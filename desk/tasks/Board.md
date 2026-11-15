@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-14T13:23:32Z'
+  at: '2026-11-15T15:28:52Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -9,7 +9,8 @@ id: board-001
 # Affected workspace or domain
 scope: desk
 # List of task-xxx paths
-tasks: []
+tasks:
+- desk/tasks/task-doctor-detecta-rutas-absolutas-en-el-desk-y-repair-las-reescribe-como-direcciones-resolubles-por-los.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -50,3 +51,5 @@ No active tasks routed.
 ## Task Details
 
 _Generated from the task references above._
+
+- doctor detecta rutas absolutas en el desk y --repair las reescribe como direcciones resolubles por los links de sldb [draft] - deskops doctor emite una alerta por cada ruta absoluta en un documento del desk (path del registro, files y references de tareas, y cualquier campo de frontmatter). doctor --repair reescribe las que puede resolver: el path del registro como ruta relativa a la raíz del ecosistema y files/references como <repo-id>:<ruta-relativa>, la forma que closeout resolved-by ya acepta.

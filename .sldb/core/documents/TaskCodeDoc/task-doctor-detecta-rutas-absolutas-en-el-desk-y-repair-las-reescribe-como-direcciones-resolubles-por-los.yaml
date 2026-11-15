@@ -1,0 +1,38 @@
+name: task-doctor-detecta-rutas-absolutas-en-el-desk-y-repair-las-reescribe-como-direcciones-resolubles-por-los
+path: desk/tasks/task-doctor-detecta-rutas-absolutas-en-el-desk-y-repair-las-reescribe-como-direcciones-resolubles-por-los.md
+source_hash: a6c1f02689e5e6ac2076a73869015f37af158d6b1d47c38e302b6dbcb1f7ded4
+content_hash: 97a78b137adbdc400d709cb1d0c3aa4fc9caa8cba8249f5e23b0f90fa91feff2
+field_hashes:
+  title: fc04d5d4b4f7e6e40f87dcbbb57a9aefa5a801a1b075cdb9e6ed4ca5da201bd2
+  id: bc93f0a899f13116c6c3863279f7a3acb5771c34cfa17fdcd0116a0fafdfbe0c
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 191a3beb9b28dccb496d4a1ee3a587819be76ca0b8edd657d8f685d3d6a197e2
+  goal: 2b6ea60618dd4abffc7873c4d691cb08af512b4f7a60eb4750f893c7a6a925f6
+  scope: f02f839e527ec71f61c67fad0157fcd9775835572762a84ea40d2e722f83b853
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 769a7e6a5b631880db2b1525a8ecec45942b3de81942dd0a3c4e36eb6a3e999f
+  validation: d5f6f4ce621ecf67a928e08f7dd18401155283e6c737b7d0f854a8136cbd955f
+  done_when: d7ac989ef37795d23944d848ab61b32a40fd3ffb0ed5e7b367743f7754e3e88f
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-15T15:28:51Z'
+  authority: generated
+  via: create_document
