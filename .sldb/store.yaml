@@ -570,8 +570,5 @@ include:
   paths:
   - deskops/data/views/board.md
   - deskops/data/views/task.md
-- model: TaskCodeDoc
-  paths:
-  - desk/tasks/task-doctor-detecta-rutas-absolutas-en-el-desk-y-repair-las-reescribe-como-direcciones-resolubles-por-los.md
 graph_backend: networkx
 policy: {}
