@@ -1,11 +1,11 @@
 name: repo-scion
 path: desk/registry/repo-scion.md
-source_hash: a10c281c19ab95f037ee29c5c7d22a0801cdc4a313ce622f0fed0957a7e16fbe
-content_hash: cd8fc6a0a3deaf951a485f19d2085d98f6bfee2a3faa95ab4b03273444d68106
+source_hash: 1b20eb3b74c35ee251d338aa0336c93fcd79800c111c1dd5bfe2a480ee91f775
+content_hash: 61abc39243a8b3bb64b4cf6de8a7b9c1182267b27cb964825ef23d2370f45a3f
 field_hashes:
   name: 1321d9efcb48ac8350a2345a4fb62a20719e69787bd4152b777b80ff17daa46a
   id: 1321d9efcb48ac8350a2345a4fb62a20719e69787bd4152b777b80ff17daa46a
-  path: 75c9ffc069819f4bc311e0403d39376314cf07513aaa4750ada10e131c9ae307
+  path: a1f84d9e9563e3e5e0d704893715c43bb3e20ed7f9860584d97cb38a86a53ab3
   status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   description: 562878862587a47d52ad02a3f65b21fb03031ef6dd8d68d82e8ca33402f271d3
   tags: a13a208db4aafb87374952a89ce90656e5950b28dd21677d81f5e2ac980432be
@@ -16,4 +16,8 @@ semantic_tags:
 - type.desk.repository
 - type:runtime
 - workspace.desk.registry
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-15T17:34:02Z'
+  authority: generated
+  via: save_document_payload

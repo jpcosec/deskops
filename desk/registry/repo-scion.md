@@ -1,8 +1,13 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-15T17:34:02Z'
+  authority: generated
+  via: save_document_payload
 # repo-xxx
 id: scion
 # Relative path to repository
-path: /home/jp/proyectos/SLDB_1/scion
+path: ../scion
 # active | maintenance | archived
 status: active
 # e.g., type:tool, layer:infra
