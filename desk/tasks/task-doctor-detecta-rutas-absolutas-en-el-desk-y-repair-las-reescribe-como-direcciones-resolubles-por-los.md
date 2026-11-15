@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-15T15:28:51Z'
+  at: '2026-11-15T15:29:20Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-doctor-detecta-rutas-absolutas-en-el-desk-y-repair-las-reescribe-como-direcciones-resolubles-por-los
 status: draft
 summary: ''
@@ -52,7 +52,7 @@ Decisiones del coordinador (revisables). 1) Fuente de verdad: los links del stor
 
 _List the checks required before this task can close._
 
-- TMPDIR=/dev/shm python -m pytest -q tests/test_doctor_absolute_paths.py
+- TMPDIR=/dev/shm python -m pytest -q tests/test_doctor_alerts.py y el archivo de tests nuevo del chequeo
 
 ## Done When
 

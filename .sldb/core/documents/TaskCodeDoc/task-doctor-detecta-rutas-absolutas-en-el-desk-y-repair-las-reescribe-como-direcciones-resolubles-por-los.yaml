@@ -1,7 +1,7 @@
 name: task-doctor-detecta-rutas-absolutas-en-el-desk-y-repair-las-reescribe-como-direcciones-resolubles-por-los
 path: desk/tasks/task-doctor-detecta-rutas-absolutas-en-el-desk-y-repair-las-reescribe-como-direcciones-resolubles-por-los.md
-source_hash: a6c1f02689e5e6ac2076a73869015f37af158d6b1d47c38e302b6dbcb1f7ded4
-content_hash: 97a78b137adbdc400d709cb1d0c3aa4fc9caa8cba8249f5e23b0f90fa91feff2
+source_hash: 13d8ed891afd8c9d42814775b9e93ec9e7278442b51a4e42de07b1f886c1b73f
+content_hash: 3dd5b4e1c2cfb7358059b4c55d46ec0c44c9f801a509c0498b27f71cff8ab54d
 field_hashes:
   title: fc04d5d4b4f7e6e40f87dcbbb57a9aefa5a801a1b075cdb9e6ed4ca5da201bd2
   id: bc93f0a899f13116c6c3863279f7a3acb5771c34cfa17fdcd0116a0fafdfbe0c
@@ -18,7 +18,7 @@ field_hashes:
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 769a7e6a5b631880db2b1525a8ecec45942b3de81942dd0a3c4e36eb6a3e999f
-  validation: d5f6f4ce621ecf67a928e08f7dd18401155283e6c737b7d0f854a8136cbd955f
+  validation: 85676e5da37f2730731fe56f75e2883ee5230a78a27355eb9c73d2d8fb920f74
   done_when: d7ac989ef37795d23944d848ab61b32a40fd3ffb0ed5e7b367743f7754e3e88f
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-15T15:28:51Z'
+  at: '2026-11-15T15:29:20Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
