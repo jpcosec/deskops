@@ -6,6 +6,7 @@ from pathlib import Path
 import subprocess
 import sys
 
+from deskops import absolute_paths
 from deskops.bootstrap import MODEL_REFS, SLDBBootstrap
 from deskops.doc_readability import is_unreadable_by_model
 from deskops.doctor_findings import (
@@ -60,6 +61,7 @@ class DoctorCLI:
             self._check_documents(root, desk_dir, repair, findings)
             self._check_managed_seeds(root, findings)
             self._check_foreign_files(root, findings)
+            self._check_absolute_paths(root, repair, findings)
             self._check_models(root, repair, findings)
         return self._report(findings, repair)
 
@@ -128,6 +130,17 @@ class DoctorCLI:
         except Exception:
             return
         findings.alerts += [task_warning(task_id, repo_id) for task_id, repo_id in found]
+
+    def _check_absolute_paths(self, root: Path, repair: bool, findings: Findings) -> None:
+        """An alert per absolute path in a desk document; ``--repair`` rewrites those the store's
+        links and the registry resolve (``deskops.absolute_paths``). The exit code never changes."""
+        try:
+            report = absolute_paths.check(root, repair=repair)
+        except Exception as exc:
+            findings.alerts.append(f"Could not check the desk for absolute paths: {exc}")
+            return
+        findings.alerts += report.alerts
+        findings.fixed += report.fixed
 
     def _store_check(self, root: Path, findings: Findings) -> dict | None:
         result = subprocess.run(

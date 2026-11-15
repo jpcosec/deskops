@@ -109,7 +109,28 @@ that edge. Any other difference (a rule, the body or notes of a seed) is an
 **alert**. A desk seeded before CC31 has `attributes: {}` on its edges and shows
 up here; `deskops desk update --apply` restores the managed seeds.
 
-`--repair` acts on errors only (it scaffolds structure and registers models). Use it
+`doctor` raises one **alert** per absolute path (`/home/...`, `/mnt/...`) in the
+frontmatter of a desk document: a path written on one machine does not exist on
+another. It never changes the exit code. The store already knows where the
+neighbouring repositories are (`.sldb/store.yaml` `links`, read through sldb, plus the
+registry entries whose path is relative; the root of a neighbour is the parent of its
+linked `.sldb`), so the alert says what the path becomes:
+
+```text
+Absolute path: desk/registry/repo-sldb.md path: /home/jp/proyectos/SLDB_1/sldb (becomes ../sldb; fix: deskops doctor --repair)
+```
+
+`--repair` rewrites those that resolve, through the desk's sldb transaction: the
+`path` of a registry entry becomes a path relative to the repository root, and each
+absolute entry of a task's `files` and `references` becomes `<repo-id>:<path>`, the
+form `closeout resolved-by` accepts (a path of this repository becomes relative to its
+root, without prefix). A path that exists here is placed by the root it falls under; a
+path that does not exist (another machine) is placed only when what follows the
+ecosystem folder (`SLDB_1`) names one neighbour without ambiguity. Anything else stays
+an alert with its reason (no ecosystem folder, no neighbour, ambiguous, no registry
+entry for that root, a field other than registry `path`, `files` and `references`).
+
+`--repair` otherwise acts on errors only (it scaffolds structure and registers models). Use it
 when you understand the reported errors:
 
 ```bash
