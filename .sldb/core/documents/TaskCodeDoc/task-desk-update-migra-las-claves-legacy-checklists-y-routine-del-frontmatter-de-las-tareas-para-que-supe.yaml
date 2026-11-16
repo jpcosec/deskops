@@ -1,0 +1,39 @@
+name: task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe
+path: desk/tasks/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe.md
+source_hash: d713b3999b98e1937d1a31a49906694969470b4657c2b2f88bc0d37c2ec74cb5
+content_hash: 48eb5eb530ef16ff87b7641eec560e797d0a56b001b3c1062140a6dd8700ea35
+field_hashes:
+  title: 6a6ddfaa9330a3a6df6f197db1552eb23c527517bdfd09a27ff6f4c0d5880108
+  id: 16bada7f7bdc44233276be8414c21abb1cb56d6720b8978f48f8cf64e237ccd8
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 0555d779be3b0be03738862dc2e65340b49289de61aa1d72a56f95af65e3ca9f
+  goal: c1824b84cf184f9299cd763dd468c593f620aa9b8b7b32ffb6d0cf95d9b1fe29
+  scope: 59b3a0d22fec3587c0b247dd195942fe51423828e21427ea829dc0ff108b737d
+  references: b5b498031e2992581ef6c01f6855d6f933f621d570034f693aed1adbce3171e9
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 10d3d7897d7ad1b64090f5a2fc26af5cde1d061ed937e4bd1200f266297151aa
+  implementation_path: 671c017535b4c982ced58286ab50e0366b3588e6e7ae9481e19fa89f1caa9095
+  validation: 2684199fa6f70d5027b8dbde914799b488375d21db3a0ebafac3b6438837afde
+  done_when: 940c48729922e53b15d9c5e21c5c45b701cfd2a3e4974556a2c757832117f265
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T15:07:03Z'
+  authority: generated
+  via: create_document

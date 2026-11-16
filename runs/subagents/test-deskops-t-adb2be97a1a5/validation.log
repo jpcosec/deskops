@@ -1,0 +1,71 @@
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_desk_paths.py
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+16 passed, 1 warning in 0.12s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_tracked_selector_resolution.py
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+15 passed, 1 warning in 26.35s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_output_goldens.py
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 473.05s (0:07:53)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli_help_examples.py
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 63.86s (0:01:03)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_cli.py::test_show_list_and_advance_task_uses_operational_runtime
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+102 passed, 2 warnings in 696.62s (0:11:36)
+rc=0
+
+## Reproducción contra HEAD (6d94cf26), copia en /dev/shm/tester-adb2be97-head (git archive HEAD + tests nuevos + golden nuevo), PYTHONPATH=copia
+$ pytest -q tests/test_desk_paths.py tests/test_tracked_selector_resolution.py
+ERROR collecting ambos archivos (ImportError: ACCEPTED_SELECTOR_FORMS / selector_stem no existen en HEAD)
+$ (imports sustituidos por la constante literal) pytest -q ... -k "path or accepted or outside or slash or not_found or dot_dot or edit_task"
+12 failed, 11 passed, 15 deselected -> fallan los 11 tests nuevos + el de igualdad del mensaje actualizado
+$ PYTHONPATH=<HEAD> python -m deskops edit task --help | diff - tests/fixtures/golden/help/deskops_edit_task.txt
+diffrc=1 (falta el epílogo Examples en HEAD); en el checkout: diff vacío, rc=0
+(test_output_goldens.py completo en HEAD no se terminó: >8 min, cortado por timeout; sustituido por el diff directo de arriba)
+
+## CLI en desk sandbox (/dev/shm/tester-adb2be97-sb, copia de desk/ y .sldb/, PYTHONPATH=checkout)
+edit task desk/drawer/tasks/task-mepu-...drawer.md scope "x sandbox" -> Updated ..., rc=0, archivo del drawer editado
+edit task <abs>/desk/drawer/tasks/task-mepu-...md -> ok
+edit task desk/drawer/tasks/zz-nope.md -> "No artifact.task file found for selector '...'. Accepted forms: an exact id, a file name, a stem, a unique fragment, or a desk/... path."
+edit task docs/x.md -> "el selector apunta fuera de desk/: 'docs/x.md'"
+edit task task-mepu-selector (fragmento único) -> ok; edit task task-l -> Ambiguous ... (sin cambios)
+Nota: sin PYTHONPATH, fuera del checkout se importa /mnt/ssd/herramientas/deskops (otra instalación) y da el mensaje viejo.
+
+## Goldens
+git status --short tests/ -> solo M deskops_edit_task.txt (+ los 2 tests); ningún golden borrado (git ls-files -d tests vacío) ni reescrito de más.
+/dev/shm limpiado.

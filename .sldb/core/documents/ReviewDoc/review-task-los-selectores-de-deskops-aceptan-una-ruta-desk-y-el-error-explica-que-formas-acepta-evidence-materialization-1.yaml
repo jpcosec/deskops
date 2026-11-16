@@ -1,0 +1,36 @@
+name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-materialization-1
+path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-materialization-1.md
+source_hash: 230d85ff4ce39a0eca5bbfbff79094ed20df79c6a84d9e4963567a9fca09cb69
+content_hash: 435067b72ccca3214538327e02cbdac4943f856c9ad9fef14fdcd704836148e6
+field_hashes:
+  id: 6a60b99a1ae9106123dc0dcac50fdd01d9b8bf815d8689a7633e644989e6d7a7
+  title: 416a3747a49255ec291da82d681e1529f7d3bd0be1ac76c0133a9ffbe1fdc0ae
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 0387937f90cb471dc54c260dbff067956286ae94e5953689c2d90dafa7b02ae7
+  subject: 6cdf256802d1a614a6c977029360b96d93247be83db553d859bb0f19dc68c560
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 986ab144c3ddc642ab2dd3d54e3ef589d0b749388937280a10a849cce608f969
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: ecbcbf0e29ccf9d8e9562e9f5898775d8f8caa193cff7b5d13c2e10560df61a2
+  created_at: 779f7905d28ccf344c8fa63bd4dfa4ed6836ff87c92aae4f3eff77c0a86cda86
+  disposed_at: 779f7905d28ccf344c8fa63bd4dfa4ed6836ff87c92aae4f3eff77c0a86cda86
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5c30d1a3f2baa50d2f11f9c17ab541f0d82eaebac5343ff272c1b9c1bf10515d
+  disposition: e75ed415266bcb870a3b6a0dcac8698714ef1422f350467bd368b0877b98d073
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T15:12:57Z'
+  authority: generated
+  via: save_document_payload

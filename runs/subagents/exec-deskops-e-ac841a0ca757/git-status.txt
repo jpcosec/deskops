@@ -1,0 +1,16 @@
+ M .sldb/core/models/InboxNoteDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M deskops/cli/registry.py
+ M deskops/desk_paths.py
+ M deskops/doc_access.py
+ M tests/fixtures/golden/help/deskops_edit_task.txt
+ M tests/test_desk_paths.py
+ M tests/test_tracked_selector_resolution.py
+?? .sldb/core/documents/InboxNoteDoc/20261116-102357-unclear-el-gate-de-tests-solo-py-bloquea-todo-el-desk-sldb-ui-vitest.yaml
+?? .sldb/core/documents/InboxNoteDoc/20261116-103216-unclear-closeout-supersede-rechaza-3-taskdocs-de-marcado-con-claves-checklists-routine.yaml
+?? .sldb/core/documents/RunDoc/run-deskops-e-ac841a0ca757.yaml
+?? desk/inbox/20261116-102357-unclear-el-gate-de-tests-solo-py-bloquea-todo-el-desk-sldb-ui-vitest.md
+?? desk/inbox/20261116-103216-unclear-closeout-supersede-rechaza-3-taskdocs-de-marcado-con-claves-checklists-routine.md
+?? runs/subagents/exec-deskops-e-ac841a0ca757/

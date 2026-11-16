@@ -1,7 +1,7 @@
 name: task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado
 path: desk/tasks/task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado.md
-source_hash: 05242aeb73208c3f8aacbb7d69c69346b74cce56d59b85d34c1016ad540b80b4
-content_hash: 2462032f5b96ce2cc1bbbf31905d9d0a6b26be06eecd24115967da136c625531
+source_hash: 0f7b8881c82aaeb5b5dd712b7af7c5acc8a8818d05e9d5bae53d0345ab31f2e6
+content_hash: a44298994dd4299bf303106d0821cd1e1667e8dd23dcb04ed249bbce04743c75
 field_hashes:
   title: 50042b29160482e6b022dd221179a3fd43ff2a1c4d59fbaff58ef96a4ffa523d
   id: d8a16bc3f3afd6bd433ab0c64e20e7f8186de8ba76547b6f310c05abdaece7fc
@@ -11,13 +11,13 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 125c84305f5d965f234da851ee1bbfebfb59b829254f033a7e3c0cfc9981786f
-  goal: b08e383f05497f205bfbafee41d9635530c373df052508e5c56cf6aa486b2d98
-  scope: cc66993c094bdfbf7f030f7baa591eab1a641f367cafa897a7e32755febaf7ea
-  references: c217e093cb7e5ee3813a84800dd36ac6d486bc5edff1d0f1a807e2f55bbeaec6
+  goal: 852d0c5e6820e50ef807200dc1bdfdefb576e29e9955916e2b898f09e403c731
+  scope: a502c2d56f9673c280567ba4951d9bd8bc5553bd4b7e770707000defae5b08bd
+  references: 31bd5ac0e01ba3700b0ba9ebd821faa3811f8aec9db32f6cd9d9e4ba542dfceb
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 91a353793a0d2e98fbe7edaf8b3f473f63c7d1aba2fa691b394d68f0edccb8df
-  implementation_path: 1741d23f68b1a2264434b60d981bbd7574d1ea34d0d55cca8badcbb7caa6709c
+  implementation_path: 292a611224c2d9407bed25ad2f7a45fec87de7c9e0f726f48d7ec649ad4e64b0
   validation: 3f098157910c0dcf866c4fc9526a1088d8ac2d938fa3d4b82c968b22567b5bd6
   done_when: f550942f87f0c1af2921c50b6c50640d5212d3e9c4d792f37a2d4939432708af
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:08:07Z'
+  at: '2026-11-16T15:09:37Z'
   authority: generated
   via: save_document_payload

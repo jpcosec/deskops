@@ -1,13 +1,15 @@
 name: 20261116-095909-suggestion-closeout-marcado-ui-ts-vitest-bloqueado-por-el-gate-de-tests-solo-py-sumar-test-ts-test-tsx
 path: desk/inbox/20261116-095909-suggestion-closeout-marcado-ui-ts-vitest-bloqueado-por-el-gate-de-tests-solo-py-sumar-test-ts-test-tsx.md
-source_hash: 0453ec899af8d89ca6aa603bbeeb8aeb1a9227613fc30c6beef3a64521bc06f0
-content_hash: 593b089d71f9cfb149963bc9606572cacc3c09aef76593ada43ffb50fbfba0cc
+source_hash: 17661486bfa2c2250b4ef953039bd9b8abab81f29f91ce0faa177d6aa0042e2b
+content_hash: ec992b5cc9e6c384281bee77d4ba76d44e3e7eda3a202627fcceabf55246688a
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: df731310bc2e75c450ec44744a7eadd4917247a9a651e539e0dc1c6deb23dad7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 705ebfb09d8fc0b95e3d920c2105f2050cd89c432fa382bbf0cc8d73ab1341f7
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 2a9e5e87321b8342828f006685d4f254f13b41e716637765e851325f4787f0ce
   title: f8902ab6e379cadb82ac666260c28eb70ac3431ef3d4e6c5d94a20e469b549e3
   body: ae3db5fb0ea720f44f3741c6591be7fd8d1cff818b9096b47792faf651972839
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T15:08:33Z'
+  authority: generated
+  via: save_document_payload

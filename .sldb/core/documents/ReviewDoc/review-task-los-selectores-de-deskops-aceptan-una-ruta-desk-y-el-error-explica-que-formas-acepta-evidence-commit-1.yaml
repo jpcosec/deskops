@@ -1,0 +1,36 @@
+name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-commit-1
+path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-commit-1.md
+source_hash: 651f82a25e432f44dec22f93a77245fc87534cbf0df879bbcaa216b37026b713
+content_hash: eccd12463588e2f112cfccb569f2999603867792d42d8e1f2e50c624b5d62c06
+field_hashes:
+  id: cdd3cb4f1cfeaadd1f10f6c94f4b11a7b3a2139fbbde223a3c28be978ec321e9
+  title: 4cb63201adc477713ae151e2b75af920e9a6679af8ef6c17ee5298e6d5efe2c0
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: 87813ba4f25c922299fd8a263f8a8e2c78b38ee78c0cf965205fb28564085027
+  subject: 6cdf256802d1a614a6c977029360b96d93247be83db553d859bb0f19dc68c560
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: b26025efa30da3778e0f67b81a1f5a71fea55e70ee66333d18098be0cadd101d
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 9db056049b3825efa822cfdf4c1cc2c56a383a5fd2523386f184b396313bfad1
+  created_at: 779f7905d28ccf344c8fa63bd4dfa4ed6836ff87c92aae4f3eff77c0a86cda86
+  disposed_at: 779f7905d28ccf344c8fa63bd4dfa4ed6836ff87c92aae4f3eff77c0a86cda86
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: c9b1f5799294e95870fd32c698326c1b35b06eade35ed151d50924678dea3682
+  disposition: 8c4e2812b7becde8b8067a1f6904313d3c179009e688baa759625a6fe2ee56e0
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T15:12:48Z'
+  authority: generated
+  via: save_document_payload

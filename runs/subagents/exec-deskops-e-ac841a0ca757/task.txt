@@ -1,0 +1,13 @@
+Task: task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta
+Title: Los selectores de deskops aceptan una ruta desk/... y el error explica que formas acepta
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+From drawer: desk/drawer/tasks/task-mepu-selector-por-ruta-en-edit-task-y-diagn-stico-drawer.md
+Effective pills:
+- desk/contexts/pill-operational-cli-grammar-follows-spoken-workflow.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

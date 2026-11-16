@@ -336,6 +336,10 @@ include:
     name: run-deskops-e-bae0befe2582
   - path: runs/subagents/test-deskops-t-05549e84fdaf/run.md
     name: run-deskops-t-05549e84fdaf
+  - path: runs/subagents/exec-deskops-e-ac841a0ca757/run.md
+    name: run-deskops-e-ac841a0ca757
+  - path: runs/subagents/test-deskops-t-adb2be97a1a5/run.md
+    name: run-deskops-t-adb2be97a1a5
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -830,6 +834,16 @@ include:
     name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-materialization-1
   - path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-materialization-2.md
     name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-materialization-2
+  - path: desk/reviews/task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado/preflight-3.md
+    name: review-task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado-preflight-3
+  - path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-tests-1.md
+    name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-tests-1
+  - path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-commit-1.md
+    name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-commit-1
+  - path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-atom-1.md
+    name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-atom-1
+  - path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-materialization-1.md
+    name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -866,7 +880,6 @@ include:
   - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
   - desk/tasks/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados.md
   - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
-  - desk/tasks/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta.md
   - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
   - desk/tasks/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act.md
   - desk/tasks/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l.md
@@ -887,6 +900,7 @@ include:
   - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
   - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
+  - desk/tasks/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
