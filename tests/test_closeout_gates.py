@@ -270,3 +270,144 @@ def test_transitions_match_the_linked_index(lifecycle_desk: Path, tmp_path: Path
     for node in _lifecycle_nodes():
         assert lifecycle.transitions_from(lifecycle_desk, node) == transitions_from_v1(lifecycle_desk, node), node
     assert lifecycle.transitions_from(lifecycle_desk, "ritual-testing")
+
+
+# ---------------------------------------------------------------- <repo-id>:<sha> commit evidence
+# A reference qualified by a repository the desk's own registry does not list resolves the
+# repo-id in the ecosystem registry (the one `message send --to` falls back to). The
+# ecosystem registry is always a sandbox: DESKOPS_ECOSYSTEM_REGISTRY under tmp_path.
+
+ECO_ID = "infra"
+
+
+def _register(registry_dir: Path, repo_id: str, repo_path: str, *, name: str | None = None) -> None:
+    from deskops.models import RepositoryDoc
+    from sldb.runtime.validation import render_model_markdown
+
+    payload = {
+        "id": repo_id,
+        "name": repo_id,
+        "path": repo_path,
+        "status": "active",
+        "description": f"Repository for {repo_id}.",
+        "tags": [],
+    }
+    _write(registry_dir / f"repo-{name or repo_id}.md", render_model_markdown(RepositoryDoc, payload) + "\n")
+
+
+def _repo_with_commit(root: Path, label: str) -> str:
+    root.mkdir(parents=True)
+    _git(root, "init", "-q")
+    _git(root, "-c", "user.email=t@example.com", "-c", "user.name=T", "commit", "--allow-empty", "-q", "-m", label)
+    return _git(root, "rev-parse", "HEAD")
+
+
+def _commit_task(root: Path, references: list[str]) -> None:
+    front = {
+        "id": "task-xrepo",
+        "status": "active",
+        "current_node": "ritual-testing",
+        "history": ["task_activates"],
+        "references": references,
+        "depends_on": [],
+        "pills": [],
+        "atoms": [],
+        "files": [],
+        "task_type": "code",
+        "closeout_evidence": ["commit"],
+        "tags": [],
+    }
+    _write(
+        root / "desk" / "tasks" / "task-xrepo.md",
+        "---\n" + yaml.safe_dump(front, sort_keys=False) + "---\n\n# task-xrepo\n\n## Goal\n\nCite another repo.\n",
+    )
+
+
+@pytest.fixture
+def xrepo(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[str, object]:
+    """A desk without registry of its own, another repo listed only by the sandbox ecosystem registry."""
+    desk = tmp_path / "desk-repo"
+    _repo_with_commit(desk, "desk seed")
+    other = tmp_path / "infra"
+    work = _repo_with_commit(other, "infra work")
+    registry = tmp_path / "eco" / "desk" / "registry"
+    _register(registry, ECO_ID, str(other))
+    monkeypatch.setenv("DESKOPS_ECOSYSTEM_REGISTRY", str(registry))
+    return {"desk": desk, "other": other, "work": work, "registry": registry, "tmp": tmp_path}
+
+
+def _commit_gate(desk: Path, references: list[str]) -> dict[str, object]:
+    _commit_task(desk, references)
+    return DeskopsOperations(desk).verify_task_closeout("task-xrepo")["gates"]["commit"]
+
+
+def test_commit_evidence_resolves_a_repo_id_only_the_ecosystem_registry_lists(xrepo: dict[str, object]) -> None:
+    desk, work = xrepo["desk"], str(xrepo["work"])
+    assert isinstance(desk, Path)
+    assert not (desk / "desk" / "registry").exists()
+    ref = f"{ECO_ID}:{work[:10]}"
+
+    gate = _commit_gate(desk, [ref])
+
+    assert gate["ok"] is True
+    assert gate["evidence"] == [ref]
+    # The evidence receipt records the full id, qualified by the repository.
+    operations = DeskopsOperations(desk)
+    qualified = operations.closure._verify_repository_references([ref])
+    assert qualified.full_commit_sha(ref, operations.closeout_gates) == f"{ECO_ID}:{work}"
+
+
+@pytest.mark.parametrize("case", ["missing-sha", "unknown-repo-id", "desk-sha-qualified-by-other"])
+def test_commit_evidence_that_does_not_resolve_does_not_count(xrepo: dict[str, object], case: str) -> None:
+    desk = xrepo["desk"]
+    assert isinstance(desk, Path)
+    ref = {
+        "missing-sha": f"{ECO_ID}:{'0' * 40}",
+        "unknown-repo-id": f"nope:{xrepo['work']}",
+        "desk-sha-qualified-by-other": f"{ECO_ID}:{_git(desk, 'rev-parse', 'HEAD')}",
+    }[case]
+
+    gate = _commit_gate(desk, [ref])
+
+    assert gate["ok"] is False
+    assert gate["evidence"] == []
+    assert [f["code"] for f in gate["findings"]] == ["missing_commit_evidence"]
+
+
+def test_commit_evidence_with_an_ambiguous_ecosystem_repo_id_does_not_count(xrepo: dict[str, object]) -> None:
+    desk, registry = xrepo["desk"], xrepo["registry"]
+    assert isinstance(desk, Path) and isinstance(registry, Path)
+    _register(registry, ECO_ID, str(xrepo["tmp"]), name=f"{ECO_ID}-copy")
+
+    gate = _commit_gate(desk, [f"{ECO_ID}:{xrepo['work']}"])
+
+    assert gate["ok"] is False
+    assert gate["evidence"] == []
+
+
+def test_commit_evidence_prefers_the_desk_registry_over_the_ecosystem(xrepo: dict[str, object]) -> None:
+    desk, tmp = xrepo["desk"], xrepo["tmp"]
+    assert isinstance(desk, Path) and isinstance(tmp, Path)
+    local_other = tmp / "infra-local"
+    local_work = _repo_with_commit(local_other, "local infra work")
+    _register(desk / "desk" / "registry", ECO_ID, str(local_other))
+
+    assert _commit_gate(desk, [f"{ECO_ID}:{local_work}"])["ok"] is True
+    assert _commit_gate(desk, [f"{ECO_ID}:{xrepo['work']}"])["ok"] is False
+
+
+def test_commit_evidence_of_an_ecosystem_repo_missing_on_this_machine_is_not_found(
+    xrepo: dict[str, object],
+) -> None:
+    desk, registry, tmp = xrepo["desk"], xrepo["registry"], xrepo["tmp"]
+    assert isinstance(desk, Path) and isinstance(registry, Path) and isinstance(tmp, Path)
+    gone = tmp / "gone"
+    _register(registry, "gone", str(gone))
+
+    gate = _commit_gate(desk, [f"gone:{xrepo['work']}"])
+
+    assert gate["ok"] is False
+    assert gate["findings"] == [
+        {"code": "missing_commit_evidence", "message": "No resolvable commit reference found."},
+        {"code": "registered_repository_missing", "message": f"Registered repository gone is not at {gone.resolve()} on this machine."},
+    ]

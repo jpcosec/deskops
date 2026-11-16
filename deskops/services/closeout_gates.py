@@ -20,6 +20,8 @@ if TYPE_CHECKING:
 
 
 COMMIT_ID_PATTERN = re.compile(r"[0-9a-f]{7,40}")
+#: A prefix that can name a repository of the ecosystem registry: no path separator, no space.
+REPO_ID_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
 URL_PATTERN = re.compile(r"https?://\S+")
 
 # Closed vocabulary for a task's declared closeout evidence. `atom` and
@@ -95,7 +97,14 @@ class CloseoutGatesService:
         *,
         points_to_atom: Callable[[str], bool],
         points_to_routed_follow_up: Callable[[str], bool],
+        points_to_commit: Callable[[str], bool] | None = None,
     ) -> dict[str, list[str]]:
+        """Classify the task's references by evidence kind.
+
+        ``points_to_commit`` replaces the local commit check, so a caller can count a
+        ``<repo-id>:<sha>`` reference resolved in another registered repository.
+        """
+        points_to_commit = points_to_commit or self.reference_points_to_commit
         evidence = {"tests": [], "atom": [], "commit": [], "follow_up": [], "document": [], "external": []}
         references = payload.get("references") or []
         if not isinstance(references, list):
@@ -111,7 +120,7 @@ class CloseoutGatesService:
                 evidence["tests"].append(ref)
             if points_to_atom(ref):
                 evidence["atom"].append(ref)
-            if self.reference_points_to_commit(ref):
+            if points_to_commit(ref):
                 evidence["commit"].append(ref)
             if points_to_routed_follow_up(ref):
                 evidence["follow_up"].append(ref)
@@ -272,6 +281,11 @@ class RepositoryReferences:
     before: a local commit, a local test path or an http(s) URL. A prefix naming the desk
     itself (its ``project_identity`` or a registered repository whose root is the desk's
     root) is local: the value is checked as an unqualified reference.
+
+    Commit evidence (``split(..., ecosystem=True)``, ``points_to_commit``) also resolves a
+    prefix the desk's registry does not list in the ecosystem registry, the one
+    ``deskops message send --to`` falls back to; the desk's own registry wins when both list
+    it. An ecosystem registry that cannot be read or names an id twice resolves nothing.
     """
 
     def __init__(
@@ -280,14 +294,21 @@ class RepositoryReferences:
         entries: "list[RegisteredRepository]",
         *,
         own_identity: str | None = None,
+        ecosystem: "Callable[[], list[RegisteredRepository]] | None" = None,
     ) -> None:
         self.root = root.resolve()
         self.entries = {entry.id: entry for entry in entries}
         self.own_identity = (own_identity or "").strip() or None
+        self._ecosystem_loader = ecosystem
+        self._ecosystem_entries: "dict[str, RegisteredRepository] | None" = None
         self._gates: dict[Path, CloseoutGatesService] = {}
 
-    def split(self, reference: str) -> "tuple[RegisteredRepository | None, str]":
-        """(the other repository, the value) for a qualified reference, else (None, the local reference)."""
+    def split(self, reference: str, *, ecosystem: bool = False) -> "tuple[RegisteredRepository | None, str]":
+        """(the other repository, the value) for a qualified reference, else (None, the local reference).
+
+        With ``ecosystem`` a prefix missing from the desk's registry is looked up in the
+        ecosystem registry too.
+        """
         text = reference.strip()
         if CloseoutGatesService.reference_points_to_url(text) or ":" not in text:
             return None, text
@@ -295,11 +316,60 @@ class RepositoryReferences:
         if self.own_identity is not None and prefix == self.own_identity:
             return None, value.strip()
         entry = self.entries.get(prefix)
+        if entry is None and ecosystem:
+            entry = self._ecosystem_entry(prefix)
         if entry is None:
             return None, text
         if entry.repo_root is not None and entry.repo_root.resolve() == self.root:
             return None, value.strip()
         return entry, value.strip()
+
+    def _ecosystem_entry(self, repo_id: str) -> "RegisteredRepository | None":
+        if self._ecosystem_loader is None or not REPO_ID_PATTERN.fullmatch(repo_id):
+            return None
+        if self._ecosystem_entries is None:
+            try:
+                loaded = self._ecosystem_loader()
+            except Exception:  # noqa: BLE001 - an unreadable or ambiguous registry resolves nothing
+                loaded = []
+            self._ecosystem_entries = {entry.id: entry for entry in loaded}
+        return self._ecosystem_entries.get(repo_id)
+
+    def points_to_commit(self, reference: str, local: CloseoutGatesService) -> bool:
+        """True for a commit ``reference_points_to_commit`` accepts, in its repository.
+
+        A ``<repo-id>:<sha>`` whose repository resolves (desk registry, then ecosystem
+        registry) is checked in that repository's root; one whose root is missing on this
+        machine does not count. Anything else is checked by ``local``.
+        """
+        entry, value = self.split(reference, ecosystem=True)
+        if entry is None:
+            return local.reference_points_to_commit(value)
+        if self.missing_root_message(entry) is not None:
+            return False
+        return self.gates(entry).reference_points_to_commit(value)
+
+    def full_commit_sha(self, reference: str, local: CloseoutGatesService) -> str:
+        """The full id of a commit ``points_to_commit`` accepts, ``<repo-id>:<sha>`` for another repo; else ''."""
+        entry, value = self.split(reference, ecosystem=True)
+        if entry is None:
+            return local.full_commit_sha(value)
+        if self.missing_root_message(entry) is not None:
+            return ""
+        sha = self.gates(entry).full_commit_sha(value)
+        return f"{entry.id}:{sha}" if sha else ""
+
+    def missing_commit_roots(self, references: list[str]) -> list[str]:
+        """The refusals of commit-shaped ``<repo-id>:<sha>`` references whose repository is not on this machine."""
+        messages: list[str] = []
+        for reference in references:
+            entry, value = self.split(reference, ecosystem=True)
+            if entry is None or not COMMIT_ID_PATTERN.fullmatch(value):
+                continue
+            message = self.missing_root_message(entry)
+            if message is not None and message not in messages:
+                messages.append(message)
+        return messages
 
     @staticmethod
     def missing_root_message(entry: "RegisteredRepository") -> str | None:

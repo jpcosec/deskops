@@ -42,6 +42,7 @@ from deskops.services.atoms import reference_points_to_atom
 from deskops.services.references import alert_dangling
 from deskops.services.references import dangling_referrers
 from deskops.config import DeskConfig
+from deskops.identity import load_ecosystem_registry
 from deskops.identity import load_repository_registry
 from sldb.core.exceptions import SLDBStoreError
 
@@ -299,15 +300,14 @@ class ClosureService:
             qualified = self._repository_references([*cleaned_refs, *cleaned_tests])
         except SLDBStoreError as exc:
             return ClosureOutcome(1, [f"Could not read the repository registry: {exc}"])
-        if refusal := self._missing_registered_root(qualified, cleaned_refs):
+        if refusal := self._missing_registered_root(qualified, cleaned_refs, ecosystem=True):
             return refusal
 
         def ref_is_commit(ref: str) -> bool:
-            entry, value = qualified.split(ref)
-            return (qualified.gates(entry) if entry is not None else gates).reference_points_to_commit(value)
+            return qualified.points_to_commit(ref, gates)
 
         def ref_is_url(ref: str) -> bool:
-            return qualified.split(ref)[0] is None and gates.reference_points_to_url(ref)
+            return qualified.split(ref, ecosystem=True)[0] is None and gates.reference_points_to_url(ref)
 
         unresolved_refs = [ref for ref in cleaned_refs if not ref_is_commit(ref) and not ref_is_url(ref)]
         if unresolved_refs:
@@ -400,21 +400,32 @@ class ClosureService:
         """The splitter of ``<repo-id>:<value>`` references over the desk's own registry.
 
         The registry (``desk/registry/repo-*.md``) is read only when a reference has a
-        ``:`` and is not a URL, so a close with plain references never depends on it.
+        ``:`` and is not a URL, so a close with plain references never depends on it. Commit
+        references (``ecosystem=True``) fall back to the ecosystem registry, read only when a
+        prefix is missing from the desk's registry.
         """
         entries: list[Any] = []
         own_identity: str | None = None
         if any(":" in ref and not closeout_gates_module.URL_PATTERN.fullmatch(ref) for ref in references):
             entries = load_repository_registry(self.desk_root, self.root)
             own_identity = DeskConfig.load(self.desk_root).project_identity
-        return closeout_gates_module.RepositoryReferences(self.root, entries, own_identity=own_identity)
+        return closeout_gates_module.RepositoryReferences(
+            self.root, entries, own_identity=own_identity, ecosystem=load_ecosystem_registry
+        )
+
+    def _verify_repository_references(self, references: list[str]) -> "RepositoryReferences":
+        """``_repository_references`` for verify: a registry it cannot read resolves nothing, never raises."""
+        try:
+            return self._repository_references(references)
+        except SLDBStoreError:
+            return closeout_gates_module.RepositoryReferences(self.root, [], ecosystem=load_ecosystem_registry)
 
     @staticmethod
     def _missing_registered_root(
-        qualified: "RepositoryReferences", references: list[str]
+        qualified: "RepositoryReferences", references: list[str], *, ecosystem: bool = False
     ) -> ClosureOutcome | None:
         for ref in references:
-            entry, _value = qualified.split(ref)
+            entry, _value = qualified.split(ref, ecosystem=ecosystem)
             if entry is not None and (message := qualified.missing_root_message(entry)):
                 return ClosureOutcome(1, [message])
         return None
@@ -976,12 +987,21 @@ class ClosureService:
             add_gate("atom_or_materialization_link", link_gate, label)
         if "commit" in declared:
             commits = reference_evidence["commit"]
+            # A <repo-id>:<sha> whose registered root is not on this machine is not found;
+            # the gate names why instead of only "no commit".
+            references = [str(ref).strip() for ref in doc_access.coerce_list(payload.get("references") or [])]
+            missing_roots = [
+                {"code": "registered_repository_missing", "message": message}
+                for message in self._verify_repository_references(references).missing_commit_roots(references)
+            ]
             add_gate(
                 "commit",
                 CloseoutGateReport(
                     ok=bool(commits),
                     evidence=commits,
-                    findings=[] if commits else [{"code": "missing_commit_evidence", "message": "No resolvable commit reference found."}],
+                    findings=[]
+                    if commits
+                    else [{"code": "missing_commit_evidence", "message": "No resolvable commit reference found."}, *missing_roots],
                 ),
                 "commit" if commits else None,
             )
@@ -1124,7 +1144,9 @@ class ClosureService:
                 continue
             evidence = [str(item) for item in gate.get("evidence") or []]
             if fact == "commit":
-                items = [sha for sha in (self._ops.closeout_gates.full_commit_sha(ref) for ref in evidence) if sha]
+                qualified = self._verify_repository_references(evidence)
+                local = self._ops.closeout_gates
+                items = [sha for sha in (qualified.full_commit_sha(ref, local) for ref in evidence) if sha]
             elif fact == "external":
                 items = [item.strip() for item in evidence]
             else:
@@ -1262,10 +1284,14 @@ class ClosureService:
         return type_kinds, extras, not task_type
 
     def _closeout_reference_evidence(self, payload: dict[str, Any]) -> dict[str, list[str]]:
-        return self._ops.closeout_gates.closeout_reference_evidence(
+        local = self._ops.closeout_gates
+        references = [str(ref).strip() for ref in doc_access.coerce_list(payload.get("references") or [])]
+        qualified = self._verify_repository_references(references)
+        return local.closeout_reference_evidence(
             payload,
             points_to_atom=lambda reference: reference_points_to_atom(self.root, reference),
             points_to_routed_follow_up=self._reference_points_to_routed_follow_up,
+            points_to_commit=lambda reference: qualified.points_to_commit(reference, local),
         )
 
     def _closeout_link_gate(

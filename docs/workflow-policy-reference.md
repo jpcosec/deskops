@@ -149,6 +149,17 @@ uv run --no-project --with pytest --with-editable /mnt/ssd/herramientas/deskops 
 
 `--with-editable` points at the deskops checkout the machine's `deskops` tool is installed from (on this machine `/mnt/ssd/herramientas/deskops`); that checkout must include `deskops/testing/`.
 
+#### Commit evidence from another repository
+
+When a task's code entered another repository, its `commit` evidence is a reference of the form `<repo-id>:<sha>` in the task's `references` (for example `deskops:4a7707a5`). `deskops closeout verify` counts it, and `deskops closeout resolved-by --ref` accepts it, after two steps:
+
+1. The `<repo-id>` is resolved first in the desk's own registry (`desk/registry/repo-*.md`, under `--root`) and, when that registry does not list it, in the ecosystem registry (`$DESKOPS_ECOSYSTEM_REGISTRY`, else `~/setup/desk/registry`), the same fallback `deskops message send --to` uses. When both list the id, the desk's registry wins. A prefix equal to the desk's own `project_identity`, or a repository whose root is the desk's root, is local: the `<sha>` is checked in this repository.
+2. The `<sha>` is checked in that repository's registered root with the same rule as a local commit: a lowercase hex id (7 to 40 characters) that `git rev-parse --verify <sha>^{commit}` resolves and that is HEAD or an ancestor of its HEAD.
+
+A reference that does not resolve does not count and raises nothing: an unknown repo-id, an id the ecosystem registry lists twice (or a registry that cannot be read), a sha that does not exist there or is not an ancestor of its HEAD. A registered root that is not on this machine does not count either: verify reports the commit gate as not found with `Registered repository <id> is not at <path> on this machine.`, and `resolved-by` refuses the close with that message. The evidence receipt records the full id as `<repo-id>:<full sha>`.
+
+Only the commit evidence reads the ecosystem registry. A `resolved-by --test <repo-id>:<test path>` still resolves `<repo-id>` in the desk's own registry alone, and the tests gate of verify is unchanged.
+
 Two rules over the task's own fields are `on_write` alerts, `subject: model <= TaskDoc`: `rule-closeout-alert-implicit-code` (`has(task_type) or nonempty(closeout_evidence)`: a task that predates types is gated as code) and `rule-closeout-alert-pill-graduation` (`not nonempty(pills) or any(references: model <= AtomDoc)`: a task that binds pills references the atom they graduate to). The other field checks stay in verify because the rule language has no quantifier over the elements of a list value: the closeout evidence vocabulary (`deskops add task --evidence` refuses an unknown kind), `python_changes_without_declared_tests` and the http(s) shape of an `external` reference.
 
 ### Task lifecycle graph

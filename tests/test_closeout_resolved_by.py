@@ -460,3 +460,97 @@ def test_resolved_by_closes_a_task_the_model_rejects_like_a_valid_one(
     assert "Closeout-Test: checks/check_thing.py" in str(got["message"])
     assert got["status"] == ""
     assert not (invalid / "desk" / "tasks" / "task-x.md").exists()
+
+
+# ---------------------------------------------------------------- --ref <repo-id>:<sha> from the ecosystem registry
+# A desk with no registry of its own cites a commit of a repo only the ecosystem registry
+# lists (a sandbox: DESKOPS_ECOSYSTEM_REGISTRY under tmp_path). Only --ref resolves through
+# the ecosystem registry; --test keeps reading the desk's registry alone.
+
+
+def _register(registry_dir: Path, repo_id: str, repo_path: str) -> None:
+    from deskops.models import RepositoryDoc
+    from sldb.runtime.validation import render_model_markdown
+
+    payload = {
+        "id": repo_id,
+        "name": repo_id,
+        "path": repo_path,
+        "status": "active",
+        "description": f"Repository for {repo_id}.",
+        "tags": [],
+    }
+    _write(registry_dir / f"repo-{repo_id}.md", render_model_markdown(RepositoryDoc, payload) + "\n")
+
+
+@pytest.fixture
+def eco_other(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> dict[str, object]:
+    """Another repo with a commit, listed only by the sandbox ecosystem registry as ``infra``."""
+    other = tmp_path / "infra"
+    other.mkdir()
+    _git(other, "init", "-q")
+    _write(other / "tests" / "test_infra.py", "def test_infra():\n    assert True\n")
+    _git(other, "add", "tests")
+    _git(other, "-c", "user.email=t@example.com", "-c", "user.name=T", "commit", "-q", "-m", "infra work")
+    registry = tmp_path / "eco" / "desk" / "registry"
+    _register(registry, "infra", str(other))
+    _register(registry, "gone", str(tmp_path / "gone"))
+    monkeypatch.setenv("DESKOPS_ECOSYSTEM_REGISTRY", str(registry))
+    return {"other": other, "work": _git(other, "rev-parse", "HEAD"), "gone": tmp_path / "gone"}
+
+
+def test_resolved_by_ref_resolves_a_repo_id_only_the_ecosystem_registry_lists(
+    repo: Path, eco_other: dict[str, object], capsys: pytest.CaptureFixture[str]
+) -> None:
+    assert not (repo / "desk" / "registry").exists()
+    ref = f"infra:{str(eco_other['work'])[:10]}"
+
+    rc = _resolved_by(repo, "--reason", "Merged in infra", "--ref", ref, "--test", TEST_REF)
+
+    out = capsys.readouterr().out
+    assert rc == 0, out
+    assert _git(repo, "log", "-1", "--format=%(trailers:key=Closeout-Ref,valueonly)") == ref
+    assert not (repo / "desk" / "tasks" / "task-x.md").exists()
+    assert _git(repo, "status", "--porcelain") == ""
+
+
+@pytest.mark.parametrize("case", ["missing-sha", "unknown-repo-id"])
+def test_resolved_by_ref_from_the_ecosystem_that_does_not_resolve_refuses(
+    repo: Path, eco_other: dict[str, object], capsys: pytest.CaptureFixture[str], case: str
+) -> None:
+    ref = {"missing-sha": f"infra:{'0' * 40}", "unknown-repo-id": f"nope:{eco_other['work']}"}[case]
+    before = _snapshot(repo)
+
+    rc = _resolved_by(repo, "--reason", "Merged in infra", "--ref", ref, "--test", TEST_REF)
+
+    out = capsys.readouterr().out
+    assert rc == 1, out
+    assert f"Unresolvable --ref: {ref}" in out
+    assert _snapshot(repo) == before
+
+
+def test_resolved_by_ref_from_the_ecosystem_missing_on_this_machine_refuses(
+    repo: Path, eco_other: dict[str, object], capsys: pytest.CaptureFixture[str]
+) -> None:
+    before = _snapshot(repo)
+
+    rc = _resolved_by(repo, "--reason", "Merged in infra", "--ref", f"gone:{eco_other['work']}", "--test", TEST_REF)
+
+    out = capsys.readouterr().out
+    assert rc == 1, out
+    assert f"Registered repository gone is not at {Path(str(eco_other['gone'])).resolve()} on this machine." in out
+    assert _snapshot(repo) == before
+
+
+def test_resolved_by_test_does_not_resolve_through_the_ecosystem_registry(
+    repo: Path, eco_other: dict[str, object], capsys: pytest.CaptureFixture[str]
+) -> None:
+    test = "infra:tests/test_infra.py"
+    before = _snapshot(repo)
+
+    rc = _resolved_by(repo, "--reason", "Merged in infra", "--ref", f"infra:{eco_other['work']}", "--test", test)
+
+    out = capsys.readouterr().out
+    assert rc == 1, out
+    assert f"Unresolvable --test: {test}" in out
+    assert _snapshot(repo) == before
