@@ -24,6 +24,9 @@ from deskops.config import DeskConfig
 from deskops.identity import EcosystemIdentity
 from deskops.identity import UNKNOWN_PROJECT_IDENTITY
 from deskops.identity import find_context_root
+from deskops.identity import find_registered_desk
+from deskops.identity import load_ecosystem_registry
+from deskops.identity import resolve_registered_repo_by_root
 from deskops.identity import find_local_store
 from deskops.models import InboxNoteDoc
 from deskops.errors import UsageError
@@ -277,7 +280,7 @@ class MessageCLI:
 
     def _resolve_repo_desk(self, repo_name: str, store_arg: str | None, pythonpath: str | None) -> Path:
         _ = pythonpath
-        return EcosystemIdentity(store_arg).how_do_i_find_another(repo_name)
+        return find_registered_desk(repo_name, store_arg)
 
     def _note_store_context(self, args: Any, desk_root: Path) -> tuple[Path, Path] | None:
         """The store that owns the target desk, or None when its repo has no store.
@@ -456,6 +459,10 @@ class MessageCLI:
                 return sender_project
         if config_identity is not None:
             return config_identity
+        # Last: the ecosystem registry may name the sender's root.
+        entry = resolve_registered_repo_by_root(load_ecosystem_registry(), sender_root)
+        if entry is not None:
+            return entry.id
         raise SLDBStoreError(
             f"Unable to resolve sender identity for '{sender_root}'. Use --sender or register the repository canonically."
         )

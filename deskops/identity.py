@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from pathlib import Path
 
 from sldb.cli.store_context import get_store_context
@@ -13,6 +14,12 @@ from deskops.config import DeskConfig
 from deskops.models import RepositoryDoc
 
 UNKNOWN_PROJECT_IDENTITY = "unknown-project"
+
+#: Environment variable naming the ecosystem registry directory (``.../desk/registry``).
+ECOSYSTEM_REGISTRY_ENV = "DESKOPS_ECOSYSTEM_REGISTRY"
+#: The ecosystem registry every repo of the user can read when its own registry does not
+#: list a target: the ``desk/registry`` of the user's ``~/setup`` control repo.
+DEFAULT_ECOSYSTEM_REGISTRY = "~/setup/desk/registry"
 
 
 @dataclass(frozen=True)
@@ -72,7 +79,7 @@ def load_repository_registry(registry_desk_root: Path, ecosystem_root: Path) -> 
         payload = extract_model_data(RepositoryDoc, path.read_text(encoding="utf-8"))
         repo_id = str(payload.get("id") or path.stem.removeprefix("repo-"))
         repo_path = payload.get("path")
-        resolved_root = _resolve_registered_root(ecosystem_root, repo_path)
+        resolved_root = resolve_registered_root(ecosystem_root, repo_path)
         entries.append(
             RegisteredRepository(
                 id=repo_id,
@@ -202,10 +209,71 @@ class EcosystemIdentity:
             return entry_by_root.id
 
     def how_do_i_find_another(self, repo_id: str) -> Path:
-        entry = resolve_registered_repo(self.entries, repo_id, registry_dir=self.registry_dir)
+        """The desk of ``repo_id``: the local registry first, then the ecosystem registry."""
+        if any(entry.id == repo_id for entry in self.entries):
+            entry = resolve_registered_repo(self.entries, repo_id, registry_dir=self.registry_dir)
+        else:
+            entry = _ecosystem_entry(repo_id, self.entries, self.registry_dir)
         if entry.desk_root is None:
             raise SLDBStoreError(f"Repository id '{repo_id}' has no registered root path.")
         return entry.desk_root.resolve()
+
+
+def ecosystem_registry_dir() -> Path:
+    """The ecosystem registry: ``$DESKOPS_ECOSYSTEM_REGISTRY``, else ``~/setup/desk/registry``."""
+    raw = os.environ.get(ECOSYSTEM_REGISTRY_ENV, "").strip() or DEFAULT_ECOSYSTEM_REGISTRY
+    return Path(raw).expanduser()
+
+
+def load_ecosystem_registry() -> list[RegisteredRepository]:
+    """Entries of the ecosystem registry; relative paths resolve against its repo root."""
+    registry_dir = ecosystem_registry_dir()
+    desk_root = registry_dir.parent
+    return load_repository_registry(desk_root, desk_root.parent)
+
+
+def find_registered_desk(repo_id: str, store_arg: str | None = None) -> Path:
+    """The desk of a registered repo, resolvable from any repo of the ecosystem.
+
+    The sender's own registry answers first (when the sender has a store); a repo it does
+    not list is looked up in the ecosystem registry (``ecosystem_registry_dir``), so a repo
+    that never registered its neighbours can still write to them. The registered root must
+    exist on this machine: a path that only exists on another machine is an error, never a
+    directory to create.
+    """
+    try:
+        desk_root = EcosystemIdentity(store_arg).how_do_i_find_another(repo_id)
+    except SLDBStoreError:
+        if store_arg:
+            raise
+        # No local store to anchor a local registry: the ecosystem registry alone answers.
+        entry = _ecosystem_entry(repo_id, [], None)
+        if entry.desk_root is None:
+            raise SLDBStoreError(f"Repository id '{repo_id}' has no registered root path.")
+        desk_root = entry.desk_root.resolve()
+    if not desk_root.parent.is_dir():
+        raise SLDBStoreError(
+            f"Repository id '{repo_id}' is registered at '{desk_root.parent}', which does not exist "
+            "on this machine. Fix its path in the registry (a '~/...' path resolves on every machine)."
+        )
+    return desk_root
+
+
+def _ecosystem_entry(
+    repo_id: str,
+    local_entries: list[RegisteredRepository],
+    local_registry_dir: Path | None,
+) -> RegisteredRepository:
+    registry_dir = ecosystem_registry_dir()
+    is_local = local_registry_dir is not None and registry_dir.resolve() == local_registry_dir.resolve()
+    entries = [] if is_local else load_ecosystem_registry()
+    matches = [entry for entry in entries if entry.id == repo_id]
+    if not matches:
+        raise SLDBStoreError(
+            _missing_repository_message(repo_id, [*local_entries, *entries], registry_dir=local_registry_dir)
+            + f" The ecosystem registry at '{registry_dir}' does not list it either."
+        )
+    return resolve_registered_repo(entries, repo_id, registry_dir=registry_dir)
 
 
 def _raise_on_duplicate_ids(entries: list[RegisteredRepository]) -> None:
@@ -253,10 +321,10 @@ def _unregistered_current_repo_message(repo_root: Path, *, registry_dir: Path | 
     )
 
 
-def _resolve_registered_root(ecosystem_root: Path, repo_path: str | None) -> Path | None:
+def resolve_registered_root(ecosystem_root: Path, repo_path: str | None) -> Path | None:
     if not repo_path:
         return None
-    candidate = Path(repo_path)
+    candidate = Path(repo_path).expanduser()
     if candidate.is_absolute():
         return candidate.resolve()
     return (ecosystem_root / candidate).resolve()

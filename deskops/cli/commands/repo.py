@@ -14,6 +14,7 @@ from sldb.store.layout import project_root
 from deskops import doc_access
 from deskops.identity import load_repository_registry, EcosystemIdentity
 from deskops.identity import find_local_store
+from deskops.identity import resolve_registered_root
 
 
 class RepoCLI:
@@ -181,7 +182,4 @@ class RepoCLI:
         return local_store, project_root(local_store)
 
     def _resolve_registered_root(self, ecosystem_root: Path, repo_path: str) -> Path:
-        candidate = Path(repo_path)
-        if candidate.is_absolute():
-            return candidate.resolve()
-        return (ecosystem_root / candidate).resolve()
+        return resolve_registered_root(ecosystem_root, repo_path)
