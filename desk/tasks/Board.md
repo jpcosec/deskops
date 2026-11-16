@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T01:25:18Z'
+  at: '2026-11-16T02:03:50Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -18,6 +18,7 @@ tasks:
 - desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
 - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
 - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
+- desk/tasks/task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -67,3 +68,4 @@ _Generated from the task references above._
 - doctor no alerta como lost los recibos de una tarea cerrada [draft] - Un recibo cuya tarea se cerro (closeout registrado en git o en el store) no produce alerta lost en doctor: el closeout re-ancla los recibos al commit de cierre o los marca archivados; solo los recibos de tareas que desaparecieron sin cierre siguen alertando.
 - Board no refleja deskops edit task goal [draft] - Reproducir en un desk real y corregir: tras deskops edit task <id> goal, la linea de la tarea en Task Details del Board muestra el goal nuevo, o hay un verbo de deskops que refresca el Board.
 - advance y closeout no derraman reglas de activacion ni runtimes centrales sin trackear en el desk consumidor [draft] - Las semillas centrales (deskops/data/rules, runtime por defecto) se leen del paquete en tiempo de ejecucion, o se escriben solo por deskops desk update --apply y quedan trackeadas y declaradas; nunca como archivos sueltos sin trackear tras advance o closeout.
+- runtime template: el coordinador lanza hijos con el harness-auth del template (default oauth-token), no api-key fijo [draft] - El auth de 'scion start' que arma deskops sale del template: scion_start_argv recibe harness_auth (validado contra HARNESS_AUTH_TYPES) y, sin valor, usa oauth-token, el mismo default que 'deskops runtime template' para claude (HARNESS_AUTH). El agents.md del coordinador escribe en los dos 'scion start' (executor y tester) el auth resuelto del template del coordinador (--harness-auth si se pasó; si no, el default del harness, oauth-token). RuntimeProfileDoc no tiene campo de auth: no se agrega en esta tarea.

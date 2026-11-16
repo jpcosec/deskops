@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-10T17:16:51Z'
+  at: '2026-11-16T02:07:26Z'
   authority: generated
-  via: update_document
+  via: save_document_payload
 id: role-deskops-supervisor
 name: deskops-supervisor
 description: 'Use when acting as the desk workflow supervisor or Scion coordinator:
@@ -72,7 +72,7 @@ A dependency-ready task missing preflight/bundle receipts is routine work, not a
 - Write RunDoc launch intent with outcome `in_progress` in its run_dir before start, and say in the summary that it is launch intent, not proof of start. Reconcile exact project, name, labels, activity and RunDoc before any new start. Reuse an existing matching RunDoc without rewriting it; only a missing intent calls the runtime template. Observe a completed child and review its handoff, resume a stopped child with the same identity, and use a new run_dir for a retry. Never duplicate; unknown or unavailable Scion state is a blocker for that task only.
 - Dispatch the executor, then a fresh independent tester with role `deskops-tester`, `--mode tester`, and a distinct role identity. The tester hands back evidence; it does not implement, fix, route, or close. Implementation and validation commands run from the configured desk_root.
 - Only after reviewing the executor and passing tester evidence, run `deskops closeout verify`, review the diff, and close with `deskops closeout commit --task <id> --run-dir <run> --paths <scoped implementation/evidence/review paths>`. Never stage unrelated work with `git add -A`. A failed tester cannot support closeout: request one bounded correction and a fresh test, preserving the failure evidence. Reconcile the phase before selecting the next task.
-- Use explicit Scion dispatch flags: `--project`, `--workspace`, `--type`, `--harness-auth api-key`, `--non-interactive`, and the identity labels. Use subcommand `--root` flags for deskops commands.
+- Use explicit Scion dispatch flags: `--project`, `--workspace`, `--type`, `--harness-auth <the template auth; oauth-token by default>`, `--non-interactive`, and the identity labels. Use subcommand `--root` flags for deskops commands.
 
 ## Bounds and escalation
 

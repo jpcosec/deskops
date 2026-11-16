@@ -64,6 +64,11 @@ COORDINATOR_MAX_DURATION = "24h"
 #: ``CLAUDE_AUTH`` file beats a project token and the agent is not logged in.
 HARNESS_AUTH: dict[str, str] = {"claude": "oauth-token"}
 
+#: Auth a ``scion start`` names when nobody chose one: the same default the
+#: claude template carries, so a coordinator never launches a subscription
+#: child with ``api-key`` (it would ask for ANTHROPIC_API_KEY and not start).
+DEFAULT_HARNESS_AUTH = HARNESS_AUTH["claude"]
+
 #: Auth types a template may select (``auth_selectedType``); the harness-config
 #: decides which secrets each one needs (claude: oauth-token ->
 #: CLAUDE_CODE_OAUTH_TOKEN, auth-file -> the CLAUDE_AUTH credentials file).
@@ -265,10 +270,18 @@ def scion_start_argv(
     project: str,
     workspace: str,
     template: str,
+    harness_auth: str | None = DEFAULT_HARNESS_AUTH,
 ) -> list[str]:
-    """The explicit native Scion start argv for one deterministic child identity."""
+    """The explicit native Scion start argv for one deterministic child identity.
+
+    ``harness_auth`` is the auth the child's template selects (``auth_selectedType``);
+    by default ``oauth-token``, the claude template default. ``None`` leaves
+    ``--harness-auth`` out so the child's template decides alone.
+    """
     if not prompt.strip():
         raise ValueError("prompt must not be empty")
+    if harness_auth is not None and harness_auth not in HARNESS_AUTH_TYPES:
+        raise ValueError(f"harness auth must be one of {HARNESS_AUTH_TYPES}, got '{harness_auth}'")
     argv = [
         "scion",
         "start",
@@ -280,8 +293,7 @@ def scion_start_argv(
         project,
         "--workspace",
         workspace,
-        "--harness-auth",
-        "api-key",
+        *(["--harness-auth", harness_auth] if harness_auth is not None else []),
         "--non-interactive",
     ]
     for key, value in (identity.get("labels") or {}).items():
@@ -472,7 +484,9 @@ def scion_template_files(
     agent_yaml = "\n".join(lines) + "\n"
     system_prompt = (body or f"# {role_name}") + "\n"
     if resolved_mode == "coordinator":
-        agents_md = _render_coordinator_agents_md(role_name, harness, task_repo, runtime_context)
+        agents_md = _render_coordinator_agents_md(
+            role_name, harness, task_repo, runtime_context, child_auth=auth_type or DEFAULT_HARNESS_AUTH
+        )
     elif resolved_mode == "tester":
         agents_md = _render_tester_agents_md(role_name, harness, task_repo, runtime_context)
     else:
@@ -493,8 +507,13 @@ def _render_coordinator_agents_md(
     harness: str,
     task_repo: str | None,
     context: dict[str, str] | None,
+    *,
+    child_auth: str = DEFAULT_HARNESS_AUTH,
 ) -> str:
     """Instructions for the long-lived agent that owns one desk.
+
+    ``child_auth`` is the ``--harness-auth`` its ``scion start`` examples name:
+    the auth this coordinator's own template selected, ``oauth-token`` by default.
 
     One coordinator per desk is the shape the owner chose (2026-10-29). It
     mutates modeled workflow state through the CLIs, never implements code,
@@ -565,7 +584,7 @@ def _render_coordinator_agents_md(
         f"deskops runtime template role-deskops-executor --root {source_root} --out \"$RUN_DIR/scion-template\" \\\n"
         f"  --mode executor --task <task-id> --agent deskops-e-<12hex> --task-root {desk_root} --run-dir runs/subagents/<run>\n"
         f"scion start deskops-e-<12hex> \"<task prompt>\" --type deskops-executor --project {project} \\\n"
-        f"  --workspace {workspace} --harness-auth api-key --non-interactive \\\n"
+        f"  --workspace {workspace} --harness-auth {child_auth} --non-interactive \\\n"
         "  --label deskops.task_id=<helper-task-label> --label deskops.contract_sha256=<helper-contract-label> \\\n"
         "  --label deskops.role=executor --label deskops.attempt=1\n"
         f"sciontool status blocked \"waiting on deskops-e-<12hex>\"\n"
@@ -582,7 +601,7 @@ def _render_coordinator_agents_md(
         f"deskops runtime template role-deskops-tester --root {source_root} --out \"$TEST_RUN/scion-template\" \\\n"
         f"  --mode tester --task <task-id> --agent deskops-t-<12hex> --task-root {desk_root} --run-dir runs/subagents/<run>-testing\n"
         f"scion start deskops-t-<12hex> \"<test prompt>\" --type deskops-tester --project {project} \\\n"
-        f"  --workspace {workspace} --harness-auth api-key --non-interactive \\\n"
+        f"  --workspace {workspace} --harness-auth {child_auth} --non-interactive \\\n"
         "  --label deskops.task_id=<helper-task-label> --label deskops.contract_sha256=<helper-contract-label> \\\n"
         "  --label deskops.role=tester --label deskops.attempt=1\n"
         "```\n"

@@ -336,7 +336,7 @@ def test_start_argv_carries_explicit_project_workspace_auth_and_labels(tmp_path:
     assert "--type" in argv and argv[argv.index("--type") + 1] == "deskops-tester"
     assert "--project" in argv and argv[argv.index("--project") + 1] == "sldb-1"
     assert "--workspace" in argv and argv[argv.index("--workspace") + 1] == "/workspace"
-    assert "--harness-auth" in argv and argv[argv.index("--harness-auth") + 1] == "api-key"
+    assert "--harness-auth" in argv and argv[argv.index("--harness-auth") + 1] == "oauth-token"
     assert "--non-interactive" in argv
     labels = {argv[index + 1].split("=", 1)[0]: argv[index + 1].split("=", 1)[1] for index, item in enumerate(argv) if item == "--label"}
     assert labels == identity["labels"]
@@ -387,7 +387,7 @@ def test_context_emits_environment_volume_and_concrete_examples(tmp_path: Path) 
         f"--workspace {paths['workspace']}",
         "--type deskops-executor",
         "--type deskops-tester",
-        "--harness-auth api-key",
+        "--harness-auth oauth-token",
         "--non-interactive",
         "--mode tester",
         "scion_child_identity(task_path, role, attempt)",
@@ -477,6 +477,35 @@ def test_harness_auth_selects_the_template_auth_type(tmp_path: Path) -> None:
         ["runtime", "template", "role-deskops-executor", "--root", str(ROOT), "--harness", "claude",
          "--out", str(out_dir), "--harness-auth", "auth-file"]
     ) == 0
+    assert yaml.safe_load((out_dir / "scion-agent.yaml").read_text(encoding="utf-8"))["auth_selectedType"] == "auth-file"
+
+
+def test_start_auth_follows_the_template_never_a_fixed_api_key(tmp_path: Path) -> None:
+    identity = scion_child_identity(_write_task(tmp_path, "task"), "executor")
+    common = dict(prompt="Do the task.", project="sldb-1", workspace="/workspace", template="deskops-executor")
+    chosen = scion_start_argv(identity, **common, harness_auth="auth-file")
+    assert chosen[chosen.index("--harness-auth") + 1] == "auth-file"
+    assert "--harness-auth" not in scion_start_argv(identity, **common, harness_auth=None)
+    with pytest.raises(ValueError, match="harness auth"):
+        scion_start_argv(identity, **common, harness_auth="password")
+
+    context, _ = _context(tmp_path)
+    _, supervisor = find_role_doc(ROOT, "role-deskops-supervisor")
+    profile = load_runtime_profiles(ROOT)["claude"]
+    for auth, expected in ((None, "oauth-token"), ("auth-file", "auth-file")):
+        agents = scion_template_files(
+            supervisor, profile, harness="claude", mode="coordinator", context=context, harness_auth=auth
+        )["agents.md"]
+        assert agents.count(f"--harness-auth {expected} --non-interactive") == 2
+        assert "--harness-auth api-key" not in agents
+
+    out_dir = tmp_path / "coordinator"
+    assert main(
+        ["runtime", "template", "role-deskops-supervisor", "--root", str(ROOT), "--harness", "claude",
+         "--mode", "coordinator", "--out", str(out_dir), "--harness-auth", "auth-file"]
+    ) == 0
+    written = (out_dir / "agents.md").read_text(encoding="utf-8")
+    assert written.count("--harness-auth auth-file") == 2 and "api-key" not in written
     assert yaml.safe_load((out_dir / "scion-agent.yaml").read_text(encoding="utf-8"))["auth_selectedType"] == "auth-file"
 
 

@@ -1,7 +1,7 @@
 name: deskops-supervisor
 path: desk/roles/deskops-supervisor.md
-source_hash: ad3ce028c7b48179b0132c678e2e16ae4d42681f58e5ca32dd57a94965a3d363
-content_hash: c1adcc4ebfe13bc60878761adc216035ce1ae39647f0d3a2bf2066bafe39d298
+source_hash: eaf5c6cabe7f12a8deef1466af8d2d92056b064a776067e4735711780f8f6393
+content_hash: f248a6f122efb15a9dbaa1b9c487adba44d9738acc628be98604ae32d91dd387
 field_hashes:
   id: a72c8291e98c725136452df047b6fbc248acc73bd2a6d98575b266624db1678d
   name: 8537fadb7b35983cfe3a8088b7167efb122ece5ec3959bffbd815e3c7253c38b
@@ -14,7 +14,7 @@ field_hashes:
   inherit_project_context: b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b
   inherit_skills: b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b
   default_context: b1e5780cb6ded9edcf5bac26c937adb4aa3023ab34d951398d5b4bed5ae4e115
-  body: 6aecab6439ecc16f0cacd450d82d0bd618c7566f3950dfdabb12fff273315385
+  body: d406043e7fd6efb93f3fe4cf46c085b8ded0029dfd3a4910c745359247e53748
 semantic_tags:
 - representation.markdown
 - source.document.markdown
@@ -22,6 +22,6 @@ semantic_tags:
 - workspace.desk.roles
 provenance:
   by: agent
-  at: '2026-11-10T17:16:51Z'
+  at: '2026-11-16T02:07:26Z'
   authority: generated
-  via: update_document
+  via: save_document_payload
