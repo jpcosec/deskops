@@ -2,8 +2,6 @@ version: 1
 links:
 - name: sldb
   path: ../sldb/.sldb
-- name: spec2viz
-  path: ../spec2viz/.sldb
 - name: pron
   path: ../pron/.sldb
 - name: scion
@@ -349,6 +347,14 @@ include:
     name: run-deskops-e-edb9213453ab
   - path: runs/subagents/test-deskops-t-ddf033189baa/run.md
     name: run-deskops-t-ddf033189baa
+  - path: runs/subagents/exec-deskops-e-79646a51295e/run.md
+    name: run-deskops-e-79646a51295e
+  - path: runs/subagents/test-deskops-t-ce38955d8076/run.md
+    name: run-deskops-t-ce38955d8076
+  - path: runs/subagents/exec-deskops-e-e1719ad4ee0d/run.md
+    name: run-deskops-e-e1719ad4ee0d
+  - path: runs/subagents/test-deskops-t-16e62e0d9f56/run.md
+    name: run-deskops-t-16e62e0d9f56
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -889,6 +895,10 @@ include:
     name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-materialization-1
   - path: desk/reviews/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/evidence-materialization-2.md
     name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-materialization-2
+  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/preflight-1.md
+    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-preflight-1
+  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/bundle-1.md
+    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

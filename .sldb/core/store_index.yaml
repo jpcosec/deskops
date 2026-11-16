@@ -1,8 +1,6 @@
 stores:
 - name: sldb
   path: ../sldb/.sldb
-- name: spec2viz
-  path: ../spec2viz/.sldb
 - name: pron
   path: ../pron/.sldb
 - name: scion
@@ -361,4 +359,4 @@ predicates:
   description: A composed field of the source (`__compositions__`) renders this document's
     payload into the source's text; the edge carries the composed field, the field
     holding the refs and the ref as authored.
-store_hash: eca987c2fc26ae7b56f1c10b02f2feaddeb35f218852b4768749f0236d5165c2
+store_hash: bdec4e4116744cecfb6b27eb21bd4f779339bcc8a14cbae19d2a2e1f21e353ce
