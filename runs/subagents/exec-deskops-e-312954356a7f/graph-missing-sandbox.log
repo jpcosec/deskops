@@ -1,0 +1,8 @@
+$ deskops graph missing --root .tmp/deskops-dir-target   # sandbox: materialization-pkg-sub con target_identity pkg/sub (directorio)
+Missing graph references:
+- missing_declared_target: materialization:materialization-pkg-sub -> pkg/sub
+  provenance: desk/materializations/materialization-pkg-sub.md:frontmatter
+  reason: declared target was not found among extracted graph nodes
+1 missing, 0 informational
+rc=1
+

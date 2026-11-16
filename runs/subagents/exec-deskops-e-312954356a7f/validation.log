@@ -1,0 +1,81 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_materialization_targets_outside_package.py
+.................                                                        [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+17 passed, 1 warning in 80.42s (0:01:20)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout_gates.py::test_closeout_reports_cover_each_gate_case[bare_desk]
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 2 warnings in 103.76s (0:01:43)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout.py
+...........................................................              [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout.py::test_closeout_verify_passes_with_complete_evidence
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+59 passed, 2 warnings in 31.14s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && flock /dev/shm/sldb1-tests.lock env TMPDIR=/dev/shm ../.venv/bin/python -m pytest -n 4 -q tests
+FAILED tests/e2e_agent/test_agent_scenarios.py::test_reference_solutions[first-task-to-closeout]
+FAILED tests/test_ci_integration.py::test_ci_check_passes_on_a_fresh_desk - A...
+FAILED tests/test_ci_integration.py::test_ci_check_fails_on_a_dangling_source_atom
+3 failed, 1066 passed, 3 skipped, 1 xfailed, 9 warnings in 1468.65s (0:24:28)
+rc=1  (salida completa en full-suite.log)
+
+# Fallas de la suite re-corridas en worktree limpio de origin/main (/dev/shm/wt-base, removido):
+>       failed = [c for c in run_reference(scenario) if not c["ok"]]
+>               raise RuntimeError(f"{what} step failed ({done.returncode}): {step}\n{done.stdout}\n{done.stderr}")
+E               RuntimeError: reference step failed (127): pytest -q
+FAILED tests/test_ci_integration.py::test_ci_check_passes_on_a_fresh_desk - A...
+FAILED tests/test_ci_integration.py::test_ci_check_fails_on_a_dangling_source_atom
+FAILED tests/e2e_agent/test_agent_scenarios.py::test_reference_solutions[first-task-to-closeout]
+3 failed, 4 warnings in 18.27s
+
+# Re-validación tras corregir el prefijo de tipo (test_file:) en los targets directorio (nota de inbox 20261116-070913)
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_materialization_targets_outside_package.py
+18 passed, 1 warning in 116.25s (0:01:56)
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py
+5 passed, 2 warnings in 89.62s (0:01:29)
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout.py
+59 passed, 2 warnings in 39.10s
+rc=0
+
+# Corrección 1: prueba de que el caso tests/ falla SIN el arreglo (comparación revertida temporalmente a _normalize_target_path(entry.target_id))
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_materialization_targets_outside_package.py -k directory_target
+E       assert 'tests/notations/test_a.py' not in {'tests/notations/test_a.py', 'tests/notationszero.py'}
+FAILED tests/test_materialization_targets_outside_package.py::test_closeout_verify_covers_files_under_a_directory_target[tests/notations-tests/notations/test_a.py-tests/notationszero.py]
+1 failed, 1 passed, 16 deselected, 1 warning in 41.31s
+rc=1
+# arreglo restaurado:
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_materialization_targets_outside_package.py -k directory_target
+2 passed, 16 deselected, 1 warning in 42.99s
+rc=0

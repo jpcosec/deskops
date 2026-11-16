@@ -1,0 +1,14 @@
+ M .sldb/core/models/InboxNoteDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M deskops/services/closure.py
+ M tests/test_materialization_targets_outside_package.py
+?? .sldb/core/documents/InboxNoteDoc/20261116-055429-unclear-drawer-remove-deja-colgando-from-drawer-references-y-no-retira-planes-dag-yaml.yaml
+?? .sldb/core/documents/InboxNoteDoc/20261116-070913-suggestion-closeout-una-materialization-cuyo-target-es-un-directorio-dentro-de-tests-no-cubre-nada-prefijo-test-file-sin-normalizar.yaml
+?? .sldb/core/documents/InboxNoteDoc/20261116-072606-suggestion-add-task-from-yaml-acepta-un-dict-en-validation-y-edit-task-lo-rechaza.yaml
+?? .sldb/core/documents/RunDoc/run-deskops-e-312954356a7f.yaml
+?? desk/inbox/20261116-055429-unclear-drawer-remove-deja-colgando-from-drawer-references-y-no-retira-planes-dag-yaml.md
+?? desk/inbox/20261116-070913-suggestion-closeout-una-materialization-cuyo-target-es-un-directorio-dentro-de-tests-no-cubre-nada-prefijo-test-file-sin-normalizar.md
+?? desk/inbox/20261116-072606-suggestion-add-task-from-yaml-acepta-un-dict-en-validation-y-edit-task-lo-rechaza.md
+?? runs/subagents/exec-deskops-e-312954356a7f/

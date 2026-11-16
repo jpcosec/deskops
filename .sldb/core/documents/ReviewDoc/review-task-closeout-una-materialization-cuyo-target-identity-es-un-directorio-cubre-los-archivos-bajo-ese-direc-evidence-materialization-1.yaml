@@ -1,0 +1,36 @@
+name: review-task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc-evidence-materialization-1
+path: desk/reviews/task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc/evidence-materialization-1.md
+source_hash: 11f74f00aa8b244345dedcc9d089a72de1c07c7efece5eee5deae36364bdb641
+content_hash: 3eb1520e1f8e81a24980903cf967a41eef1df69537b7b477375705c896047849
+field_hashes:
+  id: 1ec4ea5fa1a1a0f7b71fa5841cbbc58fcd5408a39be96d63a9cfc8f8d83444ab
+  title: b6c5d4e5115c2ea7a66a8625c5659331afd5e84b34b40e8f8cc7cd2e4dcf1aee
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 1da5d5ae1d1c9ec091c6513a70576818c19fca9491c674696230de8d91dc77ca
+  subject: 2447a1d75c49e3d6df9939bde59de439c846332989d47424206f63d16e317268
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: e50736c4b0aef3afbd5227e9b601a35cb1059bb7a00fce97a0acacf3ce10cc83
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0beeb32593bde4d3aebd5aeaffb54339e16bdde46420fe42564a7e4f65f2177c
+  created_at: ffd013f6f1384cbe979d28a54e3887555b42230f75c349233d17d69856548654
+  disposed_at: ffd013f6f1384cbe979d28a54e3887555b42230f75c349233d17d69856548654
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: e80daf48d7e03de90d1b20f8b2801f3f0fd618eda4818b4189bb0adeea8fea47
+  disposition: b7df2f083259e0a9b646c86e44e6056a1923ab19966d3ef39e870d9bd26b6628
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T10:47:12Z'
+  authority: generated
+  via: save_document_payload

@@ -1,0 +1,14 @@
+Task: task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc
+Title: closeout: una materialization cuyo target_identity es un directorio cubre los archivos bajo ese directorio
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+From drawer: desk/drawer/tasks/task-closeout-una-materialization-con-target-identity-de-paquete-no-cubre-los-archivos-del-paquete.md
+Effective pills:
+- desk/contexts/pill-materialization-contracts-declare-source-intent-and-target.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-materializations-declare-source-atoms
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
