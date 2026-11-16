@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T16:00:14Z'
+  at: '2026-11-16T16:03:07Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp
 status: draft
 summary: ''
@@ -15,6 +15,7 @@ current_node: ritual-execution
 history: []
 references:
 - desk/inbox/20261116-122447-suggestion-deskops-sldb-enlaza-spec2viz-las-pruebas-mcp-de-ir-leen-el-store-real-de-spec2viz-de-forma-transitiva-g5.md
+- desk/inbox/20261116-130201-suggestion-g5-opci-n-b-decisi-n-de-jp-deskops-quita-su-enlace-al-store-de-spec2viz-ir-espera-con-un-espejo.md
 depends_on: []
 pills: []
 files:

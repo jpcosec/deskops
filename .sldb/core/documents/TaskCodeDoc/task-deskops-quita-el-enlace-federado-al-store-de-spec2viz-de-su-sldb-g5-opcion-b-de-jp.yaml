@@ -1,7 +1,7 @@
 name: task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp
 path: desk/tasks/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp.md
-source_hash: 4ba1a0223926b07f7e27baded2be23208de8223bdece10e0087e26d0868b33ca
-content_hash: 62e06b4ac4300781481b053da6f8163c4fc9e2f8cc64ef63eee3dbe654b331a3
+source_hash: 367e144644cd4b5cbfa29da59a122204842c8c888fad9f5a7003917c5f5e5f96
+content_hash: 42846d44fdd5f1fb729191a14ec3867e44b6411fa6f13fb0ddee6e5e7da0c308
 field_hashes:
   title: 4487ea1ac54e760c48c7e9dc613c26d45b059f9f1e845e63fcb65a4e3ebf3212
   id: 0375a02262f4c62087e8b5fbda5d2ed89d591141bc67a24bb07d1652abcb52b5
@@ -13,7 +13,7 @@ field_hashes:
   why: 7744939e0e9d3a34df360c8080e5dd40414ed8b90bdbb00e1da00fdbf46d799d
   goal: 0db88544d93a54a47cf130339c91a452d4a444ac5de124d663c98d7d9f3ec5e2
   scope: 09cf8fd454d99fabb182c47cb3bcef2bd6b60cd280feb6cbeed64f4ab6d467d0
-  references: a8dc7d3476a68adb44b0a491c9f6c9179cd971af843d503296b928c37b90d121
+  references: f3233535c58f573ee57c6903ce75df5d574e38236ef21e5d7b1464cafd4b64ce
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 044ce4df48d51342f536a5afe9a491be8aec19000ed7a2166f83e617ad134215
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T16:00:14Z'
+  at: '2026-11-16T16:03:07Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
