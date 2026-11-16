@@ -1,0 +1,10 @@
+Task: task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados
+Title: La regla de desk_graph sobre specs deja de nombrar spec2viz y reconoce los specs YAML sincronizados con sldb notations sync
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

@@ -1,0 +1,36 @@
+name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-evidence-materialization-1
+path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/evidence-materialization-1.md
+source_hash: 4a6947e732c8a6f3e576a9c343811ad2ed38716250b178b8b73e729af98612f7
+content_hash: 1c36391cb2e8bb0e531f9819bc7fe8ff303b9d73824125f20a613569f409eb8d
+field_hashes:
+  id: bef257e3b21b37e7a532d1052f529019c03947e2abdedf050bfb625fd2276d25
+  title: a39a66f74bc43674bb7138b8d365fbe1c5307cc3deeeef61a0a0ced3dc566e2c
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: bda552045fb750c31cce39073430fcb18c1a5dabe509c39bcf5b75151b7203d4
+  subject: 58735f60df14a7846e80101a542861737f1947d4b7cff1272128f18b9571b2ff
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 92c61caea297bd10f55a90b829e2e0dd397607bb85f7b0d70dfb977d1106f280
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 57e435c12b803ac98786f4244610d3be0d3807006859db0147ff4b047ba1f73b
+  created_at: 4b5aacb5656cb85293d2ef979fc66ab69a61e8c75a46f719483735816b4cf6e3
+  disposed_at: 4b5aacb5656cb85293d2ef979fc66ab69a61e8c75a46f719483735816b4cf6e3
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: e788cec57b586803aaaa15dda4f4f770b78070961b33186ffef794dc486f1b34
+  disposition: 8b7872e81ae16a7ccc50b6e53eaa26198ad2df5130ed4d49ee31516a5426f4bf
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T20:45:52Z'
+  authority: generated
+  via: create_document

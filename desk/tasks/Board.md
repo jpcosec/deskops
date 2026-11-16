@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T20:40:22Z'
+  at: '2026-11-16T20:46:07Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -18,7 +18,6 @@ tasks:
 - desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
 - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
 - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
-- desk/tasks/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados.md
 - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
 - desk/tasks/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check.md
 - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
@@ -107,7 +106,6 @@ _Generated from the task references above._
 - doctor no alerta como lost los recibos de una tarea cerrada [draft] - Un recibo cuya tarea se cerro (closeout registrado en git o en el store) no produce alerta lost en doctor: el closeout re-ancla los recibos al commit de cierre o los marca archivados; solo los recibos de tareas que desaparecieron sin cierre siguen alertando.
 - Board no refleja deskops edit task goal [draft] - Reproducir en un desk real y corregir: tras deskops edit task <id> goal, la linea de la tarea en Task Details del Board muestra el goal nuevo, o hay un verbo de deskops que refresca el Board.
 - advance y closeout no derraman reglas de activacion ni runtimes centrales sin trackear en el desk consumidor [draft] - Las semillas centrales (deskops/data/rules, runtime por defecto) se leen del paquete en tiempo de ejecucion, o se escriben solo por deskops desk update --apply y quedan trackeadas y declaradas; nunca como archivos sueltos sin trackear tras advance o closeout.
-- La regla de desk_graph sobre specs deja de nombrar spec2viz y reconoce los specs YAML sincronizados con sldb notations sync [draft] - La regla de desk_graph.py reconoce los specs YAML como artefactos de autoría que se sincronizan al store con sldb notations sync, sin nombrar ni depender de spec2viz.
 - closeout commit stagea solo lo que escribio el cierre: sin git add -A sobre .sldb y sin Nothing staged mudo [draft] - `deskops closeout commit` agrega al commit exactamente las rutas que el cierre escribio (TaskDoc, desk/tasks/Board.md, archivos de .sldb/core y .sldb/store.yaml creados o modificados por la transaccion del cierre) mas las de --paths; nunca un archivo de .sldb que ya estaba sin trackear antes del cierre. Sin --paths el cierre funciona con esas rutas; si aun asi no hay nada que stagear, el error lista las rutas modificadas y sugiere --paths.
 - Los 4 atomos de salud del desk dejan de dar store/structural-noise en sldb stores check [draft] - Los 4 atomos quedan sin encabezados fuera del modelo (AtomDoc declara id, title, five_wh_one_plus, answer y tags; five_wh_one_plus y title no cambian). Cada seccion no-Tags pasa al final de answer como un parrafo que empieza con su encabezado original en ingles y en negrita (p. ej. '**Boundary Rationale:** ...'), en el mismo orden; la seccion Related Atoms queda igual, como '**Related Atoms:** atom-a, atom-b'. La seccion Tags NO va a answer: sus valores se agregan al campo tags al final de los existentes, sin duplicados. Se edita con deskops edit atom <id> answer "$(cat <archivo en /dev/shm>)" --root . y deskops edit atom <id> tags '<lista JSON>' --root .. Sin perdida: cada linea no vacia de las secciones originales que no sean encabezados ni Tags (git show HEAD:<ruta del atomo>) aparece en el answer nuevo, y cada tag de la seccion Tags esta en el campo tags. Pase: sldb stores check no emite ningun store/structural-noise para estos 4 atomos (otras alertas no cuentan).
 - closeout reconoce una materialization declarada sobre un golden en tests/fixtures sin dejar entrar el ruido de fixtures [draft] - Reproducir y corregir: una MaterializationContractDoc cuyo target_identity es un .txt bajo tests/fixtures es nodo del grafo y cubre ese archivo en closeout; los archivos de tests/fixtures no declarados siguen excluidos. Si el corte esta en sldb, la parte de sldb se pide por `deskops message send --to sldb` y en deskops se deja el test marcado xfail con el id de esa nota.

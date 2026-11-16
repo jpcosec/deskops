@@ -358,6 +358,10 @@ include:
     name: run-deskops-e-e1719ad4ee0d
   - path: runs/subagents/test-deskops-t-16e62e0d9f56/run.md
     name: run-deskops-t-16e62e0d9f56
+  - path: runs/subagents/exec-deskops-e-4ba5a0d9443c/run.md
+    name: run-deskops-e-4ba5a0d9443c
+  - path: runs/subagents/test-deskops-t-9da54e09a30a/run.md
+    name: run-deskops-t-9da54e09a30a
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -920,6 +924,14 @@ include:
     name: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-evidence-materialization-1
   - path: desk/reviews/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/evidence-materialization-2.md
     name: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-evidence-materialization-2
+  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/evidence-tests-1.md
+    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-evidence-tests-1
+  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/evidence-commit-1.md
+    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-evidence-commit-1
+  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/evidence-atom-1.md
+    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-evidence-atom-1
+  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/evidence-materialization-1.md
+    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -954,7 +966,6 @@ include:
   - desk/tasks/task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store.md
   - desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
   - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
-  - desk/tasks/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados.md
   - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
   - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
   - desk/tasks/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act.md
