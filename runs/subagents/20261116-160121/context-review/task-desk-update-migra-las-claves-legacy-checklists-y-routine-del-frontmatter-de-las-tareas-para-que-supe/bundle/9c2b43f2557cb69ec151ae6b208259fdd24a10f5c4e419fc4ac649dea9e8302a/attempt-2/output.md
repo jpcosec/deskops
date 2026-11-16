@@ -1,0 +1,12 @@
+REFORMULACION
+Nodo ejecutable `task.code`, no agregado. Propósito: migrar las claves legacy `checklists` y `routine` del frontmatter de los TaskDocs para que `closeout supersede` y `edit` puedan reescribirlos. Resultado: `desk update` en dry-run lista archivo y clave y devuelve rc 1 si hay pendientes; `--apply` borra solo esas claves del frontmatter, conserva el resto del texto, orden y cuerpo, imprime `<ruta relativa>: removed <clave> = <valor anterior en JSON compacto>` y devuelve rc 0 si termina sin errores; después, supersede no falla por claves no declaradas. Repo: `/mnt/ssd/proyectos/SLDB_1/deskops`; toca `deskops/workspace.py`, `deskops/cli/commands/desk.py` y `tests/test_legacy_task_states.py`. Límites: no cambiar `write_doc` ni su rechazo, no añadir flag a supersede, no declarar las claves en TaskDoc, no cerrar las tareas de marcado, no arreglar `deskops message send`; solo `checklists` y `routine`; `desk/tasks` bajo `--root`.
+
+AMBIGUEDADES
+1. “desk update (dry-run) lista cada TaskDoc ... con el archivo y la clave” no fija formato ni detalle de esa salida. Obligaría a inventar el texto exacto de las líneas del dry-run; `--apply` sí tiene forma fijada.
+2. “valor anterior en JSON compacto de una línea” no define cómo serializar valores YAML no JSON. Obligaría a inventar esa conversión; el contrato no la especifica.
+
+DRY-RUN
+Lecturas: `legacy_task_states`/`migrate_legacy_task_states` y el parser de frontmatter en `workspace.py`; `write_doc`/`undeclared_frontmatter_keys` en `doc_access.py`; el bloque `update` en `desk.py`; tests y fixtures actuales. Cambios previstos: detector de claves en `desk/tasks/*.md`; reporte dry-run y rc 1; en `--apply`, borrado textual de las líneas de `checklists`/`routine`, impresión de clave y valor, y tests sandbox con dry-run, apply, caso mixto y supersede. Dependencias: PyYAML/parser actual, `--root`, rechazo de `write_doc` intacto y closeout supersede. Validaciones futuras: los cuatro comandos pytest del TaskDoc; suite completa y, para fallas, repetirlas en worktree limpio de `origin/main` y registrar la lista. No se ejecuta nada.
+
+FUTURO
+El implementador produce código y tests; CI o revisor ejecuta la validación; un humano decide aceptación y commit/cierre. El coordinador de marcado ejecutará el CLI sobre el desk real y cerrará las tareas; otra decisión humana tratará el fallo de `message send` y cualquier otra clave no declarada.
