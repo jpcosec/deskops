@@ -1,0 +1,10 @@
+Task: task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb
+Title: los tests de review esperan el subject pinneado que ahora escribe create_document de sldb
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

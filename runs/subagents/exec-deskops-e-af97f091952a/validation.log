@@ -1,0 +1,45 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_record.py
+.....................                                                    [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 1 warning in 152.53s (0:02:32)
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_command.py
+.....................                                                    [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 1 warning in 172.57s (0:02:52)
+rc=0
+$ git diff --stat -- tests/test_review_record.py tests/test_review_command.py
+ tests/test_review_command.py |  3 ++-
+ tests/test_review_record.py  | 14 ++++++++------
+ 2 files changed, 10 insertions(+), 7 deletions(-)
+rc=0
+$ git diff --stat (completo; el resto es de otras tareas)
+ .sldb/core/documents/BoardDoc/Board.yaml     |   8 +-
+ .sldb/core/models/BoardDoc.yaml              |   4 +-
+ .sldb/core/models/ReviewDoc.yaml             |   6 +-
+ .sldb/core/models/RunDoc.yaml                |   6 +-
+ .sldb/core/models/TaskCodeDoc.yaml           |   6 +-
+ .sldb/core/store_index.yaml                  |   2 +-
+ .sldb/store.yaml                             |  11 ++
+ desk/tasks/Board.md                          |   4 +-
+ deskops/cli/commands/atoms.py                |  30 ++++
+ deskops/cli/commands/operations.py           |  10 +-
+ deskops/cli/registry.py                      |  36 +++++
+ deskops/services/atoms.py                    | 223 +++++++++++++++++++++++++++
+ tests/fixtures/golden/help/deskops_atoms.txt |   7 +-
+ tests/test_review_command.py                 |   3 +-
+ tests/test_review_record.py                  |  14 +-
+ 15 files changed, 343 insertions(+), 27 deletions(-)
+rc=0

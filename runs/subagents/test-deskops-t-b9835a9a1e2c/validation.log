@@ -1,0 +1,56 @@
+== HEAD
+7801327fcb4ee11041bddc9d618a8eafcef4c637
+== git show HEAD subject lines
+13:import re
+145:    assert doc["subject_ref"] == ""
+254:def test_subject_is_pinned_and_the_anchor_is_intact(desk: Path) -> None:
+261:    assert _review(root, "review-task-x-owner-1")["subject"] == "doc:TaskCodeDoc:task-x"
+266:    assert re.fullmatch(r"doc:TaskCodeDoc:task-x@sha256:[0-9a-f]{64}", doc["subject"]), doc["subject"]
+269:    assert [f for f in findings if f.subject.endswith("review-task-x-owner-1")] == []
+351:    (review id, path and subject), or no activation rule would ever see it (main en verde)."""
+363:    assert _review(root, f"review-{full}-owner-1")["subject"] == f"doc:TaskCodeDoc:{full}"
+371:    assert doc["subject"] == f"doc:TaskCodeDoc:{full}"
+9:import json
+10:import os
+11:import shutil
+12:import subprocess
+13:import sys
+16:import pytest
+28:import os
+29:import sys
+30:import time
+165:    assert doc["subject"] == "doc:TaskCodeDoc:task-x"
+294:        assert doc["subject"] == ""
+518:    assert doc["subject"].startswith("doc:TaskCodeDoc:task-identity" if tracked else "doc:TaskDoc:task-identity")
+521:    subject = _review_docs(root)[0]["subject"]
+== ee9bc3cd vs HEAD tests
+== sldb import
+/mnt/ssd/herramientas/sldb/src/sldb
+/mnt/ssd/herramientas/sldb
+34b26a505f81094d3859daea04289ac14c185b19
+477d1bc0 IS ancestor
+herramientas/sldb: 477d1bc0 IS ancestor
+== pytest record (working tree)
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 1 warning in 125.51s (0:02:05)
+== pytest command (working tree)
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 1 warning in 166.90s (0:02:46)
+== HEAD copy at /dev/shm/tester-b9835a9a1e2c-head (7801327fcb4ee11041bddc9d618a8eafcef4c637); venv ../.venv relative to real checkout
+== pytest HEAD tests/test_review_record.py
+FAILED tests/test_review_record.py::test_subject_is_pinned_and_the_anchor_is_intact
+FAILED tests/test_review_record.py::test_a_short_selector_keys_and_anchors_receipts_on_the_full_task_id
+2 failed, 19 passed, 1 warning in 125.68s (0:02:05)
+== pytest HEAD tests/test_review_command.py
+FAILED tests/test_review_command.py::test_preflight_writes_attempt_evidence_and_receipt
+1 failed, 20 passed, 1 warning in 141.77s (0:02:21)
+E       AssertionError: assert 'doc:TaskCode...340edb511bc95' == 'doc:TaskCodeDoc:task-x'
+E         
+E         - doc:TaskCodeDoc:task-x
+E         + doc:TaskCodeDoc:task-x@sha256:afead0ecb39e8b41aebb216bbd682d53fc2809a113ec9b5de44340edb511bc95

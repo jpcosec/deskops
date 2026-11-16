@@ -1,0 +1,40 @@
+        assert attempt.name == "attempt-1"
+        for name in ("input.md", "manifest.json", "output.md", "stderr.log", "receipt.json"):
+            assert (attempt / name).is_file(), name
+    
+        input_bytes = (attempt / "input.md").read_bytes()
+        assert input_bytes.decode().startswith("FILE:desk/tasks/task-x.md\n")
+    
+        manifest = _json(attempt / "manifest.json")
+        assert manifest["input_sha256"] == __import__("hashlib").sha256(input_bytes).hexdigest()
+        assert manifest["sources"][0]["path"] == "desk/tasks/task-x.md"
+        assert manifest["argv"][0] == "pi"
+        assert manifest["argv"][-1].startswith("@")
+    
+        receipt = _json(attempt / "receipt.json")
+        assert receipt["technical_ok"] is True
+        assert receipt["returncode"] == 0
+        assert receipt["input_sha256"] == manifest["input_sha256"]
+    
+        docs = [doc for doc in _review_docs(root) if doc["id"] == "review-task-x-preflight-1"]
+        assert len(docs) == 1
+        doc = docs[0]
+>       assert doc["verdict"] == "pending"
+E       AssertionError: assert 'doc:TaskCode...340edb511bc95' == 'doc:TaskCodeDoc:task-x'
+E         
+E         - doc:TaskCodeDoc:task-x
+E         + doc:TaskCodeDoc:task-x@sha256:afead0ecb39e8b41aebb216bbd682d53fc2809a113ec9b5de44340edb511bc95
+
+tests/test_review_command.py:165: AssertionError
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_review_record.py::test_subject_is_pinned_and_the_anchor_is_intact
+FAILED tests/test_review_record.py::test_a_short_selector_keys_and_anchors_receipts_on_the_full_task_id
+FAILED tests/test_review_command.py::test_preflight_writes_attempt_evidence_and_receipt
+3 failed, 39 passed, 1 warning in 405.91s (0:06:45)
