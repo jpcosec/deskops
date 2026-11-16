@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:48:26Z'
+  at: '2026-11-16T01:25:18Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -10,7 +10,6 @@ id: board-001
 scope: desk
 # List of task-xxx paths
 tasks:
-- desk/tasks/task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li.md
 - desk/tasks/task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk.md
 - desk/tasks/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado.md
 - desk/tasks/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas.md
@@ -60,7 +59,6 @@ No active tasks routed.
 
 _Generated from the task references above._
 
-- message send --to resuelve el destino en el registro del ecosistema cuando el registro propio no lo lista [draft] - --to <repo> busca primero en el registro del remitente y despues en el registro del ecosistema (~/setup/desk/registry, o la variable DESKOPS_ECOSYSTEM_REGISTRY), tambien desde un repo sin store; las rutas del registro aceptan ~ para valer en todas las maquinas; una raiz registrada que no existe en esta maquina es un error y no se escribe nada.
 - deskops status deja de ser solo un aviso Deprecated y entrega el estado rapido del desk [draft] - deskops status imprime el estado rapido del desk (tareas activas, inbox abierto, alertas baratas) sin correr el doctor completo. La implementa V1 del frente velocidad-hooks (supervisor 15-11), no este desk por su cuenta; esta tarea la registra y se cierra con resolved-by cuando V1 entre.
 - doctor dice de que tarea es cada cambio sin commitear en .sldb (checkout atrasado) [draft] - deskops doctor lista los cambios sin commitear bajo .sldb/ agrupados por la tarea (o el documento de desk) que los origino, y marca los que no tienen dueno.
 - supertareas y alta en lote: campo parent en TaskDoc y add task --from-yaml con varias tareas [draft] - TaskDoc tiene un campo parent (id de otra tarea) que doctor y el tablero respetan, y deskops add task --from-yaml acepta una lista de tareas y las crea en una sola transaccion (todas o ninguna).
