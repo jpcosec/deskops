@@ -1,0 +1,36 @@
+name: review-task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi-preflight-1
+path: desk/reviews/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi/preflight-1.md
+source_hash: fc23d3495694e53a2004ff4d40baaf65cf52c6fc71384d3789d3799b9b57a671
+content_hash: a24a7d96b06c22260df8da9fe10482272c154cc58fc733c96d290d227d509f02
+field_hashes:
+  id: 61f1050e7f98e7ace3405860a774bbb24665c7a13ca16de02d5c1116b93ecc2a
+  title: f027d819bebb12f4d3507229fb176c391003de8fc48c2a5d0ebf59390406e808
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 06270447e02f9b0d90dec255244d7769fe390041a9247840186a8fad0fbf24cb
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: df5d63e65e2f06f6debcac42072623e8e94d12d718d74c9b2b979646ea68a1de
+  input_sha256: da3763587a6fc2d9d9ea12243822a63d62e554f59dde9614a2f8cca659fbf97f
+  output_sha256: af40ecb97d3e1d450e314b8c526a429bf5a163f13321eea85872c2ef0acde650
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: e7fa9145ccf088436877980a32da2bf4ae049230e43e172f899abc82337e8a5a
+  created_at: d991cfa79a459ce7ded272c04231275cb8c8c33f29d21383f890c1319e013862
+  disposed_at: 53b23209a34e73a7299d2d288ea7a99ff8d62d0795dfdb8c24b6f6254e060489
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 596ad16d5ecb9648b2b8f3ae1064be7b1863dbb3d206e2ca0b711df9b99c1577
+  disposition: ee9a7bd4a183de23df164196478bd16848817c846755ce2499ef65b515015b48
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T17:08:11Z'
+  authority: generated
+  via: save_document_payload

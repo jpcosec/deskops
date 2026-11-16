@@ -1,0 +1,112 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_foreign_suites.py
+..........                                                               [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_foreign_suites.py::test_closeout_verify_takes_the_bridge_file_as_tests_evidence[bare_desk]
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+10 passed, 2 warnings in 12.98s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout_gates.py::test_closeout_reports_cover_each_gate_case[bare_desk]
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 2 warnings in 71.88s (0:01:11)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_test_paths.py
+...............................                                          [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+31 passed, 1 warning in 0.13s
+rc=0
+
+$ # Smoke paso 5: /dev/shm/foreign-smoke-edb92/test_vitest_smoke.py -> run_foreign_suite(VITEST, cwd="/mnt/ssd/proyectos/SLDB_1/UIs/sldb-ui")
+from deskops.testing.foreign_suites import VITEST, run_foreign_suite
+
+
+def test_sldb_ui_vitest() -> None:
+    run_foreign_suite(VITEST, cwd="/mnt/ssd/proyectos/SLDB_1/UIs/sldb-ui")
+$ cd /dev/shm/foreign-smoke-edb92 && PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m pytest -q -p no:cacheprovider -rA test_vitest_smoke.py
+.                                                                        [100%]
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED test_vitest_smoke.py::test_sldb_ui_vitest
+1 passed in 12.70s
+rc=0
+
+$ # vitest directo en sldb-ui (referencia del conteo)
+$ cd /mnt/ssd/proyectos/SLDB_1/UIs/sldb-ui && npx vitest run | tail -6
+
+ Test Files  34 passed (34)
+      Tests  219 passed (219)
+   Start at  13:09:21
+   Duration  14.92s (transform 2.06s, setup 11.72s, collect 6.31s, tests 6.54s, environment 27.35s, prepare 7.11s)
+
+rc=0
+
+$ # Comando sin venv propio, copia de sldb-ui (git archive HEAD + symlink a node_modules) en /dev/shm/sldb-ui-copy-edb92, con tests/test_vitest_suite.py:
+from pathlib import Path
+
+from deskops.testing.foreign_suites import VITEST, run_foreign_suite
+
+
+def test_vitest_suite() -> None:
+    run_foreign_suite(VITEST, cwd=Path(__file__).resolve().parents[1])
+$ cd /dev/shm/sldb-ui-copy-edb92 && uv run --no-project --with pytest --with-editable /mnt/ssd/herramientas/deskops python -m pytest -q tests/test_vitest_suite.py   # instalacion de la maquina, todavia sin este cambio
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting tests/test_vitest_suite.py __________________
+ImportError while importing test module '/dev/shm/sldb-ui-copy-edb92/tests/test_vitest_suite.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/home/robocop/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_vitest_suite.py:3: in <module>
+    from deskops.testing.foreign_suites import VITEST, run_foreign_suite
+E   ModuleNotFoundError: No module named 'deskops.testing'
+=========================== short test summary info ============================
+ERROR tests/test_vitest_suite.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.10s
+rc=2
+$ cd /dev/shm/sldb-ui-copy-edb92 && uv run --no-project --with pytest --with-editable /mnt/ssd/proyectos/SLDB_1/deskops python -m pytest -q tests/test_vitest_suite.py   # mismo comando, checkout con este cambio
+.                                                                        [100%]
+1 passed in 20.95s
+rc=0
+$ # control negativo: se agrega un test que falla a src/pages/search/results.test.ts de la COPIA; mismo comando (salida recortada a la cabecera y al resumen)
+4:foreign suite failed: exit code 1
+5:command: npx vitest run
+6:cwd: /dev/shm/sldb-ui-copy-edb92
+7:--- stdout (last 200 lines) ---
+42:   × bridge negative 28ms
+60: Test Files  1 failed | 33 passed (34)
+61:      Tests  1 failed | 219 passed (220)
+65:--- stderr (last 200 lines) ---
+248: FAIL  src/pages/search/results.test.ts > bridge negative
+260:     53| __t("bridge negative", () => { __e(1).toBe(2); });
+268:1 failed in 24.01s
+rc=1
+$ (suite completa: ver full-suite.log; fallas comparadas con origin/main en base-failures.log)

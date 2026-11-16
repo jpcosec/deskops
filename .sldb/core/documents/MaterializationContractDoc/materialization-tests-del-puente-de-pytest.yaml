@@ -1,0 +1,26 @@
+name: materialization-tests-del-puente-de-pytest
+path: desk/materializations/materialization-tests-del-puente-de-pytest.md
+source_hash: 89a6ec447e26b58abb4db29ce088f73917946133efe74ff77a637b640d864d0e
+content_hash: bd4975340f79ce2d1e18e7e486c10c20057c51ec70ee71ce0270a3ea7c0076df
+field_hashes:
+  id: 0f5fa6d119c0e65c76b0c822f8d1431174a8f5804eb8f6a182473e70a55def86
+  title: 80f3bbc0704e69c900c9fcdee22ff102d5a67d2c1773d63f073903f2041eaae5
+  source_atoms: 222f767660d52fdc4b581e4104ec763c5f9781996cbd7c6f05f1592c66c902dd
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: ed85c49f94c136aa64ba3f2e6af97078e0fceac0402e0129d1e895008ed3c711
+  intent: 3831983567b8554308e442a12be735449bee935043484fbba11c34f7197d2ff5
+  validation: 0a454c0460ec09bfe0c41ed2c99b57b41cad269852e8b898d78ba46594d06840
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 07f930c7ae0a0cf47e4627c2ac4aa879f288ebff722ff173944e618fab989dc8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T17:16:50Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,36 @@
+name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-materialization-2
+path: desk/reviews/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/evidence-materialization-2.md
+source_hash: 083d29a5848ff610ca91c19e3718ac4f5ce8ec4506226f93458c8e65ea3b13a8
+content_hash: 72570b4973832c9ec0d94bd62a9f564072b7d84ec62daf8b429d33510172c2f0
+field_hashes:
+  id: 1c2e61e146548dc92e94d5d4f9cc816bfac694bd26b5643a78fb1ac9112733f5
+  title: 01d3b38c1c45e63154b7197e9215354ad1f4adc3fc25d9caeb971cda0f77e9c1
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: bc5b3cf15087d15481377870ff48651e4741799e8718ac8bb8415f69e0c74876
+  subject: ba81270f9098473ef1f49c045ba61091b078ac4b7de1b2bd52cc6fc705cbf6af
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 73e46dad6d92c554d3d102fe50b53b4d6a0f2a335c5625b4b7d46b084783f988
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 4ca5fbea485157e531718f98eca30d9773cabccffe85e7d9061128cd65781f04
+  created_at: 455788b35f9109b948327d79b79e2f628dff710a6fd3aa669fbb1254054e461b
+  disposed_at: 455788b35f9109b948327d79b79e2f628dff710a6fd3aa669fbb1254054e461b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 3c35611daa22a2fa595b784e5358dcbe0e3494a8b212592660aab9596e424507
+  disposition: fd2b052ea22a3fa079ff4ad4815fb172dfe9746bd5cd1820d27f82dc9ae1bbef
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T17:17:56Z'
+  authority: generated
+  via: save_document_payload

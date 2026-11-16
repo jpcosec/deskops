@@ -1,0 +1,26 @@
+name: materialization-paquete-deskops-testing
+path: desk/materializations/materialization-paquete-deskops-testing.md
+source_hash: e045c0ed88541f93df5c1d99fd04ac9329e45047da85c1da916544cd67806b31
+content_hash: 634f4998d80b54f8909961108b0f06fa576b645c87b6d1a8786bb718ee788466
+field_hashes:
+  id: 07db5624c5250295c7b3f1a2b232e3bf9f2a825a3ddef18bcab96b308d299d80
+  title: 69374533bfcf48f62ac18bac2fa2407cc000304bfa79cff4b8aa361f0a19efb2
+  source_atoms: 222f767660d52fdc4b581e4104ec763c5f9781996cbd7c6f05f1592c66c902dd
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: a1b3126a0d6d7f3b7083009993b15745e21dccad1cfabcf2219564f4db619460
+  intent: 6a1e5f99f099ac516c9dc973750efcb797ddbe04f2029433d07a3ff2a2ade3fe
+  validation: 0a454c0460ec09bfe0c41ed2c99b57b41cad269852e8b898d78ba46594d06840
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 07f930c7ae0a0cf47e4627c2ac4aa879f288ebff722ff173944e618fab989dc8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T17:17:48Z'
+  authority: generated
+  via: create_document

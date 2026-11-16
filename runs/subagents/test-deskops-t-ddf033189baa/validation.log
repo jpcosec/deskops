@@ -1,0 +1,119 @@
+$ git diff --stat -- deskops/services/closeout_gates.py deskops/services pyproject.toml; git status --short
+ M .sldb/core/models/InboxNoteDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M docs/workflow-policy-reference.md
+?? .sldb/core/documents/InboxNoteDoc/20261116-132801-suggestion-deskops-view-un-gate-con-holds-true-trae-a-la-vez-un-finding-de-nivel-error.yaml
+?? .sldb/core/documents/RunDoc/run-deskops-t-ddf033189baa.yaml
+?? desk/inbox/20261116-132801-suggestion-deskops-view-un-gate-con-holds-true-trae-a-la-vez-un-finding-de-nivel-error.md
+?? deskops/testing/
+?? runs/subagents/exec-deskops-e-edb9213453ab/
+?? runs/subagents/test-deskops-t-ddf033189baa/
+?? tests/test_foreign_suites.py
+rc=0
+
+$ grep -rn "deskops.testing\|foreign_suites" deskops --include=*.py | grep -v "^deskops/testing/"
+rc=1
+
+$ ../.venv/bin/python -c "import sys, deskops.testing.foreign_suites as m; print(\"pytest\" in sys.modules, m.VITEST, m.GO_TEST)"
+False ['npx', 'vitest', 'run'] ['go', 'test', './...']
+rc=0
+
+$ grep -n "pytest" pyproject.toml
+22:    "pytest>=8.0",
+32:[tool.pytest.ini_options]
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_foreign_suites.py 2>&1 | tail -5
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+10 passed, 2 warnings in 31.23s
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py 2>&1 | tail -5
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 2 warnings in 250.01s (0:04:10)
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_closeout_test_paths.py 2>&1 | tail -5
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+31 passed, 1 warning in 0.19s
+rc=0
+
+$ cd /dev/shm/tester-ddf03/smoke && /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m pytest -q -p no:cacheprovider test_vitest_smoke.py 2>&1 | tail -4
+=========================== short test summary info ============================
+ERROR test_vitest_smoke.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.18s
+rc=0
+
+$ ls /dev/shm/tester-ddf03/copy; ls /dev/shm/tester-ddf03/copy | grep -E 'pyproject|venv|setup.py' || echo 'sin entorno python'
+README.md
+ast-initial.png
+astro.config.mjs
+desk
+diagrams
+docs
+imported
+node_modules
+package-lock.json
+package.json
+runs
+sldb
+src
+tests
+tsconfig.json
+vitest.config.ts
+sin entorno python
+rc=0
+
+$ cd /dev/shm/tester-ddf03/copy && uv run --no-project --with pytest --with-editable /mnt/ssd/proyectos/SLDB_1/deskops python -m pytest -q -p no:cacheprovider tests/test_vitest_suite.py 2>&1 | tail -4
+.                                                                        [100%]
+1 passed in 45.50s
+rc=0
+
+$ cd /dev/shm/tester-ddf03/copy && uv run --no-project --with pytest --with-editable /mnt/ssd/proyectos/SLDB_1/deskops python -m pytest -q -p no:cacheprovider tests/test_vitest_suite.py > /dev/shm/tester-ddf03/neg.out 2>&1; r=$?; grep -n -E 'foreign suite failed|^E? *command:|^E? *cwd:|--- std|Test Files|Tests |tester negative' /dev/shm/tester-ddf03/neg.out | head -20; wc -l /dev/shm/tester-ddf03/neg.out; exit $r
+4:foreign suite failed: exit code 1
+5:command: npx vitest run
+6:cwd: /dev/shm/tester-ddf03/copy
+7:--- stdout (last 200 lines) ---
+45:   × tester negative control 27ms
+60: Test Files  1 failed | 34 passed (35)
+61:      Tests  1 failed | 219 passed (220)
+65:--- stderr (last 200 lines) ---
+246:⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+248: FAIL  src/zz/fail.test.ts > tester negative control
+259:      2| test('tester negative control', () => { expect(1).toBe(2) })
+267 /dev/shm/tester-ddf03/neg.out
+rc=1
+
+# nota: la corrida anterior del smoke dio error de colección (rc enmascarado por tail); causa abajo
+$ cd /dev/shm/tester-ddf03/smoke && /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m pytest -q -p no:cacheprovider test_vitest_smoke.py 2>&1 | grep -E 'Error|error' | head -3
+ImportError while importing test module '/dev/shm/tester-ddf03/smoke/test_vitest_smoke.py'.
+E   ModuleNotFoundError: No module named 'deskops.testing'
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+rc=2
+
+$ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -c 'import deskops; print(deskops.__file__)'
+/mnt/ssd/proyectos/SLDB_1/deskops/deskops/__init__.py
+rc=0
+
+$ cd /dev/shm/tester-ddf03/smoke && PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m pytest -q -p no:cacheprovider test_vitest_smoke.py 2>&1 | tail -2
+.                                                                        [100%]
+1 passed in 31.20s
+rc=0
+
+$ probe: timeout=1 con un nieto (sleep 15) que hereda los pipes
+FAILED after 1.0s
+foreign suite failed: timed out after 1 seconds
+command: /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -c import subprocess,time; subprocess.Popen(['sleep','15']); print('started',flush=True); time.sleep
+rc=0

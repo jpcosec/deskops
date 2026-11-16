@@ -110,6 +110,45 @@ The closing order is fixed: `deskops closeout verify` runs the producers and wri
 
 When the atom|materialization gate passes without a linking document (a desk without local atoms, coverage only by a routed follow-up, or a skill guard test), verify writes an accepted `atom` receipt whose `value` is `exempt: <why the gate passed>`, so the rule needs no special case. `--evidence` (the task's `closeout_evidence`) only adds kinds (DA5): an added kind is verified and gets its receipt, and when it fails verify reports it as the alert `added_closeout_evidence_not_verified` without blocking; an added kind outside the vocabulary is the alert `unknown_closeout_evidence`.
 
+#### Tests evidence from a suite in another language
+
+The `tests` evidence is always a `.py` file: a reference counts only when it names an existing `.py` file under a `tests/` directory of the repository (or one the task declares in `files`). A repository whose suite is written in another language (vitest, go test, ...) does not change the gate; it declares its suite with a short pytest file that runs it through `deskops.testing.foreign_suites.run_foreign_suite`, and cites that file in the task's `references`.
+
+`run_foreign_suite(command, *, cwd, timeout=None, env=None)` runs `command` (an argument list, no shell) in `cwd` (required, `str` or `Path`). Exit code 0 passes; a non-zero exit code, an executable that is not found or a `timeout` (seconds; `None` is no limit) calls `pytest.fail` with a plain-text message naming the command, the cwd, the exit code or the cause, and the last 200 lines of stdout and then of stderr. `env` replaces the whole environment, as in `subprocess`; `None` inherits it (merge `os.environ` yourself when you need both). The module exports the canonical commands `VITEST = ["npx", "vitest", "run"]` and `GO_TEST = ["go", "test", "./..."]`. The deskops CLI never imports it; it is meant for test files only.
+
+Vitest (`tests/test_vitest_suite.py`):
+
+```python
+from pathlib import Path
+
+from deskops.testing.foreign_suites import VITEST, run_foreign_suite
+
+
+def test_vitest_suite() -> None:
+    run_foreign_suite(VITEST, cwd=Path(__file__).resolve().parents[1])
+```
+
+Go (`tests/test_go_suite.py`):
+
+```python
+from pathlib import Path
+
+from deskops.testing.foreign_suites import GO_TEST, run_foreign_suite
+
+
+def test_go_suite() -> None:
+    run_foreign_suite(GO_TEST, cwd=Path(__file__).resolve().parents[1])
+```
+
+The task then lists `tests/test_vitest_suite.py` (or `tests/test_go_suite.py`) in `references`, and `deskops closeout verify` counts it as `tests` evidence. From the root of a repository without its own Python environment, run it with the machine's deskops installation and a throwaway pytest through `uv`:
+
+```bash
+uv run --no-project --with pytest --with-editable /mnt/ssd/herramientas/deskops \
+  python -m pytest -q tests/test_vitest_suite.py
+```
+
+`--with-editable` points at the deskops checkout the machine's `deskops` tool is installed from (on this machine `/mnt/ssd/herramientas/deskops`); that checkout must include `deskops/testing/`.
+
 Two rules over the task's own fields are `on_write` alerts, `subject: model <= TaskDoc`: `rule-closeout-alert-implicit-code` (`has(task_type) or nonempty(closeout_evidence)`: a task that predates types is gated as code) and `rule-closeout-alert-pill-graduation` (`not nonempty(pills) or any(references: model <= AtomDoc)`: a task that binds pills references the atom they graduate to). The other field checks stay in verify because the rule language has no quantifier over the elements of a list value: the closeout evidence vocabulary (`deskops add task --evidence` refuses an unknown kind), `python_changes_without_declared_tests` and the http(s) shape of an `external` reference.
 
 ### Task lifecycle graph

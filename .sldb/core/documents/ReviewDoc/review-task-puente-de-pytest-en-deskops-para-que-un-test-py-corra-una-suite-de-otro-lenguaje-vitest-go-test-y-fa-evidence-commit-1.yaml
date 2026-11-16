@@ -1,0 +1,36 @@
+name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-commit-1
+path: desk/reviews/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/evidence-commit-1.md
+source_hash: c96f61d74c93cdb02eb98eff1823170fde7896e52a87671577aec5f618df6819
+content_hash: 6111a51fd4bfe9f50e5eb56a6c47ee9391c3edee64f4a13109a22b2b594d732f
+field_hashes:
+  id: 1924ee33a096651ced566decfc6405c2e61e65578953d8eb1316ef1c3d11720f
+  title: be129d5ea5e9c1bd44b7d205f893555dc25cafaac74f33ff248217e8418ea208
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: ff85645cb0d72d4d8a61638ce2660645293682c966740c14ce33f1fed7e4c977
+  subject: ba81270f9098473ef1f49c045ba61091b078ac4b7de1b2bd52cc6fc705cbf6af
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: a943a215cc95ef62c68bcec2dd276c6f24a6b8c63c29a34c0a686f2d4d354249
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: eb705a93f832d1cc5b23b2453fa5817d80c6d6935e2168219fef5f94fbceb89c
+  created_at: f1a1a16bf40cfc056bceb6b946898dbd67be02b0a0bba5b2ed7e81a56ce2ee34
+  disposed_at: f1a1a16bf40cfc056bceb6b946898dbd67be02b0a0bba5b2ed7e81a56ce2ee34
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f83ac45156e7706ef45b0f17b84abb140c5221051e53005034c36450dac48a86
+  disposition: 4c27b75151cb65873f6269727182c2c5b8927e29fefbaae2de756d443b066524
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T17:15:57Z'
+  authority: generated
+  via: save_document_payload
