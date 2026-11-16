@@ -1,0 +1,36 @@
+name: review-task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13-evidence-document-1
+path: desk/reviews/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13/evidence-document-1.md
+source_hash: 16373f63bf6e37da4f64a250195c7a33ef2fc9dbdcfd02c0cece4a97af69d940
+content_hash: 9c42f43e79cba17daa6e3045b51142c6f1ad6cd2faeeaa5b074cb8e88ee99d0b
+field_hashes:
+  id: 15aed93a715f4ac80a14751605d9282b9075c3cc4b9b600df2d97cff854666cc
+  title: 9f0c4d7085bc04c9bc3befcf1b7f48311bb80aaeb879691bccae9c932f1431b5
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 64ac8e615520cd1ae43ab0d47cfc9e750a82d13f9c47d468dab7cd8c982b7859
+  value: eb4314cc3cc91a76e3be18a283eb2bd7f21394f6b5e0fcf80d0adc27eb0e826b
+  subject: 6036c90c11717a1c983c8dee5f2aedcfb936782ebd763310bfc5834d51b0d961
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 1d69c4e9f67d841a26d3e6ef51c132aa25ddb797f2560c3d9d23771b132eee1f
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: ae5d5769959c465bf834152c68ee56161facd48dcdfffbaf3582a901e2521cfe
+  created_at: 94382edec768d0c6a110a27f416f06793ef459f18cc8618a2e09c82c7b7569fb
+  disposed_at: 94382edec768d0c6a110a27f416f06793ef459f18cc8618a2e09c82c7b7569fb
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: a35c4c0b429b4447b620e6dfa26ea31d5cb0a81eb7fb51303646a187dfa10ddc
+  disposition: 102b3c0c06aba2e24a5f3e74a09b64ee851830e6194a58f63c5bed1e7f5f2d12
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T20:54:45Z'
+  authority: generated
+  via: create_document

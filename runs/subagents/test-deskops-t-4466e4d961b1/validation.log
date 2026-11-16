@@ -1,0 +1,336 @@
+$ /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir diagram render --help
+Usage: specir diagram render [OPTIONS] SPEC ...
+
+  Render one or more semantic diagram spec files.
+
+Options:
+  --out PATH                      Output directory for rendered files.
+                                  [default: .]
+  --renderer, --backend [plantuml|mermaid|vega|d2|antonia-html|tree|graph|bpmn|json]
+                                  Force a renderer instead of using the spec
+                                  type default.
+  --help                          Show this message and exit.
+rc=0
+
+$ /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir diagram validate --help
+Usage: specir diagram validate [OPTIONS] SPEC ...
+
+  Validate one or more semantic diagram spec files.
+
+Options:
+  --help  Show this message and exit.
+rc=0
+
+$ /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir diagram lint --help
+Usage: specir diagram lint [OPTIONS] SPEC_OR_MMD ...
+
+  Lint .mmd files, or render specs to mermaid and lint the result.
+
+Options:
+  --help  Show this message and exit.
+rc=0
+
+$ /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir diagram schema --help
+Usage: specir diagram schema [OPTIONS]
+
+  Export JSON Schema for all diagram spec types or one diagram type.
+
+Options:
+  --type TEXT  Limit the schema to one type: class, sequence, state,
+               component, activity, deployment, component_view_matrix, or
+               diagram-store.
+  --out PATH   Write the schema to this file instead of stdout.
+  --help       Show this message and exit.
+rc=0
+
+$ /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir catalog build --help
+Usage: specir catalog build [OPTIONS]
+
+  Build a diagram catalog HTML bundle from a vistas registry or diagram store.
+
+Options:
+  --config PATH           Path to a legacy vistas.yml registry or a
+                          hierarchical diagram store config.  [required]
+  --out PATH              HTML file to write.  [required]
+  --base-dir PATH         Base directory for template and vista source paths.
+                          Defaults to the config file directory.
+  --atoms-dir PATH        Directory with W5H1 atom markdown files to inject as
+                          window.ATOMS_DB.
+  --atoms-tag TEXT        Embed only atoms carrying this tag (full `ns:value`
+                          or just `value`); repeatable. Default: all atoms.
+  --strict-atoms          Fail the build if a spec `atoms:` id does not exist
+                          among the loaded atoms (default: warning).
+  --annotations           Save the page's annotations in an sldb store through
+                          `sldb serve`; the server and the document can also
+                          come from the page URL
+                          (`?sldb=<url>&annotations=<id>`).
+  --sldb-url TEXT         Base URL of `sldb serve --cors` that keeps the
+                          annotations (implies --annotations).
+  --annotations-doc TEXT  Id of the CatalogAnnotationsDoc that holds them
+                          (implies --annotations). Default: derived from the
+                          catalog's name.
+  --help                  Show this message and exit.
+rc=0
+
+$ /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir catalog schema --help
+Usage: specir catalog schema [OPTIONS]
+
+  Export JSON Schema for diagram-store / project.yml configs.
+
+Options:
+  --out PATH  Write the schema to this file instead of stdout.
+  --help      Show this message and exit.
+rc=0
+
+$ /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir about
+specir — semantic specs -> diagrams -> catalog HTML (specIR's visual layer over sldb)
+
+Where the diagrams live:
+  spec files       : YAML specs (`type:` one of the eight diagram types) next to their vistas.yml
+  store            : /mnt/ssd/proyectos/SLDB_1/deskops/.sldb
+  specs in a store : SpecDoc documents (`sldb notations list --store <.sldb>`)
+  catalog config   : a vistas.yml registry or a project.yml / diagram-store config
+
+Flow to HTML:
+  1. specir diagram validate <spec.yml>
+  2. specir diagram render   <spec.yml> --out <dir>
+  3. specir diagram lint     <rendered.mmd>
+  4. specir catalog build    --config <vistas.yml> --out <out.html>
+     (build alias = catalog build; --atoms-dir injects window.ATOMS_DB)
+
+Into the store (sldb, used directly):
+  sldb notations sync --spec <spec.yml> --store <.sldb>
+  sldb notations sync --catalog <vistas.yml> [--check] --store <.sldb>
+  sldb notations from-graph --python <src_dir> | --store <.sldb> | --snapshot <graph.json>
+  sldb notations view <SpecDoc id> --store <.sldb>
+
+Save a built catalog's annotations (replaces spec2viz's `catalog serve`):
+  sldb models add specir.visual.catalog.annotations:CatalogAnnotationsDoc --store <.sldb>
+  sldb serve --store <.sldb> --cors --port 8765
+  specir catalog build --config <vistas.yml> --out <out.html> --sldb-url http://127.0.0.1:8765
+rc=0
+
+$ sldb notations sync --help
+usage: sldb notations sync [-h] [--notation NOTATION] [--palette PALETTE]
+                           [--spec SPEC] [--catalog CATALOG] [--check]
+                           [--prune] [--strict] [--json] [--store STORE]
+                           [--pythonpath PYTHONPATH]
+
+options:
+  -h, --help            show this help message and exit
+  --notation NOTATION   Notation name or YAML file to sync; with --spec, the
+                        notation the specs are drawn with (`none` for none)
+  --palette PALETTE     Palette name or YAML file to sync
+  --spec SPEC           Diagram spec YAML to reconcile (SpecDoc, SpecNodeDoc,
+                        RelationDoc); repeatable
+  --catalog CATALOG     vistas.yml whose specs are synced with their notation
+                        and catalog metadata
+  --check               With --catalog: only validate it (paths, specs,
+                        notations); write nothing
+  --prune               With --catalog: delete the catalog SpecDocs the
+                        vistas.yml no longer lists
+  --strict              With --spec/--catalog: exit 1 when a ref does not
+                        exist or the edge index reports errors
+  --json                With --spec/--catalog: print the list of reports as
+                        JSON
+  --store STORE         Store path
+  --pythonpath PYTHONPATH
+                        Project path
+rc=0
+
+$ sldb serve --help
+usage: sldb serve [-h] [--host HOST] [--port PORT] [--store STORE]
+                  [--pythonpath PYTHONPATH] [--cors] [--token TOKEN]
+
+options:
+  -h, --help            show this help message and exit
+  --host HOST
+  --port PORT
+  --store STORE         Store path
+  --pythonpath PYTHONPATH
+                        Project path
+  --cors                Send permissive CORS headers (for browser clients)
+  --token TOKEN         Require 'Authorization: Bearer <TOKEN>' on every
+                        request (default: $SLDB_SERVE_TOKEN, or no auth)
+rc=0
+
+$ sldb notations from-graph --help
+usage: sldb notations from-graph [-h] (--snapshot SNAPSHOT | --store STORE |
+                                 --python PYTHON) [--node-type NODE_TYPES]
+                                 [--model MODELS] [--relation RELATIONS]
+                                 [--exclude-relation EXCLUDE_RELATIONS]
+                                 [--drop-isolated]
+                                 [--module-prefix MODULE_PREFIXES]
+                                 [--id SPEC_ID] [--title TITLE]
+                                 [--output OUTPUT]
+
+options:
+  -h, --help            show this help message and exit
+  --snapshot SNAPSHOT   Node-link JSON (`sldb graph snapshot save`, or the
+                        Python source graph of `sldb selfdoc python-sync`)
+  --store STORE         Read the edge index of this .sldb (or project) dir via
+                        sldb.api
+  --python PYTHON       Directory of .py files, scanned with sldb.code (extra
+                        [code]); nodes module/class/external
+  --node-type NODE_TYPES
+                        Node type to keep (document, model, semantic_tag,
+                        ...); repeatable. Default: document, model
+  --model MODELS        Keep only documents of this model (e.g. AtomDoc);
+                        repeatable
+  --relation RELATIONS  Keep only these relations; repeatable. Overrides the
+                        default exclusions
+  --exclude-relation EXCLUDE_RELATIONS
+                        Drop this relation; repeatable. Default: structural
+                        relations
+  --drop-isolated       Drop nodes left without edges after filtering
+  --module-prefix MODULE_PREFIXES
+                        Keep only Python nodes of this module or below;
+                        repeatable. With --python, the one root package
+  --id SPEC_ID          Spec id. Defaults to the file stem, 'sldb-graph', or
+                        the parent dir of --python
+  --title TITLE         Spec title. Defaults to '<id> graph' ('<id> AST
+                        Architecture' with --python)
+  --output OUTPUT       Write the YAML spec here instead of stdout
+rc=0
+
+$ which specir sldb
+/home/robocop/.local/bin/specir
+/home/robocop/.local/bin/sldb
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/IR && .venv/bin/specir retirement check --path deskops=/mnt/ssd/proyectos/SLDB_1/deskops
+Usage: specir retirement check [OPTIONS]
+Try 'specir retirement check --help' for help.
+
+Error: no path given for: graph_ui, pron, sldb, spec2viz/.sldb
+rc=2
+
+$ cd /mnt/ssd/proyectos/SLDB_1/IR && .venv/bin/specir retirement check --path deskops=/mnt/ssd/proyectos/SLDB_1/deskops --path graph_ui=/mnt/ssd/proyectos/SLDB_1/UIs/graph_ui --path pron=/mnt/ssd/proyectos/SLDB_1/pron --path sldb=/mnt/ssd/proyectos/SLDB_1/sldb --path spec2viz/.sldb=/mnt/ssd/proyectos/SLDB_1/spec2viz/.sldb
+audited repos: graph_ui, deskops, pron, sldb, IR
+audited stores: spec2viz/.sldb
+dependencies: 63
+  sldb	runs/subagents/20261116-exec-oraculo-d2/gen_golden.py:5	importación	from spec2viz.generators import python_ast
+  IR	tests/test_matriz_cobertura_spec2viz.py:31	importación	main = importlib.import_module("spec2viz.cli").main
+  IR	tests/visual/parity.py:52	importación	from spec2viz.compilers import compile_ir
+  IR	tests/visual/parity.py:53	importación	from spec2viz.loader import load
+  IR	tests/visual/parity.py:54	importación	from spec2viz.validator import validate
+  IR	tests/visual/render_parity.py:74	importación	from spec2viz.compilers import compile_ir
+  IR	tests/visual/render_parity.py:75	importación	from spec2viz.loader import load
+  IR	tests/visual/render_parity.py:76	importación	from spec2viz.renderers import render
+  IR	tests/visual/render_parity.py:77	importación	from spec2viz.renderers.bpmn import render_bpmn_html
+  IR	tests/visual/render_parity.py:87	importación	from spec2viz.cli import DIAGRAM_RENDERERS
+  IR	tests/visual/render_parity.py:88	importación	from spec2viz.renderers import DEFAULT_RENDERER, EXT_MAP
+  IR	tests/visual/render_parity.py:94	importación	from spec2viz.renderers.view_mermaid import view_to_mermaid
+  IR	tests/visual/render_parity.py:100	importación	from spec2viz.linters.mermaid import lint_mermaid
+  IR	tests/visual/render_parity.py:106	importación	from spec2viz.schema import json_schema
+  IR	tests/visual/render_parity.py:112	importación	from spec2viz import render_to_file
+  IR	tests/visual/render_parity.py:119	importación	import spec2viz
+  IR	tests/visual/render_parity.py:190	importación	from spec2viz.linters.mermaid import lint_mermaid
+  IR	tests/visual/render_parity.py:191	importación	from spec2viz.schema import json_schema
+  IR	tests/visual/test_catalog_parity.py:39	importación	spec2viz = pytest.importorskip("spec2viz")
+  IR	tests/visual/test_catalog_parity.py:49	importación	from spec2viz.sldb_sync import check_catalog as oracle
+  IR	tests/visual/test_catalog_parity.py:102	importación	from spec2viz.sldb_sync import SpecSync as OracleSync
+  IR	tests/visual/test_catalog_parity.py:103	importación	from spec2viz.sldb_sync import sync_catalog as oracle_sync
+  IR	tests/visual/test_catalog_parity.py:122	importación	from spec2viz.cli import main
+  IR	tests/visual/test_catalog_parity.py:154	importación	from spec2viz.deskops import render_deskops
+  IR	tests/visual/test_catalog_parity.py:203	importación	from spec2viz.deskops import render_deskops
+  IR	tests/visual/test_lint_mermaid.py:86	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_cases.py:314	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_commands.py:251	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_parity.py:53	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_parity.py:59	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_parity.py:83	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_resources.py:62	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_schema.py:44	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:105	importación	spec2viz = pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:117	importación	from spec2viz.sldb_sync import SpecSync as Spec2VizSync
+  IR	tests/visual/test_sync_generation_parity.py:201	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:229	importación	import spec2viz.graph_import as oracle
+  IR	tests/visual/test_sync_generation_parity.py:258	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:259	importación	from spec2viz.graph_import import component_spec_from_graph as oracle_from_graph
+  IR	tests/visual/test_sync_generation_parity.py:260	importación	from spec2viz.graph_import import load_store_index
+  IR	tests/visual/test_sync_generation_parity.py:302	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:303	importación	from spec2viz.generators.python_ast import generate_python_ast_spec
+  IR	tests/visual/test_visual_parity.py:35	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_visual_parity.py:43	importación	pytest.importorskip("spec2viz")
+  spec2viz/.sldb	store.yaml:44	modelo registrado	model_ref: spec2viz.sldb_models:SpecDoc
+  spec2viz/.sldb	store.yaml:47	modelo registrado	model_ref: spec2viz.sldb_models:SpecNodeDoc
+  spec2viz/.sldb	store.yaml:50	modelo registrado	model_ref: spec2viz.sldb_models:NotationDoc
+  spec2viz/.sldb	store.yaml:53	modelo registrado	model_ref: spec2viz.sldb_models:GlyphDoc
+  spec2viz/.sldb	store.yaml:56	modelo registrado	model_ref: spec2viz.sldb_models:LinkDoc
+  spec2viz/.sldb	core/store_index.yaml:141	modelo registrado	model_ref: spec2viz.sldb_models:SpecDoc
+  spec2viz/.sldb	core/store_index.yaml:154	modelo registrado	model_ref: spec2viz.sldb_models:SpecNodeDoc
+  spec2viz/.sldb	core/store_index.yaml:167	modelo registrado	model_ref: spec2viz.sldb_models:NotationDoc
+  spec2viz/.sldb	core/store_index.yaml:180	modelo registrado	model_ref: spec2viz.sldb_models:GlyphDoc
+  spec2viz/.sldb	core/store_index.yaml:193	modelo registrado	model_ref: spec2viz.sldb_models:LinkDoc
+  spec2viz/.sldb	core/store_index.yaml:246	modelo registrado	model_ref: spec2viz.sldb_models:ViewDoc
+  spec2viz/.sldb	core/store_index.yaml:259	modelo registrado	model_ref: spec2viz.sldb_models:PaletteDoc
+  spec2viz/.sldb	core/models/GlyphDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:GlyphDoc
+  spec2viz/.sldb	core/models/LinkDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:LinkDoc
+  spec2viz/.sldb	core/models/NotationDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:NotationDoc
+  spec2viz/.sldb	core/models/PaletteDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:PaletteDoc
+  spec2viz/.sldb	core/models/SpecDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:SpecDoc
+  spec2viz/.sldb	core/models/SpecNodeDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:SpecNodeDoc
+  spec2viz/.sldb	core/models/ViewDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:ViewDoc
+rows not accredited: 9
+  SV-A17: abierta
+  SV-H01: abierta
+  SV-K09: abierta
+  SV-K16: abierta
+  SV-K18: abierta
+  SV-K21: abierta
+  SV-K23: abierta
+  SV-K26: abierta
+  SV-K29: abierta
+gate: failed, the retirement is not declared
+rc=1
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_skill_cli_drift.py
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 0.08s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_closeout_skill_links.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout_skill_links.py::test_atom_linked_guard_test_covers_a_changed_skill_file
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 2 warnings in 1.18s
+rc=0
+
+$ grep -rn spec2viz .claude .opencode desk/drawer/plans/workspace-documental/render_diagram.py
+.claude/skills/deskops-workflow/references/spec2viz-cli.md:1:# spec2viz CLI reference (retired)
+.claude/skills/deskops-workflow/references/spec2viz-cli.md:3:spec2viz is retired (IR13). Its command reference no longer lives here: diagrams are rendered,
+.claude/skills/deskops-workflow/references/spec2viz-cli.md:11:- `docs/spec2viz/correspondencia-cli.md` — every old spec2viz command and its equivalent.
+.opencode/skills/use-spec2viz/SKILL.md:3:description: Remission. spec2viz is retired (IR13); diagram specs, renderers, the catalog and generated diagram projections are now handled with specIR's `specir` command and sldb. Load the use-specir skill of the IR repo.
+.opencode/skills/use-spec2viz/SKILL.md:6:# use-spec2viz → use-specir
+.opencode/skills/use-spec2viz/SKILL.md:8:spec2viz is retired (IR13). This file stays only so that whoever loads the old `use-spec2viz` path
+.opencode/skills/use-spec2viz/SKILL.md:11:command-by-command correspondence is `docs/spec2viz/correspondencia-cli.md` in that repo.
+.claude/skills/deskops-workflow/SKILL.md:3:description: This skill should be used when a repository has a top-level desk/ directory, or when the user asks to "add a task", "check the board", "advance a task", "create a pill", "create an atom", "promote from the drawer", "create or update a diagram spec", "render a diagram", "validate a spec", "build the architecture catalog", "agregar tarea", "revisar el board", "avanzar tarea", "crear un pill", "crear un atom", "promover del drawer", "renderizar diagrama", "validar spec", or otherwise mentions deskops, specir, spec2viz, sldb, desk/, atoms, pills, routines, the desk board, or a diagram/spec YAML source. It forces use of the `deskops` and `specir` CLIs instead of hand-editing desk/ files or generated diagram outputs, and enforces following the spec -> atoms|diagrams -> tasks|pills -> code|documental-projection pipeline instead of ad hoc workflow habits.
+.claude/skills/deskops-workflow/SKILL.md:14:tasks, routines, pills, atoms, drawer, and board. `specir` (which replaces the retired spec2viz) owns diagrams the same way: a YAML
+.claude/skills/deskops-workflow/SKILL.md:111:- `references/spec2viz-cli.md` — remission: spec2viz is retired; points to the IR repo's
+.claude/skills/deskops-workflow/SKILL.md:112:  `skills/use-specir/SKILL.md` and its spec2viz → specir/sldb correspondence table.
+.claude/skills/deskops-workflow/SKILL.md:114:  pill-vs-atom lifecycle, and the spec2viz mirror-of-sldb relationship, for when the mental model
+.opencode/skills/use-deskops/SKILL.md:159:- Load `use-specir` (IR repo, `skills/use-specir/SKILL.md`; replaces the retired `use-spec2viz`) for structured diagram specs and generated diagram projections.
+.claude/skills/deskops-workflow/references/vocabulary.md:1:# deskops + spec2viz vocabulary
+.claude/skills/deskops-workflow/references/vocabulary.md:14:- **spec2viz** is the diagram-domain mirror of the same idea: a diagram's YAML spec plus its
+rc=0
+
+$ test -f desk/drawer/plans/workspace-documental/render_diagram.py && python3 -I -c "import ast;ast.parse(open('desk/drawer/plans/workspace-documental/render_diagram.py').read())"
+rc=0
+

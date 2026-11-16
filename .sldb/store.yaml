@@ -362,6 +362,10 @@ include:
     name: run-deskops-e-4ba5a0d9443c
   - path: runs/subagents/test-deskops-t-9da54e09a30a/run.md
     name: run-deskops-t-9da54e09a30a
+  - path: runs/subagents/exec-deskops-e-dfba46e5c9d2/run.md
+    name: run-deskops-e-dfba46e5c9d2
+  - path: runs/subagents/test-deskops-t-4466e4d961b1/run.md
+    name: run-deskops-t-4466e4d961b1
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -932,6 +936,10 @@ include:
     name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-evidence-atom-1
   - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/evidence-materialization-1.md
     name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-evidence-materialization-1
+  - path: desk/reviews/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13/evidence-commit-1.md
+    name: review-task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13-evidence-commit-1
+  - path: desk/reviews/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13/evidence-document-1.md
+    name: review-task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13-evidence-document-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -997,7 +1005,6 @@ include:
   paths:
   - desk/tasks/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check.md
   - desk/tasks/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30.md
-  - desk/tasks/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13.md
   - desk/tasks/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor.md
   - desk/tasks/task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar.md
   - desk/tasks/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con.md

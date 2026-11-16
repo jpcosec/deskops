@@ -1,0 +1,48 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/IR && .venv/bin/specir retirement check --path deskops=/mnt/ssd/proyectos/SLDB_1/deskops
+Usage: specir retirement check [OPTIONS]
+Try 'specir retirement check --help' for help.
+
+Error: no path given for: graph_ui, pron, sldb, spec2viz/.sldb
+rc=2
+
+$ cd /mnt/ssd/proyectos/SLDB_1/IR && .venv/bin/specir retirement check --path deskops=/mnt/ssd/proyectos/SLDB_1/deskops --path graph_ui=/mnt/ssd/proyectos/SLDB_1/UIs/graph_ui --path pron=/mnt/ssd/proyectos/SLDB_1/pron --path sldb=/mnt/ssd/proyectos/SLDB_1/sldb --path spec2viz/.sldb=/mnt/ssd/proyectos/SLDB_1/spec2viz/.sldb | grep -E '^(audited|dependencies|rows|gate)|	deskops	'
+audited repos: graph_ui, deskops, pron, sldb, IR
+audited stores: spec2viz/.sldb
+dependencies: 63
+rows not accredited: 9
+gate: failed, the retirement is not declared
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_skill_cli_drift.py
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 0.14s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_skill_links.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout_skill_links.py::test_atom_linked_guard_test_covers_a_changed_skill_file
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 2 warnings in 1.80s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && python3 -c "import ast;ast.parse(open('desk/drawer/plans/workspace-documental/render_diagram.py').read())" && which specir; ls /mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir
+/home/robocop/.local/bin/specir
+/mnt/ssd/proyectos/SLDB_1/IR/.venv/bin/specir
+rc=0
+
