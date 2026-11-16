@@ -6,6 +6,7 @@ to repo-relative paths outside desk/ and deskops/ become source_file graph nodes
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -24,11 +25,15 @@ def _git(root: Path, *argv: str) -> str:
 
 
 def _cli(root: Path, *argv: str) -> subprocess.CompletedProcess[str]:
+    # cwd is the sandbox repo, so put this checkout first on the path: otherwise
+    # `-m deskops` may import another installed copy instead of the code under test.
+    env = {**os.environ, "PYTHONPATH": os.pathsep.join(filter(None, [str(ROOT), os.environ.get("PYTHONPATH", "")]))}
     return subprocess.run(
         [sys.executable, "-m", "deskops", *argv],
         cwd=root,
         capture_output=True,
         text=True,
+        env=env,
     )
 
 
@@ -416,3 +421,146 @@ Done.
         if f.get("code") == "missing_changed_file_link"
     ]
     assert not missing_link_findings, f"Unexpected missing_changed_file_link: {missing_link_findings}"
+
+
+# --- Directory targets ---
+
+
+@pytest.mark.parametrize(
+    ("target", "path", "expected"),
+    [
+        ("pkg/sub", "pkg/sub/a.py", True),
+        ("pkg/sub", "pkg/sub/deep/b.py", True),
+        ("pkg/sub", "pkg/sub", True),
+        ("pkg/sub/", "pkg/sub/a.py", True),
+        ("./pkg/sub", "pkg/sub/a.py", True),
+        ("pkg/sub", "pkg/subzero.py", False),
+        ("pkg/sub", "pkg/sub.py", False),
+        ("pkg/sub", "pkg/Sub/a.py", False),
+        ("pkg/sub", "other/pkg/sub/a.py", False),
+        ("src/a.py", "src/a.py", True),
+        ("src/a.py", "src/a.pyc", False),
+        ("", "pkg/sub/a.py", False),
+    ],
+)
+def test_target_covers_matches_the_file_or_a_containing_directory(target: str, path: str, expected: bool) -> None:
+    from deskops.services.closure import target_covers
+
+    assert target_covers(target, path) is expected
+
+
+@pytest.mark.parametrize(
+    ("directory", "inside", "sibling"),
+    [
+        ("pkg/sub", "pkg/sub/a.py", "pkg/subzero.py"),
+        # The graph reports a directory under tests/ as `test_file:tests/notations`.
+        ("tests/notations", "tests/notations/test_a.py", "tests/notationszero.py"),
+    ],
+)
+def test_closeout_verify_covers_files_under_a_directory_target(
+    tmp_path: Path, directory: str, inside: str, sibling: str
+) -> None:
+    """A materialization targeting a directory covers the files under it and not a same-prefix sibling."""
+    root = _make_repo(tmp_path)
+
+    result = _cli(root, "init", str(root))
+    assert result.returncode == 0, result.stderr
+
+    _write(root / inside, "# inside\n")
+    _write(root / sibling, "# sibling\n")
+
+    result = _cli(
+        root,
+        "add", "atom",
+        "--root", str(root),
+        "--title", "Directory target atom",
+        "--five-wh-one-plus", "what",
+        "--answer", "The directory materializes this atom.",
+        "--tags", "topic:closeout",
+    )
+    assert result.returncode == 0, result.stderr
+
+    result = _cli(
+        root,
+        "add", "materialization",
+        "--root", str(root),
+        "--title", "Pkg sub package",
+        "--source-atoms", "atom-directory-target-atom",
+        "--target-kind", "source_file",
+        "--target-identity", directory,
+        "--intent", "The directory materializes the atom.",
+    )
+    assert result.returncode == 0, result.stderr
+
+    task_text = f"""---
+id: task-directory-target
+status: active
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- tests/test_materialization_targets_outside_package.py
+depends_on: []
+pills: []
+files:
+- {inside}
+- {sibling}
+tags: []
+---
+
+# Directory Target Task
+
+## Rationale
+
+Test directory coverage.
+
+## Goal
+
+Verify closeout.
+
+## Scope
+
+In scope.
+
+## Implementation Path
+
+Implement.
+
+## Validation
+
+- pytest
+
+## Done When
+
+Done.
+"""
+    _write(root / "desk/tasks/task-directory-target.md", task_text)
+    from deskops import doc_access
+    from deskops.models import TaskDoc
+
+    doc_access.track_created_document(
+        root, TaskDoc, root / "desk/tasks/task-directory-target.md", "task-directory-target"
+    )
+    _write(
+        root / "desk/tasks/Board.md",
+        "---\nid: Board\ntitle: Board\nscope: test\npurpose: test\ntasks:\n"
+        "- desk/tasks/task-directory-target.md\ntags: []\n---\n\n# Board\n",
+    )
+    import shutil
+
+    (root / "tests").mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(__file__, root / "tests" / Path(__file__).name)
+    _git(root, "add", ".")
+    _git(root, "commit", "-q", "-m", "setup directory target test")
+
+    result = _cli(root, "closeout", "verify", "--root", str(root), "--task", "task-directory-target")
+    output = json.loads(result.stdout)
+
+    missing_paths = {
+        finding.get("path")
+        for finding in output.get("findings", [])
+        if finding.get("code") == "missing_changed_file_link"
+    }
+    assert inside not in missing_paths, output
+    assert sibling in missing_paths, output
+    assert f"materialization:materialization:materialization-pkg-sub-package->{inside}" in json.dumps(output), output

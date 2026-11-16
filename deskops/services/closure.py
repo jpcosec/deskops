@@ -62,6 +62,42 @@ EVIDENCE_ENGINE = "deskops-closeout"
 CLOSEOUT_NODE = "ritual-closeout"
 
 
+def _normalize_target_path(value: str) -> str:
+    """A repo-relative POSIX path as written: no ``./`` prefix, no trailing slash, no symlink resolution."""
+    text = str(value or "").strip()
+    while text.startswith("./"):
+        text = text[2:]
+    return text.rstrip("/")
+
+
+def _missing_target_path(target_id: str) -> str:
+    """The path a missing declared target names, without a node-kind prefix such as ``test_file:``.
+
+    The graph may type a declared target by its location (a directory under ``tests/`` is
+    reported as ``test_file:tests/...``), so the ``<kind>:`` prefix is dropped before the
+    target is compared with the ``target_identity`` the materialization declares.
+    """
+    text = str(target_id or "").strip()
+    kind, sep, rest = text.partition(":")
+    if sep and kind and "/" not in kind and kind.replace("_", "").isalnum():
+        text = rest
+    return _normalize_target_path(text)
+
+
+def target_covers(target: str, path: str) -> bool:
+    """Whether a materialization ``target_identity`` covers the repo-relative ``path``.
+
+    A target covers a file when it is that file or a directory containing it: the
+    normalized path equals the target or starts with the target plus ``/``. The
+    comparison is lexical and case-sensitive; the directory need not exist.
+    """
+    normalized_target = _normalize_target_path(target)
+    normalized_path = _normalize_target_path(path)
+    if not normalized_target or not normalized_path:
+        return False
+    return normalized_path == normalized_target or normalized_path.startswith(f"{normalized_target}/")
+
+
 class ClosureCommitError(RuntimeError):
     """The closing commit could not be made; the desk was restored."""
 
@@ -1328,16 +1364,62 @@ class ClosureService:
         if path.suffix == ".md" and self._resolved_is_under(path, self.desk_root / "atoms"):
             evidence.append(f"atom-doc:{relative_path}")
         node_id = graph_context.node_id(relative_path)
-        if node_id is None:
-            return evidence
-        for edge in graph_context.edges_around(node_id):
+        for edge in graph_context.edges_around(node_id) if node_id is not None else []:
             if edge.source_id == node_id and edge.target_id.startswith("atom:"):
                 evidence.append(f"graph:{node_id}->{edge.target_id}")
             if edge.target_id == node_id and edge.source_id.startswith("materialization:"):
                 if edge.source_id in graph_context.invalid_materializations:
                     continue
                 evidence.append(f"materialization:{edge.source_id}->{relative_path}")
+        # A declared target the graph has no node for (a directory) covers the files under it.
+        for materialization_id, target in self._directory_materialization_targets(graph_context):
+            if target_covers(target, relative_path):
+                evidence.append(f"materialization:{materialization_id}->{relative_path}")
         return self._dedupe_preserve_order(evidence)
+
+    def _directory_materialization_targets(self, graph_context: "CloseoutGraph") -> list[tuple[str, str]]:
+        """Materializations whose declared ``target_identity`` is not a graph node, with that target.
+
+        The graph only makes a node of a declared target that is a file, so a directory
+        target is reported missing and its materialization lands in
+        ``invalid_materializations``. Such a materialization still covers the files under
+        its target (``target_covers``) when its only missing reference is that target
+        (compared without a node-kind prefix such as ``test_file:``);
+        any other missing reference (an unknown source atom) keeps it invalid.
+        """
+        cached = getattr(self, "_directory_targets_cache", None)
+        if cached is not None and cached[0] is graph_context:
+            return cached[1]
+        targets: list[tuple[str, str]] = []
+        graph = getattr(graph_context, "graph", None)
+        for materialization_id in sorted(getattr(graph_context, "invalid_materializations", ()) or ()):
+            missing = list(graph.missing_from(materialization_id)) if graph is not None else []
+            if not missing:
+                continue
+            declared = self._materialization_target_identity(missing[0].provenance_path)
+            if not declared:
+                continue
+            if all(_missing_target_path(entry.target_id) == declared for entry in missing):
+                targets.append((materialization_id, declared))
+        self._directory_targets_cache = (graph_context, targets)
+        return targets
+
+    def _materialization_target_identity(self, provenance_path: str | None) -> str:
+        """The normalized ``target_identity`` a materialization document declares, or ``""``."""
+        if not provenance_path:
+            return ""
+        path = self.root / provenance_path
+        try:
+            payload = _frontmatter(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError, yaml.YAMLError):
+            return ""
+        if not isinstance(payload, dict):
+            return ""
+        nested = payload.get("materialization")
+        target = payload.get("target_identity")
+        if not target and isinstance(nested, dict):
+            target = nested.get("target_identity")
+        return _normalize_target_path(target) if isinstance(target, str) else ""
 
     def _skill_guard_test_evidence(self, relative_path: str, graph_context: "CloseoutGraph") -> list[str]:
         """Evidence for a changed skill file covered by an atom-linked guard test.
