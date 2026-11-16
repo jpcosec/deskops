@@ -322,6 +322,7 @@ include:
   - desk/materializations/materialization-declaracion-del-store-sin-spec2viz.md
   - desk/materializations/materialization-indice-del-store-sin-spec2viz.md
   - desk/materializations/materialization-tests-de-la-migracion-de-estados-y-claves-legacy-de-taskdoc.md
+  - desk/materializations/materialization-tests-de-deskops-atoms-citations.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -370,6 +371,14 @@ include:
     name: run-deskops-e-560a883f4c96
   - path: runs/subagents/test-deskops-t-79da9372a710/run.md
     name: run-deskops-t-79da9372a710
+  - path: runs/subagents/exec-deskops-e-d62639bcf100/run.md
+    name: run-deskops-e-d62639bcf100
+  - path: runs/subagents/test-deskops-t-38a62e54c041/run.md
+    name: run-deskops-t-38a62e54c041
+  - path: runs/subagents/exec-deskops-e-af97f091952a/run.md
+    name: run-deskops-e-af97f091952a
+  - path: runs/subagents/test-deskops-t-b9835a9a1e2c/run.md
+    name: run-deskops-t-b9835a9a1e2c
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -952,6 +961,20 @@ include:
     name: review-task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi-evidence-atom-1
   - path: desk/reviews/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi/evidence-materialization-1.md
     name: review-task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi-evidence-materialization-1
+  - path: desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/preflight-1.md
+    name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-preflight-1
+  - path: desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/bundle-1.md
+    name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-bundle-1
+  - path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/evidence-tests-1.md
+    name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-evidence-tests-1
+  - path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/evidence-commit-1.md
+    name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-evidence-commit-1
+  - path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/evidence-atom-1.md
+    name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-evidence-atom-1
+  - path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/evidence-materialization-1.md
+    name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-evidence-materialization-1
+  - path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/evidence-materialization-2.md
+    name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-evidence-materialization-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -989,7 +1012,6 @@ include:
   - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
   - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
   - desk/tasks/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act.md
-  - desk/tasks/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l.md
   - desk/tasks/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit.md
   - desk/tasks/task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii.md
   - desk/tasks/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale.md
@@ -1006,6 +1028,7 @@ include:
   - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
   - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
+  - desk/tasks/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

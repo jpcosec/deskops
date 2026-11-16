@@ -1,0 +1,28 @@
+ M .sldb/core/documents/BoardDoc/Board.yaml
+ M .sldb/core/models/BoardDoc.yaml
+ M .sldb/core/models/ReviewDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/models/TaskCodeDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M desk/tasks/Board.md
+ M deskops/cli/commands/atoms.py
+ M deskops/cli/commands/operations.py
+ M deskops/cli/registry.py
+ M deskops/services/atoms.py
+ M tests/fixtures/golden/help/deskops_atoms.txt
+?? .sldb/core/documents/ReviewDoc/review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-bundle-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-preflight-1.yaml
+?? .sldb/core/documents/RunDoc/run-deskops-e-d62639bcf100.yaml
+?? .sldb/core/documents/TaskCodeDoc/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb.yaml
+?? desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/
+?? desk/tasks/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb.md
+?? runs/subagents/20261116-170649/
+?? runs/subagents/20261116-170855/
+?? runs/subagents/20261116-202233/
+?? runs/subagents/20261116-202327/
+?? runs/subagents/20261116-213327/
+?? runs/subagents/20261116-213418/
+?? runs/subagents/exec-deskops-e-d62639bcf100/
+?? tests/fixtures/golden/help/deskops_atoms_citations.txt
+?? tests/test_atom_citations.py

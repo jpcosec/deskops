@@ -1,0 +1,37 @@
+name: task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb
+path: desk/tasks/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb.md
+source_hash: 68ca483134fe79c3909bdb503c49c752eb87cbc3b7e3d5dc840818a4dd42f889
+content_hash: 7e33c0b5d8b7f795ca202d996113fe19f09ac2c299ed58119d38688637c45333
+field_hashes:
+  title: 3c1ee227a895f9da2d826fb249b4eee5e9e21bb544d146e62767a79b58664721
+  id: 5fc2b3acf3a0b9556c8442f2157cd405ba2ee788e1c89c1aba902a534cd4248e
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 21c22da22f0eccfa1448f9df4d4f696562fe3eaa061d77185c5920dbcba43265
+  goal: 83a48aba0c3406e57efd23a8a1cff811d64e620171adc386efbaba6a4cf5bf11
+  scope: bb60aabd59c7a9c9f80fdff3de3f68584f1f303aaf1d5cc8d5df6067eebb3806
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: ca358c893d5d79ebdcde932c172656e41649aa822bd4968128fe42b853284a9c
+  implementation_path: 086c092edf7328986deb38ddba2459ad761ce7ee9b93a1d9e125568eb16d7d1f
+  validation: 15b73439207169717e79f2fa77ab6e2cbd694cf0511411176a7e44ea5eefb272
+  done_when: b99392c192183567fc9462055990d03b19a3bf362c9f4ed598d80c0fae5e436f
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+semantic_tags:
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-16T21:32:42Z'
+  authority: generated
+  via: create_document

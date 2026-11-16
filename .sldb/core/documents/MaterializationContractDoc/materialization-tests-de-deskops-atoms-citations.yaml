@@ -1,0 +1,26 @@
+name: materialization-tests-de-deskops-atoms-citations
+path: desk/materializations/materialization-tests-de-deskops-atoms-citations.md
+source_hash: 534d557ffcf5c096b3ffed28f03ec59de712b4df0a04378c08feee4537a57041
+content_hash: 88ade8a786a5bcc728c4cba07cc9e2ce69afde2392d3ec665314f9e71f6eb3f5
+field_hashes:
+  id: af490b9267be667030d75464d81459eeffbc15d68af4f1f065a0d14ffe11b2d7
+  title: 197815e41cc9974d9cdb450c36ab180a79b61b0ac8714e2073e62b902b9853df
+  source_atoms: 7a84eb26aaf4103bfc5f9c7f919faad761dbbbc23402f61ef586fafeb724803e
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: da62560ba01afec0197fe9ad065a247a4434ffb7d680e08095cadf5a72e72c1b
+  intent: ab974cbf13d3b3434ff347b262a67b14403a21e6925eb7527d0a38ce17322ae6
+  validation: 3ce60dec8f966aa53d369c796e76604c685fd6e157dfdd8334f298cbda905e4f
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: fccca56c109eb848b388de63abbc826db44c6e5da3dd07e8f17b8d5fc468a235
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T22:30:30Z'
+  authority: generated
+  via: create_document

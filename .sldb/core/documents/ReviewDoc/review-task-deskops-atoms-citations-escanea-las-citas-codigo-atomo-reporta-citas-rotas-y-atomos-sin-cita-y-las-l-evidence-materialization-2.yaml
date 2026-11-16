@@ -1,0 +1,36 @@
+name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-evidence-materialization-2
+path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/evidence-materialization-2.md
+source_hash: ad87ea1e339231706ee895441ab7ecb6f8783e6fdf6e28c6834a9c71d0c602ae
+content_hash: dfab1abf6ba94ab1dd926040c0200a742aafaa9f385f486a2da19f300de181e7
+field_hashes:
+  id: 738f52b46a370161535d9e029d5d2858b82ac528f611f199758f52b4d9400713
+  title: 96547632342a1499e7b52c6571bf8bd9046bdb89a51fc1a624d8b1c85d1c8932
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 22b221828844c42f5db37c461972b78e40e6a8ab5b995296eb7fca1f176c6102
+  subject: eac039a62c1697c93813a74d4ba408fa51be86128aa969c400b03dba65da83a8
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 738033fda0621115cdf4eb2275222091ff8cbc26f5bf2b55cca0f760d0cb291b
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: dbde699f3283a6d5383afa1734522a2278190ae4b95a62007eb76465a73d900b
+  created_at: bebbd54c257bd1c4bbc382911bbd612cc544b98ec80ea6b101b24e7c55739f30
+  disposed_at: bebbd54c257bd1c4bbc382911bbd612cc544b98ec80ea6b101b24e7c55739f30
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: fcb962af80cf9996322ff2f9aeeeadfd8dd1faefe37197149f472563ab6de111
+  disposition: 29483b921ecc26fc7d2d2088ab4dfda4b37aff068a346454c8bd153530e302af
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T22:30:36Z'
+  authority: generated
+  via: create_document

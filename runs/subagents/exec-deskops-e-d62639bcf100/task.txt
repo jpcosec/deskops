@@ -1,0 +1,11 @@
+Task: task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l
+Title: deskops atoms citations escanea las citas codigo->atomo, reporta citas rotas y atomos sin cita, y las lleva al grafo
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+From drawer: desk/drawer/tasks/task-chatbot-infra-indexar-las-citas-c-digo-atom-de-los-docstrings-en-el-grafo-y-huecos-de-atoms-vistos-en-la-auditor-a.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
