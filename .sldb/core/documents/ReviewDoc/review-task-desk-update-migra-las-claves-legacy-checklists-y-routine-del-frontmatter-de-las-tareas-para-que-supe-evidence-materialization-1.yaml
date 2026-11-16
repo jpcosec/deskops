@@ -1,0 +1,36 @@
+name: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-evidence-materialization-1
+path: desk/reviews/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/evidence-materialization-1.md
+source_hash: fdc198520a5994b589fa3afdd0e31477ee6186930a2f217e548a488527397b95
+content_hash: 217cf419ca57a337cd5268c1c21a45ad403273e8c3007c10752075baaf8477c0
+field_hashes:
+  id: 6e22a8de8878f0e7deea9b204622e97450ad72bab5089e5da8a620f901d70a74
+  title: b958a0634f86eaaaa7a5cd08d121abf6cb1f18556d74e3fa919cf5a91322b4da
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 67e3e1ab33a1e1453095804c463ae1f350dc56072f96a4af5d58de0f706d53da
+  subject: 932db771b86d5a317e1d8911b90f11f41ee62d0faf1e2a89e4a351c1c7698e81
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: b43a478eb88d4adb4479f879d0572e1579ad8576fa93359dcc8e85bdacf6ea99
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 60d6089a2f250c430e3a32efa4d5534eab29af2da56b3dfb4f1ff46d1487e103
+  created_at: 3ee607fce69221a44bde6c379d3bac18e7c3d9acc170bd4aa1d2eee3beb2ce24
+  disposed_at: 3ee607fce69221a44bde6c379d3bac18e7c3d9acc170bd4aa1d2eee3beb2ce24
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 360264b329891e54aff62c870c9f5c791415cfbf4e4084ea3d972189fa906100
+  disposition: e8b8b423503b1cfe621a4ba3747fbb66106cd4b107a0ead6e4966bf0922b8255
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T20:39:38Z'
+  authority: generated
+  via: create_document

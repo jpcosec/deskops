@@ -1,0 +1,14 @@
+$ (HEAD copy /dev/shm) pytest -q tests/test_desk_sync.py::test_desk_update_apply_migrates_the_legacy_faq_model tests/test_desk_sync.py::test_desk_update_apply_resigns_a_moved_model_contract
+2 passed, 1 warning in 98.66s (0:01:38)
+rc=0
+$ (HEAD copy /dev/shm) pytest -q tests/test_doctor_absolute_paths.py::test_a_path_that_exists_under_a_neighbour_becomes_a_relative_registry_path
+1 passed, 1 warning in 41.39s
+rc=0
+$ (HEAD copy /dev/shm) pytest -q tests/test_review_command.py::test_preflight_writes_attempt_evidence_and_receipt
+E       AssertionError: assert 'doc:TaskCode...340edb511bc95' == 'doc:TaskCodeDoc:task-x'
+E         
+E         - doc:TaskCodeDoc:task-x
+E         + doc:TaskCodeDoc:task-x@sha256:afead0ecb39e8b41aebb216bbd682d53fc2809a113ec9b5de44340edb511bc95
+tests/test_review_command.py:165: AssertionError
+1 failed, 1 warning in 20.75s
+rc=1

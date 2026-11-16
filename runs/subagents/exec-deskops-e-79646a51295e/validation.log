@@ -1,0 +1,26 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_legacy_task_states.py
+..................................................                       [100%]
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+
+tests/test_legacy_task_states.py::test_retire_closes_two_invalid_tasks_one_after_the_other[warm]
+
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli.py
+........................................................................ [ 70%]
+..............................                                           [100%]
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+
+tests/test_cli.py::test_show_list_and_advance_task_uses_operational_runtime
+
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_doc.py
+.........x..........                                                     [100%]
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && flock /dev/shm/sldb1-tests.lock env TMPDIR=/dev/shm ../.venv/bin/python -m pytest -n 4 -q tests
+(cancelado con kill del pid 2421449 mientras esperaba el lock, por orden del coordinador wA:p1: la suite completa la corre el integrador en una copia limpia)
+rc=143 (no ejecutado)

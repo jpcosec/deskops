@@ -1,0 +1,226 @@
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_legacy_task_states.py
+..................................................                       [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_legacy_task_states.py::test_retire_closes_two_invalid_tasks_one_after_the_other[warm]
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+50 passed, 2 warnings in 273.87s (0:04:33)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli.py
+........................................................................ [ 70%]
+..............................                                           [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_cli.py::test_show_list_and_advance_task_uses_operational_runtime
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+102 passed, 2 warnings in 1365.58s (0:22:45)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_doc.py
+.........x..........                                                     [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 1 xfailed, 1 warning in 130.01s (0:02:10)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_task_types.py
+................                                                         [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+16 passed, 1 warning in 160.83s (0:02:40)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_desk_sync.py
+Unexpected error: ScannerError: while scanning a simple key
+  in "<unicode string>", line 475, column 1
+could not find expected ':'
+  in "<unicode string>", line 476, column 1 (rerun with --debug for the traceback)
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_desk_sync.py::test_desk_update_apply_migrates_the_legacy_faq_model
+FAILED tests/test_desk_sync.py::test_desk_update_apply_resigns_a_moved_model_contract
+2 failed, 6 passed, 1 warning in 104.11s (0:01:44)
+rc=1
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_activation_rules.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_activation_rules.py::test_desk_subtype_inherits_the_rules_and_a_desk_rule_adds_a_clause
+ERROR tests/test_activation_rules.py::test_one_rule_per_factory_type_is_seeded_and_tracked
+ERROR tests/test_activation_rules.py::test_desk_update_apply_changes_nothing_on_a_seeded_desk_and_rules_check_passes
+ERROR tests/test_activation_rules.py::test_g_consumer_activation_gate_in_three_steps
+ERROR tests/test_activation_rules.py::test_task_debug_requires_reproduction_and_not_bundle
+ERROR tests/test_activation_rules.py::test_task_refactor_inherits_task_code_and_adds_goldens
+ERROR tests/test_activation_rules.py::test_open_dependency_blocks_activation_and_the_finding_names_it
+ERROR tests/test_activation_rules.py::test_task_aggregate_needs_only_its_dependencies_closed
+ERROR tests/test_activation_rules.py::test_show_and_next_print_the_findings_of_the_blocked_gate
+1 failed, 1 passed, 1 warning, 8 errors in 7.37s
+rc=1
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_doctor_absolute_paths.py
+----------------------------- Captured stderr call -----------------------------
+Unexpected error: ScannerError: while scanning a simple key
+  in "<unicode string>", line 475, column 1
+could not find expected ':'
+  in "<unicode string>", line 476, column 1 (rerun with --debug for the traceback)
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_doctor_absolute_paths.py::test_a_path_that_exists_under_a_neighbour_becomes_a_relative_registry_path
+1 failed, 12 passed, 1 warning in 139.11s (0:02:19)
+rc=1
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_command_registry.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 1.51s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_domain_tree.py
+.........                                                                [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+9 passed, 1 warning in 299.36s (0:04:59)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_lifecycle_graph.py
+.........                                                                [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+9 passed, 1 warning in 52.52s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_federated_models.py
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 33.04s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_command.py
+E         
+E         - doc:TaskCodeDoc:task-x
+E         + doc:TaskCodeDoc:task-x@sha256:afead0ecb39e8b41aebb216bbd682d53fc2809a113ec9b5de44340edb511bc95
+
+tests/test_review_command.py:165: AssertionError
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_review_command.py::test_preflight_writes_attempt_evidence_and_receipt
+1 failed, 20 passed, 1 warning in 224.81s (0:03:44)
+rc=1
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_doc_readability.py
+......                                                                   [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 1 warning in 81.22s (0:01:21)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_task_lifecycle_validator.py
+......................................                                   [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+38 passed, 1 warning in 78.22s (0:01:18)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_lifecycle_seed_drift.py
+........                                                                 [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+8 passed, 1 warning in 48.05s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_scaffold_golden.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 70.01s (0:01:10)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_packaging.py
+......                                                                   [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 1 warning in 15.88s
+rc=0
+$ (re-run) TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_activation_rules.py
+
+rc=0
+$ (re-run checkout) pytest -q tests/test_desk_sync.py::test_desk_update_apply_migrates_the_legacy_faq_model tests/test_desk_sync.py::test_desk_update_apply_resigns_a_moved_model_contract tests/test_doctor_absolute_paths.py::test_a_path_that_exists_under_a_neighbour_becomes_a_relative_registry_path
+3 passed, 1 warning in 78.30s (0:01:18)
+rc=0

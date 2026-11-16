@@ -1,0 +1,26 @@
+name: materialization-tests-de-la-migracion-de-estados-y-claves-legacy-de-taskdoc
+path: desk/materializations/materialization-tests-de-la-migracion-de-estados-y-claves-legacy-de-taskdoc.md
+source_hash: 222ee54af447452bd41860b3b75b903380708a908ec08a3bc1d9baddda8ed654
+content_hash: 6c19b7cfc1a28bbc9e3ae95b554f327c61beec0d70853262bbfa264bd5fe9c82
+field_hashes:
+  id: 7e76369a357002f4531063fe013b30d7a7928dd88e190aa51ee91dcae62eaf07
+  title: 61d51840e7a76c3d6bdb1a1fcee2c97fe8b7763c395becc8e9182c70aa6b08b6
+  source_atoms: 17e0b23d3b116626a00ac503870f2a18598526257828af0d0dfb49fcb42337a7
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 0b72eab065da0c460b23fe606b24d67af9ede6863fed2fc62b73a1e87c6f2ff6
+  intent: f7a9adc5a71ffc78114e8834765b34fbae75563960ad8019076ff1a8f36b9a37
+  validation: f04174432040c733eb045d5c1ea3ba88c7ca4036b175031118769b60b6505448
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 7de7ef3a1572aa064bbf02b91e861d440d1ce9e7cd880254f16f7684809b3098
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T20:39:55Z'
+  authority: generated
+  via: create_document

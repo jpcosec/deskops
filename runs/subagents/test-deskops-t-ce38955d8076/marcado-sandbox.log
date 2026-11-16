@@ -1,0 +1,69 @@
+$ deskops edit task task-close-the-runtime-pipeline-baseline summary x (antes de --apply)
+Error: No artifact.task file found for selector 'task-close-the-runtime-pipeline-baseline'. Accepted forms: an exact id, a file name, a stem, a unique fragment, or a desk/... path.
+rc=1
+$ deskops desk update --root $S  (dry-run)
+Desk divergence report:
+- Pending task type migration: 3 task(s)
+- Legacy task frontmatter keys to remove: 6 key(s)
+  - desk/tasks/task-close-the-runtime-pipeline-baseline.md: legacy frontmatter key checklists
+  - desk/tasks/task-close-the-runtime-pipeline-baseline.md: legacy frontmatter key routine
+  - desk/tasks/task-close-the-source-and-marker-model-baseline.md: legacy frontmatter key checklists
+  - desk/tasks/task-close-the-source-and-marker-model-baseline.md: legacy frontmatter key routine
+  - desk/tasks/task-design-the-runtime-architecture-and-extension-model.md: legacy frontmatter key checklists
+  - desk/tasks/task-design-the-runtime-architecture-and-extension-model.md: legacy frontmatter key routine
+
+Run with --apply to repair these issues.
+rc=1
+006b4726edcf5d2a853d5db3e922d561  /dev/shm/tester-ce38-marcado/desk/tasks/task-design-the-runtime-architecture-and-extension-model.md
+006b4726edcf5d2a853d5db3e922d561  /dev/shm/tester-ce38-marcado/orig/task-design-the-runtime-architecture-and-extension-model.md
+1a04393181d6bdcf8a4a29bb808905e1  /dev/shm/tester-ce38-marcado/desk/tasks/task-close-the-runtime-pipeline-baseline.md
+1a04393181d6bdcf8a4a29bb808905e1  /dev/shm/tester-ce38-marcado/orig/task-close-the-runtime-pipeline-baseline.md
+7a53cf0eeff4148da7a52284fd10b292  /dev/shm/tester-ce38-marcado/desk/tasks/task-close-the-source-and-marker-model-baseline.md
+7a53cf0eeff4148da7a52284fd10b292  /dev/shm/tester-ce38-marcado/orig/task-close-the-source-and-marker-model-baseline.md
+$ deskops desk update --root $S --apply
+Removing legacy task frontmatter keys...
+- desk/tasks/task-close-the-runtime-pipeline-baseline.md: removed checklists = ["checklist-task-close-the-runtime-pipeline-baseline-execution-ready","checklist-task-close-the-runtime-pipeline-baseline-testing-ready","checklist-task-close-the-runtime-pipeline-baseline-closeout-ready"]
+- desk/tasks/task-close-the-runtime-pipeline-baseline.md: removed routine = "routine-task-close-the-runtime-pipeline-baseline"
+- desk/tasks/task-close-the-source-and-marker-model-baseline.md: removed checklists = ["checklist-task-close-the-source-and-marker-model-baseline-execution-ready","checklist-task-close-the-source-and-marker-model-baseline-testing-ready","checklist-task-close-the-source-and-marker-model-baseline-closeout-ready"]
+- desk/tasks/task-close-the-source-and-marker-model-baseline.md: removed routine = "routine-task-close-the-source-and-marker-model-baseline"
+- desk/tasks/task-design-the-runtime-architecture-and-extension-model.md: removed checklists = ["checklist-task-design-the-runtime-architecture-and-extension-model-execution-ready","checklist-task-design-the-runtime-architecture-and-extension-model-testing-ready","checklist-task-design-the-runtime-architecture-and-extension-model-closeout-ready"]
+- desk/tasks/task-design-the-runtime-architecture-and-extension-model.md: removed routine = "routine-task-design-the-runtime-architecture-and-extension-model"
+Desk divergence report:
+- Pending task type migration: 3 task(s)
+
+Applying repairs...
+- migrated desk/tasks/task-close-the-runtime-pipeline-baseline.md: task_type 'task.code' -> 'task.code' (tracked as TaskCodeDoc)
+- migrated desk/tasks/task-close-the-source-and-marker-model-baseline.md: task_type 'task.code' -> 'task.code' (tracked as TaskCodeDoc)
+- migrated desk/tasks/task-design-the-runtime-architecture-and-extension-model.md: task_type 'task.code' -> 'task.code' (tracked as TaskCodeDoc)
+rc=0
+$ diff orig/task-close-the-runtime-pipeline-baseline.md desk/tasks/
+21,25d20
+< routine: routine-task-close-the-runtime-pipeline-baseline
+< checklists:
+< - checklist-task-close-the-runtime-pipeline-baseline-execution-ready
+< - checklist-task-close-the-runtime-pipeline-baseline-testing-ready
+< - checklist-task-close-the-runtime-pipeline-baseline-closeout-ready
+$ diff orig/task-close-the-source-and-marker-model-baseline.md desk/tasks/
+21,25d20
+< routine: routine-task-close-the-source-and-marker-model-baseline
+< checklists:
+< - checklist-task-close-the-source-and-marker-model-baseline-execution-ready
+< - checklist-task-close-the-source-and-marker-model-baseline-testing-ready
+< - checklist-task-close-the-source-and-marker-model-baseline-closeout-ready
+$ diff orig/task-design-the-runtime-architecture-and-extension-model.md desk/tasks/
+25,29d24
+< routine: routine-task-design-the-runtime-architecture-and-extension-model
+< checklists:
+< - checklist-task-design-the-runtime-architecture-and-extension-model-execution-ready
+< - checklist-task-design-the-runtime-architecture-and-extension-model-testing-ready
+< - checklist-task-design-the-runtime-architecture-and-extension-model-closeout-ready
+$ deskops desk update --root $S (post)
+Desk is up to date.
+rc=0
+$ deskops desk update --root $S --apply (2a vez)
+Desk is up to date.
+rc=0
+$ deskops edit task task-close-the-runtime-pipeline-baseline summary x (tras --apply)
+Updated task task-close-the-runtime-pipeline-baseline field summary
+Path: /dev/shm/tester-ce38-marcado/desk/tasks/task-close-the-runtime-pipeline-baseline.md
+rc=0
