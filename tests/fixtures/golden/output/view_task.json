@@ -51,15 +51,12 @@
           "state": "pending"
         },
         {
-          "evidence": [],
-          "findings": [
-            {
-              "code": "missing_atom_or_materialization_link",
-              "message": "No atom reference or changed-file materialization coverage found."
-            }
+          "evidence": [
+            "atom-atom-for-the-view"
           ],
+          "findings": [],
           "gate": "atom_or_materialization_link",
-          "state": "pending"
+          "state": "holds"
         },
         {
           "evidence": [],
@@ -73,10 +70,12 @@
           "state": "pending"
         }
       ],
-      "found": [],
+      "found": [
+        "atom|materialization"
+      ],
       "implicit_code": false,
       "ok": false,
-      "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 nada"
+      "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 atom|materialization"
     },
     "current_node": "ritual-execution",
     "depends_on": [],

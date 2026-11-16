@@ -117,6 +117,15 @@ class CloseoutGatesService:
                 evidence["follow_up"].append(ref)
             if self.reference_points_to_url(ref):
                 evidence["external"].append(ref)
+        # The task's typed `atoms` field (AtomDoc ids) is atom evidence like an atom
+        # reference: every value counts, with no prefix filter.
+        atoms = payload.get("atoms") or []
+        if not isinstance(atoms, list):
+            atoms = [atoms]
+        for atom in atoms:
+            atom_id = str(atom).strip()
+            if atom_id and atom_id not in evidence["atom"]:
+                evidence["atom"].append(atom_id)
         for candidate in [*references, *files]:
             ref = str(candidate).strip()
             if ref and self.reference_points_to_document(ref) and ref not in evidence["document"]:
