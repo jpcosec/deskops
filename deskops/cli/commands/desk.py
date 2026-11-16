@@ -17,6 +17,8 @@ from deskops.workspace import ensure_target_directory
 from deskops.workspace import inspect_desk
 from deskops.workspace import legacy_task_states
 from deskops.workspace import migrate_legacy_task_states
+from deskops.workspace import legacy_frontmatter_keys
+from deskops.workspace import migrate_legacy_frontmatter_keys
 from deskops.doctor_findings import invalid_document_findings
 from deskops.workspace import migrate_desk
 from deskops.workspace import migrate_task_types
@@ -216,9 +218,19 @@ class DeskCLI:
                     print(f"- {line}")
             legacy_pending: list = []
             invalid_tasks += legacy_task_states(root)[1]
+            # Frontmatter keys TaskDoc does not declare (checklists, routine): every model write
+            # refuses to erase them, so --apply removes them and prints each previous value.
+            removed_lines, unremoved = migrate_legacy_frontmatter_keys(root)
+            if removed_lines:
+                print("Removing legacy task frontmatter keys...")
+                for line in removed_lines:
+                    print(f"- {line}")
+            invalid_tasks += unremoved
             invalid_tasks.sort(key=lambda state: state.rel)
+            legacy_keys_pending: list = []
         else:
             legacy_pending, invalid_tasks = legacy_task_states(root) if desk_dir.exists() else ([], [])
+            legacy_keys_pending = legacy_frontmatter_keys(root) if desk_dir.exists() else []
 
         missing_desk_files: list[str] = []
         if inspection.classification == "absent":
@@ -375,7 +387,7 @@ class DeskCLI:
         # below as a legacy state to migrate or as an invalid task document.
         pending_migration = [line for line in pending_migration if not line.startswith("inconsistent ")]
 
-        if not lifecycle_rewrites and not legacy_faq_pending and not missing_store and not missing_desk_files and not unregistered_models and not copied_models and not untracked_docs and not invalid_docs and not store_invalid_docs and not moved_contracts and not pending_local_types and not pending_migration and not legacy_pending and not invalid_tasks and not tag_declaration_pending:
+        if not lifecycle_rewrites and not legacy_faq_pending and not missing_store and not missing_desk_files and not unregistered_models and not copied_models and not untracked_docs and not invalid_docs and not store_invalid_docs and not moved_contracts and not pending_local_types and not pending_migration and not legacy_pending and not legacy_keys_pending and not invalid_tasks and not tag_declaration_pending:
             print("Desk is up to date.")
             return 0
 
@@ -415,6 +427,10 @@ class DeskCLI:
             for state in legacy_pending:
                 for line in state.migration_lines():
                     print(f"  - {line}")
+        if legacy_keys_pending:
+            print(f"- Legacy task frontmatter keys to remove: {len(legacy_keys_pending)} key(s)")
+            for item in legacy_keys_pending:
+                print(f"  - {item.pending_line()}")
         if invalid_tasks:
             print(f"- Invalid task documents (not written): {len(invalid_tasks)} task(s)")
             for state in invalid_tasks:

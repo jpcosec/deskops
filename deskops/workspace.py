@@ -629,7 +629,10 @@ def _task_type_migration_plan(root: Path) -> list[dict]:
     for path in sorted(tasks_dir.glob("*.md")):
         if path.name == "Board.md" or path.name.startswith("board-"):
             continue
-        raw = _frontmatter_task_type(path)
+        try:
+            raw = _frontmatter_task_type(path)
+        except (yaml.YAMLError, UnicodeDecodeError):
+            continue  # legacy_task_states reports it as an invalid task; nothing here writes it
         canonical = raw if raw in registry else canonical_task_type_name(raw)
         target = registry.get(canonical) or fallback
         plan.append(
@@ -937,4 +940,108 @@ def migrate_legacy_task_states(root: Path) -> tuple[list[str], list[LegacyTaskSt
             failed.append(LegacyTaskState(state.path, state.rel, state.task_id, [f"not migrated, the result is still invalid: {'; '.join(errors)}"]))
             continue
         lines.extend(state.migration_lines())
+    return lines, failed
+
+
+# Frontmatter keys of tasks written before the TaskDoc migration that TaskDoc does not declare:
+# the model ignores them on read, but every model write (``write_doc``) refuses to erase them.
+# The list is closed; any other undeclared key keeps that refusal.
+LEGACY_FRONTMATTER_KEYS = ("checklists", "routine")
+
+
+@dataclass(frozen=True)
+class LegacyFrontmatterKey:
+    """One legacy key in the frontmatter of a task under ``desk/tasks``."""
+
+    path: Path
+    rel: str
+    key: str
+    value: Any
+
+    def pending_line(self) -> str:
+        return f"{self.rel}: legacy frontmatter key {self.key}"
+
+    def removed_line(self) -> str:
+        previous = json.dumps(self.value, ensure_ascii=False, default=str, separators=(",", ":"))
+        return f"{self.rel}: removed {self.key} = {previous}"
+
+
+def legacy_frontmatter_keys(root: Path) -> list[LegacyFrontmatterKey]:
+    """The legacy keys of each task's frontmatter, in path order and, within a file, in the
+    order of ``LEGACY_FRONTMATTER_KEYS``. A task whose frontmatter cannot be read is skipped:
+    ``legacy_task_states`` already reports it as an invalid task."""
+    found: list[LegacyFrontmatterKey] = []
+    for path in _task_files(root):
+        try:
+            parsed = _task_frontmatter(path)
+        except (yaml.YAMLError, UnicodeDecodeError):
+            continue
+        if parsed is None:
+            continue
+        data = parsed[0]
+        rel = path.relative_to(root).as_posix()
+        found.extend(LegacyFrontmatterKey(path, rel, key, data[key]) for key in LEGACY_FRONTMATTER_KEYS if key in data)
+    return found
+
+
+def _without_top_level_keys(frontmatter: str, keys: set[str]) -> str:
+    """The frontmatter text without the blocks of ``keys``: each one's ``key:`` line plus the
+    lines under it (indented, ``- `` items, and blank lines inside an indented block). Every
+    other line keeps its text and order."""
+    lines = frontmatter.split("\n")
+    kept: list[str] = []
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if not any(line.startswith(f"{key}:") for key in keys):
+            kept.append(line)
+            index += 1
+            continue
+        index += 1
+        while index < len(lines):
+            current = lines[index]
+            if current[:1] in (" ", "-"):
+                index += 1
+                continue
+            if current == "":
+                following = next((rest for rest in lines[index:] if rest != ""), "")
+                if following[:1] in (" ", "-"):
+                    index += 1
+                    continue
+            break
+    return "\n".join(kept)
+
+
+def migrate_legacy_frontmatter_keys(root: Path) -> tuple[list[str], list[LegacyTaskState]]:
+    """Remove the legacy keys from each task's frontmatter; ``(lines, not migrated)``.
+
+    The edit is textual: only the keys' blocks go, the rest of the file is kept byte for byte.
+    A file is written only when its frontmatter, read back, is the previous one without exactly
+    those keys; otherwise it is left as it was and reported. Idempotent.
+    """
+    by_path: dict[Path, list[LegacyFrontmatterKey]] = {}
+    for item in legacy_frontmatter_keys(root):
+        by_path.setdefault(item.path, []).append(item)
+    lines: list[str] = []
+    failed: list[LegacyTaskState] = []
+    for path, items in by_path.items():
+        rel = items[0].rel
+        text = path.read_text(encoding="utf-8")
+        match = _FRONTMATTER_RE.match(text)
+        keys = {item.key for item in items}
+        before = (yaml.safe_load(match.group(1)) or {}) if match else None
+        new_frontmatter = _without_top_level_keys(match.group(1), keys) if match else ""
+        try:
+            after = yaml.safe_load(new_frontmatter) or {}
+        except yaml.YAMLError:
+            after = None
+        expected = {k: v for k, v in before.items() if k not in keys} if isinstance(before, dict) else None
+        if expected is None or after != expected:
+            task_id = str(before.get("id") or path.stem) if isinstance(before, dict) else path.stem
+            failed.append(
+                LegacyTaskState(path, rel, task_id, [f"legacy frontmatter keys not removed ({', '.join(sorted(keys))}): the textual edit would change other fields"])
+            )
+            continue
+        path.write_text("---\n" + new_frontmatter + "\n---\n" + text[match.end():], encoding="utf-8")
+        lines.extend(item.removed_line() for item in items)
     return lines, failed

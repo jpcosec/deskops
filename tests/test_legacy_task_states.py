@@ -614,3 +614,143 @@ def test_resolved_by_closes_two_invalid_tasks_one_after_the_other(lifecycle_desk
     assert _resolved_by(root, second, head) == 0, capsys.readouterr().out
     assert not (root / "desk" / "tasks" / f"{second}.md").exists()
     assert _sldb_check(root) == 0
+
+
+# ------------------------------------------------------------------ legacy frontmatter keys (checklists, routine)
+#: The shape of marcado's pre-migration tasks (note 20261116-103216): routine, then checklists.
+def _legacy_keys_block(task_id: str) -> str:
+    return (
+        f"routine: routine-{task_id}\n"
+        "checklists:\n"
+        f"- checklist-{task_id}-execution-ready\n"
+        f"- checklist-{task_id}-closeout-ready\n"
+    )
+
+
+def _with_frontmatter_lines(path: Path, block: str) -> str:
+    """Insert ``block`` before ``current_node:``, as marcado's tasks carry it; the new text."""
+    text = path.read_text(encoding="utf-8")
+    assert text.count("current_node: ritual-execution\n") == 1
+    text = text.replace("current_node: ritual-execution\n", block + "current_node: ritual-execution\n")
+    path.write_text(text, encoding="utf-8")
+    return text
+
+
+@pytest.fixture
+def legacy_keys_desk(lifecycle_desk: Path) -> tuple[Path, dict[str, Path]]:
+    """Three coherent drafts: two with marcado's legacy keys (one also with an undeclared key
+    outside the closed list) and one untouched."""
+    root = lifecycle_desk
+    rows = [(title, "draft", "ritual-execution", []) for title in ("Pipeline base heredada", "Mixta heredada", "Sin claves heredadas")]
+    paths = {Path(rel).stem: path for rel, path in _make_tasks(root, rows).items()}
+    _with_frontmatter_lines(paths["task-pipeline-base-heredada"], _legacy_keys_block("task-pipeline-base-heredada"))
+    _with_frontmatter_lines(paths["task-mixta-heredada"], "owner: alguien\n" + _legacy_keys_block("task-mixta-heredada"))
+    return root, paths
+
+
+LEGACY_KEY_LINES = [
+    "desk/tasks/task-mixta-heredada.md: legacy frontmatter key checklists",
+    "desk/tasks/task-mixta-heredada.md: legacy frontmatter key routine",
+    "desk/tasks/task-pipeline-base-heredada.md: legacy frontmatter key checklists",
+    "desk/tasks/task-pipeline-base-heredada.md: legacy frontmatter key routine",
+]
+REMOVED_KEY_LINES = [
+    'desk/tasks/task-mixta-heredada.md: removed checklists = ["checklist-task-mixta-heredada-execution-ready","checklist-task-mixta-heredada-closeout-ready"]',
+    'desk/tasks/task-mixta-heredada.md: removed routine = "routine-task-mixta-heredada"',
+    'desk/tasks/task-pipeline-base-heredada.md: removed checklists = ["checklist-task-pipeline-base-heredada-execution-ready","checklist-task-pipeline-base-heredada-closeout-ready"]',
+    'desk/tasks/task-pipeline-base-heredada.md: removed routine = "routine-task-pipeline-base-heredada"',
+]
+
+
+def test_desk_update_dry_run_lists_each_legacy_frontmatter_key_and_writes_nothing(legacy_keys_desk, capsys) -> None:
+    root, paths = legacy_keys_desk
+    before = {name: path.read_text(encoding="utf-8") for name, path in paths.items()}
+    capsys.readouterr()
+
+    assert main(["desk", "update", "--root", str(root)]) == 1
+    out = capsys.readouterr().out
+    assert "Desk is up to date." not in out
+    block = "- Legacy task frontmatter keys to remove: 4 key(s)\n" + "".join(f"  - {line}\n" for line in LEGACY_KEY_LINES)
+    assert block in out
+    assert "owner" not in out  # the list of keys is closed
+    assert {name: path.read_text(encoding="utf-8") for name, path in paths.items()} == before
+
+
+def test_desk_update_apply_removes_only_the_legacy_keys_and_prints_their_previous_values(legacy_keys_desk, capsys) -> None:
+    root, paths = legacy_keys_desk
+    before = {name: path.read_text(encoding="utf-8") for name, path in paths.items()}
+    capsys.readouterr()
+
+    assert main(["desk", "update", "--root", str(root), "--apply"]) == 0
+    out = capsys.readouterr().out
+    assert out.startswith("Removing legacy task frontmatter keys...\n" + "".join(f"- {line}\n" for line in REMOVED_KEY_LINES))
+    after = {name: path.read_text(encoding="utf-8") for name, path in paths.items()}
+    assert after["task-sin-claves-heredadas"] == before["task-sin-claves-heredadas"]
+    for name in ("task-pipeline-base-heredada", "task-mixta-heredada"):
+        # Only the keys' lines go: the rest of the frontmatter and the body keep their text.
+        removed = _legacy_keys_block(name).splitlines(keepends=True)
+        assert after[name] == before[name].replace("".join(removed), "")
+        assert "checklists" not in after[name] and "routine" not in after[name]
+        extract_model_data(TaskDoc, after[name])
+    assert "owner: alguien\n" in after["task-mixta-heredada"]
+
+    assert main(["desk", "update", "--root", str(root)]) == 0
+    assert "Desk is up to date." in capsys.readouterr().out
+    assert main(["desk", "update", "--root", str(root), "--apply"]) == 0
+    assert "Removing legacy task frontmatter keys" not in capsys.readouterr().out
+    assert {name: path.read_text(encoding="utf-8") for name, path in paths.items()} == after
+
+
+def test_supersede_rewrites_a_task_once_desk_update_removed_its_legacy_keys(legacy_keys_desk, capsys) -> None:
+    """marcado's reproduction: supersede refuses the task while it carries checklists and
+    routine; after desk update --apply it closes it. A task with another undeclared key keeps
+    the refusal for that key."""
+    root, paths = legacy_keys_desk
+    _git(root, "add", "-A")
+    _git(root, "commit", "-q", "-m", "legacy keys")
+    head = _git(root, "rev-parse", "HEAD")
+
+    def supersede(task_id: str) -> tuple[int, str]:
+        capsys.readouterr()
+        rc = main(["closeout", "supersede", "--root", str(root), "--task", task_id, "--reason", "replaced", "--ref", head])
+        out = capsys.readouterr()
+        return rc, out.out + out.err
+
+    rc, out = supersede("task-pipeline-base-heredada")
+    assert rc != 0
+    assert "frontmatter key 'checklists'; frontmatter key 'routine'" in out
+
+    assert main(["desk", "update", "--root", str(root), "--apply"]) == 0, capsys.readouterr().out
+    _git(root, "add", "-A")
+    _git(root, "commit", "-q", "-m", "removed legacy keys")
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc, out = supersede("task-pipeline-base-heredada")
+    assert rc == 0, out
+    assert "does not declare" not in out
+    assert not paths["task-pipeline-base-heredada"].exists()
+    assert "Closeout-Mode: superseded" in _git(root, "log", "-1", "--format=%B")
+
+    rc, out = supersede("task-mixta-heredada")
+    assert rc != 0
+    assert "frontmatter key 'owner'" in out
+    assert "'checklists'" not in out and "'routine'" not in out
+
+
+def test_desk_update_does_not_touch_a_task_with_unreadable_frontmatter_and_removes_the_others(legacy_keys_desk, capsys) -> None:
+    root, paths = legacy_keys_desk
+    broken = root / "desk" / "tasks" / "task-aaa-rota.md"
+    broken_text = "---\nid: task-aaa-rota\nroutine: [sin cerrar\nchecklists:\n- x\n---\n\n# Rota\n"
+    broken.write_text(broken_text, encoding="utf-8")
+    capsys.readouterr()
+
+    assert main(["desk", "update", "--root", str(root)]) == 1
+    out = capsys.readouterr().out
+    assert "task-aaa-rota.md: legacy frontmatter key" not in out
+    assert "- desk/tasks/task-aaa-rota.md: unreadable frontmatter" in out.replace("  - ", "- ")
+
+    assert main(["desk", "update", "--root", str(root), "--apply"]) == 1
+    out = capsys.readouterr().out
+    assert out.startswith("Removing legacy task frontmatter keys...\n" + "".join(f"- {line}\n" for line in REMOVED_KEY_LINES))
+    assert broken.read_text(encoding="utf-8") == broken_text
+    assert "routine" not in paths["task-pipeline-base-heredada"].read_text(encoding="utf-8")
