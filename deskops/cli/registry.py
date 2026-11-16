@@ -50,6 +50,15 @@ in the deskops repository.
 
 SELECTOR_HELP = "Selectors accept an exact id, filename, stem, or unique slug fragment where supported."
 
+EDIT_TASK_EPILOG = """
+Examples:
+  deskops edit task task-fix-thing goal "Updated goal" --root .
+  deskops edit task desk/drawer/tasks/<item>.md scope "Updated scope" --root .
+
+A task selector may also be a desk/... path, relative to the repository root or absolute;
+it names the task or drawer item whose file stem it ends in.
+""".strip()
+
 
 @dataclass(frozen=True, slots=True)
 class Arg:
@@ -239,6 +248,8 @@ def _edit_subject_commands() -> list[Command]:
             ),
             handler="deskops.cli.commands.operations:OperationsCLI",
             mutates=True,
+            epilog=EDIT_TASK_EPILOG if subject == "task" else None,
+            raw_text=subject == "task",
         )
         for subject in subjects
     ]

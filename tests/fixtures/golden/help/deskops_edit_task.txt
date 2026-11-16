@@ -12,3 +12,10 @@ positional arguments:
 options:
   -h, --help   show this help message and exit
   --root ROOT  Target repository root.
+
+Examples:
+  deskops edit task task-fix-thing goal "Updated goal" --root .
+  deskops edit task desk/drawer/tasks/<item>.md scope "Updated scope" --root .
+
+A task selector may also be a desk/... path, relative to the repository root or absolute;
+it names the task or drawer item whose file stem it ends in.

@@ -53,7 +53,9 @@ from deskops.atom_tags import load_namespaces
 from deskops.atom_tags import refuse_unplaced_tags
 from deskops.config import DeskConfig
 # CC35b-a3: untracked surface, resolved on disk
+from deskops.desk_paths import not_found_message
 from deskops.desk_paths import resolve_selector
+from deskops.desk_paths import selector_stem
 from deskops.desk_paths import relative_candidates
 from deskops.doc_readability import is_unreadable_by_model, unread_section_fields
 from deskops.errors import DomainError
@@ -677,21 +679,23 @@ def resolve_document(
     files whose name differs from their document's (``desk/rituals/execution.md`` is
     ``ritual-execution``). An ambiguous query stops there. Zero matches raise
     ``FileNotFoundError``, several ``ValueError``, with the messages the disk rule uses.
+    A path selector (``desk/...``) asks by its stem (``selector_stem``).
     """
     if not selector or not str(selector).strip():
         raise ValueError(f"Empty or whitespace-only selector provided for {what}")
     if not _tracked_surface(root, directory):
         # CC35b-a3: untracked surface, resolved on disk
         return resolve_selector(desk_root(root), [directory], selector, pattern, what, recursive=recursive)
+    stem = selector_stem(desk_root(root), selector)
     base = relative_path(root, directory) + ("/**/" if recursive else "/")
-    by_name = {"prefix": selector, "path_glob": base + pattern}
+    by_name = {"prefix": stem, "path_glob": base + pattern}
     if model is not None:
         by_name["model"] = model
-    for query in (by_name, {"path_glob": f"{base}{selector}*.md"}):
+    for query in (by_name, {"path_glob": f"{base}{stem}*.md"}):
         found = _select_one(root, query, selector, what)
         if found is not None:
             return found
-    raise FileNotFoundError(f"No {what} file found for selector '{selector}'")
+    raise FileNotFoundError(not_found_message(what, selector))
 
 
 def resolve_glob(root: Path, directory: Path, doc_id: str) -> Path:
@@ -706,7 +710,7 @@ def resolve_artifact_selector_multi(root: Path, artifact_id: str, directories: l
             return resolve_artifact_selector(root, artifact_id, directory, selector)
         except FileNotFoundError:
             continue
-    raise FileNotFoundError(f"No {artifact_id} file found for selector '{selector}'")
+    raise FileNotFoundError(not_found_message(artifact_id, selector))
 
 
 def resolve_artifact_selector(root: Path, artifact_id: str, directory: Path, selector: str) -> Path:

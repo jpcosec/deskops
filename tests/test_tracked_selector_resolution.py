@@ -12,6 +12,7 @@ import pytest
 from sldb.runtime.validation import render_model_markdown
 
 from deskops import doc_access
+from deskops.desk_paths import ACCEPTED_SELECTOR_FORMS
 from deskops.models import AtomDoc
 from deskops.models import RitualDoc
 
@@ -81,7 +82,10 @@ def test_not_found_keeps_the_disk_rule_message(lifecycle_desk: Path) -> None:
             lifecycle_desk, "artifact.atom", lifecycle_desk / "desk" / "atoms", "atom-cc35b-missing"
         )
 
-    assert str(excinfo.value) == "No artifact.atom file found for selector 'atom-cc35b-missing'"
+    assert str(excinfo.value) == (
+        "No artifact.atom file found for selector 'atom-cc35b-missing'. "
+        f"Accepted forms: {ACCEPTED_SELECTOR_FORMS}."
+    )
 
 
 def test_prefix_ambiguity_lists_sorted_paths_relative_to_the_desk(lifecycle_desk: Path) -> None:
@@ -136,3 +140,78 @@ def test_the_drawer_still_resolves_on_disk(lifecycle_desk: Path) -> None:
 def test_empty_selector_is_rejected_before_any_query(lifecycle_desk: Path) -> None:
     with pytest.raises(ValueError, match="Empty or whitespace-only selector provided for artifact.atom"):
         doc_access.resolve_artifact_selector(lifecycle_desk, "artifact.atom", lifecycle_desk / "desk" / "atoms", "  ")
+
+
+def test_a_desk_path_selector_resolves_a_tracked_document_like_its_stem(lifecycle_desk: Path) -> None:
+    atom = _atom(lifecycle_desk, "atom-cc35b-by-path", folder="nested")
+    directory = lifecycle_desk / "desk" / "atoms"
+
+    relative = doc_access.resolve_artifact_selector(
+        lifecycle_desk, "artifact.atom", directory, "desk/atoms/nested/atom-cc35b-by-path.md"
+    )
+    absolute = doc_access.resolve_artifact_selector(lifecycle_desk, "artifact.atom", directory, str(atom))
+
+    assert relative == absolute == atom
+
+
+def test_a_tracked_selector_outside_the_desk_is_rejected(lifecycle_desk: Path) -> None:
+    with pytest.raises(ValueError, match="el selector apunta fuera de desk/: 'docs/atom-cc35b.md'"):
+        doc_access.resolve_artifact_selector(
+            lifecycle_desk, "artifact.atom", lifecycle_desk / "desk" / "atoms", "docs/atom-cc35b.md"
+        )
+
+
+def test_edit_task_resolves_a_drawer_item_by_its_desk_path(lifecycle_desk: Path) -> None:
+    drawer_task = lifecycle_desk / "desk" / "drawer" / "tasks" / "task-cc35b-drawer-by-path.md"
+    drawer_task.parent.mkdir(parents=True, exist_ok=True)
+    drawer_task.write_text("# task-cc35b-drawer-by-path\n", encoding="utf-8")
+
+    _, by_path, kind = doc_access.editable_artifact(
+        lifecycle_desk, "task", "desk/drawer/tasks/task-cc35b-drawer-by-path.md"
+    )
+    _, by_stem, _ = doc_access.editable_artifact(lifecycle_desk, "task", "task-cc35b-drawer-by-path")
+
+    assert kind == "task"
+    assert by_path == by_stem == drawer_task
+
+
+def test_edit_task_names_the_accepted_forms_when_nothing_resolves(lifecycle_desk: Path) -> None:
+    with pytest.raises(FileNotFoundError) as excinfo:
+        doc_access.editable_artifact(lifecycle_desk, "task", "desk/drawer/tasks/task-cc35b-nowhere.md")
+
+    assert "selector 'desk/drawer/tasks/task-cc35b-nowhere.md'" in str(excinfo.value)
+    assert f"Accepted forms: {ACCEPTED_SELECTOR_FORMS}." in str(excinfo.value)
+
+
+def test_deskops_edit_task_edits_a_drawer_item_named_by_its_desk_path(lifecycle_desk: Path, capsys) -> None:
+    from deskops.cli.main import main
+    from deskops.models import TaskDoc
+
+    drawer_task = lifecycle_desk / "desk" / "drawer" / "tasks" / "task-cc35b-drawer-cli.md"
+    drawer_task.parent.mkdir(parents=True, exist_ok=True)
+    doc = TaskDoc(
+        id=drawer_task.stem,
+        title="Drawer item",
+        status="deferred",
+        goal="Goal.",
+        scope="Original scope.",
+        implementation_path="Path.",
+        done_when="Done.",
+    )
+    drawer_task.write_text(render_model_markdown(TaskDoc, doc.render_payload()) + "\n", encoding="utf-8")
+
+    edited = main(
+        [
+            "edit",
+            "task",
+            "desk/drawer/tasks/task-cc35b-drawer-cli.md",
+            "scope",
+            "Edited scope.",
+            "--root",
+            str(lifecycle_desk),
+        ]
+    )
+    output = capsys.readouterr()
+
+    assert edited == 0, output.err
+    assert "Edited scope." in drawer_task.read_text(encoding="utf-8")
