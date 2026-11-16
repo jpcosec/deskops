@@ -460,6 +460,26 @@ def test_context_without_container_keys_has_no_resources(tmp_path: Path) -> None
     assert len(agent["volumes"]) == 1 and "TMPDIR" not in agent["env"]
 
 
+def test_harness_auth_selects_the_template_auth_type(tmp_path: Path) -> None:
+    _, executor_role = find_role_doc(ROOT, "role-deskops-executor")
+    profile = load_runtime_profiles(ROOT)["claude"]
+    default = yaml.safe_load(scion_template_files(executor_role, profile, harness="claude")["scion-agent.yaml"])
+    assert default["auth_selectedType"] == "oauth-token"
+    chosen = yaml.safe_load(
+        scion_template_files(executor_role, profile, harness="claude", harness_auth="auth-file")["scion-agent.yaml"]
+    )
+    assert chosen["auth_selectedType"] == "auth-file"
+    with pytest.raises(ValueError, match="harness auth"):
+        scion_template_files(executor_role, profile, harness="claude", harness_auth="password")
+
+    out_dir = tmp_path / "tpl"
+    assert main(
+        ["runtime", "template", "role-deskops-executor", "--root", str(ROOT), "--harness", "claude",
+         "--out", str(out_dir), "--harness-auth", "auth-file"]
+    ) == 0
+    assert yaml.safe_load((out_dir / "scion-agent.yaml").read_text(encoding="utf-8"))["auth_selectedType"] == "auth-file"
+
+
 def test_context_rejects_bad_container_keys(tmp_path: Path) -> None:
     context, paths = _context(tmp_path)
     with pytest.raises(ValueError, match="memory_limit"):

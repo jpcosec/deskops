@@ -1,6 +1,7 @@
 usage: deskops runtime template [-h] [--root ROOT] [--harness HARNESS]
                                 [--out OUT]
                                 [--model-alias {small,medium,large,extra-large}]
+                                [--harness-auth {api-key,oauth-token,auth-file,vertex-ai}]
                                 [--task-repo TASK_REPO]
                                 [--mode {executor,coordinator,tester}]
                                 [--context-file CONTEXT_FILE] [--task TASK]
@@ -25,6 +26,11 @@ options:
   --model-alias {small,medium,large,extra-large}
                         Portable Scion model size alias written to the
                         template (the harness-config resolves it).
+  --harness-auth {api-key,oauth-token,auth-file,vertex-ai}
+                        auth_selectedType written to the template (claude:
+                        auth-file uses the CLAUDE_AUTH credentials secret,
+                        oauth-token uses CLAUDE_CODE_OAUTH_TOKEN). Default:
+                        claude -> oauth-token, other harnesses -> none.
   --task-repo TASK_REPO
                         Repository under /workspace the agent may write to;
                         named in agents.md.

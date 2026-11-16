@@ -64,6 +64,11 @@ COORDINATOR_MAX_DURATION = "24h"
 #: ``CLAUDE_AUTH`` file beats a project token and the agent is not logged in.
 HARNESS_AUTH: dict[str, str] = {"claude": "oauth-token"}
 
+#: Auth types a template may select (``auth_selectedType``); the harness-config
+#: decides which secrets each one needs (claude: oauth-token ->
+#: CLAUDE_CODE_OAUTH_TOKEN, auth-file -> the CLAUDE_AUTH credentials file).
+HARNESS_AUTH_TYPES: tuple[str, ...] = ("api-key", "oauth-token", "auth-file", "vertex-ai")
+
 TEMPLATE_FILES: tuple[str, ...] = ("scion-agent.yaml", "system-prompt.md", "agents.md")
 
 #: The only keys a Scion runtime context may carry. Paths are absolute and inside
@@ -341,6 +346,7 @@ def scion_template_files(
     source: str | None = None,
     mode: str | None = None,
     context: dict[str, Any] | None = None,
+    harness_auth: str | None = None,
 ) -> dict[str, str]:
     """Render the three template files as ``{filename: text}``.
 
@@ -357,6 +363,8 @@ def scion_template_files(
     """
     if mode not in (None, "executor", "coordinator", "tester"):
         raise ValueError(f"mode must be executor, coordinator or tester, got '{mode}'")
+    if harness_auth is not None and harness_auth not in HARNESS_AUTH_TYPES:
+        raise ValueError(f"harness auth must be one of {HARNESS_AUTH_TYPES}, got '{harness_auth}'")
     if model_alias not in MODEL_SIZE_ALIASES:
         raise ValueError(f"model alias must be one of {MODEL_SIZE_ALIASES}, got '{model_alias}'")
     if harness not in HARNESS_BY_KIND.values():
@@ -401,8 +409,9 @@ def scion_template_files(
             f"the harness-config '{harness}' resolves it to a concrete model (Scion local/templates.md)."
         )
     lines.append(f"model: {model_alias}")
-    if harness in HARNESS_AUTH:
-        lines.append(f"auth_selectedType: {HARNESS_AUTH[harness]}")
+    auth_type = harness_auth or HARNESS_AUTH.get(harness)
+    if auth_type:
+        lines.append(f"auth_selectedType: {auth_type}")
     coordinator = resolved_mode == "coordinator"
     lines.append(f"max_turns: {COORDINATOR_MAX_TURNS if coordinator else DEFAULT_MAX_TURNS}")
     lines.append(f"max_duration: {COORDINATOR_MAX_DURATION if coordinator else DEFAULT_MAX_DURATION}")
@@ -745,6 +754,7 @@ def materialize_scion_template(
     task_repo: str | None = None,
     mode: str | None = None,
     context: dict[str, Any] | None = None,
+    harness_auth: str | None = None,
 ) -> Path:
     """Write the template for ``role_id`` and return its directory.
 
@@ -769,6 +779,7 @@ def materialize_scion_template(
         source=source,
         mode=mode,
         context=context,
+        harness_auth=harness_auth,
     )
     target = template_dir_for(root, role_doc, out_dir)
     target.mkdir(parents=True, exist_ok=True)

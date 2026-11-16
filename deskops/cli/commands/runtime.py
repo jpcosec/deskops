@@ -91,6 +91,7 @@ class RuntimeCLI:
             task_repo=getattr(args, "task_repo", None),
             mode=getattr(args, "mode", None),
             context=context,
+            harness_auth=getattr(args, "harness_auth", None),
         )
         print(f"Scion template: {target}")
         for name in ("scion-agent.yaml", "system-prompt.md", "agents.md"):

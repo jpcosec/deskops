@@ -1847,6 +1847,14 @@ everything declared was found, else 1.
                     default="medium",
                     help="Portable Scion model size alias written to the template (the harness-config resolves it).",
                 ),
+                A(
+                    "--harness-auth",
+                    choices=("api-key", "oauth-token", "auth-file", "vertex-ai"),
+                    default=None,
+                    help="auth_selectedType written to the template (claude: auth-file uses the CLAUDE_AUTH "
+                    "credentials secret, oauth-token uses CLAUDE_CODE_OAUTH_TOKEN). Default: claude -> oauth-token, "
+                    "other harnesses -> none.",
+                ),
                 A("--task-repo", default=None, help="Repository under /workspace the agent may write to; named in agents.md."),
                 A(
                     "--mode",
