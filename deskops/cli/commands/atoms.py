@@ -171,6 +171,9 @@ class AtomsCLI:
                 lambda _data: _format_atom_list(payloads, axis),
             )
 
+        if args.atoms_command == "citations":
+            return _run_citations(args, operations)
+
         if args.atoms_command in {"crossroad", "proto", "type", "tree"}:
             return self._run_domain_tree(args, root)
 
@@ -222,6 +225,33 @@ class AtomsCLI:
             getattr(args, "format", "text"),
             _format_tree,
         )
+
+
+def _run_citations(args: Any, operations: DeskopsOperations) -> int:
+    """``deskops atoms citations``: list, check (exit 1 on a broken citation) and record them."""
+    try:
+        report = operations.atoms.atom_citations(write=bool(getattr(args, "write", False)))
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        print(f"Error: {exc}")
+        return 1
+    print(f"Citations: {len(report.citations)}")
+    for item in report.citations:
+        print(f"- {item.path}:{item.line} -> {item.atom_id}")
+    if report.broken:
+        print(f"Broken citations: {len(report.broken)}")
+        for item in report.broken:
+            print(f"- {item.path}:{item.line} -> {item.atom_id} (no such atom)")
+    if report.orphans:
+        print(f"Warning: atoms without a citation: {len(report.orphans)}")
+        for atom_id in report.orphans:
+            print(f"- {atom_id}")
+    if report.written:
+        print(f"Graph: {len(report.created)} cited_by relation(s) created, {len(report.removed)} removed.")
+        for item in report.created:
+            print(f"+ {item}")
+        for item in report.removed:
+            print(f"- {item}")
+    return 1 if getattr(args, "check", False) and report.broken else 0
 
 
 def _with_domain_checks(results: list[dict[str, Any]], domain: list[dict[str, Any]]) -> list[dict[str, Any]]:

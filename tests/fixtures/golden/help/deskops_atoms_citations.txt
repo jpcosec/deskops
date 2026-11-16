@@ -1,0 +1,17 @@
+usage: deskops atoms citations [-h] [--root ROOT] [--check] [--write]
+
+Python modules cite atoms in their module docstring: a line that is exactly 'Atoms:' followed by one atom id per line in column 0, up to the first empty line. Every other versioned file cites with a '# Atom: <id>' comment. Ids match ^atom-[a-z0-9-]+$; the files are those of 'git ls-files' that decode as UTF-8.
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  Target repository root.
+  --check      Exit 1 when a citation names an atom that does not exist; atoms
+               nobody cites are only a warning.
+  --write      Record one cited_by RelationDoc (file -> atom) per valid
+               citation in the desk's sldb store, so `deskops show atom <id>`
+               lists the files that cite it.
+
+Examples:
+  deskops atoms citations --root .
+  deskops atoms citations --check --root .
+  deskops atoms citations --write --root .

@@ -178,6 +178,11 @@ class OperationsCLI:
             artifact_id = show_artifacts[args.subject]
             try:
                 payload = operations.show_artifact(artifact_id, args.doc_id)
+                if args.subject == "atom":
+                    # The files that cite the atom, as `deskops atoms citations --write` recorded them.
+                    cited_by = operations.atoms.cited_by(str(payload["id"]))
+                    if cited_by:
+                        payload["cited_by"] = cited_by
             except (FileNotFoundError, ValueError) as exc:
                 return render_error(
                     str(exc),
@@ -331,10 +336,13 @@ class OperationsCLI:
         label = payload.get("title") or payload.get("name") or payload["id"]
         lines.append(f"Title: {label}")
         for key, value in payload.items():
-            if key in {"id", "title", "current_node", "history", "tags"}:
+            if key in {"id", "title", "current_node", "history", "tags", "cited_by"}:
                 continue
             if isinstance(value, list):
                 lines.append(f"{key}: {', '.join(str(item) for item in value)}")
             else:
                 lines.append(f"{key}: {value}")
+        if subject == "atom" and payload.get("cited_by"):
+            lines.append("Cited by:")
+            lines.extend(f"- {path}" for path in payload["cited_by"])
         return "\n".join(lines)

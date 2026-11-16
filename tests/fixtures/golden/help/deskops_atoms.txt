@@ -1,11 +1,11 @@
 usage: deskops atoms [-h]
-                     {add-namespace,list,reorganize,show,validate,create,delete,split,merge,crossroad,proto,type,tree}
+                     {add-namespace,list,reorganize,show,validate,create,delete,split,merge,crossroad,proto,type,tree,citations}
                      ...
 
 Atom model and namespace management.
 
 positional arguments:
-  {add-namespace,list,reorganize,show,validate,create,delete,split,merge,crossroad,proto,type,tree}
+  {add-namespace,list,reorganize,show,validate,create,delete,split,merge,crossroad,proto,type,tree,citations}
     add-namespace       Add an extensible atom tag namespace to
                         desk/atoms/tag-namespaces.yaml.
     list                Deprecated alias for `deskops list atoms`; list all
@@ -31,6 +31,9 @@ positional arguments:
                         protoatom as a redirect stub.
     tree                Show the domain tree: crossroads and the documents
                         hanging from them.
+    citations           Scan the code -> atom citations of the versioned
+                        files: report broken citations and atoms no file
+                        cites, and record them in the graph.
 
 options:
   -h, --help            show this help message and exit

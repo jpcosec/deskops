@@ -1436,6 +1436,42 @@ The issue status is set to closed and a ## Resolution section records Closed, Re
             mutates=False,
         ),
         Command(
+            path=("atoms", "citations"),
+            help=(
+                "Scan the code -> atom citations of the versioned files: report broken citations "
+                "and atoms no file cites, and record them in the graph."
+            ),
+            description=(
+                "Python modules cite atoms in their module docstring: a line that is exactly 'Atoms:' "
+                "followed by one atom id per line in column 0, up to the first empty line. Every other "
+                "versioned file cites with a '# Atom: <id>' comment. Ids match ^atom-[a-z0-9-]+$; the "
+                "files are those of 'git ls-files' that decode as UTF-8."
+            ),
+            epilog="""Examples:
+  deskops atoms citations --root .
+  deskops atoms citations --check --root .
+  deskops atoms citations --write --root .""",
+            raw_text=True,
+            args=(
+                ROOT_ARG,
+                A(
+                    "--check",
+                    action="store_true",
+                    help="Exit 1 when a citation names an atom that does not exist; atoms nobody cites are only a warning.",
+                ),
+                A(
+                    "--write",
+                    action="store_true",
+                    help=(
+                        "Record one cited_by RelationDoc (file -> atom) per valid citation in the desk's sldb store, "
+                        "so `deskops show atom <id>` lists the files that cite it."
+                    ),
+                ),
+            ),
+            handler="deskops.cli.commands.atoms:AtomsCLI",
+            mutates=True,
+        ),
+        Command(
             path=("graph",),
             help="Build and inspect deskops KGDB graph runtime outputs.",
             args=(),

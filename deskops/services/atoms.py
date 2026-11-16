@@ -7,9 +7,13 @@ block so a failure restores the original files and store entries.
 
 from __future__ import annotations
 
+import ast
 from dataclasses import dataclass
+from dataclasses import field
+import hashlib
 from pathlib import Path
 import re
+import subprocess
 from typing import Any
 from typing import TYPE_CHECKING
 from urllib.parse import urlparse
@@ -66,6 +70,111 @@ class AtomCreateResult:
     source_kind: str
     source_selector: str
     provenance: str
+
+
+# ---------------------------------------------------------------- code citations
+#: The relation a ``--write`` of ``deskops atoms citations`` records: file path -> atom.
+CITED_BY = "cited_by"
+#: Where the ``cited_by`` RelationTypeDoc and the RelationDoc of each citation live.
+CITATIONS_DIR = Path("desk") / "citations"
+CITED_BY_TYPE_NAME = "type-cited_by"
+_CITED_ATOM_ID = re.compile(r"^atom-[a-z0-9-]+$")
+_COMMENT_CITATION = re.compile(r"# Atom: (\S+)")
+
+
+@dataclass(frozen=True, slots=True)
+class AtomCitation:
+    """One code -> atom citation: the file (relative to the root), its line and the atom id."""
+
+    path: str
+    line: int
+    atom_id: str
+
+
+@dataclass(slots=True)
+class AtomCitationReport:
+    citations: list[AtomCitation]
+    broken: list[AtomCitation]
+    orphans: list[str]
+    created: list[str] = field(default_factory=list)
+    removed: list[str] = field(default_factory=list)
+    written: bool = False
+
+
+def docstring_citations(source: str) -> list[tuple[int, str]]:
+    """(line, atom id) of each ``Atoms:`` block entry in a module docstring.
+
+    The block is a line that is exactly ``Atoms:`` followed by one ``atom-<slug>`` per line in
+    column 0; it ends at the first empty line, the first line that is not an id, or the end of
+    the docstring. A module without a docstring (or that does not parse) cites nothing.
+    """
+    try:
+        module = ast.parse(source)
+    except (SyntaxError, ValueError):
+        return []
+    first = module.body[0] if module.body else None
+    if not (
+        isinstance(first, ast.Expr)
+        and isinstance(first.value, ast.Constant)
+        and isinstance(first.value.value, str)
+    ):
+        return []
+    lines = first.value.value.split("\n")
+    start = first.value.lineno
+    found: list[tuple[int, str]] = []
+    in_block = False
+    for offset, line in enumerate(lines):
+        if not in_block:
+            in_block = line.rstrip("\r") == "Atoms:"
+            continue
+        text = line.rstrip("\r")
+        if not _CITED_ATOM_ID.match(text):
+            in_block = text == "Atoms:"
+            continue
+        found.append((start + offset, text))
+    return found
+
+
+def comment_citations(text: str) -> list[tuple[int, str]]:
+    """(line, atom id) of each ``# Atom: <id>`` comment whose id is ``atom-<slug>``."""
+    found: list[tuple[int, str]] = []
+    for number, line in enumerate(text.splitlines(), start=1):
+        for match in _COMMENT_CITATION.finditer(line):
+            if _CITED_ATOM_ID.match(match.group(1)):
+                found.append((number, match.group(1)))
+    return found
+
+
+def scan_citations(root: Path) -> list[AtomCitation]:
+    """Every code -> atom citation in the files ``git ls-files`` lists under ``root``.
+
+    ``*.py`` files cite in the ``Atoms:`` block of the module docstring; every other file with a
+    ``# Atom: <id>`` comment. Files that do not decode as UTF-8 (or are gone) are skipped.
+    """
+    try:
+        listed = subprocess.run(
+            ["git", "ls-files", "-z"], cwd=root, check=True, capture_output=True
+        ).stdout.decode("utf-8", "surrogateescape")
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise ValueError(f"Cannot list the versioned files of {root} with git ls-files: {exc}") from exc
+    citations: list[AtomCitation] = []
+    for relative in sorted(name for name in listed.split("\0") if name):
+        path = root / relative
+        if not path.is_file():
+            continue
+        try:
+            text = path.read_bytes().decode("utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        found = docstring_citations(text) if relative.endswith(".py") else comment_citations(text)
+        citations.extend(AtomCitation(relative, line, atom_id) for line, atom_id in found)
+    return citations
+
+
+def citation_doc_name(path: str, atom_id: str) -> str:
+    """The RelationDoc name of one (file, atom) citation: stable across runs."""
+    digest = hashlib.sha1(f"{path}\0{atom_id}".encode("utf-8")).hexdigest()[:12]
+    return f"cite-{digest}"
 
 
 def reference_points_to_atom(root: Path, reference: str) -> bool:
@@ -783,3 +892,117 @@ class AtomsService:
 
     def _atom_doc_path(self, atom_id: str, tags: list[str]) -> Path:
         return doc_access.atom_doc_path(self.root, atom_id, tags)
+
+    # ------------------------------------------------------------ code citations
+    def atom_ids(self) -> set[str]:
+        """The ids of the atoms under desk/atoms (the file stem when the id cannot be read)."""
+        ids: set[str] = set()
+        for path in self._all_atom_paths():
+            try:
+                ids.add(str(self._read_doc(path, AtomDoc).get("id") or path.stem))
+            except Exception:
+                ids.add(path.stem)
+        return ids
+
+    def atom_citations(self, *, write: bool = False) -> AtomCitationReport:
+        """Scan the code -> atom citations: broken ones (the atom does not exist) and orphan
+        atoms (no file cites them). With ``write``, keep one ``cited_by`` RelationDoc per valid
+        (file, atom) citation in the desk's store and drop the ones no file makes any more."""
+        self.ensure_workspace()
+        known = self.atom_ids()
+        citations = scan_citations(self.root)
+        broken = [item for item in citations if item.atom_id not in known]
+        cited = {item.atom_id for item in citations}
+        report = AtomCitationReport(
+            citations=citations,
+            broken=broken,
+            orphans=sorted(known - cited),
+        )
+        if write:
+            self._write_citations(report, {(item.path, item.atom_id) for item in citations if item.atom_id in known})
+        return report
+
+    def _citation_docs(self) -> list[tuple[Path, dict[str, Any]]]:
+        """(path, payload) of every tracked ``cited_by`` RelationDoc of the desk's store."""
+        if not doc_access.has_store(self.root):
+            return []
+        from sldb.api import select_documents
+        from sldb.models.relation_doc import RelationDoc
+
+        found: list[tuple[Path, dict[str, Any]]] = []
+        for row in select_documents(doc_access.store_path(self.root), {"model": "RelationDoc"}):
+            path = self.root / row["path"]
+            if not path.exists():
+                continue
+            payload = self._read_doc(path, RelationDoc)
+            if payload.get("relation_type") == CITED_BY:
+                found.append((path, payload))
+        return found
+
+    def cited_by(self, atom_id: str) -> list[str]:
+        """The files whose ``cited_by`` RelationDoc names ``atom_id`` (what ``--write`` recorded)."""
+        target = f"AtomDoc:{atom_id}"
+        return sorted(
+            {str(payload.get("source_id")) for _path, payload in self._citation_docs() if payload.get("target_id") == target}
+        )
+
+    def _write_citations(self, report: AtomCitationReport, wanted: set[tuple[str, str]]) -> None:
+        if not doc_access.has_store(self.root):
+            raise ValueError("--write needs the desk's sldb store; run 'deskops init' first.")
+        from sldb.api import edge_node
+        from sldb.api import relation_type_node_id
+        from sldb.models.relation_doc import RelationDoc
+        from sldb.models.relation_type_doc import RelationTypeDoc
+
+        directory = self.root / CITATIONS_DIR
+        existing = {
+            (str(payload.get("source_id")), str(payload.get("target_id")).removeprefix("AtomDoc:")): path
+            for path, payload in self._citation_docs()
+        }
+        has_type = edge_node(doc_access.store_path(self.root), relation_type_node_id(CITED_BY), include_linked=False) is not None
+        with doc_access.desk_transaction(self.root):
+            if not has_type:
+                directory.mkdir(parents=True, exist_ok=True)
+                doc_access.create_doc(
+                    self.root,
+                    directory / f"{CITED_BY_TYPE_NAME}.md",
+                    RelationTypeDoc,
+                    {
+                        "title": "Cited by",
+                        "name": CITED_BY,
+                        "direction": "directed",
+                        "cardinality": "many_to_many",
+                        "axis": "PROVENANCE",
+                        "source_types": [],
+                        "target_types": ["AtomDoc"],
+                        "condition": "",
+                        "description": (
+                            "A versioned file cites an atom: the Atoms: block of a Python module docstring "
+                            "or a '# Atom: <id>' comment. Written by `deskops atoms citations --write`."
+                        ),
+                    },
+                    CITED_BY_TYPE_NAME,
+                )
+            for source, atom_id in sorted(wanted - set(existing)):
+                directory.mkdir(parents=True, exist_ok=True)
+                name = citation_doc_name(source, atom_id)
+                doc_access.create_doc(
+                    self.root,
+                    directory / f"{name}.md",
+                    RelationDoc,
+                    {
+                        "title": f"{source} cites {atom_id}",
+                        "source_id": source,
+                        "target_id": f"AtomDoc:{atom_id}",
+                        "relation_type": CITED_BY,
+                        "condition": "",
+                        "attributes": {},
+                        "notes": "",
+                    },
+                    name,
+                )
+                report.created.append(f"{source} -> {atom_id}")
+            for key in sorted(set(existing) - wanted):
+                doc_access.delete_doc(self.root, existing[key])
+                report.removed.append(f"{key[0]} -> {key[1]}")
+        report.written = True
