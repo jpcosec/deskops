@@ -252,13 +252,14 @@ def test_dispose_accepts_a_recorded_receipt(desk: Path) -> None:
 
 
 def test_subject_is_pinned_and_the_anchor_is_intact(desk: Path) -> None:
-    """sldb pins `__doc_anchors__` on save (`save_document_payload`), not on
-    `create_document`: the recorded receipt carries the bare anchor, like every other
-    receipt, and the disposition write pins it against the task's contract."""
+    """sldb pins `__doc_anchors__` when it creates a document (`create_document`, since
+    sldb 477d1bc0) and when it saves one: the recorded receipt already carries the
+    pinned anchor, and the disposition write keeps it pinned against the task's contract."""
     root = desk
     result = _deskops(root, "review", "record", "task-x", "--kind", "owner", "--reason", "approved")
     assert result.returncode == 0, result.stdout + result.stderr
-    assert _review(root, "review-task-x-owner-1")["subject"] == "doc:TaskCodeDoc:task-x"
+    subject = _review(root, "review-task-x-owner-1")["subject"]
+    assert re.fullmatch(r"doc:TaskCodeDoc:task-x@sha256:[0-9a-f]{64}", subject), subject
 
     disposed = _deskops(root, "review", "dispose", "review-task-x-owner-1", "--verdict", "accepted", "--reason", "ok")
     assert disposed.returncode == 0, disposed.stdout + disposed.stderr
@@ -360,7 +361,8 @@ def test_a_short_selector_keys_and_anchors_receipts_on_the_full_task_id(desk: Pa
     recorded = _deskops(root, "review", "record", "task-long", "--kind", "owner", "--reason", "approved")
     assert recorded.returncode == 0, recorded.stdout + recorded.stderr
     assert f"review: review-{full}-owner-1" in recorded.stdout
-    assert _review(root, f"review-{full}-owner-1")["subject"] == f"doc:TaskCodeDoc:{full}"
+    subject = _review(root, f"review-{full}-owner-1")["subject"]
+    assert re.fullmatch(rf"doc:TaskCodeDoc:{re.escape(full)}@sha256:[0-9a-f]{{64}}", subject), subject
     assert (root / "desk" / "reviews" / full / "owner-1.md").is_file()
 
     # The model review too: the logging `pi` fails, so the receipt is a technical failure,
@@ -368,5 +370,5 @@ def test_a_short_selector_keys_and_anchors_receipts_on_the_full_task_id(desk: Pa
     _deskops(root, "review", "preflight", "task-long")
     assert pi_log.exists()
     doc = _review(root, f"review-{full}-preflight-1")
-    assert doc["subject"] == f"doc:TaskCodeDoc:{full}"
+    assert re.fullmatch(rf"doc:TaskCodeDoc:{re.escape(full)}@sha256:[0-9a-f]{{64}}", doc["subject"]), doc["subject"]
     assert not (root / "desk" / "reviews" / "task-long").exists()

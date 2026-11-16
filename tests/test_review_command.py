@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -162,7 +163,7 @@ def test_preflight_writes_attempt_evidence_and_receipt(lifecycle_desk: Path, fak
     assert len(docs) == 1
     doc = docs[0]
     assert doc["verdict"] == "pending"
-    assert doc["subject"] == "doc:TaskCodeDoc:task-x"
+    assert re.fullmatch(r"doc:TaskCodeDoc:task-x@sha256:[0-9a-f]{64}", doc["subject"]), doc["subject"]
     assert doc["run_dir"] == attempt.relative_to(root).as_posix()
     assert doc["input_sha256"] == manifest["input_sha256"]
     assert doc["output_sha256"] == receipt["output_sha256"]
