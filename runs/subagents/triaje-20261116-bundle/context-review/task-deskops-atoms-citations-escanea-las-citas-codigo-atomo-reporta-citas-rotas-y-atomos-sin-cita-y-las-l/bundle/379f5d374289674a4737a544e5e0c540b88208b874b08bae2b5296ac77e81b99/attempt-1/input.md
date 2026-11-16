@@ -1,0 +1,906 @@
+FILE:desk/tasks/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l.md
+---
+sldb:
+  by: agent
+  at: '2026-11-16T05:03:35Z'
+  authority: generated
+  via: save_document_payload
+id: task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l
+status: draft
+summary: ''
+tags:
+- workspace:desk
+- artifact:task
+current_node: ritual-execution
+history: []
+references: []
+depends_on: []
+pills: []
+files:
+- deskops/services/atoms.py
+- deskops/cli/registry.py
+- tests/test_atom_citations.py
+task_type: task.code
+inherits_from: []
+inherit_acceptance_context: false
+atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+from_drawer: desk/drawer/tasks/task-chatbot-infra-indexar-las-citas-c-digo-atom-de-los-docstrings-en-el-grafo-y-huecos-de-atoms-vistos-en-la-auditor-a.md
+---
+
+# deskops atoms citations escanea las citas codigo->atomo, reporta citas rotas y atomos sin cita, y las lleva al grafo
+
+## Rationale
+
+_Explain why this task exists or the business driver behind it._
+
+Item del drawer (Chatbot_Infra, 2026-10-21). Convencion en Chatbot_Infra, labchile_chatbots y shared_llm-gateway: el codigo cita sus atomos al final del docstring del modulo en un bloque 'Atoms:' con un id por linea en columna 0, y en archivos no Python como comentario '# Atom: <id>'. Cada repo tiene su propio tests/test_atoms_citados.py. Hoy deskops no tiene verbo para esto (deskops/cli/registry.py:1155-1421).
+
+## Goal
+
+_Describe the concrete result this task must produce._
+
+`deskops atoms citations [--check] [--write] --root .`: escanea **/*.py (bloque Atoms: del docstring de modulo) y '# Atom: <id>' en el resto de archivos versionados (git ls-files); --check sale con 1 si un id citado no existe en desk/atoms y avisa (exit 0) por cada atomo sin cita; --write registra una arista cited_by modulo->atomo en el grafo de sldb para que `deskops show atom <id>` liste los modulos que lo citan.
+
+## Scope
+
+_State what is in scope and what is out of scope._
+
+Entra: deskops/services/atoms.py, deskops/cli/registry.py (verbo nuevo y su ayuda), el tipo de relacion cited_by si hay que declararlo, deskops/graph/checks.py si graph missing debe reportar citas rotas, y tests. No entra: cambiar los repos de AntonIA, renombrar atomos (otra tarea). Precisiones del preflight 1: --check sale con 1 si hay al menos una cita rota, aunque tambien haya huerfanos; con solo huerfanos sale con 0 y los lista como aviso. Gramatica del bloque: en el docstring de modulo, una linea exactamente 'Atoms:' seguida de lineas con un id cada una (regex ^atom-[a-z0-9-]+$, en columna 0); el bloque termina en la primera linea vacia o en el fin del docstring; una linea que no cumple la regex termina el bloque. En otros archivos: lineas que contienen '# Atom: <id>' con la misma regex para el id. Se escanean los archivos de git ls-files; los que no decodifican como UTF-8 se saltan. --write crea un RelationTypeDoc cited_by (si no existe) y un RelationDoc por cita con sujeto la ruta del archivo y objeto el id del atomo, por la API de sldb. show atom agrega una seccion 'Cited by:' con las rutas, leida de esas RelationDoc.
+
+## Implementation Path
+
+_Outline the expected implementation route or affected surface._
+
+1) Parser de citas con ast para .py y regex para el resto. 2) --check con codigos de salida. 3) --write con RelationDoc cited_by por la API de sldb. 4) show atom lista los citadores. 5) Tests con un repo sandbox: cita valida, cita rota (exit 1), atomo huerfano (aviso).
+
+## Validation
+
+_List the checks required before this task can close._
+
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_atom_citations.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_output_goldens.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli_help_examples.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_graph_checks.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -n 4 -q tests (suite completa una vez antes de entregar). Sin fallas nuevas: cada test que falle se corre con el mismo comando en un worktree limpio de origin/main (git worktree add /dev/shm/wt-base origin/main; luego git worktree remove /dev/shm/wt-base) y solo se acepta si falla igual ahí; la lista de esas fallas va en el informe de la tarea
+
+## Done When
+
+_Name the observable condition that makes the task complete._
+
+Los tres casos del test pasan; show atom muestra los citadores tras --write; goldens de ayuda al dia.
+
+FILE:desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md
+---
+id: atom-code-changes-close-with-tests-and-commit
+title: Code changes close with tests and commit
+five_wh_one_plus: when
+tags:
+- system:deskops
+- topic:testing
+- topic:git
+- topic:closeout
+---
+
+# Code changes close with tests and commit
+
+## Answer
+
+A task that modifies code is not closed until relevant tests pass and the completed change is recorded in a descriptive git commit.
+
+FILE:desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md
+---
+id: atom-cli-mutation-testing-uses-sandbox-desk-roots
+title: CLI mutation testing uses sandbox desk roots
+five_wh_one_plus: how
+tags:
+- system:deskops
+- topic:testing
+- topic:cli
+- topic:materialization
+---
+
+# CLI mutation testing uses sandbox desk roots
+
+## Answer
+
+When testing or exploring mutating deskops CLI commands, agents should point writes at a disposable sandbox root such as `.tmp/deskops-cli-test` instead of the repository's real `desk/`. This keeps generated tasks, lifecycle documents, inbox notes, and other workflow artifacts out of tracked project surfaces unless the mutation is intentionally changing the real desk.
+
+FILE:deskops/services/atoms.py
+"""Atom domain service: create, validate, reorganize, split, merge, retarget, delete.
+
+Every atom write goes through ``deskops.doc_access`` and the desk's
+``sldb.api.transaction``; split and merge each run inside one ``desk_transaction``
+block so a failure restores the original files and store entries.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+import re
+from typing import Any
+from typing import TYPE_CHECKING
+from urllib.parse import urlparse
+
+from deskops import doc_access
+from deskops.atom_tags import axis_folder
+from deskops.atom_tags import axis_values
+from deskops.atom_tags import folder_axis_value
+from deskops.atom_tags import refuse_unplaced_tags
+from deskops.atom_tags import tag_findings
+from deskops.doc_access import DocumentRecord
+from deskops.models import AtomDoc
+from deskops.models import PillDoc
+from deskops.models.validation import check_document
+from deskops.models.validation import validated
+from deskops.services.references import referrers_of
+from deskops.services.references import rewrite_referrers
+
+if TYPE_CHECKING:
+    from deskops.operations import DeskopsOperations
+
+
+@dataclass(slots=True)
+class AtomValidationRecord:
+    doc_id: str
+    path: Path
+    errors: list[str]
+
+
+@dataclass(slots=True)
+class AtomSplitResult:
+    original_id: str
+    original_path: Path
+    created: list[DocumentRecord]
+    redirect_kept: bool
+    inbound_references: list[str]
+
+
+@dataclass(slots=True)
+class AtomMergeResult:
+    source_id: str
+    source_path: Path
+    target_id: str
+    target_path: Path
+    redirect_kept: bool
+    rewritten_references: list[str]
+    ambiguities: list[str]
+
+
+@dataclass(slots=True)
+class AtomCreateResult:
+    doc_id: str
+    path: Path
+    source_kind: str
+    source_selector: str
+    provenance: str
+
+
+def reference_points_to_atom(root: Path, reference: str) -> bool:
+    """Whether a task reference names an atom document of this desk (by path or by id)."""
+    candidate = reference.strip()
+    if not candidate:
+        return False
+    path_text = candidate.split("::", 1)[0]
+    path = Path(path_text)
+    if not path.is_absolute():
+        path = root / path
+    atoms_dir = doc_access.desk_root(root) / "atoms"
+    if path.suffix == ".md" and path.exists():
+        try:
+            path.relative_to(atoms_dir)
+            return True
+        except ValueError:
+            pass
+    atom_id = candidate.removeprefix("atom:")
+    if not atom_id.startswith("atom-"):
+        return False
+    return any(atom_path.stem == atom_id for atom_path in atoms_dir.rglob("*.md"))
+
+
+class AtomsService:
+    def __init__(self, root: Path, operations: "DeskopsOperations") -> None:
+        self._ops = operations
+        self.root = operations.root
+        self.desk_root = operations.desk_root
+        self.logger = operations.logger
+
+    # Document access is ``deskops.doc_access``; these keep the service's own vocabulary.
+    def ensure_workspace(self) -> None:
+        doc_access.ensure_workspace(self.root)
+
+    def _read_doc(self, path: Path, model: type[Any]) -> dict[str, Any]:
+        return doc_access.read_doc(path, model)
+
+    def _write_doc(self, path: Path, model: type[Any], payload: dict[str, Any]) -> None:
+        doc_access.write_doc(self.root, path, model, payload)
+
+    def _write_new_doc(self, path: Path, model: type[Any], payload: dict[str, Any]) -> None:
+        doc_access.write_new_doc(self.root, path, model, payload)
+
+    def _remove_created_file(self, path: Path) -> None:
+        doc_access.remove_created_file(path)
+
+    def _track_created_artifact(self, artifact_id: str, model: type[Any], path: Path, doc_id: str) -> None:
+        doc_access.track_created_artifact(self.root, artifact_id, model, path, doc_id)
+
+    def _resolve_artifact_selector(self, artifact_id: str, directory: Path, selector: str) -> Path:
+        return doc_access.resolve_artifact_selector(self.root, artifact_id, directory, selector)
+
+    def list_artifacts(self, artifact_id: str) -> list[dict[str, Any]]:
+        return doc_access.list_artifacts(self.root, artifact_id)
+
+    def _resolve_artifact_selector_multi(self, artifact_id: str, directories: list[Path], selector: str) -> Path:
+        return doc_access.resolve_artifact_selector_multi(self.root, artifact_id, directories, selector)
+
+    def list_atoms(self, axis_value: str | None = None) -> tuple[str | None, list[dict[str, Any]]]:
+        """List atoms annotated with their folder-axis value.
+
+        Returns (axis, payloads). Each payload carries 'axis_values' with every
+        value of the configured axis namespace found on the atom's tags.
+        """
+        axis = self.atom_folder_axis()
+        if axis_value is not None and axis is None:
+            raise ValueError(
+                "--axis-value requires 'atom_folder_axis' to be configured in desk/config.json."
+            )
+        payloads = self.list_artifacts("artifact.atom")
+        results: list[dict[str, Any]] = []
+        for payload in payloads:
+            values = axis_values(list(payload.get("tags") or []), axis) if axis else []
+            payload["axis_values"] = values
+            if axis_value is not None and axis_value not in values:
+                continue
+            results.append(payload)
+        return axis, results
+
+    def reorganize_atoms(self, *, dry_run: bool = False) -> dict[str, Any]:
+        """Move atoms carrying a folder-axis tag into their axis subfolder.
+
+        Idempotent: atoms already in the right place are skipped. Atoms without
+        an axis tag are left untouched, preserving manual folder organization.
+        Atoms with multiple axis values are reported as errors and skipped.
+        """
+        self.ensure_workspace()
+        axis = self.atom_folder_axis()
+        if axis is None:
+            raise ValueError(
+                "No 'atom_folder_axis' configured in desk/config.json; nothing to reorganize."
+            )
+        moves: list[dict[str, str]] = []
+        errors: list[str] = []
+        retargets: dict[str, str] = {}
+        for path in self._all_atom_paths():
+            try:
+                payload = self._read_doc(path, AtomDoc)
+            except Exception as exc:
+                errors.append(f"{path.relative_to(self.root)}: unreadable atom ({exc})")
+                continue
+            atom_id = str(payload.get("id") or path.stem)
+            tags = list(payload.get("tags") or [])
+            try:
+                value = folder_axis_value(tags, axis)
+            except ValueError as exc:
+                errors.append(f"{path.relative_to(self.root)}: {exc}")
+                continue
+            if value is None:
+                continue
+            target = self.desk_root / "atoms" / axis_folder(value) / f"{atom_id}.md"
+            if target == path:
+                continue
+            if target.exists():
+                errors.append(
+                    f"{path.relative_to(self.root)}: target already exists at {target.relative_to(self.root)}"
+                )
+                continue
+            moves.append({
+                "id": atom_id,
+                "from": str(path.relative_to(self.root)),
+                "to": str(target.relative_to(self.root)),
+            })
+            if not dry_run:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                path.rename(target)
+                retargets[atom_id] = str(target.relative_to(self.root))
+        if retargets:
+            self._retarget_atom_documents(retargets)
+        return {"axis": axis, "moves": moves, "errors": errors, "dry_run": dry_run}
+
+    def validate_atoms(self, selector: str | None = None) -> list[dict[str, Any]]:
+        self.ensure_workspace()
+        paths = [self._resolve_artifact_selector("artifact.atom", self.desk_root / "atoms", selector)] if selector else self._all_atom_paths()
+        # Undeclared namespaces are sldb's tag family findings (only on tracked atoms).
+        findings = tag_findings(self.root)
+        results: list[dict[str, Any]] = []
+        for path in paths:
+            record = self._validate_atom_path(path, findings.get(str(path), {}).get("namespace", []))
+            results.append({
+                "id": record.doc_id,
+                "path": str(path),
+                "errors": list(record.errors),
+            })
+        return results
+
+    def delete_atom(self, selector: str, *, force: bool = False) -> DocumentRecord:
+        self.ensure_workspace()
+        path = self._resolve_artifact_selector("artifact.atom", self.desk_root / "atoms", selector)
+        payload = self._read_doc(path, AtomDoc)
+        atom_id = str(payload.get("id") or path.stem)
+        inbound_references = [item.location for item in referrers_of(self.root, path)]
+        if inbound_references and not force:
+            refs = "; ".join(inbound_references)
+            raise ValueError(
+                f"Refusing to delete {atom_id}; inbound references found: {refs}. Re-run with --force to delete without rewriting references."
+            )
+        untracked = doc_access.index_entry(self.root, path) is not None
+        doc_access.delete_doc(self.root, path)
+        return DocumentRecord(kind="atom-untracked" if untracked else "atom", doc_id=atom_id, path=path)
+
+    def create_atom_from_source(
+        self,
+        atom_id: str,
+        *,
+        five_wh_one_plus: str,
+        title: str | None = None,
+        tags: list[str] | None = None,
+        from_pill: str | None = None,
+        from_graph: str | None = None,
+        from_diagram: str | None = None,
+        graph_path: str | None = None,
+    ) -> AtomCreateResult:
+        self.ensure_workspace()
+        refuse_unplaced_tags(self.root, list(tags or []))
+        source_flags = [flag for flag in (from_pill, from_graph, from_diagram) if flag]
+        if len(source_flags) != 1:
+            raise ValueError("Atom create requires exactly one source: --from-pill, --from-graph, or --from-diagram.")
+
+        atom_id = str(atom_id).strip()
+        normalized_question = str(five_wh_one_plus).strip()
+
+        if from_pill:
+            payload, source_selector, provenance = self._build_atom_from_pill(
+                atom_id,
+                from_pill,
+                five_wh_one_plus=normalized_question,
+                title=title,
+                tags=list(tags or []),
+            )
+            source_kind = "pill"
+        elif from_graph:
+            payload, source_selector, provenance = self._build_atom_from_graph_finding(
+                atom_id,
+                from_graph,
+                five_wh_one_plus=normalized_question,
+                title=title,
+                tags=list(tags or []),
+                graph_path=graph_path,
+            )
+            source_kind = "graph"
+        else:
+            payload, source_selector, provenance = self._build_atom_from_diagram(
+                atom_id,
+                from_diagram or "",
+                five_wh_one_plus=normalized_question,
+                title=title,
+                tags=list(tags or []),
+            )
+            source_kind = "diagram"
+
+        validated(AtomDoc, payload)
+        path = self._atom_doc_path(atom_id, list(payload.get("tags") or []))
+        doc_access.create_doc(self.root, path, AtomDoc, payload, atom_id)
+        return AtomCreateResult(
+            doc_id=atom_id,
+            path=path,
+            source_kind=source_kind,
+            source_selector=source_selector,
+            provenance=provenance,
+        )
+
+    def split_atom(
+        self,
+        selector: str,
+        *,
+        into_ids: list[str],
+        section_flags: list[str] | None = None,
+        force: bool = False,
+    ) -> AtomSplitResult:
+        self.ensure_workspace()
+        path = self._resolve_artifact_selector("artifact.atom", self.desk_root / "atoms", selector)
+        payload = self._read_doc(path, AtomDoc)
+        atom_id = str(payload.get("id") or path.stem)
+        inbound_references = [item.location for item in referrers_of(self.root, path)]
+        if inbound_references and not force:
+            refs = "; ".join(inbound_references)
+            raise ValueError(
+                f"Refusing to split {atom_id}; inbound references found: {refs}. "
+                "Re-run with --force to keep the original as a redirect stub without rewriting referrers."
+            )
+
+        normalized_ids = [str(item).strip() for item in into_ids if str(item).strip()]
+        if len(normalized_ids) < 2:
+            raise ValueError("Atom split requires at least two target ids via --into.")
+        if len(set(normalized_ids)) != len(normalized_ids):
+            raise ValueError("Atom split target ids must be unique.")
+        if atom_id in normalized_ids:
+            raise ValueError(f"Atom split target ids must not include the source atom id {atom_id}.")
+
+        sections = self._split_atom_answer_sections(str(payload.get("answer") or ""))
+        assignments = self._resolve_atom_split_assignments(normalized_ids, sections, section_flags or [])
+        new_payloads: dict[str, dict[str, Any]] = {}
+        for target_id in normalized_ids:
+            heading, content = assignments[target_id]
+            new_payloads[target_id] = {
+                "id": target_id,
+                "title": f"{payload['title']} — {heading}",
+                "five_wh_one_plus": payload["five_wh_one_plus"],
+                "answer": content,
+                "tags": list(payload.get("tags") or []),
+                "provenance": payload.get("provenance"),
+            }
+            validated(AtomDoc, new_payloads[target_id])
+
+        created: list[DocumentRecord] = []
+
+        with doc_access.desk_transaction(self.root):
+            for target_id in normalized_ids:
+                new_payload = new_payloads[target_id]
+                new_path = self._atom_doc_path(target_id, list(new_payload.get("tags") or []))
+                doc_access.create_doc(self.root, new_path, AtomDoc, new_payload, target_id)
+                created.append(DocumentRecord(kind="atom", doc_id=target_id, path=new_path))
+
+            payload["answer"] = self._render_atom_split_redirect_answer(atom_id, normalized_ids)
+            self._write_doc(path, AtomDoc, payload)
+
+        return AtomSplitResult(
+            original_id=atom_id,
+            original_path=path,
+            created=created,
+            redirect_kept=True,
+            inbound_references=inbound_references,
+        )
+
+    def merge_atom(
+        self,
+        selector: str,
+        *,
+        into_selector: str,
+        force: bool = False,
+    ) -> AtomMergeResult:
+        self.ensure_workspace()
+        source_path = self._resolve_artifact_selector("artifact.atom", self.desk_root / "atoms", selector)
+        target_path = self._resolve_artifact_selector("artifact.atom", self.desk_root / "atoms", into_selector)
+        if source_path == target_path:
+            raise ValueError("Atom merge source and target must resolve to different atoms.")
+
+        source_payload = self._read_doc(source_path, AtomDoc)
+        target_payload = self._read_doc(target_path, AtomDoc)
+        source_id = str(source_payload.get("id") or source_path.stem)
+        target_id = str(target_payload.get("id") or target_path.stem)
+
+        validated(AtomDoc, source_payload)
+        validated(AtomDoc, target_payload)
+
+        ambiguities = self._detect_atom_merge_ambiguities(source_payload, target_payload)
+        if ambiguities and not force:
+            details = "; ".join(ambiguities)
+            raise ValueError(
+                f"Refusing to merge {source_id} into {target_id}; merge is ambiguous: {details}. "
+                "Re-run with --force to keep the target atom semantics and preserve the source atom as a redirect stub."
+            )
+
+        with doc_access.desk_transaction(self.root) as transaction:
+            rewritten_references = rewrite_referrers(
+                self.root, source_path, target_path, transaction=transaction, excluded=(target_path,)
+            )
+            merged_answer = self._merge_atom_answers(target_payload, source_payload)
+            target_payload["answer"] = merged_answer
+            target_payload["tags"] = self._merge_atom_tags(
+                list(target_payload.get("tags") or []),
+                list(source_payload.get("tags") or []),
+            )
+            self._write_doc(target_path, AtomDoc, target_payload)
+
+            source_payload["answer"] = self._render_atom_merge_redirect_answer(source_id, target_id)
+            self._write_doc(source_path, AtomDoc, source_payload)
+
+        return AtomMergeResult(
+            source_id=source_id,
+            source_path=source_path,
+            target_id=target_id,
+            target_path=target_path,
+            redirect_kept=True,
+            rewritten_references=rewritten_references,
+            ambiguities=ambiguities,
+        )
+
+    def _all_atom_paths(self) -> list[Path]:
+        atoms_dir = self.desk_root / "atoms"
+        if not atoms_dir.exists():
+            return []
+        return sorted(
+            path for path in atoms_dir.rglob("*.md")
+            if path.name != "tag-namespaces.yaml"
+            # Crossroads and protoatoms have their own models: see deskops.domain_tree.
+            and not path.name.startswith(("crossroad-", "proto-"))
+        )
+
+    def _build_atom_from_pill(
+        self,
+        atom_id: str,
+        pill_selector: str,
+        *,
+        five_wh_one_plus: str,
+        title: str | None,
+        tags: list[str],
+    ) -> tuple[dict[str, Any], str, str]:
+        field_map = {
+            "what": "what",
+            "why": "why",
+            "how": "how",
+            "how_not": "how_not",
+            "when": "when",
+            "where": "where",
+        }
+        source_field = field_map.get(five_wh_one_plus)
+        if source_field is None:
+            raise ValueError(
+                "Atom create from pill only supports questions that map directly to pill sections: what, why, how, how_not, when, where."
+            )
+        directories = [self.desk_root / "contexts", self.desk_root / "drawer" / "pills"]
+        pill_path = self._resolve_artifact_selector_multi("artifact.pill", directories, pill_selector)
+        pill_payload = self._read_doc(pill_path, PillDoc)
+        answer = str(pill_payload.get(source_field) or "").strip()
+        if not answer:
+            raise ValueError(f"Pill section '{source_field}' is empty; cannot create atom from it.")
+        relative_path = pill_path.relative_to(self.root).as_posix()
+        source_selector = str(pill_payload.get("id") or pill_path.stem)
+        provenance = f"{relative_path}::{source_field}"
+        payload = {
+            "id": atom_id,
+            "title": title.strip() if isinstance(title, str) and title.strip() else f"{pill_payload['title']} — {source_field.replace('_', ' ').title()}",
+            "five_wh_one_plus": five_wh_one_plus,
+            "answer": answer,
+            "tags": list(tags),
+            "provenance": provenance,
+        }
+        return payload, source_selector, provenance
+
+    def _build_atom_from_graph_finding(
+        self,
+        atom_id: str,
+        finding_selector: str,
+        *,
+        five_wh_one_plus: str,
+        title: str | None,
+        tags: list[str],
+        graph_path: str | None,
+    ) -> tuple[dict[str, Any], str, str]:
+        from deskops.graph.checks import find_missing_graph_references
+
+        source_id, target_id = self._parse_graph_finding_selector(finding_selector)
+        resolved_graph_path = None
+        if graph_path:
+            resolved_graph_path = Path(graph_path)
+            if not resolved_graph_path.is_absolute():
+                resolved_graph_path = (self.root / resolved_graph_path).resolve()
+        findings = [
+            finding for finding in find_missing_graph_references(self.root, resolved_graph_path)
+            if finding.source_id == source_id and finding.target_id == target_id
+        ]
+        if not findings:
+            raise FileNotFoundError(
+                f"Graph finding not found for selector {finding_selector}. Run 'deskops graph missing --root {self.root}' to inspect available findings."
+            )
+        if len(findings) > 1:
+            kinds = ", ".join(sorted({finding.kind for finding in findings}))
+            raise ValueError(
+                f"Graph finding selector {finding_selector} matched multiple findings ({kinds}). Narrow the graph input so one finding remains."
+            )
+        finding = findings[0]
+        provenance = self._compose_exact_provenance(finding.provenance_path, finding.provenance_locator)
+        if provenance is None:
+            raise ValueError(
+                f"Graph finding {finding_selector} does not expose a resolvable provenance path; exact-source atom creation is blocked."
+            )
+        answer_lines = [
+            f"Graph finding `{finding.kind}` records a missing reference from `{finding.source_id}` to `{finding.target_id}`.",
+            "",
+            f"- Reason: {finding.reason}",
+        ]
+        if finding.role:
+            answer_lines.append(f"- Role: `{finding.role}`")
+        if finding.extractor:
+            answer_lines.append(f"- Extractor: `{finding.extractor}`")
+        answer_lines.append(f"- Provenance: `{provenance}`")
+        payload = {
+            "id": atom_id,
+            "title": title.strip() if isinstance(title, str) and title.strip() else f"Graph finding — {source_id} → {target_id}",
+            "five_wh_one_plus": five_wh_one_plus,
+            "answer": "\n".join(answer_lines).strip(),
+            "tags": list(tags),
+            "provenance": provenance,
+        }
+        return payload, f"{source_id}->{target_id}", provenance
+
+    def _build_atom_from_diagram(
+        self,
+        atom_id: str,
+        diagram_path_value: str,
+        *,
+        five_wh_one_plus: str,
+        title: str | None,
+        tags: list[str],
+    ) -> tuple[dict[str, Any], str, str]:
+        diagram_path = Path(diagram_path_value)
+        if not diagram_path.is_absolute():
+            diagram_path = (self.root / diagram_path).resolve()
+        if not diagram_path.exists() or not diagram_path.is_file():
+            raise FileNotFoundError(f"Diagram source not found: {diagram_path_value}")
+        relative_path = diagram_path.relative_to(self.root).as_posix()
+        text = diagram_path.read_text(encoding="utf-8")
+        provenance = relative_path
+        answer = text.strip()
+        if diagram_path.suffix == ".mmd":
+            answer = f"```mermaid\n{answer}\n```".strip()
+        elif diagram_path.suffix == ".md":
+            mermaid_match = re.search(r"```mermaid\s*\n(?P<body>.*?)\n```", text, flags=re.DOTALL | re.IGNORECASE)
+            if mermaid_match is not None:
+                answer = f"```mermaid\n{mermaid_match.group('body').strip()}\n```".strip()
+                provenance = f"{relative_path}::mermaid:1"
+        if not answer:
+            raise ValueError(f"Diagram source {diagram_path_value} is empty; cannot create atom from it.")
+        payload = {
+            "id": atom_id,
+            "title": title.strip() if isinstance(title, str) and title.strip() else f"{diagram_path.stem.replace('-', ' ').replace('_', ' ').title()} — Diagram",
+            "five_wh_one_plus": five_wh_one_plus,
+            "answer": answer,
+            "tags": list(tags),
+            "provenance": provenance,
+        }
+        return payload, relative_path, provenance
+
+    def _parse_graph_finding_selector(self, selector: str) -> tuple[str, str]:
+        source_id, separator, target_id = str(selector).partition("->")
+        source_id = source_id.strip()
+        target_id = target_id.strip()
+        if not separator or not source_id or not target_id:
+            raise ValueError(
+                f"Invalid --from-graph value '{selector}'. Expected SOURCE_ID->TARGET_ID."
+            )
+        return source_id, target_id
+
+    def _compose_exact_provenance(self, provenance_path: str | None, provenance_locator: str | None) -> str | None:
+        path_text = str(provenance_path or "").strip()
+        if not path_text:
+            return None
+        locator_text = str(provenance_locator or "").strip()
+        return f"{path_text}::{locator_text}" if locator_text else path_text
+
+    def _split_atom_answer_sections(self, answer: str) -> list[tuple[str, str]]:
+        trimmed = answer.strip()
+        if not trimmed:
+            raise ValueError("Source atom answer is empty; nothing to split.")
+        matches = list(re.finditer(r"^(#{2,6})\s+(.+?)\s*$", answer, flags=re.MULTILINE))
+        if not matches:
+            raise ValueError(
+                "Source atom answer does not contain markdown subsections. Add heading-based sections under ## Answer or pass a differently structured atom."
+            )
+        leading = answer[:matches[0].start()].strip()
+        if leading:
+            raise ValueError(
+                "Source atom answer contains content before the first subsection heading; split only supports heading-based sections that start immediately in the answer body."
+            )
+        sections: list[tuple[str, str]] = []
+        for index, match in enumerate(matches):
+            heading = match.group(2).strip()
+            end = matches[index + 1].start() if index + 1 < len(matches) else len(answer)
+            content = answer[match.end():end].strip()
+            if not content:
+                raise ValueError(f"Source atom subsection '{heading}' is empty.")
+            sections.append((heading, content))
+        return sections
+
+    def _resolve_atom_split_assignments(
+        self,
+        into_ids: list[str],
+        sections: list[tuple[str, str]],
+        section_flags: list[str],
+    ) -> dict[str, tuple[str, str]]:
+        by_heading = {heading: content for heading, content in sections}
+        if len(by_heading) != len(sections):
+            raise ValueError("Source atom answer subsection headings must be unique to support atom splitting.")
+
+        if not section_flags:
+            if len(sections) != len(into_ids):
+                raise ValueError(
+                    f"Source atom answer exposes {len(sections)} subsection(s) but --into lists {len(into_ids)} target ids. "
+                    "Provide --section NEW_ATOM_ID:SECTION_HEADING for each target or align the counts."
+                )
+            return {
+                target_id: (heading, content)
+                for target_id, (heading, content) in zip(into_ids, sections, strict=True)
+            }
+
+        assignments: dict[str, tuple[str, str]] = {}
+        for raw_flag in section_flags:
+            target_id, separator, heading = str(raw_flag).partition(":")
+            target_id = target_id.strip()
+            heading = heading.strip()
+            if not separator or not target_id or not heading:
+                raise ValueError(
+                    f"Invalid --section value '{raw_flag}'. Expected NEW_ATOM_ID:SECTION_HEADING."
+                )
+            if target_id not in into_ids:
+                raise ValueError(
+                    f"Section assignment references unknown target id '{target_id}'. Known ids: {', '.join(into_ids)}"
+                )
+            if target_id in assignments:
+                raise ValueError(f"Section assignment for {target_id} was provided more than once.")
+            if heading not in by_heading:
+                available = ", ".join(heading_name for heading_name, _ in sections)
+                raise ValueError(
+                    f"Section heading '{heading}' was not found in the source atom answer. Available headings: {available}"
+                )
+            content = by_heading[heading]
+            if any(existing_heading == heading for existing_heading, _ in assignments.values()):
+                raise ValueError(f"Section heading '{heading}' was assigned more than once.")
+            assignments[target_id] = (heading, content)
+
+        missing = [target_id for target_id in into_ids if target_id not in assignments]
+        if missing:
+            raise ValueError(
+                f"Missing --section assignment for target ids: {', '.join(missing)}"
+            )
+        return assignments
+
+    def _render_atom_split_redirect_answer(self, atom_id: str, target_ids: list[str]) -> str:
+        bullets = "\n".join(f"- atom:{target_id}" for target_id in target_ids)
+        return (
+            f"This atom has been split. Use the child atoms below instead of expanding atom:{atom_id} further.\n\n"
+            "Redirect targets:\n"
+            f"{bullets}\n\n"
+            "The original atom is intentionally kept as a redirect stub so existing inbound references continue to resolve until callers are rerouted."
+        )
+
+    def _detect_atom_merge_ambiguities(
+        self,
+        source_payload: dict[str, Any],
+        target_payload: dict[str, Any],
+    ) -> list[str]:
+        ambiguities: list[str] = []
+        source_question = str(source_payload.get("five_wh_one_plus") or "").strip()
+        target_question = str(target_payload.get("five_wh_one_plus") or "").strip()
+        if source_question and target_question and source_question != target_question:
+            ambiguities.append(
+                f"five_wh_one_plus conflict ({source_question} vs {target_question})"
+            )
+        return ambiguities
+
+    def _merge_atom_tags(self, target_tags: list[str], source_tags: list[str]) -> list[str]:
+        merged: list[str] = []
+        for tag in [*target_tags, *source_tags]:
+            if tag not in merged:
+                merged.append(tag)
+        return merged
+
+    def _merge_atom_answers(
+        self,
+        target_payload: dict[str, Any],
+        source_payload: dict[str, Any],
+    ) -> str:
+        target_answer = str(target_payload.get("answer") or "").strip()
+        source_answer = str(source_payload.get("answer") or "").strip()
+        if not target_answer:
+            return source_answer
+        if not source_answer:
+            return target_answer
+        if source_answer == target_answer or source_answer in target_answer:
+            return target_answer
+        appendix = self._render_atom_merge_appendix(source_payload)
+        if appendix in target_answer:
+            return target_answer
+        return f"{target_answer}\n\n{appendix}".strip()
+
+    def _render_atom_merge_appendix(self, source_payload: dict[str, Any]) -> str:
+        source_id = str(source_payload.get("id") or "").strip()
+        source_title = str(source_payload.get("title") or source_id).strip()
+        source_question = str(source_payload.get("five_wh_one_plus") or "").strip()
+        source_provenance = str(source_payload.get("provenance") or "").strip()
+        source_answer = str(source_payload.get("answer") or "").strip()
+        metadata_lines = [
+            f"Merged from atom:{source_id} ({source_title}).",
+        ]
+        if source_question:
+            metadata_lines.append(f"Original question: `{source_question}`")
+        if source_provenance:
+            metadata_lines.append(f"Original provenance: `{source_provenance}`")
+        metadata = "\n".join(f"- {line}" for line in metadata_lines)
+        return f"### Merged from atom:{source_id}\n\n{metadata}\n\n{source_answer}".strip()
+
+    def _render_atom_merge_redirect_answer(self, source_id: str, target_id: str) -> str:
+        return (
+            f"This atom has been merged into atom:{target_id}. Use atom:{target_id} instead of expanding atom:{source_id} further.\n\n"
+            "The original atom is intentionally kept as a redirect stub so the old id remains traceable after inbound references are reconciled."
+        )
+
+    def _validate_atom_path(self, path: Path, namespace_errors: list[str] | None = None) -> AtomValidationRecord:
+        try:
+            payload, errors = check_document(AtomDoc, path.read_text(encoding="utf-8"), invalid="model validation failed")
+        except Exception as exc:
+            return AtomValidationRecord(doc_id=path.stem, path=path, errors=[f"model validation failed: {exc}"])
+        doc_id = str(payload.get("id") or path.stem)
+
+        if path.stem != doc_id:
+            errors.append(f"filename must match atom id '{doc_id}'")
+
+        errors.extend(namespace_errors or [])
+
+        provenance = str(payload.get("provenance") or "").strip()
+        if provenance and not self._provenance_is_resolvable(provenance):
+            errors.append(f"provenance is not resolvable: {provenance}")
+
+        return AtomValidationRecord(doc_id=doc_id, path=path, errors=errors)
+
+    def _provenance_is_resolvable(self, provenance: str) -> bool:
+        parsed = urlparse(provenance)
+        if parsed.scheme in {"http", "https"} and parsed.netloc:
+            return True
+        path_text = provenance.split("::", 1)[0].split("#", 1)[0].strip()
+        if not path_text:
+            return False
+        path = Path(path_text)
+        if not path.is_absolute():
+            path = self.root / path
+        return path.exists()
+
+    def _retarget_atom_documents(self, retargets: dict[str, str]) -> bool:
+        """Update tracked atom document paths in the .sldb store after moves.
+
+        Retracking through SLDB's own track/untrack API keeps every derived index
+        (semantic shards, sections, hashes, journal) consistent; editing the raw
+        index files leaves the derived layers stale.
+        """
+        if not (self.root / ".sldb").is_dir():
+            return False
+
+        changed = False
+        for atom_id, new_path in retargets.items():
+            try:
+                with doc_access.desk_transaction(self.root) as transaction:
+                    doc_access.untrack_doc(self.root, atom_id)
+                    transaction.track(self.root / new_path, "AtomDoc", atom_id)
+            except Exception:
+                continue
+            doc_access.forget_index(self.root)
+            changed = True
+        return changed
+
+    def _untrack_atom_document(self, atom_id: str) -> bool:
+        if not (self.root / ".sldb").is_dir():
+            return False
+        try:
+            doc_access.untrack_doc(self.root, atom_id)
+        except Exception:
+            return False
+        return True
+
+    def atom_folder_axis(self) -> str | None:
+        """Return the configured folder axis namespace for atoms, or None (flat)."""
+        return doc_access.atom_folder_axis(self.root)
+
+    def _atom_doc_path(self, atom_id: str, tags: list[str]) -> Path:
+        return doc_access.atom_doc_path(self.root, atom_id, tags)
+
+FILE:instruccion
+Cold-bundle de la tarea task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l: con el TaskDoc, los rituales enrutados por el Board, las pills ligadas, los átomos ligados y los archivos que el TaskDoc nombra, reformula el encargo, lista ambigüedades con cita textual del input y da el DRY-RUN sin ejecutar nada. No ejecutes nada.
+
+Sección de validación del TaskDoc:
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_atom_citations.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_output_goldens.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli_help_examples.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_graph_checks.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -n 4 -q tests (suite completa una vez antes de entregar). Sin fallas nuevas: cada test que falle se corre con el mismo comando en un worktree limpio de origin/main (git worktree add /dev/shm/wt-base origin/main; luego git worktree remove /dev/shm/wt-base) y solo se acepta si falla igual ahí; la lista de esas fallas va en el informe de la tarea
+

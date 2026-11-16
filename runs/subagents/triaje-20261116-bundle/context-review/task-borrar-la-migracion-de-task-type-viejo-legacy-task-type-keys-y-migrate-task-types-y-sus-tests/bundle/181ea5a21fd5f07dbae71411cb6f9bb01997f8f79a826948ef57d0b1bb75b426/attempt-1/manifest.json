@@ -1,0 +1,93 @@
+{
+  "key": "task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests/bundle",
+  "input_sha256": "181ea5a21fd5f07dbae71411cb6f9bb01997f8f79a826948ef57d0b1bb75b426",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle/context-review/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests/bundle/181ea5a21fd5f07dbae71411cb6f9bb01997f8f79a826948ef57d0b1bb75b426/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md",
+      "sha256": "2b8a2f15a435512775182f3085e5167911017da051f121bbb86327f4644edeeb",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/workspace.py",
+      "sha256": "2bc354f3ae24f13c4ee2247a9e94a98303966ca009fbbdf136fbe81b0af94f3c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/desk.py",
+      "sha256": "0429cc9218b6272f31e8fd20ae055535ac45dab48e8c5d02bdd35d3968130715",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_task_types.py",
+      "sha256": "5c92f9e83429ad31ad072c56cb9a39350cc4ea61414c6f548be68529897191f1",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_task_lifecycle_validator.py",
+      "sha256": "fd8aca78c08140f8f6097fb3ad216411d4d8d751835f7458414be44c60b0ca24",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/workflow-policy-reference.md",
+      "sha256": "3b783f9109aa888fea1ea61766ad129d395788a114b63fae78a703e8858e88d8",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T05:41:56.421223+00:00",
+  "finished": "2026-11-16T05:42:14.142103+00:00"
+}

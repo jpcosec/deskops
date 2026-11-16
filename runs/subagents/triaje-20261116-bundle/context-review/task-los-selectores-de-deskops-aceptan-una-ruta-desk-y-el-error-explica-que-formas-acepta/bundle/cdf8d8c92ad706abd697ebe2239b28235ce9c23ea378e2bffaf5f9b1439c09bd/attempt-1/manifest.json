@@ -1,0 +1,98 @@
+{
+  "key": "task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/bundle",
+  "input_sha256": "cdf8d8c92ad706abd697ebe2239b28235ce9c23ea378e2bffaf5f9b1439c09bd",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle/context-review/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/bundle/cdf8d8c92ad706abd697ebe2239b28235ce9c23ea378e2bffaf5f9b1439c09bd/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta.md",
+      "sha256": "5a7860a5652a60ce7962e28ebd9c19d3b8e439937807bd9a7aa9577fcbb42050",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/contexts/pill-operational-cli-grammar-follows-spoken-workflow.md",
+      "sha256": "74f87156da6e10dab89f82823b3e5c365375c1b96a58061790977b985071e4b3",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/desk_paths.py",
+      "sha256": "fab69ed89c278657dfb455c6e938339e6109e6b9eac5dc09cf3fe4619664c63c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/doc_access.py",
+      "sha256": "1524cba3d60190fdf02618c64d776aba247f633edd038a96523accdd42421de4",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_desk_paths.py",
+      "sha256": "572750b44fce9bac93c267c4e04c16392930d9f098f590192efd1695dea87da5",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_tracked_selector_resolution.py",
+      "sha256": "d48972920cdb5dc49caa8e9249c008dbd0f5e2440854a457c160ffde7d3871da",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 81923
+    }
+  ],
+  "started": "2026-11-16T05:37:29.418034+00:00",
+  "finished": "2026-11-16T05:37:53.101474+00:00"
+}

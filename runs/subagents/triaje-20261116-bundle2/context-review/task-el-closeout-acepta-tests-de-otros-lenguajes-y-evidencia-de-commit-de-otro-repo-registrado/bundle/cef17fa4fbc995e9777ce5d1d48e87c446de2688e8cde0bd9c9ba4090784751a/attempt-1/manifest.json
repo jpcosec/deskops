@@ -1,0 +1,93 @@
+{
+  "key": "task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado/bundle",
+  "input_sha256": "cef17fa4fbc995e9777ce5d1d48e87c446de2688e8cde0bd9c9ba4090784751a",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle2/context-review/task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado/bundle/cef17fa4fbc995e9777ce5d1d48e87c446de2688e8cde0bd9c9ba4090784751a/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado.md",
+      "sha256": "b8d21a5b5b801d42d59442500317bd3d4837bf1c24bc9c2704d09312934f439d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/services/closeout_gates.py",
+      "sha256": "4dde2dace6537796534c547ba107f6de1b6dc26cd89643b0e33e1e161fdc8b15",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/workflow-policy-reference.md",
+      "sha256": "3b783f9109aa888fea1ea61766ad129d395788a114b63fae78a703e8858e88d8",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_closeout_gates.py",
+      "sha256": "246f18317d5ce77cc5b8e898a38cce268b4145044780e578a6aa86798fede011",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_closeout_resolved_by.py",
+      "sha256": "cd920bdd5c3d3270c5a38ac89daf22bf8c7e383f47759128bc5e92fad27feb92",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/services/closure.py",
+      "reason": "size>=60000",
+      "size": 71235
+    }
+  ],
+  "started": "2026-11-16T05:53:01.018384+00:00",
+  "finished": "2026-11-16T05:53:29.347910+00:00"
+}

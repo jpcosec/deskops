@@ -1,0 +1,93 @@
+{
+  "key": "task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/bundle",
+  "input_sha256": "cce554af1c8bf7142c7112a469ff8a2c5bece11943df4b25613d089af122f30e",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle2/context-review/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/bundle/cce554af1c8bf7142c7112a469ff8a2c5bece11943df4b25613d089af122f30e/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no.md",
+      "sha256": "4eee4942e69bf47933bb5eb2f18a8bd278930f6b87e315ad8c3ab1089c04b8b3",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/atom_references.py",
+      "sha256": "c093100f10b6bf7082b51a56065635939d13de86baa60ae4db7a054c1f574869",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/graph/checks.py",
+      "sha256": "5702c0f3c8ce6a1e2556ea6ea15a75b8d24b254f84e1d3ff8e0968aed2b43a70",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/workspace.py",
+      "sha256": "2bc354f3ae24f13c4ee2247a9e94a98303966ca009fbbdf136fbe81b0af94f3c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/lifecycle.py",
+      "sha256": "d95eb7128207cb9577d2dab60b0ac9f1f053be62c81825b698c3b90e42559f8d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_atom_reference_convention.py",
+      "sha256": "e50e2d8fae6b599a717edaafcf39adbdafb05d9f364fdc19562809226c933d87",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T05:54:32.269217+00:00",
+  "finished": "2026-11-16T05:54:43.262034+00:00"
+}

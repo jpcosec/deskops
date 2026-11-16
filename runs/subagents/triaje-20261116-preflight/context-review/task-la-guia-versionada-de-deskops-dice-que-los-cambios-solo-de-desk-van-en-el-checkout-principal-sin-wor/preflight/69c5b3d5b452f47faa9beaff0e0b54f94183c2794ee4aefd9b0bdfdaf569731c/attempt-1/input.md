@@ -1,0 +1,71 @@
+FILE:desk/tasks/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor.md
+---
+sldb:
+  by: agent
+  at: '2026-11-16T04:03:21Z'
+  authority: generated
+  via: create_document
+id: task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor
+status: draft
+summary: ''
+tags:
+- workspace:desk
+- artifact:task
+current_node: ritual-execution
+history: []
+references:
+- desk/inbox/20261104-180658-suggestion-cambios-solo-de-desk-van-directo-en-el-checkout-principal-nunca-en-un-worktree.md
+depends_on: []
+pills: []
+files:
+- .opencode/skills/use-deskops/SKILL.md
+- docs/operator-manual.md
+task_type: task.docs
+inherits_from: []
+inherit_acceptance_context: false
+atoms: []
+---
+
+# La guia versionada de deskops dice que los cambios solo de desk van en el checkout principal, sin worktree
+
+## Rationale
+
+_Explain why this task exists or the business driver behind it._
+
+Nota de JP (2026-11-04, desde MEPU): crear una tarea, mandar notas, editar un campo o hacer un closeout se hace con deskops en el checkout principal del repo, sobre su rama de integracion: ponerse al dia con el remoto, git add solo de los archivos de desk/ y .sldb que toco deskops (nunca git add -A), commit con [skip ci] y push; los worktrees son para cambios de codigo que pasan por PR. Ya esta en .claude/skills/deskops-workflow/SKILL.md (lineas 80-85); falta en la guia de opencode y en el manual.
+
+## Goal
+
+_Describe the concrete result this task must produce._
+
+La regla aparece, con el mismo contenido, en .opencode/skills/use-deskops/SKILL.md y en docs/operator-manual.md (seccion de commits del desk).
+
+## Scope
+
+_State what is in scope and what is out of scope._
+
+Entra: .opencode/skills/use-deskops/SKILL.md y docs/operator-manual.md. No entra: un aviso de deskops al correr dentro de un worktree secundario (la nota lo pide 'si aplica'; se descarta en este triaje), .pi/skills (no versionado).
+
+## Implementation Path
+
+_Outline the expected implementation route or affected surface._
+
+Copiar el parrafo de .claude/skills/deskops-workflow/SKILL.md:80-85 adaptado a cada archivo y correr los tests.
+
+## Validation
+
+_List the checks required before this task can close._
+
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_skill_cli_drift.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_operator_manual.py
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && grep -n 'checkout principal' .opencode/skills/use-deskops/SKILL.md docs/operator-manual.md
+
+## Done When
+
+_Name the observable condition that makes the task complete._
+
+El grep encuentra la regla en ambos archivos y los dos tests pasan.
+
+FILE:instruccion
+Preflight solo-TaskDoc de la tarea task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor: reformula el encargo tal como lo leería un ejecutor sin ningún otro contexto, lista ambigüedades con cita textual del input y da el DRY-RUN sin ejecutar nada. No ejecutes nada.
+

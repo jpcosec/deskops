@@ -1,0 +1,92 @@
+{
+  "key": "task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/bundle",
+  "input_sha256": "9feb18314ca1d2522b7b997b05c2c13c1a13a7e2e2d3d7e27c9c660cd3788c60",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle/context-review/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/bundle/9feb18314ca1d2522b7b997b05c2c13c1a13a7e2e2d3d7e27c9c660cd3788c60/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit.md",
+      "sha256": "877bfe201f5fbff23114d156a0e94e609242c2b67e10fc1ef12f66bc3601c711",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/contexts/pill-closeout-knowledge-gates-require-traceable-evidence.md",
+      "sha256": "bf02c09d2e9946cfd474aea148661d99c4cbf9fa901ed82309958403598dfcb2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/closeout.py",
+      "sha256": "2b58772c0d4c61b183de2af9b3c893d38dec04f81e4ec677cb108db3bde16fb5",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_closeout_declared_evidence.py",
+      "sha256": "5e671666e074f04ba410e1a31165bec9601cd9b8c6e60d23ba8bfbb792ee16dd",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/services/closure.py",
+      "reason": "size>=60000",
+      "size": 71235
+    },
+    {
+      "path": "tests/fixtures/golden (el golden de ayuda de closeout verify)",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T05:38:51.080119+00:00",
+  "finished": "2026-11-16T05:39:12.222004+00:00"
+}

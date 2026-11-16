@@ -1,0 +1,108 @@
+{
+  "key": "task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/bundle",
+  "input_sha256": "aa4603ad7b503a1cfa0a3fc30709acfe3e93d5c67c517fb164bfce4033a5c48d",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle/context-review/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/bundle/aa4603ad7b503a1cfa0a3fc30709acfe3e93d5c67c517fb164bfce4033a5c48d/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias.md",
+      "sha256": "4f5f763eff22b911868d2405a4f5bcc1d786b2a2b0605a29b560c05870cf400e",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/operator-manual.md",
+      "sha256": "e92b34d6c985ae9d34636c173d32ef5c66409b4ad8a6b178ae09db98f266d03b",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/faq.md",
+      "sha256": "fbbcfcc2746e10acd1beec1db6705cf431e7e28d9bc6168af5308af1f6fa1812",
+      "projection": "whole_file"
+    },
+    {
+      "path": ".claude/skills/deskops-workflow/SKILL.md",
+      "sha256": "0dd1a7dec75679f81ccb588533d42c5fbcfff190ac6c284d5b72bc9c5e9bec8c",
+      "projection": "whole_file"
+    },
+    {
+      "path": ".claude/skills/deskops-workflow/references/deskops-cli.md",
+      "sha256": "e2e97a22bd8cd8e6ec8e7f1b4e42af6651a284ad6d1cdd9cf0f21987f4f99d7d",
+      "projection": "whole_file"
+    },
+    {
+      "path": ".claude/skills/deskops-workflow/references/vocabulary.md",
+      "sha256": "56401889f786963181764367a00f018d258884883f5c2264b8c348f72cd61fc9",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_cli.py",
+      "sha256": "3d44766bfb657bcc1652a8af431cedc73a7d6cd6203885c4c1f831ca468b2bc0",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_delivery.py",
+      "sha256": "f4a693eaea89b442a92bb12d18a8e01dcb9cecf8607700e576cdf12f31f5ff1f",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 81923
+    }
+  ],
+  "started": "2026-11-16T05:43:11.798409+00:00",
+  "finished": "2026-11-16T05:43:27.613843+00:00"
+}

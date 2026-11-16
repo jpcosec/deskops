@@ -1,0 +1,88 @@
+{
+  "key": "task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible/bundle",
+  "input_sha256": "3a5f13f98232a0beb2a42572818b1d107048808d7842b10516bb99d2b04507eb",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle/context-review/task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible/bundle/3a5f13f98232a0beb2a42572818b1d107048808d7842b10516bb99d2b04507eb/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible.md",
+      "sha256": "45222e32501fb750892f996b69d8860c44760bcaa7d8328a8234a96fba53e58a",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/contexts/pill-zero-context-preflight-precedes-executor.md",
+      "sha256": "5e9d67ac97625c6d4923924081e7e1e8977ceec3f288704901581675a0c814cc",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cheap-zero-context-reviews-test-the-brief-recursively.md",
+      "sha256": "770257e40c6df2936016dc7b8a3b6b32202e576c38f33e5d7aa8ac8aa2facf5a",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/services/review.py",
+      "sha256": "cbff5eded8b5d8eff76bf51735637d892cf577b12a903004bbcbcd82ea173d92",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_review_command.py",
+      "sha256": "cb9bb9c3a00d601be8fc554a0fc5303a951a5b245d75ce1849083bb1c2c3bc6d",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T05:40:14.969975+00:00",
+  "finished": "2026-11-16T05:40:33.376168+00:00"
+}

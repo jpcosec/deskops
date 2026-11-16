@@ -1,0 +1,113 @@
+{
+  "key": "task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/bundle",
+  "input_sha256": "307edd4aed20d90b86293678b24704077a3f1ab51c34cea8adaa01d619a8cb6d",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-bundle2/context-review/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/bundle/307edd4aed20d90b86293678b24704077a3f1ab51c34cea8adaa01d619a8cb6d/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md",
+      "sha256": "d83398854991f30031c5113efbb3df57224d4e7d07e4e36b9c7dce7ca3ca84fa",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/data/desk_declaration.yaml",
+      "sha256": "ad1ad1b498e33374e0a4a5f4265db6dbdf11404cf6cee1313120e8698b371ebc",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/data/views/board.md",
+      "sha256": "cf98f6c85a6cb86f30a1677eaade1623d10433ee2a31bcfde1ab613bed84a2ca",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/view.py",
+      "sha256": "b24909afc24206646699661404f0499c71b3a8d9e7bdaa4963156983c906e126",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/message.py",
+      "sha256": "acd0aae9edd847dcde86379a38180d9a412d4d43094592385aa2fa3cd50777f7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/promote.py",
+      "sha256": "06b6699812a96d0927acd93654342c5081ba0a74345c9230f76d02f20c7ade46",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/drawer.py",
+      "sha256": "16ddc6c77410f9f25b9e69cb4660919bcf4cdca42dfb3c3a7a6792aee0e77310",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_view.py",
+      "sha256": "064437e13c0fe906f3a4bb49f8cb95cda207730267d6db1a9c1756ecd135b4c3",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_delivery.py",
+      "sha256": "f4a693eaea89b442a92bb12d18a8e01dcb9cecf8607700e576cdf12f31f5ff1f",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_inbox_promote_cli_gaps.py",
+      "sha256": "fa4903690aadf983cdbd959dd194603e6c1366d8521795ef3b74eec40c893cc1",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T05:56:17.621282+00:00",
+  "finished": "2026-11-16T05:56:37.593668+00:00"
+}

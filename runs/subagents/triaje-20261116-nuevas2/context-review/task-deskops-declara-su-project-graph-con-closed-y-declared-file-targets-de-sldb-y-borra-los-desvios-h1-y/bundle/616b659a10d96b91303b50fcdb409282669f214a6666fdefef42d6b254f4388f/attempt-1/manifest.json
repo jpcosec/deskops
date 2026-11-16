@@ -1,0 +1,88 @@
+{
+  "key": "task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y/bundle",
+  "input_sha256": "616b659a10d96b91303b50fcdb409282669f214a6666fdefef42d6b254f4388f",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/triaje-20261116-nuevas2/context-review/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y/bundle/616b659a10d96b91303b50fcdb409282669f214a6666fdefef42d6b254f4388f/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md",
+      "sha256": "923506fce15696d8c2c4b964dfcf44884f1f3a5e8045979ca5956cb4318cdc84",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/knowledge-model/atom-knowledge-graph-connects-desk-and-source-files.md",
+      "sha256": "267181ee0d076a431830854694b7ef1442bb0f940aa7fdc728cf753d8542acec",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/graph/desk_graph.py",
+      "sha256": "279e4a2cd962eee9994cf9464d9d3e13068cafdae02fe79c33beb65eb69cd402",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/graph/checks.py",
+      "sha256": "5702c0f3c8ce6a1e2556ea6ea15a75b8d24b254f84e1d3ff8e0968aed2b43a70",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_graph_checks.py",
+      "sha256": "53afa88c535737f94c4bb58644beb977be316fa99d9eae18f6b8264adc393566",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_graph_declared_edges.py",
+      "sha256": "cdffd00771583159398d12266799f26d7386883562a26a3f645f630b9fa055dd",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T06:18:28.185171+00:00",
+  "finished": "2026-11-16T06:18:40.831951+00:00"
+}
