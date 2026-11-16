@@ -342,6 +342,8 @@ include:
     name: run-deskops-t-adb2be97a1a5
   - path: runs/subagents/exec-deskops-e-e75ce6f704e3/run.md
     name: run-deskops-e-e75ce6f704e3
+  - path: runs/subagents/exec-deskops-e-edb9213453ab/run.md
+    name: run-deskops-e-edb9213453ab
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -866,6 +868,8 @@ include:
     name: review-task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp-preflight-1
   - path: desk/reviews/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/bundle-1.md
     name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-bundle-1
+  - path: desk/reviews/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp/bundle-1.md
+    name: review-task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
