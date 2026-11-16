@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T02:10:06Z'
+  at: '2026-11-16T02:20:51Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -18,6 +18,7 @@ tasks:
 - desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
 - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
 - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
+- desk/tasks/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -67,3 +68,4 @@ _Generated from the task references above._
 - doctor no alerta como lost los recibos de una tarea cerrada [draft] - Un recibo cuya tarea se cerro (closeout registrado en git o en el store) no produce alerta lost en doctor: el closeout re-ancla los recibos al commit de cierre o los marca archivados; solo los recibos de tareas que desaparecieron sin cierre siguen alertando.
 - Board no refleja deskops edit task goal [draft] - Reproducir en un desk real y corregir: tras deskops edit task <id> goal, la linea de la tarea en Task Details del Board muestra el goal nuevo, o hay un verbo de deskops que refresca el Board.
 - advance y closeout no derraman reglas de activacion ni runtimes centrales sin trackear en el desk consumidor [draft] - Las semillas centrales (deskops/data/rules, runtime por defecto) se leen del paquete en tiempo de ejecucion, o se escriben solo por deskops desk update --apply y quedan trackeadas y declaradas; nunca como archivos sueltos sin trackear tras advance o closeout.
+- La regla de desk_graph sobre specs deja de nombrar spec2viz y reconoce los specs YAML sincronizados con sldb notations sync [draft] - La regla de desk_graph.py reconoce los specs YAML como artefactos de autoría que se sincronizan al store con sldb notations sync, sin nombrar ni depender de spec2viz.
