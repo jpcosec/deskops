@@ -112,6 +112,7 @@ MUTATING_COMMANDS: set[tuple[str, ...]] = {
     ("atoms", "crossroad"),
     ("atoms", "proto"),
     ("atoms", "type"),
+    ("atoms", "citations"),
     ("graph",),
     ("graph", "build"),
     ("graph", "reflect"),
