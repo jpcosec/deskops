@@ -1,19 +1,19 @@
 ---
 name: deskops-workflow
-description: This skill should be used when a repository has a top-level desk/ directory, or when the user asks to "add a task", "check the board", "advance a task", "create a pill", "create an atom", "promote from the drawer", "create or update a diagram spec", "render a diagram", "validate a spec", "build the architecture catalog", "agregar tarea", "revisar el board", "avanzar tarea", "crear un pill", "crear un atom", "promover del drawer", "renderizar diagrama", "validar spec", or otherwise mentions deskops, spec2viz, sldb, desk/, atoms, pills, routines, the desk board, or a diagram/spec YAML source. It forces use of the `deskops` and `spec2viz` CLIs instead of hand-editing desk/ files or generated diagram outputs, and enforces following the spec -> atoms|diagrams -> tasks|pills -> code|documental-projection pipeline instead of ad hoc workflow habits.
+description: This skill should be used when a repository has a top-level desk/ directory, or when the user asks to "add a task", "check the board", "advance a task", "create a pill", "create an atom", "promote from the drawer", "create or update a diagram spec", "render a diagram", "validate a spec", "build the architecture catalog", "agregar tarea", "revisar el board", "avanzar tarea", "crear un pill", "crear un atom", "promover del drawer", "renderizar diagrama", "validar spec", or otherwise mentions deskops, specir, spec2viz, sldb, desk/, atoms, pills, routines, the desk board, or a diagram/spec YAML source. It forces use of the `deskops` and `specir` CLIs instead of hand-editing desk/ files or generated diagram outputs, and enforces following the spec -> atoms|diagrams -> tasks|pills -> code|documental-projection pipeline instead of ad hoc workflow habits.
 ---
 
-# deskops + spec2viz Workflow
+# deskops + specir Workflow
 
 > Where this skill lives: the deskops repo (`jpcosec/opsys`), `.claude/skills/deskops-workflow/`.
 > `~/.claude/skills/deskops-workflow` is a symlink to that folder. Edit it in the repo and commit it there;
 > see the deskops README, «Pi/project agent guidance».
 
-`deskops` and `spec2viz` are CLI-driven layers for structured project workflow and structured
+`deskops` and `specir` are CLI-driven layers for structured project workflow and structured
 diagrams. `deskops` sits on top of `sldb` (structured-Markdown document infrastructure) and owns
-tasks, routines, pills, atoms, drawer, and board. `spec2viz` owns diagrams the same way: a YAML
+tasks, routines, pills, atoms, drawer, and board. `specir` (which replaces the retired spec2viz) owns diagrams the same way: a YAML
 spec is the source of truth, and every rendered Mermaid/PlantUML/Vega/D2/HTML file is a generated
-projection of it. Both CLIs are on PATH as `deskops` and `spec2viz` — always run `--help` on an
+projection of it. Both CLIs are on PATH as `deskops` and `specir` — always run `--help` on an
 unfamiliar subcommand instead of guessing flags.
 
 ## The pipeline this skill enforces
@@ -21,10 +21,10 @@ unfamiliar subcommand instead of guessing flags.
 Work in a deskops-managed repo flows through one pipeline. Do not skip stages or substitute a
 hand-written file for a stage's generated artifact:
 
-1. **Spec** — a structured YAML source (a deskops artifact spec or a spec2viz diagram spec).
+1. **Spec** — a structured YAML source (a deskops artifact spec or a specir diagram spec).
    This is where intent and structure get declared first.
 2. **Atoms | Diagrams** — durable knowledge units (`deskops atoms ...`) and rendered diagrams
-   (`spec2viz diagram render` / `spec2viz catalog build`) derive from specs and decisions. Atoms
+   (`specir diagram render` / `specir catalog build`) derive from specs and decisions. Atoms
    answer exactly one 5W1H question each; diagrams are visual projections, never hand-authored
    Mermaid/PlantUML files maintained in parallel with a spec.
 3. **Tasks | Pills** — routed, gated work (`deskops add task`, `deskops advance task`, the
@@ -56,8 +56,8 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
   model with a raw file edit.
 - **Never hand-edit a generated diagram.** `.mmd`, `.puml`, `.svg`, and generated `.html` catalog
   files are projections. Fix the YAML diagram spec (or the renderer, if the gap is systemic) and
-  re-run `spec2viz diagram render` / `spec2viz catalog build`. Validate before rendering:
-  `spec2viz diagram validate <spec.yml>`.
+  re-run `specir diagram render` / `specir catalog build`. Validate before rendering:
+  `specir diagram validate <spec.yml>`.
 - **Advance tasks through the CLI, not by editing status fields.** Use
   `deskops advance task <selector> --root .` and check what is next with
   `deskops next <selector> --root .` rather than manually flipping a task's phase/status text.
@@ -98,9 +98,9 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
 | Create/bind a pill | `deskops add pill --root . --what ... --why ... --when ... --where ... --how ... --how-not ...` then `deskops bind pill <task> <pill> --root .` |
 | Create an atom | `deskops add atom --root . --five-wh-one-plus <what\|why\|how\|how_not\|when\|where\|for_whom> --answer ...` |
 | Promote / author work | `deskops promote inbox-to-drawer-task <selector> --root .`, then `deskops add task --root . --from-drawer <selector> --title ... --goal ... --scope ... --validation ...` (no drawer-to-task promotion) |
-| Validate a diagram spec | `spec2viz diagram validate <spec.yml>` |
-| Render a diagram | `spec2viz diagram render <spec.yml> --out <dir> [--renderer mermaid\|plantuml\|vega\|d2\|antonia-html\|json]` |
-| Build a diagram catalog | `spec2viz catalog build --config <catalog.yml> --out <out.html>` |
+| Validate a diagram spec | `specir diagram validate <spec.yml>` |
+| Render a diagram | `specir diagram render <spec.yml> --out <dir> [--renderer mermaid\|plantuml\|vega\|d2\|antonia-html\|json]` |
+| Build a diagram catalog | `specir catalog build --config <catalog.yml> --out <out.html>` |
 | Close a task's code | run the task's validation, then `deskops closeout commit --root . --task <id> --run-dir <dir> ...` (or plain commit if no run-dir) |
 | Check consistency | `deskops doctor --root .`, `deskops drift check --root .`, `deskops graph missing --root .` |
 
@@ -108,8 +108,8 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
 
 - `references/deskops-cli.md` — full `deskops` subcommand reference (all `add`/`edit`/`list`/`show`
   kinds, `atoms`, `graph`, `promote`, `closeout`, `repo`, `desk`).
-- `references/spec2viz-cli.md` — full `spec2viz` subcommand reference (`diagram`, `catalog`,
-  renderers, schema export, legacy aliases).
+- `references/spec2viz-cli.md` — remission: spec2viz is retired; points to the IR repo's
+  `skills/use-specir/SKILL.md` and its spec2viz → specir/sldb correspondence table.
 - `references/vocabulary.md` — precise definitions of task/routine/phase/board, drawer/promotion,
   pill-vs-atom lifecycle, and the spec2viz mirror-of-sldb relationship, for when the mental model
   itself (not just a command) needs grounding.

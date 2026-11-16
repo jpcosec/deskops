@@ -1,40 +1,22 @@
 ---
-name: use-spec2viz
-description: Use when working with spec2viz diagrams, Mermaid outputs, diagram specs, or generated diagram projections from specs/atoms/docs.
+name: use-specir
+description: Remission. spec2viz is retired (IR13); diagram specs, renderers, the catalog and generated diagram projections are now handled with specIR's `specir` command and sldb. Load the use-specir skill of the IR repo.
 ---
 
-# Use Spec2viz
+# use-spec2viz → use-specir
 
-Spec2viz owns structured diagram rendering and diagram projections.
+spec2viz is retired (IR13). This file stays only so that whoever loads the old `use-spec2viz` path
+finds where the guidance went. The skill to use is `use-specir`, in the IR repo:
+`skills/use-specir/SKILL.md` (sibling checkout: `../IR/skills/use-specir/SKILL.md`). The
+command-by-command correspondence is `docs/spec2viz/correspondencia-cli.md` in that repo.
 
-Use spec2viz when the task involves:
+Short map:
 
-- Generating diagrams from specs or structured inputs.
-- Mermaid `.mmd` outputs.
-- Diagram documentation under `docs/diagrams/`.
-- Keeping generated diagrams synchronized with source specs or atoms.
+- render / validate / lint / schema of a spec → `specir diagram render|validate|lint|schema`
+- catalog HTML → `specir catalog build`
+- catalog sync / check → `sldb notations sync --catalog [--check]`
+- serving the catalog's annotations → `sldb serve`
+- spec from a graph or Python source → `sldb notations from-graph`
 
-Boundary:
-
-- Source knowledge belongs in atoms, specs, docs, or code.
-- Diagram outputs are projections, not canonical knowledge.
-- SLDB owns document structure.
-- KGDB owns graph snapshots.
-- Deskops may orchestrate workflow, but spec2viz should render diagrams.
-
-Deskops conventions:
-
-- Store diagram docs under `docs/diagrams/`.
-- Declare diagram sources in a `## Diagram Sources` section when useful.
-- Keep rendered diagram files reproducible from source specs.
-- If a diagram changes because an atom/spec changed, update both the source reference and generated projection.
-
-Validation:
-
-```bash
-deskops graph build --root .
-deskops graph missing --root .
-pytest
-```
-
-Do not encode durable knowledge only in a diagram. Distill it into atoms/specs first.
+Deskops conventions that still hold: diagram docs live under `docs/diagrams/`, rendered files are
+projections reproducible from their source spec, and durable knowledge goes into atoms/specs first.

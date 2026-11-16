@@ -156,7 +156,7 @@ When a doc rule changes materially, update the relevant atom first, then reflect
 
 - Load `use-sldb` for `StructuredNLDoc` models, tracked Markdown, reversible markers, `.sldb` stores, document tracking, field operations, rendering, extraction, or model changes.
 - Load `use-kgdb` for graph contracts, graph snapshots, provenance, node/edge behavior, or graph runtime validation.
-- Load `use-spec2viz` for structured diagram specs and generated diagram projections.
+- Load `use-specir` (IR repo, `skills/use-specir/SKILL.md`; replaces the retired `use-spec2viz`) for structured diagram specs and generated diagram projections.
 - Load `customize-opencode` only for opencode config, `.opencode/` agents, skills, plugins, MCP servers, permissions, or routing configuration.
 
 ## Validation
