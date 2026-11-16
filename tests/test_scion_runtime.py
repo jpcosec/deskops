@@ -125,7 +125,9 @@ def test_statuses_are_ones_sciontool_has_and_wake_the_coordinator(executor: dict
 def test_tools_fold_into_command_args_when_the_profile_has_a_flag(profiles: dict[str, dict]) -> None:
     role = {"id": "role-x", "name": "x", "description": "d", "kind": "claude", "model": "", "tools": ["Read", "Bash"], "body": "# x"}
     agent = yaml.safe_load(scion_template_files(role, profiles["claude"], harness="claude")["scion-agent.yaml"])
-    assert agent["command_args"] == ["--allowedTools", "Read", "--allowedTools", "Bash"]
+    # One token per pair: Scion appends the prompt after command_args, and a variadic
+    # flag (Claude's --allowedTools <tools...>) followed by a bare value would eat it.
+    assert agent["command_args"] == ["--allowedTools=Read", "--allowedTools=Bash"]
 
 
 def test_bad_alias_and_bad_harness_are_refused(executor: dict, profiles: dict[str, dict]) -> None:

@@ -345,7 +345,11 @@ def _command_args(role_doc: dict[str, Any], profile: dict[str, Any]) -> list[str
     """
     stripped = dict(profile)
     stripped.update(model_flag="", fallback_models_flag="", system_prompt_flag="", session_flag="", extra_args=[])
-    return list(build_agent_spec_args(role_doc, stripped))
+    args = list(build_agent_spec_args(role_doc, stripped))
+    # Scion puts the task prompt (and more options) after command_args. A variadic
+    # flag such as Claude's ``--allowedTools <tools...>`` would swallow the prompt as
+    # one more tool, so every flag/value pair is emitted as a single ``flag=value``.
+    return [f"{flag}={value}" for flag, value in zip(args[::2], args[1::2], strict=True)]
 
 
 def scion_template_files(
