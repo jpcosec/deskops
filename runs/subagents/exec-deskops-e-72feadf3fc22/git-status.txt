@@ -1,0 +1,9 @@
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M deskops/services/closeout_gates.py
+ M tests/fixtures/golden/output/view_board.json
+ M tests/fixtures/golden/output/view_task.json
+ M tests/test_closeout_gates.py
+?? .sldb/core/documents/RunDoc/run-deskops-e-72feadf3fc22.yaml
+?? runs/subagents/exec-deskops-e-72feadf3fc22/

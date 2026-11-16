@@ -1,0 +1,65 @@
+diff --git a/deskops/services/closeout_gates.py b/deskops/services/closeout_gates.py
+index 9edc6757f..293127d47 100644
+--- a/deskops/services/closeout_gates.py
++++ b/deskops/services/closeout_gates.py
+@@ -117,6 +117,15 @@ class CloseoutGatesService:
+                 evidence["follow_up"].append(ref)
+             if self.reference_points_to_url(ref):
+                 evidence["external"].append(ref)
++        # The task's typed `atoms` field (AtomDoc ids) is atom evidence like an atom
++        # reference: every value counts, with no prefix filter.
++        atoms = payload.get("atoms") or []
++        if not isinstance(atoms, list):
++            atoms = [atoms]
++        for atom in atoms:
++            atom_id = str(atom).strip()
++            if atom_id and atom_id not in evidence["atom"]:
++                evidence["atom"].append(atom_id)
+         for candidate in [*references, *files]:
+             ref = str(candidate).strip()
+             if ref and self.reference_points_to_document(ref) and ref not in evidence["document"]:
+diff --git a/tests/test_closeout_gates.py b/tests/test_closeout_gates.py
+index e7b21d2dc..3eca6f2a9 100644
+--- a/tests/test_closeout_gates.py
++++ b/tests/test_closeout_gates.py
+@@ -216,7 +216,8 @@ def test_closeout_reports_cover_each_gate_case(desk: str, request: pytest.Fixtur
+     absent = reports["task-no-materialization"]
+     assert {f["path"] for f in absent["findings"]} == {"deskops/uncovered.py", "docs/notes.md"}
+     assert any(item.startswith("graph:") for item in reports["task-changed-documents"]["evidence"])
+-    assert reports["task-skill-guard"]["evidence"] == [f"guard-test:{GUARD_TEST} -> {CHANGED_SKILL}"]
++    # The task's `atoms` field counts as atom evidence, ahead of the changed-file links.
++    assert reports["task-skill-guard"]["evidence"] == [ATOM, f"guard-test:{GUARD_TEST} -> {CHANGED_SKILL}"]
+     assert any(f["code"] == "changed_file_missing" for f in reports["task-mixed"]["findings"])
+ 
+     context = DeskopsOperations(root).closeout_gates.build_closeout_graph_context()
+@@ -226,6 +227,30 @@ def test_closeout_reports_cover_each_gate_case(desk: str, request: pytest.Fixtur
+     }
+ 
+ 
++@pytest.mark.parametrize("desk", ["bare_desk", "store_desk"])
++def test_task_atoms_field_satisfies_the_link_gate(desk: str, request: pytest.FixtureRequest) -> None:
++    """A task with `atoms` and no atom reference passes the link gate; one with neither fails."""
++    root: Path = request.getfixturevalue(desk)
++    _write(root / "desk" / "tasks" / "task-atoms-field.md", _task("task-atoms-field", [], [ATOM]))
++    _write(root / "desk" / "tasks" / "task-no-atoms.md", _task("task-no-atoms", [], []))
++    if desk == "store_desk":
++        from sldb.api import track_document_file
++
++        pythonpath = str(Path(__file__).resolve().parents[1])
++        for task_id in ("task-atoms-field", "task-no-atoms"):
++            path = root / "desk" / "tasks" / f"{task_id}.md"
++            track_document_file(root / ".sldb", "TaskDoc", path, name=task_id, pythonpath=pythonpath, force=True)
++    operations = DeskopsOperations(root)
++
++    with_atoms = operations.verify_task_closeout("task-atoms-field")["gates"]["atom_or_materialization_link"]
++    assert with_atoms["ok"] is True
++    assert with_atoms["evidence"] == [ATOM]
++
++    without = operations.verify_task_closeout("task-no-atoms")["gates"]["atom_or_materialization_link"]
++    assert without["ok"] is False
++    assert [f["code"] for f in without["findings"]] == ["missing_atom_or_materialization_link"]
++
++
+ def _lifecycle_nodes() -> list[str]:
+     return sorted(set(lifecycle.load_lifecycle_spec().rituals) | {"ritual-unknown"})
+ 

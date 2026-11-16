@@ -1,0 +1,36 @@
+name: review-task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references-evidence-tests-2
+path: desk/reviews/task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references/evidence-tests-2.md
+source_hash: 6671f2686a47612e34e958986c79944b40af7d7c5a9a5be4516b79011e515bac
+content_hash: 257f831a6d3a4894a60590a9dd359745683acca87a5571fc4c11addf8826dd12
+field_hashes:
+  id: 05feac0c0f87005a2a50dbf639f3e71b72c63e4d3b158f6b9d9887752c847dcc
+  title: 148044d770eca0f2f867a1cb1654be077729efc8396113f5e27a02fb9064c324
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 661e64ebf3637339b7cf6cf31e0820b889b2831e3a5c0e50b630be7978c36142
+  subject: 84960ec8671331a3c73864a383f0cb1ef13469816948f0b01468e5b2fde27a91
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: b52cecd781d7879fb2da2cdf5202367b54102bc6fc2c00abc4a48c47cd172cc0
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: a5cdb23a253e5db58ee891e711b98596d58ab47f9a3ebed510c5e3a661cfa58c
+  created_at: bff9baac3e3fdf3b330e792215c4efb584ebacec5de6fbb3af869267adef915c
+  disposed_at: bff9baac3e3fdf3b330e792215c4efb584ebacec5de6fbb3af869267adef915c
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: b0f305eb3ac91b310db5c1d7d9db5b6732df552d6c3fb9cc2e32f2c14e0bb53a
+  disposition: 5f9ba22ffa94c836a7411fd3889d870dc02881e09d010dc1bb31e2e4652cd204
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T08:37:06Z'
+  authority: generated
+  via: save_document_payload

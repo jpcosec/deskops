@@ -1,0 +1,108 @@
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 2 warnings in 123.62s (0:02:03)
+rc=0
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_declared_evidence.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 1 warning in 84.70s (0:01:24)
+rc=0
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+59 passed, 2 warnings in 34.17s
+rc=0
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_view_goldens.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 2 warnings in 23.41s
+rc=0
+### reproducción con HEAD
+$ cd /dev/shm/tester-a96b/deskops && PYTHONPATH=/dev/shm/tester-a96b/deskops TMPDIR=/dev/shm /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_closeout_gates.py  # copia con closeout_gates.py de HEAD (ee9755e3), tests de la entrega
+        assert valid["ok"] is True
+        assert "materialization:materialization:materialization-covered-source->deskops/covered.py" in valid["evidence"]
+        assert invalid["ok"] is False
+        assert [f["code"] for f in invalid["findings"]] == ["missing_changed_file_link"]
+        assert {f["path"] for f in absent["findings"]} == {"deskops/uncovered.py", "docs/notes.md"}
+        assert any(item.startswith("graph:") for item in reports["task-changed-documents"]["evidence"])
+>       assert reports["task-skill-guard"]["evidence"] == [ATOM, f"guard-test:{GUARD_TEST} -> {CHANGED_SKILL}"]
+E       AssertionError: assert ['guard-test:...ops/SKILL.md'] == ['atom-closeo...ops/SKILL.md']
+E         
+E         At index 0 diff: 'guard-test:tests/test_skill_cli_drift.py -> .pi/skills/use-deskops/SKILL.md' != 'atom-closeout-graph-equivalence'
+E         Right contains one more item: 'guard-test:tests/test_skill_cli_drift.py -> .pi/skills/use-deskops/SKILL.md'
+E         Use -v to get more diff
+        assert valid["ok"] is True
+        assert "materialization:materialization:materialization-covered-source->deskops/covered.py" in valid["evidence"]
+        assert invalid["ok"] is False
+        assert [f["code"] for f in invalid["findings"]] == ["missing_changed_file_link"]
+        assert {f["path"] for f in absent["findings"]} == {"deskops/uncovered.py", "docs/notes.md"}
+        assert any(item.startswith("graph:") for item in reports["task-changed-documents"]["evidence"])
+>       assert reports["task-skill-guard"]["evidence"] == [ATOM, f"guard-test:{GUARD_TEST} -> {CHANGED_SKILL}"]
+E       AssertionError: assert ['guard-test:...ops/SKILL.md'] == ['atom-closeo...ops/SKILL.md']
+rc=1
+$ cd /dev/shm/tester-a96b/deskops && PYTHONPATH=/dev/shm/tester-a96b/deskops TMPDIR=/dev/shm /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m pytest -q -p no:cacheprovider -rf tests/test_closeout_gates.py -k atoms_field
+>       assert with_atoms["ok"] is True
+E       assert False is True
+>       assert with_atoms["ok"] is True
+E       assert False is True
+FAILED tests/test_closeout_gates.py::test_task_atoms_field_satisfies_the_link_gate[bare_desk]
+FAILED tests/test_closeout_gates.py::test_task_atoms_field_satisfies_the_link_gate[store_desk]
+2 failed, 3 deselected, 2 warnings in 11.79s
+rc=1
+### $ cd /dev/shm/tester-a96b/deskops && PYTHONPATH=/dev/shm/tester-a96b/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references --root . --json
+RAW: usage: deskops closeout verify [-h] [--root ROOT] --task TASK
+deskops closeout verify: error: the following arguments are required: --task
+
+### $ cd /dev/shm/tester-a96b-patched/deskops && PYTHONPATH=/dev/shm/tester-a96b-patched/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references --root . --json
+RAW: usage: deskops closeout verify [-h] [--root ROOT] --task TASK
+deskops closeout verify: error: the following arguments are required: --task
+
+(el intento anterior usó argumento posicional; rc=2 por uso; se repite con --task)
+### $ cd /dev/shm/tester-a96b/deskops && PYTHONPATH=/dev/shm/tester-a96b/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify --task task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references --root .
+rc=1
+5:Closeout gate: esta tarea declaró tests, commit, atom|materialization; encontré atom|materialization
+8:  "declared": [
+11:    "atom",
+25:    "atom|materialization"
+28:    "atom_or_materialization_link": {
+64:  "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 atom|materialization",
+65:  "task_id": "task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references"
+### $ cd /dev/shm/tester-a96b-patched/deskops && PYTHONPATH=/dev/shm/tester-a96b-patched/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify --task task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references --root .
+rc=1
+5:Closeout gate: esta tarea declaró tests, commit, atom|materialization; encontré atom|materialization
+8:  "declared": [
+11:    "atom",
+25:    "atom|materialization"
+28:    "atom_or_materialization_link": {
+30:        "atom-code-changes-close-with-tests-and-commit",
+31:        "atom-cli-mutation-testing-uses-sandbox-desk-roots",
+66:  "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 atom|materialization",
+67:  "task_id": "task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references"
+### repro CLI del item del drawer: tarea sandbox task-tester-atoms-repro (copia de la tarea con files: [] y references: [], atoms: 2 ids) en cada copia /dev/shm
+$ cd /dev/shm/tester-a96b/deskops && PYTHONPATH=/dev/shm/tester-a96b/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify --task task-tester-atoms-repro --root .
+rc=1
+RAW File not found: No artifact.task file found for selector 'task-tester-atoms-repro'
+
+$ cd /dev/shm/tester-a96b-patched/deskops && PYTHONPATH=/dev/shm/tester-a96b-patched/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify --task task-tester-atoms-repro --root .
+rc=1
+RAW File not found: No artifact.task file found for selector 'task-tester-atoms-repro'
+
+(store no indexa archivos nuevos; en su lugar, en cada copia /dev/shm se deja files: [] en la propia tarea task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references, que ya tiene references: [] y atoms: 2 ids)
+$ cd /dev/shm/tester-a96b/deskops && PYTHONPATH=/dev/shm/tester-a96b/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify --task task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references --root .
+rc=1
+{"evidence": [], "findings": [{"code": "missing_atom_or_materialization_link", "message": "No atom reference or changed-file materialization coverage found."}], "ok": false}
+esta tarea declaró tests, commit, atom|materialization; encontré nada
+$ cd /dev/shm/tester-a96b-patched/deskops && PYTHONPATH=/dev/shm/tester-a96b-patched/deskops /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops closeout verify --task task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references --root .
+rc=1
+{"evidence": ["atom-code-changes-close-with-tests-and-commit", "atom-cli-mutation-testing-uses-sandbox-desk-roots"], "findings": [], "ok": true}
+esta tarea declaró tests, commit, atom|materialization; encontré atom|materialization
+### limpieza: rm -rf /dev/shm/tester-a96b* ; git status sin cambios respecto del inicio

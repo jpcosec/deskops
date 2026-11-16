@@ -1,0 +1,113 @@
+diff --git a/tests/fixtures/golden/output/view_board.json b/tests/fixtures/golden/output/view_board.json
+index 4961b2540..2e7e66ad2 100644
+--- a/tests/fixtures/golden/output/view_board.json
++++ b/tests/fixtures/golden/output/view_board.json
+@@ -39,15 +39,12 @@
+                 "state": "pending"
+               },
+               {
+-                "evidence": [],
+-                "findings": [
+-                  {
+-                    "code": "missing_atom_or_materialization_link",
+-                    "message": "No atom reference or changed-file materialization coverage found."
+-                  }
++                "evidence": [
++                  "atom-atom-for-the-view"
+                 ],
++                "findings": [],
+                 "gate": "atom_or_materialization_link",
+-                "state": "pending"
++                "state": "holds"
+               },
+               {
+                 "evidence": [],
+@@ -61,10 +58,12 @@
+                 "state": "pending"
+               }
+             ],
+-            "found": [],
++            "found": [
++              "atom|materialization"
++            ],
+             "implicit_code": false,
+             "ok": false,
+-            "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 nada"
++            "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 atom|materialization"
+           },
+           "current_node": "ritual-execution",
+           "gates": [
+@@ -130,15 +129,12 @@
+                 "state": "pending"
+               },
+               {
+-                "evidence": [],
+-                "findings": [
+-                  {
+-                    "code": "missing_atom_or_materialization_link",
+-                    "message": "No atom reference or changed-file materialization coverage found."
+-                  }
++                "evidence": [
++                  "atom-does-not-exist"
+                 ],
++                "findings": [],
+                 "gate": "atom_or_materialization_link",
+-                "state": "pending"
++                "state": "holds"
+               },
+               {
+                 "evidence": [],
+@@ -152,10 +148,12 @@
+                 "state": "pending"
+               }
+             ],
+-            "found": [],
++            "found": [
++              "atom|materialization"
++            ],
+             "implicit_code": false,
+             "ok": false,
+-            "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 nada"
++            "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 atom|materialization"
+           },
+           "current_node": "ritual-testing",
+           "gates": [
+diff --git a/tests/fixtures/golden/output/view_task.json b/tests/fixtures/golden/output/view_task.json
+index 14cc15a5c..d882d3ada 100644
+--- a/tests/fixtures/golden/output/view_task.json
++++ b/tests/fixtures/golden/output/view_task.json
+@@ -51,15 +51,12 @@
+           "state": "pending"
+         },
+         {
+-          "evidence": [],
+-          "findings": [
+-            {
+-              "code": "missing_atom_or_materialization_link",
+-              "message": "No atom reference or changed-file materialization coverage found."
+-            }
++          "evidence": [
++            "atom-atom-for-the-view"
+           ],
++          "findings": [],
+           "gate": "atom_or_materialization_link",
+-          "state": "pending"
++          "state": "holds"
+         },
+         {
+           "evidence": [],
+@@ -73,10 +70,12 @@
+           "state": "pending"
+         }
+       ],
+-      "found": [],
++      "found": [
++        "atom|materialization"
++      ],
+       "implicit_code": false,
+       "ok": false,
+-      "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 nada"
++      "summary": "esta tarea declar\u00f3 tests, commit, atom|materialization; encontr\u00e9 atom|materialization"
+     },
+     "current_node": "ritual-execution",
+     "depends_on": [],

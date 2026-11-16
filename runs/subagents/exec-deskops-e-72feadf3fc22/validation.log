@@ -1,0 +1,57 @@
+### red-before check: new test against HEAD closeout_gates.py (fix reverted temporarily)
+E       assert False is True
+1 failed, 4 deselected, 2 warnings in 1.31s
+
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 2 warnings in 143.70s (0:02:23)
+rc=0
+
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_declared_evidence.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 1 warning in 93.21s (0:01:33)
+rc=0
+
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+59 passed, 2 warnings in 36.51s
+rc=0
+
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && flock /dev/shm/sldb1-tests.lock env TMPDIR=/dev/shm ../.venv/bin/python -m pytest -n 4 -q tests
+(primer intento en segundo plano terminó sin salida; se repite en primer plano)
+
+### corrección ciclo 1: goldens de vista regenerados con --update-golden
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_view_goldens.py --update-golden
+(1 passed; diff en tests/fixtures/golden/output/view_board.json y view_task.json, ver golden.diff)
+### $ cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_view_goldens.py
+1 passed, 2 warnings in 23.84s
+rc=0
+>       failed = [c for c in run_reference(scenario) if not c["ok"]]
+>               raise RuntimeError(f"{what} step failed ({done.returncode}): {step}\n{done.stdout}\n{done.stderr}")
+E               RuntimeError: reference step failed (127): pytest -q
+FAILED tests/e2e_agent/test_agent_scenarios.py::test_reference_solutions[first-task-to-closeout]
+FAILED tests/test_ci_integration.py::test_ci_check_passes_on_a_fresh_desk - A...
+FAILED tests/test_ci_integration.py::test_ci_check_fails_on_a_dangling_source_atom
+3 failed, 1053 passed, 3 skipped, 1 xfailed, 9 warnings in 1593.73s (0:26:33)
+rc=1
+
+### fallas de la suite comparadas en worktree limpio de origin/main (ee9755e3) en /dev/shm/wt-base
+$ cd /dev/shm/wt-base && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/e2e_agent/test_agent_scenarios.py::test_reference_solutions[first-task-to-closeout] tests/test_ci_integration.py::test_ci_check_passes_on_a_fresh_desk tests/test_ci_integration.py::test_ci_check_fails_on_a_dangling_source_atom   (python del venv por ruta absoluta)
+>       failed = [c for c in run_reference(scenario) if not c["ok"]]
+>               raise RuntimeError(f"{what} step failed ({done.returncode}): {step}\n{done.stdout}\n{done.stderr}")
+E               RuntimeError: reference step failed (127): pytest -q
+E         /dev/shm/wt-base/scripts/ci-knowledge-check.sh: line 14: python: command not found
+FAILED tests/e2e_agent/test_agent_scenarios.py::test_reference_solutions[first-task-to-closeout]
+FAILED tests/test_ci_integration.py::test_ci_check_passes_on_a_fresh_desk - A...
+FAILED tests/test_ci_integration.py::test_ci_check_fails_on_a_dangling_source_atom
+3 failed, 1 warning in 32.98s
+rc=1
