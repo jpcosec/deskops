@@ -140,6 +140,25 @@ class ClosureService:
 
     REQUIRED_EVIDENCE = ["board.txt", "task.txt", "git-status.txt", "result-summary.md"]
 
+    @classmethod
+    def missing_run_evidence(cls, run_dir: Path) -> list[str]:
+        """The ``REQUIRED_EVIDENCE`` files absent from ``run_dir``, in declaration order.
+
+        ``closeout commit --run-dir`` refuses on any of them and ``closeout verify --run-dir``
+        reports the same ones, so a verify ``ok`` anticipates the commit's evidence check.
+        """
+        return [name for name in cls.REQUIRED_EVIDENCE if not (Path(run_dir) / name).exists()]
+
+    @staticmethod
+    def missing_run_evidence_message(run_dir: Path, missing: list[str]) -> str:
+        return f"Missing required evidence in {run_dir}: {', '.join(missing)}"
+
+    def _resolve_run_dir(self, run_dir: str | Path) -> Path:
+        resolved = Path(run_dir)
+        if not resolved.is_absolute():
+            resolved = (self.root / resolved).resolve()
+        return resolved
+
     def __init__(self, root: Path, operations: "DeskopsOperations") -> None:
         self._ops = operations
         self.root = operations.root
@@ -574,21 +593,16 @@ class ClosureService:
         message: str | None = None,
     ) -> ClosureOutcome:
         root = self.root
-        resolved_run_dir = Path(run_dir)
-        if not resolved_run_dir.is_absolute():
-            resolved_run_dir = (root / resolved_run_dir).resolve()
+        resolved_run_dir = self._resolve_run_dir(run_dir)
 
         if not self._is_under(resolved_run_dir, root / "runs" / "subagents"):
             return ClosureOutcome(1, [f"Run dir must live under runs/subagents/: {resolved_run_dir}"])
         if not resolved_run_dir.is_dir():
             return ClosureOutcome(1, [f"Run dir not found: {resolved_run_dir}"])
 
-        missing = [name for name in self.REQUIRED_EVIDENCE if not (resolved_run_dir / name).exists()]
+        missing = self.missing_run_evidence(resolved_run_dir)
         if missing:
-            return ClosureOutcome(
-                1,
-                [f"Missing required evidence in {resolved_run_dir}: {', '.join(missing)}"],
-            )
+            return ClosureOutcome(1, [self.missing_run_evidence_message(resolved_run_dir, missing)])
 
         manifest_path = resolved_run_dir / "run.yaml"
         manifest: dict[str, Any] = {}
@@ -893,6 +907,7 @@ class ClosureService:
         *,
         write_receipts: bool = False,
         task_path: Path | None = None,
+        run_dir: str | Path | None = None,
     ) -> dict[str, Any]:
         """Run the closeout fact producers and return the gate envelope.
 
@@ -901,6 +916,8 @@ class ClosureService:
         envelope is the same either way. Read-only callers (the board view, the closing gate)
         leave it off. ``task_path`` is the file a view already resolved: the task record is
         then read once per pass instead of resolving the selector and its payload again.
+        With ``run_dir`` (``closeout verify --run-dir``), each ``REQUIRED_EVIDENCE`` file
+        missing from it is a blocking finding with the text ``closeout commit`` refuses with.
         """
         task_path = (
             Path(task_path).resolve()
@@ -1027,6 +1044,18 @@ class ClosureService:
                 ),
                 "external" if urls else None,
             )
+
+        if run_dir is not None:
+            resolved_run_dir = self._resolve_run_dir(run_dir)
+            missing_evidence = self.missing_run_evidence(resolved_run_dir)
+            if missing_evidence:
+                ok = False
+                findings.append(
+                    {
+                        "code": "missing_run_evidence",
+                        "message": self.missing_run_evidence_message(resolved_run_dir, missing_evidence),
+                    }
+                )
 
         report = {
             "task_id": str(payload.get("id") or task_path.stem),

@@ -312,3 +312,71 @@ def test_evidence_alone_defaults_to_code_floor(desk_repo: Path) -> None:
     result = _cli(desk_repo, "add", "task", "--title", "Only evidence", "--evidence", "external")
     assert result.returncode == 1
     assert "--evidence removes closeout evidence the task type requires" in result.stdout
+
+
+# ---------------------------------------------------------------- verify --run-dir
+RUN_DIR_REL = "runs/subagents/20260101-000000-task-x"
+RUN_EVIDENCE = ["board.txt", "task.txt", "git-status.txt", "result-summary.md"]
+
+
+def _run_dir(root: Path, *names: str) -> Path:
+    run_dir = root / RUN_DIR_REL
+    run_dir.mkdir(parents=True, exist_ok=True)
+    for name in names:
+        _write(run_dir / name, f"{name}\n")
+    return run_dir
+
+
+def test_verify_with_an_incomplete_run_dir_names_the_missing_file_like_commit(repo: Path) -> None:
+    root = repo
+    _write_declared_task(root, task_type="task.external", references=[URL], files=[])
+    run_dir = _run_dir(root, *(name for name in RUN_EVIDENCE if name != "task.txt"))
+
+    result = _cli(root, "closeout", "verify", "--task", TASK_ID, "--run-dir", RUN_DIR_REL)
+    assert result.stdout.strip(), result.stderr
+    report = json.loads(result.stdout)
+    assert result.returncode == 1
+    assert report["ok"] is False
+    expected = f"Missing required evidence in {run_dir.resolve()}: task.txt"
+    assert {"code": "missing_run_evidence", "message": expected} in report["findings"]
+    # The declared evidence itself was found; only the run dir is short.
+    assert report["found"] == ["external"]
+
+    before = _git(root, "rev-parse", "HEAD")
+    closed = _cli(root, "closeout", "commit", "--task", TASK_ID, "--run-dir", RUN_DIR_REL, "--paths", TASK_REL)
+    assert closed.returncode != 0
+    assert expected in closed.stdout + closed.stderr
+    assert _git(root, "rev-parse", "HEAD") == before
+
+
+def test_verify_with_a_complete_run_dir_is_ok(repo: Path) -> None:
+    root = repo
+    _write_declared_task(root, task_type="task.external", references=[URL], files=[])
+    _run_dir(root, *RUN_EVIDENCE)
+
+    result = _cli(root, "closeout", "verify", "--task", TASK_ID, "--run-dir", RUN_DIR_REL)
+    assert result.stdout.strip(), result.stderr
+    report = json.loads(result.stdout)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert report["ok"] is True
+    assert report["findings"] == []
+
+
+def test_verify_without_run_dir_ignores_run_evidence(repo: Path) -> None:
+    root = repo
+    _write_declared_task(root, task_type="task.external", references=[URL], files=[])
+    _run_dir(root)  # an empty run dir exists, but verify was not pointed at it
+
+    report, result = _verify(root)
+    assert result.returncode == 0
+    assert report["ok"] is True
+    assert all(finding.get("code") != "missing_run_evidence" for finding in report["findings"])
+
+
+def test_commit_and_verify_share_the_run_evidence_helper(tmp_path: Path) -> None:
+    from deskops.services.closure import ClosureService
+
+    (tmp_path / "board.txt").write_text("b\n", encoding="utf-8")
+    assert ClosureService.missing_run_evidence(tmp_path) == ["task.txt", "git-status.txt", "result-summary.md"]
+    source = (Path(__file__).resolve().parents[1] / "deskops" / "services" / "closure.py").read_text(encoding="utf-8")
+    assert source.count("self.missing_run_evidence(resolved_run_dir)") == 2

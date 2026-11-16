@@ -1,11 +1,14 @@
 usage: deskops closeout verify [-h] [--root ROOT] --task TASK
+                               [--run-dir RUN_DIR]
 
 Check the closeout evidence the task declared, without committing; print a structured report.
 
 options:
-  -h, --help   show this help message and exit
-  --root ROOT  Target repository root.
-  --task TASK  Task id being verified.
+  -h, --help         show this help message and exit
+  --root ROOT        Target repository root.
+  --task TASK        Task id being verified.
+  --run-dir RUN_DIR  Run evidence dir; also report each evidence file
+                     `closeout commit --run-dir` requires and is missing.
 
 Example:
   deskops closeout verify --root . --task task-fix-thing
@@ -21,3 +24,6 @@ alerts, ok, summary); stderr carries the one-line summary "esta tarea declaró
 X; encontré Y" (declared X; found Y) and any ALERTA lines. Exit 0 when
 everything declared was found, else 1.
 `deskops closeout commit` runs this same gate before committing.
+With --run-dir, each evidence file `closeout commit --run-dir` requires
+(board.txt, task.txt, git-status.txt, result-summary.md) that is missing from
+the dir is a finding with the commit's own text and the report is not ok.

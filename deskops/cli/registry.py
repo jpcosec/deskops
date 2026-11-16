@@ -1731,6 +1731,10 @@ task leaves the Board, and the run index entry is marked resolved-by.
             args=(
                 ROOT_ARG,
                 A("--task", required=True, help="Task id being verified."),
+                A(
+                    "--run-dir",
+                    help="Run evidence dir; also report each evidence file `closeout commit --run-dir` requires and is missing.",
+                ),
             ),
             handler="deskops.cli.commands.closeout:CloseoutCLI",
             mutates=False,
@@ -1749,6 +1753,9 @@ alerts, ok, summary); stderr carries the one-line summary "esta tarea declaró
 X; encontré Y" (declared X; found Y) and any ALERTA lines. Exit 0 when
 everything declared was found, else 1.
 `deskops closeout commit` runs this same gate before committing.
+With --run-dir, each evidence file `closeout commit --run-dir` requires
+(board.txt, task.txt, git-status.txt, result-summary.md) that is missing from
+the dir is a finding with the commit's own text and the report is not ok.
 """.strip(),
             raw_text=True,
         ),
