@@ -1,0 +1,11 @@
+Task: task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0
+Title: desk update deja de exigir desk/reviews/ vacio y en un clon limpio el dry-run da rc 0
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+From drawer: desk/drawer/tasks/task-desk-update-crea-desk-reviews-vac-o-y-git-no-lo-guarda-en-un-clon-limpio-el-dry-run-vuelve-a-dar-missing-desk-structure-desk-reviews.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

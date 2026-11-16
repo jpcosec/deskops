@@ -1,0 +1,26 @@
+name: materialization-scaffold-update-golden
+path: desk/materializations/materialization-scaffold-update-golden.md
+source_hash: 770537d5b14e76f90d4e1fa2b14ab47b39b4a8ed92eca444577b5bcbad245f61
+content_hash: 8bda16ad49b9ba46521de77cff3f094c685cedb13c19165e0b5d5134c79439e7
+field_hashes:
+  id: dcf89ce95294ede6455ac28b3c175e0352bf7110648d33c132709db575f163da
+  title: 46995d27edb63106552c1d1e670a09270d3d52c3dfd4d5fc593450630a9a338d
+  source_atoms: ac978aba4867e9b8543a43551aa57b870ab35af73ed272fa7ac2641018f94ed7
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 64faa687f78873bbade91f0520f3745b58ffc273317ea51932877d8173a5d9ab
+  intent: e42554e606e7f00f62078e3eb07845e95bf5fb54bd718da5b67c881a13493b2c
+  validation: 6685bcf79bea3fde10fcd7d3ae4561d43dd6db2c03aa7b60f9275a90e8815f2a
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 3de61fc89aeebe1e0c74ebb50908bfc4e88eb007d36374d4a0e22eb4e3043695
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T13:00:11Z'
+  authority: generated
+  via: create_document

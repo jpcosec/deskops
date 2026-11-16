@@ -317,6 +317,7 @@ include:
   - desk/materializations/materialization-materializa-recibos-de-evidencia-cc33a-en-services-closure.md
   - desk/materializations/materialization-materializa-recibos-de-evidencia-cc33a-en-tests-test-closeout-evidence-receipts.md
   - desk/materializations/materialization-materializa-recibos-de-evidencia-cc33a-en-tests-test-review-doc.md
+  - desk/materializations/materialization-scaffold-update-golden.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -331,6 +332,10 @@ include:
     name: run-deskops-e-312954356a7f
   - path: runs/subagents/test-deskops-t-0d2935319adb/run.md
     name: run-deskops-t-0d2935319adb
+  - path: runs/subagents/exec-deskops-e-bae0befe2582/run.md
+    name: run-deskops-e-bae0befe2582
+  - path: runs/subagents/test-deskops-t-05549e84fdaf/run.md
+    name: run-deskops-t-05549e84fdaf
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -815,6 +820,16 @@ include:
     name: review-task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc-evidence-atom-1
   - path: desk/reviews/task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc/evidence-materialization-1.md
     name: review-task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc-evidence-materialization-1
+  - path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-tests-1.md
+    name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-tests-1
+  - path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-commit-1.md
+    name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-commit-1
+  - path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-atom-1.md
+    name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-atom-1
+  - path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-materialization-1.md
+    name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-materialization-1
+  - path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-materialization-2.md
+    name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-materialization-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -851,7 +866,6 @@ include:
   - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
   - desk/tasks/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados.md
   - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
-  - desk/tasks/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0.md
   - desk/tasks/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta.md
   - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
   - desk/tasks/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act.md
