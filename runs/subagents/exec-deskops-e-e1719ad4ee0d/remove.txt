@@ -1,0 +1,20 @@
+$ sldb stores remove spec2viz --store .sldb
+Removed link 'spec2viz' (was ../spec2viz/.sldb)
+rc=0
+# reintento 2026-11-16T17:06:46-03:00: el enlace reapareció en store.yaml y store_index.yaml tras el primer remove (escritura concurrente de otra sesión)
+$ sldb stores remove spec2viz --store .sldb
+Removed link 'spec2viz' (was ../spec2viz/.sldb)
+rc=0
+# 2026-11-16T17:08:18-03:00: remove solo edita store_index.yaml; store.yaml (links:) conserva spec2viz y otras sesiones regeneran el índice desde ahí. Se propaga con sldb stores declare --write.
+$ sldb stores remove spec2viz --store .sldb
+No store linked as 'spec2viz'.
+rc=1
+$ sldb stores declare --store .sldb --write
+Wrote /mnt/ssd/proyectos/SLDB_1/deskops/.sldb/store.yaml
+rc=0
+t+10s: store.yaml=0 index=0
+t+20s: store.yaml=0 index=0
+t+30s: store.yaml=0 index=0
+t+40s: store.yaml=0 index=0
+t+50s: store.yaml=0 index=0
+t+60s: store.yaml=0 index=0

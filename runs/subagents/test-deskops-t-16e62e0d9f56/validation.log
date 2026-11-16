@@ -1,0 +1,162 @@
+$ git diff -- .sldb/store.yaml .sldb/core/store_index.yaml
+diff --git a/.sldb/core/store_index.yaml b/.sldb/core/store_index.yaml
+index 305c0206..5c3214eb 100644
+--- a/.sldb/core/store_index.yaml
++++ b/.sldb/core/store_index.yaml
+@@ -1,8 +1,6 @@
+ stores:
+ - name: sldb
+   path: ../sldb/.sldb
+-- name: spec2viz
+-  path: ../spec2viz/.sldb
+ - name: pron
+   path: ../pron/.sldb
+ - name: scion
+@@ -361,4 +359,4 @@ predicates:
+   description: A composed field of the source (`__compositions__`) renders this document's
+     payload into the source's text; the edge carries the composed field, the field
+     holding the refs and the ref as authored.
+-store_hash: eca987c2fc26ae7b56f1c10b02f2feaddeb35f218852b4768749f0236d5165c2
++store_hash: bdec4e4116744cecfb6b27eb21bd4f779339bcc8a14cbae19d2a2e1f21e353ce
+diff --git a/.sldb/store.yaml b/.sldb/store.yaml
+index f18783aa..bd8a93fc 100644
+--- a/.sldb/store.yaml
++++ b/.sldb/store.yaml
+@@ -2,8 +2,6 @@ version: 1
+ links:
+ - name: sldb
+   path: ../sldb/.sldb
+-- name: spec2viz
+-  path: ../spec2viz/.sldb
+ - name: pron
+   path: ../pron/.sldb
+ - name: scion
+@@ -349,6 +347,14 @@ include:
+     name: run-deskops-e-edb9213453ab
+   - path: runs/subagents/test-deskops-t-ddf033189baa/run.md
+     name: run-deskops-t-ddf033189baa
++  - path: runs/subagents/exec-deskops-e-79646a51295e/run.md
++    name: run-deskops-e-79646a51295e
++  - path: runs/subagents/test-deskops-t-ce38955d8076/run.md
++    name: run-deskops-t-ce38955d8076
++  - path: runs/subagents/exec-deskops-e-e1719ad4ee0d/run.md
++    name: run-deskops-e-e1719ad4ee0d
++  - path: runs/subagents/test-deskops-t-16e62e0d9f56/run.md
++    name: run-deskops-t-16e62e0d9f56
+ - model: ReviewDoc
+   paths:
+   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
+@@ -889,6 +895,10 @@ include:
+     name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-materialization-1
+   - path: desk/reviews/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/evidence-materialization-2.md
+     name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-materialization-2
++  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/preflight-1.md
++    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-preflight-1
++  - path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/bundle-1.md
++    name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-bundle-1
+ - model: BoardDoc
+   paths:
+   - desk/tasks/Board.md
+rc=0
+
+$ sldb stores list --store .sldb
+Federated stores in /mnt/ssd/proyectos/SLDB_1/deskops/.sldb:
+- pron -> ../pron/.sldb
+- scion -> ../scion/.sldb
+- sldb -> ../sldb/.sldb
+rc=0
+
+$ grep -rn '../spec2viz' .sldb
+rc=1
+
+$ sldb stores check --store .sldb
+rc=0; lines=222
+alert: [anchors/doc_lost] ReviewDoc:review-task-test-model-contract-snapshot-actualizar-deliberadamente-el-hash-de-relationdoc-tras-go09-preflight-1: subject -> TaskCodeDoc:task-test-model-contract-snapshot-actualizar-deliberadamente-el-hash-de-relationdoc-tras-go09: lost (doc:TaskCodeDoc:task-test-model-contract-snapshot-actualizar-deliberadamente-el-hash-de-relationdoc-tras-go09)
+alert: [anchors/doc_changed] ReviewDoc:review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-preflight-1: subject -> TaskDebugDoc:task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos: changed (doc:TaskDebugDoc:task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos@sha256:6308d58cc7cb56a50b676dd41889591b536263778aa74aa865133817092a4598)
+alert: [anchors/doc_changed] ReviewDoc:review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-preflight-2: subject -> TaskDebugDoc:task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos: changed (doc:TaskDebugDoc:task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos@sha256:6308d58cc7cb56a50b676dd41889591b536263778aa74aa865133817092a4598)
+-- nuevas vs runs/subagents/exec-deskops-e-e1719ad4ee0d/antes-stores-check.txt:
+PASS: store integrity — 778 documents in 27 models — 217 alerta(s)
+-- desaparecen:
+$ sldb stores check --store .sldb
+PASS: store integrity — 775 documents in 27 models — 217 alerta(s)
+
+$ deskops doctor --root .
+rc=0; lines=224
+  register edits, moves and new documents with: deskops desk update --apply
+
+Desk is healthy, with 220 alert(s).
+-- nuevas vs runs/subagents/exec-deskops-e-e1719ad4ee0d/antes-doctor.txt:
+-- desaparecen:
+$ deskops doctor --root .
+
+$ deskops graph missing --root .
+rc=1; lines=113
+  provenance: desk/tasks/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30.md:line:37:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+37 missing, 0 informational
+-- nuevas vs runs/subagents/exec-deskops-e-e1719ad4ee0d/antes-graph-missing.txt:
+-- desaparecen:
+$ deskops graph missing --root .
+
+$ strace -f -e trace=openat,open,stat,newfstatat,statx sldb models list --store .sldb --format json
+rc=0; output lines=395; output mentions spec2viz path: 0
+syscalls bajo spec2viz: 0
+openat bajo spec2viz: 0
+openat bajo ../sldb/.sldb (control, enlace vivo): 0
+
+$ strace -f -e trace=openat,open,stat,newfstatat,statx sldb docs list --store .sldb
+rc=0; output lines=779; output mentions spec2viz path: 0
+syscalls bajo spec2viz: 0
+openat bajo spec2viz: 0
+openat bajo ../sldb/.sldb (control, enlace vivo): 0
+
+$ strace -f -e trace=openat python -I script: api.select_documents(.sldb, include_linked=True) (sesión federada, misma ruta que el select_documents de sldb mcp)
+rows 5294
+por origen {None: 5294}
+filas desde spec2viz 0
+ejemplo fila {'export_id': 'sldb:RelationTypeDoc:reltype-tagged_as', 'model': 'RelationTypeDoc', 'name': 'reltype-tagged_as', 'path': 'sldb/relation_types/tagged_as.md'}
+rc=0
+openat bajo spec2viz: 0
+openat bajo ../sldb/.sldb (control): 3666
+openat bajo ../pron/.sldb (control): 837
+openat bajo ../scion/.sldb (control): 180
+
+$ python -I conteo por prefijo de export_id (include_linked)
+filas por store (prefijo export_id): {'AtomDoc': 169, 'CrossroadDoc': 1, 'PillDoc': 29, 'InboxNoteDoc': 76, 'RelationDoc': 3, 'RuleDoc': 16, 'RelationTypeDoc': 17, 'MaterializationContractDoc': 107, 'RepositoryDoc': 6, 'ReviewDoc': 271, 'RitualDoc': 7, 'RoleDoc': 3, 'RuntimeProfileDoc': 3, 'BoardDoc': 1, 'TaskCodeDoc': 31, 'TaskDebugDoc': 4, 'TaskDocsDoc': 7, 'TaskDecisionDoc': 7, 'TaskExternalDoc': 1, 'ViewDoc': 2, 'RunDoc': 17, 'pron': 782, 'scion': 142, 'sldb': 3592}
+rc=0
+
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_migrate_desk_stores.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+16 passed, 1 warning in 0.42s
+rc=0
+
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_doctor_model_registration.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+8 passed, 1 warning in 76.92s (0:01:16)
+rc=0
+
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_desk_sync.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+8 passed, 1 warning in 118.18s (0:01:58)
+rc=0
+
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_doctor_absolute_paths.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 190.48s (0:03:10)
+rc=0
+
+$ python -I coherencia links store.yaml vs stores store_index.yaml (lectura)
+store.yaml links: [('pron', '../pron/.sldb'), ('scion', '../scion/.sldb'), ('sldb', '../sldb/.sldb')]
+store_index stores: [('pron', '../pron/.sldb'), ('scion', '../scion/.sldb'), ('sldb', '../sldb/.sldb')]
+coinciden: True
+rc=0
+$ grep -rn ../spec2viz .sldb (final)
+rc=1
+$ grep -n spec2viz /mnt/ssd/herramientas/sldb/src/sldb/api/stores/unlink_store.py (drop_link solo guarda store_index; no toca store.yaml)
+15:from sldb.store.io import load_store_index, save_store_index
+46:    save_store_index(sp, idx)
+

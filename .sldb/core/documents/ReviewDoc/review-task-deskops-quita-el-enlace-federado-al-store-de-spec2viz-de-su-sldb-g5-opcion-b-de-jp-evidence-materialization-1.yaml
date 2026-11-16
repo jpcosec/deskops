@@ -1,0 +1,36 @@
+name: review-task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp-evidence-materialization-1
+path: desk/reviews/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp/evidence-materialization-1.md
+source_hash: 908e2d8e600895d60197ec9970faac526bafd2ea7b7563e8333744f894190871
+content_hash: ea97741c3de74cf4690ae6f9b4c7e7fd19c32b7cbc36bed9acf72c5f360d023e
+field_hashes:
+  id: 9c8ca079fb7303d7d8545745a7a1eb330261ac58440b0efe213c7c41df6933fa
+  title: 15077c2fceb0a68a782b5ebfbdccd94312139d02264c319c36b258f3d47656f1
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 94f5aade0ff3c4271a9f4335f59d3fc2f20ffc0247c14be67e2eb6747f95ac7e
+  subject: 410c09f6f9bf4ce9e2225b8fc2a0b67ad0863c06e01447628e97f4da292ebc53
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 0d027b8d82cafac8bb08b43cdeebd0ba8068ca64fe3fce71c05d41391666d7f8
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0830a2747868b2e3af1bf2792351bcfe46afddb0a169966703e54a79c9158f39
+  created_at: a7e733cf3a0aecc6e8cf15b5bba1fadc97a2c2384656ec5023d126d569744b6b
+  disposed_at: a7e733cf3a0aecc6e8cf15b5bba1fadc97a2c2384656ec5023d126d569744b6b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 13c6133db9f0d1bccc5429c6d024d9ada79b28b8567ae21f8c0526c21205ef22
+  disposition: dd96969ebdb05d50940c8eb20db33df7529124ca8e52648459ac83c12a0d741c
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T20:38:37Z'
+  authority: generated
+  via: create_document

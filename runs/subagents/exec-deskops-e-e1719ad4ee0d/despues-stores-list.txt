@@ -1,0 +1,6 @@
+$ sldb stores list --store .sldb
+Federated stores in /mnt/ssd/proyectos/SLDB_1/deskops/.sldb:
+- pron -> ../pron/.sldb
+- scion -> ../scion/.sldb
+- sldb -> ../sldb/.sldb
+rc=0

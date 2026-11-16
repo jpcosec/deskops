@@ -1,0 +1,36 @@
+name: review-task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp-evidence-tests-1
+path: desk/reviews/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp/evidence-tests-1.md
+source_hash: 5c27db049bd8785f6991a3d697e484ad4bb7657c3249800560023ee8ab25acb7
+content_hash: b29d917415148d6eca36524cfe6db95544ec47a7e7f5f77fa1d3e23398293b95
+field_hashes:
+  id: d96dfc9cf7dafd6ae5905cb9d64103cce89dcdff0507048a3f0c0379746d699f
+  title: f25dfd146f6c8a228688e291ae218c79af8824ef07983cba67eed9e506520a6b
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 113908bfa2f13c050fca9d9c2ced57af28288060a3528bb0c9ab5195ba09d0ec
+  subject: 410c09f6f9bf4ce9e2225b8fc2a0b67ad0863c06e01447628e97f4da292ebc53
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 7a6d01e37972008d3e05fb3e5f567191e78007076b7a33f53f08b0ff689a1660
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0208b85f32f12e915c6e63913c1457b5844693805fcec9f1e277373911e7799b
+  created_at: 4cc4e9fbf70669a1735a7ffbfb7a40ca8531a12a06c4bb5b4ca981729826f543
+  disposed_at: 4cc4e9fbf70669a1735a7ffbfb7a40ca8531a12a06c4bb5b4ca981729826f543
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5745dce300012bac6ac0882b4f00660a5864f15a7c4dfd9b7aed60b2336189ce
+  disposition: a81313267c9269928634b0f8a3681e29b3969c6807a44625e289ee5fe1fb0a45
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T20:37:53Z'
+  authority: generated
+  via: create_document

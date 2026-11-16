@@ -1,0 +1,26 @@
+name: materialization-indice-del-store-sin-spec2viz
+path: desk/materializations/materialization-indice-del-store-sin-spec2viz.md
+source_hash: 94aae35603bc5bf815136316741e0637d958ec0e023e9365fa041aa321aea47c
+content_hash: ef8b53ff72514b6e89fa2da86d935c9823a77fb38d3666b84dbc0bf5fd9e26a4
+field_hashes:
+  id: 8b7c977fe4870deeb258d25f721b96c459c4ca10bcb54aec62060b97b6cd79e3
+  title: 673246f347e6514d84c505179028d6e0253442602be2da8f4ddbbb8b1b440dea
+  source_atoms: f54386ca6764723726f9f81e69d8037ee09f5ecc6c798dd63751830e2bdc8cb7
+  target_kind: 48882ab48bfdf3bef2fe65e3304e91ccfd8f74e357c183367ad6fe903fe0e697
+  target_identity: b122c4ad260aae5ede39b68bb93b48383a39d0098ef025164bb32275e079392a
+  intent: 9c3fecb2b5e7dac2aae2407cc17a5206e1e3d0b81794145038b84ccae0bf19b2
+  validation: 2f71c20c920bdc31a1ba8b14036bd24bba2f694df3e2c706c60e81a6011acb26
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 6ead5f311b05cb759d33dacb26a4666f877b784c4280767744bc8f9c9bd8d9b8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T20:38:29Z'
+  authority: generated
+  via: create_document

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T17:18:11Z'
+  at: '2026-11-16T20:38:56Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -59,7 +59,6 @@ tasks:
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
 - desk/tasks/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe.md
 - desk/tasks/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi.md
-- desk/tasks/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -150,4 +149,3 @@ _Generated from the task references above._
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
 - desk update migra las claves legacy checklists y routine del frontmatter de las tareas para que supersede y edit puedan reescribirlas [draft] - deskops desk update (dry-run) lista cada TaskDoc de desk/tasks cuyo frontmatter tiene la clave checklists o routine, que TaskDoc no declara, con el archivo y la clave, y da rc 1 como cualquier migracion pendiente; deskops desk update --apply quita esas dos claves del frontmatter (sin tocar el resto del documento) e imprime por cada archivo la clave quitada y su valor anterior en una linea, para que quede en la salida y en el commit. Despues de --apply, deskops closeout supersede sobre esa tarea ya no da el error de claves no declaradas. La lista de claves es cerrada (checklists, routine): otras claves no declaradas siguen dando el rechazo actual de write_doc.
 - la evidencia de commit de otro repo (repo-id:sha) resuelve el repo-id tambien en el registro del ecosistema, en closeout verify y en resolved-by --ref [draft] - (1) En closeout verify, una referencia <repo-id>:<sha> cuenta como evidencia de commit si <repo-id> se resuelve primero en el registro del desk y, si no esta, con find_registered_desk de deskops/identity.py (el registro del ecosistema que ya usa deskops message send --to), y <sha> es un commit alcanzable en ese repo (rev-parse --verify y ancestro de su HEAD). Si el repo-id no resuelve, es ambiguo o el sha no existe, la referencia no cuenta y no hay excepcion. (2) closeout resolved-by --ref acepta ese mismo formato con la misma resolucion.
-- deskops quita el enlace federado al store de spec2viz de su .sldb (G5, opcion b de JP) [draft] - El store de deskops ya no enlaza spec2viz: sin entrada spec2viz en links de .sldb/store.yaml ni en .sldb/core/store_index.yaml, quitada con el CLI de sldb (sldb stores remove spec2viz --store .sldb). sldb stores check, deskops doctor y deskops graph missing no empeoran (mismos hallazgos que antes, salvo los que desaparecen por el enlace), y ningun modelo ni documento de deskops depende del store de spec2viz. Los otros enlaces (sldb, pron, scion) no cambian.

@@ -1,0 +1,36 @@
+name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-preflight-1
+path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/preflight-1.md
+source_hash: 932357868cdd34ae4272a2e5caa9528a251b06c1b4e373af7ab5c5951dab8bdd
+content_hash: a650961b0b7b5475a91ac6703f79dafd374fbc7bdc5ffd6ece7edea9a609ff51
+field_hashes:
+  id: 19a32b5bfe9c5b6d8805ac9de842e76d7215d57cd4eb536dc7513cc0707f834d
+  title: 235b20bc1ff8e72a98c6ac0d05f7411fbe6630f3728c226637db8b50534e60b5
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 58735f60df14a7846e80101a542861737f1947d4b7cff1272128f18b9571b2ff
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: f208c0224b208cd62ae315b4435dff2732d8bb61f43085de2552aeff43cab1c8
+  input_sha256: 97bb51aef8170ad58d03cab463c55e02e61d4a59baaede347c03e14c6469e844
+  output_sha256: 42aacc88aad8a4bb656288ca927d64ca678002e652ce5a023473ca528c5f4d4e
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: a89b556b6a26f862c991c43cd2d6078e265146629f521984442e4986090df7f5
+  created_at: a3d4656a7e3dc4202a5568f9ed95a0a35b38e63a7debdcf554b3e3d5971c5051
+  disposed_at: a7860db066c66c2de81bf512b2bf386759bce54231a20e1e0d593d205274e4d3
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 0641c4be5d80abbba2f86881bfb05ff10184d0bf560947ccc7870ed253afd0bd
+  disposition: 9cb35ddaddf6f147899cb34b20d6c09580dc4ebeb3490bf8b9c69951397f0f12
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T20:23:05Z'
+  authority: generated
+  via: save_document_payload

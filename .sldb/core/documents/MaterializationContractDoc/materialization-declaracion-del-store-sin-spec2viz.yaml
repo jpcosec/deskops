@@ -1,0 +1,26 @@
+name: materialization-declaracion-del-store-sin-spec2viz
+path: desk/materializations/materialization-declaracion-del-store-sin-spec2viz.md
+source_hash: ec5378a4d76c2a201b30966d6291328a52d504f3eb6813819434cbe53d4ebc54
+content_hash: 40929a9f8f6f6634c130998d918a68533ae4be2ec8a6c1ea51c8ddf654f9d259
+field_hashes:
+  id: f9020918b9ace9b27c0570a58bfbf512923e2080cf1b2ec226da3fcc4194054f
+  title: 25696ebc7f1815a4ec593e7d84f24e9e6989dd9662b473a3a720473d10b0c957
+  source_atoms: f54386ca6764723726f9f81e69d8037ee09f5ecc6c798dd63751830e2bdc8cb7
+  target_kind: 48882ab48bfdf3bef2fe65e3304e91ccfd8f74e357c183367ad6fe903fe0e697
+  target_identity: 5bd4168f5f10f484944d85d87019d695878ee36cb312b67b4621db39b3057610
+  intent: 7a299558a8490a29781514f0fe992f1a2ca7ee5093becedd9ddf82b5618205f8
+  validation: 32862172976bd66430075829c4c07a91eec4cf117280e9e2fc337b44a18f62cf
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 6ead5f311b05cb759d33dacb26a4666f877b784c4280767744bc8f9c9bd8d9b8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T20:38:20Z'
+  authority: generated
+  via: create_document

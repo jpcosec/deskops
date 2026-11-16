@@ -1,0 +1,9 @@
+Task: task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp
+Title: deskops quita el enlace federado al store de spec2viz de su .sldb (G5, opcion b de JP)
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
