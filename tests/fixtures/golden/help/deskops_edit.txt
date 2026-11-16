@@ -1,11 +1,10 @@
 usage: deskops edit [-h]
-                    {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step}
-                    ...
+                    {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step,role,runtime-profile} ...
 
 Update one field on a modeled desk artifact.
 
 positional arguments:
-  {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step}
+  {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step,role,runtime-profile}
     task                Edit one task field.
     pill                Edit one pill field.
     ritual              Edit one ritual field.
@@ -17,6 +16,8 @@ positional arguments:
     inbox-note          Edit one inbox-note field.
     faq-doc             Edit one faq-doc field.
     step                Edit one step field.
+    role                Edit one role field.
+    runtime-profile     Edit one runtime-profile field.
 
 options:
   -h, --help            show this help message and exit

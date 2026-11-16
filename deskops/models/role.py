@@ -3,6 +3,12 @@ from sldb import StructuredNLDoc
 
 class RoleDoc(StructuredNLDoc):
     model_config = {"extra": "forbid"}
+    # `deskops add role --name <slug>` builds the id from the name. Role files keep
+    # free names (deskops-executor.md), so selectors resolve any *.md in desk/roles.
+    __artifact__ = {
+        "id_pattern": "role-{slug}",
+        "tags": [],
+    }
     __semantics__ = {
         "type": ["workflow", "role"],
         "workspace": ["desk", "roles"],

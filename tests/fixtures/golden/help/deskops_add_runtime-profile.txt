@@ -1,0 +1,76 @@
+usage: deskops add runtime-profile [-h] [--root ROOT] [--from-yaml FROM_YAML]
+                                   [--title TITLE] [--status STATUS]
+                                   [--summary SUMMARY]
+                                   [--tags TAGS [TAGS ...]] [--kind KIND]
+                                   [--binary BINARY] [--model-flag MODEL_FLAG]
+                                   [--fallback-models-flag FALLBACK_MODELS_FLAG]
+                                   [--fallback-models-join FALLBACK_MODELS_JOIN]
+                                   [--tools-flag TOOLS_FLAG]
+                                   [--tools-join TOOLS_JOIN]
+                                   [--system-prompt-flag SYSTEM_PROMPT_FLAG]
+                                   [--system-prompt-delivery SYSTEM_PROMPT_DELIVERY]
+                                   [--system-prompt SYSTEM_PROMPT]
+                                   [--session-flag SESSION_FLAG]
+                                   [--extra-args EXTRA_ARGS [EXTRA_ARGS ...]]
+                                   [--unsupported-role-fields UNSUPPORTED_ROLE_FIELDS [UNSUPPORTED_ROLE_FIELDS ...]]
+                                   [--notes NOTES]
+
+Create a runtime-profile artifact.
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT           Target repository root.
+  --from-yaml FROM_YAML
+                        Load the runtime-profile payload from a YAML file.
+  --title TITLE         Short primitive title.
+  --status STATUS       Primitive lifecycle status.
+  --summary SUMMARY     Short semantic summary for the primitive.
+  --tags TAGS [TAGS ...]
+                        Semantic tags placed at the end using namespaced
+                        forms.
+  --kind KIND           Runtime binary identifier this profile targets,
+                        matching RoleDoc.kind values (e.g. 'pi', 'claude',
+                        'codex').
+  --binary BINARY       Executable name or path Herdr invokes to start this
+                        runtime kind.
+  --model-flag MODEL_FLAG
+                        CLI flag used to pass the primary model id; empty
+                        means this runtime has no model flag.
+  --fallback-models-flag FALLBACK_MODELS_FLAG
+                        CLI flag used to pass fallback model ids; empty means
+                        unsupported.
+  --fallback-models-join FALLBACK_MODELS_JOIN
+                        How multiple fallback model values are combined for
+                        fallback_models_flag: 'comma', 'space', or 'repeat'.
+  --tools-flag TOOLS_FLAG
+                        CLI flag used to pass the tool allowlist; empty means
+                        unsupported.
+  --tools-join TOOLS_JOIN
+                        How multiple tool values are combined for tools_flag:
+                        'comma', 'space', or 'repeat'.
+  --system-prompt-flag SYSTEM_PROMPT_FLAG
+                        CLI flag used to append or override the system prompt;
+                        empty means unsupported.
+  --system-prompt-delivery SYSTEM_PROMPT_DELIVERY
+                        How the system prompt text reaches the flag: 'inline'
+                        passes it directly as the flag value, 'file' writes it
+                        to a session-scoped file and passes the file path.
+  --system-prompt SYSTEM_PROMPT
+                        Optional fixed system prompt text this profile carries
+                        (e.g. the isolated reviewer role); empty means the
+                        role provides the text.
+  --session-flag SESSION_FLAG
+                        CLI flag used to pass the session/transcript file
+                        path; empty means this runtime has no resumable
+                        session concept.
+  --extra-args EXTRA_ARGS [EXTRA_ARGS ...]
+                        Static CLI arguments always appended for this runtime,
+                        independent of role fields.
+  --unsupported-role-fields UNSUPPORTED_ROLE_FIELDS [UNSUPPORTED_ROLE_FIELDS ...]
+                        RoleDoc field names this runtime cannot honor; used to
+                        warn instead of silently dropping role settings.
+  --notes NOTES         Operational notes such as authentication requirements
+                        or version pins for this runtime.
+
+Example:
+  deskops add runtime-profile --root . --title "Example" --kind "..." --binary "..."

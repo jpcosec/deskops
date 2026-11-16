@@ -13,6 +13,11 @@ class RuntimeProfileDoc(PrimitiveDoc):
     language or per-flag scripting.
     """
 
+    # `deskops add runtime-profile --title ...` builds the id from the title.
+    __artifact__ = {
+        "id_pattern": "runtime-{slug}",
+        "tags": [],
+    }
     __semantics__ = {"type": ["workflow", "runtime_profile"], "workspace": ["desk", "runtimes"]}
     __template__ = """---
 # runtime-xxx

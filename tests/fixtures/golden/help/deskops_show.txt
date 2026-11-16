@@ -1,11 +1,10 @@
 usage: deskops show [-h]
-                    {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step}
-                    ...
+                    {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step,role,runtime-profile} ...
 
 Show one desk workflow artifact by selector.
 
 positional arguments:
-  {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step}
+  {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step,role,runtime-profile}
     task                Show one actionable task by selector.
     pill                Show one pill by selector.
     ritual              Show one ritual by selector.
@@ -17,6 +16,8 @@ positional arguments:
     inbox-note          Show one inbox-note by selector.
     faq-doc             Show one faq-doc by selector.
     step                Show one step by selector.
+    role                Show one role by selector.
+    runtime-profile     Show one runtime-profile by selector.
 
 options:
   -h, --help            show this help message and exit

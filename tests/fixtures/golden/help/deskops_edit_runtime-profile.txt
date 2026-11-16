@@ -1,0 +1,14 @@
+usage: deskops edit runtime-profile [-h] [--root ROOT] selector field value
+
+Edit one runtime-profile field.
+
+positional arguments:
+  selector     Runtime-profile selector. Selectors accept an exact id,
+               filename, stem, or unique slug fragment where supported.
+  field        Model field name to update; hyphens are accepted for
+               underscores.
+  value        New field value, parsed like an SLDB field value.
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  Target repository root.

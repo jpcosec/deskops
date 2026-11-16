@@ -1,11 +1,10 @@
 usage: deskops list [-h]
-                    {tasks,pills,rituals,boards,atoms,materializations,repositories,reviews,inbox-notes,faq-docs,steps}
-                    ...
+                    {tasks,pills,rituals,boards,atoms,materializations,repositories,reviews,inbox-notes,faq-docs,steps,roles,runtime-profiles} ...
 
 List desk workflow artifacts.
 
 positional arguments:
-  {tasks,pills,rituals,boards,atoms,materializations,repositories,reviews,inbox-notes,faq-docs,steps}
+  {tasks,pills,rituals,boards,atoms,materializations,repositories,reviews,inbox-notes,faq-docs,steps,roles,runtime-profiles}
     tasks               List actionable tasks.
     pills               List pills.
     rituals             List rituals.
@@ -17,6 +16,8 @@ positional arguments:
     inbox-notes         List inbox-notes.
     faq-docs            List faq-docs.
     steps               List steps.
+    roles               List roles.
+    runtime-profiles    List runtime-profiles.
 
 options:
   -h, --help            show this help message and exit

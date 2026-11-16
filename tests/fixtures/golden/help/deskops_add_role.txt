@@ -1,0 +1,40 @@
+usage: deskops add role [-h] [--root ROOT] [--from-yaml FROM_YAML]
+                        [--name NAME] [--description DESCRIPTION]
+                        [--kind KIND] [--model MODEL]
+                        [--fallback-models FALLBACK_MODELS [FALLBACK_MODELS ...]]
+                        [--tools TOOLS [TOOLS ...]]
+                        [--system-prompt-mode SYSTEM_PROMPT_MODE]
+                        [--inherit-project-context INHERIT_PROJECT_CONTEXT]
+                        [--inherit-skills INHERIT_SKILLS]
+                        [--default-context DEFAULT_CONTEXT] [--body BODY]
+
+Create a role artifact.
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT           Target repository root.
+  --from-yaml FROM_YAML
+                        Load the role payload from a YAML file.
+  --name NAME           Installed pi-agent role name, such as 'deskops-
+                        supervisor'.
+  --description DESCRIPTION
+                        Short description of when to use this role prompt.
+  --kind KIND           Agent runtime kind (e.g. pi, claude, opencode).
+  --model MODEL         Primary model ID.
+  --fallback-models FALLBACK_MODELS [FALLBACK_MODELS ...]
+                        Fallback models.
+  --tools TOOLS [TOOLS ...]
+                        Enabled tools.
+  --system-prompt-mode SYSTEM_PROMPT_MODE
+                        System prompt mode.
+  --inherit-project-context INHERIT_PROJECT_CONTEXT
+                        Inherit project context.
+  --inherit-skills INHERIT_SKILLS
+                        Inherit project skills.
+  --default-context DEFAULT_CONTEXT
+                        Default context type (e.g. fork).
+  --body BODY           Full role prompt markdown body after the YAML
+                        frontmatter.
+
+Example:
+  deskops add role --root . --name "example" --description "..." --body "..."

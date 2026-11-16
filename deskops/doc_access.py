@@ -65,6 +65,8 @@ from deskops.models import MaterializationContractDoc
 from deskops.models import PillDoc
 from deskops.models import RepositoryDoc
 from deskops.models import ReviewDoc
+from deskops.models import RoleDoc
+from deskops.models import RuntimeProfileDoc
 from deskops.models import RitualDoc
 from deskops.models import StepDoc
 from deskops.models import TaskDoc
@@ -88,6 +90,8 @@ ARTIFACT_MODELS = {
     "artifact.inbox_note": InboxNoteDoc,
     "artifact.faq": DeskFAQDoc,
     "artifact.step": StepDoc,
+    "artifact.role": RoleDoc,
+    "artifact.runtime_profile": RuntimeProfileDoc,
 }
 
 ARTIFACT_PATHS = {
@@ -102,6 +106,8 @@ ARTIFACT_PATHS = {
     "artifact.inbox_note": "inbox",
     "artifact.faq": "faq",
     "artifact.step": "steps",
+    "artifact.role": "roles",
+    "artifact.runtime_profile": "runtimes",
 }
 
 ARTIFACT_SUBJECTS = {
@@ -115,6 +121,8 @@ ARTIFACT_SUBJECTS = {
     "artifact.inbox_note": {"subject": "inbox-note", "list_subject": "inbox-notes"},
     "artifact.faq": {"subject": "faq-doc", "list_subject": "faq-docs"},
     "artifact.step": {"subject": "step", "list_subject": "steps"},
+    "artifact.role": {"subject": "role", "list_subject": "roles"},
+    "artifact.runtime_profile": {"subject": "runtime-profile", "list_subject": "runtime-profiles"},
 }
 
 # Fields whose value is an effect of a workflow command, not a free edit. The
@@ -129,7 +137,7 @@ _TASK_OWNED_FIELDS = {
 }
 
 # Artifacts whose documents are named by hand: their files are not `<id_pattern>.md`.
-_FREE_NAMED_ARTIFACTS = {"artifact.inbox_note", "artifact.board", "artifact.ritual", "artifact.review"}
+_FREE_NAMED_ARTIFACTS = {"artifact.inbox_note", "artifact.board", "artifact.ritual", "artifact.review", "artifact.role"}
 
 # Artifacts tracked in the desk's store on creation whatever their surface; ``create_artifact``
 # also tracks every other artifact it writes on a tracked surface (``_tracked_surface``).

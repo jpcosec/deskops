@@ -425,6 +425,61 @@ def test_context_rejects_missing_unknown_relative_and_out_of_workspace_paths(tmp
         validate_scion_context({**context, "sldb_root": str(paths["source"])})
 
 
+def test_context_container_keys_emit_limits_shared_paths_and_env(tmp_path: Path) -> None:
+    context, paths = _context(tmp_path)
+    shared = tmp_path / "shm"
+    shared.mkdir()
+    context.update(
+        memory_limit="6Gi",
+        cpu_limit="4",
+        shared_paths=[str(shared), str(shared)],
+        env={"TMPDIR": str(shared)},
+    )
+    _, executor_role = find_role_doc(ROOT, "role-deskops-executor")
+    files = scion_template_files(
+        executor_role, load_runtime_profiles(ROOT)["claude"], harness="claude", mode="executor", context=context
+    )
+    agent = yaml.safe_load(files["scion-agent.yaml"])
+    assert agent["resources"] == {"limits": {"cpu": "4", "memory": "6Gi"}}
+    assert agent["volumes"] == [
+        {"source": str(paths["workspace"]), "target": str(paths["workspace"])},
+        {"source": str(shared), "target": str(shared)},
+    ]
+    assert agent["env"]["TMPDIR"] == str(shared)
+    assert agent["env"]["DESKOPS_SCION_PROJECT"] == "sldb-1"
+
+
+def test_context_without_container_keys_has_no_resources(tmp_path: Path) -> None:
+    context, _ = _context(tmp_path)
+    _, executor_role = find_role_doc(ROOT, "role-deskops-executor")
+    files = scion_template_files(
+        executor_role, load_runtime_profiles(ROOT)["claude"], harness="claude", mode="executor", context=context
+    )
+    agent = yaml.safe_load(files["scion-agent.yaml"])
+    assert "resources" not in agent
+    assert len(agent["volumes"]) == 1 and "TMPDIR" not in agent["env"]
+
+
+def test_context_rejects_bad_container_keys(tmp_path: Path) -> None:
+    context, paths = _context(tmp_path)
+    with pytest.raises(ValueError, match="memory_limit"):
+        validate_scion_context({**context, "memory_limit": "lots"})
+    with pytest.raises(ValueError, match="cpu_limit"):
+        validate_scion_context({**context, "cpu_limit": "0"})
+    with pytest.raises(ValueError, match="absolute path"):
+        validate_scion_context({**context, "shared_paths": ["shm"]})
+    with pytest.raises(ValueError, match="does not exist"):
+        validate_scion_context({**context, "shared_paths": [str(tmp_path / "missing")]})
+    with pytest.raises(ValueError, match="must not repeat workspace_root"):
+        validate_scion_context({**context, "shared_paths": [str(paths["workspace"])]})
+    with pytest.raises(ValueError, match="must not redefine PYTHONPATH"):
+        validate_scion_context({**context, "env": {"PYTHONPATH": "/x"}})
+    with pytest.raises(ValueError, match="valid variable name"):
+        validate_scion_context({**context, "env": {"BAD-NAME": "x"}})
+    with pytest.raises(ValueError, match="must be a string"):
+        validate_scion_context({**context, "env": {"TMPDIR": 3}})
+
+
 def test_load_context_validates_json_and_cli_writes_nothing_on_failure(tmp_path: Path, capsys) -> None:
     context, _ = _context(tmp_path)
     valid = tmp_path / "context.json"

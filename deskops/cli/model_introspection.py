@@ -272,6 +272,8 @@ def artifact_model_fields() -> dict[str, type[BaseModel]]:
         PillDoc,
         RepositoryDoc,
         RitualDoc,
+        RoleDoc,
+        RuntimeProfileDoc,
         StepDoc,
     )
 
@@ -285,6 +287,8 @@ def artifact_model_fields() -> dict[str, type[BaseModel]]:
         "artifact.repository": RepositoryDoc,
         "artifact.ritual": RitualDoc,
         "artifact.step": StepDoc,
+        "artifact.role": RoleDoc,
+        "artifact.runtime_profile": RuntimeProfileDoc,
         # artifact.task uses a separate bundle creation path (not this path)
     }
 

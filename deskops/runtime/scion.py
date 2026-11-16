@@ -70,7 +70,21 @@ TEMPLATE_FILES: tuple[str, ...] = ("scion-agent.yaml", "system-prompt.md", "agen
 #: ``workspace_root``; ``project`` is the Scion project slug or UUID, never a path.
 SCION_CONTEXT_KEYS: tuple[str, ...] = ("project", "workspace_root", "desk_root", "source_root", "sldb_root")
 
+#: Optional container keys: how this machine runs the agent, not where the desk is.
+#: ``memory_limit``/``cpu_limit`` become ``resources.limits``; ``shared_paths`` are host
+#: paths bound at the same path (e.g. ``/dev/shm``, so tests share the host's tmpfs and
+#: its lock files); ``env`` adds static variables (e.g. ``TMPDIR``). Omitted: no change.
+SCION_CONTEXT_OPTIONAL_KEYS: tuple[str, ...] = ("memory_limit", "cpu_limit", "shared_paths", "env")
+
 _PROJECT_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+_MEMORY_RE = re.compile(r"^[0-9]+(\.[0-9]+)?([KMGT]i?)?$")
+_CPU_RE = re.compile(r"^[0-9]+(\.[0-9]+)?$")
+_ENV_NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+#: Variables the context already derives; ``env`` may not redefine them.
+_DERIVED_ENV = frozenset(
+    {"DESKOPS_DESK_ROOT", "DESKOPS_SOURCE_ROOT", "DESKOPS_SLDB_SOURCE_ROOT", "DESKOPS_WORKSPACE_ROOT",
+     "DESKOPS_SCION_PROJECT", "PYTHONPATH"}
+)
 
 
 def _context_absolute_path(key: str, value: object) -> Path:
@@ -82,7 +96,51 @@ def _context_absolute_path(key: str, value: object) -> Path:
     return path.resolve()
 
 
-def validate_scion_context(context: dict[str, Any]) -> dict[str, str]:
+def _validate_container_keys(context: dict[str, Any], workspace_root: Path) -> dict[str, Any]:
+    """The optional container keys, validated; absent keys are left out."""
+    resolved: dict[str, Any] = {}
+    if "memory_limit" in context:
+        value = context["memory_limit"]
+        if not isinstance(value, str) or _MEMORY_RE.fullmatch(value.strip()) is None:
+            raise ValueError(f"context memory_limit must be a size such as '6Gi' or '6G', got {value!r}")
+        resolved["memory_limit"] = value.strip()
+    if "cpu_limit" in context:
+        value = context["cpu_limit"]
+        if not isinstance(value, str) or _CPU_RE.fullmatch(value.strip()) is None or float(value) <= 0:
+            raise ValueError(f"context cpu_limit must be a positive number of cores as a string, got {value!r}")
+        resolved["cpu_limit"] = value.strip()
+    if "shared_paths" in context:
+        value = context["shared_paths"]
+        if not isinstance(value, list):
+            raise ValueError("context shared_paths must be a list of absolute host paths")
+        paths: list[str] = []
+        for item in value:
+            path = _context_absolute_path("shared_paths", item)
+            if not path.exists():
+                raise ValueError(f"context shared_paths entry does not exist on this host: {path}")
+            if path == workspace_root:
+                raise ValueError(f"context shared_paths must not repeat workspace_root: {path}")
+            if str(path) not in paths:
+                paths.append(str(path))
+        resolved["shared_paths"] = paths
+    if "env" in context:
+        value = context["env"]
+        if not isinstance(value, dict):
+            raise ValueError("context env must be an object of NAME: value strings")
+        env: dict[str, str] = {}
+        for name, item in value.items():
+            if not isinstance(name, str) or _ENV_NAME_RE.fullmatch(name) is None:
+                raise ValueError(f"context env name is not a valid variable name: {name!r}")
+            if name in _DERIVED_ENV:
+                raise ValueError(f"context env must not redefine {name}; the context derives it")
+            if not isinstance(item, str):
+                raise ValueError(f"context env {name} must be a string")
+            env[name] = item
+        resolved["env"] = env
+    return resolved
+
+
+def validate_scion_context(context: dict[str, Any]) -> dict[str, Any]:
     """Validate the five-key runtime context before any template output is written.
 
     ``project`` is a non-empty Scion slug or UUID. Every other value is an
@@ -94,7 +152,9 @@ def validate_scion_context(context: dict[str, Any]) -> dict[str, str]:
     if not isinstance(context, dict):
         raise ValueError("Scion context must be a JSON object")
     missing = [key for key in SCION_CONTEXT_KEYS if key not in context]
-    unknown = sorted(str(key) for key in context if key not in SCION_CONTEXT_KEYS)
+    unknown = sorted(
+        str(key) for key in context if key not in SCION_CONTEXT_KEYS and key not in SCION_CONTEXT_OPTIONAL_KEYS
+    )
     if missing:
         raise ValueError(f"Scion context is missing required key(s): {', '.join(missing)}")
     if unknown:
@@ -110,7 +170,7 @@ def validate_scion_context(context: dict[str, Any]) -> dict[str, str]:
     workspace_root = _context_absolute_path("workspace_root", context["workspace_root"])
     if not workspace_root.is_dir():
         raise ValueError(f"context workspace_root is not a directory: {workspace_root}")
-    resolved: dict[str, str] = {"project": project, "workspace_root": str(workspace_root)}
+    resolved: dict[str, Any] = {"project": project, "workspace_root": str(workspace_root)}
     for key in SCION_CONTEXT_KEYS[2:]:
         path = _context_absolute_path(key, context[key])
         try:
@@ -125,10 +185,11 @@ def validate_scion_context(context: dict[str, Any]) -> dict[str, str]:
         raise ValueError(f"context source_root must be the repository root containing the deskops package: {resolved['source_root']}")
     if not (Path(resolved["sldb_root"]) / "sldb").is_dir():
         raise ValueError(f"context sldb_root must be the sldb src directory containing the sldb package: {resolved['sldb_root']}")
+    resolved.update(_validate_container_keys(context, workspace_root))
     return resolved
 
 
-def load_scion_context(path: Path) -> dict[str, str]:
+def load_scion_context(path: Path) -> dict[str, Any]:
     """Read and validate a JSON context file; nothing is generated before this succeeds."""
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
@@ -363,9 +424,17 @@ def scion_template_files(
             ("PYTHONPATH", runtime_context["source_root"] + os.pathsep + runtime_context["sldb_root"]),
         ):
             lines.append(f"  {key}: {_yaml_scalar(value)}")
+        for key, value in (runtime_context.get("env") or {}).items():
+            lines.append(f"  {key}: {_yaml_scalar(value)}")
         lines.append("volumes:")
-        lines.append(f"  - source: {_yaml_scalar(runtime_context['workspace_root'])}")
-        lines.append(f"    target: {_yaml_scalar(runtime_context['workspace_root'])}")
+        for path in (runtime_context["workspace_root"], *(runtime_context.get("shared_paths") or [])):
+            lines.append(f"  - source: {_yaml_scalar(path)}")
+            lines.append(f"    target: {_yaml_scalar(path)}")
+        limits = [(key, runtime_context[f"{key}_limit"]) for key in ("cpu", "memory") if runtime_context.get(f"{key}_limit")]
+        if limits:
+            lines.append("resources:")
+            lines.append("  limits:")
+            lines.extend(f"    {key}: {_yaml_scalar(value)}" for key, value in limits)
 
     omitted: list[str] = []
     fallback_models = role_doc.get("fallback_models") or []

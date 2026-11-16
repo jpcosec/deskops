@@ -1081,6 +1081,13 @@ and `PYTHONPATH=source_root:sldb_root`, plus a volume whose source and target ar
 and environment compatibility; the corrected prompt text is intentionally not
 byte-identical to the faulty earlier wording.
 
+Four optional container keys describe how this machine runs the agent:
+`memory_limit` (a size such as `6Gi`) and `cpu_limit` (cores, such as `2`) are
+written as `resources.limits`; `shared_paths` is a list of absolute host paths
+bound at the same path (for example `/dev/shm`, so tests share the host tmpfs and
+`/dev/shm/sldb1-tests.lock`); `env` adds static variables such as
+`TMPDIR=/dev/shm` and may not redefine the derived ones. Omitted, nothing changes.
+
 The coordinator derives a stable child identity from the task contract:
 `deskops-e-<12hex>` for an executor or `deskops-t-<12hex>` for a tester, where
 the hex is SHA-256 of `task_id + NUL + contract_sha256 + NUL + role`.
