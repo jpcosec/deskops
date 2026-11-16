@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T20:55:02Z'
+  at: '2026-11-16T21:24:15Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -55,7 +55,6 @@ tasks:
 - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
 - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
-- desk/tasks/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -142,4 +141,3 @@ _Generated from the task references above._
 - deskops declara su project_graph con closed y declared_file_targets de sldb y borra los desvios H1 y H2 de CC33c [draft] - La configuracion de project_graph que deskops arma en deskops/graph/desk_graph.py usa closed: (predicado del lenguaje de reglas de sldb, con la misma condicion que hoy evalua _closed_issue) en lugar de closed_document=_closed_issue, y declara declared_file_targets para los archivos existentes que no son documento; declared_target_is_a_file y _closed_issue desaparecen. `deskops graph missing --root .` da el mismo resultado que antes del cambio en el desk de deskops (misma lista de faltantes). Si algun destino que hoy cubre declared_target_is_a_file (p. ej. dag.yaml o tests/fixtures/model_contract_hashes.json) no se puede declarar con declared_file_targets porque no sale de un campo de frontmatter de un glob de documentos, se manda deskops message send --to sldb con el caso y ese destino conserva su tratamiento actual.
 - repo register guarda rutas relativas a la raiz del ecosistema y doctor nombra las entradas del registro que no resuelven [draft] - (1) `deskops repo register` guarda en path la ruta relativa a la raiz del repo que contiene el registro donde escribe (desk/registry del desk, o ~/setup/desk/registry para el del ecosistema, con ~ expandido solo al resolver), y acepta leer entradas viejas con ruta absoluta o con ~. (2) `deskops doctor` reporta, por cada entrada del registro del desk cuyo path no resuelve en esta maquina, un hallazgo con el id del repo, el path guardado y la ruta resuelta, ademas del mensaje actual del store enlazado.
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
-- la evidencia de commit de otro repo (repo-id:sha) resuelve el repo-id tambien en el registro del ecosistema, en closeout verify y en resolved-by --ref [draft] - (1) En closeout verify, una referencia <repo-id>:<sha> cuenta como evidencia de commit si <repo-id> se resuelve primero en el registro del desk y, si no esta, con find_registered_desk de deskops/identity.py (el registro del ecosistema que ya usa deskops message send --to), y <sha> es un commit alcanzable en ese repo (rev-parse --verify y ancestro de su HEAD). Si el repo-id no resuelve, es ambiguo o el sha no existe, la referencia no cuenta y no hay excepcion. (2) closeout resolved-by --ref acepta ese mismo formato con la misma resolucion.

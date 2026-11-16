@@ -1,0 +1,36 @@
+name: review-task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi-evidence-materialization-1
+path: desk/reviews/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi/evidence-materialization-1.md
+source_hash: 219eb4a22625ba54c38e8fc5ddffd06c37a8c149ab8963f696490f7ddc4d6588
+content_hash: f399b24f365d7479120eed4fe13d506412242a83c5ee18a56bbc40ce7580f3e8
+field_hashes:
+  id: 1e5ec21d3aae9c22fd009340556279132bed48a727f207407c1ffd41d9812d8f
+  title: a0b3c0f5a02724a35b556a8c0ec724361c6f9cefc517112f8dce60c942d1604b
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 99c4223efca63521f4b22d535207e0d560992980ce7bc533989fc611d597f3c9
+  subject: 06270447e02f9b0d90dec255244d7769fe390041a9247840186a8fad0fbf24cb
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 5215eddbc5af04c027759ff1dd265527c550a5b5f1d1a34508d0a6a0b7e2ac09
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 2b5b8644a3e334dc29bea88bd17d7a9938eafff8fb90a798ba3e6a5d6b412da0
+  created_at: 78ded9e5f9be9d4547caddd5cb63245d25eb2d6d21466d1f69ca51b0fbfb27e1
+  disposed_at: 78ded9e5f9be9d4547caddd5cb63245d25eb2d6d21466d1f69ca51b0fbfb27e1
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: a5ccfdb4ec5f77d97b74e9a9ad343622dbdd823f577f41b73f80053f8de69710
+  disposition: 5788f3b33d83eea3035a83b5b02ba868a9afa749597042f45e67953de5953a15
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T21:24:01Z'
+  authority: generated
+  via: create_document

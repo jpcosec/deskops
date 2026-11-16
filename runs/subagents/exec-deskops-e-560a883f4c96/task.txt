@@ -1,0 +1,10 @@
+Task: task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi
+Title: la evidencia de commit de otro repo (repo-id:sha) resuelve el repo-id tambien en el registro del ecosistema, en closeout verify y en resolved-by --ref
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

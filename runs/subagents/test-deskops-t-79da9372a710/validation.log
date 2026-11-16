@@ -1,0 +1,169 @@
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 2 warnings in 138.49s (0:02:18)
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_resolved_by.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+25 passed, 2 warnings in 16.76s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_resolved_by_xrepo.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 2 warnings in 43.96s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_test_paths.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+31 passed, 1 warning in 0.17s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_foreign_suites.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+10 passed, 2 warnings in 18.24s
+rc=0
+$ TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_message_ecosystem_registry.py
+FAILED tests/test_message_ecosystem_registry.py::test_sender_registry_wins_over_ecosystem_registry
+FAILED tests/test_message_ecosystem_registry.py::test_registry_dir_comes_from_environment
+FAILED tests/test_message_ecosystem_registry.py::test_root_missing_on_this_machine_is_an_error_and_writes_nothing
+FAILED tests/test_message_ecosystem_registry.py::test_unknown_repo_names_both_registries
+4 failed, 2 passed, 1 warning in 65.55s (0:01:05)
+rc=1
+$ (HEAD ee9bc3cd + tests nuevos en /dev/shm/t79-head) PYTHONPATH=/dev/shm/t79-head python -m pytest -q -p no:cacheprovider tests/test_closeout_gates.py
+tests/test_closeout_gates.py:352: AssertionError
+tests/test_closeout_gates.py:395: AssertionError
+E       AssertionError: assert [{'code': 'mi...ence found.'}] == [{'code': 'mi...is machine.'}]
+tests/test_closeout_gates.py:410: AssertionError
+FAILED tests/test_closeout_gates.py::test_commit_evidence_resolves_a_repo_id_only_the_ecosystem_registry_lists
+FAILED tests/test_closeout_gates.py::test_commit_evidence_prefers_the_desk_registry_over_the_ecosystem
+FAILED tests/test_closeout_gates.py::test_commit_evidence_of_an_ecosystem_repo_missing_on_this_machine_is_not_found
+3 failed, 9 passed, 2 warnings in 38.25s
+rc=1
+$ (HEAD ee9bc3cd + tests nuevos en /dev/shm/t79-head) PYTHONPATH=/dev/shm/t79-head python -m pytest -q -p no:cacheprovider tests/test_closeout_resolved_by.py
+E       AssertionError: Unresolvable --ref: infra:d7ed012bd1 (need a commit that is HEAD or an ancestor, or an http(s) URL).
+tests/test_closeout_resolved_by.py:511: AssertionError
+E       AssertionError: assert 'Registered repository gone is not at /dev/shm/pytest-of-robocop/pytest-791/test_resolved_by_ref_from_the_2/gone on this machine.' in 'Unresolvable --ref: gone:12d1e1a8ab4bdca8393f67df96b956a333f27ecd (need a commit that is HEAD or an ancestor, or an http(s) URL).\n'
+tests/test_closeout_resolved_by.py:541: AssertionError
+E       AssertionError: assert 'Unresolvable --test: infra:tests/test_infra.py' in 'Unresolvable --ref: infra:e3084ebe35786e9d9a93dc490849987184e4bf67 (need a commit that is HEAD or an ancestor, or an http(s) URL).\n'
+tests/test_closeout_resolved_by.py:555: AssertionError
+FAILED tests/test_closeout_resolved_by.py::test_resolved_by_ref_resolves_a_repo_id_only_the_ecosystem_registry_lists
+FAILED tests/test_closeout_resolved_by.py::test_resolved_by_ref_from_the_ecosystem_missing_on_this_machine_refuses
+FAILED tests/test_closeout_resolved_by.py::test_resolved_by_test_does_not_resolve_through_the_ecosystem_registry
+3 failed, 22 passed, 2 warnings in 26.02s
+rc=1
+$ (reintento tras la edición en curso de ../sldb) TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_message_ecosystem_registry.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 1 warning in 159.08s (0:02:39)
+rc=0
+$ (caso real, checkout con la entrega; sandbox /dev/shm/t79-desk sin desk/registry; ecosistema real ~/setup/desk/registry) python -m deskops closeout verify --root /dev/shm/t79-desk --task task-xrepo-commit-real
+Closeout gate: esta tarea declaró commit, document; encontré commit
+{
+  "alerts": [],
+  "declared": [
+    "commit",
+    "document"
+  ],
+  "findings": [
+    {
+      "code": "missing_document_evidence",
+      "message": "No existing document (a .md/.rst/.txt/.adoc/.yaml file outside tests/ and desk/tasks/) found in references or files."
+    }
+  ],
+  "found": [
+    "commit"
+  ],
+  "gates": {
+    "commit": {
+      "evidence": [
+        "sldb:7cc3599266"
+      ],
+      "findings": [],
+      "ok": true
+    },
+    "document": {
+      "evidence": [],
+      "findings": [
+        {
+          "code": "missing_document_evidence",
+          "message": "No existing document (a .md/.rst/.txt/.adoc/.yaml file outside tests/ and desk/tasks/) found in references or files."
+        }
+      ],
+      "ok": false
+    }
+  },
+  "implicit_code": false,
+  "ok": false,
+  "summary": "esta tarea declar\u00f3 commit, document; encontr\u00e9 commit",
+  "task_id": "task-xrepo-commit-real"
+}
+rc=1
+$ (contraste, HEAD ee9bc3cd en /dev/shm/t79-head) PYTHONPATH=/dev/shm/t79-head python -m deskops closeout verify --root /dev/shm/t79-desk --task task-xrepo-commit-real
+Closeout gate: esta tarea declaró commit, document; encontré nada
+{
+  "alerts": [],
+  "declared": [
+    "commit",
+    "document"
+  ],
+  "findings": [
+    {
+      "code": "missing_commit_evidence",
+      "message": "No resolvable commit reference found."
+    },
+    {
+      "code": "missing_document_evidence",
+      "message": "No existing document (a .md/.rst/.txt/.adoc/.yaml file outside tests/ and desk/tasks/) found in references or files."
+    }
+  ],
+  "found": [],
+  "gates": {
+    "commit": {
+      "evidence": [],
+      "findings": [
+        {
+          "code": "missing_commit_evidence",
+          "message": "No resolvable commit reference found."
+        }
+      ],
+      "ok": false
+    },
+    "document": {
+      "evidence": [],
+      "findings": [
+        {
+          "code": "missing_document_evidence",
+          "message": "No existing document (a .md/.rst/.txt/.adoc/.yaml file outside tests/ and desk/tasks/) found in references or files."
+        }
+      ],
+      "ok": false
+    }
+  },
+  "implicit_code": false,
+  "ok": false,
+  "summary": "esta tarea declar\u00f3 commit, document; encontr\u00e9 nada",
+  "task_id": "task-xrepo-commit-real"
+}
+rc=1
+$ (negativos reales: sldb:deadbeef00, noexiste-xyz:7cc3599266) python -m deskops closeout verify --root /dev/shm/t79-desk --task task-xrepo-commit-real | gates.commit
+    "commit": {
+      "evidence": [],
+      "findings": [
+        {
+          "code": "missing_commit_evidence",
+          "message": "No resolvable commit reference found."
+        }
+      ],
+      "ok": false
+rc=1
