@@ -1,0 +1,39 @@
+name: task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13
+path: desk/tasks/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13.md
+source_hash: 5202b8fa4b38a7d3a08a791b4a7778177b59d0bef13e0dc15e68a0dd31cd07f2
+content_hash: 2b70d0857d2db7c61b3da7ab1be261835a2cb670437f2c6dbc860633198e06fb
+field_hashes:
+  title: 3dec38359d787f78721d9b8f67252125cf802c2be54c6a34a6786050c1ced772
+  id: 15524bbdff9dac20343cdb47f2fbfd341a1df1a65e4abfe6567e265ed28696ca
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 639155e0dbdbac3f2f142646b72f008e1e8458053e4c6dc435c57e8cce8d3ba8
+  goal: 7ebf80947bd1e28a936106fefd798daeb34090294b45e583b74c81b836dce7e6
+  scope: 5283fbc3199bc83750ea5633edc776a84683a0b69295ae9b165eca748639d28e
+  references: 3ba304389d215308ef8dc8c7d0319a2f7a7e0b389a6b1269ac791cfb9e6f81a4
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 0147dee9e1bcd6e8a7cfc434ffb9be886f64b54a9530884def1e2c3c91112c68
+  implementation_path: 9fbc8a2db4ab5b291522f966e92693fb99f98865404ec2c28a3d6a71f1207f32
+  validation: f0cf14665edcd6576fa170779c4db26a33269265e5914d7e2aff99f674f41850
+  done_when: f7cb45346b7673382435a1b755706e76ca4024a4ac7fa22e72e4b31d9a33d8e3
+  task_type: 8dbc7ea3fc2d737a841f8f9a89de6dd4bd2ca7fdc77434a53400db8767ba695d
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:03:52Z'
+  authority: generated
+  via: save_document_payload

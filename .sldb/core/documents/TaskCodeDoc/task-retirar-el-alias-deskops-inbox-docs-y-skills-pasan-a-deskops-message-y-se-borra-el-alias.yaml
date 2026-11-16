@@ -1,0 +1,40 @@
+name: task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias
+path: desk/tasks/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias.md
+source_hash: aa1117c5053f47dc37c5c99c4725e0c481a311d26e53cfd5b90f85f63a27d87b
+content_hash: 801c5cc4896e8a21bfa903f082046629b28bd140bdab8f19076488b7400c5f03
+field_hashes:
+  title: f300eff38a9ec0e3c20064562a54de10d52e755c15ed42a4340163df36bb7113
+  id: d80663afa04a7dacc4d4124155b0c17b49b7db6a3aef474a49074b21bc6ced88
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 7dc0b6186c3bad47cdd18f5f4f55cfaaac5f3b265f98ad40bd75604971f6072c
+  goal: 2dbb4ae2fa263ed3487b46695b57630364cc2eff4c8557fef474da7d3bda01ce
+  scope: 0b8433f63a58fef3fef3867539e9b52fd5b752ee64220a1af225a7d81f3a6236
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: b9d91db1b4801ea4010f2b2300d2324b4494f6c8724d198f54d690d2dfd9eb6e
+  implementation_path: 642dd24e57cbaf72d5f412cb1bff935279a0d4c9d69d3d492aa4e9182133db5b
+  validation: fa93688e1c0cbd864c9923e497b75d453559e043e6752b13e404924d13645b7b
+  done_when: 3c62dfeb0bf294d38925f528d1b41136671ec7b99a76eee7fbabecfa27a83c8a
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+  from_drawer: a805a70abebc468c6e4affe814823368f41d4fe9e63a90776cdda5d59c72e737
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:05:15Z'
+  authority: generated
+  via: save_document_payload

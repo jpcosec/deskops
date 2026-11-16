@@ -1,15 +1,16 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:48:25Z'
+  at: '2026-11-16T06:06:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co
 status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
 references: []

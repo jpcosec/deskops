@@ -1,0 +1,36 @@
+name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-preflight-2
+path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/preflight-2.md
+source_hash: eaa21ed4cafe08dc544b4d74f166e9c254567851dbfd5b968f1fb5df46410d03
+content_hash: b92e421d91f8cd22606332b233ca6ba20a750c62bd43e46b85f7cbdac5e015f9
+field_hashes:
+  id: 3d874d025b9fc89ace21119d45769c43ef35bc2d34f2139eec7879d5c0801bf0
+  title: 4cde1d7e3ac59cee59b7d976333f86a2c49950f93d044d62235a6338e5dd46b4
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 7aec95f056a247bb62a1e78153b63939ea67308b8497e390e74954a1a4b9e76d
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: ccde12566ded6de1939369f7346582764c19536146c22b0604fc43f31a99a262
+  input_sha256: 9e4ff72e3785b0626d7573ac6ab9cf00a0d60d49949c86f5930f6e8ba1a177ce
+  output_sha256: fd9171281d11e300bc3c320b70ab0706e94c70ab9aabe95b9c3e55d78dca6da4
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: f27a24479285d7266f3af5e63a86a3729bfb2ae4e30f97384017a4939a8e1d59
+  created_at: 051903648f2f0c0b88c3f80bb1a72880849534c410ae0fc939b73188e8e0d811
+  disposed_at: 57ca65bff65cd046defd3029800ddbaa82ec7885f1a3fd94a00dc05ed2ba7f6c
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: cd9e435462733d9bf2e187412d6b667c86860225ed6ddc47de9f034b976c3cf0
+  disposition: bfd701c774eec047ea46665cceb5c394f64c0b9899cfee039300b96784100195
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:34:10Z'
+  authority: generated
+  via: save_document_payload

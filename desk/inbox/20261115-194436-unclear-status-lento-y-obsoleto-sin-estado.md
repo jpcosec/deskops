@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-16T04:11:58Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,9 +13,11 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-15T19:44:36'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-16T01:11:56'
 ---
 
 # status lento y obsoleto sin estado

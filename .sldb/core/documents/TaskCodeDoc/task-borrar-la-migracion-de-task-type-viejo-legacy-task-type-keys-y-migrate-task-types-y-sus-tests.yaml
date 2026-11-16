@@ -1,0 +1,40 @@
+name: task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests
+path: desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
+source_hash: 6a24a171ce39f4122ba8550515c5f795684c69343020abee0ed35f736c2e8eec
+content_hash: 44cf4b822ff2508951410dbf72dba8721e53cd397be64c14eb883305e779012d
+field_hashes:
+  title: 32b80b54dc33866dc8e061b49b95178609d764c34e73b192c6da5fdd1a5c86ad
+  id: f0b39d969fc153bc6f9779a6b661e2cba98e309e96e14ecaadad7d37672f1835
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: ce939e5b2ee2423cf01e767b0b6c86eb423226efd425696b14ff5fb6803019d4
+  goal: b29f2a74d5ff90c5d5a01ea8eb8092127d3df447e5c05da50b68c2318f9e6b6b
+  scope: a92e9b256944a88bf27a66ecdef50eedfe68c5b91d143963f7163f06eef759d1
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: c9944ea7239330942c9de7cad717947b10abab101477ab70435a6c4c2a079d03
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 34384336aee63c9d4ddaa45175eb3e83e25cbefd1275471f9eed4db437e98ea7
+  implementation_path: 554c1d59e758568a1d31e06d5c7f9e3109da1e515693a4a3f17dbe967510da39
+  validation: b14c40630ecc2ee757257089006fcd2cb3d5eae369fed84c1e0dbdb69457afe5
+  done_when: 1c30f8e202a3cf457bf1e76a73280ff5fb774c9e0906ea6b02472177a1a1de4d
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+  from_drawer: a805a70abebc468c6e4affe814823368f41d4fe9e63a90776cdda5d59c72e737
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:04:57Z'
+  authority: generated
+  via: save_document_payload

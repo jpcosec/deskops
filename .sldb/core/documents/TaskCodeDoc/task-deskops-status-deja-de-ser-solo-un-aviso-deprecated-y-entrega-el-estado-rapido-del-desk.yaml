@@ -1,19 +1,19 @@
 name: task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk
 path: desk/tasks/task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk.md
-source_hash: cd3a49c46f0b9dabcc281d5324827c406ddf88d72cdaa932984725ae941b43d4
-content_hash: 3de17af1a04f1460223e883b3ae37441ac52e292e3dde5e352fe07714370bb65
+source_hash: c6daf3d369ac47836d43be220c3559b3f2ad7f89b3e7030668f09bb88506f949
+content_hash: 0f068af0de02120657d74102f7e8b1fbc92a8b8edfc5564259651acb6e0f29b8
 field_hashes:
   title: a74b6489ac05b9a9c86bd5dfd0ce59c130bb59c7762e0e7e4c102fb7174e87c5
   id: cd651e6399e4366936a11bb914d09b28ebb4d4a42502ed5509e63be4f812564d
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 73acb175898fc839ba739375138c9c2e473330f20b1cfdbe059103deba4b43d9
   goal: 2f7cfb6fcba6241acb6aefeed1563a591a39f8e4911eae6491e936a921fc60ae
   scope: 4fdc3ecd9b8da6f7a03ca71736d50b91ce4d65a2f954ecffb0332140b14d75bd
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: 648c40631c35c9073b2d1a84511d89a48aabbce4e143ea8927e9e05ded617154
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -26,6 +26,7 @@ field_hashes:
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - artifact:task
+- host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
@@ -33,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T00:46:59Z'
+  at: '2026-11-16T06:06:35Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

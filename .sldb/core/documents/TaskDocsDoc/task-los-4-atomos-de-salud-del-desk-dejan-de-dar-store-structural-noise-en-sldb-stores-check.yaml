@@ -1,0 +1,40 @@
+name: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check
+path: desk/tasks/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check.md
+source_hash: 6a8fe1a2d8be5a1040b826494a2d8fc5d473d2cb3f6f37b5bd787c638072ac6e
+content_hash: b8d1da01414e3fcb9e51e5811647d52536607de6b17095cdcdf5df0c366b4d3f
+field_hashes:
+  title: 487a58abc708f9a6023fe32e44b045e87d787e92f830873d09ac6694c04524a3
+  id: dc4e22d456c86e4df9b9d0739a1da85c6bac70ed61fb99a6235c851234b58e02
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 3c9e210bb778ba23e84ce760a76a32ec94f4a96e3ddc1b13c63f494237cdee3b
+  goal: 5c247869d23403c06f36c78a7559c0897ba6ca56b5a211b28b3cf3d1f422615c
+  scope: 4fe6b19da1dc57450cfd15804a965408e0543761f7a57b2b5932cb4ddcc65a97
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 9e562de53b945a4b6e3c79fffec707ace1c62946896c92c691737fdf2ca0c963
+  implementation_path: df27c0031dd1435ae2f28d885f22339454018fdc8fe34283b04676449b195093
+  validation: b127d65363aaa41f5327e704ff070f12c3948d7212d4458baaea0034d98c9909
+  done_when: f04da3a5248be712a8ab58d9109edd18c45a663c1e5b86db9b9b629ebe25e0a0
+  task_type: 8dbc7ea3fc2d737a841f8f9a89de6dd4bd2ca7fdc77434a53400db8767ba695d
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  from_drawer: 77dc2a12661ca285be3295c71a53a8c817bc32a11534738661e6018dbbe6edf1
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:59:59Z'
+  authority: generated
+  via: save_document_payload

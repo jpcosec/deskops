@@ -1,0 +1,36 @@
+name: review-task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos-owner-1
+path: desk/reviews/task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos/owner-1.md
+source_hash: ed9924accc8f0b7ebe99c20af6d7dd1d5be88fef679b8f0c9265d79671c865c0
+content_hash: 4fc81bb2e4cc27be3c76965ed346e130a005f833f19168594a7a68ee69cc9e52
+field_hashes:
+  id: 811f965dc91e2688a921571e5654850c90b21ce14d127d6726d928f2bde099c1
+  title: 18cb53fc7805600fe37abe121ea0584b5b98e75a3909b8f8429ac44b1f820dda
+  kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 984d4f35b0033b4dab031425a8550b4e7aff58845e5596ded33747b0dd3e815a
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 157415a04ef7966cd9abef102ef18301954beaa1c790c40a15ea90ec7d190b8a
+  created_at: de571e042846d767b65dcbe068c7af81d91f72506d550c588bc82952c3067bb6
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T04:09:52Z'
+  authority: generated
+  via: create_document

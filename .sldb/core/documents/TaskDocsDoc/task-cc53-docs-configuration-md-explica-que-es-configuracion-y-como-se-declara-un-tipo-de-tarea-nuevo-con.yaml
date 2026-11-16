@@ -1,0 +1,39 @@
+name: task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con
+path: desk/tasks/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con.md
+source_hash: d572696997ce51fb2a4707423cdf13322a8d777f3f2b29ff12a162d9fee6ad58
+content_hash: 03afd28f8a05fe97ea5f3a417a2e6627ad028d323f30bf088fea90422fd286cf
+field_hashes:
+  title: a952ef96dd225aaf3245c929dece964e3fbf39af668ecda34d2ab79a229767c5
+  id: 8c258d2fcdcd58056d937fb2727957df2e1856da1b294f3132904cddd81b5290
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 6cf5a8afc7debfd1f9dbddee2823b83a570046b622c45f6741e767af9f4cf5e1
+  goal: 3c3af00a75b4216748729eca0b26670b931b68fc4219d3f216046984194debeb
+  scope: 71285aee01afd5f31bdc4dc8d8748fc59cd3ff31ce1d599f844e581c34e14fb8
+  references: 5ad479f628788cbe0eca7e676d9f25c4da2f94f31430a7af82445f32fd47b1e6
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 618b8e81614a86981e3a2788b5b7a65c9a49aa607cae9c4d8a91e65550e37c5f
+  implementation_path: 1c3cadd93370882404d329b0e6dba1e23659f4e3c954cc3a5c16578e817e0aba
+  validation: 5507cc0baab227a8dfbdf35c6f5029d1a574e131348a508652f616ceabe01a60
+  done_when: c68c7794fe68141350ec43bf1a42cbbf91d32bdc4543f6769092c877997d2293
+  task_type: 8dbc7ea3fc2d737a841f8f9a89de6dd4bd2ca7fdc77434a53400db8767ba695d
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:05:38Z'
+  authority: generated
+  via: save_document_payload

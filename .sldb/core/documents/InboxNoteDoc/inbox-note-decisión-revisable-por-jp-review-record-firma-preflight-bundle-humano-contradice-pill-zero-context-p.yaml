@@ -1,13 +1,15 @@
 name: inbox-note-decisión-revisable-por-jp-review-record-firma-preflight-bundle-humano-contradice-pill-zero-context-p
 path: desk/inbox/inbox-note-decisión-revisable-por-jp-review-record-firma-preflight-bundle-humano-contradice-pill-zero-context-p.md
-source_hash: dbbd2be72096730e2da950513571a8df71fe288105f05bdc602fb0e4ac060c17
-content_hash: 5c02014a2b8f7b469b2083d755e7003bfc97ee780ecca666431c8d2d56ec877f
+source_hash: 191e6cd9fd9afba632619f83bdeb576c694a56c0dbce8dc02b3ee3ce5a02c547
+content_hash: 35859ade7d3a90fcecdda63d6b6b25d92ad7b127171a7b769d634dea208cbfc8
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 2da61077a1af30abcc56d65392f26940e8117133d3929977688aa3c72567ed7d
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: b9e21d96ba49b54305db6f2d8d42d82711b7acd443ad58b95a529aa9d4d1e8a1
   title: 4a07c7a703d0f75f66af565aa7545106094ae58c64ff154a6e45522b091af72c
   body: fbf1d64964e123eb09347e0ec84c7f1d8919bc81f6cffe90bf6ea2033c5be795
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T04:11:02Z'
+  authority: generated
+  via: save_document_payload

@@ -1,13 +1,15 @@
 name: 20261116-002453-suggestion-piloto-scion-fase-1-brechas-del-coordinador-y-del-ejecutor-claude-en-contenedor
 path: desk/inbox/20261116-002453-suggestion-piloto-scion-fase-1-brechas-del-coordinador-y-del-ejecutor-claude-en-contenedor.md
-source_hash: 7bdf862017700068ef71b6d3ebb13dec660e4fd15f8b24a0b9665b853fc4aa10
-content_hash: fd748e20bb53d5e03c88b40b4be4f8b4b1b19f761b665395e02e91019555d5c1
+source_hash: 8fe12e5de70c7cee6ae7f62c6197bd21ecc8be7585ea260a752ba831a2466a70
+content_hash: 54296206d61605c1fb58ffdcee427f5331042d4ffc857238c5e4e43b61c46f06
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 8cd391f161f737e86b14f51895066d063789431a6bffa1b61b78994d31c7ea77
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 2fd29d4285c6e1fb6551fa75aaa93c2335d1bf79efc46867369d9cd66f8a7399
   title: 4acf1cf285f8dc66783f1fb942385f88d2e2c0613d6797b7ddf6a16c2e0d3f72
   body: 5e02a412d2fd94a471e34df386e4e869a134110b18d1bd292edefb6e399f8161
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T04:11:23Z'
+  authority: generated
+  via: save_document_payload

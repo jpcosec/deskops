@@ -1,0 +1,36 @@
+name: review-task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar-preflight-1
+path: desk/reviews/task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar/preflight-1.md
+source_hash: ca1ac51c1c516387c7872d9a4dfd8f94d25e4dd26e08e1c1b0b22e9270a02cf6
+content_hash: 93ec11245603af8627dc0d544d0d017820c72d04044700ed50bfa2bf621f27f0
+field_hashes:
+  id: b2688ee41ad77e8c6c11f3cd1039b1c280eb966363b48775989819adc32f840e
+  title: 0ef973ed575985d2b517ef0123e94ca316d36c408df4f574fe04ca0abb0355b0
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 8feffa4306182f8d2d2ea005d20e5b1b5ae43e082b95558382c5195ae79260c6
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 5f499765b73b22e1bf391e80c42e445b3a0acff50e135eec545bb5fa07248dac
+  input_sha256: 5f0c850e4b685a435f34cebeac398ff0e73a8a6296fcea5b2937087cb3cf43c2
+  output_sha256: e3d29061cd55c292770503338469d5b6533d149241452f0c5f9d6be023fc4bfc
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7
+  created_at: d34dec6c9e3a14ba1883a545104d108701767fd03d1030a98e1d7d09590996dc
+  disposed_at: 069a2ec752cc55b09705184555c62ce9b9267af449dfb144b7fe94da0d1f353a
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 05b1602c85e077f0e0c76800e569093b49a15d397a98cc286d7165a2f5a60ae5
+  disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:11:31Z'
+  authority: generated
+  via: save_document_payload

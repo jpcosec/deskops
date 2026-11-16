@@ -1,0 +1,36 @@
+name: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-preflight-1
+path: desk/reviews/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/preflight-1.md
+source_hash: 87629f9c43dcdc1b150d89c826087d16c9810f7af561ab0441edef88835dd43b
+content_hash: a04de3ea61f6dde003afdaa38e92f41f51e2bd85cf6d10cb80ed0044c555929c
+field_hashes:
+  id: eb86e973b665cde8696db9e6435a432aa616c65a638947e521936b527fe8bec1
+  title: 318173f95c3d9fa1442664a48ec476ae1cb091c155925ce9e2552857c1e7c301
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 51db338e7d70ab8da7b2b6394a89f3e5d97feaff8244754173e777ba815791cb
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 58f98f5b5a1518455dfc89c0d6ccbadbdf0a4de8e620a5515b335c7b7e0db06f
+  input_sha256: 3e6663422fbcfcdc9ddc6c7f91b56a5b42d91b258e6853c4e2f8d00ac0303a7d
+  output_sha256: 4b625fb151838e2651eda457e45aee145674c5c94192c1b689745cd3a736d46a
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7
+  created_at: cf66b4a7a6df8ef07ede727e76a7aecc49828f25fa5309a98a09c4bfd78dbf1f
+  disposed_at: aa337325cf0286bff907f8638d0285ecf0e3a4ac71f29417a0d32f40ff69f2f0
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 948727d06098709bc82e69bb7e20a6be890bc35725d3700c105f79e5d493366f
+  disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:06:40Z'
+  authority: generated
+  via: save_document_payload

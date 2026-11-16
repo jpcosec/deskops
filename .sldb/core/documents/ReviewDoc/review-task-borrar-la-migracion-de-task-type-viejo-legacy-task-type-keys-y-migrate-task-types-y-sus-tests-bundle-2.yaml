@@ -1,0 +1,36 @@
+name: review-task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests-bundle-2
+path: desk/reviews/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests/bundle-2.md
+source_hash: 7d478d09da9092cfc1e55a521e1f55ac9554789a7560117be48fc6b9baf1308c
+content_hash: 9147c7c874cae6aee8a45e2e5c7408e89a0aefc2704d65b9b36a8ce155bd14e0
+field_hashes:
+  id: 45e5758ee63a1ddc13628e6e0cb23e6940a8777e9d9bf1777508ab718d7c45be
+  title: a2819f9d4a93fbdcaa5753f68bbbc767806f84fa44dd200a6be06b713f2a9a59
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: bf88f7e2f4bf03ba410fa4ad869200950cd189526e5a5e594b300555bc5ae22f
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 5618ee11251749cc7da47c03cadacfb5843c92af58a24a4ca09e08a2d1a9d523
+  input_sha256: 3c4a9963081de50cfca4967f4463847add12a496eba8e21e77f937602ee7e35d
+  output_sha256: a3b0f56e836e9678ea6b743847641f06cd0c4f991176de2f19fa4643e86eb49e
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 86f652c266c11f0eebfcce3e4258a187a4bc4928395f1ddffe9d5febc244915e
+  created_at: b2135e30d3cd5d239caa5b56214709e104028db78f9e536642bc25157b71cfd1
+  disposed_at: 9d53b3e05b2f89b4228a3694a77dc13c6fd7681d6a6273b6c62a07b54549ce66
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 080940c539d43677ad6abb59003290f893c18e8f366e17f96e5fad2db3545564
+  disposition: f798ecddfa297a487d43041f4e52de965fb9ad9f5a19a01921d4249382698f66
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:58:22Z'
+  authority: generated
+  via: save_document_payload

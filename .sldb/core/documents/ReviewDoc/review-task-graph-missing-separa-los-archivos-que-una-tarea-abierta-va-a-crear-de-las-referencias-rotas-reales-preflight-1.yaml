@@ -1,0 +1,36 @@
+name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-preflight-1
+path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/preflight-1.md
+source_hash: 5d2e1d3d36fb0f6d24ac87d2c96a9c16ff6c75260620378f2aef3661df0ac916
+content_hash: 9686ef72cd3db0a29ecc60a4ae79d4211ec56d3449b968d58fed2cf0edf979d1
+field_hashes:
+  id: 9c0c42882718aafa95ceee6b9934370f2c0f4d123303a36e888f13a1a989f10f
+  title: 44cd3d45a08f2299f3a44ee07be1e2d20130f076938abd694b27cb84d8d8e3a7
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 6f45ee6ba0f720e5498ff912ce79e8c9d2f6d2682f30986d540b612a29b19964
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 228abfb38c70fea060c73679222e6390cf53ea41ada4c988c84a77320c772788
+  input_sha256: a871eec392992cc043f471e5ba981561e42c0b1d3bf7def471105dcfdafafeb8
+  output_sha256: c49ee13eced9c0213730fe579e28f35fb65bb4669cd4fc2c9c95d543cbb6fb5e
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 753ac82f2665ba3c2bad635aca5cc502592ec1dc1fad715bda698dc4299889ab
+  created_at: c3630f2bc3ca78046463d6d5ca624d4d5f7f85d1e6d5d54277f44791668fe54d
+  disposed_at: 31e49bfb943948d67f8d72157c6ad3062a5ec7d25a13b915519421227f784e70
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: cfe3b984ea429cf467ad94f4f2b55c7fd2016b59a8cd30ebef2e4f63664bdac5
+  disposition: 170dddd13b47b1432af6eaaac5331e8360fbd972283d385309d3fde7bc831f8e
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:17:24Z'
+  authority: generated
+  via: save_document_payload

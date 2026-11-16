@@ -1,0 +1,39 @@
+name: task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r
+path: desk/tasks/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r.md
+source_hash: f6dbe0811e3a8e980a497965f94a3408bc3045b49cebea132ccd8914d8f9aa1b
+content_hash: 1d1599031e3dd871816f3f39b85fbc6204f096b90305c24f01ff1d98d63a2c48
+field_hashes:
+  title: 9d307f28a8f46cfbfea1009ff533db5253867a670c848a0c9b73d730c242dfbd
+  id: 6286e69dc6b6f07c0fb072ea4dbe38ac86da8c0bd90b23afb8632e12ed3c20f6
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 12e52c6cd4d8f77adf648ce1460bfed95dc2c03c7124d901325ed66596b27bdd
+  goal: b8ed59d85ddd3a34d58afb2195ee9549e4d134de1e7e0830fac7717a427675f4
+  scope: cb627fa640c3ff21c957e80f71fc91287656e30dee92d82657e0e284d28f9eac
+  references: d99b6312e99b6e6fc4cc97788b7b8946be352d02e8316a3a9b606cb04cf16f29
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 39bbc9dec9747535db22d83e21488c7234d109d4d2fd8ec92166a5cee2427eb6
+  implementation_path: 4bd8196674fbfd53650958b77c9c707e26d6487caa7a8cb58693096d703da237
+  validation: 3fd9c016c8e45796f87c992d2c24727bd2b51f838be89cff150cbf0a4940af81
+  done_when: 8bd164e5fa0566acffd6a5ccfc40fb72621651eb3c212466c98e6e1f0f3c9883
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 021669146ae8b913d1c1adcaec35e3884f1afb40af419bae069ce18326b9ceab
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:21:30Z'
+  authority: generated
+  via: save_document_payload

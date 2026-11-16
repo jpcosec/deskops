@@ -1,15 +1,16 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T02:20:48Z'
+  at: '2026-11-16T06:07:09Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados
 status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
 references: []

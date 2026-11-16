@@ -1,0 +1,36 @@
+name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-preflight-1
+path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/preflight-1.md
+source_hash: 6ed2c3763363804fd14b7d1abaa6f4b4aecab56cc02a081abb01cb1b37d6c554
+content_hash: 907f3710208d77c083fdd90ff0fe2acca495634717382e527b50012562b54772
+field_hashes:
+  id: 4b07cc65816b5cdd70ff8457a4e4221610f538031f5a3dda2e4cf12b688b8df6
+  title: c6c8688b5142034d6152be9e9bb95ce8e15693f426bb4c8a6516c3f6f3236b98
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 4fd712b1848fea28f7e0919eb089d013f1eb070628b612e23358d1f5ce2c1657
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: fc361220d0c44943df42cef939435dcb790e0337a1f2ca7c15527b73869bb8d2
+  input_sha256: 19aefb8f47a81d84f2a9bc9082ed5a0e25936890c3a380fae6a55e18e9952749
+  output_sha256: 2ce98a0fb72f186f8d4ce86e72e368ac2c3b25b5dd1b41adec0169e15f76694b
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 753ac82f2665ba3c2bad635aca5cc502592ec1dc1fad715bda698dc4299889ab
+  created_at: 7696aa9272afa2bb61c77abf31d3cb3914d430cb91f5600e0b4655357877e644
+  disposed_at: 1e241ea94c60c458e18376c5c3185e69368d3fb7308d598765dd5c25ac1d444d
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 561b158d645e870325ce3b89137770f8cbc185bd40bd66ce52407e7c81789e52
+  disposition: 170dddd13b47b1432af6eaaac5331e8360fbd972283d385309d3fde7bc831f8e
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:16:48Z'
+  authority: generated
+  via: save_document_payload

@@ -1,0 +1,36 @@
+name: review-task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s-preflight-2
+path: desk/reviews/task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s/preflight-2.md
+source_hash: c076e1d6cfa4eeacfb053bd07ca0625b7d25cbe6d5b8b2eff0627115bbeb35bf
+content_hash: 747e786960c4a093baf5124f22020a900b9721757f38b40f1a1e3954e76c5af5
+field_hashes:
+  id: f12eae7641954f469485d28b43fcac3629d2a333ed94a26370f66d3c50a118b7
+  title: 22379fcacbb47c5520c85e9c43738e1241e2251f4ac29c342651f7beb15ddc57
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: c4aec9ea3d8e9b089e03d59d71516ed3f07ff48d2012c9f4a8d4fd3330178029
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: cfe46adfcca883d17e812c0ad4487474ff506cf3931833eb32a3455a73cf8fe3
+  input_sha256: 63411607f2489f4a6aae655f79a7763906c47056ecf495f2ad7dbc7d2e851af3
+  output_sha256: 03ae60ca09e976f20011f5a30a4e3299f3b23a789d05b9e50a7e7e0f337e2786
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 1428bb2adbb6d7d796c1708741cd457981623e1d743e021ac2c96e690b7f15e8
+  created_at: 4ee7d021bb3ea68cf61d78acb9e5a3666b5b339e5a4c039e7a0cf2e8f33f4ed2
+  disposed_at: 0b646f4b5ae4b15d2910fcdb0d0671d1ec17007305447aa53f01c62745de1d79
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 256dc762aede1b427ceb4c4015d01c203b7a8d95c3780b8cc848920520fbf989
+  disposition: a8c14ceeb0591843ac87f4406365b7c9ec486a50ca0a7d6778388a1f7d29fd90
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:33:32Z'
+  authority: generated
+  via: save_document_payload

@@ -1,13 +1,15 @@
 name: 20261115-194450-unclear-to-deskops-no-resuelve-desde-otro-repo
 path: desk/inbox/20261115-194450-unclear-to-deskops-no-resuelve-desde-otro-repo.md
-source_hash: 367b22a432be709eaaffc77e3256bada132dea2119fb2cf95e4fb4a997065459
-content_hash: f1939d4cd4dc3e443755cb39c85bf6449825b5e058488c23778afa15236988a1
+source_hash: 96cbd6450780d6afe3505d9910fcc75521771ef776b170b06d124af603533e42
+content_hash: 9634f255bd24b1c9ff4902f5d1b93ada499ab4f8e85600a76f57713aaa5d80b8
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 085c126dd9820a7160fe6a4a4cdb557572a1e18c22c6724a00fb700b3cefbe6b
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 9ddcefe8329fa512d43c6b1d2309405b13bf0dc6fd7caab15ee5de6d48efe14d
   title: bf3882b592730e8d56fb487831a740889aef54bf19b7095e0c952b5995083992
   body: ccf2ecb642d7611574c6a4ad1345bcc411851cdea5adc6dfc2bf71df711bdd85
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T04:11:40Z'
+  authority: generated
+  via: save_document_payload

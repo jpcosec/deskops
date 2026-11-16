@@ -1,18 +1,20 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:46:59Z'
+  at: '2026-11-16T06:06:35Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk
 status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
-references: []
+references:
+- desk/inbox/20261115-194436-unclear-status-lento-y-obsoleto-sin-estado.md
 depends_on: []
 pills: []
 files: []

@@ -1,0 +1,36 @@
+name: review-task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13-preflight-1
+path: desk/reviews/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13/preflight-1.md
+source_hash: bcdb72f549e18a985ce2df061b501dff8a174c82a94b83c2bd1a70fd8934111f
+content_hash: 29a441def9ed95b329556239a3e7ce84fb08a5cf58515f0cc6bdf808720fd496
+field_hashes:
+  id: 8979ca058e6f5d30f88f0b622cb6da008e5f4ce9b1f3c46740dcb2779d45e33e
+  title: 3bade9bdc181ed4bc5f6f8eab52e04f3ab41ed0036c656bd4362da9244982ec0
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 6036c90c11717a1c983c8dee5f2aedcfb936782ebd763310bfc5834d51b0d961
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 2a8d0091e455d94891124ec1392c738cb1167860b5f2c9339efee036bc76c28c
+  input_sha256: 12f78e18ad360470a3cacdaad7d366bcbb8c731994fff82f55dc07ac420ebf06
+  output_sha256: 7d98d732b35156416f1ab914b219be79627cdba767829526ed567f5479aaf5d2
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7
+  created_at: d9a1abcb2f3aee3434c2b11547b49723a8ce20919f3ccb25d377c83a4f029d3b
+  disposed_at: 470ec14790a84cae5f24900849412e8873bcebb8fbf02b83ccaff69d0c28ee1f
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: ebe73b2079789d0aef75151f909045842e0add97b59d2047428f4ce61870a480
+  disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:09:57Z'
+  authority: generated
+  via: save_document_payload

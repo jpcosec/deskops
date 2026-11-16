@@ -1,0 +1,36 @@
+name: review-task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2-preflight-2
+path: desk/reviews/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2/preflight-2.md
+source_hash: 2f5180f7974f8d3540f67df95cfec051dc8f433fe4a5ecd8f10dbb13be54a573
+content_hash: 01765b5b4bf5e84157b130dcfe5118787fd4b666fd5a24bdce013101d082e898
+field_hashes:
+  id: cc1471783386fc041dbba58496d5fc0fc7bc9c1f53839782a1e2fd66b0b1665b
+  title: d1cdcd66a84a23e58c6de5b89c8353fd12dd7b1ac441ebdf63da4489a58481d7
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 392413e96e9a2e01f0edf3f19889aac5ebfd6579cc5151d381822ef33e5136f5
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: ea4a8e2f1c566dccac66144cb0fb7205b4bd92ab631bfcd091ecba248b0c05cb
+  input_sha256: 7d008e26a5bd425f6bab7ad1d94ac2d5cc7a62b887222d710594412f52ca3a85
+  output_sha256: 90ae48e0354ae61a803bbb3310c6b3b1e4f29a4659b1d6dfcf1a526bbe1b9a43
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 1428bb2adbb6d7d796c1708741cd457981623e1d743e021ac2c96e690b7f15e8
+  created_at: 39075f95577cd6d54d317a5acddc525cfe45d7eb8a8b0ec8c68770e85c4edd87
+  disposed_at: 0a3ddb75014797e2cd42af9c4a671075d8bf708c960f8b822911cdc3fc2babe8
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 23c189087a6c45ff7dcaa8c2b894774d6243ddbc8b7f8c2103fbb490c0fb59c1
+  disposition: a8c14ceeb0591843ac87f4406365b7c9ec486a50ca0a7d6778388a1f7d29fd90
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:33:11Z'
+  authority: generated
+  via: save_document_payload

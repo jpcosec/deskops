@@ -1,0 +1,36 @@
+name: review-task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34-bundle-1
+path: desk/reviews/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/bundle-1.md
+source_hash: 3b39d16a443acc27933b4cfbaa98a124756f3ecdd602cb7f996425633d8208b3
+content_hash: ba17360c2c758dc950044ee605452f7ba0995ba920a0bba6f53968414f14c658
+field_hashes:
+  id: 5949aa36cdb761c85eb48de5726adc9c453e967ab89da224f6ccebfa975939c2
+  title: 7f9d37b152eeb7b04f1683869185f9771cf08247cf1a66695c02bcb108b977d6
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 787da02060e2c3a1739a95fba4732252055663130762b4e834dd2f4610dab1bc
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 3f59c5b6156321e850ce57beaa829b5b5b3cc19da3e8c0294c1433db9fb14ba9
+  input_sha256: 85e0f97f3fe62315332471520c877dcf508149030e9ae087f5dd0d19b1cda0e6
+  output_sha256: 1af836725b45c004c8b00a432bf7b5132329bb6fe8630ca76ab1f960305e1341
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 01a066148e5c39b5a0d3cfdf746b9fa58b27e8b338272f6c0b83f6511b2925be
+  created_at: 5a6a245f4391399300ef15576ff7e38fbea6d964d4566e2a88f6b3cffdb1e384
+  disposed_at: 79cd57c8001e5fc711877d6e95a9f9732f48a0d9f65f4228c1871d942381af82
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: e3f896faa486e9e77367b15382d1e230c28a87b02ab0c5aa9462cbb9dad90261
+  disposition: c450bb2c98ca3b620595d82d154f0252a322816757086556a841b89765482951
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:47:36Z'
+  authority: generated
+  via: save_document_payload

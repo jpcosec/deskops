@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:47:45Z'
+  at: '2026-11-16T06:07:28Z'
   authority: generated
   via: save_document_payload
 id: task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas
@@ -10,9 +10,12 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
-references: []
+references:
+- desk/inbox/20261115-194440-unclear-supertareas-y-alta-en-lote.md
+- desk/inbox/20261115-195317-unclear-correcci-n-s-hay-supertareas-task-aggregate.md
 depends_on: []
 pills: []
 files: []

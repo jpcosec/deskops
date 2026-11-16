@@ -1,0 +1,36 @@
+name: review-task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii-preflight-1
+path: desk/reviews/task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii/preflight-1.md
+source_hash: 87a26211737a366094b728b73be0255c1e9341d2a2115a8368036938a298d006
+content_hash: 02a63d4adda3304d8679647b275e05c6f140f36121ca87a32a6bc0b40d36fe32
+field_hashes:
+  id: ec48e7bb755a022525d29576a91846f8a4253a1d0b53e66f15d9cfb190583d24
+  title: 635bf155d87d1e8d196e038ba60b1be173450c0793caea03db995103fb74bb68
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: a19f115a317d90969ce3c870c28cff7699c2bfc41282640dfe409f5d16859edb
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 85613245876f834dafb0f48e96b6fa9fc285e6be713ac06dadb78471dd7c4786
+  input_sha256: 0ef5cd38297a9a8e6c0d51c843f8b921c77928360722dac30175db22c9caf363
+  output_sha256: 9f0a6de54fc2f4b49ec3eb2f18fb651b0225f8b7f3bc23f968dae173b6361c01
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7
+  created_at: 532032ce70e0ce8b9a8938956480fd8e09f84fa9474283acc22180064b584068
+  disposed_at: 1dd5ee3c37a952670d17afe88cb9580d755918c9b7058bfa6e8254caec74d5ab
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5f0e5c6fbff08eacbef1db6c8f5b3941260ef27a38ab7a637d752eed1c15f6f4
+  disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:09:11Z'
+  authority: generated
+  via: save_document_payload

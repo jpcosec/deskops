@@ -1,0 +1,36 @@
+name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-preflight-2
+path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/preflight-2.md
+source_hash: 425d33337c6d02d4701133e2eaae55f4c3eb4babbc293ff19fcf1604f5daef9a
+content_hash: 6edb0b67a71d9cbf71ca9753b27b15a8ec33c69e1763b8b8bcff2e1c41d85ff8
+field_hashes:
+  id: c3b5854f30b9f00c273d2bcc3341a6370fa6ac47cc7cc03fd49bb58fe2a284c0
+  title: 0614f1efd09f857745647cdd2d1b6e0fc4cfe2bc9a9fce0644f616558b6b5f2f
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 2a680e9347113c533032817e50876c2ec24e5eb64703f1842d503c8404948764
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 68398977fd82c7ec1662a674ac25ed992b93c11f44d98879a7a198e848abbf2b
+  input_sha256: 21a553c67b92b7c94be7abe22872c96f0d5360f6b9555e474de0d5d187e5653f
+  output_sha256: 7fa78528bdf97ab934767512a92dad4b4d7dbadf5da054f26b1fa4372dbfa9f2
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 4a6b92873f47f0b7b17a45aed2518fe8b51f07bb56424a69933c8fdfd6bb6fac
+  created_at: 64a47d823325710abda2a7f5d8c224a872ca38052ce4ff3ebf03b26c566fdd15
+  disposed_at: e2d54f603c8de6e57d77c248d8f4d9ceadc7112194952e4befb63d288f1208a2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 48e00f9a6dc0aedb86b72195593fc0d492947a572ce24067f40bb0f481683008
+  disposition: b7fe31d225052a74be36fd3ea8e5ef38a1d2d5526020f3f7de85d1d65cafc868
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:33:46Z'
+  authority: generated
+  via: save_document_payload

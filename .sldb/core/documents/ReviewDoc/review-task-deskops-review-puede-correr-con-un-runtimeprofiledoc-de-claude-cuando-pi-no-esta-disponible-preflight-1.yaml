@@ -1,0 +1,36 @@
+name: review-task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible-preflight-1
+path: desk/reviews/task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible/preflight-1.md
+source_hash: 5e9250c22a172d891082bcf04f9c6d668627f887a57a67d08ad7e25f5fb4f25f
+content_hash: 26ea1b5f4e9ca1e194ac3db628185d0c2f0acca7ac51eaf832e30e30ae137f63
+field_hashes:
+  id: cbe43ecff4e69d3f17a15e744b368235bec50f753f84a735d777464163694ac8
+  title: 0f918ac469f9fdb4c118065d350ffc510b010102331529d6bf1baa5c4b6f30b6
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 43121ad2ea3b7e09abc55a53363b2b8218724b56ba35aa7e8bb8c1a1109d0bbe
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: e5e1ad6120dc1f599cc2356a456c0aeed2c99c1f2e3d9bafd9f75ba0651a370b
+  input_sha256: 1565e1ccae6e8287024f6a56d4e7522a130318e51b9b342e909cef8ee038b7d3
+  output_sha256: bae83941b006bc31c170814e7101ee042b8793555500d1af1c26f4404a56a613
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7
+  created_at: 35b2172bd54bbfb9fd218ac0e91ccc580976210236c41e1ccf328ef6517c0637
+  disposed_at: d37f016718a3db3aa7fc3157ccbdc9d0c000f34f8dd7bbe9b2d86a0d37d5d336
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 51a03cd90848e6334cea0c7c1235858d80212bea6d820de4e6f34ecdad892507
+  disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:09:46Z'
+  authority: generated
+  via: save_document_payload

@@ -1,13 +1,15 @@
 name: 20261116-003533-suggestion-namespace-de-tags-host-para-marcar-en-qu-m-quina-corre-cada-tarea
 path: desk/inbox/20261116-003533-suggestion-namespace-de-tags-host-para-marcar-en-qu-m-quina-corre-cada-tarea.md
-source_hash: 6a78e535867c066ae81dec107d46f4b8d192a9231559c459417691ceef91794f
-content_hash: 85be65052cf6658c915a44620a4f0a98fde2930b1a530d176038f8837be6bcbc
+source_hash: f113eaf2867b68d2e84757b83849327205fe386616a88dd9503f36f73025b597
+content_hash: d7bfc35738a1ba88183d38ad2bc82224467b3721e263a566bd7cee55e22460e9
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: bedfd7658116eea0e9c6aa56c43288b769f14cc22546ef2cbac2588069909ad8
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: e24187323b0947b26a2a3679bdd29a3aa84b6ccb9ae5e6482c4b52e1e2994561
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: b9204cf7cd3f1709ada048b811b63540d18170c8dc42a72d228ae358b627f9d9
   title: 5bd11bd76e537e58f0129a35c8cce42e2dd54a551a4942e0b1d5ba3e553406ad
   body: aa3df7732148780f15b470d428230d03b9d7febafd2a26b5c8ce1d83e65d0cc8
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T04:13:01Z'
+  authority: generated
+  via: save_document_payload

@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-16T04:12:11Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,9 +13,11 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-06T18:00:20'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-16T01:12:09'
 ---
 
 # GD24 cerrado en sldb: transacción y /save atómico; doc_io.DocTransaction queda sin motivo

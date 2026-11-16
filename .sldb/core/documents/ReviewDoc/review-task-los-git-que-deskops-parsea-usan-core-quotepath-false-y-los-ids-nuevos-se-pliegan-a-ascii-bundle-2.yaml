@@ -1,0 +1,36 @@
+name: review-task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii-bundle-2
+path: desk/reviews/task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii/bundle-2.md
+source_hash: e9be654410781342f01dba56e3500359010d129ddf7d50c386f2913d42ac787f
+content_hash: 2b8f5c1010483ac23d91584a0912e0577591178b0fd4c0ac75942a0b1cf360b7
+field_hashes:
+  id: 7b55800e641ac60f65d71868b99a03509f9fe3c082b96a464a5345909016f7ba
+  title: 10c353ab1793f0020eecf16166e61e55088299c706c4b901f7984f6957122baf
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 2a384e435f4914372abd4eed6474707dd625361519a93135104151f3b5e5fc28
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 1ba605f3db058049ec2c71a707b4696e6ea94d1acf2652ea4c26f0ac90a6e4c8
+  input_sha256: 32ecac8f38aa5244d893bb61a3b6cf1150ecd9b6f0eb9335b49ecfd361e57b30
+  output_sha256: 6adfe53c89be76b26a5699a353f12c6a6e5bc1e8074983d9ee25108911487bab
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 20747ebc7df7d09c531d67bb0d1e83d160f190b82b94cb22820af2bd05f5ee72
+  created_at: 972f4bdb44346db5f1db5cbdd88820293345ee1eba5923da195ec8b24b564899
+  disposed_at: 38669cae0c629224fa9568abf9dfe5af086ebc3d777687f969255f4a4f193269
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 9c9f07efb209b287220c54d94ae8c061087379cb56867197c47acf33d7bb9d5a
+  disposition: b2f6e6904f891d32f2b2ec2d6306114db18e48a9624ae605b7ff5ddabc25fd40
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:58:02Z'
+  authority: generated
+  via: save_document_payload

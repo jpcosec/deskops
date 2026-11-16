@@ -1,0 +1,36 @@
+name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-preflight-1
+path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/preflight-1.md
+source_hash: 37929e9b99b1f96cf9475adeee3a05bca98b67568f79ea614c31d809f3e6f6f2
+content_hash: e96380e37d4291b057cf680bca070f3ee04708fa90414e47f28bf041302a11e3
+field_hashes:
+  id: c936e5f324f019f6bb8e94ee0407f5dca3f91674183219e2e80b8aef199011ee
+  title: 08856c2682f3ef47d4f36c793371c82df60d4e07c7a5d6107c5751e64f052284
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 6cdf256802d1a614a6c977029360b96d93247be83db553d859bb0f19dc68c560
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 343f63f6bf226c26572c1202b2d89212423a3c7b71c68951688f177e6837168a
+  input_sha256: 056e12f1006d01c558abfad9e2f68e680022739a3f2a50e21d59c149ef012170
+  output_sha256: f4185424a40de74f778c278f454ec05b7eae064d3a480d3ae89768dffa7144df
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7
+  created_at: 067abd09721702b84594c31690f2e69178f388d226464a2e961426710fe435aa
+  disposed_at: 1e33331d24ab8a9d61514c1a13d18f69857944eebd366b1037833beb3407179a
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: bd00fb81a371a0aa38eb8c5cb42360faf97c0caae668105f1de5bfa201ea81f7
+  disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:07:50Z'
+  authority: generated
+  via: save_document_payload

@@ -1,0 +1,36 @@
+name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-bundle-1
+path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/bundle-1.md
+source_hash: 4eaa54ab3714eed5f6b41ee853e0c5fe42c1d80f1ca08a6f5216d88c607cb32b
+content_hash: fffb7bf4c9650d22382d9e9133e833e6f66d06939b06c48f7f813ff05c3f5c8b
+field_hashes:
+  id: f1c3f4e3dd6a720520443a5ffbb58b6accda6e615e5684b0218cf4b89a1d52b5
+  title: 6aec189843206eb09e6f0fdccc80b91e16286d4798408c26d974c68f64b9d090
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: eac039a62c1697c93813a74d4ba408fa51be86128aa969c400b03dba65da83a8
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 279c9257ea22f3ad900c93e0ba8c44008f6d6324e507294fbd04c443545b3955
+  input_sha256: 76c055e720bf30902a0157ff3fb88a795c457a81580da5c6b82c8ed0f560134a
+  output_sha256: a207403adc700610a3b9f6f2acbebb48b1201417bf471c08f065d3f1ed9a8fca
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: d8c92b9723ab98e454dc3af9efa02d4de1244aeb6ed9746a8fc72b16ba3b4cb2
+  created_at: 278e105f5d406f375754428c2bbc1f7ba83ba3d5dbeee3df1eea5317f4129870
+  disposed_at: 1cfe9ff7537406b67bc185a1d7168cc39504448b98400cfd751068cb0d0ee458
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 13e207081b2ed75efe5e0658cb953b7ce05c4aaf7fa2733abe50990a5d5b409e
+  disposition: 6796bafd38eddc8c3800609f848428bebe19584bca1cbb94f1a9f39769b3cb86
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:45:40Z'
+  authority: generated
+  via: save_document_payload

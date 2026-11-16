@@ -1,15 +1,16 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:48:15Z'
+  at: '2026-11-16T06:06:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
 status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
 references: []

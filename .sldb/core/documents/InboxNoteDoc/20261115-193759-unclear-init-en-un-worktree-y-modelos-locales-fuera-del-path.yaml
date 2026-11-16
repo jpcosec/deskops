@@ -1,13 +1,15 @@
 name: 20261115-193759-unclear-init-en-un-worktree-y-modelos-locales-fuera-del-path
 path: desk/inbox/20261115-193759-unclear-init-en-un-worktree-y-modelos-locales-fuera-del-path.md
-source_hash: e9ce18c05ac57c20710e6cfd3e002794d2a43dfb6caaed78ed31c1d325504e97
-content_hash: 9307c8243f2e67a6d90bbf1a74df092850de6660a6da3d7875a72daa683e8cc4
+source_hash: b251e1deae25e7624aa3d2a1997060d0791f9a94d7adc2c7ad854d5c29acc1f0
+content_hash: 05fa24a2a3e60b8f396e4b749629e21441bf7abfc9d3ef5b25f9d6c91e7aba04
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: 37590103db2cfc509a52b076d454b334dbf3479fa536a00116b30d2d0a655433
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 3ac4429e5f8ce2071108e96bd70b9f6d21885aa07f17e747acebaa17363a5625
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 3a02ac312794f60516fd0166a314393bc01263198ad9b12c29838c3bef681a56
   title: ac80875a0c16f35720505facec63128f3ee14a6bdee87b849c7d0460cb814a26
   body: 8b87af53f9e88d96dc421e4a755a3121aef455a49d7d721d40b0b8b5d2a6f60c
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T04:12:03Z'
+  authority: generated
+  via: save_document_payload

@@ -1,19 +1,19 @@
 name: task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas
 path: desk/tasks/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas.md
-source_hash: fb247e88cdaebc372fd38303a200df801faac79c1d6ea877049fc86ad05d824a
-content_hash: a24e6a03de065a524dd09fba3a15ecac2301602b723abd5f9b52f6aed6116ce6
+source_hash: 5c82a5f8d83e67bd3dc6583e9c2395171446add3dbaad0b8db3d95602d5ce03a
+content_hash: 7b4504f2b76ab443904dbf9419d294e25e239eed1498b539a9254d84a7a03341
 field_hashes:
   title: 19f130f9432038398e0bb831bd6d6b665e3ab9709f653aa963177c20c19f2917
   id: 1ed02b5450c16cdcab938f97fcd783956dc010d7ecc2ffb16ef1c8d2218bb634
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: fca9c8d4a93cdbe4ab9bae2e53db45697f740449642b1ecc9dfdbab98a41b833
   goal: dfa9ae3477667928dae103a8f5b18cb8640e0803573f1b026ef53012ad3cabf5
   scope: cdcda79703278c83cba06eb98929b358e6b417c24cb91d11ce50e1ebcb65cafe
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: 4db12becb9142829450a47bd968dda5e474b7399389e1e98eb8b820dbf37aae1
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -26,6 +26,7 @@ field_hashes:
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - artifact:task
+- host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
@@ -33,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T00:47:45Z'
+  at: '2026-11-16T06:07:28Z'
   authority: generated
   via: save_document_payload

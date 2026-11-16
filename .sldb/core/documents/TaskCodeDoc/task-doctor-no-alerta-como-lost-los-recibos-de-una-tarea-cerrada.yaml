@@ -1,13 +1,13 @@
 name: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
 path: desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
-source_hash: bb4fc3679521d22f607365c11ab2714f32ad22d192ee8181f571a77cdfffacd5
-content_hash: 0233cc85c192b7c9516aa4055f05ed73f16a0b53c1ba6452017839b9db4805d8
+source_hash: 7df1204e0d37d1d65d0e26f05e891700d80025e32b0ded80c3c005761780f203
+content_hash: c7ce0701d42e3e6faf0dcd941d360e01a3c320260b487b1844f9338872c71a98
 field_hashes:
   title: 0f5b95d265f940a0f1c1dbaeb06dc594c8537e12a2082cbd0bd0055f70c0cd41
   id: 0a2aeffca4a64dcd01d67c37d18680193384fd9eaa74b3851c73dfec93b61d25
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: a5bf3e8da3934759c217a354264b548a17e9b78b581f1bf8ed099919930560d5
@@ -27,6 +27,7 @@ field_hashes:
   from_drawer: 5507ad886e65957f3050ba1b163fef3119d71fa4921961eb9a891c4b943bf518
 semantic_tags:
 - artifact:task
+- host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
@@ -34,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T00:48:15Z'
+  at: '2026-11-16T06:06:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

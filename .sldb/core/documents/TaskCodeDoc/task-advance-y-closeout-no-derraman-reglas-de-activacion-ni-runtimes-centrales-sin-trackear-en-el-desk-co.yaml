@@ -1,13 +1,13 @@
 name: task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co
 path: desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
-source_hash: 081174542cd87c50044e3dceba372a70c14b7bc89013963b969e820de55340bc
-content_hash: a5f36cf72be5798682ed1660067e28b8dbc1ec211ed0595b8e14f31cf9c7921f
+source_hash: aea03b0712457427622bbb5d9898825cbf28ddfcf5ec42a95c5eb58e8bd7a14e
+content_hash: 9e2c4afaf0ff63d5e4ae6502c1c44a301b956b540e4ebf2ed1e99d55f3b103fe
 field_hashes:
   title: b0387a16ed1d6aefc564d9b02ca77d264de91a9d35ebc6a50d1a1385fcb14b63
   id: f69a9e0a89cdce07a465ce7ea7a8ebfa240748478e240870ed2c1c14ef50dd78
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: a6ec47c21b7c0f1279ab25b6c1f7033fd3b4951a05efac603ba5d8024bd50009
@@ -27,6 +27,7 @@ field_hashes:
   from_drawer: da6eff3c3e69d4afe15f1da8b5c1df99dcef74783644e65c5cacd5cd08a3f68b
 semantic_tags:
 - artifact:task
+- host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
@@ -34,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T00:48:25Z'
+  at: '2026-11-16T06:06:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,0 +1,36 @@
+name: review-task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con-preflight-2
+path: desk/reviews/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con/preflight-2.md
+source_hash: cd4747a7841b5c6cd9e13b676662faddd05c83b11b6ae95d74cf91f0d86d3da6
+content_hash: 429be7824e896ce2cf607b8a3cfb8d25d19604674dadc514b0195be183b5f44b
+field_hashes:
+  id: fd1789563cc74e80a9a6043af399ba17033751989abb39816226727b52e617c6
+  title: dd5514164409e3eac534fe6ede93cef3eb72f443662be3f81dddc9a8c5317326
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 98d7877372ec3b58c7841f948f2a40cf8f2fb3fa7e57b1c4b9f9c005d6470d37
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 93392696c77c851dfb0f42f00c9668e303825866f7571884a0d6b3040e00c8b1
+  input_sha256: ec263ae60620819551db53f90e8e387da7f51cd0a311aec0a8ec79f590d906a9
+  output_sha256: 3dc2f5ddaa8eb5c15c7cb6ac0b6f8ccd4401ea2ce6ad7cfd6417943de160131b
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 1428bb2adbb6d7d796c1708741cd457981623e1d743e021ac2c96e690b7f15e8
+  created_at: b61ae7725b433bbf0b69d6245c2fcb863fa260e94562776e89e0ce8ce7fc7430
+  disposed_at: acec02acea42f47f9a2cbbe1c8bae883bdc0d8509745ba7b16a10906ac1b897c
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f80b4e5ddba6801bf1ef84aeb430fba5346e88e00744984f05e048cd010eb004
+  disposition: a8c14ceeb0591843ac87f4406365b7c9ec486a50ca0a7d6778388a1f7d29fd90
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:33:18Z'
+  authority: generated
+  via: save_document_payload

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:47:34Z'
+  at: '2026-11-16T06:06:45Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado
@@ -10,9 +10,11 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
-references: []
+references:
+- desk/inbox/20261115-194446-unclear-checkout-atrasado-con-sldb-sin-commitear.md
 depends_on: []
 pills: []
 files: []

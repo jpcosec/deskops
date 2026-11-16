@@ -1,0 +1,36 @@
+name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-bundle-2
+path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/bundle-2.md
+source_hash: 3cc212d755f242de8e3069a807cb576d6b5019d85f538e1eb21277135c9fbb29
+content_hash: 982243b853e589f219fbdc0b3a6427b07246526e95a60c0313d79ad2d89a8981
+field_hashes:
+  id: 84352d59f9e8afec9dd83ec72fa2cc9a598137a402885ee4a28feded2b5b3687
+  title: 29d522e1f0c8fd4a3531b1f6c9ffbe770641afa15dab58db4735b399fd9f7ec6
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 72ca0401fbd98150b642851656914a1d35099346b330a3974b1d54bdae53e776
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 97e1ab6c0532446fc0e5cda874cf76cc4e97191de1712afd363ad35056e8dfe5
+  input_sha256: e44e8e141068c6814bb538e68cdeea9e3d212dfbf7507cff93ea6fbb3f2883a8
+  output_sha256: b94758c31a33246a36c9191363274ba96ecd8fe54413a892de7a92a1773b2cdd
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 86f652c266c11f0eebfcce3e4258a187a4bc4928395f1ddffe9d5febc244915e
+  created_at: 17cf9066c496692e13333bf74d8e016bbab48d6bc2040d65bcd4455509aef6ef
+  disposed_at: b104d7f4b3e4bc6b31c2626a7a065ca0fbfc3d90ebd0415c4445a9947e326e9f
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: aa54457a129699e6ae69245710b2297d1f5bc198194f9227b1e6850df4151e7b
+  disposition: f798ecddfa297a487d43041f4e52de965fb9ad9f5a19a01921d4249382698f66
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:58:52Z'
+  authority: generated
+  via: save_document_payload

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:47:41Z'
+  at: '2026-11-16T06:07:20Z'
   authority: generated
   via: save_document_payload
 id: task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar
@@ -10,9 +10,11 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
-references: []
+references:
+- desk/inbox/20261115-194443-unclear-rol-de-desk-hitl-y-carpetas-no-modeladas.md
 depends_on: []
 pills: []
 files: []

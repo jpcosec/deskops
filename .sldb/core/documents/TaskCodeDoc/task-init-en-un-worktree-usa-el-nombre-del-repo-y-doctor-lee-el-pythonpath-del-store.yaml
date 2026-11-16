@@ -1,19 +1,19 @@
 name: task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store
 path: desk/tasks/task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store.md
-source_hash: 66de9d6a50dd5bf5e728c4b8ceb60ae38b305ef65dda13168251ff6915face88
-content_hash: 2a76aab01980ad1cb51f085b1384c00d4b11607842e3232224041b6930aa13d2
+source_hash: 07bb1b4d0a6374eb667765f946000bc502e679533599f23da5d8d81f0f2be787
+content_hash: ad4b7772b7c90129060f4a14e69da828ab1964fca67e5278dc67c6c4c87d4178
 field_hashes:
   title: c6840a1dcadb0c9a36be0140c3a097dde734d68e2b305c6fafac00c2c8167c4a
   id: 4df3950105030acaf59efb1b7323fe9f5a0a29e2dcc9ca714488d670cf30f67c
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 32c43a3a3dbd765321eb9b0416891e92d36e1d4aa16ae66f394b77c0cc547d47
   goal: 05f2aa72db3dcb45d9ce0d22c54fc85bf3a5aba6cd9432207a5e82c5a1c7f7a2
   scope: ee3c61fb80c8e1edae515ffcd3d7d6373bafd3a8be10351928720e9a43710d91
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: 6150fbbf65792b2090e5042209126f121c348b6cd7a25b2025d96b07d64c334c
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -26,6 +26,7 @@ field_hashes:
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - artifact:task
+- host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
@@ -33,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T00:47:38Z'
+  at: '2026-11-16T06:07:00Z'
   authority: generated
   via: save_document_payload

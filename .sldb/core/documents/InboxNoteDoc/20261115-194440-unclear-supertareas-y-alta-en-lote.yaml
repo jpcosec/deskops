@@ -1,13 +1,15 @@
 name: 20261115-194440-unclear-supertareas-y-alta-en-lote
 path: desk/inbox/20261115-194440-unclear-supertareas-y-alta-en-lote.md
-source_hash: 7c29489f73a0ee9e84f974a6f9d37b724ae17caf14626de2e67312f99f369ccc
-content_hash: 213d8938a0eeae4b0a5177845a237dc5d7eb2e14f8dcbb6642bf26c68a5304e8
+source_hash: 6bd3a65701b332d4f543e037770f04b9c4a2756a87f567d5b69d7e6dc3acfbfc
+content_hash: 65fdd1c808b0013e7c1ac9e5062ff009e685661d924387a9c4901fd884d0fd53
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 01ab7ca557c51c7efe309e86dbb4ecac491b02efb85d662a477f8a4388e54110
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 4fc948c84594386768a226992b125fae0c02ba041bfdab195188e99aae1191d9
   title: 27c9d182e71cf9c72642d35ed7d117a67c18bb02ee2d725b4dc7c38cfcd99680
   body: 6a2aaa340036dbf9cc98cab4b6811a668fa8475c20a785fb3f70d64c994c7189
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T04:11:54Z'
+  authority: generated
+  via: save_document_payload

@@ -1,0 +1,24 @@
+name: 20261116-020638-suggestion-review-status-marca-stale-un-recibo-cuando-solo-cambia-la-cabecera-sldb-at-o-los-tags-del-taskdoc
+path: desk/inbox/20261116-020638-suggestion-review-status-marca-stale-un-recibo-cuando-solo-cambia-la-cabecera-sldb-at-o-los-tags-del-taskdoc.md
+source_hash: 52142efef39eaa4e90b78fa7ad92ac981138423d93373d43e0cbd7db5c328c93
+content_hash: c32f8b915e472d80c47269c2af4d4e9fc6fb7b91f449c1796293a2198d51cebe
+field_hashes:
+  kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
+  sender_project: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  created_at: e1fe30d984f3144d6fe49b1ae6acd217f350ab7a55e1425c1d97b16584c19aa6
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 909915812ddda3e8412f203543f1b206bb274a48cec1e66df3eddda9387b7c77
+  title: dbe876d272467c4d9d18f03afb94cb1a64ef3663b63f33ca909c68699cb81f02
+  body: a15bd8ba9f1d931d787303959a4d34e059f3d2590e646ffd118dcbbf8aead166
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+provenance:
+  by: agent
+  at: '2026-11-16T06:11:43Z'
+  authority: generated
+  via: save_document_payload

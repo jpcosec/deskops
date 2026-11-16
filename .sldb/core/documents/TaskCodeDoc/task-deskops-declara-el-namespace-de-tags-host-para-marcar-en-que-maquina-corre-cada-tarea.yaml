@@ -1,0 +1,39 @@
+name: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
+path: desk/tasks/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea.md
+source_hash: d8c02de1ba4e0c732b57318c1e44ac1896947c65c373bb69cdeec95907ea6bb8
+content_hash: 6aafab0791fc6f864b96ae9cf6142d5d92ba31c49437b60debd2a2f9fac95d56
+field_hashes:
+  title: cfd131f6624d6561997d09a228439dc5f63d6b339ad016d5405ab426b1b86fad
+  id: efbcd5bc8e052a43745d4b04625e557b0eb65f3bd8392afbf79fa84a40d38645
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 3be5378029af768be9f0835b98b06e863e6a757d1ea76bef34f401e60c39b132
+  goal: 1573d854446f65ca630f77b499337688ff3f6cd96ddffb1b0c961c395608ed9c
+  scope: 3eb37ddb7f3c1e0d97be50a3ecc7499eab7416fdc427742c736f9b2e2afb2bfa
+  references: d241fb47e5512a33f1f26a594028274933f8ce94be8f055fcfb8c0cd28425150
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: c1ffcc071a2efbafe45f591e50f395c42e30b8be8bed9219118e25221da6299a
+  implementation_path: 8646546326ad9ea7631fe477246ba4570493f8bb5993aa6fdf0b23550b95128a
+  validation: 3a40e46b8f8c96cb1c1904fb951429b72f89d085fc909eacbb4ac5a49f394c23
+  done_when: 9d167e742197c518ce9a92271f2aef2a6c666f12ad808c3a6d5d314e2fff39da
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:04:34Z'
+  authority: generated
+  via: save_document_payload

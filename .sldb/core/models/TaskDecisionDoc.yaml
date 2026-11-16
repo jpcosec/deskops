@@ -2,11 +2,11 @@ name: TaskDecisionDoc
 model_ref: deskops.models:TaskDecisionDoc
 path: deskops/models/task_types.py
 documents_index: .sldb/core/documents/TaskDecisionDoc.yaml
-sections_index: ''
-model_hash: 06d2f66338ce03e0035e0a480529d389dd7f4373833811267a03ce313340c616
-roster_hash: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+sections_index: .sldb/runtime/sections/TaskDecisionDoc.yaml
+model_hash: 20e0f0476f329ae6e49867d959abdc7d192a617cd0d2d3c058a0145a26c9fe85
+roster_hash: a598589aa3a1636dad49c259432311363ef49bca5a81134051887d9c63952722
 contract_hash: 8977e4980584dafddb756289693401a7776fe2643c18afab6bd751213fddea69
-documents_count: 0
+documents_count: 7
 version: 1
 canonical: false
 family: null

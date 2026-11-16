@@ -1,0 +1,36 @@
+name: review-task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis-bundle-1
+path: desk/reviews/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis/bundle-1.md
+source_hash: d510f8c7eba7a835ef1acb4977da8c32ff98ce6fab001c436b216125bf22e2aa
+content_hash: ecc84f2a9d971c14115f06e65c402bb50da0ea59ccc4a66bd8d55f757cfd8f58
+field_hashes:
+  id: 9c95ef2fbcf339f9dbd87d3d9f4683f8b964ef3af0aa0051333454643e2fe80d
+  title: b57cd463a854fd8eed384c1b4bb72ef0742e9693b6f4e34e087b28acfe70d8ee
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 1557c0b3d667dfe61ec29d0aaded9c08b363affd03b1df79e596f52db953200c
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 15dd455b5730e1340458a22e07983d3669fdda14edb314d34ebb2b69cb012782
+  input_sha256: dc4e709e59837b1cfc7874bd6455750304a33ea90b413aae1dd6bdf371af9e2f
+  output_sha256: c51ace1ba4fbd2ebda33b3e0c7f96733b44aa41867c9d82786f423acc6153572
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 753ac82f2665ba3c2bad635aca5cc502592ec1dc1fad715bda698dc4299889ab
+  created_at: ef21f1895c73359d5e0b5f54aa02dc25f6ffb211dc4eef23323c39e778c94ef7
+  disposed_at: 37942768403c9b33a463091a2e5c4f05c27dc4bbf77362446a869caccdf872dd
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 750d3e213645c378557e336db1e1ea35f41819664e848cd75c143cdd5bc2fe47
+  disposition: 170dddd13b47b1432af6eaaac5331e8360fbd972283d385309d3fde7bc831f8e
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:17:18Z'
+  authority: generated
+  via: save_document_payload

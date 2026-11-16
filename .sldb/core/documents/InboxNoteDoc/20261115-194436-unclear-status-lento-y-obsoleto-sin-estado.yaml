@@ -1,13 +1,15 @@
 name: 20261115-194436-unclear-status-lento-y-obsoleto-sin-estado
 path: desk/inbox/20261115-194436-unclear-status-lento-y-obsoleto-sin-estado.md
-source_hash: 768c8f93823f4c31919a9ade980cc9240f92267414f0b7100bc818be5475a80c
-content_hash: 705cf523d1331db7f7c77efa982c318f6498548b69c8109a8cfe7e18414f5bcd
+source_hash: 639aea874dbc8cb9db9257bcc2d7cbcb4b8a41d5351f4e1d555e7c23922ba0c3
+content_hash: b1bd29d5ebcd808c8965a5ed0ee73f56e176937fb82dfbfdbf9fc65d6773f497
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: ba9f2f75d0cad03ea088aa52aad502b2e9616f038807832f88020a201b86665b
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 8e0f87af03c72152285f4b3bfbb189993d1692522c1ea403aee17e39626e9bef
   title: 44b72120a34fe0886df8939722e7532f7bc715c489d9a674ba0fad01bab05e8c
   body: ceaa599bb3071fa1b75e51fec82b2678f34b7f2ce457141e18bbbdcb3c892c10
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T04:11:58Z'
+  authority: generated
+  via: save_document_payload

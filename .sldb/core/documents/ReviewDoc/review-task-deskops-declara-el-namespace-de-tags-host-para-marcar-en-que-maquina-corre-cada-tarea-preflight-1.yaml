@@ -1,0 +1,36 @@
+name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-preflight-1
+path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/preflight-1.md
+source_hash: 090bf0a364866006d2a4612735347e11c7d4e55639e378810ffe58a83327731c
+content_hash: 576d68bfc2662f1f12174dca82253aafa958d626e8d3dae1d7fb786af66a1124
+field_hashes:
+  id: fee8e22566545920683473493c8c75b6ba8e5960b968cb08859539667d1cdf14
+  title: b16d8e6eafe30fd7bf8a267f66ed0b0c58fa1549465c9d75c70bcf8d699d626f
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 67686d0cb196076c79d150de09d771a11c616c632caa40887c6288256e738a1d
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 20affc61d2628dd36ee82535bf707257f7050a23cd1f76094b110a2332f6437e
+  input_sha256: 1563fccfaa79ca9f677a798be621e7afd2e89bad022d0e3c026bf80e5f2faaf6
+  output_sha256: e22efd6c0b96d0020e16efdf8f833d4489e779c43f9e116de95c4ee53c12fdd0
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7
+  created_at: 60458f692a389f997402a3739b856d3be8343e3a1f94e4ce27f32b2c69fb5dbb
+  disposed_at: dcacd4eb84e00e0bd377cd30deda1bd2b89d697928b33eb59525f2e7de200b49
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: df9497d89d752d28bacfb89ff9e05ff8ed0f99e70e3a1380f758a54112d5cd17
+  disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T05:10:37Z'
+  authority: generated
+  via: save_document_payload

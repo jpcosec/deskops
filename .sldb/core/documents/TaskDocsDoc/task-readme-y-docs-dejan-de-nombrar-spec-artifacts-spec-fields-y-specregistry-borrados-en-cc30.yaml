@@ -1,0 +1,40 @@
+name: task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30
+path: desk/tasks/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30.md
+source_hash: 666a75766d6aac6b908ba73548d66442d15bb22de2e5725ed54f212a4b9eb31b
+content_hash: 02ac88abcc2be80f8d1be36067f96bda4816115a660140ae804486b1c5c2bfa6
+field_hashes:
+  title: 6ef99233ee29c1043a06da4b9217b4f90b62eb32ba803619e55ec3e9e2671ca9
+  id: 57060454627a4036de8704f66df608df7d39107cde401c0eba08ba7b0648063e
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: df2118cd0a90af1822c5bcc2ad69d01061acdf54d7226ec1e2663ec7677fc223
+  goal: 752e4cc19901b2e0b92603fff7709fd993e34aed56e88ad0c8c2aca525b9c6aa
+  scope: c97efbf9868f005cf4b38446e2ae10f0fcb9cf5089710b1ed7d991ea760c92da
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 53577d8a428650b21e9c17ccabcfd899b47c38908e1821f0ef4b05acb2d432b7
+  implementation_path: 4dfb99b3c54ff433f4729105e2e75851fa2b9cf14b9689b25b97986bc16f8dbf
+  validation: 7872e727500fd4cc553ad9e51b1cd9d28d6a32c7fd20e84027d6330e9f299db0
+  done_when: fe23472ae543804a37f723234ff94f6ad342cb13acf230f5d36d6dd1de9ccbd8
+  task_type: 8dbc7ea3fc2d737a841f8f9a89de6dd4bd2ca7fdc77434a53400db8767ba695d
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  from_drawer: a63a8352901f7e37f7ea6c3b9232df03d810f68591e7761bf5e02bae433faef5
+semantic_tags:
+- artifact:task
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T06:00:43Z'
+  authority: generated
+  via: save_document_payload

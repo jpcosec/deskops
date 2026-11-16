@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:47:38Z'
+  at: '2026-11-16T06:07:00Z'
   authority: generated
   via: save_document_payload
 id: task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store
@@ -10,9 +10,11 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
+- host:robocop2
 current_node: ritual-execution
 history: []
-references: []
+references:
+- desk/inbox/20261115-193759-unclear-init-en-un-worktree-y-modelos-locales-fuera-del-path.md
 depends_on: []
 pills: []
 files: []
