@@ -72,7 +72,7 @@ SURFACES = (
 _SPEC = (".md", ".yaml", ".yml")
 _DATA = (".json", ".yaml", ".yml")
 FILE_RULES = (
-    FileRule(kind="spec", file_kind="spec", path_prefixes=("spec", "docs/architecture/spec2viz"), suffixes=_SPEC),
+    FileRule(kind="spec", file_kind="spec", path_prefixes=("spec", "docs/architecture"), suffixes=_SPEC),
     FileRule(kind="test_file", file_kind="test", path_prefixes=("tests",), suffixes=(".py",)),
     FileRule(kind="config_file", file_kind="config", suffixes=(".cfg", ".ini", ".toml")),
     FileRule(kind="config_file", file_kind="config", suffixes=_DATA, hidden_name=True),

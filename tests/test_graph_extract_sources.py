@@ -42,6 +42,22 @@ def test_extract_source_file_nodes_reads_file_level_source_surfaces(tmp_path: Pa
     }
 
 
+def test_extract_source_file_nodes_reads_spec_yaml_under_docs_architecture(tmp_path: Path) -> None:
+    write(tmp_path / "spec/artifacts/atom.yaml", "id: artifact.atom\n")
+    write(tmp_path / "docs/architecture/diagrams/desk-flow.yaml", "id: diagram.desk-flow\n")
+
+    nodes = extract_source_file_nodes(tmp_path)
+    by_id = {node.id: node for node in nodes}
+
+    assert set(by_id) == {
+        "spec:docs/architecture/diagrams/desk-flow.yaml",
+        "spec:spec/artifacts/atom.yaml",
+    }
+    assert by_id["spec:docs/architecture/diagrams/desk-flow.yaml"].kind == "spec"
+    assert by_id["spec:docs/architecture/diagrams/desk-flow.yaml"].file_kind == "spec"
+    assert by_id["spec:spec/artifacts/atom.yaml"].file_kind == "spec"
+
+
 def test_extract_source_file_nodes_excludes_generated_runtime_outputs_by_default(
     tmp_path: Path,
 ) -> None:
