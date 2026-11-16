@@ -1,13 +1,15 @@
 name: 20261116-102357-unclear-el-gate-de-tests-solo-py-bloquea-todo-el-desk-sldb-ui-vitest
 path: desk/inbox/20261116-102357-unclear-el-gate-de-tests-solo-py-bloquea-todo-el-desk-sldb-ui-vitest.md
-source_hash: ab270f27d1fc464beed09a60c3e11505a45a3cbe60ab0f06c40875c48a1d985f
-content_hash: 6ada1cdc97cc7a59793db08157460883b592c299c13e07f5cc868d72473755f4
+source_hash: bc49fbe21dee9a0544b8844bed5da68b680e076e9b5452d7af350e09a9c556b2
+content_hash: 2fce367f77021d5f88bdd8c881cfb486797e2382f87a9c8d5c08256b96d4bf5f
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: e710514e29fab1ba3c04f75397d61d649da0270012ce642af2775691b57f6e9c
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: d43496a94e36d38d60cfe4d1b7c7f1041dd53d42cbac8ceb4241b8fcf5786b90
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: bdc7c336eaeff2f32bea45b829829df5e497f16cfa208506ada053c1e5fb5936
   title: d16e125311efd0de2d2f3c4f2a379fdae0e387f74bef8587debbf2b7841e4a35
   body: 294323efdbb0ecc3b1fe014e57623f616923fac1f4504d6433744c16a571330b
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T15:27:09Z'
+  authority: generated
+  via: save_document_payload
