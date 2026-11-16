@@ -1,0 +1,22 @@
+ M .sldb/core/documents/BoardDoc/Board.yaml
+ M .sldb/core/models/BoardDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/models/TaskCodeDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M desk/tasks/Board.md
+ M deskops/cli/commands/closeout.py
+ M deskops/cli/registry.py
+ M deskops/services/closure.py
+ M tests/fixtures/golden/help/deskops_closeout_verify.txt
+ M tests/test_closeout_declared_evidence.py
+?? .sldb/core/documents/RunDoc/run-deskops-e-a6a9943b2333.yaml
+?? .sldb/core/documents/TaskCodeDoc/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando.yaml
+?? desk/tasks/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando.md
+?? runs/subagents/20261116-170649/
+?? runs/subagents/20261116-170855/
+?? runs/subagents/20261116-202233/
+?? runs/subagents/20261116-202327/
+?? runs/subagents/20261116-213327/
+?? runs/subagents/20261116-213418/
+?? runs/subagents/exec-deskops-e-a6a9943b2333/

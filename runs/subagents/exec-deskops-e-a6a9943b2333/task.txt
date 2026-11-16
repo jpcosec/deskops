@@ -1,0 +1,12 @@
+Task: task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit
+Title: closeout verify anticipa la evidencia de run-dir que exige closeout commit
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective pills:
+- desk/contexts/pill-closeout-knowledge-gates-require-traceable-evidence.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

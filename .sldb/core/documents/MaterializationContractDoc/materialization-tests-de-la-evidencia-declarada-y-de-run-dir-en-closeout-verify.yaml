@@ -1,0 +1,26 @@
+name: materialization-tests-de-la-evidencia-declarada-y-de-run-dir-en-closeout-verify
+path: desk/materializations/materialization-tests-de-la-evidencia-declarada-y-de-run-dir-en-closeout-verify.md
+source_hash: 0ae3958395b1425892618a433ac127980344be8105b9cb44207db42ed8bb4297
+content_hash: 79895de05e1b58b8c52f282254c25bb3ee311b779d1979db722bc44ef369c148
+field_hashes:
+  id: 27a5aa076b54598e7deed3c2634aada1ad09f602954de17eadb2550a8803604c
+  title: f50d7cd0daddb2d4b41b6b797223ea237db4260e6ace7cd8d319b878f88ce947
+  source_atoms: ee70eaa22f9fd7106e1ca7b9d42ea735b72697539c9660225f2645b6be82e9ff
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 376ff275141c178516d9032f9a1b4b934df00f6a8abd040271fd459b0ba16826
+  intent: 3b968d824a0782445e9e662ef3e0ba10555e9cf0737de0eebd8dbabf38c2abd3
+  validation: 7ff7ca15fd2c08bddc7a77e8adee2f7644575ad21470116ae9d35d66f9876bf0
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: a69b0d96d864c2bf0a76c68f7e41edd2d1baf3d82d109ffb3dea9fdfed3346d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-16T23:31:44Z'
+  authority: generated
+  via: create_document

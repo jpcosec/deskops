@@ -324,6 +324,8 @@ include:
   - desk/materializations/materialization-tests-de-la-migracion-de-estados-y-claves-legacy-de-taskdoc.md
   - desk/materializations/materialization-tests-de-deskops-atoms-citations.md
   - desk/materializations/materialization-registro-de-comandos-declara-atoms-citations-como-mutante.md
+  - desk/materializations/materialization-tests-de-la-evidencia-declarada-y-de-run-dir-en-closeout-verify.md
+  - desk/materializations/materialization-golden-de-ayuda-de-closeout-verify.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -1004,6 +1006,22 @@ include:
     name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-atom-1
   - path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-materialization-1.md
     name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-materialization-1
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-tests-1.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-tests-1
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-commit-1.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-commit-1
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-atom-1.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-atom-1
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-materialization-1.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-materialization-1
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-tests-2.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-tests-2
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-commit-2.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-commit-2
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-atom-2.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-atom-2
+  - path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-materialization-2.md
+    name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-materialization-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1041,7 +1059,6 @@ include:
   - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
   - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
   - desk/tasks/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act.md
-  - desk/tasks/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit.md
   - desk/tasks/task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii.md
   - desk/tasks/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale.md
   - desk/tasks/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale.md

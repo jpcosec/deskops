@@ -1,0 +1,261 @@
+=== test_closeout_declared_evidence.py
+.......................                                                  [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+23 passed, 1 warning in 144.58s (0:02:24)
+rc=0
+=== test_closeout.py
+...........................................................              [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout.py::test_closeout_verify_passes_with_complete_evidence
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+59 passed, 2 warnings in 86.63s (0:01:26)
+rc=0
+=== test_output_goldens.py
+.......                                                                  [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 730.56s (0:12:10)
+rc=0
+=== test_cli_help_examples.py
+.......FF....                                                            [100%]
+=================================== FAILURES ===================================
+____________________ test_add_kind_help_example_runs[pill] _____________________
+
+lifecycle_desk = PosixPath('/dev/shm/pytest-of-robocop/pytest-1001/test_add_kind_help_example_run5/repo')
+kind = 'pill'
+
+    @pytest.mark.parametrize("kind", ADD_KINDS)
+    def test_add_kind_help_example_runs(lifecycle_desk: Path, kind: str) -> None:
+        help_text = _help("add", kind)
+        if "Example:" not in help_text.splitlines():
+            pytest.skip(f"deskops add {kind} --help prints no example")
+        examples = _example_lines(help_text, "Example:")
+        assert all(example.startswith(f"deskops add {kind} ") for example in examples)
+>       _run_examples(lifecycle_desk, examples)
+
+tests/test_cli_help_examples.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/dev/shm/pytest-of-robocop/pytest-1001/test_add_kind_help_example_run5/repo')
+examples = ['deskops add pill --root . --title "Example" --what "..." --why "..." --when "..." --where "..." --how "..." --how-not "..."']
+
+    def _run_examples(root: Path, examples: list[str]) -> None:
+        for example in examples:
+            argv = _argv(example)
+            if argv[:2] == ["advance", "task"]:
+                # The printed flow does not show the review step; the task type's activation rule
+                # (CC32) needs the receipts accepted and intact before `advance`, so the test
+                # writes them the way the flow would after `deskops review` + `review dispose`.
+                accept_receipts(root, argv[2])
+            result = _run(root, argv)
+>           assert result.returncode == 0, (
+                f"help example failed: {example}\n"
+                f"stdout:\n{result.stdout}\nstderr:\n{result.stderr}"
+            )
+E           AssertionError: help example failed: deskops add pill --root . --title "Example" --what "..." --why "..." --when "..." --where "..." --how "..." --how-not "..."
+E             stdout:
+E             
+E             stderr:
+E             Unexpected error: ScannerError: while scanning a simple key
+E               in "<unicode string>", line 475, column 1
+E             could not find expected ':'
+E               in "<unicode string>", line 476, column 1 (rerun with --debug for the traceback)
+E             
+E           assert 3 == 0
+E            +  where 3 = CompletedProcess(args=['/mnt/ssd/proyectos/SLDB_1/deskops/../.venv/bin/python', '-m', 'deskops', 'add', 'pill', '--roo...\ncould not find expected \':\'\n  in "<unicode string>", line 476, column 1 (rerun with --debug for the traceback)\n').returncode
+
+tests/test_cli_help_examples.py:94: AssertionError
+_________________ test_add_kind_help_example_runs[repository] __________________
+
+lifecycle_desk = PosixPath('/dev/shm/pytest-of-robocop/pytest-1001/test_add_kind_help_example_run6/repo')
+kind = 'repository'
+
+    @pytest.mark.parametrize("kind", ADD_KINDS)
+    def test_add_kind_help_example_runs(lifecycle_desk: Path, kind: str) -> None:
+        help_text = _help("add", kind)
+        if "Example:" not in help_text.splitlines():
+            pytest.skip(f"deskops add {kind} --help prints no example")
+        examples = _example_lines(help_text, "Example:")
+        assert all(example.startswith(f"deskops add {kind} ") for example in examples)
+>       _run_examples(lifecycle_desk, examples)
+
+tests/test_cli_help_examples.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/dev/shm/pytest-of-robocop/pytest-1001/test_add_kind_help_example_run6/repo')
+examples = ['deskops add repository --root . --name "example" --description "..."']
+
+    def _run_examples(root: Path, examples: list[str]) -> None:
+        for example in examples:
+            argv = _argv(example)
+            if argv[:2] == ["advance", "task"]:
+                # The printed flow does not show the review step; the task type's activation rule
+                # (CC32) needs the receipts accepted and intact before `advance`, so the test
+                # writes them the way the flow would after `deskops review` + `review dispose`.
+                accept_receipts(root, argv[2])
+            result = _run(root, argv)
+>           assert result.returncode == 0, (
+                f"help example failed: {example}\n"
+                f"stdout:\n{result.stdout}\nstderr:\n{result.stderr}"
+            )
+E           AssertionError: help example failed: deskops add repository --root . --name "example" --description "..."
+E             stdout:
+E             
+E             stderr:
+E             Unexpected error: ScannerError: while scanning a simple key
+E               in "<unicode string>", line 475, column 1
+E             could not find expected ':'
+E               in "<unicode string>", line 476, column 1 (rerun with --debug for the traceback)
+E             
+E           assert 3 == 0
+E            +  where 3 = CompletedProcess(args=['/mnt/ssd/proyectos/SLDB_1/deskops/../.venv/bin/python', '-m', 'deskops', 'add', 'repository', ...\ncould not find expected \':\'\n  in "<unicode string>", line 476, column 1 (rerun with --debug for the traceback)\n').returncode
+
+tests/test_cli_help_examples.py:94: AssertionError
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_cli_help_examples.py::test_add_kind_help_example_runs[pill]
+FAILED tests/test_cli_help_examples.py::test_add_kind_help_example_runs[repository]
+2 failed, 11 passed, 1 warning in 72.88s (0:01:12)
+rc=1
+=== test_command_registry.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 1.99s
+rc=0
+=== rerun test_cli_help_examples pill/repository (checkout)
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 11 deselected, 1 warning in 12.88s
+rc=0
+=== HEAD copy + tests nuevos: test_closeout_declared_evidence.py
+FF.F                                                                     [100%]
+=================================== FAILURES ===================================
+__ test_verify_with_an_incomplete_run_dir_names_the_missing_file_like_commit ___
+
+repo = PosixPath('/dev/shm/pytest-of-robocop/pytest-1006/test_verify_with_an_incomplete0/repo')
+
+    def test_verify_with_an_incomplete_run_dir_names_the_missing_file_like_commit(repo: Path) -> None:
+        root = repo
+        _write_declared_task(root, task_type="task.external", references=[URL], files=[])
+        run_dir = _run_dir(root, *(name for name in RUN_EVIDENCE if name != "task.txt"))
+    
+        result = _cli(root, "closeout", "verify", "--task", TASK_ID, "--run-dir", RUN_DIR_REL)
+>       assert result.stdout.strip(), result.stderr
+E       AssertionError: usage: deskops [-h] [--debug]
+E                        {about,doctor,status,faq,bootstrap,init,inbox,message,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}
+E                        ...
+E         deskops: error: unrecognized arguments: --run-dir runs/subagents/20260101-000000-task-x
+E         
+E       assert ''
+E        +  where '' = <built-in method strip of str object at 0xb3c3f0>()
+E        +    where <built-in method strip of str object at 0xb3c3f0> = ''.strip
+E        +      where '' = CompletedProcess(args=['/mnt/ssd/proyectos/SLDB_1/.venv/bin/python', '-m', 'deskops', 'closeout', 'verify', '--task', ...ntime}\n               ...\ndeskops: error: unrecognized arguments: --run-dir runs/subagents/20260101-000000-task-x\n').stdout
+
+tests/test_closeout_declared_evidence.py:336: AssertionError
+__________________ test_verify_with_a_complete_run_dir_is_ok ___________________
+
+repo = PosixPath('/dev/shm/pytest-of-robocop/pytest-1006/test_verify_with_a_complete_ru0/repo')
+
+    def test_verify_with_a_complete_run_dir_is_ok(repo: Path) -> None:
+        root = repo
+        _write_declared_task(root, task_type="task.external", references=[URL], files=[])
+        _run_dir(root, *RUN_EVIDENCE)
+    
+        result = _cli(root, "closeout", "verify", "--task", TASK_ID, "--run-dir", RUN_DIR_REL)
+>       assert result.stdout.strip(), result.stderr
+E       AssertionError: usage: deskops [-h] [--debug]
+E                        {about,doctor,status,faq,bootstrap,init,inbox,message,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}
+E                        ...
+E         deskops: error: unrecognized arguments: --run-dir runs/subagents/20260101-000000-task-x
+E         
+E       assert ''
+E        +  where '' = <built-in method strip of str object at 0xb3c3f0>()
+E        +    where <built-in method strip of str object at 0xb3c3f0> = ''.strip
+E        +      where '' = CompletedProcess(args=['/mnt/ssd/proyectos/SLDB_1/.venv/bin/python', '-m', 'deskops', 'closeout', 'verify', '--task', ...ntime}\n               ...\ndeskops: error: unrecognized arguments: --run-dir runs/subagents/20260101-000000-task-x\n').stdout
+
+tests/test_closeout_declared_evidence.py:358: AssertionError
+_____________ test_commit_and_verify_share_the_run_evidence_helper _____________
+
+tmp_path = PosixPath('/dev/shm/pytest-of-robocop/pytest-1006/test_commit_and_verify_share_t0')
+
+    def test_commit_and_verify_share_the_run_evidence_helper(tmp_path: Path) -> None:
+        from deskops.services.closure import ClosureService
+    
+        (tmp_path / "board.txt").write_text("b\n", encoding="utf-8")
+>       assert ClosureService.missing_run_evidence(tmp_path) == ["task.txt", "git-status.txt", "result-summary.md"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: type object 'ClosureService' has no attribute 'missing_run_evidence'
+
+tests/test_closeout_declared_evidence.py:380: AttributeError
+=============================== warnings summary ===============================
+../../../mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_closeout_declared_evidence.py::test_verify_with_an_incomplete_run_dir_names_the_missing_file_like_commit
+FAILED tests/test_closeout_declared_evidence.py::test_verify_with_a_complete_run_dir_is_ok
+FAILED tests/test_closeout_declared_evidence.py::test_commit_and_verify_share_the_run_evidence_helper
+3 failed, 1 passed, 19 deselected, 1 warning in 17.55s
+rc=1
+=== HEAD copy: test_cli_help_examples pill/repository
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../../../mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 11 deselected, 1 warning in 15.20s
+rc=0
+=== rerun completo test_cli_help_examples.py (checkout)
+.............                                                            [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 68.30s (0:01:08)
+rc=0
