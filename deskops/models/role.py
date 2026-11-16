@@ -7,7 +7,8 @@ class RoleDoc(StructuredNLDoc):
     # free names (deskops-executor.md), so selectors resolve any *.md in desk/roles.
     __artifact__ = {
         "id_pattern": "role-{slug}",
-        "tags": [],
+        "status_default": None,
+        "tags": ["workspace:desk", "artifact:role"],
     }
     __semantics__ = {
         "type": ["workflow", "role"],

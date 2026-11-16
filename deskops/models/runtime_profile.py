@@ -16,7 +16,8 @@ class RuntimeProfileDoc(PrimitiveDoc):
     # `deskops add runtime-profile --title ...` builds the id from the title.
     __artifact__ = {
         "id_pattern": "runtime-{slug}",
-        "tags": [],
+        "status_default": None,
+        "tags": ["workspace:desk", "artifact:runtime-profile"],
     }
     __semantics__ = {"type": ["workflow", "runtime_profile"], "workspace": ["desk", "runtimes"]}
     __template__ = """---
