@@ -228,8 +228,6 @@ class DeskCLI:
                 missing_desk_files.append("desk/tasks/Board.md")
             if not (desk_dir / "drawer").exists():
                 missing_desk_files.append("desk/drawer/")
-            if not (desk_dir / "reviews").exists():
-                missing_desk_files.append("desk/reviews/")
             if not (desk_dir / "rituals" / "phase.md").exists():
                 missing_desk_files.append("desk/rituals/phase.md")
             if not (desk_dir / "runtimes" / "runtime-pi-deepseek-flash.md").exists():

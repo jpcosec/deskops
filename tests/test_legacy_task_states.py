@@ -374,16 +374,16 @@ def test_desk_update_apply_repairs_everything_with_an_invalid_document(lifecycle
     root = lifecycle_desk
     paths = _make_tasks(root, [LEGACY[3]])
     rel = next(iter(paths))
-    shutil.rmtree(root / "desk" / "reviews")
+    shutil.rmtree(root / "desk" / "drawer")
     sldb_cache(root)
     capsys.readouterr()
 
     assert main(["desk", "update", "--root", str(root), "--apply"]) == 1  # the task waits for its owner
     out = capsys.readouterr().out
     assert "- Invalid task documents (not written): 1 task(s)" in out
-    assert "- Missing desk structure: desk/reviews/" in out
+    assert "- Missing desk structure: desk/drawer/" in out
     assert "Scaffolded missing desk structure." in out
-    assert (root / "desk" / "reviews").is_dir()
+    assert (root / "desk" / "drawer").is_dir()
     assert "Updated store derived indexes." in out
     assert "Skipped the other repairs" not in out
     assert _store_doc_invalid_paths(root) == {rel}

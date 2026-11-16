@@ -3157,3 +3157,46 @@ def test_atoms_show_alias_warns_and_matches_canonical(tmp_path: Path, capsys) ->
     assert alias_out == canonical_out
     assert alias_err == "Deprecated: use `deskops show atom`\n"
     assert canonical_err == ""
+
+
+def test_desk_update_dry_run_is_clean_in_a_fresh_clone_and_the_first_receipt_creates_reviews(
+    tmp_path: Path,
+) -> None:
+    # git does not keep empty directories: a clone of a fresh desk has no desk/reviews/, and desk
+    # update must not report it missing. The review service creates it with the first receipt.
+    import os
+
+    env = dict(os.environ)
+    env["PYTHONPATH"] = os.pathsep.join(filter(None, (str(Path(__file__).resolve().parents[1]), env.get("PYTHONPATH"))))
+    env.update(
+        GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t"
+    )
+
+    def run(cwd: Path, *argv: str) -> subprocess.CompletedProcess[str]:
+        result = subprocess.run([*argv], cwd=cwd, env=env, capture_output=True, text=True)
+        assert result.returncode == 0, f"{argv}: {result.stdout}{result.stderr}"
+        return result
+
+    def deskops(root: Path, *argv: str) -> subprocess.CompletedProcess[str]:
+        return run(root, sys.executable, "-m", "deskops", *argv, "--root", str(root))
+
+    source = tmp_path / "source"
+    source.mkdir()
+    run(source, "git", "init", "-q", "-b", "main")
+    run(source, sys.executable, "-m", "deskops", "init", ".")
+    run(source, "git", "add", "-A")
+    run(source, "git", "commit", "-q", "-m", "seed")
+    clone = tmp_path / "clone"
+    run(tmp_path, "git", "clone", "-q", str(source), str(clone))
+    assert not (clone / "desk" / "reviews").exists()
+
+    update = deskops(clone, "desk", "update")
+    assert "desk/reviews/" not in update.stdout
+    assert not (clone / "desk" / "reviews").exists()
+
+    deskops(
+        clone, "add", "task", "--title", "X", "--goal", "g", "--scope", "s", "--validation", "pytest",
+        "--task-type", "task.code",
+    )
+    deskops(clone, "review", "record", "task-x", "--kind", "owner", "--reason", "owner check")
+    assert (clone / "desk" / "reviews" / "task-x" / "owner-1.md").is_file()

@@ -169,7 +169,8 @@ def test_init_creates_the_reviews_directory(tmp_path: Path) -> None:
     assert (root / "desk" / "reviews").is_dir()
 
 
-def test_desk_update_recreates_the_reviews_directory(lifecycle_desk: Path) -> None:
+def test_desk_update_does_not_require_the_reviews_directory(lifecycle_desk: Path) -> None:
+    # git does not keep an empty desk/reviews/; the review service creates it with the first receipt.
     root = lifecycle_desk
     assert (root / "desk" / "reviews").is_dir()
 
@@ -178,7 +179,7 @@ def test_desk_update_recreates_the_reviews_directory(lifecycle_desk: Path) -> No
 
     updated = _deskops(root, "desk", "update", "--apply")
     assert updated.returncode == 0, updated.stdout + updated.stderr
-    assert (root / "desk" / "reviews").is_dir()
+    assert "desk/reviews/" not in updated.stdout
 
 
 @pytest.mark.xfail(strict=True, reason="G_SLDB_ANCHORS: sldb GO07")
