@@ -1,0 +1,35 @@
+== git diff --stat tests/test_command_registry.py
+ tests/test_command_registry.py | 1 +
+ 1 file changed, 1 insertion(+)
+== registry mutates
+            path=("atoms", "citations"),
+            mutates=True,
+== pytest test_command_registry.py (working tree)
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 2.33s
+== pytest test_atom_citations.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 31.43s
+== pytest HEAD copy of test_command_registry.py
+        """Every command that writes desk files, the store, or git must say so."""
+        declared = {command.path for command in command_registry() if command.mutates}
+    
+>       assert declared == MUTATING_COMMANDS
+E       AssertionError: assert {('add',), ('...zation'), ...} == {('add',), ('...zation'), ...}
+E         
+E         Extra items in the left set:
+E         ('atoms', 'citations')
+E         Use -v to get more diff
+
+/dev/shm/t64f-head/test_command_registry_head.py:135: AssertionError
+=========================== short test summary info ============================
+FAILED ::test_registry_paths_match_help_goldens - AssertionError: assert {('a...
+FAILED ::test_mutating_commands_are_declared_explicitly - AssertionError: ass...
+2 failed, 1 passed in 4.39s
+== nota: test_registry_paths_match_help_goldens falla en la copia de HEAD solo porque HELP_GOLDENS = Path(__file__).parent/"fixtures"/... no existe en /dev/shm; en el árbol real pasa (3 passed). La falla relevante de HEAD es test_mutating_commands_are_declared_explicitly: Extra items ('atoms','citations').

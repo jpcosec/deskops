@@ -1,0 +1,36 @@
+name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-tests-1
+path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-tests-1.md
+source_hash: b2606151536ca141960afe42f635976a79900174a7b35a0c3db424126a49abab
+content_hash: 9c147b4aac20581a74fef7fe6fb5ad57317e7996999067c1de70afca24fb391b
+field_hashes:
+  id: 170a9e912e92e8fb0a381d9f7f0a9b50fee9c74abcb1d30d83da56b72f51385f
+  title: 02db1e2763c54aa793a308b65b9b58a5ca2cad43e29dd210adfef58d6714cb1c
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: a3be59043154783f5d59fd29b77ed96f4c43359aa2cdc5a032f2ee4cb7d4f091
+  subject: 0750583fbaa59952e48c7b127235ec0ff4c74d9b37849a694c00a31fa33eecdc
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: c477c312c20b3d12b209f766ce8b4f6626ebeab7ec90a3e380cd5c3ad485ba3d
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: e5557bc92ff23890f872a75510a7f8121dd98568e17a5d344ee60daa25064014
+  created_at: a04f941f9e7b026fff1757419eb62350b2ec8c7d4f0d8a4b795a6156dd18f84e
+  disposed_at: a04f941f9e7b026fff1757419eb62350b2ec8c7d4f0d8a4b795a6156dd18f84e
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: fa07e458642aa4cacb18ab6fc9e0fc883e3f6b5b432c377a8fedd50551bef1a1
+  disposition: 1a689dbfa3649399abf9f31d1222a429f03117f195b0a550c93d36a36b05dc54
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T23:12:36Z'
+  authority: generated
+  via: create_document

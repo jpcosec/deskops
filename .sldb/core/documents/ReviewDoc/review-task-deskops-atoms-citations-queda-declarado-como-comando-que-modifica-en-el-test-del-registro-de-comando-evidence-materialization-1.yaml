@@ -1,0 +1,36 @@
+name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-materialization-1
+path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-materialization-1.md
+source_hash: 1b04079820ad47d6d40d4f960f3891ea10ab45137ce255e129d862973604e26a
+content_hash: d2f13c186a5669820f8cdbb4b7b1a41132126da47e13dc71d4c5789e4e0b5452
+field_hashes:
+  id: 09363e37d462660b68a5ae50cf13ceb47bd87a847627c7d572fdb05aa6614787
+  title: 5552a098955306a36686cdd4dc911b5328aeb3ebe8fdebbe53d29181b5fa58ae
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 81b68f707fbac228be82f9cc7a5391fd85971709c252633c31bbfe2e7741d58c
+  subject: 0750583fbaa59952e48c7b127235ec0ff4c74d9b37849a694c00a31fa33eecdc
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 6e8e379a9eb32e158b108695a4558e50ff38df32da50da0925638123959721aa
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: e3bcbc46462f894bc59501e30e6f185b7c1def2498ea6f93d249e5a184d13887
+  created_at: f8b880c3b9cbc89f70c47f9ae2b848dd41ffe64776fe2948723315291a08e597
+  disposed_at: f8b880c3b9cbc89f70c47f9ae2b848dd41ffe64776fe2948723315291a08e597
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 0a0f59ed417f5e6819224b5ba5e9b78fcbb526994e8f6f469a65dc6757d7d6a4
+  disposition: 02667448fbdc5dbd106011a4da5fe171fda24c4f8b04af0c91521b6b2a3652e4
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T23:13:34Z'
+  authority: generated
+  via: create_document

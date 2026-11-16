@@ -323,6 +323,7 @@ include:
   - desk/materializations/materialization-indice-del-store-sin-spec2viz.md
   - desk/materializations/materialization-tests-de-la-migracion-de-estados-y-claves-legacy-de-taskdoc.md
   - desk/materializations/materialization-tests-de-deskops-atoms-citations.md
+  - desk/materializations/materialization-registro-de-comandos-declara-atoms-citations-como-mutante.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -379,6 +380,14 @@ include:
     name: run-deskops-e-af97f091952a
   - path: runs/subagents/test-deskops-t-b9835a9a1e2c/run.md
     name: run-deskops-t-b9835a9a1e2c
+  - path: runs/subagents/exec-deskops-e-a6a9943b2333/run.md
+    name: run-deskops-e-a6a9943b2333
+  - path: runs/subagents/exec-deskops-e-8341bcf0ae0b/run.md
+    name: run-deskops-e-8341bcf0ae0b
+  - path: runs/subagents/test-deskops-t-23c03e37fed7/run.md
+    name: run-deskops-t-23c03e37fed7
+  - path: runs/subagents/test-deskops-t-64f1e63a41b3/run.md
+    name: run-deskops-t-64f1e63a41b3
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -983,6 +992,18 @@ include:
     name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-evidence-atom-1
   - path: desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/evidence-materialization-1.md
     name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-evidence-materialization-1
+  - path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/preflight-1.md
+    name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-preflight-1
+  - path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/bundle-1.md
+    name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-bundle-1
+  - path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-tests-1.md
+    name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-tests-1
+  - path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-commit-1.md
+    name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-commit-1
+  - path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-atom-1.md
+    name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-atom-1
+  - path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-materialization-1.md
+    name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

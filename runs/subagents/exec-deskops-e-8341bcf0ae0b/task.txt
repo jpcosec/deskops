@@ -1,0 +1,10 @@
+Task: task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando
+Title: deskops atoms citations queda declarado como comando que modifica en el test del registro de comandos
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-un-archivo-de-codigo-cita-los-atomos-que-implementa-y-deskops-atoms-citations-lo-comprueba
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
