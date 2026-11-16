@@ -1,0 +1,319 @@
+diff --git a/deskops/services/closeout_gates.py b/deskops/services/closeout_gates.py
+index 293127d4..c8d5012f 100644
+--- a/deskops/services/closeout_gates.py
++++ b/deskops/services/closeout_gates.py
+@@ -1,9 +1,10 @@
+ """Closeout evidence gates.
+ 
+ Closeout verification accepts only real evidence: a lowercase commit id naming
+-a commit in HEAD's history, and a Python test file inside the repository's
+-``tests/`` directory. A front-matter string that merely looks like evidence is
+-not evidence.
++a commit in HEAD's history, a test file inside the repository (a Python test, or
++a test of another language named by a closed suffix list) and a validation log
++under ``runs/``. A front-matter string that merely looks like evidence is not
++evidence.
+ """
+ 
+ from __future__ import annotations
+@@ -32,6 +33,15 @@ EXTERNAL_EVIDENCE = ("external",)
+ 
+ DOCUMENT_SUFFIXES = frozenset({".md", ".rst", ".txt", ".adoc", ".yaml", ".yml"})
+ 
++# Closed list of test files of other languages the tests gate accepts, matched literally
++# and case-sensitively against the end of the file name (Go, shell, bats, vitest/jest).
++OTHER_LANGUAGE_TEST_SUFFIXES = ("_test.go", ".test.sh", ".bats", ".test.ts", ".test.tsx")
++
++# A validation log under ``runs/``: its first line is the command, its last non-empty
++# line is the exit code.
++VALIDATION_LOG_COMMAND_PREFIX = "$ "
++VALIDATION_LOG_SUCCESS_LINE = "rc=0"
++
+ 
+ class CloseoutEvidenceError(ValueError):
+     """The declared closeout evidence is invalid or missing."""
+@@ -107,7 +117,7 @@ class CloseoutGatesService:
+             ref = str(reference).strip()
+             if not ref:
+                 continue
+-            if self.reference_points_to_test(ref, files=files):
++            if self.reference_points_to_test(ref, files=files) or self.reference_points_to_validation_log(ref):
+                 evidence["tests"].append(ref)
+             if points_to_atom(ref):
+                 evidence["atom"].append(ref)
+@@ -126,6 +136,12 @@ class CloseoutGatesService:
+             atom_id = str(atom).strip()
+             if atom_id and atom_id not in evidence["atom"]:
+                 evidence["atom"].append(atom_id)
++        # A test of another language counts when the task names it in files as well as in
++        # references (a Python test still needs a reference; files only widen where it lives).
++        for entry in files:
++            ref = str(entry).strip()
++            if ref and ref not in evidence["tests"] and self.reference_points_to_other_language_test(ref):
++                evidence["tests"].append(ref)
+         for candidate in [*references, *files]:
+             ref = str(candidate).strip()
+             if ref and self.reference_points_to_document(ref) and ref not in evidence["document"]:
+@@ -167,7 +183,12 @@ class CloseoutGatesService:
+         ``..`` or a symlink, and files under a directory starting with ``.`` or named
+         ``site-packages`` or ``node_modules`` (third-party code) are not evidence. Each
+         reference is checked on its own; the disk is not walked.
++
++        A test of another language (``OTHER_LANGUAGE_TEST_SUFFIXES``) is evidence wherever
++        it lives in the repository, see ``reference_points_to_other_language_test``.
+         """
++        if self.reference_points_to_other_language_test(reference):
++            return True
+         for candidate in self._test_path_candidates(reference):
+             path_text = candidate.split("::", 1)[0]
+             path = Path(path_text)
+@@ -189,6 +210,71 @@ class CloseoutGatesService:
+                     return True
+         return False
+ 
++    def reference_points_to_other_language_test(self, reference: str) -> bool:
++        """True for an existing test file of another language inside the repository.
++
++        Its name ends with one of ``OTHER_LANGUAGE_TEST_SUFFIXES`` (literal and
++        case-sensitive) after a non-empty stem; it needs no ``tests/`` directory. The
++        reference is a path relative to the root (an optional ``::node`` is dropped);
++        absolute paths, paths leaving the root and third-party or hidden directories are
++        not evidence, as for Python tests.
++        """
++        path_text = reference.strip().split("::", 1)[0].strip()
++        path = Path(path_text)
++        if not path_text or path.is_absolute():
++            return False
++        if not any(path.name.endswith(suffix) and len(path.name) > len(suffix) for suffix in OTHER_LANGUAGE_TEST_SUFFIXES):
++            return False
++        resolved = (self.root / path).resolve()
++        if not resolved.is_file() or not resolved.is_relative_to(self.root):
++            return False
++        if not any(resolved.name.endswith(suffix) for suffix in OTHER_LANGUAGE_TEST_SUFFIXES):
++            return False
++        directories = resolved.relative_to(self.root).parts[:-1]
++        return not any(part.startswith(".") or part in {"site-packages", "node_modules"} for part in directories)
++
++    def reference_points_to_named_test(self, reference: str, files: list[Any] | None = None) -> bool:
++        """The tests a ``--test`` of ``closeout resolved-by`` accepts.
++
++        What ``reference_points_to_test`` accepts, plus an existing ``test_*.py`` file
++        anywhere inside the root (no ``tests/`` directory needed), named by a path
++        relative to the root with an optional ``::node``.
++        """
++        if self.reference_points_to_test(reference, files=files):
++            return True
++        path_text = reference.strip().split("::", 1)[0].strip()
++        path = Path(path_text)
++        if not path_text or path.is_absolute() or not (path.name.startswith("test_") and path.name.endswith(".py")):
++            return False
++        resolved = (self.root / path).resolve()
++        if not resolved.is_file() or not resolved.is_relative_to(self.root):
++            return False
++        directories = resolved.relative_to(self.root).parts[:-1]
++        return not any(part.startswith(".") or part in {"site-packages", "node_modules"} for part in directories)
++
++    def reference_points_to_validation_log(self, reference: str) -> bool:
++        """True for a validation log under the root's ``runs/`` directory.
++
++        The reference is a path relative to the root that starts with ``runs/`` and names
++        an existing file inside ``<root>/runs``. Its first line starts with ``$ `` (the
++        command, with nothing before it) and its last non-empty line, stripped, is exactly
++        ``rc=0``; trailing lines that are empty or only whitespace are ignored.
++        """
++        path_text = reference.strip()
++        if not path_text.startswith("runs/"):
++            return False
++        resolved = (self.root / path_text).resolve()
++        if not resolved.is_file() or not resolved.is_relative_to((self.root / "runs").resolve()):
++            return False
++        try:
++            lines = resolved.read_text(encoding="utf-8").splitlines()
++        except (OSError, UnicodeDecodeError):
++            return False
++        if not lines or not lines[0].startswith(VALIDATION_LOG_COMMAND_PREFIX):
++            return False
++        filled = [line for line in lines if line.strip()]
++        return filled[-1].strip() == VALIDATION_LOG_SUCCESS_LINE
++
+     def full_commit_sha(self, reference: str) -> str:
+         """The full id of a commit reference that passes ``reference_points_to_commit``, else ''."""
+         if not self.reference_points_to_commit(reference):
+@@ -266,12 +352,16 @@ class RepositoryReferences:
+     """Split closeout references qualified by a registered repository: ``<repo-id>:<value>``.
+ 
+     The reference is cut at its first ``:``. When what comes before it is the id of a
+-    repository in the desk's own registry (``desk/registry/repo-*.md``), the rest is the
+-    value (a commit id or a test path, which may carry a pytest ``::node``) and it is
+-    checked in that repository's root. Otherwise the whole reference is what it was
+-    before: a local commit, a local test path or an http(s) URL. A prefix naming the desk
+-    itself (its ``project_identity`` or a registered repository whose root is the desk's
+-    root) is local: the value is checked as an unqualified reference.
++    repository in the desk's own registry (``desk/registry/repo-*.md``) or, when that
++    registry does not list it, a repository ``find_ecosystem_root`` resolves (the
++    ecosystem registry, as ``deskops message send --to`` does), the rest is the value (a
++    commit id or a test path, which may carry a pytest ``::node``) and it is checked in
++    that repository's root. The desk's registry answers first. Otherwise (an id neither
++    resolves, or the ecosystem lookup fails, for example because the id is ambiguous)
++    the whole reference is what it was before: a local commit, a local test path or an
++    http(s) URL, which a qualified form never is. A prefix naming the desk itself (its
++    ``project_identity`` or a registered repository whose root is the desk's root) is
++    local: the value is checked as an unqualified reference.
+     """
+ 
+     def __init__(
+@@ -280,12 +370,32 @@ class RepositoryReferences:
+         entries: "list[RegisteredRepository]",
+         *,
+         own_identity: str | None = None,
++        find_ecosystem_root: "Callable[[str], Path | None] | None" = None,
+     ) -> None:
+         self.root = root.resolve()
+         self.entries = {entry.id: entry for entry in entries}
+         self.own_identity = (own_identity or "").strip() or None
++        self._find_ecosystem_root = find_ecosystem_root
++        self._ecosystem_entries: "dict[str, RegisteredRepository | None]" = {}
+         self._gates: dict[Path, CloseoutGatesService] = {}
+ 
++    def _ecosystem_entry(self, prefix: str) -> "RegisteredRepository | None":
++        """The repository the ecosystem lookup resolves for ``prefix``, else None (cached)."""
++        if self._find_ecosystem_root is None or not prefix or "/" in prefix or prefix.strip() != prefix:
++            return None
++        if prefix not in self._ecosystem_entries:
++            from deskops.identity import RegisteredRepository
++
++            repo_root = self._find_ecosystem_root(prefix)
++            self._ecosystem_entries[prefix] = (
++                None
++                if repo_root is None
++                else RegisteredRepository(
++                    id=prefix, name=None, source_path=repo_root, relative_path=str(repo_root), repo_root=repo_root
++                )
++            )
++        return self._ecosystem_entries[prefix]
++
+     def split(self, reference: str) -> "tuple[RegisteredRepository | None, str]":
+         """(the other repository, the value) for a qualified reference, else (None, the local reference)."""
+         text = reference.strip()
+@@ -294,7 +404,7 @@ class RepositoryReferences:
+         prefix, value = text.split(":", 1)
+         if self.own_identity is not None and prefix == self.own_identity:
+             return None, value.strip()
+-        entry = self.entries.get(prefix)
++        entry = self.entries.get(prefix) or self._ecosystem_entry(prefix)
+         if entry is None:
+             return None, text
+         if entry.repo_root is not None and entry.repo_root.resolve() == self.root:
+diff --git a/deskops/services/closure.py b/deskops/services/closure.py
+index dfab5f00..f798fb99 100644
+--- a/deskops/services/closure.py
++++ b/deskops/services/closure.py
+@@ -42,7 +42,10 @@ from deskops.services.atoms import reference_points_to_atom
+ from deskops.services.references import alert_dangling
+ from deskops.services.references import dangling_referrers
+ from deskops.config import DeskConfig
++from deskops.identity import find_registered_desk
++from deskops.identity import load_ecosystem_registry
+ from deskops.identity import load_repository_registry
++from deskops.identity import resolve_registered_repo
+ from sldb.core.exceptions import SLDBStoreError
+ 
+ #: Statuses ``closeout retire`` also removes when the history is empty: the pre-CC31 tasks left
+@@ -277,13 +280,19 @@ class ClosureService:
+         The task is marked ``resolved`` and the closing commit says
+         ``Closeout-Mode: resolved-by``.
+ 
+-        A ref or test may be qualified by a repository of the desk's registry,
+-        ``<repo-id>:<sha>`` or ``<repo-id>:<test path>``, when the work entered
+-        another repository: it is checked in that repository's registered root
+-        (a commit that is its HEAD or an ancestor; a .py file under one of its
+-        tests/ directories, which the task's ``files`` do not widen) and kept as
+-        written in the trailers. A registered root missing on this machine
+-        refuses the close.
++        A ``--test`` is a path relative to the root of an existing file the tests gate
++        accepts, a ``test_*.py`` file anywhere in the repository, or a test of another
++        language (``*_test.go``, ``*.test.sh``, ``*.bats``, ``*.test.ts``,
++        ``*.test.tsx``), with no ``tests/`` directory needed for those.
++
++        A ref or test may be qualified by a registered repository, ``<repo-id>:<sha>``
++        or ``<repo-id>:<test path>``, when the work entered another repository. The id
++        is looked up in the desk's registry first and then in the ecosystem registry
++        (``find_registered_desk``, as ``deskops message send --to``); an id neither
++        resolves is not a qualification. The value is checked in that repository's
++        root (a commit that is its HEAD or an ancestor; a test it accepts, which the
++        task's ``files`` do not widen) and kept as written in the trailers. A root the
++        desk's own registry names but this machine lacks refuses the close.
+         """
+         gates = self._ops.closeout_gates
+         reason = " ".join((reason or "").split())
+@@ -346,8 +355,8 @@ class ClosureService:
+             entry, value = qualified.split(test)
+             if entry is not None:
+                 # The task's files widen where tests live in this repository only.
+-                return qualified.gates(entry).reference_points_to_test(value)
+-            return gates.reference_points_to_test(value, files=task_files)
++                return qualified.gates(entry).reference_points_to_named_test(value)
++            return gates.reference_points_to_named_test(value, files=task_files)
+ 
+         unresolved_tests = [test for test in cleaned_tests if not test_is_accepted(test)]
+         if unresolved_tests:
+@@ -355,7 +364,8 @@ class ClosureService:
+                 1,
+                 [
+                     f"Unresolvable --test: {', '.join(unresolved_tests)} "
+-                    "(need an existing .py file under a tests/ directory or declared in the task's files)."
++                    "(need an existing test_*.py file, a .py file under a tests/ directory or declared in the "
++                    "task's files, or a *_test.go, *.test.sh, *.bats, *.test.ts or *.test.tsx file)."
+                 ],
+             )
+ 
+@@ -397,17 +407,45 @@ class ClosureService:
+         return outcome
+ 
+     def _repository_references(self, references: list[str]) -> "RepositoryReferences":
+-        """The splitter of ``<repo-id>:<value>`` references over the desk's own registry.
++        """The splitter of ``<repo-id>:<value>`` references over the desk's and the ecosystem's registries.
+ 
+-        The registry (``desk/registry/repo-*.md``) is read only when a reference has a
+-        ``:`` and is not a URL, so a close with plain references never depends on it.
++        The desk's registry (``desk/registry/repo-*.md``) is read only when a reference has
++        a ``:`` and is not a URL, so a close with plain references never depends on it; an
++        id it does not list is resolved lazily by ``_find_ecosystem_root``.
+         """
+         entries: list[Any] = []
+         own_identity: str | None = None
+         if any(":" in ref and not closeout_gates_module.URL_PATTERN.fullmatch(ref) for ref in references):
+             entries = load_repository_registry(self.desk_root, self.root)
+             own_identity = DeskConfig.load(self.desk_root).project_identity
+-        return closeout_gates_module.RepositoryReferences(self.root, entries, own_identity=own_identity)
++        return closeout_gates_module.RepositoryReferences(
++            self.root, entries, own_identity=own_identity, find_ecosystem_root=self._find_ecosystem_root
++        )
++
++    def _find_ecosystem_root(self, repo_id: str) -> Path | None:
++        """The root of ``repo_id`` as ``deskops message send --to`` resolves it, else None.
++
++        ``find_registered_desk`` answers from the desk's store (its registry first, then the
++        ecosystem registry). A desk without a store reads the ecosystem registry alone, as
++        ``find_registered_desk`` does when no store anchors the lookup, but never a store
++        found from the working directory. An id that does not resolve, is ambiguous, or
++        whose root is not on this machine gives None.
++        """
++        from sldb.store.layout import store_exists
++
++        store = self.root / ".sldb"
++        try:
++            if store_exists(store):
++                desk_root = find_registered_desk(repo_id, str(store))
++            else:
++                entry = resolve_registered_repo(load_ecosystem_registry(), repo_id)
++                if entry.desk_root is None or not entry.desk_root.parent.is_dir():
++                    return None
++                desk_root = entry.desk_root
++        except SLDBStoreError:
++            return None
++        repo_root = desk_root.resolve().parent
++        return repo_root if repo_root.is_dir() else None
+ 
+     @staticmethod
+     def _missing_registered_root(

@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-16T16:00:22Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,9 +13,11 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T12:24:47'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-16T13:00:19'
 ---
 
 # deskops/.sldb enlaza spec2viz: las pruebas MCP de IR leen el store real de spec2viz de forma transitiva (G5)

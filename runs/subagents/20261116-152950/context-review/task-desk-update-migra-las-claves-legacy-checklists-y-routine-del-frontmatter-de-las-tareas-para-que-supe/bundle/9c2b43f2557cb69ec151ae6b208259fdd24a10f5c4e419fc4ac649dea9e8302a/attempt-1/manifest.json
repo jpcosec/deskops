@@ -1,0 +1,83 @@
+{
+  "key": "task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/bundle",
+  "input_sha256": "9c2b43f2557cb69ec151ae6b208259fdd24a10f5c4e419fc4ac649dea9e8302a",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261116-152950/context-review/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/bundle/9c2b43f2557cb69ec151ae6b208259fdd24a10f5c4e419fc4ac649dea9e8302a/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe.md",
+      "sha256": "e220dedd3be87a87e0a5165c110c88f854b35ef527be223541493b9a58c7ac38",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/workspace.py",
+      "sha256": "2bc354f3ae24f13c4ee2247a9e94a98303966ca009fbbdf136fbe81b0af94f3c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/desk.py",
+      "sha256": "9aabc6245be1406ec65f45fcefaa9ad16a6acef8c528304edfc4777f9c234d5f",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_legacy_task_states.py",
+      "sha256": "e92df684de9e2ebd3789c34396b7ee1d37fe59d58daf51417c9fec0a1fa6dbea",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T15:29:51.364862+00:00",
+  "finished": "2026-11-16T15:59:51.473370+00:00"
+}

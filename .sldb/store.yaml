@@ -340,6 +340,8 @@ include:
     name: run-deskops-e-ac841a0ca757
   - path: runs/subagents/test-deskops-t-adb2be97a1a5/run.md
     name: run-deskops-t-adb2be97a1a5
+  - path: runs/subagents/exec-deskops-e-e75ce6f704e3/run.md
+    name: run-deskops-e-e75ce6f704e3
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -850,6 +852,12 @@ include:
     name: review-task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado-preflight-5
   - path: desk/reviews/task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado/bundle-3.md
     name: review-task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado-bundle-3
+  - path: desk/reviews/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/preflight-1.md
+    name: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-preflight-1
+  - path: desk/reviews/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/preflight-2.md
+    name: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-preflight-2
+  - path: desk/reviews/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/bundle-1.md
+    name: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -907,6 +915,9 @@ include:
   - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
   - desk/tasks/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe.md
+  - desk/tasks/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa.md
+  - desk/tasks/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi.md
+  - desk/tasks/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

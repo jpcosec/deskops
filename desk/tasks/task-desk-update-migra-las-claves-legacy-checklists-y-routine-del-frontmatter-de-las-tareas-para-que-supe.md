@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T15:07:03Z'
+  at: '2026-11-16T15:28:46Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe
 status: draft
 summary: ''
@@ -47,7 +47,7 @@ deskops desk update (dry-run) lista cada TaskDoc de desk/tasks cuyo frontmatter 
 
 _State what is in scope and what is out of scope._
 
-Entra: deskops/workspace.py (junto a legacy_task_states y migrate_legacy_task_states, que ya migran estados legacy de tareas), deskops/cli/commands/desk.py (el reporte y la condicion de "up to date") y tests en tests/test_legacy_task_states.py. No entra: cambiar write_doc ni su rechazo, agregar un flag a supersede, declarar checklists o routine en TaskDoc, cerrar las tareas de marcado (lo hace su coordinador con el CLI nuevo), ni el fallo de deskops message send sin --root que menciona la misma nota.
+Entra: deskops/workspace.py (junto a legacy_task_states y migrate_legacy_task_states, que ya migran estados legacy de tareas), deskops/cli/commands/desk.py (el reporte y la condicion de "up to date") y tests en tests/test_legacy_task_states.py. No entra: cambiar write_doc ni su rechazo, agregar un flag a supersede, declarar checklists o routine en TaskDoc, cerrar las tareas de marcado (lo hace su coordinador con el CLI nuevo), ni el fallo de deskops message send sin --root que menciona la misma nota. Precisiones del preflight 1: (a) salida de --apply, una linea por clave quitada con la forma '<ruta relativa a la raiz>: removed <clave> = <valor anterior en JSON compacto de una linea>'. (b) desk update --apply da rc 0 si la migracion termina sin errores, igual que las otras migraciones de --apply; solo el dry-run con claves pendientes da rc 1. (c) Caso mixto: si una tarea tiene checklists o routine y ademas otra clave no declarada, --apply quita igual checklists y routine y deja la otra clave; supersede sigue rechazando la tarea por esa otra clave. (d) La edicion es textual sobre el frontmatter: se borran solo las lineas del bloque de esas claves y las demas claves conservan orden y texto, sin re-serializar el YAML. (e) desk/tasks es el de la raiz del desk (--root), igual que el resto de desk update.
 
 ## Implementation Path
 
@@ -62,7 +62,7 @@ _List the checks required before this task can close._
 - cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_legacy_task_states.py
 - cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli.py
 - cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_doc.py
-- {'cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -n 4 -q tests (suite completa una vez antes de entregar). Sin fallas nuevas': 'cada test que falle se corre con el mismo comando en un worktree limpio de origin/main (git worktree add /dev/shm/wt-base origin/main; luego git worktree remove /dev/shm/wt-base) y solo se acepta si falla igual ahí; la lista de esas fallas va en el informe de la tarea'}
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -n 4 -q tests (suite completa una vez antes de entregar). Sin fallas nuevas, cada test que falle se corre con el mismo comando en un worktree limpio de origin/main (git worktree add /dev/shm/wt-base origin/main; luego git worktree remove /dev/shm/wt-base) y solo se acepta si falla igual ahi; la lista de esas fallas va en el informe de la tarea
 
 ## Done When
 
