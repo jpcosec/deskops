@@ -1,0 +1,38 @@
+name: task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar
+path: desk/tasks/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar.md
+source_hash: 0788957bff07c6620997ec60f73a0099028d2225b8fcc858e3d851ec079a85e6
+content_hash: 19f96fa56926aced5086277db98445a387776244a00190b420abeae52024e6f9
+field_hashes:
+  title: 2afd5ba6a1e4b07446aea3ed2a28cd9b5399f787c44695c648bb7c539fd5bb87
+  id: 29d1718fc5e21e91483ade20d43bedba17784865b760f4b4891ec1e34089acb3
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: fc3d7b6290f87de2640c10cff7cb79f0eb00c6fa25ead07e40e72f0c7c1376e2
+  goal: 82b81c1416f37121fab2413b08feeb442850a448ce3dea1193b955c8f8fbfeb1
+  scope: 13a04f9416ad13bcfc9af2de4dd74d3e0817da7bb92b8fa315df691c56574579
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  validation: 58fa29aa526533b1c6d896a39fe3723d08e93cc80a5a36e9a2b1467da496c59c
+  done_when: 78e31d347e20388fdef888da8258d17edb89b1435d5ea360dac9cba30256152d
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T00:47:41Z'
+  authority: generated
+  via: save_document_payload

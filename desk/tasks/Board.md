@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-15T17:33:09Z'
+  at: '2026-11-16T00:48:26Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -9,7 +9,16 @@ id: board-001
 # Affected workspace or domain
 scope: desk
 # List of task-xxx paths
-tasks: []
+tasks:
+- desk/tasks/task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li.md
+- desk/tasks/task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk.md
+- desk/tasks/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado.md
+- desk/tasks/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas.md
+- desk/tasks/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar.md
+- desk/tasks/task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store.md
+- desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
+- desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
+- desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -50,3 +59,13 @@ No active tasks routed.
 ## Task Details
 
 _Generated from the task references above._
+
+- message send --to resuelve el destino en el registro del ecosistema cuando el registro propio no lo lista [draft] - --to <repo> busca primero en el registro del remitente y despues en el registro del ecosistema (~/setup/desk/registry, o la variable DESKOPS_ECOSYSTEM_REGISTRY), tambien desde un repo sin store; las rutas del registro aceptan ~ para valer en todas las maquinas; una raiz registrada que no existe en esta maquina es un error y no se escribe nada.
+- deskops status deja de ser solo un aviso Deprecated y entrega el estado rapido del desk [draft] - deskops status imprime el estado rapido del desk (tareas activas, inbox abierto, alertas baratas) sin correr el doctor completo. La implementa V1 del frente velocidad-hooks (supervisor 15-11), no este desk por su cuenta; esta tarea la registra y se cierra con resolved-by cuando V1 entre.
+- doctor dice de que tarea es cada cambio sin commitear en .sldb (checkout atrasado) [draft] - deskops doctor lista los cambios sin commitear bajo .sldb/ agrupados por la tarea (o el documento de desk) que los origino, y marca los que no tienen dueno.
+- supertareas y alta en lote: campo parent en TaskDoc y add task --from-yaml con varias tareas [draft] - TaskDoc tiene un campo parent (id de otra tarea) que doctor y el tablero respetan, y deskops add task --from-yaml acepta una lista de tareas y las crea en una sola transaccion (todas o ninguna).
+- rol de desk/hitl: about, faq y doctor documentan cada carpeta del desk y doctor avisa si hitl tiene archivos que no son para el humano [draft] - deskops about y deskops faq describen cada carpeta de desk/ (incluida hitl/), y doctor emite una alerta cuando desk/hitl contiene archivos que no son para el humano.
+- init en un worktree usa el nombre del repo y doctor lee el pythonpath del store [draft] - deskops init en un worktree de git deriva project_identity del repo principal (git common dir o remoto), no de la carpeta; deskops doctor usa el pythonpath que declara el store.
+- doctor no alerta como lost los recibos de una tarea cerrada [draft] - Un recibo cuya tarea se cerro (closeout registrado en git o en el store) no produce alerta lost en doctor: el closeout re-ancla los recibos al commit de cierre o los marca archivados; solo los recibos de tareas que desaparecieron sin cierre siguen alertando.
+- Board no refleja deskops edit task goal [draft] - Reproducir en un desk real y corregir: tras deskops edit task <id> goal, la linea de la tarea en Task Details del Board muestra el goal nuevo, o hay un verbo de deskops que refresca el Board.
+- advance y closeout no derraman reglas de activacion ni runtimes centrales sin trackear en el desk consumidor [draft] - Las semillas centrales (deskops/data/rules, runtime por defecto) se leen del paquete en tiempo de ejecucion, o se escriben solo por deskops desk update --apply y quedan trackeadas y declaradas; nunca como archivos sueltos sin trackear tras advance o closeout.

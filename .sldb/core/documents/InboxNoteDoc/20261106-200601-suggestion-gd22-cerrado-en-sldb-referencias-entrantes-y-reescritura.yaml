@@ -1,13 +1,15 @@
 name: 20261106-200601-suggestion-gd22-cerrado-en-sldb-referencias-entrantes-y-reescritura
 path: desk/inbox/20261106-200601-suggestion-gd22-cerrado-en-sldb-referencias-entrantes-y-reescritura.md
-source_hash: 1b9f44c04ede689a5e565fe643c34e6bc18627c429587349fead091f1e06b07e
-content_hash: 76be5da34b0d9ac6f71f837b0ab979ee008e43ced248739e11c24180e70460e7
+source_hash: d7b9c6f50f14da04c2042fec6ba7cf14375c00ce7e4dc1cd4cd632e53ccb90bd
+content_hash: fb2c7b7271a2e3ec1923634db1e2843fbb960bd76001cab204648a95ae1a66a7
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: adf8f4fb55456ba91d0b029904c49d4d1b85540b989a86435dfb80c0a89f7efb
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: e98747864fe9ed254d6706f80fb67e3ed9ce5019e977c24c9806d2a1c836a8e9
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 76350b05670a66ded5f45314245b5baa88cb410d8e0f0b5e914a5d36821eed71
   title: 7bbbae790ca8693a668f34581e6bbeac1b968a1ccd8a7bed7a89fff3a74777ce
   body: 07f71789e9927c70ff7b71b99cbed3dbe144980b28c0409605c870e299843f06
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-16T00:48:40Z'
+  authority: generated
+  via: save_document_payload

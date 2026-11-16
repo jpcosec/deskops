@@ -1,0 +1,36 @@
+name: review-task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li-bundle-1
+path: desk/reviews/task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li/bundle-1.md
+source_hash: b7b194556701d1c66a4eee0fae5ab1e7f2f9ffe2cf7169e89442ada6ea2a673d
+content_hash: 9b2ce764285a39897643b2048eea03cf36d0136a39e350a020b4f1aa15211099
+field_hashes:
+  id: efa3394a8e336ee8b8905879f9ffccb75781fd437f9039ec23012c43f1ab4764
+  title: 457f9c8fa6e801bb037ee41028b28c8b36ca1bd9188ab8eeb4f7939d17a64e61
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: a972fc864431af2c04da941233d471570561c3ffe82f931a913959ad6ccd1225
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 04ec2148b396cb00fd9add2bec71b0b4120b5a8737becc4e07b5b93ca8c5de1a
+  input_sha256: 8a273c2a27baf03e9220cc7b4cbf5a17f431537b85b2697bd432c800cfd5b89b
+  output_sha256: 6b92339e30e4e134e415ce5c0efc2285c11670d2301da07ed4999b557b6ae6d8
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 3f0587586bdcdfa2e4017174d8706d84fca91cbbb8fe82b6567027071b9fa788
+  created_at: acb1f5c357dad54ff3e070c19c370cbda64dd76bc4c5e0df0f75ea50313a4340
+  disposed_at: b31e4fed69e4637e6660c5576b6a103f375253ddf91094d95d6fcc8ec9a60f3d
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: be9d0b27a33af536c04224234fca1a925bfaf49e7e157d45e3c724b2478314a0
+  disposition: f1635990082e855193a500c2dabc616453d22d6b56cb17e3be055b844b10bc28
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-16T00:45:13Z'
+  authority: generated
+  via: save_document_payload

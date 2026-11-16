@@ -1,0 +1,78 @@
+{
+  "key": "task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li/bundle",
+  "input_sha256": "53ce665d400e5dc446983d3b14069eff6f7aa2b70429da787e42b78c38f8fc36",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261116-004440/context-review/task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li/bundle/53ce665d400e5dc446983d3b14069eff6f7aa2b70429da787e42b78c38f8fc36/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li.md",
+      "sha256": "3f892095accd90ff46c8dce691197358eac2e67c8a10104c151637d1deb6ef47",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/identity.py",
+      "sha256": "3e5b096c567cf326fc06ba0c0fa66b24a19cb2ee17449549aa08a17f1ac04952",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/message.py",
+      "sha256": "acd0aae9edd847dcde86379a38180d9a412d4d43094592385aa2fa3cd50777f7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/repo.py",
+      "sha256": "5cbc79d99aa8ea22746b309bbe95cbca9081af650fe116753dcf173c68b7218a",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_ecosystem_registry.py",
+      "sha256": "795dd10e4b4c7ffda2e18e971af791b4e8e488f6885f809c1309a177d376703c",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-16T00:44:40.442306+00:00",
+  "finished": "2026-11-16T00:44:53.427858+00:00"
+}
