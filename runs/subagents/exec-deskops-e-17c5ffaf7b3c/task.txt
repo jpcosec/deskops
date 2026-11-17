@@ -1,0 +1,10 @@
+Task: task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu
+Title: closeout commit incluye el run.md de cada RunDoc que el store trackea y git todavia no tiene, para que un clon limpio pase sldb stores build
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

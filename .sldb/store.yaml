@@ -444,6 +444,10 @@ include:
     name: run-deskops-e-ae9a07e468ed
   - path: runs/subagents/test-deskops-t-a8ebbb84ed77/run.md
     name: run-deskops-t-a8ebbb84ed77
+  - path: runs/subagents/exec-deskops-e-17c5ffaf7b3c/run.md
+    name: run-deskops-e-17c5ffaf7b3c
+  - path: runs/subagents/test-deskops-t-97feb020134d/run.md
+    name: run-deskops-t-97feb020134d
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1476,6 +1480,14 @@ include:
     name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-preflight-1
   - path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/bundle-1.md
     name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-bundle-1
+  - path: desk/reviews/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu/evidence-tests-1.md
+    name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-tests-1
+  - path: desk/reviews/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu/evidence-commit-1.md
+    name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-commit-1
+  - path: desk/reviews/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu/evidence-atom-1.md
+    name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-atom-1
+  - path: desk/reviews/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu/evidence-materialization-1.md
+    name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1526,7 +1538,6 @@ include:
   - desk/tasks/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista.md
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
-  - desk/tasks/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
 - model: TaskDebugDoc
   paths:

@@ -1,0 +1,37 @@
+name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-tests-1
+path: desk/reviews/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu/evidence-tests-1.md
+source_hash: c343de1618cb5dd91eb42751bf76f1511a209a3b85ca7053aa781d71953fd0a2
+content_hash: 9e1068e29cb5e5240d8df4d8c10ed72677e0af6fe7a6c3bd224e286715157385
+field_hashes:
+  id: f0e1951610d3149202f766d8bf84d139d76be65ca3dbaf041e30090dc31eaa52
+  title: 4fb50adc408569cdb018b095b70308eb317143d451877147380b4603218280e3
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: b57e0fede0dd878138f67a987073ba8ed8b42a611801492402afec1c28309803
+  subject: 03009182862fe7bb35af0c33723fd14d16e93b68ac7f2a8076ad6382313c785f
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 22b81f92ec107e697d5868c2dd35fce569e3be3f9f9f1066edc0d9052ce4e39b
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 9c2af6e4f69734d402dcb167fc991fad2b8b4d2d1cf57345b94a250e0fc84f4f
+  created_at: 49d061fa31fd425c0236679dbf027f6b8b29ec26aeffdc3aa432c0d276885088
+  disposed_at: 49d061fa31fd425c0236679dbf027f6b8b29ec26aeffdc3aa432c0d276885088
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 568b649c02aa801bf7fe5600c2cdc86046a3e5d793452111be346072cad6e7bd
+  disposition: 492aeaf9e104efa38ee3489cbfa30e6318435788df4938b8366fb4136c4f3594
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T12:25:38Z'
+  authority: generated
+  via: create_document

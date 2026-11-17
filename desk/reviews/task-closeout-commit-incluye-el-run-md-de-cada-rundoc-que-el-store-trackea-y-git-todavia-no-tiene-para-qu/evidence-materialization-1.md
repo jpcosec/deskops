@@ -1,0 +1,68 @@
+---
+sldb:
+  by: agent
+  at: '2026-11-17T12:25:55Z'
+  authority: generated
+  via: create_document
+# review-<task>-<kind>-<n>
+id: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-materialization-1
+# preflight | bundle | reproduction | goldens | owner | node | evidence
+kind: evidence
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: materialization
+# kind evidence only: what the producer verified, one item per line
+value: 'materialization-cc30-services-closure
+
+  materialization-materializa-recibos-de-evidencia-cc33a-en-services-closure
+
+  materialization-resolved-by-services-closure
+
+  materialization-tests-de-closeout-commit'
+# doc:<Model>:<id> or empty for reviews of plan nodes
+subject: doc:TaskCodeDoc:task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu@sha256:48901b6359c7f181105326b7c8a0efd9975471be4206a02b4c9bff127500eb72
+# <plan>/dag.yaml#node:<ID>; empty when subject names a document
+subject_ref: ''
+# RuntimeProfileDoc name or "human"
+engine: deskops-closeout
+actor: deskops
+# Run evidence directory under runs/, relative to the project root
+run_dir: ''
+input_sha256: e85ee18139b4eded58bf9a3124811d5fff2c55d3a521237f7e6e4c5199af1ce1
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
+output_sha256: ''
+# pending | accepted | rejected | incomplete
+verdict: accepted
+reason: 'verified: materialization materialization-cc30-services-closure
+
+  materialization-materializa-recibos-de-evidencia-cc33a-en-services-closure
+
+  materialization-resolved-by-services-closure
+
+  materialization-tests-de-closeout-commit'
+# ISO 8601 timestamp
+created_at: '2026-11-17T12:25:37.529413+00:00'
+# ISO 8601 timestamp, empty while pending
+disposed_at: '2026-11-17T12:25:37.529413+00:00'
+disposed_by: deskops
+# e.g. workspace:desk
+tags:
+- workspace:desk
+---
+
+# Closeout evidence materialization of task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu
+
+## Summary
+
+_Summarize what was reviewed and the evidence this receipt records._
+
+closeout verify checked materialization: materialization-cc30-services-closure, materialization-materializa-recibos-de-evidencia-cc33a-en-services-closure, materialization-resolved-by-services-closure, materialization-tests-de-closeout-commit
+
+## Disposition
+
+_Record the verdict rationale and who disposed of the review._
+
+Verdict accepted: verified: materialization materialization-cc30-services-closure
+materialization-materializa-recibos-de-evidencia-cc33a-en-services-closure
+materialization-resolved-by-services-closure
+materialization-tests-de-closeout-commit

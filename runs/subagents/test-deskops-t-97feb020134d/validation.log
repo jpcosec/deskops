@@ -1,0 +1,19 @@
+== test_closeout.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+73 passed, 1 warning in 84.57s (0:01:24)
+rc=0
+== test_closeout_declared_evidence.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+25 passed, 1 warning in 193.16s (0:03:13)
+rc=0
+== reproducción: closure.py de HEAD (git archive HEAD en /dev/shm/tester-97feb) + tests/test_closeout.py de la entrega, -k registered_run_doc
+FAILED test_closeout_commit_includes_the_run_md_of_every_registered_run_doc_git_lacks[run-dir]  (tests/test_closeout.py:1429 assert other_rel in committed)
+FAILED test_closeout_commit_includes_the_run_md_of_every_registered_run_doc_git_lacks[no-run]   (misma aserción)
+PASSED test_closeout_commit_skips_a_registered_run_doc_without_a_run_md (esperable: guarda negativa, HEAD tampoco lo arrastra)
+2 failed, 1 passed, 70 deselected in 27.54s
