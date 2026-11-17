@@ -1,0 +1,10 @@
+Task: task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi
+Title: se retiran del drawer los planes workspace-documental, gates-por-tipo, deskops-ui y deskops-como-config y el test de review node usa un plan fixture propio
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

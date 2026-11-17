@@ -1,0 +1,46 @@
+== test_review_command 2026-11-17T08:13:51Z
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+29 passed, 1 warning in 194.34s (0:03:14)
+rc=0
+== test_review_doc 2026-11-17T08:17:06Z
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+22 passed, 1 xfailed, 1 warning in 68.25s (0:01:08)
+rc=0
+== test_cli_help_examples 2026-11-17T08:18:15Z
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 59.33s
+rc=0
+== test_output_goldens 2026-11-17T08:19:14Z
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 474.69s (0:07:54)
+rc=0
+
+== graph missing --root . (rc=1, 50 missing; antes 35)
+> - missing_declared_target: task:task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar -> desk/drawer/plans/deskops-como-config/dag.yaml
+> - missing_declared_target: task:task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar -> desk/drawer/plans/deskops-como-config/decisiones.md
+> - missing_declared_target: task:task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2 -> desk/drawer/plans/deskops-como-config/dag.yaml
+> - missing_declared_target: task:task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con -> desk/drawer/plans/deskops-como-config/dag.yaml
+> - missing_declared_target: task:task-jp-confirma-o-revierte-do4-review-record-acepta-preflight-y-bundle-humanos-solo-para-quickstart-y-e2 -> desk/drawer/plans/deskops-como-config/decisiones.md
+> - missing_declared_target: task:task-jp-confirma-o-revierte-do4-review-record-acepta-preflight-y-bundle-humanos-solo-para-quickstart-y-e2 -> desk/drawer/plans/deskops-como-config/decisiones.md
+> - missing_declared_target: task:task-jp-confirma-o-revierte-do4-review-record-acepta-preflight-y-bundle-humanos-solo-para-quickstart-y-e2 -> desk/drawer/plans/deskops-como-config/decisiones.md
+> - missing_declared_target: task:task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos -> desk/drawer/plans/deskops-ui/decisiones.md
+> - missing_declared_target: task:task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos -> desk/drawer/plans/workspace-documental/cierre.md
+> - missing_declared_target: task:task-jp-fija-n-la-meta-de-lineas-de-python-de-deskops-que-exige-cc51 -> desk/drawer/plans/deskops-como-config/dag.yaml
+> - missing_declared_target: task:task-jp-fija-n-la-meta-de-lineas-de-python-de-deskops-que-exige-cc51 -> desk/drawer/plans/deskops-como-config/decisiones.md
+> - missing_declared_target: task:task-jp-fija-n-la-meta-de-lineas-de-python-de-deskops-que-exige-cc51 -> desk/drawer/plans/deskops-como-config/decisiones.md
+> - missing_declared_target: task:task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la -> desk/drawer/plans/gates-por-tipo/dag.yaml
+> - missing_declared_target: task:task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la -> desk/drawer/plans/gates-por-tipo/dag.yaml
+> - missing_declared_target: task:task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi -> desk/drawer/plans/gates-por-tipo/dag.yaml
+nuevas: 15; perdidas: 0

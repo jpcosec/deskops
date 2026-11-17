@@ -1,0 +1,37 @@
+name: review-task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi-evidence-atom-1
+path: desk/reviews/task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi/evidence-atom-1.md
+source_hash: ac8931df604744d253ad0db8eebb1b4a53b20109e5ac118dcea9f30b313b3add
+content_hash: 0a47f787c9ccba0723ea0e1291a27981557470c02cf6e0d816285805144da65c
+field_hashes:
+  id: 7e43c42af8de960714ab9ab0a65d15fdd0a139e23a0dd57ef7ebbf3b1344a755
+  title: bf25eea1c473b3ced1f91e7be27d92190817a3e9c1c76af5479eae0008faa51b
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 53d30d2787f48a526e9779806e6a817eff8430d1eb0108c3dbb116b242fd19a3
+  subject: aae59d9a92a73f37ad132dec5a301ea765c8b560af7b286994a2fc0833a72754
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 22874d499cdefc4c5a1433551beb13a221608181328899daaff8dad6e2bc2c3c
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 6652b1cfc495bbaa7621b7bc90d0b7fdbea379121b6d486580c0d11c4f534f76
+  created_at: b351d13e4e10a1e3ce2a8f7477b0596030e6ed824198805d07165f9690494f4b
+  disposed_at: b351d13e4e10a1e3ce2a8f7477b0596030e6ed824198805d07165f9690494f4b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 189231d3f8bf1c61d41e9712c8005ed44b32f067a0b0cff70b87d3d5daf8d31e
+  disposition: f6a7c9ecb9e9e07e3b4474b34134dce5c4e95ca277a9adad6509def8d8ecd20c
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T08:29:33Z'
+  authority: generated
+  via: create_document
