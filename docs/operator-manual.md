@@ -561,6 +561,38 @@ Error: Cannot advance task-x via task_activates: the edge desk/lifecycle/executi
 
 `deskops doctor` reports the same seed; `deskops desk update --apply` restores it.
 
+#### Post-hooks on a transition
+
+A lifecycle `RelationDoc` may carry `attributes.hooks`, an ordered list of commands that
+`deskops advance task` runs **after** it persisted the transition it took. The package
+seeds declare none; the list belongs to the desk (`deskops desk update --apply` copies it whole,
+in order, when it rewrites a seed, and `doctor` does not report it as drift):
+
+```yaml
+attributes:
+  sets: {status: ready_for_testing}
+  terminal: false
+  hooks:
+  - name: notify-coordinator
+    run: [scripts/notify.sh, coordinator]          # an argument list, no shell
+    timeout: 60                                    # optional, integer seconds above zero (default 300)
+```
+
+Each hook runs from the desk root with `DESKOPS_ROOT`, `DESKOPS_TASK_ID`,
+`DESKOPS_TRANSITION` (the relation type), `DESKOPS_FROM_NODE` and `DESKOPS_TO_NODE` in its
+environment. One log per advance, `runs/hooks/<task id>/<relation type>-<YYYYMMDDTHHMMSSZ>.log`,
+records each hook that ran: name, arguments, result, standard output and error. `deskops next`
+and `deskops show task` list the hooks of each transition leaving the current node.
+
+If a hook exits non-zero or exceeds its timeout, the next hooks do not run, the task goes back to
+the status, `current_node` and `history` it had before the transition, and `advance` exits non-zero
+with an error finding naming the hook, its exit code (or `timeout tras <n> s`) and the log path.
+Only the task is restored: whatever a hook wrote elsewhere stays, so **a hook must be safe to repeat**.
+A malformed entry (no `name`, no `run`, a `run` that is not a list of texts, a `timeout` that is not an
+integer above zero) makes `advance` fail before persisting, naming the `RelationDoc`. Closing a task
+(`closeout commit`) runs no hooks. The executor of a task runs `deskops advance task` on its task
+with its evidence written, so these hooks are how a coordinator outside Scion learns it finished.
+
 There is no manual override: a transition fires only when its condition
 holds, and a blocked task stays where it is while `advance` names the gate.
 Closing is `deskops closeout commit` for work that was done, `closeout

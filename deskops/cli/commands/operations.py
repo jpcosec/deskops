@@ -197,11 +197,12 @@ class OperationsCLI:
             )
 
         if args.command == "advance" and args.subject == "task":
+            from deskops.lifecycle import HookDefinitionError
             from deskops.lifecycle import LifecycleGraphMissing
 
             try:
                 task, result = operations.advance_task(args.task_id)
-            except LifecycleGraphMissing as exc:
+            except (LifecycleGraphMissing, HookDefinitionError) as exc:
                 print(f"Error: {exc}", file=sys.stderr)
                 return 1
             if task is None:
@@ -263,6 +264,12 @@ class OperationsCLI:
             print("Advance when:")
             for item in report["advance_when"]:
                 print(f"- {item}")
+        if report.get("hooks"):
+            print("Post-hooks:")
+            for relation_type, hooks in report["hooks"].items():
+                print(f"- {relation_type}:")
+                for hook in hooks:
+                    print(f"  - {hook['name']}: {' '.join(hook['run'])}")
         if report.get("findings"):
             print("Blocked by:")
             for finding in report["findings"]:
@@ -326,6 +333,8 @@ class OperationsCLI:
                 lines.append(
                     f"- {gate['relation_type']} -> {gate['target']}: {state} [{condition}]"
                 )
+                for hook in gate.get("hooks") or []:
+                    lines.append(f"  post-hook {hook['name']}: {' '.join(hook['run'])}")
                 for finding in gate.get("findings") or []:
                     lines.append(f"  blocked by: {finding_line(finding)}")
         return "\n".join(lines)

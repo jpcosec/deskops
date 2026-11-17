@@ -122,6 +122,20 @@ def test_statuses_are_ones_sciontool_has_and_wake_the_coordinator(executor: dict
     assert yaml.safe_load(worker["scion-agent.yaml"])["max_duration"] == "2h"
 
 
+def test_the_executor_asks_to_advance_before_completing_and_the_coordinator_only_verifies(executor: dict, profiles: dict[str, dict]) -> None:
+    _, supervisor = find_role_doc(ROOT, "role-deskops-supervisor")
+    coordinator = scion_template_files(supervisor, profiles["claude"], harness="claude", task_repo="deskops")["agents.md"]
+    worker = scion_template_files(executor, profiles["claude"], harness="claude", task_repo="deskops")["agents.md"]
+
+    advance, done = worker.index("deskops advance task <task-id>"), worker.index('sciontool status task_completed "<one-line summary>"')
+    assert advance < done
+    assert "sciontool status blocked" in worker[advance:done] and "result-summary.md" in worker[advance:done]
+    assert "never close the task, commit or touch other tasks" in worker
+
+    assert "deskops advance task" in coordinator and "you do not\n   advance that transition" in coordinator
+    assert "deskops show task <id>" in coordinator and "status and current_node changed" in coordinator
+
+
 def test_tools_fold_into_command_args_when_the_profile_has_a_flag(profiles: dict[str, dict]) -> None:
     role = {"id": "role-x", "name": "x", "description": "d", "kind": "claude", "model": "", "tools": ["Read", "Bash"], "body": "# x"}
     agent = yaml.safe_load(scion_template_files(role, profiles["claude"], harness="claude")["scion-agent.yaml"])

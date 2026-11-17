@@ -206,3 +206,162 @@ def test_advance_without_a_lifecycle_graph_says_how_to_get_one(tmp_path: Path) -
 
     with pytest.raises(lifecycle.LifecycleGraphMissing, match="deskops init"):
         operations.advance_task(task_id)
+
+
+# ---------------------------------------------------------------- post-hooks of a transition
+HOOKS_EDGE = "testing-task_hands_to_closeout"
+
+
+def _declare_hooks(root: Path, hooks: object) -> None:
+    """Put ``attributes.hooks`` on the testing edge through sldb, as a desk declares them."""
+    import contextlib
+    import io
+    import json
+
+    from sldb.cli import main as sldb_main
+
+    attributes = {"sets": {"status": "ready_for_testing"}, "terminal": False, "hooks": hooks}
+    with contextlib.redirect_stdout(io.StringIO()):
+        code = sldb_main(["fields", "update", f"docs/RelationDoc/{HOOKS_EDGE}/attributes", json.dumps(attributes), "--store", str(root / ".sldb")])
+    assert code == 0
+
+
+def _task_at_testing(root: Path) -> tuple[DeskopsOperations, str, Path]:
+    operations = DeskopsOperations(root)
+    task_id = _task(operations, "Hooks")
+    accept_receipts(root, task_id)
+    operations.advance_task(task_id)
+    return operations, task_id, root / "desk" / "tasks" / f"{task_id}.md"
+
+
+def _state(path: Path) -> dict[str, object]:
+    payload = doc_access.read_doc(path, TaskDoc)
+    return {key: payload.get(key) for key in ("status", "current_node", "history")}
+
+
+def test_hooks_run_in_order_after_the_transition_with_env_and_leave_a_log(lifecycle_desk: Path) -> None:
+    _declare_hooks(
+        lifecycle_desk,
+        [
+            {"name": "first", "run": ["sh", "-c", 'echo "$DESKOPS_TASK_ID|$DESKOPS_TRANSITION|$DESKOPS_FROM_NODE|$DESKOPS_TO_NODE|$DESKOPS_ROOT" > first.txt; pwd > cwd.txt']},
+            {"name": "second", "run": ["sh", "-c", "test -f first.txt && echo said-out && echo said-err >&2"]},
+        ],
+    )
+    operations, task_id, task_path = _task_at_testing(lifecycle_desk)
+
+    task, result = operations.advance_task(task_id)
+
+    assert result.progressed and task.current_node == "ritual-closeout"
+    assert "current_node: ritual-closeout\n" in task_path.read_text(encoding="utf-8")
+    root = lifecycle_desk.resolve()
+    assert (root / "first.txt").read_text().strip() == f"{task_id}|task_hands_to_closeout|ritual-testing|ritual-closeout|{root}"
+    assert (root / "cwd.txt").read_text().strip() == str(root)
+    logs = list((root / "runs" / "hooks" / task_id).glob("task_hands_to_closeout-*.log"))
+    assert len(logs) == 1
+    assert __import__("re").fullmatch(r"task_hands_to_closeout-\d{8}T\d{6}Z\.log", logs[0].name)
+    text = logs[0].read_text()
+    assert text.index("== hook first") < text.index("== hook second")
+    assert "result: exit 0" in text and "said-out" in text and "said-err" in text
+
+
+def test_a_failing_hook_restores_the_task_stops_the_chain_and_advance_names_it(lifecycle_desk: Path) -> None:
+    _declare_hooks(
+        lifecycle_desk,
+        [
+            {"name": "boom", "run": ["sh", "-c", "echo partial; echo nope >&2; exit 3"]},
+            {"name": "never", "run": ["sh", "-c", "echo x > never.txt"]},
+        ],
+    )
+    operations, task_id, task_path = _task_at_testing(lifecycle_desk)
+    before = _state(task_path)
+
+    code, out = _run(["advance", "task", task_id, "--root", str(lifecycle_desk)])
+
+    assert code == 1
+    assert _state(task_path) == before
+    assert not (lifecycle_desk / "never.txt").exists()
+    line = next(l for l in out.splitlines() if l.startswith("Message: "))
+    assert "error: [" in line and "hook 'boom'" in line and "codigo de salida 3" in line
+    log = next((lifecycle_desk / "runs" / "hooks" / task_id).glob("*.log"))
+    assert f"runs/hooks/{task_id}/{log.name}" in line
+    assert "partial" in log.read_text() and "nope" in log.read_text()
+    assert "Current node: ritual-testing" in out
+
+
+def test_a_hook_that_exceeds_its_timeout_fails_with_the_timeout_in_place_of_the_code(lifecycle_desk: Path) -> None:
+    _declare_hooks(lifecycle_desk, [{"name": "slow", "run": ["sleep", "5"], "timeout": 1}])
+    operations, task_id, task_path = _task_at_testing(lifecycle_desk)
+    before = _state(task_path)
+
+    code, out = _run(["advance", "task", task_id, "--root", str(lifecycle_desk)])
+
+    assert code == 1 and _state(task_path) == before
+    assert "hook 'slow'" in out and "timeout tras 1 s" in out
+
+
+@pytest.mark.parametrize(
+    "hooks",
+    [
+        [{"run": ["true"]}],
+        [{"name": "n"}],
+        [{"name": "n", "run": "true"}],
+        [{"name": "n", "run": ["true", 3]}],
+        [{"name": "n", "run": ["true"], "timeout": 0}],
+        [{"name": "n", "run": ["true"], "timeout": "5"}],
+    ],
+)
+def test_a_malformed_hook_entry_fails_advance_before_persisting_and_names_the_relation_doc(lifecycle_desk: Path, hooks: object) -> None:
+    import contextlib
+    import io
+
+    _declare_hooks(lifecycle_desk, hooks)
+    operations, task_id, task_path = _task_at_testing(lifecycle_desk)
+    before = task_path.read_bytes()
+
+    err = io.StringIO()
+    with contextlib.redirect_stderr(err), contextlib.redirect_stdout(io.StringIO()):
+        code = main(["advance", "task", task_id, "--root", str(lifecycle_desk)])
+
+    assert code == 1
+    assert task_path.read_bytes() == before
+    assert f"desk/lifecycle/{HOOKS_EDGE}.md" in err.getvalue()
+    assert not (lifecycle_desk / "runs" / "hooks").exists()
+
+
+def test_desk_update_keeps_the_hooks_doctor_does_not_report_them_and_next_and_show_list_them(lifecycle_desk: Path) -> None:
+    hooks = [
+        {"name": "b-second", "run": ["true"]},
+        {"name": "a-first", "run": ["sh", "-c", "exit 0"], "timeout": 9},
+    ]
+    _declare_hooks(lifecycle_desk, hooks)
+    operations, task_id, _task_path = _task_at_testing(lifecycle_desk)
+    edge = lifecycle_desk / "desk" / "lifecycle" / f"{HOOKS_EDGE}.md"
+
+    code, out = _run(["doctor", "--root", str(lifecycle_desk)])
+    assert "lifecycle seed out of date" not in out, out
+
+    # The package seed changes under the hooks: the rewrite copies the desk's list whole, in order.
+    edge.write_text(edge.read_text(encoding="utf-8").replace("status: ready_for_testing", "status: active"), encoding="utf-8")
+    code, out = _run(["desk", "update", "--apply", "--root", str(lifecycle_desk)])
+    assert code == 0, out
+    assert f"rewrote desk/lifecycle/{HOOKS_EDGE}.md" in out
+    assert lifecycle.parse_hooks(lifecycle.hooks_from_text(edge.read_text(encoding="utf-8")), HOOKS_EDGE) == (
+        lifecycle.Hook("b-second", ("true",), 300),
+        lifecycle.Hook("a-first", ("sh", "-c", "exit 0"), 9),
+    )
+    assert "status: ready_for_testing" in edge.read_text(encoding="utf-8")
+
+    code, out = _run(["doctor", "--root", str(lifecycle_desk)])
+    assert "lifecycle seed out of date" not in out, out
+
+    code, out = _run(["next", task_id, "--root", str(lifecycle_desk)])
+    assert "Post-hooks:\n- task_hands_to_closeout:\n  - b-second: true\n  - a-first: sh -c exit 0\n" in out
+    _task_obj, gates = operations.show_task(task_id)
+    assert [h["name"] for h in gates[0]["hooks"]] == ["b-second", "a-first"]
+    code, out = _run(["show", "task", task_id, "--root", str(lifecycle_desk)])
+    assert "post-hook b-second: true" in out
+
+
+def test_the_package_seeds_declare_no_hooks() -> None:
+    for path in LIFECYCLE_TEMPLATES.glob("*.md"):
+        assert lifecycle.hooks_from_text(path.read_text(encoding="utf-8")) is None, path.name

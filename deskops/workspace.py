@@ -254,6 +254,8 @@ def seed_desk(target_path: Path, *, apply: bool = True, restore_managed: bool = 
     from sldb.api import scaffold_store
 
     declaration = desk_declaration(target_path.name)
+    if restore_managed:
+        declaration = _keep_desk_hooks(target_path, declaration)
     if not restore_managed:
         declaration = StoreDeclaration(
             folders=declaration.folders,
@@ -271,6 +273,30 @@ def seed_desk(target_path: Path, *, apply: bool = True, restore_managed: bool = 
         created_paths=[target_path / relative for relative in report.created],
         rewritten_paths=[target_path / relative for relative in report.rewritten],
     )
+
+
+def _keep_desk_hooks(target_path: Path, declaration: Any) -> Any:
+    """The declaration with each lifecycle seed carrying the desk's own ``attributes.hooks``.
+
+    The hooks of a transition belong to the desk: rewriting a managed seed copies the whole
+    list, in order, from the desk's file (the package declares none, so nothing is merged)."""
+    from sldb.api import Seed
+    from sldb.api import StoreDeclaration
+
+    from deskops import lifecycle
+
+    prefix = lifecycle.LIFECYCLE_DIR.as_posix() + "/"
+    seeds = []
+    for seed in declaration.seeds:
+        desk_file = target_path / seed.path
+        if seed.path.startswith(prefix) and seed.text is not None and desk_file.is_file():
+            desk_text = desk_file.read_text(encoding="utf-8")
+            hooks = lifecycle.hooks_from_text(desk_text)
+            if hooks is not None:
+                text = lifecycle.with_hooks(seed.text, hooks, lifecycle.provenance_from_text(desk_text))
+                seed = Seed(path=seed.path, mode=seed.mode, text=text)
+        seeds.append(seed)
+    return StoreDeclaration(folders=declaration.folders, seeds=seeds, include=declaration.include)
 
 
 def desk_seed_text(name: str, path: str) -> str:

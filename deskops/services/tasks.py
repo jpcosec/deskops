@@ -8,6 +8,7 @@ selector resolution, the task payload with its inherited context) is
 
 from __future__ import annotations
 
+import copy
 from dataclasses import dataclass
 from pathlib import Path
 import sys
@@ -17,6 +18,7 @@ from typing import TYPE_CHECKING
 from deskops import doc_access
 from deskops import lifecycle
 from deskops.lifecycle import TransitionResult
+from deskops.lifecycle_hooks import run_hooks
 from deskops.models import BoardDoc
 from deskops.models import PillDoc
 from deskops.models import TaskDoc
@@ -182,6 +184,7 @@ class TasksService:
                 "target": lifecycle.COMPLETE if t.terminal else t.target,
                 "condition": t.condition,
                 "holds": not blocked and lifecycle.condition_holds(t.condition, payload),
+                **({"hooks": t.hooks_listing()} if t.raw_hooks else {}),
                 **({"findings": findings} if findings else {}),
             }
             for t in transitions
@@ -197,6 +200,16 @@ class TasksService:
             return lifecycle.transition_findings(self.root, document, payload, snapshot=self._ops.snapshot)
         except Exception:
             return []
+
+    def _transition_hooks(self, node: str) -> dict[str, list[dict[str, Any]]]:
+        """relation_type -> the post-hooks of each transition leaving ``node`` that declares any."""
+        if not node or node == lifecycle.COMPLETE:
+            return {}
+        try:
+            transitions = lifecycle.transitions_from(self.root, node, snapshot=self._ops.snapshot)
+        except Exception:
+            return {}
+        return {t.relation_type: t.hooks_listing() for t in transitions if t.raw_hooks}
 
     def render_next_action_diagram(self) -> str:
         spec = lifecycle.load_lifecycle_spec()
@@ -243,6 +256,7 @@ class TasksService:
         spec = lifecycle.load_lifecycle_spec()
         state = match_workflow_state(spec, str(payload.get("current_node") or ""))
         findings = self._transition_findings(task_path, dict(payload)) if payload.get("current_node") else []
+        hooks = self._transition_hooks(str(payload.get("current_node") or ""))
         pills = list(dict.fromkeys([*self._board_pills(board_path), *list(payload.get("effective_pills") or payload.get("pills") or [])]))
         sources = {
             "task": str(task_path.relative_to(self.root)),
@@ -274,6 +288,7 @@ class TasksService:
             "next_actions": list(state.get("next_actions") or []),
             "advance_when": list(state.get("advance_when") or []),
             "findings": findings,
+            **({"hooks": hooks} if hooks else {}),
             "why": why,
             "sources": sources,
         }
@@ -285,6 +300,7 @@ class TasksService:
         except FileNotFoundError:
             return None, None
         payload = doc_access.read_doc(task_path, TaskDoc)
+        before = copy.deepcopy(payload)
 
         current_node = str(payload.get("current_node") or "")
         current_status = str(payload.get("status") or "")
@@ -303,6 +319,18 @@ class TasksService:
         advanced_task = doc_access.hydrate_task(payload)
         if result.progressed:
             doc_access.write_doc(self.root, task_path, TaskDoc, payload)
+            transition = result.transition
+            failure = (
+                run_hooks(self.root, task_id, transition, str(payload.get("current_node") or ""), transition.hooks)
+                if transition is not None
+                else None
+            )
+            if failure is not None:
+                # Only the task goes back (status, current_node, history); what a hook wrote elsewhere stays.
+                doc_access.write_doc(self.root, task_path, TaskDoc, before)
+                self.logger.info(f"Hook {failure.hook} failed advancing task {task_id}; the task is back at {current_node}")
+                message = failure.finding(transition.relation_type)
+                return doc_access.hydrate_task(before), TransitionResult(current_node, current_status, False, True, message)
         self.logger.info(f"Advanced task {task_id} to node {payload.get('current_node')}")
         return advanced_task, result
 

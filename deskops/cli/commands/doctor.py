@@ -22,6 +22,7 @@ from deskops.doctor_findings import (
     seed_drift,
 )
 from deskops.identity import resolve_registered_root
+from deskops.lifecycle import hooks_from_text
 from deskops.foreign_files import open_foreign_tasks, task_warning
 from deskops.workspace import inspect_desk
 from deskops.workspace import modeled_desk_markdown_docs
@@ -124,6 +125,8 @@ class DoctorCLI:
         for path in rewritten:
             rel = path.resolve().relative_to(root).as_posix()
             drift = seed_drift(rel, desk_seed_text(root.name, rel), path.read_text(encoding="utf-8"))
+            if hooks_from_text(path.read_text(encoding="utf-8")) is not None and set(drift.fields) <= {"sldb"}:
+                continue  # only the layout or the write provenance differs on a copy that carries the desk's hooks
             (findings.errors if drift.governs_transition else findings.alerts).append(drift.line)
 
     def _check_foreign_files(self, root: Path, findings: Findings) -> None:

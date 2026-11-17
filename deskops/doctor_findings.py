@@ -179,11 +179,19 @@ def _body(text: str) -> str:
     return parts[2] if len(parts) == 3 else text
 
 
+def _without_hooks(front: dict[str, Any]) -> dict[str, Any]:
+    """``front`` without ``attributes.hooks``, the part of a lifecycle edge the desk owns."""
+    attributes = front.get("attributes")
+    if not isinstance(attributes, dict) or "hooks" not in attributes:
+        return front
+    return {**front, "attributes": {k: v for k, v in attributes.items() if k != "hooks"}}
+
+
 def seed_drift(rel: str, package_text: str, desk_text: str) -> SeedDrift:
     """How the desk's copy of a managed seed differs from the package's: the top-level
     frontmatter keys whose values differ, sorted, without sldb's write provenance; ``body``
     when only the text below the frontmatter differs."""
-    package, desk = _frontmatter(package_text), _frontmatter(desk_text)
+    package, desk = _without_hooks(_frontmatter(package_text)), _without_hooks(_frontmatter(desk_text))
     differ = sorted(k for k in set(package) | set(desk) if package.get(k) != desk.get(k))
     fields = tuple(k for k in differ if k != PROVENANCE_KEY)
     if not fields:

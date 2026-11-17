@@ -58,6 +58,97 @@ class LifecycleSeedOutOfDate(LifecycleGraphMissing):
     ``deskops desk update --apply``, which restores the managed seed."""
 
 
+class HookDefinitionError(RuntimeError):
+    """A transition's ``attributes.hooks`` entry is malformed; ``deskops advance`` fails with it
+    before persisting anything."""
+
+
+#: Seconds a post-hook may run unless its entry carries its own ``timeout``.
+DEFAULT_HOOK_TIMEOUT = 300
+
+
+@dataclass(frozen=True, slots=True)
+class Hook:
+    """One post-hook of a transition: a command (argument list, no shell) run after the transition is persisted."""
+
+    name: str
+    run: tuple[str, ...]
+    timeout: int = DEFAULT_HOOK_TIMEOUT
+
+    def as_dict(self) -> dict[str, Any]:
+        return {"name": self.name, "run": list(self.run), "timeout": self.timeout}
+
+
+def parse_hooks(raw: Any, relation_doc: str) -> tuple[Hook, ...]:
+    """The hooks of ``attributes.hooks`` of the edge authored by ``relation_doc``; raises
+    ``HookDefinitionError`` naming the RelationDoc when an entry has no ``name``, no ``run``, a
+    ``run`` that is not a list of texts, or a ``timeout`` that is not an integer above zero."""
+    if raw in (None, ""):
+        return ()
+    where = f"{LIFECYCLE_DIR.as_posix()}/{relation_doc}.md"
+
+    def bad(why: str) -> HookDefinitionError:
+        return HookDefinitionError(f"Malformed attributes.hooks in {where}: {why}.")
+
+    if not isinstance(raw, list):
+        raise bad("hooks must be a list")
+    hooks: list[Hook] = []
+    for index, entry in enumerate(raw, start=1):
+        if not isinstance(entry, dict):
+            raise bad(f"entry {index} is not a mapping")
+        name = entry.get("name")
+        if not isinstance(name, str) or not name.strip():
+            raise bad(f"entry {index} has no name")
+        run = entry.get("run")
+        if not isinstance(run, list) or not run or not all(isinstance(a, str) for a in run):
+            raise bad(f"hook '{name}' needs run as a non-empty list of texts")
+        timeout = entry.get("timeout", DEFAULT_HOOK_TIMEOUT)
+        if isinstance(timeout, bool) or not isinstance(timeout, int) or timeout <= 0:
+            raise bad(f"hook '{name}' has a timeout that is not an integer above zero")
+        hooks.append(Hook(name=name, run=tuple(run), timeout=timeout))
+    return tuple(hooks)
+
+
+def _frontmatter_of(text: str) -> dict[str, Any]:
+    if not text.startswith("---"):
+        return {}
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        return {}
+    try:
+        data = yaml.safe_load(parts[1])
+    except yaml.YAMLError:
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def hooks_from_text(text: str) -> Any:
+    """``attributes.hooks`` of a lifecycle seed's frontmatter text; None when it declares none."""
+    attributes = _frontmatter_of(text).get("attributes")
+    return attributes.get("hooks") if isinstance(attributes, dict) else None
+
+
+def provenance_from_text(text: str) -> Any:
+    """The ``sldb`` write provenance of a document's frontmatter text; None without it."""
+    return _frontmatter_of(text).get("sldb")
+
+
+def with_hooks(text: str, hooks: Any, provenance: Any = None) -> str:
+    """The seed ``text`` with ``attributes.hooks`` set to ``hooks`` (the whole list, in order) and,
+    when given, the desk copy's ``sldb`` write provenance (sldb adds it to a document it edits, so
+    a copy carrying the hooks has it); the text unchanged when the seed has no frontmatter."""
+    front = _frontmatter_of(text)
+    if not front:
+        return text
+    attributes = dict(front.get("attributes") or {})
+    attributes["hooks"] = hooks
+    front["attributes"] = attributes
+    if provenance is not None:
+        front = {"sldb": provenance, **front}
+    rest = text.split("---", 2)[2]
+    return "---\n" + yaml.safe_dump(front, sort_keys=False, allow_unicode=True) + "---" + rest
+
+
 @dataclass(frozen=True, slots=True)
 class Transition:
     """One edge of the lifecycle graph leaving ``source``, with its effects as the edge declares them."""
@@ -73,6 +164,25 @@ class Transition:
     #: The findings of the task's ``on_transition`` rules (sldb GO08), as ``finding_dict`` gives
     #: them: every finding on a blocked edge, only alerts on a holding one, none without a document.
     findings: tuple[dict[str, Any], ...] = ()
+    #: ``attributes.hooks`` as the edge declares them, unvalidated (``parse_hooks`` validates).
+    raw_hooks: Any = None
+
+    @property
+    def hooks(self) -> tuple[Hook, ...]:
+        return parse_hooks(self.raw_hooks, self.relation_doc or self.relation_type)
+
+    def hooks_listing(self) -> list[dict[str, Any]]:
+        """The declared hooks as plain mappings for display; a malformed entry is shown as far as it reads."""
+        raw = self.raw_hooks if isinstance(self.raw_hooks, list) else []
+        return [
+            {
+                "name": str(e.get("name") or ""),
+                "run": [str(a) for a in e["run"]] if isinstance(e.get("run"), list) else [],
+                "timeout": e.get("timeout", DEFAULT_HOOK_TIMEOUT),
+            }
+            for e in raw
+            if isinstance(e, dict)
+        ]
 
     @property
     def effects(self) -> dict[str, Any]:
@@ -121,6 +231,8 @@ class TransitionResult:
     progressed: bool
     blocked: bool
     message: str
+    #: The transition taken (set when ``progressed``); ``advance_task`` runs its hooks after persisting it.
+    transition: Transition | None = None
 
 
 def load_lifecycle_spec(path: Path = SPEC_PATH) -> LifecycleSpec:
@@ -171,6 +283,7 @@ def _transition(node: str, edge: Any) -> Transition:
         terminal=bool(effects.get("terminal")),
         relation_doc=str(edge.metadata.get("relation_doc") or ""),
         findings=tuple(finding_dict(f) for f in (getattr(edge, "findings", None) or ())),
+        raw_hooks=attributes.get("hooks"),
     )
 
 
@@ -320,13 +433,14 @@ def advance(root: Path, payload: dict[str, Any], model: type[Any], spec: Lifecyc
     transition = holding[0]
     target = COMPLETE if transition.terminal else transition.target
     _check_against_package(payload, transition, target)
+    transition.hooks  # a malformed hook entry fails here, before the payload changes
     # The model validates the whole new state (TaskDoc's lifecycle coherence): the edge's
     # ``sets``, the history it appends to and the node it leads to are applied together.
     history = [str(item) for item in payload.get("history") or []]
     sets = {**transition.sets, "history": [*history, transition.relation_type], "current_node": target}
     payload.update(apply_effects(payload, {**transition.effects, "sets": sets}, model))
     verb = "Completed" if transition.terminal else "Advanced to"
-    return TransitionResult(target, str(payload.get("status") or ""), True, False, f"{verb} {target} via {transition.relation_type}.")
+    return TransitionResult(target, str(payload.get("status") or ""), True, False, f"{verb} {target} via {transition.relation_type}.", transition)
 
 
 UPDATE_SEEDS = "deskops desk update --apply"
