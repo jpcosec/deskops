@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T04:25:30Z'
+  at: '2026-11-17T07:06:49Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -57,6 +57,7 @@ tasks:
 - desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi.md
+- desk/tasks/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -145,3 +146,4 @@ _Generated from the task references above._
 - deskops message ack acepta --reason y la nota guarda el porque en un campo ack_reason [draft] - deskops message ack <selector> --reason <texto> marca la nota como acknowledged y guarda el texto en un campo opcional ack_reason del modelo de la nota; sin --reason el ack funciona como hoy y ack_reason queda vacio; deskops message read muestra ack_reason cuando existe.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - se retiran del drawer los planes workspace-documental, gates-por-tipo, deskops-ui y deskops-como-config y el test de review node usa un plan fixture propio [draft] - desk/drawer/plans/ queda sin esos cuatro planes y desk/drawer/tasks/ sin la carpeta workspace-documental (git rm); los tests de review node usan un plan de prueba propio bajo tests/fixtures/plans/ (copia minima de gates-por-tipo con los nodos que los tests necesitan); los ejemplos de ayuda y las docs dejan de citar los planes borrados; los tests pasan.
+- closeout commit incluye el run.md de cada RunDoc que el store trackea y git todavia no tiene, para que un clon limpio pase sldb stores build [draft] - Todo commit que hace deskops closeout commit (en cualquier modo) incluye, ademas de lo de hoy, el run.md de cada RunDoc que .sldb/store.yaml registra y que git todavia no conoce (no esta en el indice ni en HEAD), de modo que despues del cierre todo run.md registrado existe en el commit.
