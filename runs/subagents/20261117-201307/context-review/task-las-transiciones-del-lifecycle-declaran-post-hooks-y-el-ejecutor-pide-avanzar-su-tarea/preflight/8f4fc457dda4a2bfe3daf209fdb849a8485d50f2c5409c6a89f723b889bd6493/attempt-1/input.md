@@ -1,33 +1,30 @@
+FILE:desk/tasks/task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea.md
 ---
 sldb:
   by: agent
-  at: '2026-11-17T23:04:24Z'
+  at: '2026-11-17T20:13:00Z'
   authority: generated
   via: save_document_payload
 id: task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea
-status: ready_for_testing
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-closeout
-history:
-- task_activates
-- task_hands_to_closeout
-references:
-- desk/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md
-- tests/test_lifecycle_graph.py
-- tests/test_scion_runtime.py
-- b4a072149e774c78c9f077c25ee04842e59629b8
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
 files:
 - deskops/lifecycle.py
-- deskops/lifecycle_hooks.py
 - deskops/services/tasks.py
+- deskops/workflow/next_actions.py
 - deskops/doctor_findings.py
 - deskops/runtime/scion.py
 - tests/test_lifecycle_graph.py
+- tests/test_lifecycle_end_to_end.py
+- tests/test_lifecycle_seed_drift.py
 - tests/test_scion_runtime.py
 - docs/operator-manual.md
 - desk/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md
@@ -87,3 +84,7 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 En un desk desechable: una transicion con dos hooks los corre en orden y deja su log; con un hook que falla la tarea queda en el estado previo, `advance` sale distinto de cero y nombra hook, codigo y log; sin hooks la salida y el estado son los de hoy; `desk update --apply` conserva los hooks y doctor no alerta por ellos; `next` lista los hooks; el template del ejecutor contiene el paso de `advance` antes de `task_completed`. La suite completa de deskops pasa.
+
+FILE:instruccion
+Preflight solo-TaskDoc de la tarea task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea: reformula el encargo tal como lo leería un ejecutor sin ningún otro contexto, lista ambigüedades con cita textual del input y da el DRY-RUN sin ejecutar nada. No ejecutes nada.
+

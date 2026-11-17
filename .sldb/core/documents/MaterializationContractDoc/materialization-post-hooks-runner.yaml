@@ -1,0 +1,25 @@
+name: materialization-post-hooks-runner
+path: desk/materializations/materialization-post-hooks-runner.md
+source_hash: 007e691e72167ff49b2207d76c76fc5b45624ae70d222db4bc643d1402fb7884
+content_hash: fbd74bb1891044f57e4ea1e929bb318d19b49c38f63841b3b0795e91b0e3b4c4
+field_hashes:
+  id: b46fe7300e86e8487527f2b680640607e9112e0424847bbfc49ea5fb7ae3d6f7
+  title: fcb78007daea46456fc446bec6db838c7192856da22260c387ececbd01162f9b
+  source_atoms: 384f22b4964f736554e697beffb1c31c6efca481f88f79f86ab5699a54a113c7
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 2e9bca3d1de2607debe2c9ee3b019ea936b765dd7d77d1049a84a409e82746ec
+  intent: c3d32a061748cf79967175a62c7d30b97cf9c15031adb90b4de8a20249d537a5
+  validation: 8ae2246dc7c6091a40656b81b8baea45bc583c3c861a07f2a856928a74d383e2
+  tags: 56d7cea4a80b5533f876106383ea4c699b24d57431c370914d76f0b10271ee08
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:lifecycle
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T23:04:03Z'
+  authority: generated
+  via: create_document

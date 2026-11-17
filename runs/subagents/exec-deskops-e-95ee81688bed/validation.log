@@ -1,0 +1,7 @@
+$ TMPDIR=/dev/shm pytest -q tests/test_lifecycle_graph.py tests/test_lifecycle_end_to_end.py tests/test_lifecycle_seed_drift.py tests/test_scion_runtime.py
+69 passed, 1 warning in 663.60s
+exit code: 0
+(pytest run with /home/scion/.local/share/uv/tools/deskops/bin/python -m pytest; pytest installed there with uv)
+$ deskops graph missing --root .
+47 missing, 0 informational (pre-existing, unrelated to this task)
+Full suite NOT run (coordinator runs it).

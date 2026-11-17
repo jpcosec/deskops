@@ -1,0 +1,25 @@
+name: materialization-post-hooks-doctor-seeds
+path: desk/materializations/materialization-post-hooks-doctor-seeds.md
+source_hash: e03f4f4b4713ef38ae45d38c18c7439f49beb862fa2e4c8954303966572e14ad
+content_hash: 4b3fa472342bfc2c2e18d9b45d5e698f03323aaa69d057425b13fd888d67365f
+field_hashes:
+  id: e884b2cbb5dfcffc7f4306524053b68974f6b91bb09ff8efa1aa2ca27969f1d7
+  title: de5583cdb88e51e6581d8f51d9d6347c44f482487f80692df8f95017a6ff39ac
+  source_atoms: 384f22b4964f736554e697beffb1c31c6efca481f88f79f86ab5699a54a113c7
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 5a495f3e90683ae54150aa63bd0dd1214d48ec3b35f4df0f4cc288fedf71c942
+  intent: aee3b31eb193f8b42ba68b52b4e2bfff4c6830f135ce562b9b63de4ec397e438
+  validation: 8ae2246dc7c6091a40656b81b8baea45bc583c3c861a07f2a856928a74d383e2
+  tags: 56d7cea4a80b5533f876106383ea4c699b24d57431c370914d76f0b10271ee08
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:lifecycle
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T23:04:10Z'
+  authority: generated
+  via: create_document

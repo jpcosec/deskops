@@ -1,0 +1,37 @@
+name: review-task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea-bundle-1
+path: desk/reviews/task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea/bundle-1.md
+source_hash: 492dc0d53175fdc031e9f0bd23d8603c641b7d2fe2b37598f143a0f6188e51be
+content_hash: 01143ed44681c45946e7bcb19bfdf1e9c34e4851af3158489c6901369a24387c
+field_hashes:
+  id: c22ac7d33614cbc99f61a54b52255486a8caaf712024291b2f953ac5d97b0731
+  title: 85815dac212a1653509c2938bc3cd31372033bd36f6fb252dc16f0360cdbfae0
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 038611517c5be946af463d0571b1de8ea1c6d1643ed70c8f522028328fe19d9e
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 64c3ed77c9f45900005e4afb6a699bb074f9ef9c27c4585bef3b78a9a6809508
+  input_sha256: 3cf295406013d4a5c455867d72596e646e8974ca8ca52ffb8c7b28488c0a83f3
+  contract_sha256: faf42ead7b2137ef8d6d7f8ec2c47cabf8cf7a1c79c0071dbeac905937f1922b
+  output_sha256: 02ed3cc2379750c81baa3ab56d9b7dcdada05ad18eb0208e536937b17a503dc3
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: eee771760c72201de7764ba7d2830bb21d49ada8eef5f7daadf123f4f2f16c6b
+  created_at: 8bffff14d1a1274d79170f9b7b270e0e87bda495beae74ad683e8b670c661267
+  disposed_at: a109bc31f25bea39a9f8e5065bbb3694d7a0a60417acec04bf16eaa275bac9ed
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 0dbe4f721a73823ca7a07f6ac02018b1b7d39d42d6980fe432762b93761c5844
+  disposition: 20bb4b2971d5a2c8947a1eae57931a16bac61d81f28fcf9b44888373edced89f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T20:14:53Z'
+  authority: generated
+  via: save_document_payload

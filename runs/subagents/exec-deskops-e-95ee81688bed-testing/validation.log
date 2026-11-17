@@ -1,0 +1,21 @@
+$ TMPDIR=/dev/shm PYTHONPATH=/dev/shm/pt python -m pytest -q <4 files>
+.....................................................................    [100%]
+=============================== warnings summary ===============================
+../../../../../dev/shm/pt/_pytest/config/__init__.py:1636
+  /dev/shm/pt/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+69 passed, 1 warning in 659.42s (0:10:59)
+exit code: 0
+
+## Prueba manual en desk desechable (/dev/shm/tdesk, deskops init)
+- dos hooks en testing-task_hands_to_closeout: advance exit 0, order.txt = A,B; env DESKOPS_* correctas, cwd = raiz; log runs/hooks/task-demo/task_hands_to_closeout-20261117T222148Z.log con nombre, run, result, stdout, stderr
+- hook one `exit 3`: advance exit 1, "error: [lifecycle/hook-failed] task_hands_to_closeout: hook 'one' fallo: codigo de salida 3; log: runs/hooks/..."; hook two no corrio; tarea restaurada (active / ritual-testing / history [task_activates])
+- timeout 1 con sleep 5: "fallo: timeout tras 1 s; log: ..."; exit 1; tarea restaurada
+- timeout 0 / 1.5 / 'abc', entrada sin name, run [1,2]: advance exit 1 "Malformed attributes.hooks in desk/lifecycle/testing-task_hands_to_closeout.md: ..." antes de persistir (current_node intacto)
+- sin hooks: advance exit 0, mismo mensaje de siempre; next sin seccion Post-hooks
+- desk update --apply conserva ambos hooks en orden; doctor "healthy, no issues" tras apply
+- next y show task listan los hooks bajo task_hands_to_closeout
+- sldb stores check: solo el atom de esta tarea sale como data_mutation (indice no refrescado); resto (review evidence, inbox, doc_lost) preexistente

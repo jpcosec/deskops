@@ -1,0 +1,37 @@
+name: review-task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea-evidence-materialization-2
+path: desk/reviews/task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea/evidence-materialization-2.md
+source_hash: 4fd27707f22f07aae36b3020a8b3194e69cec3ccf2480d79c3e7f255643729bb
+content_hash: 6dceda2a7c9fc5eb07c344ca6d594e2aff8a6fb289a18e3fc6c0e5379d8b42ee
+field_hashes:
+  id: 14213de1dc22567092920e490abf8341b698c443ac3b5a4a092a0fe3fb755cf1
+  title: 80414ef09daac05b503aa17e394149eefa5d18390b713cf28c15f2eabf647057
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: c5a570f8c3503d69809f46c52587e7fc92a872c13e8bab12751ad929aa544041
+  subject: 941224745fa076a5e1e69779e2104f476599b945aace611b4a30f394e8259611
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: a52edb721b6634ec4480902530472056f50477792697be651354a80876db07c8
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0ff2c3c50d288aef1f916ba22a4bf19d05e8935bca86f8a00d7f7e0e585567c2
+  created_at: 17001631fcb52dcdcc9c565c8a38f62d422fd75d167d4e744ff708596a4cff2c
+  disposed_at: 17001631fcb52dcdcc9c565c8a38f62d422fd75d167d4e744ff708596a4cff2c
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5f8a5f689825b674431cb6a9b7b83e3c9fb2e87492ac5e478db6a5e40365a0c8
+  disposition: 5f1d17bb6515827a39f868b6f18c8977391a9cdeb15266de22e28f244750a6d7
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T23:04:42Z'
+  authority: generated
+  via: create_document

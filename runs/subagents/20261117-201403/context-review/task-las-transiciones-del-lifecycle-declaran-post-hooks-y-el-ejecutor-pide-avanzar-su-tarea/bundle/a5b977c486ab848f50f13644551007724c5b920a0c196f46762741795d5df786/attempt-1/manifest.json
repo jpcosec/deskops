@@ -1,0 +1,144 @@
+{
+  "key": "task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea/bundle",
+  "input_sha256": "a5b977c486ab848f50f13644551007724c5b920a0c196f46762741795d5df786",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261117-201403/context-review/task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea/bundle/a5b977c486ab848f50f13644551007724c5b920a0c196f46762741795d5df786/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea.md",
+      "sha256": "17aaf73b314c544d5e152d9debf4204252a9d1d20e0114e5c40c9767b8c9e021",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-scion-coordinator-progresses-authorized-work.md",
+      "sha256": "6d4649499c28df7536cae9623f35148501072f595316d1b5de575cf51569ac94",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md",
+      "sha256": "7e57eddfbb1e2d3c3ef0016bfc537fa49100aae45a44bbd180329088c03c8c2c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/lifecycle.py",
+      "sha256": "d95eb7128207cb9577d2dab60b0ac9f1f053be62c81825b698c3b90e42559f8d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/services/tasks.py",
+      "sha256": "e894534587dd0d8b1062fff7a704ae5d42bc4173b9634ffc7f3522d3fee744fa",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/workflow/next_actions.py",
+      "sha256": "0664a937432cbbe9f09b3cba927b6f305462f8cc337c0a38afd22696dbebcf2e",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/doctor_findings.py",
+      "sha256": "65e5eb6bef370c430f471b0286e07456aefcfe4193fa8320ac1bbf9a6b6bb64f",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/runtime/scion.py",
+      "sha256": "e895474e97de66d4130bb17b420a17dcd8f59e1d6b3755d8650a6959d8d375a4",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_lifecycle_graph.py",
+      "sha256": "4453df02f8b4ce3508379b4e3e8e49bdf9eb008bdba3620c125aba35f8dfb1b6",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_lifecycle_end_to_end.py",
+      "sha256": "e05851f94bc502256725f814f21302a58507525f2d1e326e0e28d538ec9995a1",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_lifecycle_seed_drift.py",
+      "sha256": "096731612122a990d74c62e43a1c092dbee855859ee5283f7d145e4ec62ae6ad",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_scion_runtime.py",
+      "sha256": "2293de339f2c2351f22f5e46bbe26c8d60e221a0695fb44fc65533817320d58d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/operator-manual.md",
+      "sha256": "ee63a850f4641ed1bae178c4c2fa99e1377d0d2940bceeb360fbbdc1b308ad66",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md",
+      "sha256": "7e57eddfbb1e2d3c3ef0016bfc537fa49100aae45a44bbd180329088c03c8c2c",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-17T20:14:03.683649+00:00",
+  "finished": "2026-11-17T20:14:22.427463+00:00"
+}

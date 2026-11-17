@@ -1,0 +1,12 @@
+Task: task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea
+Title: Las transiciones del lifecycle declaran post-hooks y el ejecutor pide avanzar su tarea
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Effective atoms:
+- atom-scion-coordinator-progresses-authorized-work
+- atom-automatic-routines-vs-llm-tasks
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
