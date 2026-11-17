@@ -353,16 +353,6 @@ def test_message_ack_rejects_a_fragment_that_matches_two_notes(tmp_path: Path) -
     assert "status: open" in second.read_text(encoding="utf-8")
 
 
-# sldb renders a field value as Jinja source (sldb/core/renderer_engine/base.py replace_markers):
-# two or three opening braces raise TemplateSyntaxError and a valid expression is evaluated and
-# stored altered with rc 0. Reported to sldb; this pins the literal contract until sldb fixes it.
-SLDB_JINJA_VALUE_NOTE = (
-    "20261117-015212-suggestion-render-model-markdown-interpreta-como-jinja-el-valor-de-los-campos"
-    "-llaves-dobles-rompen-expresiones-se-evaluan.md"
-)
-
-
-@pytest.mark.xfail(strict=True, reason=SLDB_JINJA_VALUE_NOTE)
 @pytest.mark.parametrize(
     "body",
     [
