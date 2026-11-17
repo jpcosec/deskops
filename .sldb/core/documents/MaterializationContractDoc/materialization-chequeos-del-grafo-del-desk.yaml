@@ -1,0 +1,26 @@
+name: materialization-chequeos-del-grafo-del-desk
+path: desk/materializations/materialization-chequeos-del-grafo-del-desk.md
+source_hash: c13dbc28b0c8969919eca25380b7f716b3bca0162a16d6d109a690d5cf8d9489
+content_hash: f1ad6d649e2e010cae265af1f4c5931b9da85ad096cabade99df0e11fc9a46fa
+field_hashes:
+  id: 325bbc3d49d475ba8a3bbf2eec85cfd30ff44f7423d400fbbc628f74e2efcc8c
+  title: 1ecf86079aba7dc34b4d6b66b5c0be3d14fc4519a3ab0d0eaaccb5dbffd44c1f
+  source_atoms: fe05925db6d995d65e5818ce039c7c7cc22e551ef04cd159d82f54c24e818ad2
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: f3996f092f6d6545e925761615dd2114c2ffa59f50befd94904ef1092bfca26b
+  intent: 41815f55b42b979ae52ac0b002cb79ebd3466936d50e22c307a201252274e6bf
+  validation: 110decb936f9499bc87d4f06babdf07a2d1bc5b6f16d3707b202dabb64f767f2
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 86dd52bbd3f6cb20452be5c695f4af9dc47cfe3a7a3e37d97a9dd84d4787edd6
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T11:16:39Z'
+  authority: generated
+  via: create_document

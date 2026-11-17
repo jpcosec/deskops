@@ -1,0 +1,65 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_graph_checks.py
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 1.43s
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_graph_declared_edges.py
+............                                                             [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 1 warning in 4.01s
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_graph_cli.py
+..................                                                       [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+18 passed, 1 warning in 15.38s
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_graph_missing_existing_files.py
+.......                                                                  [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 0.92s
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_graph_store_index_not_nodes.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 1.35s
+rc=0
+$ PYTHONPATH=$PWD deskops graph missing --root . > graph-missing-despues.txt; comparación por conjunto de líneas con graph-missing-antes.txt
+diff rc=0 (graph missing rc=1 antes y después, 49 entradas)
+$ ! grep -rn 'declared_target_is_a_file\|_closed_issue' deskops
+deskops/graph/checks.py:52:        if not declared_target_is_a_file(root, missing.target_id)
+deskops/graph/checks.py:63:def declared_target_is_a_file(root: Path, target_id: str) -> bool:
+grep rc=0
+$ deskops message send --to sldb --kind suggestion --title ... <cuerpo>
+Delivered message from deskops to sldb at /mnt/ssd/proyectos/SLDB_1/sldb/desk/inbox/20261117-080724-suggestion-project-graph-de-deskops-destinos-de-h1-que-declaredfiletargets-no-puede-declarar-y-closed-sin-cuerpo-h2.md
+Tracked '20261117-080724-suggestion-project-graph-de-deskops-destinos-de-h1-que-declaredfiletargets-no-puede-declarar-y-closed-sin-cuerpo-h2'
+rc=0

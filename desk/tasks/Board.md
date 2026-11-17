@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T08:29:54Z'
+  at: '2026-11-17T11:17:50Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -46,7 +46,6 @@ tasks:
 - desk/tasks/task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos.md
 - desk/tasks/task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s.md
 - desk/tasks/task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira.md
-- desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
 - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
 - desk/tasks/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error.md
@@ -133,7 +132,6 @@ _Generated from the task references above._
 - JP decide si el plan workspace-documental se retira con sus 67 fichas o se rescatan nodos [draft] - JP decide: (a) retirar el plan entero (se borran el directorio del plan y las 67 fichas en un commit que cita los cierres); o (b) rescatar nodos concretos (candidatos: WS20/WS45/WS47 escritura en sldb, WS19/WS21 edicion, WS32-WS38 scion), que se convierten en tareas en su desk, y retirar el resto.
 - La skill, el ritual drawer-triage y la ayuda de promote dicen que una nota del inbox que es trabajo se vuelve tarea con references y ack [draft] - La skill (SKILL.md y references/vocabulary.md), el ritual ritual-drawer-triage (editado con `deskops edit ritual`), el texto de ayuda de `deskops promote inbox-to-drawer-task` y docs/operator-manual.md describen ese camino y ninguno manda una nota del inbox al drawer. La ayuda de promote advierte que borra la nota de origen y que no es el camino para notas que son trabajo.
 - JP decide si deskops promote inbox-to-drawer-task se retira [draft] - JP elige: (a) retirar promote inbox-to-drawer-task (se crea la tarea de codigo que borra el comando, sus goldens y sus tests, tests/test_inbox_promote_cli_gaps.py incluido); (b) mantenerlo con la advertencia en su ayuda (la cubre la tarea de alineacion de skill y ritual); (c) cambiarlo para que conserve la nota y la referencie.
-- deskops declara su project_graph con closed y declared_file_targets de sldb y borra los desvios H1 y H2 de CC33c [draft] - La configuracion de project_graph que deskops arma en deskops/graph/desk_graph.py usa closed: (predicado del lenguaje de reglas de sldb, con la misma condicion que hoy evalua _closed_issue) en lugar de closed_document=_closed_issue, y declara declared_file_targets para los archivos existentes que no son documento; declared_target_is_a_file y _closed_issue desaparecen. `deskops graph missing --root .` da el mismo resultado que antes del cambio en el desk de deskops (misma lista de faltantes). Si algun destino que hoy cubre declared_target_is_a_file (p. ej. dag.yaml o tests/fixtures/model_contract_hashes.json) no se puede declarar con declared_file_targets porque no sale de un campo de frontmatter de un glob de documentos, se manda deskops message send --to sldb con el caso y ese destino conserva su tratamiento actual.
 - repo register guarda rutas relativas a la raiz del ecosistema y doctor nombra las entradas del registro que no resuelven [draft] - (1) `deskops repo register` guarda en path la ruta relativa a la raiz del repo que contiene el registro donde escribe (desk/registry del desk, o ~/setup/desk/registry para el del ecosistema, con ~ expandido solo al resolver), y acepta leer entradas viejas con ruta absoluta o con ~. (2) `deskops doctor` reporta, por cada entrada del registro del desk cuyo path no resuelve en esta maquina, un hallazgo con el id del repo, el path guardado y la ruta resuelta, ademas del mensaje actual del store enlazado.
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
 - deskops view task entrega holds true en un gate cuya regla de activacion da un finding de error [draft] - Reproducir el caso, encontrar por que holds y el finding de error no coinciden, y dejar que holds sea false cuando la regla de activacion del gate da un finding de nivel error; con un test que falla antes y pasa despues.

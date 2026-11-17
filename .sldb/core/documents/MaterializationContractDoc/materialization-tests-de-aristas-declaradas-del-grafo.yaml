@@ -1,0 +1,26 @@
+name: materialization-tests-de-aristas-declaradas-del-grafo
+path: desk/materializations/materialization-tests-de-aristas-declaradas-del-grafo.md
+source_hash: 31c6b09a18bd1cd54170d9fe4d1f85b2f41e19bf39215b7d43f29740e2c558b2
+content_hash: 7ed933d32aa4466a8b749048fe4c01272989b992e378b4464465d4395ff731cd
+field_hashes:
+  id: 4d1d824afa66e9f99ed8330c115978b799664b6fb35336f392ff6811766aeb8c
+  title: cb9a39dd12bb3e41bc94fabd8d9096cfb954056c3184c364c0110b2afe0d58a5
+  source_atoms: fe05925db6d995d65e5818ce039c7c7cc22e551ef04cd159d82f54c24e818ad2
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 61fae2560c1a5e8a7700aed9124d21d8ccadd15ae589219908e0f7151b902a9a
+  intent: 3d172ee0885f16c0a2956794c1eb18e30eacf5a79809b20da5267414131a6a22
+  validation: 7611e3a049cefcc255965a7268c7d6157b245952fbfb905cdf67b82be0446a4c
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 86dd52bbd3f6cb20452be5c695f4af9dc47cfe3a7a3e37d97a9dd84d4787edd6
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T11:17:15Z'
+  authority: generated
+  via: create_document

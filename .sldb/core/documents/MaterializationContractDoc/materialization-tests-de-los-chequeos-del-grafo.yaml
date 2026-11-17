@@ -1,0 +1,26 @@
+name: materialization-tests-de-los-chequeos-del-grafo
+path: desk/materializations/materialization-tests-de-los-chequeos-del-grafo.md
+source_hash: 2f5301daffbc207473f40cbcabc479b6a1440a1efa91f85b164f318250cbbbdb
+content_hash: 3b54af214e671229a745057641bbedd604835fa8e7b303f7ef28a2b4d8337969
+field_hashes:
+  id: 16c5c9dcd352ca16ec1f343484f56342712d056bcf39379c6b9f8aa89357594b
+  title: 8ac0ef51b4d23ff0c479bdda63e30184a7984d9e237e481c2d81ebb156a7d726
+  source_atoms: fe05925db6d995d65e5818ce039c7c7cc22e551ef04cd159d82f54c24e818ad2
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: e627a0791a30833f907d6fc347b100b830c08ff83aaa56020cae853e1a5a2d84
+  intent: 77e192552d4934dfeb18242b4e3f82dc82174da71b24f57e1bc497b3d9b786f2
+  validation: 110decb936f9499bc87d4f06babdf07a2d1bc5b6f16d3707b202dabb64f767f2
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 86dd52bbd3f6cb20452be5c695f4af9dc47cfe3a7a3e37d97a9dd84d4787edd6
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T11:16:51Z'
+  authority: generated
+  via: create_document

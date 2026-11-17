@@ -1,0 +1,26 @@
+name: materialization-tests-del-cli-del-grafo
+path: desk/materializations/materialization-tests-del-cli-del-grafo.md
+source_hash: a324d499abbde167411e5784af0a2b217116b47f609e06b5a731ea5bdd5d0a83
+content_hash: 40c6bc34a31e5790b8b9959058d87f5218fb4af7a085c1a2bee600d5cc8b535d
+field_hashes:
+  id: 22bc4caa70dfdf98c84fefe2fb0eaa577c1b4d4d5f84d405d699c4980cb985d1
+  title: a93320b2f9db46e7b279b8a9dea8a1aa7573d286fb8e072386e77df1e972d286
+  source_atoms: fe05925db6d995d65e5818ce039c7c7cc22e551ef04cd159d82f54c24e818ad2
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 809d3f8dfc6fdb49ba0094731f20b4c653acddf4dd53e097707e600359e31e80
+  intent: c369bcdb041c798c8fcccb259d3683585f93e370a2918a222edb746dea837835
+  validation: 78b258c40488118d433291171d5e2165dda8861326f8772f62c9931da2a48b54
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 86dd52bbd3f6cb20452be5c695f4af9dc47cfe3a7a3e37d97a9dd84d4787edd6
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T11:17:04Z'
+  authority: generated
+  via: create_document

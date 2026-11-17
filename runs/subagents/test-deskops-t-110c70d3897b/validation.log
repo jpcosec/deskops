@@ -1,0 +1,39 @@
+== test_graph_checks
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 1.81s
+rc=0
+== test_graph_declared_edges
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 1 warning in 3.99s
+rc=0
+== test_graph_cli
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+18 passed, 1 warning in 18.48s
+rc=0
+== test_graph_missing_existing_files
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 1.51s
+rc=0
+== deskops graph missing --root . (PYTHONPATH=.)
+rc=1
+sorted diff rc=0 lines=0 antes=149 ahora=149
+== Reproducción: tests nuevos con código de HEAD (fcb98cdb)
+-- test_graph_checks
+5 passed, 2 warnings in 1.91s
+-- test_graph_declared_edges
+ERROR tests/test_graph_declared_edges.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 warning, 1 error in 2.55s
+-- test_graph_cli
+18 passed, 2 warnings in 23.31s
+-- test_graph_declared_edges con CLOSED_ISSUE stub (para pasar la colección)
+E       AssertionError: assert <function _closed_issue at 0x73c88c7d7a60> is None
+FAILED tests/test_graph_declared_edges.py::test_the_desk_graph_config_is_data_with_no_closed_document_callable
+1 failed, 11 passed, 2 warnings in 3.96s
+== Diferencial closed: vs deskops.services.issues.issue_status (66 casos frontmatter, claves status/Status/STATUS)
+14 diferencias: 13 por clave STATUS (issue_status acepta cualquier capitalización de la clave; el predicado solo status/Status)
+y 1 valor con comillas internas + espacio ("' closed'") en status/Status/STATUS. Resto idéntico (closed, Closed - done, "closed extra", closed-ish, closedx, open, null...).
