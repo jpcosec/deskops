@@ -706,7 +706,7 @@ read/ack selector: filename, stem, or unique slug fragment.
 Examples:
   deskops review preflight task-fix-thing --root .
   deskops review bundle task-fix-thing --root .
-  deskops review node desk/drawer/plans/gates-por-tipo GC03 --root .
+  deskops review node desk/drawer/plans/mi-plan N01 --root .
   deskops review status task-fix-thing --root .
   deskops review dispose review-task-fix-thing-preflight-1 --verdict accepted --reason "..." --root .
   deskops review record task-fix-thing --kind reproduction --evidence runs/repro.log --reason "..." --root .
@@ -741,7 +741,7 @@ writes a human receipt that says so.
             mutates=True,
             epilog="""
 Example:
-  deskops review node desk/drawer/plans/gates-por-tipo GC03 --root .
+  deskops review node desk/drawer/plans/mi-plan N01 --root .
 """.strip(),
             raw_text=True,
         ),
@@ -802,7 +802,7 @@ Example:
             epilog="""
 Example:
   deskops review status task-fix-thing --root .
-  deskops review status desk/drawer/plans/gates-por-tipo --root .
+  deskops review status desk/drawer/plans/mi-plan --root .
 """.strip(),
             raw_text=True,
         ),

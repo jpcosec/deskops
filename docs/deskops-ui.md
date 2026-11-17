@@ -206,7 +206,7 @@ modelo de `ViewDoc` no lo expresa aún; cada uno se retira cuando sldb cierre su
 
 ## Mapeo de la pantalla de Stitch a fuentes reales
 
-Copiado de `desk/drawer/plans/deskops-ui/alcance.md` (plan deskops-ui, 2026-11-04).
+Copiado del alcance del plan deskops-ui (2026-11-04; plan retirado del drawer el 2026-11-17, queda en el historial de git).
 
 | Elemento de Stitch | Fuente real | Campo de la vista | Si no hay fuente |
 |---|---|---|---|

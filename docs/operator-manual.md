@@ -1134,7 +1134,7 @@ only; they are not part of the runnable walkthrough.
 ```bash
 deskops review preflight task-fix-thing --root .
 deskops review bundle task-fix-thing --root .
-deskops review node desk/drawer/plans/gates-por-tipo GC03 --root .
+deskops review node desk/drawer/plans/mi-plan N01 --root .
 deskops review status task-fix-thing --root .
 deskops review dispose review-task-fix-thing-preflight-1 --verdict accepted --reason "..." --root .
 ```

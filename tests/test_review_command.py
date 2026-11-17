@@ -22,7 +22,7 @@ from deskops.models import ReviewDoc
 
 ROOT = Path(__file__).resolve().parents[1]
 CLI = [sys.executable, "-m", "deskops"]
-PLAN_SRC = ROOT / "desk" / "drawer" / "plans" / "gates-por-tipo"
+PLAN_SRC = ROOT / "tests" / "fixtures" / "plans" / "gates-por-tipo"
 
 
 FAKE_PI = """#!/usr/bin/env python3
