@@ -332,6 +332,7 @@ include:
   - desk/materializations/materialization-golden-de-ayuda-de-deskops-sin-inbox.md
   - desk/materializations/materialization-tests-del-cli-de-deskops-message.md
   - desk/materializations/materialization-tests-de-entrega-de-deskops-message.md
+  - desk/materializations/materialization-tests-de-closeout-commit.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -406,6 +407,8 @@ include:
     name: run-deskops-t-350841cd869d
   - path: runs/subagents/exec-deskops-e-3cd90f55821f/run.md
     name: run-deskops-e-3cd90f55821f
+  - path: runs/subagents/test-deskops-t-b1a597a56632/run.md
+    name: run-deskops-t-b1a597a56632
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1092,6 +1095,60 @@ include:
     name: review-deskops-gates-por-tipo-gc05-node-1
   - path: desk/reviews/deskops-gates-por-tipo-gc06/node-1.md
     name: review-deskops-gates-por-tipo-gc06-node-1
+  - path: desk/reviews/deskops-gates-por-tipo-gc07/node-1.md
+    name: review-deskops-gates-por-tipo-gc07-node-1
+  - path: desk/reviews/deskops-gates-por-tipo-gc08/node-1.md
+    name: review-deskops-gates-por-tipo-gc08-node-1
+  - path: desk/reviews/deskops-gates-por-tipo-gc09/node-1.md
+    name: review-deskops-gates-por-tipo-gc09-node-1
+  - path: desk/reviews/deskops-gates-por-tipo-gc10/node-1.md
+    name: review-deskops-gates-por-tipo-gc10-node-1
+  - path: desk/reviews/deskops-gates-por-tipo-gc11/node-1.md
+    name: review-deskops-gates-por-tipo-gc11-node-1
+  - path: desk/reviews/deskops-workspace-documental-root/node-1.md
+    name: review-deskops-workspace-documental-root-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk01/node-1.md
+    name: review-deskops-workspace-documental-pk01-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk02/node-1.md
+    name: review-deskops-workspace-documental-pk02-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk03/node-1.md
+    name: review-deskops-workspace-documental-pk03-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk04/node-1.md
+    name: review-deskops-workspace-documental-pk04-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk05/node-1.md
+    name: review-deskops-workspace-documental-pk05-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk06/node-1.md
+    name: review-deskops-workspace-documental-pk06-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk07/node-1.md
+    name: review-deskops-workspace-documental-pk07-node-1
+  - path: desk/reviews/deskops-workspace-documental-pk08/node-1.md
+    name: review-deskops-workspace-documental-pk08-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws01/node-1.md
+    name: review-deskops-workspace-documental-ws01-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws02/node-1.md
+    name: review-deskops-workspace-documental-ws02-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws03/node-1.md
+    name: review-deskops-workspace-documental-ws03-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws04/node-1.md
+    name: review-deskops-workspace-documental-ws04-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws05/node-1.md
+    name: review-deskops-workspace-documental-ws05-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws06/node-1.md
+    name: review-deskops-workspace-documental-ws06-node-1
+  - path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/evidence-tests-1.md
+    name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-tests-1
+  - path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/evidence-commit-1.md
+    name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-commit-1
+  - path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/evidence-atom-1.md
+    name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-atom-1
+  - path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/evidence-materialization-1.md
+    name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-materialization-1
+  - path: desk/reviews/deskops-workspace-documental-ws07/node-1.md
+    name: review-deskops-workspace-documental-ws07-node-1
+  - path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/evidence-materialization-2.md
+    name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-materialization-2
+  - path: desk/reviews/deskops-workspace-documental-ws08/node-1.md
+    name: review-deskops-workspace-documental-ws08-node-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1142,7 +1199,6 @@ include:
   - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
   - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
-  - desk/tasks/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit.md
   - desk/tasks/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo.md
   - desk/tasks/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista.md
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md

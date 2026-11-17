@@ -1,0 +1,106 @@
+== tests/test_closeout.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+62 passed, 2 warnings in 106.54s (0:01:46)
+rc=0
+== tests/test_closeout_declared_evidence.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+23 passed, 1 warning in 241.03s (0:04:01)
+rc=0
+== tests/test_closeout_resolved_by.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+25 passed, 2 warnings in 24.07s
+rc=0
+== repro: HEAD closure.py + new tests
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_closeout.py::test_closeout_commit_does_not_amend_a_head_the_task_cites_as_commit_evidence[reference]
+FAILED tests/test_closeout.py::test_closeout_commit_does_not_amend_a_head_the_task_cites_as_commit_evidence[receipt]
+2 failed, 1 passed, 59 deselected, 2 warnings in 5.78s
+== sandbox real: CODE=8a3967ae14f794a81cfd36c00267dcaac9ebed4e ref=8a3967ae
+Closeout gate: esta tarea declaró tests, commit, atom|materialization; encontré atom|materialization (exento: sin atoms locales), commit
+{
+  "alerts": [],
+  "declared": [
+    "tests",
+    "commit",
+    "atom",
+    "materialization"
+  ],
+  "findings": [
+    {
+      "code": "missing_tests_evidence",
+      "message": "No resolvable test evidence reference found."
+    }
+  ],
+  "found": [
+    "atom|materialization (exento: sin atoms locales)",
+    "commit"
+  ],
+  "gates": {
+    "atom_or_materialization_link": {
+      "evidence": [
+        "knowledge-coverage-exempt: no local atom documents"
+      ],
+      "findings": [],
+      "ok": true
+    },
+    "commit": {
+      "evidence": [
+        "8a3967ae"
+      ],
+      "findings": [],
+      "ok": true
+    },
+    "tests": {
+      "evidence": [],
+      "findings": [
+        {
+          "code": "missing_tests_evidence",
+          "message": "No resolvable test evidence reference found."
+verify rc=0
+Closeout gate: esta tarea declaró tests, commit, atom|materialization; encontré tests, atom|materialization (exento: sin atoms locales), commit
+{
+verify rc=0
+evidence-atom-1.md
+evidence-commit-1.md
+evidence-tests-1.md
+evidence-tests-2.md
+ M .sldb/core/models/ReviewDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M desk/tasks/task-feature-x.md
+?? .sldb/core/documents/ReviewDoc/
+?? desk/reviews/
+?? tests/
+alert: desk/tasks/task-feature-x.md still referenced by desk/reviews/task-feature-x/evidence-atom-1.md
+alert: desk/tasks/task-feature-x.md still referenced by desk/reviews/task-feature-x/evidence-commit-1.md
+alert: desk/tasks/task-feature-x.md still referenced by desk/reviews/task-feature-x/evidence-tests-1.md
+alert: desk/tasks/task-feature-x.md still referenced by desk/reviews/task-feature-x/evidence-tests-2.md
+Closing commit b20d4ac5e5eb made manually (no run): tester sandbox
+Closeout gate: esta tarea declaró tests, commit, atom|materialization; encontré tests, atom|materialization (exento: sin atoms locales), commit
+Index: /dev/shm/tester-b1a5-sbx/runs/subagents/index.jsonl
+commit rc=0
+--- log
+b20d4ac5e5eb98ebf4538107217f84039121d979 closeout: task-feature-x
+Task-Id: task-feature-x
+Closeout-Mode: manual
+
+8a3967ae14f794a81cfd36c00267dcaac9ebed4e feature
+Task-Id: task-feature-x
+
+f79342052d908bd72d428c1bb9b3719e5e76d1a3 add task
+
+d18877af3ba56a57cdbd1bb2d0cba5054659c4d4 init
+
+HEAD^=8a3967ae14f794a81cfd36c00267dcaac9ebed4e
+CODE 8a3967ae14f794a81cfd36c00267dcaac9ebed4e es ancestro de HEAD
+commit
+feature.py
+== contraste con closure.py de HEAD: CODE=b83dcd002d46ddb2f93892cea8e719e6299cd9d2
+HEAD^=6688829a5c2477c67e241abbbea0dad1af9f73d3
+CODE NO es ancestro (amendado)
+VEREDICTO: APROBADO

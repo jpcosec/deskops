@@ -1,0 +1,26 @@
+name: materialization-tests-de-closeout-commit
+path: desk/materializations/materialization-tests-de-closeout-commit.md
+source_hash: f99a5ea657e7c61fb99766223c21e568849d468b5ed49116a5f3cdc398e393cd
+content_hash: fe303287a6bc34fcd445da23a4e467e779f16581c154507b07601b94981a3374
+field_hashes:
+  id: adadd767ddbc9aa9136f49324e895190f4a673b80514b3570c163cf943e008b1
+  title: d6675ce5f3a82d88c3a2136cc443f2a47b4e60d92a1938be13153d98131ddc7d
+  source_atoms: ee70eaa22f9fd7106e1ca7b9d42ea735b72697539c9660225f2645b6be82e9ff
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: b57e0fede0dd878138f67a987073ba8ed8b42a611801492402afec1c28309803
+  intent: e32bc57d90fd3c3b674b697af8a94b03704816458e5375efaba1f0e7f0a8db44
+  validation: 99ecd3eaecffd0f1944becd72c098c7856500f24494a26e6f426ca635427f695
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: a69b0d96d864c2bf0a76c68f7e41edd2d1baf3d82d109ffb3dea9fdfed3346d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T02:03:48Z'
+  authority: generated
+  via: create_document

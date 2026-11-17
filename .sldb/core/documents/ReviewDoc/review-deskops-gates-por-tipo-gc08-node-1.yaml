@@ -1,0 +1,36 @@
+name: review-deskops-gates-por-tipo-gc08-node-1
+path: desk/reviews/deskops-gates-por-tipo-gc08/node-1.md
+source_hash: d11d0262f6fff3110000932c88e3342d606db3cf7c5fd997346ad6e74de8f206
+content_hash: 0a18510d63308e23c44b4f73e345dbdad12c6a2ec3144af374bdfd56bdc25658
+field_hashes:
+  id: ac983a8057b14cb334b6c9153402040da7e709bac37aa8360516eb2d298472d1
+  title: 339fc5fded3191f2d8deb3cbf474afe054c7f17a5dbdf0cc8343aadb1a738c82
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: 04f8c08c210cb8389ca5c28e015f411001f545faec849e8d5c14d03d2dc40d2a
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 3ec6955a536f150fd8badfa21731a502c2659fe807e01b56b9c3cbe4b573e834
+  input_sha256: 3722420f16fb66c6a40b56c2e6ae0dfcd316243b1c8812a9d9664a2ac27646dc
+  output_sha256: ab712ff7c0a59fd73dfd3d2b577f09953b4f3db0d966510c25ea1aa61b27c48d
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  created_at: 2984ef13155080ed182b9a71628b8d669aab89d14837e6fee12e23ef4847ba6a
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: f46902954e858cbf45ca99b7c05491356c8e8d43bbfbc8120ed8396c7bef07eb
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T01:41:07Z'
+  authority: generated
+  via: create_document
