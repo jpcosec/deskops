@@ -1,0 +1,10 @@
+Task: task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason
+Title: deskops message ack acepta --reason y la nota guarda el porque en un campo ack_reason
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

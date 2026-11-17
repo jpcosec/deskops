@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T14:06:08Z'
+  at: '2026-11-17T14:06:59Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -51,7 +51,6 @@ tasks:
 - desk/tasks/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista.md
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
-- desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
 # List of pill-xxx paths
@@ -136,6 +135,5 @@ _Generated from the task references above._
 - deskops view task entrega los recibos de la tarea en un campo receipts del contrato de la vista [draft] - deskops view task <id> --format json trae task.receipts: una lista con un objeto por ReviewDoc cuyo subject es la tarea, con id, kind, verdict, anchor_state y created_at, ordenada por created_at; docs/deskops-ui.md documenta el campo.
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [draft] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
-- deskops message ack acepta --reason y la nota guarda el porque en un campo ack_reason [draft] - deskops message ack <selector> --reason <texto> marca la nota como acknowledged y guarda el texto en un campo opcional ack_reason del modelo de la nota; sin --reason el ack funciona como hoy y ack_reason queda vacio; deskops message read muestra ack_reason cuando existe.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.

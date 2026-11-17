@@ -1,0 +1,171 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_message_cli.py
+............xxxx                                                         [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 4 xfailed, 1 warning in 179.77s (0:02:59)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_command_registry.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 2.64s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_output_goldens.py
+.....FF                                                                  [100%]
+=================================== FAILURES ===================================
+______________________________ test_help_goldens _______________________________
+
+request = <FixtureRequest for <Function test_help_goldens>>
+
+    def test_help_goldens(request: pytest.FixtureRequest) -> None:
+        outputs = _collect_help()
+        update = request.config.getoption("--update-golden")
+        if update:
+            help_dir = GOLDEN_DIR / "help"
+            for stale in help_dir.glob("*.txt"):
+                if f"help/{stale.name}" not in outputs:
+                    stale.unlink()
+        for relative_path, actual in sorted(outputs.items()):
+>           _check_golden(relative_path, actual, request)
+
+tests/test_output_goldens.py:325: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+relative_path = 'help/deskops_add_inbox-note.txt'
+actual = 'usage: deskops add inbox-note [-h] [--root ROOT] [--from-yaml FROM_YAML] [--kind {unclear,suggestion}] [--sender-proj...box-note --root . --kind "unclear" --created-at "2026-01-01T00:00:00" --status "open" --title "Example" --body "..."\n'
+request = <FixtureRequest for <Function test_help_goldens>>
+
+    def _check_golden(relative_path: str, actual: str, request: pytest.FixtureRequest) -> None:
+        path = GOLDEN_DIR / relative_path
+        update = request.config.getoption("--update-golden")
+        if not actual.endswith("\n"):
+            actual += "\n"
+        if update:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(actual, encoding="utf-8")
+            return
+        assert path.exists(), f"missing golden {path}; run pytest --update-golden"
+        expected = path.read_text(encoding="utf-8")
+        if relative_path.startswith("help/"):
+            # argparse wraps the usage block differently across Python versions
+            # (3.12 vs 3.13); its words, not its line breaks, are the contract.
+            actual, expected = _unwrap_usage(actual), _unwrap_usage(expected)
+>       assert actual == expected, f"golden mismatch: {relative_path}"
+E       AssertionError: golden mismatch: help/deskops_add_inbox-note.txt
+E       assert 'usage: desko...-body "..."\n' == 'usage: desko...-body "..."\n'
+E         
+E         Skipping 287 identical leading characters in diff, use -v to show
+E         - ED_AT] [--title TITLE] [--body BODY]
+E         + ED_AT] [--ack-reason ACK_REASON] [--title TITLE] [--body BODY]
+E           
+E           Create an inbox-note artifact.
+E           ...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_output_goldens.py:118: AssertionError
+_________________________ test_command_output_goldens __________________________
+
+output_golden_env = {'base': PosixPath('/dev/shm/pytest-of-robocop/pytest-1600/command-output-goldens0'), 'home': PosixPath('/dev/shm/pyte...oldens0/repo'), 'sender': PosixPath('/dev/shm/pytest-of-robocop/pytest-1600/command-output-goldens0/sender-repo'), ...}
+request = <FixtureRequest for <Function test_command_output_goldens>>
+
+    def test_command_output_goldens(
+        output_golden_env: dict[str, Path], request: pytest.FixtureRequest
+    ) -> None:
+        outputs = _collect_command_output_goldens(output_golden_env)
+        update = request.config.getoption("--update-golden")
+        if update:
+            output_dir = GOLDEN_DIR / "output"
+            output_dir.mkdir(parents=True, exist_ok=True)
+            for stale in output_dir.glob("*"):
+                # view_*.json belong to tests/test_view_goldens.py (CC34 a3).
+                if f"output/{stale.name}" not in outputs and not stale.name.startswith("view_"):
+                    stale.unlink()
+        for name, actual in sorted(outputs.items()):
+>           _check_golden(f"output/{name}", actual, request)
+
+tests/test_output_goldens.py:664: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+relative_path = 'output/list_inbox-notes.json'
+actual = '{\n  "inbox-notes": [\n    {\n      "kind": "unclear",\n      "created_at": "<ts>",\n      "status": "open",\n      "...itle": "Golden inbox note",\n      "body": "Golden body",\n      "id": "inbox-note-golden-inbox-note"\n    }\n  ]\n}\n'
+request = <FixtureRequest for <Function test_command_output_goldens>>
+
+    def _check_golden(relative_path: str, actual: str, request: pytest.FixtureRequest) -> None:
+        path = GOLDEN_DIR / relative_path
+        update = request.config.getoption("--update-golden")
+        if not actual.endswith("\n"):
+            actual += "\n"
+        if update:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(actual, encoding="utf-8")
+            return
+        assert path.exists(), f"missing golden {path}; run pytest --update-golden"
+        expected = path.read_text(encoding="utf-8")
+        if relative_path.startswith("help/"):
+            # argparse wraps the usage block differently across Python versions
+            # (3.12 vs 3.13); its words, not its line breaks, are the contract.
+            actual, expected = _unwrap_usage(actual), _unwrap_usage(expected)
+>       assert actual == expected, f"golden mismatch: {relative_path}"
+E       AssertionError: golden mismatch: output/list_inbox-notes.json
+E       assert '{\n  "inbox-...  }\n  ]\n}\n' == '{\n  "inbox-...  }\n  ]\n}\n'
+E         
+E         Skipping 101 identical leading characters in diff, use -v to show
+E           ",
+E         +       "ack_reason": "",
+E                 "title": "Golden inbox note",
+E                 "body": "Golden body",
+E                 "id": "inbox-note-golden-inbox-note"...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_output_goldens.py:118: AssertionError
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_output_goldens.py::test_help_goldens - AssertionError: gold...
+FAILED tests/test_output_goldens.py::test_command_output_goldens - AssertionE...
+2 failed, 5 passed, 1 warning in 606.52s (0:10:06)
+rc=1
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_model_contract_snapshot.py
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 0.88s
+rc=0
+
+# Re-run after regenerating only the goldens affected by ack_reason (first run above failed on them)
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_output_goldens.py
+.......                                                                  [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 484.53s (0:08:04)
+rc=0

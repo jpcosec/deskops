@@ -1,0 +1,44 @@
+== tests/test_message_cli.py
+FAILED tests/test_message_cli.py::test_message_send_keeps_braces_in_the_body_literal[texto {{a fin]
+FAILED tests/test_message_cli.py::test_message_send_keeps_braces_in_the_body_literal[this is not valid json {{{]
+FAILED tests/test_message_cli.py::test_message_send_keeps_braces_in_the_body_literal[valor {{ 7*7 }} y {# oculto #} fin]
+4 failed, 12 passed, 1 warning in 216.27s (0:03:36)
+rc=1
+== tests/test_command_registry.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 2.58s
+rc=0
+== tests/test_model_contract_snapshot.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 1.91s
+rc=0
+== tests/test_message_delivery.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 130.55s (0:02:10)
+rc=0
+== tests/test_message_ecosystem_registry.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 1 warning in 122.22s (0:02:02)
+rc=0
+== tests/test_output_goldens.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 751.59s (0:12:31)
+rc=0
+
+== nota test_message_cli: los 4 FAILED son [XPASS(strict)] de test_message_send_keeps_braces_in_the_body_literal (xfail strict por la nota de sldb sobre Jinja). sldb d49f6ddc (render literal) ya lo arregló, y está instalado en /mnt/ssd/herramientas/sldb. No tiene que ver con ack_reason: los 12 tests restantes, incluidos los 3 nuevos, pasan.
+== reproducción en HEAD (git archive HEAD en /dev/shm + tests/test_message_cli.py del checkout, -k "ack_reason or old_note"):
+FAILED test_message_ack_reason_is_stored_and_shown_by_read (usage: --reason no reconocido)
+FAILED test_message_ack_without_reason_leaves_ack_reason_empty (KeyError 'ack_reason')
+FAILED test_message_old_note_without_ack_reason_still_reads_and_acks (KeyError 'ack_reason')
+3 failed
+== git status tests/fixtures después de test_output_goldens: los mismos 10 archivos de la entrega; no se reescribió ni se borró ningún golden ajeno.
