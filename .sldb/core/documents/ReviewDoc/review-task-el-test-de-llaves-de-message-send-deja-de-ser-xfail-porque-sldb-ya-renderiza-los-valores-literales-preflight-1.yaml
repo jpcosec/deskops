@@ -1,0 +1,37 @@
+name: review-task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales-preflight-1
+path: desk/reviews/task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales/preflight-1.md
+source_hash: 8376272b6859809783dfc8637ee79633b689a7fd9552742b5e6575eac3cc41bd
+content_hash: 64c18516999f61e71f223f5719d9bdc923d551103dd6f9ad027448a14e978338
+field_hashes:
+  id: 71d8d28f467b0c63beb163f491cfe944cc5253ca620e1c34c1721bdc8faf7b45
+  title: b7c8dbfab98feecd2c56fc6968e014d6c3b3193895da0e2c7931bce9487e034d
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: e61e32ffe901571867e7fac85e6bfd967092f8c11335f9b7d589188bb5e42f1b
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 26cd0645a8fd5c1071296a76c4d5018b2a03701546b1ac07ab8f3a49e24bf3a0
+  input_sha256: e85b907b75db11293b5af921b0e3cabbfa841a4d2fb38947e02e038db4daa861
+  contract_sha256: 0bdc47347e69bb1e5bab179a771ea362588e8153ac0a76b8f323b4aca97ca9ad
+  output_sha256: 7592ed4b7b78ecdeb98b9a8cc9074f8af2801e0e96dc3a99ce199c7d6ffc2911
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: b002b9ddb74f200ffa01f8228201b9417ec52a97564b23fecda516dfe7ca64ef
+  created_at: 9cc11e866ea19ea83be7c5535eab7f8ffd9913e580e33d6c62043edeeeebb89e
+  disposed_at: fcebeaa10e6daf9d8af1dd2d832773f7c048dd3951743f40fd64507781d6fb8f
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 2eb2ffda6f1aa5f88c8947fd46c8d03eb0796b5cc1049ac1d9c00b12538b02e1
+  disposition: 0fc5471f561389f417c239f0ba600e3f9d8a557173abecf8bd32d8cb66cbdefb
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T13:36:54Z'
+  authority: generated
+  via: save_document_payload

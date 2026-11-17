@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:29:59Z'
+  at: '2026-11-17T13:31:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason
 status: draft
 summary: ''
@@ -13,6 +13,8 @@ current_node: ritual-execution
 history: []
 references:
 - desk/inbox/20261116-222401-suggestion-deskops-message-ack-no-admite-una-raz-n-y-inboxnote-no-tiene-un-campo-para-guardarla.md
+- tests/test_message_cli.py
+- 97649c61
 depends_on: []
 pills: []
 files:
@@ -20,6 +22,16 @@ files:
 - deskops/cli/registry.py
 - deskops/cli/commands/message.py
 - tests/test_message_cli.py
+- tests/fixtures/golden/help/deskops_add_inbox-note.txt
+- tests/fixtures/golden/help/deskops_message_ack.txt
+- tests/fixtures/golden/output/list_inbox-notes.json
+- tests/fixtures/golden/output/message_ack.json
+- tests/fixtures/golden/output/message_ack.yaml
+- tests/fixtures/golden/output/message_read.json
+- tests/fixtures/golden/output/message_read.yaml
+- tests/fixtures/golden/output/show_inbox-note.json
+- tests/fixtures/golden/output/show_inbox-note.text
+- tests/fixtures/model_contract_hashes.json
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false

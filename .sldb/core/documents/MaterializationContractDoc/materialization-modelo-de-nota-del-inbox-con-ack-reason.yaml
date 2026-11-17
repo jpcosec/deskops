@@ -1,0 +1,26 @@
+name: materialization-modelo-de-nota-del-inbox-con-ack-reason
+path: desk/materializations/materialization-modelo-de-nota-del-inbox-con-ack-reason.md
+source_hash: ed0881cc8cba22ebbf3f88f456b1d3d8e3e103aa9d80cfc70e826b9e579939e5
+content_hash: f2d8418ad682e1fe35e2f78914d03074ae370480f971c57fd2af2d9579e49226
+field_hashes:
+  id: b0eacaa39ab33a781fd919388357268114bb255c751e7a27fa25728159f92907
+  title: 833e3af6b5aa836c34a510c54570edc0df97fb022efdfeb0614cec6a7c7a8169
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 5a02c39e12c9c6439803feb7b55f18edf10c5517eb2b58257c22edba377e2116
+  intent: 1a546717dce8dbc844a9c809bbd4cffdd43fa904d328719880670cb5e76589a9
+  validation: 208a91a0c9455c5f0b85087dd5ef341063b4b95990e00c9f25daa7431a31598a
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T13:31:50Z'
+  authority: generated
+  via: create_document

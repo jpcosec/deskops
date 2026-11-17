@@ -1,0 +1,26 @@
+name: materialization-golden-help-deskops-add-inbox-note-txt
+path: desk/materializations/materialization-golden-help-deskops-add-inbox-note-txt.md
+source_hash: 325a3368b3147bd971592e07f7d7bfb0005090fb7bf92e8f752cea587e5005d5
+content_hash: 76b6f946b0399702f556f35bb46ba3159f5977391152fca8cd3874d8fb7726ea
+field_hashes:
+  id: 0688600c07342911dff6c95de23dae0ccde10b179bc4c5dab26f4390dd037223
+  title: c09b42dac12f8ede8c6a425e23452ca8296894c71e508282ad49bf1f1b838b98
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 30990311b7b734066808f8bf468664bacdd5aa1fdded484ac65778690448f69d
+  intent: 50dcb2ff26533e7bb19790f02dc2efae5104e195ee1a2277c1b38a829b7a7368
+  validation: 0fd05ff059c6aec6f4ce6dbf14143424d49769110e9ce657ffade3f9808d1372
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T13:31:58Z'
+  authority: generated
+  via: create_document

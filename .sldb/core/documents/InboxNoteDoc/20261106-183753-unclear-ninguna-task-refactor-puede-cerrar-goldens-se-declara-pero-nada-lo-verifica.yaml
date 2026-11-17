@@ -1,7 +1,7 @@
 name: 20261106-183753-unclear-ninguna-task-refactor-puede-cerrar-goldens-se-declara-pero-nada-lo-verifica
 path: desk/inbox/20261106-183753-unclear-ninguna-task-refactor-puede-cerrar-goldens-se-declara-pero-nada-lo-verifica.md
 source_hash: 885987cd0b791edff96a087f45e6c241677ff62c83b6d717ce033de2eb989f47
-content_hash: c5b6bfe1d0c43652a4fb52d462d68fc9341cbfae20a481526f2d9bbb80c1cec3
+content_hash: 0ae79d6b5ea889b7c8a114bcd5b75fe7e3a47413ca9985dce3ed523c4c0e8a3b
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -10,6 +10,7 @@ field_hashes:
   status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
   acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   acknowledged_at: 1492ea27a467783760d376b73c529c340f53dff2dca002ef9254c0b20954978e
+  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   title: 3ab219a261082cfa4138b5db29825e0a93c4a48b87a1e709f9226e56d17eef7a
   body: 0502663b0a70aaf26c190099ddbdb7ec3176cb2b3203abf97b5d5368a3f0c6cb
 semantic_tags:

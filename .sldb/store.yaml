@@ -340,6 +340,16 @@ include:
   - desk/materializations/materialization-tests-de-aristas-declaradas-del-grafo.md
   - desk/materializations/materialization-tests-de-robustez-del-registro-de-repos.md
   - desk/materializations/materialization-tests-de-identidad-de-repos.md
+  - desk/materializations/materialization-modelo-de-nota-del-inbox-con-ack-reason.md
+  - desk/materializations/materialization-golden-help-deskops-add-inbox-note-txt.md
+  - desk/materializations/materialization-golden-help-deskops-message-ack-txt.md
+  - desk/materializations/materialization-golden-output-list-inbox-notes-json.md
+  - desk/materializations/materialization-golden-output-message-ack-json.md
+  - desk/materializations/materialization-golden-output-message-ack-yaml.md
+  - desk/materializations/materialization-golden-output-message-read-json.md
+  - desk/materializations/materialization-golden-output-message-read-yaml.md
+  - desk/materializations/materialization-golden-output-show-inbox-note-json.md
+  - desk/materializations/materialization-golden-output-show-inbox-note-text.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -448,6 +458,10 @@ include:
     name: run-deskops-e-17c5ffaf7b3c
   - path: runs/subagents/test-deskops-t-97feb020134d/run.md
     name: run-deskops-t-97feb020134d
+  - path: runs/subagents/exec-deskops-e-e6f5a3ab8886/run.md
+    name: run-deskops-e-e6f5a3ab8886
+  - path: runs/subagents/test-deskops-t-bfb4a8401ae2/run.md
+    name: run-deskops-t-bfb4a8401ae2
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1488,6 +1502,24 @@ include:
     name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-atom-1
   - path: desk/reviews/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu/evidence-materialization-1.md
     name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-materialization-1
+  - path: desk/reviews/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/evidence-tests-1.md
+    name: review-task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason-evidence-tests-1
+  - path: desk/reviews/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/evidence-commit-1.md
+    name: review-task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason-evidence-commit-1
+  - path: desk/reviews/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/evidence-atom-1.md
+    name: review-task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason-evidence-atom-1
+  - path: desk/reviews/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/evidence-materialization-1.md
+    name: review-task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason-evidence-materialization-1
+  - path: desk/reviews/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/evidence-materialization-2.md
+    name: review-task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason-evidence-materialization-2
+  - path: desk/reviews/task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales/preflight-1.md
+    name: review-task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales-preflight-1
+  - path: desk/reviews/task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales/bundle-1.md
+    name: review-task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales-bundle-1
+  - path: desk/reviews/task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj/preflight-1.md
+    name: review-task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj-preflight-1
+  - path: desk/reviews/task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj/bundle-1.md
+    name: review-task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1539,6 +1571,8 @@ include:
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
+  - desk/tasks/task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales.md
+  - desk/tasks/task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

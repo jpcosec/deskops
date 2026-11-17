@@ -1,7 +1,7 @@
 name: 20261019-130108-suggestion-sldb-puedes-migrar-deskops-clon-limpio-de-fadd3b59-en-pass
 path: desk/inbox/20261019-130108-suggestion-sldb-puedes-migrar-deskops-clon-limpio-de-fadd3b59-en-pass.md
 source_hash: 33c461bd6ade777c1fb3c67df2bee0b21cfd61d74f414fafc50f9ab196b9efce
-content_hash: 981fb5ce173b08882f53c4836a850a04d533e850959a2d6a454a3500292a9c6d
+content_hash: de531758ec70f93aa188f12994b6fb7ba0d73ca2e4e936936a83a8f5fc50e4db
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: adf8f4fb55456ba91d0b029904c49d4d1b85540b989a86435dfb80c0a89f7efb
@@ -10,6 +10,7 @@ field_hashes:
   status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
   acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   acknowledged_at: 16a47546d13b5f13cc81ac02a460ae340d7bc39524d65d8690c26f424903f5d5
+  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   title: c2758f19d84ada24b2b188dcb640c3b8434612c86413f3ee50f25255a8941f68
   body: 1aa7d20a21f36fc6ca63f3baf9d14f0fecf7f321064e6a5fe9427a2bec3664c4
 semantic_tags:
@@ -17,3 +18,4 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
+provenance: null

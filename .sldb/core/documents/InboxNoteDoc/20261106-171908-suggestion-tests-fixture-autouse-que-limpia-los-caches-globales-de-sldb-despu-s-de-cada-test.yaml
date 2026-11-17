@@ -1,7 +1,7 @@
 name: 20261106-171908-suggestion-tests-fixture-autouse-que-limpia-los-caches-globales-de-sldb-despu-s-de-cada-test
 path: desk/inbox/20261106-171908-suggestion-tests-fixture-autouse-que-limpia-los-caches-globales-de-sldb-despu-s-de-cada-test.md
 source_hash: cd297fdf30cca76ba3f20c7af5ea965b2b3bb9b2f273406301a56ec02abcdca9
-content_hash: 193a1ed75f0a508f3eb15d0ba1b2ea49f776c51b67c1ea38910ae2b492638845
+content_hash: 0f35d76b157333fe1d409a1f8df73ac8145e5b2bb05be636d2b33080dbe9eb47
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -10,6 +10,7 @@ field_hashes:
   status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
   acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   acknowledged_at: 6bc7871677ba10a038b4e797e3454b2e0c7fa23b3252701d036028b7b2a97350
+  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   title: 8be91e9844469217f68eadb62027d2e8e802832f38f24b005bde9811674fceea
   body: be2f5fd370e7b872493ddfbc13cfba9b2e227eb98c1309ad4b4a2c7190834bce
 semantic_tags:

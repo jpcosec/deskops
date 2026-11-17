@@ -1,0 +1,37 @@
+name: review-task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj-preflight-1
+path: desk/reviews/task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj/preflight-1.md
+source_hash: 4bbf964c5026809c005dcdb90df21f4261e55abf10c8b71493c84ef2f0ff91d4
+content_hash: 4b63bfabf716f33cfa0a0c94cfae3bfd5208b45852e3bc8cb074485482820a1d
+field_hashes:
+  id: 1f006fe9e34f1d87aebcf63709b6c19276dd9b24e8c09cb96f257eb00c8e4e9b
+  title: c178a07b2e520658fb3e16aa719f90ef019a6ec3417ff7ad9040a9cef68137a4
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 46b692e764976b76a3a03b3aa66e5f26bc9eda46b222cce72943303450709a2f
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: d19c26261b1c08c3a43df9f6b7f021c582b6a72de187f9dc345fb1ee268ec7c9
+  input_sha256: 268bec61d8e6aec826814020b109e238c011e38fbc51b30dbf43c922b9bfc6fd
+  contract_sha256: 1dfc8e5b30c5adfa49e652f6c6c06f464980b64958f918b303aa93503f318877
+  output_sha256: 2ef2e1e569c5f4ad69d6bc3193f75df9dd31c98d399bc789faba21beb2a58d5e
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: a12693eb4a8760b5619dc2da3d0600e8e692826c12e64adba3a305b72d732756
+  created_at: 11c3f1bc63dfdd070b5b661dae6f7e9169c9161af8e8a17a2eff3f229eaa876a
+  disposed_at: 6354d7967c075e4a1bb84d2e6b35fae53c742dee180ddcb3b4780e729e2206cc
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f7b5e0d34f31118de9fbef0f083cc69cc6718eeb3294aecfd93277614a917261
+  disposition: 4c4a2ceac981c21b216c8e63a640fd4f7f1af1a1befb5a74db15658f727f1c70
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T13:37:15Z'
+  authority: generated
+  via: save_document_payload

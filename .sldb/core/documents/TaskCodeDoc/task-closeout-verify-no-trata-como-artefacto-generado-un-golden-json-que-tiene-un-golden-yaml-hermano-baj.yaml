@@ -1,0 +1,37 @@
+name: task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj
+path: desk/tasks/task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj.md
+source_hash: 707b8f22a219a4958ede3146f8965e2131cd04a4058543f7e06dfa7e96dab627
+content_hash: d0daf5df99eacb9f321c2148a0b3e259ebc8496ff44119f7b51cb942afe1b12f
+field_hashes:
+  title: 52d6a278e270e5dc70b8531524ff48d8c60958c958811de8288a6452d2dd57b3
+  id: c9a6fe57990e1a078a94eb63dc2a09136570844cf9b4441bb43479b0b4c5f225
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: bbb34de4005a22da4d835136ae6383920fc0d407181d3291aaa88f2cc0975c19
+  goal: 5a76fe2274e6795ae5107da27e35bf8c0a07ece4525e3b77e2facb9cf496a946
+  scope: 15d15101006463d825c2ca858ba9bbffc98c8f00b6310d93695b6a64f11491ee
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4db306053a8dc7b752a4803155a33b3ca59a261acdc0f8607a07f99ed99211dd
+  implementation_path: 4724b9b2e58c4e5757efcf882bbf6455647288a7a5ac31aa054978e707a4012e
+  validation: 2b4dfeb57c911a3322e16c6754d57d2954dff973b8ae62592d1d6726703def8f
+  done_when: 1cf90bbf11d38ac8797c419aceeed01063a03a26793a3128119445519bf68d91
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+semantic_tags:
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-17T13:34:18Z'
+  authority: generated
+  via: create_document

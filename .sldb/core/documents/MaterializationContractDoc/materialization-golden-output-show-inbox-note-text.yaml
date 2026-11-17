@@ -1,0 +1,26 @@
+name: materialization-golden-output-show-inbox-note-text
+path: desk/materializations/materialization-golden-output-show-inbox-note-text.md
+source_hash: aeecd74d748e2f8693d02e65ea62c7d7eaabb0f086734c7a334302b7252e1d61
+content_hash: 2a5d59f5c2e9520413190342d7a84a148bfb9fa6fd0abdc19c887b6c0533c627
+field_hashes:
+  id: 57e45710f16540fc3d35eb5a614cd41efa3f41f532880dba37b3f92c430c07dd
+  title: 1e90cea270225964a709e69babe0755059e483db2fd9903432d232d2b24b58c3
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 7a8adc85499a0b5b20ba20312dbd7c277b8217819535cb462d78dfb2cc187638
+  intent: 50dcb2ff26533e7bb19790f02dc2efae5104e195ee1a2277c1b38a829b7a7368
+  validation: 0fd05ff059c6aec6f4ce6dbf14143424d49769110e9ce657ffade3f9808d1372
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T13:32:58Z'
+  authority: generated
+  via: create_document
