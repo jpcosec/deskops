@@ -958,10 +958,11 @@ def registered_repositories(root: Path) -> list[dict[str, Any]]:
 
 
 def repository_root(root: Path, repository: dict[str, Any]) -> Path:
-    repo_path = Path(str(repository["path"]))
-    if repo_path.is_absolute():
-        return repo_path.resolve()
-    return (root / repo_path).resolve()
+    """The registered repository's root: ``~`` expanded, a relative path against ``root``
+    (the repo that holds ``desk/registry``), the same resolution as every registry reader."""
+    from deskops.identity import resolve_registered_root
+
+    return resolve_registered_root(root, str(repository["path"])) or root.resolve()
 
 
 def _resolve_repo_board_task_path(repo_root: Path, task_ref: str) -> Path | None:

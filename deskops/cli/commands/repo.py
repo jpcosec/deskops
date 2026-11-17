@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 import re
 from typing import Any
@@ -39,21 +40,27 @@ class RepoCLI:
         description = args.description or f"Repository for {name}."
         tags = [t.strip() for p in (args.tags or "").split(",") if (t := p.strip())]
 
-        payload = {
-            "name": name,
-            "id": repo_id,
-            "path": path,
-            "status": "active",
-            "description": description,
-            "tags": tags,
-        }
-
         # Preflight: resolve store context and model before any mutation
         try:
             store_path, root = self._store_context(args)
         except SLDBStoreError as e:
             print(f"Error: {e}")
             return 1
+
+        desk_root = self._desk_root(args)
+        registry_dir = desk_root / "registry"
+        resolved_repo_root = self._resolve_registered_root(root, path)
+        payload = {
+            "name": name,
+            "id": repo_id,
+            # Stored relative to the root of the repo that holds the registry directory
+            # (desk/registry -> the desk's repo, ~/setup/desk/registry -> ~/setup), so the
+            # entry resolves on any machine that checks the ecosystem out side by side.
+            "path": self._registry_relative_path(registry_dir, resolved_repo_root),
+            "status": "active",
+            "description": description,
+            "tags": tags,
+        }
 
         try:
             model_type, entry, idx = registered_model(
@@ -67,8 +74,6 @@ class RepoCLI:
             print(f"Error: cannot read store at {store_path}: {e}")
             return 1
 
-        desk_root = self._desk_root(args)
-        registry_dir = desk_root / "registry"
         filename = f"repo-{repo_id}.md"
         output_path = registry_dir / filename
 
@@ -82,7 +87,6 @@ class RepoCLI:
             print(f"Error: {e}")
             return 1
 
-        resolved_repo_root = self._resolve_registered_root(root, path)
         for existing_entry in existing_entries:
             if existing_entry.id == repo_id:
                 print(
@@ -183,3 +187,8 @@ class RepoCLI:
 
     def _resolve_registered_root(self, ecosystem_root: Path, repo_path: str) -> Path:
         return resolve_registered_root(ecosystem_root, repo_path)
+
+    def _registry_relative_path(self, registry_dir: Path, repo_root: Path) -> str:
+        """``repo_root`` relative to the repo containing ``registry_dir`` (its grandparent)."""
+        registry_repo_root = registry_dir.resolve().parent.parent
+        return Path(os.path.relpath(repo_root, registry_repo_root)).as_posix()

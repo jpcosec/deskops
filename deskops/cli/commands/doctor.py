@@ -7,6 +7,7 @@ import subprocess
 import sys
 
 from deskops import absolute_paths
+from deskops import doc_access
 from deskops.bootstrap import MODEL_REFS, SLDBBootstrap
 from deskops.doc_readability import is_unreadable_by_model
 from deskops.doctor_findings import (
@@ -20,6 +21,7 @@ from deskops.doctor_findings import (
     read_store_check,
     seed_drift,
 )
+from deskops.identity import resolve_registered_root
 from deskops.foreign_files import open_foreign_tasks, task_warning
 from deskops.workspace import inspect_desk
 from deskops.workspace import modeled_desk_markdown_docs
@@ -62,6 +64,7 @@ class DoctorCLI:
             self._check_managed_seeds(root, findings)
             self._check_foreign_files(root, findings)
             self._check_absolute_paths(root, repair, findings)
+            self._check_registry_paths(root, findings)
             self._check_models(root, repair, findings)
         return self._report(findings, repair)
 
@@ -141,6 +144,26 @@ class DoctorCLI:
             return
         findings.alerts += report.alerts
         findings.fixed += report.fixed
+
+    def _check_registry_paths(self, root: Path, findings: Findings) -> None:
+        """An alert per entry of the desk's registry (``desk/registry``) whose ``path`` does not
+        resolve on this machine: its id, the stored path and the absolute path tried. The exit
+        code never changes; the entry is fixed by its owner (``deskops repo remove`` + ``register``)."""
+        try:
+            repositories = doc_access.registered_repositories(root)
+        except Exception as exc:
+            findings.alerts.append(f"Could not read the desk registry: {exc}")
+            return
+        for repository in repositories:
+            stored = str(repository.get("path") or "")
+            tried = resolve_registered_root(root, stored)
+            if tried is not None and tried.is_dir():
+                continue
+            repo_id = repository.get("id") or "(no id)"
+            findings.alerts.append(
+                f"Registry entry '{repo_id}' does not resolve on this machine: "
+                f"path '{stored}' -> {tried if tried is not None else '(empty path)'}"
+            )
 
     def _store_check(self, root: Path, findings: Findings) -> dict | None:
         result = subprocess.run(

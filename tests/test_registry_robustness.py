@@ -215,3 +215,115 @@ def test_repo_register_accepts_optional_path_flag_and_does_not_crash_on_registry
     entries = load_repository_registry(desk_root, root)
     deskops_entry = next(entry for entry in entries if entry.id == "deskops")
     assert deskops_entry.repo_root == repo_root
+    # The stored path is relative to the repo holding desk/registry, not this machine's absolute path.
+    assert deskops_entry.relative_path == "../external/deskops"
+
+
+def _register_cli(root: Path, store_path: Path, name: str, path: str, capsys: pytest.CaptureFixture[str]) -> Path:
+    assert main(["repo", "register", name, "--path", path, "--store", str(store_path)]) == 0
+    capsys.readouterr()
+    return root / "desk" / "registry" / f"repo-{name}.md"
+
+
+def test_repo_register_stores_the_path_relative_to_the_registry_repo_root(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """An absolute path, the repo itself and a ~ path are all written relative to the repo
+    that holds desk/registry (here the ecosystem root), and resolve back to the same root."""
+    root = tmp_path / "ecosystem"
+    store_path = _init_ecosystem(root)
+    monkeypatch.setattr("deskops.cli.main.SLDBBootstrap.ensure_sldb_available", lambda self: 0)
+    monkeypatch.setenv("HOME", str(tmp_path / "home"))
+    sibling = (tmp_path / "sibling").resolve()
+    nested = (root / "tools" / "nested").resolve()
+    homed = (tmp_path / "home" / "proyectos" / "homed").resolve()
+
+    expected = {
+        "sibling": (str(sibling), "../sibling", sibling),
+        "self": (str(root), ".", root.resolve()),
+        "nested": (str(nested), "tools/nested", nested),
+        "homed": ("~/proyectos/homed", "../home/proyectos/homed", homed),
+    }
+    for name, (given, _stored, _resolved) in expected.items():
+        _register_cli(root, store_path, name, given, capsys)
+
+    entries = {entry.id: entry for entry in load_repository_registry(root / "desk", root)}
+    for name, (_given, stored, resolved) in expected.items():
+        assert entries[name].relative_path == stored
+        assert entries[name].repo_root == resolved
+        doc = (root / "desk" / "registry" / f"repo-{name}.md").read_text(encoding="utf-8")
+        assert str(tmp_path) not in doc
+
+
+def test_old_registry_entries_with_absolute_or_home_paths_still_resolve(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Entries written before relative paths (absolute, or with ~) resolve for every reader:
+    the identity registry and doc_access.repository_root share resolve_registered_root."""
+    from deskops import doc_access
+
+    monkeypatch.setenv("HOME", str(tmp_path / "home"))
+    root = tmp_path / "ecosystem"
+    registry_dir = root / "desk" / "registry"
+    registry_dir.mkdir(parents=True)
+    absolute = (tmp_path / "old-absolute").resolve()
+    absolute.mkdir()
+    homed = (tmp_path / "home" / "proyectos" / "homed").resolve()
+    homed.mkdir(parents=True)
+    _write_repo_doc(registry_dir, repo_id="old-absolute", repo_path=str(absolute))
+    _write_repo_doc(registry_dir, repo_id="old-home", repo_path="~/proyectos/homed")
+
+    entries = {entry.id: entry for entry in load_repository_registry(root / "desk", root)}
+    assert entries["old-absolute"].repo_root == absolute
+    assert entries["old-home"].repo_root == homed
+    assert doc_access.repository_root(root, {"path": str(absolute)}) == absolute
+    assert doc_access.repository_root(root, {"path": "~/proyectos/homed"}) == homed
+    assert doc_access.repository_root(root, {"path": "../old-absolute"}) == absolute
+
+
+def test_doctor_names_registry_entries_that_do_not_resolve_on_this_machine(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """One alert per desk/registry entry whose path does not resolve: id, stored path and
+    absolute path tried. Alerts never change doctor's exit code; resolving entries are silent."""
+    root = tmp_path / "project"
+    root.mkdir()
+    assert main(["init", str(root)]) == 0
+    capsys.readouterr()
+    monkeypatch.setattr("deskops.cli.main.SLDBBootstrap.ensure_sldb_available", lambda self: 0)
+    store_path = root / ".sldb"
+    baseline_code = main(["doctor", "--root", str(root)])
+    capsys.readouterr()
+
+    present = (tmp_path / "present").resolve()
+    present.mkdir()
+    _register_cli(root, store_path, "present", str(present), capsys)
+    gone = _register_cli(root, store_path, "gone", str(tmp_path / "gone"), capsys)
+    other_machine = _register_cli(root, store_path, "other-machine", str(tmp_path / "x"), capsys)
+    lines = other_machine.read_text(encoding="utf-8").splitlines()
+    other_machine.write_text(
+        "\n".join("path: /home/jp/proyectos/nowhere" if ln.startswith("path:") else ln for ln in lines) + "\n",
+        encoding="utf-8",
+    )
+    assert main(["desk", "update", "--apply", "--root", str(root)]) == 0
+    capsys.readouterr()
+
+    code = main(["doctor", "--root", str(root)])
+    out = capsys.readouterr().out
+    assert code == baseline_code
+    alerts = [ln for ln in out.splitlines() if "does not resolve on this machine" in ln]
+    assert len(alerts) == 2, out
+    assert any(
+        "'gone'" in ln and "path '../gone'" in ln and str((tmp_path / "gone").resolve()) in ln for ln in alerts
+    ), alerts
+    assert any(
+        "'other-machine'" in ln and "path '/home/jp/proyectos/nowhere'" in ln and "/home/jp/proyectos/nowhere" in ln
+        for ln in alerts
+    ), alerts
+    assert not any("'present'" in ln for ln in alerts)
+    assert gone.exists()
