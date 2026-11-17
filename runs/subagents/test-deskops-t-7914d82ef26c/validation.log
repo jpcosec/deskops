@@ -1,0 +1,15 @@
+== focused tests (new code, PYTHONPATH=checkout)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+100 passed, 1 warning in 176.71s (0:02:56)
+rc=0
+
+== repro: HEAD closure.py + new tests
+>       assert _generated_artifact_findings(repo, files) == []
+E       AssertionError: assert ['tests/fixtu...age_ack.json'] == []
+FAILED tests/test_closeout_declared_evidence.py::test_golden_json_with_a_yaml_sibling_under_tests_fixtures_is_not_a_generated_artifact
+1 failed, 1 passed, 25 deselected, 1 warning in 17.62s
+
+== real case (clone in /dev/shm, task-deskops-message-ack-acepta-reason-...)
+HEAD closure.py: rc=1, findings generated_artifact_missing_declared_sources en tests/fixtures/golden/output/message_ack.json y message_read.json; found=tests,commit
+new closure.py:  rc=0, ok=True, findings=[], found=tests,atom|materialization,commit

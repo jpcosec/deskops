@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T13:50:13Z'
+  at: '2026-11-17T14:06:08Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -54,7 +54,6 @@ tasks:
 - desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
-- desk/tasks/task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -140,4 +139,3 @@ _Generated from the task references above._
 - deskops message ack acepta --reason y la nota guarda el porque en un campo ack_reason [draft] - deskops message ack <selector> --reason <texto> marca la nota como acknowledged y guarda el texto en un campo opcional ack_reason del modelo de la nota; sin --reason el ack funciona como hoy y ack_reason queda vacio; deskops message read muestra ack_reason cuando existe.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
-- closeout verify no trata como artefacto generado un golden json que tiene un golden yaml hermano bajo tests/fixtures [draft] - closeout verify no da generated_artifact_missing_declared_sources para archivos bajo tests/fixtures/ (goldens y fixtures de test); fuera de tests/fixtures/ el chequeo sigue igual.
