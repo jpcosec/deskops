@@ -1,0 +1,61 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_repo_identity.py
+........                                                                 [100%]
+8 passed in 1.85s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_registry_robustness.py
+........                                                                 [100%]
+8 passed in 57.46s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_message_ecosystem_registry.py
+......                                                                   [100%]
+6 passed in 123.93s (0:02:03)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_doctor_absolute_paths.py
+.............                                                            [100%]
+13 passed in 201.43s (0:03:21)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_doctor_alerts.py
+.....                                                                    [100%]
+5 passed in 43.95s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_doctor_model_registration.py
+........                                                                 [100%]
+8 passed in 79.38s (0:01:19)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli.py
+........................................................................ [ 70%]
+..............................                                           [100%]
+102 passed in 684.54s (0:11:24)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_command_registry.py
+...                                                                      [100%]
+3 passed in 2.08s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_task_files_of_other_repo.py
+.......                                                                  [100%]
+7 passed in 73.50s (0:01:13)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_resolved_by_xrepo.py
+............                                                             [100%]
+12 passed in 37.93s
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_gates.py
+............                                                             [100%]
+12 passed in 73.13s (0:01:13)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_resolved_by.py
+.........................                                                [100%]
+25 passed in 13.96s
+rc=0
+

@@ -1,0 +1,26 @@
+name: materialization-tests-de-robustez-del-registro-de-repos
+path: desk/materializations/materialization-tests-de-robustez-del-registro-de-repos.md
+source_hash: e48dac89338ab5e68398b1eed0265587cefea824833ab8154a4221ed77afd84d
+content_hash: 44c646c33870c53ae4db6df28532d026aa8333e8f0fa5a690fcae8eb05b422c7
+field_hashes:
+  id: 50a266f3f83bc25f87f0e5279db488c91792c8ca2ebc805fede3eac8fabdc1ca
+  title: ef323d214356e5f100a270ebd0e5a0d0a74440b8161ed230eab6602491864db3
+  source_atoms: 14b39e740d10d948ddb0c1c06807cf5a7eabea7bd51e598c457ed3d837c7a268
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 993f196663827a5b53800b0c899bc35caa8869f238a64d905db983edf1ab1358
+  intent: 6b697fa913a8a2a77a7fd432ca9690a065c0556973ebb6a8c816c00f02711491
+  validation: e4ddfc48f2bcf6020e06ce840f25a3745169f91016a17cf2fb45edff948cc269
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 8f2ff8fcc6b2d0acc5e6a45c329f0a2cf3de49fdfb6fd7a44c859afa06bc1036
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T11:57:04Z'
+  authority: generated
+  via: create_document

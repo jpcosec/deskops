@@ -1,0 +1,55 @@
+$ PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_registry_robustness.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+8 passed, 1 warning in 59.70s
+rc=0
+
+$ PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_repo_identity.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+8 passed, 1 warning in 2.49s
+rc=0
+
+$ PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_message_ecosystem_registry.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 1 warning in 113.38s (0:01:53)
+rc=0
+
+$ PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_doctor_alerts.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 44.69s
+rc=0
+
+$ PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_closeout_gates.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 1 warning in 99.17s (0:01:39)
+rc=0
+
+$ PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_closeout_resolved_by.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+25 passed, 1 warning in 16.09s
+rc=0
+
+$ PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_closeout_resolved_by_xrepo.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 1 warning in 46.66s
+rc=0
+
+## Doctor de solo lectura sobre el registro real
+$ PYTHONPATH=$PWD ../.venv/bin/python -m deskops doctor --root .
+rc=1 (por Errors previos: ReviewDoc ... subject -> TaskCodeDoc ...: lost; no por la alerta nueva)
+git status --short desk/ idéntico antes/después
+Alerta nueva única: - Registry entry 'Chatbot_Infra' does not resolve on this machine: path '/home/jp/AntonIA/repos/legacy/chatbot/chatbot/Chatbot_Infra' -> /home/jp/AntonIA/repos/legacy/chatbot/chatbot/Chatbot_Infra
+Rutas del registro: . ../UIs/graph_ui ../scion ../sldb ../spec2viz existen; /home/jp/AntonIA/.../Chatbot_Infra NO existe -> alerta correcta, sin falsos positivos.
+
+## Reproducción con el código de HEAD (git archive HEAD en /dev/shm/t-a8eb-head + tests/test_registry_robustness.py nuevo)
+FAILED test_repo_register_accepts_optional_path_flag_and_does_not_crash_on_registry_scan  (assert '/dev/shm/.../sibling' == '../sibling' -- aserción añadida)
+FAILED test_repo_register_stores_the_path_relative_to_the_registry_repo_root
+FAILED test_old_registry_entries_with_absolute_or_home_paths_still_resolve  (doc_access.repository_root daba <root>/~/proyectos/homed)
+FAILED test_doctor_names_registry_entries_that_do_not_resolve_on_this_machine
+4 failed, 4 passed in 35.06s

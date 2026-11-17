@@ -1,0 +1,37 @@
+name: review-task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis-evidence-atom-1
+path: desk/reviews/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis/evidence-atom-1.md
+source_hash: 0ce31aad9795f27ad7f1a06d4388f2b29fac7043305fa0e6fe6d86b3f5ec32a6
+content_hash: 047859b74fbc8b5b92f28dc9c4024bbcbb1d9e2633ae9581830f68c53c5076aa
+field_hashes:
+  id: 345121cf47540f68be3cc71aa2a63c6da9845f217c0701fbd382582b84cc169d
+  title: 44b6996b9a2e8e7db88a15501d62ea1a5aaf651ceca6b1be535e188ad8f12fca
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 53d30d2787f48a526e9779806e6a817eff8430d1eb0108c3dbb116b242fd19a3
+  subject: 1557c0b3d667dfe61ec29d0aaded9c08b363affd03b1df79e596f52db953200c
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 22874d499cdefc4c5a1433551beb13a221608181328899daaff8dad6e2bc2c3c
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 8c12fd4eb930410e7d336dff874e837db79e62c7a6067e0c23d85d2b0797beb5
+  created_at: 7ab6f34544e65828768ea71c3f92562b2296a7839aeaf1abbc92ebd40948cc62
+  disposed_at: 7ab6f34544e65828768ea71c3f92562b2296a7839aeaf1abbc92ebd40948cc62
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 189231d3f8bf1c61d41e9712c8005ed44b32f067a0b0cff70b87d3d5daf8d31e
+  disposition: ffde7faf9cbbc1ce10f3f0b9cc89ab7fb6dca6b936f3abd53524911eb7938b5c
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T11:56:39Z'
+  authority: generated
+  via: create_document

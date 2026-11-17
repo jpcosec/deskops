@@ -1,0 +1,26 @@
+name: materialization-tests-de-identidad-de-repos
+path: desk/materializations/materialization-tests-de-identidad-de-repos.md
+source_hash: c17b4863d34f935efc15a5696f8cb5129a2c6d469295371192f02c680ecf67ea
+content_hash: f690a018a7c22b557c084690f96a847d5350e3e1930988108c68bf61616b6b24
+field_hashes:
+  id: db544028c7bcdc5e1b1c6632e58232bee9eaa3e5ab712a7955617db8494f843b
+  title: 56c99d56e1a4922a24a78b05778ba0b75412377605962778000a58a60b9a911b
+  source_atoms: 14b39e740d10d948ddb0c1c06807cf5a7eabea7bd51e598c457ed3d837c7a268
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 0bff6db454d39736be7b80b1478316642094f4e6c2ee9365f11bcb9a0d7a4cb1
+  intent: eaf08261694602ade365d0eede34cc7f3bf2bc4551aa805651ffd8db49e84cb1
+  validation: 98e4159863cf3b91b9fc2fc268ff18ef287abb80758f09d5d53fb8de79c0f096
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 8f2ff8fcc6b2d0acc5e6a45c329f0a2cf3de49fdfb6fd7a44c859afa06bc1036
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T11:57:13Z'
+  authority: generated
+  via: create_document
