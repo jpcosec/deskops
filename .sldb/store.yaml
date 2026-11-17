@@ -352,6 +352,7 @@ include:
   - desk/materializations/materialization-golden-output-show-inbox-note-text.md
   - desk/materializations/materialization-golden-de-ayuda-de-view-task.md
   - desk/materializations/materialization-golden-de-salida-de-view-task.md
+  - desk/materializations/materialization-golden-de-salida-de-view-board.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -476,6 +477,10 @@ include:
     name: run-deskops-e-df9455e89049
   - path: runs/subagents/test-deskops-t-91635780a910/run.md
     name: run-deskops-t-91635780a910
+  - path: runs/subagents/exec-deskops-e-519848b776fc/run.md
+    name: run-deskops-e-519848b776fc
+  - path: runs/subagents/test-deskops-t-ac13b51d0d0a/run.md
+    name: run-deskops-t-ac13b51d0d0a
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1568,6 +1573,16 @@ include:
     name: review-task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista-evidence-atom-2
   - path: desk/reviews/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista/evidence-materialization-2.md
     name: review-task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista-evidence-materialization-2
+  - path: desk/reviews/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error/reproduction-1.md
+    name: review-task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error-reproduction-1
+  - path: desk/reviews/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error/evidence-tests-1.md
+    name: review-task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error-evidence-tests-1
+  - path: desk/reviews/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error/evidence-commit-1.md
+    name: review-task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error-evidence-commit-1
+  - path: desk/reviews/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error/evidence-atom-1.md
+    name: review-task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error-evidence-atom-1
+  - path: desk/reviews/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error/evidence-materialization-1.md
+    name: review-task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1622,7 +1637,6 @@ include:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
   - desk/tasks/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.md
-  - desk/tasks/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error.md
 - model: TaskDocsDoc
   paths:
   - desk/tasks/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check.md

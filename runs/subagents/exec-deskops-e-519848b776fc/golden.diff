@@ -1,0 +1,62 @@
+diff --git a/tests/fixtures/golden/output/view_board.json b/tests/fixtures/golden/output/view_board.json
+index 2e7e66ad2..7198ba86a 100644
+--- a/tests/fixtures/golden/output/view_board.json
++++ b/tests/fixtures/golden/output/view_board.json
+@@ -77,12 +77,12 @@
+                   "what": "Una tarea task.code se activa con recibos preflight y bundle aceptados e intactos y sus dependencias cerradas. | any(^subject: anchor_state = \"intact\" and verdict = \"accepted\" and kind = \"preflight\") (seen: {})"
+                 }
+               ],
+-              "holds": true,
++              "holds": false,
+               "relation_type": "task_activates",
+               "target": "ritual-testing"
+             }
+           ],
+-          "gates_holding": 1,
++          "gates_holding": 0,
+           "gates_total": 1,
+           "id": "task-view-golden-execution",
+           "path": "desk/tasks/task-view-golden-execution.md",
+@@ -244,12 +244,12 @@
+                   "what": "Una tarea task.code se cierra con recibos evidence aceptados e intactos de tests, commit y atom o materialization (los escribe deskops closeout verify). | any(^subject: kind = \"evidence\" and fact = \"tests\" and anchor_state = \"intact\" and verdict = \"accepted\") (seen: {}) (witness: ReviewDoc:review-task-view-golden-closeout-bundle-1 {\"kind\":\"bundle\"})"
+                 }
+               ],
+-              "holds": true,
++              "holds": false,
+               "relation_type": "task_completes",
+               "target": "complete"
+             }
+           ],
+-          "gates_holding": 1,
++          "gates_holding": 0,
+           "gates_total": 1,
+           "id": "task-view-golden-closeout",
+           "path": "desk/tasks/task-view-golden-closeout.md",
+@@ -268,7 +268,7 @@
+       "ritual-execution": 1,
+       "ritual-testing": 1
+     },
+-    "gates_holding": 3,
++    "gates_holding": 1,
+     "gates_total": 3,
+     "tasks": 3
+   },
+diff --git a/tests/fixtures/golden/output/view_task.json b/tests/fixtures/golden/output/view_task.json
+index 760b8ece1..6b33eecaf 100644
+--- a/tests/fixtures/golden/output/view_task.json
++++ b/tests/fixtures/golden/output/view_task.json
+@@ -93,12 +93,12 @@
+             "what": "Una tarea task.code se activa con recibos preflight y bundle aceptados e intactos y sus dependencias cerradas. | any(^subject: anchor_state = \"intact\" and verdict = \"accepted\" and kind = \"preflight\") (seen: {})"
+           }
+         ],
+-        "holds": true,
++        "holds": false,
+         "relation_type": "task_activates",
+         "target": "ritual-testing"
+       }
+     ],
+-    "gates_holding": 1,
++    "gates_holding": 0,
+     "gates_total": 1,
+     "goal": "goal of View golden execution",
+     "history": [],

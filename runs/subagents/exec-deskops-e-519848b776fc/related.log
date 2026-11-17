@@ -1,0 +1,39 @@
+$ pytest -q tests/test_view_goldens.py
+E           AssertionError: golden mismatch: view_board
+E           assert '{\n  "board"... "board"\n}\n' == '{\n  "board"... "board"\n}\n'
+E             
+E             Skipping 2519 identical leading characters in diff, use -v to show
+E             -  "holds": true,
+E             ?           ^^^
+E             +  "holds": false,
+E             ?           ^^^^
+E                             "relation_type": "task_activates",...
+E             
+E             ...Full output truncated, use '-vv' to show
+FAILED tests/test_view_goldens.py::test_view_json_goldens - AssertionError: g...
+1 failed, 1 warning in 23.64s
+rc=1
+$ pytest -q tests/test_activation_rules.py
+10 passed, 1 warning in 81.63s (0:01:21)
+rc=0
+$ pytest -q tests/test_lifecycle_graph.py
+9 passed, 1 warning in 55.49s
+rc=0
+$ pytest -q tests/test_lifecycle_end_to_end.py
+5 passed, 1 warning in 912.09s (0:15:12)
+rc=0
+$ pytest -q tests/test_cli.py
+102 passed, 1 warning in 668.00s (0:11:07)
+rc=0
+$ pytest -q tests/test_cli_grammar.py
+2 passed, 1 warning in 2.82s
+rc=0
+$ pytest -q tests/test_inbox_promote_cli_gaps.py
+21 passed, 1 warning in 29.07s
+rc=0
+$ pytest -q tests/test_view_goldens.py (tras --update-golden)
+1 passed, 1 warning in 26.49s
+rc=0
+$ pytest -q tests/test_closeout_declared_evidence.py
+27 passed, 1 warning in 124.62s (0:02:04)
+rc=0

@@ -1,0 +1,50 @@
+== tests/test_view.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+18 passed, 1 warning in 196.63s (0:03:16)
+== tests/test_view_goldens.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 1 warning in 23.50s
+== tests/test_activation_rules.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+10 passed, 1 warning in 71.14s (0:01:11)
+== tests/test_lifecycle_graph.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+9 passed, 1 warning in 39.16s
+== tests/test_lifecycle_end_to_end.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 713.29s (0:11:53)
+== tests/test_cli.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+102 passed, 1 warning in 675.76s (0:11:15)
+== HEAD tasks.py (copia /dev/shm): test nuevo
+        assert any(f["level"] == "error" and f["code"] == "rules/rule-activation-task-code" for f in gate["findings"])
+>       assert gate["holds"] is False
+E       assert True is False
+/dev/shm/tester-ac13b51d0d0a/deskops/tests/test_view.py:82: AssertionError
+1 failed, 1 warning in 10.17s
+== repro.py con código nuevo
+rc=0
+1:SANDBOX /dev/shm/repro-holds-fz40kx9p/repo
+2:TASK task-repro-holds
+7:  "root": "/dev/shm/repro-holds-fz40kx9p/repo",
+9:    "id": "task-repro-holds",
+10:    "title": "Repro holds",
+14:    "path": "desk/tasks/task-repro-holds.md",
+20:        "holds": false,
+23:            "level": "error",
+25:            "subject": "TaskCodeDoc:task-repro-holds",
+31:    "gates_holding": 0,
+61:          "state": "holds",
+113:  "errors": [
+122:Task: task-repro-holds
+123:Title: Repro holds
+129:  blocked by: error: [rules/rule-activation-task-code] TaskCodeDoc:task-repro-holds: Una tarea task.code se activa con recibos preflight y bundle aceptados e intactos y sus dependencias cerradas. | any(^subject: anchor_state = "intact" and verdict = "accepted" and kind = "preflight") (seen: {})
+131:== gates con holds true y finding error: []
+133:== document TaskCodeDoc:task-repro-holds
+134:== condition_holds('', payload) [lo que usa show_task]: True
