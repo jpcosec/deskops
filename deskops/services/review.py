@@ -61,6 +61,18 @@ SYSTEM = (
 SELECTION = "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)"
 MODEL = "deepseek/deepseek-flash"
 DEFAULT_ENGINE = "runtime-pi-deepseek-flash"
+CLAUDE_SELECTION = "claude: perfil RuntimeProfileDoc de claude para cuando pi no está disponible"
+# claude -p isolation for the reviewer (flags read from `claude --help`, 2.1.x): no built-in
+# tools, no persisted session, no MCP servers, no skills/slash commands, no user/project/local
+# settings (that also drops CLAUDE.md and AGENTS.md context) and no auto-memory.
+CLAUDE_ISOLATION: tuple[tuple[str, ...], ...] = (
+    ("--tools", ""),
+    ("--no-session-persistence",),
+    ("--strict-mcp-config",),
+    ("--disable-slash-commands",),
+    ("--setting-sources", ""),
+    ("--settings", '{"autoMemoryEnabled":false}'),
+)
 TIMEOUT = 900
 # Receipts ``deskops review record`` writes by hand (no model call); the others come from their command.
 # Kinds an operator records by hand. ``preflight`` and ``bundle`` also come from their own
@@ -129,6 +141,23 @@ class Bundle:
         return "".join(part + "\n" for part in self.parts).encode()
 
 
+def _is_claude(engine: dict[str, Any]) -> bool:
+    """A profile whose kind or binary is claude gets the claude argv; everything else keeps pi's."""
+    if str(engine.get("kind") or "").strip() == "claude":
+        return True
+    return Path(str(engine.get("binary") or "")).name == "claude"
+
+
+def _flag_value(argv: list[str], flag: str) -> str | None:
+    """The value after ``flag`` in ``argv`` (``--flag value`` or ``--flag=value``), else None."""
+    for index, item in enumerate(argv):
+        if item == flag and index + 1 < len(argv):
+            return argv[index + 1]
+        if item.startswith(flag + "="):
+            return item[len(flag) + 1 :]
+    return None
+
+
 def _technical_ok(attempt_dir: Path) -> bool:
     receipt = attempt_dir / "receipt.json"
     if not receipt.exists():
@@ -179,12 +208,62 @@ class ReviewService:
         )
 
     def _argv(self, engine: dict[str, Any], input_path: Path) -> list[str]:
+        """The pi argv: the profile's static args, its fixed system prompt and the input as ``@<path>``."""
         argv = [str(engine.get("binary") or "pi")]
         argv += [str(item) for item in (engine.get("extra_args") or [])]
         if engine.get("system_prompt_flag") and engine.get("system_prompt"):
             argv += [str(engine["system_prompt_flag"]), str(engine["system_prompt"])]
         argv.append(f"@{input_path}")
         return argv
+
+    def _claude_argv(self, engine: dict[str, Any]) -> list[str]:
+        """The claude argv: non-interactive ``-p``, the profile's model, the reviewer system prompt
+        replacing claude's own, and the isolation flags; the input goes on stdin, never ``@<path>``.
+
+        claude has no ``model`` field in RuntimeProfileDoc, so the profile carries it in
+        ``extra_args`` (``--model haiku``) exactly as the pi profile does; a claude profile
+        without one is refused instead of silently reviewing with claude's default model.
+        """
+        extra = [str(item) for item in (engine.get("extra_args") or []) if str(item) not in ("-p", "--print")]
+        model_flag = str(engine.get("model_flag") or "--model")
+        if _flag_value(extra, model_flag) is None:
+            raise DomainError(
+                f"RuntimeProfileDoc '{engine.get('id')}' (claude) names no model: add "
+                f"`{model_flag} <model>` to its extra_args (e.g. `{model_flag} haiku`)."
+            )
+        argv = [str(engine.get("binary") or "claude"), "-p", *extra]
+        argv += ["--system-prompt", str(engine.get("system_prompt") or SYSTEM)]
+        for flag in CLAUDE_ISOLATION:
+            if flag[0] not in argv:
+                argv += list(flag)
+        return argv
+
+    def _command(self, engine: dict[str, Any], input_path: Path, input_data: bytes) -> dict[str, Any]:
+        """Argv, stdin and manifest facts (binary, model, isolation flags) for one review call."""
+        binary = str(engine.get("binary") or "pi")
+        if _is_claude(engine):
+            argv = self._claude_argv(engine)
+            model_flag = str(engine.get("model_flag") or "--model")
+            return {
+                "argv": argv,
+                "stdin": input_data.decode("utf-8", errors="replace"),
+                "binary": binary,
+                "model": _flag_value(argv, model_flag) or "",
+                "input_delivery": "stdin",
+                "isolation_flags": [item for flag in CLAUDE_ISOLATION for item in flag],
+                "selection_reason": CLAUDE_SELECTION,
+            }
+        argv = self._argv(engine, input_path)
+        extra = [str(item) for item in (engine.get("extra_args") or [])]
+        return {
+            "argv": argv,
+            "stdin": None,
+            "binary": binary,
+            "model": MODEL,
+            "input_delivery": "file",
+            "isolation_flags": [item for item in extra if item.startswith("--no-") or item == "--offline"],
+            "selection_reason": SELECTION,
+        }
 
     # ------------------------------------------------------------------ tasks
     def _task_path(self, task_id: str) -> Path:
@@ -486,10 +565,11 @@ class ReviewService:
 
         (attempt_dir / "input.md").write_bytes(input_data)
         engine = self._load_engine(engine_id)
-        argv = self._argv(engine, attempt_dir / "input.md")
+        command = self._command(engine, attempt_dir / "input.md", input_data)
+        argv = command["argv"]
         start = _now()
         try:
-            result = subprocess.run(argv, capture_output=True, text=True, timeout=timeout)
+            result = subprocess.run(argv, input=command["stdin"], capture_output=True, text=True, timeout=timeout)
             stdout, stderr, returncode = result.stdout, result.stderr, result.returncode
         except subprocess.TimeoutExpired as exc:
             detail = ""
@@ -508,9 +588,12 @@ class ReviewService:
             "key": key,
             "input_sha256": input_sha256,
             "argv": argv,
-            "model": MODEL,
+            "binary": command["binary"],
+            "model": command["model"],
+            "input_delivery": command["input_delivery"],
+            "isolation_flags": command["isolation_flags"],
             "profile": engine_id,
-            "selection_reason": SELECTION,
+            "selection_reason": command["selection_reason"],
             "sources": sources,
             "omitted_sources": omitted,
             "started": start,

@@ -535,3 +535,116 @@ def test_disposed_review_status_uses_task_identity(
     status = _deskops(root, "review", "status", "task-identity", "--format", "json")
     assert status.returncode == 0, status.stdout + status.stderr
     assert next(item for item in json.loads(status.stdout) if item["key"] == "task-identity/preflight")["state"] == "stale"
+
+
+# --------------------------------------------------------------- claude engine
+# A RuntimeProfileDoc whose binary is claude (pi missing, e.g. the scion-claude image) builds a
+# `claude -p` argv: profile model, reviewer system prompt, no tools/session/MCP/skills/settings,
+# and the input on stdin instead of `@<path>`. The fake claude echoes what it received.
+
+FAKE_CLAUDE = """#!/usr/bin/env python3
+import os
+import sys
+
+data = sys.stdin.read()
+log = os.environ.get("FAKE_CLAUDE_LOG")
+if log:
+    with open(log, "a", encoding="utf-8") as handle:
+        handle.write(repr(sys.argv[1:]) + "\\n")
+        handle.write("STDIN:" + data.splitlines()[0] + "\\n")
+print("REFORMULACION\\nPropósito: revisar.\\nAMBIGUEDADES: ninguna.\\nDRY-RUN: leer.\\nFUTURO: nada.")
+"""
+
+CLAUDE_ENGINE = {
+    "id": "runtime-claude",
+    "kind": "claude",
+    "binary": "claude",
+    "model_flag": "--model",
+    "system_prompt_flag": "--append-system-prompt",
+    "extra_args": ["--print", "--model", "haiku"],
+}
+
+
+def test_claude_profile_argv_is_isolated_print_mode_without_input_path(tmp_path: Path) -> None:
+    from deskops.services.review import SYSTEM
+    from deskops.services.review import ReviewService
+
+    service = ReviewService(tmp_path)
+    input_path = tmp_path / "input.md"
+    command = service._command(CLAUDE_ENGINE, input_path, b"FILE:desk/tasks/task-x.md\nhola\n")
+    argv = command["argv"]
+
+    assert argv[0] == "claude"
+    assert "-p" in argv and "--print" not in argv
+    assert argv[argv.index("--model") + 1] == "haiku"
+    assert argv[argv.index("--system-prompt") + 1] == SYSTEM
+    assert "--append-system-prompt" not in argv
+    assert argv[argv.index("--tools") + 1] == ""
+    for flag in ("--no-session-persistence", "--strict-mcp-config", "--disable-slash-commands"):
+        assert flag in argv, flag
+    assert argv[argv.index("--setting-sources") + 1] == ""
+    assert not any(item.startswith("@") for item in argv)
+    assert str(input_path) not in argv
+    assert command["stdin"].startswith("FILE:desk/tasks/task-x.md")
+    assert command["binary"] == "claude" and command["model"] == "haiku"
+    assert command["input_delivery"] == "stdin"
+    assert "--no-session-persistence" in command["isolation_flags"]
+
+
+def test_claude_profile_without_model_is_refused(tmp_path: Path) -> None:
+    from deskops.errors import DomainError
+    from deskops.services.review import ReviewService
+
+    engine = {**CLAUDE_ENGINE, "extra_args": ["--print"]}
+    with pytest.raises(DomainError, match="names no model"):
+        ReviewService(tmp_path)._command(engine, tmp_path / "input.md", b"x")
+
+
+def test_pi_profile_argv_is_unchanged(tmp_path: Path) -> None:
+    from deskops.services.review import ReviewService
+
+    engine = {"id": "runtime-pi", "kind": "pi", "binary": "pi", "extra_args": ["--no-tools", "--print"]}
+    command = ReviewService(tmp_path)._command(engine, tmp_path / "input.md", b"x")
+    assert command["argv"] == ["pi", "--no-tools", "--print", f"@{tmp_path / 'input.md'}"]
+    assert command["stdin"] is None and command["input_delivery"] == "file"
+
+
+def test_preflight_with_claude_engine_sends_input_on_stdin_and_records_it(
+    lifecycle_desk: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root = lifecycle_desk
+    bin_dir = tmp_path / "claude-bin"
+    bin_dir.mkdir()
+    claude = bin_dir / "claude"
+    claude.write_text(FAKE_CLAUDE, encoding="utf-8")
+    claude.chmod(0o755)
+    log = tmp_path / "claude.log"
+    monkeypatch.setenv("FAKE_CLAUDE_LOG", str(log))
+    monkeypatch.setenv("PATH", f"{bin_dir}{os.pathsep}{os.environ.get('PATH', '')}")
+    _add_task(root, title="X")
+    payload = tmp_path / "runtime-claude.yaml"
+    payload.write_text(
+        "title: claude haiku reviewer\nkind: claude\nbinary: claude\nmodel_flag: --model\n"
+        "extra_args: [--print, --model, haiku]\n",
+        encoding="utf-8",
+    )
+    added = _deskops(root, "add", "runtime-profile", "--from-yaml", str(payload))
+    assert added.returncode == 0, added.stdout + added.stderr
+
+    result = _deskops(
+        root, "review", "preflight", "task-x", "--run", "claude-run", "--engine", "runtime-claude-haiku-reviewer"
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+
+    attempt = _attempt_dirs(root, "task-x/preflight")[0]
+    manifest = _json(attempt / "manifest.json")
+    assert manifest["binary"] == "claude"
+    assert manifest["model"] == "haiku"
+    assert manifest["profile"] == "runtime-claude-haiku-reviewer"
+    assert manifest["input_delivery"] == "stdin"
+    assert "--strict-mcp-config" in manifest["isolation_flags"]
+    assert not any(item.startswith("@") for item in manifest["argv"])
+    assert _json(attempt / "receipt.json")["technical_ok"] is True
+    assert "STDIN:FILE:desk/tasks/task-x.md" in log.read_text(encoding="utf-8")
+    doc = next(doc for doc in _review_docs(root) if doc["id"] == "review-task-x-preflight-1")
+    assert doc["engine"] == "runtime-claude-haiku-reviewer"
