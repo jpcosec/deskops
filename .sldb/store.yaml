@@ -421,6 +421,8 @@ include:
     name: run-deskops-e-289fe7bfa1df
   - path: runs/subagents/test-deskops-t-908138de7331/run.md
     name: run-deskops-t-908138de7331
+  - path: runs/subagents/exec-deskops-e-a9bb6500e6e2/run.md
+    name: run-deskops-e-a9bb6500e6e2
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1371,6 +1373,12 @@ include:
     name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-atom-1
   - path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-materialization-1.md
     name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-materialization-1
+  - path: desk/reviews/task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi/preflight-1.md
+    name: review-task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi-preflight-1
+  - path: desk/reviews/task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos/reproduction-1.md
+    name: review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-reproduction-1
+  - path: desk/reviews/task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi/bundle-1.md
+    name: review-task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
