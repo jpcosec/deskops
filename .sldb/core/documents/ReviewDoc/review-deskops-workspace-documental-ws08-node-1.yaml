@@ -1,7 +1,7 @@
 name: review-deskops-workspace-documental-ws08-node-1
 path: desk/reviews/deskops-workspace-documental-ws08/node-1.md
-source_hash: c69cd964d3ca14bc48e25570c859b71cc53c105c85023d8df857172bb3761ea3
-content_hash: 1781a5f95f28b885b1f45d0d4f1c3976272014d4c5132db030ef50ef06041e8a
+source_hash: dcfab8fbf0b772dbe09f4ae29d0b70fdd60acabe7c13f0a32ea81df4a19971c5
+content_hash: 85b0c0c83727cad07fba636b0b6e99ac3dd809cc3c4954a46ca34687aab9c8b1
 field_hashes:
   id: 933aabe62a31d77e54db3772c474d618cd66ef7bb9ad1b5546bdb9855eea5cdf
   title: 8e1825f2d293c4f4f7bf952215715e0c5bf372a47cffce518cf5cac23ffcd262
@@ -15,13 +15,13 @@ field_hashes:
   run_dir: 6adf3599766083ea9b08702b4f4a4fd1c2bf827bc9b5725209c1c0eafd125585
   input_sha256: 8939e0a4f640c7705b61e8169f3cc97d0729bde43f6babc6c7baadd1049e8ee5
   output_sha256: b5c29c85f059aad86fd8a56838f71563dfd94283aabee439be5245f3ed7166d0
-  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
-  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 345cd83153b03ad3a92884f687728fb3c9aa6777522d531b38d8cd165c272c37
   created_at: 05d50a30d29a1ffcd37de6aa70935ada375572d793eda7fb5e0666cc7f3b2e67
-  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_at: fe50478ecebd070a57e58520d2f7eb3e259d48d97b449231b25ed1b4c148a1d9
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b7babcbd3fe65d33fcf5b3a62c1698d671bcf1c3dcd59299cb75dd2ede87ebda
-  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposition: ede836fea2b0691c061fcf74715472e32562ec982a0abe4d05d66e55c5908308
   tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
 semantic_tags:
 - representation.markdown
@@ -31,6 +31,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T02:04:21Z'
+  at: '2026-11-17T03:11:44Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-deskops-ui-root-node-1
 path: desk/reviews/deskops-ui-root/node-1.md
-source_hash: 145c23fef38a9573b6db00f48e0084d6422217ca4c0f7a64e0971ed34d804728
-content_hash: 11bc0e35fce2c6d7a34453f14614f6f38671b0693ca920a0dfcbaf10126bfb4f
+source_hash: 3ed333812f43c903078ccb0fb4b793ca6c1a8576cfabd9476f80b4880ff2073c
+content_hash: 4c22fbf616ff240844a2fbd034a4188fa2e9a0dda9a2a3a425db547c67feffa5
 field_hashes:
   id: 4a6cd31b51aec97bc4a232cfb86c4c455aa6e05406c7676a98780f3434827476
   title: 9288343fc0efdb37f54317f39fa59a16248371675688b7267f378a86465d8b58
@@ -15,13 +15,13 @@ field_hashes:
   run_dir: c166e6ce1a8e8e713cb18d5e75316c81ceec63992e25ce6300b5672eb29f2f02
   input_sha256: c36c04e09090715f1033b0bef7a67e504d8a447b832f133c58bf3a3f2d239c57
   output_sha256: 24c923a4e54e078eae91b04c284a9711e54b0812301927c2262cbd407968e73c
-  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
-  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 7f34129d26470fd001017d995db4f0821f62378a9284446aad3bb86bf6a9da95
   created_at: 7479c7613bb43b4183454f93addc1485f3c5086d9783083e1ecc7f0e33e6beab
-  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_at: 6045bbfa5fdd4e848f8fd8e49569a0b154ec7b6c555fe6fca43ea012c3377098
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 4b0d190b4ff4bb603bd97d36458528f7cf4d3a40f9a4723fa3648faed8ea5225
-  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposition: ad042650da5f2ac65991c96a6fe45b1e948a492d0d2b0b942d6f6aaff8f4ad96
   tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
 semantic_tags:
 - representation.markdown
@@ -31,6 +31,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T02:08:34Z'
+  at: '2026-11-17T03:05:41Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

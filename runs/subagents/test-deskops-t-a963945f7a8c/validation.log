@@ -1,0 +1,33 @@
+== git diff --stat
+ deskops/models/review.py     |  2 +-
+ tests/test_review_command.py | 27 +++++++++++++++++++++++++++
+ tests/test_review_doc.py     | 14 ++++++++++++++
+ 3 files changed, 42 insertions(+), 1 deletion(-)
+== pytest test_review_doc.py (working tree)
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+22 passed, 1 xfailed, 1 warning in 131.57s (0:02:11)
+== pytest test_review_command.py (working tree)
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+26 passed, 1 warning in 226.21s (0:03:46)
+== reproduction: HEAD review.py + new tests (copy in /dev/shm/tester-a963945f7a8c)
+34:SUBJECT_REF_PATTERN = r"^([^\s#]+#node:[A-Za-z0-9_-]+)?$"
+/bin/bash: line 14: ../../mnt/ssd/proyectos/SLDB_1/.venv/bin/python: No such file or directory
+== reproduction run (python=/mnt/ssd/proyectos/SLDB_1/.venv/bin/python, PYTHONPATH=copy with HEAD review.py)
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for ReviewDoc
+E           For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch
+tests/test_review_doc.py:148: ValidationError
+E       AssertionError: Validation error:
+E         1 validation error for ReviewDoc
+E             For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch
+E        +  where 1 = CompletedProcess(args=['/mnt/ssd/proyectos/SLDB_1/.venv/bin/python', '-m', 'deskops', 'review', 'node', 'desk/drawer/p...3.1', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_pattern_mismatch\n").returncode
+tests/test_review_command.py:319: AssertionError
+FAILED tests/test_review_doc.py::test_review_plan_node_subject_ref_accepts_a_dotted_node_id
+FAILED tests/test_review_command.py::test_node_writes_the_review_doc_of_a_dotted_node_id
+2 failed, 2 passed, 48 deselected, 1 warning in 19.92s
+== cleanup: /dev/shm/tester-a963945f7a8c removed (line 20 was a mistyped interpreter path, rerun at line 21)
