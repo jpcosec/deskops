@@ -31,7 +31,7 @@ REVIEW_ID_PATTERN = (
     r"|evidence-(tests|commit|atom|materialization|document|external))-[0-9]+$"
 )
 SUBJECT_PATTERN = r"^(doc:[A-Z][A-Za-z0-9_]*:[^\s:@]+(@sha256:[0-9a-f]{64})?)?$"
-SUBJECT_REF_PATTERN = r"^([^\s#]+#node:[A-Za-z0-9_-]+)?$"
+SUBJECT_REF_PATTERN = r"^([^\s#]+#node:[A-Za-z0-9_.-]+)?$"
 SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 
 ReviewKind = Literal["preflight", "bundle", "reproduction", "goldens", "owner", "node", "evidence"]

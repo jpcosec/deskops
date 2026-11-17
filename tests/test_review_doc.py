@@ -144,6 +144,20 @@ def test_review_plan_node_subject_ref_is_the_alternative_to_subject() -> None:
         ReviewDoc(**_payload(subject="doc:TaskCodeDoc:task-x", subject_ref="plan/dag.yaml#node:GC02"))
 
 
+def test_review_plan_node_subject_ref_accepts_a_dotted_node_id() -> None:
+    review = ReviewDoc(
+        **_payload(subject="", subject_ref="desk/drawer/plans/workspace-documental/dag.yaml#node:WS13.1")
+    )
+    assert review.subject_ref.endswith("#node:WS13.1")
+
+
+@pytest.mark.parametrize("node_id", ["WS 13", "WS13#x"])
+def test_review_plan_node_subject_ref_rejects_a_space_or_a_second_hash(node_id: str) -> None:
+    with pytest.raises(ValidationError) as excinfo:
+        ReviewDoc(**_payload(subject="", subject_ref=f"plan/dag.yaml#node:{node_id}"))
+    assert "subject_ref" in str(excinfo.value)
+
+
 # ------------------------------------------------------------------ desk
 def test_review_doc_is_tracked_as_review_doc_in_a_temporary_desk(lifecycle_desk: Path) -> None:
     root = lifecycle_desk

@@ -297,6 +297,33 @@ def test_node_writes_one_review_doc_per_node(lifecycle_desk: Path, fake_pi: tupl
         assert doc["verdict"] == "pending"
 
 
+def test_node_writes_the_review_doc_of_a_dotted_node_id(lifecycle_desk: Path, fake_pi: tuple[Path, Path]) -> None:
+    root = lifecycle_desk
+    plan_dir = root / "desk" / "drawer" / "plans" / "con-punto"
+    plan_dir.mkdir(parents=True)
+    (plan_dir / "dag.yaml").write_text(
+        "id: deskops-con-punto\n"
+        "hierarchy:\n"
+        "  root:\n"
+        "    id: ROOT\n"
+        "    title: Plan con ids de nodo con punto\n"
+        "    children: [WS13.1]\n"
+        "tasks:\n"
+        "- id: WS13.1\n"
+        "  title: Nodo con punto\n"
+        "  depends_on: []\n",
+        encoding="utf-8",
+    )
+
+    result = _deskops(root, "review", "node", "desk/drawer/plans/con-punto", "WS13.1", "--run", "test-run")
+    assert result.returncode == 0, result.stdout + result.stderr
+
+    node_docs = [doc for doc in _review_docs(root) if doc["kind"] == "node"]
+    assert [doc["id"] for doc in node_docs] == ["review-deskops-con-punto-ws13.1-node-1"]
+    assert node_docs[0]["subject_ref"] == "desk/drawer/plans/con-punto/dag.yaml#node:WS13.1"
+    assert node_docs[0]["verdict"] == "pending"
+
+
 def test_dispose_writes_the_verdict_and_a_second_dispose_fails(
     lifecycle_desk: Path, fake_pi: tuple[Path, Path]
 ) -> None:
