@@ -1,7 +1,7 @@
 name: inbox-note-closeout-resolved-by-cerrar-una-tarea-cuyo-trabajo-ya-entró-por-pr
 path: desk/inbox/inbox-note-closeout-resolved-by-cerrar-una-tarea-cuyo-trabajo-ya-entró-por-pr.md
 source_hash: f371ef57d98807b0dd8d872c369822d96f460c23f38f450bb34b8a33a4477daa
-content_hash: f5e2bc84e2d0cb0b8eceefab3cf3737a87bb614587b28ce17568f7254653e299
+content_hash: 2477a6a2a4203f0fa6acad85febf888dd8675c419b2a39bd6a91fd575c20da23
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: f4a2eec9b5734c37e246678816f0b307c59c117a7dc74691342c9b86ff80e169
@@ -10,6 +10,7 @@ field_hashes:
   status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
   acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   acknowledged_at: 5be253e1e9b516070a65f9d3f8c08baa6ef2efd4f7c21c099de5f03ba6908581
+  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   title: 574eeb5845fd77218f997cb3950768f9eedb0a94020f69ea7cb9de6dc1447883
   body: 9327ab3104d96c4f81e35c4084293c6409c82ac38ff2733c63ac65d80bf193fc
 semantic_tags:

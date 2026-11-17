@@ -1,0 +1,22 @@
+$ ../.venv/bin/python -c "import sldb; print(sldb.__file__)"
+/mnt/ssd/herramientas/sldb/src/sldb/__init__.py
+rc=0
+$ git -C /mnt/ssd/herramientas/sldb rev-parse --short HEAD; merge-base --is-ancestor d49f6ddc HEAD
+6e793686
+rc=1
+$ git -C ../sldb rev-parse --short HEAD; merge-base --is-ancestor d49f6ddc HEAD  (sldb que importan los tests via tests/conftest.py)
+0590ed11
+rc=0
+$ grep -rn SLDB_JINJA_VALUE_NOTE tests/ deskops/
+rc=1
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -rxX tests/test_message_cli.py
+................                                                         [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+16 passed, 1 warning in 166.32s (0:02:46)
+rc=0

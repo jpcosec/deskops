@@ -1,0 +1,28 @@
+== CLI sldb
+/home/robocop/herramientas/sldb/src/sldb/__init__.py
+== venv sldb
+/mnt/ssd/herramientas/sldb/src/sldb/__init__.py
+== grep constante
+sin coincidencias
+== pytest (conftest -> ../sldb/src, 3b3c51fe incluye d49f6ddc)
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+16 passed, 1 warning in 197.46s (0:03:17)
+== contraprueba: SLDB_SRC=/mnt/ssd/herramientas/sldb/src (6e793686, sin d49f6ddc)
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+4 failed, 12 deselected, 1 warning in 3.57s
+== procedencia
+../sldb (lo que importa la suite vía tests/conftest.py): HEAD 3b3c51fe main, incluye d49f6ddc
+/mnt/ssd/herramientas/sldb (venv ../.venv y CLI uv deskops vía symlink ~/herramientas): HEAD 6e793686, NO incluye d49f6ddc
+grep -rn SLDB_JINJA_VALUE_NOTE tests/ deskops/: sin coincidencias

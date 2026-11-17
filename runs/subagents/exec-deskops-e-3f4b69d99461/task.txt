@@ -1,0 +1,10 @@
+Task: task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales
+Title: el test de llaves de message send deja de ser xfail porque sldb ya renderiza los valores literales
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
