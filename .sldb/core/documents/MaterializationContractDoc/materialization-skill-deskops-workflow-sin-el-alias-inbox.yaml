@@ -1,0 +1,26 @@
+name: materialization-skill-deskops-workflow-sin-el-alias-inbox
+path: desk/materializations/materialization-skill-deskops-workflow-sin-el-alias-inbox.md
+source_hash: 8b3f5ca1e1ec690212618d13111a592174aaf7a94c9d5a9348878179c3790189
+content_hash: dfc7bcd822bee36d916b05c50cfa4be922721e6f4982dd9a250e84488bdd0eac
+field_hashes:
+  id: 2303f4c2ebd7f8f066d4b84b6a2567d9014e506609e58fd7f5b5b2425672a22a
+  title: adea36b737c4528d46eafa7d628dcb4cf9dafaa53e01a2362caca17d810070d2
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: bc0f43f548d6cd00dd5cc626a2e75c8454853828c86074d136cd4de2381ea142
+  target_identity: 691fead00ef78ed058c888f70481306704c873d0e2612e0e00919c79bb608b0f
+  intent: dff3b3f4ba351a03e94cb8c6460ccd329bf243780171748ddbfa160aa4bbe139
+  validation: 3c845a9b74b2a84f93e165cb140249e8dca09ae7da723c3d7e25a741b50cfa09
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T01:11:41Z'
+  authority: generated
+  via: create_document

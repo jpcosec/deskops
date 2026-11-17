@@ -1,0 +1,26 @@
+name: materialization-vocabulario-de-la-skill-con-deskops-message
+path: desk/materializations/materialization-vocabulario-de-la-skill-con-deskops-message.md
+source_hash: f89c4ecf41eca376f4841f989452d071216a3d09e0c9ec7d8f2604f3ddc0e0ce
+content_hash: e4472d4ccffd1bf4fd74229dc2d848337688dc296a0a20b4771d30d1b7ff84b5
+field_hashes:
+  id: 402c31da4c51cddfef550f3358f814a01b9e5a3b71601d937585236acc34574c
+  title: 7e4ca7beb98fd151f83d116c7acbfe749323c43d95fcb57c1cdc4c6b5195e6b1
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: bc0f43f548d6cd00dd5cc626a2e75c8454853828c86074d136cd4de2381ea142
+  target_identity: eff8e244e21500b75a124d7b91edf08cb43d58dafed8dc6f2e901091f4eb1b55
+  intent: 0aab015a044733b08e77e8481d519f4c19780cf66d8c121e628e82fc26e94c1b
+  validation: 3c845a9b74b2a84f93e165cb140249e8dca09ae7da723c3d7e25a741b50cfa09
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T01:11:59Z'
+  authority: generated
+  via: create_document

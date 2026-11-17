@@ -1,0 +1,26 @@
+name: materialization-tests-del-cli-de-deskops-message
+path: desk/materializations/materialization-tests-del-cli-de-deskops-message.md
+source_hash: 15efa62be22766e4523935ba8cfa2e4f8059e1f699f5fd4a987f7c0018938c36
+content_hash: 7d3b30785d662272a8b1d35d72d016f3d45175f4aa9996b8a9a94f82ffff914e
+field_hashes:
+  id: 819e0365d4b285a69fd50f07f6c2dcee29dc1f1eb47cd3fd665f0703ffa53826
+  title: 55f485b7f8b6182347a9ccd988473c6b83eb4981d767312dd7b15e95a50fcbee
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 59a893f5bea68225827e2fa8e66b4c310edc29e96f7d9135dbe6ec852850bcd6
+  intent: 77afa157d7c14fbb2ff2b9eb8f4ad9d0652a33c7f94f82faeca53bb3c2e0f064
+  validation: 208a91a0c9455c5f0b85087dd5ef341063b4b95990e00c9f25daa7431a31598a
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T01:12:16Z'
+  authority: generated
+  via: create_document

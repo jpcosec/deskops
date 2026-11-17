@@ -1,0 +1,33 @@
+ M .claude/skills/deskops-workflow/SKILL.md
+ M .claude/skills/deskops-workflow/references/deskops-cli.md
+ M .claude/skills/deskops-workflow/references/vocabulary.md
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M README.md
+ M deskops/cli/registry.py
+ M deskops/data/faq.md
+ M docs/faq.md
+ M docs/operator-manual.md
+ M tests/fixtures/golden/help/deskops.txt
+ D tests/fixtures/golden/help/deskops_inbox.txt
+ D tests/fixtures/golden/output/inbox.json
+ D tests/fixtures/golden/output/inbox.text
+ D tests/fixtures/golden/output/inbox.yaml
+ M tests/test_cli.py
+ M tests/test_cli_grammar.py
+ M tests/test_command_registry.py
+ M tests/test_inbox_promote_cli_gaps.py
+ M tests/test_message_cli.py
+ M tests/test_message_delivery.py
+ M tests/test_output_goldens.py
+?? .sldb/core/documents/RunDoc/run-deskops-e-d5d217748798.yaml
+?? runs/subagents/20261116-170649/
+?? runs/subagents/20261116-170855/
+?? runs/subagents/20261116-202233/
+?? runs/subagents/20261116-202327/
+?? runs/subagents/20261116-213327/
+?? runs/subagents/20261116-213418/
+?? runs/subagents/20261116-230533/
+?? runs/subagents/20261116-230642/
+?? runs/subagents/exec-deskops-e-d5d217748798/

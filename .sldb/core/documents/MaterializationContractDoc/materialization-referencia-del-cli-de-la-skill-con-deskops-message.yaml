@@ -1,0 +1,26 @@
+name: materialization-referencia-del-cli-de-la-skill-con-deskops-message
+path: desk/materializations/materialization-referencia-del-cli-de-la-skill-con-deskops-message.md
+source_hash: f981484dc8f2796dbf560f018a79463f05e71be2e775a4c7d6ef8793d6b74d4a
+content_hash: 57b2f7b5147b9370fffe71232ad8229fd1af51299fb8dfea27c11bf85f823c33
+field_hashes:
+  id: 188a657ec762b0f0b1dba2e438c77fd772f67596b98654375f2ef2c499be872a
+  title: 44de005a94d5ade8e54d16939c6ad87dfdde2cc72ab1c9e5527372852713c712
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: bc0f43f548d6cd00dd5cc626a2e75c8454853828c86074d136cd4de2381ea142
+  target_identity: 32c8b441200fb18d635c112168efaf02a233d4d6474d7ffc2ddd963300080a45
+  intent: 832b3e413a81cb4e06ce398d0cc04d2b5fdd5596e58e6b644c282634d27f338c
+  validation: 3c845a9b74b2a84f93e165cb140249e8dca09ae7da723c3d7e25a741b50cfa09
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T01:11:50Z'
+  authority: generated
+  via: create_document

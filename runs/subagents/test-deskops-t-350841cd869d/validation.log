@@ -1,0 +1,58 @@
+== pytest tests/test_message_cli.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+9 passed, 1 warning in 144.71s (0:02:24)
+rc=0
+== pytest tests/test_message_delivery.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 122.80s (0:02:02)
+rc=0
+== pytest tests/test_output_goldens.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 467.34s (0:07:47)
+rc=0
+== pytest tests/test_skill_cli_drift.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 0.07s
+rc=0
+== pytest tests/test_cli_grammar.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 2.89s
+rc=0
+== pytest tests/test_command_registry.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 1.77s
+rc=0
+== pytest tests/test_inbox_promote_cli_gaps.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 2 warnings in 31.87s
+rc=0
+== pytest tests/test_cli.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+102 passed, 2 warnings in 636.03s (0:10:36)
+rc=0
+== pytest tests/test_cli_help_examples.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 64.22s (0:01:04)
+rc=0
+== deskops inbox --list --root .
+usage: deskops [-h] [--debug]
+               {about,doctor,status,faq,bootstrap,init,message,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}
+               ...
+deskops: error: argument command: invalid choice: 'inbox' (choose from 'about', 'doctor', 'status', 'faq', 'bootstrap', 'init', 'message', 'review', 'promote', 'drawer', 'retire', 'issue', 'add', 'edit', 'bind', 'next', 'list', 'show', 'advance', 'repo', 'desk', 'atoms', 'graph', 'materialize', 'drift', 'closeout', 'view', 'runtime')
+rc=2
+== grep done_when
+rc=1
+== grep amplio
+deskops/cli/commands/message.py:39:    `deskops inbox` flag grammar routes through `_run_legacy` for backward
+tests/e2e_agent/scenarios/inbox-to-task.yaml:16:  - deskops inbox list --root . || deskops list inbox-notes --root .
+tests/test_repo_identity.py:97:    Without this, `deskops inbox --ack` and `deskops next` inside such a repo
+rc=0

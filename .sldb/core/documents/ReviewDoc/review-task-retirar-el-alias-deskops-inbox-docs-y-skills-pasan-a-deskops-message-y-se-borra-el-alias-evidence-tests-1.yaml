@@ -1,0 +1,36 @@
+name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-tests-1
+path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-tests-1.md
+source_hash: 2c3696a352803bb6d7143b5862fd4ff3ca8bbb0854377a5ca550237bf5393789
+content_hash: 98ec5fe5c9d176cbeafbf033d3de7b3c5f0dc67c8d74bc0dfb413244b130cee0
+field_hashes:
+  id: b545064bafc0dc39fd1b3f4fe15e0fb73380e3f7068fc3ac1cdb4b55efea1935
+  title: 745ff2f57b562643f3a9592415d2c8596ee779d0901d2d32de5a0aa3c7aa5185
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 59a893f5bea68225827e2fa8e66b4c310edc29e96f7d9135dbe6ec852850bcd6
+  subject: 3d62c255771d02668caa00569bb0b72efcf83428e7907c803f053724c8c7f378
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 9f9448f61df9524983fd9d481b78b935d7f2c3122e24422707135d009266c4c9
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: e6e074ba979f0a5d9c3a5d292f3c3c9c0933405dc8efdaa81434c49c440afe56
+  created_at: c4d73dd1ff0695d28a0ddac69ff59e93ff231d046aaf7fa53fa008f83f63ab7b
+  disposed_at: c4d73dd1ff0695d28a0ddac69ff59e93ff231d046aaf7fa53fa008f83f63ab7b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 41eadb5b01e2f6bb10ecc26675b07f835f7a305a3a311550f6d4784e9e820f6e
+  disposition: 5727608bac6ed2e7bafe35f16e05e350ef74c56ae36b25a7b414b00ce3ce6017
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T01:10:17Z'
+  authority: generated
+  via: create_document

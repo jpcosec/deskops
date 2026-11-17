@@ -1,0 +1,36 @@
+name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-materialization-1
+path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-materialization-1.md
+source_hash: a6200ccab89b1b9accd7745a83e1d0197b1cbdee99fe91b424541d22d0eea1ed
+content_hash: 3b62b38c93bc82c5474b9ac7e01e421bd3468607adf3374fdba6a5d696fe1c66
+field_hashes:
+  id: 2aabcf0ee6969724298bde18beb369325ee727b9c6082628edf7b5a34ae83857
+  title: 7e446af859d1418af87b435d97f4ca8c5ec114d249c90766d4f59a7cb2a42c88
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: eb911753b3c9ed0754001d9c053ed6e00a03542deee28b487279d4ec9c845ebb
+  subject: 3d62c255771d02668caa00569bb0b72efcf83428e7907c803f053724c8c7f378
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: a8a1290723110bfd44c50740bbec3094c29209df0fda5f6ce9b2d11ac74e7210
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: c413ade3c36230b114ac56bd3bb3dd295af6b6544246f0a8f320d5f91f74087e
+  created_at: c4d73dd1ff0695d28a0ddac69ff59e93ff231d046aaf7fa53fa008f83f63ab7b
+  disposed_at: c4d73dd1ff0695d28a0ddac69ff59e93ff231d046aaf7fa53fa008f83f63ab7b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: ae2fd8901348c626bddb397b9fd2ccd7f3880746977a346587fa5e0a05390830
+  disposition: 5d1cf03dc9cb2b2834d51ae4da874c561997193b84782c6838eb4cc86cfe7cfe
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T01:10:26Z'
+  authority: generated
+  via: create_document

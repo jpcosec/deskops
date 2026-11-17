@@ -1,0 +1,26 @@
+name: materialization-golden-de-ayuda-de-deskops-sin-inbox
+path: desk/materializations/materialization-golden-de-ayuda-de-deskops-sin-inbox.md
+source_hash: 73c20f3954e8ec452198b38ad6c92b223bdbf54eb220e51672b71b7c4cb339f6
+content_hash: 623acf9707ef56e22cd6eaede60f56d32f294b86cef958eadac9b2fdce86cbe0
+field_hashes:
+  id: b81f7f82c1e357df822f6205b3d16313241b15433fb5efe6d6641193cb3f0d04
+  title: 7c265c2e74e331ccc343744dbd4780ffe244d3a4a41fcdc2c2af720b45d1e1d5
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 9df198a5a24150005671bf002bc6e02ac9a131ba78cf840f58e37fa1042a4862
+  intent: f38c43f61898f77dc7a5151bd41ebab0ef9765504a4c851b94e92cca7d717c5b
+  validation: 0fd05ff059c6aec6f4ce6dbf14143424d49769110e9ce657ffade3f9808d1372
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T01:12:08Z'
+  authority: generated
+  via: create_document

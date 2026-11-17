@@ -1,0 +1,26 @@
+name: materialization-tests-de-entrega-de-deskops-message
+path: desk/materializations/materialization-tests-de-entrega-de-deskops-message.md
+source_hash: f358919a86474fbdee062671c5e9bce31fb162f0c7e94f0ecf14dbf82a68c165
+content_hash: 4e41fdae0c412d4f7e608fe43040a9dfb73cdf21d99d4653b06e416c6c017a0a
+field_hashes:
+  id: 4f220c6fc70934d986dc6eedb4921408d316b2b587c723b1dde5676cad12d50c
+  title: 0bc7adc51f4b1cce0739b4227e7918b8e811db12ae3e14c2da84a3e2c8879f03
+  source_atoms: 5d2a88373d9d4107d02dac764041187e9260c35600ae3be4e424db8caa00c82c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 7c0a0ab9137d8da75e504fcd3a2c00e7dc90fa5bbfc345899b94a05d6decfe56
+  intent: ad2eae424b343102320c6eb99584aa17b8b85fb32c7ebc19eaa6cad6dd07c328
+  validation: 2d3b3840da37c2bc50dca0c4a105f18b1f269391219c4a18689a4f831ed0a766
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: 30513b0e3f01f0ff2861a92296a5cbdfbfd026b393841ba55c57efc1c8316cf8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T01:12:24Z'
+  authority: generated
+  via: create_document

@@ -326,6 +326,12 @@ include:
   - desk/materializations/materialization-registro-de-comandos-declara-atoms-citations-como-mutante.md
   - desk/materializations/materialization-tests-de-la-evidencia-declarada-y-de-run-dir-en-closeout-verify.md
   - desk/materializations/materialization-golden-de-ayuda-de-closeout-verify.md
+  - desk/materializations/materialization-skill-deskops-workflow-sin-el-alias-inbox.md
+  - desk/materializations/materialization-referencia-del-cli-de-la-skill-con-deskops-message.md
+  - desk/materializations/materialization-vocabulario-de-la-skill-con-deskops-message.md
+  - desk/materializations/materialization-golden-de-ayuda-de-deskops-sin-inbox.md
+  - desk/materializations/materialization-tests-del-cli-de-deskops-message.md
+  - desk/materializations/materialization-tests-de-entrega-de-deskops-message.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -394,6 +400,10 @@ include:
     name: run-deskops-e-2ea9647a5250
   - path: runs/subagents/test-deskops-t-806c1355739d/run.md
     name: run-deskops-t-806c1355739d
+  - path: runs/subagents/exec-deskops-e-d5d217748798/run.md
+    name: run-deskops-e-d5d217748798
+  - path: runs/subagents/test-deskops-t-350841cd869d/run.md
+    name: run-deskops-t-350841cd869d
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1034,6 +1044,24 @@ include:
     name: review-task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible-evidence-atom-1
   - path: desk/reviews/task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible/evidence-materialization-1.md
     name: review-task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible-evidence-materialization-1
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-tests-1.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-tests-1
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-commit-1.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-commit-1
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-atom-1.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-atom-1
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-materialization-1.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-materialization-1
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-tests-2.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-tests-2
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-commit-2.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-commit-2
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-atom-2.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-atom-2
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-materialization-2.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-materialization-2
+  - path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/evidence-materialization-3.md
+    name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-materialization-3
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1079,7 +1107,6 @@ include:
   - desk/tasks/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea.md
   - desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
   - desk/tasks/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no.md
-  - desk/tasks/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias.md
   - desk/tasks/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2.md
   - desk/tasks/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r.md
   - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md

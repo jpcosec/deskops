@@ -1,0 +1,61 @@
+$ ! grep -rnw 'deskops inbox' docs .claude .opencode deskops/data README.md
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_message_cli.py 2>&1 | tail -3; exit ${PIPESTATUS[0]}
+=========================== short test summary info ============================
+FAILED tests/test_message_cli.py::test_retired_inbox_alias_is_an_unknown_command
+1 failed, 8 passed, 1 warning in 217.26s (0:03:37)
+rc=1
+
+$ ../.venv/bin/python -m pytest -q tests/test_message_delivery.py 2>&1 | tail -3; exit ${PIPESTATUS[0]}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 196.21s (0:03:16)
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_output_goldens.py 2>&1 | tail -3; exit ${PIPESTATUS[0]}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 601.99s (0:10:01)
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_skill_cli_drift.py 2>&1 | tail -3; exit ${PIPESTATUS[0]}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 0.05s
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_cli_grammar.py 2>&1 | tail -3; exit ${PIPESTATUS[0]}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 2.78s
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_command_registry.py 2>&1 | tail -3; exit ${PIPESTATUS[0]}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 1.60s
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_inbox_promote_cli_gaps.py 2>&1 | tail -3; exit ${PIPESTATUS[0]}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 2 warnings in 29.47s
+rc=0
+
+$ ../.venv/bin/python -m deskops inbox --list --root .
+usage: deskops [-h] [--debug]
+               {about,doctor,status,faq,bootstrap,init,message,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}
+               ...
+deskops: error: argument command: invalid choice: 'inbox' (choose from 'about', 'doctor', 'status', 'faq', 'bootstrap', 'init', 'message', 'review', 'promote', 'drawer', 'retire', 'issue', 'add', 'edit', 'bind', 'next', 'list', 'show', 'advance', 'repo', 'desk', 'atoms', 'graph', 'materialize', 'drift', 'closeout', 'view', 'runtime')
+rc=2
+
+# re-run tras corregir test_retired_inbox_alias_is_an_unknown_command (main devuelve 2, no lanza SystemExit)
+$ ../.venv/bin/python -m pytest -q tests/test_message_cli.py
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+9 passed, 1 warning in 94.72s (0:01:34)
+rc=0
+
+$ ../.venv/bin/python -m pytest -q tests/test_cli.py  (archivo tocado fuera de files; corrido en background antes)
+102 passed, 2 warnings in 1254.87s (0:20:54)
+rc=0
