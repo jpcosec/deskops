@@ -49,7 +49,7 @@ deskops provides a spec-driven artifact pipeline: YAML specs under `deskops/spec
 - `deskops bootstrap` — machine-level sldb and global-store setup
 - `deskops init` — initialize a repo-local `.sldb/` plus `desk/`
 - `deskops faq` — first-use help (this document)
-- `deskops message` — send, list, read, and acknowledge cross-desk messages (`deskops inbox` is a deprecated alias)
+- `deskops message` — send, list, read, and acknowledge cross-desk messages
 - `deskops promote` — move inbox notes into loose drawer candidates (`inbox-to-drawer-task`); drawer items become tasks only by authoring them with `deskops add task --from-drawer`
 - `deskops bind pill` — bind a context pill to an active task through the modeled task surface
 - `deskops graph` — build graph snapshots, inspect neighbors, check missing references, and write review-only reflection reports
@@ -226,8 +226,6 @@ deskops message read readme-install-examples
 ```
 
 Use `--kind unclear` for unresolved confusion and `--kind suggestion` for proposed improvements.
-
-The older `deskops inbox` flag grammar still works as a deprecated alias.
 
 ## How do I target another repo's desk?
 

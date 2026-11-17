@@ -38,7 +38,7 @@ def test_cli_help_uses_deskops_name(capsys) -> None:
     captured = capsys.readouterr()
     assert result == 0
     assert "usage: deskops" in captured.out
-    assert "{about,doctor,status,faq,bootstrap,init,inbox,message,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}" in captured.out
+    assert "{about,doctor,status,faq,bootstrap,init,message,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}" in captured.out
     assert "Typical flow:" in captured.out
     assert "deskops add task --root ." in captured.out
     assert "deskops faq" in captured.out
@@ -46,11 +46,11 @@ def test_cli_help_uses_deskops_name(capsys) -> None:
 
 
 def test_core_help_documents_examples_and_selectors(capsys) -> None:
-    inbox_help = main(["inbox", "--help"])
-    inbox_output = " ".join(capsys.readouterr().out.split())
-    assert inbox_help == 0
-    assert "deskops inbox" in inbox_output
-    assert "--show/--ack selector" in inbox_output
+    message_help = main(["message", "--help"])
+    message_output = " ".join(capsys.readouterr().out.split())
+    assert message_help == 0
+    assert "deskops message send" in message_output
+    assert "read/ack selector" in message_output
 
     promote_help = main(["promote", "--help"])
     promote_output = " ".join(capsys.readouterr().out.split())
@@ -515,13 +515,14 @@ def test_inbox_delivery_returns_verification_result_json(tmp_path: Path, monkeyp
 
     result = main(
         [
-            "inbox",
+            "message",
+            "send",
             "A message to this project.",
             "--title",
             "Cross desk message",
             "--kind",
             "suggestion",
-            "--repo",
+            "--to",
             "target-repo",
             "--store",
             str(store_path),
@@ -566,7 +567,8 @@ def test_inbox_fails_when_sender_identity_is_unresolvable(tmp_path: Path, monkey
 
     result = main(
         [
-            "inbox",
+            "message",
+            "send",
             "A message without a resolvable sender.",
             "--title",
             "Unknown sender",
@@ -588,11 +590,12 @@ def test_inbox_ack_flips_status_and_records_metadata(tmp_path: Path, monkeypatch
     monkeypatch.chdir(sender_repo)
     assert main(
         [
-            "inbox",
+            "message",
+            "send",
             "Please acknowledge this note.",
             "--title",
             "Ack me",
-            "--repo",
+            "--to",
             "target-repo",
             "--store",
             str(store_path),
@@ -604,8 +607,8 @@ def test_inbox_ack_flips_status_and_records_metadata(tmp_path: Path, monkeypatch
     monkeypatch.chdir(target_repo)
     result = main(
         [
-            "inbox",
-            "--ack",
+            "message",
+            "ack",
             note.stem,
             "--desk-root",
             str(target_repo / "desk"),

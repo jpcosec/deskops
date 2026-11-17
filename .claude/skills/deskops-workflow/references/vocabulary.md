@@ -37,7 +37,7 @@ model/field for docs, the YAML spec/renderer for diagrams — never the generate
 ## Drawer, inbox, promotion
 
 - The **inbox** is coordination intake: external needs, unclear requests, suggestions
-  (`deskops inbox`). It routes toward work; it is not itself work.
+  (`deskops message`). It routes toward work; it is not itself work.
 - The **drawer** (`desk/drawer/`) holds future, uncertain, or loosely shaped work — features,
   issues, questions — that is deliberately *not* active. It only becomes active execution when
   explicitly authored as a routed task: there is no drawer-to-task promotion, because the drawer

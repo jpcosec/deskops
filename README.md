@@ -224,7 +224,7 @@ Current commands (`deskops --help` is authoritative; `docs/operator-manual.md` d
 - `deskops about`, `deskops faq` - orientation
 - `deskops doctor` (`deskops status` is a deprecated alias)
 - `deskops bootstrap`, `deskops init`
-- `deskops message send/list/read/ack` (`deskops inbox` is a deprecated alias)
+- `deskops message send/list/read/ack`
 - `deskops promote inbox-to-drawer-task`, `deskops drawer remove`, `deskops retire`, `deskops issue close/list`
 - `deskops add/edit/list/show <artifact>` - tasks, pills, rituals, boards, atoms, materializations, repositories, inbox-notes, faq-docs, steps
 - `deskops bind pill`, `deskops next`, `deskops advance task`

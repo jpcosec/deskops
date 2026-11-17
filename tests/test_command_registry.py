@@ -46,7 +46,6 @@ MUTATING_COMMANDS: set[tuple[str, ...]] = {
     ("doctor",),
     ("bootstrap",),
     ("init",),
-    ("inbox",),
     ("message",),
     ("message", "send"),
     ("message", "ack"),

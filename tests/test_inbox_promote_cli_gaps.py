@@ -30,22 +30,22 @@ def _write_note(tmp_path: Path, stem: str, body: str) -> Path:
     return note
 
 
-# ── inbox --root ──────────────────────────────────────────────────────────────
+# ── message list --root ──────────────────────────────────────────────────────────────
 
 
-def test_inbox_accepts_root_like_every_other_subcommand(tmp_path: Path, capsys) -> None:
-    """The epilog documented `deskops inbox --list --root .` while the parser
-    only accepted --desk-root, so the documented invocation failed outright."""
+def test_message_list_accepts_root_like_every_other_subcommand(tmp_path: Path, capsys) -> None:
+    """The documented `--root .` invocation must list the desk's inbox notes;
+    the parser once only accepted --desk-root, so it failed outright."""
     _install_desk(tmp_path)
     _write_note(tmp_path, "20260101-000000-suggestion-hello", "# Hello\n\nBody.\n")
     capsys.readouterr()
 
-    assert main(["inbox", "--list", "--root", str(tmp_path)]) == 0
+    assert main(["message", "list", "--root", str(tmp_path)]) == 0
 
     assert "Hello" in capsys.readouterr().out
 
 
-def test_inbox_desk_root_wins_over_root(tmp_path: Path, capsys) -> None:
+def test_message_list_desk_root_wins_over_root(tmp_path: Path, capsys) -> None:
     """--desk-root is the more specific flag and must keep precedence."""
     _install_desk(tmp_path)
     other = tmp_path / "other"
@@ -55,7 +55,7 @@ def test_inbox_desk_root_wins_over_root(tmp_path: Path, capsys) -> None:
     _write_note(other, "20260101-000001-suggestion-in-desk-root", "# InDeskRoot\n\nBody.\n")
     capsys.readouterr()
 
-    assert main(["inbox", "--list", "--root", str(tmp_path), "--desk-root", str(other / "desk")]) == 0
+    assert main(["message", "list", "--root", str(tmp_path), "--desk-root", str(other / "desk")]) == 0
 
     out = capsys.readouterr().out
     assert "InDeskRoot" in out

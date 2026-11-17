@@ -418,15 +418,8 @@ deskops message read manual-message --root .
 deskops message ack manual-message --root .
 ```
 
-`deskops inbox` is a deprecated alias for the same storage. Its flag grammar
-(`--list`, `--show`, `--ack`) still works:
-
-```bash runnable
-deskops inbox --list --root .
-```
-
 `--to <repo>` targets another registered repository. `--from <project>` overrides
-the resolved sender identity (`--sender` is the deprecated `inbox` spelling).
+the resolved sender identity.
 `--desk-root` targets an explicit desk directory. `--format json|yaml` prints
 the result for machines.
 

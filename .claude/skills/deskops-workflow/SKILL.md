@@ -52,7 +52,7 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
   boards, inbox notes, repositories, faq-docs, steps, conditions, operators, checklists, hooks,
   edges, rituals). Create them with `deskops add <kind> ...` and change one field at a time with
   `deskops edit <kind> <selector> <field> <value> --root .`. If the CLI cannot express something
-  needed, log it with `deskops inbox "<gap>" --kind unclear --root .` instead of bypassing the
+  needed, log it with `deskops message send "<gap>" --kind unclear --root .` instead of bypassing the
   model with a raw file edit.
 - **Never hand-edit a generated diagram.** `.mmd`, `.puml`, `.svg`, and generated `.html` catalog
   files are projections. Fix the YAML diagram spec (or the renderer, if the gap is systemic) and

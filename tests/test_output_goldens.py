@@ -629,24 +629,6 @@ def _collect_command_output_goldens(env: dict[str, Path]) -> dict[str, str]:
             message_replacements,
         )
 
-        _reset_inbox(target)
-        capture(
-            "inbox",
-            fmt,
-            [
-                "inbox",
-                f"Legacy golden message for {fmt}.",
-                "--title",
-                f"Legacy golden {fmt}",
-                "--kind",
-                "unclear",
-                "--root",
-                str(target),
-            ],
-            sender,
-            message_replacements,
-        )
-
     for fmt in FORMATS_TEXT_JSON:
         capture(
             "runtime_workers",

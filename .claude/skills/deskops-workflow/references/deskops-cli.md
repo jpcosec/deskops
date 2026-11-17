@@ -39,8 +39,10 @@ fragment.
 
 ## Inbox and drawer promotion
 
-- `deskops inbox "<message>" --kind {unclear,suggestion} --title "<title>" --root .` — log a note.
-- `deskops inbox --list --root .` / `deskops inbox --show <selector> --root .` — list/show notes.
+- `deskops message send "<message>" --kind {unclear,suggestion} --title "<title>" --root .` — log a
+  note in this desk; `--to <repo>` sends it to another registered repository's desk.
+- `deskops message list --root .` / `deskops message read <selector> --root .` /
+  `deskops message ack <selector> --root .` — list, read, and acknowledge notes.
 - `deskops promote inbox-to-drawer-task <selector> --root . [--title ...]` — promote an inbox note
   into a deferred drawer task candidate.
 - There is no drawer-to-task promotion. A drawer item becomes a task only by authoring it with

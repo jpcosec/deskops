@@ -1,8 +1,8 @@
 """Canonical `deskops message` transport surface.
 
 `deskops message {send|list|read|ack}` is the cross-desk coordination CLI.
-`deskops inbox` remains as a deprecated alias and keeps its legacy flag
-grammar; both route to `deskops.cli.commands.message.MessageCLI`.
+It routes to `deskops.cli.commands.message.MessageCLI`; the retired `inbox`
+alias is no longer a command.
 """
 
 from __future__ import annotations
@@ -76,22 +76,9 @@ def test_message_help_documents_transport_verbs(capsys) -> None:
     assert "deskops message send" in output
 
 
-def test_inbox_alias_is_announced_as_deprecated(capsys) -> None:
-    assert main(["inbox", "--help"]) == 0
-    output = " ".join(capsys.readouterr().out.split())
-    assert "Deprecated: use `deskops message send|list|read|ack`" in output
-
-
-def test_inbox_alias_warns_and_matches_message_list(tmp_path: Path, capsys) -> None:
-    alias_result = main(["inbox", "--list", "--root", str(tmp_path)])
-    alias_capture = capsys.readouterr()
-    canonical_result = main(["message", "list", "--root", str(tmp_path)])
-    canonical_capture = capsys.readouterr()
-
-    assert alias_result == canonical_result == 0
-    assert alias_capture.out == canonical_capture.out
-    assert alias_capture.err == "Deprecated: use `deskops message`\n"
-    assert canonical_capture.err == ""
+def test_retired_inbox_alias_is_an_unknown_command(capsys) -> None:
+    assert main(["inbox", "--list"]) == 2
+    assert "invalid choice: 'inbox'" in capsys.readouterr().err
 
 
 def test_message_send_list_read_ack_roundtrip(tmp_path: Path, monkeypatch, capsys) -> None:

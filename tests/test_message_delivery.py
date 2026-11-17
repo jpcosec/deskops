@@ -211,38 +211,6 @@ def test_send_to_registered_repo_tracks_only_in_target_store(tmp_path: Path) -> 
     assert doc_status(sender / ".sldb", note.stem).status == "missing"
 
 
-def test_legacy_inbox_repo_tracks_only_in_target_store(tmp_path: Path) -> None:
-    from sldb.api import doc_status
-
-    sender = _init_repo(tmp_path / "repo-a")
-    target = _init_repo(tmp_path / "repo-b")
-    _register(sender, "repo-b", str(target))
-    before = _store_snapshot(sender)
-
-    result = _cli(
-        sender,
-        "inbox",
-        "A note addressed through the deprecated alias.",
-        "--title",
-        "Legacy repo alias",
-        "--repo",
-        "repo-b",
-        "--format",
-        "json",
-    )
-
-    assert result.returncode == 0, result.stderr or result.stdout
-    payload = json.loads(result.stdout)
-    assert payload["verified"] is True
-    assert _store_snapshot(sender) == before
-    note = next((target / "desk" / "inbox").glob("*.md"))
-    tracked = doc_status(target / ".sldb", note.stem)
-    assert tracked.status == "ok"
-    assert tracked.path == f"desk/inbox/{note.name}"
-    assert not Path(tracked.path).is_absolute()
-    assert doc_status(sender / ".sldb", note.stem).status == "missing"
-
-
 def test_ack_falls_back_to_config_when_registry_lacks_itself(tmp_path: Path) -> None:
     repo = _init_repo(tmp_path / "graph-repo")
     # Registering somebody else used to hide the repo's own identity from ack.

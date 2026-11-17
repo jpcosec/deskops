@@ -103,10 +103,6 @@ def A(flags: str | tuple[str, ...], **kwargs: Any) -> Arg:
 ROOT_ARG = A("--root", default=".", help="Target repository root.")
 ROOT_ARG_NO_PERIOD = A("--root", default=".", help="Target repository root")
 ROOT_ARG_MESSAGE = A("--root", default=None, help="Repository root whose desk/ holds the inbox")
-ROOT_ARG_INBOX = A(
-    "--root",
-    help="Repository root whose desk/ holds the inbox; the same --root every other subcommand takes",
-)
 ROOT_ARG_WHOAMI = A("--root", default=".", help="Repository root to identify")
 DESK_ROOT_ARG = A("--desk-root", help="Desk root directory override; defaults to the active project desk")
 STORE_ARG = A("--store", help="Store path used to resolve the target project root for the default desk")
@@ -114,10 +110,6 @@ REPO_ARG = A("--repo", help="Target a registered repository name in the ecosyste
 PYTHONPATH_ARG = A(
     "--pythonpath",
     help="Project path used when auto-tracking messages through the registered model",
-)
-PYTHONPATH_INBOX_ARG = A(
-    "--pythonpath",
-    help="Project path used when auto-tracking inbox notes through a registered InboxNoteDoc model",
 )
 OUTPUT_FORMAT_ARG = A("--format", choices=("text", "json"), default="text", help="Output format.")
 OUTPUT_FORMAT_YAML_ARG = A("--format", choices=("text", "json", "yaml"), default="text", help="Output format.")
@@ -632,53 +624,6 @@ def _commands() -> list[Command]:
             args=(A("path", nargs="?", default=".", help="Target repository path"),),
             handler="deskops.cli.commands.core:InitCLI",
             mutates=True,
-        ),
-        Command(
-            path=("inbox",),
-            help="Deprecated alias for `deskops message`; use message send/list/read/ack.",
-            args=(
-                A("message", nargs="?", help="Inbox note body"),
-                A(
-                    "--kind",
-                    choices=("unclear", "suggestion"),
-                    default="unclear",
-                    help="Type of inbox message to write",
-                ),
-                A("--title", help="Short title for the note"),
-                ROOT_ARG_INBOX,
-                DESK_ROOT_ARG,
-                STORE_ARG,
-                REPO_ARG,
-                A("--sender", help="Override the resolved sender identity with a registered project id"),
-                PYTHONPATH_INBOX_ARG,
-                A("--list", action="store_true", help="List desk inbox notes"),
-                A("--show", help="Show one inbox note by filename, stem, or slug fragment"),
-                A("--ack", help="Acknowledge one inbox note by filename, stem, or slug fragment"),
-                A("--limit", type=int, default=20, help="Limit listed notes"),
-                OUTPUT_FORMAT_YAML_ARG,
-            ),
-            handler="deskops.cli.commands.message:MessageCLI",
-            mutates=True,
-            deprecated_for=("message",),
-            epilog="""
-Deprecated: use `deskops message send|list|read|ack`. Each inbox form below
-has a `deskops message` equivalent; prefer it.
-
-Examples:
-  deskops inbox "Need clearer CLI help" --kind unclear --title "CLI help"
-    -> deskops message send "Need clearer CLI help" --kind unclear --title "CLI help"
-  deskops inbox --repo sibling-repo --sender current-repo "Need follow-up"
-    -> deskops message send "Need follow-up" --to sibling-repo --from current-repo
-  deskops inbox --list --root .
-    -> deskops message list --root .
-  deskops inbox --show 20260614-cli-help --root .
-    -> deskops message read 20260614-cli-help --root .
-  deskops inbox --ack 20260614-cli-help --root .
-    -> deskops message ack 20260614-cli-help --root .
-
---show/--ack selector: filename, stem, or slug fragment.
-""".strip(),
-            raw_text=True,
         ),
         Command(
             path=("message",),
