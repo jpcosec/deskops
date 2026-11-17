@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -259,3 +260,36 @@ def test_message_ack_rejects_a_fragment_that_matches_two_notes(tmp_path: Path) -
     assert exact.returncode == 0, exact.stdout + exact.stderr
     assert "status: closed" in first.read_text(encoding="utf-8")
     assert "status: open" in second.read_text(encoding="utf-8")
+
+
+# sldb renders a field value as Jinja source (sldb/core/renderer_engine/base.py replace_markers):
+# two or three opening braces raise TemplateSyntaxError and a valid expression is evaluated and
+# stored altered with rc 0. Reported to sldb; this pins the literal contract until sldb fixes it.
+SLDB_JINJA_VALUE_NOTE = (
+    "20261117-015212-suggestion-render-model-markdown-interpreta-como-jinja-el-valor-de-los-campos"
+    "-llaves-dobles-rompen-expresiones-se-evaluan.md"
+)
+
+
+@pytest.mark.xfail(strict=True, reason=SLDB_JINJA_VALUE_NOTE)
+@pytest.mark.parametrize(
+    "body",
+    [
+        "docker inspect --format {{.State.Health.Status}} web",
+        "texto {{a fin",
+        "this is not valid json {{{",
+        "valor {{ 7*7 }} y {# oculto #} fin",
+    ],
+)
+def test_message_send_keeps_braces_in_the_body_literal(tmp_path: Path, monkeypatch, capsys, body: str) -> None:
+    sender_repo, target_repo, store_path = _setup_inbox_identity_env(tmp_path, monkeypatch)
+    monkeypatch.chdir(sender_repo)
+
+    rc = main(
+        ["message", "send", body, "--title", "Llaves", "--kind", "unclear",
+         "--to", "target-repo", "--store", str(store_path), "--format", "json"]
+    )
+
+    assert rc == 0, capsys.readouterr()
+    note = next((target_repo / "desk" / "inbox").glob("*.md"))
+    assert body in note.read_text(encoding="utf-8")

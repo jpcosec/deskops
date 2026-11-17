@@ -1308,3 +1308,76 @@ def test_closeout_commit_still_amends_an_uncited_head_with_the_task_id(
     assert subprocess.run(["git", "merge-base", "--is-ancestor", code, head], cwd=root).returncode != 0
     assert "feature.py" in _git(root, "show", "--name-only", "--format=", "HEAD").splitlines()
     assert "Task-Id: task-x" in _git(root, "log", "-1", "--format=%B")
+
+
+# --- braces in --reason and the desk/reviews projection (task-valores-con-llaves-...) ------------
+
+
+@pytest.mark.parametrize(
+    "reason",
+    [
+        "cierre {a}",
+        "cierre {{a}} docker {{.State}}",
+        "cierre {{{a}}}",
+        "cierre a}",
+        "cierre a}}",
+        "cierre a}}}",
+        "cierre {commit} literal",
+    ],
+)
+def test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], reason: str
+) -> None:
+    """The reason is text: the commit trailer and the printed line carry it unchanged, rc 0."""
+    root = _make_repo(tmp_path)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    rc = _closeout_main(root, "--no-run", "--reason", reason, "--paths", "feature.py")
+
+    out = capsys.readouterr().out
+    assert rc == 0, out
+    assert _git(root, "log", "-1", "--format=%(trailers:key=Closeout-Reason,valueonly)") == reason
+    commit = _git(root, "rev-parse", "HEAD")[:12]
+    assert out.splitlines()[0] == f"Closing commit {commit} made manually (no run): {reason}"
+
+
+def test_closeout_commit_folds_the_verify_receipt_projection_into_the_closing_commit(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """verify writes its receipts without committing them; the close commits their
+    desk/reviews/<task> projection with the rest and leaves no file behind."""
+    from closeout_desk import store_repo
+    from deskops.operations import DeskopsOperations
+
+    root = store_repo(lifecycle_desk)
+    task_id = DeskopsOperations(root).create_task_bundle(
+        {
+            "title": "Llaves",
+            "goal": "g",
+            "scope": "s",
+            "implementation_path": "i",
+            "done_when": "d",
+            "validation": ["echo ok"],
+            "task_type": "task.external",
+        }
+    ).task_id
+    assert main(["edit", "task", task_id, "references", '["https://example.com/e"]', "--root", str(root)]) == 0
+    _git(root, "add", "-A")
+    _git(root, "commit", "-q", "-m", "task")
+
+    assert main(["closeout", "verify", "--task", task_id, "--root", str(root)]) == 0
+    projection = f"desk/reviews/{task_id}/evidence-external-1.md"
+    assert "?? desk/reviews/" in _git(root, "status", "--porcelain", "--untracked-files=normal")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    capsys.readouterr()
+
+    rc = main(
+        ["closeout", "commit", "--root", str(root), "--task", task_id,
+         "--no-run", "--reason", "cierre {a}", "--paths", "feature.py"]
+    )
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain") == ""
+    committed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
+    assert projection in committed
+    assert "feature.py" in committed

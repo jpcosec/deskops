@@ -1672,7 +1672,7 @@ task leaves the Board, and the run index entry is marked resolved-by.
         ),
         Command(
             path=("closeout", "verify"),
-            help="Check the closeout evidence the task declared, without committing; print a structured report.",
+            help="Check the closeout evidence the task declared and write its evidence receipts, without committing them; print a structured report.",
             args=(
                 ROOT_ARG,
                 A("--task", required=True, help="Task id being verified."),
@@ -1682,7 +1682,7 @@ task leaves the Board, and the run index entry is marked resolved-by.
                 ),
             ),
             handler="deskops.cli.commands.closeout:CloseoutCLI",
-            mutates=False,
+            mutates=True,
             epilog="""
 Example:
   deskops closeout verify --root . --task task-fix-thing
@@ -1692,6 +1692,12 @@ closeout_evidence overrides it): tests, commit, atom|materialization, document,
 external. Each kind is looked up in the task's references (and files, for
 documents). A task with no type and no field predates the types and is gated as
 code, with an alert.
+
+Writes: one evidence receipt per declared kind (a ReviewDoc kind evidence in
+the store and its projection desk/reviews/<task>/evidence-<kind>-<n>.md),
+skipped when an intact receipt with the same input and verdict exists. It does
+not commit them: `deskops closeout commit` reads them as its gate and folds
+them into its own closing commit.
 
 Output: stdout carries a JSON report (declared, found, per-gate findings,
 alerts, ok, summary); stderr carries the one-line summary "esta tarea declaró

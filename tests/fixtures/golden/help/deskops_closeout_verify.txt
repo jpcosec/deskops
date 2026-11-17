@@ -1,7 +1,7 @@
 usage: deskops closeout verify [-h] [--root ROOT] --task TASK
                                [--run-dir RUN_DIR]
 
-Check the closeout evidence the task declared, without committing; print a structured report.
+Check the closeout evidence the task declared and write its evidence receipts, without committing them; print a structured report.
 
 options:
   -h, --help         show this help message and exit
@@ -18,6 +18,12 @@ closeout_evidence overrides it): tests, commit, atom|materialization, document,
 external. Each kind is looked up in the task's references (and files, for
 documents). A task with no type and no field predates the types and is gated as
 code, with an alert.
+
+Writes: one evidence receipt per declared kind (a ReviewDoc kind evidence in
+the store and its projection desk/reviews/<task>/evidence-<kind>-<n>.md),
+skipped when an intact receipt with the same input and verdict exists. It does
+not commit them: `deskops closeout commit` reads them as its gate and folds
+them into its own closing commit.
 
 Output: stdout carries a JSON report (declared, found, per-gate findings,
 alerts, ok, summary); stderr carries the one-line summary "esta tarea declaró

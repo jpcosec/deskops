@@ -13,8 +13,9 @@ positional arguments:
                         ritual lifecycle.
     resolved-by         Close a task whose work already entered the history,
                         naming an ancestor commit and a test.
-    verify              Check the closeout evidence the task declared, without
-                        committing; print a structured report.
+    verify              Check the closeout evidence the task declared and
+                        write its evidence receipts, without committing them;
+                        print a structured report.
 
 options:
   -h, --help            show this help message and exit

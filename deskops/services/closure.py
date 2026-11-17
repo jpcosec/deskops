@@ -762,6 +762,13 @@ class ClosureService:
                     self._git("add", "-A", "--", ".sldb", check=False)
                     add_commit_path(".sldb")
 
+                # The desk/reviews/<task> projection of the evidence receipts verify wrote
+                # (their ReviewDocs ride in with .sldb above) enters the same closing commit.
+                reviews_rel = self._relative(self.desk_root / "reviews" / task_id)
+                if self._git("status", "--porcelain", "--", reviews_rel, check=False):
+                    self._git("add", "-A", "--", reviews_rel, check=False)
+                    add_commit_path(reviews_rel)
+
                 if task_bytes is not None:
                     # Committed means present in HEAD, not merely staged: a directory in
                     # --paths can stage a task created in this cycle, and HEAD never had it.
@@ -854,7 +861,9 @@ class ClosureService:
             messages.append(f"Index: {index_path}")
         messages = [*self._gate_notes, *messages] if run_gates else messages
         if success_line:
-            messages.insert(0, success_line.format(commit=commit[:12]))
+            # Not str.format: the line already carries the operator's --reason, whose braces
+            # are text. Only its leading {commit} placeholder is filled.
+            messages.insert(0, success_line.replace("{commit}", commit[:12], 1))
         return ClosureOutcome(0, messages)
 
     def _gate_outcome(self, task_id: str) -> ClosureOutcome | None:
