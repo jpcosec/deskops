@@ -1,7 +1,7 @@
 name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-preflight-2
 path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/preflight-2.md
 source_hash: 1f26425b4ed097f1d95a07ff9e8547ce83f6a03858d0935963e963f6132eabfa
-content_hash: 2f9a1127bb3e91b371e16c1d5b60b4eb1863592ec6fc10b027aab57f99218fac
+content_hash: 14a9e85e371deebde5d038795f4dfe6ea94bd53716a8287899e62dc95d761e72
 field_hashes:
   id: dbfd76f489996366707052d3e92c0a3624d180e1e7f45c62fb51ebf2aceb5abf
   title: b16d8e6eafe30fd7bf8a267f66ed0b0c58fa1549465c9d75c70bcf8d699d626f
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 48cef41768fb238c98244e81726728b73a80bb471a3c592ae12a6e55d9bb7e68
   input_sha256: 023d6aeaf148da144846fd7707d9b7ffad4f79714d2aa793909aaa6cdb35d447
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 97a415ce4eaf068fb18c6b5969e8cdcaea34a705c98c564818780f50f953f489
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 1428bb2adbb6d7d796c1708741cd457981623e1d743e021ac2c96e690b7f15e8

@@ -1,0 +1,43 @@
+== test_review_command.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+29 passed, 1 warning in 286.29s (0:04:46)
+rc=0
+== test_review_doc.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+22 passed, 1 xfailed, 1 warning in 167.41s (0:02:47)
+rc=0
+== test_review_record.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 1 warning in 215.32s (0:03:35)
+rc=0
+== test_model_contract_snapshot.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 1.17s
+rc=0
+== test_activation_rules.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+10 passed, 1 warning in 135.70s (0:02:15)
+rc=0
+== test_closeout_evidence_receipts.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 2 warnings in 49.53s
+rc=0
+
+== Reproducción en HEAD f41ce57d (git archive en /dev/shm/t908-head + tests/test_review_command.py nuevo)
+pytest -q tests/test_review_command.py -k "tags_and_status or contract_digest or linked_files"
+FAILED test_receipts_record_the_task_contract_digest
+FAILED test_edited_tags_and_status_keep_accepted_receipts_and_goal_stales_them  (tests/test_review_command.py:610: {'preflight': 'stale'} != {'preflight': 'accepted'})
+2 failed, 1 passed (linked_files pasa en HEAD, como es esperable: es un test de no-regresión)
+
+== Fixture de hashes: HEAD + deskops/models/review.py nuevo + fixture viejo
+pytest -q tests/test_model_contract_snapshot.py -> 1 failed: "Model contract changed for: ReviewDoc", computado "f16882ab411b3ca17fed6de6494d082354c73679ec0db0603a8e21bd3a606759" = valor de la entrega
+
+== Sandbox real: ver sandbox.log (git init + deskops init + pi falso, PYTHONPATH al checkout)
+preflight/bundle aceptados -> accepted/accepted; edit tags -> accepted/accepted; advance (status active, current_node ritual-testing) -> accepted/accepted; edit goal -> stale/stale
+recibo viejo sin contract_sha256: accepted; tras edit tags -> stale (comportamiento de hoy)

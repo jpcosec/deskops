@@ -1,7 +1,7 @@
 name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-preflight-1
 path: desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/preflight-1.md
 source_hash: 53d8a408b878db37833b0418a15a87a0ec2dd55e59a28cadc20744888add681e
-content_hash: 03d04a9ac6f21a68ab130640ff34b5e3925b26838e7ad39a935303601841d76e
+content_hash: 56b20ea31c1b637a9c90f60423a3f6a0c96b79648861186a05da1ed9240b0be6
 field_hashes:
   id: 0bf7192268b5d83bb5d5d2883eb8795064ba5207326423229bd3cd8d04e9db4e
   title: e8efc0de3958352d6ef68331d3e0ed71d0e2736b7bb5210e12a7aec7ad322143
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 599403109bdf592568316463fee2459bb09049c6d57de9c0ef11c02053313628
   input_sha256: 01bf04e422f8773df8f0c9318a58ddf8da4d16cf43ca231c95795cf2fd1bc8ab
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: f13dadede3607371fce92e5293e5bb6b5dbbd7892198080c02a0437f54f7b556
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: c33956485d1ebf7572b728d401424d3e5141025d2e4b98c223bbb3c73890a4c3

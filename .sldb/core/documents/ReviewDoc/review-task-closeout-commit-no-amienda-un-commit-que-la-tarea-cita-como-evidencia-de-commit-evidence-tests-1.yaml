@@ -1,7 +1,7 @@
 name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-tests-1
 path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/evidence-tests-1.md
 source_hash: f92e172ac7a6233546d6a3d07b4b6c278736047ff47ed7f68384db4a2192fb1b
-content_hash: 73e0cb8c880bf0afd9e3e216b45bfd863345b254061f4d9bf42008a3251dcacb
+content_hash: c0fdb29c63b068505566cc001e696f1978f6d0812fcf3eb73397547ea4da8377
 field_hashes:
   id: 91b99f2486a03809a9df19233b92bb447e8fdf7b2d311232aa8c554df2d9ed1a
   title: ae58292e1fd0fc022b95e576353f9061b487b023988a1a76a5783026a80ba5d4
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: 9b808cbf54d07d27f98534465d7604e444364acfd9eeb99bae10a089b97ec6a6
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 9c2af6e4f69734d402dcb167fc991fad2b8b4d2d1cf57345b94a250e0fc84f4f

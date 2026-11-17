@@ -1,7 +1,7 @@
 name: review-task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale-preflight-1
 path: desk/reviews/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/preflight-1.md
 source_hash: 81a1ccc198ecc9e083019e997afaf06a26da0761d51468b39b641cabd7e8fe11
-content_hash: c584e21c1720c82255df347ee7f4ab087410b8d28b58171313a3fc32aa6d0949
+content_hash: dc23a391f82732d11b37e746840d68144d67904bed037e2a7b545187c49dd3db
 field_hashes:
   id: 90fb575b51e5522bc87e81dd2e730ce67b87f16a199226cffb85c7894f43efde
   title: 66b38d1dca15c60917c68d84f67cd8b9bfca8dd88861a08e4889d1af64dee931
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 9f8e55d0817a62790f85c4affdc9ac8eb32f47a51dd135197856dfea00bdc412
   input_sha256: 1af741bcc6e6382e8cd5ca0cbc7880bd5ddc721940049f22b430542496c30016
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: cd93fb49bb96979033ea9b74c5709e9dca60d35aa2f55442d6642d7b62a93bba
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7

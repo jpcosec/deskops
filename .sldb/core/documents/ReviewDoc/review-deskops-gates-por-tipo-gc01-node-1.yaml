@@ -1,7 +1,7 @@
 name: review-deskops-gates-por-tipo-gc01-node-1
 path: desk/reviews/deskops-gates-por-tipo-gc01/node-1.md
 source_hash: 881877b3eb7ac9cf5d22a371c0cf4b75685d8d4d5b3c2c31207f5be0badc616b
-content_hash: bbfb9ab131bea6fd4b2298d49cb3708aac747b6b755e0ba6b6c01fbdba4c5c58
+content_hash: ab494f9d9c65be3fcb9950499178ceebe1eb4d456515b6e06830c973c2fe06ef
 field_hashes:
   id: b9ebb001c5914ba20cfe4cd0edffe8b4ca9c7f08c93e898a0f633524ba223dbe
   title: 873ef3076e940cae5158b27c36185188db6d344f7f79dd8540a29d0677a27865
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: dbc4dbcec5e90c9a21b842ce6824cc8414f23aa32a65753e752cc6edb0f1ebc5
   input_sha256: 2a15af1e2dc949290c04b1f80371db1501c29a8857019c69f9616ba8b58801a6
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 29e55c336f6987e2794884d5d0d3884bd3bab5fb10b6bf09660c41d4467b54ad
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 65d10a0074b101292fa24002af41f7f3874e012dbde38ee7b01ce52bec697b6c

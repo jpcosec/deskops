@@ -1,7 +1,7 @@
 name: review-task-scion-autonomy-review-status-bundle-1
 path: desk/reviews/task-scion-autonomy-review-status/bundle-1.md
 source_hash: 4d5a4841063036ebc578a8e54796a73acbcb35dea5b12ae1281eca13570b7f9e
-content_hash: 7e5615204ef592bc7ff21826a09c2d39197888e49e6c2ec9731f4f41ccaccf00
+content_hash: 0b6810bd2e2f603d783f708911d4a406aa70a1b7cfc9367aa8a4874c58e5c541
 field_hashes:
   id: 707ea7087794a91708d338ba366f2cc0c4f39bf3a86847dcdae188da4e930c5a
   title: 825f1f9218d0916d29a2c2ed50bf628377709103b5cecf6cafaa01c3a1402efd
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 5fcd5bf2c42c5f77a71aef3e58315f99efba2ff8336e93d58adc71f0989b1133
   input_sha256: 7f72f419b3710f9b4e0f9f36fc01846856721ed97e4fa8722ea54aaf2791661a
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 625725ac5464fbf586bb794c9796f4fe95b4f0f8fcc817845e99077fad20ce3b
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 0f3bb2476e263c56a837ef6c4df9561d6c8b4c8e6797f7080508b9b028288f60

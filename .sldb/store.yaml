@@ -419,6 +419,8 @@ include:
     name: run-deskops-t-a963945f7a8c
   - path: runs/subagents/exec-deskops-e-289fe7bfa1df/run.md
     name: run-deskops-e-289fe7bfa1df
+  - path: runs/subagents/test-deskops-t-908138de7331/run.md
+    name: run-deskops-t-908138de7331
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1325,6 +1327,50 @@ include:
     name: review-task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo-evidence-atom-1
   - path: desk/reviews/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo/evidence-materialization-1.md
     name: review-task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo-evidence-materialization-1
+  - path: desk/reviews/deskops-workspace-documental-ws13.2/node-1.md
+    name: review-deskops-workspace-documental-ws13.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws13.3/node-1.md
+    name: review-deskops-workspace-documental-ws13.3-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws15.1/node-1.md
+    name: review-deskops-workspace-documental-ws15.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws15.2/node-1.md
+    name: review-deskops-workspace-documental-ws15.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws19.1/node-1.md
+    name: review-deskops-workspace-documental-ws19.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws19.2/node-1.md
+    name: review-deskops-workspace-documental-ws19.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws25.1/node-1.md
+    name: review-deskops-workspace-documental-ws25.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws25.2/node-1.md
+    name: review-deskops-workspace-documental-ws25.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws26.1/node-1.md
+    name: review-deskops-workspace-documental-ws26.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws26.2/node-1.md
+    name: review-deskops-workspace-documental-ws26.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws27.1/node-1.md
+    name: review-deskops-workspace-documental-ws27.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws27.2/node-1.md
+    name: review-deskops-workspace-documental-ws27.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws32.1/node-1.md
+    name: review-deskops-workspace-documental-ws32.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws32.2/node-1.md
+    name: review-deskops-workspace-documental-ws32.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws33.1/node-1.md
+    name: review-deskops-workspace-documental-ws33.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws33.2/node-1.md
+    name: review-deskops-workspace-documental-ws33.2-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws34.1/node-1.md
+    name: review-deskops-workspace-documental-ws34.1-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws34.2/node-1.md
+    name: review-deskops-workspace-documental-ws34.2-node-1
+  - path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-tests-1.md
+    name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-tests-1
+  - path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-commit-1.md
+    name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-commit-1
+  - path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-atom-1.md
+    name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-atom-1
+  - path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-materialization-1.md
+    name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1371,7 +1417,6 @@ include:
   - desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
   - desk/tasks/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no.md
   - desk/tasks/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2.md
-  - desk/tasks/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r.md
   - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
   - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md

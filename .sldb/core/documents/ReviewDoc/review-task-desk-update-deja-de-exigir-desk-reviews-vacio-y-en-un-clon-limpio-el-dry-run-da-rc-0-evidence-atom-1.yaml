@@ -1,7 +1,7 @@
 name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-atom-1
 path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-atom-1.md
 source_hash: 70aabb2f6bcfeb098bca90676eef3c147a5cdea9f2683695fbe6d8a210609c1d
-content_hash: 87e93a8592ac275590e64f2dc4803e379ee5c2ea7ee2059625f37a7f26f8c201
+content_hash: de77b6c3cef537c67c455892354c36dff448aecd47a7344a08c0c91906eb92eb
 field_hashes:
   id: 3a93d9ce342b2cccfed84c2203f968d5e419fec8a2c00551939007236577f428
   title: 4f80ef5a0097f28a93b252009568d4f53b1b9d72ffcacdf7f3978a72792f3c5f
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: 22874d499cdefc4c5a1433551beb13a221608181328899daaff8dad6e2bc2c3c
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 60d6089a2f250c430e3a32efa4d5534eab29af2da56b3dfb4f1ff46d1487e103

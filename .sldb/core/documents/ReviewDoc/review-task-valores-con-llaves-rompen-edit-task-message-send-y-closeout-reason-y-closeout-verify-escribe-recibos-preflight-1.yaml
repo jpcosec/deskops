@@ -1,7 +1,7 @@
 name: review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-preflight-1
 path: desk/reviews/task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos/preflight-1.md
 source_hash: 1e501f11fbd3664b0e38ba81e7ec49b47d137643967e760fac290ac1094a7296
-content_hash: 92e6f703b46a464da4731a9fbc56e4bac10755cfab7de945c05a364b6c5dc19f
+content_hash: 54ebba99c808a592c5e41b2bc81ce87e8c10eb9ecfcb3251316cfe21e24ec04e
 field_hashes:
   id: 2a9615b51e998f5693d904fb2a61ba6785adc2d83170d24b11c32114d9953caf
   title: 823555f76fc251f7b739c460571ff47f91891be5e0efa71b96df5f112fc9dba0
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: e22249b4a66c859121d9d8b2ab2fb2d9b2c55e80dac1e88b480973890abb8d7f
   input_sha256: 5a5c87ca3a87a189aa05a4ce9fb0a9e7780a41414dffa6b34b9badea32c99baf
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 753eb47fd77b0c6236dacfcfc367de08cda40e4110108b637379d8b4931e7027
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7

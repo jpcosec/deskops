@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-tests-1
 path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-tests-1.md
 source_hash: ef84172a9275bb51d23ec3780e694d1530aeb236eb88e3f3172c6152f247a9bd
-content_hash: 1814eb5bd6b8a7a39162c17409c916a1ff68ac963a0ed10d683312190c8da937
+content_hash: 703b06edcbf916b9e5ce3d793030f4abfe645127f6f857cbf1ac0afe761cbc31
 field_hashes:
   id: 2e78bf6726bad3aff668d545f2a171a59c9ac01f38bda698ee27fbc269659e0d
   title: 0943dd29b813cfc3531e5bbd8aa03ee465d660a370b3b0ddbe54101c31f141f7
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: 59e94dbe2aafc43344f50f28163d31ea799d78984a7493c6fdd55e1b3280b851
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 576de4175b6b9d21f8a143d024d13066a4f8b0ffb5bdc07844c775eafac78858

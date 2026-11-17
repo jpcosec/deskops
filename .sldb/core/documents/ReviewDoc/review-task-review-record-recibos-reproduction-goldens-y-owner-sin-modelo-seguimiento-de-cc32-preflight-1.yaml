@@ -1,7 +1,7 @@
 name: review-task-review-record-recibos-reproduction-goldens-y-owner-sin-modelo-seguimiento-de-cc32-preflight-1
 path: desk/reviews/task-review-record-recibos-reproduction-goldens-y-owner-sin-modelo-seguimiento-de-cc32/preflight-1.md
 source_hash: 708dc10e90cecaca01e7a62926f1c21cd7db1e6832ea530f81832d4c6c95fcac
-content_hash: 6297bb484b344c19faf25980696e34cbcf802fae96cf42e59f849762e1a4d55e
+content_hash: dbfb0455d00b89ec0d1b9f717afb689228a63f37b3d317d9132d15354dbdd75c
 field_hashes:
   id: 34f02e572c5af49797123e8322e352972ec970924d108968dec23d4b8abda944
   title: fedba88eed47daac89d1dbe63dc049bcfcfc5d7d066522d0071f788551f032b2
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 8db8a83cb89c8875b27f6c6091c1ed4f9d20f81542721676d445a0e42312e914
   input_sha256: f6ebfc5879187e31d936f0a2e0232f3a33011fd03024159600ad2dabff8e254b
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 25ebabe22842e223be3e9cf52d86192b3743a51ed8c09eafe67537d71184d50b
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 58e935573575d1f02f74f7ef9335734bfc1b12104b95ebd473e30d009bdc492d

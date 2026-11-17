@@ -1,7 +1,7 @@
 name: review-task-scion-autonomy-coordinator-contract-preflight-2
 path: desk/reviews/task-scion-autonomy-coordinator-contract/preflight-2.md
 source_hash: 0e085a9bda55aa0c28b1935ec7f35297aa4e50032a75ee1bd934b7f167da6b36
-content_hash: 44588cd4291d7033701a1c377c50860637350c7ff80c82caed078abb47e3c829
+content_hash: 282756933ef8d69d955bef78eb6feb6a87db56b490b97374d27bc400c4dd57f6
 field_hashes:
   id: fd6c71272e5bdcebd28be619e87405d4795b609155f2bfffd05ce625b46a4228
   title: c3baa1634fefff24ea66f26e73110a2deac424a9134e14059f8ea601468bc8d3
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: fa35a34d68b69e6c7685aa20d67ecbc864dc93cfcab606061e17bd2b15550db5
   input_sha256: 4355f543a4855642cc0451148943b0774e515eb58cc3217900fe9236d600104a
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: f605b61e7d5eedb9deda217386ea28075cea611387d43a46588adc83b060c9fb
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: f242905a762bec8ddf373add42f42ea5541c94f993013c9081800b96a6382b46

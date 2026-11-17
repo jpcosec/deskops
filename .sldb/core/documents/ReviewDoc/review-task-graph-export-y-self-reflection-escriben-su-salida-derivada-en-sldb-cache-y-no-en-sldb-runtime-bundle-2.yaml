@@ -1,7 +1,7 @@
 name: review-task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime-bundle-2
 path: desk/reviews/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/bundle-2.md
 source_hash: b25df272b7b1b13aff1680e7e33a02e6245efe2b77182f9b456ed3ac95e81cbd
-content_hash: 88deef07579a8dd3aec282d4862814326bb738f477356df9b8c1bb91a48ed6fe
+content_hash: c77e90cdfa9e75e73f386d6f22b046431f791b3519285b3a143d1c472672ce6d
 field_hashes:
   id: c37bf61c35c3813981bc9679d739d856f5bfa7d89366b8d06aa95f168f29990b
   title: f4ba84db9ee43dba7a0a6b98cf1fb20ff8ff623a1acbfec09936a5b67e9651f2
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 14674b4a9e435d7be8dc8c7849e12dca5ed5d4f436540aa41421142967da0fa4
   input_sha256: f809f44016385a2cd9be3d113bd604fa7b5422ca1cf498b9bd59d94833052a5e
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: e0a2880639eba67491e2fdf279ab71cc9052d353fa20a149886e711ae981ed51
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 93b15e68b52aac85862b6b74cc89f53ac00f62be37f4f1ce2343e08177840f46

@@ -1,0 +1,37 @@
+name: review-deskops-workspace-documental-ws19.2-node-1
+path: desk/reviews/deskops-workspace-documental-ws19.2/node-1.md
+source_hash: 395a759f72a241eaac1597b065941eb1facd2c7d9b69142dbab57c1b61412265
+content_hash: 0227490fef5026242161765f4b305ec9769bf298815bbac23cc066352dbe9c53
+field_hashes:
+  id: eab5746c7c4b0ff3dea74dc0a2da8a39ffd8be069b1894e7c15c61ab357c7f58
+  title: f2ff9ce82773c8c9483febe4dbd212da37f463da594d49c214711edd43567856
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: aa9b934a707e0774edd0afc2367b5b9f1b03876d868ad906479ce4e5c72fe2ae
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 21a5aeace30b00b2481ba380902ea6be9977ca9186266fb6905279ecd6d78860
+  input_sha256: dc42af30caaeca350972ef685a2d03d8f981e2efa4950b016f200fc4b4614cdc
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 87bc1add8bbc55b97c91f1d99066839bb7bbc1eab5090418d73da580b6e15342
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: b57b776d9a9a4ccd7e9a84b790b83236f05b0b4e98cb9baba25d8a630b8da7b1
+  created_at: 6c2d8457b29acf551b28c02f1d234cb24770b1c333ed1752483c3439932ec693
+  disposed_at: 7156eb766b6ab9c7e4fc7d4d4eb1f438d3bae500c27faec54306397945897e82
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 49a15c54e4592498bc4e5a22f8deff3f743b8cb3b5aaf4e0f6b8eba4fe1ca4e7
+  disposition: ebac32cf3a549fa10ab2dce2d43286d766cf858accfa911029cba5d98da108b6
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T04:19:07Z'
+  authority: generated
+  via: save_document_payload

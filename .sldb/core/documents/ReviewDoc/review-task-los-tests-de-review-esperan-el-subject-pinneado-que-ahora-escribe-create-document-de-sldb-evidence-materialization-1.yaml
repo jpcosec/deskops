@@ -1,7 +1,7 @@
 name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-evidence-materialization-1
 path: desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/evidence-materialization-1.md
 source_hash: 0cadad1864a7e33c6b806bab911707bfae00fc241585beee784e2846c6ef98e5
-content_hash: a59f6f9d2db9e33e89d907b4f4b6caee37d2e206ed9fcb3ec8caea86c0fe3c73
+content_hash: a3fc97c10caf9517d74d64578ee5d264ecd773964df2067b823672e1e6976695
 field_hashes:
   id: 49a72f89c81eff33fb2d5b2257b83833c7fa45eb5a939ce80c32d25c7c3eca39
   title: b50df0e82308ea39fc9b212f15465b66e018efb8e53a14e4d885c318f2cfd376
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: 10906ba4ded6e8d496506a15e7908cf6373502d72fdfd7312d37e6404882a843
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 20d338e75d9544968f515f0add40952dab3151522d71124375476607f5b5e5b3

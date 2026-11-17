@@ -1,7 +1,7 @@
 name: review-task-deskops-view-board-en-menos-de-2-5-s-construir-una-vez-por-corrida-lo-que-hoy-se-rehace-por-tarjeta-preflight-1
 path: desk/reviews/task-deskops-view-board-en-menos-de-2-5-s-construir-una-vez-por-corrida-lo-que-hoy-se-rehace-por-tarjeta/preflight-1.md
 source_hash: af6ca7e6a0a146e27ff2955d722e4b0d8b737b9b8b1fc469ec9918c822f8dfa4
-content_hash: 9fea8bb2a93f325d3be8dc20ad6aa941a77fa0f6a166d2ba888511f3fe915ad9
+content_hash: 106b207df96abdb1ae0cdc70cc66ea7dc56a38ceec23c109bd8b2b5cd5baf8aa
 field_hashes:
   id: c873a9b3f9f49d67ac4b718f95a5d9970bad445ef1c38607027cc6c39f62bb9e
   title: c41e91c6002300090b0c79851bd94e1194cff0717c38f82a0d601ac971b5f98b
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 93300f8241682a4de4716c363df3f0a05d789349b63e40220e478d50adc76165
   input_sha256: f3b468513526770ca554a70cc8c28d971722aa8eb3d291a14f84f31f1f0016db
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 9990279ec7fd659cfed1c69a36c6ade6de8b87bdb3108d070288c5ac3ab01d80
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 83fd9017c278260ea7b321e24cd90ea9ab6d7f2d2c40b58558d4cab859f275de

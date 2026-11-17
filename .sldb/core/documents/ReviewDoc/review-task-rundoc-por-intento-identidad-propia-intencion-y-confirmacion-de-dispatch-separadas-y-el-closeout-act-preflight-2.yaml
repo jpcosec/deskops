@@ -1,7 +1,7 @@
 name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-preflight-2
 path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/preflight-2.md
 source_hash: 98167f873ec1e0045c7389df37322c22a0e47007b10861312d93306a5fb31db5
-content_hash: 333c10d5ff0bf475425eeb7c5c63191d11aad740610ef8c489cd3af03ba1b3e3
+content_hash: 8ea73cfbb68ccb2f1b3fb048f3b6c1d6861ca3c3f5d2e59eea5997b922242dcf
 field_hashes:
   id: c72cc1caa3e855d9984f4abe949501ad8cfcafefbebfd2cbd7b4d97cac41662a
   title: 09cad78541b031fdfda56e25a922f73a85de7fccde6d35fa66fb1b58a41a39f6
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: e9724a7edd862adab06bfc32aa0e403609f446c3dae61607c45b722e7442d848
   input_sha256: b523decc97723ef6a2ba3fdbad672484866aa86bf8480ff92e2f755f8b60fe53
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: f4e00913b8a7c3d5f15a91e84ba3f1a27d1cc1b646e8d832da9dfc7dcc0cac8f
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 4bc1493a3dfd17ce66ac909f1fe0c7ce70bf74e2815d5eef45925f8dd3f91a0e

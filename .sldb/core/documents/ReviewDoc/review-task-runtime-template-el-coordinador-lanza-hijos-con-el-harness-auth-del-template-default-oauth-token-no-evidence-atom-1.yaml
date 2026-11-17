@@ -1,7 +1,7 @@
 name: review-task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no-evidence-atom-1
 path: desk/reviews/task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no/evidence-atom-1.md
 source_hash: 65d527ee63e837b578545da9c0a74c90c2077a8f64622888463ffebfdc12eb77
-content_hash: 99e384cf3c7e7add42fe643a5c206863548e529e516f1ce1dfffa13432acee0b
+content_hash: 0f9bf6076ee51d7ca020a18fb14d94ca7fdb883338ff926c89caf91ac7b63b55
 field_hashes:
   id: 9ed29adfb9f734434a3d6983c7c0ff54bb10082b1a6ba500ea82e6985e098a0e
   title: 30698b8a80d78fb5fd086588c7979898e397c79f380572488d98e7bf3674b01a
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: f406a59ee2ff9a76b94ff21341d092ccd80fe74f45fcc5ef04f37c5057dad661
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: f801395744fb34b4bbeb47a9d91323c31618c2b8076ebcf427a1bcdfd886615a

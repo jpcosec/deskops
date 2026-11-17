@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo-bundle-1
 path: desk/reviews/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo/bundle-1.md
 source_hash: ede42536dc8228c72029d53bcf5f5fe2897dfa1e75dcc39b5b9dbcae6153a876
-content_hash: 30d7bd4a6fcf2ee97b4290fae874ebc5a528a23f1abee4299066049bce1c9383
+content_hash: bac6c7ca6547e896b8688ac091dad035f986b2c94fa481c8f610f25b3c3fcb36
 field_hashes:
   id: 737f290286197e65f73cab593219c2de683d562c1e9d26949fef97d4eaad0962
   title: b08ae77dddd1194048d82c48bc957e953bea36564c036254830f97833de0e5a9
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 0c3ce4b609c7cbc3b518c219ca3a99e468686824aee776982f945bc76617a68d
   input_sha256: ac401c78081090cc1297eea15f3dfa93a8ff49c0cff8861c133d303b866102fe
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 5a28792d556deb419f96789a70c97f6c959d801b8fecdabaf9657db8f6692e7b
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: c4f3f9bfeee257c07f9dfa0c62ac6006cd3d7530a33dfb792041e6bf2396e11b

@@ -1,7 +1,7 @@
 name: review-task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc-preflight-1
 path: desk/reviews/task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc/preflight-1.md
 source_hash: 4a378a8474e39d77fb4b99c4c6ce5f7ce91f32927661d4ba17552a069bd0bc65
-content_hash: 317c4eafd9afa00eae7853a316a23b5189ea203677677edf1de941638472dd0d
+content_hash: e6960d1758ad69a3554b3169fe22179f15b5672f66ab888f9abf404336a28f45
 field_hashes:
   id: 9d45ada006458fa34c0fe89574de607bbb399b27d3c1e69494825e3ee24212f1
   title: d644962b2fa57ef35e2619a16ae20f29d700cf1da14ae8bf3b99a9dc75d6715d
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 608c78aa06daa7e5f93410d6677b562825b7a1f078d226fcaccfe94b102ed03e
   input_sha256: 483a8b2f06d425a50f364c64e34310ceb0767649b59e4a2d1e456440dcff2308
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 2ca10673e058340fdb13c03d793b317765a43796c77f209fa90e4d943a2243fd
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7

@@ -1,7 +1,7 @@
 name: review-deskops-como-config-pf1-node-1
 path: desk/reviews/deskops-como-config-pf1/node-1.md
 source_hash: ffec848b8f07d58117400f01ef964c7fb40d1aab46aa6ab4af3fba893e049c37
-content_hash: ab523fd09cb24fe8bcf166e9cbe0fa7e74924b679989eb27c14937e25fe1c674
+content_hash: c3c4cb89b717ab4e5cda4475070bfbc0cfefde83cc3baf146fe5968e784cd56a
 field_hashes:
   id: 7c32643a28cddfbae998e4fa85ae3cd4c48f7aab4522d75cd6881defdd625dcb
   title: afd8d340e1490f9daa0a014f3128511697a0264c6d2a7350ee40b9035f06fb38
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: b4bc825dd864249e8b1c4ed2e67d085b7d27cf41e373c8fb768cc95a5181ffad
   input_sha256: ef5a7bc7e6c592a7f904c9762013d8518797d099d9885bb2fcb05f4bd95c31e6
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: c13aa801a17c83fd90b96fae60f1460741271e7030602bd430a499493dbff226
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 812796d66ca0b7538b65763037482e886a53f5ab5f2b7fa872630d79f267eb3e

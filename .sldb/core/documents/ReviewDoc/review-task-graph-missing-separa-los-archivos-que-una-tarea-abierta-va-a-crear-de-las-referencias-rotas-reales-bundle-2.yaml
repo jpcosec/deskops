@@ -1,7 +1,7 @@
 name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-bundle-2
 path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/bundle-2.md
 source_hash: b59ad68347ad75866b09ae58b5c8ebb73acc24d0b55d20dd772f663753c504c4
-content_hash: fad0ffef04bf47bb3bada595e49eb1562cb3ff725be527ed7bdf9e81b768cef6
+content_hash: 55105dd7ea8d94bec08d4827ae84c0b42fd52d80a45bb8bbbb7cb4675ea915cc
 field_hashes:
   id: d5cd28988b17fc02919bda05c33364188a9534ab55a14e6a47cfdc762465f29a
   title: 9386476ebb9e102742ece845725a7f2bb4a8df639e51cd02c876a97943ce6f95
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: fc8782722358e3fd7e040b03777d551c4534e66ab64487d3dcf47851a83448b6
   input_sha256: 31b4cc6af39c79f9064da1b53a2c5cbf5a3671b146a6d37f8d31278e84298bbb
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 5753ac2e71765a65ae497cfb29ee19d759c23778a69aeae79781aee8811a5647
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 4cfae0f3a9052bdc7a54625dadcf5960b0554a2d9b016f972ac8aacc67b24c44

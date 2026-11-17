@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-preflight-1
 path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/preflight-1.md
 source_hash: 7ca794113947d5fcb17724cbf5de5149808803037e17f91f9dadf618b6639bbf
-content_hash: e7e5eb80fc530e0e8c5ff6b1cb3d836f954d3c3e3ce42bbac59e899b1a81ad9e
+content_hash: 8cb572c92fe15f5f25f60eaf53a46782210c5895f7a5a5e786ac8d5dab6a7c91
 field_hashes:
   id: f65f2df12968de477374c5ed279e414e056b5059845b0221283ca5d668a31152
   title: 4a10f709cd74a41c91eae5ac77b4d07785113038713f56ecf2e9ec2db650f210
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 1fd10f088ce4ebbcf38e33417538631d3eff21cdf9f22d0247a92802a26c745b
   input_sha256: 05837112bae42f298066d0ff2e6ea86afb0454981e0d15d9c4897e50e93d808a
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 1407c8a3bdb7b9fea459729ee5a228231aafe085449b7e1aa61921b16ac062c4
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7

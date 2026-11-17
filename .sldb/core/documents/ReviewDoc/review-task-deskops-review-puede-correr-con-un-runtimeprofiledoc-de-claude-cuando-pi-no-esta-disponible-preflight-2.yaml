@@ -1,7 +1,7 @@
 name: review-task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible-preflight-2
 path: desk/reviews/task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible/preflight-2.md
 source_hash: 70b7572eaacb2f46a7f5af2be8d4b2f76a46d18b63fb33255a037a9ad2769cdc
-content_hash: eafdce40d3e4f4835f710981f03ab7fd65c45057e741734bd3a39d8531e72bf7
+content_hash: 8433a93243d8135420bc76c3a7dab4aa8fc0cef01b0a1389e14d7f1f1a1125cd
 field_hashes:
   id: 6c92f40ae81f5c8aa0ffa96624b07e892e6c45ceaccfe1e37196adf368ab5de5
   title: 0f918ac469f9fdb4c118065d350ffc510b010102331529d6bf1baa5c4b6f30b6
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 007e3395a475d7a187d1de8ce8a743b8b9569d9cdcca136e113ef8da73daeffc
   input_sha256: da0ff500390dc45a1bb52a8c60f828bd3983e6b9c07d709f76162d17b37b41ac
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 83007cbb9e86c49c30da546bb805bbd5ed7a657a8dceae7314f04705b2c1a810
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 1428bb2adbb6d7d796c1708741cd457981623e1d743e021ac2c96e690b7f15e8

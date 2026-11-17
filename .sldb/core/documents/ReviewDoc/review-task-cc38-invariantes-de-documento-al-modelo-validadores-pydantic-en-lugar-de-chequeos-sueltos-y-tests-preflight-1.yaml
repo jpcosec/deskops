@@ -1,7 +1,7 @@
 name: review-task-cc38-invariantes-de-documento-al-modelo-validadores-pydantic-en-lugar-de-chequeos-sueltos-y-tests-preflight-1
 path: desk/reviews/task-cc38-invariantes-de-documento-al-modelo-validadores-pydantic-en-lugar-de-chequeos-sueltos-y-tests/preflight-1.md
 source_hash: e369f0add0faf24700c4170e9d6746987ff1b84b90d90a72f4fba9f4a04384d0
-content_hash: 59f7abd69e3130b929cd1aca2e828a6ab2bf46658bcf1e5ff025f160d8251a69
+content_hash: f9f820a3e0c5fb5438cf427b0007000b648d37e9308ed4523953c26f2d19afc3
 field_hashes:
   id: a0508076a7a24a5ed560cb0ca10e67186ba1c406323c329f72e989a13b4568a9
   title: d9540b42bbada16493e0819f1e17ec55627a46d6018ee76ecc76acd165d50304
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 5f567d41af3e4c36b4c16c02feec5777e6ca13bfb10bd0f9e0da3c09f690a2b1
   input_sha256: cc1164826dc754b30241ec8e5c1bc135dff02e60f3f144c89d6837c258c38d5a
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 07b559b6ac7db27a96cb757a977f7a345a18c2e919c741563045ea231953a735
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: c4f022a075b943c6679b0cd0c9a489b53ad5523652fba0f66c26ab781e87e10a

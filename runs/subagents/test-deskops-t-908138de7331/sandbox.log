@@ -1,0 +1,116 @@
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops add task --title Sbx --goal g1 --scope s --validation pytest --task-type task.code --root .
+Created task bundle task-sbx
+Task: /dev/shm/t908-sbx/repo/desk/tasks/task-sbx.md
+++ for m in preflight bundle
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review preflight task-sbx --run sbx --root .
+++ tail -1
+input_sha256: 18a0a83d5c4e9b06670be6227a31d7c546dd75fe5499983f21816818dee5b0a8
+++ for m in preflight bundle
+++ tail -1
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review bundle task-sbx --run sbx --root .
+input_sha256: 29545dfa1b89bc4dd7f1e7bf4b267648ffadc124e84b25354ceaa5a8fbc5fb9f
+++ grep -h 'contract_sha256\|input_sha256' desk/reviews/task-sbx/bundle-1.md desk/reviews/task-sbx/preflight-1.md
+++ local _cc_a
+++ for _cc_a in ${1+"$@"}
+++ case "$_cc_a" in
+++ for _cc_a in ${1+"$@"}
+++ case "$_cc_a" in
+++ for _cc_a in ${1+"$@"}
+++ case "$_cc_a" in
+++ for _cc_a in ${1+"$@"}
+++ case "$_cc_a" in
+++ [[ -x /home/robocop/.local/share/claude/versions/2.1.326 ]]
+++ [[ -n '' ]]
+++ [[ linux-gnu == \m\s\y\s ]]
+++ [[ linux-gnu == \c\y\g\w\i\n ]]
+++ [[ linux-gnu == \w\i\n\3\2 ]]
+++ exec -a ugrep /home/robocop/.local/share/claude/versions/2.1.326 -G --ignore-files --hidden -I --encoding=UTF-8 --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -h 'contract_sha256\|input_sha256' desk/reviews/task-sbx/bundle-1.md desk/reviews/task-sbx/preflight-1.md
+input_sha256: 18a0a83d5c4e9b06670be6227a31d7c546dd75fe5499983f21816818dee5b0a8
+contract_sha256: 3cb63bc406f24e203478ff9a947a280a1dfa3fb66c5601dad13a83b123a415d2
+input_sha256: 29545dfa1b89bc4dd7f1e7bf4b267648ffadc124e84b25354ceaa5a8fbc5fb9f
+contract_sha256: 47bbce800afae003cc927c3c801bd9d57d12cb4ecd1f2e47253fa9324c70499f
+++ for f in desk/reviews/task-sbx/*.md
++++ grep '^id:' desk/reviews/task-sbx/bundle-1.md
++++ local _cc_a
++++ for _cc_a in ${1+"$@"}
++++ case "$_cc_a" in
++++ for _cc_a in ${1+"$@"}
++++ case "$_cc_a" in
++++ [[ -x /home/robocop/.local/share/claude/versions/2.1.326 ]]
++++ [[ -n '' ]]
++++ [[ linux-gnu == \m\s\y\s ]]
++++ [[ linux-gnu == \c\y\g\w\i\n ]]
++++ [[ linux-gnu == \w\i\n\3\2 ]]
++++ awk '{print $2}'
++++ exec -a ugrep /home/robocop/.local/share/claude/versions/2.1.326 -G --ignore-files --hidden -I --encoding=UTF-8 --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl '^id:' desk/reviews/task-sbx/bundle-1.md
+++ id=review-task-sbx-bundle-1
+++ tail -1
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review dispose review-task-sbx-bundle-1 --verdict accepted --reason ok --root .
+disposed_by: repo
+++ for f in desk/reviews/task-sbx/*.md
++++ grep '^id:' desk/reviews/task-sbx/preflight-1.md
++++ local _cc_a
++++ for _cc_a in ${1+"$@"}
++++ awk '{print $2}'
++++ case "$_cc_a" in
++++ for _cc_a in ${1+"$@"}
++++ case "$_cc_a" in
++++ [[ -x /home/robocop/.local/share/claude/versions/2.1.326 ]]
++++ [[ -n '' ]]
++++ [[ linux-gnu == \m\s\y\s ]]
++++ [[ linux-gnu == \c\y\g\w\i\n ]]
++++ [[ linux-gnu == \w\i\n\3\2 ]]
++++ exec -a ugrep /home/robocop/.local/share/claude/versions/2.1.326 -G --ignore-files --hidden -I --encoding=UTF-8 --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl '^id:' desk/reviews/task-sbx/preflight-1.md
+++ id=review-task-sbx-preflight-1
+++ tail -1
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review dispose review-task-sbx-preflight-1 --verdict accepted --reason ok --root .
+disposed_by: repo
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review status task-sbx --root .
+task-sbx/preflight                       accepted           18a0a83d5c4e
+task-sbx/bundle                          accepted           29545dfa1b89
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops edit task task-sbx tags '['\''host:otro'\'', '\''workspace:desk'\'']' --root .
+Updated task task-sbx field tags
+Path: /dev/shm/t908-sbx/repo/desk/tasks/task-sbx.md
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review status task-sbx --root .
+task-sbx/preflight                       accepted           e30799d70db5
+task-sbx/bundle                          accepted           3cde8546c0f4
+++ tail -3
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops advance task task-sbx --root .
+Status: active
+Current node: ritual-testing
+Message: Advanced to ritual-testing via task_activates.
+++ grep -E '^(status|current_node):|host:otro' desk/tasks/task-sbx.md
+++ local _cc_a
+++ for _cc_a in ${1+"$@"}
+++ case "$_cc_a" in
+++ for _cc_a in ${1+"$@"}
+++ case "$_cc_a" in
+++ for _cc_a in ${1+"$@"}
+++ case "$_cc_a" in
+++ [[ -x /home/robocop/.local/share/claude/versions/2.1.326 ]]
+++ [[ -n '' ]]
+++ [[ linux-gnu == \m\s\y\s ]]
+++ [[ linux-gnu == \c\y\g\w\i\n ]]
+++ [[ linux-gnu == \w\i\n\3\2 ]]
+++ exec -a ugrep /home/robocop/.local/share/claude/versions/2.1.326 -G --ignore-files --hidden -I --encoding=UTF-8 --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.hg --exclude-dir=.bzr --exclude-dir=.jj --exclude-dir=.sl -E '^(status|current_node):|host:otro' desk/tasks/task-sbx.md
+status: active
+- host:otro
+current_node: ritual-testing
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review status task-sbx --root .
+task-sbx/preflight                       accepted           3539341b61c1
+task-sbx/bundle                          accepted           3c414492957c
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops edit task task-sbx goal g2 --root .
+Updated task task-sbx field goal
+Path: /dev/shm/t908-sbx/repo/desk/tasks/task-sbx.md
+++ /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m deskops review status task-sbx --root .
+task-sbx/preflight                       stale              acddff3a3939
+task-sbx/bundle                          stale              d3253ae6ac5a
+++ set +x
+=== recibo viejo sin contract_sha256 (compatibilidad)
+input_sha256: f4de4c90de2072a314dbe4aa04a16b530fb30d74f003f1b1d7f5b69a6945eab8
+disposed_by: repo
+0
+task-old/preflight                       accepted           f4de4c90de20
+task-old/bundle                          missing            f230492a5916
+task-old/preflight                       stale              59bfef386d77
+task-old/bundle                          missing            23f45d2568c3

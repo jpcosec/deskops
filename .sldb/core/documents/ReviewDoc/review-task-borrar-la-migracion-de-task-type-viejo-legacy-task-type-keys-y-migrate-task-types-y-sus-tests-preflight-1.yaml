@@ -1,7 +1,7 @@
 name: review-task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests-preflight-1
 path: desk/reviews/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests/preflight-1.md
 source_hash: 911628fe43a6751609bcfd7cfcc51a644167211b13cb5898dd53e7648887b273
-content_hash: 6a28bb319767a74fc4961feaa8d8902a5708271f2da7fddb72a79bd09ba0ff77
+content_hash: 892fa7c8632b03df64280a2b7519bca17ff8c68b51157460a95f18f804fcd46b
 field_hashes:
   id: a1c6b7dbf9df1b3235c6f791c00e5a99ba8e7534b12fcd0beeb5e35c3e54a13f
   title: 994f20613ed37644938d81b94fcbcc85afb0c4bbd648acf88a6626dc28e5e844
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: d6da9111072ce97a746f3c16e66cb2a0cfd9992ae73da81a6cd841a90bdab1e2
   input_sha256: b48d4c76f1e340a4b7824202a7c48207a2fd5230101494e65a2a79e2f8e4c090
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: baa31033d96a82ef12ec6ada57d01958a44325bb3ce7ce579357775d91aa5361
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: 3d73e77ed3b6500d6629fec68a6aadee9a58e3e788cbebb7ff5e1f0eedec1cf7

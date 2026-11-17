@@ -1,7 +1,7 @@
 name: review-task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e-preflight-2
 path: desk/reviews/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e/preflight-2.md
 source_hash: a896d0240b194b8994c78e0acd7d682ee216d95d0e42323f1248f1b5781944a3
-content_hash: 909b50414d76ab8b210cf390de9d883c621d671c3aabe337919b199c99f36e44
+content_hash: ef6aa84f0da3386df26b116824cfb79dd612a275daa5e4a0940e4bb545c6375b
 field_hashes:
   id: e7efeca0a6d6850accac2cf73aa54c2ae6d7267f639fce32a48f6f539f573bab
   title: d1bfbf3b4ffdc79ada8fb4bd8e62a203a9383f0289af52a08e31c7dda6aa9be5
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 5c4fb77b957af9759adac7d627baa9ff7908074d74b4653210dd76483e2e8370
   input_sha256: 72e87d620d497da7a2263670ff917c82cebb3abf0ee94dcc7c114bbc34fa4eb2
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: bc1705b47483662648a28ff76269530effbd39f174f538734c29a8cd65895733
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 1428bb2adbb6d7d796c1708741cd457981623e1d743e021ac2c96e690b7f15e8

@@ -1,7 +1,7 @@
 name: review-task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador-evidence-tests-1
 path: desk/reviews/task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador/evidence-tests-1.md
 source_hash: 59bfc0446aae00cdc133222fbc322293e25c5482f1bcbf510adfeda75a4fb217
-content_hash: 0da45a4f789b56414eecf8a88cb4af54efb067aa9bcf8ad6d5a0ebc0889dba5b
+content_hash: 143dac487c594fed14615601449d9c33543b8fd92c5a683ce229b83cd89b319d
 field_hashes:
   id: b3412c5e57fd24972186c7f9b31872e9303618541b71c17c96961c5f4900a83f
   title: 133a99bb81b181a9b575f06348e2a0c77b1a9761e1d727fb4b13cc5d6c54b61d
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: f7c514c78b342987c4769107750b17f084c9b9adaefea0a513f0e07809e6f3ee
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
   reason: f157cb654d2277ca28c611e61b07ee267ce42159ff7043c8fde40c598122ab7b

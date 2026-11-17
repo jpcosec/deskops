@@ -1,7 +1,7 @@
 name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-commit-1
 path: desk/reviews/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/evidence-commit-1.md
 source_hash: c96f61d74c93cdb02eb98eff1823170fde7896e52a87671577aec5f618df6819
-content_hash: 6111a51fd4bfe9f50e5eb56a6c47ee9391c3edee64f4a13109a22b2b594d732f
+content_hash: 2e9c1933a786bba0c9d4e45d717b792d70aabd943dcc1888f693a81d6722ad1c
 field_hashes:
   id: 1924ee33a096651ced566decfc6405c2e61e65578953d8eb1316ef1c3d11720f
   title: be129d5ea5e9c1bd44b7d205f893555dc25cafaac74f33ff248217e8418ea208
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: a943a215cc95ef62c68bcec2dd276c6f24a6b8c63c29a34c0a686f2d4d354249
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: eb705a93f832d1cc5b23b2453fa5817d80c6d6935e2168219fef5f94fbceb89c
