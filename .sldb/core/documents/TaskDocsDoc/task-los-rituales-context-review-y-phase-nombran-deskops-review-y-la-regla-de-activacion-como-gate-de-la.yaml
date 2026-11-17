@@ -1,0 +1,37 @@
+name: task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la
+path: desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
+source_hash: 969a14ff77f4656b99a0ab0fe546ab691287ad2c5ba1a603f899c37686fda7f6
+content_hash: 9db704a1dbf8da1a75a111452c6a5b24d4a7907642728800d297cf9ffd5ca600
+field_hashes:
+  title: dc7d74d2462bab3aca17e971e27f2f7784af012982d843be86897e5552c163d5
+  id: 0b5346d97e12a222bc6f8d2fd023ed032ab1378aa6701e52ae4ed326950d4d68
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 968b7dc187479f32d3feedd4966e94dbdcf5e53a7ef6fc94997980af15a79dbe
+  goal: 903f12668a875d78d348b0babe66831e7b7d3712a4c7f422e953612bfc34834d
+  scope: f4b9687e7f886e199732f4b45d71ca290f729eb93018062d0b4940a38dacd225
+  references: 3221f858ec2db216d5eb460515e6f6e3777fe48ac60d3b34562159579fc21b4a
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 93c79e569ac28a5d877b3c6d4f9cad39079162328eb30d252247e741ebff58ce
+  implementation_path: 10b5625e05dabfe5b048f9b91456c642bdcd28e5b3e2860f0a958d81104fe996
+  validation: b5029bd5a587b164a3db6dc176bec3813f22cac21739371a03f9e3aa302f6174
+  done_when: c6a6fefb5ba7cc67499558961e24f613031843c09c596efc2d9af870932b4a36
+  task_type: 8dbc7ea3fc2d737a841f8f9a89de6dd4bd2ca7fdc77434a53400db8767ba695d
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: ee70eaa22f9fd7106e1ca7b9d42ea735b72697539c9660225f2645b6be82e9ff
+semantic_tags:
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-17T01:36:10Z'
+  authority: generated
+  via: create_document
