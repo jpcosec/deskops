@@ -1,0 +1,34 @@
+name: runtime-claude-haiku-reviewer
+path: desk/runtimes/runtime-claude-haiku-reviewer.md
+source_hash: 22b0ec02c09efef816aefa5f0d2232574996c3de85f67bdf4b02f726af4aaa13
+content_hash: a0e70469252b976497a2e06b28075787107ae2248b53f72342b7350b6e8f3fe1
+field_hashes:
+  title: 62f326d6a789083a8fb3d2a700918a7b9f72ae36fccde9f1457953a247cae902
+  id: 62f326d6a789083a8fb3d2a700918a7b9f72ae36fccde9f1457953a247cae902
+  status: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 8151eb3c8b328650b58d55c1690cada0c30ec0ebeffda6b0d80eab1e68909aa5
+  kind: 389432cbf83f3d1b64029a75864ec96f8fd06451b4c99d7b28385d395d480bfa
+  binary: 389432cbf83f3d1b64029a75864ec96f8fd06451b4c99d7b28385d395d480bfa
+  model_flag: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  fallback_models_flag: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  fallback_models_join: 1ed9862d8909bdf796ab434e52f41d749443cd41841b342cd346f3d2189e5473
+  tools_flag: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tools_join: 1ed9862d8909bdf796ab434e52f41d749443cd41841b342cd346f3d2189e5473
+  system_prompt_flag: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  system_prompt_delivery: 4d8c6647700a08a582b5c054dec6eab54b312e997df2dc355fbcc8e33a6b6912
+  session_flag: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  extra_args: c5d891e8b39e8158333e4da74a02d03327ca1b04e44ec99cce2757813c446214
+  unsupported_role_fields: 4cdbb59de234eaa3e2f180875b1c3c6dde7d4c29dbd8a1bd0ca9a92ed581a888
+  notes: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- type.workflow.runtime_profile
+- workspace.desk.runtimes
+provenance:
+  by: agent
+  at: '2026-11-17T00:04:55Z'
+  authority: generated
+  via: create_document
