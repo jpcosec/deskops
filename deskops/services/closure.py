@@ -727,6 +727,10 @@ class ClosureService:
                 commit_paths.append(path)
 
         task_bytes = task_path.read_bytes() if task_path.exists() else None
+        # Read before the close deletes the task: the commits it cites as commit evidence.
+        cited_refs, cited_receipts = (
+            self._cited_commit_evidence(task_id, task_path) if task_bytes is not None else ([], set())
+        )
         paths_to_remove: list[Path] = []
         # The close deletes the task and unroutes it from the Board; what else names it is left as it is and reported.
         dangling = dangling_referrers(self.root, task_path, excluded=(board_path,) if routed else ()) if task_bytes is not None else []
@@ -794,7 +798,11 @@ class ClosureService:
                     pathspec = [path for path in pathspec if self._git_knows(path)]
                     if not pathspec:
                         raise ClosureCommitError("None of the --paths match a file git knows; nothing to commit.")
-                if head_task_id == task_id and head_mode != "record":
+                if (
+                    head_task_id == task_id
+                    and head_mode != "record"
+                    and not self._head_is_cited(cited_refs, cited_receipts)
+                ):
                     argv = ["commit", "--amend", "--no-edit"]
                 else:
                     argv = ["commit", "-m", message]
@@ -1243,6 +1251,40 @@ class ClosureService:
                     continue
                 data += f"{path_text}\n{hashlib.sha256(path.read_bytes()).hexdigest()}\n"
         return hashlib.sha256(data.encode("utf-8")).hexdigest()
+
+    def _cited_commit_evidence(self, task_id: str, task_path: Path) -> tuple[list[str], set[str]]:
+        """The task's commit citations: lowercase-hex ``references`` items of 7+ characters,
+        and the full shas of its accepted ``evidence-commit`` receipts.
+
+        ``closeout commit`` never amends a HEAD the task cites this way: rewriting it would
+        leave the receipt and the reference naming an unreachable commit.
+        """
+        refs: list[str] = []
+        try:
+            payload = doc_access.read_doc(task_path, TaskDoc)
+        except Exception:  # noqa: BLE001 - an unreadable task cites nothing
+            payload = {}
+        for item in doc_access.coerce_list(payload.get("references") or []):
+            ref = str(item).strip()
+            if len(ref) >= 7 and all(char in "0123456789abcdef" for char in ref):
+                refs.append(ref)
+        receipts: set[str] = set()
+        for _, receipt in self._evidence_receipts(self.desk_root / "reviews" / task_id, "commit"):
+            if receipt.get("verdict") != "accepted":
+                continue
+            for line in str(receipt.get("value") or "").splitlines():
+                if line.strip():
+                    receipts.add(line.strip())
+        return refs, receipts
+
+    def _head_is_cited(self, refs: list[str], receipts: set[str]) -> bool:
+        """Whether HEAD's full sha starts with a cited reference or equals a receipt value."""
+        if not refs and not receipts:
+            return False
+        head = self._git("rev-parse", "HEAD", check=False)
+        if not head:
+            return False
+        return head in receipts or any(head.startswith(ref) for ref in refs)
 
     def _evidence_receipts(self, review_dir: Path, fact: str) -> list[tuple[str, dict[str, Any]]]:
         if not review_dir.is_dir():

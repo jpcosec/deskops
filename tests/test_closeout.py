@@ -1206,3 +1206,105 @@ def test_closeout_retire_requires_a_reason(
     assert _git(root, "status", "--porcelain") == ""
     assert (root / "desk" / "tasks" / "task-x.md").exists()
     assert not (root / "runs" / "subagents" / "index.jsonl").exists()
+
+
+def _commit_code_with_task_trailer(root: Path) -> str:
+    """A code commit carrying the task's Task-Id trailer, on top of a committed task."""
+    _write_task(root, references=["seed.txt"], files=["feature.py"])
+    _git(root, "add", "desk/tasks/task-x.md")
+    _git(root, "commit", "-q", "-m", "add task")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    _git(root, "add", "feature.py")
+    _git(root, "commit", "-q", "-m", "feature\n\nTask-Id: task-x")
+    return _git(root, "rev-parse", "HEAD")
+
+
+def _write_commit_receipt(root: Path, sha: str, verdict: str = "accepted") -> None:
+    _write(
+        root / "desk" / "reviews" / "task-x" / "evidence-commit-1.md",
+        f"""---
+id: review-task-x-evidence-commit-1
+kind: evidence
+fact: commit
+value: {sha}
+subject: doc:TaskDoc:task-x
+subject_ref: ''
+engine: deskops-closeout
+actor: deskops
+run_dir: ''
+input_sha256: ''
+output_sha256: ''
+verdict: {verdict}
+reason: 'verified: commit {sha}'
+created_at: '2026-11-16T00:00:00+00:00'
+disposed_at: '2026-11-16T00:00:00+00:00'
+disposed_by: deskops
+tags:
+- workspace:desk
+---
+
+# Closeout evidence commit of task-x
+
+## Summary
+
+closeout verify checked commit: {sha}
+
+## Disposition
+
+Verdict {verdict}: verified: commit {sha}
+""",
+    )
+
+
+@pytest.mark.parametrize("citation", ["reference", "receipt"])
+def test_closeout_commit_does_not_amend_a_head_the_task_cites_as_commit_evidence(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], citation: str
+) -> None:
+    """A HEAD with the task's Task-Id that the task cites as commit evidence (its short sha in
+    references, or the value of an accepted evidence-commit receipt) survives with its sha;
+    the close is a separate commit on top of it."""
+    root = _make_repo(tmp_path)
+    code = _commit_code_with_task_trailer(root)
+    if citation == "reference":
+        _write_task(root, references=["seed.txt", code[:8]], files=["feature.py"])
+    else:
+        _write_commit_receipt(root, code)
+    capsys.readouterr()
+
+    assert main(["closeout", "verify", "--root", str(root), "--task", "task-x"]) in (0, 1)
+    report = json.loads(capsys.readouterr().out)
+    if citation == "reference":
+        assert report["gates"]["commit"]["evidence"] == [code[:8]]
+
+    paths = ["desk/tasks"] if citation == "reference" else ["desk/tasks", "desk/reviews"]
+    rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", *paths)
+
+    assert rc == 0, capsys.readouterr().out
+    head = _git(root, "rev-parse", "HEAD")
+    assert head != code
+    assert _git(root, "rev-parse", "HEAD^") == code
+    assert _git(root, "log", "-1", "--format=%s") == "closeout: task-x"
+    assert subprocess.run(["git", "merge-base", "--is-ancestor", code, head], cwd=root).returncode == 0
+    assert _git(root, "show", "--name-only", "--format=", code).splitlines() == ["feature.py"]
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+
+
+def test_closeout_commit_still_amends_an_uncited_head_with_the_task_id(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """A HEAD with the task's Task-Id that the task does not cite (no reference, only a
+    rejected receipt) is folded into the close as before."""
+    root = _make_repo(tmp_path)
+    code = _commit_code_with_task_trailer(root)
+    before = _git(root, "rev-parse", "HEAD^")
+    _write_commit_receipt(root, code, verdict="rejected")
+
+    rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", "desk/tasks", "desk/reviews")
+
+    assert rc == 0, capsys.readouterr().out
+    head = _git(root, "rev-parse", "HEAD")
+    assert head != code
+    assert _git(root, "rev-parse", "HEAD^") == before
+    assert subprocess.run(["git", "merge-base", "--is-ancestor", code, head], cwd=root).returncode != 0
+    assert "feature.py" in _git(root, "show", "--name-only", "--format=", "HEAD").splitlines()
+    assert "Task-Id: task-x" in _git(root, "log", "-1", "--format=%B")
