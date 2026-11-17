@@ -443,3 +443,25 @@ def test_two_green_verifies_do_not_duplicate_receipts(repo: Path) -> None:
     second, _ = _verify(root)
     assert second["ok"], second
     assert sorted(path.name for path in directory.glob("evidence-*.md")) == before
+
+
+# ---------------------------------------------------------------- generated artifacts
+def _generated_artifact_findings(root: Path, files: list[str]) -> list[str]:
+    for name in files:
+        suffix = Path(name).suffix
+        _write(root / name, '{"value": 1}\n' if suffix == ".json" else "value: 1\n")
+    _git(root, "add", *files)
+    _git(root, "commit", "-q", "-m", "artifacts")
+    _write_declared_task(root, task_type="task.code", references=[_git(root, "rev-parse", "HEAD")], files=files)
+    report, _ = _verify(root)
+    return [item["path"] for item in report["findings"] if item["code"] == "generated_artifact_missing_declared_sources"]
+
+
+def test_golden_json_with_a_yaml_sibling_under_tests_fixtures_is_not_a_generated_artifact(repo: Path) -> None:
+    files = ["tests/fixtures/golden/output/message_ack.json", "tests/fixtures/golden/output/message_ack.yaml"]
+    assert _generated_artifact_findings(repo, files) == []
+
+
+def test_markdown_with_a_yaml_sibling_outside_tests_fixtures_is_still_a_generated_artifact(repo: Path) -> None:
+    files = ["docs/diagrams/flow.md", "docs/diagrams/flow.yaml"]
+    assert _generated_artifact_findings(repo, files) == ["docs/diagrams/flow.md"]

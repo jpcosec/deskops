@@ -1581,6 +1581,9 @@ class ClosureService:
         return sorted(node_id.removeprefix("test_file:") for node_id in test_node_ids)
 
     def _generated_artifact_source_finding(self, relative_path: str) -> dict[str, str] | None:
+        # Goldens and test fixtures are independent artifacts, not renderings of a sibling source.
+        if relative_path.split("/")[:2] == ["tests", "fixtures"]:
+            return None
         path = self.root / relative_path
         sibling = self._find_generated_artifact_source_sibling(path)
         if sibling is None or not path.exists() or path.suffix not in {".md", ".json"}:
