@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:40:06Z'
+  at: '2026-11-17T03:19:36Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws46-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 3942c952a2bc6566835b240e07693ca5cf59e834661328e31f67599afe794ba4
 output_sha256: 29df26029d13640765060e568faaa914342333f4c7cb98aaebaca2cc79a00859
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Productor
+  solo para WS25.2 (obsoleto). La captura a drawer se decide en task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira,
+  y su trackeo en task-inbox-y-drawer-quedan-trackeados-en-el-store…'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:40:00.252691+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:19:28.462439+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Productor solo para WS25.2 (obsoleto). La captura a drawer se decide en task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira, y su trackeo en task-inbox-y-drawer-quedan-trackeados-en-el-store…

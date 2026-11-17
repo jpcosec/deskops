@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:40:27Z'
+  at: '2026-11-17T03:19:54Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws47-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,18 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 1f9d8be6eed70bfada45e0b8da1b23b0bca8517fa3af073226fb288b031fbb47
 output_sha256: 5cb1fe4dbbb41be909ba101788a132d5a7b93dcc5c7a1c2e3510050c1028c584
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): **TAREA** (repo sldb,
+  por `deskops message send`). Sigue vigente: `save_document_payload` (sldb src/sldb/api/documents/payload_save.py)
+  y `apply_batch` update (transaction_ops.py, que llama a save_document_payload) re-renderizan
+  desde el payload sin mirar el archivo previo. `refuse_structural_noise` y `refuse_undeclared_frontmatter`
+  solo se aplican en create_document y track_document_file. graph_ui va a escribir
+  campos por apply_batch update (tare Destino: pedido a sldb por inbox (nota 20261116-223438).'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:40:24.098146+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:19:44.737475+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +52,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): **TAREA** (repo sldb, por `deskops message send`). Sigue vigente: `save_document_payload` (sldb src/sldb/api/documents/payload_save.py) y `apply_batch` update (transaction_ops.py, que llama a save_document_payload) re-renderizan desde el payload sin mirar el archivo previo. `refuse_structural_noise` y `refuse_undeclared_frontmatter` solo se aplican en create_document y track_document_file. graph_ui va a escribir campos por apply_batch update (tare Destino: pedido a sldb por inbox (nota 20261116-223438).

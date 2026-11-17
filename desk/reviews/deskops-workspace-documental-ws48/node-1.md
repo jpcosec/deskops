@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:41:05Z'
+  at: '2026-11-17T03:20:15Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws48-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,16 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 9212826d990457e9f5a816791700de15fd9f3405d561cf5ae61cb2d7aa09cd88
 output_sha256: dee203acdd7e0d736049258859085b5c1a89c39c564ba4e9add1f50adeed072d
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). La
+  admisión en "modo manual exclusivo" (WS12 §5.9) la reemplazó el contrato de graph_ui
+  edicion-contextual: solo en modo local, con chequeo de Origin y guarda de revisión
+  409 por escritura (expected_source_hash).'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:41:01.614776+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:20:04.860951+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +50,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). La admisión en "modo manual exclusivo" (WS12 §5.9) la reemplazó el contrato de graph_ui edicion-contextual: solo en modo local, con chequeo de Origin y guarda de revisión 409 por escritura (expected_source_hash).

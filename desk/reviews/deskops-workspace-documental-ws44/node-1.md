@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:38:56Z'
+  at: '2026-11-17T03:19:00Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws44-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: e371e1e7cd6b173847c2db8376986c95b0c2195a34f0e73124a82e0f2066559d
 output_sha256: 5cf496c795c8a9fc642496e06da1d25d75917dd2b9f4a8dd7fbb724a26ce69f2
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  El acceso real a Scion quedó probado en el piloto (nota 739b13fb8 con las brechas
+  de la fase 1; 8b5afbb92). Los consumidores WS32–34 se botan o están duplicados.'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:38:51.603604+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:18:53.800777+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). El acceso real a Scion quedó probado en el piloto (nota 739b13fb8 con las brechas de la fase 1; 8b5afbb92). Los consumidores WS32–34 se botan o están duplicados.
