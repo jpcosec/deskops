@@ -1,0 +1,37 @@
+name: review-task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista-evidence-tests-1
+path: desk/reviews/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista/evidence-tests-1.md
+source_hash: 98e352da301638dbc392482de6612e49339b07f95346c52faabf879ca23a32be
+content_hash: f9a5aef905a86eb7925bfe15132d081553472e6f19c716d176448497327b2659
+field_hashes:
+  id: bf71c9dbd9878e52ad0893b82546dcf575ff50b9e64275a9f5ef865f3ea75009
+  title: e6b56855be12098963e0275227f8026ed913612175baec7b9f287512bf10e837
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 8866dd17778ed1f138c87c71f06205687ed00c2f9a29f75c34a1593a1e987364
+  subject: 9a5f807a10b679144dd9f8a9eaac045c7238327351b4d2a7cba8439106422f4b
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: d34590f5bdbb4de0489e851024cb6582ede952ac9321a099267d8e6a501fb592
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 2983ae95a1740dc3b8e7ae34e95a1b331b254b35268dbd895510d0e3c7b5d8a3
+  created_at: 11e8f4b048841646a2748a3f28589d7ac85560d347548cf81c10fa2ce5e15015
+  disposed_at: 11e8f4b048841646a2748a3f28589d7ac85560d347548cf81c10fa2ce5e15015
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 70de6015c64173203d56a08088c666d8a56f655935ae6179e01f12f989260682
+  disposition: 61281c6e3b4ff462be2208f4ee105606255d32fed438053cfdcda951012b1641
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T14:59:07Z'
+  authority: generated
+  via: create_document

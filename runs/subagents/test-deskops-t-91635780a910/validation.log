@@ -1,0 +1,48 @@
+## pytest -q tests/test_view.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+17 passed, 1 warning in 258.91s (0:04:18)
+rc=0
+## pytest -q tests/test_view_goldens.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 1 warning in 35.29s
+rc=0
+## pytest -q tests/test_command_registry.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 2.07s
+rc=0
+## pytest -q tests/test_output_goldens.py -k help_goldens
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 6 deselected, 1 warning in 452.54s (0:07:32)
+rc=0
+## repro: view.py de HEAD en copia /dev/shm/tester-91635780a910, test nuevo
+>       assert task_view(root, desk["execution"])["task"]["receipts"] == []
+E       KeyError: 'receipts'
+/dev/shm/tester-91635780a910/tests/test_view.py:238: KeyError
+1 failed, 16 deselected, 1 warning in 26.88s
+## caso real (solo lectura): view task --format json
+task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista rc=0
+  {'id': 'review-task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista-preflight-1', 'kind': 'preflight', 'verdict': 'accepted', 'anchor_state': 'intact', 'created_at': '2026-11-17T12:00:34.714224+00:00'}
+  {'id': 'review-task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista-bundle-1', 'kind': 'bundle', 'verdict': 'accepted', 'anchor_state': 'intact', 'created_at': '2026-11-17T12:01:02.664896+00:00'}
+  receipt errors []
+bundle-1.md
+preflight-1.md
+  pin e178b4336896
+  pin e178b4336896
+task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales rc=0
+  {'id': 'review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-preflight-1', 'kind': 'preflight', 'verdict': 'rejected', 'anchor_state': 'changed', 'created_at': '2026-11-16T06:14:47.679801+00:00'}
+  {'id': 'review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-bundle-1', 'kind': 'bundle', 'verdict': 'rejected', 'anchor_state': 'changed', 'created_at': '2026-11-16T06:15:06.231893+00:00'}
+  {'id': 'review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-preflight-2', 'kind': 'preflight', 'verdict': 'accepted', 'anchor_state': 'changed', 'created_at': '2026-11-16T06:19:43.107923+00:00'}
+  {'id': 'review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-bundle-2', 'kind': 'bundle', 'verdict': 'accepted', 'anchor_state': 'changed', 'created_at': '2026-11-16T06:20:03.390851+00:00'}
+  receipt errors []
+bundle-1.md
+bundle-2.md
+preflight-1.md
+preflight-2.md
+  pin 730fe9064ff3
+  pin 730fe9064ff3
+  pin 730fe9064ff3
+  pin 730fe9064ff3

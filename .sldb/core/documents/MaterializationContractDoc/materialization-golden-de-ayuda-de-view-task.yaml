@@ -1,0 +1,23 @@
+name: materialization-golden-de-ayuda-de-view-task
+path: desk/materializations/materialization-golden-de-ayuda-de-view-task.md
+source_hash: cecc7485d18a4b259da3b92a2b363edb0103142eef2c3a09996b370ac025bcd8
+content_hash: 9da38b23d9d46f74b71bbc6cd740944570aabe31c65418bce0cfd6939dabe837
+field_hashes:
+  id: 964a35f5efea9efb77c4888e0f32a820c149341e498bf34cd7e4ebade06b01bf
+  title: a624387db0fbfe2708e20dda3a66a3e6ee80d0cb729fad7340cc0d6cc21926ba
+  source_atoms: ee70eaa22f9fd7106e1ca7b9d42ea735b72697539c9660225f2645b6be82e9ff
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: ae6847dcc02aee2593cbd25f6c54c4cb96f9021eec0814a50c9e7f8d1a6325d5
+  intent: 8c595ca49a5e69114520c7652b83586d63e14f50d48e6d65561dbe2bbcfa467c
+  validation: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T15:00:26Z'
+  authority: generated
+  via: create_document

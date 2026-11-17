@@ -1,0 +1,37 @@
+name: review-task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista-evidence-materialization-1
+path: desk/reviews/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista/evidence-materialization-1.md
+source_hash: 9312b1e05626ebfa8a0bf44f6f2a7afde1379345ad5f4c24e45de50bf68059ce
+content_hash: a5630257af717bdcd713ffaee66802f932c42daeea03d65e722379b5260f9927
+field_hashes:
+  id: 17430317af9c300a7bcd72e6fb19a438beb3dee59b057bb8bb469bbca34e0260
+  title: 969552df606c5ef8467079812a65936c87e5bfbad73a643d3b363223229accec
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 11be7356978ceba710cef9b9d25aa729f0f576b959f891713a9e85127dede885
+  subject: 9a5f807a10b679144dd9f8a9eaac045c7238327351b4d2a7cba8439106422f4b
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 0742990b324c0c5d838b3fcc9113f01606b35f7eed32141adff775511288c05f
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 8c12fd4eb930410e7d336dff874e837db79e62c7a6067e0c23d85d2b0797beb5
+  created_at: 11e8f4b048841646a2748a3f28589d7ac85560d347548cf81c10fa2ce5e15015
+  disposed_at: 11e8f4b048841646a2748a3f28589d7ac85560d347548cf81c10fa2ce5e15015
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 2e6faa307f6c49d1a5b6bd38228e8ffcf05cddc76b351dd98985ea042ad4e00f
+  disposition: ffde7faf9cbbc1ce10f3f0b9cc89ab7fb6dca6b936f3abd53524911eb7938b5c
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T14:59:23Z'
+  authority: generated
+  via: create_document

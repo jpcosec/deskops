@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T14:06:59Z'
+  at: '2026-11-17T15:01:19Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -48,7 +48,6 @@ tasks:
 - desk/tasks/task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira.md
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
 - desk/tasks/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error.md
-- desk/tasks/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista.md
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
@@ -132,7 +131,6 @@ _Generated from the task references above._
 - JP decide si deskops promote inbox-to-drawer-task se retira [draft] - JP elige: (a) retirar promote inbox-to-drawer-task (se crea la tarea de codigo que borra el comando, sus goldens y sus tests, tests/test_inbox_promote_cli_gaps.py incluido); (b) mantenerlo con la advertencia en su ayuda (la cubre la tarea de alineacion de skill y ritual); (c) cambiarlo para que conserve la nota y la referencie.
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
 - deskops view task entrega holds true en un gate cuya regla de activacion da un finding de error [draft] - Reproducir el caso, encontrar por que holds y el finding de error no coinciden, y dejar que holds sea false cuando la regla de activacion del gate da un finding de nivel error; con un test que falla antes y pasa despues.
-- deskops view task entrega los recibos de la tarea en un campo receipts del contrato de la vista [draft] - deskops view task <id> --format json trae task.receipts: una lista con un objeto por ReviewDoc cuyo subject es la tarea, con id, kind, verdict, anchor_state y created_at, ordenada por created_at; docs/deskops-ui.md documenta el campo.
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [draft] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.

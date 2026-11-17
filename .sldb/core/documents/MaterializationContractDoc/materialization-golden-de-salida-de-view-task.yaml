@@ -1,0 +1,23 @@
+name: materialization-golden-de-salida-de-view-task
+path: desk/materializations/materialization-golden-de-salida-de-view-task.md
+source_hash: 8e76041559a8d8cf3d663be02a0c880d49b875917f4a5a3a7528b950ca18ddd5
+content_hash: d4107050595dd8974a5e135c394aeac45511df0b3230633a3e18634b6878d0cc
+field_hashes:
+  id: b26362c8309a262f4b69cfc51b2924b6374df845f425b8c818d16301ee783bc0
+  title: 351e2bb170cac2f0b2518832c4af1129e8d21338efa9695fac75816e92acbf40
+  source_atoms: ee70eaa22f9fd7106e1ca7b9d42ea735b72697539c9660225f2645b6be82e9ff
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 482728121b65514e54e06277b056ed592f3b6760a8523427022f092353b809c8
+  intent: 8c595ca49a5e69114520c7652b83586d63e14f50d48e6d65561dbe2bbcfa467c
+  validation: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T15:00:38Z'
+  authority: generated
+  via: create_document

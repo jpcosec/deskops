@@ -1,0 +1,10 @@
+Task: task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista
+Title: deskops view task entrega los recibos de la tarea en un campo receipts del contrato de la vista
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
