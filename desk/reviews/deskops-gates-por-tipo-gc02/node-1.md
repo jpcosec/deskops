@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:36:35Z'
+  at: '2026-11-17T03:02:20Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-gates-por-tipo-gc02-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,14 @@ run_dir: runs/subagents/node-gates-por-tipo/context-review/deskops-gates-por-tip
 input_sha256: f56d165cf3d2b03d914899c83c3106397e6fddb011bd817c919df35e07abe8b6
 output_sha256: 6007c73cd68187c3ec75acb879dea8011cd344748fa6559ad71aa1a99bc2ac78
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  closeout 44454cbb'
 # ISO 8601 timestamp
 created_at: '2026-11-17T01:36:28.015389+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:02:14.132182+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +48,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). closeout 44454cbb

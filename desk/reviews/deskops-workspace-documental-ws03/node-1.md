@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:57:43Z'
+  at: '2026-11-17T03:10:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws03-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,14 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: c3eaf92ed4fe97fbe3dcbbf69a24fb356b43254686cfa85489514ada2d7447d9
 output_sha256: 65a9227ff92470348e65072eeb7763ec4c05d2f5cbb2bcb490e1b444a400271a
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  9dd027c52 "cierra WS03 auditoria infraestructura.md".'
 # ISO 8601 timestamp
 created_at: '2026-11-17T01:57:41.452954+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:10:28.035365+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +48,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). 9dd027c52 "cierra WS03 auditoria infraestructura.md".

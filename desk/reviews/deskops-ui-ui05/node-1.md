@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:18:07Z'
+  at: '2026-11-17T03:06:44Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-ui-ui05-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,14 @@ run_dir: runs/subagents/node-deskops-ui/context-review/deskops-ui/UI05/3a76ac547
 input_sha256: 3a76ac54767aa435dd0897200dce58838d3c841a5df3131eed0adffd5773cbd7
 output_sha256: 25481cecc0c82f13c19eea797fe1d236cdf65afdd8b6f7405e3e037f3bf7e846
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  graph_ui closeout d078ea3'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:18:04.364363+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:06:36.808515+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +48,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). graph_ui closeout d078ea3

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:35:52Z'
+  at: '2026-11-17T03:02:06Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-gates-por-tipo-gc01-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,14 @@ run_dir: runs/subagents/node-gates-por-tipo/context-review/deskops-gates-por-tip
 input_sha256: 4c4a0b959a4a373d7db17e3266c5c0677ebb0c8314497e3dbd6cae253521d599
 output_sha256: f2f0b4db4201a0c05f55f3f190c2b895219da624b2bf7b217df550210f8634e4
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  closeout 5439b74c'
 # ISO 8601 timestamp
 created_at: '2026-11-17T01:35:48.025761+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:01:57.575905+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +48,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). closeout 5439b74c

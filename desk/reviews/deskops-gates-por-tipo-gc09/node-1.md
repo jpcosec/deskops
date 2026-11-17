@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:41:52Z'
+  at: '2026-11-17T03:03:49Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-gates-por-tipo-gc09-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,17 @@ run_dir: runs/subagents/node-gates-por-tipo/context-review/deskops-gates-por-tip
 input_sha256: 9a67c6f94d90f5326d5563b33d587c45963305f889312d975211e6af4a0fbdc4
 output_sha256: d3d4e37e85415dd5a3892e0f69e8d6b90f2b227c797c5c860b0af1c7a3f76099
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (duplicado).
+  task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc… (activa, draft). Ojo: esa
+  tarea no incluye la cláusula de hijos de task.aggregate (rule-activation-task-aggregate.md
+  solo pide depends_on; CC32 la difirió "hasta que exista children"). Conviene sumarla
+  a su scope con deskops edit task'
 # ISO 8601 timestamp
 created_at: '2026-11-17T01:41:44.004332+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:03:43.795057+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +51,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (duplicado). task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc… (activa, draft). Ojo: esa tarea no incluye la cláusula de hijos de task.aggregate (rule-activation-task-aggregate.md solo pide depends_on; CC32 la difirió "hasta que exista children"). Conviene sumarla a su scope con deskops edit task

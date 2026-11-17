@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:48:26Z'
+  at: '2026-11-17T03:08:46Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-pk06-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,14 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 3089ccc3ded1d59960dd06018a9211e6355cad1e22e376acd2c895af3a8c16e7
 output_sha256: 76f0c05028d75c5b0a730bc06660a081f2b5f151e7300e3cc0dbb7f2aa028e3d
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (no aplica).
+  Agregado de revisión del plan, sin ficha ni ejecución propia'
 # ISO 8601 timestamp
 created_at: '2026-11-17T01:48:19.336735+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:08:36.890580+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +48,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (no aplica). Agregado de revisión del plan, sin ficha ni ejecución propia

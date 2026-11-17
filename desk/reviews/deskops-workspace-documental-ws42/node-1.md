@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:37:49Z'
+  at: '2026-11-17T03:18:32Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws42-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 14f114ec5eb84a7db7a418d5140a0594777e1c3c016f88512de4dda9dd8a6a37
 output_sha256: c2f786206f0d6ae9c7b280de760055b16fc4b27e1ef72f7afb5fda00f9b264f4
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). deskops-ui
+  alcance: "Promover a Atom" deshabilitado por falta de operación. Cómo se alimenta
+  atoms split lo decide la tarea activa task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:37:44.231836+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:18:24.399010+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). deskops-ui alcance: "Promover a Atom" deshabilitado por falta de operación. Cómo se alimenta atoms split lo decide la tarea activa task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.

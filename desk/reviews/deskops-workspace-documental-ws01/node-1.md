@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:52:42Z'
+  at: '2026-11-17T03:10:04Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws01-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: ffd833dad4c83ac34143da9e0220910dbdf86184dfe2b99af08ab3f55caefbb0
 output_sha256: 9e29e753c3f837a26288086ff165f979e9419b19a4d86628a82dca9e5b48feb3
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  brief.md escrito (355439655). dag `covered_work.state: documented_not_task_closed`
+  con sha.'
 # ISO 8601 timestamp
 created_at: '2026-11-17T01:52:36.701953+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:09:56.171320+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). brief.md escrito (355439655). dag `covered_work.state: documented_not_task_closed` con sha.

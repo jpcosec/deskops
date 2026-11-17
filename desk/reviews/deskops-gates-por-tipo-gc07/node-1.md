@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:40:25Z'
+  at: '2026-11-17T03:03:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-gates-por-tipo-gc07-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,18 @@ run_dir: runs/subagents/node-gates-por-tipo/context-review/deskops-gates-por-tip
 input_sha256: 05fb0502906dd32a2a7dd9b80c345b1a144440456d79f85686bf4b0ef7eb8a03
 output_sha256: fa317f042a48884fa98f8e86987fe9e68f6c3fd46f63fd2e35ef24fd456e387b
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (no aplica).
+  La herencia todavía se resuelve en Python (deskops/doc_access.py:783) y el cierre
+  lee las references crudas (closeout_gates.py:109,131). Pero inherits_from no lo
+  usa ninguna tarea (0 en deskops, sldb y graph_ui), y el cierre ahora va por recibos
+  (CC33a/b). DK2 lo dejó "donde aplique". Si JP quiere cerrar el hueco, la vía es
+  retirar inherits_from, no portarlo'
 # ISO 8601 timestamp
 created_at: '2026-11-17T01:40:20.044605+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:03:21.326487+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +52,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (no aplica). La herencia todavía se resuelve en Python (deskops/doc_access.py:783) y el cierre lee las references crudas (closeout_gates.py:109,131). Pero inherits_from no lo usa ninguna tarea (0 en deskops, sldb y graph_ui), y el cierre ahora va por recibos (CC33a/b). DK2 lo dejó "donde aplique". Si JP quiere cerrar el hueco, la vía es retirar inherits_from, no portarlo

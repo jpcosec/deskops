@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:21:42Z'
+  at: '2026-11-17T03:13:39Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws18-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 1b7a45626d82761fd2d66d6352c89d19a3979ddf479f3f91b4ee595042307404
 output_sha256: 50cfbbc97e5c39ce58f57521afe806d3b53aa30694de570a262a88975ac2e5fd
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). ViewDoc/NotationDoc
+  en spec2viz. spec2viz se retira: graph_ui ya usa sldb.api.notations (79d63ee) y
+  deskops quitó el enlace (421d6a27).'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:21:39.137586+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:13:33.094792+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). ViewDoc/NotationDoc en spec2viz. spec2viz se retira: graph_ui ya usa sldb.api.notations (79d63ee) y deskops quitó el enlace (421d6a27).

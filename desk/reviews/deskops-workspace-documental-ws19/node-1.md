@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:22:02Z'
+  at: '2026-11-17T03:13:54Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws19-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 4e81dd0afe60f4686f3d07d4e727496cb9918a89d222ccc282d34331ef501043
 output_sha256: f12da28bd299ef535ff467ea7ce6b1e6af79bdf695743ab2fa912d59424301b5
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (duplicado).
+  graph_ui desk/tasks/task-edicion-contextual-de-relaciones-y-campos-con-control-de-concurrencia.md
+  (campos y relaciones, 409 por source_hash).'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:21:59.482069+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:13:47.513267+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (duplicado). graph_ui desk/tasks/task-edicion-contextual-de-relaciones-y-campos-con-control-de-concurrencia.md (campos y relaciones, 409 por source_hash).

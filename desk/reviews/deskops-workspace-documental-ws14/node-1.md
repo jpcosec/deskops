@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:19:06Z'
+  at: '2026-11-17T03:12:55Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws14-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: d353ffbdc61d19111021763171781aaadfabddffba2583d6cf0339b635ec6cce
 output_sha256: 4131b0573ae9cd016cb743fba07c95f888202b2d8749b1b10b6b3923b570026b
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Búsqueda
+  del workspace documental (DU1). El backend de búsqueda de sldb ya es tarea activa
+  en sldb: task-api-pública-búsqueda-rankeada…'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:19:00.726893+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:12:50.583245+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Búsqueda del workspace documental (DU1). El backend de búsqueda de sldb ya es tarea activa en sldb: task-api-pública-búsqueda-rankeada…

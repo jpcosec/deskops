@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:25:51Z'
+  at: '2026-11-17T03:14:55Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws24-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: cd3538aa8438374ae294e3f1b312c927673c304cae67b32ffffa63d96b36955e
 output_sha256: 4e6557d02215260dfcdd0e3773b6c69320ec60e23c80e78b98793efad7b13ecc
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  Grafo local 1–2 saltos y Context: graph_ui a1b2b22 más WS13.1 (bf55151). El resto
+  (crossroads, materializaciones) era del producto documental (DU1).'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:25:46.354193+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:14:49.855605+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). Grafo local 1–2 saltos y Context: graph_ui a1b2b22 más WS13.1 (bf55151). El resto (crossroads, materializaciones) era del producto documental (DU1).

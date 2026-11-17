@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:32:55Z'
+  at: '2026-11-17T03:16:41Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws34-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 0f6df7afa973cd37f9ad63a86b982a24d5f74de79fbc80e4f4c7d532b60fdf27
 output_sha256: c1aa06eadef063adf0fe2c75b061ee63379f5addeeee7199173b0c99d3b5c7c4
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). El
+  dispatch y la respuesta los hace el coordinador con `scion start` (runtime.py:113
+  "Next: scion start…"). Un adaptador en deskops contradice ese diseño.'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:32:51.944372+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:16:36.197350+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). El dispatch y la respuesta los hace el coordinador con `scion start` (runtime.py:113 "Next: scion start…"). Un adaptador en deskops contradice ese diseño.

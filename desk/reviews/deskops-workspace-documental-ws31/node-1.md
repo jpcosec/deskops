@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:31:17Z'
+  at: '2026-11-17T03:16:09Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws31-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,14 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 931dcbc8d1baf36d77f00bfcf836b64d4e4a1d5f6afdf04c52d5053a54b13cef
 output_sha256: bdaf8d7eda0e307a7883c7a40d97320542f5f7a4bd58e22ee5147fa91f1e9ef3
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Manual
+  del workspace documental. La UI real se documenta en docs/deskops-ui.md.'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:31:15.232980+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:16:04.078889+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +48,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Manual del workspace documental. La UI real se documenta en docs/deskops-ui.md.

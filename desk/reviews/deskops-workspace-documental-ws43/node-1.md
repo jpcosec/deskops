@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:38:20Z'
+  at: '2026-11-17T03:18:45Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws43-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 6f5cf95be6a8cd20f600a29a1811c55db65c56600432351ad80f0c83c1259076
 output_sha256: 1d1d348f68927b0765f39aa0e84a76f27fcedb2ee9547da6aa9e6916f8587400
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Publicar
+  índices validados en Taller (depende de WS17 y WS30). La documentación de las carpetas
+  del desk la cubre la tarea activa task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk…'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:38:16.470234+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:18:39.007133+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Publicar índices validados en Taller (depende de WS17 y WS30). La documentación de las carpetas del desk la cubre la tarea activa task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk…

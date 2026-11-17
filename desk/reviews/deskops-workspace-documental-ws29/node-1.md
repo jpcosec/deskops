@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:29:54Z'
+  at: '2026-11-17T03:15:49Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws29-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,14 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 918b22a2a7dd472229ad87ba5b324d6d4cd9f150ff8de1417e379b0f9a5c2aed
 output_sha256: 9d1c99bd834bf3778564f321403082cbbd76ba7de698dfb7aa85b0c3cc211217
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (duplicado).
+  graph_ui desk/tasks/task-vista-changes-arbol-de-hashes-staleness-e-impacto-en-conocimiento.md.'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:29:48.960356+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:15:44.382519+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +48,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (duplicado). graph_ui desk/tasks/task-vista-changes-arbol-de-hashes-staleness-e-impacto-en-conocimiento.md.

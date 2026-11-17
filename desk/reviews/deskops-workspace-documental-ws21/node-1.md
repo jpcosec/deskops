@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:23:10Z'
+  at: '2026-11-17T03:14:19Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-deskops-workspace-documental-ws21-node-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,13 +24,15 @@ run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspa
 input_sha256: 9a47b3a7ad237dbdc98ab7abc2f242cd0816988992805b369503c6eb234b7f40
 output_sha256: ebd899ba889362e9cfe675893c134d91e1145911d918164ca076f54d3d727475
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Alternar
+  fuente y render con buffer: lo excluye la tarea edicion-contextual de graph_ui (solo
+  campos y relaciones).'
 # ISO 8601 timestamp
 created_at: '2026-11-17T02:23:04.105545+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-17T03:14:13.363657+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -47,3 +49,5 @@ node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/nod
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (obsoleto). Alternar fuente y render con buffer: lo excluye la tarea edicion-contextual de graph_ui (solo campos y relaciones).
