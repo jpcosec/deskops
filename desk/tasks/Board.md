@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T23:05:09Z'
+  at: '2026-11-17T23:06:47Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -51,6 +51,8 @@ tasks:
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
+- desk/tasks/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks.md
+- desk/tasks/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -133,3 +135,5 @@ _Generated from the task references above._
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
+- Un runner del host toma de una cola los trabajos pesados que encolan los post-hooks [draft] - Existe `deskops queue add` (lo llama un post-hook; escribe un trabajo como archivo en una cola del desk con el id de la tarea, la transicion y el tipo de trabajo) y `deskops queue run` (lo corre el host; toma el trabajo mas antiguo, verifica memoria disponible y que no haya otro trabajo corriendo, ejecuta el comando declarado para ese tipo de trabajo en la configuracion del desk, guarda el log y el resultado, y deja el trabajo como hecho o fallido). `deskops queue list` muestra pendientes, en curso y terminados. Un trabajo fallido deja una nota en el inbox del desk con la ruta del log.
+- Rol especialista de sldb que deja el store limpio, disparado por un post-hook [draft] - El desk de deskops trae un RoleDoc de especialista de sldb (creado con `deskops add role`) cuyo encargo es: correr `sldb stores check` y `deskops doctor` sobre el desk, corregir con el CLI lo que sea mecanico (registrar o actualizar documentos editados fuera del CLI, quitar del indice documentos que ya no existen) y dejar por escrito en una nota del inbox lo que requiere una decision. `deskops runtime template` lo materializa como template scion en un modo propio, con su agents.md. El manual del operador muestra el post-hook que lo despacha en la transicion a closeout.
