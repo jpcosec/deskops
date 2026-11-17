@@ -1,0 +1,37 @@
+name: task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo
+path: desk/tasks/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo.md
+source_hash: 6d482d08f0f3c395a1a568eec750248e1f3def5357e5dd81c5308dbf423361f2
+content_hash: 2a378ad9afc96ec2f8cdaf01a63b11edf0c2decab00742df819d143e4eded30f
+field_hashes:
+  title: cf2a6f5a0732d08e050a274c4e1b91637d500059e8332adb9a1225b5963843a7
+  id: 75b410b203645134282e7dcc3dfde340752767df0cce957d49924529dfde21e9
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 0c5ca0e9db5c2e5b4caddd1fba89cad157ac741cf011eafb3f955b00a4b89b08
+  goal: 20694d2d78a98d384ce82ab779f32a1b4751e04e517a8bc9b08865eea4cb8311
+  scope: 9f48d275deaff24c41442bd3f54c7fef26f29c697fdb2329c09e228b62f2573f
+  references: 0b1769b2dfaeed928feb2c2a7421f92ae6ea11c989063c03998b079bd4faa2fd
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4db306053a8dc7b752a4803155a33b3ca59a261acdc0f8607a07f99ed99211dd
+  implementation_path: 3d0f56b88340665a7044a9323761408e1126860b4318c10002e23a3ff47fe7db
+  validation: 2b4dfeb57c911a3322e16c6754d57d2954dff973b8ae62592d1d6726703def8f
+  done_when: 5e8c521f701f1e8a0cc6b47ee7c885d3d5db17555f0e78b25709ac0a94f49bea
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+semantic_tags:
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-17T01:24:47Z'
+  authority: generated
+  via: create_document

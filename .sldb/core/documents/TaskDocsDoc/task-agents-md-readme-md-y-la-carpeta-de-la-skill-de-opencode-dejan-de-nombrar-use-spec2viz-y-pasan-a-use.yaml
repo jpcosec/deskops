@@ -1,0 +1,37 @@
+name: task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use
+path: desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
+source_hash: bf6d9f8ebacff4e1b3d49279bc394f4bc3e64dd9b08c8dfc6d7c0067ea6699f5
+content_hash: fe51cabf2426b3625d539781439ec109c6b3317f4e26ea33526277d484bab471
+field_hashes:
+  title: 85dad5fd937836dd6dfb86692e4e83b9e834b4904f6ce0c1800f190c9d5ae5c9
+  id: ca38f71ced258da579392e31385f8eb1d7a8e2f33278fedf2ab0ca8b2eff4f9f
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: a76f3a8f773d304b62d5b1e8acf13e3c3b0c84c6e125ce7bd19a0359f0b23ef6
+  goal: 0ecae76c37d0551d20a15a86836be007ede4ab90b7dc754bba3ab79672b187f0
+  scope: 04f388695d4e08e2a2c1f54571ffbba64f2b84f35d27d48f86a28ae9db163960
+  references: 88f9c6b59b5b762d4fcd969459ce03810972293b6d51e27d39fbd8451de16b1b
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 427656fe7913cdd65c4e4510d7152b5099a6cff24b8f075bc9c3bd5e91fa3dc9
+  implementation_path: 19adc2472a491482c1bf84085d399efe9127c169b36d785a813de5c68619f9da
+  validation: 86e1e1016f4d81aabb86f938704186e0b252107064899e139ae91782ca1c4328
+  done_when: a13d0f8f0e7b9b5f9c6c37f2089fe9a2411131d207ea89aa830ded3b37900649
+  task_type: 8dbc7ea3fc2d737a841f8f9a89de6dd4bd2ca7fdc77434a53400db8767ba695d
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: ee70eaa22f9fd7106e1ca7b9d42ea735b72697539c9660225f2645b6be82e9ff
+semantic_tags:
+- host:robocop2
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-17T01:25:43Z'
+  authority: generated
+  via: create_document

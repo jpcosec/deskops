@@ -1,13 +1,15 @@
 name: 20261116-132801-suggestion-deskops-view-un-gate-con-holds-true-trae-a-la-vez-un-finding-de-nivel-error
 path: desk/inbox/20261116-132801-suggestion-deskops-view-un-gate-con-holds-true-trae-a-la-vez-un-finding-de-nivel-error.md
-source_hash: 32d6d610544107f1e034f6f3cbf0bc2b2d86972746a2fe43417e4f18fd4a00af
-content_hash: e233c0421e7e2a87c3993b7fd532371c6453efdc4a8ea8e7850a05d8af1692c7
+source_hash: 74a30999f8f8a3f11be8e3081794127f046c1a6a92b3164bad47bd04aba3f03e
+content_hash: b0d03903245cb1482b4d733aecadd539b156c0ceaf591d0ec47a50319165a319
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 1d147ab379788e0277ce278d918ca7cf9e0572dffeefc59e10d282ef146bd45c
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: b5708f8ec9dbb2a88faef26f78dac1f1b275c3c44304cd7970d143a76bce43a8
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 78f3bbc5e096e3b638a007718805849208554fe678097b045c0a55b27d3ecf10
   title: f9e231ceed82700d86bce1d29173f15f0188b1bbcaed0ee361dc1368d1d26af3
   body: 5da1c6028cdc0a4521627f255e96997efb662ff6310ee68023269319abed81be
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-17T01:28:24Z'
+  authority: generated
+  via: save_document_payload

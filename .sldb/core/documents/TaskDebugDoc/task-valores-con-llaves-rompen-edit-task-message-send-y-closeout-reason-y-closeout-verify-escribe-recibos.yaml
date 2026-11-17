@@ -1,7 +1,7 @@
 name: task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos
 path: desk/tasks/task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos.md
-source_hash: 980224887acd0b41fc5472d62f328fd64b785f7f31317a453ac9c31b13d3fa05
-content_hash: 018dc5d15f275f335aecfad21eeb909619b2fc58bca91ccc947f81c9a8f4c7dd
+source_hash: 417f6146398e2643e78ad5f7ef77de04497027def10bfbddb31024358b4226ce
+content_hash: 8d9ec55ecbe870151542caf4df8db4a1a8fc8e9758cab0dd4e07892acfe6d47d
 field_hashes:
   title: e6da249bd719a40eb3b93fd7bf89106edf293c3162f48132e5baa49ae31676ca
   id: 7ac70b39ae51dcc284d48dc5cdc99dc0949cb99aafdde6afabf8047908aa026f
@@ -13,7 +13,7 @@ field_hashes:
   why: fca0f9eb9fb1c101ecbd715f36dd308e83190ba55294dc70b0dc5c6ba23921d7
   goal: 1fd39fd6f76ce9bb5430e22250960d95b6e68a060e9140f8b2bab2c391e8ae84
   scope: fc4679dce8be524809ddf31e8bcc3714861c32be8c11890bcced9ddb73965711
-  references: c217e093cb7e5ee3813a84800dd36ac6d486bc5edff1d0f1a807e2f55bbeaec6
+  references: dc9227f8ca9883c1f6a6ea8296b12fa347602f6220eed8304a82f0b572202f1f
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 872a0d37e73c2fac786ca7fbfe96dbe1d449f8751708adcacfe55186bb59f11a
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:08:16Z'
+  at: '2026-11-17T01:26:52Z'
   authority: generated
   via: save_document_payload

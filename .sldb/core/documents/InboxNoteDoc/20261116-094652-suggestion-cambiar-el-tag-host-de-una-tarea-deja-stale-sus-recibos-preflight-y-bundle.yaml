@@ -1,13 +1,15 @@
 name: 20261116-094652-suggestion-cambiar-el-tag-host-de-una-tarea-deja-stale-sus-recibos-preflight-y-bundle
 path: desk/inbox/20261116-094652-suggestion-cambiar-el-tag-host-de-una-tarea-deja-stale-sus-recibos-preflight-y-bundle.md
-source_hash: c7a3b840f7c474610cf8f5328ad23d7be0df018cf639c5d3935de15424dfa9ab
-content_hash: 6255de06b789241a623dcf2024fb7cd451ca0fe19f51c0065bb594d18bed4fbd
+source_hash: e0140cd19171cd811caf6b9707b035b6664aa11023324b4f47d8a8012c146d33
+content_hash: d1321fe13469246381162f472288ab9add7188a8c4787ccb63f249bf61b6a650
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 1d147ab379788e0277ce278d918ca7cf9e0572dffeefc59e10d282ef146bd45c
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: e81dad5c21d371955a8704e3c8deeaa745fce1f96d28cd2a379a656bf824d2f2
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 9652370e5872d0578de4481cc45ae9d68585d4ed2747252ecb3a6020a1d365d7
   title: 66320a9e8346ae712e21d77872dac3bf0f6edce14a1f0aea2452aabf0d737a34
   body: dbc26a20e122a82c384fe7233e6a29e89a89809d914033ebcb457f3d7e16ed71
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-17T01:28:47Z'
+  authority: generated
+  via: save_document_payload

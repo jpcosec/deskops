@@ -1,13 +1,15 @@
 name: 20261116-165008-unclear-deskops-edit-task-y-message-send-fallan-con-templatesyntaxerror-si-el-texto-trae-dos-llaves-de-apertura-seguidas
 path: desk/inbox/20261116-165008-unclear-deskops-edit-task-y-message-send-fallan-con-templatesyntaxerror-si-el-texto-trae-dos-llaves-de-apertura-seguidas.md
-source_hash: 6183e8fcf62811fa9fda2f1012218640d4c841815d26012dab7c7a260cebe0b5
-content_hash: d70007646e85d11342f32b572454fc00707c887c3691812d99a1d5e313fbfb5b
+source_hash: 9ddf5d961f2e20db3672e77b18518b24c6def25748b4e7524dfc84fb7e45899f
+content_hash: b35b06ca9367d7bf88f75f3d93dfd07118a5e44c55b40d67a18cfba85f55d0eb
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: e710514e29fab1ba3c04f75397d61d649da0270012ce642af2775691b57f6e9c
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 918ac29597bd0c1fddc4b3dcaa29546da850d67e6193144735fd324ad38e545e
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 7ab8d5694f6f4a1a16f9d4ccc2babaa00192dde36cf465344295bc578dde3345
   title: 22a27a382ff981c7e97594330d1e309732f396f1a6fe222a8472a79c89f22f3b
   body: d7faaebc3bad3a5130f6925de4360c722d61fcb32878b7a4a2a9283eb3177e37
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-17T01:27:40Z'
+  authority: generated
+  via: save_document_payload

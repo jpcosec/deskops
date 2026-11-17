@@ -1,0 +1,24 @@
+name: 20261116-222401-suggestion-deskops-message-ack-no-admite-una-raz-n-y-inboxnote-no-tiene-un-campo-para-guardarla
+path: desk/inbox/20261116-222401-suggestion-deskops-message-ack-no-admite-una-raz-n-y-inboxnote-no-tiene-un-campo-para-guardarla.md
+source_hash: 907bee4e4c760c6b1613afc41f8169e4137fa80d0f9333d219a415b7387a143c
+content_hash: e585038c8483b275a357bdf4b151acc7e56d52d7f4d404659ca73c2145ec5f77
+field_hashes:
+  kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
+  sender_project: bedfd7658116eea0e9c6aa56c43288b769f14cc22546ef2cbac2588069909ad8
+  target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  created_at: fcb54e5444a0ec08a742c165cb16dc5bf50ba192d627485a7dc07305878bc952
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 92db097dc68e8020f9f8db33cd8c6425881b5d6197c76d1eb39fe3b956ba9702
+  title: 9546f1526918413dd570f80625c125919484fbead1866ad2a7f5b313a57da82d
+  body: 1f03d21154eb9039ee3b0dac4cfc42dd05b6880cdfd6ad4ba2161e5180f814e7
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+provenance:
+  by: agent
+  at: '2026-11-17T01:30:18Z'
+  authority: generated
+  via: save_document_payload

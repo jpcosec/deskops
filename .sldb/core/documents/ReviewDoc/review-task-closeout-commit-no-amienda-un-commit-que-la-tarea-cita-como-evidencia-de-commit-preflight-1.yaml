@@ -1,0 +1,36 @@
+name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-preflight-1
+path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/preflight-1.md
+source_hash: fe877baf0b86b6ce8ea335614e0139dfa66f0f2c602321684d4520d10c89699f
+content_hash: ac626e564801e2e401d68f211b44761d2f0081306dbdb02000072daf1c6d3f0a
+field_hashes:
+  id: e433bca9e639892276710d183253b9f25b848de96dd33864a6c91f04bdb31557
+  title: c3dc9665f20f5aa98de49cbd351d490ae4d554a4cdaddedab3fa79c2ac7c9d87
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: aa08d9f5a063c160a42406d2b4fd5a26d111a6385c2b313b58b0414f4f285d59
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: c9f19cb92d83f9844128b6812ffda34e194b559d8895cc755bb5be1079a4e498
+  input_sha256: 65fee16475324ddcc97be9b614d6b25c51bc37629b1131ef27f186e3602eaaa9
+  output_sha256: d7d75f3705c195d9d7cf283357a7a0576611913a494340dd58f5311228112a82
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  created_at: d80875454836140e0547154a2e448805382c31d1df64cdd7c56dee6d8d002864
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: 843e8772fa136dea6a1ede21c0d48f7c08a937656856fb9f3d1a3f9f725ce5d4
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T01:29:17Z'
+  authority: generated
+  via: create_document

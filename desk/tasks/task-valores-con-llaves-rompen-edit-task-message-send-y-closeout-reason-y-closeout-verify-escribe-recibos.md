@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:08:16Z'
+  at: '2026-11-17T01:26:52Z'
   authority: generated
   via: save_document_payload
 id: task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos
@@ -15,6 +15,7 @@ current_node: ritual-execution
 history: []
 references:
 - desk/inbox/20261116-005144-suggestion-closeout-el-gate-de-tests-solo-acepta-py-y-el-de-commit-solo-el-repo-del-desk-tareas-go-bash-o-con-c-digo-en-otro-repo-no-pueden-cerrar.md
+- desk/inbox/20261116-165008-unclear-deskops-edit-task-y-message-send-fallan-con-templatesyntaxerror-si-el-texto-trae-dos-llaves-de-apertura-seguidas.md
 depends_on: []
 pills: []
 files:

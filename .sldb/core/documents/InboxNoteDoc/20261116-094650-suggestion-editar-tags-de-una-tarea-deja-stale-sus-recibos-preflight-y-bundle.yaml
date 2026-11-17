@@ -1,13 +1,15 @@
 name: 20261116-094650-suggestion-editar-tags-de-una-tarea-deja-stale-sus-recibos-preflight-y-bundle
 path: desk/inbox/20261116-094650-suggestion-editar-tags-de-una-tarea-deja-stale-sus-recibos-preflight-y-bundle.md
-source_hash: 7c459886d7c9999f420f5767a15506c33770cd3a19ec2741b9d187f133a136de
-content_hash: 7bee13f495d772fba7137eb1f619955237b4a6c8f4612b0066c7083707f9dcf8
+source_hash: a1b9593189aa73e89533ea971344479e445fc89e6d26d6a8fe29392fcfbe0153
+content_hash: ae01ccbd63f548a5056b9c851ab513f177cd62aff650ff2d68383ef02ab76f18
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: e710514e29fab1ba3c04f75397d61d649da0270012ce642af2775691b57f6e9c
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 200c8c5b81ec495749261dbb8f927780440816f742b45c46fca75cc9e6244999
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 1114bdb73aa2678cbcf394dabb62c0ec6ae19f83b719b5f076e21c056c530ab7
   title: abdd906a7a73d71b6829392a9b64841985a00d49bb9f24ba0b788d4f875bcf53
   body: d4ef657e966fd7b7c94ccb7acd93fbb45783706b6c9cc97bea57f4c80f0efd90
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-17T01:28:58Z'
+  authority: generated
+  via: save_document_payload

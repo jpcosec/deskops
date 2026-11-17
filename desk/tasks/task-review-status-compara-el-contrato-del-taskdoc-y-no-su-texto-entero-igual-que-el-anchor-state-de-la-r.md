@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:21:30Z'
+  at: '2026-11-17T01:27:05Z'
   authority: generated
   via: save_document_payload
 id: task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r
@@ -15,6 +15,8 @@ current_node: ritual-execution
 history: []
 references:
 - desk/inbox/20261116-020638-suggestion-review-status-marca-stale-un-recibo-cuando-solo-cambia-la-cabecera-sldb-at-o-los-tags-del-taskdoc.md
+- desk/inbox/20261116-094650-suggestion-editar-tags-de-una-tarea-deja-stale-sus-recibos-preflight-y-bundle.md
+- desk/inbox/20261116-094652-suggestion-cambiar-el-tag-host-de-una-tarea-deja-stale-sus-recibos-preflight-y-bundle.md
 depends_on: []
 pills: []
 files:

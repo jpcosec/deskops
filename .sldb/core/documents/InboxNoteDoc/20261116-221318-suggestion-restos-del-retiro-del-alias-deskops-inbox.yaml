@@ -1,13 +1,15 @@
 name: 20261116-221318-suggestion-restos-del-retiro-del-alias-deskops-inbox
 path: desk/inbox/20261116-221318-suggestion-restos-del-retiro-del-alias-deskops-inbox.md
-source_hash: 0ec1b450082df1ae916677f7efedae87fd447f44d399c08a01b388f46921d37f
-content_hash: 151d9f17deadb1efbb4815e64ea3b2c03f0152c0b2b426ede32159b70e56949e
+source_hash: 1e3ca5abf9cee181b5931d8d91ee4d6655f21a9c5911747fe7b20caaa818739b
+content_hash: 556baf7cc8e5569823f554f9a0442eca1bb0debae57fe673c3bfdcd136609f33
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 0994a08ee2c014a264288b0859c708adf44d46051f2ef6d7b1a1532ecb63a1d8
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 22ef5609475065491b26877589ac87009d67d1f7d1f163e99f9a200f66dfa1ac
   title: c100337d38bd0b03c7ca6087f596e105aac5d028bf858cc8d2c58bab4bd394a5
   body: 6018d74fb81d31ebde381b1a01439836d7c1869e7a50a63df3b2689fc0866cb2
 semantic_tags:
@@ -15,4 +17,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-17T01:27:18Z'
+  authority: generated
+  via: save_document_payload
