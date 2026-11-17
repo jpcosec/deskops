@@ -1,0 +1,26 @@
+name: materialization-golden-de-ayuda-de-closeout
+path: desk/materializations/materialization-golden-de-ayuda-de-closeout.md
+source_hash: ad9ac1b9009f1b4c1d3c4c70e813b1e50ca6d7534e3eb81fee2f6d4daeeef25c
+content_hash: d662b6f0c431cb78f2c900d63cfdd00c893b52d43fdbdc8f841c75e70f502292
+field_hashes:
+  id: 544e6361371dcd7d20747e89a832791328e9cb6da4367925aab860711c3e8ffd
+  title: c43a7d11710e15a9ae0df02793972cee6b06099e1ffb0d54a8ced00b38700388
+  source_atoms: ee70eaa22f9fd7106e1ca7b9d42ea735b72697539c9660225f2645b6be82e9ff
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 57cf1e132197169cb95177f74a285c4860de6e8d12f540d9356b7d0858e727ab
+  intent: 29e522ce540304298a5033e1dec8a17a348cea22e42e3ad5f474b53e8fa5bd93
+  validation: 0fd05ff059c6aec6f4ce6dbf14143424d49769110e9ce657ffade3f9808d1372
+  tags: 49e17fdb90b92f61e6f4c274dd5a0b257cc8d0bbc9e994066feaa209785d2df4
+  provenance: a69b0d96d864c2bf0a76c68f7e41edd2d1baf3d82d109ffb3dea9fdfed3346d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:materialization
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-17T07:52:14Z'
+  authority: generated
+  via: create_document

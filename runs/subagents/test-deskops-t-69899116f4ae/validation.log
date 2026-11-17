@@ -1,0 +1,84 @@
+== test_closeout.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+70 passed, 2 warnings in 63.01s (0:01:03)
+== test_message_cli.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+9 passed, 4 xfailed, 1 warning in 108.99s (0:01:48)
+== test_command_registry.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 3.98s
+== test_closeout_evidence_receipts.py
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 2 warnings in 34.24s
+== test_cli_grammar.py
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 3.04s
+== runxfail test_message_send_keeps_braces_in_the_body_literal
+      3 E       assert 3 == 0
+      3 E       AssertionError: CaptureResult(out='{
+      3 E         }
+      3 E         ', err='')
+      3 E           }
+      3 E           "ok": false,
+      3 E           "error": {
+      3 E             "type": "TemplateSyntaxError",
+      3 E             "code": 3,
+      1 E       AssertionError: assert 'valor {{ 7*7 }} y {# oculto #} fin' in '---\n# unclear | suggestion\nkind: unclear\n# e.g., other_repo\nsender_project: sender-repo\n# e.g., target_repo\ntar... acknowledged\n---\n\n# Llaves\n\n_Describe the incoming message with enough evidence to triage._\n\nvalor 49 y  fin\n'
+      1 E        +  where '---\n# unclear | suggestion\nkind: unclear\n# e.g., other_repo\nsender_project: sender-repo\n# e.g., target_repo\ntar... acknowledged\n---\n\n# Llaves\n\n_Describe the incoming message with enough evidence to triage._\n\nvalor 49 y  fin\n' = read_text(encoding='utf-8')
+      1 E        +    where read_text = PosixPath('/dev/shm/pytest-of-robocop/pytest-1391/test_message_send_keeps_braces3/target-repo/desk/inbox/20261117-044102-unclear-llaves.md').read_text
+      1 E             "message": "unexpected \'end of template\'"
+      1 E             "message": "unexpected \'.\'"
+      1 E             "message": "expected token \'end of print statement\', got \'fin\'"
+      1 4 failed, 9 deselected, 1 warning in 3.73s
+== HEAD closure.py, tests nuevos de (b)
+E       AssertionError: 
+E       assert 1 == 0
+E       AssertionError: assert 'Closing comm...cker {.State}' == 'Closing comm...er {{.State}}'
+E       AssertionError: 
+E       assert 1 == 0
+E       AssertionError: 
+E       assert 1 == 0
+E       AssertionError: assert 'Closing comm...n): cierre a}' == 'Closing comm...): cierre a}}'
+E       AssertionError: 
+E       assert 1 == 0
+E       AssertionError: assert 'Closing comm...fa56f literal' == 'Closing comm...mmit} literal'
+E       AssertionError: 
+E       assert 1 == 0
+FAILED tests/test_closeout.py::test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte[cierre {a}]
+FAILED tests/test_closeout.py::test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte[cierre {{a}} docker {{.State}}]
+FAILED tests/test_closeout.py::test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte[cierre {{{a}}}]
+FAILED tests/test_closeout.py::test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte[cierre a}]
+FAILED tests/test_closeout.py::test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte[cierre a}}]
+FAILED tests/test_closeout.py::test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte[cierre a}}}]
+FAILED tests/test_closeout.py::test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte[cierre {commit} literal]
+FAILED tests/test_closeout.py::test_closeout_commit_folds_the_verify_receipt_projection_into_the_closing_commit
+8 failed, 62 deselected, 2 warnings in 15.74s
+== HEAD closure.py + solo arreglo de format (aisla la proyeccion)
+E       AssertionError: assert '?? desk/reviews/' == ''
+E         
+E         + ?? desk/reviews/
+1 failed, 69 deselected, 2 warnings in 9.99s
+== test_output_goldens.py -k closeout (subset; carga alta)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 6 deselected, 1 warning in 6.08s
+ 04:41:54 up 20 days, 11:31, 13 users,  load average: 7.17, 8.06, 6.81
+== test_output_goldens.py (completo)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 warning in 438.85s (0:07:18)

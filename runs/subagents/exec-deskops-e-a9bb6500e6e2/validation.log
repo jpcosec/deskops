@@ -1,0 +1,123 @@
+# FASE 1 (reproduccion): no se cambio codigo, no se corrieron tests de la Validation (van en FASE 2).
+# Comandos de la reproduccion (todos con TMPDIR=/dev/shm PYTHONPATH=<checkout>, desk sandbox bajo .tmp/repro-llaves/<caso>, ignorado por git):
+#   runs/subagents/repro-llaves-20261117/sbx.sh <sbx>              -> git init + deskops init + commit seed
+#   runs/subagents/repro-llaves-20261117/ab.sh <sbx> <reason> <modo> -> (a) y (b); modos verify|uncommitted|reverify
+#   runs/subagents/repro-llaves-20261117/c.sh  <sbx> <valor>        -> (c) deskops --debug edit task / message send
+# Salida y rc de cada caso: runs/subagents/repro-llaves-20261117/repro-<caso>.log (cada comando deskops va seguido de su rc=).
+== runs/subagents/repro-llaves-20261117/repro-a.log
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-b-1-close.log
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre a} --paths seed.txt --root .
+rc=1
+== runs/subagents/repro-llaves-20261117/repro-b-1-open.log
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre {a} --paths seed.txt --root .
+rc=1
+== runs/subagents/repro-llaves-20261117/repro-b-2-close.log
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre a}} --paths seed.txt --root .
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-b-2-open.log
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre {{a}} docker {{.State}} --paths seed.txt --root .
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-b-3-close.log
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre a}}} --paths seed.txt --root .
+rc=1
+== runs/subagents/repro-llaves-20261117/repro-b-3-open.log
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre {{{a}}} --paths seed.txt --root .
+rc=1
+== runs/subagents/repro-llaves-20261117/repro-b-reverify-plain.log
+rc=0
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre simple --paths seed.txt --root .
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-b-reverify.log
+rc=0
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre {a} --paths seed.txt --root .
+rc=1
+== runs/subagents/repro-llaves-20261117/repro-b-uncommitted.log
+rc=0
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre {a} --paths seed.txt --root .
+rc=1
+== runs/subagents/repro-llaves-20261117/repro-c-1-close.log
+$ deskops --debug edit task task-llaves-c scope texto a} fin --root .
+rc=0
+$ deskops --debug message send --title llaves --kind unclear --root . texto a} fin
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-c-1-open.log
+$ deskops --debug edit task task-llaves-c scope texto {a} fin --root .
+rc=0
+$ deskops --debug message send --title llaves --kind unclear --root . texto {a} fin
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-c-2-close.log
+$ deskops --debug edit task task-llaves-c scope texto a}} fin --root .
+rc=0
+$ deskops --debug message send --title llaves --kind unclear --root . texto a}} fin
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-c-2-open.log
+$ deskops --debug edit task task-llaves-c scope texto {{a fin --root .
+rc=3
+$ deskops --debug message send --title llaves --kind unclear --root . texto {{a fin
+rc=3
+== runs/subagents/repro-llaves-20261117/repro-c-3-close.log
+$ deskops --debug edit task task-llaves-c scope texto a}}} fin --root .
+rc=0
+$ deskops --debug message send --title llaves --kind unclear --root . texto a}}} fin
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-c-3-open.log
+$ deskops --debug edit task task-llaves-c scope texto {{{a fin --root .
+rc=3
+$ deskops --debug message send --title llaves --kind unclear --root . texto {{{a fin
+rc=3
+== runs/subagents/repro-llaves-20261117/repro-c-go-format.log
+$ deskops --debug edit task task-llaves-c scope docker inspect --format {{.State.Health.Status}} web --root .
+rc=3
+$ deskops --debug message send --title llaves --kind unclear --root . docker inspect --format {{.State.Health.Status}} web
+rc=3
+== runs/subagents/repro-llaves-20261117/repro-c-jinja-eval.log
+$ deskops --debug edit task task-llaves-c scope valor {{ 7*7 }} y {# oculto #} fin --root .
+rc=0
+$ deskops --debug message send --title llaves --kind unclear --root . valor {{ 7*7 }} y {# oculto #} fin
+rc=0
+== runs/subagents/repro-llaves-20261117/repro-c-json-3-open.log
+$ deskops --debug edit task task-llaves-c scope this is not valid json {{{ --root .
+rc=3
+$ deskops --debug message send --title llaves --kind unclear --root . this is not valid json {{{
+rc=3
+== deskops review record ... --kind reproduction
+task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos/reproduction: recorded
+review: review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-reproduction-1
+evidence: runs/subagents/repro-llaves-20261117/ab.sh, runs/subagents/repro-llaves-20261117/c.sh, runs/subagents/repro-llaves-20261117/repro-a.log, runs/subagents/repro-llaves-20261117/repro-b-1-close.log, runs/subagents/repro-llaves-20261117/repro-b-1-open.log, runs/subagents/repro-llaves-20261117/repro-b-2-close.log, runs/subagents/repro-llaves-20261117/repro-b-2-open.log, runs/subagents/repro-llaves-20261117/repro-b-3-close.log, runs/subagents/repro-llaves-20261117/repro-b-3-open.log, runs/subagents/repro-llaves-20261117/repro-b-reverify-plain.log, runs/subagents/repro-llaves-20261117/repro-b-reverify.log, runs/subagents/repro-llaves-20261117/repro-b-uncommitted.log, runs/subagents/repro-llaves-20261117/repro-c-1-close.log, runs/subagents/repro-llaves-20261117/repro-c-1-open.log, runs/subagents/repro-llaves-20261117/repro-c-2-close.log, runs/subagents/repro-llaves-20261117/repro-c-2-open.log, runs/subagents/repro-llaves-20261117/repro-c-3-close.log, runs/subagents/repro-llaves-20261117/repro-c-3-open.log, runs/subagents/repro-llaves-20261117/repro-c-go-format.log, runs/subagents/repro-llaves-20261117/repro-c-jinja-eval.log, runs/subagents/repro-llaves-20261117/repro-c-json-3-open.log, runs/subagents/repro-llaves-20261117/sbx.sh
+input_sha256: 2d3d07d1e77d1bca158fd267dbbb7a7eb0d72674c4e832f8629f1d56d9a30137
+rc=0
+
+# ===== FASE 2: validacion (de a un archivo, sin lock; PYTHONPATH=checkout) =====
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout.py
+......................................................................   [100%]
+70 passed in 88.99s (0:01:28)
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_message_cli.py
+.........xxxx                                                            [100%]
+9 passed, 4 xfailed in 176.76s (0:02:56)
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_output_goldens.py
+.......                                                                  [100%]
+7 passed in 1042.47s (0:17:22)
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_command_registry.py
+...                                                                      [100%]
+3 passed in 3.52s
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli_grammar.py
+..                                                                       [100%]
+2 passed in 9.55s
+rc=0
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout_evidence_receipts.py
+.....                                                                    [100%]
+5 passed in 103.97s (0:01:43)
+rc=0

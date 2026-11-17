@@ -1,0 +1,16 @@
+valor enviado: texto a} fin
+$ deskops --debug edit task task-llaves-c scope texto a} fin --root .
+Updated task task-llaves-c field scope
+Path: /mnt/ssd/proyectos/SLDB_1/deskops/.tmp/repro-llaves/c-1-close/desk/tasks/task-llaves-c.md
+rc=0
+== scope guardado ==
+_State what is in scope and what is out of scope._
+
+texto a} fin
+
+$ deskops --debug message send --title llaves --kind unclear --root . texto a} fin
+Delivered message from c-1-close to c-1-close at /mnt/ssd/proyectos/SLDB_1/deskops/.tmp/repro-llaves/c-1-close/desk/inbox/20261117-014149-unclear-llaves.md
+Tracked '20261117-014149-unclear-llaves'
+rc=0
+== inbox ==
+20261117-014149-unclear-llaves.md

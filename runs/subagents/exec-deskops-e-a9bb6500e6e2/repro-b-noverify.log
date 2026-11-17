@@ -1,0 +1,19 @@
+modo=noverify
+== closeout commit --no-run --reason ==
+reason enviado: cierre {a}
+$ deskops closeout commit --task task-llaves-repro --no-run --reason cierre {a} --paths seed.txt --root .
+Closeout gate blocked task-llaves-repro; the closing commit was not made.
+Closeout gate: esta tarea declaró external; encontré external
+- error: [rules/rule-closeout-task-external] TaskExternalDoc:task-llaves-repro: Una tarea task.external se cierra con un recibo evidence aceptado e intacto de external (lo escribe deskops closeout verify). | any(^subject: kind = "evidence" and fact = "external" and anchor_state = "intact" and verdict = "accepted") (seen: {})
+Run 'deskops closeout verify --task task-llaves-repro' to write the evidence receipts the rule asks for, then commit again.
+rc=1
+== HEAD despues ==
+aed4f472a5cd0e4f84f8b6d64db066807a6366a6
+task autorada
+
+== Closeout-Reason del commit ==
+
+== status despues del cierre (contrato (b): vacio) ==
+ M seed.txt
+== recibos en HEAD ==
+=========

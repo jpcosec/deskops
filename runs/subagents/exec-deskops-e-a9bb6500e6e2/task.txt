@@ -1,0 +1,11 @@
+Task: task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos
+Title: Valores con llaves rompen edit task, message send y closeout --reason, y closeout verify escribe recibos
+Status: draft
+Current node: ritual-execution
+Task type: task.debug
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  blocked by: error: [rules/rule-activation-task-debug] TaskDebugDoc:task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos: Una tarea task.debug se activa con recibos preflight y reproduction aceptados e intactos y sus dependencias cerradas. | any(^subject: anchor_state = "intact" and verdict = "accepted" and kind = "reproduction") (seen: {}) (witness: ReviewDoc:review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-preflight-1 {"anchor_state":"changed"})

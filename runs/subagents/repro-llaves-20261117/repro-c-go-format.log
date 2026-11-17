@@ -1,0 +1,113 @@
+valor enviado: docker inspect --format {{.State.Health.Status}} web
+$ deskops --debug edit task task-llaves-c scope docker inspect --format {{.State.Health.Status}} web --root .
+Traceback (most recent call last):
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/main.py", line 229, in main
+    return cli.run(argv)
+           ^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/main.py", line 153, in run
+    return _load_handler(command.handler)().run(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/commands/operations.py", line 100, in run
+    record = operations.edit_artifact_field(args.subject, args.selector, args.field, args.value)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/operations.py", line 150, in edit_artifact_field
+    return doc_access.edit_artifact_field(self.root, subject, selector, field, raw_value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/doc_access.py", line 933, in edit_artifact_field
+    write_doc(root, path, model, payload)
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/doc_access.py", line 404, in write_doc
+    rendered = render_model_markdown(model, payload) + "\n"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/runtime/validation.py", line 68, in render_model_markdown
+    def render_model_markdown(m: type[StructuredNLDoc], d: dict[str, Any], ref_root: Path | None = None) -> str: return Validator(m).render(d, ref_root)
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/runtime/validation.py", line 22, in render
+    return self.renderer.render(self.model_type(**data), ref_root)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 31, in render
+    raw = self.render_raw(model, ref_root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 43, in render_raw
+    return "\n\n".join(self._render_blocks(blocks, template.splitlines(), data))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 50, in _render_blocks
+    rendered = self._render_block(block, template_lines, data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 58, in _render_block
+    return self._dispatch_render(handler_key, block, block_text, data, start_line)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 67, in _dispatch_render
+    return self.yaml_renderer.replace_markers(block_text, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer_engine/base.py", line 34, in replace_markers
+    return self.jinja_env.from_string(source).render(**data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 1111, in from_string
+    return cls.from_code(self, self.compile(source), gs, None)
+                               ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "/mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<unknown>", line 1, in template
+jinja2.exceptions.TemplateSyntaxError: unexpected '.'
+Unexpected error: TemplateSyntaxError: unexpected '.' (rerun with --debug for the traceback)
+rc=3
+== scope guardado ==
+_State what is in scope and what is out of scope._
+
+s
+
+$ deskops --debug message send --title llaves --kind unclear --root . docker inspect --format {{.State.Health.Status}} web
+Traceback (most recent call last):
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/main.py", line 229, in main
+    return cli.run(argv)
+           ^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/main.py", line 153, in run
+    return _load_handler(command.handler)().run(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/commands/message.py", line 46, in run
+    return self._run_message_command(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/commands/message.py", line 60, in _run_message_command
+    return self._deliver_note(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/deskops/deskops/cli/commands/message.py", line 109, in _deliver_note
+    rendered = render_model_markdown(InboxNoteDoc, payload) + "\n"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/runtime/validation.py", line 68, in render_model_markdown
+    def render_model_markdown(m: type[StructuredNLDoc], d: dict[str, Any], ref_root: Path | None = None) -> str: return Validator(m).render(d, ref_root)
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/runtime/validation.py", line 22, in render
+    return self.renderer.render(self.model_type(**data), ref_root)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 31, in render
+    raw = self.render_raw(model, ref_root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 43, in render_raw
+    return "\n\n".join(self._render_blocks(blocks, template.splitlines(), data))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 50, in _render_blocks
+    rendered = self._render_block(block, template_lines, data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 58, in _render_block
+    return self._dispatch_render(handler_key, block, block_text, data, start_line)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer.py", line 67, in _dispatch_render
+    return self.yaml_renderer.replace_markers(block_text, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/herramientas/sldb/src/sldb/core/renderer_engine/base.py", line 34, in replace_markers
+    return self.jinja_env.from_string(source).render(**data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 1111, in from_string
+    return cls.from_code(self, self.compile(source), gs, None)
+                               ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "/mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<unknown>", line 1, in template
+jinja2.exceptions.TemplateSyntaxError: unexpected '.'
+Unexpected error: TemplateSyntaxError: unexpected '.' (rerun with --debug for the traceback)
+rc=3
+== inbox ==

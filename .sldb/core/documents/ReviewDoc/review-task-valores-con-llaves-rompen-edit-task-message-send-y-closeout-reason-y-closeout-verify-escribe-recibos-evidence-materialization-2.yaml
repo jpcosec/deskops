@@ -1,0 +1,37 @@
+name: review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-evidence-materialization-2
+path: desk/reviews/task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos/evidence-materialization-2.md
+source_hash: 259238c2bcd9b2da8a12032e28f1410570168477a69359ce8eebc96b30f237bd
+content_hash: 64c566a43dd5234e795e633ef04215c2c452ea1bb3dc67fe36efcb673e818d95
+field_hashes:
+  id: 7f9a36df990efda435b68ef65a546911051f8aa4840ad3f7bdf54dd476c40e5a
+  title: d004ca3180ec0728d7179582cac4b4506e18a519a2c43f13a02298c2e5651a73
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: a5c4361efb903a06ed6b7a9c025a2328133e0bc6635a9a78427fc0c27298d637
+  subject: 3ead57a7a350f246c9e5f13dac4f7f64782e9b411d1d583bfa7a5c03f380bc35
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 1a33442c7b7c51b7944ddaf8df552c99f5925febc34e1f75a6285491d5c1aed0
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 92ed25acc8d37267498ef8f29d9a4ec216c0a1aa33fc4b2fe01ee80ccd50b122
+  created_at: 039c583329f4814ee4b075b4ad4bb313ccce01d2a45f635a453a074a63032a28
+  disposed_at: 039c583329f4814ee4b075b4ad4bb313ccce01d2a45f635a453a074a63032a28
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 8e0eafdcdf33494ad36e3c21c24262bcc8c3f2eb9ef38b44569ff866d7ea3f52
+  disposition: d20eff872c762042935d1a322c8aa434a165365215546bc171d732d0216e7854
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T07:52:26Z'
+  authority: generated
+  via: create_document
