@@ -93,12 +93,12 @@
             "what": "Una tarea task.code se activa con recibos preflight y bundle aceptados e intactos y sus dependencias cerradas. | any(^subject: anchor_state = \"intact\" and verdict = \"accepted\" and kind = \"preflight\") (seen: {})"
           }
         ],
-        "holds": true,
+        "holds": false,
         "relation_type": "task_activates",
         "target": "ritual-testing"
       }
     ],
-    "gates_holding": 1,
+    "gates_holding": 0,
     "gates_total": 1,
     "goal": "goal of View golden execution",
     "history": [],

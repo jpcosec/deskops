@@ -68,6 +68,27 @@ def test_board_groups_by_current_node_in_spec_order_and_gates_are_show_task(desk
             assert card["closeout"]["declared"] == report["declared"] and card["closeout"]["found"] == report["found"]
 
 
+def test_a_gate_with_an_error_finding_does_not_hold(lifecycle_desk: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    """A task.code without receipts: the activation rule gives an error finding on the gate
+    leaving ritual-execution (empty condition), so the gate does not hold; the finding stays."""
+    monkeypatch.chdir(lifecycle_desk)
+    ops = DeskopsOperations(lifecycle_desk)
+    payload = {"title": "No receipts", "goal": "g", "scope": "s", "implementation_path": "i", "done_when": "d", "validation": ["pytest -q tests/test_x.py"], "task_type": "code"}
+    task_id = ops.create_task_bundle(payload).task_id
+    _, gates = ops.show_task(task_id)
+    gate = next(g for g in gates if g["target"] == "ritual-testing")
+    assert gate["condition"] == ""
+    assert any(f["level"] == "error" and f["code"] == "rules/rule-activation-task-code" for f in gate["findings"])
+    assert gate["holds"] is False
+    from tests.view_desk import install_views
+
+    install_views(lifecycle_desk)
+    view = _cli_json(capsys, "view", "task", task_id, "--root", str(lifecycle_desk), "--format", "json")
+    for card_gate in view["task"]["gates"]:
+        assert card_gate["holds"] is not any(f["level"] == "error" for f in card_gate.get("findings", []))
+    assert view["task"]["gates_holding"] == 0
+
+
 def test_unresolvable_pill_and_atom_go_to_errors_not_to_the_card(desk: dict) -> None:
     view = board_view(desk["root"])
     cards = {card["id"]: card for column in view["columns"] for card in column["tasks"]}

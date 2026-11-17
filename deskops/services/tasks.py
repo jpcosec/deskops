@@ -173,12 +173,15 @@ class TasksService:
         if task_path is None or payload is None:
             task_path, payload, _ = self._ops.task_record(task.id)
         findings = self._transition_findings(task_path, payload)
+        # An error finding of the task's on_transition rules holds every edge back (as
+        # sldb's edges_holding does), so such a gate does not hold whatever its condition says.
+        blocked = any(f.get("level") == "error" for f in findings)
         return [
             {
                 "relation_type": t.relation_type,
                 "target": lifecycle.COMPLETE if t.terminal else t.target,
                 "condition": t.condition,
-                "holds": lifecycle.condition_holds(t.condition, payload),
+                "holds": not blocked and lifecycle.condition_holds(t.condition, payload),
                 **({"findings": findings} if findings else {}),
             }
             for t in transitions
