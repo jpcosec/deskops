@@ -691,6 +691,11 @@ read/ack selector: filename, stem, or unique slug fragment.
             help="Acknowledge one received message.",
             args=(
                 A("selector", help="Message filename, stem, or unique slug fragment"),
+                A(
+                    "--reason",
+                    default="",
+                    help="Why the message is acknowledged; stored in the note's ack_reason field",
+                ),
                 *_message_target_args(root_arg=ROOT_ARG_MESSAGE),
             ),
             handler="deskops.cli.commands.message:MessageCLI",

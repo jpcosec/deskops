@@ -1,6 +1,6 @@
-usage: deskops message ack [-h] [--root ROOT] [--desk-root DESK_ROOT]
-                           [--store STORE] [--repo REPO]
-                           [--pythonpath PYTHONPATH]
+usage: deskops message ack [-h] [--reason REASON] [--root ROOT]
+                           [--desk-root DESK_ROOT] [--store STORE]
+                           [--repo REPO] [--pythonpath PYTHONPATH]
                            [--format {text,json,yaml}]
                            selector
 
@@ -11,6 +11,8 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
+  --reason REASON       Why the message is acknowledged; stored in the note's
+                        ack_reason field
   --root ROOT           Repository root whose desk/ holds the inbox
   --desk-root DESK_ROOT
                         Desk root directory override; defaults to the active

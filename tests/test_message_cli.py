@@ -207,6 +207,97 @@ def test_message_ack_restores_note_when_tracking_fails(tmp_path: Path, monkeypat
     assert "PASS" in check.stdout
 
 
+def test_message_ack_reason_is_stored_and_shown_by_read(tmp_path: Path) -> None:
+    from sldb.api import doc_status
+
+    repo_a, repo_b = _init_repos(tmp_path)
+    note, _ = _deliver(repo_a, repo_b, "Acknowledged with a reason")
+    reason = "Ya resuelto: la tarea X cubre esto"
+
+    result = _cli(
+        repo_b, "message", "ack", note.stem, "--root", str(repo_b), "--reason", reason, "--format", "json"
+    )
+    assert result.returncode == 0, result.stderr or result.stdout
+    acked = json.loads(result.stdout)
+    assert acked["status"] == "closed"
+    assert acked["ack_reason"] == reason
+    assert "ack_reason: 'Ya resuelto: la tarea X cubre esto'" in note.read_text(encoding="utf-8")
+    assert doc_status(repo_b / ".sldb", note.stem).status == "ok"
+    check = _sldb_stores_check(repo_b / ".sldb")
+    assert check.returncode == 0, check.stderr or check.stdout
+
+    read_json = _cli(repo_b, "message", "read", note.stem, "--root", str(repo_b), "--format", "json")
+    assert read_json.returncode == 0, read_json.stderr or read_json.stdout
+    assert json.loads(read_json.stdout)["ack_reason"] == reason
+
+    read_text = _cli(repo_b, "message", "read", note.stem, "--root", str(repo_b))
+    assert read_text.returncode == 0, read_text.stderr or read_text.stdout
+    lines = read_text.stdout.splitlines()
+    ack_at = next(i for i, line in enumerate(lines) if line.startswith("acknowledged_at: "))
+    assert lines[ack_at + 1] == f"Ack reason: {reason}"
+
+
+def test_message_ack_without_reason_leaves_ack_reason_empty(tmp_path: Path) -> None:
+    repo_a, repo_b = _init_repos(tmp_path)
+    note, _ = _deliver(repo_a, repo_b, "Acknowledged without a reason")
+
+    result = _cli(repo_b, "message", "ack", note.stem, "--root", str(repo_b), "--format", "json")
+    assert result.returncode == 0, result.stderr or result.stdout
+    acked = json.loads(result.stdout)
+    assert acked["status"] == "closed"
+    assert acked["acknowledged_by"] == "repo-b"
+    assert acked["ack_reason"] == ""
+
+    read_json = _cli(repo_b, "message", "read", note.stem, "--root", str(repo_b), "--format", "json")
+    assert json.loads(read_json.stdout)["ack_reason"] == ""
+    read_text = _cli(repo_b, "message", "read", note.stem, "--root", str(repo_b))
+    assert read_text.returncode == 0, read_text.stderr or read_text.stdout
+    assert "Ack reason" not in read_text.stdout
+
+
+OLD_NOTE = """---
+kind: suggestion
+sender_project: repo-a
+target_project: repo-b
+created_at: '2026-01-01T00:00:00'
+status: open
+---
+
+# Old note
+
+_Describe the incoming message with enough evidence to triage._
+
+Written before ack_reason existed.
+"""
+
+
+def test_message_old_note_without_ack_reason_still_reads_and_acks(tmp_path: Path) -> None:
+    repo = tmp_path / "repo-old"
+    inbox = repo / "desk" / "inbox"
+    inbox.mkdir(parents=True)
+    note = inbox / "20260101-000000-suggestion-old-note.md"
+    note.write_text(OLD_NOTE, encoding="utf-8")
+
+    read_json = _cli(repo, "message", "read", note.stem, "--root", str(repo), "--format", "json")
+    assert read_json.returncode == 0, read_json.stderr or read_json.stdout
+    read = json.loads(read_json.stdout)
+    assert read["status"] == "open"
+    assert read["ack_reason"] == ""
+
+    acked = _cli(repo, "message", "ack", note.stem, "--root", str(repo), "--reason", "Aviso leido", "--format", "json")
+    assert acked.returncode == 0, acked.stderr or acked.stdout
+    assert json.loads(acked.stdout)["ack_reason"] == "Aviso leido"
+    reread = _cli(repo, "message", "read", note.stem, "--root", str(repo), "--format", "json")
+    assert json.loads(reread.stdout)["ack_reason"] == "Aviso leido"
+
+    # An old note acked without --reason, as before ack_reason existed.
+    plain = inbox / "20260101-000001-suggestion-old-plain.md"
+    plain.write_text(OLD_NOTE, encoding="utf-8")
+    acked_plain = _cli(repo, "message", "ack", plain.stem, "--root", str(repo), "--format", "json")
+    assert acked_plain.returncode == 0, acked_plain.stderr or acked_plain.stdout
+    assert json.loads(acked_plain.stdout)["ack_reason"] == ""
+
+
 def test_message_list_uses_store_when_no_root_is_given(
     tmp_path: Path, monkeypatch, capsys
 ) -> None:

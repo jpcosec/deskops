@@ -6,7 +6,8 @@ usage: deskops add inbox-note [-h] [--root ROOT] [--from-yaml FROM_YAML]
                               [--status {open,closed}]
                               [--acknowledged-by ACKNOWLEDGED_BY]
                               [--acknowledged-at ACKNOWLEDGED_AT]
-                              [--title TITLE] [--body BODY]
+                              [--ack-reason ACK_REASON] [--title TITLE]
+                              [--body BODY]
 
 Create an inbox-note artifact.
 
@@ -35,6 +36,10 @@ options:
   --acknowledged-at ACKNOWLEDGED_AT
                         Timestamp for when the inbox note was acknowledged and
                         closed.
+  --ack-reason ACK_REASON
+                        Why the inbox note was acknowledged, recorded by
+                        `deskops message ack --reason`; empty when none was
+                        given.
   --title TITLE         Inbox note title shown as the H1 heading.
   --body BODY           Markdown body describing the question or suggestion in
                         detail.

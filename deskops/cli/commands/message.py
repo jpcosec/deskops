@@ -181,6 +181,8 @@ class MessageCLI:
         payload["target_project"] = payload.get("target_project") or target_project
         payload["acknowledged_by"] = target_project
         payload["acknowledged_at"] = acknowledged_at
+        ack_reason = (getattr(args, "reason", None) or "").strip()
+        payload["ack_reason"] = ack_reason
         rendered = render_model_markdown(InboxNoteDoc, payload) + "\n"
         tracked_name = None
         if context is None:
@@ -205,6 +207,7 @@ class MessageCLI:
             "target_project": payload["target_project"],
             "acknowledged_by": target_project,
             "acknowledged_at": acknowledged_at,
+            "ack_reason": ack_reason,
             "tracked_name": tracked_name,
             "verified": True,
         }
@@ -343,6 +346,8 @@ class MessageCLI:
             "title": title,
             "body": body,
             **frontmatter,
+            # A note written before ack_reason existed reads as having no reason.
+            "ack_reason": frontmatter.get("ack_reason") or "",
         }
 
     def _parse_note(self, path: Path) -> tuple[dict[str, str | None], str, str]:
@@ -388,6 +393,8 @@ class MessageCLI:
         ):
             if meta in payload and payload[meta] not in {None, ""}:
                 lines.append(f"{meta}: {payload[meta]}")
+            if meta == "acknowledged_at" and payload.get("ack_reason"):
+                lines.append(f"Ack reason: {payload['ack_reason']}")
         lines.append("")
         lines.append(payload.get("body", ""))
         return "\n".join(lines)
@@ -413,6 +420,8 @@ class MessageCLI:
                 f"by {data['acknowledged_by']} at {data['acknowledged_at']}",
                 f"Path: {data['path']}",
             ]
+            if data.get("ack_reason"):
+                lines.append(f"Ack reason: {data['ack_reason']}")
             if data.get("tracked_name"):
                 lines.append(f"Tracked '{data['tracked_name']}'")
             else:

@@ -1,6 +1,6 @@
 from typing import Literal, Optional
 
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from sldb import StructuredNLDoc
 
@@ -32,6 +32,8 @@ status: ⸢rev•status⸥
 acknowledged_by: ⸢optrev•acknowledged_by⸥
 # ISO 8601 timestamp, set when acknowledged
 acknowledged_at: ⸢optrev•acknowledged_at⸥
+# why the note was acknowledged; empty when no reason was given
+ack_reason: ⸢optrev•ack_reason⸥
 ---
 
 # ⸢rev•title⸥
@@ -64,5 +66,16 @@ _Describe the incoming message with enough evidence to triage._
         default=None,
         description="Timestamp for when the inbox note was acknowledged and closed."
     )
+    ack_reason: str = Field(
+        default="",
+        description="Why the inbox note was acknowledged, recorded by `deskops message ack --reason`; empty when none was given."
+    )
+
+    @field_validator("ack_reason", mode="before")
+    @classmethod
+    def _absent_ack_reason_is_empty(cls, value: object) -> object:
+        # A note written before ack_reason existed has no such key and reads as ''.
+        return "" if value is None else value
+
     title: str = Field(description="Inbox note title shown as the H1 heading.")
     body: str = Field(description="Markdown body describing the question or suggestion in detail.")
