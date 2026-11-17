@@ -762,6 +762,12 @@ class ClosureService:
                     self._git("add", "-A", "--", ".sldb", check=False)
                     add_commit_path(".sldb")
 
+                # The store this commit publishes may register RunDocs of other runs whose
+                # run.md git has never seen; a clean clone could not build that store.
+                for run_rel in self._unknown_registered_run_docs():
+                    self._git("add", "--", run_rel, check=False)
+                    add_commit_path(run_rel)
+
                 # The desk/reviews/<task> projection of the evidence receipts verify wrote
                 # (their ReviewDocs ride in with .sldb above) enters the same closing commit.
                 reviews_rel = self._relative(self.desk_root / "reviews" / task_id)
@@ -1739,6 +1745,32 @@ class ClosureService:
         result = subprocess.run(["git", "check-ignore", "-q", "--", path], cwd=self.root,
                                 capture_output=True, text=True)
         return result.returncode == 0
+
+    def _unknown_registered_run_docs(self) -> list[str]:
+        """run.md paths .sldb/store.yaml registers as RunDocs that exist on disk but
+        git knows neither in the index nor in HEAD. A registered path without a file
+        on disk is not the close's concern and is skipped."""
+        manifest_path = self.root / ".sldb" / "store.yaml"
+        try:
+            manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
+        except (OSError, yaml.YAMLError):
+            return []
+        found: list[str] = []
+        includes = manifest.get("include") if isinstance(manifest, dict) else None
+        for item in includes or []:
+            if not isinstance(item, dict) or item.get("model") != "RunDoc":
+                continue
+            for entry in item.get("paths") or []:
+                rel = entry.get("path") if isinstance(entry, dict) else entry
+                if not isinstance(rel, str) or not rel or rel in found:
+                    continue
+                path = self.root / rel
+                if not path.is_file() or not self._is_under(path.resolve(), self.root):
+                    continue
+                if self._git_ignores(rel) or self._git_knows(rel):
+                    continue
+                found.append(rel)
+        return found
 
     def _git_knows(self, path: str) -> bool:
         """Whether `path` matches anything in the index or in HEAD."""

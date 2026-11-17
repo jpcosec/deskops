@@ -1381,3 +1381,85 @@ def test_closeout_commit_folds_the_verify_receipt_projection_into_the_closing_co
     committed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
     assert projection in committed
     assert "feature.py" in committed
+
+
+@pytest.mark.parametrize("mode", ["run-dir", "no-run"])
+def test_closeout_commit_includes_the_run_md_of_every_registered_run_doc_git_lacks(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str], mode: str
+) -> None:
+    """Another run's RunDoc reached the store (here an earlier commit published it) while
+    its run.md stayed untracked; the next close carries that run.md, so every RunDoc path
+    .sldb/store.yaml registers is in HEAD and a clean clone can build the store."""
+    from closeout_desk import store_repo
+    from deskops.runtime.scion import record_scion_run
+
+    root = store_repo(lifecycle_desk)
+    other_rel = "runs/subagents/exec-other/run.md"
+    record_scion_run(
+        root, task_id="task-other", role_id="role-deskops-executor", kind="claude",
+        agent_slug="other", run_dir="runs/subagents/exec-other",
+    )
+    # An unrelated close published the store with the other run's registration only.
+    _git(root, "add", "-A", "--", ".sldb")
+    _git(root, "commit", "-q", "-m", "publishes the store", "--", ".sldb")
+    own_dir = "runs/subagents/exec-own"
+    record_scion_run(
+        root, task_id="task-x", role_id="role-deskops-executor", kind="claude",
+        agent_slug="own", run_dir=own_dir,
+    )
+    for fname in ["board.txt", "task.txt", "git-status.txt", "result-summary.md"]:
+        (root / own_dir / fname).write_text(f"{fname}\n", encoding="utf-8")
+    # A registered RunDoc without a run.md on disk is not the close's concern.
+    manifest_path = root / ".sldb" / "store.yaml"
+    manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
+    run_item = next(item for item in manifest["include"] if item.get("model") == "RunDoc")
+    registered = [entry["path"] for entry in run_item["paths"]]
+    assert {other_rel, f"{own_dir}/run.md"} <= set(registered)
+    assert subprocess.run(
+        ["git", "cat-file", "-e", f"HEAD:{other_rel}"], cwd=root, capture_output=True
+    ).returncode != 0
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    capsys.readouterr()
+
+    route = ["--run-dir", own_dir] if mode == "run-dir" else ["--no-run", "--reason", "sin corrida"]
+    rc = _closeout_main(root, *route, "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    committed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
+    assert other_rel in committed
+    assert "feature.py" in committed
+    head_manifest = yaml.safe_load(_git(root, "show", "HEAD:.sldb/store.yaml"))
+    head_paths = [
+        entry["path"]
+        for item in head_manifest["include"]
+        if item.get("model") == "RunDoc"
+        for entry in item["paths"]
+    ]
+    assert f"{own_dir}/run.md" in head_paths
+    for path in head_paths:
+        assert subprocess.run(
+            ["git", "cat-file", "-e", f"HEAD:{path}"], cwd=root, capture_output=True
+        ).returncode == 0, f"{path} is registered but not in HEAD"
+
+
+def test_closeout_commit_skips_a_registered_run_doc_without_a_run_md(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from closeout_desk import store_repo
+    from deskops.runtime.scion import record_scion_run
+
+    root = store_repo(lifecycle_desk)
+    record_scion_run(
+        root, task_id="task-other", role_id="role-deskops-executor", kind="claude",
+        agent_slug="gone", run_dir="runs/subagents/exec-gone",
+    )
+    (root / "runs" / "subagents" / "exec-gone" / "run.md").unlink()
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    capsys.readouterr()
+
+    rc = _closeout_main(root, "--no-run", "--reason", "sin corrida", "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    committed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
+    assert "feature.py" in committed
+    assert not any(path.startswith("runs/subagents/exec-gone") for path in committed)
