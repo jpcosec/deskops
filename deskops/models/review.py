@@ -67,6 +67,8 @@ actor: ⸢rev•actor⸥
 # Run evidence directory under runs/, relative to the project root
 run_dir: ⸢rev•run_dir⸥
 input_sha256: ⸢rev•input_sha256⸥
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ⸢rev•contract_sha256⸥
 output_sha256: ⸢rev•output_sha256⸥
 # pending | accepted | rejected | incomplete
 verdict: ⸢rev•verdict⸥
@@ -98,9 +100,10 @@ _Record the verdict rationale and who disposed of the review._
     @model_validator(mode="before")
     @classmethod
     def _absent_evidence_fields_are_empty(cls, data: Any) -> Any:
-        """Receipts written before kind ``evidence`` have no ``fact``/``value`` keys: empty."""
+        """Receipts written before kind ``evidence`` have no ``fact``/``value`` keys, and those
+        written before the contract digest have no ``contract_sha256``: empty."""
         if isinstance(data, dict):
-            return {key: value for key, value in data.items() if not (value is None and key in ("fact", "value"))}
+            return {key: value for key, value in data.items() if not (value is None and key in ("fact", "value", "contract_sha256"))}
         return data
 
     id: str = Field(
@@ -136,6 +139,11 @@ _Record the verdict rationale and who disposed of the review._
         default="", description="Run evidence directory under runs/, relative to the project root."
     )
     input_sha256: str = Field(default="", description="SHA-256 of the review input, 64 lowercase hex digits or empty.")
+    contract_sha256: str = Field(
+        default="",
+        description="Preflight/bundle: SHA-256 of the review input with the TaskDoc text replaced by its "
+        "__contract__ digest; review status compares it instead of input_sha256. Empty on older receipts.",
+    )
     output_sha256: str = Field(default="", description="SHA-256 of the review output, 64 lowercase hex digits or empty.")
     verdict: ReviewVerdict = Field(
         default="pending", description="Review verdict: pending, accepted, rejected, or incomplete."
@@ -168,7 +176,7 @@ _Record the verdict rationale and who disposed of the review._
                 raise ValueError(f"verdict {self.verdict!r} requires disposed_by")
         if self.verdict == "pending" and (self.disposed_at.strip() or self.disposed_by.strip()):
             raise ValueError("disposed_at and disposed_by must be empty while verdict is pending")
-        for field_name in ("input_sha256", "output_sha256"):
+        for field_name in ("input_sha256", "contract_sha256", "output_sha256"):
             value = getattr(self, field_name).strip()
             if value and not SHA256_PATTERN.fullmatch(value):
                 raise ValueError(f"{field_name} must be 64 lowercase hex digits or empty")

@@ -110,6 +110,18 @@ def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 
+def _task_contract_text(markdown: str) -> str | None:
+    """The TaskDoc ``__contract__`` digest that stands for the task text in a receipt's
+    ``contract_sha256`` input (the same sldb digest the dispatch contract uses); ``None`` when the
+    task does not parse, so the state falls back to the whole-input comparison."""
+    from deskops.runtime.scion import task_contract_sha256
+
+    try:
+        return task_contract_sha256(markdown)
+    except ValueError:
+        return None
+
+
 def _coerce_list(value: Any) -> list[str]:
     if value is None:
         return []
@@ -295,10 +307,16 @@ class ReviewService:
         return extract_model_data(TaskDoc, task_path.read_text(encoding="utf-8"))
 
     # ------------------------------------------------------------------ bundle
-    def _preflight_input(self, task_path: Path, task_id: str) -> tuple[bytes, list[dict], list[dict]]:
-        bundle = Bundle()
+    def _add_task(self, bundle: Bundle, task_path: Path, task_text: str | None) -> None:
+        """Add the TaskDoc to ``bundle``: its whole text, or ``task_text`` in the same position."""
         rel = task_path.relative_to(self.root).as_posix()
-        bundle.add(rel, task_path.read_text(encoding="utf-8"))
+        bundle.add(rel, task_path.read_text(encoding="utf-8") if task_text is None else task_text)
+
+    def _preflight_input(
+        self, task_path: Path, task_id: str, *, task_text: str | None = None
+    ) -> tuple[bytes, list[dict], list[dict]]:
+        bundle = Bundle()
+        self._add_task(bundle, task_path, task_text)
         instruction = (
             f"Preflight solo-TaskDoc de la tarea {task_id}: reformula el encargo tal como lo leería "
             "un ejecutor sin ningún otro contexto, lista ambigüedades con cita textual del input y "
@@ -335,13 +353,14 @@ class ReviewService:
             return matches[0]
         return None
 
-    def _bundle_input(self, task_path: Path, task_id: str) -> tuple[bytes, list[dict], list[dict]]:
+    def _bundle_input(
+        self, task_path: Path, task_id: str, *, task_text: str | None = None
+    ) -> tuple[bytes, list[dict], list[dict]]:
         bundle = Bundle()
         payload = self._task_payload(task_path)
 
-        # 1. TaskDoc
-        rel = task_path.relative_to(self.root).as_posix()
-        bundle.add(rel, task_path.read_text(encoding="utf-8"))
+        # 1. TaskDoc (for the review state, its contract digest in the same position)
+        self._add_task(bundle, task_path, task_text)
 
         # 2. Rituals routed by the Board (desk/tasks/Board.md), in order.
         board_path = self.desk_root / "tasks" / "Board.md"
@@ -557,6 +576,7 @@ class ReviewService:
         subject_ref: str,
         node_id: str | None,
         plan_id: str | None = None,
+        contract_sha256: str = "",
     ) -> dict[str, Any]:
         input_sha256 = _sha(input_data)
         attempt_dir = self._next_attempt_dir(run_name, key, input_sha256, max_attempts, force)
@@ -638,6 +658,7 @@ class ReviewService:
             reason=review_reason,
             node_id=node_id,
             plan_id=plan_id,
+            contract_sha256=contract_sha256,
         )
 
         return {
@@ -674,6 +695,7 @@ class ReviewService:
         summary: str | None = None,
         actor: str | None = None,
         title: str | None = None,
+        contract_sha256: str = "",
     ) -> tuple[str, Path]:
         if node_id is not None:
             node_lower = node_id.lower()
@@ -700,6 +722,7 @@ class ReviewService:
             "actor": actor or self._identity(),
             "run_dir": run_dir,
             "input_sha256": input_sha256,
+            "contract_sha256": contract_sha256,
             "output_sha256": output_sha256,
             "verdict": verdict,
             "reason": reason,
@@ -843,17 +866,39 @@ class ReviewService:
                 continue
         return records
 
-    def _state_for_key(self, key: str, input_data: bytes) -> dict[str, Any]:
+    def _contract_sha(self, mode: str, task_path: Path, task_id: str) -> str:
+        """SHA-256 of the review input with the TaskDoc text replaced by its ``__contract__``
+        digest: what a preflight/bundle receipt's ``contract_sha256`` records and what the state
+        compares, so the sldb header, tags, status, current_node, history and references of the
+        task do not make a receipt stale. Empty when the task contract cannot be read."""
+        digest = _task_contract_text(task_path.read_text(encoding="utf-8"))
+        if digest is None:
+            return ""
+        builder = self._preflight_input if mode == "preflight" else self._bundle_input
+        input_data, _, _ = builder(task_path, task_id, task_text=digest)
+        return _sha(input_data)
+
+    def _state_for_key(self, key: str, input_data: bytes, contract_sha: str = "") -> dict[str, Any]:
+        """State of ``key`` over its receipts: a receipt with ``contract_sha256`` is current when
+        that digest equals ``contract_sha``; an older receipt without it keeps the whole-input
+        ``input_sha256`` comparison. The verdict priority among current receipts is unchanged."""
         current_sha = _sha(input_data)
         records = [
             record
             for record in self._review_records()
             if self._record_key(record) == key
         ]
+
+        def is_current(record: dict[str, Any]) -> bool:
+            recorded = str(record.get("contract_sha256") or "")
+            if recorded:
+                return bool(contract_sha) and recorded == contract_sha
+            return record.get("input_sha256") == current_sha
+
         if not records:
             state = "missing"
         else:
-            current = [record for record in records if record.get("input_sha256") == current_sha]
+            current = [record for record in records if is_current(record)]
             verdicts = {record.get("verdict") for record in current}
             if not current:
                 state = "stale"
@@ -901,11 +946,11 @@ class ReviewService:
                 keys.append(key)
         reports: list[dict[str, Any]] = []
         for key in keys:
-            input_data = self._input_for_key(key)
-            if input_data is None:
+            inputs = self._input_for_key(key)
+            if inputs is None:
                 reports.append({"key": key, "state": "missing", "input_sha256": ""})
             else:
-                reports.append(self._state_for_key(key, input_data))
+                reports.append(self._state_for_key(key, *inputs))
         return reports
 
     def _is_plan_dir(self, target: str) -> bool:
@@ -922,7 +967,8 @@ class ReviewService:
             ("bundle", self._bundle_input),
         ):
             input_data, _, _ = builder(task_path, task_id)
-            reports.append(self._state_for_key(f"{task_id}/{mode}", input_data))
+            contract_sha = self._contract_sha(mode, task_path, task_id)
+            reports.append(self._state_for_key(f"{task_id}/{mode}", input_data, contract_sha))
         return reports
 
     def _status_plan(self, plan_dir_str: str) -> list[dict[str, Any]]:
@@ -937,7 +983,8 @@ class ReviewService:
             reports.append(self._state_for_key(f"{dag['id']}/{node_id}", input_data))
         return reports
 
-    def _input_for_key(self, key: str) -> bytes | None:
+    def _input_for_key(self, key: str) -> tuple[bytes, str] | None:
+        """The current input of ``key`` and, for task keys, its contract digest (else empty)."""
         if "/preflight" in key or "/bundle" in key:
             task_id, _, mode = key.rpartition("/")
             if mode not in {"preflight", "bundle"}:
@@ -948,7 +995,7 @@ class ReviewService:
                 return None
             builder = self._preflight_input if mode == "preflight" else self._bundle_input
             input_data, _, _ = builder(task_path, task_id)
-            return input_data
+            return input_data, self._contract_sha(mode, task_path, task_id)
         # node key <plan-id>/<NODE>
         parts = key.split("/", 1)
         if len(parts) != 2:
@@ -962,7 +1009,7 @@ class ReviewService:
         if node is None:
             return None
         input_data, _, _ = self._node_input(plan_dir, dag, nodes, node)
-        return input_data
+        return input_data, ""
 
     # ------------------------------------------------------------------ public run
     def run_task(
@@ -985,6 +1032,7 @@ class ReviewService:
         builder = self._preflight_input if mode == "preflight" else self._bundle_input
         input_data, sources, omitted = builder(task_path, task_id)
         return self._run_one(
+            contract_sha256=self._contract_sha(mode, task_path, task_id),
             run_name=run_name,
             key=f"{task_id}/{mode}",
             input_data=input_data,

@@ -564,6 +564,68 @@ def test_disposed_review_status_uses_task_identity(
     assert next(item for item in json.loads(status.stdout) if item["key"] == "task-identity/preflight")["state"] == "stale"
 
 
+def _accept_task_reviews(root: Path, task_id: str) -> None:
+    for mode in ("preflight", "bundle"):
+        result = _deskops(root, "review", mode, task_id, "--run", "contract")
+        assert result.returncode == 0, result.stdout + result.stderr
+    for doc in _review_docs(root):
+        disposed = _deskops(root, "review", "dispose", doc["id"], "--verdict", "accepted", "--reason", "ok")
+        assert disposed.returncode == 0, disposed.stdout + disposed.stderr
+
+
+def _task_states(root: Path, task_id: str) -> dict[str, str]:
+    status = _deskops(root, "review", "status", task_id, "--format", "json")
+    assert status.returncode == 0, status.stdout + status.stderr
+    return {item["key"].rsplit("/", 1)[-1]: item["state"] for item in json.loads(status.stdout)}
+
+
+def test_receipts_record_the_task_contract_digest(lifecycle_desk: Path, fake_pi: tuple[Path, Path]) -> None:
+    root = lifecycle_desk
+    _add_task(root, title="Contract")
+    _accept_task_reviews(root, "task-contract")
+    docs = {doc["kind"]: doc for doc in _review_docs(root)}
+    assert set(docs) == {"preflight", "bundle"}
+    for doc in docs.values():
+        assert re.fullmatch(r"[0-9a-f]{64}", doc["contract_sha256"]), doc
+        assert doc["contract_sha256"] != doc["input_sha256"]
+    assert docs["preflight"]["contract_sha256"] != docs["bundle"]["contract_sha256"]
+
+
+def test_edited_tags_and_status_keep_accepted_receipts_and_goal_stales_them(
+    lifecycle_desk: Path, fake_pi: tuple[Path, Path]
+) -> None:
+    root = lifecycle_desk
+    _add_task(root, title="Contract")
+    _accept_task_reviews(root, "task-contract")
+    assert _task_states(root, "task-contract") == {"preflight": "accepted", "bundle": "accepted"}
+
+    tags = _deskops(root, "edit", "task", "task-contract", "tags", "['host:otro', 'workspace:desk']")
+    assert tags.returncode == 0, tags.stdout + tags.stderr
+    # status (with current_node and history) changes through deskops advance, which the two
+    # accepted receipts unlock (rule-activation-task-code reads them as anchor_state intact).
+    advanced = _deskops(root, "advance", "task", "task-contract")
+    assert advanced.returncode == 0, advanced.stdout + advanced.stderr
+    text = (root / "desk" / "tasks" / "task-contract.md").read_text(encoding="utf-8")
+    assert "host:otro" in text and "\nstatus: draft\n" not in text
+    assert _task_states(root, "task-contract") == {"preflight": "accepted", "bundle": "accepted"}
+
+    goal = _deskops(root, "edit", "task", "task-contract", "goal", "goal changed")
+    assert goal.returncode == 0, goal.stdout + goal.stderr
+    assert _task_states(root, "task-contract") == {"preflight": "stale", "bundle": "stale"}
+
+
+def test_bundle_state_still_follows_the_linked_files(lifecycle_desk: Path, fake_pi: tuple[Path, Path]) -> None:
+    root = lifecycle_desk
+    _add_task(root, title="Contract")
+    linked = root / "linked.txt"
+    linked.write_text("one\n", encoding="utf-8")
+    files = _deskops(root, "edit", "task", "task-contract", "files", "['linked.txt']")
+    assert files.returncode == 0, files.stdout + files.stderr
+    _accept_task_reviews(root, "task-contract")
+    linked.write_text("two\n", encoding="utf-8")
+    assert _task_states(root, "task-contract") == {"preflight": "accepted", "bundle": "stale"}
+
+
 # --------------------------------------------------------------- claude engine
 # A RuntimeProfileDoc whose binary is claude (pi missing, e.g. the scion-claude image) builds a
 # `claude -p` argv: profile model, reviewer system prompt, no tools/session/MCP/skills/settings,
