@@ -1,0 +1,52 @@
+---
+sldb:
+  by: agent
+  at: '2026-11-17T02:57:11Z'
+  authority: generated
+  via: save_document_payload
+# review-<task>-<kind>-<n>
+id: review-deskops-como-config-cc35-node-1
+# preflight | bundle | reproduction | goldens | owner | node | evidence
+kind: node
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
+# doc:<Model>:<id> or empty for reviews of plan nodes
+subject: ''
+# <plan>/dag.yaml#node:<ID>; empty when subject names a document
+subject_ref: desk/drawer/plans/deskops-como-config/dag.yaml#node:CC35
+# RuntimeProfileDoc name or "human"
+engine: runtime-pi-deepseek-flash
+actor: deskops
+# Run evidence directory under runs/, relative to the project root
+run_dir: runs/subagents/node-deskops-como-config/context-review/deskops-como-config/CC35/d3e8827841482b7b30a5db61e077001cd68daf4a99581d1510d5b7f608ec4f90/attempt-1
+input_sha256: d3e8827841482b7b30a5db61e077001cd68daf4a99581d1510d5b7f608ec4f90
+output_sha256: 9214af37994a54cd33e00c9ab10175d9edbdc7e4fed24cea77dde8621926495c
+# pending | accepted | rejected | incomplete
+verdict: rejected
+reason: 'Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto).
+  Agregado; CC35a-d cerrados'
+# ISO 8601 timestamp
+created_at: '2026-11-17T02:49:43.404395+00:00'
+# ISO 8601 timestamp, empty while pending
+disposed_at: '2026-11-17T02:57:00.109129+00:00'
+disposed_by: deskops
+# e.g. workspace:desk
+tags:
+- workspace:desk
+---
+
+# Node review of CC35
+
+## Summary
+
+_Summarize what was reviewed and the evidence this receipt records._
+
+node review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/node-deskops-como-config/context-review/deskops-como-config/CC35/d3e8827841482b7b30a5db61e077001cd68daf4a99581d1510d5b7f608ec4f90/attempt-1.
+
+## Disposition
+
+_Record the verdict rationale and who disposed of the review._
+
+Verdict rejected: Triaje del drawer 2026-11-16 (pedido del supervisor): BOTAR (ya resuelto). Agregado; CC35a-d cerrados

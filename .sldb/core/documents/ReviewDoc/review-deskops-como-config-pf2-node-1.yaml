@@ -1,0 +1,36 @@
+name: review-deskops-como-config-pf2-node-1
+path: desk/reviews/deskops-como-config-pf2/node-1.md
+source_hash: a35563350daad2eadea363582c18f8f0ef91746051187dad2d7e082009e11bb6
+content_hash: 62de50838174423cc3c7d507d5159ffaf0d3930e74dd437c07e97a08d6321585
+field_hashes:
+  id: 0a877d9897278db8c752ccd183bdca745281a8032595e75153f440aadafde8bd
+  title: aca7cbf616be13d55f9482d92979d66060035d739d00ddd9c990bac9da57f5d8
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: d5f64e22fb4da5759879941cdbcb9517351840cd25264a1496ff9399778c4771
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: d4defead70c9e3e17343f83f201d157feaa61885c138f44fd8d63a8d41c4baff
+  input_sha256: a59bc7d82430de5c2c1fc99de40a04c26bf9f59bd40cbe71b72bd63c68addc74
+  output_sha256: 9c4bfbd2e8a85f27deb1f3310b531c2d56a07d9fdc9fe30b80e8805a7585d040
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 994fff8d25a7bc9f21587a324e76627b3ebfb481f60dd425c748b351cbdd080a
+  created_at: 60703d398dc13452ca50f374118447b3309af304a0166db85a9569a451fa5061
+  disposed_at: 5f57006184b828b6b89405936efd1c8d7e74692f15afe8a9ad9a392f574ef5c2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: ffb62e94ef6d9a02a5ca4c96d1a30ca77e7691c8b292d72b3013f579d21c27ec
+  disposition: 46faa8c5634ef268fd088625e9b1b222bf3abfede073b7f03994bcc31f553070
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T03:00:26Z'
+  authority: generated
+  via: save_document_payload

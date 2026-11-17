@@ -1,0 +1,36 @@
+name: review-deskops-como-config-cc35b-node-1
+path: desk/reviews/deskops-como-config-cc35b/node-1.md
+source_hash: ab6373a185acfbc2cac91d3cd5a64f1b62a6346ded99fcec1e3a9d95ad37fec3
+content_hash: f18cb4a4b1d1c10bb24b071098c2c10c8b59fae1cb642ca3d06f1e9ca1faacf2
+field_hashes:
+  id: 5e965e50d1f90dfb12783a3725e9c1a24e6b428179a00278a0b4a29385b51a63
+  title: 17aa8968056aa7b883ddce2c2587ce4008942e630b4ad86fa14155e47824c7d7
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: 01ef5c8ace9b9e9f5b5bd80b28e9a349748bfc35668c50f5bdd0730e86a1bc1d
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 79c474b5a8bab5a3d5ba5c2280dac15a294e04326b047c6e11b2799ee1d34c30
+  input_sha256: 686dac3e212f5a588de375195fe814884356126651f166d4f05efb52e9f256d9
+  output_sha256: 3de3b42b19f92d0d365dde6f37cea0ec37fe2216c3cbeed6c7cfa9397b91fefd
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3699af16437d71de78b2859937e909ce61861bfbac7f2fdb2c92befddb0da7e2
+  created_at: b99be310683f6f66c63488a8f570dc7d10e184a8bd25b561af5e777558691a64
+  disposed_at: 33dc72dcc4618b60d46b8255882d3087056a615f5cca184510dd4ac6c21822d0
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 452d121f508f7975292997086edf1c6a2a719fcde0453be5749301d9d6ba32e3
+  disposition: aad72c9dbf5e9c4b88450a5412fb7bd2de6d6c7f7e7662b49f2fc8037fcde9de
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T02:57:48Z'
+  authority: generated
+  via: save_document_payload

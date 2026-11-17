@@ -1,0 +1,36 @@
+name: review-deskops-como-config-pf4-node-1
+path: desk/reviews/deskops-como-config-pf4/node-1.md
+source_hash: ede49af87b48b302f2b7b16b1fd4bfe419ed1b32bfbce9268671c76d13ac4ba6
+content_hash: 0a92c34e93236468b7124d4647dd395d9f9e0e4584f89117d0bad426213d59ef
+field_hashes:
+  id: 0fef9673a1a6f1a7e1f8bb283419531e933c676ec27a3ed4e5d028fd4755b80b
+  title: e0d64959ccc6bc0400ebaf2d64131f34e47fb309ccbb75018a45edea643ea24b
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: 19be69779bdbd3a9de776f3b142cc95deb0ae67a82ab8eb3a95886ce3f2e9d4d
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: eb7622e20887c801bcd532c2a2e409df5dc5e181290acd97187cb937015212ea
+  input_sha256: 1ab2bcd336726bd7c4ed0a386d9a66a9391f3a56b860c995726252bdae481de7
+  output_sha256: ad9cc9c459ee23793db93395f2aab322b77391e2f8e18450684da6a7a9dbd865
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  created_at: 5e387d4896b063cba419c5f96f3676ccb87a2a508930d26a823cdb5d8030c4ce
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: ef242330d8204437088c2cca6c427176bd5f6006024b62192078ab838232e9f5
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T02:44:00Z'
+  authority: generated
+  via: create_document

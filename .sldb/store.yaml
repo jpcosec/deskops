@@ -413,6 +413,8 @@ include:
     name: run-deskops-e-7fbb23ba5137
   - path: runs/subagents/test-deskops-t-59a02e2fac60/run.md
     name: run-deskops-t-59a02e2fac60
+  - path: runs/subagents/exec-deskops-e-3d60a97676f5/run.md
+    name: run-deskops-e-3d60a97676f5
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1223,6 +1225,94 @@ include:
     name: review-task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo-evidence-materialization-1
   - path: desk/reviews/deskops-workspace-documental-ws30/node-1.md
     name: review-deskops-workspace-documental-ws30-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws31/node-1.md
+    name: review-deskops-workspace-documental-ws31-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws32/node-1.md
+    name: review-deskops-workspace-documental-ws32-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws33/node-1.md
+    name: review-deskops-workspace-documental-ws33-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws34/node-1.md
+    name: review-deskops-workspace-documental-ws34-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws35/node-1.md
+    name: review-deskops-workspace-documental-ws35-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws36/node-1.md
+    name: review-deskops-workspace-documental-ws36-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws37/node-1.md
+    name: review-deskops-workspace-documental-ws37-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws38/node-1.md
+    name: review-deskops-workspace-documental-ws38-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws39/node-1.md
+    name: review-deskops-workspace-documental-ws39-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws40/node-1.md
+    name: review-deskops-workspace-documental-ws40-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws41/node-1.md
+    name: review-deskops-workspace-documental-ws41-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws42/node-1.md
+    name: review-deskops-workspace-documental-ws42-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws43/node-1.md
+    name: review-deskops-workspace-documental-ws43-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws44/node-1.md
+    name: review-deskops-workspace-documental-ws44-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws45/node-1.md
+    name: review-deskops-workspace-documental-ws45-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws46/node-1.md
+    name: review-deskops-workspace-documental-ws46-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws47/node-1.md
+    name: review-deskops-workspace-documental-ws47-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws48/node-1.md
+    name: review-deskops-workspace-documental-ws48-node-1
+  - path: desk/reviews/deskops-como-config-root/node-1.md
+    name: review-deskops-como-config-root-node-1
+  - path: desk/reviews/deskops-como-config-pf1/node-1.md
+    name: review-deskops-como-config-pf1-node-1
+  - path: desk/reviews/deskops-como-config-pf2/node-1.md
+    name: review-deskops-como-config-pf2-node-1
+  - path: desk/reviews/deskops-como-config-pf3/node-1.md
+    name: review-deskops-como-config-pf3-node-1
+  - path: desk/reviews/deskops-como-config-pf4/node-1.md
+    name: review-deskops-como-config-pf4-node-1
+  - path: desk/reviews/deskops-como-config-cc30/node-1.md
+    name: review-deskops-como-config-cc30-node-1
+  - path: desk/reviews/deskops-como-config-cc31/node-1.md
+    name: review-deskops-como-config-cc31-node-1
+  - path: desk/reviews/deskops-como-config-cc32/node-1.md
+    name: review-deskops-como-config-cc32-node-1
+  - path: desk/reviews/deskops-como-config-cc33/node-1.md
+    name: review-deskops-como-config-cc33-node-1
+  - path: desk/reviews/deskops-como-config-cc33a/node-1.md
+    name: review-deskops-como-config-cc33a-node-1
+  - path: desk/reviews/deskops-como-config-cc33b/node-1.md
+    name: review-deskops-como-config-cc33b-node-1
+  - path: desk/reviews/deskops-como-config-cc33c/node-1.md
+    name: review-deskops-como-config-cc33c-node-1
+  - path: desk/reviews/deskops-como-config-cc34/node-1.md
+    name: review-deskops-como-config-cc34-node-1
+  - path: desk/reviews/deskops-como-config-cc35/node-1.md
+    name: review-deskops-como-config-cc35-node-1
+  - path: desk/reviews/deskops-como-config-cc35a/node-1.md
+    name: review-deskops-como-config-cc35a-node-1
+  - path: desk/reviews/deskops-como-config-cc35b/node-1.md
+    name: review-deskops-como-config-cc35b-node-1
+  - path: desk/reviews/deskops-como-config-cc35c/node-1.md
+    name: review-deskops-como-config-cc35c-node-1
+  - path: desk/reviews/deskops-como-config-cc35d/node-1.md
+    name: review-deskops-como-config-cc35d-node-1
+  - path: desk/reviews/deskops-como-config-cc36/node-1.md
+    name: review-deskops-como-config-cc36-node-1
+  - path: desk/reviews/deskops-como-config-cc37/node-1.md
+    name: review-deskops-como-config-cc37-node-1
+  - path: desk/reviews/deskops-como-config-cc38/node-1.md
+    name: review-deskops-como-config-cc38-node-1
+  - path: desk/reviews/task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos/preflight-3.md
+    name: review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-preflight-3
+  - path: desk/reviews/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo/preflight-1.md
+    name: review-task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo-preflight-1
+  - path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/preflight-3.md
+    name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-preflight-3
+  - path: desk/reviews/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo/bundle-1.md
+    name: review-task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo-bundle-1
+  - path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/bundle-3.md
+    name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-bundle-3
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1277,6 +1367,7 @@ include:
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
   - desk/tasks/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo.md
+  - desk/tasks/task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

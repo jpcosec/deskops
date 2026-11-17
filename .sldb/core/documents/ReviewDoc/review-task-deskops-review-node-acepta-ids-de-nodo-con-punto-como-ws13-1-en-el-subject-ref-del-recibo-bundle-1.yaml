@@ -1,0 +1,36 @@
+name: review-task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo-bundle-1
+path: desk/reviews/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo/bundle-1.md
+source_hash: f0e48c2e137fbad1c34cd265f9a165c4666d192b0f485bf0f764dc8d248c0bd1
+content_hash: 8f42a1824fe759df38aa641860f27acbb7335e269caf7c90b51221205c9deaaf
+field_hashes:
+  id: a638af08b6bb7084821dd6c3c2aefc590c1f6dcc573f28cf465dfe76644cbee6
+  title: 2b4026005dd65f94d3ec1d6624d2cdbd680c7a8d327bfe70744a3a7da783e326
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 4cebd7359811b74bab420f12282c6d9a4e37f86b9cf32506d57516b7d1a14cec
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: c3a40f9a992be551566e7ab16eca59f42e7d15e43963cf880ed660a84f82b3cd
+  input_sha256: a9163a1680b5957e39910357ce677625b6ec97f434f6c4217f4eec6bed4db6f1
+  output_sha256: 3e858670c321ec2c4354efa5ce027cbed549c22d0567559acd2b8bafde6ca08d
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 3cc58406d6010e02677e4da0b1ca91f75bf08743b4a18ac4970e761964ba4f62
+  created_at: 82c5a1248fa592ce2586e727af3613662ada8793ee46e5998189bd4892883615
+  disposed_at: aaea633179ada04e8d953e9ae5be83866cab09b31e5573c02be725f87ed1260f
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f1efb63f536203227371d0c9a4386678e85a260237eab8a979305b9961dd4ccb
+  disposition: fea1e526d5aa17adf2b8365786ec04b8b3160ba6679583f73d43640b28856dcb
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T02:57:17Z'
+  authority: generated
+  via: save_document_payload

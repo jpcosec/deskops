@@ -1,0 +1,36 @@
+name: review-deskops-workspace-documental-ws35-node-1
+path: desk/reviews/deskops-workspace-documental-ws35/node-1.md
+source_hash: 21da2423d722e0963f41c92c4d529b384ea78b84227f193e595707dac9c0efab
+content_hash: 6663d72f36596a154f9b5b2ad9d9be9980f417f7c319f11113b47367186cbbc3
+field_hashes:
+  id: ed424e3e3f74246c795d66459fa49c6040fe95b7155ffd90b282d9df34ae107e
+  title: 97646ada83c841907a5bc06274d6a9c7fef92a3f904a3cfc56e96c310e28827f
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: b9175b0f3761fb4982cdfe73bc14e77f95e87d02b63db7aae649f06ffd597f4b
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 39eadbd617b02fd2de6f2aa33e42148976f37e22a6aa983deea51f48d001aadf
+  input_sha256: accd5f25b8d74b1d2e2a080ca5bc721e496aba614253c0b73f2942df2b90a470
+  output_sha256: f84b600cfec4e0e380add60bfaf107843f2d3d93d2de0ac6cad5af30c10a219a
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  created_at: b236852fd5326ac49d323bd00086a8b5dc39f818e71911ba7d6b2e0dbf3a9823
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: f178a136986a9265e96ec2a1c9a035023fde56f9551ed3a338f67dab67a6520f
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T02:33:40Z'
+  authority: generated
+  via: create_document

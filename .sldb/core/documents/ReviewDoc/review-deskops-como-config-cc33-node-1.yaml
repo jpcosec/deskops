@@ -1,0 +1,36 @@
+name: review-deskops-como-config-cc33-node-1
+path: desk/reviews/deskops-como-config-cc33/node-1.md
+source_hash: 2da4ea49a5a84ad92f2329bff779d8907eafab6cd8d6eac3b7c7e73454aecc14
+content_hash: 061471d25307d1675fb9b330f59678acbab8dce5ed07b38951ef1c54ce4268a8
+field_hashes:
+  id: 8992b63c8768efcad641609cc3b94ca373a4d8817502c4c100118e902a8bcc93
+  title: 65a0ad79263e21802ccd63f947db2c71903bc0865797a1e651ed420639d3c990
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: 958adf0576341e97b07102f7d4d0b5e7b1de676b0ac8933cced81e1ebc9df015
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 2d6897cd92511aba444f509f4ae398ff393fd4e93aa123c390b67732d3a41525
+  input_sha256: d391ad577ac5c551ab8c0510f64fbdc27dc08fda0c5c67ea1f455aea3322ef50
+  output_sha256: 322bba051ae9a9f2609e5b15be32bc5cac05c783c002ce6adf460f8bc684626f
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 0d21d584195cb8e3c54df1aafd77accc4fcde505b259fabbbf0c7c58b11837af
+  created_at: 26d77d41163b1270818a96e535e046bc493e9b679c10f6ad09ff8bb64d359f6a
+  disposed_at: 07da3a89b595d66a8f19b33dfe4919fe701b9f9088810acb8b796d87e1ac1e84
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 38686490a8e02bae48f27a37ee307c7869fe3840a399929b780d780ccf1bd888
+  disposition: 776a781869b200cab7649f47eaca92f08a70ce79b8141c308fe6943467c8c123
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T02:55:28Z'
+  authority: generated
+  via: save_document_payload
