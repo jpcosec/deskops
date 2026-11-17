@@ -4,12 +4,8 @@ This board routes deferred work only.
 
 ## Remaining
 
-- `tasks/task-chatbot-infra-indexar-las-citas-c-digo-atom-de-los-docstrings-en-el-grafo-y-huecos-de-atoms-vistos-en-la-auditor-a.md` — Chatbot_Infra: indexar las citas código→atom de los docstrings en el grafo (y huecos de atoms vistos en la auditoría)
-- `tasks/task-closeout-verify-ignora-el-campo-atoms-de-la-tarea-y-solo-lee-references.md` — closeout verify ignora el campo atoms de la tarea y solo lee references
-- `tasks/task-correlacionar-intentos-scion-con-rundoc-y-closeout.md` — Correlacionar intentos Scion con RunDoc y closeout
-- `tasks/task-mepu-selector-por-ruta-en-edit-task-y-diagn-stico-drawer.md` — MEPU: selector por ruta en edit task y diagnóstico drawer
-- `tasks/task-release-deskops-0-2-0-pendiente-hasta-que-la-suite-completa-funcione-junta.md` — Release deskops 0.2.0 pendiente hasta que la suite completa funcione junta
-- `tasks/task-requisitos-d4-d6-de-governance-pr-en-taskdoc-alertas-en-el-inbox-y-rundoc.md` — Requisitos D4–D6 de Governance: PR en TaskDoc, alertas en el inbox y RunDoc
+Nada. Triaje del 2026-11-16: los 14 ítems sueltos se botaron (5 ya resueltos y 9 cubiertos por una tarea activa que los cita en from_drawer). Detalle en reports/triaje-deskops-20261116.md.
+
 
 ## Retired
 
