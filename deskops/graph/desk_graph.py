@@ -44,6 +44,12 @@ DECLARED_EDGE_EXTRACTOR = "desk_declared_edges_v1"
 PROVENANCE_FIELDS = ("from_drawer",)
 
 _MD = (".md",)
+# A closed issue is history, like a ``record: true`` document: its frontmatter ``status`` (or
+# ``Status``) reads as ``closed`` the way ``deskops issue`` normalizes it (case, quotes, a
+# trailing colon, words after it). sldb evaluates it on the payload (frontmatter), so an issue
+# whose status lives only in a ``## Status`` section or a ``Status:`` line is not closed by it.
+_CLOSED_STATUS = r"(?i)^\s*[\"']*closed:*(\s|[\"']*\s*$)"
+CLOSED_ISSUE = f'status ~ "{_CLOSED_STATUS}" or Status ~ "{_CLOSED_STATUS}"'
 SURFACES = (
     DocumentSurface(kind="atom", directory="desk/atoms", pattern="**/*.md", identity="document_id"),
     DocumentSurface(kind="materialization", directory="desk/materializations", pattern="**/*.md", identity="document_id"),
@@ -52,7 +58,7 @@ SURFACES = (
     DocumentSurface(kind="run", directory="desk/runs", pattern="**/*.md", identity="document_id"),
     DocumentSurface(kind="pill", directory="desk/contexts", pattern="*.md", identity="document_id"),
     DocumentSurface(kind="task", directory="desk/tasks", pattern="*.md", excluded_names=("Board.md",), identity="document_id"),
-    DocumentSurface(kind="issue", directory="desk/drawer/issues", pattern="*.md", identity="document_id_or_slug"),
+    DocumentSurface(kind="issue", directory="desk/drawer/issues", pattern="*.md", identity="document_id_or_slug", closed=CLOSED_ISSUE),
     DocumentSurface(kind="question", directory="desk/drawer/questions", pattern="*.md"),
     DocumentSurface(kind="task", directory="desk/drawer/tasks", pattern="*.md", excluded_names=("Board.md",), identity="document_id"),
     DocumentSurface(kind="feature", directory="desk/drawer/features", pattern="*.md"),
@@ -152,15 +158,6 @@ MISSING_TARGET_KINDS = (
 )
 
 
-def _closed_issue(kind: str, text: str) -> bool:
-    """A closed issue is history, like a ``record: true`` document."""
-    if kind != "issue":
-        return False
-    from deskops.services.issues import issue_status
-
-    return issue_status(text) == "closed"
-
-
 def _model_classes() -> dict[str, Any]:
     from deskops import models
 
@@ -201,7 +198,7 @@ def desk_graph_config() -> ProjectGraphConfig:
         fields_by_model={name: _declared_fields(model) for name, model in classes.items()},
         kind_by_model={name: "materialization" if kind == "materialization_contract" else kind for name, kind in kinds.items() if kind},
         provenance_fields=PROVENANCE_FIELDS, section_mentions=SECTION_MENTIONS, line_mentions=LINE_MENTIONS,
-        missing_target_kinds=MISSING_TARGET_KINDS, closed_document=_closed_issue,
+        missing_target_kinds=MISSING_TARGET_KINDS,
     )
 
 

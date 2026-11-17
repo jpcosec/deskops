@@ -11,8 +11,12 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from deskops.cli.main import main
 from deskops.graph.checks import find_missing_graph_references
+from deskops.graph.desk_graph import CLOSED_ISSUE
+from deskops.graph.desk_graph import desk_graph_config
 from deskops.graph.desk_graph import extract_declared_edges
 
 
@@ -185,3 +189,26 @@ def test_record_issue_with_the_same_dangling_path_is_informational(tmp_path: Pat
     assert result == 0
     assert "Informational (archived records):" in captured.out
     assert "0 missing, 1 informational" in captured.out
+
+
+@pytest.mark.parametrize(
+    "status, record",
+    [("closed", True), ("Closed: fixed", True), ("'closed'", True), ("open", None), ("closed-ish", None)],
+)
+def test_a_closed_issue_is_history_by_its_surfaces_closed_predicate(tmp_path: Path, status: str, record: bool | None) -> None:
+    """sldb's ``closed:`` on the issue surface reads the frontmatter status as ``deskops issue`` does."""
+    write(tmp_path / "desk/drawer/issues/issue-old.md", f'---\nstatus: "{status}"\n---\n\n' + LIVE_ISSUE)
+
+    findings = find_missing_graph_references(tmp_path)
+
+    assert [(finding.target_id, finding.record) for finding in findings] == [("source_file:deskops/missing.py", record)]
+
+
+def test_the_desk_graph_config_is_data_with_no_closed_document_callable() -> None:
+    """H2 of CC33c: the closed-issue rule is a ``closed:`` predicate, so the configuration dumps as data."""
+    config = desk_graph_config()
+
+    assert config.closed_document is None
+    issue = next(surface for surface in config.surfaces if surface.kind == "issue")
+    assert issue.closed == CLOSED_ISSUE
+    assert config.to_mapping()["surfaces"]

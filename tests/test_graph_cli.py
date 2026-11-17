@@ -302,11 +302,11 @@ def test_graph_missing_surfaces_an_import_failure_instead_of_masking_it(tmp_path
 def test_graph_missing_treats_a_closed_issue_as_a_record(tmp_path: Path, capsys, status: str, expected: int) -> None:
     write(
         tmp_path / "desk/drawer/issues/issue-old.md",
-        f"""# Old issue
+        f"""---
+status: {status}
+---
 
-## Status
-
-{status}
+# Old issue
 
 ## Resolution
 

@@ -65,10 +65,15 @@ def declared_target_is_a_file(root: Path, target_id: str) -> bool:
 
     The project graph makes nodes only for the files its surfaces extract, so an existing
     ``.yaml`` or ``.json`` (the plan's ``dag.yaml`` in the drawer, a test fixture) is reported as
-    a missing target although it is there. CC33c read ``graph`` from sldb's project graph (GD21)
-    and found it still makes no node for them, so the exception stays: such a target is not
-    missing when, without its ``kind:`` prefix, it names a file inside ``root``. An atom reference, a path that does not exist, and a
-    path that leaves ``root`` (absolute, or through ``..``) are still reported.
+    a missing target although it is there. sldb's ``DeclaredFileTargets`` (GD21) makes nodes only
+    for a top-level scalar frontmatter field of a glob of documents, outside the exclusions; the
+    desk already declares the one it can (``MATERIALIZATION_TARGETS``). None of the targets this
+    exception covers fits it: a task's ``references:`` list (inbox notes), a path mentioned in a
+    task's body (``dag.yaml``, an e2e scenario), and a materialization target under the excluded
+    ``tests/fixtures``. So the exception stays (reported to sldb): such a target is not missing
+    when, without its ``kind:`` prefix, it names a file inside ``root``. An atom reference, a
+    path that does not exist, and a path that leaves ``root`` (absolute, or through ``..``) are
+    still reported.
     """
     if target_id.startswith("atom:"):
         return False
