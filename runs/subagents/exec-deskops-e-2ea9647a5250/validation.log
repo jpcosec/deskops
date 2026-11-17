@@ -1,0 +1,33 @@
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_command.py
+.........................                                                [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+25 passed, 1 warning in 338.53s (0:05:38)
+rc=0
+
+$ cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_review_doc.py
+.........x..........                                                     [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 1 xfailed, 1 warning in 148.68s (0:02:28)
+rc=0
+
+$ (manual, paso 4) desk sandbox /dev/shm/sb-claude-review-2ea9: git init + deskops init; deskops add runtime-profile --from-yaml (kind claude, binary claude, model_flag --model, extra_args [--print]); deskops edit runtime-profile runtime-claude extra_args "[--print, --model, haiku]"; deskops add task --title "Contar lineas" ...;
+$ deskops review preflight task-contar-lineas --engine runtime-claude --run manual-claude --root .
+task-contar-lineas/preflight: reviewed
+review: review-task-contar-lineas-preflight-1
+run_dir: runs/subagents/manual-claude/context-review/task-contar-lineas/preflight/9a9dbe111c3f17304f01ce77b60c0f7f244f345b307bd7142e18c2170db6e292/attempt-1
+rc=0  (receipt technical_ok=true; ReviewDoc engine: runtime-claude, verdict: pending; output.md con REFORMULACION, AMBIGUEDADES, DRY-RUN, FUTURO)
+Evidencia copiada a manual-run/ antes de borrar el sandbox.
+
+$ pytest -n 4 -q tests (suite completa): NO CORRIDA por orden del integrador wA:p1 -> para el integrador.

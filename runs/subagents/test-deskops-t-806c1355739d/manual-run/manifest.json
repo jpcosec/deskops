@@ -1,0 +1,47 @@
+{
+  "key": "task-contar-palabras-de-readme/preflight",
+  "input_sha256": "3bc3a20106eca33475a70fdcbf1e15e01bd8e53dede0b0c8d354891cd865bcca",
+  "argv": [
+    "claude",
+    "-p",
+    "--model",
+    "haiku",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "--tools",
+    "",
+    "--no-session-persistence",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"autoMemoryEnabled\":false}"
+  ],
+  "binary": "claude",
+  "model": "haiku",
+  "input_delivery": "stdin",
+  "isolation_flags": [
+    "--tools",
+    "",
+    "--no-session-persistence",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"autoMemoryEnabled\":false}"
+  ],
+  "profile": "runtime-claude-haiku-reviewer",
+  "selection_reason": "claude: perfil RuntimeProfileDoc de claude para cuando pi no está disponible",
+  "sources": [
+    {
+      "path": "desk/tasks/task-contar-palabras-de-readme.md",
+      "sha256": "d6d0898a5478f382f72e362a8fd9bd2ffd9567159d9964a9f6e985f0d1fc50dc",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [],
+  "started": "2026-11-16T23:54:11.415769+00:00",
+  "finished": "2026-11-16T23:54:18.819984+00:00"
+}

@@ -1,0 +1,13 @@
+Task: task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible
+Title: deskops review puede correr con un RuntimeProfileDoc de claude cuando pi no esta disponible
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective pills:
+- desk/contexts/pill-zero-context-preflight-precedes-executor.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-cheap-zero-context-reviews-test-the-brief-recursively
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

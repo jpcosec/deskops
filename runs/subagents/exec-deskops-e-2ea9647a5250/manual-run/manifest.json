@@ -1,0 +1,47 @@
+{
+  "key": "task-contar-lineas/preflight",
+  "input_sha256": "9a9dbe111c3f17304f01ce77b60c0f7f244f345b307bd7142e18c2170db6e292",
+  "argv": [
+    "claude",
+    "-p",
+    "--model",
+    "haiku",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "--tools",
+    "",
+    "--no-session-persistence",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"autoMemoryEnabled\":false}"
+  ],
+  "binary": "claude",
+  "model": "haiku",
+  "input_delivery": "stdin",
+  "isolation_flags": [
+    "--tools",
+    "",
+    "--no-session-persistence",
+    "--strict-mcp-config",
+    "--disable-slash-commands",
+    "--setting-sources",
+    "",
+    "--settings",
+    "{\"autoMemoryEnabled\":false}"
+  ],
+  "profile": "runtime-claude",
+  "selection_reason": "claude: perfil RuntimeProfileDoc de claude para cuando pi no está disponible",
+  "sources": [
+    {
+      "path": "desk/tasks/task-contar-lineas.md",
+      "sha256": "9323a3ae3e5731e153c15e5c6a569dd12e5cf51cdb32abad7b87a6a4aab88bde",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [],
+  "started": "2026-11-16T23:40:59.064109+00:00",
+  "finished": "2026-11-16T23:41:14.726965+00:00"
+}

@@ -1,0 +1,65 @@
+## claude --help flags (2.1.326 (Claude Code))
+== --tools
+                                        tools) and WebFetch unless --tools names
+  --tools <tools...>                    Built-in tools to make available: "" for
+== --no-session-persistence
+  --no-session-persistence              Don't save sessions to disk; they can't
+== --strict-mcp-config
+                                        --strict-mcp-config to skip MCP servers
+  --strict-mcp-config                   Only use MCP servers from --mcp-config,
+== --disable-slash-commands
+  --disable-slash-commands              Disable all skills and commands
+== --setting-sources
+  --setting-sources <sources>           Comma-separated list of setting sources
+== --settings
+                                        apiKeyHelper via --settings (OAuth and
+                                        --settings, --agents, --plugin-dir.
+== -p
+  -p, --print                           Print response and exit (useful for
+                                        non-interactive mode (via -p, or when
+== --system-prompt
+  --system-prompt <prompt>              System prompt to use for the session
+                                        first request — a --system-prompt or
+== --model
+  --model <model>                       Model for the current session. Use an
+ugrep: warning: -A2: No such file or directory
+## pytest
+== test_review_command
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+25 passed, 1 warning in 361.86s (0:06:01)
+rc=0
+== test_review_doc
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 1 xfailed, 1 warning in 99.07s (0:01:39)
+rc=0
+== test_review_record
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 1 warning in 236.82s (0:03:56)
+rc=0
+== test_command_registry
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 3.32s
+rc=0
+
+## --settings / --tools (grep corregido)
+  --settings <file-or-json>   Settings file or JSON string to load more settings from
+  --tools <tools...>          Built-in tools to make available: "" for none, ...
+Los 6 flags de CLAUDE_ISOLATION existen en claude 2.1.326.
+
+## Tests nuevos contra HEAD (git archive HEAD en /dev/shm + tests/test_review_command.py de la entrega)
+pytest -k "claude or pi_profile": 4 failed (los 4 nuevos); e2e falla con KeyError: 'binary' en el manifest.
+
+## Corrida real (sandbox /dev/shm/tester-806c-sbx: git init + deskops init; perfil runtime-claude-haiku-reviewer
+## creado con `deskops add runtime-profile --from-yaml`, extra_args [--print, --model, haiku])
+deskops review preflight task-contar-palabras-de-readme --engine runtime-claude-haiku-reviewer --root .  -> rc=0
+manifest: binary=claude model=haiku input_delivery=stdin, argv sin @ruta, isolation_flags completos
+receipt: technical_ok=true returncode=0; output.md: REFORMULACION, AMBIGUEDADES, DRY-RUN, FUTURO
+ReviewDoc preflight-1: engine runtime-claude-haiku-reviewer. Copia en manual-run/.
+
+## Sonda de aislamiento (haiku, cwd = checkout real)
+con CLAUDE_ISOLATION: no ve CLAUDE.md/AGENTS.md, ni MEMORY.md, ni tools, ni skills (isolation-probe.txt)
+control sin --setting-sources ""/autoMemoryEnabled: cita "# Cómo trabajar conmigo", "# Agent Onboarding" y una entrada de MEMORY.md (isolation-control.txt)
