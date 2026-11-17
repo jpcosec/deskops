@@ -1087,9 +1087,11 @@ class ClosureService:
         """One ``ReviewDoc`` kind ``evidence`` per declared kind, pinned on the task's contract.
 
         A receipt is skipped when one of the same fact for the task already carries the same
-        ``input_sha256`` and an intact anchor (c2). Written by ``create`` plus an unchanged
-        ``update`` in the same transaction, the save that pins ``subject`` (c1). A root without
-        a store has no anchors to pin and gets no receipts. Returns the review ids written.
+        ``input_sha256``, the same ``verdict`` and an intact anchor (c2); a changed verdict on
+        the same input (a gate fixed without touching the fact's items) writes a new one.
+        Written by ``create`` plus an unchanged ``update`` in the same transaction, the save
+        that pins ``subject`` (c1). A root without a store has no anchors to pin and gets no
+        receipts. Returns the review ids written.
         """
         if not doc_access.has_store(self.root):
             return []
@@ -1108,7 +1110,7 @@ class ClosureService:
             same_input = [
                 review_id
                 for review_id, payload in self._evidence_receipts(review_dir, fact)
-                if payload.get("input_sha256") == input_sha256
+                if payload.get("input_sha256") == input_sha256 and payload.get("verdict") == verdict
             ]
             if same_input:
                 if not_intact is None:

@@ -380,3 +380,66 @@ def test_commit_and_verify_share_the_run_evidence_helper(tmp_path: Path) -> None
     assert ClosureService.missing_run_evidence(tmp_path) == ["task.txt", "git-status.txt", "result-summary.md"]
     source = (Path(__file__).resolve().parents[1] / "deskops" / "services" / "closure.py").read_text(encoding="utf-8")
     assert source.count("self.missing_run_evidence(resolved_run_dir)") == 2
+
+
+# ---------------------------------------------------------------- receipts follow the verdict
+def _evidence_receipts(root: Path, fact: str) -> list[dict]:
+    directory = root / "desk" / "reviews" / TASK_ID
+    receipts = []
+    for path in sorted(directory.glob(f"evidence-{fact}-*.md")):
+        receipts.append(yaml.safe_load(path.read_text(encoding="utf-8").split("---", 2)[1]))
+    return receipts
+
+
+def _code_task_with_its_evidence(root: Path) -> None:
+    (root / "tests").mkdir(exist_ok=True)
+    shutil.copyfile(__file__, root / "tests" / Path(__file__).name)
+    _write(root / "feature.py", "x = 1\n")
+    _git(root, "add", "tests", "feature.py")
+    _git(root, "commit", "-q", "-m", "feature")
+    refs = [f"tests/{Path(__file__).name}", _git(root, "rev-parse", "HEAD")]
+    _write_declared_task(root, task_type="task.code", references=refs, files=["feature.py"])
+
+
+def test_a_changed_verdict_on_the_same_input_writes_a_new_receipt_and_unblocks_closeout(repo: Path) -> None:
+    from deskops.operations import DeskopsOperations
+
+    root = repo
+    _code_task_with_its_evidence(root)
+    closure = DeskopsOperations(root).closure
+    green = closure.verify_task_closeout(TASK_ID)["gates"]
+    red = json.loads(json.dumps(green))
+    red["tests"].update(ok=False, findings=[{"code": "tests_failed", "message": "the suite is red"}])
+    # The gate in red: same tests items, verdict rejected.
+    written = closure._write_evidence_receipts(root / TASK_REL, TASK_ID, ["tests"], red)
+    assert written == [f"review-{TASK_ID}-evidence-tests-1"]
+    assert [r["verdict"] for r in _evidence_receipts(root, "tests")] == ["rejected"]
+
+    # Fixed without changing the fact's input: verify writes the accepted receipt.
+    report, _ = _verify(root)
+    assert report["ok"], report
+    receipts = _evidence_receipts(root, "tests")
+    assert [r["verdict"] for r in receipts] == ["rejected", "accepted"]
+    assert receipts[0]["input_sha256"] == receipts[1]["input_sha256"]
+
+    closed = _commit_no_run(root, TASK_REL)
+    assert closed.returncode == 0, closed.stdout + closed.stderr
+    assert "[rules/rule-closeout-task-code]" not in closed.stdout
+
+    # Symmetric: back to rejected on the same input writes yet another receipt.
+    assert closure._write_evidence_receipts(root / TASK_REL, TASK_ID, ["tests"], red) == [
+        f"review-{TASK_ID}-evidence-tests-3"
+    ]
+
+
+def test_two_green_verifies_do_not_duplicate_receipts(repo: Path) -> None:
+    root = repo
+    _code_task_with_its_evidence(root)
+    first, _ = _verify(root)
+    assert first["ok"], first
+    directory = root / "desk" / "reviews" / TASK_ID
+    before = sorted(path.name for path in directory.glob("evidence-*.md"))
+    assert before
+    second, _ = _verify(root)
+    assert second["ok"], second
+    assert sorted(path.name for path in directory.glob("evidence-*.md")) == before
