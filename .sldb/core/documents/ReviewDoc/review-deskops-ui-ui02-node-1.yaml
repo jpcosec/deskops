@@ -1,0 +1,36 @@
+name: review-deskops-ui-ui02-node-1
+path: desk/reviews/deskops-ui-ui02/node-1.md
+source_hash: 172739cacddb438a4dab94448a0c531241cb0c24c8f5576077b0bd75c3346b87
+content_hash: 78b16072959113e5a1250ef2be8a1a0b5f3d858513c55ae707998e3595077dba
+field_hashes:
+  id: 499a750e4d268c2d6ba6ec6a27a2c59ed3c769f087cc450d8c179c8c14a20a04
+  title: 25648f4933b10f814215cbef8a2fcedf775b6c728a911fd28275776feabe543e
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: 4c6a2f894f1c4e0ec238809ecc53254df9c846fc92d6f52a65c6f000c0063f5b
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: a05bc6883b22ec6e3e4a6e297a2572ab499a3c7ca4cbc32f98e109bfd60493ec
+  input_sha256: 6c6ede22af61dc26fb2498a1ce11345d600ec9b12cd35f74b85ea14ba0eecd5e
+  output_sha256: 24f6dcf2038b4440f647d0e4421121ceaa217c15e754fd4db71ba3c120119b02
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  created_at: 92bcac11d2ab6983ad076889bf08d02abf44f63d9664b9d88e97b670d31d0a7b
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: 245908076771bb9ec06dfaaf6e6c156111b739a42f13a61a4eaad3c22cce7627
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T02:13:04Z'
+  authority: generated
+  via: create_document

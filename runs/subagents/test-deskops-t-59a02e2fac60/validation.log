@@ -1,0 +1,39 @@
+== tests/test_closeout_declared_evidence.py
+.........................                                                [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout_declared_evidence.py::test_a_changed_verdict_on_the_same_input_writes_a_new_receipt_and_unblocks_closeout
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+25 passed, 2 warnings in 245.63s (0:04:05)
+rc=0
+== tests/test_closeout.py
+..............................................................           [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_closeout.py::test_closeout_verify_passes_with_complete_evidence
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/pydantic/main.py:280: DeprecationWarning: ProjectGraphConfig(closed_document=...) is deprecated: declare `closed:` on the document surface
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+62 passed, 2 warnings in 75.24s (0:01:15)
+rc=0
+== reproduccion: closure.py de HEAD en /dev/shm/t59a-repro, tests nuevos
+>       assert [r["verdict"] for r in receipts] == ["rejected", "accepted"]
+E       AssertionError: assert ['rejected'] == ['rejected', 'accepted']
+E         
+E         Right contains one more item: 'accepted'
+E         Use -v to get more diff
+tests/test_closeout_declared_evidence.py:422: AssertionError
+1 failed, 1 passed, 23 deselected, 2 warnings in 37.77s
+rc=1

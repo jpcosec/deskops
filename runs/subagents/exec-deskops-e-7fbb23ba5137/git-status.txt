@@ -1,0 +1,55 @@
+ M .sldb/core/documents/BoardDoc/Board.yaml
+ M .sldb/core/models/BoardDoc.yaml
+ M .sldb/core/models/ReviewDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/models/TaskCodeDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M desk/tasks/Board.md
+ M deskops/services/closure.py
+ M tests/test_closeout_declared_evidence.py
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-pu01-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-pu02-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-root-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-ui01-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-ui02-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-ui03-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-ui04-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-ui-ui05-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-workspace-documental-ws09-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-workspace-documental-ws10-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-workspace-documental-ws11-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-workspace-documental-ws12-node-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-deskops-workspace-documental-ws13-node-1.yaml
+?? .sldb/core/documents/RunDoc/run-deskops-e-7fbb23ba5137.yaml
+?? .sldb/core/documents/TaskCodeDoc/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo.yaml
+?? desk/reviews/deskops-ui-pu01/
+?? desk/reviews/deskops-ui-pu02/
+?? desk/reviews/deskops-ui-root/
+?? desk/reviews/deskops-ui-ui01/
+?? desk/reviews/deskops-ui-ui02/
+?? desk/reviews/deskops-ui-ui03/
+?? desk/reviews/deskops-ui-ui04/
+?? desk/reviews/deskops-ui-ui05/
+?? desk/reviews/deskops-workspace-documental-ws09/
+?? desk/reviews/deskops-workspace-documental-ws10/
+?? desk/reviews/deskops-workspace-documental-ws11/
+?? desk/reviews/deskops-workspace-documental-ws12/
+?? desk/reviews/deskops-workspace-documental-ws13/
+?? desk/tasks/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo.md
+?? runs/subagents/20261116-170649/
+?? runs/subagents/20261116-170855/
+?? runs/subagents/20261116-202233/
+?? runs/subagents/20261116-202327/
+?? runs/subagents/20261116-213327/
+?? runs/subagents/20261116-213418/
+?? runs/subagents/20261116-230533/
+?? runs/subagents/20261116-230642/
+?? runs/subagents/20261117-012855/
+?? runs/subagents/20261117-012922/
+?? runs/subagents/20261117-012951/
+?? runs/subagents/20261117-013045/
+?? runs/subagents/exec-deskops-e-7fbb23ba5137/
+?? runs/subagents/node-deskops-ui/
+?? runs/subagents/node-gates-por-tipo/
+?? runs/subagents/node-workspace-documental/

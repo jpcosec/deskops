@@ -409,6 +409,10 @@ include:
     name: run-deskops-e-3cd90f55821f
   - path: runs/subagents/test-deskops-t-b1a597a56632/run.md
     name: run-deskops-t-b1a597a56632
+  - path: runs/subagents/exec-deskops-e-7fbb23ba5137/run.md
+    name: run-deskops-e-7fbb23ba5137
+  - path: runs/subagents/test-deskops-t-59a02e2fac60/run.md
+    name: run-deskops-t-59a02e2fac60
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1149,6 +1153,76 @@ include:
     name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-materialization-2
   - path: desk/reviews/deskops-workspace-documental-ws08/node-1.md
     name: review-deskops-workspace-documental-ws08-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws09/node-1.md
+    name: review-deskops-workspace-documental-ws09-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws10/node-1.md
+    name: review-deskops-workspace-documental-ws10-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws11/node-1.md
+    name: review-deskops-workspace-documental-ws11-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws12/node-1.md
+    name: review-deskops-workspace-documental-ws12-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws13/node-1.md
+    name: review-deskops-workspace-documental-ws13-node-1
+  - path: desk/reviews/deskops-ui-root/node-1.md
+    name: review-deskops-ui-root-node-1
+  - path: desk/reviews/deskops-ui-pu01/node-1.md
+    name: review-deskops-ui-pu01-node-1
+  - path: desk/reviews/deskops-ui-pu02/node-1.md
+    name: review-deskops-ui-pu02-node-1
+  - path: desk/reviews/deskops-ui-ui01/node-1.md
+    name: review-deskops-ui-ui01-node-1
+  - path: desk/reviews/deskops-ui-ui02/node-1.md
+    name: review-deskops-ui-ui02-node-1
+  - path: desk/reviews/deskops-ui-ui03/node-1.md
+    name: review-deskops-ui-ui03-node-1
+  - path: desk/reviews/deskops-ui-ui04/node-1.md
+    name: review-deskops-ui-ui04-node-1
+  - path: desk/reviews/deskops-ui-ui05/node-1.md
+    name: review-deskops-ui-ui05-node-1
+  - path: desk/reviews/deskops-ui-ui06/node-1.md
+    name: review-deskops-ui-ui06-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws14/node-1.md
+    name: review-deskops-workspace-documental-ws14-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws15/node-1.md
+    name: review-deskops-workspace-documental-ws15-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws16/node-1.md
+    name: review-deskops-workspace-documental-ws16-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws17/node-1.md
+    name: review-deskops-workspace-documental-ws17-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws18/node-1.md
+    name: review-deskops-workspace-documental-ws18-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws19/node-1.md
+    name: review-deskops-workspace-documental-ws19-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws20/node-1.md
+    name: review-deskops-workspace-documental-ws20-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws21/node-1.md
+    name: review-deskops-workspace-documental-ws21-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws22/node-1.md
+    name: review-deskops-workspace-documental-ws22-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws23/node-1.md
+    name: review-deskops-workspace-documental-ws23-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws24/node-1.md
+    name: review-deskops-workspace-documental-ws24-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws25/node-1.md
+    name: review-deskops-workspace-documental-ws25-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws26/node-1.md
+    name: review-deskops-workspace-documental-ws26-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws27/node-1.md
+    name: review-deskops-workspace-documental-ws27-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws28/node-1.md
+    name: review-deskops-workspace-documental-ws28-node-1
+  - path: desk/reviews/deskops-workspace-documental-ws29/node-1.md
+    name: review-deskops-workspace-documental-ws29-node-1
+  - path: desk/reviews/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo/evidence-tests-1.md
+    name: review-task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo-evidence-tests-1
+  - path: desk/reviews/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo/evidence-commit-1.md
+    name: review-task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo-evidence-commit-1
+  - path: desk/reviews/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo/evidence-atom-1.md
+    name: review-task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo-evidence-atom-1
+  - path: desk/reviews/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo/evidence-materialization-1.md
+    name: review-task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo-evidence-materialization-1
+  - path: desk/reviews/deskops-workspace-documental-ws30/node-1.md
+    name: review-deskops-workspace-documental-ws30-node-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1199,10 +1273,10 @@ include:
   - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
   - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
-  - desk/tasks/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo.md
   - desk/tasks/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista.md
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
+  - desk/tasks/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:04:26Z'
+  at: '2026-11-17T02:30:41Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -51,13 +51,13 @@ tasks:
 - desk/tasks/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y.md
 - desk/tasks/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis.md
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
-- desk/tasks/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo.md
 - desk/tasks/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error.md
 - desk/tasks/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista.md
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
 - desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
+- desk/tasks/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -140,10 +140,10 @@ _Generated from the task references above._
 - deskops declara su project_graph con closed y declared_file_targets de sldb y borra los desvios H1 y H2 de CC33c [draft] - La configuracion de project_graph que deskops arma en deskops/graph/desk_graph.py usa closed: (predicado del lenguaje de reglas de sldb, con la misma condicion que hoy evalua _closed_issue) en lugar de closed_document=_closed_issue, y declara declared_file_targets para los archivos existentes que no son documento; declared_target_is_a_file y _closed_issue desaparecen. `deskops graph missing --root .` da el mismo resultado que antes del cambio en el desk de deskops (misma lista de faltantes). Si algun destino que hoy cubre declared_target_is_a_file (p. ej. dag.yaml o tests/fixtures/model_contract_hashes.json) no se puede declarar con declared_file_targets porque no sale de un campo de frontmatter de un glob de documentos, se manda deskops message send --to sldb con el caso y ese destino conserva su tratamiento actual.
 - repo register guarda rutas relativas a la raiz del ecosistema y doctor nombra las entradas del registro que no resuelven [draft] - (1) `deskops repo register` guarda en path la ruta relativa a la raiz del repo que contiene el registro donde escribe (desk/registry del desk, o ~/setup/desk/registry para el del ecosistema, con ~ expandido solo al resolver), y acepta leer entradas viejas con ruta absoluta o con ~. (2) `deskops doctor` reporta, por cada entrada del registro del desk cuyo path no resuelve en esta maquina, un hallazgo con el id del repo, el path guardado y la ruta resuelta, ademas del mensaje actual del store enlazado.
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
-- closeout verify escribe un recibo nuevo cuando el veredicto cambia aunque el input sea el mismo [draft] - closeout verify escribe un recibo nuevo cuando el unico recibo intacto con el mismo fact e input_sha256 tiene otro verdict; si ya hay uno intacto con el mismo input y el mismo verdict, lo salta como hoy.
 - deskops view task entrega holds true en un gate cuya regla de activacion da un finding de error [draft] - Reproducir el caso, encontrar por que holds y el finding de error no coinciden, y dejar que holds sea false cuando la regla de activacion del gate da un finding de nivel error; con un test que falla antes y pasa despues.
 - deskops view task entrega los recibos de la tarea en un campo receipts del contrato de la vista [draft] - deskops view task <id> --format json trae task.receipts: una lista con un objeto por ReviewDoc cuyo subject es la tarea, con id, kind, verdict, anchor_state y created_at, ordenada por created_at; docs/deskops-ui.md documenta el campo.
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [draft] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - deskops message ack acepta --reason y la nota guarda el porque en un campo ack_reason [draft] - deskops message ack <selector> --reason <texto> marca la nota como acknowledged y guarda el texto en un campo opcional ack_reason del modelo de la nota; sin --reason el ack funciona como hoy y ack_reason queda vacio; deskops message read muestra ack_reason cuando existe.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
+- deskops review node acepta ids de nodo con punto como WS13.1 en el subject_ref del recibo [draft] - SUBJECT_REF_PATTERN acepta el punto en el id de nodo (por ejemplo dag.yaml#node:WS13.1) y deskops review node escribe el recibo de un nodo con punto; un id con espacio o con '#' sigue rechazado.
