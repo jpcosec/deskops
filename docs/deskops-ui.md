@@ -98,6 +98,8 @@ extra con `in_lifecycle: false` y además en `errors`.
     "why": "…", "goal": "…", "scope": "…", "implementation_path": "…",
     "validation": ["…"], "done_when": "…", "references": ["…"], "files": ["…"],
     "depends_on": ["…"], "inherits_from": ["…"], "from_drawer": "", "history": ["task_activates"],
+    "receipts": [{"id": "review-task-…-reproduction-1", "kind": "reproduction", "verdict": "pending",
+                  "anchor_state": "intact", "created_at": "2026-11-17T14:00:00+00:00"}],
     "pills": [{"id": "…", "title": "…", "source": "task", "what": "…", "when": "…", "how_not": "…"}],
     "atoms": [{"id": "…", "title": "…", "question": "what", "answer": "…"}]
   },
@@ -108,6 +110,14 @@ extra con `in_lifecycle: false` y además en `errors`.
 ```
 
 - `validation`, `done_when` y `references` son los efectivos (con herencia).
+- `receipts` (solo en la vista task, junto a `gates`): un objeto por `ReviewDoc` cuyo
+  `subject` es la tarea (`doc:<modelo de la tarea>:<id>`, con o sin el pin `@sha256:…`), con
+  exactamente `id`, `kind`, `verdict`, `anchor_state` y `created_at`, en orden ascendente por
+  `created_at` y luego `id`. `anchor_state` (`intact`, `changed`, `lost`) es el que sldb deriva
+  al componer el índice (`subject__anchor_state`), el mismo que lee la regla de activación por
+  `^subject`. Los recibos de nodo de plan (subject vacío) no son de la tarea. Sin recibos, `[]`.
+  En `--format yaml` la estructura es la misma; en texto, una línea por recibo:
+  `receipt <id> <kind> <verdict> <anchor_state> <created_at>`.
 - `next` viene de `next_action_report`; si falla, `next` es `null` y la causa va a `errors`.
 - `revision` = el ETag de la vista `task` (`run_view(...)["revision"]`, GD25): cambia cuando
   cambia la tarea, el Board o una pill o un atom que la vista leyó. Es la guarda que usa
@@ -199,6 +209,7 @@ modelo de `ViewDoc` no lo expresa aún; cada uno se retira cuando sldb cierre su
 | `task.on_board` | `run_view`, arista `tasks` del Board |
 | `task.why/goal/scope/implementation_path/files/depends_on/inherits_from/from_drawer/history` | `run_view`, fila de `task` |
 | `next` | agregado CLI, pendiente de sldb H5 (`next_action_report`) |
+| `task.receipts` | agregado CLI: nodos `ReviewDoc` del índice compuesto (`sldb.api.load_edge_index`) con su `subject__anchor_state` |
 | `revision` (task) | `run_view` (ETag de GD25) |
 | `drawer.*` (`markdown`, `excerpt`, `command`...) | agregado CLI, lectura del archivo, pendiente de H7 y H10 |
 | `inbox.*`, `notes[].revision` | agregado CLI, lectura del archivo, pendiente de H8 y H10 |
@@ -227,4 +238,4 @@ Copiado del alcance del plan deskops-ui (2026-11-04; plan retirado del drawer el
 | Agentes y corridas | `runtime workers`, `runs/subagents/index.jsonl` | `agents.workers`, `agents.runs` | causa en `workers_error` |
 | Métricas de cabecera | conteos derivables | `board.counts`, `drawer.count`, `inbox.open`, `agents.live_workers` | ningún porcentaje inventado |
 | Hilo del inbox, firmas, prioridad, TTL, autor, versión | no existe | — | no se dibuja |
-| Gates por tipo, recibos, `anchor_state` | plan `gates-por-tipo`, sldb GO07 | — | no se dibuja hasta que existan |
+| Recibos de la tarea con `anchor_state` | `ReviewDoc` con `subject` en la tarea, sldb GO07 | `task.receipts` | lista vacía |

@@ -11,7 +11,10 @@ its pending sldb hypothesis (CC34 H1-H8):
 - H5 the lifecycle nodes' `phase`/`purpose` and `next`: the lifecycle spec and
   `next_action_report`;
 - H6 the effective (inherited) pills, atoms, validation, done_when and references:
-  `doc_access.resolve_task_payload`.
+  `doc_access.resolve_task_payload`;
+- `receipts` (task view only): the task's ReviewDocs read from the store's composed edge
+  index (`sldb.api.load_edge_index`), where sldb derives each receipt's
+  `subject__anchor_state`, the `anchor_state` the activation rules read on `^subject`.
 
 `drawer` and `inbox` read the desk's files (H7, H8, H10: those folders are not tracked in a
 desk's store yet), and `agents` is what is not a document (`deskops.runtime.desk_agents`).
@@ -235,6 +238,35 @@ class _Projection:
             "evidence": evidence,
         }
 
+    def _receipts(self, export_id: str, task_id: str, errors: list[dict[str, str]]) -> list[dict[str, Any]]:
+        """The ReviewDocs whose subject is `doc:<task model>:<task id>` (pinned or not), with the
+        `anchor_state` sldb derives when it composes the index (the one the activation rule reads
+        on `^subject`), ordered by `created_at` then id. Node receipts (empty subject) are not
+        the task's."""
+        from sldb.api import load_edge_index
+
+        from deskops import doc_access
+
+        model = export_id.split(":", 1)[0] if ":" in export_id else "TaskDoc"
+        subject = f"doc:{model}:{task_id}"
+        try:
+            nodes = load_edge_index(doc_access.store_path(self.root), include_linked=False).nodes_of_type("ReviewDoc")
+        except Exception as exc:
+            _error(errors, task_id, f"Review receipts unavailable: {exc}")
+            return []
+        receipts = [
+            {
+                "id": str(node.payload.get("id") or ""),
+                "kind": str(node.payload.get("kind") or ""),
+                "verdict": str(node.payload.get("verdict") or ""),
+                "anchor_state": str(node.payload.get("subject__anchor_state") or ""),
+                "created_at": str(node.payload.get("created_at") or ""),
+            }
+            for node in nodes
+            if str(node.payload.get("subject") or "").split("@", 1)[0] == subject
+        ]
+        return sorted(receipts, key=lambda item: (item["created_at"], item["id"]))
+
     @staticmethod
     def _lifecycle_nodes() -> list[dict[str, Any]]:
         """H5: the lifecycle nodes with their phase and purpose, in the spec's order."""
@@ -348,6 +380,7 @@ class _Projection:
                 "inherits_from": [str(i) for i in fields.get("inherits_from") or []],
                 "from_drawer": str(fields.get("from_drawer") or ""),
                 "history": [str(h) for h in fields.get("history") or []],
+                "receipts": self._receipts(str(row.get("export_id") or ""), card["id"], errors),
             },
             "next": next_info,
             # The ETag of the ViewDoc's result (GD25): the advance guard of graph_ui.
@@ -484,6 +517,8 @@ def render_text(view: dict[str, Any]) -> str:
             lines.append(f"  gate {gate['relation_type']} -> {gate['target']}: {'holds' if gate['holds'] else 'pending'} ({gate['condition'] or 'no condition'})")
         for item in (task.get("closeout") or {}).get("evidence", []):
             lines.append(f"  evidence {item['gate']}: {item['state']}")
+        for receipt in task.get("receipts") or []:
+            lines.append(f"receipt {receipt['id']} {receipt['kind']} {receipt['verdict']} {receipt['anchor_state']} {receipt['created_at']}")
     elif kind == "drawer":
         for entry in view["tasks"]:
             lines.append(f"{entry['id']} [{entry['status'] or '-'}] {entry['title']}")

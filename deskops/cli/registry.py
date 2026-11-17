@@ -1733,7 +1733,7 @@ the dir is a finding with the commit's own text and the report is not ok.
         Command(
             path=("view", "task"),
             help="Task view: the board card plus the TaskDoc sections, next actions and the advance revision.",
-            args=(A("task_id", help=f"Task selector. {SELECTOR_HELP}"), ROOT_ARG, OUTPUT_FORMAT_ARG),
+            args=(A("task_id", help=f"Task selector. {SELECTOR_HELP}"), ROOT_ARG, OUTPUT_FORMAT_YAML_ARG),
             handler="deskops.cli.commands.view:ViewCLI",
             mutates=False,
         ),

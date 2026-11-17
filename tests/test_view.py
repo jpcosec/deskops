@@ -226,3 +226,42 @@ def test_a_closeout_read_failure_is_the_card_error(desk: dict, monkeypatch: pyte
     errors = [item for item in view["errors"] if item["cause"] == "verify_task_closeout failed: closeout unavailable"]
     assert errors
     assert all(card["closeout"] is None for column in view["columns"] for card in column["tasks"])
+
+
+def test_task_receipts_are_the_reviewdocs_of_the_task_with_their_anchor_state(desk: dict, capsys: pytest.CaptureFixture[str]) -> None:
+    """`task.receipts`: one entry per ReviewDoc whose subject is the task (graph_ui note
+    20261116-095054), with the anchor_state sldb derives for `^subject`; a task without
+    receipts gets an empty list and another task's receipts are not its own."""
+    import yaml
+
+    root = desk["root"]
+    assert task_view(root, desk["execution"])["task"]["receipts"] == []
+    evidence = root / "notes" / "repro.txt"
+    evidence.parent.mkdir(parents=True, exist_ok=True)
+    evidence.write_text("reproduced\n", encoding="utf-8")
+    for _ in range(2):
+        assert main(["review", "record", desk["execution"], "--kind", "reproduction", "--evidence", "notes/repro.txt", "--reason", "x", "--root", str(root)]) == 0
+    capsys.readouterr()
+
+    receipts = _cli_json(capsys, "view", "task", desk["execution"], "--root", str(root), "--format", "json")["task"]["receipts"]
+    assert len(receipts) == 2
+    assert all(set(item) == {"id", "kind", "verdict", "anchor_state", "created_at"} for item in receipts)
+    assert [(item["kind"], item["verdict"], item["anchor_state"]) for item in receipts] == [("reproduction", "pending", "intact")] * 2
+    assert receipts == sorted(receipts, key=lambda item: (item["created_at"], item["id"]))
+    other = task_view(root, desk["testing"])["task"]["receipts"]  # the fixture's activation receipts
+    assert other and not {item["id"] for item in other} & {item["id"] for item in receipts}
+
+    capsys.readouterr()
+    assert main(["view", "task", desk["execution"], "--root", str(root), "--format", "yaml"]) == 0
+    assert yaml.safe_load(capsys.readouterr().out)["task"]["receipts"] == receipts
+    assert main(["view", "task", desk["execution"], "--root", str(root)]) == 0
+    text = capsys.readouterr().out.splitlines()
+    assert [line for line in text if line.startswith("receipt ")] == [
+        f"receipt {r['id']} {r['kind']} {r['verdict']} {r['anchor_state']} {r['created_at']}" for r in receipts
+    ]
+
+    # The anchor follows the task's contract: a changed goal leaves the receipts `changed`.
+    assert main(["edit", "task", desk["execution"], "goal", "a new goal", "--root", str(root)]) == 0
+    moved = task_view(root, desk["execution"])["task"]["receipts"]
+    assert [item["id"] for item in moved] == [item["id"] for item in receipts]
+    assert {item["anchor_state"] for item in moved} == {"changed"}

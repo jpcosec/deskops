@@ -1,4 +1,5 @@
-usage: deskops view task [-h] [--root ROOT] [--format {text,json}] task_id
+usage: deskops view task [-h] [--root ROOT] [--format {text,json,yaml}]
+                         task_id
 
 Task view: the board card plus the TaskDoc sections, next actions and the
 advance revision.
@@ -10,4 +11,5 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   --root ROOT           Target repository root.
-  --format {text,json}  Output format.
+  --format {text,json,yaml}
+                        Output format.
