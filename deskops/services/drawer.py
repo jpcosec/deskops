@@ -8,6 +8,8 @@ It never promotes drawer material into an active task.
 
 from __future__ import annotations
 
+from deskops.slugs import ascii_slug
+
 from dataclasses import dataclass
 from dataclasses import field
 from pathlib import Path
@@ -286,5 +288,4 @@ class DrawerService:
         return render_model_markdown(TaskDoc, payload) + "\n"
 
     def _slug(self, text: str) -> str:
-        slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
-        return slug or "task"
+        return ascii_slug(text) or "task"

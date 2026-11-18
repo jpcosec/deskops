@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from deskops.slugs import ascii_slug
+
 from dataclasses import dataclass
 from typing import Any
 from collections.abc import Collection
@@ -155,7 +157,5 @@ def _coerce_list(value: Any) -> list[str]:
 
 
 def _slugify(text: str) -> str:
-    lowered = "".join(ch.lower() if ch.isalnum() else "-" for ch in text)
-    parts = [part for part in lowered.split("-") if part]
-    slug = "-".join(parts) or "item"
+    slug = ascii_slug(text) or "item"
     return slug[:100].rstrip("-")

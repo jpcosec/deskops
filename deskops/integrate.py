@@ -48,6 +48,9 @@ class StepFailed(Exception):
 
 
 def _run(argv: list[str], cwd: Path, env: dict[str, str] | None = None) -> subprocess.CompletedProcess[str]:
+    if argv and argv[0] == "git":
+        # Parsed paths must not come back quoted with octal escapes (ids with accents).
+        argv = ["git", "-c", "core.quotepath=false", *argv[1:]]
     return subprocess.run(argv, cwd=cwd, capture_output=True, text=True, env=env, stdin=subprocess.DEVNULL)
 
 

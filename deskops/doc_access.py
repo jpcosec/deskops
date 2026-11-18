@@ -18,6 +18,8 @@ deskops edit of it goes through.
 
 from __future__ import annotations
 
+from deskops.slugs import ascii_slug
+
 from contextlib import contextmanager
 import copy
 from functools import lru_cache
@@ -157,9 +159,7 @@ _INDEX_ENTRIES: dict[str, tuple[tuple[int, int], dict[str, "IndexEntry"]]] = {}
 
 
 def slugify(text: str) -> str:
-    lowered = "".join(ch.lower() if ch.isalnum() else "-" for ch in text)
-    parts = [part for part in lowered.split("-") if part]
-    slug = "-".join(parts) or "item"
+    slug = ascii_slug(text) or "item"
     return slug[:100].rstrip("-")
 
 

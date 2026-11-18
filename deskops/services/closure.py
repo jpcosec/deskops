@@ -1778,13 +1778,15 @@ class ClosureService:
     def _git_knows(self, path: str) -> bool:
         """Whether `path` matches anything in the index or in HEAD."""
         for argv in (["ls-files", "--", path], ["ls-tree", "-r", "--name-only", "HEAD", "--", path]):
-            listed = subprocess.run(["git", *argv], cwd=self.root, capture_output=True, text=True)
+            listed = subprocess.run(["git", "-c", "core.quotepath=false", *argv], cwd=self.root, capture_output=True, text=True)
             if listed.returncode == 0 and listed.stdout.strip():
                 return True
         return False
 
     def _git(self, *argv: str, check: bool = True) -> str:
-        result = subprocess.run(["git", *argv], cwd=self.root, capture_output=True, text=True)
+        result = subprocess.run(
+            ["git", "-c", "core.quotepath=false", *argv], cwd=self.root, capture_output=True, text=True
+        )
         if check and result.returncode != 0:
             raise ClosureCommitError(f"git {' '.join(argv)} failed: {result.stderr.strip()}")
         return result.stdout.strip()
