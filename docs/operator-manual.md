@@ -731,6 +731,15 @@ deskops dispatch reap --task <task-id> --root .
   and exits with scion's code. The run_dir is `runs/subagents/exec-<name>` (the
   tester adds `-testing`); if it exists the attempt-2 identity is used, and if
   that exists too it exits 5 (`sin intentos: <task> <role>`).
+- **Python in the container.** The workspace `.venv` links to the host's
+  `/usr/bin/python3.12`, which the scion images (python 3.13 via uv) lack, so it
+  does not start there. The generated `agents.md` of the executor and tester
+  therefore opens with a "Python environment" step: `uv venv /tmp/ws-venv
+  --python 3.12`, `uv pip install -e "<desk_root>[dev]" -e <sldb checkout>`, and
+  `/tmp/ws-venv/bin/python` first on `PATH` (with `PYTHONPATH` unset). Measured
+  at about 30 s (venv 28 s incl. 3.12 download, install 2 s). Scion has no
+  start hook, so the step is an instruction, not automatic. Route (b), an image
+  with python3.12, was not needed.
 - `reap` stops and deletes the task's finished agents (`phase:<v>` not running,
   `activity:<v>` completed, blocked or limits_exceeded, or a `result-summary.md`
   in its run_dir) and prints `<name> <role> <reason|vivo>`; it exits 4 if any

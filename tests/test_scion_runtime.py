@@ -737,3 +737,25 @@ def test_specialist_identity_uses_the_s_prefix(tmp_path: Path) -> None:
     identity = scion_child_identity(_write_task(tmp_path, "task"), "specialist")
     assert re.fullmatch(r"deskops-s-[0-9a-f]{12}", identity["name"])
     assert identity["role"] == "specialist"
+
+
+@pytest.mark.parametrize("mode", ["executor", "tester"])
+def test_executor_and_tester_agents_md_build_their_own_py312_venv(
+    executor: dict, profiles: dict[str, dict], mode: str, tmp_path: Path
+) -> None:
+    for d in ("desk/desk", "desk/deskops", "sldb/src/sldb"):
+        (tmp_path / d).mkdir(parents=True)
+    ws = str(tmp_path)
+    ctx = {
+        "desk_root": f"{ws}/desk",
+        "source_root": f"{ws}/desk",
+        "sldb_root": f"{ws}/sldb/src",
+        "workspace_root": ws,
+        "project": "p",
+    }
+    files = scion_template_files(executor, profiles["claude"], harness="claude", mode=mode, context=ctx)
+    text = files["agents.md"]
+    assert "uv venv /tmp/ws-venv --python 3.12" in text
+    assert f'uv pip install -e "{ws}/desk[dev]" -e {ws}/sldb' in text
+    assert 'PATH="/tmp/ws-venv/bin:$PATH"' in text and "unset PYTHONPATH" in text
+    assert text.index("Python environment") < text.index("Recover state first")

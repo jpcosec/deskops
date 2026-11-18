@@ -684,6 +684,8 @@ def _render_tester_agents_md(
         f"- Run every validation command from `{desk_root}`. `{source_root}` is the tool import source, not a task\n"
         "  write location. Persist evidence under the assigned `runs/subagents/<run>-testing/` directory.\n"
         "\n"
+        + _render_python_env_section(desk_root, context)
+        +
         "## Recover state first\n"
         "\n"
         "```bash\n"
@@ -782,6 +784,28 @@ def _render_specialist_agents_md(
     )
 
 
+def _render_python_env_section(desk_root: str, context: dict[str, str] | None) -> str:
+    """Startup step: the container builds its own Python 3.12 venv (the workspace .venv does not run there)."""
+    sldb_pkg = (
+        str(Path(context["sldb_root"]).parent) if context is not None else "<sldb checkout>"
+    )
+    return (
+        "## Python environment (run first)\n"
+        "\n"
+        "The workspace `.venv` links to the host's `/usr/bin/python3.12`, which this image lacks. Build your own\n"
+        "venv from the task repo's `pyproject.toml` before any test (about 30 s) and put it first on `PATH`:\n"
+        "\n"
+        "```bash\n"
+        "export PATH=\"$HOME/.local/bin:$PATH\" TMPDIR=/tmp; unset PYTHONPATH\n"
+        "uv venv /tmp/ws-venv --python 3.12\n"
+        f"VIRTUAL_ENV=/tmp/ws-venv uv pip install -e \"{desk_root}[dev]\" -e {sldb_pkg}\n"
+        "export VIRTUAL_ENV=/tmp/ws-venv PATH=\"/tmp/ws-venv/bin:$PATH\"\n"
+        "python -m pytest -q -p no:cacheprovider <tests>\n"
+        "```\n"
+        "\n"
+    )
+
+
 def _render_agents_md(
     role_name: str,
     harness: str,
@@ -807,6 +831,8 @@ def _render_agents_md(
         "  task write location.\n"
         "- The CLIs are `deskops` and `sldb`; learn them with `--help`. Never edit a tracked desk document by hand.\n"
         "\n"
+        + _render_python_env_section(desk_root, context)
+        +
         "## Recover state first\n"
         "\n"
         "```bash\n"
