@@ -1,0 +1,15 @@
+usage: deskops integrate [-h] [--task TASK] [--task-from-env] [--dry-run]
+                         [--root ROOT]
+
+Run the gates of a closed task in a clean copy and push its code commit and closing tip.
+
+options:
+  -h, --help       show this help message and exit
+  --task TASK      Closed task id
+  --task-from-env  Take the task id from $DESKOPS_TASK_ID
+  --dry-run        Run every gate but print the pushes instead of running them
+  --root ROOT      Target repository root.
+
+Examples:
+  deskops integrate --task task-x --root . --dry-run
+  deskops integrate --task-from-env --root .

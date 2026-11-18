@@ -783,6 +783,24 @@ Examples:
             mutates=True,
         ),
         Command(
+            path=("integrate",),
+            help="Run the gates of a closed task in a clean copy and push its code commit and closing tip.",
+            args=(
+                A("--task", default=None, help="Closed task id"),
+                A("--task-from-env", action="store_true", help="Take the task id from $DESKOPS_TASK_ID"),
+                A("--dry-run", action="store_true", help="Run every gate but print the pushes instead of running them"),
+                ROOT_ARG,
+            ),
+            handler="deskops.integrate:IntegrateCLI",
+            mutates=True,
+            epilog="""
+Examples:
+  deskops integrate --task task-x --root . --dry-run
+  deskops integrate --task-from-env --root .
+""".strip(),
+            raw_text=True,
+        ),
+        Command(
             path=("review",),
             help="Run and dispose cold context reviews (node, preflight, bundle, status, dispose).",
             args=(),

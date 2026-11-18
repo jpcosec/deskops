@@ -25,6 +25,16 @@ class QueueJob(BaseModel):
     timeout: int = Field(default=3600, gt=0, description="Seconds before the job is killed")
 
 
+class IntegrateConfig(BaseModel):
+    remote_url: str = Field(min_length=1, description="URL or path of the remote that receives the push")
+    branch: str = Field(min_length=1, description="Remote branch that receives the code commit and the tip")
+    suite: list[str] = Field(min_length=1, description="argv of the full suite, run in the clean copy")
+    suite_timeout: int = Field(default=5400, gt=0, description="Seconds before the suite is killed")
+    tests_lock: str | None = Field(default=None, description="Lock file taken exclusively around the suite")
+    tools_checkout: str | None = Field(default=None, description="Tools checkout updated after the push")
+    push_env: dict[str, str] = Field(default_factory=dict, description="Environment added to the git push commands")
+
+
 class DispatchRole(BaseModel):
     role: str = Field(min_length=1, description="RoleDoc id or name")
     harness: str = Field(min_length=1, description="Runtime profile kind / scion harness")
@@ -61,6 +71,10 @@ class DeskConfig(BaseModel):
     dispatch: DispatchConfig | None = Field(
         default=None,
         description="deskops dispatch: scion project, workspace, templates and per-role launch settings.",
+    )
+    integrate: IntegrateConfig | None = Field(
+        default=None,
+        description="deskops integrate: remote, branch, suite and tools checkout of the integration.",
     )
     queue_min_available_gb: int = Field(default=8, description="Minimum MemAvailable (GB) to start a queued job.")
     queue_max_psi_avg60: float = Field(default=10, description="Memory PSI some avg60 at or above which jobs wait.")

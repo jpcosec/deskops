@@ -736,6 +736,73 @@ deskops dispatch reap --task <task-id> --root .
   in its run_dir) and prints `<name> <role> <reason|vivo>`; it exits 4 if any
   agent is still alive.
 
+## Integrate
+
+`deskops integrate` runs the integration of a closed task: gates in a clean
+copy, then the push of its code commit and of its closing tip. It is meant to
+run as a host queue job.
+
+Declare the `integrate` field in `desk/config.json` (without it the command
+exits 2 with `falta el campo integrate en desk/config.json`):
+
+```json
+{
+  "integrate": {
+    "remote_url": "git@host:org/repo.git",
+    "branch": "main",
+    "suite": ["pytest", "-q"],
+    "suite_timeout": 5400,
+    "tests_lock": "/abs/path/tests.lock",
+    "tools_checkout": "/abs/path/tools-checkout",
+    "push_env": {"GIT_SSH_COMMAND": "ssh -i /abs/path/key"}
+  },
+  "queue_jobs": {
+    "integrate": {"run": ["deskops", "integrate", "--task-from-env", "--root", "."], "timeout": 7200}
+  }
+}
+```
+
+- `remote_url`, `branch` and `suite` (argv) are required. `suite_timeout`
+  (seconds, default 5400), `tests_lock` (lock file), `tools_checkout` and
+  `push_env` (environment added to the push commands) are optional.
+- `--task <id>` or `--task-from-env` (the id from `DESKOPS_TASK_ID`) is
+  required and they exclude each other; so does any missing or empty id (exit 2).
+- The task must be closed: `closeout commit` removes the task and leaves the
+  commit with subject `closeout: <task id>` (the tip, the most recent one in
+  `HEAD`). The code commit is the first 40-hex entry of the task's
+  `references`. A task still on disk counts as closed only if its status and
+  last `history` item are the `closed` pair of `CLOSEOUT_STATES`. Not closed,
+  or a missing commit, exits 2 and says which.
+
+Steps, in order; the first failure stops everything, pushes nothing, removes
+the copies and exits 1 printing `fallo: <paso>: <detalle>`:
+
+1. `memoria`: the memory gates of `queue run` (`queue_min_available_gb`,
+   `queue_max_psi_avg60`).
+2. `copia`: `git clone --no-hardlinks` of the root under `TMPDIR`, checkout of
+   the tip, `origin` pointed at `remote_url`, fetch of `branch`.
+3. `fast-forward`: `origin/<branch>` must be an ancestor of the tip.
+4. `suite`: only if the range `origin/<branch>..tip` touches a path outside
+   `desk/`, `.sldb/` and `runs/`. Runs `suite` in the copy with `PYTHONPATH`
+   set to the copy, under the exclusive `tests_lock` if declared and the
+   `suite_timeout` limit (`fallo: suite: timeout tras <N> s`). Its output goes
+   to `runs/queue/logs/integrate-<task id>.log`.
+5. `store`: every `path:` of `.sldb/store.yaml` that does not start with `../`
+   must exist in the tip commit.
+6. `graph`: the missing references of `deskops graph missing` in the tip may
+   not exceed those of `origin/<branch>`.
+7. `push`: `git push origin <code sha>:<branch>` and then
+   `git push origin <tip>:<branch>`, never forced. With `--dry-run` they are
+   printed, not run.
+8. `herramientas`: with `tools_checkout`, `git fetch origin` and
+   `git checkout --detach origin/<branch>` there (not run with `--dry-run`).
+9. Always at the end: the copies are removed and
+   `runs/hooks/events.log` gains `<UTC date> <task id> integrate <ok|fallo:<paso>> <short tip>`
+   (`dry-run` instead of `ok` with `--dry-run`).
+
+On success it prints `integrado <short code sha> <short tip> en <branch>` (with
+`--dry-run`, `simulado ...`) and exits 0.
+
 ## Closeout
 
 A task's type declares the evidence that closes it (`task.code`: tests + commit + atom|materialization; `task.docs` and `task.decision`: commit + document; `task.external`: external; `task.aggregate`: children + commit; `task.refactor`: task.code's evidence plus goldens). `--evidence` only adds kinds to the type's, never removes one. `deskops closeout verify`

@@ -1,10 +1,10 @@
 usage: deskops [-h] [--debug]
-               {about,doctor,status,faq,bootstrap,init,message,queue,dispatch,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime} ...
+               {about,doctor,status,faq,bootstrap,init,message,queue,dispatch,integrate,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime} ...
 
 deskops: Workflow-domain layer for the hum-ecosystem.
 
 positional arguments:
-  {about,doctor,status,faq,bootstrap,init,message,queue,dispatch,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}
+  {about,doctor,status,faq,bootstrap,init,message,queue,dispatch,integrate,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,desk,atoms,graph,materialize,drift,closeout,view,runtime}
     about               Print a short overview of deskops and its first-use commands.
     doctor              Detect and repair common broken desk states safely.
     status              Deprecated alias for `deskops doctor`.
@@ -14,6 +14,7 @@ positional arguments:
     message             Send, list, read, or acknowledge cross-desk messages.
     queue               Enqueue and run heavy host jobs from the repo's runs/queue.
     dispatch            Launch and reap the scion executor and tester of one task.
+    integrate           Run the gates of a closed task in a clean copy and push its code commit and closing tip.
     review              Run and dispose cold context reviews (node, preflight, bundle, status, dispose).
     promote             Promote inbox notes into loose drawer candidates. Drawer items become tasks only by authoring them with `deskops add task`.
     drawer              Manage deferred drawer entries.

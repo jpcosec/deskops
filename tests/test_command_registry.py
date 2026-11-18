@@ -55,6 +55,7 @@ MUTATING_COMMANDS: set[tuple[str, ...]] = {
     ("dispatch",),
     ("dispatch", "start"),
     ("dispatch", "reap"),
+    ("integrate",),
     ("review",),
     ("review", "node"),
     ("review", "preflight"),

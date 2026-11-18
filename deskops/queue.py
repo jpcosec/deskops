@@ -116,7 +116,7 @@ def _memory_state() -> tuple[float | None, float | None]:
     return available, avg60
 
 
-def _wait_reason(config: DeskConfig) -> str | None:
+def wait_reason(config: DeskConfig) -> str | None:
     available, avg60 = _memory_state()
     if available is not None and available < config.queue_min_available_gb:
         return f"memoria disponible {available:.1f} GB < minimo {config.queue_min_available_gb} GB"
@@ -252,7 +252,7 @@ def run_queue(root: Path, run_all: bool) -> int:
             if not pending:
                 print("sin trabajos")
                 return 0
-            reason = _wait_reason(config)
+            reason = wait_reason(config)
             if reason:
                 print(f"en espera: {reason}")
                 return 0
