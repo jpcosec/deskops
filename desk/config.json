@@ -1,5 +1,87 @@
 {
   "project_identity": "deskops",
+  "dispatch": {
+    "project": "sldb-1",
+    "workspace": "/mnt/ssd/proyectos/SLDB_1",
+    "templates_dir": "/home/robocop/.scion/project-configs/sldb-1__b0899ed7/.scion/templates",
+    "context_file": "/mnt/ssd/proyectos/SLDB_1/.bootstrap/deskops-scion-context.json",
+    "roles": {
+      "executor": {
+        "role": "deskops-executor",
+        "harness": "claude",
+        "model_alias": "medium",
+        "harness_auth": "oauth-token",
+        "env_config": "/mnt/ssd/proyectos/SLDB_1/.bootstrap/ir-scion-env.yaml"
+      },
+      "tester": {
+        "role": "deskops-tester",
+        "harness": "pi",
+        "model_alias": "medium",
+        "harness_auth": "api-key",
+        "env_config": "/mnt/ssd/proyectos/SLDB_1/.bootstrap/pi-scion-env.yaml"
+      }
+    }
+  },
+  "integrate": {
+    "remote_url": "https://github.com/jpcosec/opsys.git",
+    "branch": "main",
+    "suite": [
+      "sh",
+      "-c",
+      "SLDB_SRC=/mnt/ssd/herramientas/sldb/src /mnt/ssd/proyectos/SLDB_1/.venv/bin/python -m pytest -q -n 4 -p no:cacheprovider tests"
+    ],
+    "suite_timeout": 5400,
+    "tests_lock": "/dev/shm/sldb1-tests.lock",
+    "tools_checkout": "/mnt/ssd/herramientas/deskops",
+    "push_env": {
+      "GIT_TERMINAL_PROMPT": "0",
+      "GIT_CONFIG_COUNT": "3",
+      "GIT_CONFIG_KEY_0": "credential.helper",
+      "GIT_CONFIG_VALUE_0": "",
+      "GIT_CONFIG_KEY_1": "credential.helper",
+      "GIT_CONFIG_VALUE_1": "!f(){ echo username=jpcosec; echo \"password=$(gh auth token -u jpcosec)\"; }; f",
+      "GIT_CONFIG_KEY_2": "credential.https://github.com.username",
+      "GIT_CONFIG_VALUE_2": "jpcosec"
+    }
+  },
+  "queue_jobs": {
+    "dispatch-executor": {
+      "run": [
+        "sh",
+        "-c",
+        "deskops dispatch start executor --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""
+      ],
+      "timeout": 600
+    },
+    "dispatch-tester": {
+      "run": [
+        "sh",
+        "-c",
+        "deskops dispatch start tester --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""
+      ],
+      "timeout": 600
+    },
+    "dispatch-reap": {
+      "run": [
+        "sh",
+        "-c",
+        "deskops dispatch reap --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""
+      ],
+      "timeout": 600
+    },
+    "integrate": {
+      "run": [
+        "deskops",
+        "integrate",
+        "--task-from-env",
+        "--root",
+        "."
+      ],
+      "timeout": 7200
+    }
+  },
+  "queue_min_available_gb": 8,
+  "queue_max_psi_avg60": 10,
   "versions": {
     "desk_format": "1.0.0",
     "model_version": "1.0.0"
