@@ -1,0 +1,25 @@
+name: materialization-ids-ascii-drawer
+path: desk/materializations/materialization-ids-ascii-drawer.md
+source_hash: 931c53a897795079d175fcdcc2cfc4c7f640d792686bfbe90fbf50c7efb16ef2
+content_hash: 80ac4cf0a1e4b0317f4d0caac7d8f7b721e001c61fc192003b437d5c88553e32
+field_hashes:
+  id: e095b607496342c3d4d578299f3e119a4337dc48ed14a11ce8fba6940c739bcc
+  title: 322a47a667a2fa4c95ef64ac06d6a5c14c0a2fe60827d30540f8d166e2dec264
+  source_atoms: 0de7f5975f8a88a6f642b54031f973019943f13a4f1041bf0e7b188ef21219b5
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 808f8eea552acbf6098e65d461965e931e567671d5731d3311cc33b9971bf84d
+  intent: 27ed4f2dfccbd43f9287866994581ffd2c06849f6abf55ba2ea2a4bec7ea9e93
+  validation: e48909fa3161bac6e300dc396b3f0e40493f4946e40dc95a14d577b391359a40
+  tags: 927a60ba97615bfe1afedc73021e2d09a7617a27b6ff25d5946fd537dc45a2bc
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:ids
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-18T21:26:45Z'
+  authority: generated
+  via: create_document

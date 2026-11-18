@@ -1,0 +1,25 @@
+name: materialization-ids-ascii-test-ascii-ids
+path: desk/materializations/materialization-ids-ascii-test-ascii-ids.md
+source_hash: b1a43bbb4f848ef7447192f972f6fe62899812d0e6a451bb2e7cb3671d14f6de
+content_hash: 31b6e72da0b2a7b053bd46745931b546782ade9c99fda2fd985fe3bae4b2184e
+field_hashes:
+  id: 79346defa8c4a8004858db82679a38b52d8209d9c5355eb67c6aa63d16a795ae
+  title: 6775f961ae3c266fd4e39ea78e6a243e8fa5a9a062c7c31d5c8a731e0707ea73
+  source_atoms: 0de7f5975f8a88a6f642b54031f973019943f13a4f1041bf0e7b188ef21219b5
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 49ebf37780ff6e359ea99d2feca295e1f2e9c9b5155da6d11ab18e1597c0ed23
+  intent: 4d5616dfbcfc0c16ec33c1797b69ee6c8f89bb2e10d951ab0eb29cd53c03fec2
+  validation: e48909fa3161bac6e300dc396b3f0e40493f4946e40dc95a14d577b391359a40
+  tags: 927a60ba97615bfe1afedc73021e2d09a7617a27b6ff25d5946fd537dc45a2bc
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:ids
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-18T21:26:54Z'
+  authority: generated
+  via: create_document
