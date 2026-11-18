@@ -1,7 +1,7 @@
 name: deskops-executor
 path: desk/roles/deskops-executor.md
-source_hash: b9fd17b4c88d7db6f5f112676c568e7bd491e43da81de0e3837930d3aa606960
-content_hash: f21c0b4227a574b9ec5ffed64c9e1bd0cd928eaca8d1714d3ac4644f503e64ed
+source_hash: 2036e4a17d1fb5e17c23ff5d4df1d9d33ce77bba87531ff08843b441c3058d86
+content_hash: ef5a8fd622bb5f8c771e3d9c7cccb4d05082bc1ca962ec4df6f8c71bd9bc0352
 field_hashes:
   id: 8980bfef6a3fc6abef521560e4eaed8965c3ab8863cc66495a41d21209b33fef
   name: 9932006d07907a689c73e2a306b88d55d3d0d349cdb308830f8aaf711f0a715b
@@ -14,9 +14,10 @@ field_hashes:
   inherit_project_context: b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b
   inherit_skills: b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b
   default_context: b1e5780cb6ded9edcf5bac26c937adb4aa3023ab34d951398d5b4bed5ae4e115
-  body: c66637ca70f82193c1ef4bacbd961d090e6246d8c0596ebf24d425e16f25098c
+  body: 55c8bbaf2501c5a092ccb2259ed55890c1c3006cfa98963428eec8b3953aa42a
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.role
 - workspace.desk.roles
+provenance: null

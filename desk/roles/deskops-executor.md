@@ -98,6 +98,8 @@ If the change touches tracked structured docs or models, also use `.opencode/ski
 
 Closeout commits are made only via `deskops closeout commit`, never handcrafted with plain `git commit`: use `--task <id> --run-dir <dir>` when a subagent run produced the evidence, or `--task <id> --no-run --reason "<why>"` when the task closes without a subagent run (the commit then carries `Closeout-Mode: manual`). Do not fabricate a run dir for work no subagent did.
 
+That rule is about the closing commit only. The code commit is the executor's: when the prompt asks for it, commit the files you changed for the task, named one by one (never `git add -A`, `git add -u` over the whole tree or `git stash`, because the tree may hold someone else's uncommitted work), with the trailer `Task-Id: <task id>`, without pushing, and only then run `deskops advance task`. The coordinator later runs `deskops closeout commit` for the desk.
+
 ## Anti-patterns
 
 Do not:
