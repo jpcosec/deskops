@@ -35,6 +35,23 @@ def _dispatch_config(root: Path) -> DispatchConfig:
     return config.dispatch
 
 
+def _roles_root(root: Path, cfg: DispatchConfig) -> Path:
+    """Repo whose desk/roles holds the RoleDocs (default: the task root), absolute."""
+    if not cfg.roles_root:
+        return root
+    path = Path(cfg.roles_root).expanduser()
+    if not path.is_absolute():
+        path = root / path
+    return path.resolve()
+
+
+def _task_repo(root: Path) -> str:
+    config = DeskConfig.load(root / "desk")
+    if "project_identity" in config.model_fields_set:
+        return config.project_identity
+    return root.name
+
+
 def _task_path(root: Path, task_id: str) -> Path:
     path = root / "desk" / "tasks" / f"{task_id}.md"
     if not path.is_file():
@@ -89,13 +106,15 @@ def start(root: Path, role: str, task_id: str) -> int:
             return EXIT_NO_ATTEMPTS
     name = identity["name"]
 
-    _, role_doc = find_role_doc(root, role_cfg.role)
+    roles_root = _roles_root(root, cfg)
+    _, role_doc = find_role_doc(roles_root, role_cfg.role)
     role_name = str(role_doc["name"])
     context = load_scion_context(Path(cfg.context_file).expanduser())
     target = Path(cfg.templates_dir).expanduser() / role_name
     materialize_scion_template(
-        root,
+        roles_root,
         role_cfg.role,
+        task_repo=_task_repo(root),
         harness=role_cfg.harness,
         out_dir=target,
         model_alias=role_cfg.model_alias,

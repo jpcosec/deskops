@@ -352,3 +352,16 @@ def test_push_env_reaches_the_push_commands(closed: Path, tmp_path: Path) -> Non
     result = _integrate(root)
     assert result.returncode == 0, result.stdout + result.stderr
     assert marker.read_text(encoding="utf-8").split() == ["visible", "visible"]
+
+
+def test_a_tip_already_on_the_remote_is_a_noop(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    tip = _git(root, "rev-parse", "HEAD")
+    first = _integrate(root)
+    assert first.returncode == 0, first.stdout + first.stderr
+    second = _integrate(root)
+    assert second.returncode == 0, second.stdout + second.stderr
+    assert second.stdout.strip() == f"ya integrado: {tip[:12]}"
+    assert _remote_head(root) == tip
+    assert _events(root)[-1].endswith(f" {TASK} integrate ya-integrado {tip[:12]}")
+    assert _leftovers(root) == []

@@ -54,6 +54,10 @@ class DispatchConfig(BaseModel):
     templates_dir: str = Field(min_length=1, description="Scion project templates folder")
     context_file: str = Field(min_length=1, description="Scion context JSON path")
     roles: DispatchRoles
+    roles_root: str | None = Field(
+        default=None,
+        description="Repo whose desk/roles holds the RoleDocs; default is the task root. Relative paths resolve against the task root.",
+    )
 
 
 class DeskConfig(BaseModel):

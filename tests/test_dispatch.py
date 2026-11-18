@@ -204,3 +204,59 @@ def test_without_dispatch_config_exits_2(env: Env, argv: tuple[str, ...]) -> Non
     assert result.returncode == 2
     assert "falta el campo dispatch en desk/config.json" in result.stdout + result.stderr
     assert env.calls() == []
+
+
+@pytest.fixture
+def roleless(env: Env, tmp_path: Path) -> Env:
+    """A task desk without roles; its dispatch config takes them from the `env` desk."""
+    import shutil
+
+    taskdesk = tmp_path / "taskdesk"
+    shutil.copytree(env.root, taskdesk, ignore=shutil.ignore_patterns("roles"))
+    assert not (taskdesk / "desk" / "roles").exists()
+    config = json.loads((env.root / "desk" / "config.json").read_text())
+    config["project_identity"] = "taskdesk-identity"
+    config["dispatch"]["roles_root"] = str(env.root)
+    (taskdesk / "desk" / "config.json").write_text(json.dumps(config))
+    env.root = taskdesk
+    return env
+
+
+def test_start_takes_roles_from_roles_root(roleless: Env, tmp_path: Path) -> None:
+    result = roleless.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    start = _start_call(roleless)
+    name = start[1]
+    run_dir = f"runs/subagents/exec-{name}"
+    assert start[3:5] == ["--type", "disp-executor"]
+    assert (tmp_path / "templates" / "disp-executor" / "scion-agent.yaml").is_file()
+    assert "taskdesk-identity" in (tmp_path / "templates" / "disp-executor" / "agents.md").read_text()
+    assert (roleless.root / run_dir / "run.md").is_file()
+    assert (roleless.root / run_dir / "prompt.md").is_file()
+
+
+def test_roles_root_relative_resolves_against_task_root(roleless: Env, tmp_path: Path) -> None:
+    path = roleless.root / "desk" / "config.json"
+    config = json.loads(path.read_text())
+    config["dispatch"]["roles_root"] = "../repo"
+    path.write_text(json.dumps(config))
+    result = roleless.cli("dispatch", "start", "tester", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert _start_call(roleless)[3:5] == ["--type", "disp-tester"]
+
+
+def test_start_without_roles_root_and_without_roles_fails(roleless: Env) -> None:
+    path = roleless.root / "desk" / "config.json"
+    config = json.loads(path.read_text())
+    del config["dispatch"]["roles_root"]
+    path.write_text(json.dumps(config))
+    result = roleless.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode != 0
+    assert not any(c[0] == "start" for c in roleless.calls())
+
+
+def test_reap_works_on_a_desk_without_roles(roleless: Env) -> None:
+    roleless.agents({"name": "deskops-e-x", "phase": "stopped", "labels": {"deskops.task_id": TASK, "deskops.role": "executor"}})
+    result = roleless.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert ["stop", "deskops-e-x", "--project", "proj"] in roleless.calls()

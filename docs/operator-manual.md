@@ -736,6 +736,16 @@ deskops dispatch reap --task <task-id> --root .
   in its run_dir) and prints `<name> <role> <reason|vivo>`; it exits 4 if any
   agent is still alive.
 
+Optional `dispatch.roles_root` (in the `desk/config.json` of the TASK desk, the
+one passed with `--root`): repo whose `desk/roles` holds the RoleDocs (and
+whose `desk/runtimes` the template reads). `expanduser()` is applied, a
+relative path resolves against the task root, default is the task root. A desk
+without roles (sldb, IR) sets e.g. `"roles_root": "/abs/path/deskops"`: `start`
+then finds the RoleDoc and writes the template from there, with `task_repo`
+= the task desk's `project_identity` (the root directory name if missing); the
+run_dir, RunDoc and prompt stay under the task root. `reap` uses no roles and
+works as is with the `--root` of such a desk.
+
 ## Integrate
 
 `deskops integrate` runs the integration of a closed task: gates in a clean
@@ -799,6 +809,10 @@ the copies and exits 1 printing `fallo: <paso>: <detalle>`:
 9. Always at the end: the copies are removed and
    `runs/hooks/events.log` gains `<UTC date> <task id> integrate <ok|fallo:<paso>> <short tip>`
    (`dry-run` instead of `ok` with `--dry-run`).
+
+After the fetch of step 1, if the tip is already an ancestor of
+`origin/<branch>`, it prints `ya integrado: <short tip>`, exits 0, does not
+push nor run the suite, and logs result `ya-integrado` in `events.log`.
 
 On success it prints `integrado <short code sha> <short tip> en <branch>` (with
 `--dry-run`, `simulado ...`) and exits 0.

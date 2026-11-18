@@ -34,6 +34,10 @@ DESK_ONLY_PREFIXES = ("desk/", ".sldb/", "runs/")
 SHORT = 12
 
 
+class AlreadyIntegrated(Exception):
+    """The tip is already an ancestor of the remote branch."""
+
+
 class StepFailed(Exception):
     """A step of the integration failed; ``step`` and ``detail`` make the ``fallo:`` line."""
 
@@ -228,6 +232,10 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
     try:
         try:
             _steps(root, config, cfg, task_id, tip, code, dry_run, temps)
+        except AlreadyIntegrated:
+            result = "ya-integrado"
+            print(f"ya integrado: {tip[:SHORT]}")
+            return 0
         except StepFailed as exc:
             result = f"fallo:{exc.step}"
             print(f"fallo: {exc.step}: {exc.detail}")
@@ -259,6 +267,9 @@ def _steps(
     _git(copy, "checkout", "-q", "--detach", tip, step="copia")
     _git(copy, "remote", "set-url", "origin", cfg.remote_url, step="copia")
     _git(copy, "fetch", "-q", "origin", branch, step="copia")
+
+    if _run(["git", "merge-base", "--is-ancestor", "HEAD", remote_ref], copy).returncode == 0:
+        raise AlreadyIntegrated()
 
     if _run(["git", "merge-base", "--is-ancestor", remote_ref, "HEAD"], copy).returncode != 0:
         raise StepFailed("fast-forward", f"{remote_ref} no es ancestro de {tip[:SHORT]}")
