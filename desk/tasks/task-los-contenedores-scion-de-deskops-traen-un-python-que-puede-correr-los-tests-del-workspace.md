@@ -1,18 +1,22 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T21:32:32Z'
+  at: '2026-11-18T22:20:12Z'
   authority: generated
   via: save_document_payload
 id: task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/runtime/scion.py
+- tests/test_scion_runtime.py
+- 4a8c984f1d1623a9bba0efc5a4dfdec50311ad09
 depends_on: []
 pills: []
 files:
@@ -21,7 +25,7 @@ task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
+- atom-contenedores-scion-venv-propio-con-uv-python-3-12-via-a
 ---
 
 # Los contenedores scion de deskops traen un python que puede correr los tests del workspace
