@@ -693,6 +693,49 @@ A post-hook that enqueues (in the lifecycle hook declaration):
 run: [deskops, queue, add, full-suite, --root, .]
 ```
 
+### Launching the executor and tester through scion
+
+`deskops dispatch` chains the deterministic steps a coordinator agent did by
+hand. It reads the `dispatch` field of `desk/config.json` (without it both
+subcommands exit 2 with `falta el campo dispatch en desk/config.json`):
+
+```json
+{
+  "dispatch": {
+    "project": "my-scion-project",
+    "workspace": "/abs/path/workspace",
+    "templates_dir": "/abs/path/workspace/.scion/templates",
+    "context_file": "/abs/path/scion-context.json",
+    "roles": {
+      "executor": {"role": "deskops-executor", "harness": "pi", "model_alias": "medium", "env_config": "/abs/path/env.yaml"},
+      "tester": {"role": "deskops-tester", "harness": "claude", "model_alias": "medium", "harness_auth": "oauth-token"}
+    }
+  },
+  "queue_jobs": {
+    "dispatch-executor": {"run": ["sh", "-c", "deskops dispatch start executor --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""], "timeout": 600},
+    "dispatch-tester": {"run": ["sh", "-c", "deskops dispatch start tester --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""], "timeout": 600},
+    "dispatch-reap": {"run": ["sh", "-c", "deskops dispatch reap --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""], "timeout": 600}
+  }
+}
+```
+
+```bash
+deskops dispatch start executor --task <task-id> --root .   # or: tester
+deskops dispatch reap --task <task-id> --root .
+```
+
+- `start` refuses while any agent of the scion project is `running` (prints
+  `ocupado: <name>`, exit 3). Otherwise it writes the template and RunDoc, runs
+  `scion templates sync`, writes `<run_dir>/prompt.md` (`deskops show task` plus
+  the TaskDoc) and runs `scion start`; it prints `agente <name> run_dir <run_dir>`
+  and exits with scion's code. The run_dir is `runs/subagents/exec-<name>` (the
+  tester adds `-testing`); if it exists the attempt-2 identity is used, and if
+  that exists too it exits 5 (`sin intentos: <task> <role>`).
+- `reap` stops and deletes the task's finished agents (`phase:<v>` not running,
+  `activity:<v>` completed, blocked or limits_exceeded, or a `result-summary.md`
+  in its run_dir) and prints `<name> <role> <reason|vivo>`; it exits 4 if any
+  agent is still alive.
+
 ## Closeout
 
 A task's type declares the evidence that closes it (`task.code`: tests + commit + atom|materialization; `task.docs` and `task.decision`: commit + document; `task.external`: external; `task.aggregate`: children + commit; `task.refactor`: task.code's evidence plus goldens). `--evidence` only adds kinds to the type's, never removes one. `deskops closeout verify`

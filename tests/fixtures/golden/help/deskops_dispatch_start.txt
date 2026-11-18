@@ -1,0 +1,11 @@
+usage: deskops dispatch start [-h] --task TASK [--root ROOT] role
+
+Launch the executor or tester of a task through scion.
+
+positional arguments:
+  role         executor or tester
+
+options:
+  -h, --help   show this help message and exit
+  --task TASK  Task id
+  --root ROOT  Target repository root.

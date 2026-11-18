@@ -25,6 +25,27 @@ class QueueJob(BaseModel):
     timeout: int = Field(default=3600, gt=0, description="Seconds before the job is killed")
 
 
+class DispatchRole(BaseModel):
+    role: str = Field(min_length=1, description="RoleDoc id or name")
+    harness: str = Field(min_length=1, description="Runtime profile kind / scion harness")
+    model_alias: str = Field(min_length=1, description="Scion model size alias")
+    harness_auth: str | None = Field(default=None, description="Scion harness auth type")
+    env_config: str | None = Field(default=None, description="Path passed to scion start --config")
+
+
+class DispatchRoles(BaseModel):
+    executor: DispatchRole
+    tester: DispatchRole
+
+
+class DispatchConfig(BaseModel):
+    project: str = Field(min_length=1, description="Scion project")
+    workspace: str = Field(min_length=1, description="Absolute workspace path")
+    templates_dir: str = Field(min_length=1, description="Scion project templates folder")
+    context_file: str = Field(min_length=1, description="Scion context JSON path")
+    roles: DispatchRoles
+
+
 class DeskConfig(BaseModel):
     project_identity: str = Field(default="unknown-project", description="Canonical project desk identity")
     versions: VersionExpectations = Field(default_factory=VersionExpectations)
@@ -36,6 +57,10 @@ class DeskConfig(BaseModel):
     queue_jobs: dict[str, QueueJob] = Field(
         default_factory=dict,
         description="Host queue job kinds: kind -> {run: argv, timeout: seconds}.",
+    )
+    dispatch: DispatchConfig | None = Field(
+        default=None,
+        description="deskops dispatch: scion project, workspace, templates and per-role launch settings.",
     )
     queue_min_available_gb: int = Field(default=8, description="Minimum MemAvailable (GB) to start a queued job.")
     queue_max_psi_avg60: float = Field(default=10, description="Memory PSI some avg60 at or above which jobs wait.")

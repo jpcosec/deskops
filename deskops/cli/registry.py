@@ -750,6 +750,39 @@ Examples:
             mutates=False,
         ),
         Command(
+            path=("dispatch",),
+            help="Launch and reap the scion executor and tester of one task.",
+            args=(),
+            handler="deskops.dispatch:DispatchCLI",
+            mutates=True,
+            epilog="""
+Examples:
+  deskops dispatch start executor --task task-x --root .
+  deskops dispatch start tester --task task-x --root .
+  deskops dispatch reap --task task-x --root .
+""".strip(),
+            raw_text=True,
+            subcommand_dest="dispatch_command",
+        ),
+        Command(
+            path=("dispatch", "start"),
+            help="Launch the executor or tester of a task through scion.",
+            args=(
+                A("agent_role", metavar="role", choices=("executor", "tester"), help="executor or tester"),
+                A("--task", required=True, help="Task id"),
+                ROOT_ARG,
+            ),
+            handler="deskops.dispatch:DispatchCLI",
+            mutates=True,
+        ),
+        Command(
+            path=("dispatch", "reap"),
+            help="Stop and delete the finished scion agents of a task.",
+            args=(A("--task", required=True, help="Task id"), ROOT_ARG),
+            handler="deskops.dispatch:DispatchCLI",
+            mutates=True,
+        ),
+        Command(
             path=("review",),
             help="Run and dispose cold context reviews (node, preflight, bundle, status, dispose).",
             args=(),
