@@ -1,18 +1,19 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T20:17:42Z'
+  at: '2026-11-18T20:17:51Z'
   authority: generated
   via: save_document_payload
 id: task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - desk/inbox/inbox-note-nombres-de-tarea-con-acentos-git-cita-las-rutas-y-el-hook-de-wt-las-rechaza.md
 - desk/inbox/20261118-154919-unclear-queue-20261118t184427z-integrate-task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vac-a-el-path-de-los-modelos-en-sldb-core-mode.md
