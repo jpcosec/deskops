@@ -1,25 +1,25 @@
-name: task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual
-path: desk/tasks/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual.md
-source_hash: 6c2fb8ee43a6f92706b585626eef8e77b7117ddeb86c373e102a1f53c2572fd2
-content_hash: bbde44e7df415ffd35d2df3ba3b94df025d15865188178d419303b769d817928
+name: task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace
+path: desk/tasks/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace.md
+source_hash: 2025e73ff3a9f1238c40216d9c7758dac8995e30895d68e0e8e87dd04890f845
+content_hash: 49e105ebc40cb4685fa9a442f78dfe47d8c72ad4812aed5ff9a83be109972614
 field_hashes:
-  title: dd9584e932852013b824455bab2c54216c7c28aeca8a964524aa26fe537c100b
-  id: 57b891ece1b454b9a692b31811a719e0dd399e2d0e77886fd78ec4b798409030
+  title: 90781d77d88dfe7174fbf6625d0266de525ebea4cffbe7d82d050204553e3b28
+  id: 08ca482407a0d920090d5555a6e9e1eaeab3f49ad0a22f823a3f9870f1de0389
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: 73cfa642ce4b4158cafaf43106364277a6e2722daabeebbf1ec23d270a4ec5b3
-  goal: d15cdf39efc6112abf01de70c4f9575489156c00f60a3bd2a63b6f29a23c841a
-  scope: 8ffc2e39caf4de5e41097cbce31499b8a7243762ac3bf06028047089e2a04ddb
+  why: 975766a05dd69d5e6947fccd65c8f8471c359ab2a75ccc9c58114ade5014b383
+  goal: b9605d329c5e979ed8f7f225f49c79bcee72e1c9cf1a62303ac392e60dacd47b
+  scope: 2d67ae98a9cb7cbba983c4145d8ca61b098d0acb55af54a1a8ad9f8b33ab5f40
   references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: c857b7de5206753c8958dc4ba7bec3a6473c33cc4b71903bb340f598dff85b5c
+  files: 61346b6c43374d4fe61b9a6f96909eff440db26ef963701752d947939e1f598f
   implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   validation: 38b859c8331d180c799929742048f58e26269ab24a75a27ea0af0cef56a2648d
-  done_when: 27258e998592599ad533727fadfcfb0280e3bfd47030b50eacf9f4ea72dbc167
+  done_when: 2ef2073e0ccb41461efb60d0f99750bb8de052bca45f3e4bfff109540ba09bab
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T05:54:01Z'
+  at: '2026-11-18T07:43:12Z'
   authority: generated
   via: create_document

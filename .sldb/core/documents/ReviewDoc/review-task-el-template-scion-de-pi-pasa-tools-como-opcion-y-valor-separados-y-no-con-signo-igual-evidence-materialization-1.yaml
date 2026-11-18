@@ -1,0 +1,37 @@
+name: review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-evidence-materialization-1
+path: desk/reviews/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual/evidence-materialization-1.md
+source_hash: 239e2322bbe49d96cd7525bf2656222795d03421734da24378384ac0099a5af9
+content_hash: 478093522943813139789077d0d98474d948ca37e94f0b8d2666b2432812654d
+field_hashes:
+  id: 87433f474c3c62397a72ca5aa789829c51792a35ae94ce486377f46fa916c194
+  title: f3c2abffad7180d2fce885736171d1740f323eb3c14eb9165ec9a43c22ce92fe
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 84d2dedd1156117acaa3d16e0f933be67a6c30475f286bbaf81bd0f6c926adf0
+  subject: 3c9f3d8a23867d06293cf8a5fd5066a2523fe9a0fe2fdc3e4321d7e17c540f42
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: a2f08f002ca7ad700dad172fe3112d9721acc08c6727535ca65447df81631960
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 149768ebad929be6f4b1bcce3b6b3a95ac8052636fa1dedd1805d7d65f3e6bfd
+  created_at: ab23691e2868b72bd8fa3ab4c1bab094cb4e2728449e6bd8afde35687c2097b8
+  disposed_at: ab23691e2868b72bd8fa3ab4c1bab094cb4e2728449e6bd8afde35687c2097b8
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 7950cfb3a6986ae684119bd14cef31f69cf89c74357c87e0e10ad8ab2f769024
+  disposition: 9846aaa6c6908673db28c446e26ee29e39bc517891eaaff256cd7cb9b0d3e9eb
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T07:55:08Z'
+  authority: generated
+  via: create_document

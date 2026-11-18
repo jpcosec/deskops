@@ -1,0 +1,10 @@
+Task: task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual
+Title: El template scion de pi pasa tools como opcion y valor separados y no con signo igual
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+Lifecycle gates:
+- task_completes -> complete: closed [status = "ready_for_testing"]
+  blocked by: error: [rules/rule-closeout-task-code] TaskCodeDoc:task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual: Una tarea task.code se cierra con recibos evidence aceptados e intactos de tests, commit y atom o materialization (los escribe deskops closeout verify). | any(^subject: kind = "evidence" and fact = "tests" and anchor_state = "intact" and verdict = "accepted") (seen: {}) (witness: ReviewDoc:review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-bundle-1 {"kind":"bundle"})

@@ -1,0 +1,51 @@
+# Independent validation - exec-deskops-t-b02c6a3c3823-testing
+
+Task: task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual
+Date: 2026-11-18
+Repository used: /workspace/deskops (the /mnt/ssd/proyectos/SLDB_1 path from the brief is not mounted in this container)
+Runtime used: uv-managed CPython 3.13.18 + /workspace/sldb/.venv/lib/python3.13/site-packages (system python3 is 3.11 and has no pytest)
+Worktree state: only inspected; no implementation, commit or desk/.sldb edits were made by the tester.
+
+## Point 1 - Unit tests for the task
+PASS
+Command:
+  cd /workspace/deskops
+  TMPDIR=/dev/shm PYTHONPATH=/workspace/deskops:/workspace/sldb/src:/workspace/sldb/.venv/lib/python3.13/site-packages \
+    /home/scion/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/bin/python3.13 \
+    -m pytest -q -p no:cacheprovider tests/test_scion_runtime.py
+Result: 40 passed, 1 warning in 7.13s
+The new test test_pi_tools_are_option_and_value_as_separate_args ran and passed.
+
+## Point 2 - CLI template with --harness pi
+PASS
+Command (temporary output under /dev/shm, removed afterwards):
+  deskops runtime template deskops-tester --root . --harness pi --mode tester --out <tmp>/pi
+Observed in scion-agent.yaml:
+  command_args: ["--tools", "read,grep,find,ls,bash"]
+Parsed YAML value:
+  ['--tools', 'read,grep,find,ls,bash']
+Verdict: option and its value are two separate command_args elements; no '--tools=...' token.
+
+## Point 3 - CLI template with --harness claude keeps option=value
+PASS
+Command (temporary output under /dev/shm, removed afterwards):
+  deskops runtime template deskops-tester --root . --harness claude --mode tester --out <tmp>/claude
+Observed in scion-agent.yaml:
+  command_args: ["--allowedTools=read", "--allowedTools=grep", "--allowedTools=find", "--allowedTools=ls", "--allowedTools=bash"]
+Parsed YAML value:
+  ['--allowedTools=read', '--allowedTools=grep', '--allowedTools=find', '--allowedTools=ls', '--allowedTools=bash']
+Verdict: claude behavior is unchanged.
+
+## Point 4 - Source review / scope
+PASS
+- deskops/runtime/scion.py: _command_args(role_doc, profile, harness="") returns the raw [flag, value] pairs when harness == "pi"; all other harness names keep the existing f"{flag}={value}" folding.
+- The only production caller, scion_template_files, passes its harness argument, and materialize_scion_template resolves that from the selected RuntimeProfileDoc kind via pick_harness_config.
+- No other callers of _command_args exist in the repository.
+- Extra harness check with every tracked profile: claude -> option=value; pi -> option, value (only claude and pi RuntimeProfileDocs are present).
+- tests/test_scion_runtime.py adds one focused regression test; existing claude assertion remains.
+- git diff --check reports no whitespace errors for the two task files.
+- docs/operator-manual.md mentions tools_flag but not the rendered form of command_args, so no documentation change was required.
+- Other dirty files in the worktree (message.py, message/inbox/repo-identity tests) were not part of this task and were ignored.
+
+## Final verdict
+PASS
