@@ -43,10 +43,10 @@ def check_slug_id(value: object, prefix: str, label: str) -> object:
     if not isinstance(value, str):
         return value
     # Lazy: doc_access imports the models, and the slug form is defined once, there.
-    from deskops.doc_access import slugify
+    from deskops.doc_access import slug_form
 
     slug = value.removeprefix(prefix)
-    if not value.startswith(prefix) or not slug or slug != slugify(slug):
+    if not value.startswith(prefix) or not slug or slug != slug_form(slug):
         raise ValueError(f"{label} id must follow slug convention {prefix}<slug>: {value}")
     return value
 

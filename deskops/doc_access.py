@@ -163,6 +163,16 @@ def slugify(text: str) -> str:
     return slug[:100].rstrip("-")
 
 
+def slug_form(text: str) -> str:
+    """The slug convention an existing id is checked against: alphanumeric runs (accented
+    letters included) joined by '-'. New ids derived from a title use ``slugify`` (ASCII);
+    ids committed before that keep their accents and must still validate and resolve."""
+    lowered = "".join(ch.lower() if ch.isalnum() else "-" for ch in text)
+    parts = [part for part in lowered.split("-") if part]
+    slug = "-".join(parts) or "item"
+    return slug[:100].rstrip("-")
+
+
 @dataclass(slots=True)
 class DocumentRecord:
     kind: str

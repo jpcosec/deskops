@@ -53,6 +53,22 @@ def test_existing_accented_id_still_resolves(tmp_path: Path, capsys) -> None:
     assert "task-transacción" in capsys.readouterr().out
 
 
+def test_existing_accented_atom_and_protoatom_ids_still_validate() -> None:
+    # Folding new ids to ASCII must not reject ids committed with accents (the atom and
+    # protoatom validators check the slug convention, not the ASCII fold).
+    from deskops.models.atom import check_slug_id
+
+    accented = "atom-en-deskops-el-store-de-sldb-se-versiona-entero-y-solo-la-caché-se-ignora"
+    assert check_slug_id(accented, "atom-", "atom") == accented
+    assert check_slug_id("atom-transaccion-nandu", "atom-", "atom") == "atom-transaccion-nandu"
+    try:
+        check_slug_id("atom-Not A Slug", "atom-", "atom")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("a non-slug atom id must still be rejected")
+
+
 def test_integrate_finds_receipt_of_task_with_accented_id(tmp_path: Path) -> None:
     root = tmp_path / "repo"
     root.mkdir()
