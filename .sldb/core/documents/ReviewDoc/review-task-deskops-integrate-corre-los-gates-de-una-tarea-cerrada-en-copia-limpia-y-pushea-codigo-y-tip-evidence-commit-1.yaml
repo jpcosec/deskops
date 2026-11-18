@@ -1,0 +1,37 @@
+name: review-task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip-evidence-commit-1
+path: desk/reviews/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip/evidence-commit-1.md
+source_hash: c2d28e57a7bf20e39731d6051f6df20d4368b4054ac2428901e43689c0271120
+content_hash: 05356cbc383b4e49c92d9c13495281dcb704be88cddda1c93c7aac507f72c390
+field_hashes:
+  id: 53a411ac13b5df019310b9c27c518160a066f0cb08a226a938fc68eb632bebdb
+  title: af97bf410f5e6aae32accfd648141135e9d4006ee8b18a7b767e14085ad75f7a
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: c7be7059b8f73f98071891ad83a3e3c49a37eeadf16aa44b8a5c5a95f3f1a0df
+  subject: 393c245488428e877cfead5ada1b06048d7a14bdac83fee22690449bb2a27722
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: ed09497f2ee09ec8d296076d8f36af82f136bb22119552c844bb5332e05789fd
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: d8c57a6ca0b142e808c939ba74336e0570848ba678ca8dcac7f0395615079919
+  created_at: eb904c68419bb2e1bba64e60da21df2709b230df8dc614831632d8447db57259
+  disposed_at: eb904c68419bb2e1bba64e60da21df2709b230df8dc614831632d8447db57259
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 69c72a81356d990d9d392fb0b93408e7c45b8ed003c3d372a40bd873fc8cab96
+  disposition: 9dce12ef2bab037aa75c4cdf0c56cca1110095261bd19aa062e4a4cc47f85e73
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T12:44:09Z'
+  authority: generated
+  via: create_document

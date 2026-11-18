@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T11:49:29Z'
+  at: '2026-11-18T12:45:40Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -51,7 +51,6 @@ tasks:
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
-- desk/tasks/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip.md
 - desk/tasks/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace.md
 # List of pill-xxx paths
 pills:
@@ -135,23 +134,4 @@ _Generated from the task references above._
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
-- deskops integrate corre los gates de una tarea cerrada en copia limpia y pushea codigo y tip [ready_for_testing] - Un comando nuevo, `deskops integrate --task <id> --root .` (con `--dry-run` opcional), y su configuracion en el desk.
-
-Configuracion. `DeskConfig` (`deskops/config.py`) gana un campo `integrate` con: `remote_url` (URL o ruta del remoto), `branch` (rama remota), `suite` (lista argv de la suite completa), `suite_timeout` (segundos, por defecto 5400), `tests_lock` (ruta de un archivo de cerrojo; opcional), `tools_checkout` (ruta de un checkout de herramientas; opcional) y `push_env` (mapa de variables de entorno para los comandos git de push; opcional). Sin campo `integrate` el comando sale con codigo 2 y el mensaje `falta el campo integrate en desk/config.json`.
-
-Entrada. La tarea debe estar cerrada: su ultima entrada de history es el registro de cierre. El tip es el commit de cierre de la tarea, que se busca con `git log` por el asunto exacto `closeout: <id de la tarea>`; el commit de codigo es el sha de 40 caracteres que aparece en `references` de la tarea. Si la tarea no esta cerrada o falta alguno de los dos commits, sale con codigo 2 y dice cual falta.
-
-Pasos, en orden; el primero que falla detiene todo, no se pushea nada, se borra la copia y el comando sale con codigo 1 imprimiendo `fallo: <paso>: <detalle>`:
-1. `memoria`: los mismos dos gates de `deskops queue run` (campos `queue_min_available_gb` y `queue_max_psi_avg60`), reutilizando la funcion que ya los calcula en el modulo de la cola.
-2. `copia`: `git clone --no-hardlinks <root> <dir temporal bajo TMPDIR>`, `git checkout --detach <tip>`, `git remote set-url origin <remote_url>`, `git fetch origin <branch>`.
-3. `fast-forward`: `git merge-base --is-ancestor origin/<branch> HEAD` debe salir con 0.
-4. `suite`: solo si `git diff --name-only origin/<branch> HEAD` trae alguna ruta que no empieza con `desk/`, `.sldb/` ni `runs/`. Corre el argv `suite` en la copia, con `PYTHONPATH` igual a la copia, tomando antes el cerrojo exclusivo de `tests_lock` (bloqueante, `fcntl.flock`) si esta declarado, con tope `suite_timeout`; la salida va a un log. Falla si el codigo no es 0.
-5. `store`: cada ruta `path:` de `.sldb/store.yaml` del tip que no empieza con `../` debe existir en el commit (`git cat-file -e HEAD:<ruta>`).
-6. `graph`: la cuenta de faltantes de `deskops graph missing --root <copia>` en el tip no puede ser mayor que la misma cuenta en `origin/<branch>` (se mide en un segundo checkout temporal de esa rama).
-7. `push`: `git push origin <sha de codigo>:<branch>` y despues `git push origin <tip>:<branch>`, nunca con force, con las variables de `push_env` agregadas al entorno. Con `--dry-run` no se ejecuta e imprime los dos comandos.
-8. `herramientas`: si `tools_checkout` esta declarado, `git -C <tools_checkout> fetch origin` y `git -C <tools_checkout> checkout --detach origin/<branch>`. Con `--dry-run` no se ejecuta.
-9. Siempre, al final: borra las copias temporales y agrega a `runs/hooks/events.log` del root la linea `<fecha UTC ISO> <id de tarea> integrate <ok|fallo:<paso>> <tip corto>`. El log de la suite queda en `runs/queue/logs/integrate-<id de tarea>.log` del root.
-En exito imprime `integrado <sha de codigo corto> <tip corto> en <branch>` y sale con 0.
-
-El manual del operador gana una seccion `Integrate` con la configuracion, los pasos y el ejemplo de `queue_jobs` `integrate: {run: [deskops, integrate, --task-from-env, --root, .]}`; para eso el comando acepta `--task-from-env`, que toma el id de `DESKOPS_TASK_ID`.
 - Los contenedores scion de deskops traen un python que puede correr los tests del workspace [draft] - Decidir e implementar una de dos vias y dejarla documentada en el manual del operador: (a) el template scion que genera deskops runtime template declara un paso de arranque que crea un entorno virtual propio del contenedor desde el pyproject del workspace y lo pone primero en el PATH; o (b) las imagenes traen python 3.12 en la misma ruta que usa el entorno del workspace. La tarea empieza por medir cual es viable con la version de scion instalada y registra la decision en un atom.

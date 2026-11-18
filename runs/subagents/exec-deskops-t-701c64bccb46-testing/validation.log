@@ -1,0 +1,112 @@
+# Validation log — task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip
+
+Veredicto global: PASS
+
+Entorno:
+- Repo probado: /mnt/ssd/proyectos/SLDB_1/deskops (= /workspace/deskops, mismo inodo).
+- Python: /home/scion/.local/share/uv/python/cpython-3.13-linux-x86_64-gnu/bin/python3.13
+- PYTHONPATH=/workspace/deskops:/workspace/sldb/src:/workspace/sldb/.venv/lib/python3.13/site-packages
+- TMPDIR=/dev/shm
+- No se ejecutó `deskops integrate` sobre el repo real. No hubo add/commit/push en él.
+
+## Punto 1 — Validación: tests/test_integrate.py
+
+Comando:
+TMPDIR=/dev/shm python3.13 -m pytest -q -p no:cacheprovider tests/test_integrate.py
+
+Resultado: PASS — 18 passed, 1 warning, 237.17 s.
+
+Cobertura verificada (cada caso PASS):
+(a) gates verdes: remoto termina en el tip, el commit de código es ancestro del tip remoto,
+    events.log gana `... task-foo integrate ok <tip corto>`, imprime `integrado`; log de suite creado. PASS
+(b) --dry-run: remoto y tools checkout intactos, imprime los dos comandos de push. PASS
+(c) suite con exit 1: `fallo: suite`, exit 1, remoto intacto, log con la salida y evento `fallo:suite`. PASS
+(d) rango que sólo toca desk/: no corre la suite (la suite configurada es `exit 1`) y termina bien. PASS
+(e) tip no fast-forward: `fallo: fast-forward`, exit 1, remoto intacto. PASS
+(f) ruta de .sldb/store.yaml ausente en el commit: `fallo: store`, ruta nombrada. PASS
+(g) tarea sin cerrar y falta del campo integrate: exit 2; selección inválida de --task/--task-from-env también exit 2. PASS
+(h) tras cada corrida no queda ninguna copia temporal bajo TMPDIR. PASS
+
+Los tests usan git real, desk real creado por el CLI, cierre real con `closeout commit` y remoto bare
+en tmp_path; no hay mocks/monkeypatch (`grep -n 'mock\|monkeypatch' tests/test_integrate.py` sin resultados).
+
+## Punto 2 — Validación: guardianes del CLI y goldens de ayuda
+
+Comandos:
+- pytest -q tests/test_cli_grammar.py tests/test_command_registry.py
+- pytest -q tests/test_cli.py -k help_uses_deskops_name
+- pytest -q tests/test_output_goldens.py -k help
+
+Resultado: PASS.
+- Guardianes: incluidos en la corrida conjunta de abajo; pasan con `integrate` declarado.
+- test_output_goldens.py -k help: 1 passed, 6 deselected, 339.15 s.
+- Sólo cambian/aparecen los goldens esperados:
+  `M tests/fixtures/golden/help/deskops.txt` y `?? tests/fixtures/golden/help/deskops_integrate.txt`.
+  No hay otros ficheros de help modificados.
+
+## Punto 3 — Validación: tests/test_queue.py
+
+Primera corrida con el entorno disponible:
+`pytest -q tests/test_queue.py` → 13 passed, 1 failed
+(test_concurrent_runs_execute_once). El fallo NO es de este cambio: ese test reemplaza PYTHONPATH
+por el root del repo y el intérprete 3.13 no tiene sldb instalado en site-packages; el hijo falla con
+`ModuleNotFoundError: No module named 'sldb.store'` antes de ejecutar nada.
+
+Repetición independiente sin tocar el repo, con un userbase temporal en /dev/shm que expone
+las site-packages del venv de sldb (PYTHONUSERBASE temporal):
+`PYTHONUSERBASE=/dev/shm/deskops-userbase pytest -q tests/test_queue.py`
+→ PASS: 14 passed, 43.88 s (incluye test_concurrent_runs_execute_once y el test de la memoria que
+usa wait_reason). Esto confirma que la cola no tiene regresión por el renombre `_wait_reason`→`wait_reason`.
+
+## Punto 4 — Prueba manual end-to-end independiente (repo real + desk real + remoto bare local)
+
+Bajo /dev/shm se construyó un repo git con `deskops init`, una tarea task.code con
+`add atom`, `add task`, recibos de activación, avances reales, commit de código, `edit task references`,
+`closeout verify` y `closeout commit` real; remoto `git init --bare` local. Luego se copió ese
+escenario para cada caso. Ningún remoto real fue tocado.
+
+Resultados (todos PASS):
+- Verde: exit 0, `integrado <code> <tip> en main`, remoto en el tip, commit de código ancestro del
+  tip remoto, evento `... task-foo integrate ok <tip>`, log de suite presente, TMPDIR limpio.
+  En este escenario real el TaskDoc está ausente de HEAD y la versión previa al cierre tenía
+  `references: []`: se usó el recibo aceptado `evidence-commit` del tip, tal como exige la decisión
+  aceptada (2). También valida la decisión (1) (tarea ausente de HEAD + commit `closeout: <id>`).
+- --dry-run: exit 0, imprime exactamente los dos `git push` en orden, remoto sin cambios,
+  evento `... integrate dry-run <tip>`, TMPDIR limpio. Valida la decisión (4).
+- Suite que falla (`exit 1`): exit 1, `fallo: suite: codigo 1, log ...`, remoto intacto,
+  evento `fallo:suite`, TMPDIR limpio.
+- No fast-forward (commit ajeno empujado al bare): exit 1, `fallo: fast-forward`, remoto intacto,
+  evento `fallo:fast-forward`, TMPDIR limpio.
+- Sin campo `integrate`: exit 2 con `falta el campo integrate en desk/config.json`.
+
+En los cuatro escenarios con TMPDIR propio no quedó ningún `deskops-integrate-*` ni copia temporal.
+
+## Punto 5 — Contrato adicional y revisión estática
+
+- `--task` y `--task-from-env` son excluyentes y uno es obligatorio: PASS (tests y revisión del CLI).
+- Timeout de suite: texto exacto `fallo: suite: timeout tras <N> s`: PASS (test dedicado).
+- El tope no cuenta la espera del cerrojo: PASS por inspección (`_suite_lock` se toma antes de
+  lanzar el proceso y de `proc.wait(timeout=...)`).
+- El push nunca usa force: PASS. `grep -n 'force' deskops/integrate.py` sin resultados; los argv
+  construidos son `git push origin <sha>:<branch>` sin `--force` ni `-f`.
+- Decisión (3): la cuenta de graph missing se hace en proceso con
+  `find_missing_graph_references`, no parseando el CLI; PASS por inspección y por el gate graph
+  de los tests.
+- Decisión (2): primer sha de 40 hex de `references` y fallback al recibo aceptado
+  `evidence-commit`; PASS (revisión + escenario manual que ejercita el fallback).
+
+## Otras suites requeridas
+
+Corrida conjunta:
+`pytest -q tests/test_queue.py tests/test_dispatch.py tests/test_config.py tests/test_packaging.py tests/test_cli_grammar.py tests/test_command_registry.py tests/test_cli.py -k 'help_uses_deskops_name or test_'`
+→ 141 passed, 1 failed (sólo el fallo ambiental de test_queue explicado arriba), 687.10 s.
+Con la repetición de test_queue corregida por entorno: todas las suites requeridas en verde.
+
+## Done When
+
+PASS: las tres validaciones pasan (con la salvedad ambiental de test_queue, reproducida en verde
+sin tocar código) y docs/operator-manual.md contiene la sección `## Integrate` con configuración,
+pasos, dry-run/eventos y el ejemplo de `queue_jobs` con `--task-from-env`.
+
+Suite completa en copia limpia de a6fae9ddcbb845bd4c8e2f12aa01da1237d8d9cd (pytest -q -n 4 -p no:cacheprovider tests), corrida por el coordinador:
+1227 passed, 3 skipped, 1 xfailed, 5 warnings in 1493.52s (0:24:53)
