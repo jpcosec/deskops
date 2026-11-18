@@ -1,3 +1,13 @@
+Task: task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task
+Title: deskops dispatch: reap encuentra los agentes sin el archivo de la tarea, el ejecutor commitea con Task-Id y el tester pi corre solo los tests de lo tocado
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent

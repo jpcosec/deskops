@@ -532,6 +532,10 @@ include:
     name: run-deskops-e-19b2ea183813
   - path: runs/subagents/exec-deskops-t-1093bfcd825b-testing/run.md
     name: run-deskops-t-1093bfcd825b
+  - path: runs/subagents/exec-deskops-e-05d3e6bc3598/run.md
+    name: run-deskops-e-05d3e6bc3598
+  - path: runs/subagents/exec-deskops-t-b40b9e0feb3a-testing/run.md
+    name: run-deskops-t-b40b9e0feb3a
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1776,6 +1780,12 @@ include:
     name: review-task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task-preflight-2
   - path: desk/reviews/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task/bundle-1.md
     name: review-task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task-bundle-1
+  - path: desk/reviews/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task/evidence-tests-1.md
+    name: review-task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task-evidence-tests-1
+  - path: desk/reviews/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task/evidence-commit-1.md
+    name: review-task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task-evidence-commit-1
+  - path: desk/reviews/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task/evidence-atom-1.md
+    name: review-task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task-evidence-atom-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1826,7 +1836,6 @@ include:
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
   - desk/tasks/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace.md
-  - desk/tasks/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

@@ -1,0 +1,21 @@
+Tester: deskops-t-b40b9e0feb3a
+Task: task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task
+Touched files (from executor result-summary): deskops/dispatch.py, tests/test_dispatch.py, docs/operator-manual.md, CHANGELOG.md
+Tests selected: tests/test_dispatch.py (tests/*.py of the touched file; tests/test_dispatch.py is also tests/test_<module>.py for deskops/dispatch.py)
+
+Command:
+  TMPDIR=/dev/shm /dev/shm/t311/bin/python -m pytest -q tests/test_dispatch.py
+
+Output:
+..................                                                       [100%]
+=============================== warnings summary ===============================
+../../dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+18 passed, 1 warning in 186.37s (0:03:06)
+exit code: 0
+
+Environment note: /dev/shm/t-venv pointed to Python 3.13, which is no longer present in the container (/usr/bin/python3 is 3.11.2); its pytest was therefore unimportable. Created /dev/shm/t311 (Python 3.11.2) and installed pytest/pydantic/pyyaml/networkx/jinja2/markdown-it-py/mdit-py-plugins/linkify-it-py. No full suite was run: integrate runs it on the host.
