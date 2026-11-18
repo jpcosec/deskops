@@ -1,7 +1,7 @@
 name: task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace
 path: desk/tasks/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace.md
-source_hash: 28d53545700e5289eb12175aa64a18ab25d4dd3809d223f668d1790e458bb3fd
-content_hash: dac4f080794afa0fad1919c8a7de731f6dcb0fc57cd40fbd84a25446ac843942
+source_hash: e58be237c44eec05129ad1c8950647b7288937984b2c9ed79ab04de9ce094c56
+content_hash: e166dc145ac1808e60284e6526f77bcc5f610c8f398b0968c0f1b9ef239b131c
 field_hashes:
   title: 90781d77d88dfe7174fbf6625d0266de525ebea4cffbe7d82d050204553e3b28
   id: 08ca482407a0d920090d5555a6e9e1eaeab3f49ad0a22f823a3f9870f1de0389
@@ -17,7 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 61346b6c43374d4fe61b9a6f96909eff440db26ef963701752d947939e1f598f
-  implementation_path: bd3c54553653211c7080561fdd63231176f9c58798d35598bb8c85bad3710ca2
+  implementation_path: 6eeee233b4760efe7dfa4faa60f9390f709b839d8d8c5dd69770a62b0cf792df
   validation: 489c85da564e86c56547e679467a270e3629583dc4949a6b113978956d7416e1
   done_when: 03c5cbcef0c73b6fd277cb706801e3c19c6c689166c15b64218db20d7293f53c
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T21:31:00Z'
+  at: '2026-11-18T21:32:32Z'
   authority: generated
   via: save_document_payload

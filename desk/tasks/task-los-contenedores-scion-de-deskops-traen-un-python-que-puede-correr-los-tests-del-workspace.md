@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T21:31:00Z'
+  at: '2026-11-18T21:32:32Z'
   authority: generated
   via: save_document_payload
 id: task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace
@@ -48,7 +48,7 @@ Hecho de partida (integrador, 2026-11-18): el .venv del workspace (/mnt/ssd/proy
 
 _Outline the expected implementation route or affected surface._
 
-p1 (medir antes de elegir): en un contenedor de la imagen scion-claude que usa el despacho, lanzado con el mismo --config que usa dispatch (/mnt/ssd/proyectos/SLDB_1/.bootstrap/ir-scion-env.yaml), probar las dos vías y medir tiempo de arranque y si 'python -m pytest -q tests/test_dispatch.py' corre en /mnt/ssd/proyectos/SLDB_1/deskops: (a) un paso de arranque del template (hook pre-start del harness o comando de inicio) que crea un venv propio del contenedor fuera del workspace con 'uv venv --python 3.12' (uv descarga 3.12 si hace falta) y 'uv pip install -e <repo>[dev]' del repo de la tarea, y lo pone primero en el PATH; (b) una imagen derivada con /usr/bin/python3.12. p2: elegir con esa medición; preferir (a) si arranca en menos de 3 minutos, porque no agrega imágenes de varios GB. p3: implementar la vía elegida en deskops/runtime/scion.py con test. p4: documentar en el manual (sección de dispatch) y registrar la decisión y la medición en un atom (deskops add atom). p5: informe con los tiempos medidos de ambas vías.
+p1 (medir la vía a en el propio contenedor): el ejecutor ya corre en un contenedor scion-claude lanzado por deskops dispatch con --config /mnt/ssd/proyectos/SLDB_1/.bootstrap/ir-scion-env.yaml, y ahí mide. Con TMPDIR=/tmp y cronometrando: uv venv /tmp/ws-venv --python 3.12 (uv descarga 3.12 si no está); VIRTUAL_ENV=/tmp/ws-venv uv pip install -e /mnt/ssd/proyectos/SLDB_1/deskops[dev] -e /mnt/ssd/herramientas/sldb (el repo de la tarea con su extra dev, más sldb, que deskops importa); y después /tmp/ws-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_dispatch.py en /mnt/ssd/proyectos/SLDB_1/deskops. Anotar los tiempos y el resultado. p2 (mecanismo de la vía a): implementarlo en deskops/runtime/scion.py como un paso que corre al inicio del agente. Si el template de scion que genera 'deskops runtime template' admite un comando o hook de inicio (ver cómo scion.py arma scion-agent.yaml y los hooks pre-start del harness), usar eso. Si no, dispatch start antepone a prompt.md un bloque 'Antes de empezar' con esos comandos y el export de PATH. El repo a instalar es la raíz de la tarea (--root) con su extra dev, más /mnt/ssd/herramientas/sldb cuando la tarea no es de sldb. p3 (vía b, solo si a falla o tarda más de 3 min): un Dockerfile en deskops/runtime/images/scion-claude-py312/Dockerfile, FROM ghcr.io/jpruizantonia/scion-claude:latest, que instala python3.12 en /usr/bin/python3.12. El contenedor no lo construye: el informe deja el comando docker build para el integrador. p4: test en tests/test_scion_runtime.py del paso de arranque (que el template o el prompt.md generado lo contenga). p5: documentar en docs/operator-manual.md, sección 'Launching the executor and tester through scion'. p6: atom con deskops add atom (--five-wh-one-plus how, tags system:deskops topic:scion) con la vía elegida y los tiempos medidos. p7: informe en result-summary.md del run dir.
 
 ## Validation
 
