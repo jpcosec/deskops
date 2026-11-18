@@ -1,0 +1,38 @@
+name: task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode
+path: desk/tasks/task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode.md
+source_hash: 289c7223453a746294837707c37ddcf5be102f78e5caa8b4dd2c2ce9118b1148
+content_hash: a6ef644fe58f1bead2c559efb70045016284143446248ada12a2014c08a1ee51
+field_hashes:
+  title: 46c431fa9e09cfe2e83d11d969fa11d157686d038767a8c7b3a3710fdd0b58dd
+  id: 408216dda7aed72166cd98a39c23842dc54c823dd1d092b41ee47a3038fd1db8
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 21a5e748e8896d83a2b9880d60d645fd8d8a5f9eb36520428f56147561187b6a
+  goal: 0acaa32645420805e3303a34d6f9cdc7b36cf6f1fe8e9352275294770b0192af
+  scope: 5fa26a369873c8cfcb95acfadded51f60800b0046fc4103a715d355e55014098
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 5e872b870629fdcc3fd2e5311f449d7adf3d4d7c1a54ec1cc2eeeffc5305d683
+  validation: 12627310342b97817808544fa4046bc486b5727b2d7c8ed79907d5c4172d8292
+  done_when: b27bcbf424668f1959b645029b03a8f98b9ba6012b42b5aa3bdb616f249e3246
+  task_type: 17aef8a679138336d87167505c61b03a7bc28c9a12b1ccf78947b619d28fae69
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T17:43:07Z'
+  authority: generated
+  via: create_document

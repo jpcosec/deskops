@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-18T17:43:19Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,11 +13,14 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-18T10:23:59'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-18T14:43:13'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: 'Convertida en tarea: desk update --apply no vacía el path de los modelos
+  en el repo de deskops.'
 ---
 
 # deskops desk update --apply sobre el repo de deskops vacía el path de todos los modelos de .sldb/core/models
