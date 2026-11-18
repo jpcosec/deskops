@@ -1,7 +1,7 @@
 name: task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task
 path: desk/tasks/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task.md
-source_hash: 4106a6c21fefd25371f36df94e128d9cba0cdfb450357f38841b19779c4a5038
-content_hash: bb91cdd0e9544d94b7ccadf5bcc446eb6ac25862ff44f6be2d9f9269bde10693
+source_hash: 7511a3f3944fef6b829700e302833e6d473f15d09d6f1c8af14f25521b440ce5
+content_hash: d9d4729aef73888cd264cd51875505c87b30f6fcea2c75765585523f41dc5f4a
 field_hashes:
   title: 00148b63c01ccb34c3039c61db667dff917d56268a5fb4ff685f0adeec562a1d
   id: 3459ea13bc5ebb7acc7496a9c327251f89d0002770916eb6bfca5d0e37f81874
@@ -12,7 +12,7 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 600d0f999c13d47efdab1cf252bc64acf63cb9a05cf6b1e68d0e32281d956a18
   goal: b5269afc3dc2f98933a5c2f23b918ba2fe5bbb1108691ba316cd09b53a1898f3
-  scope: de51b4073222920eaa626f89ff2e03e9f6d7f865345e0df2ff0b14688d541f53
+  scope: b33fdcc028aada5d4c832102610c74d81a50a1706961cbd98544b57977bcd8b1
   references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T16:04:19Z'
+  at: '2026-11-18T16:43:44Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

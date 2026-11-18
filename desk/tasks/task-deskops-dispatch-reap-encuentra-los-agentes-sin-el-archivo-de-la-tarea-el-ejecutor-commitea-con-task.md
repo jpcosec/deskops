@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T16:04:19Z'
+  at: '2026-11-18T16:43:44Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task
 status: draft
 summary: ''
@@ -40,7 +40,7 @@ Un reap encolado después del cierre detiene y borra los agentes de la tarea igu
 
 _State what is in scope and what is out of scope._
 
-En alcance: (a) dispatch.reap identifica los agentes por la etiqueta deskops.task_id; si el TaskDoc ya no está, usa el id de la tarea (hash de deskops.task_id calculado del id) y sigue, sin fallar. (b) El prompt.md que escribe dispatch start para el rol executor termina con la instrucción de commitear con rutas nombradas (nunca git add -A ni -u sobre el árbol, porque puede haber trabajo ajeno sin commitear) y el trailer Task-Id: <id>, sin push, antes de deskops advance. (c) El prompt.md del rol tester pide solo los tests de los archivos del diff del commit del ejecutor y escribir result-summary.md con veredicto PASA o FALLA; nombra que la suite completa la corre integrate. Fuera de alcance: cambiar la cola o integrate.
+En alcance: (a) dispatch.reap (deskops/dispatch.py, def reap) hoy calcula la etiqueta con scion_child_identity(task_path, ...), que lee el TaskDoc, y por eso falla si la tarea ya se cerró. Debe calcularla con _scion_task_label(task_id) (deskops/runtime/scion.py:224: 't-' + los primeros 61 hex de sha256(task_id)), que no lee archivos. El resto de reap no cambia: mismo criterio de terminado (phase, activity, result-summary.md), stop y después delete por agente, 'vivo' y rc 4 si queda alguno vivo. Si un stop o un delete de scion falla, imprime '<nombre> <rol> error:<código>' y sigue con el siguiente agente; ese caso también da rc distinto de 0. (b) El prompt.md que escribe dispatch start para el rol executor termina con estas instrucciones: commitear solo los archivos que el ejecutor cambió para la tarea, nombrados uno por uno (los mismos que lista en result-summary.md), nunca git add -A, git add -u sobre todo el árbol ni git stash, porque puede haber trabajo ajeno sin commitear; mensaje con el trailer 'Task-Id: <id de la tarea>'; sin push; y recién después deskops advance task. (c) El prompt.md del rol tester le dice cómo ubicar el trabajo: 'git log -1 --format=%H --grep "Task-Id: <id>"' da el commit del ejecutor y 'git show --name-only <commit>' sus archivos. Los tests a correr son los archivos tests/*.py de ese commit, más tests/test_<módulo>.py cuando exista para cada módulo de código tocado; de a uno, con TMPDIR=/tmp. El tester escribe result-summary.md con veredicto PASA o FALLA en la primera línea, y el prompt aclara que la suite completa la corre integrate en el host. Fuera de alcance: cambiar la cola o integrate.
 
 ## Implementation Path
 
