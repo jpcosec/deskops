@@ -1,20 +1,32 @@
+Task: task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii
+Title: Los git que deskops parsea usan core.quotepath=false y los ids nuevos se pliegan a ASCII
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-18T21:27:03Z'
+  at: '2026-11-18T20:17:51Z'
   authority: generated
   via: save_document_payload
 id: task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii
-status: ready_for_testing
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-closeout
+current_node: ritual-testing
 history:
 - task_activates
-- task_hands_to_closeout
 references:
 - desk/inbox/inbox-note-nombres-de-tarea-con-acentos-git-cita-las-rutas-y-el-hook-de-wt-las-rechaza.md
 - desk/inbox/20261118-154919-unclear-queue-20261118t184427z-integrate-task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vac-a-el-path-de-los-modelos-en-sldb-core-mode.md
@@ -36,7 +48,6 @@ inherit_acceptance_context: false
 atoms:
 - atom-code-changes-close-with-tests-and-commit
 - atom-cli-mutation-testing-uses-sandbox-desk-roots
-- atom-los-ids-que-deskops-deriva-de-un-título-se-pliegan-a-ascii-y-los-ids-existentes-con-tilde-siguen-val
 ---
 
 # Los git que deskops parsea usan core.quotepath=false y los ids nuevos se pliegan a ASCII
@@ -79,3 +90,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 tests/test_ascii_ids.py pasa; `grep -rn quotepath deskops/` muestra la opcion en las llamadas git parseadas; los ids acentuados existentes siguen resolviendo; suite sin fallas nuevas.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

@@ -1,0 +1,37 @@
+name: review-task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii-evidence-materialization-2
+path: desk/reviews/task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii/evidence-materialization-2.md
+source_hash: a1a1abbb68ed07f7417276c26bab9f91ebf0d81257f933dc215316fdc73021fd
+content_hash: d912e58241ab6031634ae53eb19d9d30671982de239ee35dd222419672df2666
+field_hashes:
+  id: 5e0acd229348ae78304ece05ef47672e0110e730fb933ddf34b82d153d52f1d3
+  title: 6f57b599d620be15548ac9fbba3fd5e71f8de54abe28a4c544023a92026774b4
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 8f9dd9cac909eaae66dff1e7cfbf344e52dac3c83fc0acc00652077f954b794c
+  subject: 65b52d317ed179c8ec586acef68a03c833e203fb2a20bb2723e24c5db70a521d
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: e5c5f731195cf60ec1973a6d41bf980cf31582c92a7475d8e116736fe9eb9a01
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 4deccae6493656484e3d0f6aaa498237be632f9ab2022de7a93d7c68a35c6517
+  created_at: bc5e98acedd8a9757e3d09ff12c00b1d3f79320adf86256366b9ff40117e1e00
+  disposed_at: bc5e98acedd8a9757e3d09ff12c00b1d3f79320adf86256366b9ff40117e1e00
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 3d76d8b2dc050b6a5deb63810bd0bebb709938fc3a5d51352baa2f0c6854fa9f
+  disposition: f2d935ccd8b60c9f70e439976b0af926fe16446b10b88791478d2a08450eabb7
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T21:27:18Z'
+  authority: generated
+  via: create_document

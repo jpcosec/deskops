@@ -1,0 +1,13 @@
+== current HEAD (af79c143 in main) ==
+Error: 1 validation error for AtomDoc
+id
+  Value error, atom id must follow slug convention atom-<slug>: atom-en-deskops-el-store-de-sldb-se-versiona-entero-y-solo-la-caché-se-ignora [type=value_error, input_value='atom-en-deskops-el-store...olo-la-caché-se-ignora', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/value_error
+exit=1
+
+== clean worktree origin/main (708a92fe) ==
+Atom: atom-en-deskops-el-store-de-sldb-se-versiona-entero-y-solo-la-caché-se-ignora
+Title: En deskops el store de sldb se versiona entero y solo la caché se ignora
+five_wh_one_plus: what
+answer: La regla del dueño vigente para el layout de sldb en deskops: .sldb/store.yaml y todo .sldb/core/ se versionan en git (el pasado del store se lee del historial), .sldb_cache/ es regenerable y se ignora, y nada de .sldb/runtime/ se trackea. tests/test_gitignore_policy.py hace cumplir esa política leyendo .gitignore y el índice de git. Un test que espere .sldb/core ignorado quedó viejo frente a la migración de layout y se ajusta el test, no la política.
+exit=0

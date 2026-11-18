@@ -1,0 +1,8 @@
+$ cd deskops && TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_ascii_ids.py
+exit 1: No module named pytest (../.venv is built for python3.12; host only has /usr/bin/python3.13, site-packages not on path)
+$ PYTHONPATH=../.venv/lib/python3.12/site-packages python3 -m pytest -q tests/test_ascii_ids.py
+exit 2: ImportError pydantic_core (compiled for 3.12)
+$ python3 -m py_compile <changed files + tests/test_ascii_ids.py>
+exit 0
+$ python3 (ascii_slug('Transacción ñandú über')) -> transaccion-nandu-uber
+Tests NOT run: no usable Python 3.12 interpreter in this container.

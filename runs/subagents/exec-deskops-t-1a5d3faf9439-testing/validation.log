@@ -1,0 +1,41 @@
+Tester: deskops-t-1a5d3faf9439
+Task: task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii
+Executor commit: af79c143553a6ef94d45e1b29c3d746bc511605e (HEAD e5c28661)
+
+Environment: /dev/shm/t311/bin/python (Python 3.11.2, pytest 9.2.0), PYTHONPATH=deskops:sldb/src, TMPDIR=/tmp
+(The repo .venv points at a missing /usr/bin/python3.12 in this container.)
+
+Commands and results (each file run separately):
+- pytest -q tests/test_ascii_ids.py                          -> 5 passed
+- pytest -q tests/test_integrate.py                          -> 19 passed (alone)
+- pytest -q tests/test_specs.py                              -> 5 passed
+- pytest -q tests/test_add_task_from_drawer.py               -> 3 passed
+- pytest -q tests/test_closeout.py                           -> 73 passed
+- pytest -q tests/test_cli.py                                -> 102 passed
+- pytest -q tests/test_closeout_evidence_receipts.py         -> 5 passed
+- pytest -q tests/test_transaction.py                        -> 11 passed
+- pytest -q tests/test_closeout_resolved_by.py               -> 25 passed
+- pytest -q tests/test_tracked_selector_resolution.py        -> 15 passed
+- pytest -q tests/test_taskdoc_read_without_overlay.py       -> 1 passed
+
+Note: an initial run of test_integrate.py while two other pytest processes were running concurrently
+reported 2 failures in cleanup assertions (test_failing_suite_stops_before_any_push and
+test_a_tip_already_on_the_remote_is_a_noop). Both tests passed when rerun alone, and the whole
+test_integrate.py passed alone. They were not reproducible; no baseline difference.
+
+Manual checks:
+- grep -rn quotepath deskops/: present in deskops/integrate.py:_run and
+  deskops/services/closure.py:_git/_git_knows. Other literal git calls either do not parse path
+  output (rm/add/commit/cat-file/check-ignore/rev-parse/merge-base) or use -z (atoms.py).
+- ClosureService._git status on an untracked '.sldb/nota-decisión-añadida.md' returns the raw
+  UTF-8 path (no octal escapes) and _git_knows finds it once staged.
+- deskops show task of an explicitly created accented id resolves (covered by test_ascii_ids).
+
+BLOCKING FAILURE:
+Existing accented AtomDoc ids no longer resolve. doc_access.slugify (now ascii_slug) is also used by
+deskops/models/atom.py:check_slug_id, so validation rejects the committed ids.
+See logs/accented-atom-regression.log:
+- current code: deskops show atom 'atom-en-deskops-el-store-de-sldb-se-versiona-entero-y-solo-la-caché-se-ignora' -> exit 1, pydantic value_error
+- origin/main worktree: same command -> exit 0, atom displayed
+There are 8 committed atom ids with accents under desk/atoms (plus protoatoms use the same check).
+This violates goal (3): existing ids with accents must keep resolving and must not be renamed/migrated.
