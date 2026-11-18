@@ -616,6 +616,62 @@ resolved-by` for work that already entered the history (for example through a
 PR) before the closeout, `closeout supersede` when the task's subject no longer
 exists, and `closeout retire` for a task resolved before the ritual lifecycle.
 
+## Host queue
+
+Post-hooks run wherever `deskops advance task` runs, which can be a container
+without the host's test lock, memory control or push credentials. Heavy work
+(the full suite, integration, push) is therefore enqueued by the hook and run
+on the host, one job at a time, by `deskops queue run`.
+
+Declare job kinds in `desk/config.json`:
+
+```json
+{
+  "queue_jobs": {
+    "full-suite": {"run": ["sh", "-c", "pytest -q"], "timeout": 3600}
+  },
+  "queue_min_available_gb": 8,
+  "queue_max_psi_avg60": 10
+}
+```
+
+- `queue_jobs` maps a kind to `{"run": [argv...], "timeout": seconds}`. `run` is
+  executed without a shell, from the repository root; `timeout` is an integer
+  above zero and defaults to 3600. The default map is empty.
+- `queue_min_available_gb` (default 8) and `queue_max_psi_avg60` (default 10)
+  are the memory gates: `queue run` leaves the job pending and prints
+  `en espera: ...` when `MemAvailable` is below the first or the `some avg60`
+  of `/proc/pressure/memory` is at or above the second.
+
+The queue lives in `runs/queue/{pending,running,done,failed,logs}` (run output,
+not tracked in the store). A job is `<UTC timestamp>-<kind>-<task id>.json`.
+
+```bash
+deskops queue add full-suite --task <task-id> --transition <relation> --root .
+deskops queue run --root .          # at most one job
+deskops queue run --all --root .    # until empty or a job fails
+deskops queue list --root . --format json
+```
+
+- `queue add` takes `--task` and `--transition` from `DESKOPS_TASK_ID` and
+  `DESKOPS_TRANSITION` when they are not given (the variables post-hooks
+  receive). An undeclared kind, or a missing task id, exits 2.
+- `queue run` takes an exclusive lock on `runs/queue/run.lock`; if another
+  `queue run` holds it, it prints `ocupado: otro queue run en curso` and exits 0.
+  It then fails jobs left in `running` by a dead run (`interrupted: true`),
+  and prints `sin trabajos` when nothing is pending. The job gets
+  `DESKOPS_ROOT`, `DESKOPS_TASK_ID`, `DESKOPS_TRANSITION`, `DESKOPS_JOB_ID` and
+  `DESKOPS_JOB_KIND`; its output goes to `logs/<id>.log`. Exit 0 moves the job to
+  `done`; any other code or a timeout moves it to `failed`, leaves an
+  `unclear` inbox note titled `queue: <id>`, and `queue run` exits 1.
+- `queue list` shows the jobs grouped by state.
+
+A post-hook that enqueues (in the lifecycle hook declaration):
+
+```yaml
+run: [deskops, queue, add, full-suite, --root, .]
+```
+
 ## Closeout
 
 A task's type declares the evidence that closes it (`task.code`: tests + commit + atom|materialization; `task.docs` and `task.decision`: commit + document; `task.external`: external; `task.aggregate`: children + commit; `task.refactor`: task.code's evidence plus goldens). `--evidence` only adds kinds to the type's, never removes one. `deskops closeout verify`

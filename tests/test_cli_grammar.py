@@ -21,6 +21,7 @@ TOP_LEVEL_GRAMMAR: dict[str, frozenset[str]] = {
             "promote",
             "bind",
             "message",
+            "queue",
             "graph",
             "drift",
             "runtime",

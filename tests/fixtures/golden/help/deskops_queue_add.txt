@@ -1,0 +1,15 @@
+usage: deskops queue add [-h] [--task TASK] [--transition TRANSITION]
+                         [--root ROOT]
+                         kind
+
+Enqueue one job of a kind declared in queue_jobs.
+
+positional arguments:
+  kind                  Job kind declared in desk/config.json queue_jobs
+
+options:
+  -h, --help            show this help message and exit
+  --task TASK           Task id; defaults to $DESKOPS_TASK_ID
+  --transition TRANSITION
+                        Transition relation; defaults to $DESKOPS_TRANSITION
+  --root ROOT           Target repository root.

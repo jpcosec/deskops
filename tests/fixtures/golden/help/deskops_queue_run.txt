@@ -1,0 +1,8 @@
+usage: deskops queue run [-h] [--all] [--root ROOT]
+
+Run at most one pending job (all of them with --all).
+
+options:
+  -h, --help   show this help message and exit
+  --all        Keep running until the queue is empty or a job fails
+  --root ROOT  Target repository root.

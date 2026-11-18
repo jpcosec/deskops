@@ -702,6 +702,50 @@ read/ack selector: filename, stem, or unique slug fragment.
             mutates=True,
         ),
         Command(
+            path=("queue",),
+            help="Enqueue and run heavy host jobs from the repo's runs/queue.",
+            args=(),
+            handler="deskops.queue:QueueCLI",
+            mutates=True,
+            epilog="""
+Examples:
+  deskops queue add full-suite --task task-x --transition task_hands_to_closeout --root .
+  deskops queue run --root .
+  deskops queue list --root . --format json
+""".strip(),
+            raw_text=True,
+            subcommand_dest="queue_command",
+        ),
+        Command(
+            path=("queue", "add"),
+            help="Enqueue one job of a kind declared in queue_jobs.",
+            args=(
+                A("kind", help="Job kind declared in desk/config.json queue_jobs"),
+                A("--task", default=None, help="Task id; defaults to $DESKOPS_TASK_ID"),
+                A("--transition", default=None, help="Transition relation; defaults to $DESKOPS_TRANSITION"),
+                ROOT_ARG,
+            ),
+            handler="deskops.queue:QueueCLI",
+            mutates=True,
+        ),
+        Command(
+            path=("queue", "run"),
+            help="Run at most one pending job (all of them with --all).",
+            args=(
+                A("--all", action="store_true", help="Keep running until the queue is empty or a job fails"),
+                ROOT_ARG,
+            ),
+            handler="deskops.queue:QueueCLI",
+            mutates=True,
+        ),
+        Command(
+            path=("queue", "list"),
+            help="List queued jobs grouped by state.",
+            args=(ROOT_ARG, OUTPUT_FORMAT_ARG),
+            handler="deskops.queue:QueueCLI",
+            mutates=False,
+        ),
+        Command(
             path=("review",),
             help="Run and dispose cold context reviews (node, preflight, bundle, status, dispose).",
             args=(),

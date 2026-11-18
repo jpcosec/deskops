@@ -20,6 +20,11 @@ class VersionExpectations(BaseModel):
     model_version: str = "1.0.0"
 
 
+class QueueJob(BaseModel):
+    run: list[str] = Field(min_length=1, description="argv executed without a shell")
+    timeout: int = Field(default=3600, gt=0, description="Seconds before the job is killed")
+
+
 class DeskConfig(BaseModel):
     project_identity: str = Field(default="unknown-project", description="Canonical project desk identity")
     versions: VersionExpectations = Field(default_factory=VersionExpectations)
@@ -28,6 +33,12 @@ class DeskConfig(BaseModel):
         default=None,
         description="Tag namespace used as the physical folder axis for atoms under desk/atoms/. Null keeps flat layout.",
     )
+    queue_jobs: dict[str, QueueJob] = Field(
+        default_factory=dict,
+        description="Host queue job kinds: kind -> {run: argv, timeout: seconds}.",
+    )
+    queue_min_available_gb: int = Field(default=8, description="Minimum MemAvailable (GB) to start a queued job.")
+    queue_max_psi_avg60: float = Field(default=10, description="Memory PSI some avg60 at or above which jobs wait.")
     load_warnings: list[str] = Field(default_factory=list, exclude=True)
 
     @property

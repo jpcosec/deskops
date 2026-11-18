@@ -1,0 +1,17 @@
+usage: deskops queue [-h] {add,run,list} ...
+
+Enqueue and run heavy host jobs from the repo's runs/queue.
+
+positional arguments:
+  {add,run,list}
+    add           Enqueue one job of a kind declared in queue_jobs.
+    run           Run at most one pending job (all of them with --all).
+    list          List queued jobs grouped by state.
+
+options:
+  -h, --help      show this help message and exit
+
+Examples:
+  deskops queue add full-suite --task task-x --transition task_hands_to_closeout --root .
+  deskops queue run --root .
+  deskops queue list --root . --format json
