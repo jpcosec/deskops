@@ -1868,11 +1868,11 @@ the dir is a finding with the commit's own text and the report is not ok.
                 A("--task-repo", default=None, help="Repository under /workspace the agent may write to; named in agents.md."),
                 A(
                     "--mode",
-                    choices=("executor", "coordinator", "tester"),
+                    choices=("executor", "coordinator", "tester", "specialist"),
                     default=None,
                     help=(
-                        "Which agents.md to write: executor (one bounded task), tester (independent verification) "
-                        "or coordinator (owns a desk). Default: by the selected role's name/id; an explicit mode wins."
+                        "Which agents.md to write: executor (one bounded task), tester (independent verification), "
+                        "specialist (leaves the sldb store clean) or coordinator (owns a desk). Default: by the selected role's name/id; an explicit mode wins."
                     ),
                 ),
                 A(

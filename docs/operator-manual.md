@@ -578,6 +578,22 @@ attributes:
     timeout: 60                                    # optional, integer seconds above zero (default 300)
 ```
 
+A hook can also only queue work for the coordinator. `encola-especialista-de-store` on the
+`testing-task_hands_to_closeout` transition appends one line, `<UTC ISO date> <task id>`, to
+`runs/hooks/store-specialist.queue`:
+
+```yaml
+hooks:
+- name: encola-especialista-de-store
+  run: [sh, -c, 'mkdir -p runs/hooks && printf "%s %s\n" "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" >> runs/hooks/store-specialist.queue']
+  timeout: 30
+```
+
+The hook only enqueues. The coordinator dispatches the specialist with
+`deskops runtime template sldb-store-specialist --mode specialist` and `scion start`, following the
+coordinator's `scion start` recipe (in the coordinator's agents.md); the specialist leaves the store clean
+and notes what it cannot fix mechanically.
+
 Each hook runs from the desk root with `DESKOPS_ROOT`, `DESKOPS_TASK_ID`,
 `DESKOPS_TRANSITION` (the relation type), `DESKOPS_FROM_NODE` and `DESKOPS_TO_NODE` in its
 environment. One log per advance, `runs/hooks/<task id>/<relation type>-<YYYYMMDDTHHMMSSZ>.log`,
@@ -1082,7 +1098,7 @@ deskops runtime template deskops-tester --root . --harness claude \
 `runtime template` needs no live Herdr Space: it writes the template files from
 the role and runtime-profile docs. `--mode executor` writes the agents.md for one
 bounded task, `--mode tester` writes the independent verification instructions,
-and `--mode coordinator` writes it for an agent that owns a desk. An explicit
+`--mode specialist` writes the store-cleaning instructions (a name or id ending in `-specialist` chooses it), and `--mode coordinator` writes it for an agent that owns a desk. An explicit
 mode always wins; otherwise only the selected role's own name/id is inspected
 (a name or id ending in `-tester` chooses tester; a selected name or id naming a
 supervisor/coordinator chooses coordinator; anything else executor). With

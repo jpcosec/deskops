@@ -3,7 +3,7 @@ usage: deskops runtime template [-h] [--root ROOT] [--harness HARNESS]
                                 [--model-alias {small,medium,large,extra-large}]
                                 [--harness-auth {api-key,oauth-token,auth-file,vertex-ai}]
                                 [--task-repo TASK_REPO]
-                                [--mode {executor,coordinator,tester}]
+                                [--mode {executor,coordinator,tester,specialist}]
                                 [--context-file CONTEXT_FILE] [--task TASK]
                                 [--agent AGENT] [--task-root TASK_ROOT]
                                 [--run-dir RUN_DIR]
@@ -34,11 +34,12 @@ options:
   --task-repo TASK_REPO
                         Repository under /workspace the agent may write to;
                         named in agents.md.
-  --mode {executor,coordinator,tester}
+  --mode {executor,coordinator,tester,specialist}
                         Which agents.md to write: executor (one bounded task),
-                        tester (independent verification) or coordinator (owns
-                        a desk). Default: by the selected role's name/id; an
-                        explicit mode wins.
+                        tester (independent verification), specialist (leaves
+                        the sldb store clean) or coordinator (owns a desk).
+                        Default: by the selected role's name/id; an explicit
+                        mode wins.
   --context-file CONTEXT_FILE
                         JSON with project, workspace_root, desk_root,
                         source_root and sldb_root; emits DESKOPS_*

@@ -233,8 +233,8 @@ def scion_child_identity(task_path: str | Path, role: str, attempt: int = 1) -> 
     refused. This helper derives identity only; it does not start anything.
     """
     role_name = str(role).strip().lower()
-    if role_name not in {"executor", "tester"}:
-        raise ValueError(f"role must be executor or tester, got '{role}'")
+    if role_name not in {"executor", "tester", "specialist"}:
+        raise ValueError(f"role must be executor, tester or specialist, got '{role}'")
     if isinstance(attempt, bool) or not isinstance(attempt, int) or attempt not in {1, 2}:
         raise ValueError(f"attempt must be 1 or 2, got {attempt!r}")
 
@@ -246,7 +246,7 @@ def scion_child_identity(task_path: str | Path, role: str, attempt: int = 1) -> 
         raise ValueError(f"cannot read task {path}: {exc}") from exc
     contract_sha256 = task_contract_sha256(markdown)
     digest = hashlib.sha256(f"{task_id}\0{contract_sha256}\0{role_name}".encode("utf-8")).hexdigest()[:12]
-    prefix = "deskops-e" if role_name == "executor" else "deskops-t"
+    prefix = {"executor": "deskops-e", "tester": "deskops-t", "specialist": "deskops-s"}[role_name]
     name = f"{prefix}-{digest}" + ("-a2" if attempt == 2 else "")
     return {
         "name": name,
@@ -369,7 +369,7 @@ def scion_template_files(
     ``source`` is a human-readable provenance line (role path + runtime path)
     written at the top of ``scion-agent.yaml``. ``mode`` picks the
     ``agents.md``: ``executor`` (one bounded task), ``tester`` (independent
-    verification) or ``coordinator`` (owns a desk); by default the selected
+    verification), ``specialist`` (leaves the sldb store clean) or ``coordinator`` (owns a desk); by default the selected
     role's own name/id decides, and an explicit mode always wins.
 
     ``context`` is the optional five-key Scion runtime context. Omitted, the
@@ -377,8 +377,8 @@ def scion_template_files(
     corrected intentionally rather than kept byte-identical. Supplied, it adds
     the DESKOPS_* environment, a workspace volume and concrete command paths.
     """
-    if mode not in (None, "executor", "coordinator", "tester"):
-        raise ValueError(f"mode must be executor, coordinator or tester, got '{mode}'")
+    if mode not in (None, "executor", "coordinator", "tester", "specialist"):
+        raise ValueError(f"mode must be executor, coordinator, tester or specialist, got '{mode}'")
     if harness_auth is not None and harness_auth not in HARNESS_AUTH_TYPES:
         raise ValueError(f"harness auth must be one of {HARNESS_AUTH_TYPES}, got '{harness_auth}'")
     if model_alias not in MODEL_SIZE_ALIASES:
@@ -394,6 +394,8 @@ def scion_template_files(
         resolved_mode = mode
     elif role_name.endswith("-tester") or role_id.endswith("-tester"):
         resolved_mode = "tester"
+    elif role_name.endswith("-specialist") or role_id.endswith("-specialist"):
+        resolved_mode = "specialist"
     elif (
         "supervisor" in role_name
         or "coordinator" in role_name
@@ -493,6 +495,8 @@ def scion_template_files(
         )
     elif resolved_mode == "tester":
         agents_md = _render_tester_agents_md(role_name, harness, task_repo, runtime_context)
+    elif resolved_mode == "specialist":
+        agents_md = _render_specialist_agents_md(role_name, harness, task_repo, runtime_context)
     else:
         agents_md = _render_agents_md(role_name, harness, task_repo, runtime_context)
     return {"scion-agent.yaml": agent_yaml, "system-prompt.md": system_prompt, "agents.md": agents_md}
@@ -704,6 +708,73 @@ def _render_tester_agents_md(
         "  your evidence and a passing independent test.\n"
         "- Say you are done with `sciontool status task_completed \"<one-line pass/fail summary>\"`: Scion wakes the\n"
         "  coordinator on that status.\n"
+        f"\nProject: `{project}`. Runtime: `{harness}`.\n"
+    )
+
+
+def _render_specialist_agents_md(
+    role_name: str,
+    harness: str,
+    task_repo: str | None,
+    context: dict[str, str] | None,
+) -> str:
+    """Store-cleaning specialist: mechanical sldb repairs only, notes for the rest."""
+    _workspace, desk_root, _source_root, project = _example_roots(task_repo, context)
+    return (
+        f"# {role_name}: sldb store specialist on Scion ({harness})\n"
+        "\n"
+        "You leave the desk's sldb store clean. You repair only mechanical findings and report the rest.\n"
+        "\n"
+        "## Scope\n"
+        "\n"
+        f"- Work from the desk root `{desk_root}` (`DESKOPS_DESK_ROOT`): `cd {desk_root}` first.\n"
+        "- Use exactly the run_dir the coordinator wrote in your start prompt; never invent a different\n"
+        "  timestamp directory. Create it if missing.\n"
+        "\n"
+        "## 1. Check\n"
+        "\n"
+        "```bash\n"
+        f"cd {desk_root}\n"
+        "RUN_DIR=<run_dir from the start prompt>; mkdir -p \"$RUN_DIR\"\n"
+        "sldb stores check --store .sldb --format json > \"$RUN_DIR/stores-check-before.json\"\n"
+        "deskops doctor --root . > \"$RUN_DIR/doctor-before.txt\"\n"
+        "```\n"
+        "\n"
+        "## 2. Repair (only these four commands define \"mechanical\")\n"
+        "\n"
+        "- `sldb docs track <path>`: a Markdown file under `desk/` the check reports as unregistered.\n"
+        "- `sldb docs update <path>`: a registered document whose file changed outside the CLI. It registers the\n"
+        "  file as it is; you never change its text.\n"
+        "- `sldb docs untrack <id>`: an indexed document whose file no longer exists.\n"
+        "- `sldb stores rebuild-index --store .sldb`: the check reports a stale derived index.\n"
+        "\n"
+        "## 3. Everything else: leave a note, touch nothing\n"
+        "\n"
+        "Any finding those four commands do not fix (lost anchors included, and anything that would need you to\n"
+        "change a document's text) is not touched. Send one note per finding:\n"
+        "\n"
+        "```bash\n"
+        "deskops message send \"<finding verbatim and affected document>\" --kind unclear \\\n"
+        "  --title \"store: <document id, or file path if it has no id>\" --root .\n"
+        "```\n"
+        "\n"
+        "## 4. Re-check and report\n"
+        "\n"
+        "```bash\n"
+        "sldb stores check --store .sldb --format json > \"$RUN_DIR/stores-check-after.json\"\n"
+        "```\n"
+        "\n"
+        "Write `$RUN_DIR/result-summary.md` with: findings before, commands run, findings after, notes sent.\n"
+        "\n"
+        "## Forbidden\n"
+        "\n"
+        "- Editing files by hand, touching code or tests.\n"
+        "- `git commit` and `git add`: changes stay uncommitted for the coordinator.\n"
+        "- `deskops closeout` and `deskops advance task`.\n"
+        "\n"
+        "## Completion\n"
+        "\n"
+        "- Say you are done with `sciontool status task_completed \"<one-line summary>\"`.\n"
         f"\nProject: `{project}`. Runtime: `{harness}`.\n"
     )
 

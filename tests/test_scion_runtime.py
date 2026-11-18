@@ -692,3 +692,39 @@ def test_native_labels_fit_scion_without_changing_canonical_identity(tmp_path, t
         assert labels["deskops.task_id"] == "t-" + hashlib.sha256(task_id.encode()).hexdigest()[:61]
     expected = hashlib.sha256(f"{task_id}\0{identity['contract_sha256']}\0executor".encode()).hexdigest()[:12]
     assert identity["name"] == "deskops-e-" + expected
+
+
+def test_specialist_mode_writes_the_three_files_with_the_repair_contract(tmp_path: Path, capsys) -> None:
+    out_dir = tmp_path / "t"
+    code = main([
+        "runtime", "template", "role-deskops-executor", "--root", str(ROOT), "--harness", "claude",
+        "--mode", "specialist", "--out", str(out_dir),
+    ])
+    assert code == 0, capsys.readouterr().out
+    assert sorted(p.name for p in out_dir.iterdir()) == sorted(TEMPLATE_FILES)
+    agents = (out_dir / "agents.md").read_text(encoding="utf-8")
+    for needle in (
+        "sldb stores check", "deskops doctor", "sldb docs track", "sldb docs update",
+        "sldb docs untrack", "sldb stores rebuild-index", "deskops message send",
+    ):
+        assert needle in agents
+    forbidden = agents.split("## Forbidden", 1)[1].split("## Completion", 1)[0]
+    assert "deskops closeout" in forbidden and "deskops advance task" in forbidden
+    assert "You are a deskops executor" not in agents
+
+
+def test_specialist_role_name_resolves_the_mode_and_unknown_mode_still_fails() -> None:
+    profiles = load_runtime_profiles(ROOT)
+    role = {"id": "role-x", "name": "x-specialist", "description": "d", "kind": "claude", "body": "# s"}
+    files = scion_template_files(role, profiles["claude"], harness="claude")
+    assert "sldb store specialist" in files["agents.md"]
+    by_id = {"id": "role-x-specialist", "name": "x", "description": "d", "kind": "claude", "body": "# s"}
+    assert "sldb store specialist" in scion_template_files(by_id, profiles["claude"], harness="claude")["agents.md"]
+    with pytest.raises(ValueError, match="mode must be"):
+        scion_template_files(role, profiles["claude"], harness="claude", mode="bogus")
+
+
+def test_specialist_identity_uses_the_s_prefix(tmp_path: Path) -> None:
+    identity = scion_child_identity(_write_task(tmp_path, "task"), "specialist")
+    assert re.fullmatch(r"deskops-s-[0-9a-f]{12}", identity["name"])
+    assert identity["role"] == "specialist"
