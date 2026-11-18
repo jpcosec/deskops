@@ -1,0 +1,37 @@
+name: review-task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task-preflight-2
+path: desk/reviews/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task/preflight-2.md
+source_hash: 3e6985b634b8eb54d30c60e6c0e5c09e910fe3d567ff31cf829dfca86a120498
+content_hash: 2282d4ff7f12a7077d5675ead0fbd49c1e57b3184b2191c10f6e235194c95e10
+field_hashes:
+  id: 947a61d98c0cc9d65f20182c994d907c2b41b94e6c68b16218451bc0556fdf06
+  title: 00a21c74158e3495df3cb66e42ad33c27dcefd87159ae1c6c8c8759d93214fce
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 39913fb66f6048c5267fbbb7082f71ce2e4fe45cb18fd177a9125fce41944181
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 511da6992a581b3255f57bf4db29dd6f1dc6ca03982e670f644db8aa8579d9ba
+  input_sha256: 2b06104230425767597dfd49cfb8d877f092cd01bb0d7734897cf8eb89815b77
+  contract_sha256: 85e230b5457d7ae7b1a959eb0d7b91ef3fba7b33dac1d45d095f18578f4970b0
+  output_sha256: 96b6819af8a5be7d1bb44a561160d60a5dd3c96a174e55341992db40153ec7dd
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: bca6232d869b1247777e867f00e8f05a67815cc9fb34d28f3620840f73beec13
+  created_at: 6822da8e339083ee780ba82c4680dbea6656bf1eeef2663ca54ae034ca5eff93
+  disposed_at: 5afe470f1e4d0ff1095f370ab5286f63c2c5efbdf25c0c21c1a24f054fca24e2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 68845922d1985e89d05d4d7c9ace99397e38ed5743364d147b6c87f883114423
+  disposition: 96c33909009c3c0d8e73b421d8fa838fa3d62b1bc4adbca6a1a19027016d5277
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T16:44:47Z'
+  authority: generated
+  via: save_document_payload
