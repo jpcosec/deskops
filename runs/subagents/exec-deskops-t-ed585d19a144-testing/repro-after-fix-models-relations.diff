@@ -1,0 +1,36 @@
+diff --git a/.sldb/core/models/RelationDoc.yaml b/.sldb/core/models/RelationDoc.yaml
+index a3fee1cf..29871bb9 100644
+--- a/.sldb/core/models/RelationDoc.yaml
++++ b/.sldb/core/models/RelationDoc.yaml
+@@ -3,10 +3,10 @@ model_ref: sldb.models.relation_doc:RelationDoc
+ path: /home/jp/proyectos/SLDB_1/sldb/src/sldb/models/relation_doc.py
+ documents_index: .sldb/core/documents/RelationDoc.yaml
+ sections_index: .sldb/runtime/sections/RelationDoc.yaml
+-model_hash: 3dc97b1e3949e4114fb020688ae97c4afa26fbd6295ae3f0c8aef08ff4fe0f2f
+-roster_hash: 6fc3874b40ae6f11d12b0a0e52d32fb7bbf07aba53e72f470506b555710898e4
++model_hash: 22d02687e0db73a5a28a27d31ea44bf07ba617d324eb48159c593738fc33d5f5
++roster_hash: 911fc2db6f4bf443f918ef8d3543bf6908ec5372d369abed0322a12fbdd44cd9
+ contract_hash: a71cc04505ddc23c00b8a9ff917e000e955fe11de68ddbaeb08da2bb1e68c9a6
+-documents_count: 3
++documents_count: 4
+ version: 1
+ canonical: false
+ family: relation
+diff --git a/.sldb/core/models/RelationTypeDoc.yaml b/.sldb/core/models/RelationTypeDoc.yaml
+index 30c2e400..bf952a19 100644
+--- a/.sldb/core/models/RelationTypeDoc.yaml
++++ b/.sldb/core/models/RelationTypeDoc.yaml
+@@ -3,10 +3,10 @@ model_ref: sldb.models.relation_type_doc:RelationTypeDoc
+ path: /home/jp/proyectos/SLDB_1/sldb/src/sldb/models/relation_type_doc.py
+ documents_index: .sldb/core/documents/RelationTypeDoc.yaml
+ sections_index: .sldb/runtime/sections/RelationTypeDoc.yaml
+-model_hash: 7d1b1b3e7deab627b084f267d6b4d3cfdd16cefbc51d6dabd3fd775b9ff236bb
+-roster_hash: 868ade736dd3b0cba969891109ffb1fc131d03f87580c00d21064162fd544faa
++model_hash: df51350b378be17910293a78d0099602523e63557d0968b828d63062ef6298dc
++roster_hash: b53545edf87190e4b038b5ac91ab9e1e292b3ad8be7b0c59b692332b5d0ef847
+ contract_hash: 57b63063959eb2f0b721697bc626d10bc4d960672ed03fa04f9d0a5e1f499699
+-documents_count: 17
++documents_count: 18
+ version: 1
+ canonical: false
+ family: relation

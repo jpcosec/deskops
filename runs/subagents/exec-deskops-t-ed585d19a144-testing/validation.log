@@ -1,0 +1,57 @@
+# Validation — exec-deskops-t-ed585d19a144-testing
+
+## Work located
+
+No commit with trailer `Task-Id: task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode` exists.
+The executor left its work uncommitted in the working tree (as its own result-summary explains).
+Touched files for this task, verified by diff:
+- deskops/bootstrap.py
+- deskops/cli/commands/desk.py
+- tests/test_desk_sync.py
+- CHANGELOG.md
+
+Unrelated dirty files in the tree were not used as evidence and were not modified.
+
+## Tests (working tree)
+
+Command:
+  cd /mnt/ssd/proyectos/SLDB_1/deskops
+  TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_desk_sync.py
+
+Result: 9 passed, 1 warning, exit 0 (366.68 s).
+Log: pytest-test_desk_sync.log
+
+Extra regression test for the bootstrap/inheritance path touched:
+  TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_federated_models.py
+Result: 2 passed, 1 warning, exit 0 (76.05 s).
+
+Note: `python` is not on PATH in this container; the original sldb venv symlink points to a missing interpreter.
+`/dev/shm/t311/bin/python` is a Python 3.11 venv with pytest and imports deskops from this working tree; this matches the
+environment used by the executor for its own validation.
+
+## Before/after proof for the new test
+
+Before the fix: clean clone of HEAD + only the new test applied
+  TMPDIR=/tmp PYTHONPATH=/tmp/deskops-before-fix:/mnt/ssd/proyectos/SLDB_1/sldb/src \
+    /dev/shm/t311/bin/python -m pytest -q \
+    tests/test_desk_sync.py::test_desk_update_apply_keeps_the_local_path_of_a_declared_model
+
+Result: FAILED, `AssertionError: assert '' == 'deskops/models/role.py'` (log: pytest-before-fix.log).
+
+With the executor fix in the working tree: same test is part of the 9 passed above.
+
+## Clean-clone reproduction after the fix
+
+Clean clone of HEAD + only the executor code fix (deskops/bootstrap.py, deskops/cli/commands/desk.py), then:
+  TMPDIR=/tmp PYTHONPATH=/tmp/deskops-test-before:/mnt/ssd/proyectos/SLDB_1/sldb/src \
+    /dev/shm/t311/bin/python -m deskops desk update --apply --root /tmp/deskops-test-before
+
+Result: exit 0.
+- `git status --porcelain -- .sldb/core/models sldb/relation_types` before: empty.
+- after: only `M .sldb/core/models/RelationDoc.yaml` and `M .sldb/core/models/RelationTypeDoc.yaml`.
+- `git diff -- .sldb/core/models sldb/relation_types | grep -E '^[+-](path:|diff --git)'`: no output.
+  (No model `path:` changed, no `sldb/relation_types` file touched, no `links_to` added.)
+- Lasting changes are lifecycle documents, tag namespaces and the RelationDoc/RelationTypeDoc hashes/counts (normal
+  desk update output), not model paths.
+Evidence: repro-after-fix-update.log, repro-after-fix-models-before.txt, repro-after-fix-models-after.txt,
+repro-after-fix-diff-stat.txt, repro-after-fix-models-relations.diff.

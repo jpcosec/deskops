@@ -1,0 +1,4 @@
+TMPDIR=/tmp PYTHONPATH=/tmp/pt:. /home/scion/.local/share/uv/tools/deskops/bin/python -m pytest -q tests/test_desk_sync.py
+9 passed (exit 0)
+New test without the fix: FAILED (assert "" == "deskops/models/role.py")
+Note: pytest not installed in the deskops tool venv; pytest/pluggy/pygments linked from sldb/.venv site-packages via /tmp/pt.

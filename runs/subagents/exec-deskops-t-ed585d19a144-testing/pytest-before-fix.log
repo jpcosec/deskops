@@ -1,0 +1,63 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_desk_update_apply_keeps_the_local_path_of_a_declared_model ________
+
+tmp_path = PosixPath('/tmp/pytest-of-scion/pytest-4/test_desk_update_apply_keeps_t0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7af3659dd5d0>
+capsys = <_pytest.capture.CaptureFixture object at 0x7af3659a5910>
+
+    def test_desk_update_apply_keeps_the_local_path_of_a_declared_model(tmp_path: Path, monkeypatch, capsys) -> None:
+        """A store that declares a deskops model with a local source path keeps that path."""
+        from deskops.cli.main import main
+    
+        monkeypatch.setattr(SLDBBootstrap, "_deskops_owner_store", lambda self: None)
+        assert main(["init", str(tmp_path)]) == 0
+        source = tmp_path / "deskops" / "models" / "role.py"
+        source.parent.mkdir(parents=True)
+        source.write_text("# local model source\n", encoding="utf-8")
+        store_yaml = tmp_path / ".sldb" / "store.yaml"
+        store = yaml.safe_load(store_yaml.read_text(encoding="utf-8"))
+        for entry in store["models"]:
+            if entry["name"] == "RoleDoc":
+                entry["path"] = "deskops/models/role.py"
+        store_yaml.write_text(yaml.safe_dump(store, sort_keys=False), encoding="utf-8")
+        store_index_path = tmp_path / ".sldb" / "core" / "store_index.yaml"
+        store_index = yaml.safe_load(store_index_path.read_text(encoding="utf-8"))
+        for entry in store_index["models"]:
+            if entry["name"] == "RoleDoc":
+                entry["path"] = "deskops/models/role.py"
+        store_index_path.write_text(yaml.safe_dump(store_index, sort_keys=False), encoding="utf-8")
+        model_path = tmp_path / ".sldb" / "core" / "models" / "RoleDoc.yaml"
+        index = yaml.safe_load(model_path.read_text(encoding="utf-8"))
+        index["path"] = "deskops/models/role.py"
+        model_path.write_text(yaml.safe_dump(index, sort_keys=False), encoding="utf-8")
+    
+        # Another deskops checkout owns the models; this store only declares local copies.
+        owner_root = tmp_path.parent / f"{tmp_path.name}-owner"
+        owner_root.mkdir()
+        monkeypatch.setattr(SLDBBootstrap, "_deskops_owner_store", lambda self: None)
+        assert main(["init", str(owner_root)]) == 0
+        owner = owner_root / ".sldb"
+        monkeypatch.setattr(SLDBBootstrap, "_deskops_owner_store", lambda self: owner)
+        capsys.readouterr()
+    
+        main(["desk", "update", "--root", str(tmp_path), "--apply"])
+        capsys.readouterr()
+    
+        after = yaml.safe_load(model_path.read_text(encoding="utf-8"))
+>       assert after["path"] == "deskops/models/role.py"
+E       AssertionError: assert '' == 'deskops/models/role.py'
+E         
+E         - deskops/models/role.py
+
+tests/test_desk_sync.py:328: AssertionError
+=============================== warnings summary ===============================
+../../dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_desk_sync.py::test_desk_update_apply_keeps_the_local_path_of_a_declared_model
+1 failed, 1 warning in 56.64s

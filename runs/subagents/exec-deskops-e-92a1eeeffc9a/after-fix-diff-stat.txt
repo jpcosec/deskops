@@ -1,0 +1,5 @@
+ .sldb/core/models/RelationDoc.yaml     |  6 +++---
+ .sldb/core/models/RelationTypeDoc.yaml |  6 +++---
+ .sldb/core/store_index.yaml            |  2 +-
+ .sldb/store.yaml                       | 28 ++++++++++++++++++++++++++++
+ 4 files changed, 35 insertions(+), 7 deletions(-)

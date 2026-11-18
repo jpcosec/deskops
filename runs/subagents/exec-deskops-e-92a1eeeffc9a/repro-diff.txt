@@ -1,0 +1,336 @@
+diff --git a/.sldb/core/models/AtomDoc.yaml b/.sldb/core/models/AtomDoc.yaml
+index f8ea2574..91604f00 100644
+--- a/.sldb/core/models/AtomDoc.yaml
++++ b/.sldb/core/models/AtomDoc.yaml
+@@ -1,6 +1,6 @@
+ name: AtomDoc
+ model_ref: deskops.models:AtomDoc
+-path: deskops/models/atom.py
++path: ''
+ documents_index: .sldb/core/documents/AtomDoc.yaml
+ sections_index: .sldb/runtime/sections/AtomDoc.yaml
+ model_hash: 2e2b32139e95d4899d0071efef3a75a8e9448440566fd7a093fa5d7060f9c9e3
+diff --git a/.sldb/core/models/BoardDoc.yaml b/.sldb/core/models/BoardDoc.yaml
+index 90ae59b9..d43db1b6 100644
+--- a/.sldb/core/models/BoardDoc.yaml
++++ b/.sldb/core/models/BoardDoc.yaml
+@@ -1,6 +1,6 @@
+ name: BoardDoc
+ model_ref: deskops.models:BoardDoc
+-path: deskops/models/board.py
++path: ''
+ documents_index: .sldb/core/documents/BoardDoc.yaml
+ sections_index: .sldb/runtime/sections/BoardDoc.yaml
+ model_hash: 548911748a290a869cba6e919a0d5b3c1aec1c5af78ae770b569247b9966924b
+diff --git a/.sldb/core/models/CrossroadDoc.yaml b/.sldb/core/models/CrossroadDoc.yaml
+index 0a184a3a..6ba48c52 100644
+--- a/.sldb/core/models/CrossroadDoc.yaml
++++ b/.sldb/core/models/CrossroadDoc.yaml
+@@ -1,6 +1,6 @@
+ name: CrossroadDoc
+ model_ref: deskops.models:CrossroadDoc
+-path: deskops/models/crossroad.py
++path: ''
+ documents_index: .sldb/core/documents/CrossroadDoc.yaml
+ sections_index: .sldb/runtime/sections/CrossroadDoc.yaml
+ model_hash: ba29f386ac77dd0337746088fa7ff695f737d6eae02441aadb7c36b22b1967a6
+diff --git a/.sldb/core/models/DeskFAQDoc.yaml b/.sldb/core/models/DeskFAQDoc.yaml
+index 3c1d8889..a291da65 100644
+--- a/.sldb/core/models/DeskFAQDoc.yaml
++++ b/.sldb/core/models/DeskFAQDoc.yaml
+@@ -1,6 +1,6 @@
+ name: DeskFAQDoc
+ model_ref: deskops.models:DeskFAQDoc
+-path: deskops/models/faq.py
++path: ''
+ documents_index: .sldb/core/documents/DeskFAQDoc.yaml
+ sections_index: .sldb/runtime/sections/DeskFAQDoc.yaml
+ model_hash: 5bf7fd4278b5d0f1820ac62901e18a0e4baff09a60dcd504951d8a56c3fdf3e9
+diff --git a/.sldb/core/models/InboxNoteDoc.yaml b/.sldb/core/models/InboxNoteDoc.yaml
+index 59e58966..198adb4b 100644
+--- a/.sldb/core/models/InboxNoteDoc.yaml
++++ b/.sldb/core/models/InboxNoteDoc.yaml
+@@ -1,6 +1,6 @@
+ name: InboxNoteDoc
+ model_ref: deskops.models:InboxNoteDoc
+-path: deskops/models/inbox.py
++path: ''
+ documents_index: .sldb/core/documents/InboxNoteDoc.yaml
+ sections_index: .sldb/runtime/sections/InboxNoteDoc.yaml
+ model_hash: 4f2ae6697f86c0eaaad5e81e6e9d7090902a572baa54b4cafab3a7f3d63e4518
+diff --git a/.sldb/core/models/MaterializationContractDoc.yaml b/.sldb/core/models/MaterializationContractDoc.yaml
+index a62de19f..11a12dbb 100644
+--- a/.sldb/core/models/MaterializationContractDoc.yaml
++++ b/.sldb/core/models/MaterializationContractDoc.yaml
+@@ -1,6 +1,6 @@
+ name: MaterializationContractDoc
+ model_ref: deskops.models:MaterializationContractDoc
+-path: deskops/models/materialization.py
++path: ''
+ documents_index: .sldb/core/documents/MaterializationContractDoc.yaml
+ sections_index: .sldb/runtime/sections/MaterializationContractDoc.yaml
+ model_hash: bd6fd86f7d9146119be8772cc051effd3ee413a700627a503eef98188188d4ed
+diff --git a/.sldb/core/models/PillDoc.yaml b/.sldb/core/models/PillDoc.yaml
+index 6a1b7c36..84de922d 100644
+--- a/.sldb/core/models/PillDoc.yaml
++++ b/.sldb/core/models/PillDoc.yaml
+@@ -1,6 +1,6 @@
+ name: PillDoc
+ model_ref: deskops.models:PillDoc
+-path: deskops/models/pill.py
++path: ''
+ documents_index: .sldb/core/documents/PillDoc.yaml
+ sections_index: .sldb/runtime/sections/PillDoc.yaml
+ model_hash: 9aca51eb410ba2547ac51746d31a2621d784aa1c29c655335bad49914eafc76d
+diff --git a/.sldb/core/models/ProtoAtomDoc.yaml b/.sldb/core/models/ProtoAtomDoc.yaml
+index 77a7b21f..6ea1332a 100644
+--- a/.sldb/core/models/ProtoAtomDoc.yaml
++++ b/.sldb/core/models/ProtoAtomDoc.yaml
+@@ -1,6 +1,6 @@
+ name: ProtoAtomDoc
+ model_ref: deskops.models:ProtoAtomDoc
+-path: deskops/models/protoatom.py
++path: ''
+ documents_index: .sldb/core/documents/ProtoAtomDoc.yaml
+ sections_index: ''
+ model_hash: 73c1388c2e7515d9b6f342794d83eeee4589e4409b24d0714d8519db38f142ca
+diff --git a/.sldb/core/models/RelationDoc.yaml b/.sldb/core/models/RelationDoc.yaml
+index a3fee1cf..29871bb9 100644
+--- a/.sldb/core/models/RelationDoc.yaml
++++ b/.sldb/core/models/RelationDoc.yaml
+@@ -3,10 +3,10 @@ model_ref: sldb.models.relation_doc:RelationDoc
+ path: /home/jp/proyectos/SLDB_1/sldb/src/sldb/models/relation_doc.py
+ documents_index: .sldb/core/documents/RelationDoc.yaml
+ sections_index: .sldb/runtime/sections/RelationDoc.yaml
+-model_hash: 3dc97b1e3949e4114fb020688ae97c4afa26fbd6295ae3f0c8aef08ff4fe0f2f
+-roster_hash: 6fc3874b40ae6f11d12b0a0e52d32fb7bbf07aba53e72f470506b555710898e4
++model_hash: 22d02687e0db73a5a28a27d31ea44bf07ba617d324eb48159c593738fc33d5f5
++roster_hash: 911fc2db6f4bf443f918ef8d3543bf6908ec5372d369abed0322a12fbdd44cd9
+ contract_hash: a71cc04505ddc23c00b8a9ff917e000e955fe11de68ddbaeb08da2bb1e68c9a6
+-documents_count: 3
++documents_count: 4
+ version: 1
+ canonical: false
+ family: relation
+diff --git a/.sldb/core/models/RelationTypeDoc.yaml b/.sldb/core/models/RelationTypeDoc.yaml
+index 30c2e400..af9928b1 100644
+--- a/.sldb/core/models/RelationTypeDoc.yaml
++++ b/.sldb/core/models/RelationTypeDoc.yaml
+@@ -3,10 +3,10 @@ model_ref: sldb.models.relation_type_doc:RelationTypeDoc
+ path: /home/jp/proyectos/SLDB_1/sldb/src/sldb/models/relation_type_doc.py
+ documents_index: .sldb/core/documents/RelationTypeDoc.yaml
+ sections_index: .sldb/runtime/sections/RelationTypeDoc.yaml
+-model_hash: 7d1b1b3e7deab627b084f267d6b4d3cfdd16cefbc51d6dabd3fd775b9ff236bb
+-roster_hash: 868ade736dd3b0cba969891109ffb1fc131d03f87580c00d21064162fd544faa
++model_hash: 9d66f8444ffdef9bed8c7a1bd39df0698e38b9715b1b2597d077d0333d7dfc49
++roster_hash: 47a9ca47544cbba332dcd58cb5481e8c3b379a66a6782788eabb28de9a5f9f8e
+ contract_hash: 57b63063959eb2f0b721697bc626d10bc4d960672ed03fa04f9d0a5e1f499699
+-documents_count: 17
++documents_count: 19
+ version: 1
+ canonical: false
+ family: relation
+diff --git a/.sldb/core/models/RepositoryDoc.yaml b/.sldb/core/models/RepositoryDoc.yaml
+index b183d451..bbe1b755 100644
+--- a/.sldb/core/models/RepositoryDoc.yaml
++++ b/.sldb/core/models/RepositoryDoc.yaml
+@@ -1,6 +1,6 @@
+ name: RepositoryDoc
+ model_ref: deskops.models:RepositoryDoc
+-path: deskops/models/repository.py
++path: ''
+ documents_index: .sldb/core/documents/RepositoryDoc.yaml
+ sections_index: .sldb/runtime/sections/RepositoryDoc.yaml
+ model_hash: 02311bf86fc184352a223752dcce07b585e366716001549dc006d5c36db8b714
+diff --git a/.sldb/core/models/ReviewDoc.yaml b/.sldb/core/models/ReviewDoc.yaml
+index f359a8f0..98bddb6a 100644
+--- a/.sldb/core/models/ReviewDoc.yaml
++++ b/.sldb/core/models/ReviewDoc.yaml
+@@ -1,6 +1,6 @@
+ name: ReviewDoc
+ model_ref: deskops.models:ReviewDoc
+-path: deskops/models/review.py
++path: ''
+ documents_index: .sldb/core/documents/ReviewDoc.yaml
+ sections_index: .sldb/runtime/sections/ReviewDoc.yaml
+ model_hash: f57c256103e02a5c438e89f5539a9484e42cb11d99f647a422e0803e1794a89d
+diff --git a/.sldb/core/models/RitualDoc.yaml b/.sldb/core/models/RitualDoc.yaml
+index 05e1dfbf..f9fcfd9f 100644
+--- a/.sldb/core/models/RitualDoc.yaml
++++ b/.sldb/core/models/RitualDoc.yaml
+@@ -1,6 +1,6 @@
+ name: RitualDoc
+ model_ref: deskops.models:RitualDoc
+-path: deskops/models/ritual.py
++path: ''
+ documents_index: .sldb/core/documents/RitualDoc.yaml
+ sections_index: .sldb/runtime/sections/RitualDoc.yaml
+ model_hash: 5064b43d34e0171c7642adb4ad04eb395dd893d54ae33e7d9fa768097e9528c8
+diff --git a/.sldb/core/models/RoleDoc.yaml b/.sldb/core/models/RoleDoc.yaml
+index 320a9a97..977c5e59 100644
+--- a/.sldb/core/models/RoleDoc.yaml
++++ b/.sldb/core/models/RoleDoc.yaml
+@@ -1,6 +1,6 @@
+ name: RoleDoc
+ model_ref: deskops.models:RoleDoc
+-path: deskops/models/role.py
++path: ''
+ documents_index: .sldb/core/documents/RoleDoc.yaml
+ sections_index: .sldb/runtime/sections/RoleDoc.yaml
+ model_hash: f093af64f630ff768a9c521848491a3dc9f45ce9b6f3d5ec92f2465925e4f76f
+diff --git a/.sldb/core/models/RunDoc.yaml b/.sldb/core/models/RunDoc.yaml
+index 699a1534..f60f1824 100644
+--- a/.sldb/core/models/RunDoc.yaml
++++ b/.sldb/core/models/RunDoc.yaml
+@@ -1,6 +1,6 @@
+ name: RunDoc
+ model_ref: deskops.models:RunDoc
+-path: deskops/models/run.py
++path: ''
+ documents_index: .sldb/core/documents/RunDoc.yaml
+ sections_index: .sldb/runtime/sections/RunDoc.yaml
+ model_hash: 567294157151c2f4bed0525fec854091415aa91bdb78406c12d2f9a07a4f03e4
+diff --git a/.sldb/core/models/RuntimeProfileDoc.yaml b/.sldb/core/models/RuntimeProfileDoc.yaml
+index bdbf9014..0536e903 100644
+--- a/.sldb/core/models/RuntimeProfileDoc.yaml
++++ b/.sldb/core/models/RuntimeProfileDoc.yaml
+@@ -1,6 +1,6 @@
+ name: RuntimeProfileDoc
+ model_ref: deskops.models:RuntimeProfileDoc
+-path: deskops/models/runtime_profile.py
++path: ''
+ documents_index: .sldb/core/documents/RuntimeProfileDoc.yaml
+ sections_index: .sldb/runtime/sections/RuntimeProfileDoc.yaml
+ model_hash: 3d299cb51dde5d77004a9c3d3514febb27c0ee04419b0ec90b74d3dc8b03335d
+diff --git a/.sldb/core/models/StepDoc.yaml b/.sldb/core/models/StepDoc.yaml
+index d4511f69..f8573802 100644
+--- a/.sldb/core/models/StepDoc.yaml
++++ b/.sldb/core/models/StepDoc.yaml
+@@ -1,6 +1,6 @@
+ name: StepDoc
+ model_ref: deskops.models:StepDoc
+-path: deskops/models/step.py
++path: ''
+ documents_index: .sldb/core/documents/StepDoc.yaml
+ sections_index: .sldb/runtime/sections/StepDoc.yaml
+ model_hash: dd3a2c0d0a07e7950b867bdee110eefd5acc6b253b24be58400d557d4dad1fbf
+diff --git a/.sldb/core/models/TaskAggregateDoc.yaml b/.sldb/core/models/TaskAggregateDoc.yaml
+index 52914b29..c36236f4 100644
+--- a/.sldb/core/models/TaskAggregateDoc.yaml
++++ b/.sldb/core/models/TaskAggregateDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskAggregateDoc
+ model_ref: deskops.models:TaskAggregateDoc
+-path: deskops/models/task_types.py
++path: ''
+ documents_index: .sldb/core/documents/TaskAggregateDoc.yaml
+ sections_index: ''
+ model_hash: 9214d8df794419aba370aa7f623cd210837614255521717c431714fd925730b9
+diff --git a/.sldb/core/models/TaskCodeDoc.yaml b/.sldb/core/models/TaskCodeDoc.yaml
+index ca6edde2..fdc7a54f 100644
+--- a/.sldb/core/models/TaskCodeDoc.yaml
++++ b/.sldb/core/models/TaskCodeDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskCodeDoc
+ model_ref: deskops.models:TaskCodeDoc
+-path: deskops/models/task_types.py
++path: ''
+ documents_index: .sldb/core/documents/TaskCodeDoc.yaml
+ sections_index: .sldb/runtime/sections/TaskCodeDoc.yaml
+ model_hash: 4aee7dffe2ad2443114ed4aa7dfe77661e1b97b12aa21b47a34de253f783b210
+diff --git a/.sldb/core/models/TaskDebugDoc.yaml b/.sldb/core/models/TaskDebugDoc.yaml
+index 1a06e397..da58636e 100644
+--- a/.sldb/core/models/TaskDebugDoc.yaml
++++ b/.sldb/core/models/TaskDebugDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskDebugDoc
+ model_ref: deskops.models:TaskDebugDoc
+-path: deskops/models/task_types.py
++path: ''
+ documents_index: .sldb/core/documents/TaskDebugDoc.yaml
+ sections_index: .sldb/runtime/sections/TaskDebugDoc.yaml
+ model_hash: 53999259cde6e94a53c0af2b74d49924d625354ab19de336b7a459310ce98ea4
+diff --git a/.sldb/core/models/TaskDecisionDoc.yaml b/.sldb/core/models/TaskDecisionDoc.yaml
+index 2a41da42..27afd2f5 100644
+--- a/.sldb/core/models/TaskDecisionDoc.yaml
++++ b/.sldb/core/models/TaskDecisionDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskDecisionDoc
+ model_ref: deskops.models:TaskDecisionDoc
+-path: deskops/models/task_types.py
++path: ''
+ documents_index: .sldb/core/documents/TaskDecisionDoc.yaml
+ sections_index: .sldb/runtime/sections/TaskDecisionDoc.yaml
+ model_hash: 20e0f0476f329ae6e49867d959abdc7d192a617cd0d2d3c058a0145a26c9fe85
+diff --git a/.sldb/core/models/TaskDoc.yaml b/.sldb/core/models/TaskDoc.yaml
+index 5225315b..24d90661 100644
+--- a/.sldb/core/models/TaskDoc.yaml
++++ b/.sldb/core/models/TaskDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskDoc
+ model_ref: deskops.models:TaskDoc
+-path: deskops/models/task.py
++path: ''
+ documents_index: .sldb/core/documents/TaskDoc.yaml
+ sections_index: .sldb/runtime/sections/TaskDoc.yaml
+ model_hash: d88864f595b836625cd676a2fc48584736255139c0a44353eab20b5a92e3da06
+diff --git a/.sldb/core/models/TaskDocsDoc.yaml b/.sldb/core/models/TaskDocsDoc.yaml
+index 214bffed..14e2ca34 100644
+--- a/.sldb/core/models/TaskDocsDoc.yaml
++++ b/.sldb/core/models/TaskDocsDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskDocsDoc
+ model_ref: deskops.models:TaskDocsDoc
+-path: deskops/models/task_types.py
++path: ''
+ documents_index: .sldb/core/documents/TaskDocsDoc.yaml
+ sections_index: .sldb/runtime/sections/TaskDocsDoc.yaml
+ model_hash: f68809c4d7237c073707387a815fee068125340276e66c1cb72c4d95ce9e4f82
+diff --git a/.sldb/core/models/TaskExternalDoc.yaml b/.sldb/core/models/TaskExternalDoc.yaml
+index b139950c..9fcf7b3c 100644
+--- a/.sldb/core/models/TaskExternalDoc.yaml
++++ b/.sldb/core/models/TaskExternalDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskExternalDoc
+ model_ref: deskops.models:TaskExternalDoc
+-path: deskops/models/task_types.py
++path: ''
+ documents_index: .sldb/core/documents/TaskExternalDoc.yaml
+ sections_index: .sldb/runtime/sections/TaskExternalDoc.yaml
+ model_hash: 00929548b04efca0d43e9121f97fb55289582a4b5e3500ceb336d2d3590bcd25
+diff --git a/.sldb/core/models/TaskRefactorDoc.yaml b/.sldb/core/models/TaskRefactorDoc.yaml
+index d6c16282..540599ed 100644
+--- a/.sldb/core/models/TaskRefactorDoc.yaml
++++ b/.sldb/core/models/TaskRefactorDoc.yaml
+@@ -1,6 +1,6 @@
+ name: TaskRefactorDoc
+ model_ref: deskops.models:TaskRefactorDoc
+-path: deskops/models/task_types.py
++path: ''
+ documents_index: .sldb/core/documents/TaskRefactorDoc.yaml
+ sections_index: .sldb/runtime/sections/TaskRefactorDoc.yaml
+ model_hash: bfe17dfa7ec49d1f6df0443cdc4d8c0287fdcc971096a7f5877d2ab12958f293
+diff --git a/sldb/relation_types/has_model.md b/sldb/relation_types/has_model.md
+index d8e50b32..efaa9c37 100644
+--- a/sldb/relation_types/has_model.md
++++ b/sldb/relation_types/has_model.md
+@@ -1,7 +1,12 @@
+ ---
++sldb:
++  by: agent
++  at: '2026-11-18T17:53:32Z'
++  authority: generated
++  via: init_relations
+ name: has_model
+ direction: directed
+-cardinality: one_to_many
++cardinality: many_to_many
+ axis: WHAT
+ source_types:
+ - sldb_store
+@@ -14,4 +19,4 @@ condition: ''
+ 
+ ## Description
+ 
+-The store registers this model.
++The store registers this model: its own, or one it inherits from the linked store that owns it.

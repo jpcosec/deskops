@@ -1,0 +1,10 @@
+Desk divergence report:
+- Untracked desk documents: desk/lifecycle/type-task_returns_to_execution.md, desk/lifecycle/testing-task_returns_to_execution.md
+- Tag namespace declaration: .sldb/store.yaml differs from desk/atoms/tag-namespaces.yaml
+- Stale document hashes: desk/inbox/20261117-102750-suggestion-sldb-el-valor-de-un-campo-ya-se-renderiza-literal-nota-015212.md (data_mutation), desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-atom-1.md (data_mutation), desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-commit-1.md (data_mutation), desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-materialization-1.md (data_mutation), desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-tests-1.md (data_mutation)
+
+Applying repairs...
+Declared the tag namespaces of desk/atoms/tag-namespaces.yaml in .sldb/store.yaml.
+Lifecycle graph: tracked desk/lifecycle/type-task_returns_to_execution.md
+Lifecycle graph: tracked desk/lifecycle/testing-task_returns_to_execution.md
+Updated store derived indexes.

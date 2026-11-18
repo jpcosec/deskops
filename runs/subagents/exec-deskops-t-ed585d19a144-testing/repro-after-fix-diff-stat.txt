@@ -1,0 +1,8 @@
+ .sldb/core/models/RelationDoc.yaml     |  6 ++---
+ .sldb/core/models/RelationTypeDoc.yaml |  6 ++---
+ .sldb/core/store_index.yaml            |  2 +-
+ .sldb/store.yaml                       | 28 +++++++++++++++++++++
+ deskops/bootstrap.py                   | 25 +++++++++++++++++-
+ deskops/cli/commands/desk.py           |  1 +
+ tests/test_desk_sync.py                | 46 ++++++++++++++++++++++++++++++++++
+ 7 files changed, 106 insertions(+), 8 deletions(-)
