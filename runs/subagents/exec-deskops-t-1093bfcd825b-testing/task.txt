@@ -1,0 +1,9 @@
+Task: task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int
+Title: deskops dispatch toma los roles del desk de deskops para tareas de otros desks (sldb, IR), y deskops integrate trata un tip ya pusheado como éxito
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .

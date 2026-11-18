@@ -1,0 +1,4 @@
+$ PYTHONPATH=<repo>:<pytest-symlinks> TMPDIR=/dev/shm <deskops tool python> -m pytest -q -p no:cacheprovider tests/test_dispatch.py tests/test_integrate.py
+33 passed, 1 warning in 435.51s
+exit code 0
+(no pytest in the deskops tool env; pytest borrowed via symlinks from /workspace/.venv)

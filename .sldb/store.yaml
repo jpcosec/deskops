@@ -528,6 +528,10 @@ include:
     name: run-deskops-e-7b5f40795a7e
   - path: runs/subagents/exec-deskops-t-701c64bccb46-testing/run.md
     name: run-deskops-t-701c64bccb46
+  - path: runs/subagents/exec-deskops-e-19b2ea183813/run.md
+    name: run-deskops-e-19b2ea183813
+  - path: runs/subagents/exec-deskops-t-1093bfcd825b-testing/run.md
+    name: run-deskops-t-1093bfcd825b
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1750,6 +1754,22 @@ include:
     name: review-task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip-evidence-atom-2
   - path: desk/reviews/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip/evidence-materialization-2.md
     name: review-task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip-evidence-materialization-2
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/preflight-1.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-preflight-1
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/preflight-2.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-preflight-2
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/preflight-3.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-preflight-3
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/bundle-1.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-bundle-1
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/evidence-tests-1.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-evidence-tests-1
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/evidence-commit-1.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-evidence-commit-1
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/evidence-atom-1.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-evidence-atom-1
+  - path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/evidence-atom-2.md
+    name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-evidence-atom-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1800,7 +1820,6 @@ include:
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
   - desk/tasks/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace.md
-  - desk/tasks/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

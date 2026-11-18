@@ -1,0 +1,37 @@
+name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-evidence-tests-1
+path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/evidence-tests-1.md
+source_hash: d9e8a26e52d2c568dba4df6b506722ad4f8adfb5d6e3f7da2cc7d8e7c0fafc35
+content_hash: 3984333bae9135515547f589e0605a2caf0dff491f5d2f705365b6c9daa7c041
+field_hashes:
+  id: 4eba277873fda6f22f8b121cec3caa9b84e57bae3141a9414b39a0e92f6ae0a4
+  title: 004a91608f7edb3d923efc6033bbbf01029aa3a105e89cb9914eba12f2d4b4ca
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 39e48134ab7d1a6c00ddc5a94d3ae510378b58f1337b12e87c4979d67d90e62a
+  subject: f12ce06ae8f3044435b957d0d66f9d28277b9e0fd7d0f928f7e49f0a706114d6
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 7ea3f13f0f4417339ab53db9fe9eeca4335342020508c4e4ebb654267a06ed15
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0cae26b2be2a2d12527f008f88b5f7f14fa0f70a6d6cd0371a8dd5d80743a945
+  created_at: c1ccc9ece412488dae46c5330b1458ce779c06d680c0ac614639ad668c62f3d3
+  disposed_at: c1ccc9ece412488dae46c5330b1458ce779c06d680c0ac614639ad668c62f3d3
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 837de78765ca3f895d675876658d5c62ed6c41776432a229d76bfd3d5ac40c82
+  disposition: cb502d889b8f27aa2017939c2728499c5c1469699754d561572a48d45142cda4
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T16:01:53Z'
+  authority: generated
+  via: create_document
