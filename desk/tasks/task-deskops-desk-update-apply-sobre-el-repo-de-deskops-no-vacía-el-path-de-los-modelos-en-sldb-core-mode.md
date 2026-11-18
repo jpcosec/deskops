@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T17:43:07Z'
+  at: '2026-11-18T17:44:28Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode
 status: draft
 summary: ''
@@ -40,7 +40,7 @@ En el repo de deskops, desk update --apply deja intacto el path de cada modelo e
 
 _State what is in scope and what is out of scope._
 
-En alcance: reproducir en una copia limpia de deskops (git clone a /dev/shm, desk update --apply, git diff -- .sldb/core/models sldb/relation_types), encontrar con archivo y línea qué parte de desk update re-registra los modelos sin la ruta local (hipótesis: en el repo de deskops los modelos son del paquete propio y se registran como instalados), y arreglarlo para que conserve la ruta del store.yaml de deskops. Si lo que agrega en sldb/relation_types es correcto (un relation type que el paquete declara), el informe lo dice con evidencia en vez de revertirlo. Fuera de alcance: cambiar el layout de .sldb.
+En alcance: (a) reproducir en una copia limpia del HEAD local de deskops al momento del despacho (git clone --no-hardlinks /mnt/ssd/proyectos/SLDB_1/deskops /tmp/repro && git -C /tmp/repro checkout --detach <HEAD>), correr 'deskops desk update --apply --root /tmp/repro' y guardar 'git -C /tmp/repro diff --stat' y 'git -C /tmp/repro diff -- .sldb/core/models sldb/relation_types' en el run dir. (b) Encontrar, con archivo y línea, qué parte de desk update reescribe .sldb/core/models/<Modelo>.yaml con path vacío. La fuente de verdad de la ruta es la entrada models: del .sldb/store.yaml de la raíz del repo (cada modelo con su path, p. ej. RoleDoc -> deskops/models/role.py). (c) Arreglo: desk update nunca deja vacío un path de modelo que ya era no vacío ni que el store.yaml declara. (d) relation types: desk update puede escribir solo los relation types que el paquete deskops declara. El informe muestra, con la ruta del archivo de declaración, si reltype-links_to y el cambio de has_model.md están declarados. Si no lo están, el arreglo evita escribirlos; si lo están, se dejan y se explica. (e) Test que falla antes, en tests/test_desk_sync.py, sobre un desk de prueba armado en tmp_path con el mismo helper que usan los tests existentes de ese archivo, con un store.yaml que declara un modelo con path local: después de desk update --apply el path sigue igual. (f) El ejecutor corre solo tests/test_desk_sync.py y los tests de los archivos que toque; la suite completa la corre integrate. El informe va en result-summary.md del run dir que fija el despacho. Fuera de alcance: cambiar el layout de .sldb.
 
 ## Implementation Path
 

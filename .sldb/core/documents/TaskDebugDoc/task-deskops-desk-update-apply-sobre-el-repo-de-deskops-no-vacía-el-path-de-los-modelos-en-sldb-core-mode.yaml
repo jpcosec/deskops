@@ -1,7 +1,7 @@
 name: task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode
 path: desk/tasks/task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode.md
-source_hash: 289c7223453a746294837707c37ddcf5be102f78e5caa8b4dd2c2ce9118b1148
-content_hash: a6ef644fe58f1bead2c559efb70045016284143446248ada12a2014c08a1ee51
+source_hash: e704ee604d24689a639a1f7837824e9f22f7130f08f819111a010d41ec331fe9
+content_hash: 44535587a80db451f55ffbdee49aa8ba3e48400e92c972e1b7f529b9bf1d20f0
 field_hashes:
   title: 46c431fa9e09cfe2e83d11d969fa11d157686d038767a8c7b3a3710fdd0b58dd
   id: 408216dda7aed72166cd98a39c23842dc54c823dd1d092b41ee47a3038fd1db8
@@ -12,7 +12,7 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 21a5e748e8896d83a2b9880d60d645fd8d8a5f9eb36520428f56147561187b6a
   goal: 0acaa32645420805e3303a34d6f9cdc7b36cf6f1fe8e9352275294770b0192af
-  scope: 5fa26a369873c8cfcb95acfadded51f60800b0046fc4103a715d355e55014098
+  scope: 1224db9a91d9919bb115ac3b4b632b8f2a579ac011e10c9890b2ab44013c75e3
   references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T17:43:07Z'
+  at: '2026-11-18T17:44:28Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
