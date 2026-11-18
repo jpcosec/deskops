@@ -529,6 +529,8 @@ Advancement fires the first lifecycle transition (an sldb RelationDoc between ri
             help="Advance one actionable task through the desk's lifecycle graph.",
             args=(
                 A("task_id", help=f"Task selector. {SELECTOR_HELP}"),
+                A("--back", action="store_true", help="Take the manual transition back (ritual-testing to ritual-execution) instead of advancing; needs --reason."),
+                A("--reason", help="Why the task goes back; recorded in history. Only with --back."),
                 ROOT_ARG,
             ),
             handler="deskops.cli.commands.operations:OperationsCLI",
@@ -536,8 +538,10 @@ Advancement fires the first lifecycle transition (an sldb RelationDoc between ri
             epilog=f"""
 Example:
   deskops advance task task-fix-thing --root .
+  deskops advance task task-fix-thing --back --reason "blocked: needs a design decision" --root .
 
 Advancement fires the first lifecycle transition (an sldb RelationDoc between rituals) whose condition holds for the task.
+--back takes only the manual transitions (attributes.manual: true) leaving the task's node.
 {SELECTOR_HELP}
 """.strip(),
             raw_text=True,

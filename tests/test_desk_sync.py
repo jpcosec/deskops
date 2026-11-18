@@ -260,6 +260,7 @@ def test_declared_includes_cover_what_desk_update_used_to_guess(tmp_path: Path) 
         "RelationDoc": [
             "desk/lifecycle/execution-task_activates.md",
             "desk/lifecycle/testing-task_hands_to_closeout.md",
+            "desk/lifecycle/testing-task_returns_to_execution.md",
             "desk/lifecycle/closeout-task_completes.md",
         ],
         "BoardDoc": ["desk/tasks/Board.md"],

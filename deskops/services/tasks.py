@@ -294,7 +294,7 @@ class TasksService:
         }
 
     # ---------------------------------------------------------------- advance
-    def advance_task(self, task_id: str) -> tuple[Task | None, TransitionResult | None]:
+    def advance_task(self, task_id: str, back_reason: str | None = None) -> tuple[Task | None, TransitionResult | None]:
         try:
             task_path = doc_access.resolve_glob(self.root, self.desk_root / "tasks", task_id)
         except FileNotFoundError:
@@ -309,7 +309,7 @@ class TasksService:
         # against TaskDoc, the model it was read with: a typed model's `task_type` literal could
         # not accept it (d4, instead of k5's TaskCodeDoc).
         model = self.registered_task_types().get(str(payload.get("task_type") or "")) or TaskDoc
-        result = lifecycle.advance(self.root, payload, model, document=lifecycle.task_document(self.root, task_path))
+        result = lifecycle.advance(self.root, payload, model, document=lifecycle.task_document(self.root, task_path), back_reason=back_reason)
         if result.progressed and payload.get("current_node") == lifecycle.COMPLETE:
             # The lifecycle graph would close the task. Do not persist it; the
             # only closing entry point is `deskops closeout commit`.

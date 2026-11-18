@@ -851,6 +851,8 @@ def _render_agents_md(
         "  stays where it was), put that finding line in `result-summary.md` and signal\n"
         "  `sciontool status blocked \"<the finding line>\"` instead of `task_completed`.\n"
         "  Advancing is the only lifecycle step you take: never close the task, commit or touch other tasks.\n"
+        "- If you end blocked or without changes, do NOT run `deskops advance task`: write the blocker in\n"
+        "  `result-summary.md` and finish with `sciontool status blocked \"<reason>\"`.\n"
         "- Say you are done with `sciontool status task_completed \"<one-line summary>\"`: Scion wakes the coordinator\n"
         "  on that status, not on `blocked`.\n"
         f"\nProject: `{project}`.\n"

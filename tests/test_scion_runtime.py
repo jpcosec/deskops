@@ -116,6 +116,9 @@ def test_statuses_are_ones_sciontool_has_and_wake_the_coordinator(executor: dict
         statuses = set(re.findall(r"sciontool status (\w+)", text))
         assert statuses <= {"ask_user", "blocked", "task_completed"}, statuses
     assert "sciontool status task_completed" in worker["agents.md"]  # blocked would not wake the coordinator
+    # an executor that ends blocked or without changes does not advance the task
+    assert "sciontool status blocked" in worker["agents.md"]
+    assert "do NOT run `deskops advance task`" in worker["agents.md"]
 
     # A coordinator idles blocked on its children; the executor's limit would kill it.
     assert yaml.safe_load(coordinator["scion-agent.yaml"])["max_duration"] == "24h"

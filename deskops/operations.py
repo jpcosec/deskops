@@ -217,8 +217,8 @@ class DeskopsOperations:
     def show_task(self, task_id: str) -> tuple[Task | None, list[dict[str, Any]]]:
         return self.tasks.show_task(task_id)
 
-    def advance_task(self, task_id: str) -> tuple[Task | None, TransitionResult | None]:
-        return self.tasks.advance_task(task_id)
+    def advance_task(self, task_id: str, back_reason: str | None = None) -> tuple[Task | None, TransitionResult | None]:
+        return self.tasks.advance_task(task_id, back_reason=back_reason)
 
     def next_action_report(self, task_selector: str | None = None) -> dict[str, Any]:
         return self.tasks.next_action_report(task_selector)

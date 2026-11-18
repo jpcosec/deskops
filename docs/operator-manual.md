@@ -561,6 +561,27 @@ Error: Cannot advance task-x via task_activates: the edge desk/lifecycle/executi
 
 `deskops doctor` reports the same seed; `deskops desk update --apply` restores it.
 
+#### Going back from testing: `--back --reason`
+
+`ritual-testing` has a second outgoing edge, `task_returns_to_execution`, that
+returns the task to `ritual-execution` with status `active`. It is declared with
+`attributes.manual: true`: the plain `deskops advance task <id>` never takes a
+manual edge, it only follows the edges without it, so its behavior does not
+change. `--back` takes only the manual edges leaving the task's current node:
+
+```bash
+deskops advance task <id> --back --reason "bloqueado: falta una decision de diseno" --root .
+```
+
+The reason goes into `history` as a single string,
+`task_returns_to_execution: <reason>`, and the edge's post-hooks run like those of
+any other advance. `--back` without `--reason` (or with an empty one) and
+`--reason` without `--back` exit with code 2. `--back` at a node with no manual
+edge exits 1, blocked, with `no hay transicion de vuelta desde <node>`. An
+executor that ends blocked or without changes does not advance the task at all;
+the coordinator uses `--back` when a task is already in testing and must return.
+Desks seeded earlier receive the edge with `deskops desk update --apply`.
+
 #### Post-hooks on a transition
 
 A lifecycle `RelationDoc` may carry `attributes.hooks`, an ordered list of commands that

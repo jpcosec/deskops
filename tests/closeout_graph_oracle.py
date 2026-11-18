@@ -16,8 +16,8 @@ __all__ = ["transitions_from_v1"]
 
 
 # ------------------------------------------------------------------ lifecycle
-def transitions_from_v1(root: Path, node: str) -> list[lifecycle.Transition]:
-    """``lifecycle.transitions_from`` as it was: the index composed with the linked stores."""
+def transitions_from_v1(root: Path, node: str, *, manual: bool = False) -> list[lifecycle.Transition]:
+    """``lifecycle.transitions_from`` as it was: the index composed with the linked stores. Manual edges (``attributes.manual``) are not normal-advance transitions."""
     from sldb.api import edges_from
 
     found: list[lifecycle.Transition] = []
@@ -25,6 +25,8 @@ def transitions_from_v1(root: Path, node: str) -> list[lifecycle.Transition]:
         if edge.metadata.get("origin") != "relation_doc" or not edge.target.rsplit("/", 1)[-1].startswith("RitualDoc:"):
             continue
         attributes = edge.metadata.get("attributes") or {}
+        if bool(attributes.get("manual")) != manual:
+            continue
         found.append(
             lifecycle.Transition(
                 relation_type=edge.relation,
@@ -34,6 +36,7 @@ def transitions_from_v1(root: Path, node: str) -> list[lifecycle.Transition]:
                 sets=dict(attributes.get("sets") or {}),
                 terminal=bool(attributes.get("terminal")),
                 relation_doc=str(edge.metadata.get("relation_doc") or ""),
+                manual=manual,
             )
         )
     return found

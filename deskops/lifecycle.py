@@ -166,6 +166,8 @@ class Transition:
     findings: tuple[dict[str, Any], ...] = ()
     #: ``attributes.hooks`` as the edge declares them, unvalidated (``parse_hooks`` validates).
     raw_hooks: Any = None
+    #: ``attributes.manual``: the edge is never taken by the normal advance, only by ``advance --back``.
+    manual: bool = False
 
     @property
     def hooks(self) -> tuple[Hook, ...]:
@@ -284,6 +286,7 @@ def _transition(node: str, edge: Any) -> Transition:
         relation_doc=str(edge.metadata.get("relation_doc") or ""),
         findings=tuple(finding_dict(f) for f in (getattr(edge, "findings", None) or ())),
         raw_hooks=attributes.get("hooks"),
+        manual=bool(attributes.get("manual")),
     )
 
 
@@ -292,20 +295,27 @@ def _is_lifecycle_edge(edge: Any) -> bool:
     return edge.metadata.get("origin") == "relation_doc" and edge.target.rsplit("/", 1)[-1].startswith(f"{RITUAL_MODEL}:")
 
 
-def _lifecycle_edges(node: str, edges: list[Any]) -> list[Transition]:
-    """The authored edges between rituals, in the order sldb returns them."""
-    return [_transition(node, e) for e in edges if _is_lifecycle_edge(e)]
+def _lifecycle_edges(node: str, edges: list[Any], *, manual: bool = False) -> list[Transition]:
+    """The authored edges between rituals, in the order sldb returns them: the manual ones
+    (``attributes.manual``) when ``manual``, else the ones the normal advance may take."""
+    found = [_transition(node, e) for e in edges if _is_lifecycle_edge(e)]
+    return [t for t in found if t.manual is manual]
 
 
-def transitions_from(root: Path, node: str, *, snapshot: ReadSnapshot | None = None) -> list[Transition]:
+def transitions_from(root: Path, node: str, *, snapshot: ReadSnapshot | None = None, manual: bool = False) -> list[Transition]:
     """The lifecycle transitions leaving ``node``, as the desk's graph declares them.
 
     Topology, conditions and effects all come from the graph. The lifecycle graph lives in the
     desk's own store, so only that store's edge index is read (sldb keeps it composed while
     its shards do not move), not the index composed with every linked store.
 
-    With a ``snapshot``, the transitions leaving a node are read once and reused.
+    With a ``snapshot``, the transitions leaving a node are read once and reused. Manual
+    transitions (``attributes.manual``) are left out unless ``manual``.
     """
+    if manual:
+        from sldb.api import edges_from as manual_edges_from
+
+        return _lifecycle_edges(node, manual_edges_from(_store(root), ritual_export_id(node), include_linked=False), manual=True)
     if snapshot is not None:
         if node not in snapshot.transitions:
             snapshot.transitions[node] = transitions_from(root, node)
@@ -388,7 +398,15 @@ def lifecycle_transitions(root: Path, spec: LifecycleSpec | None = None) -> list
     return [t for node in spec.rituals for t in transitions_from(root, node)]
 
 
-def advance(root: Path, payload: dict[str, Any], model: type[Any], spec: LifecycleSpec | None = None, document: str | None = None) -> TransitionResult:
+def advance(
+    root: Path,
+    payload: dict[str, Any],
+    model: type[Any],
+    spec: LifecycleSpec | None = None,
+    document: str | None = None,
+    *,
+    back_reason: str | None = None,
+) -> TransitionResult:
     """Take the first transition out of the task's current node whose condition holds.
 
     The edge's effects are applied with ``sldb.api.apply_effects`` (``sets`` replaces the
@@ -401,6 +419,9 @@ def advance(root: Path, payload: dict[str, Any], model: type[Any], spec: Lifecyc
     With ``document`` (``task_document``) the task's ``on_transition`` rules run: when an error
     finding holds the edges back, the message lists each finding (rule, clause, node and value
     seen) instead of the edges' conditions.
+
+    With ``back_reason`` the task takes the manual transition leaving its node instead (the
+    return from testing to execution); the history entry is ``<relation_type>: <reason>``.
     """
     from sldb.api import apply_effects
 
@@ -414,6 +435,18 @@ def advance(root: Path, payload: dict[str, Any], model: type[Any], spec: Lifecyc
             f"No sldb store at {_store(root)}: run 'deskops init' (or 'deskops desk update --apply' on an "
             "existing store) to create the lifecycle graph that 'deskops advance' reads."
         )
+    if back_reason is not None:
+        manual = transitions_from(root, node, manual=True)
+        if not manual:
+            return TransitionResult(node, status, False, True, f"no hay transicion de vuelta desde {node}")
+        transition = manual[0]
+        target = COMPLETE if transition.terminal else transition.target
+        _check_against_package(payload, transition, target)
+        transition.hooks
+        history = [str(item) for item in payload.get("history") or []]
+        sets = {**transition.sets, "history": [*history, f"{transition.relation_type}: {back_reason}"], "current_node": target}
+        payload.update(apply_effects(payload, {**transition.effects, "sets": sets}, model))
+        return TransitionResult(target, str(payload.get("status") or ""), True, False, f"Returned to {target} via {transition.relation_type}.", transition)
     transitions = transitions_from(root, node)
     if not transitions:
         raise LifecycleGraphMissing(

@@ -142,6 +142,9 @@ seeds:
 - path: desk/lifecycle/type-task_hands_to_closeout.md
   mode: managed
   file: lifecycle/type-task_hands_to_closeout.md
+- path: desk/lifecycle/type-task_returns_to_execution.md
+  mode: managed
+  file: lifecycle/type-task_returns_to_execution.md
 - path: desk/lifecycle/type-task_completes.md
   mode: managed
   file: lifecycle/type-task_completes.md
@@ -151,6 +154,9 @@ seeds:
 - path: desk/lifecycle/testing-task_hands_to_closeout.md
   mode: managed
   file: lifecycle/testing-task_hands_to_closeout.md
+- path: desk/lifecycle/testing-task_returns_to_execution.md
+  mode: managed
+  file: lifecycle/testing-task_returns_to_execution.md
 - path: desk/lifecycle/closeout-task_completes.md
   mode: managed
   file: lifecycle/closeout-task_completes.md
@@ -209,6 +215,7 @@ include:
   paths:
   - desk/lifecycle/execution-task_activates.md
   - desk/lifecycle/testing-task_hands_to_closeout.md
+  - desk/lifecycle/testing-task_returns_to_execution.md
   - desk/lifecycle/closeout-task_completes.md
 - model: RuleDoc
   glob: desk/lifecycle/rule-activation-*.md

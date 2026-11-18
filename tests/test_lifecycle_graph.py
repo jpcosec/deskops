@@ -365,3 +365,94 @@ def test_desk_update_keeps_the_hooks_doctor_does_not_report_them_and_next_and_sh
 def test_the_package_seeds_declare_no_hooks() -> None:
     for path in LIFECYCLE_TEMPLATES.glob("*.md"):
         assert lifecycle.hooks_from_text(path.read_text(encoding="utf-8")) is None, path.name
+
+
+# ---------------------------------------------------------------- the manual return, testing -> execution
+BACK_EDGE = "testing-task_returns_to_execution"
+
+
+def _run_both(argv: list[str]) -> tuple[int, str, str]:
+    import contextlib
+    import io
+
+    out, err = io.StringIO(), io.StringIO()
+    with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+        code = main(argv)
+    return code, out.getvalue(), err.getvalue()
+
+
+def test_the_return_edge_is_seeded_manual_and_the_normal_advance_never_takes_it(lifecycle_desk: Path) -> None:
+    from sldb.api import doc_exists
+
+    assert doc_exists(lifecycle_desk / ".sldb", f"RelationDoc/{BACK_EDGE}")
+    assert doc_exists(lifecycle_desk / ".sldb", "RelationTypeDoc/type-task_returns_to_execution")
+    back = lifecycle.transitions_from(lifecycle_desk, "ritual-testing", manual=True)
+    assert [(t.relation_type, t.target, t.condition, t.terminal, t.manual) for t in back] == [
+        ("task_returns_to_execution", "ritual-execution", "", False, True)
+    ]
+    assert back[0].sets == {"status": "active"}
+    assert [t.relation_type for t in lifecycle.transitions_from(lifecycle_desk, "ritual-testing")] == ["task_hands_to_closeout"]
+
+    operations, task_id, task_path = _task_at_testing(lifecycle_desk)
+    task, result = operations.advance_task(task_id)
+    assert result.progressed and task.current_node == "ritual-closeout"
+    assert _state(task_path)["history"] == ["task_activates", "task_hands_to_closeout"]
+
+
+def test_advance_back_returns_the_task_to_execution_with_the_reason_in_history(lifecycle_desk: Path) -> None:
+    operations, task_id, task_path = _task_at_testing(lifecycle_desk)
+
+    code, out, _ = _run_both(["advance", "task", task_id, "--back", "--reason", "bloqueado: falta una decision", "--root", str(lifecycle_desk)])
+
+    assert code == 0 and "Current node: ritual-execution" in out and "Status: active" in out
+    state = _state(task_path)
+    assert state["status"] == "active" and state["current_node"] == "ritual-execution"
+    assert state["history"] == ["task_activates", "task_returns_to_execution: bloqueado: falta una decision"]
+    # the entry is a valid lifecycle state: the task goes forward again
+    code, out, _ = _run_both(["advance", "task", task_id, "--root", str(lifecycle_desk)])
+    assert code == 0 and "Current node: ritual-testing" in out
+
+
+def test_advance_back_usage_errors_exit_2_and_a_node_without_manual_edge_is_blocked(lifecycle_desk: Path) -> None:
+    operations, task_id, task_path = _task_at_testing(lifecycle_desk)
+    before = _state(task_path)
+    root = str(lifecycle_desk)
+
+    code, _, err = _run_both(["advance", "task", task_id, "--back", "--root", root])
+    assert code == 2 and "--reason" in err
+    code, _, err = _run_both(["advance", "task", task_id, "--back", "--reason", "   ", "--root", root])
+    assert code == 2 and "--reason" in err
+    code, _, err = _run_both(["advance", "task", task_id, "--reason", "x", "--root", root])
+    assert code == 2 and "--back" in err
+    assert _state(task_path) == before
+
+    operations.advance_task(task_id)  # now at ritual-closeout: no manual edge leaves it
+    before = _state(task_path)
+    code, out, _ = _run_both(["advance", "task", task_id, "--back", "--reason", "x", "--root", root])
+    assert code == 1
+    assert "Message: no hay transicion de vuelta desde ritual-closeout" in out
+    assert _state(task_path) == before
+
+
+def test_a_post_hook_declared_on_the_return_edge_runs(lifecycle_desk: Path) -> None:
+    import contextlib
+    import io
+    import json
+
+    from sldb.cli import main as sldb_main
+
+    marker = lifecycle_desk / "vuelta.txt"
+    attributes = {
+        "sets": {"status": "active"},
+        "terminal": False,
+        "manual": True,
+        "hooks": [{"name": "vuelta", "run": ["sh", "-c", f"echo vuelta > {marker}"]}],
+    }
+    with contextlib.redirect_stdout(io.StringIO()):
+        code = sldb_main(["fields", "update", f"docs/RelationDoc/{BACK_EDGE}/attributes", json.dumps(attributes), "--store", str(lifecycle_desk / ".sldb")])
+    assert code == 0
+    operations, task_id, _ = _task_at_testing(lifecycle_desk)
+
+    code, _, _ = _run_both(["advance", "task", task_id, "--back", "--reason", "x", "--root", str(lifecycle_desk)])
+
+    assert code == 0 and marker.read_text().strip() == "vuelta"

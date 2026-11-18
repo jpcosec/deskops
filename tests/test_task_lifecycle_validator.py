@@ -50,6 +50,7 @@ def test_the_table_is_read_from_the_package_relation_docs() -> None:
     assert edges == {
         "task_activates": ("ritual-testing", "active"),
         "task_hands_to_closeout": ("ritual-closeout", "ready_for_testing"),
+        "task_returns_to_execution": ("ritual-execution", "active"),
         "task_completes": ("complete", "closed"),
     }
     assert ENTRY_STATUSES == {"draft"}
@@ -103,6 +104,7 @@ def test_entry_state_rejects_a_later_node_without_history() -> None:
     [
         (["task_activates"], "ritual-testing", "active"),
         (["task_activates", "task_hands_to_closeout"], "ritual-closeout", "ready_for_testing"),
+        (["task_activates", "task_returns_to_execution: falta una decision"], "ritual-execution", "active"),
         (["task_activates", "task_hands_to_closeout", "task_completes"], "complete", "closed"),
     ],
 )

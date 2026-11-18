@@ -200,8 +200,16 @@ class OperationsCLI:
             from deskops.lifecycle import HookDefinitionError
             from deskops.lifecycle import LifecycleGraphMissing
 
+            back = bool(getattr(args, "back", False))
+            reason = getattr(args, "reason", None)
+            if reason is not None and not back:
+                print("Error: --reason only goes with --back.", file=sys.stderr)
+                return 2
+            if back and not (reason or "").strip():
+                print("Error: --back needs --reason \"<text>\" (why the task goes back).", file=sys.stderr)
+                return 2
             try:
-                task, result = operations.advance_task(args.task_id)
+                task, result = operations.advance_task(args.task_id, back_reason=reason.strip() if back else None)
             except (LifecycleGraphMissing, HookDefinitionError) as exc:
                 print(f"Error: {exc}", file=sys.stderr)
                 return 1

@@ -44,7 +44,7 @@ def test_desk_declaration_and_templates_ship_inside_the_package() -> None:
     relations = [seed for seed in lifecycle if seed["file"].startswith("lifecycle/")]
     rules = [seed for seed in lifecycle if seed["file"].startswith("rules/")]
     # 7 activation rules (CC32), 7 closeout rules and 2 closeout field alerts (CC33b).
-    assert len(relations) == 6 and len(rules) == 16 and len(lifecycle) == 22
+    assert len(relations) == 8 and len(rules) == 16 and len(lifecycle) == 24
     config = yaml.safe_load((DESK_TEMPLATES_PATH / "config.json").read_text(encoding="utf-8"))
     assert config["versions"]["desk_format"] == CURRENT_DESK_FORMAT
 

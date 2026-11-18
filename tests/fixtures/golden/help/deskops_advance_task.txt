@@ -1,17 +1,24 @@
-usage: deskops advance task [-h] [--root ROOT] task_id
+usage: deskops advance task [-h] [--back] [--reason REASON] [--root ROOT]
+                            task_id
 
 Advance one actionable task through the desk's lifecycle graph.
 
 positional arguments:
-  task_id      Task selector. Selectors accept an exact id, filename, stem, or
-               unique slug fragment where supported.
+  task_id          Task selector. Selectors accept an exact id, filename,
+                   stem, or unique slug fragment where supported.
 
 options:
-  -h, --help   show this help message and exit
-  --root ROOT  Target repository root.
+  -h, --help       show this help message and exit
+  --back           Take the manual transition back (ritual-testing to ritual-
+                   execution) instead of advancing; needs --reason.
+  --reason REASON  Why the task goes back; recorded in history. Only with
+                   --back.
+  --root ROOT      Target repository root.
 
 Example:
   deskops advance task task-fix-thing --root .
+  deskops advance task task-fix-thing --back --reason "blocked: needs a design decision" --root .
 
 Advancement fires the first lifecycle transition (an sldb RelationDoc between rituals) whose condition holds for the task.
+--back takes only the manual transitions (attributes.manual: true) leaving the task's node.
 Selectors accept an exact id, filename, stem, or unique slug fragment where supported.

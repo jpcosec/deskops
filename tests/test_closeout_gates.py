@@ -270,6 +270,11 @@ def test_transitions_match_the_linked_index(lifecycle_desk: Path, tmp_path: Path
     for node in _lifecycle_nodes():
         assert lifecycle.transitions_from(lifecycle_desk, node) == transitions_from_v1(lifecycle_desk, node), node
     assert lifecycle.transitions_from(lifecycle_desk, "ritual-testing")
+    manual = lifecycle.transitions_from(lifecycle_desk, "ritual-testing", manual=True)
+    assert manual
+    assert manual == transitions_from_v1(lifecycle_desk, "ritual-testing", manual=True)
+    assert all(t.manual for t in manual)
+    assert not any(t.manual for t in lifecycle.transitions_from(lifecycle_desk, "ritual-testing"))
 
 
 # ---------------------------------------------------------------- <repo-id>:<sha> commit evidence

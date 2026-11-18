@@ -151,7 +151,8 @@ def lifecycle_errors(status: str, current_node: str, history: list[str]) -> list
     closeout = CLOSEOUT_STATES.get(status)
     if closeout is not None and closeout[0] == last and closeout[1] in (None, current_node):
         return []
-    edge = table.edges.get(last)
+    # A manual transition records its reason: ``<relation_type>: <reason>``.
+    edge = table.edges.get(last.split(": ", 1)[0] if ": " in last else last)
     if edge is None:
         pairs = ", ".join(f"'{h}' for status '{s}'" for s, (h, _) in sorted(CLOSEOUT_STATES.items()))
         return [
