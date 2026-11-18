@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T13:43:57Z'
+  at: '2026-11-18T13:45:12Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int
@@ -40,13 +40,13 @@ deskops dispatch start y reap funcionan con --root sldb o IR tomando los roles (
 
 _State what is in scope and what is out of scope._
 
-En alcance: (a) un campo opcional roles_root en el bloque dispatch del desk/config.json del desk de la TAREA (el que se pasa con --root, p. ej. sldb/desk/config.json): ruta absoluta del repo cuyo desk/roles tiene los RoleDoc. Por defecto es la raíz de la tarea, y así el comportamiento de hoy en deskops no cambia. (b) dispatch.start usa roles_root para find_role_doc y para runtime template (root=roles_root); task_root es la raíz de la tarea (--root) y task_repo es el project_identity del desk/config.json de la tarea (en sldb, 'sldb'). El run_dir y el RunDoc quedan bajo la raíz de la tarea, como hoy. (c) dispatch.reap no usa roles: con --root de la tarea encuentra los agentes por la etiqueta deskops.task_id y mira result-summary.md en el run_dir bajo la raíz de la tarea. Debe funcionar igual con --root sldb (test). (d) en integrate, la rama es el campo branch del bloque integrate del config. Si el tip ya es ancestro de origin/<branch>: rc 0, imprime 'ya integrado: <tip corto>', no pushea y agrega a <raíz>/runs/hooks/events.log la línea '<fecha UTC ISO> <task id> integrate ya-integrado <tip corto>', con el mismo formato de las líneas ok/fallo que integrate ya escribe. Fuera de alcance: copiar RoleDocs a otros desks.
+En alcance: (a) un campo opcional roles_root en el bloque dispatch del desk/config.json del desk de la TAREA, el que se pasa con --root (p. ej. sldb/desk/config.json): ruta del repo cuyo desk/roles tiene los RoleDoc. Se aplica expanduser(); si es relativa se resuelve contra la raíz de la tarea; se guarda absoluta. Por defecto es la raíz de la tarea, y así deskops se comporta como hoy. (b) dispatch.start usa roles_root para find_role_doc y como root de la misma llamada a runtime template que hace hoy (deskops/dispatch.py, el bloque que escribe el template en templates_dir/<nombre del rol>); task_root es la raíz de la tarea y task_repo es el campo project_identity del desk/config.json de la tarea, o el nombre del directorio de la raíz si falta. El run_dir y el RunDoc quedan bajo la raíz de la tarea, como hoy. (c) dispatch.reap no cambia: no usa roles y sigue listando con _list_agents (scion list --project <project> --format json, deskops/dispatch.py:45) y filtrando por la etiqueta deskops.task_id. Solo se agrega un test que muestra que funciona con --root de un desk sin roles. (d) integrate: la rama es el campo branch del bloque integrate del desk/config.json de --root. Después del fetch que integrate ya hace en el paso copia (deskops/integrate.py:261), si el tip ya es ancestro de origin/<branch>: rc 0, imprime 'ya integrado: <tip corto>', no pushea ni corre la suite y agrega la línea a <raíz>/runs/hooks/events.log con la misma función que escribe hoy las líneas ok/fallo (deskops/integrate.py:213), con resultado 'ya-integrado'. Fuera de alcance: copiar RoleDocs a otros desks.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-p1: test que falla antes: dispatch start con un desk de tarea sin roles y roles_root apuntando a un desk con roles arma el template y el argv de scion (con scion simulado, como los tests actuales de dispatch). p2: implementar roles_root en DispatchConfig y en dispatch.start/reap. p3: test e implementación del caso 'ya integrado' en integrate. p4: docs/operator-manual.md (secciones de dispatch e integrate) y CHANGELOG.
+p1: test que falla antes: dispatch start con un desk de tarea sin roles y roles_root apuntando a un desk con roles arma el template y el argv de scion (con scion simulado, como los tests actuales de dispatch). p2: implementar roles_root en DispatchConfig y en dispatch.start (reap no cambia; solo su test con --root de otro desk). p3: test e implementación del caso 'ya integrado' en integrate. p4: docs/operator-manual.md (secciones de dispatch e integrate) y CHANGELOG.
 
 ## Validation
 
