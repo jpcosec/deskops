@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T13:22:42Z'
+  at: '2026-11-18T13:43:57Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int
 status: draft
 summary: ''
@@ -40,7 +40,7 @@ deskops dispatch start y reap funcionan con --root sldb o IR tomando los roles (
 
 _State what is in scope and what is out of scope._
 
-En alcance: un campo opcional roles_root en el bloque dispatch de desk/config.json (ruta absoluta al repo cuyo desk/roles tiene los RoleDoc; por defecto la raíz de la tarea), que dispatch.start use para find_role_doc y para runtime template (root=roles_root, task_root=raíz de la tarea, task_repo=nombre del repo de la tarea); en integrate, un tip que ya es ancestro de origin/<branch> sale con rc 0, imprime 'ya integrado: <tip>' y escribe esa línea en events.log. Fuera de alcance: copiar RoleDocs a otros desks.
+En alcance: (a) un campo opcional roles_root en el bloque dispatch del desk/config.json del desk de la TAREA (el que se pasa con --root, p. ej. sldb/desk/config.json): ruta absoluta del repo cuyo desk/roles tiene los RoleDoc. Por defecto es la raíz de la tarea, y así el comportamiento de hoy en deskops no cambia. (b) dispatch.start usa roles_root para find_role_doc y para runtime template (root=roles_root); task_root es la raíz de la tarea (--root) y task_repo es el project_identity del desk/config.json de la tarea (en sldb, 'sldb'). El run_dir y el RunDoc quedan bajo la raíz de la tarea, como hoy. (c) dispatch.reap no usa roles: con --root de la tarea encuentra los agentes por la etiqueta deskops.task_id y mira result-summary.md en el run_dir bajo la raíz de la tarea. Debe funcionar igual con --root sldb (test). (d) en integrate, la rama es el campo branch del bloque integrate del config. Si el tip ya es ancestro de origin/<branch>: rc 0, imprime 'ya integrado: <tip corto>', no pushea y agrega a <raíz>/runs/hooks/events.log la línea '<fecha UTC ISO> <task id> integrate ya-integrado <tip corto>', con el mismo formato de las líneas ok/fallo que integrate ya escribe. Fuera de alcance: copiar RoleDocs a otros desks.
 
 ## Implementation Path
 

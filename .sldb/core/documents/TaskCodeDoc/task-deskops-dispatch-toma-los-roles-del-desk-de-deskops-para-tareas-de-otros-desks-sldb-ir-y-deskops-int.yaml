@@ -1,7 +1,7 @@
 name: task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int
 path: desk/tasks/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int.md
-source_hash: e44b4e79134a6273122ba56886d60900f810f29cf2e6d2d2971566ce5fc13684
-content_hash: 84b075ee4177c76eb5b3e65811d17e5ff4d558569612b3450ba14714d102d23a
+source_hash: 78f4243ebc67a284b19bf9b0e80030ffff08d99cf38b1fbcb3b6803b0a150fda
+content_hash: f87b1e4feded9510202add16424ada7b620009dc4baae2c5951d587a2bdf61b7
 field_hashes:
   title: 5a3e931f9ec37555a5a2ec938476041a51a9d475df296fd64cc0298c2b9ba758
   id: 75a27fa689caa9110a0c97e2206dd8015bfa49810b8b5ee68ec8788a51b7aa11
@@ -12,7 +12,7 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 7e15bfd9dd8d234987e47c6d4d31f6fa2dc9e3f59d2eeea108cd5a903adf9656
   goal: 9de35ac8bbe7ef61d1d5a4002951527fc5c1085243edd04dfd1ec4907a20e691
-  scope: 065a840f3f418e873c0a40bb01e43962e2d92059df69d7946ac2dd06869c94b4
+  scope: f52de6ff521c9c2ae5daa4ae73a5ba5e6f0cb1ea176c1d67aa4bcc509bc68d77
   references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T13:22:42Z'
+  at: '2026-11-18T13:43:57Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
