@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T18:50:33Z'
+  at: '2026-11-18T19:43:12Z'
   authority: generated
   via: save_document_payload
 id: task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii
@@ -50,7 +50,7 @@ _Describe the concrete result this task must produce._
 
 _State what is in scope and what is out of scope._
 
-Entra: deskops/specs/compiler.py (alrededor de las lineas 155-159), deskops/doc_access.py (157-161), deskops/services/drawer.py (288-290), las llamadas git de deskops/services/closure.py (alrededor de 645, 695 y 1555) y cualquier otra llamada git con salida parseada que muestre `grep -rn '"git"' deskops/`; un test nuevo tests/test_ascii_ids.py. No entra: renombrar o migrar ids ya commiteados (CC35a y otros), el hook externo de worktrees (no vive en este repo), cambiar la longitud maxima de los ids.
+Entra: deskops/specs/compiler.py (alrededor de las lineas 155-159), deskops/doc_access.py (157-161), deskops/services/drawer.py (288-290), las llamadas git de deskops/services/closure.py (alrededor de 645, 695 y 1555) y cualquier otra llamada git con salida parseada que muestre `grep -rn '"git"' deskops/`; un test nuevo tests/test_ascii_ids.py. No entra: renombrar o migrar ids ya commiteados (CC35a y otros), el hook externo de worktrees (no vive en este repo), cambiar la longitud maxima de los ids. Incluye además deskops/integrate.py (posterior a esta tarea): load_closed_task y _receipt_commit (alrededor de la línea 100) parsean 'git ls-tree --name-only' y 'git log'. Con un id con tilde, ls-tree cita la ruta y el recibo evidence-commit no se encuentra. Así falló el 2026-11-18 el integrate automático de la tarea de desk update (nota de la cola en references). Test: integrate encuentra el código de una tarea cerrada cuyo id tiene tilde.
 
 ## Implementation Path
 
