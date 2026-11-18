@@ -1,0 +1,37 @@
+name: review-task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip-bundle-1
+path: desk/reviews/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip/bundle-1.md
+source_hash: 3aa92d8df5f8080fd34d1eb6fb02ee6d0b213b5bee7663193c83bdad44eee7a9
+content_hash: dfe31d03f61b1ff89f6c671d69a50b1ff1c552ab2cb2ca5ad2ca46b19cc82869
+field_hashes:
+  id: 18a3d072cc35326782ce66850079e661149a37707ed1c1a6751b21c6baa89d9f
+  title: ea5b5a3d3cde7c9bd02b2a230c29226f6baade36b91f25ed73985ff353695503
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 393c245488428e877cfead5ada1b06048d7a14bdac83fee22690449bb2a27722
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 1397f80266bf6f08576af5515c936895c806848e36c219305d0d50a04c9dc193
+  input_sha256: f2ed6f4eb964d3ab723f1232f92796ce8911fc821c1b0eb4b9edc6469ffcc780
+  contract_sha256: 1ef865b50feeacdbfb759a96784d702311518d410f712f44b9947e345452eb7e
+  output_sha256: db54940395db91fe627907d8bf7bad763a76aa20c73f9d7d2e811da8cabca983
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 06fe496755fa69a1873149c70033c6b64d9c67271379ab10bb5b7c670643a612
+  created_at: 50f3f1fd2e49963a8f16b97952c6c6702e505d82503f13f1ff8facce2e6c0a1b
+  disposed_at: e8da212252a3451b8d1ffe66e2eaa2bbecbcfa03b9d5e9c5c4bbe0a0ce14fb2a
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 08b0c3bc3d7049545a9edf2279a1835eab6289292f6d098f1e76d3c1520d7c20
+  disposition: 2941b92f6d3a53ccbce24314ab67119481883e9219b6741226a56b6e2752ba57
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T11:08:49Z'
+  authority: generated
+  via: save_document_payload

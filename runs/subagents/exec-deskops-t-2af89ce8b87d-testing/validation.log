@@ -1,0 +1,111 @@
+# Validación independiente
+
+run_id: run-deskops-t-2af89ce8b87d
+task: task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent
+fecha: 2026-11-18
+workspace: /mnt/ssd/proyectos/SLDB_1/deskops
+veredicto global: PASS
+
+Entorno usado: /mnt/ssd/proyectos/SLDB_1/.venv/bin/python es Python 3.11.2 y no tiene pytest, así que se usó el fallback indicado:
+  PYTHONPATH=/workspace/deskops:/workspace/sldb/src:/workspace/sldb/.venv/lib/python3.13/site-packages
+  /home/scion/.local/share/uv/python/cpython-3.13-linux-x86_64-gnu/bin/python3.13 -m pytest -q -p no:cacheprovider <archivos>
+con TMPDIR=/dev/shm.
+
+## 1. Tests de la tarea y guardianes
+
+PASS - tests/test_dispatch.py (archivo nuevo): 10 passed, 1 warning, 117.79s.
+        Cubre start executor (a), start tester con run_dir -testing (b), agente running -> 3 sin start (c),
+        intento 2 y tercero -> 5 (d), reap por phase/activity/result-summary + vivo -> 4 (e),
+        y falta de dispatch -> 2 en start ejecutor, start tester y reap (f).
+
+PASS - tests/test_scion_runtime.py: 40 passed.
+PASS - tests/test_cli_grammar.py tests/test_command_registry.py: 5 passed.
+PASS - tests/test_cli.py -k help_uses_deskops_name: 1 passed, 101 deselected.
+PASS - tests/test_output_goldens.py -k help: 1 passed, 6 deselected (comparación, sin --update-golden).
+PASS - tests/test_packaging.py: 6 passed.
+PASS - tests/test_config.py tests/test_supervise.py: 12 passed.
+
+PASS - tests/test_queue.py: 14 passed con una corrección SOLO del entorno de lanzamiento de este runner.
+        Primera corrida: 13 passed, 1 failed (test_concurrent_runs_execute_once). El fallo es ambiental y
+        previo a cualquier código de dispatch: el test lanza `python -m deskops` con
+        env={..., "PYTHONPATH": "<repo deskops>"} (sin /workspace/sldb/src) y el fixture autouse cambia HOME,
+        por lo que el subproceso muere con `ModuleNotFoundError: No module named 'sldb.store'`.
+        Para verificar que no hay regresión del cambio, se añadió temporalmente un .pth en el site-packages
+        del intérprete 3.13 con /workspace/sldb/src y el site-packages de sldb; las 14 pruebas pasaron.
+        El .pth se eliminó al terminar. No se modificó ningún test ni archivo del repo.
+
+## 2. Prueba manual de los dos subcomandos (desk desechable)
+
+PASS - Desk /dev/shm/dispatch-manual-test creado con `deskops init`; roles disp-executor/disp-tester,
+        runtime-profile claude y tarea task-dispatch-manual creados con `deskops add ...` por el CLI.
+        `dispatch` añadido a desk/config.json. Contexto JSON con project/workspace_root/desk_root/
+        source_root/sldb_root válido. Scion de prueba propio, primero en PATH: script que guarda cada argv
+        en un log y responde a `list` con el JSON controlado. NUNCA se ejecutó el scion real.
+
+PASS - (a) `dispatch start executor --task ... --root .` -> exit 0.
+        argv registrado: list --project manual-proj --format json;
+        templates sync disp-executor --project manual-proj;
+        start deskops-e-<hash> "<frase con la ruta absoluta de prompt.md>" --type disp-executor
+        --project manual-proj --workspace <abs> --harness-auth oauth-token --non-interactive
+        --label deskops.task_id=... --label deskops.contract_sha256=... --label deskops.role=executor
+        --label deskops.attempt=1 --config <env.yaml>.
+        Se crearon template (scion-agent.yaml, agents.md, system-prompt.md), RunDoc run.md y prompt.md;
+        prompt.md contiene el `deskops show task` seguido del Markdown completo del TaskDoc.
+        Salida: `agente deskops-e-<hash> run_dir runs/subagents/exec-deskops-e-<hash>`; exit = código de scion.
+
+PASS - (b) `dispatch start tester ...` -> exit 0; nombre deskops-t-<hash> SIN sufijo -testing;
+        run_dir runs/subagents/exec-deskops-t-<hash>-testing; template/RunDoc/prompt.md creados;
+        `templates sync disp-tester ...`; argv de start sin --config (tester no lo declara).
+
+PASS - (c) Con un agente phase=running en `list`: imprime `ocupado: busy-agent`, exit 3, y solo se ejecutó
+        el `list` (ningún start ni sync).
+
+PASS - (d) Segundo start de la misma tarea/rol -> nombre ...-a2, run_dir ...-a2, exit 0.
+        Tercer start -> `sin intentos: task-dispatch-manual executor`, exit 5, sin start adicional.
+
+PASS - (e) `reap` con agentes de la tarea:
+        `deskops-e-phase executor phase:stopped`,
+        `deskops-e-act executor activity:blocked`,
+        `deskops-t-<hash> tester result-summary`,
+        `deskops-e-live executor vivo`; exit 4.
+        Para los tres terminados se ejecutaron `scion stop <name> --project manual-proj` y
+        `scion delete <name> --project manual-proj --yes`; el vivo y el agente de otra tarea no recibieron
+        stop/delete. Con solo agentes terminados, reap imprimió su motivo y salió con 0.
+
+PASS - (f) Sin campo dispatch: start executor, start tester y reap imprimen
+        `falta el campo dispatch en desk/config.json` y salen con 2; no se llamó a scion.
+
+PASS - Desk manual borrado al terminar (/dev/shm/dispatch-manual-test eliminado).
+
+## 3. Revisión de implementación y tests
+
+PASS - deskops/dispatch.py: todas las llamadas a scion pasan por `_scion(argv)` que usa subprocess.run.
+PASS - Orden y semántica de start: list/ocupado (3), identidad y run_dir con intentos (5), template,
+        RunDoc, templates sync, prompt.md, scion_start_argv (+ --config), salida `agente ... run_dir ...`
+        y exit de scion. Identidad con scion_child_identity; run_dir exec-<name>[-testing].
+PASS - Reap: filtra por labels["deskops.task_id"] calculado con scion_child_identity; usa
+        labels["deskops.role"] para el rol y el run_dir; prioridad phase -> activity -> result-summary;
+        stop+delete por terminado; línea de salida y exit 4/0 correctos.
+PASS - Configuración: DeskConfig.dispatch con project, workspace, templates_dir, context_file y roles
+        executor/tester (role, harness, model_alias, harness_auth opcional, env_config opcional).
+PASS - Registro del grupo dispatch/start/reap y declaraciones en los tres tests guardianes; goldens
+        deskops.txt + deskops_dispatch{,_start,_reap}.txt coherentes; operator-manual con config y queue_jobs.
+PASS - tests/test_dispatch.py no usa mocks ni monkeypatch sobre funciones del módulo: usa un ejecutable
+        `scion` falso en PATH que registra argv y responde list con JSON. Las aserciones contra textos
+        (p. ej. `agente ... run_dir ...`, `sin intentos: ...`, líneas de reap, frase del prompt) son
+        contratos de salida exigidos por el TaskDoc, no duplicados de implementación.
+PASS - Sin cambios del tester en el repo, sin commits, sin tocar desk/ ni .sldb/ del repo. Se ignoraron
+        los cambios ajenos sin commitear (message.py, tests de message, inbox, repo identity).
+
+## Veredicto por punto
+
+PASS - Validation: test_dispatch.py nuevo pasa y cubre (a)-(f).
+PASS - Validation: test_scion_runtime.py sigue pasando.
+PASS - Validation: tests guardianes del CLI y goldens de ayuda pasan con el grupo declarado.
+PASS - Done When: start arma/ejecuta el argv esperado para ejecutor y tester, se niega con agente vivo;
+       reap detiene y borra terminados y deja vivos.
+
+VEREDICTO FINAL: PASS
+
+Suite completa en copia limpia de 9daa47b2b2a850a7ab33d179a8ff02da716c8074 (pytest -q -n 4 -p no:cacheprovider tests), corrida por el coordinador:
+1209 passed, 3 skipped, 1 xfailed, 5 warnings in 1745.05s (0:29:05)

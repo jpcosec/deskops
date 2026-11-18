@@ -1,25 +1,25 @@
 name: task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip
 path: desk/tasks/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip.md
-source_hash: cec2a1481de29a8bea3e5454550d069185f4d64b87742944bbbfc4a50ea63867
-content_hash: 1736a4de655cea06371956444931a316c0fcb60cf3311f633b2a11f511f68bf0
+source_hash: 096406be416a77c035a80947e5dc744a4176fc81747ebf9d125ce51b0cefdb9e
+content_hash: 33f6d301391a6798d4cdf7a55adad1d2fe0131c6f2076eb463e13b0cd94c09c0
 field_hashes:
   title: b8da91fcd64e3df5c2dd04f27724220c811c72cf619d5e8e0ccb0e84164e8bd0
   id: 74fc082bff466ecbb6ca32a0a933e760a27266b791e721fb46ea0bd098fde94c
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: cc27f324bfa491a687cd4e2ac1ec9091b6d1f2c34c1103e05501e73e6284b7c3
-  goal: 7988f7440fad1bd90c977f512d637a982f7798a5eb3b84227b73fa9aac89bd33
-  scope: 558f80ba093a25b2d0d5171ed83595be299f10b724a35cdb5b22d5e6f990dbc9
+  goal: a7948f21fbc868cc389f287eb92b06542b08a2d69933d576c64dc8f99ba828e9
+  scope: d2771539c1e7f350d1caea2c0c26386ccd8a251beac8b71f57048248d05c1c6b
   references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   depends_on: 0bbb2f877c3ebd26880e98e5b6eac58959778559d3d79bdfad6dbea776f24930
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: eb9b712ae28a127c18f74eab03d86873493328aabcc044d92625d96e676809e9
+  files: 401f50a77f1dbd1910f2c80c1fb8067c9d53a034ce461d029f26f525c6953a39
   implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  validation: 9a664f391e60cc91c1d44b4f47dd3701bc5cff7ec3a259dda651e623b1e599f1
-  done_when: f221b068300480b9283cb10e42601faa693c3a40367a26b8634ea605f3f144ae
+  validation: 1f7a70226b7827c445f136eab8a718da9ed64c18e083397674cd9cc4ab018606
+  done_when: 2ac98b0b732d384441a9f5ade075c118fb327d5c0646f899bcd1d5b349e6d901
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T05:55:35Z'
+  at: '2026-11-18T11:39:05Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

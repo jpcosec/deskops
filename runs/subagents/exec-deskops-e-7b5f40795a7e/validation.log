@@ -1,0 +1,27 @@
+# env: PYTHONPATH=/workspace/deskops:/workspace/sldb/src:<sldb venv site-packages> TMPDIR=/dev/shm python3.13 -m pytest -q -p no:cacheprovider
+$ pytest tests/test_integrate.py -> 18 passed (exit 0)
+$ pytest -q tests/test_cli_grammar.py tests/test_command_registry.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 4.12s
+exit 0
+$ pytest -q tests/test_cli.py -k help_uses_deskops_name
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 101 deselected, 1 warning in 1.22s
+exit 0
+$ pytest -q tests/test_output_goldens.py -k help
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 6 deselected, 1 warning in 358.88s (0:05:58)
+exit 0
+$ pytest -q tests/test_config.py
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 0.12s
+exit 0
+$ pytest tests/test_queue.py -> 13 passed, 1 failed (exit 1): test_concurrent_runs_execute_once; the test replaces PYTHONPATH with the repo root, so the subprocess cannot import sldb in this container (ModuleNotFoundError sldb.store), unrelated to this change.
