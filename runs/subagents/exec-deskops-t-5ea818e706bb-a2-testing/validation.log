@@ -1,0 +1,157 @@
+# Independent validation — task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook
+
+run_id: run-deskops-t-5ea818e706bb-a2
+role: tester
+date: 2026-11-18 (UTC)
+repo: /workspace/deskops (main checkout, uncommitted executor changes)
+
+## Test environment note
+
+The prompt's `/mnt/ssd/proyectos/SLDB_1/.venv` is not mounted in this tester
+environment, and `/workspace/.venv` has broken interpreter symlinks (its
+`python` points at the system 3.11 while its packages are 3.12-only). To run the
+same suite against the project's >=3.12 requirement I used a temporary venv
+created with the installed deskops tool interpreter (Python 3.13.18) under
+`/tmp/tester-venv313`, with the test dependencies installed there, and ran:
+
+    PYTHONPATH=/workspace/sldb/src:/workspace/deskops TMPDIR=/dev/shm \
+      /tmp/tester-venv313/bin/python -m pytest -q -p no:cacheprovider \
+      tests/test_scion_runtime.py
+
+This is the same test file and the same `-q -p no:cacheprovider` invocation;
+only the unavailable interpreter path differs. Result repeated identically under
+a local 3.11 venv as a sanity cross-check (both 39 passed).
+
+---
+
+## Validation points
+
+### V1 — pytest tests/test_scion_runtime.py with new tests (a)-(e): PASS
+
+Command exit code: 0.
+Result: `39 passed, 1 warning in 5.99s`.
+
+Inspection of the three added tests:
+- (a) `test_specialist_mode_writes_the_three_files_with_the_repair_contract`
+  asserts `scion-agent.yaml`, `system-prompt.md`, `agents.md` are written after
+  `--mode specialist`.
+- (b) The same test asserts the agents.md contains `sldb stores check`,
+  `deskops doctor`, `sldb docs track`, `sldb docs update`, `sldb docs untrack`,
+  `sldb stores rebuild-index`, and `deskops message send`; the `## Forbidden`
+  section contains `deskops closeout` and `deskops advance task`.
+- (c) `test_specialist_role_name_resolves_the_mode_and_unknown_mode_still_fails`
+  checks name `x-specialist` and id `role-x-specialist` both resolve specialist
+  without `--mode`.
+- (d) The same test checks a bogus mode raises `ValueError` matching
+  `mode must be`.
+- (e) `test_specialist_identity_uses_the_s_prefix` checks
+  `deskops-s-[0-9a-f]{12}` and `role == specialist`.
+
+Observation (non-blocking): the CLI test invokes the real repo root
+(`--root str(ROOT)`) and uses `tmp_path` only for the output directory, instead
+of constructing a fully synthetic desk under `tmp_path`. The required behavioral
+assertions and results are nevertheless present and independently confirmed;
+this does not alter or mask any of the contract checks.
+
+### V2 — runtime template exits 0 and its output dir is removed: PASS
+
+Command (auto-resolved role mode, exactly the coordinator recipe):
+
+    deskops runtime template sldb-store-specialist --root . --out /dev/shm/sldb-specialist-tpl.ggxHaw
+
+Exit code: 0. Output listed `scion-agent.yaml`, `system-prompt.md`, `agents.md`.
+The generated agents.md is the specialist template and contains the a-f
+contract: desk root / `DESKOPS_DESK_ROOT`; the exact run_dir instruction; both
+before checks; all four mechanical repair commands; one note per remaining
+finding via `deskops message send`; re-check plus `result-summary.md`; the
+forbidden list (`hand edits`, `git commit`, `git add`, `deskops closeout`,
+`deskops advance task`); and `sciontool status task_completed`.
+
+Also verified explicit `--mode specialist`: exit 0 and specialist agents.md.
+Both temporary output directories were deleted and re-checked as absent.
+
+### V3 — `deskops graph missing --root .`: PASS (against the coordinator's stated criterion)
+
+Exit code: 1. Output: `47 missing, 0 informational`.
+The 47 missing_declared_target entries are the documented pre-existing backlog
+from other tasks. A grep of stdout+stderr for the task id, `scion.py`,
+`registry.py`, `test_scion_runtime`, `operator-manual`, or
+`sldb-store-specialist` returned no matches. Therefore this change introduces no
+missing graph target, per the explicit criterion in the coordinator note (the
+requested exit-0 condition is not achievable while those 47 pre-existing gaps
+remain and they are out of this task's scope).
+
+### V4 — new RoleDoc not reported unregistered by `sldb stores check`: PASS
+
+`sldb stores check --store .sldb` exits 1 because of pre-existing damage/alerts
+elsewhere, but it contains no mention of the new RoleDoc as unregistered.
+The `--format json` output contains the RoleDoc entry:
+`role-sldb-store-specialist`, path `desk/roles/role-sldb-store-specialist.md`,
+`path_exists: true`, `hash_c_ok: true`, `hash_d_ok: true`, `content_ok: true`,
+`fields_ok: true`, `note: "ok"`, `explain: "ok"`.
+No `unregistered`/`untracked` occurrence names it.
+
+---
+
+## Done When
+
+### D1 — RoleDoc `sldb-store-specialist` exists and matches the contract: PASS
+
+- `desk/roles/role-sldb-store-specialist.md` and
+  `.sldb/core/documents/RoleDoc/role-sldb-store-specialist.yaml` exist.
+- `name: sldb-store-specialist`, `id: role-sldb-store-specialist`, `kind: pi`,
+  tools exactly `read, grep, find, ls, bash`.
+- `model: openrouter/nvidia/nemotron-3-super-120b-a12b:free`, identical to the
+  primary `--model` in `desk/roles/deskops-tester.md`.
+- Its body states the a-f specialist mandate (check+doctor in the exact run_dir,
+  four mechanical commands, notes for everything else, result-summary.md,
+  prohibitions, and `sciontool status task_completed`).
+
+### D2 — specialist mode and renderer implemented: PASS
+
+- `deskops/runtime/scion.py`: `specialist` accepted by
+  `scion_template_files`; resolved automatically for names/ids ending in
+  `-specialist`; new `_render_specialist_agents_md` used for that mode.
+- `scion_child_identity` accepts `specialist` and emits the `deskops-s-` prefix.
+- `deskops/cli/registry.py`: `--mode` choices include `specialist`.
+- Covered by the passing tests in V1.
+
+### D3 — operator manual hook example: PASS
+
+- `docs/operator-manual.md`, section `#### Post-hooks on a transition`, contains
+  `encola-especialista-de-store` for
+  `testing-task_hands_to_closeout`; it appends
+  `<UTC ISO date> <DESKOPS_TASK_ID>` to `runs/hooks/store-specialist.queue`.
+- The manual states the hook only queues and the coordinator dispatches the
+  specialist with `deskops runtime template sldb-store-specialist --mode
+  specialist` and `scion start`.
+- The YAML fragment parses successfully and has the expected `name`, `run`
+  (`sh -c`, append command) and `timeout`.
+
+### D4 — the four validations pass: PASS
+
+V1-V4 above. V3 passes under the coordinator's explicit pre-existing-backlog
+criterion; the literal exit-0 requirement is not met because of 47 unrelated
+missing targets, none attributable to this task.
+
+### D5 — git status has no new task-owned files outside Scope: PASS (with notes)
+
+Task-owned modifications are limited to the listed surfaces:
+`deskops/runtime/scion.py`, `deskops/cli/registry.py`,
+`tests/test_scion_runtime.py`, `docs/operator-manual.md`, plus the explicitly
+allowed new `desk/roles/role-sldb-store-specialist.md` and its
+`.sldb/core/documents/RoleDoc/role-sldb-store-specialist.yaml` registration.
+The `.sldb` model/store-index/store metadata changes are the RoleDoc
+registration. Other modified/untracked paths are the foreign uncommitted
+changes the coordinator said to ignore, pre-existing run/review artifacts, and
+the lifecycle hook output `runs/hooks/` produced by `advance task` (runtime
+evidence, not a source deliverable of this task).
+
+---
+
+## Overall verdict
+
+PASS. All three deliverables exist; all required behaviors are implemented and
+proven; no task-owned regression was found. Non-blocking observations: the
+specialist CLI test uses ROOT rather than a synthetic temp desk, and V3 is
+green only under the coordinator's stated pre-existing-backlog criterion.

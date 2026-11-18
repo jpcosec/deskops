@@ -1,0 +1,37 @@
+name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-preflight-1
+path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/preflight-1.md
+source_hash: 860641c2cb94b14396c48516d315f460dabf3a184aad363e9ba91b4efbb59424
+content_hash: a0cbcc54c4dff30dc9ef06f6d03f76dcd64390e3d014b46087aa8639f7d4ab8f
+field_hashes:
+  id: daf0457fd0bd9f411919af783725f3147fc5e494a02797862578a43f27a888cf
+  title: 900ceff01a0621021c3990e862321e15a549179288d9d4e3a6adbe4191974dfd
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: db68469c91d11154924741afc2c3dcda13e13574536a716f7d5910acae04576a
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: fba58686c24a195e4d3f0b49f450b3d273792093b49792f841da92ae896cd54e
+  input_sha256: c43c024495b2b5a07f490904131cfc4a71977fff77228f49c5e3a4473d9266c2
+  contract_sha256: f824a22898082f48fbecbd6291a71045da45386fc418a220d0c0783ab218dfe2
+  output_sha256: 87ac54cf22f854c843e452ca220477f77d2e895c34edd5f70f6873b52ac4e7f8
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 33ec90d3b0d24172f839be42081f5690adcd36036d5a95002981c4cafbbd8bdc
+  created_at: 56f56094194a01d78c92a6917b2cda795a8267bdb5aaaf59fa842a0d302c414d
+  disposed_at: da18a44b5725c65bab26105b1f9c6737a391573308f9c94a331c785adc37e841
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 2730ae223360778f99338a3a9583f429d14925f340ffa6fe57cfbbb33c82ad64
+  disposition: b936b989dd1419a4f4bf1ea12ddb73e016d0ff16310ffb790c792d358e24f19b
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T04:13:16Z'
+  authority: generated
+  via: save_document_payload

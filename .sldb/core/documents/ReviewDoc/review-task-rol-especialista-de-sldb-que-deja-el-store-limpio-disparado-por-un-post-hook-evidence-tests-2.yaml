@@ -1,0 +1,37 @@
+name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-tests-2
+path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-tests-2.md
+source_hash: 00c238e72b02757ac4ea78c25fa1bc521b0a79c42997e322f4a6b1c7b5d7bb80
+content_hash: 110be82cf06496225f04d832398c540c6cc25cac4c14cdf9d71b959e8f007afb
+field_hashes:
+  id: 142e33921b4c0e9ea6e9d6eaf1a3cb5cf941e724ea43f684eb70aedac7b390cb
+  title: b78a41032b7cc1866e1dfefa790e4ef71b71ba20ae562d4d417779661648cd16
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 03611a5bcd9182d32cee45cc74f5ba854a5389c5f4c0b7a2ccdc86286afffb8d
+  subject: 4182de0dad0edcbd2f0c6178bcbcb435b872e62ee4d75eb1fd934779b631a132
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: cb895d48f713ac7cc54c151937c58b81c58fea428b5a048c23f1425ff7534817
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0b86ac485f7ad9d68e9d1c89415ecfd27b2d40075c58a142cafefb930c88d411
+  created_at: 5a247cb2d517b526b327649133c657b91c40753a13d695c1d90f2c697de41924
+  disposed_at: 5a247cb2d517b526b327649133c657b91c40753a13d695c1d90f2c697de41924
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 64082a8deca0cb6de4de72b3fda2bf5d5158d782d24cd2b03a38d94726577133
+  disposition: 36b4ce6dc7f18d7338aa8f6e21f754a7ae6b4a558bca67994a4c1aec603130ab
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T05:50:51Z'
+  authority: generated
+  via: create_document

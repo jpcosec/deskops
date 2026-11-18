@@ -1,0 +1,10 @@
+Task: task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook
+Title: Rol especialista de sldb que deja el store limpio, disparado por un post-hook
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.code
+Effective atoms:
+- atom-scion-coordinator-progresses-authorized-work
+- atom-automatic-routines-vs-llm-tasks
+Lifecycle gates:
+- task_completes -> complete: open [status = "ready_for_testing"]

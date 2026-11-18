@@ -1,0 +1,11 @@
+Task: task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook
+Title: Rol especialista de sldb que deja el store limpio, disparado por un post-hook
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Effective atoms:
+- atom-scion-coordinator-progresses-authorized-work
+- atom-automatic-routines-vs-llm-tasks
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log

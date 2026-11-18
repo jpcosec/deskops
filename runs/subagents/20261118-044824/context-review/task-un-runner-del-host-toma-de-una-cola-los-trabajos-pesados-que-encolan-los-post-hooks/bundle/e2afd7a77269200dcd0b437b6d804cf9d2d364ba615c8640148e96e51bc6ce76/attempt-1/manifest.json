@@ -1,0 +1,99 @@
+{
+  "key": "task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/bundle",
+  "input_sha256": "e2afd7a77269200dcd0b437b6d804cf9d2d364ba615c8640148e96e51bc6ce76",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261118-044824/context-review/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/bundle/e2afd7a77269200dcd0b437b6d804cf9d2d364ba615c8640148e96e51bc6ce76/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks.md",
+      "sha256": "62fd75f49130d977ebf16469b55730722827f92c2d19be4f7daa3cc5b3f9ef19",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md",
+      "sha256": "b067cd57c8d61bc7320c81051f6c01ad5adf7b5d304c43abdf0f061577766e7d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/config.py",
+      "sha256": "9694f4ab63433b998b60566077f66e20d1f5030c6e55e3da7cd98d732c9394df",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/operator-manual.md",
+      "sha256": "a75046ef3a0b4fc53b7a7dc6488b0e212760c4ced405b3442c947a40568ab824",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 82593
+    }
+  ],
+  "started": "2026-11-18T04:48:25.130093+00:00",
+  "finished": "2026-11-18T04:48:36.448404+00:00"
+}

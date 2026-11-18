@@ -1,3 +1,4 @@
+FILE:desk/tasks/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook.md
 ---
 sldb:
   by: agent
@@ -65,3 +66,7 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 `deskops runtime template` del rol especialista produce scion-agent.yaml, system-prompt.md y agents.md con el encargo descrito; el test del template pasa; el manual documenta el hook.
+
+FILE:instruccion
+Preflight solo-TaskDoc de la tarea task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook: reformula el encargo tal como lo leería un ejecutor sin ningún otro contexto, lista ambigüedades con cita textual del input y da el DRY-RUN sin ejecutar nada. No ejecutes nada.
+

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T23:06:47Z'
+  at: '2026-11-18T05:51:55Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -52,7 +52,6 @@ tasks:
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
 - desk/tasks/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks.md
-- desk/tasks/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -135,5 +134,17 @@ _Generated from the task references above._
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
-- Un runner del host toma de una cola los trabajos pesados que encolan los post-hooks [draft] - Existe `deskops queue add` (lo llama un post-hook; escribe un trabajo como archivo en una cola del desk con el id de la tarea, la transicion y el tipo de trabajo) y `deskops queue run` (lo corre el host; toma el trabajo mas antiguo, verifica memoria disponible y que no haya otro trabajo corriendo, ejecuta el comando declarado para ese tipo de trabajo en la configuracion del desk, guarda el log y el resultado, y deja el trabajo como hecho o fallido). `deskops queue list` muestra pendientes, en curso y terminados. Un trabajo fallido deja una nota en el inbox del desk con la ruta del log.
-- Rol especialista de sldb que deja el store limpio, disparado por un post-hook [draft] - El desk de deskops trae un RoleDoc de especialista de sldb (creado con `deskops add role`) cuyo encargo es: correr `sldb stores check` y `deskops doctor` sobre el desk, corregir con el CLI lo que sea mecanico (registrar o actualizar documentos editados fuera del CLI, quitar del indice documentos que ya no existen) y dejar por escrito en una nota del inbox lo que requiere una decision. `deskops runtime template` lo materializa como template scion en un modo propio, con su agents.md. El manual del operador muestra el post-hook que lo despacha en la transicion a closeout.
+- Un runner del host toma de una cola los trabajos pesados que encolan los post-hooks [draft] - Un grupo de comandos nuevo, `deskops queue`, con tres subcomandos, y su configuracion en el desk.
+
+Configuracion. `DeskConfig` (archivo `deskops/config.py`, se lee de `desk/config.json`) gana tres campos: `queue_jobs`, un mapa de tipo de trabajo a `{"run": [lista argv], "timeout": segundos enteros mayores que cero, por defecto 3600}`; `queue_min_available_gb` (entero, por defecto 8); `queue_max_psi_avg60` (numero, por defecto 10). Por defecto `queue_jobs` es un mapa vacio.
+
+Cola. Vive en la carpeta `runs/queue` del repo, con las subcarpetas `pending`, `running`, `done`, `failed` y `logs`, que los comandos crean si faltan. Un trabajo es un archivo JSON llamado `<AAAAMMDDTHHMMSSZ>-<tipo>-<id de tarea>.json` con las claves `id` (el nombre sin extension), `kind`, `task_id`, `transition`, `enqueued_at`. Cambiar de estado es mover el archivo de carpeta con `os.replace`.
+
+1. `deskops queue add <tipo> --task <id> --transition <relacion> --root .` escribe el trabajo en `pending` e imprime su `id`. Si `--task` o `--transition` no vienen, se leen de las variables `DESKOPS_TASK_ID` y `DESKOPS_TRANSITION` (las que reciben los post-hooks). Un tipo que no esta en `queue_jobs` sale con codigo 2 y un mensaje que lista los tipos declarados; sin id de tarea sale con codigo 2.
+
+2. `deskops queue run --root .` ejecuta como maximo un trabajo y sale. Pasos, en orden: (a) toma un cerrojo exclusivo no bloqueante (`fcntl.flock`) sobre el archivo `run.lock` de la carpeta de la cola; si otro proceso lo tiene, imprime `ocupado: otro queue run en curso` y sale con codigo 0 sin tocar nada; (b) si no hay pendientes imprime `sin trabajos` y sale con codigo 0; (c) lee `MemAvailable` de `/proc/meminfo` y el `avg60` de la linea `some` de `/proc/pressure/memory`; si la memoria disponible en GB es menor que `queue_min_available_gb` o el avg60 es mayor o igual que `queue_max_psi_avg60`, imprime `en espera: <motivo con los valores>` y sale con codigo 0 dejando el trabajo en `pending`; (d) toma el pendiente mas antiguo (orden por nombre), lo mueve a `running` y ejecuta el argv de su tipo con `subprocess.run`, sin shell, con la raiz del repo como directorio de trabajo y con las variables `DESKOPS_ROOT`, `DESKOPS_TASK_ID`, `DESKOPS_TRANSITION`, `DESKOPS_JOB_ID`, `DESKOPS_JOB_KIND`; la salida estandar y de error van al archivo `<id>.log` de la carpeta `logs`; (e) agrega al JSON `started_at`, `ended_at`, `exit_code` (o `timeout: true` si paso el tope) y `log`, y lo mueve a `done` si el codigo fue 0 y a `failed` en otro caso; (f) si fallo, deja una nota en el inbox del mismo desk con la misma funcion que usa `deskops message send`, tipo `unclear`, titulo `queue: <id>` y cuerpo con el tipo, la tarea, el codigo de salida y la ruta del log; `queue run` sale con codigo 1. Con `--all` repite los pasos (b) a (f) hasta que no queden pendientes o uno falle.
+   Un trabajo que quedo en `running` de una corrida que murio (el cerrojo esta libre y hay archivos en `running`) se mueve a `failed` con `exit_code: null` y `interrupted: true` antes del paso (b), con su nota.
+
+3. `deskops queue list --root . --format text|json` muestra los trabajos agrupados por estado, con id, tipo, tarea y, en los terminados, codigo de salida.
+
+El manual del operador gana una seccion `Host queue` que explica el formato de `queue_jobs`, los tres subcomandos, los gates, y un ejemplo de post-hook que encola: `run: [deskops, queue, add, <tipo>, --root, .]`.

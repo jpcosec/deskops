@@ -1,0 +1,37 @@
+name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-bundle-1
+path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/bundle-1.md
+source_hash: d5583afb1961d2a71e0149fafdcba0d5f6de1535d081dbeca6087c981c7f3b32
+content_hash: 8892456f00524d7eae1b6337ea8315bb1ad278ceb53bc9b7887f608370bfb188
+field_hashes:
+  id: 62b8352b6ed7eea4e9037a7d8889cc572e62a4b18c087cae5a62798dda78d628
+  title: 56dd64f0c358bf13843f16f23149066fcf1acd990c210de45143718af25e43c1
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 4182de0dad0edcbd2f0c6178bcbcb435b872e62ee4d75eb1fd934779b631a132
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 163a2fec4fd9326de745a4886519f7898f3b2ebcda252b1acf068e6f162fc223
+  input_sha256: 15e05f1bc919cb4bef060e4fc5a9756d078988634aef2d2d20cc995315a9c648
+  contract_sha256: 744ea54a32f445e5cc6569b943680a6721f9cd4820daf5293e4957bb24d73f19
+  output_sha256: 41d1eafd8341555c6511f87db0adbc153457f2037e06e03ddf2a40a20e401966
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: e9b0b164f0bc1a90237fe03f55a37c37a51099bcf7102a04dff93bd15d52dc5b
+  created_at: 2bfc61cc791e7886c471d603ef1557061c9c1e25b7d849a6a7dcfff4d96c0db7
+  disposed_at: 383aaa64629c25c741fb6403c8ea1723a8a2a766a1707475587fa154f9f23c0b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 1e6cf14cd496b834ed904491b90b1f503d58102644d6c2cb2ccbc03d506de555
+  disposition: f37e4ed3af228b7d580f83667ab947fb485ee1e311a7e1367dddbc0e93371f31
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T04:19:19Z'
+  authority: generated
+  via: save_document_payload

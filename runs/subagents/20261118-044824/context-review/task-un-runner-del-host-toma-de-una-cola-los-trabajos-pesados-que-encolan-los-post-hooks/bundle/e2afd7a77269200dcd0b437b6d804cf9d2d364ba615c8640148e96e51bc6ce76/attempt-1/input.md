@@ -1,0 +1,1512 @@
+FILE:desk/tasks/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks.md
+---
+sldb:
+  by: agent
+  at: '2026-11-18T04:47:13Z'
+  authority: generated
+  via: save_document_payload
+id: task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks
+status: draft
+summary: ''
+tags:
+- workspace:desk
+- artifact:task
+current_node: ritual-execution
+history: []
+references: []
+depends_on: []
+pills: []
+files:
+- deskops/config.py
+- deskops/cli/registry.py
+- docs/operator-manual.md
+task_type: task.code
+inherits_from: []
+inherit_acceptance_context: false
+atoms:
+- atom-automatic-routines-vs-llm-tasks
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+---
+
+# Un runner del host toma de una cola los trabajos pesados que encolan los post-hooks
+
+## Rationale
+
+_Explain why this task exists or the business driver behind it._
+
+Los post-hooks de una transicion corren donde corre `deskops advance task`. Cuando lo corre un ejecutor dentro de un contenedor scion, ahi no estan el cerrojo de tests de la maquina, el control de memoria ni las credenciales de push. La suite completa, la integracion y el push tienen que correr en el host, de a uno.
+
+## Goal
+
+_Describe the concrete result this task must produce._
+
+Un grupo de comandos nuevo, `deskops queue`, con tres subcomandos, y su configuracion en el desk.
+
+Configuracion. `DeskConfig` (archivo `deskops/config.py`, se lee de `desk/config.json`) gana tres campos: `queue_jobs`, un mapa de tipo de trabajo a `{"run": [lista argv], "timeout": segundos enteros mayores que cero, por defecto 3600}`; `queue_min_available_gb` (entero, por defecto 8); `queue_max_psi_avg60` (numero, por defecto 10). Por defecto `queue_jobs` es un mapa vacio.
+
+Cola. Vive en la carpeta `runs/queue` del repo, con las subcarpetas `pending`, `running`, `done`, `failed` y `logs`, que los comandos crean si faltan. Un trabajo es un archivo JSON llamado `<AAAAMMDDTHHMMSSZ>-<tipo>-<id de tarea>.json` con las claves `id` (el nombre sin extension), `kind`, `task_id`, `transition`, `enqueued_at`. Cambiar de estado es mover el archivo de carpeta con `os.replace`.
+
+1. `deskops queue add <tipo> --task <id> --transition <relacion> --root .` escribe el trabajo en `pending` e imprime su `id`. Si `--task` o `--transition` no vienen, se leen de las variables `DESKOPS_TASK_ID` y `DESKOPS_TRANSITION` (las que reciben los post-hooks). Un tipo que no esta en `queue_jobs` sale con codigo 2 y un mensaje que lista los tipos declarados; sin id de tarea sale con codigo 2.
+
+2. `deskops queue run --root .` ejecuta como maximo un trabajo y sale. Pasos, en orden: (a) toma un cerrojo exclusivo no bloqueante (`fcntl.flock`) sobre el archivo `run.lock` de la carpeta de la cola; si otro proceso lo tiene, imprime `ocupado: otro queue run en curso` y sale con codigo 0 sin tocar nada; (b) si no hay pendientes imprime `sin trabajos` y sale con codigo 0; (c) lee `MemAvailable` de `/proc/meminfo` y el `avg60` de la linea `some` de `/proc/pressure/memory`; si la memoria disponible en GB es menor que `queue_min_available_gb` o el avg60 es mayor o igual que `queue_max_psi_avg60`, imprime `en espera: <motivo con los valores>` y sale con codigo 0 dejando el trabajo en `pending`; (d) toma el pendiente mas antiguo (orden por nombre), lo mueve a `running` y ejecuta el argv de su tipo con `subprocess.run`, sin shell, con la raiz del repo como directorio de trabajo y con las variables `DESKOPS_ROOT`, `DESKOPS_TASK_ID`, `DESKOPS_TRANSITION`, `DESKOPS_JOB_ID`, `DESKOPS_JOB_KIND`; la salida estandar y de error van al archivo `<id>.log` de la carpeta `logs`; (e) agrega al JSON `started_at`, `ended_at`, `exit_code` (o `timeout: true` si paso el tope) y `log`, y lo mueve a `done` si el codigo fue 0 y a `failed` en otro caso; (f) si fallo, deja una nota en el inbox del mismo desk con la misma funcion que usa `deskops message send`, tipo `unclear`, titulo `queue: <id>` y cuerpo con el tipo, la tarea, el codigo de salida y la ruta del log; `queue run` sale con codigo 1. Con `--all` repite los pasos (b) a (f) hasta que no queden pendientes o uno falle.
+   Un trabajo que quedo en `running` de una corrida que murio (el cerrojo esta libre y hay archivos en `running`) se mueve a `failed` con `exit_code: null` y `interrupted: true` antes del paso (b), con su nota.
+
+3. `deskops queue list --root . --format text|json` muestra los trabajos agrupados por estado, con id, tipo, tarea y, en los terminados, codigo de salida.
+
+El manual del operador gana una seccion `Host queue` que explica el formato de `queue_jobs`, los tres subcomandos, los gates, y un ejemplo de post-hook que encola: `run: [deskops, queue, add, <tipo>, --root, .]`.
+
+## Scope
+
+_State what is in scope and what is out of scope._
+
+Dentro: `deskops/config.py`, un modulo nuevo llamado queue.py dentro del paquete deskops, el registro del grupo `queue` en `deskops/cli/registry.py` siguiendo el patron de los grupos vecinos, un archivo de tests nuevo llamado test_queue.py en la carpeta tests, `docs/operator-manual.md`. Fuera: un servicio o timer permanente; cualquier comando que lance agentes scion, corra suites o haga push (eso es otra tarea que usa esta cola); declarar `queue_jobs` u hooks en desks reales; cambios en el repo sldb. Se trabaja en el checkout principal de deskops, sin worktree ni rama, sin `git add` ni `git commit`. Si el cambio deja codigo o tests sin ninguna referencia, se borran en la misma tarea. No se tocan archivos ya modificados por otros en el checkout (`deskops/cli/commands/message.py`, `tests/e2e_agent/scenarios/inbox-to-task.yaml`, `tests/test_inbox_promote_cli_gaps.py`, `tests/test_message_cli.py`, `tests/test_repo_identity.py`). La carpeta de la cola es salida de ejecucion: no se registra en el store.
+
+## Implementation Path
+
+_Outline the expected implementation route or affected surface._
+
+1. Campos nuevos en `DeskConfig`. 2. Modulo queue.py con las funciones de encolar, correr y listar. 3. Grupo `queue` en `deskops/cli/registry.py`. 4. Tests. 5. Manual. 6. `deskops advance task` de esta tarea y aviso de termino.
+
+## Validation
+
+_List the checks required before this task can close._
+
+- El archivo de tests nuevo pasa con `TMPDIR=/dev/shm pytest -q` sobre ese archivo. Los tests usan un desk desechable bajo `tmp_path`, creado como lo hacen los tests vecinos que prueban comandos del CLI, y comandos reales en `queue_jobs` (por ejemplo `[sh, -c, ...]`), sin mocks. Cubren: (a) `queue add` de un tipo declarado crea el archivo en pending y uno no declarado sale con codigo 2; (b) `queue add` toma tarea y transicion de las variables de entorno; (c) `queue run` ejecuta el trabajo, lo deja en done con `exit_code` 0 y escribe el log con la salida del comando y las cinco variables; (d) un comando que sale con codigo distinto de 0 queda en failed, `queue run` sale con 1 y aparece una nota nueva en el inbox del desk que nombra el log; (e) un comando que supera su `timeout` queda en failed con `timeout: true`; (f) con `queue_min_available_gb` fijado en un valor imposible de cumplir, `queue run` imprime `en espera`, sale con 0 y el trabajo sigue en pending; (g) dos procesos `queue run` lanzados a la vez sobre un trabajo que duerme dos segundos: uno lo ejecuta y el otro imprime `ocupado`, y el comando corrio una sola vez; (h) `queue run --all` vacia dos pendientes en orden; (i) un archivo dejado en running sin cerrojo tomado pasa a failed con `interrupted: true`; (j) `queue list --format json` devuelve los cuatro estados.
+- `TMPDIR=/dev/shm pytest -q tests/test_lifecycle_graph.py` sigue pasando.
+- `deskops queue --help` y la ayuda de cada subcomando terminan con codigo 0.
+- `deskops graph missing --root .` no informa ninguna referencia nueva que nombre esta tarea.
+
+## Done When
+
+_Name the observable condition that makes the task complete._
+
+Las cuatro validaciones pasan, el manual tiene la seccion `Host queue` y `git status --short` no muestra archivos nuevos fuera de los nombrados en Scope.
+
+FILE:desk/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md
+---
+sldb:
+  by: agent
+  at: '2026-11-17T22:32:42Z'
+  authority: generated
+  via: save_document_payload
+id: atom-automatic-routines-vs-llm-tasks
+title: Deterministic checks are not LLM tasks
+five_wh_one_plus: how
+tags:
+- system:deskops
+- topic:automation
+- topic:workflow
+---
+
+# Deterministic checks are not LLM tasks
+
+## Answer
+
+Actions that require semantic judgment belong to LLM/subagent tasks. Deterministic checks over known inputs, such as running touched-surface tests, closeout validation, or phase end-to-end checks, belong to tests, CI, or CLI gates. The routine and hook models of the primitive layer stay retired. What exists now are post-hooks declared on the lifecycle transitions (`attributes.hooks` of a `RelationDoc`, run by `deskops advance task` after it persists the transition): deterministic commands, not tasks for a model.
+
+FILE:desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md
+---
+id: atom-code-changes-close-with-tests-and-commit
+title: Code changes close with tests and commit
+five_wh_one_plus: when
+tags:
+- system:deskops
+- topic:testing
+- topic:git
+- topic:closeout
+---
+
+# Code changes close with tests and commit
+
+## Answer
+
+A task that modifies code is not closed until relevant tests pass and the completed change is recorded in a descriptive git commit.
+
+FILE:desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md
+---
+id: atom-cli-mutation-testing-uses-sandbox-desk-roots
+title: CLI mutation testing uses sandbox desk roots
+five_wh_one_plus: how
+tags:
+- system:deskops
+- topic:testing
+- topic:cli
+- topic:materialization
+---
+
+# CLI mutation testing uses sandbox desk roots
+
+## Answer
+
+When testing or exploring mutating deskops CLI commands, agents should point writes at a disposable sandbox root such as `.tmp/deskops-cli-test` instead of the repository's real `desk/`. This keeps generated tasks, lifecycle documents, inbox notes, and other workflow artifacts out of tracked project surfaces unless the mutation is intentionally changing the real desk.
+
+FILE:deskops/config.py
+from __future__ import annotations
+
+import json
+import warnings
+from pathlib import Path
+from typing import Any
+
+from pydantic import BaseModel, Field
+
+from deskops.constants import CURRENT_DESK_FORMAT
+
+
+class SandboxPolicy(BaseModel):
+    enabled: bool = False
+    sandbox_root: str | None = None
+
+
+class VersionExpectations(BaseModel):
+    desk_format: str = CURRENT_DESK_FORMAT
+    model_version: str = "1.0.0"
+
+
+class DeskConfig(BaseModel):
+    project_identity: str = Field(default="unknown-project", description="Canonical project desk identity")
+    versions: VersionExpectations = Field(default_factory=VersionExpectations)
+    sandbox: SandboxPolicy = Field(default_factory=SandboxPolicy)
+    atom_folder_axis: str | None = Field(
+        default=None,
+        description="Tag namespace used as the physical folder axis for atoms under desk/atoms/. Null keeps flat layout.",
+    )
+    load_warnings: list[str] = Field(default_factory=list, exclude=True)
+
+    @property
+    def has_load_warnings(self) -> bool:
+        return bool(self.load_warnings)
+
+    @classmethod
+    def load(cls, desk_root: Path) -> "DeskConfig":
+        merged_data: dict[str, Any] = {}
+        load_warnings: list[str] = []
+
+        for config_path in (desk_root / "config.json", desk_root / "config.local.json"):
+            file_data = _load_json_object(config_path, load_warnings)
+            if file_data is None:
+                continue
+            merged_data = _deep_merge_dicts(merged_data, file_data)
+
+        return cls(**merged_data, load_warnings=load_warnings)
+
+
+def _load_json_object(path: Path, load_warnings: list[str]) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        message = f"Failed to parse desk config {path}: {exc.msg}"
+        load_warnings.append(message)
+        warnings.warn(message, stacklevel=2)
+        return None
+
+    if not isinstance(data, dict):
+        message = f"Desk config {path} must contain a JSON object at the top level."
+        load_warnings.append(message)
+        warnings.warn(message, stacklevel=2)
+        return None
+
+    return data
+
+
+def _deep_merge_dicts(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
+    merged: dict[str, Any] = dict(base)
+    for key, override_value in override.items():
+        base_value = merged.get(key)
+        if isinstance(base_value, dict) and isinstance(override_value, dict):
+            merged[key] = _deep_merge_dicts(base_value, override_value)
+        else:
+            merged[key] = override_value
+    return merged
+
+FILE:docs/operator-manual.md
+# deskops Operator Manual
+
+This manual is the end-to-end operational playbook for `deskops`.
+
+It is written for two audiences:
+
+- people who operate a desk by hand
+- agents that follow documented commands instead of reconstructing behavior from source
+
+The examples are executable. Every fenced block marked `bash runnable` is
+extracted, in document order, by `tests/test_operator_manual.py`. The test runs
+the blocks in a throwaway git repository under `pytest`'s `tmp_path`, with an
+isolated `HOME`, so the manual cannot drift from the real CLI.
+
+Blocks marked `bash` are illustrative only. They show expected failures,
+destructive alternatives, cross-repo targeting, or commands that need an
+external runtime such as Herdr.
+
+For the first, shortest walkthrough, read `docs/quickstart.md`. For the CLI's
+first-use question index, run `deskops faq`. This manual does not re-document
+SLDB; it only covers the deskops workflow surface built on top of SLDB.
+
+## Runnables convention
+
+The runnable walkthrough assumes:
+
+- the current directory is an empty git repository with at least one commit
+- `deskops` resolves to this checkout (`tests/test_operator_manual.py` supplies
+  a shim so the examples stay spelled `deskops ...`)
+- no real `~/.sldb` or user desk is touched
+
+Run one block at a time, or let the test run all blocks in order. State created
+by one block is visible to later blocks.
+
+## Machine and repository setup
+
+### Help and bootstrap
+
+`deskops bootstrap` is the machine-level repair path. It verifies that SLDB is
+importable, installs it from the sibling checkout only when needed, creates the
+global `~/.sldb` store, and registers the deskops model set there.
+
+```bash runnable
+deskops --help
+deskops bootstrap
+```
+
+### Initialize the repository
+
+`deskops init` runs the bootstrap preflight, creates a local `.sldb/` store,
+scaffolds `desk/`, and writes the lifecycle graph under `desk/lifecycle/`.
+
+```bash runnable
+deskops init .
+```
+
+### Orient yourself
+
+```bash runnable
+deskops about
+deskops faq
+deskops faq 1
+```
+
+`deskops faq` with no argument lists the available questions. Pass a question
+index, slug, or text fragment to print one answer.
+
+### Check desk health
+
+`deskops doctor` reports desk shape, store registration, tracking, and model
+validity. `deskops status` is a deprecated alias for the same command.
+
+```bash runnable
+deskops doctor --root .
+deskops status --root .
+```
+
+The report has two parts. **Errors** mean the desk is broken: missing structure,
+a tracked document that is gone, a document its model cannot read, an unregistered
+model, a store that cannot be read. They make `doctor` exit 1. **Alerts** mean the
+store moved under an expected change: a document edited, moved or added by hand, a
+model contract that changed. Nothing is broken; register them with
+`deskops desk update --apply`. Alerts alone exit 0, and they are always printed.
+
+A task its model rejects (its `status`, `current_node` and `history` are not a state
+the lifecycle can produce) is an error of its own, one line per task with the file and
+the validator's text, read from the task's frontmatter, while doctor still runs the other
+checks (structure, store, models). `sldb stores check` names such a document as
+`store/doc-invalid` and goes on; doctor reads that finding too, for a tracked document
+under another model, and does not repeat a task its frontmatter listing already named.
+A task the legacy migration decides says
+`Migrate it with deskops desk update --apply`; any other one says what its owner can
+do (`decide its state: deskops closeout supersede --task <id> --reason ... --ref ...`).
+
+`doctor` also compares the desk's managed seeds (the lifecycle graph and its rules
+under `desk/lifecycle/`) with the ones the installed deskops ships, by the same
+comparison `deskops desk update --apply` makes before rewriting them. Each copy
+that differs is one finding, naming the top-level frontmatter fields that differ
+(`body` when only the text below the frontmatter does; the `sldb:` write
+provenance is named only when nothing else differs):
+
+```text
+lifecycle seed out of date: desk/lifecycle/execution-task_activates.md differs from the deskops package (attributes). Fix: deskops desk update --apply
+```
+
+It is an **error** when a lifecycle edge's transition fields differ (`source_id`,
+`target_id`, `relation_type`, `condition`, `attributes`): `deskops advance` refuses
+that edge. Any other difference (a rule, the body or notes of a seed) is an
+**alert**. A desk seeded before CC31 has `attributes: {}` on its edges and shows
+up here; `deskops desk update --apply` restores the managed seeds.
+
+`doctor` raises one **alert** per absolute path (`/home/...`, `/mnt/...`) in the
+frontmatter of a desk document: a path written on one machine does not exist on
+another. It never changes the exit code. The store already knows where the
+neighbouring repositories are (`.sldb/store.yaml` `links`, read through sldb, plus the
+registry entries whose path is relative; the root of a neighbour is the parent of its
+linked `.sldb`), so the alert says what the path becomes:
+
+```text
+Absolute path: desk/registry/repo-sldb.md path: /home/jp/proyectos/SLDB_1/sldb (becomes ../sldb; fix: deskops doctor --repair)
+```
+
+`--repair` rewrites those that resolve, through the desk's sldb transaction: the
+`path` of a registry entry becomes a path relative to the repository root, and each
+absolute entry of a task's `files` and `references` becomes `<repo-id>:<path>`, the
+form `closeout resolved-by` accepts (a path of this repository becomes relative to its
+root, without prefix). A path that exists here is placed by the root it falls under; a
+path that does not exist (another machine) is placed only when what follows the
+ecosystem folder (`SLDB_1`) names one neighbour without ambiguity. Anything else stays
+an alert with its reason (no ecosystem folder, no neighbour, ambiguous, no registry
+entry for that root, a field other than registry `path`, `files` and `references`).
+
+`--repair` otherwise acts on errors only (it scaffolds structure and registers models). Use it
+when you understand the reported errors:
+
+```bash
+deskops doctor --root . --repair
+```
+
+### Inspect the lifecycle graph
+
+On a fresh desk, `next --diagram` renders the state machine as Mermaid from the
+source spec. The states are ritual docs and the transitions are sldb relation
+docs.
+
+```bash runnable
+deskops next --diagram --root .
+```
+
+The rendered edges include their conditions:
+
+- `task_activates` moves a draft task into execution.
+- `task_hands_to_closeout` requires a non-empty `validation` field.
+- `task_completes` requires `status = 'ready_for_testing'` and verified
+  closeout evidence.
+
+## Repository identity and the ecosystem registry
+
+`deskops repo whoami` prints the repository's configured project identity.
+`deskops repo register` writes a canonical `RepositoryDoc` into the registry and
+tracks it in SLDB.
+
+Register the current repository before sending messages. Message delivery
+requires the current repository to resolve through the registry when any
+registry entries exist.
+
+```bash runnable
+identity="$(deskops repo whoami --root .)"
+deskops repo register "$identity" . --store .sldb --pythonpath .
+deskops repo whoami --root .
+```
+
+`deskops repo remove <id>` takes a registration out of the registry so the
+repository can be registered again, for example after a rename:
+
+```bash runnable
+identity="$(deskops repo whoami --root .)"
+deskops repo remove "$identity" --root . --store .sldb
+deskops repo register "$identity" . --store .sldb --pythonpath .
+```
+
+`deskops add repository` is different: it creates a local repository artifact
+under `desk/registry/` for discovery or routing. It is not the canonical
+ecosystem registration path. The runnable walkthrough creates one later for a
+sibling desk.
+
+Cross-repo targeting uses the registered repository id:
+
+```bash
+deskops message send "Need a follow-up" --to sibling-desk --title "Follow-up"
+deskops list tasks --include-repos
+```
+
+## Desk scaffold, migration, and repair
+
+`deskops desk install` scaffolds only the desk folders and starter docs. It does
+not create a store, register a repository, or write the lifecycle graph.
+
+```bash runnable
+mkdir -p ../sibling
+deskops desk install ../sibling
+deskops desk migrate --root ../sibling
+deskops desk update --root ../sibling --apply
+```
+
+- `desk install <path>` creates `tasks/`, `contexts/`, `rituals/`, `atoms/`,
+  `roles/`, `inbox/`, `drawer/`, the starter boards/pills/rituals, and
+  `desk/config.json`.
+- `desk migrate` adopts a legacy or partial desk non-destructively. It reports
+  what it adopted, preserved, or left for manual conversion.
+- `desk update` is a dry run by default. Add `--apply` to create a missing
+  store, register missing models, and write the lifecycle graph.
+- `desk update` also migrates the tasks a desk migrated before CC31 left in a
+  state no transition produces: an empty history with a terminal or drawer
+  status at a node. The dry run lists them as `Legacy task states to migrate`;
+  `--apply` writes them first, one line per changed field
+  (`desk/tasks/<task>.md: history [] -> [superseded]`). The table:
+  `superseded` gets `history [superseded]` (its node stays); `closed`,
+  `resolved`, `done`, `complete` and `cancelled` (pre-lifecycle resolved), and
+  `deferred` and `candidate` (drawer), get `current_node ''`, outside the
+  lifecycle. A non-terminal status with an empty history (any status that is
+  not `draft` nor one of those above, nor a closeout status: `active`,
+  `ready_for_testing`, `blocked`...) is backed by no transition, so it gets
+  `status draft` at the entry node `ritual-execution` (an empty
+  `current_node` stays empty), reported as
+  `desk/tasks/<task>.md: status active -> draft` plus
+  `current_node <node> -> ritual-execution` when the node moves, and its
+  `summary` gets one line in front, `Migrada a draft por deskops desk update:
+  estado heredado '<status>' sin history (<YYYY-MM-DD UTC>).`, followed by the
+  previous summary. A non-empty history with an incoherent status is not
+  migrated. Any other task the model rejects is listed under
+  `Invalid task documents (not written)` with the validator's text and what its
+  owner can do; it is never written. The migration writes the frontmatter
+  directly because the model rejects the state, and validates the new text with
+  `TaskDoc`; a task it still rejects is restored. A document sldb names with
+  `store/doc-invalid` that the task listing does not cover is reported under
+  `Invalid documents (not written)` with the model's rejection. `sldb stores
+  check` names invalid documents and goes on, so `--apply` keeps every other
+  repair (structure, lifecycle graph, models, tracking, task types, indexes); a
+  store check with no JSON and a failing exit code is still an environment
+  error. `--apply` exits 0
+  when nothing is left and 1 while a task or another invalid document waits
+  for its owner (as the dry-run does); a second run migrates nothing.
+
+A dry run exits `1` when it finds divergence:
+
+```bash
+deskops desk update --root ../sibling
+# Desk divergence report:
+# - Missing store: .sldb
+# - Unregistered models: ...
+# Run with --apply to repair these issues.
+```
+
+## Artifact commands
+
+The `add`, `edit`, `list`, and `show` families are generated from the artifact
+registry. The same grammar applies to every artifact subject.
+
+### Add artifacts
+
+```bash runnable
+deskops add atom --root . \
+  --title "Operator manual evidence" \
+  --five-wh-one-plus what \
+  --answer "The operator manual examples run against the real CLI." \
+  --tags system:manual topic:docs
+
+deskops add pill --root . \
+  --title "Pattern: Manual examples stay runnable" \
+  --summary "Executable documentation." \
+  --what "What." --why "Why." --when "When." --where "Where." \
+  --how "How." --how-not "How not." \
+  --tags topic:docs
+
+deskops add ritual --root . \
+  --title "Manual ritual" \
+  --purpose "Purpose." --trigger "Trigger." --completion "Completion."
+
+deskops add board --root . \
+  --title "Manual board" --scope "Scope." --purpose "Purpose."
+
+deskops add materialization --root . \
+  --title "Manual materialization" \
+  --source-atoms atom-operator-manual-evidence \
+  --target-kind board \
+  --target-identity desk/tasks/Board.md \
+  --intent "Document the CLI." \
+  --validation pytest
+
+deskops add repository --root . \
+  --name "Sibling desk" --path ../sibling --description "Sibling sandbox."
+
+deskops add faq-doc --root . --title "Manual FAQ" --body "FAQ body."
+
+deskops add step --root . \
+  --title "Manual step" --action "Action." --outcome "Outcome."
+
+deskops add inbox-note --root . \
+  --kind suggestion \
+  --created-at "2026-01-01T00:00:00" \
+  --status open \
+  --title "Manual inbox note" \
+  --body "Promote this note."
+```
+
+Required and commonly used flags per subject:
+
+| Subject | Required flags | Common extras |
+|---|---|---|
+| `task` | `--title` | `--why`, `--goal`, `--scope`, `--task-type` (default `task.code`), `--implementation-path`, `--done-when`, `--validation`, `--from-drawer`, `--depends-on`, `--evidence` (adds kinds only), `--inherits-from`, `--atom`, `--inherit-acceptance-context` |
+| `pill` | `--what`, `--why`, `--when`, `--where`, `--how`, `--how-not` | `--summary`, `--tags` |
+| `ritual` | `--purpose`, `--trigger`, `--completion` | `--preconditions`, `--steps`, `--validation`, `--failure-modes`, `--tags` |
+| `board` | `--scope`, `--purpose` | `--tasks`, `--pills`, `--rituals`, `--notes`, `--tags` |
+| `atom` | `--five-wh-one-plus`, `--answer` | `--title`, `--tags`, `--provenance` |
+| `materialization` | `--target-kind`, `--target-identity`, `--intent` | `--source-atoms`, `--validation`, `--tags`, `--provenance` |
+| `repository` | `--name`, `--description` | `--path`, `--status`, `--tags` |
+| `inbox-note` | `--kind`, `--created-at`, `--status`, `--body` | `--sender-project`, `--target-project`, `--title`, `--acknowledged-by`, `--acknowledged-at` |
+| `faq-doc` | `--body` | `--title` |
+| `step` | `--action`, `--outcome` | `--title`, `--tags` |
+
+`--validation`, `--depends-on`, `--atom`, and similar list flags accept repeated
+or space-separated values. Put them last in a command when mixing with another
+multi-value flag, because argparse consumes following tokens until the next
+flag.
+
+`--from-yaml <file>` loads the payload from YAML for every `add` subject.
+
+`--evidence <kind>...` adds closeout evidence kinds to the type's (`tests`,
+`commit`, `atom`, `materialization`, `document`, `external`); it cannot remove
+one the type requires. Without `--task-type` the type is `task.code`. See Closeout.
+
+### List artifacts
+
+Plural subjects list all documents of a type. `--format json` is available on
+every list command. `list tasks --include-repos` also follows task boards
+registered as sibling repositories.
+
+```bash runnable
+deskops list atoms --root .
+deskops list pills --root .
+deskops list rituals --root .
+deskops list boards --root .
+deskops list materializations --root .
+deskops list repositories --root .
+deskops list faq-docs --root .
+deskops list steps --root .
+deskops list inbox-notes --root .
+```
+
+### Show artifacts
+
+Singular subjects show one document by exact id, filename, stem, or a unique
+slug fragment. `--format json` is available.
+
+```bash runnable
+deskops show atom atom-operator-manual-evidence --root .
+deskops show pill pill-pattern-manual-examples-stay-runnable --root .
+deskops show ritual ritual-manual-ritual --root .
+deskops show board board-manual-board --root .
+deskops show materialization materialization-manual-materialization --root .
+deskops show repository repo-sibling-desk --root .
+deskops show faq-doc faq-manual-faq --root .
+deskops show step step-manual-step --root .
+deskops show inbox-note inbox-note-manual-inbox-note --root .
+```
+
+### Edit artifacts
+
+The edit grammar is:
+
+```text
+deskops edit <subject> <selector> <field> <value> [--root .]
+```
+
+Field names accept hyphens in place of underscores. Values are parsed like SLDB
+field values, so JSON lists and quoted strings work. The document is re-rendered
+through its model.
+
+A section field of text whose template carries an italic placeholder paragraph
+(`_Outline the expected implementation route or affected surface._` in a task,
+`_Describe the incoming message with enough evidence to triage._` in an inbox
+note) gets it from the template on every render, so `edit` drops from the value
+any paragraph that is exactly that field's placeholder. Passing the raw section
+text back with a new paragraph leaves one placeholder, the same value twice leaves
+the same file, and a value that is only the placeholder empties the field. The
+phrase inside a longer paragraph, a quote, a list or a code block is content and
+stays. The placeholders are read from the model's template, never from a list.
+
+```bash runnable
+deskops edit atom atom-operator-manual-evidence title "Operator manual evidence (edited)" --root .
+deskops edit pill pill-pattern-manual-examples-stay-runnable summary "Edited summary." --root .
+deskops edit ritual ritual-manual-ritual summary "Edited summary." --root .
+deskops edit board board-manual-board notes "Edited notes." --root .
+deskops edit materialization materialization-manual-materialization intent "Edited intent." --root .
+deskops edit repository repo-sibling-desk status maintenance --root .
+deskops edit faq-doc faq-manual-faq body "Edited FAQ body." --root .
+deskops edit step step-manual-step outcome "Edited outcome." --root .
+deskops edit inbox-note inbox-note-manual-inbox-note body "Edited inbox body." --root .
+```
+
+The same subjects exist for `add`, `edit`, `list`, and `show`; `list` uses
+plural names and `show` uses singular names.
+
+## Inbox, messages, and drawer
+
+### Send, list, read, and acknowledge messages
+
+`deskops message` is the canonical cross-desk surface. Files are written to the
+target desk's `desk/inbox/` as timestamped Markdown notes. Acknowledging closes
+the note but keeps the file as the trace.
+
+```bash runnable
+deskops message send "Please clarify the manual example." \
+  --kind unclear --title "Manual message" --root .
+deskops message list --root .
+deskops message read manual-message --root .
+deskops message ack manual-message --root .
+```
+
+`--to <repo>` targets another registered repository. `--from <project>` overrides
+the resolved sender identity.
+`--desk-root` targets an explicit desk directory. `--format json|yaml` prints
+the result for machines.
+
+### Promote an inbox note to a drawer candidate
+
+Inbox notes are intake. Promotion turns one note into a loose deferred candidate
+under `desk/drawer/tasks/`, removes the inbox file, and records the new
+candidate on the drawer board. The candidate is not yet an active task.
+
+```bash runnable
+deskops promote inbox-to-drawer-task manual-inbox-note --root .
+```
+
+`--title <text>` overrides the candidate title.
+
+### Remove a drawer entry
+
+`deskops drawer remove` removes the file, its tracking, and its drawer-board
+bullets. It refuses when an active task records the entry in `from_drawer`
+unless `--force` is passed. Any other reference to the entry is left as it is.
+Each file that holds one is reported on stderr as
+`alert: <entry> still referenced by <file>`, and the exit code does not change.
+These references are what `sldb.api.referrers` finds over the desk graph: a
+drawer-board bullet in another form, such as `` `tasks/<id>.md` ``, or a task
+that names the entry. `deskops closeout` reports the files that still name the
+closed task in the same way.
+
+```bash runnable
+deskops message send "Remove this candidate." \
+  --kind suggestion --title "Removable candidate" --root .
+deskops promote inbox-to-drawer-task removable-candidate --root .
+deskops drawer remove task-removable-candidate --root .
+```
+
+### Retire any other desk document
+
+`deskops retire` removes one obsolete file under `desk/` that has no dedicated
+verb (pills, inbox notes, steps, roles, runtimes, FAQ docs, materializations,
+leftovers), with a reason and a `--ref` that resolves to an ancestor commit or
+an existing path. The declared fields that name the document lose that entry
+in the transaction that deletes it. For a pill, these are the `pills` of the
+Board and of every task. A mention in prose, such as a path in a task body, is
+never rewritten, so retire refuses while one remains unless `--force` is passed.
+Both kinds of reference are what `sldb.api.referrers` finds: the store's field
+index, and the mention patterns of the desk graph. Tasks, drawer entries, atoms, and registry
+entries keep their own verbs: `closeout`, `drawer remove`, `atoms delete`,
+`repo remove`.
+
+```bash runnable
+deskops retire desk/steps/step-manual-step.md --root . \
+  --reason "The manual step was only an example" \
+  --ref "$(git rev-parse HEAD)"
+```
+
+## Tasks
+
+### Author a task from a drawer candidate
+
+There is no direct drawer-to-active promotion. A person or agent authors the
+active task explicitly and records the drawer file with `--from-drawer`. The
+drawer file is kept for manual cleanup. Like every task, its type declares its
+closeout evidence: `--task-type task.docs` declares `commit` and `document`.
+
+When the `files` of a task name another repository of the desk's registry
+(`deskops repo register`), `add task` prints one more line after creating it, and
+creates it all the same (it never blocks and does not change the type):
+
+```text
+Files of <task-id> belong to repository <repo-id>; if the work lives there consider task_type task.external or a mirror task in its desk.
+```
+
+A file belongs to another repository when it is `<repo-id>:<path>` with a registered
+id, an absolute path under that repository's registered root, or a relative path that
+starts at the parent folder (`../<repo>/...`) and resolves under it. Anything else is
+local. Only `files` count, not `references`; the line is not printed for `task.external`
+or when every file is local. `deskops doctor` lists the same line as an alert for each
+open task (not closed, resolved, done, complete, superseded or cancelled) that is not
+`task.external` and has such files; it does not change doctor's exit code.
+
+```bash runnable
+deskops add task --root . \
+  --title "Close a manual task" \
+  --task-type task.docs \
+  --why "Why." \
+  --goal "Goal." \
+  --scope "Scope." \
+  --implementation-path "Path." \
+  --done-when "Done." \
+  --from-drawer task-manual-inbox-note \
+  --validation "pytest tests/test_manual_smoke.py"
+```
+
+### Bind reusable context pills
+
+Pills are reusable atomic context, not one-to-one task artifacts. Bind the ones
+whose `when`, `where`, and `how_not` match the task.
+
+```bash runnable
+deskops bind pill task-close-a-manual-task \
+  pill-pattern-manual-examples-stay-runnable --root .
+```
+
+### Inspect, edit, and advance a task
+
+`next <task>` explains the next valid workflow action without mutating the
+task; `next <task> --why` adds why this task and these actions were selected. `show task` prints the lifecycle gates and whether each holds.
+
+```bash runnable
+deskops list tasks --root .
+deskops show task task-close-a-manual-task --root .
+deskops next task-close-a-manual-task --root .
+deskops edit task task-close-a-manual-task scope "Edited scope." --root .
+deskops review record task-close-a-manual-task --kind preflight --operator "Manual operator" \
+  --evidence desk/tasks/task-close-a-manual-task.md --reason "Contract read; nothing ambiguous" --root .
+deskops review dispose review-task-close-a-manual-task-preflight-1 --verdict accepted --reason "Contract reviewed by the operator" --root .
+deskops advance task task-close-a-manual-task --root .
+deskops advance task task-close-a-manual-task --root .
+```
+
+A task leaves `ritual-execution` only with the review receipts its type asks for
+(here `task.docs`: an accepted `preflight` on the task's current contract, so it
+is recorded after the last edit). This sandbox has no reviewer model, so the
+operator records a human receipt (`engine: human`, `no model available`; see
+[Cold context reviews](#cold-context-reviews)); a desk where the model runs uses
+`deskops review preflight`. The two advances move the task from `draft` to `active` and then
+`ready_for_testing`. `advance` stops at `ritual-closeout`; it never closes a
+task. When no outgoing transition condition holds, it exits non-zero and names
+the blocked gate.
+
+Before applying an edge, `advance` checks it against the lifecycle the installed
+deskops ships: same `relation_type`, same target ritual and same
+`attributes.sets.status`. An edge that differs (a desk seeded before CC31 has
+`attributes: {}`) would write a state the task model rejects, so `advance` stops
+first, exits 1 and leaves the task unchanged:
+
+```text
+Error: Cannot advance task-x via task_activates: the edge desk/lifecycle/execution-task_activates.md does not set status active (attributes.sets.status is missing). The desk's lifecycle seeds are out of date: run 'deskops desk update --apply'.
+```
+
+`deskops doctor` reports the same seed; `deskops desk update --apply` restores it.
+
+#### Post-hooks on a transition
+
+A lifecycle `RelationDoc` may carry `attributes.hooks`, an ordered list of commands that
+`deskops advance task` runs **after** it persisted the transition it took. The package
+seeds declare none; the list belongs to the desk (`deskops desk update --apply` copies it whole,
+in order, when it rewrites a seed, and `doctor` does not report it as drift):
+
+```yaml
+attributes:
+  sets: {status: ready_for_testing}
+  terminal: false
+  hooks:
+  - name: notify-coordinator
+    run: [scripts/notify.sh, coordinator]          # an argument list, no shell
+    timeout: 60                                    # optional, integer seconds above zero (default 300)
+```
+
+A hook can also only queue work for the coordinator. `encola-especialista-de-store` on the
+`testing-task_hands_to_closeout` transition appends one line, `<UTC ISO date> <task id>`, to
+`runs/hooks/store-specialist.queue`:
+
+```yaml
+hooks:
+- name: encola-especialista-de-store
+  run: [sh, -c, 'mkdir -p runs/hooks && printf "%s %s\n" "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" >> runs/hooks/store-specialist.queue']
+  timeout: 30
+```
+
+The hook only enqueues. The coordinator dispatches the specialist with
+`deskops runtime template sldb-store-specialist --mode specialist` and `scion start`, following the
+coordinator's `scion start` recipe (in the coordinator's agents.md); the specialist leaves the store clean
+and notes what it cannot fix mechanically.
+
+Each hook runs from the desk root with `DESKOPS_ROOT`, `DESKOPS_TASK_ID`,
+`DESKOPS_TRANSITION` (the relation type), `DESKOPS_FROM_NODE` and `DESKOPS_TO_NODE` in its
+environment. One log per advance, `runs/hooks/<task id>/<relation type>-<YYYYMMDDTHHMMSSZ>.log`,
+records each hook that ran: name, arguments, result, standard output and error. `deskops next`
+and `deskops show task` list the hooks of each transition leaving the current node.
+
+If a hook exits non-zero or exceeds its timeout, the next hooks do not run, the task goes back to
+the status, `current_node` and `history` it had before the transition, and `advance` exits non-zero
+with an error finding naming the hook, its exit code (or `timeout tras <n> s`) and the log path.
+Only the task is restored: whatever a hook wrote elsewhere stays, so **a hook must be safe to repeat**.
+A malformed entry (no `name`, no `run`, a `run` that is not a list of texts, a `timeout` that is not an
+integer above zero) makes `advance` fail before persisting, naming the `RelationDoc`. Closing a task
+(`closeout commit`) runs no hooks. The executor of a task runs `deskops advance task` on its task
+with its evidence written, so these hooks are how a coordinator outside Scion learns it finished.
+
+There is no manual override: a transition fires only when its condition
+holds, and a blocked task stays where it is while `advance` names the gate.
+Closing is `deskops closeout commit` for work that was done, `closeout
+resolved-by` for work that already entered the history (for example through a
+PR) before the closeout, `closeout supersede` when the task's subject no longer
+exists, and `closeout retire` for a task resolved before the ritual lifecycle.
+
+## Closeout
+
+A task's type declares the evidence that closes it (`task.code`: tests + commit + atom|materialization; `task.docs` and `task.decision`: commit + document; `task.external`: external; `task.aggregate`: children + commit; `task.refactor`: task.code's evidence plus goldens). `--evidence` only adds kinds to the type's, never removes one. `deskops closeout verify`
+checks exactly that set for a board-routed task, nothing more and nothing less,
+and prints `esta tarea declaró X; encontré Y` (declared X; found Y):
+
+| Evidence | What counts |
+|---|---|
+| `tests` | an existing `.py` file under `tests/`, optionally with `::node`, or a `pytest <path>` reference |
+| `atom` / `materialization` | one gate: an atom reference, or graph/materialization coverage or a routed follow-up reference for every path in `files`; exempt in a desk without local atom documents |
+| `commit` | a lowercase 7-40 character commit id resolving to `HEAD` or an ancestor |
+| `document` | an existing `.md`, `.rst`, `.txt`, `.adoc`, or `.yaml` file in `references` or `files`, outside `tests/` and `desk/tasks/` |
+| `external` | an `http(s)` URL in `references`, for work tracked outside the repository |
+
+Changed `.py` files in a task that did not declare `tests` print a visible alert
+without blocking. A task created before the field existed is gated as code and
+alerted to declare its evidence with
+`deskops edit task <id> closeout_evidence '["commit", "document"]'`.
+
+Verify before adding evidence. It exits `1` and prints the missing gates:
+
+```bash
+deskops closeout verify --root . --task task-close-a-manual-task
+```
+
+The manual task was authored with `--task-type task.docs`, so its type declares
+`commit` and `document`: the gate asks for no test file. The example still writes
+`tests/test_manual_smoke.py` because the task's `--validation` names it, and
+the `pytest ...` reference is extra context the gate does not read. The atom
+file is the document evidence. The commit reference must already exist, so use
+an earlier commit such as the repository seed or the authoring commit. The
+closing commit does not exist yet.
+
+```bash runnable
+mkdir -p tests
+cat > tests/test_manual_smoke.py <<'EOF'
+def test_manual_smoke():
+    assert True
+EOF
+
+commit="$(git rev-parse HEAD)"
+deskops edit task task-close-a-manual-task references \
+  "[\"desk/atoms/atom-operator-manual-evidence.md\", \"pytest tests/test_manual_smoke.py::test_manual_smoke\", \"$commit\"]" \
+  --root .
+deskops edit task task-close-a-manual-task files \
+  '["desk/atoms/atom-operator-manual-evidence.md"]' --root .
+deskops closeout verify --root . --task task-close-a-manual-task
+```
+
+`deskops closeout commit` creates the closing commit itself. It offers two
+routes:
+
+- `--run-dir runs/subagents/<dir>` links the commit to subagent run evidence
+  and adds `Task-Id`, `Run-Dir`, `Run-Id`, and `Session-Sha256` trailers.
+- `--no-run --reason "<why>"` closes manually and adds `Task-Id`,
+  `Closeout-Mode: manual`, and `Closeout-Reason` trailers.
+
+Either route removes the task bundle from `desk/tasks/`, removes it from
+`desk/tasks/Board.md`, records the commit in `runs/subagents/index.jsonl`, and
+commits only the paths it staged. Unrelated staged work stays staged. `--paths`
+accepts files and directories.
+
+```bash runnable
+deskops closeout commit --root . \
+  --task task-close-a-manual-task \
+  --no-run --reason "Operator manual runnable example" \
+  --paths desk/atoms/atom-operator-manual-evidence.md tests/test_manual_smoke.py
+```
+
+A subagent-run closeout instead looks like:
+
+```bash
+deskops closeout commit --root . \
+  --task task-close-a-manual-task \
+  --run-dir runs/subagents/20260101-120000-task-close-a-manual-task \
+  --run-id 6046eaef \
+  --session ~/.pi/agent/sessions/<dir>/6046eaef/run-0/session.jsonl \
+  --paths desk/atoms/atom-operator-manual-evidence.md tests/test_manual_smoke.py
+```
+
+### Supersede or retire a task
+
+Two closes skip the evidence gates because no work is being proven.
+`closeout supersede` closes a task whose subject no longer exists. `closeout
+retire` removes a task whose status is already `resolved`, `closed`, `done`,
+`complete` or `cancelled`, as pre-lifecycle tasks are, or `superseded`,
+`deferred` or `candidate` with an empty history (what a desk migrated before
+CC31 left; a `superseded` task with only its `superseded` record, what
+`desk update --apply` makes of it, too). Retire reads the task's frontmatter, so it also removes a task its
+model rejects. `closeout supersede` also closes a task
+its model rejects (a lifecycle no migration decides, such as a `draft` after
+`task_hands_to_closeout`): it reads and writes the frontmatter, with the same
+commit and trailers. Both close one invalid task while others remain invalid:
+sldb names the others with `store/doc-invalid` and goes on. Both need `--reason` and at least one
+`--ref` (an ancestor commit; supersede also accepts an existing path), make
+exactly one closing commit with `Closeout-Mode: superseded` or
+`Closeout-Mode: legacy-resolved` trailers, and take the task off the Board.
+
+```bash runnable
+deskops add task --root . \
+  --title "Superseded manual task" \
+  --task-type task.docs \
+  --goal "Goal." --scope "Scope." --validation "pytest"
+deskops closeout supersede --root . \
+  --task task-superseded-manual-task \
+  --reason "The feature this task targeted was removed before any work started" \
+  --ref "$(git rev-parse HEAD)"
+```
+
+```bash
+deskops closeout retire --root . \
+  --task task-already-resolved \
+  --reason "Resolved before the ritual lifecycle existed" \
+  --ref 3900ad4
+```
+
+### Close a task whose work already entered the history
+
+`closeout resolved-by` closes a task whose work was already committed, for
+example merged through a PR, before anyone ran its closeout. It does not ask for
+an atom per changed file. Its evidence is a `--reason`, at least one `--ref`
+that is a commit at HEAD or an ancestor (further refs may be ancestor commits or
+http(s) URLs, such as the PR), and at least one `--test` that the tests gate
+accepts for the task's `files`. A ref or test that does not resolve is refused
+and nothing is written. It makes exactly one closing commit with
+`Closeout-Mode: resolved-by`, `Closeout-Reason`, one `Closeout-Ref` per ref and
+one `Closeout-Test` per test; the task is marked `resolved` (history
+`resolved-by`) and leaves the Board. `--paths` adds paths to the closing commit
+and `--message` replaces its subject. Like supersede, it also closes a task its
+model rejects (a lifecycle no migration decides, such as a `draft` after
+`task_hands_to_closeout`): it reads the task's `files` and history from the
+frontmatter, applies the same ref and test gates, writes `status: resolved` and
+the `resolved-by` record into the frontmatter (validated with `TaskDoc`, restored
+if it fails) and makes the same closing commit with the same trailers. With a
+store, each of the three closes its invalid task while another one of the same
+model remains invalid: sldb names it with `store/doc-invalid` and goes on, so
+the tasks can be closed one after the other. Tasks that are not the one being
+closed can also be migrated with `deskops desk update --apply` or decided by
+hand.
+
+```bash
+deskops closeout resolved-by --root . \
+  --task task-fix-thing \
+  --reason "The fix entered main through PR #42 before the closeout" \
+  --ref 9f64f0f --ref https://example.com/org/repo/pull/42 \
+  --test tests/test_fix_thing.py
+```
+
+When the task's code entered another repository (a task.code of a coordinating
+desk whose code lives in a sibling repo), qualify the ref and the test with that
+repository's id: `--ref <repo-id>:<sha>` and `--test <repo-id>:<test path>`.
+The id is looked up in the desk's own registry, `desk/registry/repo-*.md`,
+written by `deskops repo register`. The reference is cut at its first `:`: when
+what comes before it is a registered id, the rest is checked in that
+repository's registered root, with the same rules as a local reference (a
+lowercase commit id that is its HEAD or an ancestor; an existing `.py` file
+under one of its `tests/` directories, optionally with a pytest `::node`). The
+task's `files` do not widen where another repository's tests live. A prefix
+that is not a registered id (or a reference without `:`) is checked locally as
+before, and a prefix naming the desk itself (its `project_identity`, or a
+registered repository whose root is the desk's root) is local. A registered
+repository whose root is missing on this machine refuses the close with
+`Registered repository <id> is not at <path> on this machine.` and writes
+nothing. The closing commit is the same, made in the desk's repository, and its
+`Closeout-Ref` and `Closeout-Test` trailers keep each reference as written
+(`Closeout-Ref: infra:87671716`). `closeout verify`, `closeout commit` and
+`closeout supersede` still accept only local evidence.
+
+```bash
+deskops repo register infra --path /srv/infra --id infra --store .sldb
+deskops closeout resolved-by --root . \
+  --task task-wire-infra \
+  --reason "The code entered infra through PR #7" \
+  --ref infra:87671716 --ref https://example.com/org/infra/pull/7 \
+  --test infra:tests/test_wire.py
+```
+
+## Issues
+
+Issues are plain Markdown files under `desk/issues/` or
+`desk/drawer/issues/`. They are intentionally not modeled documents.
+`deskops issue list` filters by `open`, `closed`, or `all`. `deskops issue close`
+rewrites the status and appends a `## Resolution` section; it never deletes the
+file.
+
+```bash runnable
+mkdir -p desk/issues
+cat > desk/issues/issue-manual-example.md <<'EOF'
+# Manual example issue
+
+## Status
+
+open
+
+## Problem
+
+The manual needs an issue example.
+EOF
+
+deskops issue list --root .
+deskops issue close issue-manual-example --reason "Manual example" --ref . --root .
+deskops issue list --status closed --root .
+```
+
+### Replace text in an unmodeled desk file
+
+`deskops desk replace` edits a file under `desk/` that no `deskops edit`
+subject reaches (issue bodies, drawer notes, role prompts, the tag namespace
+file). `--old` must occur exactly `--count` times (default 1); a modeled
+document is refused and pointed at its `edit` verb. The write is sldb's
+`replace_text` inside the desk transaction: a store-tracked file (a role prompt)
+must still validate under its model after the replacement, or nothing is written
+and the command exits 1 with `Refusing to replace in <path>: ...`.
+
+```bash runnable
+deskops desk replace desk/issues/issue-manual-example.md --root . \
+  --old "The manual needs an issue example." \
+  --new "The manual has an issue example."
+```
+
+## Atoms
+
+Atoms are the durable knowledge layer. The `atoms` commands cover namespaces,
+protoatoms, typed atoms, crossroads, domain trees, provenance-preserving
+creation, splitting, merging, deletion, and validation.
+
+### Namespaces, crossroads, and the domain tree
+
+A domain tag such as `domain:manual.docs` needs a written crossroad for every
+parent path, created top-down. Crossroads describe what hangs below a path.
+sldb checks it (and that every atom or protoatom namespace is declared) as its
+tag family, from the declaration `deskops init` and `deskops desk update --apply`
+write in `.sldb/store.yaml`; a desk without a store checks neither. See
+`docs/atoms.md` ("Who checks the namespaces and the domain parents").
+
+```bash runnable
+deskops atoms add-namespace manual \
+  --meaning "Manual-only tags" \
+  --use-when "Operator manual examples" \
+  --do-not-use-when "Durable knowledge" \
+  --example manual:example --root .
+
+deskops atoms crossroad manual \
+  --title "Manual domain" --content "Root of manual examples." --root .
+deskops atoms crossroad manual.docs \
+  --title "Manual docs" --content "Documentation children." --root .
+
+deskops atoms proto proto-manual \
+  --title "Manual proto" --content "Free text." \
+  --tag domain:manual.docs --root .
+
+deskops atoms tree --root .
+```
+
+### Type a protoatom
+
+`atoms type` converts a protoatom into a tracked model document and keeps the
+protoatom as a redirect stub. For `AtomDoc`, pass `--content-field answer`
+because `AtomDoc` has no `content` field.
+
+```bash runnable
+deskops atoms type proto-manual \
+  --model AtomDoc \
+  --id atom-typed-manual \
+  --content-field answer \
+  --data '{"title":"Typed manual atom","five_wh_one_plus":"what"}' \
+  --root .
+```
+
+### Create an atom from a source
+
+`atoms create` preserves exact provenance from a pill field, a missing graph
+finding, or a diagram source.
+
+```bash runnable
+deskops atoms create atom-from-manual-pill \
+  --five-wh-one-plus what \
+  --from-pill pill-pattern-manual-examples-stay-runnable \
+  --root .
+```
+
+Other source routes:
+
+```bash
+deskops atoms create atom-from-graph \
+  --five-wh-one-plus what \
+  --from-graph source-id->target-id \
+  --graph .deskops/graph.json --root .
+
+deskops atoms create atom-from-diagram \
+  --five-wh-one-plus what \
+  --from-diagram docs/diagrams/example/source.mmd --root .
+```
+
+### Merge, delete, and validate
+
+Merge rewrites every reference to the source atom so that it names the target,
+in the same transaction as the merge. It covers fields such as a task's
+`atoms`, `atom:atom-<source>` anywhere in a task or issue, and a bare
+`atom-<source>` under a Related Atoms heading. The source stays as a redirect
+stub. `atoms delete` and `atoms split` find the same references. `atoms split` is not shown here: since CC35a sldb
+refuses headings inside a field, so a sectioned atom cannot be written through
+the CLI (see the drawer entry
+task-atoms-split-no-se-puede-alimentar-por-el-cli-desde-cc35a-sldb-rechaza-encabezados-en-el-field).
+
+```bash runnable
+deskops add atom --root . \
+  --title "Merge source manual atom" \
+  --five-wh-one-plus what \
+  --answer "One."
+deskops add atom --root . \
+  --title "Merge target manual atom" \
+  --five-wh-one-plus what \
+  --answer "Two."
+deskops atoms merge atom-merge-source-manual-atom \
+  --into atom-merge-target-manual-atom --root .
+
+deskops add atom --root . \
+  --title "Delete manual atom" \
+  --five-wh-one-plus what \
+  --answer "Temporary."
+deskops atoms delete atom-delete-manual-atom --root .
+
+deskops atoms validate --all --root .
+deskops list atoms --root .
+deskops show atom atom-typed-manual --root .
+```
+
+`list atoms` and `show atom` are the current spellings; `atoms list` and
+`atoms show` are deprecated aliases. `atoms delete` refuses to delete an atom with inbound references
+unless `--force` is passed.
+
+### Reorganize atoms by tag namespace
+
+`atoms reorganize` moves atoms into folders derived from the
+`atom_folder_axis` configured in `desk/config.json`. Without that config it
+exits non-zero:
+
+```bash
+deskops atoms reorganize --dry-run --root .
+# Error: No 'atom_folder_axis' configured in desk/config.json; nothing to reorganize.
+```
+
+Configure one namespace, then run it:
+
+```json
+{ "atom_folder_axis": "object" }
+```
+
+```bash
+deskops atoms reorganize --dry-run --root .
+deskops atoms reorganize --root .
+```
+
+## Graph
+
+The graph surface builds a KGDB snapshot, shows one node's neighbors, reports
+missing declared targets, and writes review-only self-reflection findings.
+
+```bash runnable
+deskops graph build --root . --output .deskops/graph.json
+deskops graph neighbors atom:atom-from-manual-pill --root . --graph .deskops/graph.json
+deskops graph missing --root . --graph .deskops/graph.json
+deskops graph reflect --root . --graph .deskops/graph.json
+```
+
+`graph missing` exits `1` when a declared target does not resolve. For example,
+a materialization whose `--target-identity` names a file that does not exist as
+a graph node is reported as `missing_declared_target`.
+
+`graph reflect` writes `.sldb/runtime/self_reflection_findings.json` and only
+reports findings; it does not edit desk documents.
+
+## Roles, materialization, and drift
+
+Role docs under `desk/roles/` are materialized into pi-agent files.
+`deskops materialize` writes them to `~/.pi/agent/agents/` by default; `--out`
+overrides the directory. `deskops drift check` compares rendered output with
+the installed files and also checks runtime-profile bindings.
+
+A role with `kind: pi` needs a matching `RuntimeProfileDoc` under
+`desk/runtimes/`. Without it, drift reports a missing runtime profile.
+
+```bash runnable
+cat > desk/roles/manual-role.md <<'EOF'
+---
+id: role-manual-example
+name: manual-example
+description: Example role for the operator manual.
+kind: pi
+model: example-model
+fallback_models: []
+tools: []
+system_prompt_mode: replace
+inherit_project_context: true
+inherit_skills: true
+default_context: fresh
+---
+
+# Manual example role
+
+Act as the example role.
+EOF
+
+mkdir -p desk/runtimes
+cat > desk/runtimes/runtime-pi.md <<'EOF'
+---
+id: runtime-pi
+status: active
+kind: pi
+binary: pi
+model_flag: --model
+fallback_models_flag: ''
+fallback_models_join: comma
+tools_flag: --tools
+tools_join: comma
+system_prompt_flag: --append-system-prompt
+system_prompt_delivery: file
+session_flag: --session
+extra_args: []
+unsupported_role_fields:
+- fallback_models
+tags:
+- system:manual
+---
+
+# Pi runtime
+
+## Summary
+
+Pi agent runtime profile.
+
+## Notes
+
+Example profile.
+EOF
+
+deskops materialize --root . --out .pi-agent
+deskops drift check --root . --out .pi-agent
+```
+
+`drift check` exits `1` on any finding. A mismatch names the installed file and
+the role doc it was rendered from.
+
+## Runtime and Herdr
+
+The `runtime` commands manage a live Herdr Space. They need a `herdr`
+executable and are not part of the runnable walkthrough.
+
+```bash
+# Initialize or reuse this desk's Herdr Space.
+deskops runtime init --root .
+deskops runtime init --root . --agents
+
+# Inspect, focus, and close the Space.
+deskops runtime status --root .
+deskops runtime attach --root .
+deskops runtime stop --root .
+
+# List live agents machine-wide.
+deskops runtime workers
+deskops runtime workers --format json
+
+# Block on one agent's lifecycle and report blocked/done settles.
+deskops runtime supervise deskops-executor --root .
+deskops runtime supervise deskops-executor --max-iterations 1 --timeout-ms 30000
+
+# Materialize a RoleDoc + RuntimeProfileDoc as a Scion agent template
+# (.scion/templates/<role-name>/: scion-agent.yaml, system-prompt.md, agents.md).
+deskops runtime template deskops-executor --root .
+deskops runtime template deskops-executor --root . --harness claude \
+  --mode executor --task task-fix-thing --agent deskops-e-0123456789ab
+
+# A tester is its own role and mode, with separate scope and completion rules.
+deskops runtime template deskops-tester --root . --harness claude \
+  --mode tester --task task-fix-thing --agent deskops-t-0123456789ab \
+  --task-root . --run-dir runs/subagents/20261110-120000-task-fix-thing-testing
+```
+
+`runtime template` needs no live Herdr Space: it writes the template files from
+the role and runtime-profile docs. `--mode executor` writes the agents.md for one
+bounded task, `--mode tester` writes the independent verification instructions,
+`--mode specialist` writes the store-cleaning instructions (a name or id ending in `-specialist` chooses it), and `--mode coordinator` writes it for an agent that owns a desk. An explicit
+mode always wins; otherwise only the selected role's own name/id is inspected
+(a name or id ending in `-tester` chooses tester; a selected name or id naming a
+supervisor/coordinator chooses coordinator; anything else executor). With
+`--task` and `--agent` it also records the in_progress RunDoc launch intent under
+`runs/subagents/`; its summary says it is intent, not proof of start.
+`--task-root` names the repository whose desk owns the task (default `--root`)
+and `--run-dir` points at the evidence directory. An existing RunDoc is reused
+for reconciliation but never overwritten: a retry gets a new run_dir, and
+attempts and their evidence are immutable.
+
+`--context-file` accepts JSON with exactly `project`, `workspace_root`,
+`desk_root`, `source_root` and `sldb_root`. `project` is a non-empty Scion slug
+or UUID, never a filesystem path; the other four are absolute directories inside
+`workspace_root`, where `desk_root` contains `desk/`, `source_root` contains the
+`deskops` package and `sldb_root` is sldb's `src` directory. Missing, unknown,
+relative, out-of-workspace or invalid values are refused before any template is
+written. A valid context emits `DESKOPS_DESK_ROOT`, `DESKOPS_SOURCE_ROOT`,
+`DESKOPS_SLDB_SOURCE_ROOT`, `DESKOPS_WORKSPACE_ROOT`, `DESKOPS_SCION_PROJECT`
+and `PYTHONPATH=source_root:sldb_root`, plus a volume whose source and target are
+`workspace_root`. It carries no secrets. Omitting the flag preserves CLI, path
+and environment compatibility; the corrected prompt text is intentionally not
+byte-identical to the faulty earlier wording.
+
+Four optional container keys describe how this machine runs the agent:
+`memory_limit` (a size such as `6Gi`) and `cpu_limit` (cores, such as `2`) are
+written as `resources.limits`; `shared_paths` is a list of absolute host paths
+bound at the same path (for example `/dev/shm`, so tests share the host tmpfs and
+`/dev/shm/sldb1-tests.lock`); `env` adds static variables such as
+`TMPDIR=/dev/shm` and may not redefine the derived ones. Omitted, nothing changes.
+
+The coordinator derives a stable child identity from the task contract:
+`deskops-e-<12hex>` for an executor or `deskops-t-<12hex>` for a tester, where
+the hex is SHA-256 of `task_id + NUL + contract_sha256 + NUL + role`.
+`contract_sha256` is the SLDB `TaskDoc.__contract__` digest. Attempt 1 uses the
+base name, attempt 2 appends `-a2`, and there is no attempt 3; labels are
+`deskops.task_id`, `deskops.contract_sha256`, `deskops.role` and
+`deskops.attempt`. The runtime helper `scion_child_identity(task_path, role,
+attempt)` returns that name and label set, and `scion_start_argv` builds the
+explicit native start argv. These helpers only derive identity/argv; native
+Scion orchestration remains Scion, not a DeskOps scheduler.
+
+Native labels must be printable ASCII and at most 63 characters. The helper
+preserves the full canonical task id and 64-hex contract hash in its returned
+identity and name derivation; `deskops.contract_sha256` carries the 63-hex prefix.
+A long or non-ASCII task-id label uses a bounded hash descriptor while TaskDoc
+and RunDoc retain the full id. Copy the helper label map exactly rather than
+pasting a full 64-hex digest into `--label`.
+
+The generated coordinator reconciles its own existing executor/tester lanes and
+completed handoffs before selecting new work; a restart or successful child
+completion must not skip its own task or duplicate a child. It reads Scion
+activity first and phase only as fallback, because the native bridge can report
+`activity=completed` while `phase=running`. A dependency-ready task missing its
+preflight/bundle receipt is routine work: run the cheap context review and
+adjudicate factual findings before dispatch. Implementation and validation run
+from the configured `desk_root`, with template artifacts and evidence under the
+assigned desk `runs/` path rather than `/tmp`. Closeout runs
+`deskops closeout verify`, reviews the diff, and commits only scoped
+implementation/evidence/review paths with `closeout commit --paths` (never
+`git add -A`). The coordinator signals `task_completed` only after all authorized
+work is closed, declared evidence verified and required phase integration/commit
+done; an external blocker is recorded and signalled as blocked, and only an
+actual owner decision uses `ask_user`.
+
+`runtime supervise` never answers a blocked agent's prompt and never advances a
+task on a done settle. A human or supervisor decides what happens next.
+
+## Cold context reviews
+
+`deskops review` runs the cheap isolated reviewer from
+`desk/rituals/context-review.md` and writes the receipts (`ReviewDoc`) under
+`desk/reviews/`. The default engine is the `runtime-pi-deepseek-flash` profile
+seeded under `desk/runtimes/` by `deskops init` and `deskops desk update --apply`;
+`--engine` picks any other `RuntimeProfileDoc` under `desk/runtimes/`. Every run
+also writes ritual evidence under
+`runs/subagents/<run>/context-review/<key>/<sha>/attempt-N/`.
+
+The reviewer is an external model process, so these examples are illustrative
+only; they are not part of the runnable walkthrough.
+
+```bash
+deskops review preflight task-fix-thing --root .
+deskops review bundle task-fix-thing --root .
+deskops review node desk/drawer/plans/mi-plan N01 --root .
+deskops review status task-fix-thing --root .
+deskops review dispose review-task-fix-thing-preflight-1 --verdict accepted --reason "..." --root .
+```
+
+An unchanged input is not reviewed again; a second run does not call the model.
+`review status` compares the SHA-256 of the exact current builder input bytes
+with all receipts for the key. No receipts means `missing`; receipts with no
+matching input mean `stale`, regardless of their old verdict. Among matching
+receipts, priority is `accepted`, `rejected`, `pending` (reported as `reviewed`),
+then `incomplete` (reported as `technical_failure`). A current accepted
+receipt therefore survives later rejected or failed attempts. Task subjects
+use the same task id whether plain or pinned with a SHA-256 anchor. Status
+preserves receipts and run evidence and does not change lifecycle gates.
+See [the source atom](../desk/atoms/workflow-model/atom-review-status-preserves-current-dispositions.md).
+
+`--max-attempts` (default 2) caps the good
+attempts per key; `--force --reason` is the only way to re-review a key whose
+input already has a good attempt. A transport failure (non-zero exit, timeout,
+or output without `REFORMULACION`) is recorded with `technical_ok: false` and a
+`verdict: incomplete` / `reason: technical` receipt, kept separate from
+comprehension findings.
+
+Reproduction, goldens and owner receipts are not produced by a model: whoever
+operates the desk records them with the evidence they checked, and disposes of
+them like any other receipt.
+
+```bash
+deskops review record task-fix-thing --kind reproduction --evidence runs/repro.log --reason "..." --root .
+deskops review record task-fix-thing --kind owner --reason "approved by the owner" --root .
+```
+
+`record` writes a `ReviewDoc` with `verdict: pending`, `engine: human`, `actor`
+from the desk identity, and the evidence paths in `summary`. Each `--evidence` is
+an existing file inside the root; anything else fails with
+`Error: evidence not found: <path>` (exit 1) and writes nothing. `reproduction`
+and `goldens` need at least one `--evidence`; `owner` may carry only `--reason`.
+`input_sha256` is the SHA-256 of `<path>\n<content>\n` for each evidence file,
+paths relative to the root, sorted and without repeats (empty without evidence).
+`--kind` accepts `reproduction`, `goldens`, `owner`, `preflight` and `bundle`;
+`node` comes from its own command. `deskops review dispose <review-id>` writes
+the verdict.
+
+A desk with no model to run the reviewer (the CI scenarios, the quickstart) can
+still activate a task: whoever operates it records the `preflight` and `bundle`
+receipts by hand. `--operator <name>` is required for those two kinds; without
+it the command fails and writes nothing. The receipt keeps `engine: human`,
+names the operator as its `actor`, and says `no model available` in its title
+and `summary`, so nobody mistakes it for a model review. It is not a stand-in
+for `deskops review preflight|bundle` on a desk where the model runs.
+
+```bash
+deskops review record task-fix-thing --kind preflight --operator "Ana" --evidence desk/tasks/task-fix-thing.md --reason "read the contract; no ambiguity" --root .
+deskops review dispose review-task-fix-thing-preflight-1 --verdict accepted --reason "..." --root .
+```
+
+## Verb coverage
+
+This table maps every CLI verb to the section that documents it.
+
+| Verb | Section |
+|---|---|
+| `about` | Orient yourself |
+| `doctor`, `status` | Check desk health |
+| `faq` | Orient yourself |
+| `bootstrap` | Help and bootstrap |
+| `init` | Initialize the repository |
+| `inbox` | Inbox, messages, and drawer |
+| `message send/list/read/ack` | Send, list, read, and acknowledge messages |
+| `promote inbox-to-drawer-task` | Promote an inbox note to a drawer candidate |
+| `drawer remove` | Remove a drawer entry |
+| `retire` | Retire any other desk document |
+| `issue close/list` | Issues |
+| `add task/pill/ritual/board/atom/materialization/repository/inbox-note/faq-doc/step` | Add artifacts |
+| `edit ...` | Edit artifacts |
+| `bind pill` | Bind reusable context pills |
+| `next`, `next --why`, `next --diagram` | Inspect the lifecycle graph; Inspect, edit, and advance a task |
+| `list tasks/pills/rituals/boards/atoms/materializations/repositories/inbox-notes/faq-docs/steps` | List artifacts |
+| `show task/pill/ritual/board/atom/materialization/repository/inbox-note/faq-doc/step` | Show artifacts |
+| `advance task` | Inspect, edit, and advance a task |
+| `repo register/whoami/remove` | Repository identity and the ecosystem registry |
+| `desk install/migrate/update` | Desk scaffold, migration, and repair |
+| `desk replace` | Replace text in an unmodeled desk file |
+| `atoms add-namespace/list/reorganize/show/validate/create/delete/split/merge/crossroad/proto/type/tree` | Atoms |
+| `graph build/neighbors/missing/reflect` | Graph |
+| `materialize` | Roles, materialization, and drift |
+| `drift check` | Roles, materialization, and drift |
+| `closeout verify/commit` | Closeout |
+| `closeout supersede/retire` | Supersede or retire a task |
+| `closeout resolved-by` | Close a task whose work already entered the history |
+| `runtime init/status/attach/stop/workers/supervise/template` | Runtime and Herdr |
+| `review node/preflight/bundle/status/dispose/record` | Cold context reviews |
+
+FILE:instruccion
+Cold-bundle de la tarea task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks: con el TaskDoc, los rituales enrutados por el Board, las pills ligadas, los átomos ligados y los archivos que el TaskDoc nombra, reformula el encargo, lista ambigüedades con cita textual del input y da el DRY-RUN sin ejecutar nada. No ejecutes nada.
+
+Sección de validación del TaskDoc:
+- El archivo de tests nuevo pasa con `TMPDIR=/dev/shm pytest -q` sobre ese archivo. Los tests usan un desk desechable bajo `tmp_path`, creado como lo hacen los tests vecinos que prueban comandos del CLI, y comandos reales en `queue_jobs` (por ejemplo `[sh, -c, ...]`), sin mocks. Cubren: (a) `queue add` de un tipo declarado crea el archivo en pending y uno no declarado sale con codigo 2; (b) `queue add` toma tarea y transicion de las variables de entorno; (c) `queue run` ejecuta el trabajo, lo deja en done con `exit_code` 0 y escribe el log con la salida del comando y las cinco variables; (d) un comando que sale con codigo distinto de 0 queda en failed, `queue run` sale con 1 y aparece una nota nueva en el inbox del desk que nombra el log; (e) un comando que supera su `timeout` queda en failed con `timeout: true`; (f) con `queue_min_available_gb` fijado en un valor imposible de cumplir, `queue run` imprime `en espera`, sale con 0 y el trabajo sigue en pending; (g) dos procesos `queue run` lanzados a la vez sobre un trabajo que duerme dos segundos: uno lo ejecuta y el otro imprime `ocupado`, y el comando corrio una sola vez; (h) `queue run --all` vacia dos pendientes en orden; (i) un archivo dejado en running sin cerrojo tomado pasa a failed con `interrupted: true`; (j) `queue list --format json` devuelve los cuatro estados.
+- `TMPDIR=/dev/shm pytest -q tests/test_lifecycle_graph.py` sigue pasando.
+- `deskops queue --help` y la ayuda de cada subcomando terminan con codigo 0.
+- `deskops graph missing --root .` no informa ninguna referencia nueva que nombre esta tarea.
+

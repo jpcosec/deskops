@@ -492,6 +492,12 @@ include:
     name: run-deskops-e-95ee81688bed
   - path: runs/subagents/exec-deskops-e-95ee81688bed-testing/run.md
     name: run-deskops-t-c8c5ad06d492
+  - path: runs/subagents/exec-deskops-e-9fc95085d5a3/run.md
+    name: run-deskops-e-9fc95085d5a3
+  - path: runs/subagents/exec-deskops-t-5ea818e706bb-testing/run.md
+    name: run-deskops-t-5ea818e706bb
+  - path: runs/subagents/exec-deskops-t-5ea818e706bb-a2-testing/run.md
+    name: run-deskops-t-5ea818e706bb-a2
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1620,6 +1626,30 @@ include:
     name: review-task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea-evidence-atom-2
   - path: desk/reviews/task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea/evidence-materialization-2.md
     name: review-task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea-evidence-materialization-2
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/preflight-1.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-preflight-1
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/preflight-2.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-preflight-2
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/preflight-3.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-preflight-3
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/bundle-1.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-bundle-1
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/preflight-1.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-preflight-1
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/bundle-1.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-bundle-1
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-tests-1.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-tests-1
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-commit-1.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-commit-1
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-atom-1.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-atom-1
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-materialization-1.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-materialization-1
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-tests-2.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-tests-2
+  - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-commit-2.md
+    name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-commit-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1670,7 +1700,6 @@ include:
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
   - desk/tasks/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks.md
-  - desk/tasks/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

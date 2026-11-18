@@ -1,7 +1,7 @@
 name: task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks
 path: desk/tasks/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks.md
-source_hash: 17878c55dcb3e954ba667765bcaad7d5761c3c61698fb0acb2c6ccc2a8f4f493
-content_hash: 515e3e169923e63f24830a07ba55fb22f8ae8ee20e0d637382df88ccf1091e5e
+source_hash: 62fd75f49130d977ebf16469b55730722827f92c2d19be4f7daa3cc5b3f9ef19
+content_hash: f0f5edf6616ab504c186f9e49d3a259d05db652a5b413c8f505b099f97f3a0b9
 field_hashes:
   title: b0e6c351ff8511e3361ad3d7d215776d7705cfcd99ba9a23ad533370d76a9374
   id: 4f88803ff4228207ee764a1224673b38e2037622ad0ce4bfbaa966524e1525db
@@ -11,15 +11,15 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 2ce66bf833da70436b7468acb018071d366c57cbb3fc6148d1fb156b7011a78d
-  goal: 7099b8946263eaae719af3aec1d07754d8f13e14ff30698a3c325dd203e9e5ce
-  scope: 9e7141cb59ab61c06c55bc9e326a01343e530de19a2c9c5ea4a927b52227317c
+  goal: 0a0e4a5b89a0d43beaa83b789d16412e2b5b79e5c172fc3739d3e84f7c9beae7
+  scope: ba8bd1628f98f6c51fb639f417a2397a576994db3aa192a3a33aaa7696637011
   references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 1749473911b52e57655ccf8139e675f20f537858b023b1920b0bec277a4c9388
-  implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  validation: 92e027c30dc97ff78ae4b3af2fe431424072dded74e3114c230590b9cb65a511
-  done_when: db5086c41ca38e50ac006fb31923a497ab5f30adb444cd1233048429157efea5
+  files: eb9b712ae28a127c18f74eab03d86873493328aabcc044d92625d96e676809e9
+  implementation_path: 9fc894bc247b3bb784bd9eb71e02c2e0275ba56dbe4218567ae8cd737ccc5268
+  validation: a52223264dcc5890c2efbceeceb790fd752693eda2c9c4711cba9c5fe5288877
+  done_when: ac53c2949d1b156626f17cd6848bddac70bf1c4ee6099e61c440d4317526e02e
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T23:06:29Z'
+  at: '2026-11-18T04:47:13Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

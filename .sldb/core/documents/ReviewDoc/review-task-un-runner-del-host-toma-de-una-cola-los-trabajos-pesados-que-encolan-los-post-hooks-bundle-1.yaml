@@ -1,0 +1,37 @@
+name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-bundle-1
+path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/bundle-1.md
+source_hash: a0f054a31d8af1dc40c6f51fd8bf6dbb05cfd239feeb218c2ae3b70460a9cea6
+content_hash: e671acce60098d2a3f3ee2728bcae4fd2fabf3e6e2f8f6bfa8667301cced87f6
+field_hashes:
+  id: 21dd51c1ee9191fb14e8bbf615164923ef33a4ff78b4d1e8df540a0a62ec04c2
+  title: 0e8475c64ae33fb4011eebd868d2dd6d3c267ab0fd9b5884dd9f7ee118dec4a6
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 4c617d653bd5a47990a30e42a435d449b1f7ed3c50968793c327646b69698b68
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: e9500eedddd495186ef96b58a767242dbbc7d34b30c70761b88c277914157573
+  input_sha256: 7595cf9be4bc1f4f9250c8448f89549a83522d0baf2198bb4c5f32b72bcbc2cc
+  contract_sha256: 60b9c60025df62de2be9b68954279c40c1d336324e9f4684d0d357c30152688f
+  output_sha256: 255b545962d116705447ba22b900075d9dbca82c1b0c30dffdb894c6e049fc70
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: f8af7637de59fbe7252c25f51f6d14777608cfa71fd0daa9563a5082d43d594b
+  created_at: c1c84e3ecb58ee9d37696298d241e7573227b15d381b3261bdfeadeba592f13b
+  disposed_at: dd718883fa651fd3d43e34f9c4d9a72927e01e72d5dc2a797a6f574ecde5b5ca
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 104073cfd398825f81bddae1385db445ea48f0110ef9cffe0fc9a3cb49e29624
+  disposition: 3fcd6b809d155afeb4d478f0f86ec7240bce30ffda4be7a3c2495be06397aa95
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T04:49:14Z'
+  authority: generated
+  via: save_document_payload

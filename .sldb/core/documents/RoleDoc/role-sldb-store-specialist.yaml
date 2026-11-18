@@ -1,0 +1,27 @@
+name: role-sldb-store-specialist
+path: desk/roles/role-sldb-store-specialist.md
+source_hash: d76e2fe1ceb725aa19ed956bb14f239b6a4809653e656577694a9d6c91fc8cd9
+content_hash: 33bb89923adfac9e018d317153277ac3eed2bc06faf9c956764522d7ef9d9e13
+field_hashes:
+  id: c5af222e66a141fb3c30bfa7efad62d0c253f945ad0d2aad4641e94614ee281d
+  name: e456984546bfef302679026f4736e051144057df2e23cc5489092a50dd8443b1
+  description: 3a1c3fa1838afb4a30ef183fdbcb24fee72706b49832d99cad4d282e5250abdb
+  kind: d9470c6b3069cf135b35c8e1f67317837d889fee4a894ec293ab09ae3f352716
+  model: 0fc0ffb38570dedb6f0d8af0115b79dfe5084c7aaca5b0b7b95d7225388eea68
+  fallback_models: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  tools: 5bea1700129eaddc7b7f61ae74d4e7084144dd5db8376e7fd54dc83e1a8a5969
+  system_prompt_mode: 197d1a176b127ea0b453175db9de47e38f6168ab692a8621f4d4fed58fb7e5ff
+  inherit_project_context: b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b
+  inherit_skills: b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b
+  default_context: b1e5780cb6ded9edcf5bac26c937adb4aa3023ab34d951398d5b4bed5ae4e115
+  body: c165debaaa5e6f4cb210129bd83deeb06bc9ab686ac71ec3c4b11893dcf67caf
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.role
+- workspace.desk.roles
+provenance:
+  by: agent
+  at: '2026-11-18T04:21:48Z'
+  authority: generated
+  via: create_document

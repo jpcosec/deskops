@@ -1,0 +1,99 @@
+{
+  "key": "task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/bundle",
+  "input_sha256": "d716c9ea6d7a0e302c6ce57e4fbd5406776b04bc8a06a7bc869827536b53c133",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261118-041825/context-review/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/bundle/d716c9ea6d7a0e302c6ce57e4fbd5406776b04bc8a06a7bc869827536b53c133/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook.md",
+      "sha256": "ef11924fd43bf8eba7d4b94669af3a34e814ea34a2cd5e040cfb3dadcbb076d6",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-scion-coordinator-progresses-authorized-work.md",
+      "sha256": "6d4649499c28df7536cae9623f35148501072f595316d1b5de575cf51569ac94",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md",
+      "sha256": "b067cd57c8d61bc7320c81051f6c01ad5adf7b5d304c43abdf0f061577766e7d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/runtime/scion.py",
+      "sha256": "9cf95eb3166ac28e2058ce906a58b63dfa7fbffd90ec4d07ae5f3a6e1c5ecec5",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_scion_runtime.py",
+      "sha256": "b8eda2714df72bd095a460c9f2e761d20f09a59f052b6c9024ce3de18279d8cb",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/operator-manual.md",
+      "sha256": "03887d7316039268973dade9943d24d6e0dd42e6e20f1cfe508d44565ac3f3d2",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 82537
+    }
+  ],
+  "started": "2026-11-18T04:18:26.050272+00:00",
+  "finished": "2026-11-18T04:18:45.959519+00:00"
+}
