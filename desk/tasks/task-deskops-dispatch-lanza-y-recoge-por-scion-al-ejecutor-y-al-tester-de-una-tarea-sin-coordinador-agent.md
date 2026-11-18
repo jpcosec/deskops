@@ -1,17 +1,19 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T07:05:36Z'
+  at: '2026-11-18T10:39:48Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent
-status: draft
+status: ready_for_testing
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-closeout
+history:
+- task_activates
+- task_hands_to_closeout
 references: []
 depends_on:
 - task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks

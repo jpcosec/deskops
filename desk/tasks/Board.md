@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T07:55:57Z'
+  at: '2026-11-18T10:56:52Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -51,7 +51,6 @@ tasks:
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
-- desk/tasks/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution.md
 - desk/tasks/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent.md
 - desk/tasks/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip.md
 - desk/tasks/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace.md
@@ -137,14 +136,7 @@ _Generated from the task references above._
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
-- Un ejecutor bloqueado no puede dejar su tarea en testing y existe la vuelta de testing a execution [draft] - Dos cambios.
-
-(1) Transicion de vuelta. La siembra del lifecycle (los archivos de la carpeta `deskops/data/lifecycle` y su lista en `deskops/data/desk_declaration.yaml`) gana una transicion de `RitualDoc:ritual-testing` a `RitualDoc:ritual-execution` con `relation_type: task_returns_to_execution`, sin condicion, con `attributes.sets.status: active`, `attributes.terminal: false` y un atributo nuevo `attributes.manual: true`, mas su archivo de tipo, copiando la forma de `deskops/data/lifecycle/testing-task_hands_to_closeout.md` y `deskops/data/lifecycle/type-task_hands_to_closeout.md`. Una transicion con `manual: true` nunca la toma el avance normal: `deskops advance task <id>` sin opciones se comporta exactamente como hoy. `deskops advance task <id> --back --reason "<texto>"` toma solo transiciones manuales desde el nodo actual; agrega a `history` la cadena `task_returns_to_execution: <texto>` (hoy history guarda solo el relation_type; esta entrada lleva ademas el motivo); corre los post-hooks de esa transicion igual que cualquier avance. `--back` sin `--reason`, o con motivo vacio, sale con codigo 2 y un mensaje; `--reason` sin `--back` sale con codigo 2; `--back` en un nodo sin transicion manual sale bloqueado con el mensaje `no hay transicion de vuelta desde <nodo>`.
-
-(2) Regla del ejecutor. El agents.md del modo executor (funcion `_render_agents_md` de `deskops/runtime/scion.py`) dice que, si el ejecutor termina bloqueado o sin cambios, NO corre `deskops advance task`: escribe el bloqueo en result-summary.md y termina con `sciontool status blocked "<motivo>"`.
-
-El manual (`docs/operator-manual.md`, seccion `Inspect, edit, and advance a task`) documenta `--back --reason` y el atributo `manual`.
-- deskops dispatch lanza y recoge por scion al ejecutor y al tester de una tarea sin coordinador agente [draft] - Un grupo de comandos nuevo, `deskops dispatch`, con dos subcomandos, y su configuracion en el desk.
+- deskops dispatch lanza y recoge por scion al ejecutor y al tester de una tarea sin coordinador agente [ready_for_testing] - Un grupo de comandos nuevo, `deskops dispatch`, con dos subcomandos, y su configuracion en el desk.
 
 Configuracion. `DeskConfig` (`deskops/config.py`) gana un campo `dispatch` con: `project` (proyecto scion), `workspace` (ruta absoluta), `templates_dir` (carpeta de templates del proyecto scion), `context_file` (ruta del JSON de contexto scion) y un mapa `roles` con las claves `executor` y `tester`, cada una con `role` (id o nombre del RoleDoc), `harness`, `model_alias`, `harness_auth` (opcional) y `env_config` (ruta opcional que se pasa a scion start con `--config`). Sin campo `dispatch` los dos subcomandos salen con codigo 2 y un mensaje.
 

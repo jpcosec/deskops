@@ -1,0 +1,6 @@
+cmd: TMPDIR=/dev/shm python3 -m pytest -q -p no:cacheprovider tests/test_lifecycle_graph.py tests/test_scion_runtime.py tests/test_task_lifecycle_validator.py tests/test_desk_sync.py tests/test_scaffold_golden.py tests/test_cli.py tests/test_doctor_alerts.py tests/test_output_goldens.py
+result: 228 passed
+exit: 0
+cmd: deskops init + deskops doctor on fresh desk
+result: Desk is healthy
+exit: 0

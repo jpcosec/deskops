@@ -1,0 +1,5 @@
+Verificacion del coordinador tras el arreglo del intento 2 (commit 9c9834b5cdb1b012f8312eb6c34a9d969ceee7eb).
+El tester deskops-t-873e90b300b4-a2 dio FAIL solo por dos regresiones en tests existentes (closeout_graph_oracle y test_packaging); el resto PASS. El intento 2 del ejecutor las corrigio.
+Revision de agy sobre el diff: runs/subagents/exec-deskops-e-e54423baf717/agy-review.md (sin defectos bloqueantes: el validador solo mira la ultima entrada de history y --back sin condicion es el diseno pedido).
+Suite completa en copia limpia de 9c9834b5cdb1b012f8312eb6c34a9d969ceee7eb (pytest -q -n 4 -p no:cacheprovider tests, bajo /dev/shm/sldb1-tests.lock):
+1199 passed, 3 skipped, 1 xfailed, 5 warnings in 1390.27s (0:23:10)

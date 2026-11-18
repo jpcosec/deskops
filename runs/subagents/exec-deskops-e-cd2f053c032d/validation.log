@@ -1,0 +1,5 @@
+tests/test_dispatch.py -> 10 passed (exit 0)
+tests/test_cli_grammar.py tests/test_command_registry.py tests/test_scion_runtime.py -> 45 passed (exit 0)
+tests/test_cli.py -k help_uses_deskops_name -> 1 passed (exit 0)
+tests/test_output_goldens.py -k help --update-golden -> 1 passed; only deskops.txt (changed) + 3 new deskops_dispatch*.txt kept; others reverted with git checkout
+Python: /usr/bin/python3.13 with PYTHONPATH=/workspace/deskops:/workspace/sldb/src:<sldb venv site-packages>, TMPDIR=/dev/shm

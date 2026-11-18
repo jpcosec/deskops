@@ -511,6 +511,18 @@ include:
     name: run-deskops-e-dbce9a3a5f2a
   - path: runs/subagents/exec-deskops-t-b02c6a3c3823-testing/run.md
     name: run-deskops-t-b02c6a3c3823
+  - path: runs/subagents/exec-deskops-e-e54423baf717/run.md
+    name: run-deskops-e-e54423baf717
+  - path: runs/subagents/exec-deskops-t-873e90b300b4-testing/run.md
+    name: run-deskops-t-873e90b300b4
+  - path: runs/subagents/exec-deskops-t-873e90b300b4-a2-testing/run.md
+    name: run-deskops-t-873e90b300b4-a2
+  - path: runs/subagents/exec-deskops-e-e54423baf717-a2/run.md
+    name: run-deskops-e-e54423baf717-a2
+  - path: runs/subagents/exec-deskops-e-cd2f053c032d/run.md
+    name: run-deskops-e-cd2f053c032d
+  - path: runs/subagents/exec-deskops-t-2af89ce8b87d-testing/run.md
+    name: run-deskops-t-2af89ce8b87d
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1699,6 +1711,14 @@ include:
     name: review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-evidence-atom-1
   - path: desk/reviews/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual/evidence-materialization-1.md
     name: review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-evidence-materialization-1
+  - path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/evidence-tests-1.md
+    name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-evidence-tests-1
+  - path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/evidence-commit-1.md
+    name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-evidence-commit-1
+  - path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/evidence-atom-1.md
+    name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-evidence-atom-1
+  - path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/evidence-materialization-1.md
+    name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1748,7 +1768,6 @@ include:
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
-  - desk/tasks/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution.md
   - desk/tasks/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent.md
   - desk/tasks/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip.md
   - desk/tasks/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace.md
