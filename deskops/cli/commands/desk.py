@@ -324,6 +324,7 @@ class DeskCLI:
                 owner_store is not None
                 and not getattr(entry, "origin", None)
                 and getattr(entry, "model_ref", None) == model_ref
+                and not bootstrap.is_local_model_entry(entry, store_dir)
             ):
                 copied_models.append(model_name)
 

@@ -284,3 +284,49 @@ def test_declared_includes_cover_what_desk_update_used_to_guess(tmp_path: Path) 
         "StepDoc": ["desk/steps/*.md"],
         "DeskFAQDoc": ["desk/faq/*.md"],
     }
+
+
+def test_desk_update_apply_keeps_the_local_path_of_a_declared_model(tmp_path: Path, monkeypatch, capsys) -> None:
+    """A store that declares a deskops model with a local source path keeps that path."""
+    from deskops.cli.main import main
+
+    monkeypatch.setattr(SLDBBootstrap, "_deskops_owner_store", lambda self: None)
+    assert main(["init", str(tmp_path)]) == 0
+    source = tmp_path / "deskops" / "models" / "role.py"
+    source.parent.mkdir(parents=True)
+    source.write_text("# local model source\n", encoding="utf-8")
+    store_yaml = tmp_path / ".sldb" / "store.yaml"
+    store = yaml.safe_load(store_yaml.read_text(encoding="utf-8"))
+    for entry in store["models"]:
+        if entry["name"] == "RoleDoc":
+            entry["path"] = "deskops/models/role.py"
+    store_yaml.write_text(yaml.safe_dump(store, sort_keys=False), encoding="utf-8")
+    store_index_path = tmp_path / ".sldb" / "core" / "store_index.yaml"
+    store_index = yaml.safe_load(store_index_path.read_text(encoding="utf-8"))
+    for entry in store_index["models"]:
+        if entry["name"] == "RoleDoc":
+            entry["path"] = "deskops/models/role.py"
+    store_index_path.write_text(yaml.safe_dump(store_index, sort_keys=False), encoding="utf-8")
+    model_path = tmp_path / ".sldb" / "core" / "models" / "RoleDoc.yaml"
+    index = yaml.safe_load(model_path.read_text(encoding="utf-8"))
+    index["path"] = "deskops/models/role.py"
+    model_path.write_text(yaml.safe_dump(index, sort_keys=False), encoding="utf-8")
+
+    # Another deskops checkout owns the models; this store only declares local copies.
+    owner_root = tmp_path.parent / f"{tmp_path.name}-owner"
+    owner_root.mkdir()
+    monkeypatch.setattr(SLDBBootstrap, "_deskops_owner_store", lambda self: None)
+    assert main(["init", str(owner_root)]) == 0
+    owner = owner_root / ".sldb"
+    monkeypatch.setattr(SLDBBootstrap, "_deskops_owner_store", lambda self: owner)
+    capsys.readouterr()
+
+    main(["desk", "update", "--root", str(tmp_path), "--apply"])
+    capsys.readouterr()
+
+    after = yaml.safe_load(model_path.read_text(encoding="utf-8"))
+    assert after["path"] == "deskops/models/role.py"
+    store_after = yaml.safe_load(store_yaml.read_text(encoding="utf-8"))
+    role = next(entry for entry in store_after["models"] if entry["name"] == "RoleDoc")
+    assert role.get("path") == "deskops/models/role.py"
+    assert not role.get("origin")

@@ -153,16 +153,39 @@ class SLDBBootstrap:
                             continue
                         if origin or getattr(entry, "model_ref", None) != model_ref:
                             continue
+                        if self.is_local_model_entry(entry, store_path):
+                            # The store declares this model with a path to its own source.
+                            # Inheriting would blank that path, so it stays as declared.
+                            continue
                     print(f"Inheriting {model_name} in {store_path}...")
                     self._inherit_model(model_name, store_path)
 
-            self._init_relations(store_path)
+            # The builtin relation types come from sldb, not from deskops: a store that
+            # already has the relation models keeps its relation types as they are.
+            registered = self._registered_model_entries(store_path)
+            if not {"RelationTypeDoc", "RelationDoc"} <= set(registered):
+                self._init_relations(store_path)
             self._update_store_indexes(store_path)
         except RuntimeError as exc:
             print(f"Error: {exc}")
             return 1
 
         return 0
+
+    @staticmethod
+    def is_local_model_entry(entry: Any, store_path: Path) -> bool:
+        """True when `entry` declares a model whose source file lives in the store's own repo."""
+        raw = entry.get("path") if isinstance(entry, dict) else getattr(entry, "path", None)
+        if not raw:
+            return False
+        project = store_path.resolve().parent
+        path = Path(str(raw))
+        if not path.is_absolute():
+            path = project / path
+        path = path.resolve()
+        # A copy registered from another checkout or the installed package points
+        # outside this repo; only a source inside the repo makes the model local.
+        return path.is_file() and path.is_relative_to(project)
 
     def _register_models_directly(self, store_path: Path) -> None:
         """Register the deskops models as copies when no owner store is installed."""
