@@ -144,6 +144,12 @@ def test_tools_fold_into_command_args_when_the_profile_has_a_flag(profiles: dict
     assert agent["command_args"] == ["--allowedTools=Read", "--allowedTools=Bash"]
 
 
+def test_pi_tools_are_option_and_value_as_separate_args(profiles: dict[str, dict]) -> None:
+    role = {"id": "role-x", "name": "x", "description": "d", "kind": "pi", "model": "", "tools": ["read", "grep", "bash"], "body": "# x"}
+    agent = yaml.safe_load(scion_template_files(role, profiles["pi"], harness="pi")["scion-agent.yaml"])
+    assert agent["command_args"] == ["--tools", "read,grep,bash"]
+
+
 def test_bad_alias_and_bad_harness_are_refused(executor: dict, profiles: dict[str, dict]) -> None:
     with pytest.raises(ValueError, match="model alias"):
         scion_template_files(executor, profiles["claude"], harness="claude", model_alias="huge")

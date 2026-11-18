@@ -335,7 +335,7 @@ def _yaml_scalar(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def _command_args(role_doc: dict[str, Any], profile: dict[str, Any]) -> list[str]:
+def _command_args(role_doc: dict[str, Any], profile: dict[str, Any], harness: str = "") -> list[str]:
     """Role settings that only exist as CLI flags (today: ``tools``).
 
     Model and system prompt have template fields of their own, the session is
@@ -349,6 +349,9 @@ def _command_args(role_doc: dict[str, Any], profile: dict[str, Any]) -> list[str
     # Scion puts the task prompt (and more options) after command_args. A variadic
     # flag such as Claude's ``--allowedTools <tools...>`` would swallow the prompt as
     # one more tool, so every flag/value pair is emitted as a single ``flag=value``.
+    if harness == "pi":
+        # pi rejects ``--tools=a,b`` (Unknown option) and takes option and value as two args.
+        return list(args)
     return [f"{flag}={value}" for flag, value in zip(args[::2], args[1::2], strict=True)]
 
 
@@ -434,7 +437,7 @@ def scion_template_files(
     lines.append(f"max_turns: {COORDINATOR_MAX_TURNS if coordinator else DEFAULT_MAX_TURNS}")
     lines.append(f"max_duration: {COORDINATOR_MAX_DURATION if coordinator else DEFAULT_MAX_DURATION}")
 
-    command_args = _command_args(role_doc, profile)
+    command_args = _command_args(role_doc, profile, harness)
     if command_args:
         lines.append("# RoleDoc.tools, folded through the runtime profile's tools flag:")
         lines.append(f"command_args: {_yaml_scalar(command_args)}")
