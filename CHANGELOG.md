@@ -7,6 +7,10 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ## [Unreleased]
 
+### Fixed
+
+- `deskops dispatch reap` no longer reads the TaskDoc (label from the task id), so a reap queued after `closeout commit` still stops and deletes the task's agents; a failing scion stop/delete prints `<name> <role> error:<code>`, continues and exits 6. The executor `prompt.md` asks for a commit with named paths and `Task-Id:` trailer; the tester `prompt.md` runs only the tests of the touched files (`tests/test_dispatch.py`).
+
 ### Added
 
 - `dispatch.roles_root` (optional, in the task desk's `desk/config.json`): `deskops dispatch start` takes the RoleDocs and the template from that repo's `desk/roles`, so sldb and IR dispatch with the deskops roles; `reap` is unchanged. `deskops integrate` returns 0 with `ya integrado: <tip>` (event `ya-integrado`, no push, no suite) when the tip is already an ancestor of `origin/<branch>` (`tests/test_dispatch.py`, `tests/test_integrate.py`).

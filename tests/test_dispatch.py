@@ -19,6 +19,8 @@ with open(os.environ["FAKE_SCION_LOG"], "a") as log:
 if sys.argv[1:2] == ["list"]:
     with open(os.environ["FAKE_SCION_LIST"]) as handle:
         sys.stdout.write(handle.read())
+if sys.argv[1:2] == ["stop"] and sys.argv[2:3] == [os.environ.get("FAKE_SCION_FAIL_STOP")]:
+    sys.exit(9)
 sys.exit(int(os.environ.get("FAKE_SCION_START_CODE", "0")) if sys.argv[1:2] == ["start"] else 0)
 """
 
@@ -195,6 +197,45 @@ def test_reap(env: Env) -> None:
 def test_reap_all_finished_exits_zero(env: Env) -> None:
     env.agents({"name": "deskops-e-x", "phase": "stopped", "labels": {"deskops.task_id": TASK, "deskops.role": "executor"}})
     assert env.cli("dispatch", "reap", "--task", TASK).returncode == 0
+
+
+def test_reap_after_the_task_was_deleted(env: Env) -> None:
+    (env.root / "desk" / "tasks" / f"{TASK}.md").unlink()
+    env.agents({"name": "deskops-e-x", "phase": "stopped", "labels": {"deskops.task_id": TASK, "deskops.role": "executor"}})
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert ["delete", "deskops-e-x", "--project", "proj", "--yes"] in env.calls()
+
+
+def test_reap_scion_error_continues_and_fails(env: Env) -> None:
+    labels = {"deskops.task_id": TASK, "deskops.role": "executor"}
+    env.env["FAKE_SCION_FAIL_STOP"] = "deskops-e-bad"
+    env.agents(
+        {"name": "deskops-e-bad", "phase": "stopped", "labels": labels},
+        {"name": "deskops-e-ok", "phase": "stopped", "labels": labels},
+    )
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode != 0
+    assert result.stdout.splitlines() == ["deskops-e-bad executor error:9", "deskops-e-ok executor phase:stopped"]
+    assert ["delete", "deskops-e-ok", "--project", "proj", "--yes"] in env.calls()
+
+
+def test_executor_prompt_asks_for_named_commit_with_task_id(env: Env) -> None:
+    assert env.cli("dispatch", "start", "executor", "--task", TASK).returncode == 0
+    name = _start_call(env)[1]
+    text = (env.root / f"runs/subagents/exec-{name}/prompt.md").read_text()
+    assert f"Task-Id: {TASK}" in text and "uno por uno" in text
+    assert "git add -A" in text and "git stash" in text and "deskops advance task" in text
+    assert "--grep" not in text
+
+
+def test_tester_prompt_runs_only_touched_tests(env: Env) -> None:
+    assert env.cli("dispatch", "start", "tester", "--task", TASK).returncode == 0
+    name = _start_call(env)[1]
+    text = (env.root / f"runs/subagents/exec-{name}-testing/prompt.md").read_text()
+    assert f'git log -1 --format=%H --grep "Task-Id: {TASK}"' in text
+    assert "git show --name-only" in text and "TMPDIR=/tmp" in text
+    assert "PASA o FALLA" in text and "integrate en el host" in text
 
 
 @pytest.mark.parametrize("argv", [("start", "executor"), ("start", "tester"), ("reap",)])

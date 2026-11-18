@@ -20,6 +20,7 @@ from deskops.errors import UsageError
 EXIT_BUSY = 3
 EXIT_ALIVE = 4
 EXIT_NO_ATTEMPTS = 5
+EXIT_SCION_ERROR = 6
 DONE_ACTIVITIES = ("completed", "blocked", "limits_exceeded")
 
 
@@ -74,6 +75,31 @@ def _list_agents(cfg: DispatchConfig) -> list[dict[str, Any]]:
 
 def _run_dir_for(name: str, role: str) -> str:
     return f"runs/subagents/exec-{name}" + ("-testing" if role == "tester" else "")
+
+
+def _role_instructions(role: str, task_id: str) -> str:
+    if role == "executor":
+        return (
+            "## Entrega del ejecutor\n\n"
+            "Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno "
+            "(los mismos que listas en result-summary.md):\n\n"
+            "    git add <ruta> <ruta> ...\n"
+            f"    git commit -m \"<resumen>\" -m \"Task-Id: {task_id}\"\n\n"
+            "Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo "
+            "ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.\n"
+        )
+    if role == "tester":
+        return (
+            "## Como probar (tester)\n\n"
+            "Ubica el trabajo del ejecutor:\n\n"
+            f"    git log -1 --format=%H --grep \"Task-Id: {task_id}\"   # commit del ejecutor\n"
+            "    git show --name-only <commit>                           # sus archivos\n\n"
+            "Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py "
+            "cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. "
+            "No corras la suite completa: la corre integrate en el host.\n\n"
+            "Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.\n"
+        )
+    return ""
 
 
 def start(root: Path, role: str, task_id: str) -> int:
@@ -142,7 +168,12 @@ def start(root: Path, role: str, task_id: str) -> int:
     prompt_path = (root / run_dir / "prompt.md").resolve()
     prompt_path.parent.mkdir(parents=True, exist_ok=True)
     prompt_path.write_text(
-        shown.getvalue().rstrip("\n") + "\n\n" + task_path.read_text(encoding="utf-8"), encoding="utf-8"
+        shown.getvalue().rstrip("\n")
+        + "\n\n"
+        + task_path.read_text(encoding="utf-8").rstrip("\n")
+        + "\n\n"
+        + _role_instructions(role, task_id),
+        encoding="utf-8",
     )
 
     argv = scion_start_argv(
@@ -166,12 +197,12 @@ def start(root: Path, role: str, task_id: str) -> int:
 
 
 def reap(root: Path, task_id: str) -> int:
-    from deskops.runtime.scion import scion_child_identity
+    from deskops.runtime.scion import _scion_task_label
 
     cfg = _dispatch_config(root)
-    task_path = _task_path(root, task_id)
-    label = scion_child_identity(task_path, "executor", 1)["labels"]["deskops.task_id"]
+    label = _scion_task_label(task_id)  # no TaskDoc read: the task may be closed already
     alive = 0
+    failed = False
     for agent in _list_agents(cfg):
         labels = agent.get("labels") or {}
         if labels.get("deskops.task_id") != label:
@@ -191,10 +222,20 @@ def reap(root: Path, task_id: str) -> int:
             print(f"{name} {role} vivo")
             alive += 1
             continue
-        _scion(["scion", "stop", name, "--project", cfg.project])
-        _scion(["scion", "delete", name, "--project", cfg.project, "--yes"])
+        stopped = _scion(["scion", "stop", name, "--project", cfg.project])
+        if stopped.returncode != 0:
+            print(f"{name} {role} error:{stopped.returncode}")
+            failed = True
+            continue
+        deleted = _scion(["scion", "delete", name, "--project", cfg.project, "--yes"])
+        if deleted.returncode != 0:
+            print(f"{name} {role} error:{deleted.returncode}")
+            failed = True
+            continue
         print(f"{name} {role} {reason}")
-    return EXIT_ALIVE if alive else 0
+    if alive:
+        return EXIT_ALIVE
+    return EXIT_SCION_ERROR if failed else 0
 
 
 class DispatchCLI:

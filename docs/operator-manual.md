@@ -734,7 +734,19 @@ deskops dispatch reap --task <task-id> --root .
 - `reap` stops and deletes the task's finished agents (`phase:<v>` not running,
   `activity:<v>` completed, blocked or limits_exceeded, or a `result-summary.md`
   in its run_dir) and prints `<name> <role> <reason|vivo>`; it exits 4 if any
-  agent is still alive.
+  agent is still alive. It computes the task label from the task id alone
+  (it does not read the TaskDoc), so a reap queued after `closeout commit` still
+  finds and deletes the agents. If a scion stop or delete fails it prints
+  `<name> <role> error:<code>`, continues with the next agent and exits 6.
+- The `prompt.md` of the executor ends with the delivery rules: commit only the
+  files changed for the task, named one by one (never `git add -A`, `git add -u`
+  over the whole tree or `git stash`), message with trailer `Task-Id: <task id>`,
+  no push, then `deskops advance task`. The tester's prompt tells it to find the
+  executor's commit with `git log -1 --format=%H --grep "Task-Id: <id>"`, list its
+  files with `git show --name-only`, run only the touched `tests/*.py` (plus
+  `tests/test_<module>.py` of touched modules) one by one with `TMPDIR=/tmp`, and
+  write `result-summary.md` with `PASA` or `FALLA` on the first line; the full
+  suite is run by `integrate` on the host.
 
 Optional `dispatch.roles_root` (in the `desk/config.json` of the TASK desk, the
 one passed with `--root`): repo whose `desk/roles` holds the RoleDocs (and
