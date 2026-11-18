@@ -1,0 +1,15 @@
+ M .sldb/core/models/TaskAggregateDoc.yaml
+ M .sldb/core/models/TaskCodeDoc.yaml
+ M .sldb/core/models/TaskDebugDoc.yaml
+ M .sldb/core/models/TaskDecisionDoc.yaml
+ M .sldb/core/models/TaskDoc.yaml
+ M .sldb/core/models/TaskDocsDoc.yaml
+ M .sldb/core/models/TaskExternalDoc.yaml
+ M .sldb/core/models/TaskRefactorDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M sldb/relation_types/has_model.md
+?? .sldb/core/documents/RelationDoc/testing-task_returns_to_execution.yaml
+?? .sldb/core/documents/RelationTypeDoc/reltype-links_to.yaml
+?? .sldb/core/documents/RelationTypeDoc/type-task_returns_to_execution.yaml
+?? sldb/relation_types/links_to.md

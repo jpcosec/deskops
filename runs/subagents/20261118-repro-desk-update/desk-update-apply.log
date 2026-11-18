@@ -1,0 +1,30 @@
+ M deskops/cli/commands/message.py
+ M tests/e2e_agent/scenarios/inbox-to-task.yaml
+ M tests/test_inbox_promote_cli_gaps.py
+ M tests/test_message_cli.py
+ M tests/test_repo_identity.py
+rc=0
+Lifecycle graph: tracked desk/lifecycle/type-task_returns_to_execution.md
+Lifecycle graph: tracked desk/lifecycle/testing-task_returns_to_execution.md
+0a1,29
+>  M .sldb/core/documents/InboxNoteDoc/20261117-102750-suggestion-sldb-el-valor-de-un-campo-ya-se-renderiza-literal-nota-015212.yaml
+>  M .sldb/core/documents/RelationTypeDoc/reltype-has_model.yaml
+>  M .sldb/core/models/AtomDoc.yaml
+>  M .sldb/core/models/BoardDoc.yaml
+>  M .sldb/core/models/CrossroadDoc.yaml
+>  M .sldb/core/models/DeskFAQDoc.yaml
+>  M .sldb/core/models/InboxNoteDoc.yaml
+>  M .sldb/core/models/MaterializationContractDoc.yaml
+>  M .sldb/core/models/PillDoc.yaml
+>  M .sldb/core/models/ProtoAtomDoc.yaml
+>  M .sldb/core/models/RelationDoc.yaml
+>  M .sldb/core/models/RelationTypeDoc.yaml
+>  M .sldb/core/models/RepositoryDoc.yaml
+>  M .sldb/core/models/ReviewDoc.yaml
+>  M .sldb/core/models/RitualDoc.yaml
+>  M .sldb/core/models/RoleDoc.yaml
+>  M .sldb/core/models/RunDoc.yaml
+>  M .sldb/core/models/RuntimeProfileDoc.yaml
+>  M .sldb/core/models/StepDoc.yaml
+
+[exited with code 0]
