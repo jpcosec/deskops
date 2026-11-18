@@ -1,0 +1,37 @@
+name: review-task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace-evidence-tests-1
+path: desk/reviews/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace/evidence-tests-1.md
+source_hash: f73f1f66135045131447475420e21d12822f1c9b893ab848a31ff848d94db492
+content_hash: 75801382c661d23ad4e9aad7f63ef83d7c4a3ac01bc38d08a45dd2ae1b4328d2
+field_hashes:
+  id: 473a5c9b0b12dc6a1f0642b8abf78bd41d8e388c23ddd3964f653e91808cb540
+  title: 68ea616195b9d5b7c3a0638c1be54c0c69e3c58e23a6cd20f67b161b3b81d9f0
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 087232b751f65a7e84eac4f21c093d0b24d44b90e4fb12297d37936794c58bd7
+  subject: 9cd81869d1e026c3fd78015cf06b6db3babe45e0d6c3de04d3a7c2e70e63ac57
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: ee60b280560c213d9ecde4da3f40dc0a0f4359650ff79b4df41eb05505d9839a
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 9c48fd884b4953df6a92c9f94386c842352f5d86018992d6a38bc3890e210c7a
+  created_at: dec7695986e5a3114e494f51d526e2ef9c1b30f52296b1c693c496536a247080
+  disposed_at: dec7695986e5a3114e494f51d526e2ef9c1b30f52296b1c693c496536a247080
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 2c37099d28aaebba2fc2ab55f8ae6d22c5bf52d56f140728ca19040ebecec346
+  disposition: a03b5a7881a56f151b5901bb522299326fc9586c8cefc2dfe7d858b1771a4c0d
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T22:20:22Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,35 @@
+$ uv venv /tmp/ws-venv --python 3.12
+Using CPython 3.12.16
+Creating virtual environment at: /tmp/ws-venv
+real 0m33.007s
+
+$ VIRTUAL_ENV=/tmp/ws-venv uv pip install -e "/workspace/deskops[dev]" -e /workspace/sldb
+Installed 20 packages in 628ms
+real 0m2.604s
+
+$ cd /workspace/deskops && TMPDIR=/tmp /tmp/ws-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_scion_runtime.py
+..........................................                               [100%]
+42 passed, 1 warning in 6.08s  (exit 0)
+
+$ cd /workspace/deskops && TMPDIR=/tmp /tmp/ws-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_dispatch.py
+..................                                                       [100%]
+18 passed, 1 warning in 185.37s (0:03:05)  (exit 0)
+
+$ /tmp/ws-venv/bin/deskops runtime template role-deskops-executor --harness claude \
+    --context-file /workspace/.bootstrap/deskops-scion-context.json --out /tmp/scion-tmpl-check/role-deskops-executor
+Scion template: ...  (exit 0)
+  13:## Python environment (run first)
+  20:uv venv /tmp/ws-venv --python 3.12
+  21:VIRTUAL_ENV=/tmp/ws-venv uv pip install -e "/mnt/ssd/proyectos/SLDB_1/deskops[dev]" -e /mnt/ssd/proyectos/SLDB_1/sldb
+  22:export VIRTUAL_ENV=/tmp/ws-venv PATH="/tmp/ws-venv/bin:$PATH"
+
+$ /tmp/ws-venv/bin/deskops runtime template role-deskops-tester --harness claude \
+    --context-file /workspace/.bootstrap/deskops-scion-context.json --out /tmp/scion-tmpl-check/role-deskops-tester
+Scion template: ...  (exit 0)
+  14:## Python environment (run first)
+  21:uv venv /tmp/ws-venv --python 3.12
+  22:VIRTUAL_ENV=/tmp/ws-venv uv pip install -e "/mnt/ssd/proyectos/SLDB_1/deskops[dev]" -e /mnt/ssd/proyectos/SLDB_1/sldb
+  23:export VIRTUAL_ENV=/tmp/ws-venv PATH="/tmp/ws-venv/bin:$PATH"
+
+$ /tmp/ws-venv/bin/sldb docs show atom-contenedores-scion-venv-propio-con-uv-python-3-12-via-a --store .sldb --format json
+(resolves AtomDoc, answer contains route (a) and measured times)  (exit 0)

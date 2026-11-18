@@ -1,0 +1,4 @@
+$ TMPDIR=/tmp /tmp/ws-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_scion_runtime.py
+42 passed, 1 warning  (exit 0)
+$ /tmp/ws-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_dispatch.py   (venv built with the new steps, inside the container)
+18 passed, 1 warning in 187.92s  (exit 0)

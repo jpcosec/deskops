@@ -1,7 +1,19 @@
+Task: task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace
+Title: Los contenedores scion de deskops traen un python que puede correr los tests del workspace
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-18T22:20:12Z'
+  at: '2026-11-18T22:07:23Z'
   authority: generated
   via: save_document_payload
 id: task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace
@@ -13,10 +25,7 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- deskops/runtime/scion.py
-- tests/test_scion_runtime.py
-- 4a8c984f1d1623a9bba0efc5a4dfdec50311ad09
+references: []
 depends_on: []
 pills: []
 files:
@@ -25,7 +34,7 @@ task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-contenedores-scion-venv-propio-con-uv-python-3-12-via-a
+- atom-code-changes-close-with-tests-and-commit
 ---
 
 # Los contenedores scion de deskops traen un python que puede correr los tests del workspace
@@ -66,3 +75,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Un ejecutor despachado por la cola puede correr los tests del workspace dentro del contenedor sin improvisar un entorno; la vía elegida y su medición quedan en un atom y en el manual.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
