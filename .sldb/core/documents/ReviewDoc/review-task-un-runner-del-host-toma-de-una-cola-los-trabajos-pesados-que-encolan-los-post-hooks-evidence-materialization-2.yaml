@@ -1,0 +1,37 @@
+name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-materialization-2
+path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/evidence-materialization-2.md
+source_hash: 91545ee94aec57af4f3b237ec831e4342996aa75a591947d7c40a59f0bc376da
+content_hash: 4521501d56195303ded225c8dacc1299abeb4462aa6c010efa59d4f956005828
+field_hashes:
+  id: e281c5d04d2d597f82b935811a44e22f63c36cacdc35a84ae2b061cbfebefa3e
+  title: 59d69a840c990bee5b3b0cbea5f9ff15479a89c958eeff802634f6034d56f2f3
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 36ff8b575b06380ed2e8cfdee44b3e891a4b4310197f33eb5e165537bdc7193c
+  subject: 4c617d653bd5a47990a30e42a435d449b1f7ed3c50968793c327646b69698b68
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 6f0eac67d2e84e9d8b22ccd23d75e3983e88e0369772b75c9b34f12dc9f520f5
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 8cbc2b925aa221a46beb4bc91ca52bfcbe5812fd4454def630cfac313d6bb47a
+  created_at: 4fc07cf669ed097eed82e9bfc319f619d21c67f371a466a44e71991722bb163f
+  disposed_at: 4fc07cf669ed097eed82e9bfc319f619d21c67f371a466a44e71991722bb163f
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f9c5386c799010dcbb40e7604e06809e480cea45c0ad80629996640b0c0d5c69
+  disposition: 6a6713745c6ec4d7beaeb45291aa1b000981d6e9add08a8e10b36bcd90f7160f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T07:41:48Z'
+  authority: generated
+  via: create_document

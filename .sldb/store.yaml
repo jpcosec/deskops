@@ -356,6 +356,7 @@ include:
   - desk/materializations/materialization-post-hooks-runner.md
   - desk/materializations/materialization-post-hooks-doctor-seeds.md
   - desk/materializations/materialization-post-hooks-tests.md
+  - desk/materializations/materialization-host-queue-config.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -498,6 +499,14 @@ include:
     name: run-deskops-t-5ea818e706bb
   - path: runs/subagents/exec-deskops-t-5ea818e706bb-a2-testing/run.md
     name: run-deskops-t-5ea818e706bb-a2
+  - path: runs/subagents/exec-deskops-e-86e44ee7cd8a/run.md
+    name: run-deskops-e-86e44ee7cd8a
+  - path: runs/subagents/exec-deskops-t-01d2e969dfaf-testing/run.md
+    name: run-deskops-t-01d2e969dfaf
+  - path: runs/subagents/exec-deskops-t-01d2e969dfaf-a2-testing/run.md
+    name: run-deskops-t-01d2e969dfaf-a2
+  - path: runs/subagents/exec-deskops-e-86e44ee7cd8a-a2/run.md
+    name: run-deskops-e-86e44ee7cd8a-a2
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1650,6 +1659,34 @@ include:
     name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-tests-2
   - path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-commit-2.md
     name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-commit-2
+  - path: desk/reviews/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual/preflight-1.md
+    name: review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-preflight-1
+  - path: desk/reviews/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual/bundle-1.md
+    name: review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-bundle-1
+  - path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/preflight-1.md
+    name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-preflight-1
+  - path: desk/reviews/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent/preflight-1.md
+    name: review-task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent-preflight-1
+  - path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/preflight-2.md
+    name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-preflight-2
+  - path: desk/reviews/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent/preflight-2.md
+    name: review-task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent-preflight-2
+  - path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/bundle-1.md
+    name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-bundle-1
+  - path: desk/reviews/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent/bundle-1.md
+    name: review-task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent-bundle-1
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/evidence-tests-1.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-tests-1
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/evidence-commit-1.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-commit-1
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/evidence-atom-1.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-atom-1
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/evidence-materialization-1.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-materialization-1
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/evidence-atom-2.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-atom-2
+  - path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/evidence-materialization-2.md
+    name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-materialization-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -1699,7 +1736,10 @@ include:
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
-  - desk/tasks/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks.md
+  - desk/tasks/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual.md
+  - desk/tasks/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution.md
+  - desk/tasks/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent.md
+  - desk/tasks/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md

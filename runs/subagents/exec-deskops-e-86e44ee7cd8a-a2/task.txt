@@ -1,0 +1,12 @@
+Task: task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks
+Title: Un runner del host toma de una cola los trabajos pesados que encolan los post-hooks
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.code
+Effective atoms:
+- atom-automatic-routines-vs-llm-tasks
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_completes -> complete: closed [status = "ready_for_testing"]
+  blocked by: error: [rules/rule-closeout-task-code] TaskCodeDoc:task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks: Una tarea task.code se cierra con recibos evidence aceptados e intactos de tests, commit y atom o materialization (los escribe deskops closeout verify). | any(^subject: kind = "evidence" and fact = "tests" and anchor_state = "intact" and verdict = "accepted") (seen: {}) (witness: ReviewDoc:review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-bundle-1 {"kind":"bundle"})

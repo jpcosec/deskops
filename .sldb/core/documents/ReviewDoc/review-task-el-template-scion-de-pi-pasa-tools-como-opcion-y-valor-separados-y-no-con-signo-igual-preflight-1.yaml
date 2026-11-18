@@ -1,0 +1,37 @@
+name: review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-preflight-1
+path: desk/reviews/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual/preflight-1.md
+source_hash: 0be48f8f294579bd6a3f3a15af5f0bf03c956d1fb2d5c5dfd4ec8da65fc94b6e
+content_hash: f73745d4071e6e5803b07c7e2433494c98dae802414a3e2a12fbbf7255ac6d28
+field_hashes:
+  id: b8b3794c542b9f08d7243d5f6743cd8905e4fc97ac79ddb8722420ece17b8dc1
+  title: decb507cf782ab769340cf8e4e89ee3b513543483467acc9a4f284024e1ed709
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 3c9f3d8a23867d06293cf8a5fd5066a2523fe9a0fe2fdc3e4321d7e17c540f42
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 06c567214d869225312e9b2923dff17f13235a73506753729ce053ec5ebf7132
+  input_sha256: 5b4889cba11c5773cff3855f27b00dccccbea1d05bcb21e04d3c977f6b35b73d
+  contract_sha256: a6bf60b4d0f98f0125dde36df2e122db526df7a1d5270ee787c3d571e532a558
+  output_sha256: e07e952caeb22241194bb1f5d0d33bae4e9f8dce59dc7b225110b393e04ad963
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: c1d3f97c4a476d76da19f2e656a1a5d421fec7b23036c534c3e959ea191564c3
+  created_at: bc27fe28525e0ff789a7a29aaaf87c856b892f24f5e469150b395b7a1941092e
+  disposed_at: 2134c3ca3dd4c23501e9405c67acdc2c5ccea97ba0d2b63b3a941af30de7a043
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 59b50bab9c4a4d11a8ac1488ea90178e7634efde7cbe1cb89e30918cc2abf405
+  disposition: 501d4f597844c5ca9022ea4fdc6491b57e9d48c47c11f2a0a04f5cd2d69d13d5
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-18T05:56:42Z'
+  authority: generated
+  via: save_document_payload

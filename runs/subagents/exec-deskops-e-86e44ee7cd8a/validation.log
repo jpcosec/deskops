@@ -1,0 +1,6 @@
+pytest -q tests/test_queue.py -> exit 0 (14 passed)
+pytest -q tests/test_lifecycle_graph.py -> exit 0 (20 passed)
+deskops queue --help / add --help / run --help / list --help -> exit 0 each
+deskops graph missing --root . -> no reference naming this task (grep count 0)
+pytest -n 4 tests/test_output_goldens.py -k help --update-golden -> exit 0; kept deskops.txt + 4 new deskops_queue*.txt; 8 line-wrap-only goldens restored via git checkout
+Note: venv python is 3.13 vs 3.12 site-packages, so tests were run with the uv tool python + pytest installed in /dev/shm (removed).

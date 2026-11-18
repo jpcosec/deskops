@@ -1,0 +1,119 @@
+{
+  "key": "task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent/bundle",
+  "input_sha256": "1111dd9e7616918898d9a70a748461dd9c8f64b629155f742b8280c98678067f",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261118-070838/context-review/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent/bundle/1111dd9e7616918898d9a70a748461dd9c8f64b629155f742b8280c98678067f/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent.md",
+      "sha256": "df2b89720322a79db9dd66bb56583ab514e5d7e2b275f4e4018ab00a5b4fd198",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-scion-coordinator-progresses-authorized-work.md",
+      "sha256": "6d4649499c28df7536cae9623f35148501072f595316d1b5de575cf51569ac94",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/runtime/scion.py",
+      "sha256": "a77fc119d56e69380e0a5708c357576da7afc0a6551d5eb1be4cf4cd3b8aad39",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/config.py",
+      "sha256": "decd3600989c32f6cae65071443ee576f59210f211de7fbac0f0493ac35e4831",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_cli_grammar.py",
+      "sha256": "2aede4ba260c2e725401f6dfa9fefe115b40e0f94ac9f68c073510c4be47eb62",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_command_registry.py",
+      "sha256": "30989a21e3b3c29151bd87e36e110da8afa50d02c17f66fecf4b605ab76b6fe8",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 84271
+    },
+    {
+      "path": "docs/operator-manual.md",
+      "reason": "size>=60000",
+      "size": 60111
+    },
+    {
+      "path": "tests/test_cli.py",
+      "reason": "size>=60000",
+      "size": 111990
+    }
+  ],
+  "started": "2026-11-18T07:08:40.057413+00:00",
+  "finished": "2026-11-18T07:08:55.084158+00:00"
+}

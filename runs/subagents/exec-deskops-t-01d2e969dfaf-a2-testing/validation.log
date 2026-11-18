@@ -1,0 +1,97 @@
+Tester independiente: exec-deskops-t-01d2e969dfaf-a2-testing
+Fecha: 2026-11-18 (UTC)
+Entorno: no existe /mnt/ssd/proyectos/SLDB_1/.venv. Se uso:
+  /home/scion/.local/share/uv/python/cpython-3.13-linux-x86_64-gnu/bin/python3.13
+  PYTHONPATH=/workspace/deskops:/workspace/sldb/src:/workspace/sldb/.venv/lib/python3.13/site-packages
+  TMPDIR=/dev/shm
+Nota de entorno: /dev/shm es de 64 MB; hubo que limpiar /dev/shm/pytest-of-scion entre
+archivos de test para no agotar espacio. El test de concurrencia sobrescribe PYTHONPATH
+al lanzar el subproceso; para que sldb fuera importable se creo temporalmente un .pth
+en el site-packages del interprete 3.13 y se retiro al terminar.
+
+=== Validation 1: tests/test_queue.py ===
+Comando: TMPDIR=/dev/shm ... -m pytest -q tests/test_queue.py
+Resultado: PASS (14 passed)
+Revision del test: usa subprocess reales contra python -m deskops sobre lifecycle_desk;
+no usa mocks. Los comandos de queue_jobs son [sh, -c, ...] reales. Cubre (a)-(j) y help.
+Los literales de contrato ("ocupado", "en espera", "pending (1)") son los del TaskDoc.
+
+=== Validation 2: tests/test_lifecycle_graph.py ===
+Comando: TMPDIR=/dev/shm ... -m pytest -q tests/test_lifecycle_graph.py
+Resultado: PASS (20 passed)
+
+=== Validation 3: ayuda de queue ===
+Comandos: python -m deskops queue --help
+           python -m deskops queue add --help
+           python -m deskops queue run --help
+           python -m deskops queue list --help
+Resultado: PASS (los cuatro salen con codigo 0 y muestran usage/subcomandos).
+Goldens: tests/test_output_goldens.py::test_help_goldens PASS; los goldens nuevos
+deskops_queue{, _add,_run,_list}.txt coinciden (con la normalizacion de wrapping).
+
+=== Validation 4: deskops graph missing --root . ===
+Resultado: PASS. 47 faltantes, todos preexistentes (docs/plans/otros tests).
+Ninguno nombra esta tarea ni queue.py, config.py, registry.py, test_queue.py,
+operator-manual.md ni deskops_queue*.txt.
+
+=== Done When: manual Host queue ===
+docs/operator-manual.md contiene la seccion "Host queue" (linea 619): formato de
+queue_jobs, gates de memoria, los tres subcomandos, estados y ejemplo de post-hook
+run: [deskops, queue, add, <tipo>, --root, .].
+Resultado: PASS.
+
+=== Done When: git status --short ===
+Solo aparecen como cambios/nuevos de esta tarea los archivos esperados:
+  M deskops/config.py, M deskops/cli/registry.py, M docs/operator-manual.md,
+  M tests/fixtures/golden/help/deskops.txt,
+  ?? deskops/queue.py, ?? tests/test_queue.py,
+  ?? tests/fixtures/golden/help/deskops_queue*.txt (4).
+El resto de cambios/nuevos del checkout son de otras tareas y se ignoraron segun el
+encargo. No se creo runs/queue en el repo (las pruebas manuales fueron en /dev/shm).
+Resultado: PASS con la salvedad de que los goldens nuevos no estaban nombrados en el
+parrafo Scope, pero si en las notas del coordinador y son necesarios para el CLI.
+
+=== Prueba manual propia en desk desechable /dev/shm/queue-manual-desk ===
+Creado con python -m deskops init. desk/config.json con queue_jobs reales
+(ok/fail/slow/t con [sh, -c, ...]) y gates 0/101 (luego min=1e9 para el gate).
+- queue add declarado: crea pending/<AAAAMMDDTHHMMSSZ>-<tipo>-<task>.json e imprime id. PASS
+- queue add tipo no declarado: rc=2 y lista "Declared kinds: fail, ok, slow". PASS
+- queue add sin tarea/entorno: rc=2. PASS
+- queue add desde DESKOPS_TASK_ID/DESKOPS_TRANSITION: cubierto por test (b) PASS.
+- queue run ok: done con exit_code 0, started_at/ended_at/log; el log contiene stdout
+  y las cinco variables (ROOT|TASK_ID|TRANSITION|JOB_ID|JOB_KIND) y pwd=raiz. PASS
+- queue run fail: rc=1, failed con exit_code 7, log con stdout+stderr, nota nueva en
+  desk/inbox tipo unclear, titulo "queue: <id>", cuerpo con tipo/tarea/codigo/log. PASS
+- queue list text/json: cuatro estados; json con pending/running/done/failed; texto con
+  id, tipo, tarea y exit/timeout de terminados. PASS
+- dos queue run simultaneos sobre un slow de 3 s: uno ejecuta, el otro imprime
+  "ocupado: otro queue run en curso" y sale 0; marker escrito una sola vez; un done. PASS
+- queue run --all: ejecuta ok y luego fail, sale 1 y se detiene. PASS
+- timeout=1 con sleep 30: failed con timeout:true, sin exit_code, rc=1. PASS
+- running huerfano sin lock: pasa a failed con interrupted:true y exit_code:null, rc=0
+  ("sin trabajos") y nota sin codigo ni log (aclaracion aceptada). PASS
+- queue_min_available_gb=1e9: imprime "en espera: memoria disponible 14.1 GB < minimo
+  1000000000 GB", rc=0 y el trabajo sigue en pending. PASS
+- Al terminar se borro /dev/shm/queue-manual-desk.
+
+=== Checks adicionales de regresion (no listados en Validation, pero afectados por el CLI nuevo) ===
+FAIL tests/test_cli.py::test_cli_help_uses_deskops_name
+  Espera la lista exacta de comandos sin "queue":
+  "{about,...,message,review,...}" no esta en el help actual, que incluye
+  "...message,queue,review...".
+FAIL tests/test_cli_grammar.py::test_top_level_nouns_are_classified_exactly_once
+  TOP_LEVEL_GRAMMAR no clasifica "queue"; el registro si lo declara como top-level.
+FAIL tests/test_command_registry.py::test_mutating_commands_are_declared_explicitly
+  MUTATING_COMMANDS no incluye ("queue",), ("queue","add"), ("queue","run"), pero
+  esos comandos estan declarados con mutates=True.
+Estos tres tests pasaban antes del cambio (el registro no tenia queue) y fallan ahora.
+No son un problema de entorno: se corrieron aislados con /dev/shm limpio.
+test_registry_paths_match_help_goldens y test_help_goldens si pasan.
+No se modifico nada para corregirlos (el rol de tester no implementa).
+
+=== Veredicto ===
+Validation 1-4: PASS. Done When (manual y git status): PASS.
+Regresiones en tests existentes que guardan la superficie CLI: FAIL.
+Veredicto global: FAIL. La tarea no puede aceptarse mientras el CLI nuevo deje
+tests existentes en rojo; falta declarar queue en test_cli.py, test_cli_grammar.py
+y MUTATING_COMMANDS de test_command_registry.py (queue list no muta).
