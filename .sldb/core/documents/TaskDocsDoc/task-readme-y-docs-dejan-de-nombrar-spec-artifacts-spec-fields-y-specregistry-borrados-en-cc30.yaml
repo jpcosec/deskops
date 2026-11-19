@@ -1,7 +1,7 @@
 name: task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30
 path: desk/tasks/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30.md
-source_hash: 963caca15a0838d4e1b61878cb854e58c22095402b343453c09d526f349a08de
-content_hash: 100078b7f95a684085e89d8a64bc51cd17d9951eb2960640731b78ec252870a4
+source_hash: e2b458646a54ea316164ea1d938d22e0cf7431da3e3debc0c622046445f2e90d
+content_hash: e1af08bedf1e47d6d82396f840540d38a9708b007ed62f38dc4c4114b3ad624e
 field_hashes:
   title: 6ef99233ee29c1043a06da4b9217b4f90b62eb32ba803619e55ec3e9e2671ca9
   id: 57060454627a4036de8704f66df608df7d39107cde401c0eba08ba7b0648063e
@@ -13,17 +13,17 @@ field_hashes:
   why: df2118cd0a90af1822c5bcc2ad69d01061acdf54d7226ec1e2663ec7677fc223
   goal: 752e4cc19901b2e0b92603fff7709fd993e34aed56e88ad0c8c2aca525b9c6aa
   scope: c97efbf9868f005cf4b38446e2ae10f0fcb9cf5089710b1ed7d991ea760c92da
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: e01cace8531dd4da4bbc92638791c65a0bc51581dcbe036cfe10094e175709b8
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 53577d8a428650b21e9c17ccabcfd899b47c38908e1821f0ef4b05acb2d432b7
+  files: 366d8148a9341ff5d2818b61e966d43ede6ace9c895cd37e66740e73ec7762f0
   implementation_path: 4dfb99b3c54ff433f4729105e2e75851fa2b9cf14b9689b25b97986bc16f8dbf
   validation: 7872e727500fd4cc553ad9e51b1cd9d28d6a32c7fd20e84027d6330e9f299db0
   done_when: fe23472ae543804a37f723234ff94f6ad342cb13acf230f5d36d6dd1de9ccbd8
   task_type: 8dbc7ea3fc2d737a841f8f9a89de6dd4bd2ca7fdc77434a53400db8767ba695d
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: 1feaff343ea2f0cec3eeee61269c547412394daf7ee660fe9d9e4972973fd61b
   from_drawer: a63a8352901f7e37f7ea6c3b9232df03d810f68591e7761bf5e02bae433faef5
 semantic_tags:
 - artifact:task
@@ -35,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T17:54:59Z'
+  at: '2026-11-19T18:24:34Z'
   authority: generated
   via: save_document_payload

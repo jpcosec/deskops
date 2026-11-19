@@ -1,0 +1,25 @@
+name: materialization-sin-spec-artifacts-docs-knowledge-graph-desk-source-graph-vocabulary-md
+path: desk/materializations/materialization-sin-spec-artifacts-docs-knowledge-graph-desk-source-graph-vocabulary-md.md
+source_hash: 545f38e7fcf2877b588e66e438205eac9efbd33aedbb50d9594f436ae950f755
+content_hash: 80c3225463123154da169f9c189e2d55f13e7c0e3b7fcaf5f97848fa69a8c075
+field_hashes:
+  id: 4ae9ee0a1d4ec872d1750b9f665c244c077b91e0702bfbdbe86820c7e6887c3d
+  title: 77fa2c492a54b8f3c2a4cf966204806ec637b39763d5b50f59ff25c7c266de7f
+  source_atoms: 1feaff343ea2f0cec3eeee61269c547412394daf7ee660fe9d9e4972973fd61b
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: ae4553e075b4bb58d7decf41955d2a45b24c693287c7687c0d0074478ffd3922
+  intent: 88fd276c29bafec40ef54db72cc001585e87bb65abcaf87ac65a37eab340217d
+  validation: 06c69e95e3e851e1d27cc23a1613d3c048fc2d5eed8ab76483e59908c3de1e13
+  tags: aaf2657eeaf0b1896a1048135ce63d6e79fd5365fc0e1ff69b15e9552e56efb2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:docs
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-19T18:25:07Z'
+  authority: generated
+  via: create_document

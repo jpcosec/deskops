@@ -1,30 +1,37 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:00:43Z'
+  at: '2026-11-19T18:24:34Z'
   authority: generated
   via: save_document_payload
 id: task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- README.md
+- docs/diagrams/process/current-agent-workflow-and-automation.md
+- docs/diagrams/process/current-agent-workflow-and-automation.mmd
+- docs/knowledge-graph/desk-source-graph-vocabulary.md
+- db68d330c1d365ecd674204a16d93afad1684e6b
 depends_on: []
 pills: []
 files:
 - README.md
-- docs/knowledge-graph/desk-source-graph-vocabulary.md
 - docs/diagrams/process/current-agent-workflow-and-automation.md
 - docs/diagrams/process/current-agent-workflow-and-automation.mmd
+- docs/knowledge-graph/desk-source-graph-vocabulary.md
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-el-vocabulario-de-esquema-de-los-artefactos-de-deskops-vive-en-los-modelos-no-en-spec-artifacts-ni-s
 from_drawer: desk/drawer/tasks/task-docs-y-readme-todav-a-nombran-spec-artifacts-y-spec-fields-borrados-en-cc30.md
 ---
 

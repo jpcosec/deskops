@@ -367,6 +367,10 @@ include:
   - desk/materializations/materialization-retry-exit-codes-test-queue.md
   - desk/materializations/materialization-retry-exit-codes-operator-manual.md
   - desk/materializations/materialization-verify-directorio-nodo-closure.md
+  - desk/materializations/materialization-sin-spec-artifacts-readme-md.md
+  - desk/materializations/materialization-sin-spec-artifacts-docs-diagrams-process-current-agent-workflow-and-automation-md.md
+  - desk/materializations/materialization-sin-spec-artifacts-docs-diagrams-process-current-agent-workflow-and-automation-mmd.md
+  - desk/materializations/materialization-sin-spec-artifacts-docs-knowledge-graph-desk-source-graph-vocabulary-md.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -581,6 +585,8 @@ include:
     name: run-deskops-t-07d09079fe71
   - path: runs/subagents/exec-deskops-e-5b4af01ff753/run.md
     name: run-deskops-e-5b4af01ff753
+  - path: runs/subagents/exec-deskops-t-2f462207c820-testing/run.md
+    name: run-deskops-t-2f462207c820
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1927,6 +1933,10 @@ include:
     name: review-task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30-bundle-1
   - path: desk/reviews/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/bundle-1.md
     name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-bundle-1
+  - path: desk/reviews/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30/evidence-commit-1.md
+    name: review-task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30-evidence-commit-1
+  - path: desk/reviews/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30/evidence-document-1.md
+    name: review-task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30-evidence-document-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

@@ -1,0 +1,25 @@
+name: materialization-sin-spec-artifacts-readme-md
+path: desk/materializations/materialization-sin-spec-artifacts-readme-md.md
+source_hash: 01316ccc6e22a5f4215fb24cd5aa001174598aa3d2497e33eab384249d2a5bd3
+content_hash: d2d79af14c62aeab4432adc0587bd397a6ae53f378cb52d5057984fcdd07b570
+field_hashes:
+  id: 132b694e0867812444ee4994b355b70debe13fba216128a33e0e044dcb6d6c8f
+  title: be87e6182aa557ee87e2fb20e61fbd9bc40c32e8f02b9d43cdb7e21b3794d8f3
+  source_atoms: 1feaff343ea2f0cec3eeee61269c547412394daf7ee660fe9d9e4972973fd61b
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: d82ab49f91a6ba1662d933820377bd073d4da4fb04bd2911a20ecfde554cdd93
+  intent: 97742d0c0b22edd26e1a35005ef5fb01bed06ac1972cc8e9fd186858521159c1
+  validation: 06c69e95e3e851e1d27cc23a1613d3c048fc2d5eed8ab76483e59908c3de1e13
+  tags: aaf2657eeaf0b1896a1048135ce63d6e79fd5365fc0e1ff69b15e9552e56efb2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:docs
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-19T18:24:42Z'
+  authority: generated
+  via: create_document

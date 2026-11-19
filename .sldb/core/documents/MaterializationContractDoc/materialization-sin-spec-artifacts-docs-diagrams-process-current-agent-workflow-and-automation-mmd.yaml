@@ -1,0 +1,25 @@
+name: materialization-sin-spec-artifacts-docs-diagrams-process-current-agent-workflow-and-automation-mmd
+path: desk/materializations/materialization-sin-spec-artifacts-docs-diagrams-process-current-agent-workflow-and-automation-mmd.md
+source_hash: ef647218a5730906682ff9248e7640e942618b489ff964852bd950b73ca78d04
+content_hash: 7a207c02a5fc88be933f8d6af5c9bf831699794d167ea9922cfbd7c29cd0f4af
+field_hashes:
+  id: 3c404c9af050db8d2a26f5c26c8441e37d0219e4b016fd927abefa50960f9898
+  title: 2e907240e6cdf4a7b07453d008dbeb5bc4389b4f3a6ec9ccc7897bba6090f977
+  source_atoms: 1feaff343ea2f0cec3eeee61269c547412394daf7ee660fe9d9e4972973fd61b
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: ec992483e76c49617769fa7fd44c96f8788a41ca5551e9b0c5053c85df033468
+  intent: 2014e0441f1097c77033c76a673056f21dc83a7182edabf82efa390c0e3ccc0b
+  validation: 06c69e95e3e851e1d27cc23a1613d3c048fc2d5eed8ab76483e59908c3de1e13
+  tags: aaf2657eeaf0b1896a1048135ce63d6e79fd5365fc0e1ff69b15e9552e56efb2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:docs
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-19T18:24:59Z'
+  authority: generated
+  via: create_document
