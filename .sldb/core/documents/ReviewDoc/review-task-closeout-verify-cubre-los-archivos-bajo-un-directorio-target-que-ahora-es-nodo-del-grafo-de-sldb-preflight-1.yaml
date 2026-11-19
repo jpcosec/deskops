@@ -1,0 +1,37 @@
+name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-preflight-1
+path: desk/reviews/task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb/preflight-1.md
+source_hash: 86f6cd120e65f22e35cd6360fafc0fe9d5845c3db6ef600e74b675eb6a5e91f7
+content_hash: a2e1dfe41d1cf900514aefbf3fa16c50b82a5bb3eee104adc0621b3e6aa22623
+field_hashes:
+  id: 416f41eeb2f58a420a05c515979c20659e58ba813f26263608860acc87cc3173
+  title: 5af03be6fb198d7756afa3aac266a699428a644235f5bf1e27092f4d1f053a27
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 2855c8fca9744013c77d680bcde74c4443cd41d844a7c0218c82e915474f6317
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: a3578edaa53b1a49e3b7cfa73947de027a0af3c3ce44d8177b5b44bbd2c400fa
+  input_sha256: cc433fafa164d304966d679f5382b6a54e5fcbb0c562dad35e5e6ad9359f54bb
+  contract_sha256: fe89b4c93bc73236e0804b3d43966d58acab23c055a63db939b9a47462a49b1e
+  output_sha256: d46857e024d0c514a18949c6f6a4ef01c81ba34caaab560255a080b9c5ff49e0
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: b547ae8dbefbbf579fac42b2158b5648fda764355d524a28cfea610bb9b9ffee
+  created_at: 19397d51655b192f59ebc8c971840de885f1933841b7a9e236e8f85fcde32eab
+  disposed_at: eef76b891c38f5080079dbfa8e3c2dd05fe69cf15758ac2bac54dfa55ae21655
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 27628b02e1590c99ffb07ca5656bfa1b750dea0e543a1be1d280efdcc1c0f6e8
+  disposition: c14bc5e0965011adaf78d2d34a2a0efbcfa745ee932fc7e63f5155738691a656
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-19T14:11:04Z'
+  authority: generated
+  via: save_document_payload
