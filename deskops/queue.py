@@ -173,8 +173,8 @@ def _recover_interrupted(root: Path, queue: Path) -> None:
         _notify_failure(root, job, interrupted=True)
 
 
-def _execute(root: Path, queue: Path, config: DeskConfig, path: Path) -> bool:
-    """Run one pending job; True when it succeeded."""
+def _execute(root: Path, queue: Path, config: DeskConfig, path: Path) -> str:
+    """Run one pending job; "ok", "failed" or "retry" (back to pending, exit code in retry_exit_codes)."""
     running = queue / "running" / path.name
     os.replace(path, running)
     job = _read_job(running)
@@ -217,11 +217,17 @@ def _execute(root: Path, queue: Path, config: DeskConfig, path: Path) -> bool:
     if not job.get("timeout"):
         job["exit_code"] = code
     ok = code == 0
+    if spec is not None and not ok and not job.get("timeout") and code in spec.retry_exit_codes:
+        for key in ("started_at", "ended_at", "exit_code", "log"):
+            job.pop(key, None)
+        _write_job(running, job)
+        os.replace(running, path)
+        return "retry"
     _write_job(running, job)
     os.replace(running, queue / ("done" if ok else "failed") / path.name)
     if not ok:
         _notify_failure(root, job, interrupted=False)
-    return ok
+    return "ok" if ok else "failed"
 
 
 @contextlib.contextmanager
@@ -258,7 +264,11 @@ def run_queue(root: Path, run_all: bool) -> int:
                 return 0
             path = pending[0]
             print(f"ejecutando {path.stem}")
-            if not _execute(root, queue, config, path):
+            outcome = _execute(root, queue, config, path)
+            if outcome == "retry":
+                print(f"en espera: {path.stem} ocupado")
+                return 0
+            if outcome == "failed":
                 print(f"fallo {path.stem}")
                 return 1
             print(f"listo {path.stem}")

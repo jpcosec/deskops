@@ -659,6 +659,11 @@ Declare job kinds in `desk/config.json`:
 - `queue_jobs` maps a kind to `{"run": [argv...], "timeout": seconds}`. `run` is
   executed without a shell, from the repository root; `timeout` is an integer
   above zero and defaults to 3600. The default map is empty.
+- `retry_exit_codes` (optional list of integers per kind, default empty): when the
+  job's command exits with one of them (`dispatch start` uses 3 for "ocupado"),
+  `queue run` leaves the job in `pending` without an inbox note, prints
+  `en espera: <id> ocupado` and stops without failing; the next run retries it.
+  Any other non-zero code is still a failure.
 - `queue_min_available_gb` (default 8) and `queue_max_psi_avg60` (default 10)
   are the memory gates: `queue run` leaves the job pending and prints
   `en espera: ...` when `MemAvailable` is below the first or the `some avg60`

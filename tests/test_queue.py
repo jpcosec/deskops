@@ -101,6 +101,25 @@ def test_run_failure_goes_to_failed_with_inbox_note(desk: Path) -> None:
     assert data["log"] in text and "queue: " in text
 
 
+def test_retry_exit_code_leaves_job_pending(desk: Path) -> None:
+    _configure(desk, {"start": {**_sh("echo ocupado; exit 3"), "retry_exit_codes": [3]}})
+    _add(desk, "start")
+    result = _cli(desk, "queue", "run", "--all", "--root", ".")
+    assert result.returncode == 0
+    assert "en espera:" in result.stdout and "ocupado" in result.stdout
+    assert len(_queue(desk, "pending")) == 1
+    assert not _queue(desk, "failed") and not _queue(desk, "running")
+    assert not list((desk / "desk" / "inbox").glob("*.md"))
+
+
+def test_other_exit_code_still_fails_with_retry_codes(desk: Path) -> None:
+    _configure(desk, {"start": {**_sh("exit 4"), "retry_exit_codes": [3]}})
+    _add(desk, "start")
+    result = _cli(desk, "queue", "run", "--root", ".")
+    assert result.returncode == 1
+    assert len(_queue(desk, "failed")) == 1 and not _queue(desk, "pending")
+
+
 def test_timeout_fails_job(desk: Path) -> None:
     _configure(desk, {"slow": _sh("sleep 30", timeout=1)})
     _add(desk, "slow")

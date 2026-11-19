@@ -23,6 +23,10 @@ class VersionExpectations(BaseModel):
 class QueueJob(BaseModel):
     run: list[str] = Field(min_length=1, description="argv executed without a shell")
     timeout: int = Field(default=3600, gt=0, description="Seconds before the job is killed")
+    retry_exit_codes: list[int] = Field(
+        default_factory=list,
+        description="Exit codes that leave the job pending for the next run instead of failing it",
+    )
 
 
 class IntegrateConfig(BaseModel):
