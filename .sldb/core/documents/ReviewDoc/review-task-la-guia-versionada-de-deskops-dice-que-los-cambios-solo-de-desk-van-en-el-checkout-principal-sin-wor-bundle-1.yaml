@@ -1,0 +1,37 @@
+name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-bundle-1
+path: desk/reviews/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/bundle-1.md
+source_hash: 51525c1f5d240a5d80a35d07afae063a0a4a8693fbddd6d8d6c7f540b8bab322
+content_hash: 222c11c39134865fd852cef8d3642825d677968f588734fb3570f213dee773b1
+field_hashes:
+  id: 14286ec331895665bf59772b0658517cf123879aebc15b3a4cca0a9784aaf140
+  title: 861b11a602f6ed097f8a2a2ffd2232cb3f681efb51ba878d781fe80a1a1fc537
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: ba244588734cb38a69d0b7d4ad51af151fd63b0cf352b11f104f7d3c5b421714
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: c21db6a86510fa402e164c07829f4bb088b7baf6121d73a5b154fdc4115d9729
+  input_sha256: f37ab86fdb55c9195c33cb417f6e56a84abb936c75a38f907db51bb09bafa6f7
+  contract_sha256: 1690c289d25e526b587a70d2d4edc122d577c0f355eeac7c3d9e01ed307d759e
+  output_sha256: db4ea48d3f5a9e695fa0075154c4ec5be639b1e8c2c1b6b92f10d1e044803509
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  created_at: c2bf4ed66408b5b513db52f3c2d637660e3f1df36fa491b3db2aab322a57d202
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: 45608833fd77200d9ae4ae94a2491029e462bd6837ea1c929887e8568844fbff
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-19T17:44:14Z'
+  authority: generated
+  via: create_document
