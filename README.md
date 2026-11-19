@@ -50,8 +50,8 @@ Pi/project agent guidance includes:
 
 Parallel opencode copies also exist under `.opencode/skills/`.
 
-Claude Code uses `.claude/skills/deskops-workflow/` (`SKILL.md` plus `references/deskops-cli.md`,
-`references/spec2viz-cli.md` and `references/vocabulary.md`). This is the versioned copy: on each machine,
+Claude Code uses `.claude/skills/deskops-workflow/` (`SKILL.md` plus `references/deskops-cli.md`
+and `references/vocabulary.md`; diagram work routes to the IR repo `use-specir` skill). This is the versioned copy: on each machine,
 `~/.claude/skills/deskops-workflow` is a symlink to it, so the skill is the same in every repo that uses deskops
 and on every machine that pulls this repo:
 
