@@ -220,9 +220,10 @@ def _execute(root: Path, queue: Path, config: DeskConfig, path: Path) -> str:
     if spec is not None and not ok and not job.get("timeout") and code in spec.retry_exit_codes:
         for key in ("started_at", "ended_at", "exit_code", "log"):
             job.pop(key, None)
+        job["attempts"] = int(job.get("attempts", 0)) + 1
         _write_job(running, job)
         os.replace(running, path)
-        return "retry"
+        return f"retry:{code}"
     _write_job(running, job)
     os.replace(running, queue / ("done" if ok else "failed") / path.name)
     if not ok:
@@ -265,8 +266,8 @@ def run_queue(root: Path, run_all: bool) -> int:
             path = pending[0]
             print(f"ejecutando {path.stem}")
             outcome = _execute(root, queue, config, path)
-            if outcome == "retry":
-                print(f"en espera: {path.stem} ocupado")
+            if outcome.startswith("retry:"):
+                print(f"en espera: {path.stem} ocupado (exit {outcome.split(':', 1)[1]})")
                 return 0
             if outcome == "failed":
                 print(f"fallo {path.stem}")

@@ -106,8 +106,14 @@ def test_retry_exit_code_leaves_job_pending(desk: Path) -> None:
     _add(desk, "start")
     result = _cli(desk, "queue", "run", "--all", "--root", ".")
     assert result.returncode == 0
-    assert "en espera:" in result.stdout and "ocupado" in result.stdout
+    job_id = _queue(desk, "pending")[0].stem
+    assert f"en espera: {job_id} ocupado (exit 3)" in result.stdout
     assert len(_queue(desk, "pending")) == 1
+    assert json.loads(_queue(desk, "pending")[0].read_text())["attempts"] == 1
+    result = _cli(desk, "queue", "run", "--all", "--root", ".")
+    assert result.returncode == 0
+    assert f"en espera: {job_id} ocupado (exit 3)" in result.stdout
+    assert json.loads(_queue(desk, "pending")[0].read_text())["attempts"] == 2
     assert not _queue(desk, "failed") and not _queue(desk, "running")
     assert not list((desk / "desk" / "inbox").glob("*.md"))
 
