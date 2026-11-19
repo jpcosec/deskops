@@ -10,6 +10,7 @@ from __future__ import annotations
 import contextlib
 import io
 import json
+import shlex
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -77,7 +78,31 @@ def _run_dir_for(name: str, role: str) -> str:
     return f"runs/subagents/exec-{name}" + ("-testing" if role == "tester" else "")
 
 
-def _role_instructions(role: str, task_id: str) -> str:
+def _quick_gates_text(role: str, quick_gates: list[str] | None) -> str:
+    if not quick_gates:
+        return ""
+    command = shlex.join(quick_gates)
+    if role == "executor":
+        return (
+            "\n## Gates rapidos del desk\n\n"
+            "Antes del commit corre, con el python del venv (/tmp/ws-venv en PATH):\n\n"
+            f"    {command}\n\n"
+            "Debe terminar con rc 0 antes de commitear; si falla, corrige y repite. "
+            "Anota el comando y su rc en validation.log.\n"
+        )
+    return (
+        "\n## Gates rapidos del desk\n\n"
+        "Antes del veredicto corre, con el python del venv (/tmp/ws-venv en PATH):\n\n"
+        f"    {command}\n\n"
+        "Si termina con rc distinto de 0 el veredicto es FALLA.\n"
+    )
+
+
+def _role_instructions(role: str, task_id: str, quick_gates: list[str] | None = None) -> str:
+    return _base_instructions(role, task_id) + _quick_gates_text(role, quick_gates)
+
+
+def _base_instructions(role: str, task_id: str) -> str:
     if role == "executor":
         return (
             "## Entrega del ejecutor\n\n"
@@ -172,7 +197,7 @@ def start(root: Path, role: str, task_id: str) -> int:
         + "\n\n"
         + task_path.read_text(encoding="utf-8").rstrip("\n")
         + "\n\n"
-        + _role_instructions(role, task_id),
+        + _role_instructions(role, task_id, cfg.quick_gates),
         encoding="utf-8",
     )
 

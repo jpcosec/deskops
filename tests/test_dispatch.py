@@ -301,3 +301,32 @@ def test_reap_works_on_a_desk_without_roles(roleless: Env) -> None:
     result = roleless.cli("dispatch", "reap", "--task", TASK)
     assert result.returncode == 0, result.stdout + result.stderr
     assert ["stop", "deskops-e-x", "--project", "proj"] in roleless.calls()
+
+
+def _set_quick_gates(env: Env, gates: list[str] | None) -> None:
+    path = env.root / "desk" / "config.json"
+    config = json.loads(path.read_text())
+    if gates is not None:
+        config["dispatch"]["quick_gates"] = gates
+    path.write_text(json.dumps(config))
+
+
+@pytest.mark.parametrize("role", ["executor", "tester"])
+def test_prompts_require_quick_gates_when_declared(env: Env, role: str) -> None:
+    _set_quick_gates(env, ["bash", "tools/check.sh", "--fast"])
+    assert env.cli("dispatch", "start", role, "--task", TASK).returncode == 0
+    name = _start_call(env)[1]
+    suffix = "-testing" if role == "tester" else ""
+    text = (env.root / f"runs/subagents/exec-{name}{suffix}/prompt.md").read_text()
+    assert "bash tools/check.sh --fast" in text
+    assert ("rc 0 antes de commitear" if role == "executor" else "veredicto es FALLA") in text
+
+
+@pytest.mark.parametrize("role", ["executor", "tester"])
+def test_prompts_without_quick_gates_do_not_mention_them(env: Env, role: str) -> None:
+    _set_quick_gates(env, None)
+    assert env.cli("dispatch", "start", role, "--task", TASK).returncode == 0
+    name = _start_call(env)[1]
+    suffix = "-testing" if role == "tester" else ""
+    text = (env.root / f"runs/subagents/exec-{name}{suffix}/prompt.md").read_text()
+    assert "Gates rapidos" not in text

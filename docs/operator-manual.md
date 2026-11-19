@@ -731,6 +731,11 @@ deskops dispatch reap --task <task-id> --root .
   and exits with scion's code. The run_dir is `runs/subagents/exec-<name>` (the
   tester adds `-testing`); if it exists the attempt-2 identity is used, and if
   that exists too it exits 5 (`sin intentos: <task> <role>`).
+- **`quick_gates` (optional).** `dispatch.quick_gates` is an argv list, e.g.
+  `["bash", "tools/check.sh", "--fast"]`. When declared, `prompt.md` of the
+  executor requires running it (python of the container venv) with rc 0 before
+  the commit, and the tester's requires it before the verdict (rc != 0 is
+  FALLA). Without the field the prompts are unchanged.
 - **Python in the container.** The workspace `.venv` links to the host's
   `/usr/bin/python3.12`, which the scion images (python 3.13 via uv) lack, so it
   does not start there. The generated `agents.md` of the executor and tester

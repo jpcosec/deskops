@@ -58,6 +58,10 @@ class DispatchConfig(BaseModel):
         default=None,
         description="Repo whose desk/roles holds the RoleDocs; default is the task root. Relative paths resolve against the task root.",
     )
+    quick_gates: list[str] | None = Field(
+        default=None,
+        description="Optional argv of the fast gates the executor and the tester must run (rc 0) before the commit and the verdict.",
+    )
 
 
 class DeskConfig(BaseModel):
