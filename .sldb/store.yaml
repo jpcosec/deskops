@@ -579,6 +579,8 @@ include:
     name: run-deskops-e-12233e13896c
   - path: runs/subagents/exec-deskops-t-07d09079fe71-testing/run.md
     name: run-deskops-t-07d09079fe71
+  - path: runs/subagents/exec-deskops-e-5b4af01ff753/run.md
+    name: run-deskops-e-5b4af01ff753
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1973,6 +1975,7 @@ include:
   - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
   - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
   - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
+  - desk/tasks/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md

@@ -1,15 +1,15 @@
 name: task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30
 path: desk/tasks/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30.md
-source_hash: 666a75766d6aac6b908ba73548d66442d15bb22de2e5725ed54f212a4b9eb31b
-content_hash: 02ac88abcc2be80f8d1be36067f96bda4816115a660140ae804486b1c5c2bfa6
+source_hash: 963caca15a0838d4e1b61878cb854e58c22095402b343453c09d526f349a08de
+content_hash: 100078b7f95a684085e89d8a64bc51cd17d9951eb2960640731b78ec252870a4
 field_hashes:
   title: 6ef99233ee29c1043a06da4b9217b4f90b62eb32ba803619e55ec3e9e2671ca9
   id: 57060454627a4036de8704f66df608df7d39107cde401c0eba08ba7b0648063e
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: df2118cd0a90af1822c5bcc2ad69d01061acdf54d7226ec1e2663ec7677fc223
   goal: 752e4cc19901b2e0b92603fff7709fd993e34aed56e88ad0c8c2aca525b9c6aa
   scope: c97efbf9868f005cf4b38446e2ae10f0fcb9cf5089710b1ed7d991ea760c92da
@@ -35,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:00:43Z'
+  at: '2026-11-19T17:54:59Z'
   authority: generated
   via: save_document_payload
