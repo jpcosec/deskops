@@ -552,6 +552,10 @@ include:
     name: run-deskops-e-0c84525da1de
   - path: runs/subagents/exec-deskops-t-61b84ea4d8d8-testing/run.md
     name: run-deskops-t-61b84ea4d8d8
+  - path: runs/subagents/exec-deskops-e-c24d46beeb78/run.md
+    name: run-deskops-e-c24d46beeb78
+  - path: runs/subagents/exec-deskops-t-af576e976f64-testing/run.md
+    name: run-deskops-t-af576e976f64
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1852,6 +1856,12 @@ include:
     name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-preflight-1
   - path: desk/reviews/task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del/bundle-1.md
     name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-bundle-1
+  - path: desk/reviews/task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del/evidence-tests-1.md
+    name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-evidence-tests-1
+  - path: desk/reviews/task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del/evidence-commit-1.md
+    name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-evidence-commit-1
+  - path: desk/reviews/task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del/evidence-atom-1.md
+    name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-evidence-atom-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

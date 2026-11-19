@@ -1,25 +1,31 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T00:42:56Z'
+  at: '2026-11-19T01:11:28Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- desk/materializations/materialization-host-queue-runner.md
+- ef2ad7533239cfd467ab07c416156f5aebed7727
 depends_on: []
 pills: []
 files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-scion-coordinator-progresses-authorized-work
 ---
 
 # dispatch exige al ejecutor y al tester los gates rápidos que declara el desk antes del commit y del veredicto
