@@ -1,0 +1,37 @@
+name: review-task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid-evidence-tests-1
+path: desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/evidence-tests-1.md
+source_hash: e6caea8a92d49626d506020595a14da4024ffeb4d690a74513fd0b98800ca884
+content_hash: 9f1e339f7b0eee84993ada4f0aba087b5057f7d68acfcf654e88b82403be2cb8
+field_hashes:
+  id: 8a7bd429e96e6899ccb32d4be02683926bfa4dc22324347d22cea00a1d572932
+  title: 1284d779c345f758533eb8d5696601c708270b67ac0e5f0339919e179d35eb68
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 2a74dcccf4490a78f2327ec5a4cf8c49b7309f228943f393f3a367db8c015485
+  subject: 8d98fc02ad640e7b105653d0cece53d7e866b8a25f0abc04dd53846f1178667c
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 0e025083b4b5bd8ade5e54685bbe44dd0cde2b07abd389a45a653621020232d7
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 9977665eeb4cbe759800f34b4089be6abc6fa3e08f036fe8fbe2f8aceb174103
+  created_at: 99c9806809c135d4e9a067ef0494ff6c4664ea0dfef50f4324f998fc1389b47c
+  disposed_at: 99c9806809c135d4e9a067ef0494ff6c4664ea0dfef50f4324f998fc1389b47c
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: d4c94610e8c81bd5f531a0c3afaaab613218d2406ecb2b774f0f4ab48ae7c74e
+  disposition: 119f8c6cd445f4499cc07cffaf90fe69b34856a16b3bd0428d40a2ad5faf30ad
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-19T13:28:30Z'
+  authority: generated
+  via: create_document

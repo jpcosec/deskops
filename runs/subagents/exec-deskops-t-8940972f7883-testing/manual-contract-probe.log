@@ -1,0 +1,22 @@
+# Manual contract probe: retry exit code 3 -> pending
+root: /tmp/queue-retry-probe-vc0Aq7
+cmd: PYTHONPATH=/workspace/deskops /workspace/sldb/.venv/bin/python -m deskops queue add start --task task-probe --root .
+20261119T131025Z-start-task-probe
+cmd: PYTHONPATH=/workspace/deskops /workspace/sldb/.venv/bin/python -m deskops queue run --all --root .
+ejecutando 20261119T131025Z-start-task-probe
+en espera: 20261119T131025Z-start-task-probe ocupado
+rc: 0
+pending files:
+20261119T131025Z-start-task-probe.json
+failed files:
+inbox notes:
+pending JSON:
+{
+  "id": "20261119T131025Z-start-task-probe",
+  "kind": "start",
+  "task_id": "task-probe",
+  "transition": "",
+  "enqueued_at": "2026-11-19T13:10:25Z"
+}
+check attempts counter:
+ABSENT

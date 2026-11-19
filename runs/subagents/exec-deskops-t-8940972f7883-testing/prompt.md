@@ -1,7 +1,17 @@
+Task: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
+Title: queue run deja en espera un trabajo de dispatch start que responde ocupado, en vez de marcarlo fallido
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-19T13:27:43Z'
+  at: '2026-11-19T12:56:51Z'
   authority: generated
   via: save_document_payload
 id: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
@@ -13,34 +23,14 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-- 'task_returns_to_execution: Tester deskops-t-8940972f7883 FALLA sobre 00ec6562 (informe
-  en runs/subagents/exec-deskops-t-8940972f7883-testing/). El Goal se cumple, pero
-  faltan dos requisitos de las resoluciones aceptadas (preflight-1 y bundle-1): 1)
-  el JSON del trabajo que vuelve a pending debe sumar un contador ''attempts'' (1
-  al primer reintento, 2 al segundo); hoy la clave no aparece; 2) el mensaje debe
-  ser exactamente ''en espera: <id> ocupado (exit <n>)'', y hoy falta el sufijo ''(exit
-  3)''. Intento 2: agregar los dos y ampliar test_retry_exit_code_leaves_job_pending
-  para que compruebe attempts tras dos corridas y el mensaje exacto con ''(exit 3)''.'
-- task_activates
-references:
-- deskops/queue.py
-- deskops/config.py
-- tests/test_queue.py
-- 00ec6562a296469669c78b886048b1761c27c8e0
-- e893a6313190df132fe381215e08506c57de3137
+references: []
 depends_on: []
 pills: []
-files:
-- deskops/queue.py
-- deskops/config.py
-- tests/test_queue.py
-- docs/operator-manual.md
-- CHANGELOG.md
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-queue-run-deja-en-pending-un-trabajo-cuyo-codigo-de-salida-esta-en-retry-exit-codes
+atoms: []
 ---
 
 # queue run deja en espera un trabajo de dispatch start que responde ocupado, en vez de marcarlo fallido
@@ -80,3 +70,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tests nuevos pasan y la suite completa de deskops pasa (la corre integrate).
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

@@ -1,0 +1,16 @@
+# Executor commit
+00ec6562a296469669c78b886048b1761c27c8e0
+robocop server <juanpablo.ruiz.r@gmail.com>
+2026-11-19 12:56:47 +0000
+queue run: retry_exit_codes deja el trabajo en pending
+Task-Id: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
+
+
+# Files
+CHANGELOG.md
+deskops/config.py
+deskops/queue.py
+docs/operator-manual.md
+tests/test_queue.py
+# Whitespace check
+diff-check rc=0

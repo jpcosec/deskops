@@ -1,0 +1,68 @@
+# Validation — exec-deskops-t-8940972f7883-testing
+
+## Work located
+
+Commit: 00ec6562a296469669c78b886048b1761c27c8e0
+Subject: queue run: retry_exit_codes deja el trabajo en pending
+Task-Id trailer: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
+Files: CHANGELOG.md, deskops/config.py, deskops/queue.py, docs/operator-manual.md, tests/test_queue.py
+`git diff <parent> <commit> --check`: clean.
+
+## Environment
+
+`python` is not on PATH in this container. The repo `.venv/bin/python` is a broken
+3.11 venv (its site-packages are 3.12 and pytest is not importable). Tests were run
+with `/workspace/sldb/.venv/bin/python` (CPython 3.13.18, pytest 9.1.1), which imports
+deskops and sldb from the sibling working trees. Same pytest invocation as the task,
+with TMPDIR=/tmp and `-p no:cacheprovider`.
+
+## Tests (working tree at executor commit)
+
+Command:
+  cd /workspace/deskops
+  TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_queue.py
+Result: 16 passed, 1 warning, exit 0 (46.50 s).
+Log: pytest-test_queue.log
+
+Command (tests/test_<modulo>.py for the touched module deskops/config.py):
+  TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_config.py
+Result: 5 passed, 1 warning, exit 0 (0.10 s).
+Log: pytest-test_config.log
+
+The suite was not run in full (per the assignment; integrate runs it on the host).
+
+## Contract checks beyond the tests
+
+Accepted receipts are the binding contract (both `accepted`):
+  preflight-1: desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/preflight-1.md
+  bundle-1:    desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/bundle-1.md
+  `deskops review status <task> --root .`: preflight accepted 73602ef13a6d, bundle accepted 2639218029f2 (review-status.txt).
+
+The accepted coordinator resolution says:
+  "Un trabajo cuyo código de salida está en retry_exit_codes de su tipo vuelve de
+   running a pending (conserva id y nombre, y suma el contador attempts en el JSON),
+   queue run imprime 'en espera: <id> ocupado (exit <n>)' y retorna 0 sin correr los
+   siguientes, para no saltarse el orden."
+
+Observed implementation (manual-contract-probe.log, /tmp/queue-retry-probe-*):
+  - job with retry_exit_codes [3] and command `exit 3` -> back to pending, exit 0,
+    no failed job, no inbox note: matches the core requirement.
+  - stdout: "en espera: 20261119T131025Z-start-task-probe ocupado"
+    MISSING the accepted "(exit 3)" suffix.
+  - pending JSON: id/kind/task_id/transition/enqueued_at only.
+    MISSING the accepted `attempts` counter.
+  - repeated run (manual-contract-probe2.log, no --all, two retries):
+    still pending, exit 0, but `attempts` remains ABSENT.
+  - `tests/test_queue.py::test_retry_exit_code_leaves_job_pending` only asserts
+    "en espera:" + "ocupado", pending/failed/running folders and no inbox note; it
+    does not cover the accepted `attempts` counter or the `(exit <n>)` message.
+
+## Verdict
+
+FALLA. The two new tests and the whole test_queue file pass, and the literal task
+Goal (pending instead of failed, no unclear note, other exit codes fail) is met.
+However the accepted preflight/bundle contract adds two observable requirements that
+the executor did not implement and the new tests do not cover:
+  1. `attempts` counter in the pending job JSON;
+  2. `en espera: <id> ocupado (exit <n>)` including the exit code.
+No source, test or desk files were modified by this tester; no commit was created.

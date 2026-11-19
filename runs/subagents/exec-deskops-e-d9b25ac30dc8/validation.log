@@ -1,0 +1,1 @@
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_queue.py -> exit 0 (16 passed)

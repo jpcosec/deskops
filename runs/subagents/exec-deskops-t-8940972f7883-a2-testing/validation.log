@@ -1,0 +1,14 @@
+# Validación del tester
+commit: e893a6313190df132fe381215e08506c57de3137
+arbol: /tmp/deskops-e893 (git archive limpio)
+python: /workspace/sldb/.venv/bin/python 3.13.18, pytest 9.1.1
+
+$ TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_queue.py
+16 passed, 1 warning in 47.64s
+exit 0
+
+$ TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_config.py
+5 passed, 1 warning in 0.10s
+exit 0
+
+Suite completa: no corrida (la corre integrate), según el encargo.

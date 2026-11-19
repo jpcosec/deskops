@@ -1,0 +1,29 @@
+# Manual probe without --all; run twice
+root: /tmp/queue-retry-probe2-NXoA2n
+20261119T131035Z-start-task-probe2
+--- run 1
+ejecutando 20261119T131035Z-start-task-probe2
+en espera: 20261119T131035Z-start-task-probe2 ocupado
+rc: 0
+pending JSON:
+{
+  "id": "20261119T131035Z-start-task-probe2",
+  "kind": "start",
+  "task_id": "task-probe2",
+  "transition": "",
+  "enqueued_at": "2026-11-19T13:10:35Z"
+}
+--- run 2
+ejecutando 20261119T131035Z-start-task-probe2
+en espera: 20261119T131035Z-start-task-probe2 ocupado
+rc: 0
+pending JSON:
+{
+  "id": "20261119T131035Z-start-task-probe2",
+  "kind": "start",
+  "task_id": "task-probe2",
+  "transition": "",
+  "enqueued_at": "2026-11-19T13:10:35Z"
+}
+attempts key after two retries:
+ABSENT
