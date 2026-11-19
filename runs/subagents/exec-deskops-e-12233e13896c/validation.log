@@ -1,0 +1,1 @@
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_materialization_targets_outside_package.py -> exit 0, 18 passed
