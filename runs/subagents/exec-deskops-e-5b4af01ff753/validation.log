@@ -1,0 +1,2 @@
+grep -rn 'spec/artifacts\|spec/fields\|SpecRegistry' README.md docs/ -> exit 1 (empty)
+pytest -q tests/test_operator_manual.py -> 1 passed, exit 0

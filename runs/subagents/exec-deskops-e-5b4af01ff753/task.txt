@@ -1,0 +1,10 @@
+Task: task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30
+Title: README y docs dejan de nombrar spec/artifacts, spec/fields y SpecRegistry, borrados en CC30
+Status: draft
+Current node: ritual-execution
+Task type: task.docs
+From drawer: desk/drawer/tasks/task-docs-y-readme-todav-a-nombran-spec-artifacts-y-spec-fields-borrados-en-cc30.md
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
