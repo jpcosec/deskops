@@ -1,16 +1,25 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:25:43Z'
+  at: '2026-11-19T19:12:58Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use
-status: draft
+status: active
 summary: ''
 tags:
 - host:robocop2
 current_node: ritual-execution
-history: []
+history:
+- task_activates
+- 'task_returns_to_execution: Tester deskops-t-a7703272a0b7 FALLA sobre eee49b89 (informe
+  en runs/subagents/exec-deskops-t-a7703272a0b7-testing/). Según las resoluciones
+  aceptadas, el token use-spec2viz no puede quedar en AGENTS.md, README.md ni .opencode;
+  quedan tres: el título y el cuerpo de .opencode/skills/use-specir/SKILL.md y .opencode/skills/use-deskops/SKILL.md:159.
+  Intento 2: quitarlos manteniendo el sentido histórico (p. ej. ''# use-specir (antes
+  la skill de spec2viz de opencode)'', ''la ruta anterior de spec2viz'', ''replaces
+  the retired spec2viz''), sin cambiar el resto, y verificar que ''grep -rn use-spec2viz
+  AGENTS.md README.md .opencode'' sale vacío.'
 references:
 - desk/inbox/20261116-175512-suggestion-seguimiento-de-ir13-cerrado-en-ce66f69e-2421ca29-agents-md-25-rutea-a.md
 depends_on: []

@@ -1,15 +1,15 @@
 name: task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use
 path: desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
-source_hash: bf6d9f8ebacff4e1b3d49279bc394f4bc3e64dd9b08c8dfc6d7c0067ea6699f5
-content_hash: fe51cabf2426b3625d539781439ec109c6b3317f4e26ea33526277d484bab471
+source_hash: e6874a959d8af3fe6dcd39bc510fa886f52eff0013e93c78a3e1a2b8ca703c2f
+content_hash: 43e152601607c8c939aa295356c687f02977b9aa52872a9a42ac64ad855ce512
 field_hashes:
   title: 85dad5fd937836dd6dfb86692e4e83b9e834b4904f6ce0c1800f190c9d5ae5c9
   id: ca38f71ced258da579392e31385f8eb1d7a8e2f33278fedf2ab0ca8b2eff4f9f
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  history: 7b92cfbcf0204984bc2ed8f4e8719a6ee7b5b302059bc95e94d51ca8330066b0
   why: a76f3a8f773d304b62d5b1e8acf13e3c3b0c84c6e125ce7bd19a0359f0b23ef6
   goal: 0ecae76c37d0551d20a15a86836be007ede4ab90b7dc754bba3ab79672b187f0
   scope: 04f388695d4e08e2a2c1f54571ffbba64f2b84f35d27d48f86a28ae9db163960
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-17T01:25:43Z'
+  at: '2026-11-19T19:12:58Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T18:29:03Z'
+  at: '2026-11-19T18:43:21Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -49,6 +49,7 @@ tasks:
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
 - desk/tasks/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d.md
+- desk/tasks/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -124,8 +125,9 @@ _Generated from the task references above._
 - La skill, el ritual drawer-triage y la ayuda de promote dicen que una nota del inbox que es trabajo se vuelve tarea con references y ack [draft] - La skill (SKILL.md y references/vocabulary.md), el ritual ritual-drawer-triage (editado con `deskops edit ritual`), el texto de ayuda de `deskops promote inbox-to-drawer-task` y docs/operator-manual.md describen ese camino y ninguno manda una nota del inbox al drawer. La ayuda de promote advierte que borra la nota de origen y que no es el camino para notas que son trabajo.
 - JP decide si deskops promote inbox-to-drawer-task se retira [draft] - JP elige: (a) retirar promote inbox-to-drawer-task (se crea la tarea de codigo que borra el comando, sus goldens y sus tests, tests/test_inbox_promote_cli_gaps.py incluido); (b) mantenerlo con la advertencia en su ayuda (la cubre la tarea de alineacion de skill y ritual); (c) cambiarlo para que conserve la nota y la referencie.
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
-- AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [draft] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
+- AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [active] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
 - queue run sigue con los trabajos siguientes cuando uno queda en espera por retry_exit_codes, en vez de detener la cola [draft] - Cuando un trabajo vuelve a pending por retry_exit_codes, queue run lo saltea en esa corrida y sigue con los siguientes pendientes en orden (con --all), así un dispatch-reap o un integrate que está detrás corre aunque haya un ejecutor esperando cupo. Un trabajo que ya quedó en espera en esa corrida no se reintenta hasta la próxima, sin bucle. Sin --all se corre un solo trabajo como hoy. Un fallo sigue deteniendo la cola.
+- dispatch start lanza agentes en paralelo con el único límite físico de la máquina (gate de memoria), en vez de uno solo por proyecto scion [draft] - dispatch start lanza un agente si la memoria pasa el gate de la cola (wait_reason de deskops/queue.py: disponible >= queue_min_available_gb y PSI avg60 < queue_max_psi_avg60) y si la misma tarea no tiene ya un agente running (por el prefijo de identidad de scion_child_identity de esa tarea). No hay tope configurable de agentes: el límite es físico. Si no se cumple, sale con EXIT_BUSY (3) e imprime el motivo ('ocupado: memoria ...' o 'ocupado: la tarea ya tiene agente <nombre>'). Con retry_exit_codes [3] la cola lo reintenta.
