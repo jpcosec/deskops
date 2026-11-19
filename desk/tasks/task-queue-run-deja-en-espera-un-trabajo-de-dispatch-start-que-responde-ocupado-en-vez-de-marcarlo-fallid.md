@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T12:56:51Z'
+  at: '2026-11-19T13:14:18Z'
   authority: generated
   via: save_document_payload
 id: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
@@ -10,9 +10,17 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
+current_node: ritual-execution
 history:
 - task_activates
+- 'task_returns_to_execution: Tester deskops-t-8940972f7883 FALLA sobre 00ec6562 (informe
+  en runs/subagents/exec-deskops-t-8940972f7883-testing/). El Goal se cumple, pero
+  faltan dos requisitos de las resoluciones aceptadas (preflight-1 y bundle-1): 1)
+  el JSON del trabajo que vuelve a pending debe sumar un contador ''attempts'' (1
+  al primer reintento, 2 al segundo); hoy la clave no aparece; 2) el mensaje debe
+  ser exactamente ''en espera: <id> ocupado (exit <n>)'', y hoy falta el sufijo ''(exit
+  3)''. Intento 2: agregar los dos y ampliar test_retry_exit_code_leaves_job_pending
+  para que compruebe attempts tras dos corridas y el mensaje exacto con ''(exit 3)''.'
 references: []
 depends_on: []
 pills: []
