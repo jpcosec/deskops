@@ -60,7 +60,7 @@ flowchart TB
         rituals["desk/rituals/*.md\nexecution/testing/closeout gates"]
         pills["desk/contexts/*.md\nboard + task pills"]
         atoms["desk/atoms/**/*.md\ndurable knowledge"]
-        specs["deskops/spec/workflows/*.yaml\nspec/artifacts/*.yaml\nspec/fields/*.yaml"]
+        specs["deskops/spec/workflows/*.yaml\ndeskops/models (class attrs)\ndeskops/doc_access.py"]
         runtime["desk/lifecycle/*.md\nRelationDoc transitions between rituals\n(tracked in .sldb)"]
         code["deskops/*.py\nCLI/runtime implementation"]
         tests["tests/*.py\nvalidation surfaces"]

@@ -60,7 +60,7 @@ Identifier stability follows the identity source. Nodes backed by explicit ids r
 | `issue` | `issue:<issue-id-or-title-slug>` from explicit `ID` when present, otherwise the issue title/file slug. | `issue:issue-integrate-kgdb-for-desk-source-knowledge-graph` |
 | `doc` | `doc:<project-relative-path>` for durable Markdown docs that are not a more specific kind. | `doc:docs/knowledge-graph/desk-source-graph-vocabulary.md` |
 | `diagram` | `diagram:<project-relative-path>` for diagram source or rendered diagram docs. | `diagram:docs/diagrams/codebase/codebase-knowledge-surfaces.mmd` |
-| `spec` | `spec:<project-relative-path>` plus `#<spec-id>` only when the file carries multiple explicit specs. | `spec:spec/artifacts/atom.yaml` |
+| `spec` | `spec:<project-relative-path>` plus `#<spec-id>` only when the file carries multiple explicit specs. | `spec:deskops/spec/workflows/<workflow>.yaml` |
 | `ritual` | `ritual:<ritual-id>` from the ritual `ID` field. | `ritual:ritual-execution` |
 | `sldb_model` | `sldb_model:<model-name>` for declared SLDB models; use `sldb_model:<project-relative-path>` only when no model name exists. | `sldb_model:AtomDoc` |
 | `cli_command` | `cli_command:<space-separated-command-token-path>` using the user-facing command path. | `cli_command:deskops atoms check-tags` |

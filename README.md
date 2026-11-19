@@ -87,7 +87,7 @@ Use `sldb` as the preferred write/edit path for modeled Markdown: `sldb docs cre
 
 If that SLDB path does not work, capture the failure in the sibling `sldb` repo's inbox with the failing command, expected behavior, actual behavior, and relevant model/document references. Do not silently bypass SLDB or reimplement the missing field/document behavior inside `deskops` before the SLDB issue is recorded.
 
-`deskops/spec/fields/` may define artifact schema vocabulary for the deskops compiler, but `desk/fields/` should not become a human-facing workflow surface or duplicate SLDB's field model.
+Artifact schema vocabulary (`id_pattern`, `status_default`, `tags`) lives as class attributes of the models in `deskops/models`; `desk/fields/` should not become a human-facing workflow surface or duplicate SLDB's field model.
 
 Model changes should use SLDB's model workflow where possible:
 
