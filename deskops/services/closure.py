@@ -1505,6 +1505,7 @@ class ClosureService:
         if cached is not None and cached[0] is graph_context:
             return cached[1]
         targets: list[tuple[str, str]] = []
+        invalid = set(getattr(graph_context, "invalid_materializations", ()) or ())
         graph = getattr(graph_context, "graph", None)
         for materialization_id in sorted(getattr(graph_context, "invalid_materializations", ()) or ()):
             missing = list(graph.missing_from(materialization_id)) if graph is not None else []
@@ -1515,6 +1516,20 @@ class ClosureService:
                 continue
             if all(_missing_target_path(entry.target_id) == declared for entry in missing):
                 targets.append((materialization_id, declared))
+        # With a sldb that makes an existing directory a graph node the materialization is
+        # valid, so it is not in ``invalid_materializations``; its declared target is still a
+        # directory that covers the files under it.
+        seen = {materialization_id for materialization_id, _ in targets}
+        for into in (getattr(graph_context, "_materialization_edges_to", None) or {}).values():
+            for edge in into:
+                source = edge.source_id
+                if source in seen or source in invalid:
+                    continue
+                declared = self._materialization_target_identity(getattr(edge, "provenance_path", None))
+                if declared and (self.root / declared).is_dir():
+                    seen.add(source)
+                    targets.append((source, declared))
+        targets.sort()
         self._directory_targets_cache = (graph_context, targets)
         return targets
 
