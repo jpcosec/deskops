@@ -940,8 +940,25 @@ def edit_artifact_field(root: Path, subject: str, selector: str, field: str, raw
     payload[field_name] = strip_template_placeholders(
         model, field_name, _parse_field_value(model, field_name, raw_value)
     )
-    write_doc(root, path, model, payload)
+    with desk_transaction(root):
+        write_doc(root, path, model, payload)
+        if subject == "task" and field_name in _BOARD_TASK_FIELDS:
+            refresh_board(root)
     return DocumentRecord(kind=kind, doc_id=str(payload.get("id", path.stem)), path=path)
+
+
+# Fields of a task the Board's `task_summaries` composition renders (BoardDoc.__compositions__).
+_BOARD_TASK_FIELDS = frozenset({"title", "status", "goal"})
+
+
+def refresh_board(root: Path) -> None:
+    """Save the Board again the way `add task` saves it, so sldb re-renders its composed
+    Task Details after a task's title, status or goal changed."""
+    from deskops.models import BoardDoc
+
+    board_path = desk_root(root) / "tasks" / "Board.md"
+    if board_path.exists():
+        write_doc(root, board_path, BoardDoc, read_doc(board_path, BoardDoc))
 
 
 # ---------------------------------------------------------------- registry

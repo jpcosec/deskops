@@ -9,6 +9,7 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Fixed
 
+- `deskops edit task <id> title|goal|status` saves the Board again in the same transaction, so the task's line in `desk/tasks/Board.md` (`task_summaries` composition) shows the new value instead of the old one (`tests/test_edit_task_refreshes_board.py`).
 - `deskops desk update --apply` no longer converts a deskops model the store declares with a source path inside its own repo into an inherited one (which blanked `path` in `.sldb/core/models/<Model>.yaml` and `store.yaml`), and it re-runs `init_relations` only when the relation models are missing, so `sldb/relation_types/*.md` (`has_model`, `links_to`, builtins of sldb) are not rewritten in an existing store (`tests/test_desk_sync.py`).
 - `deskops dispatch reap` no longer reads the TaskDoc (label from the task id), so a reap queued after `closeout commit` still stops and deletes the task's agents; a failing scion stop/delete prints `<name> <role> error:<code>`, continues and exits 6. The executor `prompt.md` asks for a commit with named paths and `Task-Id:` trailer; the tester `prompt.md` runs only the tests of the touched files (`tests/test_dispatch.py`).
 
