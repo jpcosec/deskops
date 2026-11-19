@@ -366,6 +366,7 @@ include:
   - desk/materializations/materialization-retry-exit-codes-config.md
   - desk/materializations/materialization-retry-exit-codes-test-queue.md
   - desk/materializations/materialization-retry-exit-codes-operator-manual.md
+  - desk/materializations/materialization-verify-directorio-nodo-closure.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -574,6 +575,10 @@ include:
     name: run-deskops-e-d9b25ac30dc8-a2
   - path: runs/subagents/exec-deskops-t-8940972f7883-a2-testing/run.md
     name: run-deskops-t-8940972f7883-a2
+  - path: runs/subagents/exec-deskops-e-12233e13896c/run.md
+    name: run-deskops-e-12233e13896c
+  - path: runs/subagents/exec-deskops-t-07d09079fe71-testing/run.md
+    name: run-deskops-t-07d09079fe71
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1908,6 +1913,14 @@ include:
     name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-preflight-1
   - path: desk/reviews/task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb/bundle-1.md
     name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-bundle-1
+  - path: desk/reviews/task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb/evidence-tests-1.md
+    name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-evidence-tests-1
+  - path: desk/reviews/task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb/evidence-commit-1.md
+    name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-evidence-commit-1
+  - path: desk/reviews/task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb/evidence-atom-1.md
+    name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-evidence-atom-1
+  - path: desk/reviews/task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb/evidence-materialization-1.md
+    name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

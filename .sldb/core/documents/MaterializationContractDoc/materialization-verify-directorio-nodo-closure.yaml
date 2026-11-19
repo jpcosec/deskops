@@ -1,0 +1,25 @@
+name: materialization-verify-directorio-nodo-closure
+path: desk/materializations/materialization-verify-directorio-nodo-closure.md
+source_hash: 7dda6df96701871240411ee6b8b442d3656d68f548f8ce4c9a99823e6cfbcc4c
+content_hash: 1a087734ba607f060ba6af9edc0a76ede70bcf6bb25df28fda62a803c0fb45d2
+field_hashes:
+  id: 2b152904b6650e31f2dd6d0ea176015617f71388fbd54ee2a698bd24244a7a44
+  title: 0987956487f0c71a559e5cee0d2aed33fcc523663e6acaddad9058d861d2754c
+  source_atoms: ff1367e3636cfec9acad1c82336134eaf70733b35625e76397f8b0c4d62982fc
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 6194c2533e39b9dfd88721f75777a1a4564a61864e3e7ccae6a755f646dd0057
+  intent: 88d8f6d9f0eb8165810a9c168934a5fbdf92b845537bba4513fc96cd7e2c1b64
+  validation: bbe8edf46fe6b0f9665fa293d79b7fdeac4ec8d20a01c1c9c001f3563cb1f096
+  tags: cfe8511f254e0d9f2a44b447c2da40339c65b1bc8ebf58f1d4700912cf8c0ea3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:closeout
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-19T14:54:45Z'
+  authority: generated
+  via: create_document

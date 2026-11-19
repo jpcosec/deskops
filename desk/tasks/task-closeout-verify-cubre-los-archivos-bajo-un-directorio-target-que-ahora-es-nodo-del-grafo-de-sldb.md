@@ -1,25 +1,32 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T14:07:32Z'
+  at: '2026-11-19T14:54:36Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/services/closure.py
+- tests/test_materialization_targets_outside_package.py
+- f680196999dacc787f87850c2bf296fb87bee86f
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/services/closure.py
+- CHANGELOG.md
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-sea-nodo-del-grafo-o-missing
 ---
 
 # closeout verify cubre los archivos bajo un directorio target que ahora es nodo del grafo de sldb
