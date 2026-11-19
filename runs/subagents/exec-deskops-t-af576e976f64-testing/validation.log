@@ -1,0 +1,17 @@
+$ git log -1 --format=%H --grep "Task-Id: task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del"
+ef2ad7533239cfd467ab07c416156f5aebed7727
+
+$ git show --name-only --format="" ef2ad753
+CHANGELOG.md
+deskops/config.py
+deskops/dispatch.py
+docs/operator-manual.md
+tests/test_dispatch.py
+
+$ cd /workspace/deskops && TMPDIR=/tmp /tmp/ws-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_dispatch.py
+22 passed, 1 warning in 227.87s (0:03:47)
+rc=0
+
+$ cd /workspace/deskops && TMPDIR=/tmp /tmp/ws-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_config.py
+5 passed, 1 warning in 0.21s
+rc=0

@@ -1,0 +1,37 @@
+name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-evidence-commit-1
+path: desk/reviews/task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del/evidence-commit-1.md
+source_hash: 80049ebc0bd124c9db753cefd5cbe7d4d86357b5e5121fe871c515771c5dac76
+content_hash: 45066c2526c8c3d34c6cb2e96be68b4c452cbfef819d2d69dd57131fcf9a1150
+field_hashes:
+  id: 5654df04ae2f81bc8a61b390ab95c49963950041a062ddaff233b2a22c776541
+  title: 92e060d8546f858efb20b124277fc386de3eae5a19fc86a5b792fa283088d5d0
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: 20e3c58f4e89286082f3cb9062889e129e04284d55792bba46e431a0dc657ca7
+  subject: ec4869e7c47c766f7603ac19e43ba31f92f4ae9b39cc27b55cb6863da71d6721
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 78213d9370215e1429c6ba2b9652a29a28478ac953e9b8e8ee496b89b9eaf558
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 20d2f63feff791af93a93ea72cb2d6dd4b833697b17496fbed3a21c23f0b46b2
+  created_at: 0100e3b19a5d52324bafb2c616829315b70f13dcafa959e7e3ef7a15937250fd
+  disposed_at: 0100e3b19a5d52324bafb2c616829315b70f13dcafa959e7e3ef7a15937250fd
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 60ff7d3b3633ccc6aa09013ed0025a69412608172a06e53a6397bc41d9e21414
+  disposition: 0991e8ca024a38e3607ab0b0a95be16768d80121ebf8d85dd627f989a3d7acc2
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-19T01:11:42Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,1 @@
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_dispatch.py -> 20 passed full file earlier + 1 test split; -k quick_gates: 4 passed rc 0

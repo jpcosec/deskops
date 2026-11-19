@@ -1,31 +1,35 @@
+Task: task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del
+Title: dispatch exige al ejecutor y al tester los gates rápidos que declara el desk antes del commit y del veredicto
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-19T01:11:28Z'
+  at: '2026-11-19T00:42:56Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/dispatch.py
-- tests/test_dispatch.py
-- desk/materializations/materialization-host-queue-runner.md
-- ef2ad7533239cfd467ab07c416156f5aebed7727
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
 files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-scion-coordinator-progresses-authorized-work
+atoms: []
 ---
 
 # dispatch exige al ejecutor y al tester los gates rápidos que declara el desk antes del commit y del veredicto
@@ -65,3 +69,12 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tests nuevos pasan y la suite completa de deskops pasa (la corre integrate).
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
