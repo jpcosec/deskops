@@ -1,15 +1,15 @@
 name: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
 path: desk/tasks/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid.md
-source_hash: be8f03048bbdb3446287e884fce46c08be5d7ce067538f9720bffba40e8a5c90
-content_hash: 5804bd5c7cda383c66b524290b756a33e1dbcb036e806325c7db32dbee9a32f3
+source_hash: 6f4b308677662dab2276ea6751c7f409872cb084ec8ab30edd5178560227647e
+content_hash: f2e529b0bdeeeda5d0bcbfbb23e985a38c50fd6e3d1b516a6ab6881b6efbe7cd
 field_hashes:
   title: cad30594d3cbf1d0d6f2f58ba3eb942112adf2acedd6a29aadd9a49555076a38
   id: d50a8871a77ecc4a6d7640e6a2569d0ca04a080dc945a1c83455f70aeed1b4be
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 79c2c3b9434f0b85436e5d3117aa5b4997724d62bd40dc0fad70961001036a21
   goal: efd43778980a9487287162561fc366ad15050bcb563daeaaa1bd9013657031b4
   scope: 3f4ae99046910aff0027ba9639795d225686c6954be9263e428db2e4f00a61cf
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T11:50:55Z'
+  at: '2026-11-19T12:56:51Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

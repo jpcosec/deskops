@@ -1,17 +1,18 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T11:50:55Z'
+  at: '2026-11-19T12:56:51Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references: []
 depends_on: []
 pills: []
