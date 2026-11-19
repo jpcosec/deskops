@@ -591,6 +591,8 @@ include:
     name: run-deskops-e-780cd9b1b487
   - path: runs/subagents/exec-deskops-t-a7703272a0b7-testing/run.md
     name: run-deskops-t-a7703272a0b7
+  - path: runs/subagents/exec-deskops-e-780cd9b1b487-a2/run.md
+    name: run-deskops-e-780cd9b1b487-a2
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1941,6 +1943,14 @@ include:
     name: review-task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30-evidence-commit-1
   - path: desk/reviews/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30/evidence-document-1.md
     name: review-task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30-evidence-document-1
+  - path: desk/reviews/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de/preflight-1.md
+    name: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-preflight-1
+  - path: desk/reviews/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de/bundle-1.md
+    name: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-bundle-1
+  - path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/preflight-1.md
+    name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-preflight-1
+  - path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/bundle-1.md
+    name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
