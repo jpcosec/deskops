@@ -362,6 +362,10 @@ include:
   - desk/materializations/materialization-host-queue-runner.md
   - desk/materializations/materialization-ids-ascii-drawer.md
   - desk/materializations/materialization-ids-ascii-test-ascii-ids.md
+  - desk/materializations/materialization-retry-exit-codes-queue.md
+  - desk/materializations/materialization-retry-exit-codes-config.md
+  - desk/materializations/materialization-retry-exit-codes-test-queue.md
+  - desk/materializations/materialization-retry-exit-codes-operator-manual.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -566,6 +570,10 @@ include:
     name: run-deskops-e-d9b25ac30dc8
   - path: runs/subagents/exec-deskops-t-8940972f7883-testing/run.md
     name: run-deskops-t-8940972f7883
+  - path: runs/subagents/exec-deskops-e-d9b25ac30dc8-a2/run.md
+    name: run-deskops-e-d9b25ac30dc8-a2
+  - path: runs/subagents/exec-deskops-t-8940972f7883-a2-testing/run.md
+    name: run-deskops-t-8940972f7883-a2
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1888,6 +1896,14 @@ include:
     name: review-task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid-preflight-1
   - path: desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/bundle-1.md
     name: review-task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid-bundle-1
+  - path: desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/evidence-tests-1.md
+    name: review-task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid-evidence-tests-1
+  - path: desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/evidence-commit-1.md
+    name: review-task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid-evidence-commit-1
+  - path: desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/evidence-atom-1.md
+    name: review-task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid-evidence-atom-1
+  - path: desk/reviews/task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid/evidence-materialization-1.md
+    name: review-task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

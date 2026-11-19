@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T13:14:18Z'
+  at: '2026-11-19T13:27:43Z'
   authority: generated
   via: save_document_payload
 id: task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid
@@ -10,7 +10,7 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
+current_node: ritual-testing
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-8940972f7883 FALLA sobre 00ec6562 (informe
@@ -21,14 +21,26 @@ history:
   ser exactamente ''en espera: <id> ocupado (exit <n>)'', y hoy falta el sufijo ''(exit
   3)''. Intento 2: agregar los dos y ampliar test_retry_exit_code_leaves_job_pending
   para que compruebe attempts tras dos corridas y el mensaje exacto con ''(exit 3)''.'
-references: []
+- task_activates
+references:
+- deskops/queue.py
+- deskops/config.py
+- tests/test_queue.py
+- 00ec6562a296469669c78b886048b1761c27c8e0
+- e893a6313190df132fe381215e08506c57de3137
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/queue.py
+- deskops/config.py
+- tests/test_queue.py
+- docs/operator-manual.md
+- CHANGELOG.md
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-queue-run-deja-en-pending-un-trabajo-cuyo-codigo-de-salida-esta-en-retry-exit-codes
 ---
 
 # queue run deja en espera un trabajo de dispatch start que responde ocupado, en vez de marcarlo fallido

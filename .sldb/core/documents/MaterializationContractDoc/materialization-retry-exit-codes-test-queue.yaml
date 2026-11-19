@@ -1,0 +1,25 @@
+name: materialization-retry-exit-codes-test-queue
+path: desk/materializations/materialization-retry-exit-codes-test-queue.md
+source_hash: 18e187006f13008fbb50685c8b46366cbe574191841230901bf31a895ae8ff88
+content_hash: 6f8610dd246aa4ca860ed0f48e30fe83c7e1a2c531fe1040c240478ee9bf189e
+field_hashes:
+  id: 2433bf35ea0ee6aec7a874fb4ae0dfa30647d6e18f793ca4438bbff2776e3b00
+  title: 72364400b6e9df660f1105503d716e32ab777818a4d67adab0cb521c05ce1638
+  source_atoms: f27cfdb9a9a743b35087808281758fd37990232d865f8d1fffe304629490d448
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: c515af31fc0aa785ef7f1ee2394d84542517f111d1beab3c3dadbb70f01e9270
+  intent: 9bc2b2699ae5a906b825099ffb9c48c0e530e7a7e816ef386e57247c886874a6
+  validation: 833a97fee71ed0f2a09c6b17ea1b58120651f3ee1dd9f38129867baf5586edc6
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-19T13:28:10Z'
+  authority: generated
+  via: create_document
