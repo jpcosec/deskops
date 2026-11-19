@@ -1,0 +1,37 @@
+name: review-task-board-no-refleja-deskops-edit-task-goal-evidence-atom-1
+path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/evidence-atom-1.md
+source_hash: 676c932a07bb7d6040d2f1d81a5af948ac0e23cfe075e4f02a844675fe652e6b
+content_hash: 70311b67fc5f154e939f87c71f55ba090825460e0f75b610194e2f36cfc31ddb
+field_hashes:
+  id: a86d58c947ce3a6821dfb87e8445759cdfadaa3ea47d9edad91ed677515491d7
+  title: 7639717a6b3beed68d077fb287df1f1a9318091fa3bb4f571e631da2deca3a73
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 50a15c2e4921c2e01256f9d230cc777dbc40c2e88fb30acdfaea41d008d291ec
+  subject: 10409d878594ee7a456a15e9b2d0497b3a8af0c22caaa6fd53f85700cf1b436d
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 55daedb995b21084a5c5e788404cf0039b54ea0be9161d6dc71b84d910b314ce
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 2ec4d890abb2d99584ce2c85db5c8ba68b715ac8e3902cc5caea221e53e22933
+  created_at: bd99ee6dc601a3b7855dd614a42ecc3ae046dd4d58a6370eb7d0b25a4e52d054
+  disposed_at: bd99ee6dc601a3b7855dd614a42ecc3ae046dd4d58a6370eb7d0b25a4e52d054
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 7ba9b27b850ccfee233b9e09a28394d3d409cff3adc157ab92eb95d1be05f4f0
+  disposition: 1e811aa9adba0ec508e9f6653594d28867114933b247c6e3b4ce7abee0bc2add
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-19T05:31:26Z'
+  authority: generated
+  via: create_document

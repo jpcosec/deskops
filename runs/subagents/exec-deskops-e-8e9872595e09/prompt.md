@@ -1,31 +1,37 @@
+Task: task-board-no-refleja-deskops-edit-task-goal
+Title: Board no refleja deskops edit task goal
+Status: draft
+Current node: ritual-execution
+Task type: task.debug
+From drawer: desk/drawer/tasks/task-board-no-refleja-edit-task-goal.md
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-19T05:31:08Z'
+  at: '2026-11-19T04:54:51Z'
   authority: generated
   via: save_document_payload
 id: task-board-no-refleja-deskops-edit-task-goal
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/doc_access.py
-- tests/test_edit_task_refreshes_board.py
-- 0e5c961c2b70613d625a46f83ef52890babc558c
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
 files: []
 task_type: task.debug
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-desk-health-is-measured-by-cli-diagnostics
+atoms: []
 from_drawer: desk/drawer/tasks/task-board-no-refleja-edit-task-goal.md
 ---
 
@@ -67,3 +73,12 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 recibo de reproduccion y test que edita el goal y lee el Board con el valor nuevo.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-board-no-refleja-deskops-edit-task-goal"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.

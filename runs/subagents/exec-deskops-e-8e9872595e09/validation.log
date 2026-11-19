@@ -1,0 +1,2 @@
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_edit_task_refreshes_board.py -> 1 passed (failed before the fix)
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_cli.py tests/test_edit_task_refreshes_board.py -> 103 passed, exit 0
