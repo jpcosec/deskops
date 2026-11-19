@@ -1,26 +1,31 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T04:54:51Z'
+  at: '2026-11-19T05:31:08Z'
   authority: generated
   via: save_document_payload
 id: task-board-no-refleja-deskops-edit-task-goal
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/doc_access.py
+- tests/test_edit_task_refreshes_board.py
+- 0e5c961c2b70613d625a46f83ef52890babc558c
 depends_on: []
 pills: []
 files: []
 task_type: task.debug
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-desk-health-is-measured-by-cli-diagnostics
 from_drawer: desk/drawer/tasks/task-board-no-refleja-edit-task-goal.md
 ---
 

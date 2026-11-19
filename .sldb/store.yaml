@@ -556,6 +556,10 @@ include:
     name: run-deskops-e-c24d46beeb78
   - path: runs/subagents/exec-deskops-t-af576e976f64-testing/run.md
     name: run-deskops-t-af576e976f64
+  - path: runs/subagents/exec-deskops-e-8e9872595e09/run.md
+    name: run-deskops-e-8e9872595e09
+  - path: runs/subagents/exec-deskops-t-b37e53faa1af-testing/run.md
+    name: run-deskops-t-b37e53faa1af
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1868,6 +1872,12 @@ include:
     name: review-task-board-no-refleja-deskops-edit-task-goal-preflight-1
   - path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/bundle-1.md
     name: review-task-board-no-refleja-deskops-edit-task-goal-bundle-1
+  - path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/evidence-tests-1.md
+    name: review-task-board-no-refleja-deskops-edit-task-goal-evidence-tests-1
+  - path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/evidence-commit-1.md
+    name: review-task-board-no-refleja-deskops-edit-task-goal-evidence-commit-1
+  - path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/evidence-atom-1.md
+    name: review-task-board-no-refleja-deskops-edit-task-goal-evidence-atom-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

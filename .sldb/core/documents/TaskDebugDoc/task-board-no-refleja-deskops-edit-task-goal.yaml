@@ -1,19 +1,19 @@
 name: task-board-no-refleja-deskops-edit-task-goal
 path: desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
-source_hash: 9619d27a7eca7b3a9fcb2d25eb602ba1dc4a16a5df796418008cf35d78551db5
-content_hash: 66479ad08fb6eb998d2c000c15652697bd0fa6f830c29c76351b829c58aa8a33
+source_hash: d138acbcd5aeb011a68cc4620648ef120cbd0c2457515dbdaac78e5a2b7e6d8e
+content_hash: f43395eca9599fd4c9c33c149ce7a8d034cfa255a299182c26a01ee36a5940c2
 field_hashes:
   title: 962b571d3b2b7e2af27fc9f0f8ce1647754a3cca51804181c3d6052ba0165316
   id: 7f6b30b83ee69f69369258b4f09fb1bf52ee657c33a061351b3e38dd07826114
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 67c82ac507a4e8b5c0b31eaaa2ff9050f28acbf1288c159d1728947cff8c6eab
   goal: a05e560ea0fe3ebc8474cf4b6dcb1e10ebb5054cda92ff0ac1dc028a4635c5ea
   scope: 9340429262ece18da1b421ea9a61e5c992e5b723f558198a121fbba96608cc63
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: ad48490df79f7ca3f85b185df092422025ffb52aec1890ee206946c4b7c9cfb4
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -23,7 +23,7 @@ field_hashes:
   task_type: 17aef8a679138336d87167505c61b03a7bc28c9a12b1ccf78947b619d28fae69
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: ffedef126265a49b1bc82d4b0cd85a911157af66efa0138d6205a7170eda71cf
   from_drawer: 4787ab4f8edd1c76d05d3893738c2d92606af3da5010d0fb0c62ab59d24830f6
 semantic_tags:
 - artifact:task
@@ -35,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T04:54:51Z'
+  at: '2026-11-19T05:31:08Z'
   authority: generated
   via: save_document_payload
