@@ -1,7 +1,7 @@
 name: task-board-no-refleja-deskops-edit-task-goal
 path: desk/tasks/task-board-no-refleja-deskops-edit-task-goal.md
-source_hash: 2e24e5ef32b402385bde9db8a07c1e754f743945a865b94b18d102410eeb687e
-content_hash: d9cccb3b946afce5d5d5491eaeea3a13ceac14434918fb293f0c393a5a15e897
+source_hash: 9619d27a7eca7b3a9fcb2d25eb602ba1dc4a16a5df796418008cf35d78551db5
+content_hash: 66479ad08fb6eb998d2c000c15652697bd0fa6f830c29c76351b829c58aa8a33
 field_hashes:
   title: 962b571d3b2b7e2af27fc9f0f8ce1647754a3cca51804181c3d6052ba0165316
   id: 7f6b30b83ee69f69369258b4f09fb1bf52ee657c33a061351b3e38dd07826114
@@ -17,8 +17,8 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  validation: 2a608ef72ecb3f3fbcf6e715851a7ce889adf0199bea90fd2ba026e197cb3b79
+  implementation_path: 5a990e3df9d0fa596dc0010ebf36972ac4186d491bc6a0bd6eecd5200883f64b
+  validation: 23ce1af2d986f6f97446da682c0b671aaeb1a91ea350473a08ef2dcf643428be
   done_when: e6b111d2aa443c409f3457a1b185a3fcb509108cb3b04a239603e15fa2748023
   task_type: 17aef8a679138336d87167505c61b03a7bc28c9a12b1ccf78947b619d28fae69
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -35,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:06:26Z'
+  at: '2026-11-19T04:54:51Z'
   authority: generated
   via: save_document_payload

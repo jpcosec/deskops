@@ -1862,6 +1862,8 @@ include:
     name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-evidence-commit-1
   - path: desk/reviews/task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del/evidence-atom-1.md
     name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-evidence-atom-1
+  - path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/reproduction-1.md
+    name: review-task-board-no-refleja-deskops-edit-task-goal-reproduction-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
