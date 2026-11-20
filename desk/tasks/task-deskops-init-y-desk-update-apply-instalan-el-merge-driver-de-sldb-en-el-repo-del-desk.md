@@ -1,25 +1,38 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T08:43:42Z'
+  at: '2026-11-20T09:22:37Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/bootstrap.py
+- deskops/cli/commands/desk.py
+- tests/conftest.py
+- tests/test_desk_merge_driver.py
+- d944d0e3d02d99b301102e489452a0cddffd1225
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/bootstrap.py
+- deskops/cli/commands/desk.py
+- docs/operator-manual.md
+- tests/conftest.py
+- tests/test_desk_merge_driver.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk
 ---
 
 # deskops init y desk update --apply instalan el merge driver de sldb en el repo del desk

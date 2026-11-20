@@ -1,0 +1,25 @@
+name: materialization-merge-driver-deskops-bootstrap-py
+path: desk/materializations/materialization-merge-driver-deskops-bootstrap-py.md
+source_hash: 54fe809c12e4c80ead221c11ca74b1ad7d0f5a11b6d0360aea2bd1c7ba7766a3
+content_hash: fdbd1ed6a6f84da6988c34e6df5d1749d6d3197e1e5e717e050e6df29d865f0d
+field_hashes:
+  id: 07c8697c6d9c477544e48d4ef5b03e4b15bdc565d48723f67326ecae3355a9a4
+  title: e24a57d5d7715e5a94978816a2a9df4abc9c8e804029e096809f44ffe356744d
+  source_atoms: dcea89cafb49295aa7a2d35742dbeb712b211b5caed1d9ac20d8b943465c95bb
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 1bc767273ff221e20ff208afdc982c3b3db6dbebd834d214c11f7f0d2601ab98
+  intent: 5a46f36896fd4e5be469eebf692ccf83808b764a0dbaf338ebd27f43aed86d66
+  validation: f5aa453930620b39dc3aaf86e68b5b6dcd91990ea7dedca9333a34f01b4bbe7f
+  tags: 3ab758a2ca466b852a6e465b9b61ffd2400463c190e46bbf64e3ca657699b968
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:merge-driver
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T09:22:46Z'
+  authority: generated
+  via: create_document

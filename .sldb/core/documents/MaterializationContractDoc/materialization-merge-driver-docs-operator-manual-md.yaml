@@ -1,0 +1,25 @@
+name: materialization-merge-driver-docs-operator-manual-md
+path: desk/materializations/materialization-merge-driver-docs-operator-manual-md.md
+source_hash: 17b8d74fc2ba83de21720e584fc59fe0e82fd0f5d71fbbe176a5348d3fc13c12
+content_hash: 903f036420ebe371dc13cc1f245a6be703d98772f7d130ce33e4f0299a38a100
+field_hashes:
+  id: 545f5a92638b4892561494da204b889c7a78526a0a967903c7039abe7bacc9f9
+  title: 6a8d330683d3a8c686112358ad6d0b0f11d619e821f5f0668256d4e86c35e932
+  source_atoms: dcea89cafb49295aa7a2d35742dbeb712b211b5caed1d9ac20d8b943465c95bb
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 3bed947441017806533d525d02305a7a0ba4430336a3781093dbc5810d8c74a6
+  intent: b67e2dd457a4516d815e32e69cafe2b46b57ec092f159eeb850702b309c356a2
+  validation: f5aa453930620b39dc3aaf86e68b5b6dcd91990ea7dedca9333a34f01b4bbe7f
+  tags: 3ab758a2ca466b852a6e465b9b61ffd2400463c190e46bbf64e3ca657699b968
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:merge-driver
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T09:23:03Z'
+  authority: generated
+  via: create_document

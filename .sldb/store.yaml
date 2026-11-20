@@ -381,6 +381,11 @@ include:
   - desk/materializations/materialization-context-review-con-deskops-review-desk-rituals-phase-md.md
   - desk/materializations/materialization-integrate-codigo-en-origin-deskops-integrate-py.md
   - desk/materializations/materialization-integrate-codigo-en-origin-tests-test-integrate-py.md
+  - desk/materializations/materialization-merge-driver-deskops-bootstrap-py.md
+  - desk/materializations/materialization-merge-driver-deskops-cli-commands-desk-py.md
+  - desk/materializations/materialization-merge-driver-docs-operator-manual-md.md
+  - desk/materializations/materialization-merge-driver-tests-conftest-py.md
+  - desk/materializations/materialization-merge-driver-tests-test-desk-merge-driver-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -619,6 +624,10 @@ include:
     name: run-deskops-e-fddfc2cfbdeb
   - path: runs/subagents/exec-deskops-t-551cb023ca49-testing/run.md
     name: run-deskops-t-551cb023ca49
+  - path: runs/subagents/exec-deskops-e-3a19ddae700d/run.md
+    name: run-deskops-e-3a19ddae700d
+  - path: runs/subagents/exec-deskops-t-3be999334b72-testing/run.md
+    name: run-deskops-t-3be999334b72
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2013,6 +2022,14 @@ include:
     name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-preflight-1
   - path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/bundle-1.md
     name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-bundle-1
+  - path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/evidence-tests-1.md
+    name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-evidence-tests-1
+  - path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/evidence-commit-1.md
+    name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-evidence-commit-1
+  - path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/evidence-atom-1.md
+    name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-evidence-atom-1
+  - path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/evidence-materialization-1.md
+    name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
