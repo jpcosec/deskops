@@ -1,0 +1,38 @@
+name: task-interfaz-mcp-de-deskops-compatible-con-claude-code
+path: desk/tasks/task-interfaz-mcp-de-deskops-compatible-con-claude-code.md
+source_hash: cf836752340b5354dbab48e56c9b0991103a462fcf9cef6efc7f29d9d69c2b7a
+content_hash: 74e040e372cf889a70128ddc464bea331f075e03d2bd48e6c364a62bfe3e785e
+field_hashes:
+  title: 0ceeae888278d0bdb4a7f0e8249de5963ad10d4490b345fb29909ccaf87b2e57
+  id: 8f86234be45b95a73b978339fe9effc096e6f4d8d6682552e8753db5815bd032
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: ee86b1a98ddc60861ffdf8a0f648a8e56a0666736d420f0c4aaaf84a7303959e
+  goal: b7d0c4a50465418c13cfad807b33c97f5738a3a1a0142189eb529d76dbbc6c98
+  scope: bc6538f72d864cd372f51269c825f748b9831db3a5f727a44ecb8c84f6b394ba
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  validation: 494e33e0f440451edb7633d8a88f5a14bc36517cfe64a83ce13bb24336073006
+  done_when: fe5e34465eb832f83e26c4cd636ad090417fb8c93075ced286ad8f3ed9e2e7ca
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T02:23:45Z'
+  authority: generated
+  via: create_document
