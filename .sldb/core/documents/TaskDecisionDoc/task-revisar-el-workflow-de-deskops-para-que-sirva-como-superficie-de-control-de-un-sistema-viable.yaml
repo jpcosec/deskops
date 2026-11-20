@@ -1,0 +1,38 @@
+name: task-revisar-el-workflow-de-deskops-para-que-sirva-como-superficie-de-control-de-un-sistema-viable
+path: desk/tasks/task-revisar-el-workflow-de-deskops-para-que-sirva-como-superficie-de-control-de-un-sistema-viable.md
+source_hash: 2bdb05292229e708dd61c8db5ce01680960b23e3dd3dc20551891f699c57bd83
+content_hash: 935a4496c041a8b8de884c54cc72c79fd2e92980a7e552f4835789aa8371c5eb
+field_hashes:
+  title: 04698276116bc87808d0e7a88996753f563689f659d6aaec14290b1edeb91a64
+  id: 58fecd95e0f8cc1fa846029af2845fdf1535072c56cf5fbda2d58a2ab9795012
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 6703f6c3da1c7b60e16ee733c3edc69deee6ad790d6fe266c8b6cab999b69fce
+  goal: 5e9669076c0ac32285034f3cb4fb88305ee413936db6a85e1b346e8dfd5a4b00
+  scope: 692b2b3ff7827773d36b071b9b043e3fd4a7c8f1030fa37e7f42990f57c350cb
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  validation: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  done_when: 20eb603122d822b9656f9621918d7ca3814e1c3571ed35e89b369ef0a44a9dab
+  task_type: a4df8849de4c7c42dff3bfe95bbeb8759b5ca37238136b51e418b9d2f5ef311c
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T02:26:09Z'
+  authority: generated
+  via: create_document

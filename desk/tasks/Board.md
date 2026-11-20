@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T02:24:34Z'
+  at: '2026-11-20T02:26:11Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -50,6 +50,7 @@ tasks:
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
 - desk/tasks/task-interfaz-mcp-de-deskops-compatible-con-claude-code.md
 - desk/tasks/task-ui-de-deskops-sobre-astro-con-las-uis-de-sldb-1-y-la-estructura-de-mepu-y-ft-courier.md
+- desk/tasks/task-revisar-el-workflow-de-deskops-para-que-sirva-como-superficie-de-control-de-un-sistema-viable.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -130,3 +131,4 @@ _Generated from the task references above._
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
 - Interfaz MCP de deskops compatible con Claude Code [draft] - Un servidor MCP de deskops que Claude Code pueda registrar con claude mcp add: lectura del desk (board, tareas, inbox, drawer, agentes, siguiente acción de una tarea) y las escrituras que hoy hace el CLI (crear tarea, mandar y acusar notas entre desks, avanzar, cerrar), pasando por las mismas reglas y compuertas.
 - UI de deskops sobre Astro con las UIs de SLDB_1 y la estructura de mepu y FT Courier [draft] - Una UI web de deskops en Astro que muestre board, tareas, inbox, drawer y agentes de uno o varios desks, leyendo deskops view, con los componentes y la estructura compartida con mepu y FT Courier en vez de un diseño aparte.
+- Revisar el workflow de deskops para que sirva como superficie de control de un sistema viable [draft] - Un diseño revisado del workflow de deskops: qué ritos y compuertas quedan, cuáles se vuelven opcionales o livianos, cómo el desk se mira a sí mismo (autorreflexión: medir su propio estado y avisar cuando miente), y qué funciones del VSM (ejecución, coordinación, regulación, auditoría, anticipación, clausura, corte) sostiene cada pieza del desk, con recursión de un desk de repo a uno de organización.
