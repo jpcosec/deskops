@@ -308,7 +308,11 @@ def _steps(
 
     env = dict(os.environ)
     env.update(cfg.push_env)
-    pushes = [f"git push origin {code}:{branch}", f"git push origin {tip}:{branch}"]
+    code_in_origin = _run(["git", "merge-base", "--is-ancestor", code, remote_ref], copy).returncode == 0
+    if code_in_origin:
+        print(f"código ya en origin: {code[:SHORT]}")
+    pushes = [] if code_in_origin else [f"git push origin {code}:{branch}"]
+    pushes.append(f"git push origin {tip}:{branch}")
     if dry_run:
         for line in pushes:
             print(f"dry-run: {line}")

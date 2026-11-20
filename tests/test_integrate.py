@@ -247,8 +247,26 @@ def test_range_touching_only_desk_does_not_run_the_suite(closed: Path, tmp_path:
     _configure(root, suite=["sh", "-c", "exit 1"])
     result = _integrate(root)
     assert result.returncode == 0, result.stdout + result.stderr
-    assert result.stdout.startswith("integrado ")
+    assert "integrado " in result.stdout
     assert not (root / "runs" / "queue" / "logs" / f"integrate-{TASK}.log").exists()
+
+
+def test_code_already_behind_origin_main_is_not_pushed(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    tip = _git(root, "rev-parse", "HEAD")
+    code = _find(root, "feature")
+    # origin/main is ahead of the code commit (it holds a descendant): pushing code:main would be non-fast-forward.
+    # Rebuild the tip on top of an extra empty commit that the remote already has.
+    extra = _git(root, "commit-tree", f"{code}^{{tree}}", "-p", code, "-m", "other task tip")
+    tip = _git(root, "commit-tree", f"{tip}^{{tree}}", "-p", extra, "-m", f"closeout: {TASK}")
+    _git(root, "reset", "-q", "--hard", tip)
+    _configure(root)
+    _git(root, "push", "-q", str(root.parent / "remote.git"), f"{extra}:{BRANCH}")
+    result = _integrate(root)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert f"código ya en origin: {code[:12]}" in result.stdout
+    assert result.stdout.strip().splitlines()[-1] == f"integrado {code[:12]} {tip[:12]} en {BRANCH}"
+    assert _remote_head(root) == tip
 
 
 def test_a_tip_that_is_not_fast_forward_fails(closed: Path, tmp_path: Path) -> None:
