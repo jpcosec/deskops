@@ -666,6 +666,10 @@ include:
     name: run-deskops-e-3c6efcfebee3-a2
   - path: runs/subagents/exec-deskops-t-4efc28be470c-a2-testing/run.md
     name: run-deskops-t-4efc28be470c-a2
+  - path: runs/subagents/exec-deskops-e-b44ae6af923e/run.md
+    name: run-deskops-e-b44ae6af923e
+  - path: runs/subagents/exec-deskops-t-2ec2a62cb644-testing/run.md
+    name: run-deskops-t-2ec2a62cb644
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2104,6 +2108,10 @@ include:
     name: review-task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage-preflight-1
   - path: desk/reviews/task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage/bundle-1.md
     name: review-task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage-bundle-1
+  - path: desk/reviews/task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage/evidence-commit-1.md
+    name: review-task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage-evidence-commit-1
+  - path: desk/reviews/task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage/evidence-document-1.md
+    name: review-task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage-evidence-document-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

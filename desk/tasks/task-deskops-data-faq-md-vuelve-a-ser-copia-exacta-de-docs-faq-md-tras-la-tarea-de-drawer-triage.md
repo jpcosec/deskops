@@ -1,25 +1,30 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T16:13:23Z'
+  at: '2026-11-20T16:25:50Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/data/faq.md
+- b4dbae0a5368a403f0e80409187ae0cd8bf41477
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/data/faq.md
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-la-copia-empaquetada-de-la-faq-deskops-data-faq-md-es-identica-a-docs-faq-md
 ---
 
 # deskops/data/faq.md vuelve a ser copia exacta de docs/faq.md tras la tarea de drawer-triage
