@@ -315,7 +315,7 @@ def start(root: Path, role: str, task_id: str) -> int:
         run_dir=run_dir,
     )
 
-    sync = _scion(["scion", "templates", "sync", role_name, "--project", cfg.project])
+    sync = _scion(["scion", "templates", "sync", str(target.resolve()), "--project", cfg.project])
     if sync.returncode != 0:
         print(f"scion templates sync fallo ({sync.returncode}): {sync.stderr.strip()}")
         return sync.returncode

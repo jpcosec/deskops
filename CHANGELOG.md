@@ -13,6 +13,7 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Fixed
 
+- `deskops dispatch start` syncs the scion template by the absolute path of the directory it just wrote instead of by role name, so a desk with its own `.scion` project (settings and `templates/`) no longer fails with `template <role> not found locally`; `scion start --type <name>` is unchanged because it resolves the name on the hub after the sync (`tests/test_dispatch.py`).
 - `deskops integrate` evaluates the gates on the current local tip, not only on the `closeout: <task>` commit, when every commit after the closeout touches only `desk/`, `.sldb/` or `runs/`: it prints `tip extendido a <sha>: solo commits de desk` and pushes that tip (a dangling graph reference fixed by a later desk commit no longer blocks it); with a later commit that touches code, tests or docs the tip stays the closeout commit (`tests/test_integrate.py`).
 - `deskops integrate` skips the push of the code sha when it is already an ancestor of `origin/<branch>` (git rejected it as non-fast-forward, `fallo:push`), reports `código ya en origin: <sha>` and goes on to push the tip (`tests/test_integrate.py`).
 - `deskops queue run --all` no longer stops the queue when a job returns to `pending` through `retry_exit_codes`: it skips that job for the rest of the run (no retry loop) and continues with the next pending jobs, so a `dispatch-reap` or `integrate` behind a waiting executor runs; without `--all` it still runs one job, and a failure still stops the queue (`tests/test_queue.py`).

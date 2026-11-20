@@ -115,7 +115,7 @@ def test_start_executor(env: Env, tmp_path: Path) -> None:
     run_dir = f"runs/subagents/exec-{name}"
     assert result.stdout.strip() == f"agente {name} run_dir {run_dir}"
     assert env.calls()[0] == ["list", "--project", "proj", "--format", "json"]
-    assert ["templates", "sync", "disp-executor", "--project", "proj"] in env.calls()
+    assert ["templates", "sync", str((tmp_path / "templates" / "disp-executor").resolve()), "--project", "proj"] in env.calls()
     prompt_file = (env.root / run_dir / "prompt.md").resolve()
     assert start[2] == (
         f"Tu encargo esta en el archivo {prompt_file}. "
@@ -131,6 +131,16 @@ def test_start_executor(env: Env, tmp_path: Path) -> None:
     assert TASK in text and "# Dispatch me" in text
 
 
+def test_start_syncs_the_template_by_path_in_a_desk_with_its_own_scion(env: Env, tmp_path: Path) -> None:
+    (env.root / ".scion").mkdir()
+    (env.root / ".scion" / "settings.yaml").write_text("hub:\n  enabled: true\n")
+    result = env.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    target = (tmp_path / "templates" / "disp-executor").resolve()
+    assert ["templates", "sync", str(target), "--project", "proj"] in env.calls()
+    assert _start_call(env)[3:5] == ["--type", "disp-executor"]
+
+
 def test_start_tester_run_dir_has_testing_suffix(env: Env, tmp_path: Path) -> None:
     result = env.cli("dispatch", "start", "tester", "--task", TASK)
     assert result.returncode == 0, result.stdout + result.stderr
@@ -141,7 +151,7 @@ def test_start_tester_run_dir_has_testing_suffix(env: Env, tmp_path: Path) -> No
     assert result.stdout.strip() == f"agente {name} run_dir {run_dir}"
     assert "--config" not in start
     assert (env.root / run_dir / "prompt.md").is_file() and (env.root / run_dir / "run.md").is_file()
-    assert ["templates", "sync", "disp-tester", "--project", "proj"] in env.calls()
+    assert ["templates", "sync", str((tmp_path / "templates" / "disp-tester").resolve()), "--project", "proj"] in env.calls()
     assert (tmp_path / "templates" / "disp-tester").is_dir()
 
 
