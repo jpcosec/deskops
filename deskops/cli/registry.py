@@ -985,7 +985,7 @@ Examples:
         ),
         Command(
             path=("promote", "inbox-to-drawer-task"),
-            help="Promote one inbox note into a deferred drawer task candidate.",
+            help="Promote one inbox note into a deferred drawer task candidate. Warning: this deletes the source note, and it is not the path for notes that are work. A note that is work becomes a task with `deskops add task`, with references to the note, and then `deskops message ack <note>`.",
             args=(
                 A("selector", help="Inbox filename, stem, or unique slug fragment"),
                 ROOT_ARG_NO_PERIOD,

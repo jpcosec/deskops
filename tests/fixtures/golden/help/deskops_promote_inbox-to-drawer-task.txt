@@ -1,7 +1,10 @@
 usage: deskops promote inbox-to-drawer-task [-h] [--root ROOT] [--title TITLE]
                                             selector
 
-Promote one inbox note into a deferred drawer task candidate.
+Promote one inbox note into a deferred drawer task candidate. Warning: this
+deletes the source note, and it is not the path for notes that are work. A
+note that is work becomes a task with `deskops add task`, with references to
+the note, and then `deskops message ack <note>`.
 
 positional arguments:
   selector       Inbox filename, stem, or unique slug fragment

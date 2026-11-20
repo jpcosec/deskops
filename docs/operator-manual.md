@@ -20,6 +20,9 @@ For the first, shortest walkthrough, read `docs/quickstart.md`. For the CLI's
 first-use question index, run `deskops faq`. This manual does not re-document
 SLDB; it only covers the deskops workflow surface built on top of SLDB.
 
+To find where a rule, model or view lives, or to declare a new task type or view, read
+`docs/configuration.md` (its recipes are executed by `tests/test_docs_recipes.py`).
+
 ## Runnables convention
 
 The runnable walkthrough assumes:
@@ -434,6 +437,12 @@ the result for machines.
 Inbox notes are intake. Promotion turns one note into a loose deferred candidate
 under `desk/drawer/tasks/`, removes the inbox file, and records the new
 candidate on the drawer board. The candidate is not yet an active task.
+
+An inbox note that is work becomes a task with `deskops add task`, with references to
+the note (in the `--from-yaml` YAML or later with `deskops edit task <id> references`),
+and then `deskops message ack <note>`; if it is not work, just ack and the reason stays
+in the report. `promote inbox-to-drawer-task` deletes the source note and is not the path
+for notes that are work.
 
 ```bash runnable
 deskops promote inbox-to-drawer-task manual-inbox-note --root .
@@ -1493,7 +1502,7 @@ This table maps every CLI verb to the section that documents it.
 | `init` | Initialize the repository |
 | `inbox` | Inbox, messages, and drawer |
 | `message send/list/read/ack` | Send, list, read, and acknowledge messages |
-| `promote inbox-to-drawer-task` | Promote an inbox note to a drawer candidate |
+| `promote inbox-to-drawer-task` | Promote an inbox note to a drawer candidate (deletes the note; not the path for notes that are work) |
 | `drawer remove` | Remove a drawer entry |
 | `retire` | Retire any other desk document |
 | `issue close/list` | Issues |

@@ -37,8 +37,11 @@ hand-written file for a stage's generated artifact:
 
 A pill that stabilizes into durable knowledge must graduate into an atom
 (`deskops add atom`) instead of being left as a permanent pill. Work that is not yet ready to
-execute belongs in the drawer or inbox. Inbox notes move into the drawer with
-`deskops promote inbox-to-drawer-task`; a drawer item never becomes a task directly — the drawer is
+execute belongs in the drawer or inbox. An inbox note that is work becomes a task with `deskops add task`, with references to the note
+(in the `--from-yaml` YAML or later with `deskops edit task <id> references`), and then
+`deskops message ack <note>`; if it is not work, just ack and the reason stays in the triage
+report. `deskops promote inbox-to-drawer-task` deletes the source note and is not the path for notes
+that are work. A drawer item never becomes a task directly — the drawer is
 loose by design and a task is a fully authored, compiled bundle. Author the task in full with
 `deskops add task ... --from-drawer <selector>`, which records the drawer file in the task's own
 `from_drawer` field and keeps it for manual cleanup. Never jump straight to code.
@@ -64,8 +67,10 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
 - **Bind context explicitly.** Attach a pill to a task with `deskops bind pill <task> <pill> --root .`
   instead of referencing it only in prose. Bind atoms to a task via `--atom` on `deskops add task`
   or a follow-up edit, so the task's context is queryable, not implicit.
-- **Promote deliberately, author tasks explicitly.** Move an inbox note into the drawer with
-  `deskops promote inbox-to-drawer-task`. There is no drawer-to-task promotion: write the task
+- **Author tasks explicitly.** An inbox note that is work becomes a task with `deskops add task`,
+  with references to the note, and then `deskops message ack <note>`; `deskops promote
+  inbox-to-drawer-task` deletes the source note and is not that path. There is no
+  drawer-to-task promotion: write the task
   yourself with `deskops add task --from-drawer <selector> --title ... --goal ... --scope ...
   --validation ...`, then remove the drawer item by hand once the task supersedes it. Do not
   silently start implementing something that only exists as an inbox note, a drawer item, or a
@@ -97,7 +102,7 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
 | Advance a task | `deskops advance task <id> --root .` / `deskops next <id> --root .` |
 | Create/bind a pill | `deskops add pill --root . --what ... --why ... --when ... --where ... --how ... --how-not ...` then `deskops bind pill <task> <pill> --root .` |
 | Create an atom | `deskops add atom --root . --five-wh-one-plus <what\|why\|how\|how_not\|when\|where\|for_whom> --answer ...` |
-| Promote / author work | `deskops promote inbox-to-drawer-task <selector> --root .`, then `deskops add task --root . --from-drawer <selector> --title ... --goal ... --scope ... --validation ...` (no drawer-to-task promotion) |
+| Promote / author work | `deskops add task --root . --title ... --goal ... --scope ... --validation ... --from-yaml <file with references to the note>`, then `deskops message ack <note> --root .`; for a drawer item, `deskops add task --root . --from-drawer <selector> ...` (no drawer-to-task promotion; `promote inbox-to-drawer-task` deletes the note and is not the path for notes that are work) |
 | Validate a diagram spec | `specir diagram validate <spec.yml>` |
 | Render a diagram | `specir diagram render <spec.yml> --out <dir> [--renderer mermaid\|plantuml\|vega\|d2\|antonia-html\|json]` |
 | Build a diagram catalog | `specir catalog build --config <catalog.yml> --out <out.html>` |

@@ -44,7 +44,8 @@ fragment.
 - `deskops message list --root .` / `deskops message read <selector> --root .` /
   `deskops message ack <selector> --root .` — list, read, and acknowledge notes.
 - `deskops promote inbox-to-drawer-task <selector> --root . [--title ...]` — promote an inbox note
-  into a deferred drawer task candidate.
+  into a deferred drawer task candidate. It deletes the source note and is not the path for notes
+  that are work (those become tasks with `deskops add task` plus references, then `message ack`).
 - There is no drawer-to-task promotion. A drawer item becomes a task only by authoring it with
   `deskops add task --from-drawer <selector> ...` (see below); the drawer file is kept and cleaned
   up by hand.
