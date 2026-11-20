@@ -1,18 +1,21 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T11:58:21Z'
+  at: '2026-11-20T12:15:43Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan
-status: draft
+status: active
 summary: ''
 tags:
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- runs/subagents/test-deskops-t-a8ebbb84ed77/verdict.md
+- deskops/absolute_paths.py
+- tests/test_doctor_absolute_paths.py
+- 342b22e9cb92838ad8fd8c0332af5732d47b221d
 depends_on: []
 pills: []
 files:
@@ -22,8 +25,7 @@ task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix
+- atom-build-neighbours-de-absolute-paths-resuelve-el-registro-con-resolve-registered-root
 ---
 
 # build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla

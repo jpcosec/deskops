@@ -388,6 +388,8 @@ include:
   - desk/materializations/materialization-merge-driver-tests-test-desk-merge-driver-py.md
   - desk/materializations/materialization-tip-extendido-deskops-integrate-py.md
   - desk/materializations/materialization-tip-extendido-tests-test-integrate-py.md
+  - desk/materializations/materialization-registry-deskops-absolute-paths-py.md
+  - desk/materializations/materialization-registry-tests-test-doctor-absolute-paths-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -634,6 +636,14 @@ include:
     name: run-deskops-e-929ddc02614b
   - path: runs/subagents/exec-deskops-t-b732c559b3f6-testing/run.md
     name: run-deskops-t-b732c559b3f6
+  - path: runs/subagents/exec-deskops-e-e5774a62a36c/run.md
+    name: run-deskops-e-e5774a62a36c
+  - path: runs/subagents/exec-deskops-e-3c6efcfebee3/run.md
+    name: run-deskops-e-3c6efcfebee3
+  - path: runs/subagents/exec-deskops-e-fba0ac071a91/run.md
+    name: run-deskops-e-fba0ac071a91
+  - path: runs/subagents/exec-deskops-t-3c5aa531496b-testing/run.md
+    name: run-deskops-t-3c5aa531496b
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2048,6 +2058,14 @@ include:
     name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-atom-1
   - path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-materialization-1.md
     name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-materialization-1
+  - path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/evidence-tests-1.md
+    name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-tests-1
+  - path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/evidence-commit-1.md
+    name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-commit-1
+  - path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/evidence-atom-1.md
+    name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-atom-1
+  - path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/evidence-materialization-1.md
+    name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

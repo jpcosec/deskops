@@ -1,10 +1,16 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-20T11:53:14Z'
+  authority: generated
+  via: save_document_payload
 # ritual-xxx
 id: ritual-drawer-triage
 # Ordered prose steps; not document references
 steps:
-- 1. Capture repo-local work directly in desk/drawer/tasks/ (inbox notes from other
-  desks arrive there with deskops promote inbox-to-drawer-task).
+- 1. Capture repo-local deferred work directly in desk/drawer/tasks/. Inbox notes
+  that are work become tasks with references to the note and then message ack; they
+  do not go to the drawer.
 - '2. Keep the item lightweight and future-oriented, but readable as a TaskDoc: id,
   title and status deferred.'
 - 3. Separate speculative backlog items from active implementation tasks.

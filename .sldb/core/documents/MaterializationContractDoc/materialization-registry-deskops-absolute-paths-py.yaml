@@ -1,0 +1,25 @@
+name: materialization-registry-deskops-absolute-paths-py
+path: desk/materializations/materialization-registry-deskops-absolute-paths-py.md
+source_hash: 4419c0ab2d99bfbe4776c7c93fb16f85b20be1cc38089cdeedb4ee4199977684
+content_hash: ac1cc3258a388927fbb10fe1f9fc324b63dd463bc597a286bc509694303bbdd9
+field_hashes:
+  id: fae2be0689a652a293a913f4513947316e7ebf54bc19526ab1a700ca3247754d
+  title: 0c899c25e1233d83140b03a2d6ed4c9128b9984056c31a96293f5bb560ed7ff2
+  source_atoms: a67edae8b40531bf7238528056a9fd9ea6ed437878aa5fe475cd7074637e389f
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 6d449b7537bdf765939fb6897c7f6b9a106cac07630cbb923aee117a931369b8
+  intent: e65d7c0cb8efc3a62367a7d77f93251851e91a33e213b16dc1bbcd08384656d4
+  validation: 232238dee5bcec44a640ac16a00fdcae76bdc4864c54aacbd172b88b6fbbb3e4
+  tags: 24e909253d13cf59c2f24a2853add4b05a7afcf3da8d9d24790b5a13142eda68
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:registry
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T12:15:52Z'
+  authority: generated
+  via: create_document
