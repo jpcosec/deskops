@@ -1,0 +1,37 @@
+name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-materialization-1
+path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/evidence-materialization-1.md
+source_hash: 278fd7144b2960c06f1a9ff777a41716ae5ce7f2d7d17822941cf4ce62b14cf0
+content_hash: 9904d0915ef3906e210149210e4ad8baf7f69de6f8b328aedb25dac0e44d2baa
+field_hashes:
+  id: cd9f1d0ea8dd0f0ebe3a7fff7452e0a943bb467f05455d5483ee50d5c771d83a
+  title: 64e4dff9a6018fff6e3727da3fabc066e9bb3c0e9de31cd3f0e3adb9994b4003
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 86b38bc95f715d51e72cbedc4c08f2ebc46bcba3fc08ddd19d586f924997a442
+  subject: ffcfc196494b1b6c985e53c93e8dd364c07e1c07e0a80f14f81ec90112033efd
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 241569a97ce7eeeeabeede73057dfaed9140fb0a89fada38f8c31ec96174de9b
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: fb3d601b7160c769c08ae0f9f6fa6dcd5ef780eb876c964dd0a64cef2fd4e60c
+  created_at: 20f2894c8c793b97aa4a4a88cc89bf4ca6fcf52c8db1e5a265085734d68b4ef5
+  disposed_at: 20f2894c8c793b97aa4a4a88cc89bf4ca6fcf52c8db1e5a265085734d68b4ef5
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f996f10ae7755dbc955c124d94e5f778ca4986653ea1513a08c0dbd7ab4c3ac4
+  disposition: aab405b6667d3712be178ad57797f7288df0843f8b158fe306ba5a8330e5c956
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T05:48:33Z'
+  authority: generated
+  via: create_document

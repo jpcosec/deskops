@@ -1,33 +1,35 @@
+Task: task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main
+Title: integrate no intenta empujar el sha de código cuando ya es ancestro de origin/main
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T05:47:55Z'
+  at: '2026-11-20T04:54:39Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/integrate.py
-- tests/test_integrate.py
-- 6ca104ec87462c2459ac1164da569231e6e5d468
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/integrate.py
-- tests/test_integrate.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-integrate-saltea-el-push-del-sha-de-codigo-cuando-ya-es-ancestro-de-origin
+atoms: []
 ---
 
 # integrate no intenta empujar el sha de código cuando ya es ancestro de origin/main
@@ -67,3 +69,12 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El test nuevo y los de integrate pasan; la suite completa la corre integrate.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.

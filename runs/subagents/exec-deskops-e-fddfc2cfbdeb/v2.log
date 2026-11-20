@@ -1,0 +1,35 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+______________ test_code_already_behind_origin_main_is_not_pushed ______________
+
+closed = PosixPath('/tmp/pytest-of-scion/pytest-3/test_code_already_behind_origi0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-scion/pytest-3/test_code_already_behind_origi0')
+
+    def test_code_already_behind_origin_main_is_not_pushed(closed: Path, tmp_path: Path) -> None:
+        root = closed
+        tip = _git(root, "rev-parse", "HEAD")
+        code = _find(root, "feature")
+        # origin/main is ahead of the code commit (it holds a descendant): pushing code:main would be non-fast-forward.
+        # Rebuild the tip on top of an extra empty commit that the remote already has.
+        extra = _git(root, "commit-tree", f"{code}^{{tree}}", "-p", code, "-m", "other task tip")
+        tip = _git(root, "commit-tree", f"{tip}^{{tree}}", "-p", extra, "-m", f"closeout: {TASK}")
+        _git(root, "reset", "-q", "--hard", tip)
+        _git(root, "push", "-q", str(root.parent / "remote.git"), f"{extra}:{BRANCH}")
+        result = _integrate(root)
+>       assert result.returncode == 0, result.stdout + result.stderr
+E       AssertionError: falta el campo integrate en desk/config.json
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/tmp/ws-venv/bin/python', '-m', 'deskops', 'integrate', '--task', 'task-foo', '--root', '.'], returncode=2, stdout='falta el campo integrate en desk/config.json\n', stderr='').returncode
+
+tests/test_integrate.py:265: AssertionError
+=============================== warnings summary ===============================
+../../../../../tmp/ws-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /tmp/ws-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_integrate.py::test_code_already_behind_origin_main_is_not_pushed
+1 failed, 1 passed, 18 deselected, 1 warning in 171.07s (0:02:51)

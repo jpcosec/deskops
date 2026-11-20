@@ -1,0 +1,37 @@
+name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-commit-1
+path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/evidence-commit-1.md
+source_hash: 0caba3b7633c85e24a71773b8eca6b45154f16c5e2a3fda8f50aee8ea51c1f7a
+content_hash: 5078a7fbac19f1507abdc6772d49d285adaec82c9ea6b05a0f75c6fe6d1ff647
+field_hashes:
+  id: 96ed74b08e417fc615960ce7c9866add86d0ff1f05c548cd7779b3b8e478ea5d
+  title: 8df763e8cacce4601203201638f8c647916d47d94e60e40b11594fcea2672597
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: bf018562b2cf44273b36d659ae9f87d9e046c2617dce3f5d370b41ad911a9db5
+  subject: ffcfc196494b1b6c985e53c93e8dd364c07e1c07e0a80f14f81ec90112033efd
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 0d09380703557698e2c38a609abc585e3d51a0a062aa5aa891ce9cd39cb1935b
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 848109e847c1bfe561f217a9eed8df7aee99db7c17d99dff177beb3f4fe80fbc
+  created_at: 20f2894c8c793b97aa4a4a88cc89bf4ca6fcf52c8db1e5a265085734d68b4ef5
+  disposed_at: 20f2894c8c793b97aa4a4a88cc89bf4ca6fcf52c8db1e5a265085734d68b4ef5
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 7cac53f96e068e8c120faae7f648de72d54ce04ab2b6a89023e1aa49b0ee8553
+  disposition: 6be8ca5393529db1ecb3e53b8d329134c4445fe6de5e5f555d764eced4dd4c98
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T05:48:28Z'
+  authority: generated
+  via: create_document

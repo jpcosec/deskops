@@ -1,0 +1,21 @@
+# Tester validation evidence
+# Commit: 6ca104ec87462c2459ac1164da569231e6e5d468
+# Worktree: /tmp/deskops-test-6ca104ec (detached, removed after run)
+# Python: /workspace/sldb/.venv/bin/python 3.13.18, pytest 9.1.1
+
+$ cd /tmp/deskops-test-6ca104ec
+$ PYTHONPATH=$PWD TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_integrate.py
+....................                                                     [100%]
+20 passed, 1 warning in 61.43s
+PYTEST_RC=0
+
+# Regression check: new test against parent commit with the new test file
+$ cd /tmp/deskops-test-parent   # b75894c3 + tests/test_integrate.py del commit evaluado
+$ PYTHONPATH=$PWD TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_integrate.py -k code_already
+F                                                                        [100%]
+FAILED tests/test_integrate.py::test_code_already_behind_origin_main_is_not_pushed
+AssertionError: fallo: push: git push origin e98803f...:main: ... (non-fast-forward)
+1 failed, 19 deselected
+PYTEST_RC=1
+
+VERDICT: PASA - el test nuevo falla en el padre con fallo:push non-fast-forward y pasa en el commit evaluado; 20/20 tests de tests/test_integrate.py pasan.
