@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T12:17:12Z'
+  at: '2026-11-20T12:22:45Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -46,6 +46,7 @@ tasks:
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
+- desk/tasks/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -123,3 +124,4 @@ _Generated from the task references above._
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [active] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
+- dispatch start lanza cada ejecutor en su propio git worktree, para que agentes en paralelo no se pisen el árbol de trabajo [draft] - dispatch start crea para cada ejecutor un git worktree propio: una rama 'deskops/<agente>' desde la punta local del repo, en un directorio de trabajo bajo el workspace montado (p. ej. <repo>/.worktrees/<agente>, ignorado por git). El agente trabaja y commitea ahí. El tester prueba ese worktree. Al cierre, integrate (o closeout) trae el commit de la rama a la rama principal con cherry-pick o rebase y fast-forward, y borra el worktree y la rama. Los agentes de distintas tareas no comparten árbol de trabajo ni índice.
