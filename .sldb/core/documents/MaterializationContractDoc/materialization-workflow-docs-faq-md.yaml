@@ -1,0 +1,25 @@
+name: materialization-workflow-docs-faq-md
+path: desk/materializations/materialization-workflow-docs-faq-md.md
+source_hash: 5e85cd064ae93fc40cb433e5f2a4f68ff937e143b1d7db49854a5fbb3166b658
+content_hash: ae75a4b45c05a46e5eba27a06c5791483d54aab57d082017751d957ca062d13d
+field_hashes:
+  id: 6cf31dfee0f3e9e2e521ce56b4535722dce07feade0cb0c7f12fce00be58e0ca
+  title: a3e889f07a7343fb4a933de16caf86bf624945f45b5dc241fa83dd2818a36952
+  source_atoms: bc7e6ce2135349d786fc6d3d6558ced588c1a5d9347b6d67c6db4674e6ea6d3c
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 7ea370f4298b941c7da0d74df601f0e06f5843aef4a4438c29670e3d0e7b31dd
+  intent: 9ef06352de4cd8b0345528cb5792554950a5fe671470d145232948672a0a3547
+  validation: 3c08ad71400326c4dec0685600909e679047fa9806806106235727a4bf91bf9c
+  tags: 9f13720b0a02df8bb02ec72565eff4115f9f636c9625981f60a900a64b5022f3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:workflow
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T15:13:35Z'
+  authority: generated
+  via: create_document

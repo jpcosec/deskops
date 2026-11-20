@@ -1,0 +1,25 @@
+name: materialization-workflow-tests-fixtures-golden-help-deskops-promote-txt
+path: desk/materializations/materialization-workflow-tests-fixtures-golden-help-deskops-promote-txt.md
+source_hash: b76894c5295bf7fda714f228631f7a91325791d15c22a9404c55a7d2993dff66
+content_hash: 5250595ef6043b524f1d319730a6d19066420122f4ac97bda4005672f0b25583
+field_hashes:
+  id: d61cc5b360ddbec4d6e3c570b87f1d7fbce0758e4efc8c4186b90fbc2b6c57bd
+  title: 90f9acf7f28288d997a460e767289fcc559de1deba0d154d38cd5f1886b14886
+  source_atoms: bc7e6ce2135349d786fc6d3d6558ced588c1a5d9347b6d67c6db4674e6ea6d3c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: b089220c3b59f23e18323a782dbe7b40518b875173cf75e6ee16d8f901356aeb
+  intent: 56a427b33844c1fbc678c773bbef50a135341d30ac8bf1b2f1367034416b0f59
+  validation: 3c08ad71400326c4dec0685600909e679047fa9806806106235727a4bf91bf9c
+  tags: 9f13720b0a02df8bb02ec72565eff4115f9f636c9625981f60a900a64b5022f3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:workflow
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T15:18:02Z'
+  authority: generated
+  via: create_document

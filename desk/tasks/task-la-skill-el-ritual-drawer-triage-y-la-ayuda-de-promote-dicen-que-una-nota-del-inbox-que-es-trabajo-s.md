@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T14:13:02Z'
+  at: '2026-11-20T15:17:04Z'
   authority: generated
   via: save_document_payload
 id: task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s
@@ -11,7 +11,7 @@ tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
+current_node: ritual-testing
 history:
 - task_activates
 - 'task_returns_to_execution: Tester exec-deskops-t-4efc28be470c-testing FALLA sobre
@@ -23,23 +23,36 @@ history:
   que en operator-manual.md:444, sin tocar los ejemplos runnable de la mecánica, y
   verificar que el grep muestre solo advertencias o ejemplos permitidos. Commit solo
   de tus archivos con ''git commit -- <rutas>''.'
+- task_activates
 references:
-- desk/inbox/20261116-003032-unclear-la-skill-y-ritual-drawer-triage-mandan-el-inbox-al-drawer-los-atoms-dicen-que-no.md
-- /mnt/ssd/proyectos/SLDB_1/triaje-drawers-inbox-brief.md
+- .claude/skills/deskops-workflow/SKILL.md
+- .claude/skills/deskops-workflow/references/deskops-cli.md
+- .claude/skills/deskops-workflow/references/vocabulary.md
+- deskops/cli/registry.py
+- docs/deskops-ui.md
+- docs/faq.md
+- docs/operator-manual.md
+- tests/fixtures/golden/help/deskops_promote.txt
+- tests/fixtures/golden/help/deskops_promote_inbox-to-drawer-task.txt
+- 2b5f68daf5badf55e406f5c305f9ba3afd796450
+- 812f6115aba165fee9c4050c2dcb179da57cbf0d
 depends_on: []
 pills: []
 files:
 - .claude/skills/deskops-workflow/SKILL.md
+- .claude/skills/deskops-workflow/references/deskops-cli.md
 - .claude/skills/deskops-workflow/references/vocabulary.md
-- desk/rituals/ritual-drawer-triage.md
 - deskops/cli/registry.py
+- docs/deskops-ui.md
+- docs/faq.md
 - docs/operator-manual.md
+- tests/fixtures/golden/help/deskops_promote.txt
+- tests/fixtures/golden/help/deskops_promote_inbox-to-drawer-task.txt
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-inbox-is-coordination-intake
-- atom-drawers-feed-tasks-through-promotion
+- atom-una-nota-del-inbox-no-va-al-drawer-la-skill-el-ritual-drawer-triage-la-ayuda-de-promote-y-los-docs-l
 ---
 
 # La skill, el ritual drawer-triage y la ayuda de promote dicen que una nota del inbox que es trabajo se vuelve tarea con references y ack

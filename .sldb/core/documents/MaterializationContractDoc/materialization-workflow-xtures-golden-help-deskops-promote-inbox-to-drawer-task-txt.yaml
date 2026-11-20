@@ -1,0 +1,25 @@
+name: materialization-workflow-xtures-golden-help-deskops-promote-inbox-to-drawer-task-txt
+path: desk/materializations/materialization-workflow-xtures-golden-help-deskops-promote-inbox-to-drawer-task-txt.md
+source_hash: 4b046b7bcc3e18c4e99ce46029e0bb878f7b465606bbbc53a46564e21f5c51b7
+content_hash: c62083c66980830434c871d22db8fab13b9babb77b68d11ab72955fb8c1d22ed
+field_hashes:
+  id: 7a87eda8e8e628fc8be1d620faddd2308490e6ba7c8771e321fe1bd1b11dda0a
+  title: 42ab52abf5187f1a1ac72bacce90637b3be43aaea453e676d15ee177ecea8440
+  source_atoms: bc7e6ce2135349d786fc6d3d6558ced588c1a5d9347b6d67c6db4674e6ea6d3c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: f4a48ad8bfd5b6be2f57f6a2cfd775edd3b22360c696779a7e7a9cea54b90242
+  intent: 67023b2876b0dbb3b6d8dc24a69f91dc2d582ecbeeced2e6f616469639722224
+  validation: 3c08ad71400326c4dec0685600909e679047fa9806806106235727a4bf91bf9c
+  tags: 9f13720b0a02df8bb02ec72565eff4115f9f636c9625981f60a900a64b5022f3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:workflow
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T15:18:12Z'
+  authority: generated
+  via: create_document

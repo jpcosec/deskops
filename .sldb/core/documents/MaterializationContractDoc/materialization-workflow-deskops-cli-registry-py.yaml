@@ -1,0 +1,25 @@
+name: materialization-workflow-deskops-cli-registry-py
+path: desk/materializations/materialization-workflow-deskops-cli-registry-py.md
+source_hash: 47ab81e06d39e2368238713248abc15999c43e43b8a67d6d717f17b3585a98fc
+content_hash: 3f20e5daa8301b91fac85118105ca49a0a28196e58889fb15ee03b0bede4cdb8
+field_hashes:
+  id: dcbab93e40930e3ef768527bcacf423a2e502af33c0e45d07b6f61ea862b75d6
+  title: 85a1e2953e6ba50ad340ad3879a176430e98d0c9715b72909250b3e40430219d
+  source_atoms: bc7e6ce2135349d786fc6d3d6558ced588c1a5d9347b6d67c6db4674e6ea6d3c
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 03d49390d854e640aff7fe73b370938d48f0b2249a058fb02ab85435f605f172
+  intent: 472d2ea912a0d1ed3db2c49743142a68c419cc512b523535fbb366d46258966d
+  validation: 3c08ad71400326c4dec0685600909e679047fa9806806106235727a4bf91bf9c
+  tags: 9f13720b0a02df8bb02ec72565eff4115f9f636c9625981f60a900a64b5022f3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:workflow
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T15:17:40Z'
+  authority: generated
+  via: create_document

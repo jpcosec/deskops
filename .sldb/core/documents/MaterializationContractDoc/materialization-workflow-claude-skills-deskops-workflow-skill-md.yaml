@@ -1,0 +1,25 @@
+name: materialization-workflow-claude-skills-deskops-workflow-skill-md
+path: desk/materializations/materialization-workflow-claude-skills-deskops-workflow-skill-md.md
+source_hash: 145175aa9ec08ee7222575acc1e84139293da87a203c69f1c3cea0d4a55c1783
+content_hash: d84b1598698781d1ed17beda098ffd26988cc739aecb2717ef7f6390641e0927
+field_hashes:
+  id: 25d43d17c11380651217d0148df132dd843da92e274965444007d429c4826cca
+  title: 21b9e4d1dbb6e4f42c92b21bad08aede71b011ee4aa2467a49f219a33a26b7d0
+  source_atoms: bc7e6ce2135349d786fc6d3d6558ced588c1a5d9347b6d67c6db4674e6ea6d3c
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 691fead00ef78ed058c888f70481306704c873d0e2612e0e00919c79bb608b0f
+  intent: 8a273ce667b184ada3f2c02ba083770891ae9f17ae4729fe960e1b7dbff66f0e
+  validation: 3c08ad71400326c4dec0685600909e679047fa9806806106235727a4bf91bf9c
+  tags: 9f13720b0a02df8bb02ec72565eff4115f9f636c9625981f60a900a64b5022f3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:workflow
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T15:17:13Z'
+  authority: generated
+  via: create_document

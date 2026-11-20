@@ -1,0 +1,25 @@
+name: materialization-workflow-docs-operator-manual-md
+path: desk/materializations/materialization-workflow-docs-operator-manual-md.md
+source_hash: 0650d667d484d7796162e9f321b5e06a550658af36a3047190a08b2dcf154ffd
+content_hash: af4f9c68462b5dae7dd6c3a22271cfba14ac543e75926c33a59f95078e733509
+field_hashes:
+  id: e697abab38d8cbdc230621dfc1206df70b60bdda28fe220ba17582d95bd3b2ed
+  title: ab04576f72ac34b792110f41c7c806ea2f5588fbe669654a6a2854c05f212562
+  source_atoms: bc7e6ce2135349d786fc6d3d6558ced588c1a5d9347b6d67c6db4674e6ea6d3c
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 3bed947441017806533d525d02305a7a0ba4430336a3781093dbc5810d8c74a6
+  intent: 6b463230e7fbdb6bfaa9b77b270188ebe9b31729f7873fa722f25abd8352c038
+  validation: 3c08ad71400326c4dec0685600909e679047fa9806806106235727a4bf91bf9c
+  tags: 9f13720b0a02df8bb02ec72565eff4115f9f636c9625981f60a900a64b5022f3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:workflow
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T15:17:53Z'
+  authority: generated
+  via: create_document
