@@ -1,0 +1,37 @@
+name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-materialization-1
+path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-materialization-1.md
+source_hash: f22766be9ff93094ccc56b03b1eac088f51e2d69efe6d1da671163a6bca26af0
+content_hash: ab492b7eac84ec9fe5aff2e91af4de0613a6035930c8672fd1b1b3810ce97fb6
+field_hashes:
+  id: b2239a9a47e25aaec9166d4a39167816e8ec980439ff6c693959934a8791bb5c
+  title: 27cd1880e8eae3e2e5e91b223c72059da4e09dcb5121a4e31792af8a281dd0c3
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: e0a9aa3f81412d058c0fda8ef90e198a1663fd9b86944c5e9f5f622cbfed47b7
+  subject: 623b400b3100f9af1aa900d0524f0c3ad7dfe79b53cfcf925b9099d2bca6e893
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: a71b8fd114d2fac3dae65bb1ba5262df4386415a534a05fbe67f37921cae4590
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0c6aea19d2ca1db63f7d5351b1ad4d57c8f1be6296fc348edba97dc049c59db1
+  created_at: 31c8cb3fba825dcc983ca11163587e1e436051d702c99b19a98f943473999e89
+  disposed_at: 31c8cb3fba825dcc983ca11163587e1e436051d702c99b19a98f943473999e89
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 1437098344be5481c451c483b60f4ce8977727f172dbc942f387cb00057bb950
+  disposition: 671599d0901a8dececb29b33fe32dae795c6faa3381f28f00b5daa8e7800ae3d
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T11:05:46Z'
+  authority: generated
+  via: create_document

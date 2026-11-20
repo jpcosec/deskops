@@ -1,0 +1,1 @@
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_integrate.py -> 22 passed, exit 0

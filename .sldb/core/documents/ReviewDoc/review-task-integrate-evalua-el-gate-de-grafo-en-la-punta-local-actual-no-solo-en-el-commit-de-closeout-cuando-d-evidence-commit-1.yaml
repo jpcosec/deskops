@@ -1,0 +1,37 @@
+name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-commit-1
+path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-commit-1.md
+source_hash: dc1a2edeee1517b93b6d4153a6fffd523b4e1ab092abc0de3b6ba7ab14991d3b
+content_hash: 25f7a4b7815f26421025d9bbdb2a0fa6b997210ed8e5b52c35a335b3dde1bc1e
+field_hashes:
+  id: 11d1daf3b5108da604ebb65564c23ec4aa5230765f19444078e48ccb70458014
+  title: 92d87afe37432c8708720f64f12ed56477956595fd78d264605792743b4bd1b5
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: af071ffb5d22e62fbda907d44acbb530359b798afca5901f2ff1bb37a7c068d2
+  subject: 623b400b3100f9af1aa900d0524f0c3ad7dfe79b53cfcf925b9099d2bca6e893
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 059f0c447aa72ae8aa0227cdde188eeca963be51474a686cd8eeae909318a6fc
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 64d0c5a7a8376838145ae38e9be554ea9865d50a3c7f9f98d4bc164e36f7c57d
+  created_at: 31c8cb3fba825dcc983ca11163587e1e436051d702c99b19a98f943473999e89
+  disposed_at: 31c8cb3fba825dcc983ca11163587e1e436051d702c99b19a98f943473999e89
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 346ec7af9e98c14bfdef19ad0adc6fbbe4b41d50764e8b6059c96dda1b4846b1
+  disposition: fbbe6cbad6dc4645ff1390634b94cb7be179c21d3a12e0640970fd4b5164a71c
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T11:05:40Z'
+  authority: generated
+  via: create_document

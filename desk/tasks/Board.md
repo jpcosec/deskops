@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T10:43:21Z'
+  at: '2026-11-20T11:08:35Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -47,7 +47,6 @@ tasks:
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
-- desk/tasks/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -126,4 +125,3 @@ _Generated from the task references above._
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [active] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
-- integrate evalúa el gate de grafo en la punta local actual, no solo en el commit de closeout, cuando después solo hay commits de desk [draft] - Si entre el commit de closeout de la tarea y la punta local (HEAD de la rama) solo hay commits que tocan desk/, .sldb/ o runs/ (nada de código, tests ni docs), integrate usa esa punta como tip: corre los gates sobre ella y la empuja. Si hay commits con código posteriores, sigue usando el commit de closeout como hoy. Lo dice en su salida ('tip extendido a <sha>: solo commits de desk').

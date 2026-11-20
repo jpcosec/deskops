@@ -1,33 +1,35 @@
+Task: task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d
+Title: integrate evalúa el gate de grafo en la punta local actual, no solo en el commit de closeout, cuando después solo hay commits de desk
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T11:05:05Z'
+  at: '2026-11-20T10:43:17Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/integrate.py
-- tests/test_integrate.py
-- a9952c2974ae8862990ef13c6deb258837fee29c
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
-files:
-- deskops/integrate.py
-- tests/test_integrate.py
-- CHANGELOG.md
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-integrate-extiende-el-tip-a-head-cuando-despues-del-closeout-solo-hay-commits-de-desk
+atoms: []
 ---
 
 # integrate evalúa el gate de grafo en la punta local actual, no solo en el commit de closeout, cuando después solo hay commits de desk
@@ -67,3 +69,12 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tests nuevos y tests/test_integrate.py pasan.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
