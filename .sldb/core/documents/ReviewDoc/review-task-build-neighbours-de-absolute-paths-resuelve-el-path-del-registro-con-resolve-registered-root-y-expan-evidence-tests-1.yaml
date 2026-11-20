@@ -1,0 +1,37 @@
+name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-tests-1
+path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/evidence-tests-1.md
+source_hash: 04c93ba2ba99bf07cbefc8ccac95d357140c7458ec10310d1d659d974d745b08
+content_hash: 0f23f4637d4f8152dc2de96b9be8d2424c656870e1cd27798e52581f604b560c
+field_hashes:
+  id: 074a45fd2fffb254797728d07be77d232d3c7c240332b11cfa67336f96bddaa6
+  title: e1a7cd5fd7b0f69c17826dec13dc5defd6f5140d190ef57c917c16afc4a63b4c
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 7d33471b090131e3b5aecf4f63a9088d098d74d1043ee01feebacb8edaa2be4d
+  subject: 0574a3800b72163f1593e76d7a336a3e71af74f5820f4e2fe82ed93a1682f673
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 5f96fdf454bfaa64fbfebab15212b0be61f052bce6001962bc088ac0141be424
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 317beb87842cf5be20299b7f2d6519fb19b49ac6c503621aa5bcc852da510bfb
+  created_at: 9c975761b68304d517e901d5d3b06a98621843a33031a4222274485cae4a1ad4
+  disposed_at: 9c975761b68304d517e901d5d3b06a98621843a33031a4222274485cae4a1ad4
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: bb80f52fa9d90d96d12d61373dd089ae9c87a4b6c25c00406ba64e86ac17771d
+  disposition: c69c060e9e934c3ff31fe62abd3ccbdb10a70a08510904d991395372d313a1c4
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T12:16:13Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,12 @@
+Task: task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan
+Title: build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .

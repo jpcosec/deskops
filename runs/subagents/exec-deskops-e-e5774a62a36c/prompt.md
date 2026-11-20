@@ -1,21 +1,31 @@
+Task: task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan
+Title: build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T12:15:43Z'
+  at: '2026-11-17T11:58:21Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan
-status: active
+status: draft
 summary: ''
 tags:
 - host:robocop2
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
-- deskops/absolute_paths.py
-- tests/test_doctor_absolute_paths.py
-- 342b22e9cb92838ad8fd8c0332af5732d47b221d
+- runs/subagents/test-deskops-t-a8ebbb84ed77/verdict.md
 depends_on: []
 pills: []
 files:
@@ -25,7 +35,8 @@ task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-build-neighbours-de-absolute-paths-resuelve-el-registro-con-resolve-registered-root
+- atom-code-changes-close-with-tests-and-commit
+- atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix
 ---
 
 # build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla
@@ -66,3 +77,12 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El test nuevo pasa (mismo directorio por los dos caminos para una entrada con la virgulilla y una relativa) y los dos archivos de la Validation pasan.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.

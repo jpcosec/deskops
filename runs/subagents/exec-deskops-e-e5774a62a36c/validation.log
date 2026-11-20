@@ -1,0 +1,2 @@
+python -m pytest -q -p no:cacheprovider tests/test_doctor_absolute_paths.py tests/test_registry_robustness.py
+22 passed, exit 0
