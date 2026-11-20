@@ -1,0 +1,25 @@
+name: materialization-cola-sigue-tras-retry-deskops-queue-py
+path: desk/materializations/materialization-cola-sigue-tras-retry-deskops-queue-py.md
+source_hash: 348c38f2653562de8650b94b8bf5eeeca34862e15600ce0e8506d5576592bfcc
+content_hash: 23ccb385277e5d314f61fd3818e3b21ee9011bd3cfbdf5756b970427c9279dce
+field_hashes:
+  id: 3a3a6c2531ee4d25733baad0ab5287474fecf97c033304d39b0eb88218cec723
+  title: 6ae2d3a4ab98d28ac78a332e0eb1079aff9826083611d70928fcaa288c799909
+  source_atoms: 80a7120555e137e1ad6b7a745839c9ae416931a2b52420e1ce35e83a56f6f37b
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 26178540e1e6c093f4e238287bcf1dc6767f4239a6bd259605de6f93ddd65cb9
+  intent: 1bda7a77fbc43925555189c2c6cd7fe44587d9ae0bf9e3be8128a763c7c1211d
+  validation: 833a97fee71ed0f2a09c6b17ea1b58120651f3ee1dd9f38129867baf5586edc6
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T01:47:34Z'
+  authority: generated
+  via: create_document

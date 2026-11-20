@@ -374,6 +374,9 @@ include:
   - desk/materializations/materialization-dispatch-paralelo-deskops-dispatch-py.md
   - desk/materializations/materialization-dispatch-paralelo-docs-operator-manual-md.md
   - desk/materializations/materialization-dispatch-paralelo-tests-test-dispatch-py.md
+  - desk/materializations/materialization-cola-sigue-tras-retry-deskops-queue-py.md
+  - desk/materializations/materialization-cola-sigue-tras-retry-docs-operator-manual-md.md
+  - desk/materializations/materialization-cola-sigue-tras-retry-tests-test-queue-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -600,6 +603,10 @@ include:
     name: run-deskops-e-a2dfce03aecf
   - path: runs/subagents/exec-deskops-t-674f356814bf-testing/run.md
     name: run-deskops-t-674f356814bf
+  - path: runs/subagents/exec-deskops-e-f585f0ef0e37/run.md
+    name: run-deskops-e-f585f0ef0e37
+  - path: runs/subagents/exec-deskops-t-22dbf234c4bc-testing/run.md
+    name: run-deskops-t-22dbf234c4bc
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1966,6 +1973,14 @@ include:
     name: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-evidence-atom-1
   - path: desk/reviews/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de/evidence-materialization-1.md
     name: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-evidence-materialization-1
+  - path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/evidence-tests-1.md
+    name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-evidence-tests-1
+  - path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/evidence-commit-1.md
+    name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-evidence-commit-1
+  - path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/evidence-atom-1.md
+    name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-evidence-atom-1
+  - path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/evidence-materialization-1.md
+    name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

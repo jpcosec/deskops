@@ -1,0 +1,25 @@
+name: materialization-cola-sigue-tras-retry-docs-operator-manual-md
+path: desk/materializations/materialization-cola-sigue-tras-retry-docs-operator-manual-md.md
+source_hash: fc4266c5d62c1c10ab8802fa4040ada51790a8a9269963c337b7b85e234c05f2
+content_hash: eaaba759774a01621055034c2d923eada3f31d4aaa6d54d81035da073b81ec1b
+field_hashes:
+  id: b5eac49c40c274e4109f9fd0ac8f76bfac5b9a43a7a9daa0e30d52c2fa5445b4
+  title: ac7bffbdb9b0752bec502175ff30bbba95c32d3cee830c149029c7b8c6492102
+  source_atoms: 80a7120555e137e1ad6b7a745839c9ae416931a2b52420e1ce35e83a56f6f37b
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 3bed947441017806533d525d02305a7a0ba4430336a3781093dbc5810d8c74a6
+  intent: a79f93bbbe21b726dc74b4b9dda4c2ae53a99ff7584995af7ac26fa8366e5ce4
+  validation: 833a97fee71ed0f2a09c6b17ea1b58120651f3ee1dd9f38129867baf5586edc6
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T01:47:42Z'
+  authority: generated
+  via: create_document

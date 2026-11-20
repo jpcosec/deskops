@@ -1,0 +1,25 @@
+name: materialization-cola-sigue-tras-retry-tests-test-queue-py
+path: desk/materializations/materialization-cola-sigue-tras-retry-tests-test-queue-py.md
+source_hash: 8f86148e29f6417351fea4b814acafed91d585f420bf73ae5f4d24cd4192cccc
+content_hash: 74fd94f38ed96d55dac019a0024449bf79d49fc2f191a7bf617f77f325d982ac
+field_hashes:
+  id: 44abb0652b5d319824b77992fd186a98473188ae3ae2bc1718a709b3bbaf14df
+  title: 9f7120bcaed338f0af235d02ce4ce1b3e1efcbb32df1fa027aff8dd5bf366bd6
+  source_atoms: 80a7120555e137e1ad6b7a745839c9ae416931a2b52420e1ce35e83a56f6f37b
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: c515af31fc0aa785ef7f1ee2394d84542517f111d1beab3c3dadbb70f01e9270
+  intent: 51cb8107de3f617e06cc7d6ba0ff3435a45993b08e0dbf2ff601e5ec964558df
+  validation: 833a97fee71ed0f2a09c6b17ea1b58120651f3ee1dd9f38129867baf5586edc6
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T01:47:51Z'
+  authority: generated
+  via: create_document

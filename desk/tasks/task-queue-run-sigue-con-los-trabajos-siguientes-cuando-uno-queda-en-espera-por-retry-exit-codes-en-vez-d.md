@@ -1,25 +1,35 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T18:13:14Z'
+  at: '2026-11-20T01:47:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/queue.py
+- docs/operator-manual.md
+- tests/test_queue.py
+- 9317d460a755c651423ffec1e8bca128409cc6c4
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/queue.py
+- docs/operator-manual.md
+- tests/test_queue.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-queue-run-all-saltea-en-esa-corrida-el-trabajo-que-quedo-en-espera-por-retry-y-sigue-con-los-siguien
 ---
 
 # queue run sigue con los trabajos siguientes cuando uno queda en espera por retry_exit_codes, en vez de detener la cola
