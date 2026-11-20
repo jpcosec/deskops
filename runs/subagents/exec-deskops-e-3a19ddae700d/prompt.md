@@ -1,38 +1,35 @@
+Task: task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk
+Title: deskops init y desk update --apply instalan el merge driver de sldb en el repo del desk
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T09:22:37Z'
+  at: '2026-11-20T08:43:42Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/bootstrap.py
-- deskops/cli/commands/desk.py
-- tests/conftest.py
-- tests/test_desk_merge_driver.py
-- d944d0e3d02d99b301102e489452a0cddffd1225
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/bootstrap.py
-- deskops/cli/commands/desk.py
-- docs/operator-manual.md
-- tests/conftest.py
-- tests/test_desk_merge_driver.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk
+atoms: []
 ---
 
 # deskops init y desk update --apply instalan el merge driver de sldb en el repo del desk
@@ -72,3 +69,12 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tests nuevos y tests/test_lifecycle_seed_drift.py pasan; la suite completa la corre integrate.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.

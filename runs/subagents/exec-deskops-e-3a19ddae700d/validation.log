@@ -1,0 +1,2 @@
+pytest tests/test_desk_merge_driver.py tests/test_desk_sync.py: 12 passed (earlier run)
+pytest tests/test_lifecycle_seed_drift.py: 8 passed, exit 0 (sldb 9007f78a, has the alert)

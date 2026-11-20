@@ -1,0 +1,37 @@
+name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-evidence-atom-1
+path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/evidence-atom-1.md
+source_hash: f8bf0087132701db0d8db8a6cdff596ffb893d2723ba2d871565341740f0918a
+content_hash: 6e609a75b826a0ce59303f37e7c15956db913e055a28d73b37ba3caa5a17d7b3
+field_hashes:
+  id: a149b0858cc5213f816bfc4b96a6f9baf5f925afe61b165084d0ef15d05d2f74
+  title: dc93a6411ebf95e40b408f9492bc0b490225cb16c23bf7693393378a2fe8714a
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 82e6098f48030f4d2dd1663cc3c33eed432740c9b1a992b36dd4877470031113
+  subject: 946e807fc33a62fcdd03024f1a0365e0a842a9874d9e56a6bd606c21755e3855
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 5f9cdf8617e18e4fe1e554be7e18acbb90a420c7c4ee4212f60daec52492d5c6
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 6d2cf23eea41a5ce45484892b974cad4abe39d64c1340cf0f1ed7fbf2d7efd37
+  created_at: 786c8bc537c7c36f064140b079c88de358def60c6e1409b5c0ff7286bcd1fa6d
+  disposed_at: 786c8bc537c7c36f064140b079c88de358def60c6e1409b5c0ff7286bcd1fa6d
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 71506d099da09481f5c40cdf430dd61553f9afa057f88a8fe15b19f7bae61fd6
+  disposition: b79f970fa4aeb14e4fb0a7c1c2bfc7fccbb3d6bced375365e629ff57921f04b2
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T09:23:37Z'
+  authority: generated
+  via: create_document
