@@ -1,7 +1,19 @@
+Task: task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la
+Title: los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea
+Status: active
+Current node: ritual-testing
+Task type: task.docs
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T02:24:33Z'
+  at: '2026-11-20T02:00:53Z'
   authority: generated
   via: save_document_payload
 id: task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la
@@ -13,9 +25,7 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- desk/rituals/context-review.md
-- desk/rituals/phase.md
-- a64b0b0e8ca9b1b01966cac650c668be4b6add7f
+- desk/drawer/plans/gates-por-tipo/dag.yaml
 depends_on: []
 pills: []
 files:
@@ -25,7 +35,7 @@ task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-los-rituales-context-review-y-phase-describen-la-revision-de-contexto-con-deskops-review-y-la-regla
+- atom-code-changes-close-with-tests-and-commit
 ---
 
 # los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea
@@ -67,3 +77,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 context-review y phase nombran deskops review preflight|bundle|dispose y la regla de activacion, no instruyen pi manual, doctor no da hallazgos nuevos y tests/test_skill_cli_drift.py pasa.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

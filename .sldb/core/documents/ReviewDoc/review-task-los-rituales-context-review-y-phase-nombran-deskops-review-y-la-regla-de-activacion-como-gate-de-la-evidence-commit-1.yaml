@@ -1,0 +1,37 @@
+name: review-task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la-evidence-commit-1
+path: desk/reviews/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la/evidence-commit-1.md
+source_hash: c9ce9b591e7640d860eb7ad38967ddec6821194c794c38e6fa12cb0e207b2d09
+content_hash: aa2ff832a0ff6eb11397d7973f78089f3e7b8fa62caa4b4c26b3921f54c53720
+field_hashes:
+  id: f84e84f480e05fef7d6680655b89aa3313c3796d5c9115b5c356b132c8aec99f
+  title: 8a584b0a42c4f7fc4ba7fa42dc096e199dad398e403dfcf1f1d655167e5e5386
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: effd62c85bfdb0119906e3af70f127c8a253f37c0458cd3e64ae3ebc80fd78a8
+  subject: 594737f7e13923fb0fa13d7851988e5a964713b53ecb75619c873d1866a9c657
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 2b4c8bc5d90e6362341516a748328a7f819bb240450611e1bf2436a17308a730
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 39b6327785cea67e5bf7c36965f36283884c4663499df4fe54fd2fbbd45e751b
+  created_at: 8613ab929c50c7ba854839fe4fa8ba172d8fe6d62208dc37af8755a9f914e1b2
+  disposed_at: 8613ab929c50c7ba854839fe4fa8ba172d8fe6d62208dc37af8755a9f914e1b2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f9959b5ee42bef5126bb372727179857be371f57d696d7a3bcfa130f10b0825e
+  disposition: 99c7cf52c73f0171157575a19012652f97ac73dbdf340b4c712729e7df19e4af
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T02:24:59Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,3 @@
+deskops show ritual context-review --root . | grep -E "pi --provider|preflight.md" -> 0 matches
+deskops doctor --root . -> exit 1, only pre-existing findings (lost ReviewDoc subjects, absolute paths, registry); none new on rituals
+pytest -q tests/test_skill_cli_drift.py (venv /tmp/ws-venv) -> 2 passed

@@ -1,0 +1,43 @@
+# Tester validation evidence
+# Task: task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la
+# Commit: a64b0b0e8ca9b1b01966cac650c668be4b6add7f
+# Worktree: /tmp/deskops-test-a64b0b0e (detached at the commit, removed after the run)
+# Python: /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python 3.13.18, pytest 9.1.1
+# The repo .venv (../.venv) is broken in this container: it declares Python 3.12 but
+# /usr/bin/python3.12 is absent, so its pytest binary cannot start. The sldb venv above
+# runs the same tests against the clean worktree.
+
+$ cd /tmp/deskops-test-a64b0b0e
+$ PYTHONPATH=$PWD TMPDIR=/tmp /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_skill_cli_drift.py
+..                                                                       [100%]
+2 passed, 1 warning in 0.03s
+PYTEST_RC=0
+
+$ PYTHONPATH=$PWD /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m deskops show ritual context-review --root .
+Ritual: ritual-context-review
+...
+SHOW_CONTEXT_RC=0
+$ grep -nE 'pi --provider|preflight\.md' <(show ritual context-review)
+(no matches; rc=1)
+required tokens found: deskops review preflight, deskops review bundle, deskops review dispose,
+--engine, runtime-pi-deepseek-flash, desk/reviews/<task>/
+
+$ PYTHONPATH=$PWD /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m deskops show ritual phase --root .
+Ritual: ritual-phase
+...
+SHOW_PHASE_RC=0
+required tokens found: rule-activation-<task-type>, rule-activation-task-docs, task_activates
+$ grep -nE 'pi --provider|preflight\.md' <(show ritual phase)
+(no matches; rc=1)
+
+$ PYTHONPATH=$PWD /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m deskops doctor --root .
+DOCTOR_RC=1
+31 lines of findings, all pre-existing/environmental in the detached /tmp worktree:
+registry entries (graph_ui, scion, sldb, spec2viz, Chatbot_Infra) do not resolve from /tmp.
+$ grep -nE 'context-review|ritual-phase|desk/rituals/(context-review|phase)\.md|RitualDoc:(context-review|ritual-phase)' doctor.out
+(no matches)
+No new ritual findings. The same check in the real repo also returned no finding naming
+context-review or ritual-phase; there rc=1 comes from unrelated pre-existing ReviewDoc anchors.
+
+VERDICT: PASA - both rituals describe the deskops review flow and the activation-rule gate;
+the required drift test passes; doctor adds no ritual findings.
