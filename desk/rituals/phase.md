@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-10-31T04:05:20Z'
+  at: '2026-11-20T01:58:58Z'
   authority: generated
-  via: update_document
+  via: save_document_payload
 # ritual-xxx
 id: ritual-phase
 # Ordered prose steps; not document references
@@ -12,8 +12,11 @@ steps:
   root, packages and every leaf with their dependency interfaces. Compare reformulation,
   ambiguities and detailed non-executing dry-run with intent; correct briefs and split
   large nodes into children and edges before selecting ready leaves.
-- 1. Identify the ready dependency layer of tasks whose prerequisites are satisfied
-  and whose planned changes do not overlap operationally.
+- '1. Identify the ready dependency layer of tasks whose prerequisites are satisfied
+  and whose planned changes do not overlap operationally. The gate that lets a task
+  pass to execution is the rule rule-activation-<task-type> in desk/lifecycle (for
+  example rule-activation-task-docs): the task_activates transition checks that rule,
+  which requires the review receipts its type asks for.'
 - '1. Confirm each task has a fresh execution context bundle: the task doc, board-routed
   instructions, bound pills, linked atoms, linked files, and validation targets.'
 - 1. Run the execution ritual for each task in the phase before implementation begins.

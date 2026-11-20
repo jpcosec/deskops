@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-10-31T04:05:18Z'
+  at: '2026-11-20T01:58:41Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # ritual-xxx
 id: ritual-context-review
 # Ordered prose steps; not document references
@@ -11,25 +11,29 @@ steps:
 - '1. Map the multilevel DAG: root, packages, leaves and dependency edges. Start with
   the question at the current node; review every node and its edges, not only the
   root.'
-- '2. Save input.md as an explicit concatenation of FILE:<path> headers and UTF-8
-  texts in documented order. Hash the exact saved bytes with SHA-256, without additional
-  normalization. Evidence directory: runs/subagents/<run-dir>/context-review/<node-id>/<bundle-sha256>/attempt-<n>/.'
-- '3. Launch a new ephemeral process for each attempt. On this machine the verified
-  profile is: pi --provider deepseek --model deepseek-flash --thinking low --offline
-  --no-session --no-context-files --no-skills --no-extensions --no-prompt-templates
-  --no-tools --system-prompt <reviewer-role> --print @<input.md>. Save the command,
-  provider/model/profile and reason for cheap selection. No --continue or --resume.
-  Record isolation flags and supplied input as operational evidence; this does not
-  assert knowledge of provider internal memory.'
+- '2. Build the reviewed input with deskops review preflight <task> (TaskDoc-only)
+  or deskops review bundle <task> (cold bundle); for a plan node use deskops review
+  node <plan> <node-id>. The builder saves input.md as an explicit concatenation of
+  FILE:<path> headers and UTF-8 texts in documented order and hashes the exact saved
+  bytes with SHA-256. Evidence directory: runs/subagents/<run-dir>/context-review/<key>/<sha>/attempt-<n>/.'
+- 3. Each attempt is a new ephemeral reviewer process launched by deskops review with
+  the isolation flags of its RuntimeProfileDoc. The default engine is the runtime-pi-deepseek-flash
+  profile under desk/runtimes/; --engine <profile> picks another RuntimeProfileDoc.
+  Do not run the reviewer by hand. The command, profile and reason for cheap selection
+  are recorded in the run evidence and the receipt. No --continue or --resume.
 - '4. Instruct the non-executing reviewer to restate the objective and scope, enumerate
   ambiguities and produce a detailed dry-run: which supplied sources it would read,
   proposed edits, dependency/interface implications, commands it would run later and
   expected validation outcomes. It may name commands but must not run them, inspect
   unsupplied sources or edit files.'
-- 5. Save output and coordinator comparison with owner intent, including missing guardrails,
-  required textual corrections and disposition. A word such as APTO is never sufficient.
-  Keep transport/quota/unavailable-model failures separately from comprehension findings;
-  stop or retry an available cheap model with explicit reason, without expert rescue.
+- 5. deskops review writes the reviewer output and a receipt (ReviewDoc) under desk/reviews/<task>/.
+  Compare it with owner intent, including missing guardrails and required textual
+  corrections, then record the disposition with deskops review dispose <review-id>
+  --verdict accepted|rejected --reason <why>. A word such as APTO is never sufficient.
+  Transport/quota/unavailable-model failures are recorded as technical (verdict incomplete)
+  and kept separate from comprehension findings; retry an available cheap model with
+  explicit reason (--force --reason when the input already has a good attempt), without
+  expert rescue.
 - 6. Use misunderstandings as feedback on the brief. Correct its text; split oversized
   or ambiguous nodes recursively into coherent children and explicit dependency edges.
   Review root, packages and all leaves, plus contracts across edges. Do not execute
@@ -39,10 +43,11 @@ steps:
   reviews, including dependent nodes whose supplied contract changed; unrelated typos
   do not revoke every review. Preserve previous attempts for traceability.
 - '8. Before Executor dispatch, run two separate cheap roles under this protocol:
-  TaskDoc-only preflight (save reformulation also at runs/subagents/<run-dir>/preflight.md),
-  then cold-bundle coverage using TaskDoc, routed instructions/rituals, bound pills,
-  linked atoms/files and validation targets supplied explicitly. The coordinator accepts
-  both comparisons before dispatch.'
+  deskops review preflight <task> (TaskDoc-only reformulation) and deskops review
+  bundle <task> (cold-bundle coverage with TaskDoc, routed instructions/rituals, bound
+  pills, linked atoms/files and validation targets supplied explicitly). The coordinator
+  disposes both receipts with deskops review dispose before dispatch; deskops review
+  status <task> shows whether each is accepted for the current input.'
 - 9. Only reviewed ready leaves may enter the execution ritual. Expert council review
   of design, an Executor implementation and a fresh independent Tester are separate
   gates; none substitutes for cheap comprehension or human product decisions.
