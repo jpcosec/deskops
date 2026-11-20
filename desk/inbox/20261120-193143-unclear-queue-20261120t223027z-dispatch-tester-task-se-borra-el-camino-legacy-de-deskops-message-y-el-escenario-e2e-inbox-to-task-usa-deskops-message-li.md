@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-20T23:22:03Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,11 +13,15 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-20T19:31:43'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-20T20:21:53'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: 'Resuelto: el tester falló por un RunDoc de otra sesión ya trackeado;
+  se desrastreó con sldb docs untrack, se re-encoló y dio PASA. Tarea de fondo registrada
+  (dispatch con RunDoc ya trackeado).'
 ---
 
 # queue: 20261120T223027Z-dispatch-tester-task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li

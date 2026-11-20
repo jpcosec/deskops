@@ -1,14 +1,16 @@
 name: 20261120-193143-unclear-queue-20261120t223027z-dispatch-tester-task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
 path: desk/inbox/20261120-193143-unclear-queue-20261120t223027z-dispatch-tester-task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
-source_hash: d1c4e082c7dd59b3d37206cd7e6f79e50deac050c4f3ba2ea10226bb282278cc
-content_hash: 934500ab4c3355c3d9dac0ba54d580cd353ea1fa80bc5c2c02c7d3447df89692
+source_hash: ba0735770bf4fc66c1a1dcad5f77e30440f504a148fd0182a79209c36f5b8068
+content_hash: f059e51d0bb1c7e37655585e3c944719195670a04f456cec3ce2def688f63b2a
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 0e5d930db4008f464e88cc62a54fd9e3a8062bffb2b3b80544eb92e07f33e4bf
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 7dd7a8435273ea40599956d28be2fbaf77511e95df3b37866fa983e78695b328
+  ack_reason: 04ae3cca753db430003278bc4d4d67e25004e6e1518c5f4727907433ad06730e
   title: 213177b14fd6e6c177fceeed03288d45c389adc41109ea3b67c6b890305be13b
   body: 5c8fcd333fbf522b00a285154d6a4d2ad507697dd92b259a30c599104aa201d2
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-20T23:22:03Z'
+  authority: generated
+  via: save_document_payload

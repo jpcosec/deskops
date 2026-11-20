@@ -1,14 +1,16 @@
 name: 20261120-194016-suggestion-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta
 path: desk/inbox/20261120-194016-suggestion-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta.md
-source_hash: b1fc570c9945cd8dbbfd19a3b1f81a88c3ae6c186d7eb706d3bb6c01aa94ec9c
-content_hash: 1e8fe2853f41d1836f89af31952a3b0fcca7e8087ae06bc55f2763c0b226d262
+source_hash: d30056471e5b8a10a9c3b7a97d4d90d052931576347cd4a831588770992c33c4
+content_hash: 1ef9594705e06ebd48f15066752cad4a6ebad1648973f2a18ef8a4f79cae740d
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 3c894b699286d85f1511fdbcb79fa8e20b368f377466132c43b01c94611d9e89
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 20032625a7fed63d9f13ac05af562b0f7a7f1c03090dcf29e97599e6289ad8cc
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: ef1f280b243a6d35489d4acd1a6a0c1a5aec9f6fbb454c99580b0a90af9ca62b
+  ack_reason: 5089710441d78bd33dacb1497047c5e2bc7725a86c25dc0ef9a3ede36d0febb8
   title: 675a977ee560cfeb53df5fb2d75550ad9e70bce175a019f81c94282f9a8d2dcc
   body: 36d657853c8bd02a03b452b6e5e33b4cca907343a0bedce6029473a90388afe4
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-20T23:24:34Z'
+  authority: generated
+  via: save_document_payload

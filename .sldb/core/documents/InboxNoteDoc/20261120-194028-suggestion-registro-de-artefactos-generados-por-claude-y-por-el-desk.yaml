@@ -1,14 +1,16 @@
 name: 20261120-194028-suggestion-registro-de-artefactos-generados-por-claude-y-por-el-desk
 path: desk/inbox/20261120-194028-suggestion-registro-de-artefactos-generados-por-claude-y-por-el-desk.md
-source_hash: 8334e891ab6f0a517fe1894356b101c6b8874323acf3e9a19b978c89b465da60
-content_hash: d0481343f5f42ebc97a1ba0b405239806f983010df8fb371c65853eefa3d8759
+source_hash: 4f70571acf86dd8512ed9f397b7cb6cd7854cc74cac64922cad5033eb899af65
+content_hash: 694639f949dd950934434d9565fca6c7b71822093a08fbe84b9465945602c8f4
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 3c894b699286d85f1511fdbcb79fa8e20b368f377466132c43b01c94611d9e89
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: d6303ccc3bf067ac5995edd570771fc4322f4ec301927b68f255a7c76b4ca72d
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: ed89be9f82609cea1907b8733ebf745b7f59760fe82421815ba739f1408fb2ca
+  ack_reason: 10cecf72ce5a4a9b10d6750b22d49a9090ff49f75b84151fd67192263bfcc6d6
   title: 856ba704d42f129ac51e509d91bc1a93142896f204f6f5de62c2962438a92002
   body: b98c56f7ba0e37f65a4944151b2a92b632831fc60b57a2f1803e7ab4436c9406
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-20T23:28:38Z'
+  authority: generated
+  via: save_document_payload
