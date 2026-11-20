@@ -294,6 +294,14 @@ Behavior (see `desk/atoms/atom-atom-folder-axis-is-one-configurable-tag-namespac
 - `deskops list atoms --axis-value <value>` filters by the axis value; the axis value is shown in list output.
 - `deskops atoms reorganize [--dry-run]` idempotently moves existing atoms into their axis folders and retargets tracked paths in the `.sldb` store.
 
+## Where is the rule for X?
+
+Configuration is documents. When a task of type T may start is `desk/lifecycle/rule-activation-<T>.md`; what it needs to close is `desk/lifecycle/rule-closeout-<T>.md`; what a transition does to the task is the `attributes` of the `desk/lifecycle/<node>-<verb>.md` relation. `sldb rules explain <rule> <Model>:<id> --store .sldb --pythonpath desk` says whether a rule holds on a task, and `deskops next <task> --root .` says why a task does not advance. The full map is in `docs/configuration.md`.
+
+## How do I add a task type?
+
+Write a `TaskDoc` subclass in `desk/models/<file>.py` that fixes `task_type`, write its `RuleDoc` as `desk/lifecycle/rule-activation-<type>.md`, and run `deskops desk update --apply --root .`. Then `deskops add task --task-type <type>` creates tasks of the new type and `deskops advance task` applies your rule. The tested recipe, with the view recipe, is in `docs/configuration.md`.
+
 ## How do I validate changes in this repo?
 
 Run the test suite from the repo root.

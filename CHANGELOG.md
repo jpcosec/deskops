@@ -20,6 +20,7 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Added
 
+- `docs/configuration.md` maps deskops' configuration (models and task types, receipts, `RelationDoc` attributes, activation and closeout `RuleDoc`s, consistency, `ViewDoc`, graph, seeds) to its place in the package and in the desk and to what sldb runs, with a recipe to declare a new task type (`desk/models/*.py`, `desk update --apply`, its own rule, `sldb rules explain`, `deskops advance`) and one for a new view; `tests/test_docs_recipes.py` runs both in a temporary desk (the task stays blocked and then activates). The operator manual and the workflow policy reference link to it and both FAQs answer `Where is the rule for X?` and `How do I add a task type?`.
 - `deskops init` and `deskops desk update --apply` install sldb's merge driver (`install_merge_driver`) for the desk store when the desk is a git repo; idempotent, silent outside git or with an older sldb, a git failure warns on stderr (`tests/test_desk_merge_driver.py`).
 
 - `queue_jobs.<kind>.retry_exit_codes` (optional list, default empty): `deskops queue run` leaves a job whose command exits with one of those codes in `pending` (adds an `attempts` counter to the job and prints `en espera: <id> ocupado (exit <n>)`, no `unclear` note, exit 0) instead of moving it to `failed`; other non-zero codes still fail (`tests/test_queue.py`).

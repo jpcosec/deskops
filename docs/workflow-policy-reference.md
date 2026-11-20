@@ -44,6 +44,7 @@ This reference summarizes the current workflow policy used by `deskops`.
 - [Deferred Work](../desk/drawer/README.md) - Waiting items
 - [Context Review Ritual](../desk/rituals/context-review.md) - Cheap recursive brief comprehension
 - [Phase Ritual](../desk/rituals/phase.md) - Dependency-layer execution and closeout
+- [Configuration map](configuration.md) - Where each rule, model and view lives, and how to declare a new task type or view
 
 ---
 
