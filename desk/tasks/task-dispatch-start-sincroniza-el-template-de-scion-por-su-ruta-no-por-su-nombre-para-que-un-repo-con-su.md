@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T19:22:46Z'
+  at: '2026-11-20T20:00:28Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- 0172198901f0cc92f7255a9887cbc258f837fda5
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta
 ---
 
 # dispatch start sincroniza el template de scion por su ruta, no por su nombre, para que un repo con su propio .scion no lo pierda

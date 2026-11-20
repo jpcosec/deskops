@@ -677,6 +677,10 @@ include:
     name: run-deskops-e-ae8bbbddff67
   - path: runs/subagents/exec-deskops-t-31247d0735b6-testing/run.md
     name: run-deskops-t-31247d0735b6
+  - path: runs/subagents/exec-deskops-e-1ae7acd5a6d9/run.md
+    name: run-deskops-e-1ae7acd5a6d9
+  - path: runs/subagents/exec-deskops-t-9a7c347eef10-testing/run.md
+    name: run-deskops-t-9a7c347eef10
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2135,6 +2139,14 @@ include:
     name: review-task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su-preflight-1
   - path: desk/reviews/task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su/bundle-1.md
     name: review-task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su-bundle-1
+  - path: desk/reviews/task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su/evidence-tests-1.md
+    name: review-task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su-evidence-tests-1
+  - path: desk/reviews/task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su/evidence-commit-1.md
+    name: review-task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su-evidence-commit-1
+  - path: desk/reviews/task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su/evidence-atom-1.md
+    name: review-task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su-evidence-atom-1
+  - path: desk/reviews/task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su/evidence-materialization-1.md
+    name: review-task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
