@@ -404,6 +404,9 @@ include:
   - desk/materializations/materialization-workflow-docs-operator-manual-md.md
   - desk/materializations/materialization-workflow-tests-fixtures-golden-help-deskops-promote-txt.md
   - desk/materializations/materialization-workflow-xtures-golden-help-deskops-promote-inbox-to-drawer-task-txt.md
+  - desk/materializations/materialization-dispatch-deskops-dispatch-py.md
+  - desk/materializations/materialization-dispatch-docs-operator-manual-md.md
+  - desk/materializations/materialization-dispatch-tests-test-dispatch-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -670,6 +673,10 @@ include:
     name: run-deskops-e-b44ae6af923e
   - path: runs/subagents/exec-deskops-t-2ec2a62cb644-testing/run.md
     name: run-deskops-t-2ec2a62cb644
+  - path: runs/subagents/exec-deskops-e-ae8bbbddff67/run.md
+    name: run-deskops-e-ae8bbbddff67
+  - path: runs/subagents/exec-deskops-t-31247d0735b6-testing/run.md
+    name: run-deskops-t-31247d0735b6
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2116,6 +2123,14 @@ include:
     name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-preflight-1
   - path: desk/reviews/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise/bundle-1.md
     name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-bundle-1
+  - path: desk/reviews/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise/evidence-tests-1.md
+    name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-evidence-tests-1
+  - path: desk/reviews/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise/evidence-commit-1.md
+    name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-evidence-commit-1
+  - path: desk/reviews/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise/evidence-atom-1.md
+    name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-evidence-atom-1
+  - path: desk/reviews/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise/evidence-materialization-1.md
+    name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

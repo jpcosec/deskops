@@ -1,0 +1,25 @@
+name: materialization-dispatch-docs-operator-manual-md
+path: desk/materializations/materialization-dispatch-docs-operator-manual-md.md
+source_hash: 6ae1efeef4e9036e237b9315f090ca222ef8e3f4bfa81bd43a5d0e7bdc318428
+content_hash: 5f814904a104aef7c9c8b1da7c88bf0525222f0c004b061c7bfb786f36815a2a
+field_hashes:
+  id: eb3f93733f1180939f70261bfef19c843650110abc9228c8095849785dee43ad
+  title: 26ce5510939f261813cf241833a556c356178f4a76e30bdf93ff5f67a2681e00
+  source_atoms: 54e163db772c32136f81e7754ae33436767a25ca7bac476a7292c527d57c2feb
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 3bed947441017806533d525d02305a7a0ba4430336a3781093dbc5810d8c74a6
+  intent: f18023fa99858d0efbad528cc8d8fa9f32274df3d7ae3eacbe36b4fa517412de
+  validation: 8a6553f8ae234d1a5b594a142028d442e7f3b21988dabc472b99561d73621718
+  tags: f30d545e32452daf97627c990ab27f8dbd56f3c2e7e49c86826acd38cfb84e8f
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:dispatch
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T18:17:55Z'
+  authority: generated
+  via: create_document

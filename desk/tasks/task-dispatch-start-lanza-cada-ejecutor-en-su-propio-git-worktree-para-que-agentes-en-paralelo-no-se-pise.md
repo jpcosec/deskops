@@ -1,25 +1,35 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T12:22:36Z'
+  at: '2026-11-20T18:17:37Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- docs/operator-manual.md
+- tests/test_dispatch.py
+- 9d60527943bea5a9a6935dff6937b4416728aed1
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- docs/operator-manual.md
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-cada-ejecutor-de-dispatch-trabaja-en-su-propio-git-worktree-y-reap-integra-su-rama
 ---
 
 # dispatch start lanza cada ejecutor en su propio git worktree, para que agentes en paralelo no se pisen el árbol de trabajo
