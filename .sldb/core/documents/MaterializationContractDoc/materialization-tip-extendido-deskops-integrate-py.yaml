@@ -1,0 +1,25 @@
+name: materialization-tip-extendido-deskops-integrate-py
+path: desk/materializations/materialization-tip-extendido-deskops-integrate-py.md
+source_hash: 237947e3886f574a9593c2f35dbccf5aec86ebcabf75af53aa3c53aba70a740f
+content_hash: f34802e3babd4f231f355bfcdc4568aa3f54ce6ad35e47838c12292403bed0e6
+field_hashes:
+  id: 0b9997b44efec5f45ed004ec31c08e57e9efc1b92c40a36c0c86062b29f64cea
+  title: 181eabea42ba55367e5da5f9e29d744a0ad02638ab719b5b48388da15dbd8e1c
+  source_atoms: 5162a1b26e2e7d13b6057e2dd9216d0f2a2677174bd4f3153b525df64ff14616
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 96e31634e5d49f9d09cf6cb8ffec95c91bc69c397a2f23c28fba27c76749c5ba
+  intent: f4ae805f2aee1ad8ee42703138f57695cb4095b5b5572147748960c768fefb0e
+  validation: 309bd8700757929a997562811a2c97832046e04797c5736363cd84593312dc7c
+  tags: 65032db1e03e5284dea572e86b9855bf76a3a572761c6bc01fd3324ed696f2e1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:integrate
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T11:05:15Z'
+  authority: generated
+  via: create_document

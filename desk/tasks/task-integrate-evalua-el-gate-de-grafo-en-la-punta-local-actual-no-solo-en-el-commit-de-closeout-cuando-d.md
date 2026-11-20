@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T10:43:17Z'
+  at: '2026-11-20T11:05:05Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/integrate.py
+- tests/test_integrate.py
+- a9952c2974ae8862990ef13c6deb258837fee29c
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/integrate.py
+- tests/test_integrate.py
+- CHANGELOG.md
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-integrate-extiende-el-tip-a-head-cuando-despues-del-closeout-solo-hay-commits-de-desk
 ---
 
 # integrate evalúa el gate de grafo en la punta local actual, no solo en el commit de closeout, cuando después solo hay commits de desk

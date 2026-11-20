@@ -386,6 +386,8 @@ include:
   - desk/materializations/materialization-merge-driver-docs-operator-manual-md.md
   - desk/materializations/materialization-merge-driver-tests-conftest-py.md
   - desk/materializations/materialization-merge-driver-tests-test-desk-merge-driver-py.md
+  - desk/materializations/materialization-tip-extendido-deskops-integrate-py.md
+  - desk/materializations/materialization-tip-extendido-tests-test-integrate-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -628,6 +630,10 @@ include:
     name: run-deskops-e-3a19ddae700d
   - path: runs/subagents/exec-deskops-t-3be999334b72-testing/run.md
     name: run-deskops-t-3be999334b72
+  - path: runs/subagents/exec-deskops-e-929ddc02614b/run.md
+    name: run-deskops-e-929ddc02614b
+  - path: runs/subagents/exec-deskops-t-b732c559b3f6-testing/run.md
+    name: run-deskops-t-b732c559b3f6
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2034,6 +2040,14 @@ include:
     name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-preflight-1
   - path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/bundle-1.md
     name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-bundle-1
+  - path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-tests-1.md
+    name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-tests-1
+  - path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-commit-1.md
+    name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-commit-1
+  - path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-atom-1.md
+    name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-atom-1
+  - path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-materialization-1.md
+    name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
