@@ -2009,6 +2009,10 @@ include:
     name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-atom-1
   - path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/evidence-materialization-1.md
     name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-materialization-1
+  - path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/preflight-1.md
+    name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-preflight-1
+  - path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/bundle-1.md
+    name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
