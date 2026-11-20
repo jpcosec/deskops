@@ -1,0 +1,37 @@
+name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-evidence-materialization-1
+path: desk/reviews/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise/evidence-materialization-1.md
+source_hash: 7312e7eb9a985e1d412c19532e3774f1b8483ff16fbea741aff85f67e3bd8ab0
+content_hash: 65fd855455def4aecc77ed42262b58df2a8d5ea57e87948c6a8920d3f8dfe0a3
+field_hashes:
+  id: 53bd796cbe4227882c8c8be6c8ed3c0c15eb6908bf524520cd7b1bf1cfba77a3
+  title: 25f721b6d6c2419c943fa430235b4aedc4cfa6eda4068460dc6ee77ef784cdc1
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: ca9f5374cf0d31746779d02f44ccf7684028a6974b617f4a09b4b3a9e511af62
+  subject: fe3aad57f89dc98b45609ef1dd5979b079f2a9bfa867eb6ae66df8ab812b1aa6
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 9ac9c48daab8e0c18450d2b75f4c1bf194963e2fb6acdc1160879545330dc1d4
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: b3d49cfd08842c6c363ef2242822ce2111fca375403bf1d9afc6375f85c11b7e
+  created_at: 021d169156ade16f72573c5ce711b1be0154b1b408ec804b997d5a5785f88d0b
+  disposed_at: 021d169156ade16f72573c5ce711b1be0154b1b408ec804b997d5a5785f88d0b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 9ea6ccdd6e21430777cbda79f8c105910fd29af77ecfdfe66011323c52995585
+  disposition: f55c7b56cdc8828dfbb8db058c105eb8534a6be79fbde7c01924a95921e6dbf8
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T18:18:24Z'
+  authority: generated
+  via: create_document
