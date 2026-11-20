@@ -1,7 +1,17 @@
+Task: task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de
+Title: dispatch start lanza agentes en paralelo con el único límite físico de la máquina (gate de memoria), en vez de uno solo por proyecto scion
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T00:52:48Z'
+  at: '2026-11-20T00:39:22Z'
   authority: generated
   via: save_document_payload
 id: task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de
@@ -13,23 +23,14 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- deskops/dispatch.py
-- docs/operator-manual.md
-- tests/test_dispatch.py
-- bdf06f810e1c045a139c17dc9e72f9a7904bb9e1
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/dispatch.py
-- docs/operator-manual.md
-- tests/test_dispatch.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-dispatch-start-solo-se-frena-por-la-memoria-de-la-maquina-o-porque-la-tarea-ya-tiene-agente
+atoms: []
 ---
 
 # dispatch start lanza agentes en paralelo con el único límite físico de la máquina (gate de memoria), en vez de uno solo por proyecto scion
@@ -69,3 +70,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tests nuevos y los de dispatch pasan; la suite completa la corre integrate.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

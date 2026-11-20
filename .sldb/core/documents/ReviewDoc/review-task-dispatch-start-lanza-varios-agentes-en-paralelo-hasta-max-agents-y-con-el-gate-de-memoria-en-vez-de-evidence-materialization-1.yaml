@@ -1,0 +1,37 @@
+name: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-evidence-materialization-1
+path: desk/reviews/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de/evidence-materialization-1.md
+source_hash: 5de7a53eed1bb1db1aee54e309351ee5097959d36fec282b57a2f3ca66386045
+content_hash: 12e443ee926e24eaf87c59732127552b947ddd241995abb7955f1f52983edf7c
+field_hashes:
+  id: a3a8e9c794fac080c4d5eeb70faa22a80e1ac898bfda4c04efed6cfa627a7d87
+  title: efb183642b5d3e08b651a6291257d2e2fba731d07cfffc3b2d43a25f730f43bc
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: c3efd646e886c2689ed575f2c07062be233ce39eef6cb0b5c153671901d17212
+  subject: 35a90f549c06c66b6a006cb8189d5d961b4eb01e7f2126cc09bef8794758818d
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: f427c8d0145539dfc2b60b9c63ddc39258fe9f7886a0d01f1b638a3e5a363e63
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 73043faf2c6fedcbff0f0cb4e3c52b6e6319d624fad855adeed89ff7ef22a504
+  created_at: 1201ec10948c33f017b4ca7e5624000b5bc6e735f09fffa213d268ff55d771fb
+  disposed_at: 1201ec10948c33f017b4ca7e5624000b5bc6e735f09fffa213d268ff55d771fb
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: ed00b203bb10bbc7c7c691b5dbef987e8a185a09bae3fba345660572d5b83518
+  disposition: b797c771e7f2b318b384ff3178af3aded14f17f84d7b8880f066a5af08a5e75f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T00:53:32Z'
+  authority: generated
+  via: create_document

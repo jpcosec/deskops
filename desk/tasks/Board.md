@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T18:43:21Z'
+  at: '2026-11-20T00:55:48Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -49,7 +49,6 @@ tasks:
 - desk/tasks/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la.md
 - desk/tasks/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan.md
 - desk/tasks/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d.md
-- desk/tasks/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -130,4 +129,3 @@ _Generated from the task references above._
 - los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea [draft] - desk/rituals/context-review.md describe la revision de contexto como deskops review preflight y deskops review bundle (con --engine <perfil> y el default runtime-pi-deepseek-flash), su recibo en desk/reviews/<tarea>/ y su disposicion con deskops review dispose; desk/rituals/phase.md nombra la regla rule-activation-<tipo> como el gate que deja pasar una tarea a ejecucion. Ninguno de los dos instruye correr pi a mano.
 - build_neighbours de absolute_paths resuelve el path del registro con resolve_registered_root y expande la virgulilla [draft] - build_neighbours resuelve cada entrada del registro con resolve_registered_root, igual que doc_access.repository_root; una entrada con la virgulilla o relativa resuelve al mismo directorio por los dos caminos.
 - queue run sigue con los trabajos siguientes cuando uno queda en espera por retry_exit_codes, en vez de detener la cola [draft] - Cuando un trabajo vuelve a pending por retry_exit_codes, queue run lo saltea en esa corrida y sigue con los siguientes pendientes en orden (con --all), así un dispatch-reap o un integrate que está detrás corre aunque haya un ejecutor esperando cupo. Un trabajo que ya quedó en espera en esa corrida no se reintenta hasta la próxima, sin bucle. Sin --all se corre un solo trabajo como hoy. Un fallo sigue deteniendo la cola.
-- dispatch start lanza agentes en paralelo con el único límite físico de la máquina (gate de memoria), en vez de uno solo por proyecto scion [draft] - dispatch start lanza un agente si la memoria pasa el gate de la cola (wait_reason de deskops/queue.py: disponible >= queue_min_available_gb y PSI avg60 < queue_max_psi_avg60) y si la misma tarea no tiene ya un agente running (por el prefijo de identidad de scion_child_identity de esa tarea). No hay tope configurable de agentes: el límite es físico. Si no se cumple, sale con EXIT_BUSY (3) e imprime el motivo ('ocupado: memoria ...' o 'ocupado: la tarea ya tiene agente <nombre>'). Con retry_exit_codes [3] la cola lo reintenta.
