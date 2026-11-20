@@ -1,0 +1,100 @@
+## main...origin/main [ahead 6]
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M deskops/cli/commands/message.py
+ M tests/e2e_agent/scenarios/inbox-to-task.yaml
+ M tests/test_inbox_promote_cli_gaps.py
+ M tests/test_message_cli.py
+ M tests/test_repo_identity.py
+?? .sldb/core/documents/RunDoc/run-deskops-e-b44ae6af923e.yaml
+?? desk/inbox/20261120-125424-unclear-queue-20261120t152717z-integrate-task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s.md
+?? runs/subagents/20261116-170649/
+?? runs/subagents/20261116-170855/
+?? runs/subagents/20261116-202233/
+?? runs/subagents/20261116-202327/
+?? runs/subagents/20261116-213327/
+?? runs/subagents/20261116-213418/
+?? runs/subagents/20261116-230533/
+?? runs/subagents/20261116-230642/
+?? runs/subagents/20261117-012855/
+?? runs/subagents/20261117-012922/
+?? runs/subagents/20261117-012951/
+?? runs/subagents/20261117-013045/
+?? runs/subagents/20261117-025329/
+?? runs/subagents/20261117-025359/
+?? runs/subagents/20261117-025511/
+?? runs/subagents/20261117-025544/
+?? runs/subagents/20261117-025620/
+?? runs/subagents/20261117-043714/
+?? runs/subagents/20261117-045616/
+?? runs/subagents/20261117-115857/
+?? runs/subagents/20261117-115915/
+?? runs/subagents/20261117-115941/
+?? runs/subagents/20261117-115958/
+?? runs/subagents/20261117-120023/
+?? runs/subagents/20261117-120041/
+?? runs/subagents/20261117-120111/
+?? runs/subagents/20261117-120133/
+?? runs/subagents/20261117-120151/
+?? runs/subagents/20261117-120211/
+?? runs/subagents/20261117-120232/
+?? runs/subagents/20261117-120258/
+?? runs/subagents/20261117-120319/
+?? runs/subagents/20261117-120341/
+?? runs/subagents/20261117-120407/
+?? runs/subagents/20261117-120426/
+?? runs/subagents/20261117-133437/
+?? runs/subagents/20261117-133508/
+?? runs/subagents/20261117-133603/
+?? runs/subagents/20261117-133620/
+?? runs/subagents/20261119-004318/
+?? runs/subagents/20261119-004401/
+?? runs/subagents/20261119-045520/
+?? runs/subagents/20261119-045538/
+?? runs/subagents/20261119-124249/
+?? runs/subagents/20261119-124309/
+?? runs/subagents/20261119-140901/
+?? runs/subagents/20261119-140918/
+?? runs/subagents/20261119-174322/
+?? runs/subagents/20261119-174357/
+?? runs/subagents/20261119-214249/
+?? runs/subagents/20261119-214304/
+?? runs/subagents/20261119-214325/
+?? runs/subagents/20261119-214347/
+?? runs/subagents/20261120-051300/
+?? runs/subagents/20261120-051337/
+?? runs/subagents/20261120-084356/
+?? runs/subagents/20261120-084416/
+?? runs/subagents/20261120-104332/
+?? runs/subagents/20261120-104354/
+?? runs/subagents/20261120-161329/
+?? runs/subagents/20261120-161353/
+?? runs/subagents/exec-deskops-e-44a082df5dbe/board.txt
+?? runs/subagents/exec-deskops-e-44a082df5dbe/brief.md
+?? runs/subagents/exec-deskops-e-44a082df5dbe/delivery.patch
+?? runs/subagents/exec-deskops-e-44a082df5dbe/git-status.txt
+?? runs/subagents/exec-deskops-e-44a082df5dbe/result-summary.md
+?? runs/subagents/exec-deskops-e-44a082df5dbe/task.txt
+?? runs/subagents/exec-deskops-e-44a082df5dbe/validation.log
+?? runs/subagents/exec-deskops-e-780cd9b1b487-a2/prompt.md
+?? runs/subagents/exec-deskops-e-780cd9b1b487/board.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/git-status.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/graph.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/next.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/prompt.md
+?? runs/subagents/exec-deskops-e-780cd9b1b487/result-summary.md
+?? runs/subagents/exec-deskops-e-780cd9b1b487/task.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/validation.log
+?? runs/subagents/exec-deskops-e-b44ae6af923e/
+?? runs/subagents/exec-deskops-t-4efc28be470c-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-4efc28be470c-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-a7703272a0b7-testing/prompt.md
+?? runs/subagents/exec-deskops-t-a7703272a0b7-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-a7703272a0b7-testing/validation.log
+?? runs/subagents/node-deskops-como-config/
+?? runs/subagents/node-deskops-ui/
+?? runs/subagents/node-gates-por-tipo/
+?? runs/subagents/node-workspace-documental-r2/
+?? runs/subagents/node-workspace-documental/
+?? runs/subagents/test-deskops-t-1551a4c10d58/brief.md

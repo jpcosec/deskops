@@ -1,0 +1,37 @@
+name: review-task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage-evidence-document-1
+path: desk/reviews/task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage/evidence-document-1.md
+source_hash: f724312c2d5ff49266003affa43560e0cb4841c6c72a22b439ea599dc6d3954a
+content_hash: f9f2d25d59fbf2d85a7e1f76760b806d56cc2ee20f699df4c0d27a1eac654d2d
+field_hashes:
+  id: 53daa2fa2548ddbfef2cba5b919ea1eb7fab7225e46d7deb72cd3e50d52c34f9
+  title: 2eba517885494844f835a3cc0bc0dfb3294150c6e2f3d219feda50fdf5eea351
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 64ac8e615520cd1ae43ab0d47cfc9e750a82d13f9c47d468dab7cd8c982b7859
+  value: ddcc8bc6087f123e18577ce254b964133a64a6853f92b81a5951cc4d942878cc
+  subject: 0168b3ea4a20538c1929100c12590fdd6e3464df1174610964f6e3495cd52dda
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 4ce38314ae3e78f7b99b1cf4f7a687c04c3ca11af60fe407e041a31342df7928
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: cca8c37e880c788e7f93eadd33a7003b789312eda95420775ae110c451f26fd0
+  created_at: 3e38103867409249dd0263eba92eac85cc65fa7001c5db0029465b969179f39a
+  disposed_at: 3e38103867409249dd0263eba92eac85cc65fa7001c5db0029465b969179f39a
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 9afb9d52bd5a403846c34007b0fcbce8bf63187d504df5af97d98c4bc44e4b09
+  disposition: 35ac6d0fe69e8fc39f82f60a51684e21b1f5a50976964e11a65e5cddd6c24611
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T16:26:04Z'
+  authority: generated
+  via: create_document
