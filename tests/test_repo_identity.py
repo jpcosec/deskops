@@ -94,7 +94,7 @@ def test_repo_local_desk_without_a_registry_is_its_own_authority(
 ) -> None:
     """A desk that keeps no registry must still resolve its own identity.
 
-    Without this, `deskops inbox --ack` and `deskops next` inside such a repo
+    Without this, `deskops message ack` and `deskops next` inside such a repo
     fail with "Repository id '<name>' not found in registry", which makes inbox
     triage impossible from the repository the note is addressed to.
     """

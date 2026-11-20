@@ -13,7 +13,7 @@ setup:
   - deskops add inbox-note --root . --title "Document the release process" --kind suggestion --sender-project other-project --target-project repo --created-at 2026-10-16T12:00:00 --status open --body "Please document how this repo cuts a release." >/dev/null
   - git add -A && git commit -qm "initial"
 reference:
-  - deskops inbox list --root . || deskops list inbox-notes --root .
+  - deskops message list --root .
   - deskops promote inbox-to-drawer-task document-the-release-process --root .
   - deskops add task --root . --title "Document the release process" --goal "Write down how releases are made" --scope "docs only" --task-type task.docs --validation pytest
 checks:

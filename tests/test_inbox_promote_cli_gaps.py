@@ -1,8 +1,8 @@
 """Regression tests for the CLI gaps reported in desk/inbox/.
 
-Covers the inbox note:
-  - 20260827-160657 "CLI gaps: inbox --root, promote deja notas tracked
-    huerfanas, sin listado de drawer"
+Covers the inbox note 20260827-160657 (CLI gaps): listing a desk's messages by
+--root (today `deskops message list --root`), promote leaving orphan tracked
+notes, and no drawer listing.
 
 Drawer -> active task promotion was removed rather than repaired: the drawer
 is loose by design and an active task is a compiled, fully authored bundle,

@@ -35,16 +35,13 @@ from deskops.errors import UsageError
 class MessageCLI:
     """Send, list, read, or acknowledge cross-desk messages.
 
-    Canonical surface is `deskops message {send|list|read|ack}`. The legacy
-    `deskops inbox` flag grammar routes through `_run_legacy` for backward
-    compatibility.
+    The surface is `deskops message {send|list|read|ack}`; argparse requires
+    the subcommand, so `deskops message` alone is a usage error (rc 2).
     """
 
     def run(self, args: Any) -> int:
         try:
-            if getattr(args, "message_command", None) is not None:
-                return self._run_message_command(args)
-            return self._run_legacy(args)
+            return self._run_message_command(args)
         except (SLDBStoreError, SLDBValidationError, ValueError) as exc:
             return render_error(
                 str(exc),
@@ -71,21 +68,6 @@ class MessageCLI:
             getattr(args, "format", "text"),
             type_name="DomainError",
         )
-
-    def _run_legacy(self, args: Any) -> int:
-        if getattr(args, "list", False):
-            return self._list_notes(args)
-        if getattr(args, "show", None):
-            return self._show_note(args)
-        if getattr(args, "ack", None):
-            return self._ack_note(args)
-        if not getattr(args, "message", None):
-            return render_error(
-                "Provide a message or use send/list/read/ack.",
-                getattr(args, "format", "text"),
-                type_name="DomainError",
-            )
-        return self._deliver_note(args)
 
     def _deliver_note(self, args: Any) -> int:
         target_project, desk_root = self._resolve_target(args)

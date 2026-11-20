@@ -77,6 +77,15 @@ def test_message_help_documents_transport_verbs(capsys) -> None:
     assert "deskops message send" in output
 
 
+def test_message_without_subcommand_is_a_usage_error_naming_the_verbs(capsys) -> None:
+    assert main(["message"]) == 2
+    captured = capsys.readouterr()
+    for verb in ("send", "list", "read", "ack"):
+        assert verb in captured.err
+    # A usage error, not the full help.
+    assert "Examples:" not in captured.err + captured.out
+
+
 def test_retired_inbox_alias_is_an_unknown_command(capsys) -> None:
     assert main(["inbox", "--list"]) == 2
     assert "invalid choice: 'inbox'" in capsys.readouterr().err
