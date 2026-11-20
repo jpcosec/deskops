@@ -118,7 +118,37 @@ class SLDBBootstrap:
                 print(f"Error: {exc}")
                 return 1
 
+        self.ensure_merge_driver(local_store)
         return self._register_models(local_store)
+
+    def ensure_merge_driver(self, store_path: Path) -> list[str]:
+        """Install sldb's git merge driver for the store when its desk is a git repo.
+
+        Idempotent. Outside git, or with an sldb that has no `install_merge_driver`, it does
+        nothing; a git failure is reported on stderr and does not break the caller.
+        Returns the `.gitattributes` lines and git config keys it wrote.
+        """
+        try:
+            from sldb.api.stores.merge_driver_install import install_merge_driver
+        except ImportError:
+            return []
+        try:
+            inside = subprocess.run(
+                ["git", "-C", str(store_path.parent), "rev-parse", "--is-inside-work-tree"],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+        except OSError:
+            return []
+        if inside.returncode != 0 or inside.stdout.strip() != "true":
+            return []
+        try:
+            result = install_merge_driver(store_path)
+        except Exception as exc:
+            print(f"Warning: could not install the sldb merge driver: {exc}", file=sys.stderr)
+            return []
+        return [*result.get("attributes", []), *result.get("config", [])]
 
     def _register_models(self, store_path: Path) -> int:
         """Link the deskops owner store and inherit the model set from it.

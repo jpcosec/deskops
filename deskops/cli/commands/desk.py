@@ -208,6 +208,10 @@ class DeskCLI:
 
         inspection = inspect_desk(root)
 
+        if apply and store_dir.exists():
+            for change in SLDBBootstrap().ensure_merge_driver(store_dir):
+                print(f"Installed sldb merge driver: {change}")
+
         # Tasks with a pre-CC31 lifecycle state: the model rejects them, and sldb with them every
         # other read of the store, so --apply migrates them first, from the frontmatter (d1).
         if apply and desk_dir.exists():

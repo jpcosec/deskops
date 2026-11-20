@@ -210,6 +210,12 @@ deskops desk update --root ../sibling --apply
   what it adopted, preserved, or left for manual conversion.
 - `desk update` is a dry run by default. Add `--apply` to create a missing
   store, register missing models, and write the lifecycle graph.
+- `deskops init` and `desk update --apply` install sldb's git merge driver for
+  the desk store (`.gitattributes` lines plus `merge.sldb.*` in the repo config)
+  when the desk is a git repo, so `doctor` does not show
+  `stores/merge_driver_missing`. It is idempotent, does nothing outside git or
+  with an sldb that lacks `install_merge_driver`, and a git failure is a
+  warning on stderr.
 - `desk update` also migrates the tasks a desk migrated before CC31 left in a
   state no transition produces: an empty history with a terminal or drawer
   status at a node. The dry run lists them as `Legacy task states to migrate`;

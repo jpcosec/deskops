@@ -119,4 +119,9 @@ def lifecycle_desk(tmp_path: Path, _lifecycle_desk_template: Path) -> Path:
     _git(root, "config", "user.email", "test@example.com")
     _git(root, "config", "user.name", "Test")
     _git(root, "commit", "--allow-empty", "-q", "-m", "seed")
+    # `deskops init` inside a git repo leaves sldb's merge driver installed; the template was
+    # initialised outside git, so install it as init would.
+    from deskops.bootstrap import SLDBBootstrap
+
+    SLDBBootstrap().ensure_merge_driver(root / ".sldb")
     return root

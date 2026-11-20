@@ -19,6 +19,8 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Added
 
+- `deskops init` and `deskops desk update --apply` install sldb's merge driver (`install_merge_driver`) for the desk store when the desk is a git repo; idempotent, silent outside git or with an older sldb, a git failure warns on stderr (`tests/test_desk_merge_driver.py`).
+
 - `queue_jobs.<kind>.retry_exit_codes` (optional list, default empty): `deskops queue run` leaves a job whose command exits with one of those codes in `pending` (adds an `attempts` counter to the job and prints `en espera: <id> ocupado (exit <n>)`, no `unclear` note, exit 0) instead of moving it to `failed`; other non-zero codes still fail (`tests/test_queue.py`).
 - `dispatch.quick_gates` (optional argv in `desk/config.json`): `deskops dispatch start` makes the executor `prompt.md` require it with rc 0 before the commit and the tester's before the verdict (FALLA otherwise); without it the prompts are unchanged (`tests/test_dispatch.py`).
 - `dispatch.roles_root` (optional, in the task desk's `desk/config.json`): `deskops dispatch start` takes the RoleDocs and the template from that repo's `desk/roles`, so sldb and IR dispatch with the deskops roles; `reap` is unchanged. `deskops integrate` returns 0 with `ya integrado: <tip>` (event `ya-integrado`, no push, no suite) when the tip is already an ancestor of `origin/<branch>` (`tests/test_dispatch.py`, `tests/test_integrate.py`).
