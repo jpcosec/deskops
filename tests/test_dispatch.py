@@ -95,6 +95,7 @@ def env(lifecycle_desk: Path, tmp_path: Path) -> Env:
         },
     }
     (root / "desk" / "config.json").write_text(json.dumps(config))
+    subprocess.run(["git", "checkout", "-q", "-B", "main"], cwd=root, check=True)
     return e
 
 
@@ -359,3 +360,118 @@ def test_prompts_without_quick_gates_do_not_mention_them(env: Env, role: str) ->
     suffix = "-testing" if role == "tester" else ""
     text = (env.root / f"runs/subagents/exec-{name}{suffix}/prompt.md").read_text()
     assert "Gates rapidos" not in text
+
+
+# --- worktree por ejecutor ---------------------------------------------------
+
+
+def _git(cwd: Path, *argv: str) -> str:
+    done = subprocess.run(["git", *argv], cwd=cwd, capture_output=True, text=True)
+    assert done.returncode == 0, done.stderr
+    return done.stdout.strip()
+
+
+def _start_executor(env: Env, task: str = TASK) -> str:
+    result = env.cli("dispatch", "start", "executor", "--task", task)
+    assert result.returncode == 0, result.stdout + result.stderr
+    return next(c for c in reversed(env.calls()) if c[0] == "start")[1]
+
+
+def _commit_in(worktree: Path, filename: str, text: str) -> str:
+    (worktree / filename).write_text(text)
+    _git(worktree, "add", filename)
+    _git(worktree, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", f"add {filename}")
+    return _git(worktree, "rev-parse", "HEAD")
+
+
+def _finished(env: Env, *names: str) -> None:
+    env.agents(*({"name": n, "phase": "stopped", "labels": {"deskops.task_id": TASK, "deskops.role": "executor"}} for n in names))
+
+
+def test_start_executor_creates_own_worktree_and_branch(env: Env) -> None:
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    assert worktree.is_dir()
+    assert _git(worktree, "rev-parse", "--abbrev-ref", "HEAD") == f"deskops/{name}"
+    assert _git(worktree, "rev-parse", "HEAD") == _git(env.root, "rev-parse", "main")
+    assert ".worktrees/" in (env.root / ".git" / "info" / "exclude").read_text().splitlines()
+    assert ".worktrees" not in _git(env.root, "status", "--short")
+    prompt = (env.root / f"runs/subagents/exec-{name}" / "prompt.md").read_text()
+    assert f"{worktree}" in prompt and f"deskops/{name}" in prompt
+
+
+def test_start_tester_has_no_worktree(env: Env) -> None:
+    assert env.cli("dispatch", "start", "tester", "--task", TASK).returncode == 0
+    assert not (env.root / ".worktrees").exists()
+
+
+def test_start_refuses_when_checkout_is_not_on_base_branch(env: Env) -> None:
+    _git(env.root, "checkout", "-q", "-b", "other")
+    result = env.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode == 8 and "no en 'main'" in result.stdout
+    assert not any(c[0] == "start" for c in env.calls())
+
+
+def test_start_scion_failure_removes_the_worktree(env: Env) -> None:
+    env.env["FAKE_SCION_START_CODE"] = "7"
+    assert env.cli("dispatch", "start", "executor", "--task", TASK).returncode == 7
+    assert not list((env.root / ".worktrees").glob("*"))
+    assert "deskops/" not in _git(env.root, "branch", "--list")
+
+
+def test_two_executors_do_not_share_tree_or_index(env: Env) -> None:
+    add = env.cli("add", "task", "--title", "Second", "--goal", "g", "--scope", "s",
+                  "--validation", "pytest", "--task-type", "task.code")
+    assert add.returncode == 0, add.stdout + add.stderr
+    first = _start_executor(env)
+    second = _start_executor(env, "task-second")
+    assert first != second
+    one, two = env.root / ".worktrees" / first, env.root / ".worktrees" / second
+    _commit_in(one, "one.txt", "1")
+    (two / "dirty.txt").write_text("x")
+    assert not (two / "one.txt").exists() and not (one / "dirty.txt").exists()
+    assert _git(two, "status", "--short") == "?? dirty.txt"
+    assert _git(env.root, "branch", "--list", "deskops/*").count("deskops/") == 2
+
+
+def test_reap_fast_forwards_commit_and_removes_worktree(env: Env) -> None:
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    sha = _commit_in(worktree, "one.txt", "1")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert _git(env.root, "rev-parse", "main") == sha
+    assert not worktree.exists()
+    assert _git(env.root, "branch", "--list", "deskops/*") == ""
+
+
+def test_reap_cherry_picks_only_the_task_commit(env: Env) -> None:
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    _commit_in(worktree, "mine.txt", "m")
+    (env.root / "other.txt").write_text("o")
+    _git(env.root, "add", "other.txt")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "main moved")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert _git(env.root, "show", "--name-only", "--format=", "main") == "mine.txt"
+    assert (env.root / "other.txt").is_file()
+    assert not worktree.exists()
+
+
+def test_reap_conflict_aborts_and_keeps_worktree(env: Env) -> None:
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    _commit_in(worktree, "same.txt", "mine")
+    (env.root / "same.txt").write_text("theirs")
+    _git(env.root, "add", "same.txt")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "main same")
+    before = _git(env.root, "rev-parse", "main")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 8 and "conflicto" in result.stdout
+    assert _git(env.root, "rev-parse", "main") == before
+    assert worktree.is_dir() and f"deskops/{name}" in _git(env.root, "branch", "--list", "deskops/*")
+    assert not (env.root / ".git" / "CHERRY_PICK_HEAD").exists()

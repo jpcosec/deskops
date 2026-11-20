@@ -22,6 +22,8 @@ EXIT_BUSY = 3
 EXIT_ALIVE = 4
 EXIT_NO_ATTEMPTS = 5
 EXIT_SCION_ERROR = 6
+EXIT_WORKTREE = 8
+WORKTREES_DIR = ".worktrees"
 DONE_ACTIVITIES = ("completed", "blocked", "limits_exceeded")
 
 
@@ -74,6 +76,100 @@ def _list_agents(cfg: DispatchConfig) -> list[dict[str, Any]]:
     return [item for item in data if isinstance(item, dict)]
 
 
+def _git(root: Path, *argv: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", "-c", "core.quotepath=false", *argv], cwd=root, capture_output=True, text=True,
+        stdin=subprocess.DEVNULL,
+    )
+
+
+def _git_error(result: subprocess.CompletedProcess[str]) -> str:
+    return " ".join((result.stderr.strip() or result.stdout.strip() or f"codigo {result.returncode}").split())
+
+
+def _base_branch(root: Path) -> str:
+    """Local branch the executor branches start from and reap integrates into."""
+    integrate = DeskConfig.load(root / "desk").integrate
+    return integrate.branch if integrate is not None else "main"
+
+
+def _agent_branch(name: str) -> str:
+    return f"deskops/{name}"
+
+
+def _worktree_path(root: Path, name: str) -> Path:
+    return root / WORKTREES_DIR / name
+
+
+def _check_on_base(root: Path, base: str) -> str | None:
+    """Error text when the main checkout is not on ``base``, else None."""
+    head = _git(root, "rev-parse", "--abbrev-ref", "HEAD")
+    if head.returncode != 0:
+        return f"{root} no es un repo git: {_git_error(head)}"
+    if head.stdout.strip() != base:
+        return f"el checkout principal esta en '{head.stdout.strip()}', no en '{base}'"
+    return None
+
+
+def _ignore_worktrees(root: Path) -> None:
+    """Add ``.worktrees/`` to the local ``info/exclude`` (not versioned) when missing."""
+    located = _git(root, "rev-parse", "--git-path", "info/exclude")
+    if located.returncode != 0:
+        return
+    exclude = Path(located.stdout.strip())
+    if not exclude.is_absolute():
+        exclude = root / exclude
+    line = f"{WORKTREES_DIR}/"
+    current = exclude.read_text(encoding="utf-8") if exclude.is_file() else ""
+    if line in current.splitlines():
+        return
+    exclude.parent.mkdir(parents=True, exist_ok=True)
+    exclude.write_text(current + ("" if not current or current.endswith("\n") else "\n") + line + "\n", encoding="utf-8")
+
+
+def _remove_worktree(root: Path, name: str) -> subprocess.CompletedProcess[str] | None:
+    """Remove the worktree and branch of an agent; the failing git result, or None."""
+    path = _worktree_path(root, name)
+    if path.exists():
+        removed = _git(root, "worktree", "remove", "--force", str(path))
+        if removed.returncode != 0:
+            return removed
+    deleted = _git(root, "branch", "-D", _agent_branch(name))
+    return deleted if deleted.returncode != 0 else None
+
+
+def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
+    """Bring the commits of ``deskops/<name>`` onto the local base branch, then drop worktree and branch.
+
+    Returns (0, "") when there was nothing to do or it went through, else (code, message)
+    leaving worktree and branch in place.
+    """
+    branch = _agent_branch(name)
+    if _git(root, "rev-parse", "--verify", "--quiet", f"refs/heads/{branch}").returncode != 0:
+        return 0, ""
+    base = _base_branch(root)
+    problem = _check_on_base(root, base)
+    if problem:
+        return EXIT_WORKTREE, f"{problem}: no se integra {branch}"
+    pending = _git(root, "rev-list", "--reverse", "--cherry-pick", "--right-only", "--no-merges", f"{base}...{branch}")
+    if pending.returncode != 0:
+        return EXIT_WORKTREE, f"git rev-list {base}...{branch}: {_git_error(pending)}"
+    commits = pending.stdout.split()
+    if commits:
+        if _git(root, "merge-base", "--is-ancestor", base, branch).returncode == 0:
+            picked = _git(root, "merge", "--ff-only", "-q", branch)  # keeps the executor's shas
+        else:
+            picked = _git(root, "cherry-pick", *commits)
+            if picked.returncode != 0:
+                _git(root, "cherry-pick", "--abort")
+        if picked.returncode != 0:
+            return EXIT_WORKTREE, f"conflicto al traer {branch} a {base}: {_git_error(picked)}"
+    failed = _remove_worktree(root, name)
+    if failed is not None:
+        return EXIT_WORKTREE, f"no se pudo borrar el worktree de {name}: {_git_error(failed)}"
+    return 0, f"integrado {len(commits)} commit(s) de {branch} en {base}"
+
+
 def _run_dir_for(name: str, role: str) -> str:
     return f"runs/subagents/exec-{name}" + ("-testing" if role == "tester" else "")
 
@@ -98,8 +194,29 @@ def _quick_gates_text(role: str, quick_gates: list[str] | None) -> str:
     )
 
 
-def _role_instructions(role: str, task_id: str, quick_gates: list[str] | None = None) -> str:
-    return _base_instructions(role, task_id) + _quick_gates_text(role, quick_gates)
+def _worktree_text(worktree: Path | None, root: Path) -> str:
+    if worktree is None:
+        return ""
+    return (
+        "\n## Tu worktree\n\n"
+        f"Tu codigo vive en un worktree propio, en la rama `deskops/{worktree.name}`:\n\n"
+        f"    {worktree}\n\n"
+        "Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout "
+        f"principal {root}. Las operaciones de desk (`deskops ... --root {root}`, evidencia en "
+        "runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. "
+        "Al terminar, reap trae tus commits a la rama principal y borra el worktree.\n"
+    )
+
+
+def _role_instructions(
+    role: str, task_id: str, quick_gates: list[str] | None = None,
+    worktree: Path | None = None, root: Path | None = None,
+) -> str:
+    return (
+        _base_instructions(role, task_id)
+        + _quick_gates_text(role, quick_gates)
+        + (_worktree_text(worktree, root) if root is not None else "")
+    )
 
 
 def _base_instructions(role: str, task_id: str) -> str:
@@ -164,6 +281,15 @@ def start(root: Path, role: str, task_id: str) -> int:
             return EXIT_NO_ATTEMPTS
     name = identity["name"]
 
+    worktree: Path | None = None
+    if role == "executor":
+        base = _base_branch(root)
+        problem = _check_on_base(root, base)
+        if problem:
+            print(f"worktree: {problem}; no se lanza")
+            return EXIT_WORKTREE
+        worktree = _worktree_path(root, name)
+
     roles_root = _roles_root(root, cfg)
     _, role_doc = find_role_doc(roles_root, role_cfg.role)
     role_name = str(role_doc["name"])
@@ -204,9 +330,16 @@ def start(root: Path, role: str, task_id: str) -> int:
         + "\n\n"
         + task_path.read_text(encoding="utf-8").rstrip("\n")
         + "\n\n"
-        + _role_instructions(role, task_id, cfg.quick_gates),
+        + _role_instructions(role, task_id, cfg.quick_gates, worktree, root),
         encoding="utf-8",
     )
+
+    if worktree is not None:
+        _ignore_worktrees(root)
+        created = _git(root, "worktree", "add", "-q", "-b", _agent_branch(name), str(worktree), base)
+        if created.returncode != 0:
+            print(f"worktree: git worktree add fallo: {_git_error(created)}")
+            return EXIT_WORKTREE
 
     argv = scion_start_argv(
         identity,
@@ -224,6 +357,8 @@ def start(root: Path, role: str, task_id: str) -> int:
     started = _scion(argv)
     if started.returncode != 0:
         print(started.stderr.strip())
+        if worktree is not None:
+            _remove_worktree(root, name)
     print(f"agente {name} run_dir {run_dir}")
     return started.returncode
 
@@ -235,6 +370,7 @@ def reap(root: Path, task_id: str) -> int:
     label = _scion_task_label(task_id)  # no TaskDoc read: the task may be closed already
     alive = 0
     failed = False
+    conflict = False
     for agent in _list_agents(cfg):
         labels = agent.get("labels") or {}
         if labels.get("deskops.task_id") != label:
@@ -265,8 +401,16 @@ def reap(root: Path, task_id: str) -> int:
             failed = True
             continue
         print(f"{name} {role} {reason}")
+        if role == "executor":
+            code, message = _integrate_branch(root, name)
+            if message:
+                print(f"{name} {message}")
+            if code:
+                conflict = True
     if alive:
         return EXIT_ALIVE
+    if conflict:
+        return EXIT_WORKTREE
     return EXIT_SCION_ERROR if failed else 0
 
 

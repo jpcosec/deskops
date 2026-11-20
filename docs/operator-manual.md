@@ -755,6 +755,20 @@ deskops dispatch reap --task <task-id> --root .
   and exits with scion's code. The run_dir is `runs/subagents/exec-<name>` (the
   tester adds `-testing`); if it exists the attempt-2 identity is used, and if
   that exists too it exits 5 (`sin intentos: <task> <role>`).
+- **Worktree per executor.** `start executor` creates the branch
+  `deskops/<name>` (from the local `integrate.branch`, `main` without an
+  `integrate` block) and the worktree `<root>/.worktrees/<name>`, and adds
+  `.worktrees/` to `.git/info/exclude` (local). If the main checkout is not on
+  that branch it exits 8 and launches nothing. `prompt.md` tells the executor to
+  work and commit in that path (the workspace is mounted at the same path in the
+  container); desk operations keep using the main checkout. Testers get no
+  worktree. If `scion start` fails the worktree and branch are removed. `reap`,
+  for each finished executor, fast-forwards (or cherry-picks, when main moved)
+  the commits of `deskops/<name>` onto the local branch, then removes worktree and
+  branch. A conflict runs `cherry-pick --abort`, keeps worktree and branch, prints
+  `<name> conflicto al traer ...` and exits 8. Two executors of different tasks
+  never share working tree or index. A cherry-pick changes the commit sha; a
+  fast-forward keeps it.
 - **`quick_gates` (optional).** `dispatch.quick_gates` is an argv list, e.g.
   `["bash", "tools/check.sh", "--fast"]`. When declared, `prompt.md` of the
   executor requires running it (python of the container venv) with rc 0 before

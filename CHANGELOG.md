@@ -7,6 +7,10 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ## [Unreleased]
 
+### Added
+
+- `deskops dispatch start executor` launches each executor in its own git worktree (`<root>/.worktrees/<name>`, branch `deskops/<name>` from the local base branch) so parallel agents no longer share working tree or index; `dispatch reap` brings the branch's commits onto the base branch (fast-forward or cherry-pick) and removes worktree and branch, and on conflict aborts, keeps them and exits 8 (`tests/test_dispatch.py`).
+
 ### Fixed
 
 - `deskops integrate` evaluates the gates on the current local tip, not only on the `closeout: <task>` commit, when every commit after the closeout touches only `desk/`, `.sldb/` or `runs/`: it prints `tip extendido a <sha>: solo commits de desk` and pushes that tip (a dangling graph reference fixed by a later desk commit no longer blocks it); with a later commit that touches code, tests or docs the tip stays the closeout commit (`tests/test_integrate.py`).
