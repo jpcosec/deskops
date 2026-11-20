@@ -1,19 +1,19 @@
-name: run-deskops-t-1551a4c10d58
-path: runs/subagents/test-deskops-t-1551a4c10d58/run.md
-source_hash: 1494a6c0cc369c0214f5857dd40a51f9ebcaeaa53cfa337c42099f1fac81920a
-content_hash: 2a3935f03fb020bf92abac92471185662136da36651c282f88e068578c8c8fb0
+name: run-deskops-e-44a082df5dbe-a2
+path: runs/subagents/exec-deskops-e-44a082df5dbe-a2/run.md
+source_hash: 246892a5079c0b3968c35c57fdd6fb9fd0eb0def407be669b565494ac5039a20
+content_hash: 289ac36e0d9eeff463b9cd2c0f6dc69acc7dabd9e5cc196f858dbeda44ff5d92
 field_hashes:
-  id: 4283b01b7e602c4a434c1888ae8f311c0e40446a4536c95325372fca5102b479
-  title: 705685907cfb68cc8bceeb51a6bd21b8f1a145cfc933a28bc9e7223b3d5f484e
-  summary: 57495ccdf134cfe7848a94a37a5f59bdc969c2f0d2ebba5752f37e83c7fd539a
+  id: 3541bae0f2824237094ee81740735f44cb72d303219dba658f7dae6d5cb230bb
+  title: 8d66d267b3e2864a54e24477acbca4d4a3ec3690d6dcaa276439a619dd10624e
+  summary: a19d720b5a7c5abd90f3f970c1cedd79f705b67fc77c466692e18aaf30041b28
   task_id: 262d4825ad7dae223d53a5455df70ef91884642c5fe0132c40c5bca260687661
-  role_id: c5775f1b3fece1cbdd49c2d83cfe0eabb0af85b64185464b3b87f74b4620bfb6
+  role_id: 8980bfef6a3fc6abef521560e4eaed8965c3ab8863cc66495a41d21209b33fef
   kind: 389432cbf83f3d1b64029a75864ec96f8fd06451b4c99d7b28385d395d480bfa
-  run_dir: 7c59abfc5986cdc645e7e2dcb29f501a8c2c5ff00681ee978cf31c2036ef4621
+  run_dir: 7a581f153734bdb63601733a56431c19ffd6b91a3f1d5ccaaed0ca21b3bb4dc8
   herdr_pane_id: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  session_path: 80ad0a3ad7ac8fa087ebbdf2403f3e899fe44aab1262c76a3d2e7b608074a3bc
+  session_path: 383b095c650aa1075031874438900808629ba3b023f6aec4a3222bc2df94af4e
   session_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  started_at: dc33083869dfe283dc8aed24881377cc83c852f067c8a4ffa224b7d6daa9f463
+  started_at: dc716e15a60797de4d3565133eb8841a44a7225b28b566a5f77bbe14b07ad3c7
   ended_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   outcome: de2bc7968076346e1ae2e62d3fd6385361b3855025678cd2732d9132eb9965cb
   commit_sha: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
@@ -27,6 +27,6 @@ semantic_tags:
 - workspace.desk.runs
 provenance:
   by: agent
-  at: '2026-11-17T16:40:10Z'
+  at: '2026-11-20T22:20:22Z'
   authority: generated
   via: create_document

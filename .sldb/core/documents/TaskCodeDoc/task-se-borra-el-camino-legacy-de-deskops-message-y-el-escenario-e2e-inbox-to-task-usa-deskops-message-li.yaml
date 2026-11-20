@@ -1,15 +1,15 @@
 name: task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
 path: desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
-source_hash: a532fad5734dce249885276ef46aa9f58a0761b172cef12462aaca4b012c31fa
-content_hash: 86ccd072d1ca89badd4384b92312191f7209f6d3d63c76697cc51828b535766f
+source_hash: c77b4240d98298c430b282e9f1c66ce0e6a0e8f01804c96d392ee1d5ae590cbd
+content_hash: 2d3786ad192fc8ccc74183543dc00a0c02a809db052344b9b723354416b3b7f0
 field_hashes:
   title: 11b5b30e4297bd126b7062670f2f3b11e11505664fe6b5133ec553454d820e5a
   id: 262d4825ad7dae223d53a5455df70ef91884642c5fe0132c40c5bca260687661
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 4419fa5002ee98d6025629b6f750f97fbed799e396d9c08ad5aee42d65c91f57
   goal: 0f6a822b6593dab2bd90eb4332092331b4f09b3156ee13c52dfdc9f2831177bd
   scope: b3264e49a37ac7dca7ef2e085692d0f7d68730137c31567e183cc6384c24419d
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-17T01:26:04Z'
+  at: '2026-11-20T22:30:18Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
