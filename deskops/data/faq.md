@@ -50,7 +50,7 @@ deskops provides a spec-driven artifact pipeline: YAML specs under `deskops/spec
 - `deskops init` — initialize a repo-local `.sldb/` plus `desk/`
 - `deskops faq` — first-use help (this document)
 - `deskops message` — send, list, read, and acknowledge cross-desk messages
-- `deskops promote` — move inbox notes into loose drawer candidates (`inbox-to-drawer-task`); drawer items become tasks only by authoring them with `deskops add task --from-drawer`
+- `deskops promote` — `inbox-to-drawer-task` deletes the source inbox note and is not the path for notes that are work (a note that is work becomes a task with `deskops add task` plus references to the note, then `deskops message ack`); drawer items become tasks only by authoring them with `deskops add task --from-drawer`
 - `deskops bind pill` — bind a context pill to an active task through the modeled task surface
 - `deskops graph` — build graph snapshots, inspect neighbors, check missing references, and write review-only reflection reports
 - `deskops repo register` — canonical repository registration in the ecosystem desk registry, tracked through SLDB
@@ -115,7 +115,7 @@ For a board-routed task, `closeout commit` runs `deskops closeout verify` first.
 
 **Promote inbox notes** — `deskops promote inbox-to-drawer-task <selector>`
 
-Moves a project-addressed message into the drawer as a loose, deferred candidate, and removes it from the inbox and from the store:
+Moves a project-addressed message into the drawer as a loose, deferred candidate, and removes it from the inbox and from the store. It deletes the source note and is not the path for notes that are work: an inbox note that is work becomes a task with `deskops add task`, with references to the note (in the `--from-yaml` YAML or later with `deskops edit task <id> references`), and then `deskops message ack <note>`; if it is not work, just ack and the reason stays in the report.
 
 ```
 deskops promote inbox-to-drawer-task <inbox-note-selector>
