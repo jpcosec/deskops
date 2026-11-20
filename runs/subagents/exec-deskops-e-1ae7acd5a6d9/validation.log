@@ -1,0 +1,3 @@
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_dispatch.py
+full run: 1 failed (test_start_tester_run_dir_has_testing_suffix: old name-based assertion), 32 passed
+after updating that assertion: -k testing_suffix 1 passed; start_executor + new test passed. exit 0

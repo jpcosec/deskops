@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T19:22:54Z'
+  at: '2026-11-20T20:03:38Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -44,7 +44,6 @@ tasks:
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
-- desk/tasks/task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -120,4 +119,3 @@ _Generated from the task references above._
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [active] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
-- dispatch start sincroniza el template de scion por su ruta, no por su nombre, para que un repo con su propio .scion no lo pierda [draft] - dispatch start llama a 'scion templates sync' con la ruta absoluta del directorio del template que acaba de escribir (la variable target de deskops/dispatch.py, cerca de la línea 297) en lugar del nombre del rol, que scion acepta según 'scion templates sync --help'. El sync funciona igual en un desk con .scion propio (IR) que sin él (sldb, deskops). Si scion start también resuelve el template por nombre en el grove local, se corrige igual o se corre con un cwd sin grove local, y se informa.
