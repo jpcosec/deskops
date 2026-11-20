@@ -379,6 +379,8 @@ include:
   - desk/materializations/materialization-cola-sigue-tras-retry-tests-test-queue-py.md
   - desk/materializations/materialization-context-review-con-deskops-review-desk-rituals-context-review-md.md
   - desk/materializations/materialization-context-review-con-deskops-review-desk-rituals-phase-md.md
+  - desk/materializations/materialization-integrate-codigo-en-origin-deskops-integrate-py.md
+  - desk/materializations/materialization-integrate-codigo-en-origin-tests-test-integrate-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -613,6 +615,10 @@ include:
     name: run-deskops-e-e406abea57f2
   - path: runs/subagents/exec-deskops-t-5a0b6c7482cc-testing/run.md
     name: run-deskops-t-5a0b6c7482cc
+  - path: runs/subagents/exec-deskops-e-fddfc2cfbdeb/run.md
+    name: run-deskops-e-fddfc2cfbdeb
+  - path: runs/subagents/exec-deskops-t-551cb023ca49-testing/run.md
+    name: run-deskops-t-551cb023ca49
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1995,6 +2001,14 @@ include:
     name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-preflight-1
   - path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/bundle-1.md
     name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-bundle-1
+  - path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/evidence-tests-1.md
+    name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-tests-1
+  - path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/evidence-commit-1.md
+    name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-commit-1
+  - path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/evidence-atom-1.md
+    name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-atom-1
+  - path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/evidence-materialization-1.md
+    name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
