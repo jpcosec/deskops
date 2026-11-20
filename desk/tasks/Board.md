@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T15:27:12Z'
+  at: '2026-11-20T16:13:27Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -45,6 +45,7 @@ tasks:
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
 - desk/tasks/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise.md
+- desk/tasks/task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -121,3 +122,4 @@ _Generated from the task references above._
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [active] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list [draft] - deskops message sin subcomando da un error de uso claro (la ayuda de message con sus subcomandos) sin pasar por _run_legacy, que se borra; el escenario e2e usa deskops message list --root .; los dos docstrings dejan de presentar deskops inbox como comando vigente.
 - dispatch start lanza cada ejecutor en su propio git worktree, para que agentes en paralelo no se pisen el árbol de trabajo [draft] - dispatch start crea para cada ejecutor un git worktree propio: una rama 'deskops/<agente>' desde la punta local del repo, en un directorio de trabajo bajo el workspace montado (p. ej. <repo>/.worktrees/<agente>, ignorado por git). El agente trabaja y commitea ahí. El tester prueba ese worktree. Al cierre, integrate (o closeout) trae el commit de la rama a la rama principal con cherry-pick o rebase y fast-forward, y borra el worktree y la rama. Los agentes de distintas tareas no comparten árbol de trabajo ni índice.
+- deskops/data/faq.md vuelve a ser copia exacta de docs/faq.md tras la tarea de drawer-triage [draft] - deskops/data/faq.md queda idéntica a docs/faq.md y los dos tests pasan. No cambia ningún otro archivo.
