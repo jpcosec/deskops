@@ -83,6 +83,8 @@ def env(lifecycle_desk: Path, tmp_path: Path) -> Env:
     assert added.returncode == 0, added.stdout + added.stderr
     config = {
         "project_identity": "dispatch-test",
+        "queue_min_available_gb": 0,
+        "queue_max_psi_avg60": 1000,
         "dispatch": {
             "project": "proj", "workspace": str(tmp_path), "templates_dir": str(tmp_path / "templates"),
             "context_file": str(context),
@@ -142,11 +144,38 @@ def test_start_tester_run_dir_has_testing_suffix(env: Env, tmp_path: Path) -> No
     assert (tmp_path / "templates" / "disp-tester").is_dir()
 
 
-def test_start_refuses_when_an_agent_is_running(env: Env) -> None:
+def _set_config(env: Env, **fields) -> None:
+    path = env.root / "desk" / "config.json"
+    data = json.loads(path.read_text())
+    data.update(fields)
+    path.write_text(json.dumps(data))
+
+
+def test_start_launches_while_another_task_agent_is_running(env: Env) -> None:
     env.agents({"name": "other-agent", "phase": "running"}, {"name": "old", "phase": "stopped"})
     result = env.cli("dispatch", "start", "executor", "--task", TASK)
-    assert result.returncode == 3 and "ocupado: other-agent" in result.stdout
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert any(call[0] == "start" for call in env.calls())
+
+
+def test_start_refuses_when_the_task_already_has_a_running_agent(env: Env) -> None:
+    first = env.cli("dispatch", "start", "executor", "--task", TASK)
+    assert first.returncode == 0, first.stdout + first.stderr
+    name = _start_call(env)[1]
+    env.log.unlink()
+    env.agents({"name": name, "phase": "running"})
+    result = env.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode == 3
+    assert f"ocupado: la tarea ya tiene agente {name}" in result.stdout
     assert all(call[0] == "list" for call in env.calls())
+
+
+def test_start_refuses_when_memory_is_under_the_gate(env: Env) -> None:
+    _set_config(env, queue_min_available_gb=100000)
+    result = env.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode == 3
+    assert "ocupado: memoria disponible" in result.stdout
+    assert not any(call[0] == "start" for call in env.calls())
 
 
 def test_attempts_then_no_more(env: Env) -> None:

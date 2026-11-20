@@ -142,12 +142,19 @@ def start(root: Path, role: str, task_id: str) -> int:
     role_cfg = getattr(cfg.roles, role)
     task_path = _task_path(root, task_id)
 
-    for agent in _list_agents(cfg):
-        if agent.get("phase") == "running":
-            print(f"ocupado: {agent.get('name')}")
-            return EXIT_BUSY
+    from deskops.queue import wait_reason
+
+    reason = wait_reason(DeskConfig.load(root / "desk"))
+    if reason:
+        print(f"ocupado: {reason}")
+        return EXIT_BUSY
 
     identity = scion_child_identity(task_path, role, 1)
+    for agent in _list_agents(cfg):
+        if agent.get("phase") == "running" and str(agent.get("name", "")).startswith(identity["name"]):
+            print(f"ocupado: la tarea ya tiene agente {agent.get('name')}")
+            return EXIT_BUSY
+
     run_dir = _run_dir_for(identity["name"], role)
     if (root / run_dir).exists():
         identity = scion_child_identity(task_path, role, 2)

@@ -729,8 +729,12 @@ deskops dispatch start executor --task <task-id> --root .   # or: tester
 deskops dispatch reap --task <task-id> --root .
 ```
 
-- `start` refuses while any agent of the scion project is `running` (prints
-  `ocupado: <name>`, exit 3). Otherwise it writes the template and RunDoc, runs
+- `start` has no agent cap: the only limit is the machine. It refuses (exit 3,
+  retried by the queue through `retry_exit_codes: [3]`) when memory fails the
+  queue gate (`queue_min_available_gb`, `queue_max_psi_avg60`; prints
+  `ocupado: memoria ...`) or when the same task and role already has a running
+  agent (prints `ocupado: la tarea ya tiene agente <name>`). Agents of other
+  tasks do not block it. Otherwise it writes the template and RunDoc, runs
   `scion templates sync`, writes `<run_dir>/prompt.md` (`deskops show task` plus
   the TaskDoc) and runs `scion start`; it prints `agente <name> run_dir <run_dir>`
   and exits with scion's code. The run_dir is `runs/subagents/exec-<name>` (the
