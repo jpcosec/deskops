@@ -383,3 +383,44 @@ def test_a_tip_already_on_the_remote_is_a_noop(closed: Path, tmp_path: Path) -> 
     assert _remote_head(root) == tip
     assert _events(root)[-1].endswith(f" {TASK} integrate ya-integrado {tip[:12]}")
     assert _leftovers(root) == []
+
+
+def _dangling_closeout(root: Path) -> str:
+    """Amend the closeout commit so it carries a task with a dangling file reference; returns the tip."""
+    other = {"id": "task-old", "title": "Old", "goal": "g", "scope": "s", "implementation_path": "i",
+             "done_when": "d", "validation": ["pytest"], "task_type": "task.code"}
+    _cli(root, "add", "task", "--root", str(root), json.dumps(other))
+    _cli(root, "edit", "task", "task-old", "files", json.dumps(["desk/ghost-absent.md"]), "--root", str(root))
+    _git(root, "add", "desk", ".sldb")
+    _git(root, "commit", "-q", "--amend", "--no-edit")
+    return _git(root, "rev-parse", "HEAD")
+
+
+def test_tip_extends_over_later_desk_only_commits(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    tip = _dangling_closeout(root)
+    before = _remote_head(root)
+    failed = _integrate(root)
+    assert failed.returncode == 1 and "fallo: graph" in failed.stdout
+    assert _remote_head(root) == before
+    _cli(root, "edit", "task", "task-old", "files", json.dumps([]), "--root", str(root))
+    _git(root, "add", "desk", ".sldb")
+    _git(root, "commit", "-q", "-m", "desk: retire dangling reference")
+    head = _git(root, "rev-parse", "HEAD")
+    assert head != tip
+    result = _integrate(root)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert f"tip extendido a {head[:12]}: solo commits de desk" in result.stdout
+    assert _remote_head(root) == head
+
+
+def test_tip_stays_at_closeout_when_a_later_commit_touches_code(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    tip = _dangling_closeout(root)
+    _write(root / "src" / "later.py", "X = 1\n")
+    _git(root, "add", "src/later.py")
+    _git(root, "commit", "-q", "-m", "later code")
+    result = _integrate(root)
+    assert "tip extendido" not in result.stdout
+    assert result.returncode == 1 and "fallo: graph" in result.stdout
+    assert _remote_head(root) != tip

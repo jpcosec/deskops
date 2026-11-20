@@ -223,12 +223,30 @@ def _append_event(root: Path, task_id: str, result: str, tip: str | None) -> Non
         handle.write(f"{stamp} {task_id} integrate {result} {(tip or '')[:SHORT]}\n")
 
 
+def extend_tip(root: Path, tip: str) -> str:
+    """HEAD when only desk commits (``desk/``, ``.sldb/``, ``runs/``) follow the closeout commit, else ``tip``."""
+    head = _run(["git", "rev-parse", "HEAD"], root)
+    if head.returncode != 0 or head.stdout.strip() == tip:
+        return tip
+    head_sha = head.stdout.strip()
+    diff = _run(["git", "diff", "--name-only", f"{tip}..{head_sha}"], root)
+    if diff.returncode != 0:
+        return tip
+    if any(not path.startswith(DESK_ONLY_PREFIXES) for path in diff.stdout.splitlines() if path):
+        return tip
+    return head_sha
+
+
 def integrate(root: Path, task_id: str, dry_run: bool) -> int:
     config = DeskConfig.load(root / "desk")
     cfg = config.integrate
     if cfg is None:
         raise UsageError("falta el campo integrate en desk/config.json")
     tip, code = load_closed_task(root, task_id)
+    extended = extend_tip(root, tip)
+    if extended != tip:
+        tip = extended
+        print(f"tip extendido a {tip[:SHORT]}: solo commits de desk")
 
     temps: list[Path] = []
     result = "ok"
