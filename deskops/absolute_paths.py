@@ -31,6 +31,7 @@ from typing import Any
 import yaml
 
 from deskops.doc_access import desk_transaction, read_doc, write_doc
+from deskops.identity import resolve_registered_root
 
 #: Frontmatter keys that are not content of the document.
 _SKIPPED_KEYS = frozenset({"sldb"})
@@ -175,14 +176,11 @@ def build_neighbours(root: Path, planned: dict[str, str] | None = None) -> Neigh
         if not value or value == ".":
             near.own_ids.add(repo_id)
             continue
-        if Path(value).is_absolute():
-            target = Path(value).resolve()
-        else:
-            target = (root / value).resolve()
+        target = resolve_registered_root(root, value) or root
         if target == root:
             near.own_ids.add(repo_id)
             continue
-        if not Path(value).is_absolute():
+        if not Path(value).expanduser().is_absolute():
             near.roots.setdefault(target, repo_id)
         near.ids.setdefault(target, []).append(repo_id)
     return near

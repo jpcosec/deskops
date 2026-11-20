@@ -170,3 +170,21 @@ def test_the_exit_code_does_not_change_and_repair_is_idempotent(tmp_path: Path, 
                                               ("/home/jp/x/y", True), ("two words /a/b", False)])
 def test_what_counts_as_an_absolute_path(value: str, absolute: bool) -> None:
     assert absolute_paths.looks_absolute(value) is absolute
+
+
+def test_build_neighbours_resolves_tilde_and_relative_entries_like_repository_root(tmp_path: Path, capsys, monkeypatch) -> None:
+    from deskops.doc_access import repository_root
+
+    root = _eco(tmp_path, capsys)
+    home = tmp_path / "home"
+    (home / "tilde-repo").mkdir(parents=True)
+    monkeypatch.setenv("HOME", str(home))
+    tilde = _register(root, capsys, "tilde-repo", "../sldb")
+    rel = _register(root, capsys, "rel-repo", "../spec2viz")
+    _set_path(tilde, "~/tilde-repo")
+    near = absolute_paths.build_neighbours(root)
+    for doc, expected in ((tilde, home / "tilde-repo"), (rel, root.parent / "spec2viz")):
+        repo = read_doc(doc, RepositoryDoc)
+        assert repository_root(root, repo) == expected.resolve()
+        assert expected.resolve() in near.ids
+        assert repo["id"] in near.ids[expected.resolve()]
