@@ -1,0 +1,37 @@
+name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-evidence-materialization-1
+path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/evidence-materialization-1.md
+source_hash: f1c8c89cb45e8788352862b9eedca5216ae6434520c63b59116fcf7e6e273f25
+content_hash: d60c9958ec6cca90d76ceb025e8194e6abfc5a1cc1ebf48955e6d3bcfb58b0b1
+field_hashes:
+  id: b0bf066ca595a559f044cc5b8528ed0ce628ef0076783a23d48e9b9ea0e5732f
+  title: ccc85c148b745714c5a362ddda2d5953a11e088ef2f8d9a53f7b156a3ef52473
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 18b24b148c71e0f42f4baa9d04e51db8712341e4a66a27b5a730513d38322e01
+  subject: 8c4c214e97dd81781920cd0b866e089bfc1f910bdfa43af89ed823ad5b61435c
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: aecd0aeeeb8f551521134b822091e9261c9cfbd62ad48c902b938b5a089fca52
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 42f90b2ad7735e9f064a07f09195ca5cd695beae8aa137235d4470cf02a631f8
+  created_at: 0663eb53c9e4817b23b659a2f6420a6e0039d7ede8e66578623d9ba386407ac9
+  disposed_at: 0663eb53c9e4817b23b659a2f6420a6e0039d7ede8e66578623d9ba386407ac9
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: fdbaa5cbf0cc1a322fb1c8466c417bb55afec662fc35d852c73b0ab0d469b054
+  disposition: f31e483b958057ecfb9b25baefcccbc6ffe3457af349c96849e0394de2ecbe4a
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T01:48:10Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,11 @@
+# Tester validation evidence
+# Commit: 9317d460a755c651423ffec1e8bca128409cc6c4
+# Python: /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python 3.13.18, pytest 9.1.1
+
+$ cd /workspace/deskops
+$ TMPDIR=/tmp /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_queue.py
+..................                                                       [100%]
+18 passed, 1 warning in 52.72s
+PYTEST_RC=0
+
+VERDICT: PASA - queue run --all skips retry_exit_codes jobs for the rest of the run, continues with the next pending jobs, and ends without a loop when all are waiting; without --all it still stops after one job. All tests/test_queue.py pass.
