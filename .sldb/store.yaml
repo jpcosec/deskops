@@ -390,6 +390,11 @@ include:
   - desk/materializations/materialization-tip-extendido-tests-test-integrate-py.md
   - desk/materializations/materialization-registry-deskops-absolute-paths-py.md
   - desk/materializations/materialization-registry-tests-test-doctor-absolute-paths-py.md
+  - desk/materializations/materialization-docs-deskops-data-faq-md.md
+  - desk/materializations/materialization-docs-docs-configuration-md.md
+  - desk/materializations/materialization-docs-docs-faq-md.md
+  - desk/materializations/materialization-docs-docs-workflow-policy-reference-md.md
+  - desk/materializations/materialization-docs-tests-test-docs-recipes-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -644,6 +649,10 @@ include:
     name: run-deskops-e-fba0ac071a91
   - path: runs/subagents/exec-deskops-t-3c5aa531496b-testing/run.md
     name: run-deskops-t-3c5aa531496b
+  - path: runs/subagents/exec-deskops-t-4efc28be470c-testing/run.md
+    name: run-deskops-t-4efc28be470c
+  - path: runs/subagents/exec-deskops-t-0a9701da5cf9-testing/run.md
+    name: run-deskops-t-0a9701da5cf9
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2066,6 +2075,10 @@ include:
     name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-atom-1
   - path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/evidence-materialization-1.md
     name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-materialization-1
+  - path: desk/reviews/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con/evidence-commit-1.md
+    name: review-task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con-evidence-commit-1
+  - path: desk/reviews/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con/evidence-document-1.md
+    name: review-task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con-evidence-document-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

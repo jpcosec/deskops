@@ -1,0 +1,25 @@
+name: materialization-docs-docs-configuration-md
+path: desk/materializations/materialization-docs-docs-configuration-md.md
+source_hash: 6644d78114c62b8dcf9b86b7690eb50ea80d221070d9d2e58187e3f27f1c07f7
+content_hash: 91134d707b7e42459281adac8f14197090cf6fe56fdfb3850c5a05b8f46ac63e
+field_hashes:
+  id: 059ea37fd382a6575467f49860b24e16ffcab61b3d2adaf1b65d4230164a38ef
+  title: e31d5976a1759ac200e7b633df593418a89a6aec24ac8ce720d2985193981d73
+  source_atoms: 87eddc1209f498225800ca559e50af63bf73209bb053e5eba436f3fd3c496863
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 5a569d682d78306bb8ac6b8eacfe55822b69d728415a484d8175a6afa53aef7a
+  intent: 4b0d86790809dda64487fbd1d1381c147a1f9381734f7d114a2f4f10355adca8
+  validation: 645249dd29be669025b61c0f34a22dbb18264aa7ee1bdcc81138364e06ab3d6b
+  tags: aaf2657eeaf0b1896a1048135ce63d6e79fd5365fc0e1ff69b15e9552e56efb2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:docs
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T13:43:46Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,25 @@
+name: materialization-docs-docs-workflow-policy-reference-md
+path: desk/materializations/materialization-docs-docs-workflow-policy-reference-md.md
+source_hash: 438c3841a8615d9980df56fe00134b89c38d3b322a5bcb6c662fb8bc28da03a3
+content_hash: 8fab15cdde04a8c509d1bdbeeadb2d3adbcbd4171b04823c771dfbd45f5bf1ac
+field_hashes:
+  id: 1dadb379368cb63724a697431b0b9d930ec7bdb65e9c878d3fd2e50fd6061ab9
+  title: 0fed0d5f37f45d0df0568fbbfb9db2648ecaf3d7c04603a150ecdb38b5ae66d3
+  source_atoms: 87eddc1209f498225800ca559e50af63bf73209bb053e5eba436f3fd3c496863
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: c43633b1fb0b2cd096b8911cbbb6e70c879f0746a665857d6e0a34736fa57091
+  intent: 45f7feb6a2472fdc7e61bac8a147978b06c36c56cc176f2326b074c1fac88b8c
+  validation: 645249dd29be669025b61c0f34a22dbb18264aa7ee1bdcc81138364e06ab3d6b
+  tags: aaf2657eeaf0b1896a1048135ce63d6e79fd5365fc0e1ff69b15e9552e56efb2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:docs
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T13:44:05Z'
+  authority: generated
+  via: create_document

@@ -1,18 +1,19 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:06:02Z'
+  at: '2026-11-20T12:35:46Z'
   authority: generated
   via: save_document_payload
 id: task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - desk/inbox/20261116-003032-unclear-la-skill-y-ritual-drawer-triage-mandan-el-inbox-al-drawer-los-atoms-dicen-que-no.md
 - /mnt/ssd/proyectos/SLDB_1/triaje-drawers-inbox-brief.md

@@ -1,0 +1,25 @@
+name: materialization-docs-tests-test-docs-recipes-py
+path: desk/materializations/materialization-docs-tests-test-docs-recipes-py.md
+source_hash: e9038fe23ba056bd6ff2fb1881a5a1d40518552c103946ffe63af1a711b1dabf
+content_hash: 662e2e89c6b33f80d376963cd4803f9c785a7819ded57ca7b10fb9b800910898
+field_hashes:
+  id: 5df65b20b5ef004bc3c854e9fb7adb5a617664ac4337f57392ac6b67b7b388b0
+  title: 668be31517d68609eb4e5495251f1b6b7bdca8f90873048eb0a194a60732c0b6
+  source_atoms: 87eddc1209f498225800ca559e50af63bf73209bb053e5eba436f3fd3c496863
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 03215ef4b15dfd76a44f2ba4cebac91b21a296d99f9967598e3f696c0fefc30c
+  intent: d8420ba15bdc6d57bf9df7f32dd343c3dd22a84fc3f42c26fb268773e1e12e12
+  validation: 645249dd29be669025b61c0f34a22dbb18264aa7ee1bdcc81138364e06ab3d6b
+  tags: aaf2657eeaf0b1896a1048135ce63d6e79fd5365fc0e1ff69b15e9552e56efb2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:docs
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T13:44:14Z'
+  authority: generated
+  via: create_document

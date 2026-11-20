@@ -1,34 +1,36 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:05:38Z'
+  at: '2026-11-20T13:43:28Z'
   authority: generated
   via: save_document_payload
 id: task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/drawer/plans/deskops-como-config/dag.yaml
+- tests/test_docs_recipes.py
+- b39f2fa86df977487034b3e0ebcbd584602391f7
 depends_on: []
 pills: []
 files:
-- docs/configuration.md
-- docs/operator-manual.md
-- docs/workflow-policy-reference.md
-- docs/faq.md
-- deskops/data/faq.md
-- tests/test_docs_recipes.py
 - CHANGELOG.md
+- deskops/data/faq.md
+- docs/configuration.md
+- docs/faq.md
+- docs/workflow-policy-reference.md
+- tests/test_docs_recipes.py
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-docs-configuration-md-explica-que-es-configuracion-en-deskops-y-como-se-declara-un-tipo-de-tarea
 ---
 
 # CC53: docs/configuration.md explica que es configuracion y como se declara un tipo de tarea nuevo, con receta probada
