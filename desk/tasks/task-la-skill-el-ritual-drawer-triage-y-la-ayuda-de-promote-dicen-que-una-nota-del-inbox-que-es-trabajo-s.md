@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T12:35:46Z'
+  at: '2026-11-20T14:13:02Z'
   authority: generated
   via: save_document_payload
 id: task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s
@@ -11,9 +11,18 @@ tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
+current_node: ritual-execution
 history:
 - task_activates
+- 'task_returns_to_execution: Tester exec-deskops-t-4efc28be470c-testing FALLA sobre
+  812f6115: el Goal se cumple en lo que tocó, pero no el Done When. ''grep -rn inbox-to-drawer
+  .claude docs desk/rituals'' todavía muestra dos menciones que mandan notas del inbox
+  al drawer sin advertencia: docs/faq.md:53 (''deskops promote — move inbox notes
+  into loose drawer candidates'') y docs/deskops-ui.md:237 (''Inbox: Pasar a drawer
+  | promote inbox-to-drawer-task''). Intento 2: agregar en esas dos la misma advertencia
+  que en operator-manual.md:444, sin tocar los ejemplos runnable de la mecánica, y
+  verificar que el grep muestre solo advertencias o ejemplos permitidos. Commit solo
+  de tus archivos con ''git commit -- <rutas>''.'
 references:
 - desk/inbox/20261116-003032-unclear-la-skill-y-ritual-drawer-triage-mandan-el-inbox-al-drawer-los-atoms-dicen-que-no.md
 - /mnt/ssd/proyectos/SLDB_1/triaje-drawers-inbox-brief.md
