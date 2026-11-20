@@ -1,0 +1,37 @@
+name: review-task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s-evidence-document-2
+path: desk/reviews/task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s/evidence-document-2.md
+source_hash: 81f35f05ca6d2417be3c6e78f1970338bcbcb42db1a53aed345fc74c8afcb0a4
+content_hash: 7a8b89f4ecdf6c519dc0c486b849bc64688bf0cdfefdc7a1efd21aa0fcfab839
+field_hashes:
+  id: a4bc06eca3243d6bbbc6943364d63ae74dcd547b8025ecfa5bb3fb7af3e0c1e6
+  title: 3f4b612d48f433a278fde6f76b9de15bb343e36a2f1fd2022411c00f6334a5b8
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 64ac8e615520cd1ae43ab0d47cfc9e750a82d13f9c47d468dab7cd8c982b7859
+  value: c42dc37131e2fb086977ed08571d0ed480e64cf55973316e76bf2613846c9e66
+  subject: 0e62160ad1a08b291a19268feb5de99070fbac32660fa3a766dc1b39d3c74835
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 4dff0e34f9b8b9a0028c3822216a3e58a7476a0e58cc0f272f8a27f8312fc613
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: a7a2d201bc6997d86adfaeed2d97683593c190878ff76bf17bbec190b695e6dd
+  created_at: 70137e781f1721d642a4881e5dca46ccf2bc987c50e21de36f3fc5bab5bfae54
+  disposed_at: 70137e781f1721d642a4881e5dca46ccf2bc987c50e21de36f3fc5bab5bfae54
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: a87a3ac0c2ffc9afef5ee18186abce7145c35db734715c94ae502a9491efbde3
+  disposition: 0fc37444792899f01fa2712f53ce894420221a502129f17c6e456a338c0c1c2b
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T15:18:25Z'
+  authority: generated
+  via: create_document

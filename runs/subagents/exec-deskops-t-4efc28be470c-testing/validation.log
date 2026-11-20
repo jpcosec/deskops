@@ -1,0 +1,19 @@
+# Tester validation log
+# Run: run-deskops-t-4efc28be470c
+# Commit: 812f6115aba165fee9c4050c2dcb179da57cbf0d
+# Clean tree: /tmp/deskops-test-812f (git archive 812f6115)
+# Python: /dev/shm/t311/bin/python (3.11); PYTHONPATH=/tmp/deskops-test-812f:/mnt/ssd/proyectos/SLDB_1/sldb/src
+# Note: /mnt/ssd/proyectos/SLDB_1/.venv expects missing /usr/bin/python3.12.
+
+tests/test_skill_cli_drift.py       -> 2 passed, 1 warning (0.10 s)
+tests/test_output_goldens.py       -> 7 passed, 1 warning (392.97 s)
+tests/test_operator_manual.py      -> 1 passed, 1 warning (199.39 s)
+tests/test_command_registry.py     -> 3 passed, 1 warning (1.42 s)
+tests/test_registry_robustness.py  -> 8 passed, 1 warning (30.84 s)
+
+# Acceptance grep (clean tree of the commit) shows non-warning mentions:
+# docs/deskops-ui.md:237  | Inbox: Pasar a drawer | `promote inbox-to-drawer-task` | ...
+# docs/faq.md:53          - `deskops promote` — move inbox notes into loose drawer candidates ...
+# docs/faq.md:116         **Promote inbox notes** — `deskops promote inbox-to-drawer-task <selector>`
+# docs/faq.md:121         deskops promote inbox-to-drawer-task <inbox-note-selector>
+# Done When requires the grep to show only warnings -> FAIL.

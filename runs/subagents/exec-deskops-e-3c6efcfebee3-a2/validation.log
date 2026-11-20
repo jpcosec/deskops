@@ -1,0 +1,3 @@
+pytest tests/test_skill_cli_drift.py tests/test_operator_manual.py: exit 0
+pytest tests/test_output_goldens.py: 7 passed, exit 0
+grep inbox-to-drawer .claude docs desk/rituals: solo advertencias o ejemplos runnable de mecánica

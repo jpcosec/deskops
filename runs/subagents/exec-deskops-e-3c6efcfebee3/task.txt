@@ -1,0 +1,12 @@
+Task: task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s
+Title: La skill, el ritual drawer-triage y la ayuda de promote dicen que una nota del inbox que es trabajo se vuelve tarea con references y ack
+Status: draft
+Current node: ritual-execution
+Task type: task.docs
+Effective atoms:
+- atom-inbox-is-coordination-intake
+- atom-drawers-feed-tasks-through-promotion
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
