@@ -118,6 +118,34 @@ def test_retry_exit_code_leaves_job_pending(desk: Path) -> None:
     assert not list((desk / "desk" / "inbox").glob("*.md"))
 
 
+def test_retry_job_is_skipped_and_queue_continues(desk: Path) -> None:
+    _configure(desk, {
+        "a": {**_sh("exit 3"), "retry_exit_codes": [3]},
+        "b": _sh("exit 0"),
+    })
+    a = _add(desk, "a", "task-1")
+    _add(desk, "b", "task-2")
+    _add(desk, "b", "task-3")
+    result = _cli(desk, "queue", "run", "--all", "--root", ".")
+    assert result.returncode == 0, result.stderr
+    assert f"en espera: {a} ocupado (exit 3)" in result.stdout
+    pending = _queue(desk, "pending")
+    assert [p.stem for p in pending] == [a]
+    assert json.loads(pending[0].read_text())["attempts"] == 1
+    assert len(_queue(desk, "done")) == 2 and not _queue(desk, "failed")
+
+
+def test_all_waiting_jobs_end_run_without_loop(desk: Path) -> None:
+    _configure(desk, {"a": {**_sh("exit 3"), "retry_exit_codes": [3]}})
+    _add(desk, "a", "task-1")
+    _add(desk, "a", "task-2")
+    result = _cli(desk, "queue", "run", "--all", "--root", ".")
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.count("en espera:") == 2
+    attempts = [json.loads(p.read_text())["attempts"] for p in _queue(desk, "pending")]
+    assert attempts == [1, 1]
+
+
 def test_other_exit_code_still_fails_with_retry_codes(desk: Path) -> None:
     _configure(desk, {"start": {**_sh("exit 4"), "retry_exit_codes": [3]}})
     _add(desk, "start")

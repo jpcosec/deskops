@@ -662,7 +662,7 @@ Declare job kinds in `desk/config.json`:
 - `retry_exit_codes` (optional list of integers per kind, default empty): when the
   job's command exits with one of them (`dispatch start` uses 3 for "ocupado"),
   `queue run` leaves the job in `pending` without an inbox note, prints
-  `en espera: <id> ocupado (exit <n>)`, increments the job's `attempts` counter and stops without failing; the next run retries it.
+  `en espera: <id> ocupado (exit <n>)`, increments the job's `attempts` counter and exits 0 without failing. Without `--all` the run stops there; with `--all` it skips that job for the rest of the run and continues with the next pending ones (so a `dispatch-reap` behind a waiting executor still runs), and ends when no runnable job is left. The next run retries it.
   Any other non-zero code is still a failure.
 - `queue_min_available_gb` (default 8) and `queue_max_psi_avg60` (default 10)
   are the memory gates: `queue run` leaves the job pending and prints

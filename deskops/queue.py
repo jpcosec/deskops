@@ -254,10 +254,11 @@ def run_queue(root: Path, run_all: bool) -> int:
             print("ocupado: otro queue run en curso")
             return 0
         _recover_interrupted(root, queue)
+        waiting: set[str] = set()  # jobs left pending in this run; not retried until the next one
         while True:
-            pending = _jobs(queue, "pending")
+            pending = [p for p in _jobs(queue, "pending") if p.stem not in waiting]
             if not pending:
-                print("sin trabajos")
+                print("sin trabajos" if not waiting else "sin trabajos ejecutables: todos en espera")
                 return 0
             reason = wait_reason(config)
             if reason:
@@ -268,7 +269,10 @@ def run_queue(root: Path, run_all: bool) -> int:
             outcome = _execute(root, queue, config, path)
             if outcome.startswith("retry:"):
                 print(f"en espera: {path.stem} ocupado (exit {outcome.split(':', 1)[1]})")
-                return 0
+                if not run_all:
+                    return 0
+                waiting.add(path.stem)
+                continue
             if outcome == "failed":
                 print(f"fallo {path.stem}")
                 return 1

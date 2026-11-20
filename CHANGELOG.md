@@ -9,6 +9,7 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Fixed
 
+- `deskops queue run --all` no longer stops the queue when a job returns to `pending` through `retry_exit_codes`: it skips that job for the rest of the run (no retry loop) and continues with the next pending jobs, so a `dispatch-reap` or `integrate` behind a waiting executor runs; without `--all` it still runs one job, and a failure still stops the queue (`tests/test_queue.py`).
 - `deskops dispatch start` no longer answers `ocupado` because of any running agent of the scion project: it launches in parallel and refuses (exit 3) only when memory fails the queue gate (`ocupado: memoria ...`) or the same task and role already has a running agent (`ocupado: la tarea ya tiene agente <name>`); no agent-count setting (`tests/test_dispatch.py`).
 - `closeout verify` covers the files under a directory a materialization declares as `target_identity` also when sldb reports that directory as a graph node (valid materialization), not only when it is missing (`tests/test_materialization_targets_outside_package.py`).
 - `deskops edit task <id> title|goal|status` saves the Board again in the same transaction, so the task's line in `desk/tasks/Board.md` (`task_summaries` composition) shows the new value instead of the old one (`tests/test_edit_task_refreshes_board.py`).
