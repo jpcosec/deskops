@@ -1,0 +1,10 @@
+Task: task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
+Title: se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]

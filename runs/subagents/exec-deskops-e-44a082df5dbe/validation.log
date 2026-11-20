@@ -1,0 +1,42 @@
+$ PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_message_cli.py
+.................                                                        [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+17 passed, 1 warning in 181.11s (0:03:01)
+rc=0
+$ PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_command_registry.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 7.17s
+rc=0
+$ PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_cli.py
+........................................................................ [ 70%]
+..............................                                           [100%]
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /mnt/ssd/proyectos/SLDB_1/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+102 passed, 1 warning in 751.78s (0:12:31)
+rc=0
+$ grep -rn _run_legacy deskops/
+rc=1
+$ grep -n 'deskops inbox' tests/e2e_agent/scenarios/inbox-to-task.yaml
+rc=1
+$ python -m deskops message
+usage: deskops message [-h] {send,list,read,ack} ...
+deskops message: error: the following arguments are required: message_command
+rc=2

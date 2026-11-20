@@ -1,0 +1,1 @@
+pytest tests/test_message_cli.py tests/test_command_registry.py tests/test_cli.py tests/test_repo_identity.py tests/test_inbox_promote_cli_gaps.py -> 151 passed, exit 0

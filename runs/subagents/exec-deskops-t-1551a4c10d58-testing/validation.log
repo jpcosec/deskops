@@ -1,0 +1,43 @@
+Tester validation for task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
+Executor commit: 6ae6ea035fc975fe86f1e4f6077ced5e28f7b9a8
+Workdir: /mnt/ssd/proyectos/SLDB_1/deskops
+
+NOTE: the task's suggested ../.venv/bin/python cannot import pytest in this container
+(its interpreter resolves to /usr/bin/python3 3.11 while its site-packages are 3.12).
+Used /dev/shm/t311/bin/python (Python 3.11, project + dependencies + pytest 9.2.0).
+
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_message_cli.py
+17 passed, 1 warning in 159.57s
+exit 0
+
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_inbox_promote_cli_gaps.py
+21 passed, 1 warning in 31.10s
+exit 0
+
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_repo_identity.py
+8 passed, 1 warning in 2.08s
+exit 0
+
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_command_registry.py
+3 passed, 1 warning in 2.49s
+exit 0
+
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_cli.py
+102 passed, 1 warning in 580.74s
+exit 0
+
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q 'tests/e2e_agent/test_agent_scenarios.py::test_reference_solutions[inbox-to-task]'
+1 passed, 1 warning in 17.77s
+exit 0
+
+Manual behavior check:
+$ PYTHONPATH=$PWD /dev/shm/t311/bin/python -m deskops message
+rc=2
+stderr: usage: deskops message [-h] {send,list,read,ack} ...
+        deskops message: error: the following arguments are required: message_command
+
+Static checks:
+$ grep -R '_run_legacy' -n deskops tests --exclude-dir=__pycache__
+(no output)
+$ grep -R 'deskops inbox' -n tests/e2e_agent/scenarios/inbox-to-task.yaml tests/test_repo_identity.py tests/test_inbox_promote_cli_gaps.py
+(no output)

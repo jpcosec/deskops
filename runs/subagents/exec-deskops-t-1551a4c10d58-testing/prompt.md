@@ -1,7 +1,20 @@
+Task: task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
+Title: se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T23:08:56Z'
+  at: '2026-11-20T22:30:18Z'
   authority: generated
   via: save_document_payload
 id: task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
@@ -13,25 +26,21 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- deskops/cli/commands/message.py
-- tests/e2e_agent/scenarios/inbox-to-task.yaml
-- tests/test_inbox_promote_cli_gaps.py
-- tests/test_message_cli.py
-- tests/test_repo_identity.py
-- 6ae6ea035fc975fe86f1e4f6077ced5e28f7b9a8
+- desk/inbox/20261116-221318-suggestion-restos-del-retiro-del-alias-deskops-inbox.md
 depends_on: []
 pills: []
 files:
 - deskops/cli/commands/message.py
 - tests/e2e_agent/scenarios/inbox-to-task.yaml
+- tests/test_repo_identity.py
 - tests/test_inbox_promote_cli_gaps.py
 - tests/test_message_cli.py
-- tests/test_repo_identity.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-se-borro-el-camino-legacy-de-deskops-message-sin-subcomando-es-un-error-de-uso
+- atom-code-changes-close-with-tests-and-commit
+- atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk
 ---
 
 # se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list
@@ -73,3 +82,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 grep de _run_legacy en deskops/ no da nada, el escenario e2e no usa deskops inbox, el test nuevo pasa y los tres archivos de la Validation pasan.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

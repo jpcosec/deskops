@@ -1,0 +1,37 @@
+name: review-task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li-evidence-materialization-1
+path: desk/reviews/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li/evidence-materialization-1.md
+source_hash: f7b17ad46bcce9514191995b75be846a087b981dcefc0545e971de2a7aa3a5dd
+content_hash: ad61461ed84c3da6b5e0934be4bb878ce8a5d7b3987ebda6c382b294faba4ac1
+field_hashes:
+  id: 2f35937f9af5cc6cddde1f3051039deaf191665dc4294f87017f24d557985e99
+  title: 33c995af76a2ddb294ac66d9f8fce79e3262268adcf585f0ac153b781cd7f87b
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 184e170a567bf3ff9c5fccb99f1fb781bd72c7b4f1d6b9a340b6a099826d9753
+  subject: 746d4332ddd3c5095ebbf00bc867a3e9bf0564ec7a1590911e460e26a079822f
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: a49c2d53240fe15aefadb2b2c5c9b99fdcedf11c5446c093a9ca4afda321b107
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: d622d702d709955b86617a367608dc027958ccb880492065381df1f5b38f0e47
+  created_at: 87c7e879f39a10f4b77f7985e5d0b0ef5b0065025de23c7c69ba018d96ab8a52
+  disposed_at: 87c7e879f39a10f4b77f7985e5d0b0ef5b0065025de23c7c69ba018d96ab8a52
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5d43997adfef735a3491cc43ce56078a4a9a7b5028b7c46709d7d837a375a34f
+  disposition: ea9efefa864ceb4f40f0135632ab5cee11f331e6b2d60fd05e211a3ae3e9bed8
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T23:10:09Z'
+  authority: generated
+  via: create_document
