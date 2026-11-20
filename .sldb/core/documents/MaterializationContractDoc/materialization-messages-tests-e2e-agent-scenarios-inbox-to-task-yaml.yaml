@@ -1,0 +1,25 @@
+name: materialization-messages-tests-e2e-agent-scenarios-inbox-to-task-yaml
+path: desk/materializations/materialization-messages-tests-e2e-agent-scenarios-inbox-to-task-yaml.md
+source_hash: dca0b7d597272ae1fdfd7c87c29b8a832a6ea79046b4861516006df889a96b1b
+content_hash: 8dc306333ba774db4a49cea0b1afdc8d7efda31f87c297719cb1b85bd894135b
+field_hashes:
+  id: f787b48ca73f0d357d8010dd9ad1430e5a77e121690d0a633bedc292e707ad45
+  title: 75cf3a5dee6bf1da48fcb433859969307f9fb337e4c3ba1f89faec67dbca2407
+  source_atoms: ee5a1c030a3b0c2c71b2de4c1746570ddde35a4ff588359a7bfcb37f8ae9541e
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 991d1abc1481122aeb68f9e62c4251bb232cfc25b34e2548707211fcdc76f71f
+  intent: 1f654feed6728580e5977ba932e1e297ead43650bcdd3a52a590e24d82fd1ea2
+  validation: 8dd57a0d2e19d92ae92eef3f74f24ada2e31d7250df850f0c58184efa8819064
+  tags: d7c8c1fb210c08ba44f281f3ab13b89530a347d9053dbbea9e48fec651964250
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:messages
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T23:09:15Z'
+  authority: generated
+  via: create_document

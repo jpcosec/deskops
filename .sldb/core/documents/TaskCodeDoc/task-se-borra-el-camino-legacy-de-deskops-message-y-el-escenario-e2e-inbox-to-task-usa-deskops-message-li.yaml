@@ -1,7 +1,7 @@
 name: task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
 path: desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md
-source_hash: c77b4240d98298c430b282e9f1c66ce0e6a0e8f01804c96d392ee1d5ae590cbd
-content_hash: 2d3786ad192fc8ccc74183543dc00a0c02a809db052344b9b723354416b3b7f0
+source_hash: ff21946dc76a114ad15830fdf2fdafd197963a8ddc89c06e46b32620edc2857c
+content_hash: fa9ccef1dc067d72befe97fff39429db78b9ea1f005ee9b6d48d4ca4455f732c
 field_hashes:
   title: 11b5b30e4297bd126b7062670f2f3b11e11505664fe6b5133ec553454d820e5a
   id: 262d4825ad7dae223d53a5455df70ef91884642c5fe0132c40c5bca260687661
@@ -13,17 +13,17 @@ field_hashes:
   why: 4419fa5002ee98d6025629b6f750f97fbed799e396d9c08ad5aee42d65c91f57
   goal: 0f6a822b6593dab2bd90eb4332092331b4f09b3156ee13c52dfdc9f2831177bd
   scope: b3264e49a37ac7dca7ef2e085692d0f7d68730137c31567e183cc6384c24419d
-  references: 237f8e53c0ebca17d0ccb5dd85c20ebffb56c68fb151421a87aa935ad0867fb9
+  references: bbbf6d884e64ff692b0f5dec8c07dc7229756b0b6c210041ba0014c9342239d2
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 6a0b3fe5f476947b7082d31c42ee22609d6496bb6696287bde8c14d41cb7868f
+  files: 2b5b679ab924c029999426064dd0dabbe4af85d7d76706c59f84fb67f708c2c8
   implementation_path: baf17d923794f1679f5b0b905faea32b7a5ffb58485dc40630969a77124b96dd
   validation: b891889cb94722bb421350d89cfbac7fbb5efb60ddc144d05bb811d3364e1826
   done_when: 828a28d5776fa83e861f9eda8f230a80a13c8128d0c25e05d06b5072aa8a78ed
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4d04d95b64cacfc012051c4c9dc8b2530c632af7b8bf2678e0b802af6d574cab
+  atoms: ee5a1c030a3b0c2c71b2de4c1746570ddde35a4ff588359a7bfcb37f8ae9541e
 semantic_tags:
 - host:robocop2
 - representation.markdown
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-20T22:30:18Z'
+  at: '2026-11-20T23:08:56Z'
   authority: generated
   via: save_document_payload

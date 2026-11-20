@@ -1,0 +1,25 @@
+name: materialization-messages-tests-test-inbox-promote-cli-gaps-py
+path: desk/materializations/materialization-messages-tests-test-inbox-promote-cli-gaps-py.md
+source_hash: c589069c83bf9c5660043d42cdf6ed7c72df08e14fec6c699e85d9b02ebbb8ac
+content_hash: 233af164575a0b100a81391b0e25dfbe305942ba89fee71ffcba6413d8927516
+field_hashes:
+  id: 74039541589d3241277d3a7759c57cd74d6338414d116b946473cc56bd4170c0
+  title: ea826c95f502fb130f4023c911f55105dd05da1a3d1a04b5ee7c2f180023c06a
+  source_atoms: ee5a1c030a3b0c2c71b2de4c1746570ddde35a4ff588359a7bfcb37f8ae9541e
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 238a1690ff38198c04bf7b6c950a96979624bf0827bbafc0fdc48da74663b8e8
+  intent: 6fb236b83d62d1cb9f5331ba82abfdc8c378b54f04e734dbfcee0d75b4c8263f
+  validation: 8dd57a0d2e19d92ae92eef3f74f24ada2e31d7250df850f0c58184efa8819064
+  tags: d7c8c1fb210c08ba44f281f3ab13b89530a347d9053dbbea9e48fec651964250
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:messages
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T23:09:25Z'
+  authority: generated
+  via: create_document

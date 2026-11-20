@@ -1,32 +1,37 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:26:04Z'
+  at: '2026-11-20T23:08:56Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li
-status: draft
+status: active
 summary: ''
 tags:
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261116-221318-suggestion-restos-del-retiro-del-alias-deskops-inbox.md
+- deskops/cli/commands/message.py
+- tests/e2e_agent/scenarios/inbox-to-task.yaml
+- tests/test_inbox_promote_cli_gaps.py
+- tests/test_message_cli.py
+- tests/test_repo_identity.py
+- 6ae6ea035fc975fe86f1e4f6077ced5e28f7b9a8
 depends_on: []
 pills: []
 files:
 - deskops/cli/commands/message.py
 - tests/e2e_agent/scenarios/inbox-to-task.yaml
-- tests/test_repo_identity.py
 - tests/test_inbox_promote_cli_gaps.py
 - tests/test_message_cli.py
+- tests/test_repo_identity.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk
+- atom-se-borro-el-camino-legacy-de-deskops-message-sin-subcomando-es-un-error-de-uso
 ---
 
 # se borra el camino legacy de deskops message y el escenario e2e inbox-to-task usa deskops message list
