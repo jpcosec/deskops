@@ -234,7 +234,7 @@ Copiado del alcance del plan deskops-ui (2026-11-04; plan retirado del drawer el
 | Drawer: "Promover a Desk" | `add task --from-drawer` | `drawer.tasks[].command` | se muestra el comando, no un botón |
 | Inbox: lista, lectura, emisor → destino | `InboxNoteDoc` | `inbox.notes` | — |
 | Inbox: Reconocer | `deskops message ack` | — (acción de UI05) | — |
-| Inbox: Pasar a drawer | `promote inbox-to-drawer-task` | — (acción de UI05) | — |
+| Inbox: Pasar a drawer (borra la nota de origen; no es el camino para notas que son trabajo: esas se vuelven tarea con `add task` y references, luego `message ack`) | `promote inbox-to-drawer-task` | — (acción de UI05) | — |
 | Agentes y corridas | `runtime workers`, `runs/subagents/index.jsonl` | `agents.workers`, `agents.runs` | causa en `workers_error` |
 | Métricas de cabecera | conteos derivables | `board.counts`, `drawer.count`, `inbox.open`, `agents.live_workers` | ningún porcentaje inventado |
 | Hilo del inbox, firmas, prioridad, TTL, autor, versión | no existe | — | no se dibuja |
