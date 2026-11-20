@@ -377,6 +377,8 @@ include:
   - desk/materializations/materialization-cola-sigue-tras-retry-deskops-queue-py.md
   - desk/materializations/materialization-cola-sigue-tras-retry-docs-operator-manual-md.md
   - desk/materializations/materialization-cola-sigue-tras-retry-tests-test-queue-py.md
+  - desk/materializations/materialization-context-review-con-deskops-review-desk-rituals-context-review-md.md
+  - desk/materializations/materialization-context-review-con-deskops-review-desk-rituals-phase-md.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -607,6 +609,10 @@ include:
     name: run-deskops-e-f585f0ef0e37
   - path: runs/subagents/exec-deskops-t-22dbf234c4bc-testing/run.md
     name: run-deskops-t-22dbf234c4bc
+  - path: runs/subagents/exec-deskops-e-e406abea57f2/run.md
+    name: run-deskops-e-e406abea57f2
+  - path: runs/subagents/exec-deskops-t-5a0b6c7482cc-testing/run.md
+    name: run-deskops-t-5a0b6c7482cc
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -1981,6 +1987,10 @@ include:
     name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-evidence-atom-1
   - path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/evidence-materialization-1.md
     name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-evidence-materialization-1
+  - path: desk/reviews/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la/evidence-commit-1.md
+    name: review-task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la-evidence-commit-1
+  - path: desk/reviews/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la/evidence-document-1.md
+    name: review-task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la-evidence-document-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

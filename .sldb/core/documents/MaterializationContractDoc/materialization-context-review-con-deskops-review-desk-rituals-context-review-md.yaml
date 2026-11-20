@@ -1,0 +1,25 @@
+name: materialization-context-review-con-deskops-review-desk-rituals-context-review-md
+path: desk/materializations/materialization-context-review-con-deskops-review-desk-rituals-context-review-md.md
+source_hash: facd79270a8993b21e5cb8b419ed388e5dce87b11fa6f34dea611112279e015c
+content_hash: 91c542a071074367d0923a5f84427361750f3b4ba3dc6e35bc7437b7177aa4b3
+field_hashes:
+  id: 7cc7f9419191cd3738e22b11f10e3b400a08c7c12cd1f4d49be2ec880792b283
+  title: f3e0d94e833221a153e3fd0a882c2fe91e8ec72678d989150ce90cd21c97c5d1
+  source_atoms: 23d4372d838280d8a3c2fbce73c3a53f5e754e94d51eb70d72821ea06de02449
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: dad0fbc769d756c903a56c8ae28282be1e605029953774a36cdf9c89efabba06
+  intent: 7e5e8d84e07a9b09910db3880ac0901144c9c95758b032b6206e3699d0c7743d
+  validation: 8fab8f6bee80870d6f68308dd22e48030a3646c2c6829383cc7414979d023e6e
+  tags: 28d763ce881042b1a001d3423bac7a954a6a3f933ee8366576dd0d02212b2c8f
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:rituals
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T02:24:41Z'
+  authority: generated
+  via: create_document

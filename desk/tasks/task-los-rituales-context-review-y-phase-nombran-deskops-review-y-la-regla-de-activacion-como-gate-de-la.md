@@ -1,18 +1,21 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:36:10Z'
+  at: '2026-11-20T02:24:33Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la
-status: draft
+status: active
 summary: ''
 tags:
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/drawer/plans/gates-por-tipo/dag.yaml
+- desk/rituals/context-review.md
+- desk/rituals/phase.md
+- a64b0b0e8ca9b1b01966cac650c668be4b6add7f
 depends_on: []
 pills: []
 files:
@@ -22,7 +25,7 @@ task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
+- atom-los-rituales-context-review-y-phase-describen-la-revision-de-contexto-con-deskops-review-y-la-regla
 ---
 
 # los rituales context-review y phase nombran deskops review y la regla de activacion como gate de la tarea
