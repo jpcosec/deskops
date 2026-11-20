@@ -1,25 +1,35 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T18:43:39Z'
+  at: '2026-11-20T00:52:48Z'
   authority: generated
   via: save_document_payload
 id: task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- docs/operator-manual.md
+- tests/test_dispatch.py
+- bdf06f810e1c045a139c17dc9e72f9a7904bb9e1
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- docs/operator-manual.md
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-dispatch-start-solo-se-frena-por-la-memoria-de-la-maquina-o-porque-la-tarea-ya-tiene-agente
 ---
 
 # dispatch start lanza agentes en paralelo con el único límite físico de la máquina (gate de memoria), en vez de uno solo por proyecto scion

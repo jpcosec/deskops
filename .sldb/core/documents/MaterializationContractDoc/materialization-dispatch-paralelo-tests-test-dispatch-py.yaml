@@ -1,0 +1,25 @@
+name: materialization-dispatch-paralelo-tests-test-dispatch-py
+path: desk/materializations/materialization-dispatch-paralelo-tests-test-dispatch-py.md
+source_hash: aa487794c5c007ac5c93ac8432c11c59b00080635f4e9561c917621f71d2fe60
+content_hash: 7c9c6f33cc22d6c0b7aa9ef58f7936cf34d9ba3524d0f7ce52c53a4d78999158
+field_hashes:
+  id: 2ae63b955d7efb972d19fdab7905a04b18e72b29ee7eddc00fd440316e1da8af
+  title: 77b0dabcfebd162f7676c35d55837186d3458c07707c0f1a2e501a770a2a634d
+  source_atoms: bbf5f9d2a0515d6e236d943854f86296873ee441ad461465c5e34daf156d816c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 93529867a43e58bec44237233aeb1d4138785aea59ee7f81ad966f3b4540ca38
+  intent: 87c228c333a0ebf35ceb7b46720af5dd9972d05810bf0aa73ef6ff728e4d2a14
+  validation: 8a6553f8ae234d1a5b594a142028d442e7f3b21988dabc472b99561d73621718
+  tags: f30d545e32452daf97627c990ab27f8dbd56f3c2e7e49c86826acd38cfb84e8f
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:dispatch
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-20T00:53:13Z'
+  authority: generated
+  via: create_document
