@@ -1,0 +1,4 @@
+pytest -q tests/test_docs_recipes.py                      -> 2 passed
+pytest -q tests/test_output_goldens.py tests/test_cli_help_examples.py tests/test_operator_manual.py tests/test_large_doc_materialization.py -> 24 passed (exit 0)
+pytest -n 4 -q tests (full suite, TMPDIR=/tmp, venv /tmp/ws-venv) -> 1266 passed, 3 skipped, 1 xfailed, exit 0 (no failures, so no baseline worktree comparison needed)
+grep -rln 'spec/artifacts\|desk_graph.py\|doc_io\|advance task .* --to' desk/rituals -> empty (exit 1): no ritual touched

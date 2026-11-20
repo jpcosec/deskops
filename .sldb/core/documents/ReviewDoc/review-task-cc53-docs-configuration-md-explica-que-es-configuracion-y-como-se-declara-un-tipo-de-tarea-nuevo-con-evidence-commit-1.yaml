@@ -1,0 +1,37 @@
+name: review-task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con-evidence-commit-1
+path: desk/reviews/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con/evidence-commit-1.md
+source_hash: 2e66537e88f2f58a5fd84a5313f9f1a80977779e2f90834467dba9b56785c015
+content_hash: 47e88ea41af15d66d0005b35129d84f80c3a469c2d1ba45ea48c3981252e941b
+field_hashes:
+  id: 41a7766c90da5eca5652b6419e6df4429af4b4ba3c7d8c729eb3c64377dd8286
+  title: 7e8826ad53b2f9247ad19abecac2bf0f032ecd53eca93769c4ec3f68e27695ca
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: 8286221c370dc0595cd907d003fae156d3f43703d947d3319292357b2c285667
+  subject: d342a4b6b799443501ea08d9a7938eb25cde9dad809cec2751bf8b4839534e3f
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: d9d64c0fd4b68e2fc54d14859106fad4cfca995c8ba0aadbb89e1d31972cc3cc
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: d04d826eb3106d37ddad8e05ef5452fc3ea4c3de61793355b20c8f58d0a76ca3
+  created_at: 6e9723f1f22e33b2e614e939ce72fa3a75bf0f696dbba920f574ac1cc72d93ea
+  disposed_at: 6e9723f1f22e33b2e614e939ce72fa3a75bf0f696dbba920f574ac1cc72d93ea
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: a40361e2ead6b5439a052a9aa3f52ea9d57c71eb493cef4e9aec0b64f033d02e
+  disposition: b6e3de1081b8276d1ac25739a1e0a2acba0e4c248df69614b5090d6cfb6512a3
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-20T13:44:23Z'
+  authority: generated
+  via: create_document

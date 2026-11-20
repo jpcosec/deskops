@@ -1,0 +1,40 @@
+# Tester validation — task-cc53
+# Commit: b39f2fa86df977487034b3e0ebcbd584602391f7
+# Python: /dev/shm/t311/bin/python (3.11.2), pytest 9.2.0
+# (../.venv is broken in this host: py3.11 binary with py3.12 site-packages, no pytest)
+
+## Clean worktree of the commit: /dev/shm/wt-cc53
+$ TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_docs_recipes.py
+..                                                                       [100%]
+2 passed, 1 warning in 27.16s
+exit=0
+
+## Regression checks in the main checkout
+$ TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_output_goldens.py
+.......                                                                  [100%]
+7 passed, 1 warning in 402.94s
+exit=0
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_cli_help_examples.py
+.............                                                            [100%]
+13 passed, 1 warning in 58.97s
+exit=0
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q tests/test_operator_manual.py
+.                                                                        [100%]
+1 passed, 1 warning in 457.30s
+exit=0
+
+## Ritual grep (task accepts no change when empty)
+$ grep -rln 'spec/artifacts\|desk_graph.py\|doc_io\|advance task .* --to' desk/rituals
+exit=1
+
+## Links / FAQ
+$ grep -n configuration docs/operator-manual.md
+24:`docs/configuration.md` (its recipes are executed by `tests/test_docs_recipes.py`).
+$ grep -n configuration docs/workflow-policy-reference.md
++ [Configuration map](configuration.md) ...
+$ grep -n "Where is the rule for X\|How do I add a task type" docs/faq.md deskops/data/faq.md
+both files: 2 matches
+
+VERDICT: PASA

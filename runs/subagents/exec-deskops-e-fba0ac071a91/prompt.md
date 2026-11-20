@@ -1,36 +1,44 @@
+Task: task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con
+Title: CC53: docs/configuration.md explica que es configuracion y como se declara un tipo de tarea nuevo, con receta probada
+Status: draft
+Current node: ritual-execution
+Task type: task.docs
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-20T13:43:28Z'
+  at: '2026-11-16T06:05:38Z'
   authority: generated
   via: save_document_payload
 id: task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
-- tests/test_docs_recipes.py
-- b39f2fa86df977487034b3e0ebcbd584602391f7
+- desk/drawer/plans/deskops-como-config/dag.yaml
 depends_on: []
 pills: []
 files:
-- CHANGELOG.md
-- deskops/data/faq.md
 - docs/configuration.md
-- docs/faq.md
+- docs/operator-manual.md
 - docs/workflow-policy-reference.md
+- docs/faq.md
+- deskops/data/faq.md
 - tests/test_docs_recipes.py
+- CHANGELOG.md
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-docs-configuration-md-explica-que-es-configuracion-en-deskops-y-como-se-declara-un-tipo-de-tarea
+atoms: []
 ---
 
 # CC53: docs/configuration.md explica que es configuracion y como se declara un tipo de tarea nuevo, con receta probada
@@ -74,3 +82,12 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 configuration.md existe con ambas recetas; test_docs_recipes pasa (tarea bloqueada y luego activada); enlaces y FAQ presentes.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
