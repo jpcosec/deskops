@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T11:43:49Z'
+  at: '2026-11-21T12:04:11Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- tests/fixtures/model_contract_hashes.json
+- tests/test_model_contract_snapshot.py
+- 3a8df5ac43103578c7eb8da69ff6deae22adf289
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- tests/fixtures/model_contract_hashes.json
+- tests/test_model_contract_snapshot.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-el-snapshot-de-contratos-de-modelo-acepta-el-cambio-solo-de-descripcion-de-ruledoc
 ---
 
 # Snapshot de contratos de modelo: RuleDoc cambió solo la descripción de where (sldb 22cfafb2); actualizar el hash sin migración

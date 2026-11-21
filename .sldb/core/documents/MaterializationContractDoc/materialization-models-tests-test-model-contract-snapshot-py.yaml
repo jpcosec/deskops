@@ -1,0 +1,25 @@
+name: materialization-models-tests-test-model-contract-snapshot-py
+path: desk/materializations/materialization-models-tests-test-model-contract-snapshot-py.md
+source_hash: 376ce049062a7cf8432a9f17cfea04c834a897b8d73e5f10bca31b8009274453
+content_hash: eae0f3bf9341e7c1bcf6a16420ccc327c3bf5ebbaf628377845218c6695584f5
+field_hashes:
+  id: 3a5d144a2dd759333145b538b85ff457738dd1fbfe2aa264d421cafd67c21186
+  title: f646e2a4d7e77785facb5645d5cac76fda1a80c7ba069ca46f7bf0572d416e67
+  source_atoms: dfb2e2ff0f76007c15a13d8bb5f72615b9d80d14b81fd9cf55f277d1040dd751
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 4f802c0507c544e326a1ff45bb220097d3d1fa5e518a4c4cdc08713fe63e0b9e
+  intent: d1f152ad8b1122feca550d246a00ebf2793b5753997e507a5bdb56d278555df8
+  validation: 34e957feb8bfc3d5e057f91f3a4ed446f37eefbd5d959bb18249780286a68bdf
+  tags: f8b17cd10326de92e4b50e1b0c09279d209c5ca837bdf75c9c3f16502783a451
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:models
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T12:04:22Z'
+  authority: generated
+  via: create_document
