@@ -440,6 +440,24 @@ def test_tip_extends_over_a_merge_of_the_remote_branch(closed: Path, tmp_path: P
     assert "fast-forward" not in result.stdout
 
 
+def test_code_commit_that_is_not_fast_forward_rides_with_the_tip(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    _dangling_closeout(root)
+    code = _find(root, "feature")
+    _remote_code_commit(root)
+    _git(root, "fetch", "-q", str(root.parent / "remote.git"), BRANCH)
+    _git(root, "merge", "-q", "--no-ff", "-m", "merge remote", "FETCH_HEAD")
+    _cli(root, "edit", "task", "task-old", "files", json.dumps([]), "--root", str(root))
+    _git(root, "add", "desk", ".sldb")
+    _git(root, "commit", "-q", "-m", "desk: retire dangling reference")
+    head = _git(root, "rev-parse", "HEAD")
+    result = _integrate(root)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert f"código va con el tip: {code[:12]}" in result.stdout
+    assert _remote_head(root) == head
+    assert _git(root.parent / "remote.git", "merge-base", "--is-ancestor", code, head) == ""
+
+
 def test_tip_stays_when_a_local_code_commit_follows_a_remote_merge(closed: Path, tmp_path: Path) -> None:
     root = closed
     _dangling_closeout(root)
