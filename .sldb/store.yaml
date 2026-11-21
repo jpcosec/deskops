@@ -698,6 +698,8 @@ include:
     name: run-deskops-e-8dc2d5f09fda
   - path: runs/subagents/exec-deskops-t-7f4f0f892411-testing/run.md
     name: run-deskops-t-7f4f0f892411
+  - path: runs/subagents/exec-deskops-e-e5f89cdffe35/run.md
+    name: run-deskops-e-e5f89cdffe35
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2200,6 +2202,22 @@ include:
     name: review-task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej-preflight-1
   - path: desk/reviews/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej/bundle-1.md
     name: review-task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej-bundle-1
+  - path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/preflight-1.md
+    name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-preflight-1
+  - path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/preflight-1.md
+    name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-preflight-1
+  - path: desk/reviews/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur/preflight-1.md
+    name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-preflight-1
+  - path: desk/reviews/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada/preflight-1.md
+    name: review-task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada-preflight-1
+  - path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/bundle-1.md
+    name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-bundle-1
+  - path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/bundle-1.md
+    name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-bundle-1
+  - path: desk/reviews/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur/bundle-1.md
+    name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-bundle-1
+  - path: desk/reviews/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada/bundle-1.md
+    name: review-task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

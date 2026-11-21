@@ -1,0 +1,37 @@
+name: review-task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada-bundle-1
+path: desk/reviews/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada/bundle-1.md
+source_hash: 1958a5da39f61ae493d717cea721cdfb2caa20a7b546d3e7353e6281f29d76bf
+content_hash: c8e01f40c071f4340453f8963fa6d755f2fe583ce3fdd9646c6e033d09d64263
+field_hashes:
+  id: 7e4b19ec5b06e325628556900884c5fe7a7a99f464df741a5ec55255a708d107
+  title: 265c4140a03125b624d61f317b8a2dce5a8823bd66e23119d5700f4d3f797327
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 2efa49d7782e8d1b4ee1761384322d2d2d6be1e88d78ac838cdbdd79ce32a7cb
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 2ccd5cce70c4cce67f818a0f61b91c46b7587d73d67964da022dc6b11d3b3589
+  input_sha256: 9741575f7050132c37b7a74bff1d72d5429180ebb7e5641108f4f7a70e5d4679
+  contract_sha256: a31218dc18136d9192eec5953e0415f3e283ce9e3691778286ca985e70a0e2eb
+  output_sha256: 90f7827bc605f9037eaa111adde7d41ed75c8edd95905329b5955e97b722e8f8
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 8f3fd3bb311f1b2ff00ca984bc6c8fca106bd9afc2a024b87ae6ce11af3c428b
+  created_at: e2bc0a3c123b572f6b7f005cfcc0cf91ef21f94bf0925d6e71940b7481427f6c
+  disposed_at: 8cc43e3a930bf11220d0f74775c313b914198dad8d9ad7d2335adee8545a2311
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: d23183745a60c792727de7ef789db013d7bf1c1a90ff488b4050e034c1a17f4f
+  disposition: 5c053f96ceca82772419ce12e9754f42e4835383c2704f56ef728de10b8eb633
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:02:34Z'
+  authority: generated
+  via: save_document_payload
