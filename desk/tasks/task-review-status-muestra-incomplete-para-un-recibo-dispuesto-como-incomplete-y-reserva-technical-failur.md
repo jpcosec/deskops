@@ -1,17 +1,18 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:39:32Z'
+  at: '2026-11-21T08:18:17Z'
   authority: generated
   via: save_document_payload
 id: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - desk/inbox/20261116-013120-unclear-review-status-muestra-technical-failure-para-un-recibo-dispuesto-como-incomplete.md
 depends_on: []

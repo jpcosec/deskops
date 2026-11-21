@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:09:26Z'
+  at: '2026-11-21T08:29:35Z'
   authority: generated
   via: save_document_payload
 id: task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej
@@ -13,14 +13,21 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references: []
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- d42ee6635cef8bc8a27ff03a9c21788e09341df7
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-dispatch-commitea-los-rundoc-que-escribe
 ---
 
 # dispatch deja commiteados los RunDoc que escribe, para que el reap pueda traer al main commits del ejecutor que tocan el store

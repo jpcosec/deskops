@@ -1,7 +1,7 @@
 name: task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej
 path: desk/tasks/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej.md
-source_hash: e9827ff94cb938cc47461c3590e339c37cd472cc361122eb6e9f0f75a0834837
-content_hash: 4a3c9bb6a9578489ba85e62e43c30c0e48ef22f46c29c6ef553edda8343fabee
+source_hash: 7b1783ca130330edda1e5d6b45daf220cdccb91c6b563bf3ffa70dece5d198f9
+content_hash: 9d5042eae56ac28804a8fa37f650184774cdff5aa53f9d0f972e312019316383
 field_hashes:
   title: 58539e37ad2e2cf6f175f28c86bc9e8b8a48ec83538039299a83b69badc75ab2
   id: f454ae92e303c5ab0b897c599af0b168a5b4700ead501c63c3d6864b83a48e1d
@@ -13,17 +13,17 @@ field_hashes:
   why: 21a69797e1c58fed675d340389a02c7d1435175879eb75c2b2606d7d3dd0e0d9
   goal: 06cd6c7c13c55b300978c3654cd84e72ea212ad20c2b5da49e431a54c80799d3
   scope: 1c3ea0acd648b2e7cb173bb955d4128d3bb6c7da6e93be00f6ab3a5072fd8593
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: ccb7d2c8b80836e51872fdcfc8e6023717aff9b9fee6a9ed8fa47c055c1b56b7
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 82039547758bb54f2631d45d6084cfb8f1e0ad739d071305ee2dbb2fdc9eb6d2
   implementation_path: 0a376f2e1a3eb72f397af7488c446d33a604788290d22155372c3db10aff12e2
   validation: 8a6553f8ae234d1a5b594a142028d442e7f3b21988dabc472b99561d73621718
   done_when: c1dc09dce85781db6293f971fdfef39225476788c9ae63b493bfc2edbb569da7
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: ee75a9aceaa15f2f918b457fafb5bee9a389cc4e5a73f953c659d3b117a941b5
 semantic_tags:
 - artifact:task
 - representation.markdown
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:09:26Z'
+  at: '2026-11-21T08:29:35Z'
   authority: generated
   via: save_document_payload
