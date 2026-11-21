@@ -59,3 +59,15 @@ def test_receipts_of_a_task_gone_without_closeout_still_alert_without_desk_updat
     assert "task-vanished: lost" in out and "1 alert(s)" in out
     assert "register edits" not in out
     assert "does not repair these" in out
+
+
+def test_closeout_known_only_by_its_subject_does_not_alert(tmp_path: Path, monkeypatch, capsys) -> None:
+    root, docs = _desk(tmp_path, capsys)
+    _git(root, "init", "-q")
+    _git(root, "commit", "-q", "--allow-empty", "-m", "closeout: task-subj [skip ci]")
+    # A longer id sharing the prefix is not closed by that subject.
+    _store_check_says(monkeypatch, docs, alerts=[_lost("task-subj"), _lost("task-subj-other")])
+    code, out = _doctor(root, capsys)
+    assert code == 0
+    assert "task-subj-other: lost" in out and "1 alert(s)" in out
+    assert "TaskCodeDoc:task-subj: lost" not in out

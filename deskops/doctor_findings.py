@@ -136,17 +136,23 @@ def _lost_receipt_task(entry: Any) -> str | None:
 def closed_task_ids(root: Path) -> set[str]:
     """Task ids with a closeout commit in git: its trailers carry Closeout-Mode or Run-Id
     (``deskops closeout commit`` / ``resolved-by`` / ``supersede``), not just a Task-Id."""
+    import re
     import subprocess
 
-    fmt = "%(trailers:key=Task-Id,valueonly,separator=%x1d)%x1e%(trailers:key=Closeout-Mode,valueonly,separator=%x1d)%x1e%(trailers:key=Run-Id,valueonly,separator=%x1d)%x1f"
+    fmt = "%(trailers:key=Task-Id,valueonly,separator=%x1d)%x1e%(trailers:key=Closeout-Mode,valueonly,separator=%x1d)%x1e%(trailers:key=Run-Id,valueonly,separator=%x1d)%x1e%s%x1f"
     result = subprocess.run(["git", "log", f"--format={fmt}"], cwd=root, capture_output=True, text=True, check=False)
     closed: set[str] = set()
     if result.returncode != 0:
         return closed
     for record in result.stdout.split("\x1f"):
         parts = record.strip("\n").split("\x1e")
-        if len(parts) == 3 and (parts[1].strip() or parts[2].strip()):
+        if len(parts) == 4 and (parts[1].strip() or parts[2].strip()):
             closed |= {t.strip() for t in parts[0].split("\x1d") if t.strip()}
+        if len(parts) == 4:
+            # canonical subject of ``deskops closeout commit`` (optionally ``[skip ci]``): whole id only
+            found = re.fullmatch(r"closeout: (\S+)(?:\s+\[skip ci\])?", parts[3].strip())
+            if found:
+                closed.add(found.group(1))
     return closed
 
 
