@@ -1,32 +1,36 @@
+Task: task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task
+Title: add task --from-yaml rechaza un item de lista que YAML leyo como dict, igual que edit task
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T18:34:52Z'
+  at: '2026-11-21T06:39:03Z'
   authority: generated
   via: save_document_payload
 id: task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
-- deskops/cli/parse_input.py
-- tests/test_cli.py
-- 4963966abd4f79e47b5a4f8ba75cf40fb84d4929
+- desk/inbox/20261116-072606-suggestion-add-task-from-yaml-acepta-un-dict-en-validation-y-edit-task-lo-rechaza.md
 depends_on: []
 pills: []
-files:
-- deskops/cli/parse_input.py
-- tests/test_cli.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict
+atoms: []
 ---
 
 # add task --from-yaml rechaza un item de lista que YAML leyo como dict, igual que edit task
@@ -68,3 +72,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Test nuevo: el YAML con el item sin comillas hace fallar add task con un mensaje que nombra validation y el indice, sin crear la tarea; el mismo item entrecomillado crea la tarea con la linea literal.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-e70b6cd9c7de`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-e70b6cd9c7de
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

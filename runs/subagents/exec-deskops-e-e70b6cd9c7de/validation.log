@@ -1,0 +1,3 @@
+cd .worktrees/deskops-e-e70b6cd9c7de && pytest -q tests/test_cli.py tests/test_add_task_from_drawer.py
+exit 0 -- 106 passed
+Suite completa (-n 4): no ejecutada; cortada por indicacion del coordinador, queda para integrate.

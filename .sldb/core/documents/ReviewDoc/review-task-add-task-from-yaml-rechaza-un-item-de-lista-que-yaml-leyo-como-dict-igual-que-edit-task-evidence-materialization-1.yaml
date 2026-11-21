@@ -1,0 +1,37 @@
+name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-evidence-materialization-1
+path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/evidence-materialization-1.md
+source_hash: 1924e8b0ba195e01471a2510697e236c4367a4dd9badbeca91bc1af5ec4162fb
+content_hash: 84599009f531db13945fcc1b91887f205f1349bfdecb4f9e5e6705df730d28c3
+field_hashes:
+  id: 74574f0370be7b4594429777fbe72ecd7c947d16eb760761369f002ea3ee190d
+  title: 59eee6a36843eca224edb94880e27305e0704d4a6c7edad9b840f3898429a6a5
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: a2b115f1cc582c809148e4dc90f2a47fcfe9b27e72b62cf7897448a4c683417d
+  subject: b919cb979202e249acac43dfc75e13d5c8b6a940a36d5a1ea6fd0f17c3728d72
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 5e6777e02c802d9b588c3a44f3006728e1141e93c505305e3e6206f95bd62392
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 69ceaeb9ec929f19a5678d3be7d36a7c243d5375a18a0a04a253545e8276bfbc
+  created_at: 883abcd344e946dcf5c5c8aef817333d6015851fb31a3162ed6815c9f73728a3
+  disposed_at: 883abcd344e946dcf5c5c8aef817333d6015851fb31a3162ed6815c9f73728a3
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 71e8632cdf8c054c5d6ff6a2fe71a8456bdbb02e5c989930f2f429b9b991927c
+  disposition: c932b0bf1181bc1d5a3b1326d6c1a6d4606b6d2e62818672ff4a43431f7d780a
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T18:35:34Z'
+  authority: generated
+  via: create_document
