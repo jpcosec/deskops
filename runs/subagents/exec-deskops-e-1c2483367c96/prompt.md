@@ -1,33 +1,35 @@
+Task: task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s
+Title: integrate extiende el tip sobre un merge de la rama remota cuando lo demás después del closeout es solo desk
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T04:33:52Z'
+  at: '2026-11-21T04:15:45Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/integrate.py
-- tests/test_integrate.py
-- e727297a14d8ec20ccbb931aa9e976ea57330d87
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/integrate.py
-- tests/test_integrate.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota
+atoms: []
 ---
 
 # integrate extiende el tip sobre un merge de la rama remota cuando lo demás después del closeout es solo desk
@@ -67,3 +69,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los dos tests nuevos y tests/test_integrate.py pasan.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-1c2483367c96`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-1c2483367c96
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

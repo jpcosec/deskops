@@ -1,0 +1,37 @@
+name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-evidence-materialization-1
+path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/evidence-materialization-1.md
+source_hash: 27e3449b1ccde8642bcaa48e86400e12d78936bb248e7543ac911384a0009f87
+content_hash: 0755966d8bf62545dcf44eb4f92f0ed3ab6086c94693f6b9fd335e1ea4cef652
+field_hashes:
+  id: 2f6f17b24440e1ad43a13920e7dd741e7ef9b57d454713bad340b94efb5f48df
+  title: f0a4c782fc58524629c81d43672fb2db34bbe5fe2c9bc02d1b3dce72b8311bb0
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 1df35f689fd78184f94b95255e2f5e8f4ce990fea69814978ff2a2534da5740e
+  subject: 14b6027eff1ce128a90f518610513eff4c5eb19dad2081e72f78f15f36326e26
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 8ecaf4e1f6c468c1034093c8d1a9e368e9a5842c3c06ab4dd3c9813c17593d03
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: c6e2170854883cf47ca789b1846942031d82d99f3f5577eaab9d14d4c8fd43bf
+  created_at: e541c392834743d410b460129497536e2456cb9785f77885c9de6ea412879be9
+  disposed_at: e541c392834743d410b460129497536e2456cb9785f77885c9de6ea412879be9
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: e85631e4cc529777418cf9e2ac32adf1219cb7979f3d24d7d3b9101fd8f0221e
+  disposition: 33c30fc8d32f6c66d60dff462665babee6a77166de59b6d2df3000e2e791f44e
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T04:34:30Z'
+  authority: generated
+  via: create_document

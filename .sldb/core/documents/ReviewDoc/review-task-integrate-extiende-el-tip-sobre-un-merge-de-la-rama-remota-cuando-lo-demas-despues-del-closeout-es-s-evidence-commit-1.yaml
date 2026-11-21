@@ -1,0 +1,37 @@
+name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-evidence-commit-1
+path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/evidence-commit-1.md
+source_hash: 8c014172af17993b57f2b68213f9f638d36bdb3a746bbc9f1611247a9adb5a33
+content_hash: c8b230282472fd8c746b012347e58aae190b44f97a388012e3d2e9e166bb9fa2
+field_hashes:
+  id: 783a63d4eb4555dbb182d9b3fd545b10931618224b7e1a2585a979edd62f4b32
+  title: d6cfc1b28f0825448c1116a0573d06d91e3a8909895dde3ff574ac2116769c39
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: 1fff50bb70f3ac3d5b8633d8a9a698a49a9e97782ea94ea48c31bab9af964a93
+  subject: 14b6027eff1ce128a90f518610513eff4c5eb19dad2081e72f78f15f36326e26
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: c210dfa839a553c12d0942e8cba3c1bbbc6c129744b6ff77936bbe221c620fce
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 4cf3a206f29648f696d05eb38ac798ddc511d9e27819087f790d37a9595ce26a
+  created_at: e541c392834743d410b460129497536e2456cb9785f77885c9de6ea412879be9
+  disposed_at: e541c392834743d410b460129497536e2456cb9785f77885c9de6ea412879be9
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 7586f765a98a7d9d16215ccde93d2120d6847eef621a8ff1257307af1bec962d
+  disposition: 4c2cfef6c15b4e5c27b144190b4c2f8f897a03de3e770b9d9956f54e9fbc5404
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T04:34:25Z'
+  authority: generated
+  via: create_document

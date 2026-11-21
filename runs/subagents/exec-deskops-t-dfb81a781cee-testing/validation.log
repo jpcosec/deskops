@@ -1,0 +1,24 @@
+# Validación tester - task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s
+
+Commit del ejecutor: e727297a14d8ec20ccbb931aa9e976ea57330d87
+Archivos: CHANGELOG.md, deskops/integrate.py, tests/test_integrate.py
+
+## Comando del encargo
+
+cd /mnt/ssd/proyectos/SLDB_1/deskops
+TMPDIR=/tmp /workspace/IR/.venv/bin/python3.13 -m pytest -q -p no:cacheprovider tests/test_integrate.py
+
+Resultado: 24 passed, 1 warning in 255.73s
+
+## Control negativo (código previo al arreglo)
+
+Worktree temporal en el padre 05ff5978 con el tests/test_integrate.py nuevo:
+TMPDIR=/tmp /workspace/IR/.venv/bin/python3.13 -m pytest -q -p no:cacheprovider tests/test_integrate.py -k "merge_of_the_remote_branch or local_code_commit_follows_a_remote_merge"
+
+Resultado: 1 failed, 1 passed
+- test_tip_extends_over_a_merge_of_the_remote_branch FALLA con:
+  fallo: fast-forward: origin/main no es ancestro de e47f9af30d07
+  (reproduce el bug que motiva la tarea)
+- test_tip_stays_when_a_local_code_commit_follows_a_remote_merge PASA (guarda del caso sin extensión)
+
+Worktree eliminado después.
