@@ -1,0 +1,37 @@
+name: review-task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado-preflight-1
+path: desk/reviews/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado/preflight-1.md
+source_hash: e6d2b16b64a47a5ae478642d8f73070a0481e4b2aa9b5d0b62f5ff1e64081811
+content_hash: 9d5dbb61f606b47c1fde9a721055087151462c6994a7408b8e9c491fef194e55
+field_hashes:
+  id: 0cd15d6e6450b5a7587820b1d02a75d10260fa52b55e2c04baf365672424137f
+  title: ec661d7572c5741813a8d524f5cc3523642a1c5f84a401d4abb63b24e4e336a3
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 8e20874b8e92859789f02c77b6e53dd0fe925c1163b53d4ddc9250154435288e
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 0fec34518b1f3895d9148994f818d24ed2bb8d43c32963a9bdc782205346a9bd
+  input_sha256: 1a9a72a1f6b5990066699a1bb0b71ba7252d2ec4085d7ef27f8b8d903af16619
+  contract_sha256: 69b54d8992f5d42fd3001fc037c5c7fe6776fce8cdd55c38272670c8f7b0462b
+  output_sha256: a7b89a3e6a928649b068ae33591de8408dc6db40e21487a4a13b13c941110377
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: cefc4b35d82ebfadca53244f59966c8c6ebb51ba668a193134cd35132efc70b3
+  created_at: 74ce4f679f39571e3c8f057055b83ac957feabfc6919973c80822f35009ff148
+  disposed_at: a868e1f59f23334b43bf07755f1a99ee5b5ad42bc2d5f6e71bb2e297e4281f69
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 0f074e44b39dd8120b10844a816e20b5dd666099ac1057ade211595bf7c7fff8
+  disposition: 8042e4f077ea7ca85381ca42f2fea622fe6ab184774dd2375b94ba936e3fa2f9
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:27:09Z'
+  authority: generated
+  via: save_document_payload

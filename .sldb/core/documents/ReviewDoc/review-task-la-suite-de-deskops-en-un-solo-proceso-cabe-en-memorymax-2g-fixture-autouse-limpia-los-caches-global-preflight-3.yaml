@@ -1,0 +1,37 @@
+name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-preflight-3
+path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/preflight-3.md
+source_hash: 45e35a44e8e2338009c254180a2a29ab795b10736fe816d88173468df7630031
+content_hash: 3aa64927bb32638871046bfe5bb17e6672186d29683ff11ba0e56f5f99f00a67
+field_hashes:
+  id: 17eb0ff5fe9406c1bd6eaba9d0a44dce8b7464f7329dfd1aa5359f1b70e91fca
+  title: 4cde1d7e3ac59cee59b7d976333f86a2c49950f93d044d62235a6338e5dd46b4
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 32d3bcd6e3e7041f49482be769fc82286688f61327b79ff779cc9d486b06e6a3
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: e11e9935585fa53124875ee5c4a80413de0ae93483d66fba7f2a77edd2362d68
+  input_sha256: 816c9f128407711f7ccefbd21cd328bbd1fdd8a7845f013da5da94a75e12cf9b
+  contract_sha256: 6249965462cbe7d31c9fcb92f8cb9be331aa05ec9f000f59355b806090fc86b8
+  output_sha256: 99d4b7ad739dd9ad72da1707aaf34a4c563c8e6c940fad87d5444cb52083a1a9
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 7594a73f0b49fc21a1c90a700ddfdc2d53002aeeb1381bafda6c26c94ea9c5c4
+  created_at: a7356f9bdc2cf15eb40357886191289080e6bad222c1698069c3bc9427e9ae9c
+  disposed_at: 7b8fc995345ab7d3b90fba27279366940a86b8109b2d6e5f4cbcbee3025fce1c
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: d38203ff55a7a44c42e1c594e36abc0ea1b4ee3e1120507034cb21c62b4dbd05
+  disposition: a1df8d62a6b71c2ae9e49bbcb9ad186749606a1d7fb5f859208c7cf2d9eb38b6
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:31:11Z'
+  authority: generated
+  via: save_document_payload

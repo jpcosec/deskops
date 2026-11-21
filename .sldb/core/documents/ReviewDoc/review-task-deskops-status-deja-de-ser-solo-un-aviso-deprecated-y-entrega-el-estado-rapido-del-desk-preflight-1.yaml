@@ -1,0 +1,37 @@
+name: review-task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk-preflight-1
+path: desk/reviews/task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk/preflight-1.md
+source_hash: 2ad4ab5d85a193858244aaba05cd94258637c12352d4c292d58f00f3fa46ee18
+content_hash: bf80d98112107fbc19eb4805228b838437fc9fcf4ad900a1742a52f400cd7cc6
+field_hashes:
+  id: 52a49d6767a9fdb4730136aeddb67c2ae516a63d1703d5fb43aa14b3d26e3f40
+  title: df227bb9e4971392a15d269b3f1fdd79eb558b5a4084d7b76279d2ca3b14d01d
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 93971c0467f376b9321867f7879ea2f4a2a1ecf21da9779ddc1e5bb301cfd740
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 2175b1a45cff70e7a7dcf12a75bf6aaeea5bad1e26235f04603955162154555c
+  input_sha256: 9dba144dcd2c7be29d8df238592d3a1b509dd7fcaf9b92a26f3180c1f90fcee4
+  contract_sha256: 3b1b58af2d5de193ed3af16e1b250d278856563472eeef5f89588a1dd336ed4b
+  output_sha256: cace2dc16e7a4e18a5d0d90b7ba8d4a387eba5ca9f619e0a6bec0037a5ef65ee
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: e4527157582f6318c570c97818c9f320d835417fb6a19023431acb6fea6f30b4
+  created_at: 6f3ca62b93c1364204d8ceb7f072dda4a82319f4abd8f11b2c311f40f67cea3b
+  disposed_at: dc1fabe59149357a2b1d47c2c4e87d02ec4b3d4ae8a10e870e4209adb62a81a2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 674e5ac9ace9689822c846497d953fc432af4ed63443f01f0fd4d31885b3e452
+  disposition: c6f1f6402d4b6b8195978b77baedcac08d3ced14996da6fa4ebbccc52b4ab33d
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:26:55Z'
+  authority: generated
+  via: save_document_payload
