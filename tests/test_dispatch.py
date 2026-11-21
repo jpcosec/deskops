@@ -525,3 +525,8 @@ def test_reap_names_the_files_when_local_changes_block_the_pick(env: Env) -> Non
     _finished(env, name)
     result = env.cli("dispatch", "reap", "--task", TASK)
     assert result.returncode == 8 and "shared.txt" in result.stdout and "commitea" in result.stdout
+
+
+def test_reap_names_the_files_under_a_spanish_locale(env: Env) -> None:
+    env.env.update({"LANG": "es_ES.UTF-8", "LC_ALL": "es_ES.UTF-8", "LANGUAGE": "es"})
+    test_reap_names_the_files_when_local_changes_block_the_pick(env)

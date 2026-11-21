@@ -10,6 +10,7 @@ from __future__ import annotations
 import contextlib
 import io
 import json
+import os
 import shlex
 import subprocess
 from pathlib import Path
@@ -77,9 +78,11 @@ def _list_agents(cfg: DispatchConfig) -> list[dict[str, Any]]:
 
 
 def _git(root: Path, *argv: str) -> subprocess.CompletedProcess[str]:
+    # Messages are parsed (e.g. "would be overwritten"), so git must not localize them.
+    env = {**os.environ, "LC_ALL": "C", "LANGUAGE": ""}
     return subprocess.run(
         ["git", "-c", "core.quotepath=false", *argv], cwd=root, capture_output=True, text=True,
-        stdin=subprocess.DEVNULL,
+        stdin=subprocess.DEVNULL, env=env,
     )
 
 
