@@ -1,0 +1,37 @@
+name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-bundle-1
+path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/bundle-1.md
+source_hash: c1d0f43aea7358d3ef871c0a588daaef4c4cfc87cb1653c28c42c0292d22f1a2
+content_hash: 5809b52dc56c71724d15000341e2b78651950bfc258e0bcf7b049935133f689d
+field_hashes:
+  id: a7425a5d7a3ae9bb42b77da511301cc1d9199d59cdb3a8b19aeb093fcafc0789
+  title: 97382b797ffb5189243f89b76e03e7681338b160133df0d8226723cef97bc004
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 6569698b9343de8c5e7d7b0e0874174f21b1a187b07aea3f5c5c449ce5b19aa7
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 40c63c37bdf598aef2eddea70571b229a73fcfef4409e98c1c8a9e92e351d187
+  input_sha256: e52a3ef3217511fb6a3a798cf04e133448fc7f5772accb784ad8796f58ef7ef8
+  contract_sha256: 6aedffffc4e1d098375006207f3730380922b87906fbc20356515ea17ce4dd14
+  output_sha256: 5e38ca48283d1e2656685dafff9ed4a20e70433034f271944aad9f9ed257cce5
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 4ddfe578b353445f02442107a64d952258266bcb71c54eb4a83eeb128315922a
+  created_at: a7fa2ca600c41cd93de4e2214585561a63a43402b7366d00006f6d03ba81c438
+  disposed_at: f9734ee5ded3260f4f472e82fa9b70b356fccba62a8516ffd9f8476e8e5ca0c0
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 8443627e6bd941ff12220373f0e126b618016b751c2db611ccfdba2c4e8d4186
+  disposition: 3df2681fd0148b65eff11a6da44ecd18ddcf517679ad6c25661165103097603f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T05:14:44Z'
+  authority: generated
+  via: save_document_payload
