@@ -1,0 +1,37 @@
+name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-preflight-1
+path: desk/reviews/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e/preflight-1.md
+source_hash: 1e5f8e10e2c2d51bbde2fe068390c590813ce29e4d8c0521780c366c7b82f99b
+content_hash: 44e2a266e2f9f437c827e7ab3514b6e62ae5ee5eab39f4e31a399339fbe4c1f1
+field_hashes:
+  id: c4d9a415b42ce68b71720e99a0ee4fc6b04e0a513174a37ff36d356202e97f35
+  title: 6d7ae6a41781ec8e6edfd27568d3205743fd670b8374d2547b2b0bbdc658d5c9
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: a056001bee4e8329de967cd117c629945bbf6c3e6a23ff3b446cd2782f957b9c
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: b2160b927541e28391c6235edd8bd7e13beaf51d454483dbbd5fa524920c346d
+  input_sha256: 439f2727518dc1f605d4eb852d41cb36f6e65702c1563b776db913366a97bdec
+  contract_sha256: 4748d81e621b41c0e781c5ff5e4a5346c57f49a727bc7a040cbdd5c772134521
+  output_sha256: 514d6b1502a4fecfa8286c11f5f3893918d8eb62faa0dd022568d024c455ba9b
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: ab94400d1ebb3088d3ab31518e444b6abaa54e03347ead4694c142830936fbf4
+  created_at: 0cb395a91ac230cc214f89f1ef06835a2ee5918836b9d46960348864af5d7b58
+  disposed_at: 59e3bde0531dba697e50f5e58b78a7c70480cbe8044441f0e930700bab92fb8f
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: b279ed3231b47ebac91d4a94b0f2423eb6b271ca4b7cd17d5a1c1333184b9dbe
+  disposition: 48f54a36d80f648525f9c2f2851c626697e6eaaedd4dd04784401cbee514703c
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T11:49:47Z'
+  authority: generated
+  via: save_document_payload
