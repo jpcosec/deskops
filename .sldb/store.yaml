@@ -422,6 +422,8 @@ include:
   - desk/materializations/materialization-models-tests-test-model-contract-snapshot-py.md
   - desk/materializations/materialization-init-deskops-bootstrap-py.md
   - desk/materializations/materialization-init-tests-test-gitignore-policy-py.md
+  - desk/materializations/materialization-cli-deskops-cli-parse-input-py.md
+  - desk/materializations/materialization-cli-tests-test-cli-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2408,6 +2410,14 @@ include:
     name: review-task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u-preflight-1
   - path: desk/reviews/task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u/bundle-1.md
     name: review-task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u-bundle-1
+  - path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/evidence-tests-1.md
+    name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-evidence-tests-1
+  - path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/evidence-commit-1.md
+    name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-evidence-commit-1
+  - path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/evidence-atom-1.md
+    name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-evidence-atom-1
+  - path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/evidence-materialization-1.md
+    name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

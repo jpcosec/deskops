@@ -1,26 +1,32 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:39:03Z'
+  at: '2026-11-21T18:34:52Z'
   authority: generated
   via: save_document_payload
 id: task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261116-072606-suggestion-add-task-from-yaml-acepta-un-dict-en-validation-y-edit-task-lo-rechaza.md
+- deskops/cli/parse_input.py
+- tests/test_cli.py
+- 4963966abd4f79e47b5a4f8ba75cf40fb84d4929
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/cli/parse_input.py
+- tests/test_cli.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict
 ---
 
 # add task --from-yaml rechaza un item de lista que YAML leyo como dict, igual que edit task
