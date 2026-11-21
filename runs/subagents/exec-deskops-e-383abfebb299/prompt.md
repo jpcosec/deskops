@@ -1,46 +1,49 @@
+Task: task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime
+Title: graph export y self_reflection escriben su salida derivada en .sldb_cache y no en .sldb/runtime
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective pills:
+- desk/contexts/pill-010-graph-runtime-output-policy.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T21:55:17Z'
+  at: '2026-11-16T06:04:14Z'
   authority: generated
   via: save_document_payload
 id: task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
-- deskops/graph/export.py
-- deskops/graph/paths.py
-- deskops/graph/self_reflection.py
-- tests/fixtures/golden/graph_snapshot.kg.json
-- tests/fixtures/golden/self_reflection_findings.json
-- tests/test_graph_self_reflection.py
-- tests/test_graph_snapshot.py
-- tests/test_output_goldens.py
-- b3b40a14d8376b2add3df1dac9001c1f5fc4d66c
+- desk/inbox/20261104-233657-suggestion-sldb-el-store-pasa-a-sldb-versionado-y-sldb-cache-ignorada-journal-retirado.md
 depends_on: []
 pills:
 - desk/contexts/pill-010-graph-runtime-output-policy.md
 files:
 - deskops/graph/export.py
-- deskops/graph/paths.py
 - deskops/graph/self_reflection.py
-- tests/fixtures/golden/graph_snapshot.kg.json
-- tests/fixtures/golden/self_reflection_findings.json
-- tests/test_graph_self_reflection.py
 - tests/test_graph_snapshot.py
-- tests/test_output_goldens.py
+- tests/test_graph_self_reflection.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
 ---
 
 # graph export y self_reflection escriben su salida derivada en .sldb_cache y no en .sldb/runtime
@@ -85,3 +88,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Ningun codigo de deskops/ escribe en .sldb/runtime (el grep solo muestra menciones de exclusion o lectura); pill-010 dice .sldb_cache/; los tests listados pasan; consumidores avisados si los hubo.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-383abfebb299`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-383abfebb299
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

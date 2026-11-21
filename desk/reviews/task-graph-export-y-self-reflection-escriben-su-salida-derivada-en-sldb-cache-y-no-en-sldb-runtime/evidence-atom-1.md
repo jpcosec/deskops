@@ -1,0 +1,53 @@
+---
+sldb:
+  by: agent
+  at: '2026-11-21T21:57:01Z'
+  authority: generated
+  via: create_document
+# review-<task>-<kind>-<n>
+id: review-task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime-evidence-atom-1
+# preflight | bundle | reproduction | goldens | owner | node | evidence
+kind: evidence
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: atom
+# kind evidence only: what the producer verified, one item per line
+value: atom-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache
+# doc:<Model>:<id> or empty for reviews of plan nodes
+subject: doc:TaskCodeDoc:task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime@sha256:c699392b1c24814f3b6d772f858a73f39896c317471b74cd87a735329dcc04e7
+# <plan>/dag.yaml#node:<ID>; empty when subject names a document
+subject_ref: ''
+# RuntimeProfileDoc name or "human"
+engine: deskops-closeout
+actor: deskops
+# Run evidence directory under runs/, relative to the project root
+run_dir: ''
+input_sha256: e71c7824e8e0ae2a6ba6e49bfa4efff46aca911101a2bce1c1aa1f372780fc16
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
+output_sha256: ''
+# pending | accepted | rejected | incomplete
+verdict: accepted
+reason: 'verified: atom atom-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache'
+# ISO 8601 timestamp
+created_at: '2026-11-21T21:56:51.295922+00:00'
+# ISO 8601 timestamp, empty while pending
+disposed_at: '2026-11-21T21:56:51.295922+00:00'
+disposed_by: deskops
+# e.g. workspace:desk
+tags:
+- workspace:desk
+---
+
+# Closeout evidence atom of task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime
+
+## Summary
+
+_Summarize what was reviewed and the evidence this receipt records._
+
+closeout verify checked atom: atom-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache
+
+## Disposition
+
+_Record the verdict rationale and who disposed of the review._
+
+Verdict accepted: verified: atom atom-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache

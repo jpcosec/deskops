@@ -1,0 +1,2 @@
+pytest -n 4 -q tests (worktree, PYTHONPATH=worktree): exit 0 — 1287 passed, 3 skipped, 1 xfailed
+focused tests (snapshot, self_reflection, gitignore_policy, graph_cli, output_goldens) included in full run: pass
