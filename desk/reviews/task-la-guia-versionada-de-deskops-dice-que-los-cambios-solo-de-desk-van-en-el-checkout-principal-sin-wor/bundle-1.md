@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T17:44:14Z'
+  at: '2026-11-21T07:43:07Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-bundle-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -26,13 +26,19 @@ input_sha256: 9e34569b9e5ac9eaaec366ac033768b29f299490dc2f190b94d952936420f491
 contract_sha256: e62eec7451f39fff459acb51ab6b36475219c08abf6bbc0b61f9bd1982433d08
 output_sha256: 6f9c6a32d3eb923906657b8ca2b451dcbc721d08cfc39c53ff33bda88448a554
 # pending | accepted | rejected | incomplete
-verdict: pending
-reason: ''
+verdict: accepted
+reason: 'Aceptado. Resoluciones (las de preflight-3): 1) En .opencode/skills/use-deskops/SKILL.md
+  el parrafo va al final de la seccion ''## Workflow model'' (linea 54), antes de
+  ''## Task-state recovery commands''. 2) Copia literal del parrafo de .claude/skills/deskops-workflow/SKILL.md:80-85
+  en ingles; ''adaptado'' solo permite ajustar el nivel de encabezado o la viñeta.
+  3) ''Correr los tests'' = los comandos de la seccion Validation del TaskDoc, nada
+  mas. Commit con ''Task-Id: task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor''
+  en el cuerpo, en el worktree que dispatch le da al ejecutor.'
 # ISO 8601 timestamp
 created_at: '2026-11-19T17:44:08.883771+00:00'
 # ISO 8601 timestamp, empty while pending
-disposed_at: ''
-disposed_by: ''
+disposed_at: '2026-11-21T07:42:57.365026+00:00'
+disposed_by: deskops
 # e.g. workspace:desk
 tags:
 - workspace:desk
@@ -49,3 +55,5 @@ bundle review; engine runtime-pi-deepseek-flash; evidence under runs/subagents/2
 ## Disposition
 
 _Record the verdict rationale and who disposed of the review._
+
+Verdict accepted: Aceptado. Resoluciones (las de preflight-3): 1) En .opencode/skills/use-deskops/SKILL.md el parrafo va al final de la seccion '## Workflow model' (linea 54), antes de '## Task-state recovery commands'. 2) Copia literal del parrafo de .claude/skills/deskops-workflow/SKILL.md:80-85 en ingles; 'adaptado' solo permite ajustar el nivel de encabezado o la viñeta. 3) 'Correr los tests' = los comandos de la seccion Validation del TaskDoc, nada mas. Commit con 'Task-Id: task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor' en el cuerpo, en el worktree que dispatch le da al ejecutor.

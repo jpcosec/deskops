@@ -1,0 +1,37 @@
+name: review-task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34-preflight-3
+path: desk/reviews/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/preflight-3.md
+source_hash: 8c2ac1441d82b83ac5be9a05a62902d94e282511dda2fee23eb68be6356b5012
+content_hash: 10bdfd6a5d70daa24b94469f161ba8c9c7a563d04b3d2f32003816a3fe777e81
+field_hashes:
+  id: 3e007654cb278b55fcda523d5eb8f7896e16740535666f6d4fa392cda024d305
+  title: 4371e362c340463ade0463c34210cf5c8adc7ef7c790ea4516aa5a5cb8eb4398
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: d96d6dda572938a93cc8d8ae70fb234ef7085eeca2368eeaa10b48b68c098c33
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: b39c89b9d8b02e9325d28fcff5a3734ddd908b3a6e0330584f4e4bbaf1164b6f
+  input_sha256: d451b01bd5b869099409b235180687148ca7135cf739cc8b9ac86c72eacb02a6
+  contract_sha256: 889c9676ddce2b4815396ff9d09a1a0495df151b6ac6a7db2f8082e1c56d5253
+  output_sha256: bf31da15704ac9c76fca706648e8e5b05a07a9773d59b2c41dc198746ab7d813
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: dd6af86157bd99b93ce94b30a980a2bb9442a578dd0706c7b417f027e82d431f
+  created_at: e7dbcc111d6231aeb87e67f2928f8587de8e38698d26196f4ee427947e6f4ce0
+  disposed_at: 1d4af5b04c3740a1521b78652d549c234635e453867c831d3151625bc130f72d
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 09bd027f797c8ddd9d161c915a97b4ba65cfae60c89e6188a9a235862045139e
+  disposition: df42d79786c2c8a29f50b5539b9dcccc7e56a4a7cfbe3a51115571cd012f4ae1
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:39:16Z'
+  authority: generated
+  via: save_document_payload

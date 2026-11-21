@@ -1,7 +1,7 @@
 name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-bundle-1
 path: desk/reviews/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/bundle-1.md
-source_hash: 51525c1f5d240a5d80a35d07afae063a0a4a8693fbddd6d8d6c7f540b8bab322
-content_hash: 222c11c39134865fd852cef8d3642825d677968f588734fb3570f213dee773b1
+source_hash: 9a6a996420d7ee14fcbe4f7d135f68f419e2e50d8711d3206d3f11f6eabcd9ca
+content_hash: 6ff4b7863f4a7ad7738410ccd0929712b5638f2a3d446e5fe54b165e6836c15b
 field_hashes:
   id: 14286ec331895665bf59772b0658517cf123879aebc15b3a4cca0a9784aaf140
   title: 861b11a602f6ed097f8a2a2ffd2232cb3f681efb51ba878d781fe80a1a1fc537
@@ -16,13 +16,13 @@ field_hashes:
   input_sha256: f37ab86fdb55c9195c33cb417f6e56a84abb936c75a38f907db51bb09bafa6f7
   contract_sha256: 1690c289d25e526b587a70d2d4edc122d577c0f355eeac7c3d9e01ed307d759e
   output_sha256: db4ea48d3f5a9e695fa0075154c4ec5be639b1e8c2c1b6b92f10d1e044803509
-  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
-  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: cb7e6a88016a00a1aef669e973439bead4383dc0c71769575c34acf4f2c9ea5d
   created_at: c2bf4ed66408b5b513db52f3c2d637660e3f1df36fa491b3db2aab322a57d202
-  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_at: b48548c44d986f73ccdb6a07994bbc87b8af39fad00b333a8667c65d1e8acbf1
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 45608833fd77200d9ae4ae94a2491029e462bd6837ea1c929887e8568844fbff
-  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposition: 6559851989dfd9d6e0927337f596cdce44aff16b38c76fc8884cb71c66315734
   tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
 semantic_tags:
 - representation.markdown
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T17:44:14Z'
+  at: '2026-11-21T07:43:07Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
