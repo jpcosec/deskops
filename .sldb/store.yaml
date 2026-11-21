@@ -722,6 +722,8 @@ include:
     name: run-deskops-t-0d28ced06662
   - path: runs/subagents/exec-deskops-e-a3513307b96e/run.md
     name: run-deskops-e-a3513307b96e
+  - path: runs/subagents/exec-deskops-t-0a4577b6db6f-testing/run.md
+    name: run-deskops-t-0a4577b6db6f
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2376,6 +2378,14 @@ include:
     name: review-task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar-evidence-atom-2
   - path: desk/reviews/task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar/evidence-materialization-2.md
     name: review-task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar-evidence-materialization-2
+  - path: desk/reviews/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e/evidence-tests-1.md
+    name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-evidence-tests-1
+  - path: desk/reviews/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e/evidence-commit-1.md
+    name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-evidence-commit-1
+  - path: desk/reviews/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e/evidence-atom-1.md
+    name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-evidence-atom-1
+  - path: desk/reviews/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e/evidence-materialization-1.md
+    name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

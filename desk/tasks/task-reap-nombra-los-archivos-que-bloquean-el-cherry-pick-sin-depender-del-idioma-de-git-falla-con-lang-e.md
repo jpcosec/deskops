@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T11:47:23Z'
+  at: '2026-11-21T12:47:03Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- cdca5251242ab0951e1847769049ff36ea3627e5
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-con-cualquier-idioma-de-git
 ---
 
 # reap nombra los archivos que bloquean el cherry-pick sin depender del idioma de git (falla con LANG=es_ES del timer)
