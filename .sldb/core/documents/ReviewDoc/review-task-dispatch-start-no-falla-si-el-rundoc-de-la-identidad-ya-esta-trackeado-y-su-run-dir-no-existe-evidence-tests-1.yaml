@@ -1,0 +1,37 @@
+name: review-task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe-evidence-tests-1
+path: desk/reviews/task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe/evidence-tests-1.md
+source_hash: 6556158a844cbf025470bfec69decbb9b601e166ba819be194bd893a64cc9877
+content_hash: 4d83397d18191bb7825ff52bba35b51dac84472741d274a2f0fbe2ba691befee
+field_hashes:
+  id: f72de209ea9c6f5ef1ff87542296a0e48d1e8c2f7c9e3b4ca2ba91d7f11abdc5
+  title: 03b8d4a1f34b49bc1899d5fff739a0ec5063046af451e90ef495bbea494c3da5
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 0effbf961689811ed60d6a5f3afd26a461664f60e7ffb78cb273cf331f0c72e2
+  subject: f3f19b99bb9f7a7ac8458a50f4c81eb9a8ce59a8aec6333f879f93fb3f1d9900
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: e60643c9936b58d6d03f8af062eba2c6bccb6df4823aa96313df0965054ce64c
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 86c6494e93739305f94b06bf040c9453fb11d7d3b85f5bd6c83a87861bbffa1e
+  created_at: a6b9ca7ae704429ebfa0763b153ffdd7f968e4238ce066a6e657a0ca711362cc
+  disposed_at: a6b9ca7ae704429ebfa0763b153ffdd7f968e4238ce066a6e657a0ca711362cc
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 2683f58970855a7b756fabac9249fa5cf16fd30922d1e483139bac882ec2c9e6
+  disposition: b9083d9769d41d44e18642f2bf1e43ebc1ac6bb45ed639450496f14f6d056cb9
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T23:08:23Z'
+  authority: generated
+  via: create_document
