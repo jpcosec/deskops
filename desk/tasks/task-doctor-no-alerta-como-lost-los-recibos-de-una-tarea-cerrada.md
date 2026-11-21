@@ -1,18 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:29:23Z'
+  at: '2026-11-21T23:36:39Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
 current_node: ritual-execution
-history: []
+history:
+- task_activates
+- 'task_returns_to_execution: Tester deskops-t-ce3a6e33bbbc FALLA sobre c0df7045.
+  closed_task_ids() en deskops/doctor_findings.py solo considera cerrada una tarea
+  si hay un commit con Task-Id y además el trailer Closeout-Mode o Run-Id. No reconoce
+  el cierre por el asunto canónico ''closeout: <task-id>'' que escribe deskops closeout
+  commit. Sobre los desks reales, IR sigue con 83 alertas ''lost'', 81 de ellas de
+  tareas con un commit de asunto exacto ''closeout: <task-id>'' (ejemplo: task-fixture-mount-copy-de-las-pruebas-copia-los-rundoc-de-runs-subagents,
+  commit 89404705). Intento 2: closed_task_ids también cuenta como cerrada una tarea
+  con un commit cuyo asunto es exactamente ''closeout: <task-id>'' (git log --format=%s,
+  comparando el id completo, sin prefijos). Agregar un test con un repo temporal donde
+  el cierre solo está en el asunto. Verificar sobre /mnt/ssd/proyectos/SLDB_1/IR (solo
+  lectura): deskops doctor --root /mnt/ssd/proyectos/SLDB_1/IR no da alertas lost
+  de tareas con commit ''closeout:''; anotar el conteo antes y después en el run dir.
+  Correr tests/test_doctor_*.py. Commit desde tu worktree con ''git commit -- <rutas>''
+  y el trailer Task-Id.'
 references:
 - desk/inbox/20261121-032540-unclear-doctor-alertas-subject-lost-de-revisiones-de-tareas-cerradas-que-desk-update-no-repara.md
 depends_on: []
