@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T02:33:33Z'
+  at: '2026-11-21T04:15:49Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -47,6 +47,7 @@ tasks:
 - desk/tasks/task-governance-e-g-other-repo.md
 - desk/tasks/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej.md
 - desk/tasks/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada.md
+- desk/tasks/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -125,3 +126,4 @@ _Generated from the task references above._
 - Governance: e.g., other_repo [draft] - Lo que pide la nota 20261120-193931-suggestion-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11, según la propuesta de Governance (orden de implementación en su sección 11 y decisiones en la 12). Antes de despachar, el coordinador la prepara con el texto completo de la propuesta: alcance, archivos, camino y validación.
 - dispatch deja commiteados los RunDoc que escribe, para que el reap pueda traer al main commits del ejecutor que tocan el store [draft] - Ningún reap falla porque el checkout principal tenga sin commitear el store que escribió dispatch. dispatch start commitea en la rama principal, con pathspec, solo los archivos del store que record_scion_run tocó ('git commit -- <rutas>', mensaje 'run: <agente>' y [skip ci]). Además, reap, antes del cherry-pick, commitea igual cualquier RunDoc pendiente de sus agentes. Si queda otro cambio local que choca, el mensaje de error nombra los archivos y sugiere commitearlos.
 - dispatch start tester no lanza si la rama del ejecutor de la tarea todavía no está integrada [draft] - dispatch start tester sale con EXIT_BUSY (3, así la cola lo reintenta) e imprime 'en espera: la rama deskops/<ejecutor> de la tarea no está integrada' si existe alguna rama deskops/<nombre> de un ejecutor de esa tarea (por scion_child_identity, intentos 1 y 2) con commits que no están en la rama principal. Cuando el reap la integra y la borra, el tester lanza.
+- integrate extiende el tip sobre un merge de la rama remota cuando lo demás después del closeout es solo desk [draft] - extend_tip devuelve HEAD cuando (a) la rama remota configurada (cfg.remote/cfg.branch, la misma que usa el paso fast-forward) es ancestro de HEAD y (b) los archivos que cambian los commits de tip..HEAD que no están en la rama remota, sin contar merges, son solo de desk/, .sldb/ o runs/ (git log --no-merges --name-only --format= HEAD ^tip ^<remoto>). Además, si el merge resolvió algún conflicto en archivos de código (el árbol del merge difiere de lo que daría la unión), no hace falta detectarlo: los gates corren igual sobre la copia limpia del tip extendido. Sin cambio para el caso actual de commits de desk sin merge.
