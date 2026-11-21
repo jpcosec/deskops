@@ -1,7 +1,17 @@
+Task: task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev
+Title: integrate no empuja el commit de código por separado cuando no avanza rápido sobre el remoto; lo lleva el tip
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T05:35:34Z'
+  at: '2026-11-21T05:22:34Z'
   authority: generated
   via: save_document_payload
 id: task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev
@@ -13,21 +23,14 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- deskops/integrate.py
-- tests/test_integrate.py
-- 238099a6e62efdaaa7bc1d6bb3b50b6fe39eefbd
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/integrate.py
-- tests/test_integrate.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-integrate-no-empuja-por-separado-un-commit-de-codigo-que-no-avanza-rapido-sobre-el-remoto
+atoms: []
 ---
 
 # integrate no empuja el commit de código por separado cuando no avanza rápido sobre el remoto; lo lleva el tip
@@ -67,3 +70,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El test nuevo y tests/test_integrate.py pasan.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

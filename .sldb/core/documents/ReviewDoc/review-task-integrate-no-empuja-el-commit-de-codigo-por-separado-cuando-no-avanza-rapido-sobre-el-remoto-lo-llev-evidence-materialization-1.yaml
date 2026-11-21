@@ -1,0 +1,37 @@
+name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-evidence-materialization-1
+path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/evidence-materialization-1.md
+source_hash: c3ecbed215d4045d9c82a099462bc0505529f25d74cdbc3086f993852dbd3780
+content_hash: 115c4db59386a465f1b0f251199ff917204c9324e31a65278892cfe0f7c1d9a8
+field_hashes:
+  id: ca28d568e962be826b6d8c7b6a004e38c772c16668b20bd542a3f06a2d914f15
+  title: a69ac8f3d75efa69cda63df0c195a30922687c06e7f0a976da8e89d6110e8909
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 1df35f689fd78184f94b95255e2f5e8f4ce990fea69814978ff2a2534da5740e
+  subject: b2c9185d113d8be9cc6f0000dcd883c0bfc4ade7ccfed14e3ed95f52ada74c09
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 8ecaf4e1f6c468c1034093c8d1a9e368e9a5842c3c06ab4dd3c9813c17593d03
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: c6e2170854883cf47ca789b1846942031d82d99f3f5577eaab9d14d4c8fd43bf
+  created_at: f2b6e51df4052b8dc6d3daee7837dc9b6b5181cac6102ecb35867d085b12c151
+  disposed_at: f2b6e51df4052b8dc6d3daee7837dc9b6b5181cac6102ecb35867d085b12c151
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: e85631e4cc529777418cf9e2ac32adf1219cb7979f3d24d7d3b9101fd8f0221e
+  disposition: 33c30fc8d32f6c66d60dff462665babee6a77166de59b6d2df3000e2e791f44e
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T05:35:57Z'
+  authority: generated
+  via: create_document

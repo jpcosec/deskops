@@ -1,0 +1,1 @@
+TMPDIR=/tmp pytest -q tests/test_integrate.py -> 25 passed, exit 0 (worktree)
