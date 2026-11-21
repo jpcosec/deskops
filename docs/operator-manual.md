@@ -261,6 +261,10 @@ deskops desk update --root ../sibling
 # Run with --apply to repair these issues.
 ```
 
+### Desk-only changes
+
+Desk-only changes go straight on the main checkout, never in a worktree. Creating a task, sending inbox notes, editing a field or committing a closeout is done with deskops in the repo main checkout on its integration branch: sync with the remote first, git add only the desk/ and .sldb files deskops touched (never git add -A: other sessions may have uncommitted work there), commit with [skip ci] and push. Worktrees are for code changes that go through a PR.
+
 ## Artifact commands
 
 The `add`, `edit`, `list`, and `show` families are generated from the artifact
