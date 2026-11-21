@@ -223,13 +223,31 @@ def _append_event(root: Path, task_id: str, result: str, tip: str | None) -> Non
         handle.write(f"{stamp} {task_id} integrate {result} {(tip or '')[:SHORT]}\n")
 
 
-def extend_tip(root: Path, tip: str) -> str:
-    """HEAD when only desk commits (``desk/``, ``.sldb/``, ``runs/``) follow the closeout commit, else ``tip``."""
+def extend_tip(root: Path, tip: str, remote: str | None = None, branch: str | None = None) -> str:
+    """HEAD when only desk commits (``desk/``, ``.sldb/``, ``runs/``) follow the closeout commit, else ``tip``.
+
+    When the configured remote branch is an ancestor of HEAD (a merge of it after the closeout), the
+    code that merge brought from the remote is not counted: only the non-merge commits of
+    ``tip..HEAD`` that the remote branch lacks are checked.
+    """
     head = _run(["git", "rev-parse", "HEAD"], root)
     if head.returncode != 0 or head.stdout.strip() == tip:
         return tip
     head_sha = head.stdout.strip()
-    diff = _run(["git", "diff", "--name-only", f"{tip}..{head_sha}"], root)
+    remote_sha = None
+    if remote and branch:
+        fetched = _run(["git", "fetch", "-q", remote, branch], root)
+        if fetched.returncode == 0:
+            ref = _run(["git", "rev-parse", "FETCH_HEAD"], root)
+            candidate = ref.stdout.strip() if ref.returncode == 0 else ""
+            if candidate and _run(["git", "merge-base", "--is-ancestor", candidate, head_sha], root).returncode == 0:
+                remote_sha = candidate
+    if remote_sha is None:
+        diff = _run(["git", "diff", "--name-only", f"{tip}..{head_sha}"], root)
+    else:
+        diff = _run(
+            ["git", "log", "--no-merges", "--name-only", "--format=", head_sha, f"^{tip}", f"^{remote_sha}"], root
+        )
     if diff.returncode != 0:
         return tip
     if any(not path.startswith(DESK_ONLY_PREFIXES) for path in diff.stdout.splitlines() if path):
@@ -243,7 +261,7 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
     if cfg is None:
         raise UsageError("falta el campo integrate en desk/config.json")
     tip, code = load_closed_task(root, task_id)
-    extended = extend_tip(root, tip)
+    extended = extend_tip(root, tip, cfg.remote_url, cfg.branch)
     if extended != tip:
         tip = extended
         print(f"tip extendido a {tip[:SHORT]}: solo commits de desk")

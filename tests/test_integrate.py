@@ -414,6 +414,45 @@ def test_tip_extends_over_later_desk_only_commits(closed: Path, tmp_path: Path) 
     assert _remote_head(root) == head
 
 
+def _remote_code_commit(root: Path) -> None:
+    """Another person pushes a code commit to the bare remote."""
+    other = root.parent / "other"
+    _git(root.parent, "clone", "-q", str(root.parent / "remote.git"), str(other))
+    _write(other / "src" / "remote_code.py", "R = 1\n")
+    _git(other, "add", "src/remote_code.py")
+    _git(other, "commit", "-q", "-m", "remote code")
+    _git(other, "push", "-q", "origin", f"HEAD:{BRANCH}")
+
+
+def test_tip_extends_over_a_merge_of_the_remote_branch(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    _dangling_closeout(root)
+    _remote_code_commit(root)
+    _git(root, "fetch", "-q", str(root.parent / "remote.git"), BRANCH)
+    _git(root, "merge", "-q", "--no-ff", "-m", "merge remote", "FETCH_HEAD")
+    _cli(root, "edit", "task", "task-old", "files", json.dumps([]), "--root", str(root))
+    _git(root, "add", "desk", ".sldb")
+    _git(root, "commit", "-q", "-m", "desk: retire dangling reference")
+    head = _git(root, "rev-parse", "HEAD")
+    result = _integrate(root, "--dry-run")
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert f"tip extendido a {head[:12]}: solo commits de desk" in result.stdout
+    assert "fast-forward" not in result.stdout
+
+
+def test_tip_stays_when_a_local_code_commit_follows_a_remote_merge(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    _dangling_closeout(root)
+    _remote_code_commit(root)
+    _git(root, "fetch", "-q", str(root.parent / "remote.git"), BRANCH)
+    _git(root, "merge", "-q", "--no-ff", "-m", "merge remote", "FETCH_HEAD")
+    _write(root / "src" / "local_code.py", "L = 1\n")
+    _git(root, "add", "src/local_code.py")
+    _git(root, "commit", "-q", "-m", "local code")
+    result = _integrate(root, "--dry-run")
+    assert "tip extendido" not in result.stdout
+
+
 def test_tip_stays_at_closeout_when_a_later_commit_touches_code(closed: Path, tmp_path: Path) -> None:
     root = closed
     tip = _dangling_closeout(root)
