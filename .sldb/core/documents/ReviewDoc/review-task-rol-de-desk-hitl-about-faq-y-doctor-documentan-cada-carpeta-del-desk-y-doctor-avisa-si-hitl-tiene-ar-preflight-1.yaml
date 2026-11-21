@@ -1,0 +1,37 @@
+name: review-task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar-preflight-1
+path: desk/reviews/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar/preflight-1.md
+source_hash: e823fdcc857cc608ca98d28e29841d87f1b35fb89db0a0308f5b5402d5500d14
+content_hash: a508eedd10ea1a2f6daeeebf01a8e9ed8d637402a4ad35ce5a158b81678ab678
+field_hashes:
+  id: f50952d1defd18b197a8f0fb49c2ffa67526896fffce17551e052cb65e058b82
+  title: 1905081af007160665ee8f6c6df5826eefef8675409b02bdfd173fe7ed9173c4
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: c617ce10d9f1c36e13381c30e3d20ed2b5c419a30db45c52df2254deee663d72
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 196eb300d6c9012e7b323dde48b61e95bf75880f10539d84a88857454af16a1f
+  input_sha256: 2db952cef61cdade1fda8945cd72c43a8e0da191db57aafafdab25244d5c2d0e
+  contract_sha256: 5f1f1fcebb5ac0cac41f8f27124de13ec38d406366828e3bdd181f314ddcac9d
+  output_sha256: 6adbe162db26f8bda6c5cf06d62282eaa2ff4467517a01c3886964b171a1c458
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 2f1c757748e1946af2cb687f12191c8d652b152b73fe9cf696730b5efae90be4
+  created_at: baa77c4fa84c257653627746d3ef6b60312a4386d481bf968567dc62c9184844
+  disposed_at: 652d7befc86aa08361457ec4f29fa6f636a2357887ee06bea9789a56798aa1cf
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f7e1ff923c0fa30e324bd7691e90ca2403e98024527684840717a76fdeea2895
+  disposition: 89a316134cee67b499163380c7c76cae31440f8cf4d5c44ceb2fdb965763e251
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:47:03Z'
+  authority: generated
+  via: save_document_payload

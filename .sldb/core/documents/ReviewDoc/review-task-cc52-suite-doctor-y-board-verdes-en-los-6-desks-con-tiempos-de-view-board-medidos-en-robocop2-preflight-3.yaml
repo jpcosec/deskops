@@ -1,0 +1,37 @@
+name: review-task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2-preflight-3
+path: desk/reviews/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2/preflight-3.md
+source_hash: 435d61d14f01fab983e15c5a3b1c9ffc537490e50413a628350e4a51f0b7d22a
+content_hash: 1b3eee99e0b5ef2e1b65eabebc681d34a10c3a2817ca3ade1313269b04f714ee
+field_hashes:
+  id: 5495606701fdd223d8bfe4f43a7af3f06c5dedfc46c0ced2eed524a07b2ac14f
+  title: d1cdcd66a84a23e58c6de5b89c8353fd12dd7b1ac441ebdf63da4489a58481d7
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 392413e96e9a2e01f0edf3f19889aac5ebfd6579cc5151d381822ef33e5136f5
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: e1ebe0f07d40d58882178fcc87b08bcf4a701ee54db0798821439ee11e898384
+  input_sha256: 7125e10b604977257a075596dd51652de6fe9e9848440cc98174051fdcb4f27c
+  contract_sha256: 884b3c45c40188c841d4ae0db40cc29859f15775f7970dc84cb9e0c5e90a8e38
+  output_sha256: 1951c13df248ee4d2b51aee85abc0e555248b959e65e9dc897487144d1444d61
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 6fa8541d1343a07c63250502d45356fd2a82191641ba19506aae9a35bb4a7f91
+  created_at: 7fedfb1f679bf122b0055d80f0582aa2caf89ba67994d7ac5301efc131610cae
+  disposed_at: 0c522cb44689f51f42d488bb9d225ae213ec1ffd334922c9719c43bc017a4b83
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5ec78bdab1894949210f5fbdd44f864d248502fb78c87cc6370f19eb2cf258fc
+  disposition: 43d0dfa95e64ad78b290662a551da716b8bf969f5231307cda3192ff7c91edba
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:51:05Z'
+  authority: generated
+  via: save_document_payload

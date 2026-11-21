@@ -1,7 +1,7 @@
 name: task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2
 path: desk/tasks/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2.md
-source_hash: bf741be62a93294121d8aa9d93619218c39102899eaacf3aea187e7c275f2d21
-content_hash: 8c13089515f85baf526442a2e501f36e611f33cb856037bf6d786f7401e3c754
+source_hash: 3bb61410e5120afdfdd8f7e844a99d8116c21403cdc79194ce66e76484a4c893
+content_hash: a05229ed972e35171274478009ddea66ace00357c7b7cbef009523078e6a229e
 field_hashes:
   title: 69bb78f547fd985586a333d7fede6adb3fca93d9f47228376c538c8bea37ce6a
   id: 0fa915d01812a6d45439370d9f6dc41afe62b6701cf489d6421f500c9a8a2296
@@ -14,7 +14,7 @@ field_hashes:
   goal: 364553cc1a98acacff56067d16a7f273155647376ddc4aa4aede0f2ad9b48421
   scope: 992e5d10f6c75309305b68ea4f8a90d7755270b149fc57d0726275129fa840d6
   references: 5ad479f628788cbe0eca7e676d9f25c4da2f94f31430a7af82445f32fd47b1e6
-  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4963d885b6aaa93c859a6976bfa94c516d3d1d8a1969d131b24910920e642c2b
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: a099b17a271669c74a344c6ff2bdfb3841c9edb2db3f6af4fd17487f82e8c4f9
   implementation_path: 853e6db6c21422b68c22559bad169ef641939a41062d8883721c06fc52f3640f
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:05:31Z'
+  at: '2026-11-21T07:51:17Z'
   authority: generated
   via: save_document_payload

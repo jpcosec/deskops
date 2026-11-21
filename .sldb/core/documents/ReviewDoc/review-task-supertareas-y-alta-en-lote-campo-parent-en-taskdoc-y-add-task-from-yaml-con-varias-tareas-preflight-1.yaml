@@ -1,0 +1,37 @@
+name: review-task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas-preflight-1
+path: desk/reviews/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas/preflight-1.md
+source_hash: af4ee116e09976ab6577f0325e0cb0eb66119bba32e8f45c202dea146f3be288
+content_hash: 19319475ecb7e9091ea88d93d7789811de07e6a029b0a0ef1705686ec46faa15
+field_hashes:
+  id: 802e1c4940dece3c02bd204237470236360b3b3df5b37d331e26e73485e53369
+  title: 35b2a5725b54d405fdbfbd03d0d3785dc9df476c0fa732d294d546bb13020ac4
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 078ec7006a4a7ab3d65bb8095fd52b37debe271acce72b00c8d5151cde0a9543
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 6956cca92ec3a030a616f05bb14b0442c5faea7c0a93f472df0d1187835902fd
+  input_sha256: d9cbfe8086263627551490277dceba9e70930365f18dfe7e3a6ef4c1c98c17cd
+  contract_sha256: 85a11edc70a08eae4c0d43aac47b9b68962a407dd30734406b7be1bb7416239d
+  output_sha256: 3d90f7c77564b1aabd3d83d4eaf53b5e1c1a73ae04a337593d7e14672078bad0
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: a1442b0b4311ca092741c6952809c6baf7ecadea4eda2b05811925e4a1c87dfd
+  created_at: 8557a450df2fbd99118d867a95ca9680d12b528ec204b7d2f5bc53c7be97dfc0
+  disposed_at: 6f909b77cb6a2637267b2bf7af1efdbf0d4d866863619fa8ec40201191e5e411
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: a16b82c77c98a9207e2dfa0c8ad45d892bd3eb340e366b02f8e244b063439b87
+  disposition: 3880376032813e22479453f350b3045fe32aa304b804a0bd1fe227d3375f3135
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:50:50Z'
+  authority: generated
+  via: save_document_payload

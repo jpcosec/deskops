@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:05:31Z'
+  at: '2026-11-21T07:51:17Z'
   authority: generated
   via: save_document_payload
 id: task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2
@@ -15,7 +15,8 @@ current_node: ritual-execution
 history: []
 references:
 - desk/drawer/plans/deskops-como-config/dag.yaml
-depends_on: []
+depends_on:
+- task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar
 pills: []
 files:
 - docs/config-vs-code.md

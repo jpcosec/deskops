@@ -1,0 +1,37 @@
+name: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-preflight-3
+path: desk/reviews/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/preflight-3.md
+source_hash: 7746efe7403f4001fa5816a95368d83d9e911ea57eef6abe66f43703a474ccfa
+content_hash: dc3512cd482c600f6019143ca32d747d08ced6f35ab13a03394ded643d7fb0d3
+field_hashes:
+  id: 9a0e45b72ef17903b19e67e08c084c950e02f6642d72d2f8c050510a8c0536c8
+  title: 318173f95c3d9fa1442664a48ec476ae1cb091c155925ce9e2552857c1e7c301
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 48169143a470892486d54b9ee215f0e2a88ec83a2eef5e605614c2d18560aa05
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: aec602e9edf90290cea98998074cda05f6e4bb41fc68157b721ae074c37da41c
+  input_sha256: 2b6504188e04f21ff4ee6ab59a4fe3878a019612c0d432464ffc4db96ca87635
+  contract_sha256: b73d399e78cc462740db791fabc4e24eee04a5c173165efdef384f95ed9ab663
+  output_sha256: 13e5f3111e9a680cab4af17f19836caffd37728585bd43e5e783fbbe8ff29f9e
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 1f39de3434f631d8dcbc46030d5df9808e1b8fc5686d57d61632808934ce3bee
+  created_at: 25c3de7e289c56a5fa7976d48eb452cea92f50ec2cd164103abe9e0931d29aaf
+  disposed_at: fa8e7012ca20c975b0bd73d9ac8882d3324721ea139e879d48c4b2681e55d7bd
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 17c1b9628313b28c24e1608e62223d4f17a492298e91918fbfb347735ed07871
+  disposition: ea2f6c1d5f156695c197be4573fcaef71446ba5daf8c221c0940f867e3ce4a76
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:47:35Z'
+  authority: generated
+  via: save_document_payload
