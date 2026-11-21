@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:09:45Z'
+  at: '2026-11-21T13:25:35Z'
   authority: generated
   via: save_document_payload
 id: task-governance-interfaz-mcp-de-deskops-compatible-con-claude-code-delgada-sobre-las-operaciones-del-cli
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-193949-suggestion-interfaz-mcp-compatible-con-claude-code.md (2026-11-20): Pedido urgente de JP (19-11). Decisión del 20-11: el MCP puede hacer todo lo que hace el CLI (leer, crear, avanzar, cerrar), como capa delgada sobre las mismas operaciones y pasando por las mismas compuertas, sin lógica propia. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, sección 5.
+Nota de Governance 20261120-193949-suggestion-interfaz-mcp-compatible-con-claude-code.md (2026-11-20): Pedido urgente de JP (19-11). Decisión del 20-11: el MCP puede hacer todo lo que hace el CLI (leer, crear, avanzar, cerrar), como capa delgada sobre las mismas operaciones y pasando por las mismas compuertas, sin lógica propia. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), sección 5.
 
 ## Goal
 

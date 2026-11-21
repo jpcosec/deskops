@@ -1,7 +1,7 @@
 name: task-governance-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11
 path: desk/tasks/task-governance-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11.md
-source_hash: 1e8b02e79aef5e66dd1e943d99f1790972a5467dc328e4104d2b0c4b511c17bf
-content_hash: 7c1703b25adb19692ff86cf316c17994a4f2bfd40d17c17c2397d7dc47cf32c2
+source_hash: e3566464f50b010979755ba6ccbd63c7cc1ad8c0359689ce768f7d0981cb885a
+content_hash: d8fee46f9d8cd9f87de30ec6e570c2f8ff696ab07a4972c6ca5635de31014a8a
 field_hashes:
   title: e4e3dad2e0594fec6469d93907aaf5e34f7fdf47e4a2a268ea2142673e3a535e
   id: b4069d1519d13b3cc5e03bdba1b9b07944f4aa5cb0c28ec69243907510c4bb68
@@ -10,7 +10,7 @@ field_hashes:
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: cd870acd9834d2cce3f65ec5e7f5384c7d0a9e9721ee68fc2b2e7e2b229f50fd
+  why: dc223b01509c23622f81b7ddb1fc30ac9aa0b5f4a7406fdaf0fc7cd4f26b142f
   goal: 2bcd7774b082dba59d7f5f687f242374c34a30350c2c5e0bc07e72cbab4ddbd0
   scope: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   references: a7eaf8e14fff597588040554daf53d927130fa58d09449f45053400292fcc610
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:08:25Z'
+  at: '2026-11-21T13:25:25Z'
   authority: generated
   via: save_document_payload

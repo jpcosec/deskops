@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:39:17Z'
+  at: '2026-11-21T13:24:35Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph
@@ -31,7 +31,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Tres notas de sldb (20261116-083618, 20261116-082230, 20261116-081341) avisan APIs nuevas que reemplazan codigo propio de deskops. Verificado hoy en el sldb instalado (/mnt/ssd/herramientas/sldb): sldb.api.rewrite_references acepta graph= y excluded_sources=, sldb.api.referrers acepta graph=, existe sldb.api.template_anchors(model_type), y segun la nota create_document y Transaction.create pinnean con @sha256 los doc: de __doc_anchors__ (tests de sldb tests/api/test_doc_anchors.py::test_create_document_pins_the_anchor_without_a_later_save).
+Tres notas de sldb (20261116-083618, 20261116-082230, 20261116-081341) avisan APIs nuevas que reemplazan codigo propio de deskops. Verificado hoy en el sldb instalado (/mnt/ssd/herramientas/sldb): sldb.api.rewrite_references acepta graph= y excluded_sources=, sldb.api.referrers acepta graph=, existe sldb.api.template_anchors(model_type), y segun la nota create_document y Transaction.create pinnean con @sha256 los doc: de __doc_anchors__ (tests de sldb el test test_doc_anchors.py de sldb (en tests/api de sldb)::test_create_document_pins_the_anchor_without_a_later_save).
 
 ## Goal
 

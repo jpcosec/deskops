@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:09:18Z'
+  at: '2026-11-21T13:25:15Z'
   authority: generated
   via: save_document_payload
 id: task-governance-el-cierre-de-la-tarea-ocurre-dentro-del-pr-y-deskops-reconcile-lo-cruza-con-github
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-193943-suggestion-cierre-de-la-tarea-dentro-del-pr-y-reconcile-contra-github.md (2026-11-20): Decisión de JP (20-11): el cierre ocurre dentro del PR que trae el código, no en un commit posterior. Pedido: que el diff del PR pueda marcar la tarea cerrada y CI corra sus compuertas de cierre; y un deskops reconcile que cruce los PR y merges de gh con los documentos de PR y los Task-Id, y avise las tareas abiertas cuyo PR ya se integró. Las tareas cerradas se borran: la historia vive en git y en desk/PRS. Reemplaza la tarea de Governance «el desk se entera de GitHub». Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, secciones 2 y 3.
+Nota de Governance 20261120-193943-suggestion-cierre-de-la-tarea-dentro-del-pr-y-reconcile-contra-github.md (2026-11-20): Decisión de JP (20-11): el cierre ocurre dentro del PR que trae el código, no en un commit posterior. Pedido: que el diff del PR pueda marcar la tarea cerrada y CI corra sus compuertas de cierre; y un deskops reconcile que cruce los PR y merges de gh con los documentos de PR y los Task-Id, y avise las tareas abiertas cuyo PR ya se integró. Las tareas cerradas se borran: la historia vive en git y en desk/PRS. Reemplaza la tarea de Governance «el desk se entera de GitHub». Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), secciones 2 y 3.
 
 ## Goal
 

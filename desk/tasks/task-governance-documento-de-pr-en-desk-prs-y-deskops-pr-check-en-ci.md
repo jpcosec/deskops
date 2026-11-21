@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:08:52Z'
+  at: '2026-11-21T13:24:25Z'
   authority: generated
   via: save_document_payload
 id: task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-193937-suggestion-documento-de-pr-en-desk-prs-y-pr-check-en-ci.md (2026-11-20): Decisión de JP (19-11): todo PR a dev trae un documento en desk/PRS que explica qué, cómo, cuándo, dónde y por qué, sin el ritual completo. Pedido: un modelo para ese documento, un comando deskops pr check que corra en CI y rechace el PR sin documento, con un campo vacío o que nombre una tarea inexistente, y la generación del documento desde una tarea macro (task.aggregate con children; el campo children todavía no existe, ver data/rules/closeout-evidence.yaml). Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, sección 2.
+Nota de Governance 20261120-193937-suggestion-documento-de-pr-en-desk-prs-y-pr-check-en-ci.md (2026-11-20): Decisión de JP (19-11): todo PR a dev trae un documento en desk/PRS que explica qué, cómo, cuándo, dónde y por qué, sin el ritual completo. Pedido: un modelo para ese documento, un comando deskops pr check que corra en CI y rechace el PR sin documento, con un campo vacío o que nombre una tarea inexistente, y la generación del documento desde una tarea macro (task.aggregate con children; el campo children todavía no existe, ver data/rules/closeout-evidence.yaml). Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), sección 2.
 
 ## Goal
 

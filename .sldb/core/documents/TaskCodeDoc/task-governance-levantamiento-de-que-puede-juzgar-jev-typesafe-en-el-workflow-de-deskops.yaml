@@ -1,7 +1,7 @@
 name: task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflow-de-deskops
 path: desk/tasks/task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflow-de-deskops.md
-source_hash: ca819dfabbb6a85e49bbb79b047e2852b583ba4a0d4910c6b71b154689e2329b
-content_hash: 3585cc912a88d36cf9f8c91b3f21f390054cac33cf5e08127221a300d495f724
+source_hash: dc7e3a17aa85fa509702ecf12ad033a9670642830e35c5a520b168b6ccd2a04f
+content_hash: d482bf53a0276c272a3e18cd82e23a6c89a06b0609608d4996b5d99db39aca4f
 field_hashes:
   title: 858bf655f22de5a73fbaba3c59846a99fef62d64d435aa5f27140c121f7aafcc
   id: 65e98e3edf83050dcc7810004497b972c01305fb7474b56d92e05d72d627fbda
@@ -10,7 +10,7 @@ field_hashes:
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: 903c759516afaba5a9c247cf8fad11f27dec11cccedec036e065999b87a3ef08
+  why: c8ed42badbad69d82f68adc32e097e04c0f0268cc3e2c81ad9baa07b3a15b22a
   goal: 2bcd7774b082dba59d7f5f687f242374c34a30350c2c5e0bc07e72cbab4ddbd0
   scope: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   references: 4eb4ed2117401f146d6cdac1d1bdea941923b9f77367a30d19a0d210a8b4365b
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:11:04Z'
+  at: '2026-11-21T13:26:15Z'
   authority: generated
   via: save_document_payload

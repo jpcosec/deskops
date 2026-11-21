@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:13:18Z'
+  at: '2026-11-21T13:24:45Z'
   authority: generated
   via: save_document_payload
 id: task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-194040-suggestion-migraci-n-del-workflow-nuevo-los-diez-desks-a-la-vez-con-vuelta-atr-s-probada.md (2026-11-20): Decisión de JP (20-11): el workflow nuevo se lleva a los diez desks a la vez. Con el cierre dentro del PR y pr check obligatorio, un error en la migración frena los merges a dev en todos los repos el mismo día. Pedido: que desk update tenga una vuelta atrás probada antes de correr la migración. Además los topes del despachador (deskops dispatch) los decide scion según el hardware; deskops no fija umbrales a priori. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, secciones 5, 9 y 11.
+Nota de Governance 20261120-194040-suggestion-migraci-n-del-workflow-nuevo-los-diez-desks-a-la-vez-con-vuelta-atr-s-probada.md (2026-11-20): Decisión de JP (20-11): el workflow nuevo se lleva a los diez desks a la vez. Con el cierre dentro del PR y pr check obligatorio, un error en la migración frena los merges a dev en todos los repos el mismo día. Pedido: que desk update tenga una vuelta atrás probada antes de correr la migración. Además los topes del despachador (deskops dispatch) los decide scion según el hardware; deskops no fija umbrales a priori. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), secciones 5, 9 y 11.
 
 ## Goal
 

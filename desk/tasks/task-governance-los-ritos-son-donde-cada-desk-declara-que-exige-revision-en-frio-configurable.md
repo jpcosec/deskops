@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:11:57Z'
+  at: '2026-11-21T13:24:55Z'
   authority: generated
   via: save_document_payload
 id: task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-194022-suggestion-los-ritos-son-donde-cada-desk-declara-qu-exige.md (2026-11-20): JP (20-11): si la revisión en frío es obligatoria o no se configura en los rituales de cada desk, no en el código. En los desks medidos, 7 de 10 tienen los ritos vacíos. Pedido: que los ritos sean la superficie donde un desk declara sus exigencias (revisión en frío, concilio, pruebas sin contexto) y que deskops las haga cumplir. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, sección 1.
+Nota de Governance 20261120-194022-suggestion-los-ritos-son-donde-cada-desk-declara-qu-exige.md (2026-11-20): JP (20-11): si la revisión en frío es obligatoria o no se configura en los rituales de cada desk, no en el código. En los desks medidos, 7 de 10 tienen los ritos vacíos. Pedido: que los ritos sean la superficie donde un desk declara sus exigencias (revisión en frío, concilio, pruebas sin contexto) y que deskops las haga cumplir. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), sección 1.
 
 ## Goal
 

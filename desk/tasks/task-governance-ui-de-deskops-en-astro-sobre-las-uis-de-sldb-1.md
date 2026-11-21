@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:10:11Z'
+  at: '2026-11-21T13:25:05Z'
   authority: generated
   via: save_document_payload
 id: task-governance-ui-de-deskops-en-astro-sobre-las-uis-de-sldb-1
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-193955-suggestion-ui-de-deskops-en-astro.md (2026-11-20): Pedido urgente de JP (19-11): una UI para deskops en Astro, aprovechando las UIs del repo SLDB_1 (graph_ui sobre sldb serve, docs/deskops-ui.md) y la estructura que están sacando ftcourier (shared) y mepu. Debe incluir la vista del desk maestro: Governance, que enlaza los stores de todos los desks por nombre. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, sección 5.
+Nota de Governance 20261120-193955-suggestion-ui-de-deskops-en-astro.md (2026-11-20): Pedido urgente de JP (19-11): una UI para deskops en Astro, aprovechando las UIs del repo SLDB_1 (graph_ui sobre sldb serve, docs/deskops-ui.md) y la estructura que están sacando ftcourier (shared) y mepu. Debe incluir la vista del desk maestro: Governance, que enlaza los stores de todos los desks por nombre. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), sección 5.
 
 ## Goal
 

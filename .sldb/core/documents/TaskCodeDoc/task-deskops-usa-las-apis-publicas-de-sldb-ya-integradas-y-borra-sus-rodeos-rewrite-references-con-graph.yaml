@@ -1,7 +1,7 @@
 name: task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph
 path: desk/tasks/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.md
-source_hash: 52ef06fc55af4482dc841aaafc9accf5a3594eb3509a0cba0f79a261da9bca2c
-content_hash: 38a85f13f0cf94cda934f651f9050ce127b21f9111480324b1a0ced1ceccfd02
+source_hash: cec90e4d1b7825f82e92772547e779a4339b00ac570bef4d64e02dc4a27ff0c7
+content_hash: 8295da4dc58d9e41faa203cc857e369b5b870889e9c4888c728e00f825dbb3ac
 field_hashes:
   title: fe9109bb792b62e79601a10b8e5fa05a48ecc5970b2dd2f35d1c3ed27caad71f
   id: 64a39fca4fe1711945e88a266bceaeb434c8670b87b5e06daafad6888a5cb592
@@ -10,7 +10,7 @@ field_hashes:
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: d7ec2d1ea19964f6b4794c70eaff47b3d901e02ef078d17a1edaa6d73c4c31fe
+  why: 2ad69b4df0f16a4608edbf8ba1e9ea9d40da9a44ff3ace6a682cfa9d81d9edd5
   goal: 330042ef849b688ac0c26bae851ec3804c3a5bd92df0f7d26b5505c37daa8093
   scope: ed34d0eac55ad5ba7d7d2f77182eda104319622507cf3bda53e41af7ffa85593
   references: 1a458a34b2efbfd0bd2fe55dbec23cca874e552ab8e0f778883d9c978a21b459
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T06:39:17Z'
+  at: '2026-11-21T13:24:35Z'
   authority: generated
   via: save_document_payload

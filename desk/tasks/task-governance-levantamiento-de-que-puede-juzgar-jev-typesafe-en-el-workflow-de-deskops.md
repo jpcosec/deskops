@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:11:04Z'
+  at: '2026-11-21T13:26:15Z'
   authority: generated
   via: save_document_payload
 id: task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflow-de-deskops
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-194010-suggestion-levantamiento-de-qu-puede-hacer-jev-typesafe-en-deskops.md (2026-11-20): JP (20-11): Jev no es solo para juzgar el documento de un PR; hay que dejar el antecedente de ver en deskops qué más podría hacer. Pedido: un levantamiento de los puntos del workflow donde hoy juzga una persona o nadie (triaje del inbox, vínculo PR-tarea, si una tarea cumplió su done_when, camino liviano o completo, riesgo) y cuáles se pueden volver juicios tipados Choice, Noul o Score con umbral calibrado. La tolerancia al error queda abierta hasta tener ese levantamiento. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, sección 8.
+Nota de Governance 20261120-194010-suggestion-levantamiento-de-qu-puede-hacer-jev-typesafe-en-deskops.md (2026-11-20): JP (20-11): Jev no es solo para juzgar el documento de un PR; hay que dejar el antecedente de ver en deskops qué más podría hacer. Pedido: un levantamiento de los puntos del workflow donde hoy juzga una persona o nadie (triaje del inbox, vínculo PR-tarea, si una tarea cumplió su done_when, camino liviano o completo, riesgo) y cuáles se pueden volver juicios tipados Choice, Noul o Score con umbral calibrado. La tolerancia al error queda abierta hasta tener ese levantamiento. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), sección 8.
 
 ## Goal
 

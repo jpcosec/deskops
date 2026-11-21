@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:39:46Z'
+  at: '2026-11-21T13:25:45Z'
   authority: generated
   via: save_document_payload
 id: task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason
@@ -32,7 +32,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Cuatro notas del 2026-11-16: sldb (20261116-055429, punto 2): drawer remove no acepta un plan de desk/drawer/plans/<plan>/ (dag.yaml) y responde No drawer file matches, los planes se retiraron con git rm a mano (tambien en deskops, commit 1530e576); graph_ui (20261116-004719): drawer remove de un issue deja sus capturas en desk/drawer/issues/assets/<issue>/ y deskops retire las rechaza con has its own retirement verb aunque el issue ya no existe; sldb-ui (20261116-005408, punto 2): el stem de desk/drawer/tasks/macro-01-cli-gateway.yml no matchea porque resolve_drawer_source solo busca *.md (deskops/services/drawer.py ~linea 74); marcado (20261116-004657): drawer remove no registra reason ni ref como si hace retire.
+Cuatro notas del 2026-11-16: sldb (20261116-055429, punto 2): drawer remove no acepta un plan de desk/drawer/plans/<plan>/ (dag.yaml) y responde No drawer file matches, los planes se retiraron con git rm a mano (tambien en deskops, commit 1530e576); graph_ui (20261116-004719): drawer remove de un issue deja sus capturas en desk/drawer/issues/assets/<issue>/ y deskops retire las rechaza con has its own retirement verb aunque el issue ya no existe; sldb-ui (20261116-005408, punto 2): el stem de la entrada macro-01-cli-gateway del drawer (yml, ya retirada) no matchea porque resolve_drawer_source solo busca *.md (deskops/services/drawer.py ~linea 74); marcado (20261116-004657): drawer remove no registra reason ni ref como si hace retire.
 
 ## Goal
 

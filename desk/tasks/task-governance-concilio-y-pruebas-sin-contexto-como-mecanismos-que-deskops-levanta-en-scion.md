@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:11:30Z'
+  at: '2026-11-21T13:26:05Z'
   authority: generated
   via: save_document_payload
 id: task-governance-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta-en-scion
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-194016-suggestion-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta.md (2026-11-20): JP (19-11): el concilio (pi, agy, codex) y las pruebas sin contexto hoy solo existen cuando él los levanta a mano en herdr; no son mecanismos. Pedido: que deskops pueda levantarlos solo, como agentes en scion con identidad y estado persistente, disparados por los ritos del desk, una fecha, un umbral o un pedido, y que dejen su informe en el desk. Corrección de JP (20-11): el cumplimiento de una tarea se juzga antes de cerrarla; la revisión del PR y el concilio miran que no haya dejado daños y que respete la arquitectura. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, sección 10.
+Nota de Governance 20261120-194016-suggestion-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta.md (2026-11-20): JP (19-11): el concilio (pi, agy, codex) y las pruebas sin contexto hoy solo existen cuando él los levanta a mano en herdr; no son mecanismos. Pedido: que deskops pueda levantarlos solo, como agentes en scion con identidad y estado persistente, disparados por los ritos del desk, una fecha, un umbral o un pedido, y que dejen su informe en el desk. Corrección de JP (20-11): el cumplimiento de una tarea se juzga antes de cerrarla; la revisión del PR y el concilio miran que no haya dejado daños y que respete la arquitectura. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), sección 10.
 
 ## Goal
 

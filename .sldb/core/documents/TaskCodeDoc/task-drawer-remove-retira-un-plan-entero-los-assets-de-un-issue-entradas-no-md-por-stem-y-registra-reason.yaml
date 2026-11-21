@@ -1,7 +1,7 @@
 name: task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason
 path: desk/tasks/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason.md
-source_hash: b7c8e4b2b4f28cc064fe4d6a4e5855a724792d192ce226401938c95513e4f76b
-content_hash: e58b684d913eeb74d22e44883787d338cc3f5411e780f5467b9b6d18c404e5da
+source_hash: 94e76c94db30ac2d21528ca473ce60dbcb6a1c33812871755603b7120ce9c153
+content_hash: ef76759d9119a0da9cfe80d5419f13e2f0f5bc690548054cf11c71b84543a911
 field_hashes:
   title: 862817940f4b9434e52b1ed7e2424adeb1eab9a85cce504efe3f37ac518ea0b0
   id: 1f3c7f952ca149949b8e6983bd6144e385671bc5335a5fe1bfa7a7490f0f0120
@@ -10,7 +10,7 @@ field_hashes:
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: 0e003ebebb44c7cfdff9cea10e47fa2c2f17f6fd44c7fcd7db17369215c5f5d3
+  why: 541abfdda3020b3de80220ba71dea2e256d2d1368b5d9514838425d29d16bdb2
   goal: 38c0549d441da210f59896ff9d31083c0d5544cdea17fa8afdeeeef768a2c005
   scope: b93c2c2a167594247a66e1c82e13f84618e018f4d8c40478c428041c3b727c56
   references: 9ec49b87cd0fe6e6c994af9fcb8075638a3b4f06eb1d8b13006c12e262b52020
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T06:39:46Z'
+  at: '2026-11-21T13:25:45Z'
   authority: generated
   via: save_document_payload

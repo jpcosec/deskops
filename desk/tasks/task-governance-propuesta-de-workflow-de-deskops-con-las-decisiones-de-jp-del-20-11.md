@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:08:25Z'
+  at: '2026-11-21T13:25:25Z'
   authority: generated
   via: save_document_payload
 id: task-governance-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-193931-suggestion-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11.md (2026-11-20): Governance revisó el workflow de deskops (mediciones de uso en los desks, lectura del código, diagnóstico por función del VSM) y JP respondió las 14 preguntas el 2026-11-20. La propuesta reescrita trae el orden de implementación en 16 pasos (sección 11) y el registro de decisiones (sección 12). Los mensajes que siguen piden cada pieza por separado; este es el índice. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md. En la misma carpeta: uso-real.json, workflow-actual.md y diagnostico-vsm.md.
+Nota de Governance 20261120-193931-suggestion-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11.md (2026-11-20): Governance revisó el workflow de deskops (mediciones de uso en los desks, lectura del código, diagnóstico por función del VSM) y JP respondió las 14 preguntas el 2026-11-20. La propuesta reescrita trae el orden de implementación en 16 pasos (sección 11) y el registro de decisiones (sección 12). Los mensajes que siguen piden cada pieza por separado; este es el índice. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance). En la misma carpeta: uso-real.json, workflow-actual.md y diagnostico-vsm.md.
 
 ## Goal
 

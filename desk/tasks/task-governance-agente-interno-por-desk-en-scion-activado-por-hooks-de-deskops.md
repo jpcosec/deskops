@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:10:37Z'
+  at: '2026-11-21T13:25:55Z'
   authority: generated
   via: save_document_payload
 id: task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops
@@ -29,7 +29,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261120-194002-suggestion-agente-interno-por-desk-en-scion-activado-por-hooks.md (2026-11-20): Decisión de JP (20-11): un agente interno por desk que hace el mantenimiento (triaje del inbox, proponer cierres, armar los PR de desk), corre en scion y se activa por hooks de deskops. Además lee el canal informal de scion y propone tareas o notas de inbox cuando detecta un compromiso. No toca código, no se audita a sí mismo y no decide lo que es de una persona. Falta: hooks por evento (hoy lifecycle_hooks.py solo corre al avanzar una transición), actor en history y una identidad propia. Fuente: heyantonia/Governance, rama dev, docs/diagnostico-vsm-2026-11-19/revision-deskops/propuesta-workflow.md, secciones 6 y 7.
+Nota de Governance 20261120-194002-suggestion-agente-interno-por-desk-en-scion-activado-por-hooks.md (2026-11-20): Decisión de JP (20-11): un agente interno por desk que hace el mantenimiento (triaje del inbox, proponer cierres, armar los PR de desk), corre en scion y se activa por hooks de deskops. Además lee el canal informal de scion y propone tareas o notas de inbox cuando detecta un compromiso. No toca código, no se audita a sí mismo y no decide lo que es de una persona. Falta: hooks por evento (hoy lifecycle_hooks.py solo corre al avanzar una transición), actor en history y una identidad propia. Fuente: heyantonia/Governance, rama dev, la propuesta de workflow del diagnóstico VSM (propuesta-workflow.md, en el repo Governance), secciones 6 y 7.
 
 ## Goal
 

@@ -1,7 +1,7 @@
 name: task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci
 path: desk/tasks/task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci.md
-source_hash: 572554e0e271e9acff28a0a9a5560a2cc19783b412d818b6a4ed57cd67b42211
-content_hash: 280d4c3ec2943a3fe88e4c58b9e713b8a01234cbd5453509bacc68a9ca17df7e
+source_hash: 3d80c789ac5175fba787e491954a31756ac97b8062af09405a8562af967b4484
+content_hash: ac8508688bd062b77867c02240941e6726028cb2dda3c4743285f69bda113d74
 field_hashes:
   title: e24a932e5d24077424f5556c263dbfb1c77e5de255cf683c2ce5523ee4ea0e3b
   id: cf40171a7b6b782fd1f4cb7ced81f0a2d57e5add3de2e58fc7d2b192c634e1fe
@@ -10,7 +10,7 @@ field_hashes:
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: 13b85539d4ec42307acea38e5c9873280b815419aef7503398caf3acd3777ce0
+  why: a3dab43114ae00ffc304aef55e018b4cf0acdd8a4a7783c868f27109595545aa
   goal: 2bcd7774b082dba59d7f5f687f242374c34a30350c2c5e0bc07e72cbab4ddbd0
   scope: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   references: 0a98998b91b2d3be8bf43ecbc561d302e6436c59abe45769a21ca1156e7b6dca
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:08:52Z'
+  at: '2026-11-21T13:24:25Z'
   authority: generated
   via: save_document_payload
