@@ -3203,3 +3203,30 @@ def test_desk_update_dry_run_is_clean_in_a_fresh_clone_and_the_first_receipt_cre
     )
     deskops(clone, "review", "record", "task-x", "--kind", "owner", "--reason", "owner check")
     assert (clone / "desk" / "reviews" / "task-x" / "owner-1.md").is_file()
+
+
+def test_add_task_from_yaml_rejects_unquoted_colon_list_item(tmp_path: Path, capsys) -> None:
+    payload = tmp_path / "task.yaml"
+    payload.write_text(
+        "title: T\\ngoal: G\\nvalidation:\\n  - Suite completa, bajo flock /dev/shm/x.lock: CMD foo\\n".replace("\\n", "\n"),
+        encoding="utf-8",
+    )
+
+    result = main(["add", "task", "--from-yaml", str(payload), "--root", str(tmp_path)])
+
+    captured = capsys.readouterr()
+    assert result == 1
+    assert "validation" in captured.err
+    assert "item 0" in captured.err
+    assert "quotes" in captured.err
+    assert not list((tmp_path / "desk" / "tasks").glob("task-*.md"))
+
+    payload.write_text(
+        "title: T\ngoal: G\nvalidation:\n  - 'Suite completa, bajo flock /dev/shm/x.lock: CMD foo'\n",
+        encoding="utf-8",
+    )
+    result = main(["add", "task", "--from-yaml", str(payload), "--root", str(tmp_path)])
+    assert result == 0
+    tasks = list((tmp_path / "desk" / "tasks").glob("task-*.md"))
+    assert len(tasks) == 1
+    assert "- Suite completa, bajo flock /dev/shm/x.lock: CMD foo" in tasks[0].read_text(encoding="utf-8")

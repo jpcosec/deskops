@@ -23,6 +23,7 @@ def parse_task_input(args: Any) -> dict[str, Any]:
         payload.update(_load_yaml_mapping(Path(args.from_yaml)))
     elif getattr(args, "payload", None):
         payload.update(_load_json_mapping(args.payload))
+    _ensure_string_list_items(payload)
 
     if getattr(args, "title", None): payload["title"] = args.title
     if getattr(args, "why", None): payload["why"] = args.why
@@ -39,6 +40,32 @@ def parse_task_input(args: Any) -> dict[str, Any]:
     if getattr(args, "inherit_acceptance_context", False): payload["inherit_acceptance_context"] = True
 
     return payload
+
+
+_TASK_STRING_LIST_FIELDS = (
+    "validation",
+    "depends_on",
+    "inherits_from",
+    "atoms",
+    "evidence",
+    "closeout_evidence",
+    "references",
+)
+
+
+def _ensure_string_list_items(payload: dict[str, Any]) -> None:
+    """Reject non-string items in list fields (e.g. unquoted ``a: b`` read as a dict)."""
+    for field in _TASK_STRING_LIST_FIELDS:
+        value = payload.get(field)
+        if not isinstance(value, list):
+            continue
+        for index, item in enumerate(value):
+            if not isinstance(item, str):
+                kind = type(item).__name__
+                raise ValueError(
+                    f"Field '{field}' item {index} must be a string, got {kind}: {item!r}. "
+                    f"If the item contains ': ' (colon and space), wrap it in quotes."
+                )
 
 
 def parse_artifact_input(artifact_id: str, args: Any) -> dict[str, Any]:
