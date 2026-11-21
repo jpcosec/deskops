@@ -1,0 +1,2 @@
+TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_dispatch.py
+full run: 1 failed (hint did not name files), 34 passed; after fixing _dirty_overwrite_hint, the 2 new tests pass (-k) -> exit 0

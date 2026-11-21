@@ -1,0 +1,37 @@
+name: review-task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej-evidence-atom-1
+path: desk/reviews/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej/evidence-atom-1.md
+source_hash: 12dc72265cbc01c1035bfcbd4de390dba192385b01a4e9dcbd5c372c8eb39ca6
+content_hash: 69eed6bdccdf02eb21c377526c049621880717af7138e7882dba8deb6a365758
+field_hashes:
+  id: a56a50f8e7ea8b5215fbb21ca75e3bf62e6814cb7e770e336cf69221e9758b87
+  title: 90458509d7fb77626ab76e1d1ba2f018f6c9c6a34db1aa566fe28344f9edc1cf
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 634c26faacf71bc2172fe9a42c0025d936fc02b040e4c8c32544492d0fcab00f
+  subject: c4eec53b14810da0e9d1c35b775ddf6903419e07d0026e442d39980eee932b5e
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 7a5ed8f7e4969edd94411dee727f366e56b6091f2677baac3f2d55cde59da88b
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0311dd57ac5218ec7f5120b4669addc06d90c9d0726123f3fdbf9b59dd25b0ba
+  created_at: 5295be1790a05b61169d020072382c3dfd604d41cb04684fe222f49b87b018e2
+  disposed_at: 5295be1790a05b61169d020072382c3dfd604d41cb04684fe222f49b87b018e2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: bb3c614529bd06c20cc2c44f5db0a9d2e266cb508f344107f13064b6b2ee5899
+  disposition: 4426c999ccb4f9e3502c8e3751fe81e8154ec0ff607efa018ac4b99cd5bedaac
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T08:29:58Z'
+  authority: generated
+  via: create_document
