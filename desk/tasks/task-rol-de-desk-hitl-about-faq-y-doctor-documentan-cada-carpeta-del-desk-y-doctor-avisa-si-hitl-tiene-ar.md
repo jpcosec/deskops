@@ -1,12 +1,14 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:07:20Z'
+  at: '2026-11-21T07:52:25Z'
   authority: generated
   via: save_document_payload
 id: task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar
 status: draft
-summary: ''
+summary: 'Borrador sin preparar: preflight rechazado el 2026-11-21 (ver desk/reviews/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar/).
+  Falta Implementation Path concreto, decisiones de diseno y nombre del test antes
+  de revisar de nuevo.'
 tags:
 - workspace:desk
 - artifact:task

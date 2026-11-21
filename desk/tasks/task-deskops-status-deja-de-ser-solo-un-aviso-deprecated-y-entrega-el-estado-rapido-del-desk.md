@@ -1,12 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:06:35Z'
+  at: '2026-11-21T07:52:46Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk
 status: draft
-summary: ''
+summary: 'No despachable desde este desk: la implementa V1 del frente velocidad-hooks
+  y se cierra con resolved-by (preflight rechazado el 2026-11-21).'
 tags:
 - workspace:desk
 - artifact:task

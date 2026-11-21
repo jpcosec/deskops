@@ -1,12 +1,14 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:07:28Z'
+  at: '2026-11-21T07:52:35Z'
   authority: generated
   via: save_document_payload
 id: task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas
 status: draft
-summary: ''
+summary: 'Borrador sin preparar: preflight rechazado el 2026-11-21 (ver desk/reviews/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas/).
+  Falta Implementation Path concreto, decisiones de diseno y nombre del test antes
+  de revisar de nuevo.'
 tags:
 - workspace:desk
 - artifact:task

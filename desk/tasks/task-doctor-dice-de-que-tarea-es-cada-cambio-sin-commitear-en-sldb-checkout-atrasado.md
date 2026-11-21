@@ -1,12 +1,14 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:06:45Z'
+  at: '2026-11-21T07:52:03Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado
 status: draft
-summary: ''
+summary: 'Borrador sin preparar: preflight rechazado el 2026-11-21 (ver desk/reviews/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado/).
+  Falta Implementation Path concreto, decisiones de diseno y nombre del test antes
+  de revisar de nuevo.'
 tags:
 - workspace:desk
 - artifact:task

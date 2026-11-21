@@ -1,12 +1,14 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:06:16Z'
+  at: '2026-11-21T07:51:52Z'
   authority: generated
   via: save_document_payload
 id: task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co
 status: draft
-summary: ''
+summary: 'Borrador sin preparar: preflight rechazado el 2026-11-21 (ver desk/reviews/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co/).
+  Falta Implementation Path concreto, decisiones de diseno y nombre del test antes
+  de revisar de nuevo.'
 tags:
 - workspace:desk
 - artifact:task
