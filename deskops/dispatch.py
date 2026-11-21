@@ -365,14 +365,27 @@ def start(root: Path, role: str, task_id: str) -> int:
         context=context,
         harness_auth=role_cfg.harness_auth,
     )
-    record_scion_run(
-        root,
-        task_id=task_id,
-        role_id=str(role_doc["id"]),
-        kind=role_cfg.harness,
-        agent_slug=name,
-        run_dir=run_dir,
-    )
+    # A RunDoc left tracked by another session whose run_dir is gone is stale: untrack it
+    # so the new run can track the same identity (a RunDoc with its run_dir counts as an attempt).
+    from deskops.runtime.scion import _slug
+
+    from deskops import doc_access
+
+    doc_access.untrack_doc(root, f"run-{_slug(name)}")
+    try:
+        record_scion_run(
+            root,
+            task_id=task_id,
+            role_id=str(role_doc["id"]),
+            kind=role_cfg.harness,
+            agent_slug=name,
+            run_dir=run_dir,
+        )
+    except Exception:
+        leftover = root / run_dir
+        if leftover.is_dir() and not any(leftover.iterdir()):
+            leftover.rmdir()
+        raise
     failure = _commit_run_store(root, [name])
     if failure:
         print(f"aviso: no se pudo commitear el RunDoc de {name}: {failure}")

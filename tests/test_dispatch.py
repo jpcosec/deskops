@@ -547,3 +547,16 @@ def test_reap_names_the_files_when_local_changes_block_the_pick(env: Env) -> Non
 def test_reap_names_the_files_under_a_spanish_locale(env: Env) -> None:
     env.env.update({"LANG": "es_ES.UTF-8", "LC_ALL": "es_ES.UTF-8", "LANGUAGE": "es"})
     test_reap_names_the_files_when_local_changes_block_the_pick(env)
+
+
+def test_start_untracks_a_stale_rundoc_whose_run_dir_is_missing(env: Env) -> None:
+    import shutil
+
+    name = _start_executor(env)
+    _git(env.root, "worktree", "remove", "--force", str(env.root / ".worktrees" / name))
+    _git(env.root, "branch", "-D", f"deskops/{name}")
+    shutil.rmtree(env.root / f"runs/subagents/exec-{name}")  # RunDoc stays tracked in the store
+    result = env.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert (env.root / f"runs/subagents/exec-{name}/run.md").is_file()
+    assert [c[1] for c in env.calls() if c[0] == "start"] == [name, name]

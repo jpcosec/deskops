@@ -13,6 +13,7 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Fixed
 
+- `deskops dispatch start` untracks a stale RunDoc of the identity (tracked by another session, run_dir gone) before recording the new run, so it no longer fails with `Doc run-... already tracked` and leaves an empty folder; a failed record removes the empty run_dir (`tests/test_dispatch.py`).
 - `deskops dispatch start` also commits the run dir's `run.md` (the RunDoc's tracked file, `-testing` for testers) with the RunDoc store files, so the committed RunDoc always has its file in the same commit and `integrate`'s store gate no longer fails with `ruta ausente en el commit: runs/subagents/exec-<name>/run.md` while an agent is alive (`tests/test_dispatch.py`).
 - `dispatch reap` runs git with `LC_ALL=C` and `LANGUAGE=` so the message it parses (`would be overwritten`) is not localized: under the timer's `LANG=es_ES.UTF-8` the warning named no files; same message and rc 8 (`tests/test_dispatch.py`).
 - `tests/fixtures/model_contract_hashes.json`: the `RuleDoc` hash is regenerated with the test's own `hash_model_contract` after sldb 22cfafb2 changed only the description of `where` (`false or incomplete` -> `false`); type, default and fields are unchanged, so this is a description-only change with no store migration (`tests/test_model_contract_snapshot.py`).
