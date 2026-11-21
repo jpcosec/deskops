@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T23:29:37Z'
+  at: '2026-11-21T08:13:30Z'
   authority: generated
   via: save_document_payload
 id: task-governance-e-g-other-repo
@@ -23,7 +23,7 @@ inherit_acceptance_context: false
 atoms: []
 ---
 
-# Governance: e.g., other_repo
+# Governance: versionar deskops con tags y fijar la versión en quienes lo usan
 
 ## Rationale
 

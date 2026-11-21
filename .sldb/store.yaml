@@ -704,6 +704,8 @@ include:
     name: run-deskops-e-39eb55f8272d
   - path: runs/subagents/exec-deskops-t-88eddb4a8208-testing/run.md
     name: run-deskops-t-88eddb4a8208
+  - path: runs/subagents/exec-deskops-t-0200461b903c-testing/run.md
+    name: run-deskops-t-0200461b903c
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2362,6 +2364,18 @@ include:
   - desk/tasks/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.md
   - desk/tasks/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur.md
   - desk/tasks/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason.md
+  - desk/tasks/task-governance-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11.md
+  - desk/tasks/task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci.md
+  - desk/tasks/task-governance-el-cierre-de-la-tarea-ocurre-dentro-del-pr-y-deskops-reconcile-lo-cruza-con-github.md
+  - desk/tasks/task-governance-interfaz-mcp-de-deskops-compatible-con-claude-code-delgada-sobre-las-operaciones-del-cli.md
+  - desk/tasks/task-governance-ui-de-deskops-en-astro-sobre-las-uis-de-sldb-1.md
+  - desk/tasks/task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops.md
+  - desk/tasks/task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflow-de-deskops.md
+  - desk/tasks/task-governance-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta-en-scion.md
+  - desk/tasks/task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable.md
+  - desk/tasks/task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk.md
+  - desk/tasks/task-governance-message-send-to-y-list-tasks-include-repos-resuelven-el-repo-por-la-ruta-del-registro-no.md
+  - desk/tasks/task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
