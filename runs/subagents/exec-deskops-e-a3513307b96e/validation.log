@@ -1,0 +1,2 @@
+LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 LANGUAGE=es python -m pytest -q -p no:cacheprovider tests/test_dispatch.py -> 36 passed, rc 0
+LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python -m pytest -q -p no:cacheprovider tests/test_dispatch.py -> 36 passed, rc 0
