@@ -28,9 +28,9 @@ REPO_ROOT = TESTS_DIR.parent
 FIXTURE_DESK = TESTS_DIR / "fixtures" / "golden_desk"
 GOLDEN_DIR = TESTS_DIR / "fixtures" / "golden"
 
-GRAPH_SNAPSHOT = Path(".sldb/runtime/graphs/deskops.kg.json")
-GRAPH_NETWORKX = Path(".sldb/runtime/graphs/deskops.nx.json")
-SELF_REFLECTION = Path(".sldb/runtime/self_reflection_findings.json")
+GRAPH_SNAPSHOT = Path(".sldb_cache/graphs/deskops.kg.json")
+GRAPH_NETWORKX = Path(".sldb_cache/graphs/deskops.nx.json")
+SELF_REFLECTION = Path(".sldb_cache/self_reflection_findings.json")
 
 RUN_DIR = "runs/subagents/golden-run"
 RUN_ID = "run-golden-001"

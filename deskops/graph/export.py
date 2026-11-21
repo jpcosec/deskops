@@ -15,11 +15,12 @@ from deskops.graph.desk_graph import DECLARED_EDGE_EXTRACTOR
 from deskops.graph.desk_graph import DOC_NODE_EXTRACTOR
 from deskops.graph.desk_graph import SOURCE_FILE_NODE_EXTRACTOR
 from deskops.graph.desk_graph import desk_graph
+from deskops.graph.paths import DERIVED_ROOT
 
 
 SNAPSHOT_SCHEMA = "deskops_kgdb_graph_snapshot_v1"
 SNAPSHOT_EXTRACTOR = "deskops_kgdb_snapshot_v1"
-DEFAULT_SNAPSHOT_PATH = Path(".sldb/runtime/graphs/deskops.kg.json")
+DEFAULT_SNAPSHOT_PATH = DERIVED_ROOT / "graphs" / "deskops.kg.json"
 
 
 class GraphSnapshotCapabilityError(RuntimeError):

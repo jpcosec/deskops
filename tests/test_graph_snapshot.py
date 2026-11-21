@@ -39,7 +39,7 @@ Explicit source file reference: `deskops/operations.py`.
     nodes_by_id = {node.identity.node_id: node for node in validated.nodes}
 
     assert snapshot["metadata"]["schema"] == "deskops_kgdb_graph_snapshot_v1"
-    assert snapshot["metadata"]["runtime_output_path"] == ".sldb/runtime/graphs/deskops.kg.json"
+    assert snapshot["metadata"]["runtime_output_path"] == ".sldb_cache/graphs/deskops.kg.json"
     assert snapshot["metadata"]["node_count"] >= 3
     assert snapshot["metadata"]["edge_count"] >= 2
 
@@ -64,7 +64,7 @@ def test_write_graph_snapshot_uses_ignored_runtime_path(tmp_path: Path) -> None:
 
     output_path = write_graph_snapshot(tmp_path)
 
-    assert DEFAULT_SNAPSHOT_PATH.as_posix() == ".sldb/runtime/graphs/deskops.kg.json"
+    assert DEFAULT_SNAPSHOT_PATH.as_posix() == ".sldb_cache/graphs/deskops.kg.json"
     assert output_path == tmp_path / DEFAULT_SNAPSHOT_PATH
     GraphSnapshot.model_validate(json.loads(output_path.read_text(encoding="utf-8")))
 
@@ -73,7 +73,7 @@ def test_snapshot_path_helpers_keep_projections_separate(tmp_path: Path) -> None
     preferred = tmp_path / DEFAULT_SNAPSHOT_PATH
 
     assert networkx_path_for_snapshot(preferred) == (
-        tmp_path / ".sldb/runtime/graphs/deskops.nx.json"
+        tmp_path / ".sldb_cache/graphs/deskops.nx.json"
     )
 
 

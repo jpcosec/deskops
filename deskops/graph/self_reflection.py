@@ -8,14 +8,15 @@ from typing import Any
 
 from deskops.graph.checks import GraphMissingFinding
 from deskops.graph.checks import find_missing_snapshot_targets
+from deskops.graph.paths import DERIVED_ROOT
 from deskops.graph.view import GraphView
 from deskops.graph.view import Node
 
 
 REPORT_SCHEMA = "deskops_self_reflection_report_v2"
 DECISIONS_SCHEMA = "deskops_self_reflection_decisions_v1"
-DEFAULT_REPORT_PATH = Path(".sldb/runtime/self_reflection_findings.json")
-DEFAULT_DECISIONS_PATH = Path(".sldb/runtime/self_reflection_decisions.json")
+DEFAULT_REPORT_PATH = DERIVED_ROOT / "self_reflection_findings.json"
+DEFAULT_DECISIONS_PATH = DERIVED_ROOT / "self_reflection_decisions.json"
 
 ATOM_REFERENCE_ROLES = {"references", "documents", "specifies", "constrains", "validates"}
 SOURCE_LINK_ROLES = {
@@ -37,6 +38,7 @@ SOURCE_LINK_ROLES = {
 }
 EXCLUDED_SOURCE_PREFIXES = (
     ".sldb/runtime/",
+    ".sldb_cache/",
     "tests/fixtures/",
 )
 EXCLUDED_SOURCE_PARTS = {

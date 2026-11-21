@@ -63,7 +63,7 @@ def test_self_reflection_report_generates_findings_and_writes_runtime_report(tmp
     assert json.loads(decisions_path.read_text(encoding="utf-8")) == {
         "allowed_statuses": ["pending", "accepted", "rejected"],
         "decisions": [],
-        "report_path": ".sldb/runtime/self_reflection_findings.json",
+        "report_path": ".sldb_cache/self_reflection_findings.json",
         "runtime_only": True,
         "schema": "deskops_self_reflection_decisions_v1",
     }
@@ -74,7 +74,7 @@ def test_self_reflection_report_generates_findings_and_writes_runtime_report(tmp
     assert report["review_loop"] == {
         "decision_storage": {
             "schema": "deskops_self_reflection_decisions_v1",
-            "runtime_output_path": ".sldb/runtime/self_reflection_decisions.json",
+            "runtime_output_path": ".sldb_cache/self_reflection_decisions.json",
             "allowed_statuses": ["pending", "accepted", "rejected"],
         },
         "promotion_paths": {

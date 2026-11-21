@@ -3,7 +3,7 @@
     "edge_count": 7,
     "extractor": "deskops_kgdb_snapshot_v1",
     "node_count": 7,
-    "runtime_output_path": ".sldb/runtime/graphs/deskops.kg.json",
+    "runtime_output_path": ".sldb_cache/graphs/deskops.kg.json",
     "schema": "deskops_kgdb_graph_snapshot_v1",
     "source_extractors": [
       "desk_doc_nodes_v1",
