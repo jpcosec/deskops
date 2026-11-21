@@ -1,7 +1,17 @@
+Task: task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u
+Title: dispatch commitea también el run.md del run dir junto con su RunDoc (integrate fallaba en store con un agente vivo)
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T19:29:36Z'
+  at: '2026-11-21T19:01:25Z'
   authority: generated
   via: save_document_payload
 id: task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u
@@ -13,21 +23,14 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- deskops/dispatch.py
-- tests/test_dispatch.py
-- fe2f3a3ff445373763f08fbfb240dde78ae83dd6
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/dispatch.py
-- tests/test_dispatch.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-dispatch-commitea-el-run-md-del-run-dir-junto-con-su-rundoc
+atoms: []
 ---
 
 # dispatch commitea también el run.md del run dir junto con su RunDoc (integrate fallaba en store con un agente vivo)
@@ -67,3 +70,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tests nuevos, tests/test_dispatch.py y tests/test_integrate.py pasan.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
