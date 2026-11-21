@@ -1,0 +1,25 @@
+name: materialization-init-tests-test-gitignore-policy-py
+path: desk/materializations/materialization-init-tests-test-gitignore-policy-py.md
+source_hash: 5939964775a897d54e1011ed0120b4143cb601f8a5b87e1d48e2fd43bd93df64
+content_hash: 9cded005584740a0d2ca9bdf58d6c87b3388d125815499bcbea40f8c30164c3a
+field_hashes:
+  id: 3a28489221e1af2b7b9e50834fd6acc6c1f7fc93f38fffd435c38899a1a82ad9
+  title: 3003e84e52366ef665ada8431c710dec6ff726c324d56ba8db3edca199749bf3
+  source_atoms: 8448db43283dfd70e332851c2ffd41c2bee0883cc41cbbb5ff69e59a8441d708
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: e285720bf14b6d4e7ecd9f3df063bf094f80724723e2db231255f4bff487eb2b
+  intent: 3ef88f3e701a6e3c0b753fdfe8de2de1d4df0777a3109bfae19e76a950fd4aa4
+  validation: 7543f891a88122f2961e6d70b195365ef9b7a48b7870dd296dcf2fdc6c18b368
+  tags: e6570c4746417ebc817ceec767c8e5d3a58b1b45a80c980fa97730603eb179ab
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:init
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T17:22:56Z'
+  authority: generated
+  via: create_document

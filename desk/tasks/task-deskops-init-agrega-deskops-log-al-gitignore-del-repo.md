@@ -1,26 +1,32 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:38:33Z'
+  at: '2026-11-21T17:22:36Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-init-agrega-deskops-log-al-gitignore-del-repo
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261119-220154-suggestion-init-no-ignora-deskops-log.md
+- deskops/bootstrap.py
+- tests/test_gitignore_policy.py
+- f5b017755746a11b8798d3a003c43899e0997afa
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/bootstrap.py
+- tests/test_gitignore_policy.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-deskops-init-agrega-deskops-log-al-gitignore-del-repo
 ---
 
 # deskops init agrega .deskops.log al .gitignore del repo

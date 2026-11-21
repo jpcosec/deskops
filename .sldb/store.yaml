@@ -420,6 +420,8 @@ include:
   - desk/materializations/materialization-init-tests-test-doctor-model-registration-py.md
   - desk/materializations/materialization-models-tests-fixtures-model-contract-hashes-json.md
   - desk/materializations/materialization-models-tests-test-model-contract-snapshot-py.md
+  - desk/materializations/materialization-init-deskops-bootstrap-py.md
+  - desk/materializations/materialization-init-tests-test-gitignore-policy-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2390,6 +2392,14 @@ include:
     name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-evidence-atom-1
   - path: desk/reviews/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e/evidence-materialization-1.md
     name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-evidence-materialization-1
+  - path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/evidence-tests-1.md
+    name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-evidence-tests-1
+  - path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/evidence-commit-1.md
+    name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-evidence-commit-1
+  - path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/evidence-atom-1.md
+    name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-evidence-atom-1
+  - path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/evidence-materialization-1.md
+    name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
