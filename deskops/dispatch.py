@@ -184,15 +184,19 @@ _STORE_RUN_PATHS = (
 
 
 def _run_store_paths(root: Path, name: str) -> list[str]:
-    """Store files ``record_scion_run`` touches for agent ``name`` (only the ones that exist)."""
+    """Store files ``record_scion_run`` touches for agent ``name`` (only the ones that exist).
+
+    Includes the run dir's ``run.md`` (the RunDoc's tracked file), so a committed RunDoc always has it.
+    """
     from deskops.runtime.scion import _slug
 
     shard = f".sldb/core/documents/RunDoc/run-{_slug(name)}.yaml"
-    return [rel for rel in (*_STORE_RUN_PATHS, shard) if (root / rel).exists()]
+    run_docs = [f"{_run_dir_for(name, role)}/run.md" for role in ("executor", "tester")]
+    return [rel for rel in (*_STORE_RUN_PATHS, shard, *run_docs) if (root / rel).exists()]
 
 
 def _commit_run_store(root: Path, names: list[str]) -> str:
-    """Commit, with pathspec, the RunDoc store files of ``names`` that are still uncommitted.
+    """Commit, with pathspec, the RunDoc store files and run.md of ``names`` that are still uncommitted.
 
     Returns "" on success or nothing to do, else the git error. Other dirty files are untouched.
     """

@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 import pytest
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -509,6 +510,22 @@ def test_start_commits_the_rundoc_so_reap_brings_an_executor_commit_touching_the
     assert result.returncode == 0, result.stdout + result.stderr
     assert "executor sync" in (env.root / ".sldb/core/store_index.yaml").read_text()
     assert not worktree.exists()
+
+
+def test_start_commits_the_run_md_with_the_rundoc_and_the_store_gate_passes(env: Env) -> None:
+    from deskops.integrate import _collect_paths
+
+    _git(env.root, "add", ".sldb", "desk", "sldb")
+    _git(env.root, "commit", "-q", "-m", "desk")
+    name = _start_executor(env)
+    run_md = f"runs/subagents/exec-{name}/run.md"
+    files = _git(env.root, "show", "--name-only", "--format=%s", "HEAD").splitlines()
+    assert files[0] == f"run: {name}"
+    assert run_md in files and any("RunDoc/run-" in f for f in files)
+    store = yaml.safe_load(_git(env.root, "show", "HEAD:.sldb/store.yaml"))
+    for path in _collect_paths(store):
+        if not path.startswith("../"):
+            _git(env.root, "cat-file", "-e", f"HEAD:{path.rstrip('/') or '.'}")
 
 
 def test_reap_names_the_files_when_local_changes_block_the_pick(env: Env) -> None:

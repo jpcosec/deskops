@@ -13,6 +13,7 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Fixed
 
+- `deskops dispatch start` also commits the run dir's `run.md` (the RunDoc's tracked file, `-testing` for testers) with the RunDoc store files, so the committed RunDoc always has its file in the same commit and `integrate`'s store gate no longer fails with `ruta ausente en el commit: runs/subagents/exec-<name>/run.md` while an agent is alive (`tests/test_dispatch.py`).
 - `dispatch reap` runs git with `LC_ALL=C` and `LANGUAGE=` so the message it parses (`would be overwritten`) is not localized: under the timer's `LANG=es_ES.UTF-8` the warning named no files; same message and rc 8 (`tests/test_dispatch.py`).
 - `tests/fixtures/model_contract_hashes.json`: the `RuleDoc` hash is regenerated with the test's own `hash_model_contract` after sldb 22cfafb2 changed only the description of `where` (`false or incomplete` -> `false`); type, default and fields are unchanged, so this is a description-only change with no store migration (`tests/test_model_contract_snapshot.py`).
 - `tests/test_doctor_model_registration.py`: `test_init_repairs_a_broken_deskops_link` simulates a link `store_links` reports as not ok (sldb #3 resolves a missing path by store name, so a stale path to the owner is no longer broken), and a new test covers that stale-but-resolvable link, where `deskops init` prints no replacement and the link resolves to the owner; `bootstrap.py` is unchanged (nothing in deskops reads a stored store-link path outside `store_links`).
