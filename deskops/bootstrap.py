@@ -118,8 +118,26 @@ class SLDBBootstrap:
                 print(f"Error: {exc}")
                 return 1
 
+        self.ensure_log_ignored(target_path)
         self.ensure_merge_driver(local_store)
         return self._register_models(local_store)
+
+    def ensure_log_ignored(self, repo_root: Path) -> bool:
+        """Ensure the root `.gitignore` of a git repo lists `.deskops.log`, once.
+
+        Creates the file when missing; leaves it untouched when the line is already there.
+        Returns True when it wrote.
+        """
+        if not (repo_root / ".git").exists():
+            return False
+        gitignore = repo_root / ".gitignore"
+        text = gitignore.read_text(encoding="utf-8") if gitignore.exists() else ""
+        if any(line.strip() in (".deskops.log", "/.deskops.log") for line in text.splitlines()):
+            return False
+        if text and not text.endswith("\n"):
+            text += "\n"
+        gitignore.write_text(text + ".deskops.log\n", encoding="utf-8")
+        return True
 
     def ensure_merge_driver(self, store_path: Path) -> list[str]:
         """Install sldb's git merge driver for the store when its desk is a git repo.

@@ -56,3 +56,30 @@ def _tracked_under(path: str) -> list[str]:
         text=True,
     )
     return result.stdout.split()
+
+
+def test_init_local_store_ignores_deskops_log_once(tmp_path: Path) -> None:
+    from deskops.bootstrap import SLDBBootstrap
+
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    (repo / ".git").mkdir()
+    boot = SLDBBootstrap()
+    boot._init_store = lambda target: None  # type: ignore[method-assign]
+    boot.ensure_merge_driver = lambda store: []  # type: ignore[method-assign]
+    boot._register_models = lambda store: 0  # type: ignore[method-assign]
+
+    assert boot.init_local_store(repo) == 0
+    gitignore = repo / ".gitignore"
+    assert gitignore.read_text().splitlines().count(".deskops.log") == 1
+
+    assert boot.init_local_store(repo) == 0
+    assert gitignore.read_text().splitlines().count(".deskops.log") == 1
+
+    gitignore.write_text("node_modules\n.deskops.log\n")
+    boot.init_local_store(repo)
+    assert gitignore.read_text() == "node_modules\n.deskops.log\n"
+
+    gitignore.write_text("node_modules")
+    boot.init_local_store(repo)
+    assert gitignore.read_text() == "node_modules\n.deskops.log\n"
