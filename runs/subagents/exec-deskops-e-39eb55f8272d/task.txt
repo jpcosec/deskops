@@ -1,0 +1,9 @@
+Task: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
+Title: review status muestra incomplete para un recibo dispuesto como incomplete y reserva technical_failure para la falla tecnica
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .

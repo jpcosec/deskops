@@ -1,35 +1,36 @@
+Task: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
+Title: review status muestra incomplete para un recibo dispuesto como incomplete y reserva technical_failure para la falla tecnica
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:40:58Z'
+  at: '2026-11-21T06:39:32Z'
   authority: generated
   via: save_document_payload
 id: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
-status: ready_for_testing
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-closeout
-history:
-- task_activates
-- task_hands_to_closeout
+current_node: ritual-execution
+history: []
 references:
-- deskops/services/review.py
-- docs/operator-manual.md
-- tests/test_review_command.py
-- f32c12b213f58fb2e4697218f5546327fc22336f
+- desk/inbox/20261116-013120-unclear-review-status-muestra-technical-failure-para-un-recibo-dispuesto-como-incomplete.md
 depends_on: []
 pills: []
-files:
-- deskops/services/review.py
-- docs/operator-manual.md
-- tests/test_review_command.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete
+atoms: []
 ---
 
 # review status muestra incomplete para un recibo dispuesto como incomplete y reserva technical_failure para la falla tecnica
@@ -70,3 +71,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Test nuevo: review status de un recibo dispuesto incomplete muestra incomplete y el de una corrida con falla tecnica muestra technical_failure.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-39eb55f8272d`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-39eb55f8272d
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

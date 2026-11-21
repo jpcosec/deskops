@@ -1,0 +1,2 @@
+pytest tests -k review: 77 passed, 1 xfailed (exit 0)
+pytest -n 4 tests: 5 failed, 1275 passed. 4 fail identically on clean origin/main (test_ci_check_passes_on_a_fresh_desk, test_ci_check_fails_on_a_dangling_source_atom, test_init_repairs_a_broken_deskops_link, e2e first-task-to-closeout). test_lifecycle_seed_drift pre_cc31 passes alone (load flake).
