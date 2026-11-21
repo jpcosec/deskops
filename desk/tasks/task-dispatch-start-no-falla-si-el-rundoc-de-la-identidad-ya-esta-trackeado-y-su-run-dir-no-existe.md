@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T22:40:05Z'
+  at: '2026-11-21T23:08:08Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- 42b1f6888b150495ee8fe4b753cfd8aa1d7354d2
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado
 ---
 
 # dispatch start no falla si el RunDoc de la identidad ya está trackeado y su run_dir no existe
