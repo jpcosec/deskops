@@ -1,29 +1,29 @@
 name: task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk
 path: desk/tasks/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk.md
-source_hash: 6a4825d3b022b6fc68cac17db7705794016ee238362e6fc30ceb5f5f84326cee
-content_hash: 73d65b923783dacffbca4a85b21ce2fc7370315f44ef8452595e6ff0cdb7e458
+source_hash: 91f19cd0c62d0a69febf884c779eba7530576cf1ce49a87502d4191050746707
+content_hash: 44f0c510e6f61c494930a67cb9fe1208108f6afde2be46874e893343dce4148b
 field_hashes:
   title: cea35f0dcb606c742acdb96c10fd35289a0f94e9e7a194761c440b2068d6d9e1
   id: 91bef67978f224927ffcebfb7cb1343b0778093d3b954c21574bea1e56fd2d32
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: b0f53dce5e3b0d4389831ad28b069374d66bae3a56bff7aa38dea8682d44bdd8
   goal: 9b1275a442b597ceae056ff01e75b4a8c4fe57f7a4189973122ce6ae4e97386c
   scope: 9535d279407192cc3d83488504036930819fe39cbfcf243d7b14fa9933a2c692
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: 1e402743ac19e64be834431a099a361acc93a1eb8dc6c07e4a2b3eb94e6672e1
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 2b8d4f19ffb1bcf4b5feb7d38385bf3debac3f2927760f10462bd0df8ee6ce81
   implementation_path: 5c5ff7b361185a39d05f58c81639ad4454a20c011d33b5f920cf9e6ebce8b0a2
   validation: 4980770c6fce8888533e77b0913538a41e2ec9e151e05dd1357f9083cefa6585
   done_when: 02250d6975bbeed0fe75753c39769f2a4e2949ae95506d121076638ccb4a9365
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: 3a66e5b282a9337ff802d469224ebb8f36fec4ff0ee2a2781d666a5c9bfa7f06
 semantic_tags:
 - artifact:task
 - representation.markdown
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T09:14:31Z'
+  at: '2026-11-21T10:43:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

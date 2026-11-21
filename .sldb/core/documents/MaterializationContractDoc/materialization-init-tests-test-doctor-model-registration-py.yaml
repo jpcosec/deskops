@@ -1,0 +1,25 @@
+name: materialization-init-tests-test-doctor-model-registration-py
+path: desk/materializations/materialization-init-tests-test-doctor-model-registration-py.md
+source_hash: 3758f465095f2f8c11b4071212fe9870e9afc3b7ee2159ba0b4935ece139b14b
+content_hash: c9a9de8e25c875338c161160bd69b84fc17877cf859cad0c1b6ec3c3389bee72
+field_hashes:
+  id: 893ad0c6f56bd382fa54707855f24f08571bcdffc80348e6235a5751d9c84382
+  title: 734688c40199bcee197b6f5340f0436f80cc51ebbb6d05a650b0baaa2c75770f
+  source_atoms: 3a66e5b282a9337ff802d469224ebb8f36fec4ff0ee2a2781d666a5c9bfa7f06
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 3f9687175f99e6eeeec6edce5c713d8368c0b94f7804e8983566e2c9f935bc0d
+  intent: 4f8ee6f25869de36a425d15691e54f5bd927a8587aca67450a8c2f80e347edb8
+  validation: 4980770c6fce8888533e77b0913538a41e2ec9e151e05dd1357f9083cefa6585
+  tags: e6570c4746417ebc817ceec767c8e5d3a58b1b45a80c980fa97730603eb179ab
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:init
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T10:43:43Z'
+  authority: generated
+  via: create_document

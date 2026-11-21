@@ -417,6 +417,7 @@ include:
   - desk/materializations/materialization-review-deskops-services-review-py.md
   - desk/materializations/materialization-review-docs-operator-manual-md.md
   - desk/materializations/materialization-review-tests-test-review-command-py.md
+  - desk/materializations/materialization-init-tests-test-doctor-model-registration-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -709,6 +710,10 @@ include:
     name: run-deskops-t-88eddb4a8208
   - path: runs/subagents/exec-deskops-t-0200461b903c-testing/run.md
     name: run-deskops-t-0200461b903c
+  - path: runs/subagents/exec-deskops-e-7cdeb2d8da8b/run.md
+    name: run-deskops-e-7cdeb2d8da8b
+  - path: runs/subagents/exec-deskops-t-a99aa3dcd88c-testing/run.md
+    name: run-deskops-t-a99aa3dcd88c
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2331,6 +2336,14 @@ include:
     name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-preflight-1
   - path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/bundle-1.md
     name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-bundle-1
+  - path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/evidence-tests-1.md
+    name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-evidence-tests-1
+  - path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/evidence-commit-1.md
+    name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-evidence-commit-1
+  - path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/evidence-atom-1.md
+    name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-evidence-atom-1
+  - path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/evidence-materialization-1.md
+    name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

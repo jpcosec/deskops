@@ -1,25 +1,31 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T09:14:31Z'
+  at: '2026-11-21T10:43:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- tests/test_doctor_model_registration.py
+- 3dfa88115c46245c5b3428405555ea2fc849d622
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- tests/test_doctor_model_registration.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-init-y-sus-tests-asumen-la-resolucion-por-nombre-de-enlaces-de-sldb-3
 ---
 
 # init repara el enlace deskops con la resolución por nombre de sldb (#3): test_init_repairs_a_broken_deskops_link en rojo bloquea todo integrate
