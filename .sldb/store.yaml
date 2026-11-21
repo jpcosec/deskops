@@ -414,6 +414,9 @@ include:
   - desk/materializations/materialization-messages-tests-test-repo-identity-py.md
   - desk/materializations/materialization-integrate-deskops-integrate-py.md
   - desk/materializations/materialization-integrate-tests-test-integrate-py.md
+  - desk/materializations/materialization-review-deskops-services-review-py.md
+  - desk/materializations/materialization-review-docs-operator-manual-md.md
+  - desk/materializations/materialization-review-tests-test-review-command-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2316,6 +2319,14 @@ include:
     name: review-task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej-evidence-atom-1
   - path: desk/reviews/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej/evidence-materialization-1.md
     name: review-task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej-evidence-materialization-1
+  - path: desk/reviews/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur/evidence-tests-1.md
+    name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-evidence-tests-1
+  - path: desk/reviews/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur/evidence-commit-1.md
+    name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-evidence-commit-1
+  - path: desk/reviews/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur/evidence-atom-1.md
+    name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-evidence-atom-1
+  - path: desk/reviews/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur/evidence-materialization-1.md
+    name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

@@ -1,7 +1,7 @@
 name: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
 path: desk/tasks/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur.md
-source_hash: c54e283898b9f91ced9860094961c0ca5aac8e32679f608a554d16b88afc7538
-content_hash: 851a1e3d535b83f45653103c00ecdd9d395e6ece0dc765bf9654b0d59742bc91
+source_hash: 9ede620ef3126bb5e9ebdc1b85a611981d6376aece45f099fe3861160e1f7311
+content_hash: 780571825105c5354ab99f9e5b9ff0d6c1529fab7bcd9d14ae739be588704d51
 field_hashes:
   title: 41c0049c916d64fa8eefa9679446481dd6924842e06dd7eba20adeeb890903bb
   id: 30e255a6cfb57eba249d868f6476a76f360137335adaf7e324dda1f81c5c138a
@@ -13,17 +13,17 @@ field_hashes:
   why: 64496f6fedd0956e80c1645444e244fda5cf27d18ddedea138e0b34888ebab64
   goal: 16076132bd2f477d6d9d63d647bfc535db0056a0344d7afd3fb0a3a6f7b78b51
   scope: b359df0a4412f0693ca8ad8d2070d63ff8c2a51526be29a804f9696d70333199
-  references: 24ec477d32ab7a09f3e8e5657ad10ca9d246c927b3eb2039c7c0b9e348ffcbca
+  references: 4315f5221b6c26844acbc65fece441e8a35d5b292c81e23e343732a1fd771a91
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 8552792db07957fc4bdc30f507bc2ed5983abcaf3ad688723a98774337cde539
   implementation_path: 71ed7830b3c869e5861cda5de9fb7f609be3a6cd43e7c500f1f724a6d66461a1
   validation: 3955aba08d39c9ea5ef3468cfc8102a1e43c1b06f26606cf5cea5693163b8442
   done_when: d0d650d274451cc9c49d5818e83d92485bb351ab5dbc2c0f7f69738a726185f2
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: 8dc0dcc5922d2e1641aae9638e4d651d0a7c792b92d2765bfa03f80bc724adbb
 semantic_tags:
 - artifact:task
 - representation.markdown
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:18:17Z'
+  at: '2026-11-21T08:39:50Z'
   authority: generated
   via: save_document_payload

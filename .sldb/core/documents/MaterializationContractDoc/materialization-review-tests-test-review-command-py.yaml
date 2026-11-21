@@ -1,0 +1,25 @@
+name: materialization-review-tests-test-review-command-py
+path: desk/materializations/materialization-review-tests-test-review-command-py.md
+source_hash: f99f7e4888f391e1f9b081453cce1d5f705121fbc1b4c7e2551395a37f609b47
+content_hash: fa2bd58e3baa6b716ebd06e9e280f57a7d7c4ea517e8aa081c67a8a53d8d343f
+field_hashes:
+  id: 86dec20657c208728d886a1d81f491875e560da302b366b6b20890f081519bc7
+  title: 32e5b0081e90da1975479d17013671e6433cd5f21802632d676cedf8f80a1238
+  source_atoms: 8dc0dcc5922d2e1641aae9638e4d651d0a7c792b92d2765bfa03f80bc724adbb
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 4165f8a460733037588a9d3655b057a4bd2ff76a8b4bdd13eb68f1d02a577cfe
+  intent: 6a6579ac3a883abd886b57e3bfea65cca35c554e8fedc50dc1289a06eb616bf7
+  validation: 5974af1474f6fc703ccf86dd7c745fcdfa499ed137d206e6df3553ae47026875
+  tags: 42a86cbc7b61fd4b767aa06853197517b62326e638e0af28c66646573429adf2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:review
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T08:40:21Z'
+  authority: generated
+  via: create_document

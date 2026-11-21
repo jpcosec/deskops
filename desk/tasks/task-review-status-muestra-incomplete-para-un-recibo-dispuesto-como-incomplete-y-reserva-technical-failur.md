@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:18:17Z'
+  at: '2026-11-21T08:39:50Z'
   authority: generated
   via: save_document_payload
 id: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
@@ -14,14 +14,21 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- desk/inbox/20261116-013120-unclear-review-status-muestra-technical-failure-para-un-recibo-dispuesto-como-incomplete.md
+- deskops/services/review.py
+- docs/operator-manual.md
+- tests/test_review_command.py
+- f32c12b213f58fb2e4697218f5546327fc22336f
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/services/review.py
+- docs/operator-manual.md
+- tests/test_review_command.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete
 ---
 
 # review status muestra incomplete para un recibo dispuesto como incomplete y reserva technical_failure para la falla tecnica
