@@ -1,15 +1,15 @@
 name: task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
 path: desk/tasks/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur.md
-source_hash: 9ede620ef3126bb5e9ebdc1b85a611981d6376aece45f099fe3861160e1f7311
-content_hash: 780571825105c5354ab99f9e5b9ff0d6c1529fab7bcd9d14ae739be588704d51
+source_hash: 1722c01cbf3f2b9ff139aa2666cecc82dee274f36c0f1d39442732f3cc893f62
+content_hash: 5d8c027049c1b926311cbdd02801a607cefcf8922ce71e392d9ba1c5690ce4ac
 field_hashes:
   title: 41c0049c916d64fa8eefa9679446481dd6924842e06dd7eba20adeeb890903bb
   id: 30e255a6cfb57eba249d868f6476a76f360137335adaf7e324dda1f81c5c138a
-  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
-  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: 64496f6fedd0956e80c1645444e244fda5cf27d18ddedea138e0b34888ebab64
   goal: 16076132bd2f477d6d9d63d647bfc535db0056a0344d7afd3fb0a3a6f7b78b51
   scope: b359df0a4412f0693ca8ad8d2070d63ff8c2a51526be29a804f9696d70333199
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:39:50Z'
+  at: '2026-11-21T08:40:58Z'
   authority: generated
   via: save_document_payload
