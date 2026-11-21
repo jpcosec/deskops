@@ -156,6 +156,9 @@ def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
         return EXIT_WORKTREE, f"git rev-list {base}...{branch}: {_git_error(pending)}"
     commits = pending.stdout.split()
     if commits:
+        failure = _commit_run_store(root, [name])
+        if failure:
+            return EXIT_WORKTREE, f"no se pudo commitear el RunDoc de {name}: {failure}"
         if _git(root, "merge-base", "--is-ancestor", base, branch).returncode == 0:
             picked = _git(root, "merge", "--ff-only", "-q", branch)  # keeps the executor's shas
         else:
@@ -163,11 +166,60 @@ def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
             if picked.returncode != 0:
                 _git(root, "cherry-pick", "--abort")
         if picked.returncode != 0:
-            return EXIT_WORKTREE, f"conflicto al traer {branch} a {base}: {_git_error(picked)}"
+            return EXIT_WORKTREE, f"conflicto al traer {branch} a {base}: {_dirty_overwrite_hint(root, base, branch, _git_error(picked))}"
     failed = _remove_worktree(root, name)
     if failed is not None:
         return EXIT_WORKTREE, f"no se pudo borrar el worktree de {name}: {_git_error(failed)}"
     return 0, f"integrado {len(commits)} commit(s) de {branch} en {base}"
+
+
+_STORE_RUN_PATHS = (
+    ".sldb/store.yaml",
+    ".sldb/core/store_index.yaml",
+    ".sldb/core/models/RunDoc.yaml",
+)
+
+
+def _run_store_paths(root: Path, name: str) -> list[str]:
+    """Store files ``record_scion_run`` touches for agent ``name`` (only the ones that exist)."""
+    from deskops.runtime.scion import _slug
+
+    shard = f".sldb/core/documents/RunDoc/run-{_slug(name)}.yaml"
+    return [rel for rel in (*_STORE_RUN_PATHS, shard) if (root / rel).exists()]
+
+
+def _commit_run_store(root: Path, names: list[str]) -> str:
+    """Commit, with pathspec, the RunDoc store files of ``names`` that are still uncommitted.
+
+    Returns "" on success or nothing to do, else the git error. Other dirty files are untouched.
+    """
+    paths: list[str] = []
+    for name in names:
+        paths += [p for p in _run_store_paths(root, name) if p not in paths]
+    if not paths:
+        return ""
+    dirty = _git(root, "status", "--porcelain", "--", *paths)
+    if dirty.returncode != 0:
+        return _git_error(dirty)
+    if not dirty.stdout.strip():
+        return ""
+    added = _git(root, "add", "--", *paths)
+    if added.returncode != 0:
+        return _git_error(added)
+    done = _git(root, "commit", "-q", "-m", f"run: {', '.join(names)}", "-m", "[skip ci]", "--", *paths)
+    return "" if done.returncode == 0 else _git_error(done)
+
+
+def _dirty_overwrite_hint(root: Path, base: str, branch: str, message: str) -> str:
+    """When git refused because local changes would be overwritten, name the files and say to commit them."""
+    if "sobrescrit" not in message and "overwritten" not in message:
+        return message
+    touched = _git(root, "diff", "--name-only", f"{base}...{branch}")
+    dirty = _git(root, "status", "--porcelain", "-uno")
+    changed = {line[3:].strip() for line in dirty.stdout.splitlines() if len(line) > 3}
+    files = sorted(changed & set(touched.stdout.split()))
+    listed = ", ".join(files) if files else "ver git status"
+    return f"{message} (commitea o descarta antes estos cambios locales del checkout principal: {listed})"
 
 
 def _run_dir_for(name: str, role: str) -> str:
@@ -314,6 +366,9 @@ def start(root: Path, role: str, task_id: str) -> int:
         agent_slug=name,
         run_dir=run_dir,
     )
+    failure = _commit_run_store(root, [name])
+    if failure:
+        print(f"aviso: no se pudo commitear el RunDoc de {name}: {failure}")
 
     sync = _scion(["scion", "templates", "sync", str(target.resolve()), "--project", cfg.project])
     if sync.returncode != 0:

@@ -485,3 +485,43 @@ def test_reap_conflict_aborts_and_keeps_worktree(env: Env) -> None:
     assert _git(env.root, "rev-parse", "main") == before
     assert worktree.is_dir() and f"deskops/{name}" in _git(env.root, "branch", "--list", "deskops/*")
     assert not (env.root / ".git" / "CHERRY_PICK_HEAD").exists()
+
+
+def test_start_commits_the_rundoc_so_reap_brings_an_executor_commit_touching_the_store(env: Env) -> None:
+    _git(env.root, "add", ".sldb", "desk")
+    _git(env.root, "commit", "-q", "-m", "desk")
+    (env.root / "unrelated.txt").write_text("dirty")  # foreign dirty work must stay uncommitted
+    name = _start_executor(env)
+    assert _git(env.root, "status", "--short", "--", ".sldb") == ""
+    assert _git(env.root, "log", "-1", "--format=%s%n%b", "--", ".sldb").splitlines()[0] == f"run: {name}"
+    assert "[skip ci]" in _git(env.root, "log", "-1", "--format=%B")
+    assert _git(env.root, "status", "--short", "unrelated.txt") == "?? unrelated.txt"
+    worktree = env.root / ".worktrees" / name
+    index = worktree / ".sldb/core/store_index.yaml"
+    index.write_text(index.read_text() + "\n# executor sync\n")
+    _git(worktree, "add", ".sldb/core/store_index.yaml")
+    _git(worktree, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "sync store")
+    (env.root / "main.txt").write_text("m")
+    _git(env.root, "add", "main.txt")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "main moved")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "executor sync" in (env.root / ".sldb/core/store_index.yaml").read_text()
+    assert not worktree.exists()
+
+
+def test_reap_names_the_files_when_local_changes_block_the_pick(env: Env) -> None:
+    _git(env.root, "add", ".sldb", "desk")
+    _git(env.root, "commit", "-q", "-m", "desk")
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    _commit_in(worktree, "shared.txt", "mine")
+    (env.root / "main.txt").write_text("m")
+    _git(env.root, "add", "main.txt")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "main moved")
+    (env.root / "shared.txt").write_text("local")
+    _git(env.root, "add", "shared.txt")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 8 and "shared.txt" in result.stdout and "commitea" in result.stdout
