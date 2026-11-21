@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T20:41:48Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-010
 # e.g., language:python, library:pydantic
@@ -34,7 +39,7 @@ Apply this pill whenever a task writes deskops graph snapshot JSON, generated in
 
 _Name the files, surfaces, or scope this pill applies to._
 
-Generated outputs should prefer `.sldb/runtime/` or another agreed ignored runtime location. Versioned fixtures belong under tests or contracts only when they prove behavior.
+Generated outputs go to `.sldb_cache/` (ignored by `.gitignore`), the derived root of the sldb store layout (sldb decision c420809c); deskops code takes it from `deskops.graph.paths.DERIVED_ROOT`. Do not write derived outputs under the old `.sldb/runtime/`. Versioned fixtures belong under tests or contracts only when they prove behavior.
 
 ## How
 

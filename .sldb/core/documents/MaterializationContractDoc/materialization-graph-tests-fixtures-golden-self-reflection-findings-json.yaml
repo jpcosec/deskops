@@ -1,0 +1,25 @@
+name: materialization-graph-tests-fixtures-golden-self-reflection-findings-json
+path: desk/materializations/materialization-graph-tests-fixtures-golden-self-reflection-findings-json.md
+source_hash: 656588ae438e75995263d6dfa90e23cc898f218abc465317e3a8fbdee6bd55db
+content_hash: a25c849b5fe635d60121747a50956e403b94a5e9b6b3eee635e179c056894a84
+field_hashes:
+  id: 1f64829b83fb6aad544c4cc8029880f0035a8bff742a28aefa93c7558af9dd58
+  title: 68636378d1e4e9caec63e1001f811926121b9a658ddc54ddc86a5ac24790ea4b
+  source_atoms: 77b5a7bbdae4884e3030238172bd4c6b3a8ef1ee0f89fc67101e07acd436a82f
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: fef0ccabe1633e5c88a29ee1c57f14c9fb3b71163cb38858550f7e2f2a41364a
+  intent: 384480d211d3a92583704e8d8fa76daa0527ccc92ebb32a84d94331bdc96fd2e
+  validation: 92ff5ee9957e3f92962ddc0f7111b3b5b9e1860e26a7af138190d5c4bacd2c08
+  tags: b15a9beb6d645f45465945d899a2e0fa4bfc3287b88afd3cf231ac658507d8d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:graph
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T21:56:08Z'
+  authority: generated
+  via: create_document

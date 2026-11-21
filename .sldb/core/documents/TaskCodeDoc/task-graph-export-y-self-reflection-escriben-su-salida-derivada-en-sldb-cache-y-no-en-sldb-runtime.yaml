@@ -1,29 +1,29 @@
 name: task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime
 path: desk/tasks/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime.md
-source_hash: 9bd82c37b5475acb1592848766e07fff99e698e297842f212a0532224965fc83
-content_hash: 8166f4e96aff906158f643a1ce21e2d091113ec569acb9284712e85e0f2e38d9
+source_hash: 9a34dc555962ad2956013d3a75361a945ce54216ca4e45717659a61584e26754
+content_hash: f6268b882f1bba7c52267b759694e06f1819198b94ec4240755f1e45a7cdcf03
 field_hashes:
   title: d5a8d525ef3cdc2ec5649a9799ef1da5f9711d1848fd8bd6b91d20eba4b5e04a
   id: f4e65861ffb45091e298de453919c8a52726cdd6242d97be6aa3f719ad770cd9
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: bc47af73c7c9ae7a28f35ee25163e87274eb89db1079a6e3819b9e25ae814cb3
   goal: 04e9d3bbffff94070161f4477a24f2250d62eb070e0c1f92551e93f8d82dc032
   scope: 7b157bb12c01fd9810f48f262dbd45a8ab3f127cf4c7faa59afec4e704dba99c
-  references: 2a0539ff26ba69bc1a9a0e00930dae196756ba0a30aa0b21110cb4ce4f2c0adf
+  references: 4af892cafce14b2f0b1ce28ab1b3e929e7a34b6510f3fec766f3836839542769
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 98ce2e8cfd8522c81003aef0d6d4e21e99938a3b8fb80d4a5ea015b6206fa303
-  files: 29a42e9fb7340291d775ae203125fb4514ae9d2e453386b134a845188f8eb47b
+  files: 06f4c31179c11a07f328f26b5969086f2d6aa8cbb04699fba4492721ebdea5e8
   implementation_path: 5b66881086b35aa5658d903ff5111bc9977380cb4a7a830d3a56f8df9c70d813
   validation: 710818e6dd2f6bda885974a2686df5e2874ebf597daf439b56c2e9aaa0765726
   done_when: 5a8ad9545bbf4e672a3e6134d46af5779678668b6a02d054370135e88ac4f372
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+  atoms: 77b5a7bbdae4884e3030238172bd4c6b3a8ef1ee0f89fc67101e07acd436a82f
 semantic_tags:
 - artifact:task
 - host:robocop2
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:04:14Z'
+  at: '2026-11-21T21:55:17Z'
   authority: generated
   via: save_document_payload

@@ -1,0 +1,25 @@
+name: materialization-graph-tests-fixtures-golden-graph-snapshot-kg-json
+path: desk/materializations/materialization-graph-tests-fixtures-golden-graph-snapshot-kg-json.md
+source_hash: 62e9ad9f91e17aebe7ab9a940e236282f824669642f1f46fdda1964583fbda12
+content_hash: 821618135423b4344188e1d176af84d27fe19949860c3d3586de7fe650a862ee
+field_hashes:
+  id: 2e0f8659b1e14462e337d998025b591e1529f95b804bb7566bb78deb2f1e00f3
+  title: a20cbeae1edb807c9a6a1970190b5d50978122bb9c5bcc201757589ac75f6478
+  source_atoms: 77b5a7bbdae4884e3030238172bd4c6b3a8ef1ee0f89fc67101e07acd436a82f
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: ff44b50f05c29428c7a13dd271299a74dc2e48f875260af8e00d7cf59595cbe8
+  intent: d92e3bfe1eaa236f87340740244ae66fa184318a1f1cbf8092a266d81ac48920
+  validation: 92ff5ee9957e3f92962ddc0f7111b3b5b9e1860e26a7af138190d5c4bacd2c08
+  tags: b15a9beb6d645f45465945d899a2e0fa4bfc3287b88afd3cf231ac658507d8d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:graph
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T21:55:58Z'
+  authority: generated
+  via: create_document

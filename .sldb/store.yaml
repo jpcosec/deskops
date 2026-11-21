@@ -426,6 +426,14 @@ include:
   - desk/materializations/materialization-cli-tests-test-cli-py.md
   - desk/materializations/materialization-docs-opencode-skills-use-deskops-skill-md.md
   - desk/materializations/materialization-docs-docs-operator-manual-md.md
+  - desk/materializations/materialization-graph-deskops-graph-export-py.md
+  - desk/materializations/materialization-graph-deskops-graph-paths-py.md
+  - desk/materializations/materialization-graph-deskops-graph-self-reflection-py.md
+  - desk/materializations/materialization-graph-tests-fixtures-golden-graph-snapshot-kg-json.md
+  - desk/materializations/materialization-graph-tests-fixtures-golden-self-reflection-findings-json.md
+  - desk/materializations/materialization-graph-tests-test-graph-self-reflection-py.md
+  - desk/materializations/materialization-graph-tests-test-graph-snapshot-py.md
+  - desk/materializations/materialization-graph-tests-test-output-goldens-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2444,6 +2452,14 @@ include:
     name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-evidence-commit-1
   - path: desk/reviews/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/evidence-document-1.md
     name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-evidence-document-1
+  - path: desk/reviews/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/evidence-tests-1.md
+    name: review-task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime-evidence-tests-1
+  - path: desk/reviews/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/evidence-commit-1.md
+    name: review-task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime-evidence-commit-1
+  - path: desk/reviews/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/evidence-atom-1.md
+    name: review-task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime-evidence-atom-1
+  - path: desk/reviews/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/evidence-materialization-1.md
+    name: review-task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

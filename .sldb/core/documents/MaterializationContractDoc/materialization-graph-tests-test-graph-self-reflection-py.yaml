@@ -1,0 +1,25 @@
+name: materialization-graph-tests-test-graph-self-reflection-py
+path: desk/materializations/materialization-graph-tests-test-graph-self-reflection-py.md
+source_hash: cafd2877f70654910bad42502a2d19d2b1d6634b6ec088796a345ecfd7c62324
+content_hash: 1f508b2dbe7ee72dc38d7859a0aef1df7c374741ea7cec0d179e00e8047198eb
+field_hashes:
+  id: ae2295cd03415724b4b958d91a7dd650ada28b79d7af66d0f124f85a1430763b
+  title: 61bf1b72d8e653a53a058e38b67fae552f5b44e53a5b42113dff2fe898c35424
+  source_atoms: 77b5a7bbdae4884e3030238172bd4c6b3a8ef1ee0f89fc67101e07acd436a82f
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: f05993e9628a0adfe7316b75a83f3d48fd6862f0b60607c1b97c94eaea7c9fbd
+  intent: 31186464548627be32d04b50f58156f4846b495f59e7a63d7f2a82fad640c851
+  validation: 92ff5ee9957e3f92962ddc0f7111b3b5b9e1860e26a7af138190d5c4bacd2c08
+  tags: b15a9beb6d645f45465945d899a2e0fa4bfc3287b88afd3cf231ac658507d8d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:graph
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T21:56:19Z'
+  authority: generated
+  via: create_document

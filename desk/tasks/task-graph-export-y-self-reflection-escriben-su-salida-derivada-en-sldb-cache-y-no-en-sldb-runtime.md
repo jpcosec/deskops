@@ -1,34 +1,46 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:04:14Z'
+  at: '2026-11-21T21:55:17Z'
   authority: generated
   via: save_document_payload
 id: task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261104-233657-suggestion-sldb-el-store-pasa-a-sldb-versionado-y-sldb-cache-ignorada-journal-retirado.md
+- deskops/graph/export.py
+- deskops/graph/paths.py
+- deskops/graph/self_reflection.py
+- tests/fixtures/golden/graph_snapshot.kg.json
+- tests/fixtures/golden/self_reflection_findings.json
+- tests/test_graph_self_reflection.py
+- tests/test_graph_snapshot.py
+- tests/test_output_goldens.py
+- b3b40a14d8376b2add3df1dac9001c1f5fc4d66c
 depends_on: []
 pills:
 - desk/contexts/pill-010-graph-runtime-output-policy.md
 files:
 - deskops/graph/export.py
+- deskops/graph/paths.py
 - deskops/graph/self_reflection.py
-- tests/test_graph_snapshot.py
+- tests/fixtures/golden/graph_snapshot.kg.json
+- tests/fixtures/golden/self_reflection_findings.json
 - tests/test_graph_self_reflection.py
+- tests/test_graph_snapshot.py
+- tests/test_output_goldens.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache
 ---
 
 # graph export y self_reflection escriben su salida derivada en .sldb_cache y no en .sldb/runtime
