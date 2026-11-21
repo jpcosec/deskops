@@ -1,0 +1,37 @@
+name: review-task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio-preflight-1
+path: desk/reviews/task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio/preflight-1.md
+source_hash: 8d9beb2e23039fc909aed6f38d5925c6804af175defea5451cf7faf7d422b35b
+content_hash: e685a2b641596bd4924f89269921522d1a3f8e73e078aac8ab8832088eeac2ae
+field_hashes:
+  id: e37d6ba37225e1e81d7d7b3f3a1ade3bf8b611690383925854f084a3138099c2
+  title: d9833c9d8e1fd6544ca7a33d90124f7ac92b484731e36d1599ec20c2b2dbf933
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 87563ed18fb889fd455f16670014c3da98fe8f4389c2a44417a000d5f0d4c018
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: ae56344316235750f6139a568f52a6d3606d0e2ef21b29d36e2f9a6a5df4ba6a
+  input_sha256: 778b2e9fd82cdf28bfe09afaea8200cc6b166b41a196fb119b0f69691bf4603d
+  contract_sha256: 1ca5dceb26f971e18011101abb4d6d0f505f396625d795400c1c6b7a895b0a33
+  output_sha256: 9fd0a9830d49f45605b93c55a59493982924340ec19812beb81499b960fa0354
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0eb7c187521ee0f2d517cca49a480c02a0df47fabb4fac65e1458aed2a08902c
+  created_at: 0392003471d5e26f2b7d1344cee09290aadaec7323af85c9ba241b5b584df5f8
+  disposed_at: ded7fd3850eec006540aaf87375463492f0f13b8f67b4d3304707c2d3d19100b
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f3e5cfcf532187afc7de1e7f46ff84187cf4caba45148f5aaa0654ac4ba14838
+  disposition: c9857b7b7bbd5ee1f01371eb3740a02a0e4bfc8704e5ac85bb50b23a6817e385
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:16:32Z'
+  authority: generated
+  via: save_document_payload

@@ -1,0 +1,37 @@
+name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-bundle-1
+path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/bundle-1.md
+source_hash: 9395d4434ec304eff17ef5cba3f3c445f0fc6ee6d4a52140d23e9cb0daa9d5f1
+content_hash: b156d7fabef11c442354dd7a85d6a5ba8e766926279951bb71ec6df53423efd7
+field_hashes:
+  id: 3fe8697dba3bc8c9ee53e0225877411f01dfd9f463090a77b30a2082d5b13566
+  title: 13bf17ab60bec8552ee531a82c72b6cc482fe43284e1b5c9763097d4950d2727
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: c083cb875741a5420c13460de5ce19cfb62238ae696b10b8a070f65b75154bcd
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 81d498d9ffd40e74475ef2b0cba51d6e7682220bc7e8c1dda062a8ec35cd2276
+  input_sha256: 896bac7c0a50240072878cfb212f860151cee6e615eb995fbafad83d5890db73
+  contract_sha256: 5ae5a97e9781fab5697fcd7518f1cfc545236cb7f0d94ad1e631ff6ecf019184
+  output_sha256: d8d19a41550be6ccd75052064927146a49cceae6405467f1e6f67701356e0939
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 854a49f34e054c36c8d9c863e2ef82688ec48d201a9291ae689ecbadad103428
+  created_at: 25db98dc95b7619fd76695c384439fa479b9bed79d9c8f6c75987331694a214f
+  disposed_at: b4c97ba8b426d25b9672e873f309ab02be2c305cd56ed01392960891d46e21a9
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 8cd5445a756cf6f1a35fc410c3390dc0fbbb5e7fb1db95645d260150d00db3a0
+  disposition: bde9eeb1c2bcf7658b1bb92038f33273b7ef36a6a309c13c83589e91bf6a188b
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:23:32Z'
+  authority: generated
+  via: save_document_payload

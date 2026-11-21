@@ -1,0 +1,37 @@
+name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-bundle-3
+path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/bundle-3.md
+source_hash: df3c214f152abec51ecc1beb06d00f38aa27a15c1f86563ad8870a175daa43ad
+content_hash: 307abc69dfe3dd1fcc3ddf8b3bcce73394ae367d366e4120efe3ab67c356d9b0
+field_hashes:
+  id: 530035359e4ac096c835987c34e8c751eb689de020a2f16738a5940dbcde52a9
+  title: ceb95cc7094a0ee54f29164c942976d23d5d27ae19b22a9d1d8cf034e969b1e5
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 0c23b3cde9687a53ed10de8e0e0ca94f645e5576fd684ba068c6c6afa81c2469
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12b995f57b235543a6a13539e635d25a2561e19052435680150de99de056689c
+  input_sha256: 5caf61aa6b1c5c4ced57e56ec71e40d9d43af2ccb5e9468203e6a5674e53f89b
+  contract_sha256: b622e1fde932eccb8ada193c0e5e58261a8a531ca1b4b060a26c0d3b7c79fb93
+  output_sha256: 5d3cdf51c37b1340b0ce7ae56db61fececd996a9c3c3ec89b04c0bdd51ab909a
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 484df74323a06a6ebf8d715970ff71a0832c50300ff59ae595a3bc7aef57bbf3
+  created_at: 778faa32d25de4df657f6a2caae86fd433504b6b9c967137952ec3744174b550
+  disposed_at: 97b0715861038925e26fed5c95bf798780c2076ba3c8cc3056bb41be822a07e3
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: b93b6e41f9478dcb7c0fb0f3fc6853b742e1e3ee8da40c0a4340a014cd10870b
+  disposition: 86e9a6a7f7b541daa9751a0fad6f62f974ef6c8399aa4131b95971cd6effb6ae
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:22:49Z'
+  authority: generated
+  via: save_document_payload
