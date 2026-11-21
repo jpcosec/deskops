@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T02:26:31Z'
+  at: '2026-11-21T02:33:33Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -46,6 +46,7 @@ tasks:
 - desk/tasks/task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe.md
 - desk/tasks/task-governance-e-g-other-repo.md
 - desk/tasks/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej.md
+- desk/tasks/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -123,3 +124,4 @@ _Generated from the task references above._
 - dispatch start no falla si el RunDoc de la identidad ya está trackeado y su run_dir no existe [draft] - dispatch start, antes de usar una identidad cuyo run_dir no existe, mira si su RunDoc ya está trackeado. Si lo está, lo actualiza o lo re-trackea con force para el run nuevo, y sigue sin error. Si un fallo deja una carpeta vacía, se borra. Un RunDoc trackeado con su run_dir presente sigue contando como intento hecho, como hoy.
 - Governance: e.g., other_repo [draft] - Lo que pide la nota 20261120-193931-suggestion-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11, según la propuesta de Governance (orden de implementación en su sección 11 y decisiones en la 12). Antes de despachar, el coordinador la prepara con el texto completo de la propuesta: alcance, archivos, camino y validación.
 - dispatch deja commiteados los RunDoc que escribe, para que el reap pueda traer al main commits del ejecutor que tocan el store [draft] - Ningún reap falla porque el checkout principal tenga sin commitear el store que escribió dispatch. dispatch start commitea en la rama principal, con pathspec, solo los archivos del store que record_scion_run tocó ('git commit -- <rutas>', mensaje 'run: <agente>' y [skip ci]). Además, reap, antes del cherry-pick, commitea igual cualquier RunDoc pendiente de sus agentes. Si queda otro cambio local que choca, el mensaje de error nombra los archivos y sugiere commitearlos.
+- dispatch start tester no lanza si la rama del ejecutor de la tarea todavía no está integrada [draft] - dispatch start tester sale con EXIT_BUSY (3, así la cola lo reintenta) e imprime 'en espera: la rama deskops/<ejecutor> de la tarea no está integrada' si existe alguna rama deskops/<nombre> de un ejecutor de esa tarea (por scion_child_identity, intentos 1 y 2) con commits que no están en la rama principal. Cuando el reap la integra y la borra, el tester lanza.
