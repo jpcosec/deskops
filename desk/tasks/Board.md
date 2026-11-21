@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T18:07:18Z'
+  at: '2026-11-21T18:13:37Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -66,6 +66,7 @@ tasks:
 - desk/tasks/task-governance-el-store-se-actualiza-solo-hook-de-pre-commit-o-pr-check-que-falla-si-el-store-no-corresp.md
 - desk/tasks/task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare.md
 - desk/tasks/task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u.md
+- desk/tasks/task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -163,3 +164,4 @@ _Generated from the task references above._
 - Governance: el store se actualiza solo (hook de pre-commit o pr check que falla si el store no corresponde al árbol) [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
 - Governance: puesta al día de los clones base de la máquina coordinadora y doctor que valida cada tarea contra su modelo [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
 - dispatch commitea también el run.md del run dir junto con su RunDoc (integrate fallaba en store con un agente vivo) [draft] - _run_store_paths incluye el run.md del run dir del agente (runs/subagents/exec-<nombre>/run.md, y -testing para testers, el mismo de _run_dir_for), si existe. _commit_run_store lo commitea junto con el store, con pathspec. Así el RunDoc commiteado siempre tiene su archivo en el mismo commit, e integrate pasa el gate de store con agentes vivos. El closeout que después commitea el run dir completo no se rompe (run.md ya trackeado).
+- Los contenedores de scion de ejecutor y tester traen pytest-xdist para correr la suite completa con -n 4 [draft] - El venv que usan los roles executor y tester en los contenedores de scion trae pytest-xdist instalado (en la imagen o en el paso de preparación del runtime template de scion), y el prompt de esos roles corre la suite completa con -n 4.
