@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T18:07:13Z'
+  at: '2026-11-21T19:29:36Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- fe2f3a3ff445373763f08fbfb240dde78ae83dd6
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-dispatch-commitea-el-run-md-del-run-dir-junto-con-su-rundoc
 ---
 
 # dispatch commitea también el run.md del run dir junto con su RunDoc (integrate fallaba en store con un agente vivo)
