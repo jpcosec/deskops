@@ -1,0 +1,37 @@
+name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-evidence-materialization-1
+path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/evidence-materialization-1.md
+source_hash: e0d663716b61b07ddf8dbf4740fddffa7a1e2211c09a60dc41e948ca368c4b4d
+content_hash: a04074a80f6b2bcc7714bac7203f8be03a1e566fa483b242602b0ffd72a1a5ef
+field_hashes:
+  id: 419b13cfbf537145a1c775ecbc4b61a3c5b4e8ae67bfcc18b1b986130b5770b5
+  title: 084a565d3dacd7328b92c2693ab51cdd5a8eeb66ce5551816159f9707a5f17cd
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 3478873f3461c4ddf1e7c18b73ef46fb5c27ecf84fc08e92dae26eb3031c5f92
+  subject: bbb43c4c366e355dbaeef641083bcc93c848f1481dcdd7440615f89851513e69
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: c6ac49843cba7cdc04d15822c03ba49518b7fd79c331f3025ec140271717249f
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 72b29b038f5c9407c2677752c36c9c813c9fd1fd92e472c7595301a8b9a2f9a6
+  created_at: d6516cb5fbc85dc8f4cc7d885503c6dc6093e387ee60f3ec1807f577f903ff74
+  disposed_at: d6516cb5fbc85dc8f4cc7d885503c6dc6093e387ee60f3ec1807f577f903ff74
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 684f158d5f969a829729fae51a57bed4c3b17a62a3a0db1158c259fb66d02165
+  disposition: a05a4f7ada05821f8114b660ce9fd63836f5838e21518d994c289f0e43bbfc2a
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T10:44:06Z'
+  authority: generated
+  via: create_document

@@ -1,7 +1,17 @@
+Task: task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk
+Title: init repara el enlace deskops con la resolución por nombre de sldb (#3): test_init_repairs_a_broken_deskops_link en rojo bloquea todo integrate
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T10:43:34Z'
+  at: '2026-11-21T10:10:11Z'
   authority: generated
   via: save_document_payload
 id: task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk
@@ -13,19 +23,14 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- tests/test_doctor_model_registration.py
-- 3dfa88115c46245c5b3428405555ea2fc849d622
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- tests/test_doctor_model_registration.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-init-y-sus-tests-asumen-la-resolucion-por-nombre-de-enlaces-de-sldb-3
+atoms: []
 ---
 
 # init repara el enlace deskops con la resolución por nombre de sldb (#3): test_init_repairs_a_broken_deskops_link en rojo bloquea todo integrate
@@ -65,3 +70,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 tests/test_doctor_model_registration.py pasa entero contra el sldb de /mnt/ssd/herramientas/sldb y la suite completa no tiene fallas de ese archivo.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T09:14:35Z'
+  at: '2026-11-21T10:48:56Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -64,7 +64,6 @@ tasks:
 - desk/tasks/task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk.md
 - desk/tasks/task-governance-message-send-to-y-list-tasks-include-repos-resuelven-el-repo-por-la-ruta-del-registro-no.md
 - desk/tasks/task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada.md
-- desk/tasks/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -160,4 +159,3 @@ _Generated from the task references above._
 - Governance: registro en el desk de los artefactos generados por Claude y por el desk [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
 - Governance: message send --to y list tasks --include-repos resuelven el repo por la ruta del registro, no por el nombre [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
 - Governance: migración del workflow nuevo a los diez desks a la vez con vuelta atrás probada [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
-- init repara el enlace deskops con la resolución por nombre de sldb (#3): test_init_repairs_a_broken_deskops_link en rojo bloquea todo integrate [draft] - La suite de deskops vuelve a verde contra el sldb de herramientas. Decidir con evidencia cuál de las dos cosas es cierta y hacerla: (a) con la resolución por nombre, un enlace cuyo path no existe pero cuyo nombre resuelve al store dueño ya no está roto. Entonces init no tiene nada que reparar y el test se reescribe para lo que sí sigue roto: un enlace 'deskops' cuyo nombre resuelve a otro store o a ninguno, o cuyo status no es ok según store_links. El caso 'path viejo pero resoluble por nombre' pasa a un test propio, donde init no imprime reemplazo y el enlace queda resolviendo al dueño. (b) init tiene que normalizar el path guardado aunque resuelva por nombre; entonces bootstrap.py compara también el path guardado y lo reescribe. Preferir (a) salvo que algo de deskops lea el path guardado sin pasar por store_links (buscar con grep).
