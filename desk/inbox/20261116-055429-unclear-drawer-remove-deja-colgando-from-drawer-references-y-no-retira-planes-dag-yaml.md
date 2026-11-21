@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:42:02Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,9 +13,16 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T05:54:29'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:41:55'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: 'Punto 1 ya resuelto: from_drawer es campo de procedencia (PROVENANCE_FIELDS,
+  deskops/graph/desk_graph.py:44, desde 4a9a4bbb) y graph missing no lo cuenta (verificado
+  hoy: task-doctor-no-alerta-... tiene from_drawer muerto y no aparece). Punto 2 (retirar
+  planes con dag.yaml) convertido en tarea task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason.'
 ---
 
 # drawer remove deja colgando from_drawer/references y no retira planes (dag.yaml)

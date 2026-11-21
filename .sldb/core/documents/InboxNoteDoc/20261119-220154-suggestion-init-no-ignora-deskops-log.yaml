@@ -1,13 +1,16 @@
 name: 20261119-220154-suggestion-init-no-ignora-deskops-log
 path: desk/inbox/20261119-220154-suggestion-init-no-ignora-deskops-log.md
-source_hash: d7155b4137a7b8c025590aca9685ea4668eca9071b2e0e9a4bfe26ea7629f48c
-content_hash: 6fe2b6c18438c1f50365f3ebc7691797ee0d242ceb70f93eda935595f65e0309
+source_hash: 6a598380765c1be24015b7fbb0eb396f6465ae3cae1f299c1f12bc5d0d9b91ac
+content_hash: b897ce4a8fe398e0205fa878772f4d52955855d5037a87828693658d57ad6690
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 49dd79627e3243e8e87555525170fa5e0ddaec5c52fcf2b43276109105b58663
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: d5e7782571517cd40bdf38fb8f7e5631bc11a1cbf223dd89357101cb8c28c686
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 34dfe344123cfcf886a9d50d6f22f46f655635b7656de11861a44b3f0c6e487a
+  ack_reason: e63a774b6516b780a014e72a37167dd76afd904b2c79c126dc4ca38403790997
   title: 0d0f123c706a3670703e9c660aab17b631db650198616316028b5eef1c50f4e2
   body: 723242d0a8ef818da08d80976b105594a2ee2e1cbb91ac87e02354d3913bee48
 semantic_tags:
@@ -15,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T06:40:49Z'
+  authority: generated
+  via: save_document_payload

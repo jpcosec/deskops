@@ -1,13 +1,16 @@
 name: 20261116-004719-unclear-drawer-remove-de-un-issue-deja-sus-assets-y-retire-los-rechaza-no-hay-verbo-para-darlos-de-baja
 path: desk/inbox/20261116-004719-unclear-drawer-remove-de-un-issue-deja-sus-assets-y-retire-los-rechaza-no-hay-verbo-para-darlos-de-baja.md
-source_hash: b876562d832e27baa07f168c2d85f29eafd0b614ed1bd72439c824c72b0fdcb3
-content_hash: 2c802a60e3bbec25750f39cd762b3560e4510a91cf0559b4e8a810370fce76e8
+source_hash: b3a6c30f1773b02d6ee3f28b77bbb75183a5f6e3c0cb9f309870f363eaab4801
+content_hash: 00ada9b178d1cb547ac33a7e9ba37289e5e4bbe71668e959699b7d68a13cadb7
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: 1d147ab379788e0277ce278d918ca7cf9e0572dffeefc59e10d282ef146bd45c
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 0a01572a1a39cf5a1872425db35a42311b5ca1187db609344b95111e59592c39
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: d121fd9e75c7a42fb5dfe7bfc8811fd77b823c06add8953023825cbf454125b1
+  ack_reason: b73a8deca5ec717ba91338808ea70d9e72ed1dbd317ee2226bac678c70c69703
   title: e6a9ed13619e36120d2b4cd2fc7e60ce45e625f1b97fe525c6daa79cdc2f33c7
   body: 213a6f6e36adb0ba9aab75e7840034996684f63ece1e70dfc996b0fcea5acfc5
 semantic_tags:
@@ -15,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T06:42:12Z'
+  authority: generated
+  via: save_document_payload

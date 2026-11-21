@@ -1,7 +1,7 @@
 name: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
 path: desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
-source_hash: 7df1204e0d37d1d65d0e26f05e891700d80025e32b0ded80c3c005761780f203
-content_hash: c7ce0701d42e3e6faf0dcd941d360e01a3c320260b487b1844f9338872c71a98
+source_hash: e8b6f0cb1d4269e40d27123ad410e2204e5eeb73b43d4e48e65c1180476fc5fb
+content_hash: 1adf0cc60f0fc467849503fb93bdb7b4188769af8e18a7444aa0c3dbe6fa8ade
 field_hashes:
   title: 0f5b95d265f940a0f1c1dbaeb06dc594c8537e12a2082cbd0bd0055f70c0cd41
   id: 0a2aeffca4a64dcd01d67c37d18680193384fd9eaa74b3851c73dfec93b61d25
@@ -11,15 +11,15 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: a5bf3e8da3934759c217a354264b548a17e9b78b581f1bf8ed099919930560d5
-  goal: df9f6fd201a59e8eb9cb292602f3451d507dd08f98cac69f145fe70e12c3c601
+  goal: d9ac2539d9c91588307f535e3f07ea9697e1167d2395c396878289ec6f788a75
   scope: 47a9b3287471bc4263b5365e5ac71feeccdf0c23e1476e31657ab254a56cf8f0
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: 1ce5f282529c0b0826a3d0c37386d9aaac6f2d062d65441f608b297bf2f1715f
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   validation: 4864d6e05aa3055d0c1b838919412bf342f6c4ff499f6c72efc7b2d7a7ca3bc5
-  done_when: d1724008d701da4ebc41db0e4392a3c0af69b7fce1547d5cb732ea2693786ffb
+  done_when: 2186889247ddb9010957b7bb1b2e3856017f336fc5b16fce790dc9cb7932a088
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -35,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:06:53Z'
+  at: '2026-11-21T06:29:23Z'
   authority: generated
   via: save_document_payload

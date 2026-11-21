@@ -1,14 +1,16 @@
 name: 20261116-055429-unclear-drawer-remove-deja-colgando-from-drawer-references-y-no-retira-planes-dag-yaml
 path: desk/inbox/20261116-055429-unclear-drawer-remove-deja-colgando-from-drawer-references-y-no-retira-planes-dag-yaml.md
-source_hash: fb6b98e635b3be5454afcc6809e2fefb0cabce45325d38aa0c48e9300807269e
-content_hash: f171bffaa3fd16cbe34e388b7053c987c76962c613f206b355c415b6c7069864
+source_hash: cc702a24df3b4247b8f8868ffb22d610aeed299ff7e5c1a8c2bf8a8cc18f4a3f
+content_hash: 4304a18be5ccd4e37a1711451ccc0a6844cc1db2c8756ccaa5c0ae6feb1ff9f6
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: adf8f4fb55456ba91d0b029904c49d4d1b85540b989a86435dfb80c0a89f7efb
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 92cde7906c23d60ed3ee3b5cd08badac2efc237437881a3f5af8b3c19190fd3c
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 71bb64faa2c80b2fce361d275246e8c3d4b94ad6e5b201946dfab547251a15f9
+  ack_reason: d04a5f646f88173059e8ab63495003c76e439535afaa6e12058d343b3627bb04
   title: 9c4555b8c22512a134ddce6e7d88713649344eb6ded22d86c86ee9ded1307aa9
   body: 3f204036a56cfac8389207f895792f59e7c9cf1e8da8ec17f322fa669439ca55
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T06:42:02Z'
+  authority: generated
+  via: save_document_payload

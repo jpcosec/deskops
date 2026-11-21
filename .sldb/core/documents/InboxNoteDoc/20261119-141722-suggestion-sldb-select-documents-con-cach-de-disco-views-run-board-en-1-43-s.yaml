@@ -1,14 +1,16 @@
 name: 20261119-141722-suggestion-sldb-select-documents-con-cach-de-disco-views-run-board-en-1-43-s
 path: desk/inbox/20261119-141722-suggestion-sldb-select-documents-con-cach-de-disco-views-run-board-en-1-43-s.md
-source_hash: 8dc4b10c4e2951a70826ff3799aeb4e893b2f07357e5faa3544f72178906632a
-content_hash: 5bae7b55a6e2e5974f7b44e50938ca0c3e5385e1fb0554b50908fa0c7ef64253
+source_hash: 07614201f38d495c4a574b19676eccc0dda0290d0737bbf0e47d60f0e2b33cc6
+content_hash: cd5e4e4c1c2172d7693a46a5620fd5da7f34867eb7eb241c10c74278e79db303
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: adf8f4fb55456ba91d0b029904c49d4d1b85540b989a86435dfb80c0a89f7efb
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 1c811cfe281de5fcbc591bd9c8e14d7a9e49638b95dd102f05d7969ef6f48d20
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 273d2d4ec0b50f0652fe801eea682b19a3437a742494477ade7914a87addebe8
+  ack_reason: 84a803f5e4f3baba64c27f5b760b92a2eec4374deff68ff8a29bd82f7c44514a
   title: 48d771c2e160256568e46a0527daaddd79c8d6b23fbad5e9a9b52a6eaca0aca3
   body: 6250dcb1d5a72e8d957670b089a69b88bde634fddf1bbe898f006fdddd33a458
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T06:42:59Z'
+  authority: generated
+  via: save_document_payload

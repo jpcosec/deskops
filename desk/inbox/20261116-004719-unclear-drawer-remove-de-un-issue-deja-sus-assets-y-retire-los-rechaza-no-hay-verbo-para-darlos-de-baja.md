@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:42:12Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,9 +13,14 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T00:47:19'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:42:05'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: 'Convertida en tarea task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason
+  (punto 2: assets de un issue; retire.py:70-74 sigue rechazandolos).'
 ---
 
 # drawer remove de un issue deja sus assets y retire los rechaza: no hay verbo para darlos de baja

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T02:10:20Z'
+  at: '2026-11-21T06:41:00Z'
   authority: generated
   via: save_document_payload
 # unclear | suggestion
@@ -13,9 +13,15 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-19T23:09:58'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:40:52'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: Convertida en tarea task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio
+  (doctor+init+README/skill; depende de la tarea que saca graph export de .sldb/runtime).
+  El aviso a cada repo queda para los coordinadores tras integrarla.
 ---
 
 # guiar a los repos que usan deskops a migrar el layout de .sldb (sldb stores migrate-layout)

@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:42:59Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,11 +13,15 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-19T14:17:22'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:42:53'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: 'Informativa: deskops solo nombra .sldb_cache como prefijo excluido del
+  grafo (deskops/graph/desk_graph.py:91), que cubre document_rows/; no lee su contenido.
+  Nada que hacer.'
 ---
 
 # sldb: select_documents con caché de disco; views run board en 1,43 s

@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:42:41Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,9 +13,17 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T00:46:57'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:42:34'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: 'drawer remove sin reason/ref: en task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason.
+  Las 56 tareas legacy ya no existen (UIs/marcado tiene 6 tareas, 0 con current_node
+  checklist-*), asi que la migracion masiva no tiene consumidor hoy; registro de deskops
+  en el ecosistema ya resuelto (~/setup/desk/registry/repo-deskops.md). Los avisos
+  de clase no importable de modelos legacy se verifican si reaparecen en otro desk.'
 ---
 
 # desk update --apply en desk legacy: 56 tareas sin migración masiva y 5 modelos legacy sin importar

@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:41:52Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,9 +13,14 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T01:31:20'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:41:44'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: Convertida en tarea task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur
+  (review.py:912 cae en technical_failure para todo verdict no accepted/rejected/pending).
 ---
 
 # review status muestra 'technical_failure' para un recibo dispuesto como incomplete

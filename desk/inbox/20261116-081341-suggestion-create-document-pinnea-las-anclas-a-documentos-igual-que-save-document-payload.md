@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:41:42Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,9 +13,14 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T08:13:41'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:41:35'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: 'Convertida en tarea task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph
+  (parte c: closure.py:1107-1171 aun hace create + update sin cambios para pinnear).'
 ---
 
 # create_document pinnea las anclas a documentos igual que save_document_payload

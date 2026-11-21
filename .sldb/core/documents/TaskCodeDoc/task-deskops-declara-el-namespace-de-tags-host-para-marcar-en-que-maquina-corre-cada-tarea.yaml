@@ -1,7 +1,7 @@
 name: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
 path: desk/tasks/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea.md
-source_hash: d8c02de1ba4e0c732b57318c1e44ac1896947c65c373bb69cdeec95907ea6bb8
-content_hash: 6aafab0791fc6f864b96ae9cf6142d5d92ba31c49437b60debd2a2f9fac95d56
+source_hash: d4da2c548e54e4a4fcfe77f7e34e726c2549c792756be1eca243b13947d4dfe5
+content_hash: b7bc58083f5ea835426b0c547e5006e370079878249f9265c5be7ed3c03d645b
 field_hashes:
   title: cfd131f6624d6561997d09a228439dc5f63d6b339ad016d5405ab426b1b86fad
   id: efbcd5bc8e052a43745d4b04625e557b0eb65f3bd8392afbf79fa84a40d38645
@@ -13,7 +13,7 @@ field_hashes:
   why: 3be5378029af768be9f0835b98b06e863e6a757d1ea76bef34f401e60c39b132
   goal: 1573d854446f65ca630f77b499337688ff3f6cd96ddffb1b0c961c395608ed9c
   scope: 3eb37ddb7f3c1e0d97be50a3ecc7499eab7416fdc427742c736f9b2e2afb2bfa
-  references: d241fb47e5512a33f1f26a594028274933f8ce94be8f055fcfb8c0cd28425150
+  references: 2b4b19df82d544b0b548828fa1361fab7d247f5dea5a71ff302f9cbdb602f0c5
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: c1ffcc071a2efbafe45f591e50f395c42e30b8be8bed9219118e25221da6299a
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:04:34Z'
+  at: '2026-11-21T06:40:37Z'
   authority: generated
   via: save_document_payload

@@ -1,13 +1,16 @@
 name: 20261119-230958-suggestion-guiar-a-los-repos-que-usan-deskops-a-migrar-el-layout-de-sldb-sldb-stores-migrate-layout
 path: desk/inbox/20261119-230958-suggestion-guiar-a-los-repos-que-usan-deskops-a-migrar-el-layout-de-sldb-sldb-stores-migrate-layout.md
-source_hash: c01792559298f49889b3248cc1c1c3dfde16500f3b0777ae4c5e94784a9141f3
-content_hash: 8a6d04df7a3bb7bf925b1b6e5867e0cb305241819beb199879a02a6aa36b4e72
+source_hash: 7ca657ffb6790b5f93c64bb5105d13e4e67006b75da929b09311559ade98d57a
+content_hash: 87b4ca27beba6a106e2804e53347853e41ef0d83eb3af4aefd86e13f0c3e352e
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 49dd79627e3243e8e87555525170fa5e0ddaec5c52fcf2b43276109105b58663
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 23f5138e414f66a624bd2f49cb3efb907ea80c836a3bb47dfdccc91ad319ba87
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 896f02bd9e963e0ed79bd2c0c9303234fb7d8080d51bbc4615ca2ed1e2e3f601
+  ack_reason: 79bcc4995b6eb81d1389e2b51e273deda55ae54f8ab74eeeb6a79444f7f1178d
   title: 430c3e352d4b54e20454e616a76e2619ab9912a106dea07872b04e6bd58e3516
   body: f8154124a4db63cba3f547c6273cab1ded7a8d98ba196e3865b40896df84d6a4
 semantic_tags:
@@ -17,6 +20,6 @@ semantic_tags:
 - workspace.desk.inbox
 provenance:
   by: agent
-  at: '2026-11-20T02:10:20Z'
+  at: '2026-11-21T06:41:00Z'
   authority: generated
   via: save_document_payload

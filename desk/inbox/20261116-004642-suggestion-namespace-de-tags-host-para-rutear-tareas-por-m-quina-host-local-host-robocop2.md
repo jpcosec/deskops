@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:42:50Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,9 +13,14 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T00:46:42'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:42:44'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: Cubierta por la tarea existente task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
+  (referencia agregada).
 ---
 
 # Namespace de tags host para rutear tareas por máquina (host:local, host:robocop2)

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:04:34Z'
+  at: '2026-11-21T06:40:37Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
@@ -16,9 +16,7 @@ history: []
 references:
 - desk/inbox/20261116-003533-suggestion-namespace-de-tags-host-para-marcar-en-qu-m-quina-corre-cada-tarea.md
 - desk/inbox/20261116-003602-suggestion-namespace-de-tags-host-para-separar-tareas-de-ui-local-y-backend-robocop2.md
-- desk/inbox/20261116-004745-suggestion-namespace-de-tags-host-para-rutear-tareas-por-m-quina-triaje-2026-11-16.md
-- desk/inbox/20261116-004744-suggestion-triaje-2026-11-16-falta-un-namespace-de-tags-para-el-host-de-una-tarea-host-local-host-robocop2.md
-- /mnt/ssd/proyectos/SLDB_1/triaje-drawers-inbox-brief.md
+- desk/inbox/20261116-004642-suggestion-namespace-de-tags-host-para-rutear-tareas-por-m-quina-host-local-host-robocop2.md
 depends_on: []
 pills: []
 files:

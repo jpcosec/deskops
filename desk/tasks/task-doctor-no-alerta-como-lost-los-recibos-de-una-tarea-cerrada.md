@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:06:53Z'
+  at: '2026-11-21T06:29:23Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
@@ -13,7 +13,8 @@ tags:
 - host:robocop2
 current_node: ritual-execution
 history: []
-references: []
+references:
+- desk/inbox/20261121-032540-unclear-doctor-alertas-subject-lost-de-revisiones-de-tareas-cerradas-que-desk-update-no-repara.md
 depends_on: []
 pills: []
 files: []
@@ -36,7 +37,7 @@ Nota de ftcourier (14-11, inbox 20261114-022915): al cerrar con closeout commit 
 
 _Describe the concrete result this task must produce._
 
-Un recibo cuya tarea se cerro (closeout registrado en git o en el store) no produce alerta lost en doctor: el closeout re-ancla los recibos al commit de cierre o los marca archivados; solo los recibos de tareas que desaparecieron sin cierre siguen alertando.
+Un recibo cuya tarea se cerro (closeout registrado en git o en el store) no produce alerta lost en doctor: el closeout re-ancla los recibos al commit de cierre o los marca archivados; solo los recibos de tareas que desaparecieron sin cierre siguen alertando. Los recibos lost ya existentes de tareas cerradas (p. ej. ~107 en el desk de IR, inbox 20261121-032540) dejan de alertar sin intervencion manual, y el texto de la alerta de doctor nombra un comando que de verdad la resuelve: hoy sugiere deskops desk update --apply, que responde 'Desk is up to date' sin reparar nada.
 
 ## Scope
 
@@ -60,4 +61,4 @@ _List the checks required before this task can close._
 
 _Name the observable condition that makes the task complete._
 
-test: cerrar una tarea con recibos preflight/bundle y correr doctor no da alertas lost; borrar una tarea sin cierre si las da.
+test: cerrar una tarea con recibos preflight/bundle y correr doctor no da alertas lost; borrar una tarea sin cierre si las da; un recibo lost preexistente de una tarea con closeout en git no alerta; el mensaje de la alerta restante no menciona desk update --apply salvo que ese comando la repare.

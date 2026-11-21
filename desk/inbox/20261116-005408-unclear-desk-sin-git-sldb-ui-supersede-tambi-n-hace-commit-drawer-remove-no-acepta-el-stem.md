@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:42:22Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,9 +13,16 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T00:54:08'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:42:15'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: '1) Desk sin git: sldb-ui es repo git desde 56a552b (2026-11-16); la regla
+  general queda en task.decision task-jp-decide-si-deskops-exige-git-en-cada-desk-o-acepta-otra-evidencia-de-cierre.
+  2) stem de .yml: en task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason
+  (drawer.py solo busca *.md). 3) deskops ya esta en el registro del ecosistema (~/setup/desk/registry/repo-deskops.md).'
 ---
 
 # Desk sin git (sldb-ui): supersede también hace commit; drawer remove no acepta el stem

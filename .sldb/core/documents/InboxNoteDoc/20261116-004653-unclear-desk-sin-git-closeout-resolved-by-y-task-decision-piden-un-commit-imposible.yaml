@@ -1,13 +1,16 @@
 name: 20261116-004653-unclear-desk-sin-git-closeout-resolved-by-y-task-decision-piden-un-commit-imposible
 path: desk/inbox/20261116-004653-unclear-desk-sin-git-closeout-resolved-by-y-task-decision-piden-un-commit-imposible.md
-source_hash: c4935db94a970c671f9ff44499c0517b83bd730fb81828988c02cb3e424c70ec
-content_hash: e21365414c8983a76d5f108da700b9f1e268eff3885c6ccfd30cb6c97481eec4
+source_hash: d98b5c29acfb4e874b41025e6328b8365ae58d9cfdad82d7d9f95293711494d2
+content_hash: b2393f4673f0705837eb61c007963e8594a8f8e620e9282a624f410ea9a5060b
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: 82207a77bf6be972913ad911a7b57aa55ac2b7d504d62df1ef63dfe0bb0c9dfd
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 8a6e616433b28c05ab80d526417c08d1a31d4a782acb2ad8ef623b394fc0e51c
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: b7a4688aa663efe3f182088f691e50a41a95823329b0f9183ba5850ba6d12477
+  ack_reason: e14e1e2c1c2d77bf435c1f4f94b175a1227a97806c5745b28ebdb629c86b2ce0
   title: 1a3abf3bf1c36314869f234dded8db2d71f15a651bba8352f3db466c2bcd888f
   body: d3aaf08901340086eccd2ddce5d7bc570d56dc6d22825d2e9823896b109fe00a
 semantic_tags:
@@ -15,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T06:42:32Z'
+  authority: generated
+  via: save_document_payload

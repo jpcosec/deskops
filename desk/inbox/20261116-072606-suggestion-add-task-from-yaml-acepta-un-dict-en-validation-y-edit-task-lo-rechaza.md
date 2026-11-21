@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T06:41:11Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,9 +13,14 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-16T07:26:06'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T03:41:03'
+# why the note was acknowledged; empty when no reason was given
+ack_reason: Convertida en tarea task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task;
+  reproducido hoy en un desk temporal (Validation queda con el repr del dict).
 ---
 
 # add task --from-yaml acepta un dict en validation y edit task lo rechaza

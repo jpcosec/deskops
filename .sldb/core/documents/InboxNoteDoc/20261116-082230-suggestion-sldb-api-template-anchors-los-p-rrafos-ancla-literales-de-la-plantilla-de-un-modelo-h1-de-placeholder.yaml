@@ -1,14 +1,16 @@
 name: 20261116-082230-suggestion-sldb-api-template-anchors-los-p-rrafos-ancla-literales-de-la-plantilla-de-un-modelo-h1-de-placeholder
 path: desk/inbox/20261116-082230-suggestion-sldb-api-template-anchors-los-p-rrafos-ancla-literales-de-la-plantilla-de-un-modelo-h1-de-placeholder.md
-source_hash: 9395e874e5aa9bbe7d60e1f0882b2bd1af72beba79216e55cd1379af75066447
-content_hash: e22a11c57e924bccf3a258b6d17d1e330c17fe7efdf80fd3b280f4507b10f962
+source_hash: bb7afe6c7013e42a4692c2144ad60fcdaf418430cd7cfb9470a7c22ca9f9064e
+content_hash: 9a864fffe39e149f502592aed0b969cf3754c32e4a0a13742f2069c801d5ca2a
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: adf8f4fb55456ba91d0b029904c49d4d1b85540b989a86435dfb80c0a89f7efb
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: ec4d3ad4f1b847b02506d76fb1386ad00e7350ddc1ba35d60463a7259d008bee
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 104b97b28e594db74ec965248b349566e812fd37449f1803b12bb3c810f7415c
+  ack_reason: 8e51834a01aa1d1f6d6c835c68b8176e98063470160b087d8225d1feb815071d
   title: 3c5cf55cef6f2ee2160b75bdf7890884d76e7b710463ece866750d448f00485f
   body: e87ea387f39e370db916a8030e768e73a3b686d8c7aba0ff458bef6c8b784776
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T06:41:32Z'
+  authority: generated
+  via: save_document_payload
