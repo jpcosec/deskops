@@ -107,6 +107,7 @@ class DoctorCLI:
         findings.alerts += [f"Moved: {m}" for m in moves]
         findings.alerts += [f"Not tracked yet: {p.relative_to(root)}" for p in untracked]
         findings.alerts += docs.store_alerts
+        findings.lost += docs.lost_receipts
         findings.errors += [f"Tracked document is gone: {p.relative_to(root)} (restore it, or untrack it with {REGISTER})" for p in gone]
         findings.errors += [f"Invalid desk document: {d}" for d in docs.unknown]
         findings.errors += docs.store_errors
@@ -223,12 +224,12 @@ class DoctorCLI:
             return False
 
     def _report(self, findings: Findings, repair: bool) -> int:
-        if not findings.errors and not findings.alerts and not findings.fixed:
+        if not (findings.errors or findings.alerts or findings.lost or findings.fixed):
             print("Desk is healthy. No issues found.")
             return 0
         print_findings(findings, repair=repair)
         if not findings.errors:
-            print(f"\nDesk is healthy{f', with {len(findings.alerts)} alert(s)' if findings.alerts else ''}.")
+            print(f"\nDesk is healthy{f', with {len(findings.alerts) + len(findings.lost)} alert(s)' if findings.alerts or findings.lost else ''}.")
             return 0
         return 1
 

@@ -42,6 +42,8 @@ class Findings:
     alerts: list[str] = field(default_factory=list)
     fixed: list[str] = field(default_factory=list)
     manual: list[str] = field(default_factory=list)
+    #: Review receipts whose subject is gone with no closeout on record (see ``read_store_check``).
+    lost: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -54,16 +56,31 @@ class StoreDocs:
     missing: list[Path] = field(default_factory=list)
     unknown: list[str] = field(default_factory=list)
     store_alerts: list[str] = field(default_factory=list)
+    lost_receipts: list[str] = field(default_factory=list)
     store_errors: list[str] = field(default_factory=list)
 
 
 def read_store_check(root: Path, payload: dict[str, Any]) -> StoreDocs:
-    """Sort each tracked desk document of a `stores check` payload into clean, changed or broken."""
+    """Sort each tracked desk document of a `stores check` payload into clean, changed or broken.
+
+    A receipt (``ReviewDoc``) whose subject task is `lost` is audit of a task that closed: when
+    the git history holds the task's closeout it is not reported; otherwise it goes to
+    ``lost_receipts``, which no desk command repairs.
+    """
     docs = StoreDocs()
     for model in payload.get("models", []):
         for doc in model.get("documents", []):
             _read_doc(root, model.get("name"), doc, docs)
-    docs.store_alerts = _store_level_alerts(payload)
+    alerts = _store_level_alerts(payload)
+    closed: set[str] | None = None
+    for text, entry in alerts:
+        target = _lost_receipt_task(entry)
+        if target is None:
+            docs.store_alerts.append(text)
+            continue
+        closed = closed_task_ids(root) if closed is None else closed
+        if target not in closed:
+            docs.lost_receipts.append(text)
     # A missing document is read from its note, where it can be paired into a move. A
     # store/doc-invalid document is named by invalid_document_findings, with its path.
     docs.store_errors = [
@@ -93,13 +110,44 @@ def _read_doc(root: Path, model_name: str | None, doc: dict[str, Any], docs: Sto
         docs.unknown.append(f"{rel} ({note})")
 
 
-def _store_level_alerts(payload: dict[str, Any]) -> list[str]:
-    """Store-wide moves: the `alerts` sldb reports, or what older sldb versions only implied."""
+def _store_level_alerts(payload: dict[str, Any]) -> list[tuple[str, Any]]:
+    """Store-wide moves as ``(text, entry)``: the `alerts` sldb reports, or what older sldb
+    versions only implied (``entry`` None)."""
     if "alerts" in payload:
-        return [_entry_text(a) for a in payload.get("alerts") or [] if not _is_document_alert(a)]
+        return [(_entry_text(a), a) for a in payload.get("alerts") or [] if not _is_document_alert(a)]
     moved = [f"model contract changed: {name}" for name in payload.get("moved_contracts") or []]
     roster = [f"document list of {name} not reindexed" for name in payload.get("roster_only") or []]
-    return moved + roster
+    return [(text, None) for text in moved + roster]
+
+
+_LOST_TARGET = re.compile(r"->\s+[A-Za-z0-9_]+:(\S+?): lost\b")
+
+
+def _lost_receipt_task(entry: Any) -> str | None:
+    """The task id a ReviewDoc's lost `subject` anchor pointed to, else None (any other alert)."""
+    if not isinstance(entry, dict) or _code(entry) != "anchors/doc_lost":
+        return None
+    if not str(entry.get("subject") or "").startswith("ReviewDoc:"):
+        return None
+    match = _LOST_TARGET.search(str(entry.get("what") or ""))
+    return match.group(1) if match else None
+
+
+def closed_task_ids(root: Path) -> set[str]:
+    """Task ids with a closeout commit in git: its trailers carry Closeout-Mode or Run-Id
+    (``deskops closeout commit`` / ``resolved-by`` / ``supersede``), not just a Task-Id."""
+    import subprocess
+
+    fmt = "%(trailers:key=Task-Id,valueonly,separator=%x1d)%x1e%(trailers:key=Closeout-Mode,valueonly,separator=%x1d)%x1e%(trailers:key=Run-Id,valueonly,separator=%x1d)%x1f"
+    result = subprocess.run(["git", "log", f"--format={fmt}"], cwd=root, capture_output=True, text=True, check=False)
+    closed: set[str] = set()
+    if result.returncode != 0:
+        return closed
+    for record in result.stdout.split("\x1f"):
+        parts = record.strip("\n").split("\x1e")
+        if len(parts) == 3 and (parts[1].strip() or parts[2].strip()):
+            closed |= {t.strip() for t in parts[0].split("\x1d") if t.strip()}
+    return closed
 
 
 def _is_document_alert(alert: Any) -> bool:
@@ -206,6 +254,15 @@ def print_findings(findings: Findings, *, repair: bool) -> None:
     if findings.alerts:
         _section("Alerts (the store moved under an expected change; nothing is broken):", findings.alerts)
         print(f"  register edits, moves and new documents with: {REGISTER}")
+    if findings.lost:
+        _section(
+            "Alerts (review receipts whose task is gone with no closeout on record; nothing is broken):",
+            findings.lost,
+        )
+        print(
+            "  `deskops desk update --apply` does not repair these. Restore the task, or close it with "
+            "`deskops closeout commit` (a closed task's receipts stop alerting)."
+        )
     if findings.fixed:
         _section("Repairs applied:", findings.fixed)
     if findings.errors and not repair:
