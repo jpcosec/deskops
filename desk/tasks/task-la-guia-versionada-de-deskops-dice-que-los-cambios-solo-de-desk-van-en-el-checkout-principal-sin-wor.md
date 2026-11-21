@@ -1,20 +1,23 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:04:24Z'
+  at: '2026-11-21T20:28:15Z'
   authority: generated
   via: save_document_payload
 id: task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261104-180658-suggestion-cambios-solo-de-desk-van-directo-en-el-checkout-principal-nunca-en-un-worktree.md
+- .opencode/skills/use-deskops/SKILL.md
+- docs/operator-manual.md
+- 16a95ba0cd7f3621355cfef0b219b8d0636d1015
 depends_on: []
 pills: []
 files:
@@ -23,7 +26,8 @@ files:
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal
 ---
 
 # La guia versionada de deskops dice que los cambios solo de desk van en el checkout principal, sin worktree

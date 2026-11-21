@@ -424,6 +424,8 @@ include:
   - desk/materializations/materialization-init-tests-test-gitignore-policy-py.md
   - desk/materializations/materialization-cli-deskops-cli-parse-input-py.md
   - desk/materializations/materialization-cli-tests-test-cli-py.md
+  - desk/materializations/materialization-docs-opencode-skills-use-deskops-skill-md.md
+  - desk/materializations/materialization-docs-docs-operator-manual-md.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2434,6 +2436,10 @@ include:
     name: review-task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u-evidence-atom-1
   - path: desk/reviews/task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u/evidence-materialization-1.md
     name: review-task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u-evidence-materialization-1
+  - path: desk/reviews/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/evidence-commit-1.md
+    name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-evidence-commit-1
+  - path: desk/reviews/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/evidence-document-1.md
+    name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-evidence-document-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

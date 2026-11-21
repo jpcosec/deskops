@@ -1,0 +1,25 @@
+name: materialization-docs-opencode-skills-use-deskops-skill-md
+path: desk/materializations/materialization-docs-opencode-skills-use-deskops-skill-md.md
+source_hash: 372915b7bc88cc90de519a06ad43083fce37bc9ffb907b87b6823d7f6417e1e4
+content_hash: 21e43183fbd29cb066e9628a9edc5a0805b1327c855df6314d5a30ab1f9fa430
+field_hashes:
+  id: 5b438c030a4c0824d104e8ceb3259641fdd4e132ed240c15b5c08932fb64b5b8
+  title: c3066b3c3aa0d94eb8df0dbe10e9829d1a8878d9e0a9517a4747fac1862021ba
+  source_atoms: 5365b9632e6b75f7a8a168ccb7320083d76ebec42540ac7b49f61e03d7b5a46b
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 52962837986ea991eddd7717ae59d8e80697903f28f0c04c32c052da4995ffa4
+  intent: d1c16c659c4d7e3a6ec7931362c158d77dd2c7c6bc7c70c4b6964405cd6e2504
+  validation: b86c7934ced5e6f0c731055c73fb3b0553d9678e93d838c981a13740b039cd16
+  tags: aaf2657eeaf0b1896a1048135ce63d6e79fd5365fc0e1ff69b15e9552e56efb2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:docs
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-21T20:28:25Z'
+  authority: generated
+  via: create_document
