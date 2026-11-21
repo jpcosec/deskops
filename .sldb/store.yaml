@@ -700,6 +700,8 @@ include:
     name: run-deskops-t-7f4f0f892411
   - path: runs/subagents/exec-deskops-e-e5f89cdffe35/run.md
     name: run-deskops-e-e5f89cdffe35
+  - path: runs/subagents/exec-deskops-e-39eb55f8272d/run.md
+    name: run-deskops-e-39eb55f8272d
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2218,6 +2220,22 @@ include:
     name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-bundle-1
   - path: desk/reviews/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada/bundle-1.md
     name: review-task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada-bundle-1
+  - path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/preflight-1.md
+    name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-preflight-1
+  - path: desk/reviews/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph/preflight-1.md
+    name: review-task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph-preflight-1
+  - path: desk/reviews/task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe/preflight-1.md
+    name: review-task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe-preflight-1
+  - path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/preflight-2.md
+    name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-preflight-2
+  - path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/bundle-1.md
+    name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-bundle-1
+  - path: desk/reviews/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph/bundle-1.md
+    name: review-task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph-bundle-1
+  - path: desk/reviews/task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe/bundle-1.md
+    name: review-task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe-bundle-1
+  - path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/bundle-1.md
+    name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

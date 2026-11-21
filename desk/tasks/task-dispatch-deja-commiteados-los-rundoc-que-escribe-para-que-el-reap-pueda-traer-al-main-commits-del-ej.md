@@ -1,17 +1,18 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T02:26:22Z'
+  at: '2026-11-21T07:09:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references: []
 depends_on: []
 pills: []

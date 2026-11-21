@@ -1,15 +1,15 @@
 name: task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej
 path: desk/tasks/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej.md
-source_hash: 67ae4eeea5b6d9eac2cc03ada4af60e56f0652927ba9512cdf2d8b8b6b1296df
-content_hash: 5b6cbe34e0a61d5289f98bd393297a556e91c59d55b78310ae14cc261e11c7ea
+source_hash: e9827ff94cb938cc47461c3590e339c37cd472cc361122eb6e9f0f75a0834837
+content_hash: 4a3c9bb6a9578489ba85e62e43c30c0e48ef22f46c29c6ef553edda8343fabee
 field_hashes:
   title: 58539e37ad2e2cf6f175f28c86bc9e8b8a48ec83538039299a83b69badc75ab2
   id: f454ae92e303c5ab0b897c599af0b168a5b4700ead501c63c3d6864b83a48e1d
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 21a69797e1c58fed675d340389a02c7d1435175879eb75c2b2606d7d3dd0e0d9
   goal: 06cd6c7c13c55b300978c3654cd84e72ea212ad20c2b5da49e431a54c80799d3
   scope: 1c3ea0acd648b2e7cb173bb955d4128d3bb6c7da6e93be00f6ab3a5072fd8593
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T02:26:22Z'
+  at: '2026-11-21T07:09:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

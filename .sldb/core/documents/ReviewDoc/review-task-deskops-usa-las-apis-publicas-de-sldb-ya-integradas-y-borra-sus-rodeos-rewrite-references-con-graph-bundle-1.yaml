@@ -1,0 +1,37 @@
+name: review-task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph-bundle-1
+path: desk/reviews/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph/bundle-1.md
+source_hash: 76a2c212908f195117e338abe41cf8e331f5decdc49c591bbf97d668f6a62dbd
+content_hash: 35f23b5753a2fec8f96995c41355f2504b4b833d041c48f526a1da75d36c495e
+field_hashes:
+  id: 5525b6939166b1dd74908bfc1aaa97cf8fa5700d9fa56a08121437a93ef61966
+  title: 968891142652ca1e3252681f0c3b1058934a8188df996eca550c69521cec2dfb
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: e62ad39dd1abc24d32c0976827980d68585b7262751f37a27d4a0a5da2423f9e
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 6a63651637486abfe8c192ea40db08d04652b9f7d563912e48b656008cfe6b97
+  input_sha256: 5220eed4c916096e835fdd07a9f0df7ef1ca86c56220fe7ed33df45e2b204813
+  contract_sha256: f963d2a03e6d5362ce965884cfcce1b8ccf6293adce8fc044ca1224e5af13623
+  output_sha256: db5f6eca2007fe1b6127058a13b9890615e4688b7a8cf27a0951ce87f323c7eb
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 6d36a941fedf2412c12fd3e55c3f2ccb9644b4070ab49f79e0d48a3569a1719d
+  created_at: bfbfc6f93db28d65b471b73610693b1b46c2b0f2826f0945f392dc8a4641a9f5
+  disposed_at: 09336dc37bdca06bcbfb5185990ada0a7c5e81b88022ac7f81c3a0023ee11193
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: ab472fce7c97081b95dbacdcc6b6e27c99e96e92597f10e5f0f02181a19af3cb
+  disposition: 0bc4f76089ba02e303c21669c7f2e001771d19f355da96dd9dae986dcffca170
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T07:11:52Z'
+  authority: generated
+  via: save_document_payload
