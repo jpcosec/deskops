@@ -1,32 +1,36 @@
+Task: task-deskops-init-agrega-deskops-log-al-gitignore-del-repo
+Title: deskops init agrega .deskops.log al .gitignore del repo
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T17:22:36Z'
+  at: '2026-11-21T06:38:33Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-init-agrega-deskops-log-al-gitignore-del-repo
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
-- deskops/bootstrap.py
-- tests/test_gitignore_policy.py
-- f5b017755746a11b8798d3a003c43899e0997afa
+- desk/inbox/20261119-220154-suggestion-init-no-ignora-deskops-log.md
 depends_on: []
 pills: []
-files:
-- deskops/bootstrap.py
-- tests/test_gitignore_policy.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-deskops-init-agrega-deskops-log-al-gitignore-del-repo
+atoms: []
 ---
 
 # deskops init agrega .deskops.log al .gitignore del repo
@@ -68,3 +72,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El test nuevo de tests/test_gitignore_policy.py pasa: init deja .deskops.log en el .gitignore una sola vez y no lo duplica en un segundo init.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-deskops-init-agrega-deskops-log-al-gitignore-del-repo"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-4ee2bde35767`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-4ee2bde35767
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

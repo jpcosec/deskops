@@ -1,0 +1,37 @@
+name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-evidence-commit-1
+path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/evidence-commit-1.md
+source_hash: b0404c80dd79b3768469603ed36518eb7785ce1a87e2e6001cda1bbca059c4d3
+content_hash: e412b00f2babcd9857f466356de5ec490a1e8127d65ebd8af94910d803824854
+field_hashes:
+  id: f709f19af1b195c7d40249148c32e1c8b6bc99042e77cf25afd5d55902fefc46
+  title: aad77aec25142501d67b2551b2ff7685266dff191ec03f3d2ee086f4d8bed11d
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: 1db39d7c1e7e6aea334aa3ce7d8ee67c192547c3ae63fa69b8ce7c3944bc7afc
+  subject: ed629204dd3e6b896ca00a8b87e6716b4c64ecafae496e1c43da9d5a8a22f7e7
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 28f697b3a09cafb4225f658a81040e260b22b55e3060f7a97b76b88f0cf05cc5
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 90aa2ad80d8d4e2c856b0ffbc3b889b668ff9ed08413077f7b984fab5b90c071
+  created_at: 5d2a3b691c1d33cd3dba6931c3c0ce2a1782c9ab082b643bd7ba1d3204fdab71
+  disposed_at: 5d2a3b691c1d33cd3dba6931c3c0ce2a1782c9ab082b643bd7ba1d3204fdab71
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 149b22a73aba803df260f96480286f968159db8823eef10da01c83d408a32aad
+  disposition: f3c1598c81d33d6a192d95f09ba10f2648e5e395dde1842a48cf26719ebe7dee
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T17:23:12Z'
+  authority: generated
+  via: create_document

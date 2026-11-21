@@ -1,0 +1,37 @@
+name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-evidence-atom-1
+path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/evidence-atom-1.md
+source_hash: 35a09c54047be598cc13091383fbd89f3f9f8438e8bc55cea734e04aea8b110b
+content_hash: 106c3b977795f2165a13b66654de53514f886d578dcfec4e3078b3e00e040293
+field_hashes:
+  id: 3de77b1248e3e6b3b1c4fa76900b53118040538622b741458013501d380ea87e
+  title: 93e63fdde7c78bce5de4d8bcc6cf1a9cb292e38af9b7d48e3bd7c66e9e07e777
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 340e8d4f9af73e13957be796bcfcfb688e9ed4ca4cc77c5a15a6719367a497c6
+  subject: ed629204dd3e6b896ca00a8b87e6716b4c64ecafae496e1c43da9d5a8a22f7e7
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 95679e0fc4462b32dd82a09e0dcf6fc777518aed0ab36588d2ef16457b78e91e
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 4e6ba75d37f633031f9c617634b9815c41c7f7215c730397aaa5e4b21e3855f3
+  created_at: 5d2a3b691c1d33cd3dba6931c3c0ce2a1782c9ab082b643bd7ba1d3204fdab71
+  disposed_at: 5d2a3b691c1d33cd3dba6931c3c0ce2a1782c9ab082b643bd7ba1d3204fdab71
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 47acabffd2221a727cec283d4c97e47a88f59e59dd7a673c537559dd64c84ac6
+  disposition: 389d82cf258384729774d38358e63dbcac7485498972ff4400a89a3e5308a068
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T17:23:16Z'
+  authority: generated
+  via: create_document

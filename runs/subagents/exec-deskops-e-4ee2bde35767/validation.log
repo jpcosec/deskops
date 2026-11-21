@@ -1,0 +1,3 @@
+cmd: python -m pytest -q -p no:cacheprovider tests/test_gitignore_policy.py tests/test_runtime_initializer.py
+exit: 0 (5 passed)
+suite completa (tests, -n 4): no corrida por el ejecutor; xdist ausente y el coordinador la deja para integrate. Corrida sin xdist cortada.

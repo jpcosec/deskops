@@ -1,0 +1,25 @@
+# Tester validation evidence
+# Commit: f5b017755746a11b8798d3a003c43899e0997afa
+# Worktree: /tmp/deskops-test-f5b01775 (detached, removed after run)
+# Python: /dev/shm/t311/bin/python 3.11.2, pytest 9.2.0
+# Env: PYTHONPATH=$PWD TMPDIR=/tmp
+
+$ cd /tmp/deskops-test-f5b01775
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q -p no:cacheprovider tests/test_gitignore_policy.py
+..                                                                       [100%]
+2 passed, 1 warning in 1.82s
+PYTEST_RC=0
+
+$ PYTHONPATH=$PWD TMPDIR=/tmp /dev/shm/t311/bin/python -m pytest -q -p no:cacheprovider tests/test_runtime_initializer.py
+...                                                                      [100%]
+3 passed, 1 warning in 0.69s
+PYTEST_RC=0
+
+$ manual smoke (git init real + ensure_log_ignored)
+first wrote: True
+second wrote: False
+gitignore repr: '.deskops.log\n'
+status: '?? .gitignore\n'
+check-ignore rc: 0
+
+VERDICT: PASA - el test nuevo y el test de bootstrap pasan; el comportamiento idempotente del .gitignore queda verificado.
