@@ -412,6 +412,8 @@ include:
   - desk/materializations/materialization-messages-tests-test-inbox-promote-cli-gaps-py.md
   - desk/materializations/materialization-messages-tests-test-message-cli-py.md
   - desk/materializations/materialization-messages-tests-test-repo-identity-py.md
+  - desk/materializations/materialization-integrate-deskops-integrate-py.md
+  - desk/materializations/materialization-integrate-tests-test-integrate-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -688,6 +690,10 @@ include:
     name: run-deskops-e-44a082df5dbe-a2
   - path: runs/subagents/exec-deskops-t-1551a4c10d58-testing/run.md
     name: run-deskops-t-1551a4c10d58
+  - path: runs/subagents/exec-deskops-e-1c2483367c96/run.md
+    name: run-deskops-e-1c2483367c96
+  - path: runs/subagents/exec-deskops-t-dfb81a781cee-testing/run.md
+    name: run-deskops-t-dfb81a781cee
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2166,6 +2172,14 @@ include:
     name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-preflight-1
   - path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/bundle-1.md
     name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-bundle-1
+  - path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/evidence-tests-1.md
+    name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-evidence-tests-1
+  - path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/evidence-commit-1.md
+    name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-evidence-commit-1
+  - path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/evidence-atom-1.md
+    name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-evidence-atom-1
+  - path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/evidence-materialization-1.md
+    name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T04:15:45Z'
+  at: '2026-11-21T04:33:52Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/integrate.py
+- tests/test_integrate.py
+- e727297a14d8ec20ccbb931aa9e976ea57330d87
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/integrate.py
+- tests/test_integrate.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota
 ---
 
 # integrate extiende el tip sobre un merge de la rama remota cuando lo demás después del closeout es solo desk
