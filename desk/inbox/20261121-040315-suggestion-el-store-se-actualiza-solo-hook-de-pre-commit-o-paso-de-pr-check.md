@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T15:10:46Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,11 +13,13 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-21T04:03:15'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T12:10:39'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: Convertida en tarea borrador task-governance-el-store-se-actualiza-solo-hook-de-pre-commit-o-pr-check-que-falla-si-el-store-no-corresp.
 ---
 
 # El store se actualiza solo: hook de pre-commit o paso de pr check

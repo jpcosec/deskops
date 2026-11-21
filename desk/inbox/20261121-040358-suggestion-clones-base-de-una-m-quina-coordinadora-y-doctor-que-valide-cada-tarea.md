@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T15:11:22Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,11 +13,13 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-21T04:03:58'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T12:11:15'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: Convertida en tarea borrador task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare.
 ---
 
 # Clones base de una máquina coordinadora y doctor que valide cada tarea

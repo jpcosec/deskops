@@ -1,14 +1,16 @@
 name: 20261121-040358-suggestion-clones-base-de-una-m-quina-coordinadora-y-doctor-que-valide-cada-tarea
 path: desk/inbox/20261121-040358-suggestion-clones-base-de-una-m-quina-coordinadora-y-doctor-que-valide-cada-tarea.md
-source_hash: e72911870ed3307ed300648f77338d613d5a88c7b5cd68ff2231a088f496b893
-content_hash: 713625e058040346b32e959ec582319136b6067b8482507259323b27d708bb95
+source_hash: bd36af65c2da47b4eea689b6c50b204966b95667f73726dff1df141a16a8614c
+content_hash: 4e97c9e81f7b6eaa71d6a37405ed39ea02ea208109608b28840c42b4ca966440
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 3c894b699286d85f1511fdbcb79fa8e20b368f377466132c43b01c94611d9e89
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 241230f5babc9b566d61274c1a5bf4da7004ce5c2c5dbc2aac6c2605fa0a4a4c
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 9b7a95f9389993bfbde2755eb1fd5472d3b26572ddbfb49f485fceef7ce597fe
+  ack_reason: 0badd46398ca99632a53da5efce19fa93910bea4b404677fe8ac4ee7472bb06a
   title: 112b07f3d1fcd42c713bb8c2e9a9d94296b9683a31e628f8e08dc1f0c74286c0
   body: 1e683826630ca0edc71eaf77fbb631a24e60f1ea068f993d54530b9ad2da8322
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T15:11:22Z'
+  authority: generated
+  via: save_document_payload

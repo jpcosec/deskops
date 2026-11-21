@@ -1,14 +1,16 @@
 name: 20261121-053808-unclear-queue-20261121t083257z-integrate-task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej
 path: desk/inbox/20261121-053808-unclear-queue-20261121t083257z-integrate-task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej.md
-source_hash: e1dcdac3068aa2cc024034a7b2131722cf6de75b951502bdda8dae903e006c53
-content_hash: 5bca7ff4d5253f070696e4f876d117138697864af8174d2fc46b4c1c61aba3db
+source_hash: cb1c4394dbee4653644f39bc1e6f5c5de1543914a4df147fa8271415271a3a80
+content_hash: b743d4309f1bc8cd95a022c1840e034619291a7421f485c08e4d258ee2828cc4
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 1f1bb8d5662e6c405f556deb2b1a8ddc0ed6607e5382b97adb63956745a4d2f4
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 0aebb7825d14342eeb97b787c40e07d652696b197358376e7aab3161bf653d87
+  ack_reason: dc41d2390a3b0ee244ef31eb5df0a3b954b75c333b00e379f439e362cad83a48
   title: 366da4b93e9fc6459e88b36957374d433edf5e813d580005d7b80512759db3f1
   body: f667cbcc2379dfe17b4e71a802a5da4839976ca622d89c71be391b41abf02336
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-21T14:43:44Z'
+  authority: generated
+  via: save_document_payload

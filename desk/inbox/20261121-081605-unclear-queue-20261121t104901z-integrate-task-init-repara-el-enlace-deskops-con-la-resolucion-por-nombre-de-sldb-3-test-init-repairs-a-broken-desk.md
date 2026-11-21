@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-21T14:43:25Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,11 +13,15 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-21T08:16:05'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-21T11:43:18'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: 'Fallo de integrate por el gate de graph (38 faltantes contra 27 en origin):
+  rationales de tareas que citaban rutas de otros repos como locales. Corregido con
+  deskops edit task en b9674d25 y re-encolado.'
 ---
 
 # queue: 20261121T104901Z-integrate-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk
