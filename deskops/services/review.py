@@ -908,6 +908,13 @@ class ReviewService:
                 state = "rejected"
             elif "pending" in verdicts:
                 state = "reviewed"
+            elif "incomplete" in verdicts and not any(
+                record.get("verdict") == "incomplete"
+                and str(record.get("reason") or "") == "technical"
+                for record in current
+            ):
+                # A receipt disposed ``incomplete`` by a human (reason is not ``technical``).
+                state = "incomplete"
             else:
                 state = "technical_failure"
         return {"key": key, "state": state, "input_sha256": current_sha}

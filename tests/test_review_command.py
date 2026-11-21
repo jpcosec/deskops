@@ -481,7 +481,9 @@ def test_init_and_desk_update_seed_the_deepseek_flash_profile_idempotently(
     [
         ([], "missing"),
         ([("old", "accepted"), ("old", "rejected"), ("old", "incomplete")], "stale"),
-        ([("current", "incomplete")], "technical_failure"),
+        ([("current", "incomplete")], "incomplete"),
+        ([("current", "incomplete:technical")], "technical_failure"),
+        ([("current", "incomplete"), ("current", "incomplete:technical")], "technical_failure"),
         ([("current", "incomplete"), ("current", "pending")], "reviewed"),
         ([("current", "pending"), ("current", "rejected")], "rejected"),
         ([("current", "accepted"), ("current", "rejected"), ("current", "pending"),
@@ -505,6 +507,9 @@ def test_status_classifies_only_current_receipts_without_mutating_evidence(
     task_path, task_id = service._resolve_task("task-status")
     input_data, _, _ = service._preflight_input(task_path, task_id)
     for index, (identity, verdict) in enumerate(receipts):
+        reason = "test evidence"
+        if verdict == "incomplete:technical":
+            verdict, reason = "incomplete", "technical"
         evidence = root / "runs" / "subagents" / f"receipt-{index}"
         evidence.mkdir(parents=True)
         (evidence / "input.md").write_bytes(input_data if identity == "current" else b"old input\n")
@@ -514,7 +519,7 @@ def test_status_classifies_only_current_receipts_without_mutating_evidence(
             engine="test", run_dir=evidence.relative_to(root).as_posix(),
             input_sha256=_sha(input_data) if identity == "current" else _sha(b"old input\n"),
             output_sha256=_sha(b"review output"),
-            verdict="pending" if verdict in {"accepted", "rejected"} else verdict, reason="test evidence",
+            verdict="pending" if verdict in {"accepted", "rejected"} else verdict, reason=reason,
             node_id=None,
         )
         if verdict in {"accepted", "rejected"}:

@@ -1457,7 +1457,9 @@ An unchanged input is not reviewed again; a second run does not call the model.
 with all receipts for the key. No receipts means `missing`; receipts with no
 matching input mean `stale`, regardless of their old verdict. Among matching
 receipts, priority is `accepted`, `rejected`, `pending` (reported as `reviewed`),
-then `incomplete` (reported as `technical_failure`). A current accepted
+then `incomplete`: reported as `technical_failure` when its reason is `technical`
+(the run failed by transport or quota), and as `incomplete` when a person
+disposed it as incomplete with another reason. A current accepted
 receipt therefore survives later rejected or failed attempts. Task subjects
 use the same task id whether plain or pinned with a SHA-256 anchor. Status
 preserves receipts and run evidence and does not change lifecycle gates.
