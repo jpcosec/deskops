@@ -1,0 +1,17 @@
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../../../../../dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 0.56s
+exit=0
+
+--- clean worktree check ---
+worktree: /tmp/deskops-test-3a8df5ac @ 3a8df5ac (detached, git status clean)
+TMPDIR=/tmp PYTHONPATH=/tmp/deskops-test-3a8df5ac /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_model_contract_snapshot.py
+2 passed, 1 warning in 0.60s
+exit=0
+imports verified: deskops and test module resolve to /tmp/deskops-test-3a8df5ac

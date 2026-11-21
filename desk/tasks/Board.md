@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T11:47:27Z'
+  at: '2026-11-21T12:05:30Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -64,7 +64,6 @@ tasks:
 - desk/tasks/task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk.md
 - desk/tasks/task-governance-message-send-to-y-list-tasks-include-repos-resuelven-el-repo-por-la-ruta-del-registro-no.md
 - desk/tasks/task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada.md
-- desk/tasks/task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar.md
 - desk/tasks/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e.md
 # List of pill-xxx paths
 pills:
@@ -161,5 +160,4 @@ _Generated from the task references above._
 - Governance: registro en el desk de los artefactos generados por Claude y por el desk [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
 - Governance: message send --to y list tasks --include-repos resuelven el repo por la ruta del registro, no por el nombre [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
 - Governance: migración del workflow nuevo a los diez desks a la vez con vuelta atrás probada [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
-- Snapshot de contratos de modelo: RuleDoc cambió solo la descripción de where (sldb 22cfafb2); actualizar el hash sin migración [draft] - tests/fixtures/model_contract_hashes.json tiene el hash nuevo de RuleDoc, recalculado con la función del propio test (no a mano), y el commit explica que es un cambio solo de descripción, sin migración de stores. Antes de actualizarlo, verificar con evidencia que no hace falta migrar: sldb stores check sobre el store de deskops y el de sldb no da hallazgos nuevos de RuleDoc (anotar la salida en el run dir). Si el test permite marcar cambios solo de descripción sin migración (ver FIXTURE_UPDATE en el test), seguir ese camino.
 - reap nombra los archivos que bloquean el cherry-pick sin depender del idioma de git (falla con LANG=es_ES del timer) [draft] - dispatch reap identifica los archivos locales que bloquean el cherry-pick sin parsear el mensaje localizado de git: o corre los comandos de git cuya salida parsea con LC_ALL=C y LANGUAGE= en el entorno, o calcula los archivos con git status --porcelain y la lista de archivos del commit. El mensaje sigue nombrando los archivos y sugiriendo commitearlos, con el mismo rc 8. El test pasa con cualquier locale, y se agrega un test que lo corre con LANG/LC_ALL/LANGUAGE en español.

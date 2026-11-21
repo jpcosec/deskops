@@ -1,7 +1,17 @@
+Task: task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar
+Title: Snapshot de contratos de modelo: RuleDoc cambió solo la descripción de where (sldb 22cfafb2); actualizar el hash sin migración
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-21T12:04:11Z'
+  at: '2026-11-21T11:56:40Z'
   authority: generated
   via: save_document_payload
 id: task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar
@@ -13,21 +23,14 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- tests/fixtures/model_contract_hashes.json
-- tests/test_model_contract_snapshot.py
-- 3a8df5ac43103578c7eb8da69ff6deae22adf289
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- tests/fixtures/model_contract_hashes.json
-- tests/test_model_contract_snapshot.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-el-snapshot-de-contratos-de-modelo-acepta-el-cambio-solo-de-descripcion-de-ruledoc
+atoms: []
 ---
 
 # Snapshot de contratos de modelo: RuleDoc cambió solo la descripción de where (sldb 22cfafb2); actualizar el hash sin migración
@@ -67,3 +70,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 tests/test_model_contract_snapshot.py pasa contra el sldb de /mnt/ssd/herramientas/sldb y solo cambió la entrada RuleDoc del fixture.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
