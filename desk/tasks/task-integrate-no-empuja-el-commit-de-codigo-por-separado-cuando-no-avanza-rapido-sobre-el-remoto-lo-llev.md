@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T05:13:05Z'
+  at: '2026-11-21T05:35:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/integrate.py
+- tests/test_integrate.py
+- 238099a6e62efdaaa7bc1d6bb3b50b6fe39eefbd
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/integrate.py
+- tests/test_integrate.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-integrate-no-empuja-por-separado-un-commit-de-codigo-que-no-avanza-rapido-sobre-el-remoto
 ---
 
 # integrate no empuja el commit de código por separado cuando no avanza rápido sobre el remoto; lo lleva el tip

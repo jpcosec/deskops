@@ -694,6 +694,10 @@ include:
     name: run-deskops-e-1c2483367c96
   - path: runs/subagents/exec-deskops-t-dfb81a781cee-testing/run.md
     name: run-deskops-t-dfb81a781cee
+  - path: runs/subagents/exec-deskops-e-8dc2d5f09fda/run.md
+    name: run-deskops-e-8dc2d5f09fda
+  - path: runs/subagents/exec-deskops-t-7f4f0f892411-testing/run.md
+    name: run-deskops-t-7f4f0f892411
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -2184,6 +2188,14 @@ include:
     name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-preflight-1
   - path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/bundle-1.md
     name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-bundle-1
+  - path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/evidence-tests-1.md
+    name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-evidence-tests-1
+  - path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/evidence-commit-1.md
+    name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-evidence-commit-1
+  - path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/evidence-atom-1.md
+    name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-evidence-atom-1
+  - path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/evidence-materialization-1.md
+    name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
