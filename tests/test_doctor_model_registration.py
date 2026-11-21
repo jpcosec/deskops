@@ -168,20 +168,64 @@ def _sldb_stores_check(store: Path) -> subprocess.CompletedProcess[str]:
     )
 
 
-def test_init_repairs_a_broken_deskops_link(tmp_path: Path, capsys) -> None:
-    root = tmp_path / "repo"
-    _init_repo(root, capsys)
-    owner = (Path(package_pythonpath()) / ".sldb").resolve()
-
+def _delete_deskops_link_target(root: Path, tmp_path: Path) -> Path:
     deleted = tmp_path / "deleted" / ".sldb"
     deleted.mkdir(parents=True)
     _point_deskops_link_at(root, deleted)
     shutil.rmtree(tmp_path / "deleted")
+    return deleted
+
+
+def test_init_repairs_a_broken_deskops_link(tmp_path: Path, capsys, monkeypatch) -> None:
+    """A link whose path is gone and that sldb cannot resolve by name is replaced.
+
+    Current sldb resolves a missing path by the store's name, so the broken status is
+    simulated: `store_links` reports `missing` while the stored path does not exist.
+    """
+    import sldb.api
+
+    root = tmp_path / "repo"
+    _init_repo(root, capsys)
+    owner = (Path(package_pythonpath()) / ".sldb").resolve()
+    deleted = _delete_deskops_link_target(root, tmp_path)
+    real_store_links = sldb.api.store_links
+
+    def unresolved_store_links(store_path):
+        links = []
+        for link in real_store_links(store_path):
+            if link["name"] == "deskops" and not (Path(store_path).parent / link["path"]).exists():
+                link = {**link, "resolved": str(deleted), "status": "missing", "by": "path"}
+            links.append(link)
+        return links
+
+    monkeypatch.setattr(sldb.api, "store_links", unresolved_store_links)
 
     assert main(["init", str(root)]) == 0
     out, _ = capsys.readouterr()
     assert "Replaced broken 'deskops' link" in out
     assert (root / _deskops_link(root)["path"]).resolve() == owner
+
+    check = _sldb_stores_check(root / ".sldb")
+    assert check.returncode == 0, check.stdout + check.stderr
+
+
+def test_init_leaves_a_deskops_link_with_a_stale_path_that_resolves_by_name(tmp_path: Path, capsys) -> None:
+    """With name resolution (sldb #3) a missing path that resolves to the owner is not broken."""
+    from sldb.api import store_links
+
+    root = tmp_path / "repo"
+    _init_repo(root, capsys)
+    owner = (Path(package_pythonpath()) / ".sldb").resolve()
+    _delete_deskops_link_target(root, tmp_path)
+
+    assert main(["init", str(root)]) == 0
+    out, _ = capsys.readouterr()
+    assert "Replaced broken" not in out
+    assert "already links" not in out
+
+    link = next(link for link in store_links(root / ".sldb") if link["name"] == "deskops")
+    assert link["status"] == "ok"
+    assert Path(link["resolved"]) == owner
 
     check = _sldb_stores_check(root / ".sldb")
     assert check.returncode == 0, check.stdout + check.stderr
