@@ -2344,6 +2344,10 @@ include:
     name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-evidence-atom-1
   - path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/evidence-materialization-1.md
     name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-evidence-materialization-1
+  - path: desk/reviews/task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar/preflight-1.md
+    name: review-task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar-preflight-1
+  - path: desk/reviews/task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar/bundle-1.md
+    name: review-task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -2411,6 +2415,7 @@ include:
   - desk/tasks/task-governance-message-send-to-y-list-tasks-include-repos-resuelven-el-repo-por-la-ruta-del-registro-no.md
   - desk/tasks/task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada.md
   - desk/tasks/task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar.md
+  - desk/tasks/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md

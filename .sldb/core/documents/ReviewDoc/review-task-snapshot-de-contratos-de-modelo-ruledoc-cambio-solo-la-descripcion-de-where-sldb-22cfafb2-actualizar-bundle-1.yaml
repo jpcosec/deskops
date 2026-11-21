@@ -1,0 +1,37 @@
+name: review-task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar-bundle-1
+path: desk/reviews/task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar/bundle-1.md
+source_hash: 25dbd421d9060ef3442ca5048c7c82481df8903c69ea6a7b7d54e0a17f449523
+content_hash: ce45cf579974bf5c04a101979c78a21f019ab89048d85768e6ae27d1f2bfff8b
+field_hashes:
+  id: 61eebf874888e36248130f48b969b5ae79727da9f34a61b0cee9420d81fab9b1
+  title: 70687087ec0bf5969bd942abc6bbd72b19143b9e9a6e1ae87957d32b182c7f50
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 1f41cc3c55dec48c8476d4a89edcece58e34e4ba63d7c1a135a1945f81b26fb8
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 2513a8b4399dbcb2ef467a762805f8e992d8a7607d53eae69e4d308cbbea8d01
+  input_sha256: f1c994988bf562acc6322fa3e12ee228a4904bcfbbbc2e910963d44c768591b4
+  contract_sha256: fcb1ed54d9d2a250f768750e507bedfc74cf3a52f33247a81249cd8cd00c523a
+  output_sha256: 2dc358b662bd6513ff4174270b06d729174aaf8cbefd5d1ac0ad4a8be03feb11
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 5ff86e1a784ea5f50f331e4225b668313f003b8bd1970475d6a476e88a243b54
+  created_at: 7181e6b262bbde8a3ff23b0c7b2f68f62919a05399c5b25ee8b8d4141beaf5d4
+  disposed_at: 888005de87a50d9f8adf69662046673892a5edcfbfc01c67c82770a0876a05d7
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: df8cbae7fa4d4d2a8c7761b5e56bb0cb8b5898286f0dd39c6d548e6b35c32145
+  disposition: 5635e90eb8194410be9d34a1b8be467708e6d6602a8f56ee300db5fac3b35881
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-21T11:48:05Z'
+  authority: generated
+  via: save_document_payload
