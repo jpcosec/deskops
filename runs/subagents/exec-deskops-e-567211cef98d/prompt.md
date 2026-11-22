@@ -1,34 +1,35 @@
+Task: task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con
+Title: Los contenedores de scion de ejecutor y tester traen pytest-xdist para correr la suite completa con -n 4
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T08:15:32Z'
+  at: '2026-11-21T18:13:28Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/runtime/scion.py
-- pyproject.toml
-- tests/test_scion_runtime.py
-- 5270f990b113b49341ac23e25ddac76622eb0807
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
-files:
-- deskops/runtime/scion.py
-- pyproject.toml
-- tests/test_scion_runtime.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-los-contenedores-de-scion-traen-pytest-xdist-y-la-suite-completa-corre-con-n-4
+atoms: []
 ---
 
 # Los contenedores de scion de ejecutor y tester traen pytest-xdist para correr la suite completa con -n 4
@@ -68,3 +69,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Un ejecutor lanzado con el template importa xdist y corre la suite con -n 4.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-567211cef98d`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-567211cef98d
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

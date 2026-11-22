@@ -1,0 +1,37 @@
+name: review-task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con-evidence-atom-1
+path: desk/reviews/task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con/evidence-atom-1.md
+source_hash: 425c539e4d2584387a8ff778c8f1ccc15e61f6dd173c04c6de60f9d28952125a
+content_hash: d600bbd32788d474090e9e064390a99859448e8419d70d33a3c923e89b9be913
+field_hashes:
+  id: 3c6c4c36cde02dba693c37ddc9e5e2dd75fbce0582a2c0f692e338b4bd414833
+  title: 782f91bcb457002e167c980a2893f96b6d210989327f5754aebda26e4eed7381
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 7acfd87d3b0f1d4347dd31f0d8bbde11058ea03fd93e7a51ad93b6f654272edd
+  subject: 3b498c479d000bdac23dae423cfd5b0cfdb9ee9e18d1590b55855602e2f62747
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 7de0f718013f484eed4785f63dee72dfce056195044515fc2119b74e530d3219
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0b9d083e67a47b01c70aaf4f787764fd00bdf62eff8910a8f80ca695836f2316
+  created_at: ad407d255a5ac0836d655612e694e58445e0e0f25c1c5c565f4b372165f23544
+  disposed_at: ad407d255a5ac0836d655612e694e58445e0e0f25c1c5c565f4b372165f23544
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: cd68b86bbf8ed5641edbea7d1d4bf205e8b3207b4cfade82e60d37ba8cd73f6b
+  disposition: 8b9b3f209d661a590209a605c8f19cf54a9649476b025c9178e8f2a3938401fc
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T08:16:23Z'
+  authority: generated
+  via: create_document

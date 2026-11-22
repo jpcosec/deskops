@@ -1,0 +1,37 @@
+name: review-task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con-evidence-materialization-1
+path: desk/reviews/task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con/evidence-materialization-1.md
+source_hash: 89de143233d771908d5987f60ffd6609bdc8ab99dabacbc71844d24f097bad1b
+content_hash: 6b6235f5d9e734f422e501c811ec47182886206a55a8996cad958e4f872fb279
+field_hashes:
+  id: aba29b4e9abe7df6b09bbd6abcee1ad7387fd6d99dc4c19fee7ac019dba818c1
+  title: 15457572a878d87f657201f7bf2d4530a6f8d2e5d02ba906babcf4954f94eec2
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 1ffe6691f91cc1ce8bee3e6dbe864261d06673f244fd11595157a3687d1a2ff4
+  subject: 3b498c479d000bdac23dae423cfd5b0cfdb9ee9e18d1590b55855602e2f62747
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 14269340ce17c06b6364d8e70bcfd72915e3435fa822de41d8925c051ae98ad8
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 11f51bae3dbef9fbc611f89b584c49b5509a84cf072b5879456adb80ee775892
+  created_at: ad407d255a5ac0836d655612e694e58445e0e0f25c1c5c565f4b372165f23544
+  disposed_at: ad407d255a5ac0836d655612e694e58445e0e0f25c1c5c565f4b372165f23544
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 57ea4894cfae20d93dcaf6caab460c0789271cb4338b92d5b0e1124da5c151d1
+  disposition: 6ee249734c7f8c8fdbf8ed1a880fb2111836d77e6ca26cd6ed1e4968765025d4
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T08:16:27Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,1 @@
+pytest -q -p no:cacheprovider -n 4 tests/test_dispatch.py tests/test_scion_runtime.py -> rc 0, 80 passed; python -c 'import xdist' -> 3.8.0
