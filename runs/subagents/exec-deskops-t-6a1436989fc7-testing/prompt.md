@@ -1,7 +1,17 @@
+Task: task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio
+Title: doctor reporta el layout viejo de .sldb y nombra sldb stores migrate-layout como remedio
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T07:45:51Z'
+  at: '2026-11-22T06:19:45Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio
@@ -13,64 +23,16 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-- 'task_returns_to_execution: Tester deskops-t-6a1436989fc7 FALLA sobre 2373f55d.
-
-
-  (1) deskops/sldb_layout.py no detecta en .gitignore las variantes .sldb/core/**,
-  .sldb/core/*, .sldb/runtime/** ni .sldb/runtime/*. La resolución aceptada pide quitar
-  la barra inicial y los sufijos ''/**'', ''/*'' o la barra final, y dar señal si
-  queda exactamente .sldb/core o .sldb/runtime. El tester lo reprodujo: con .sldb/core/**
-  en el .gitignore, doctor dice healthy.
-
-
-  (2) init rechaza un directorio sin store que solo hereda una línea vieja en .gitignore.
-  El chequeo de init va en deskops/bootstrap.py (init_local_store, antes de _init_store
-  y de cualquier escritura), y solo si la carpeta de store del repo ya existe.
-
-
-  (3) Se acepta la ubicación deskops/sldb_layout.py. El mensaje tiene que ser el resuelto:
-  "old .sldb layout (SEÑALES): run sldb stores migrate-layout --store RUTA", donde
-  RUTA es la ruta absoluta de la carpeta de store del repo.
-
-
-  Intento 2:
-
-  - arreglar 1, 2 y 3, con tests para las cuatro variantes del .gitignore y para init
-  en un repo sin store (sale 0 e inicializa);
-
-  - correr tests/test_doctor_sldb_layout.py, test_doctor_alerts.py y test_gitignore_policy.py;
-
-  - correr la suite completa con -n 4 (pip install pytest-xdist en /tmp/ws-venv);
-  si no termina en 30 minutos, entregar con los tests enfocados y anotarlo;
-
-  - commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
-- task_activates
 references:
-- .claude/skills/deskops-workflow/SKILL.md
-- README.md
-- deskops/bootstrap.py
-- deskops/cli/commands/core.py
-- deskops/cli/commands/doctor.py
-- deskops/sldb_layout.py
-- tests/test_doctor_sldb_layout.py
-- 5f8e878f129103e3bdbd8f4591431867ec7478b4
-- 2373f55deeff3db66bc4a6791264ff8a8490f0b3
+- desk/inbox/20261119-230958-suggestion-guiar-a-los-repos-que-usan-deskops-a-migrar-el-layout-de-sldb-sldb-stores-migrate-layout.md
 depends_on:
 - task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime
 pills: []
-files:
-- .claude/skills/deskops-workflow/SKILL.md
-- README.md
-- deskops/bootstrap.py
-- deskops/cli/commands/core.py
-- deskops/cli/commands/doctor.py
-- deskops/sldb_layout.py
-- tests/test_doctor_sldb_layout.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-doctor-e-init-reportan-el-layout-viejo-de-sldb-con-el-remedio-migrate-layout
+atoms: []
 ---
 
 # doctor reporta el layout viejo de .sldb y nombra sldb stores migrate-layout como remedio
@@ -113,3 +75,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Tests nuevos: cada una de las tres senales produce un issue de doctor con el comando sldb stores migrate-layout --store <ruta>/.sldb y sin Desk is healthy; un repo migrado no da el issue; init sobre layout viejo falla nombrando el remedio. README y skill tienen el procedimiento.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

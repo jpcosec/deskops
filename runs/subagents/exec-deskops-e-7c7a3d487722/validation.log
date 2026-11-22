@@ -1,0 +1,4 @@
+pytest tests/test_doctor_sldb_layout.py: 6 passed
+pytest -n 4 -q tests (full): 1 failed, 1302 passed, 3 skipped, 1 xfailed (exit 1, 51 min)
+ FAILED tests/test_output_goldens.py::test_help_goldens (help/deskops_drawer.txt golden: text of `drawer remove`; unrelated, this change touches no CLI help). The clean origin/main comparison was not completed.
+deskops doctor --root . : no layout issue in the main desk (pre-existing unrelated lost-receipt findings).
