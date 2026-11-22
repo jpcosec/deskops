@@ -1,14 +1,16 @@
 name: 20261122-171034-unclear-queue-20261122t200542z-integrate-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
 path: desk/inbox/20261122-171034-unclear-queue-20261122t200542z-integrate-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea.md
-source_hash: cf631d950a71db6ce23c899a775156ca98e47b9eeb0ef6cff65e754f0112ea3a
-content_hash: af788b8beb0400b80a4321b553a81587b89718ebf2c313ea5ece788da0abb390
+source_hash: df0570c7ccb7ecd387173100ea945e2cb29c23c1161edb1db26130f7e72023d8
+content_hash: 24b32d0334ab471b02f32fc37dc448946961b1b924db499c9a3504c6429f2396
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 4902e79c17b317545f895204c02e965cd3da3c3fce14c56ab8dd7dd612667bea
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 5b538827f271376482e9bb87c6648891ec6eb88734ee14a23ce8f7042f94cf0a
+  ack_reason: d7bb89d7d73477c3c0265f2dd91e2a8627a0580173f91c380740db982dbad699
   title: f4d9fe4f5d87ab5ff455e1da441c20d554d9a940662a489fcc08a04813b7ca5b
   body: b8719f3916e59fac0aca611262eeea3a2b870ce8c1c5c4e07492a3f262c783db
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-22T21:21:29Z'
+  authority: generated
+  via: save_document_payload

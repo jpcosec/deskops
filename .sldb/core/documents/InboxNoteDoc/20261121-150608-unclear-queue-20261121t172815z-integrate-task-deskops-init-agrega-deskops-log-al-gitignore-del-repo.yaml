@@ -1,14 +1,16 @@
 name: 20261121-150608-unclear-queue-20261121t172815z-integrate-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo
 path: desk/inbox/20261121-150608-unclear-queue-20261121t172815z-integrate-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo.md
-source_hash: a432960e0cb4a2bed31505739b207899f92f4d7de41e7740add90717e5321f28
-content_hash: 4044818ce33b6ed0cd23bf94e67d73936397b5b8d76d73e2fb5daca91460bf71
+source_hash: f551a0adaa23b97d02907c4638e460ac59dbd60c5f27f80c8f5c0b975b7ceefa
+content_hash: a6154c90fd31e7b4333bb0a1035b37533d4cbd4cd0b90ec5115edb82abee35be
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 018045ac7109285fa3af860c798cf7b55b819572244f687ddc7ab52c4762030d
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 4c0326343e3a901fee613bc4ea24aa63ea132117f0b919f88dd119242205318e
+  ack_reason: 3f23f342ec55d9cb90b3193f44e1572f94d66caafd4ce859458c0ff0d08d0e0a
   title: d33f457f81f7232553f888d240db84b984763eb4dae018b439c998498fccc211
   body: 161f929c91672d0ea9d657f5d4f5a7511ab6396623daddcac3f10ebb5ea88010
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-22T21:22:13Z'
+  authority: generated
+  via: save_document_payload

@@ -1,14 +1,16 @@
 name: 20261122-070528-unclear-queue-20261122t093337z-integrate-task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove
 path: desk/inbox/20261122-070528-unclear-queue-20261122t093337z-integrate-task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove.md
-source_hash: 136f4a7223a7949e4b9ca0d9f88ed114e473b00d253ca79acba2af952c023a89
-content_hash: 224463c0ef54a170c06a8661a44661bed0aa0ac58fde7cc40c76a02d0cbabeb5
+source_hash: 80c4a3f551eb99cd1e67b065c04111cf3834834ce5c350e93160691b72beb008
+content_hash: d097568e769a5cb7d4233fd924f48cd8440ac8dbb7d229e44daa4f8d40e51e5e
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: d81f6ca13f812f412ea8e97617d17e6a26f08f88ef4ee662423ff1bef73bb0b3
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 3ab5542adc038d1ff18129fbd5d0eb687771d3c1110409b4d7733562361e191b
+  ack_reason: 566ec438605adbb7a6d5a2b95f2136d65af13642047ee1ab3e193be4f2db219a
   title: 937d561f1c2916c058d13dc714c28acd3d12d51b7fb202d36459e49c145e16bb
   body: 4652228099d1d0b49083fcadc29aa1b90122dfc254a7eddfc478e41ca4e07dbd
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-22T21:21:51Z'
+  authority: generated
+  via: save_document_payload
