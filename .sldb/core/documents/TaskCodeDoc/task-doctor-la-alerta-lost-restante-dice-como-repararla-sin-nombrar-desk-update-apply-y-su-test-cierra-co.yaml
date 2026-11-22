@@ -1,0 +1,38 @@
+name: task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co
+path: desk/tasks/task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co.md
+source_hash: 31b73279573fb9ab30ccf4345d81dc8af7dcbc56b9b8b2128488679368a39b33
+content_hash: 13c6f1fb2a480512b74a77333a787bbf78c87b0368a5ed47971a27e842f55171
+field_hashes:
+  title: c8ab059c847fd81a1a89e1cabddc0c90abb53302a28ae984922bbeaa33ffd103
+  id: 1872be25888045ea0d404b701fb4176b55ffabbdb19c73712533c37fef1249a3
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: a144a13b2ae194588e883781212977eaa7b7e1125018c63333aaea25949d0e97
+  goal: b1ea70c083d12fcea1965f7629076dfd125b37d9130eb996dd600307a37d2041
+  scope: 05fbad1b57986e9ad9bb6a817c6866c438ccd0d148bcb14432af0185c97b034d
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 579d1b797bdd5dea328879bbaf96aef593a0f453ba1c8211aaf8dc44a9c06855
+  validation: 41d73da4051c68b309e801c8a4fdf4f70e07804c8413c9ab47ccf5a7f17d393f
+  done_when: ce0cf352bf88321a8bfe9b5008324e02c058505d356bb2f152861b870d9a58c9
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T00:14:55Z'
+  authority: generated
+  via: create_document
