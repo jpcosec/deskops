@@ -1,18 +1,50 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:40:37Z'
+  at: '2026-11-22T13:13:42Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
 current_node: ritual-execution
-history: []
+history:
+- task_activates
+- 'task_returns_to_execution: Tester deskops-t-52556b8a9207 FALLA.
+
+
+  Bloqueante: la declaración del namespace host quedó en desk/atoms/tag-namespaces.yaml,
+  pero el store del desk no se sincronizó. En HEAD, tag_models de store.yaml no incluye
+  TaskDoc ni declara el namespace host, y deskops desk update --root . informa la
+  divergencia ''Tag namespace declaration: store.yaml differs from desk/atoms/tag-namespaces.yaml''
+  y sale 1.
+
+
+  Además, el commit duplicó en store.yaml una segunda sección ''- model: RelationTypeDoc''
+  con las rutas de sldb/relation_types/*.
+
+
+  Intento 2:
+
+  1. Quitar del store la sección RelationTypeDoc duplicada. Que quede una sola, y
+  que la herramienta la regenere: no se edita a mano.
+
+  2. Sincronizar el store con ''deskops desk update --apply --root .'' y commitear
+  los archivos del store que toque.
+
+  3. Comprobar que ''deskops desk update --root .'' sale 0 y que ''sldb stores check
+  --store'' sobre la carpeta de store del desk no da hallazgos nuevos.
+
+  4. Que el test de la tarea compruebe además que, después de declarar el namespace,
+  desk update no informa divergencia.
+
+  5. Correr los tests de la tarea y la suite con -n 4 (pytest-xdist ya está en [dev]).
+
+  6. Commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
 references:
 - desk/inbox/20261116-003533-suggestion-namespace-de-tags-host-para-marcar-en-qu-m-quina-corre-cada-tarea.md
 - desk/inbox/20261116-003602-suggestion-namespace-de-tags-host-para-separar-tareas-de-ui-local-y-backend-robocop2.md
