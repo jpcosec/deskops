@@ -1,0 +1,1 @@
+python -m pytest -q -p no:cacheprovider tests/test_output_goldens.py -> exit 0 (7 passed)
