@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T18:35:28Z'
+  at: '2026-11-22T19:53:26Z'
   authority: generated
   via: save_document_payload
 id: task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales
@@ -15,19 +15,23 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- desk/inbox/20261116-010912-unclear-graph-missing-no-distingue-archivos-que-la-tarea-va-a-crear-ya-borrados-o-de-otro-repo.md
+- deskops/cli/commands/graph.py
+- deskops/graph/checks.py
+- tests/test_graph_checks.py
+- tests/test_graph_declared_edges.py
+- 97007d8085fe4414128642e5584a2fece72448d7
 depends_on: []
 pills: []
 files:
-- deskops/graph/checks.py
 - deskops/cli/commands/graph.py
+- deskops/graph/checks.py
 - tests/test_graph_checks.py
+- tests/test_graph_declared_edges.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-knowledge-graph-connects-desk-and-source-files
+- atom-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas
 ---
 
 # graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales

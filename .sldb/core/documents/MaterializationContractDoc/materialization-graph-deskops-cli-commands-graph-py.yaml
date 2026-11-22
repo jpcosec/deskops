@@ -1,0 +1,25 @@
+name: materialization-graph-deskops-cli-commands-graph-py
+path: desk/materializations/materialization-graph-deskops-cli-commands-graph-py.md
+source_hash: 785ab1ad6f8abb2e9b451aeb41451dc90c19ce3a85974e49d0a0031c0f85dafa
+content_hash: af4657e5fc89206a47ec97d00ea4982230fafbd65095b90f801fe8c561232a3c
+field_hashes:
+  id: 90d0085d8ab261ce14b1752de1306fb7900773ca353e68554ace0a0007534624
+  title: f417b1d7d0231150832f66953d958b0c82f64286c87e65261470aec5ed58c2a7
+  source_atoms: 259d50687fcb9a0d6f1ea91f7819e32020f922dcd4f0863ecd6d5bd3bdea0b23
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 7ff8f65148bf768711b652b857fd540f164f41b04036e5904b36cf5082abe27c
+  intent: b0befd4ee470a152e2eb74cc59e5649d07de167b7d3fddf713555e6949af3729
+  validation: 487bd3f002080106cfccf2f570c71e5836bebf0132c62abb96cd28a2494bbf77
+  tags: b15a9beb6d645f45465945d899a2e0fa4bfc3287b88afd3cf231ac658507d8d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:graph
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T19:53:36Z'
+  authority: generated
+  via: create_document

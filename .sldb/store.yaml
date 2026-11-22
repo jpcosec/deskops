@@ -488,6 +488,10 @@ include:
   - desk/materializations/materialization-dispatch-tests-fixtures-model-contract-hashes-json.md
   - desk/materializations/materialization-dispatch-tests-test-closeout-py.md
   - desk/materializations/materialization-dispatch-tests-test-scion-runtime-py.md
+  - desk/materializations/materialization-graph-deskops-cli-commands-graph-py.md
+  - desk/materializations/materialization-graph-deskops-graph-checks-py.md
+  - desk/materializations/materialization-graph-tests-test-graph-checks-py.md
+  - desk/materializations/materialization-graph-tests-test-graph-declared-edges-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2682,6 +2686,14 @@ include:
     name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-atom-1
   - path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/evidence-materialization-1.md
     name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-materialization-1
+  - path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/evidence-tests-1.md
+    name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-evidence-tests-1
+  - path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/evidence-commit-1.md
+    name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-evidence-commit-1
+  - path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/evidence-atom-1.md
+    name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-evidence-atom-1
+  - path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/evidence-materialization-1.md
+    name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
