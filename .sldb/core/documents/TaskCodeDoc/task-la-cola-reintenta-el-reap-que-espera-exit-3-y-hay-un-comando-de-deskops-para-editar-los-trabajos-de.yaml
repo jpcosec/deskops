@@ -1,0 +1,38 @@
+name: task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de
+path: desk/tasks/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de.md
+source_hash: 058f4c66190f19969c2382c294c8dd717f8987ea4b52a0a579468d6a7ada06c4
+content_hash: 1be893b382fc32105b52a84f5c967df8214ad14f6c1f7eff2af4640d35181968
+field_hashes:
+  title: 2cc8a1fd8ba765024d8e648d52ec730bcccf562f470baea346f48755aa5e4339
+  id: 6a1dc17c816393373553e9b8f67ae4197b416ecdefecfcdff2ece5f67327a25d
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 0e281eaea3c46c6946000129a085cbc4368e26c56f5d328f3c97ec4d25b9c21a
+  goal: d6d97b90dd1c001cfecabe746510ebc45e0bc07a810e478251f627af4cb5b75b
+  scope: da90497931e71d8f2f116a454aa4d833ab609f6d6820b7096b4b21ff4fb7ca90
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 27ec9340d9a9bc4077e919a38ad54c5078abd95e99292fde76ab2761cb8c4b8d
+  validation: 34caecc9937ed0da94e8e0a4b9c618956ba5ec1209397b879dca86bba8bf9533
+  done_when: 99eaa1b0e6e076044b89d52e33f788b9b07a969e4fa36cf8161820bd354f8b04
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T19:44:03Z'
+  authority: generated
+  via: create_document
