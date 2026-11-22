@@ -52,6 +52,8 @@ MUTATING_COMMANDS: set[tuple[str, ...]] = {
     ("queue",),
     ("queue", "add"),
     ("queue", "run"),
+    ("queue", "job"),
+    ("queue", "job", "set"),
     ("dispatch",),
     ("dispatch", "start"),
     ("dispatch", "reap"),

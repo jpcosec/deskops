@@ -1,0 +1,11 @@
+usage: deskops queue job [-h] {set} ...
+
+Edit the queue_jobs declared in desk/config.json.
+
+positional arguments:
+  {set}
+    set       Set one field (run, timeout, retry_exit_codes) of a queue job in
+              desk/config.json.
+
+options:
+  -h, --help  show this help message and exit

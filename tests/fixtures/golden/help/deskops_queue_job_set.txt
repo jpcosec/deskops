@@ -1,0 +1,14 @@
+usage: deskops queue job set [-h] [--root ROOT] job field value
+
+Set one field (run, timeout, retry_exit_codes) of a queue job in
+desk/config.json.
+
+positional arguments:
+  job          Job kind declared in queue_jobs
+  field        Field of the job: run, timeout or retry_exit_codes
+  value        JSON value (e.g. '[3]', 600, '["sh", "-c", "x"]'); anything
+               else is a string
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  Target repository root.
