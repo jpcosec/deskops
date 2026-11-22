@@ -1,25 +1,34 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T18:13:28Z'
+  at: '2026-11-22T08:15:32Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/runtime/scion.py
+- pyproject.toml
+- tests/test_scion_runtime.py
+- 5270f990b113b49341ac23e25ddac76622eb0807
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/runtime/scion.py
+- pyproject.toml
+- tests/test_scion_runtime.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-los-contenedores-de-scion-traen-pytest-xdist-y-la-suite-completa-corre-con-n-4
 ---
 
 # Los contenedores de scion de ejecutor y tester traen pytest-xdist para correr la suite completa con -n 4

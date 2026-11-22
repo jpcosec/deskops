@@ -1,0 +1,25 @@
+name: materialization-runtime-pyproject-toml
+path: desk/materializations/materialization-runtime-pyproject-toml.md
+source_hash: 01962c58446fd208c16bfc750e65a89b50c69e23c24a5af33655a3f82fb9835f
+content_hash: 31c1ddc2e2cbfa7fd413974e71772aa47ce70c066d78e78ef1e9065843213352
+field_hashes:
+  id: 0f41754f934f5abfafef38569216eb55d664464d10e18eda682123c291473cdc
+  title: 20acd53f633fb9258ed31cf8a27b17eaeb87e7087e35b37e188ee4facd38ffe6
+  source_atoms: ab0a155edaa3037286f529677a6c058368747c5ef92b46423acba5f9bc427ad0
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 9c6cd9431da5c16d2ee820ad552f266833f2ce755f554cbf9ffc5e0d3ccf1504
+  intent: e382707d2868c3751e0e96b90758b6f1588d6a4420721955b47131f608fb9b2f
+  validation: bd0fd9f20a28ecd597cd626b15534d9797e392d6d4af7e26b685cdccfa7fc576
+  tags: f6de0ec06eb2b1db0f1b669faf516523ed6d93b464786ce7f845098d8a4eb85b
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:runtime
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T08:15:52Z'
+  authority: generated
+  via: create_document

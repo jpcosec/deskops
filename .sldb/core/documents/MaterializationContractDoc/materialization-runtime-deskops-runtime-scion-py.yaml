@@ -1,0 +1,25 @@
+name: materialization-runtime-deskops-runtime-scion-py
+path: desk/materializations/materialization-runtime-deskops-runtime-scion-py.md
+source_hash: e305aaa66cf2e668a13d890660280ecaf958ca10d08dfde1e244439fbc6db0b8
+content_hash: cee30a469abeafd462d61725e898681d0895559c921c324883c0020834152ba8
+field_hashes:
+  id: 3f095fdc9ef7a6bf24788a9c79c5f1b84918a9f5b50f5a7f9becfa4ea340970a
+  title: 5b23873004b935ca8ca0c363940d9bf7ca44e9a4fde3594c89120b801983111a
+  source_atoms: ab0a155edaa3037286f529677a6c058368747c5ef92b46423acba5f9bc427ad0
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 6c0faf5411ced73438fd1e97bd5a4a805806513a53da73cee50025843d766055
+  intent: 872ac46030537cc922578ec969c03b37a20308ae340193b1890e0942368d0397
+  validation: bd0fd9f20a28ecd597cd626b15534d9797e392d6d4af7e26b685cdccfa7fc576
+  tags: f6de0ec06eb2b1db0f1b669faf516523ed6d93b464786ce7f845098d8a4eb85b
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:runtime
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T08:15:42Z'
+  authority: generated
+  via: create_document
