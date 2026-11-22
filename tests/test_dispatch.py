@@ -578,3 +578,44 @@ def test_start_untracks_a_stale_rundoc_whose_run_dir_is_missing(env: Env) -> Non
     assert result.returncode == 0, result.stdout + result.stderr
     assert (env.root / f"runs/subagents/exec-{name}/run.md").is_file()
     assert [c[1] for c in env.calls() if c[0] == "start"] == [name, name]
+
+
+def test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main(env: Env) -> None:
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    (env.root / "marker.txt").write_text("r")  # the 'run:' commit made in main after the branch was created
+    _git(env.root, "add", "marker.txt")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", f"run: {name}")
+    _git(worktree, "merge", "--ff-only", "-q", "main")  # the executor's commit sits on top of it ...
+    (worktree / "marker.txt").write_text("r2")
+    _git(worktree, "add", "marker.txt")
+    _git(worktree, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "mine", "-m", "Task-Id: t")
+    # ... and another main commit repeats its patch, so `--cherry-pick` would count it as already in main
+    (env.root / "marker.txt").write_text("r2")
+    _git(env.root, "add", "marker.txt")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "same patch")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "integrado 1 commit(s)" in result.stdout
+    assert "Task-Id: t" in _git(env.root, "log", "--format=%B", "main")
+    assert not worktree.exists()
+
+
+def test_reap_keeps_the_branch_when_no_commit_is_counted_but_the_tip_is_not_in_main(env: Env, monkeypatch) -> None:
+    from deskops import dispatch
+
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    sha = _commit_in(worktree, "mine.txt", "m")
+    real = dispatch._git
+
+    def blind(root, *args):  # a miscount: rev-list reports nothing pending
+        if args[:1] == ("rev-list",) and "--count" not in args:
+            return subprocess.CompletedProcess(args, 0, "", "")
+        return real(root, *args)
+
+    monkeypatch.setattr(dispatch, "_git", blind)
+    code, message = dispatch._integrate_branch(env.root, name)
+    assert code == 8 and f"deskops/{name}" in message and sha in message
+    assert worktree.is_dir() and f"deskops/{name}" in _git(env.root, "branch", "--list", "deskops/*")

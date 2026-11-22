@@ -154,10 +154,17 @@ def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
     problem = _check_on_base(root, base)
     if problem:
         return EXIT_WORKTREE, f"{problem}: no se integra {branch}"
-    pending = _git(root, "rev-list", "--reverse", "--cherry-pick", "--right-only", "--no-merges", f"{base}...{branch}")
+    pending = _git(root, "rev-list", "--reverse", "--no-merges", f"{base}..{branch}")
     if pending.returncode != 0:
-        return EXIT_WORKTREE, f"git rev-list {base}...{branch}: {_git_error(pending)}"
+        return EXIT_WORKTREE, f"git rev-list {base}..{branch}: {_git_error(pending)}"
     commits = pending.stdout.split()
+    if not commits:
+        # never drop a branch whose tip is not in base, whatever the count said
+        tip = _git(root, "rev-parse", branch)
+        if tip.returncode != 0:
+            return EXIT_WORKTREE, f"git rev-parse {branch}: {_git_error(tip)}"
+        if _git(root, "merge-base", "--is-ancestor", branch, base).returncode != 0:
+            return EXIT_WORKTREE, f"no se borra {branch}: su punta {tip.stdout.strip()} no esta en {base} y no se conto ningun commit"
     if commits:
         failure = _commit_run_store(root, [name])
         if failure:
@@ -165,7 +172,7 @@ def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
         if _git(root, "merge-base", "--is-ancestor", base, branch).returncode == 0:
             picked = _git(root, "merge", "--ff-only", "-q", branch)  # keeps the executor's shas
         else:
-            picked = _git(root, "cherry-pick", *commits)
+            picked = _git(root, "cherry-pick", "--keep-redundant-commits", *commits)
             if picked.returncode != 0:
                 _git(root, "cherry-pick", "--abort")
         if picked.returncode != 0:
