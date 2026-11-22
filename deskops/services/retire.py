@@ -66,7 +66,7 @@ def retire_document(
         raise DomainError(f"{target} is not inside {root}") from exc
     if not relative.startswith("desk/"):
         raise DomainError(f"{relative} is not a file under desk/")
-    closed_issue = _is_retirable_drawer_issue(path, relative)
+    closed_issue = _is_retirable_drawer_issue(path, relative) or _is_orphan_issue_asset(root, relative)
     for prefix, verb in _DEDICATED_VERBS:
         if relative.startswith(prefix) and not closed_issue:
             if relative.startswith("desk/drawer/issues/"):
@@ -124,6 +124,17 @@ def _is_retirable_drawer_issue(path: Path, relative: str) -> bool:
     if issue_status(text) in {"closed", "resolved"}:
         return True
     return _frontmatter_record(text)
+
+
+def _is_orphan_issue_asset(root: Path, relative: str) -> bool:
+    """A file in desk/drawer/issues/assets/<issue>/ whose issue no longer exists."""
+    prefix = "desk/drawer/issues/assets/"
+    if not relative.startswith(prefix):
+        return False
+    parts = relative[len(prefix):].split("/")
+    if len(parts) < 2:
+        return False
+    return not (root / "desk" / "drawer" / "issues" / f"{parts[0]}.md").exists()
 
 
 def _frontmatter_record(text: str) -> bool:

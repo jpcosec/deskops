@@ -69,10 +69,7 @@ class DrawerService:
             return resolved
         if not drawer_root.exists():
             raise FileNotFoundError(f"No drawer found at {drawer_root}")
-        files = sorted(
-            path for path in drawer_root.rglob("*.md")
-            if path.is_file() and path.name not in self.DRAWER_INDEX_FILES
-        )
+        files = self._drawer_files(drawer_root)
         exact = [path for path in files if selector in {path.name, path.stem}]
         matches = exact or [path for path in files if selector.lower() in path.stem.lower()]
         if not matches:
@@ -81,6 +78,42 @@ class DrawerService:
             listing = ", ".join(str(path.relative_to(drawer_root)) for path in matches)
             raise ValueError(f"Ambiguous drawer selector '{selector}': {listing}")
         return matches[0].resolve()
+
+    def _drawer_files(self, drawer_root: Path) -> list[Path]:
+        """Every selectable drawer entry: .md files plus .yml/.yaml entries (plan dags are not entries)."""
+        plans_root = drawer_root / "plans"
+        found: list[Path] = []
+        for path in drawer_root.rglob("*"):
+            if not path.is_file() or path.name in self.DRAWER_INDEX_FILES:
+                continue
+            if path.suffix == ".md":
+                found.append(path)
+            elif path.suffix in {".yml", ".yaml"} and plans_root not in path.parents:
+                found.append(path)
+        return sorted(found)
+
+    def resolve_plan_dir(self, selector: str, *, by_name: bool = True) -> Path | None:
+        """The desk/drawer/plans/<plan>/ directory named by a path or a plan name (exact or unique fragment)."""
+        plans_root = (self.desk_root / "drawer" / "plans").resolve()
+        if not plans_root.is_dir():
+            return None
+        candidate = Path(selector)
+        if not candidate.is_absolute():
+            candidate = self.root / candidate
+        if candidate.is_dir():
+            resolved = candidate.resolve()
+            if resolved.parent == plans_root:
+                return resolved
+            return None
+        if not by_name:
+            return None
+        plans = sorted(path for path in plans_root.iterdir() if path.is_dir())
+        exact = [path for path in plans if path.name == selector]
+        matches = exact or [path for path in plans if selector.lower() in path.name.lower()]
+        if len(matches) > 1:
+            listing = ", ".join(path.name for path in matches)
+            raise ValueError(f"Ambiguous drawer plan selector '{selector}': {listing}")
+        return matches[0].resolve() if matches else None
 
     def attach_drawer_source(self, payload: dict[str, Any], drawer_file: Path) -> dict[str, Any]:
         """Record where an authored task came from, without copying or deleting it.
@@ -145,7 +178,14 @@ class DrawerService:
         messages.append(f"Path: {target}")
         return DrawerPromotion(0, messages)
 
-    def remove_entry(self, selector: str, *, force: bool = False) -> DrawerRemoval:
+    def remove_entry(
+        self,
+        selector: str,
+        *,
+        force: bool = False,
+        reason: str | None = None,
+        refs: list[str] | None = None,
+    ) -> DrawerRemoval:
         """Remove one drawer file, its tracking, and its bullets on the drawer board.
 
         Every other reference to it (``sldb.api.referrers`` over the desk graph) is left as it
@@ -156,7 +196,16 @@ class DrawerService:
         leave active work pointing at a file someone still expects to exist.
         """
         try:
-            source = self.resolve_drawer_source(selector)
+            plan = self.resolve_plan_dir(selector, by_name=False)
+            if plan is not None:
+                return self._remove_plan(plan, reason=reason, refs=refs)
+            try:
+                source = self.resolve_drawer_source(selector)
+            except FileNotFoundError:
+                plan = self.resolve_plan_dir(selector)
+                if plan is None:
+                    raise
+                return self._remove_plan(plan, reason=reason, refs=refs)
         except (FileNotFoundError, ValueError) as exc:
             return DrawerRemoval(1, [f"Error: {exc}"])
 
@@ -187,12 +236,85 @@ class DrawerService:
             # Read after the Board lost its bullets: what is left still names the entry once it is gone.
             dangling = dangling_referrers(self.root, source)
             doc_access.delete_doc(self.root, source)
+            assets = self._issue_assets_dir(source)
+            removed_assets = None
+            if assets is not None and not self._assets_referenced(assets, source):
+                removed_assets = self._delete_tree(assets, transaction)
         alert_dangling(relative, dangling)
 
         messages = [f"Removed drawer entry {relative}"]
         if board_changed:
             messages.append(f"Removed its bullets from {board.relative_to(self.root).as_posix()}")
+        if removed_assets:
+            messages.append(f"Removed its assets {removed_assets}")
+        messages.extend(self._registration(reason, refs))
         return DrawerRemoval(0, messages)
+
+    @staticmethod
+    def _registration(reason: str | None, refs: list[str] | None) -> list[str]:
+        lines: list[str] = []
+        clean_reason = " ".join((reason or "").split())
+        if clean_reason:
+            lines.append(f"Reason: {clean_reason}")
+        clean_refs = [ref.strip() for ref in refs or [] if ref.strip()]
+        if clean_refs:
+            lines.append(f"Refs: {', '.join(clean_refs)}")
+        return lines
+
+    def _remove_plan(self, plan: Path, *, reason: str | None, refs: list[str] | None) -> DrawerRemoval:
+        """Remove a whole plan directory: its files, their tracking and the drawer Board bullets naming the plan."""
+        relative = plan.relative_to(self.root).as_posix()
+        board = self.desk_root / "drawer" / "tasks" / "Board.md"
+        board_changed = False
+        with doc_access.desk_transaction(self.root) as transaction:
+            if board.exists():
+                original = board.read_text(encoding="utf-8")
+                updated = self._without_entry_bullets(original, plan.name)
+                if updated != original:
+                    if transaction is not None:
+                        transaction.record(board)
+                    board.write_text(updated, encoding="utf-8")
+                    board_changed = True
+            self._delete_tree(plan, transaction)
+        messages = [f"Removed drawer plan {relative}"]
+        if board_changed:
+            messages.append(f"Removed its bullets from {board.relative_to(self.root).as_posix()}")
+        messages.extend(self._registration(reason, refs))
+        return DrawerRemoval(0, messages)
+
+    def _delete_tree(self, directory: Path, transaction: Any) -> str:
+        """Delete every file under directory (tracked ones through the store), then the empty folders."""
+        for path in sorted(p for p in directory.rglob("*") if p.is_file()):
+            doc_access.delete_doc(self.root, path)
+        for folder in sorted((p for p in directory.rglob("*") if p.is_dir()), reverse=True):
+            folder.rmdir()
+        directory.rmdir()
+        return directory.relative_to(self.root).as_posix()
+
+    def _issue_assets_dir(self, source: Path) -> Path | None:
+        """desk/drawer/issues/assets/<stem>/ for a drawer issue, when it exists."""
+        issues_root = self.desk_root / "drawer" / "issues"
+        if source.parent != issues_root.resolve():
+            return None
+        assets = issues_root / "assets" / source.stem
+        return assets.resolve() if assets.is_dir() else None
+
+    def _assets_referenced(self, assets: Path, issue: Path) -> bool:
+        """True when a desk document other than the removed issue and the drawer Board mentions the assets folder."""
+        needle = f"assets/{assets.name}/"
+        skip = {issue.resolve(), (self.desk_root / "drawer" / "tasks" / "Board.md").resolve()}
+        for path in self.desk_root.rglob("*"):
+            if not path.is_file() or path.suffix not in {".md", ".yml", ".yaml"}:
+                continue
+            resolved = path.resolve()
+            if resolved in skip or assets in resolved.parents:
+                continue
+            try:
+                if needle in path.read_text(encoding="utf-8"):
+                    return True
+            except (OSError, UnicodeDecodeError):
+                continue
+        return False
 
     def _tasks_recording(self, relative: str) -> list[str]:
         """Active task ids in desk/tasks/ whose from_drawer points at relative."""

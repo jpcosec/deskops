@@ -373,3 +373,78 @@ def test_drawer_remove_untracks_the_entry_from_the_store(tmp_path: Path) -> None
 
     assert not entry.exists()
     assert _tracked_names(tmp_path) == []
+
+
+# ── drawer remove: plans, assets, yml entries, reason/ref ────────────────────
+
+
+def test_drawer_remove_retires_a_whole_plan_by_name_and_by_path(tmp_path: Path) -> None:
+    _install_desk(tmp_path)
+    board = _drawer_board(tmp_path)
+    board.write_text(board.read_text(encoding="utf-8") + "- `mi-plan` — plan bullet\n", encoding="utf-8")
+    for name in ("mi-plan", "otro-plan"):
+        plan = tmp_path / "desk" / "drawer" / "plans" / name
+        (plan / "nodes").mkdir(parents=True)
+        (plan / "dag.yaml").write_text("nodes: []\n", encoding="utf-8")
+        (plan / "nodes" / "n01.md").write_text("# n01\n", encoding="utf-8")
+
+    assert main(["drawer", "remove", "mi-plan", "--root", str(tmp_path)]) == 0
+    assert not (tmp_path / "desk" / "drawer" / "plans" / "mi-plan").exists()
+    assert "mi-plan" not in board.read_text(encoding="utf-8")
+    assert main(["drawer", "remove", "desk/drawer/plans/otro-plan", "--root", str(tmp_path)]) == 0
+    assert not (tmp_path / "desk" / "drawer" / "plans" / "otro-plan").exists()
+
+
+def test_drawer_remove_of_an_issue_removes_its_assets(tmp_path: Path) -> None:
+    _install_desk(tmp_path)
+    issues = tmp_path / "desk" / "drawer" / "issues"
+    (issues / "assets" / "issue-a").mkdir(parents=True)
+    (issues / "assets" / "issue-a" / "shot.png").write_bytes(b"png")
+    (issues / "assets" / "issue-b").mkdir(parents=True)
+    (issues / "assets" / "issue-b" / "shot.png").write_bytes(b"png")
+    (issues / "issue-a.md").write_text("# A\n\n![x](assets/issue-a/shot.png)\n", encoding="utf-8")
+    (issues / "issue-b.md").write_text("# B\n\n![x](assets/issue-b/shot.png)\n", encoding="utf-8")
+    (tmp_path / "desk" / "tasks" / "task-ref.md").write_text("# Ref\n\nSee assets/issue-b/shot.png\n", encoding="utf-8")
+
+    assert main(["drawer", "remove", "issue-a", "--root", str(tmp_path)]) == 0
+    assert not (issues / "assets" / "issue-a").exists()
+    assert main(["drawer", "remove", "issue-b", "--root", str(tmp_path)]) == 0
+    assert (issues / "assets" / "issue-b" / "shot.png").exists()
+
+
+def test_drawer_remove_resolves_a_yml_entry_by_stem(tmp_path: Path) -> None:
+    _install_desk(tmp_path)
+    entry = tmp_path / "desk" / "drawer" / "features" / "macro-01-cli-gateway.yml"
+    entry.parent.mkdir(parents=True)
+    entry.write_text("title: macro\n", encoding="utf-8")
+
+    assert main(["drawer", "remove", "macro-01-cli-gateway", "--root", str(tmp_path)]) == 0
+    assert not entry.exists()
+
+
+def test_drawer_remove_records_reason_and_ref(tmp_path: Path, capsys) -> None:
+    _install_desk(tmp_path)
+    _drawer_file(tmp_path, "tasks/task-loose-idea.md")
+    capsys.readouterr()
+
+    assert main(["drawer", "remove", "loose-idea", "--reason", "Superseded", "--ref", "abc123", "--root", str(tmp_path)]) == 0
+    out = capsys.readouterr().out
+    assert "Reason: Superseded" in out
+    assert "Refs: abc123" in out
+
+
+def test_retire_accepts_an_orphan_issue_asset(tmp_path: Path) -> None:
+    _install_desk(tmp_path)
+    assets = tmp_path / "desk" / "drawer" / "issues" / "assets" / "gone-issue"
+    assets.mkdir(parents=True)
+    shot = assets / "shot.png"
+    shot.write_bytes(b"png")
+    (tmp_path / "desk" / "drawer" / "issues" / "alive.md").write_text("# Alive\n", encoding="utf-8")
+    live = tmp_path / "desk" / "drawer" / "issues" / "assets" / "alive"
+    live.mkdir()
+    (live / "a.png").write_bytes(b"png")
+
+    argv = ["retire", "--reason", "Orphan", "--ref", "desk/drawer/README.md", "--root", str(tmp_path)]
+    assert main(["retire", str(live / "a.png"), *argv[1:]]) != 0
+    assert main(["retire", str(shot), *argv[1:]]) == 0
+    assert not shot.exists()

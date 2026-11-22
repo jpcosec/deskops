@@ -1,13 +1,19 @@
-usage: deskops drawer remove [-h] [--root ROOT] [--force] selector
+usage: deskops drawer remove [-h] [--root ROOT] [--force] [--reason REASON]
+                             [--ref REF]
+                             selector
 
-Remove one drawer entry, its tracking, and its bullets on the drawer board.
+Remove one drawer entry (a file, an issue with its assets, or a whole plan
+directory), its tracking, and its bullets on the drawer board.
 
 positional arguments:
-  selector     Drawer file selector. Selectors accept an exact id, filename,
-               stem, or unique slug fragment where supported.
+  selector         Drawer file selector. Selectors accept an exact id,
+                   filename, stem, or unique slug fragment where supported.
 
 options:
-  -h, --help   show this help message and exit
-  --root ROOT  Target repository root
-  --force      Remove even when a task in desk/tasks/ records the entry in
-               from_drawer.
+  -h, --help       show this help message and exit
+  --root ROOT      Target repository root
+  --force          Remove even when a task in desk/tasks/ records the entry in
+                   from_drawer.
+  --reason REASON  Why the entry is removed; printed with the result.
+  --ref REF        Commit or file that replaces or resolves the entry;
+                   repeatable.

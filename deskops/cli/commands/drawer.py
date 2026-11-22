@@ -12,7 +12,12 @@ class DrawerCLI:
     def run(self, args: Any) -> int:
         root = Path(args.root).resolve()
         if args.drawer_command == "remove":
-            result = DrawerService(root).remove_entry(args.selector, force=args.force)
+            result = DrawerService(root).remove_entry(
+                args.selector,
+                force=args.force,
+                reason=args.reason,
+                refs=list(args.ref or []),
+            )
             for message in result.messages:
                 print(message)
             return result.exit_code

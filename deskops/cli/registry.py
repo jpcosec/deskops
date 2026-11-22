@@ -1004,7 +1004,7 @@ Examples:
         ),
         Command(
             path=("drawer", "remove"),
-            help="Remove one drawer entry, its tracking, and its bullets on the drawer board.",
+            help="Remove one drawer entry (a file, an issue with its assets, or a whole plan directory), its tracking, and its bullets on the drawer board.",
             args=(
                 A("selector", help=f"Drawer file selector. {SELECTOR_HELP}"),
                 ROOT_ARG_NO_PERIOD,
@@ -1012,6 +1012,12 @@ Examples:
                     "--force",
                     action="store_true",
                     help="Remove even when a task in desk/tasks/ records the entry in from_drawer.",
+                ),
+                A("--reason", help="Why the entry is removed; printed with the result."),
+                A(
+                    "--ref",
+                    action="append",
+                    help="Commit or file that replaces or resolves the entry; repeatable.",
                 ),
             ),
             handler="deskops.cli.commands.drawer:DrawerCLI",
