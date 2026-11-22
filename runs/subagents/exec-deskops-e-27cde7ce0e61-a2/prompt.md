@@ -1,7 +1,18 @@
+Task: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
+Title: doctor no alerta como lost los recibos de una tarea cerrada
+Status: active
+Current node: ritual-execution
+Task type: task.code
+From drawer: desk/drawer/tasks/task-doctor-los-recibos-de-una-tarea-cerrada-quedan-como-alerta-lost.md
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T00:17:54Z'
+  at: '2026-11-21T23:36:39Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
@@ -11,7 +22,7 @@ tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
+current_node: ritual-execution
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-ce3a6e33bbbc FALLA sobre c0df7045.
@@ -28,24 +39,15 @@ history:
   de tareas con commit ''closeout:''; anotar el conteo antes y después en el run dir.
   Correr tests/test_doctor_*.py. Commit desde tu worktree con ''git commit -- <rutas>''
   y el trailer Task-Id.'
-- task_activates
 references:
-- deskops/cli/commands/doctor.py
-- deskops/doctor_findings.py
-- tests/test_doctor_lost_receipts.py
-- 91f44d0d1710c2c428d5edebb8a9e8424c42f89f
-- c0df7045058dc5c4ddd6d5f143f9fae4038cd47f
+- desk/inbox/20261121-032540-unclear-doctor-alertas-subject-lost-de-revisiones-de-tareas-cerradas-que-desk-update-no-repara.md
 depends_on: []
 pills: []
-files:
-- deskops/cli/commands/doctor.py
-- deskops/doctor_findings.py
-- tests/test_doctor_lost_receipts.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
+atoms: []
 from_drawer: desk/drawer/tasks/task-doctor-los-recibos-de-una-tarea-cerrada-quedan-como-alerta-lost.md
 ---
 
@@ -86,3 +88,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 test: cerrar una tarea con recibos preflight/bundle y correr doctor no da alertas lost; borrar una tarea sin cierre si las da; un recibo lost preexistente de una tarea con closeout en git no alerta; el mensaje de la alerta restante no menciona desk update --apply salvo que ese comando la repare.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-27cde7ce0e61-a2`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-27cde7ce0e61-a2
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

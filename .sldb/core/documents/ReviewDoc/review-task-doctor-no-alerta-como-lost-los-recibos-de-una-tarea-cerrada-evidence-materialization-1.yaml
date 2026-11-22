@@ -1,0 +1,37 @@
+name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-materialization-1
+path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/evidence-materialization-1.md
+source_hash: 87a73088b9157dbbce8c00669f68564cce79423b718f27eb2d70bc3942121461
+content_hash: aeb890060577f8b5d79d1621ca9de991b6788c738cb5f9aa071b695e81299b60
+field_hashes:
+  id: 3d01c3bd0eac689b57c81009f3880714c0192bb0b520fe020b0e04c1e939c434
+  title: 4bade22c550e6896ff7020d4de8b2acd5997f87c7da711f38ce16facbbbb2d88
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: badbc1885ac8bbc364b1223f4f3c83749e37342c9191f78671b72ee4aa2a7a62
+  subject: c617956e7a086b5df97cf1c70cb939606cfba48ec0ad34b5e69275650adb4dec
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 4ebbb8444e0787070264e5be7530e709ac1c928f2069f2f64aa2bd93b6f6dd15
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: c3b7e2d10050a7c197b5c187e8262708240cc741ecbd3047afe0d6f0386d6c1b
+  created_at: 5875add7667956d9e4b764cc5f167225fbc0a14210af62eb896ae07c1b5b0dd2
+  disposed_at: 5875add7667956d9e4b764cc5f167225fbc0a14210af62eb896ae07c1b5b0dd2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 202b9e6203cb655adec6e85e2701a8d5116844aff18ae13e40aea2a293930dc5
+  disposition: 6a882f6ed2024f9ca565b588e8a1dfe2a2decb511da4fea94da3b7690cab3e5b
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T00:18:49Z'
+  authority: generated
+  via: create_document

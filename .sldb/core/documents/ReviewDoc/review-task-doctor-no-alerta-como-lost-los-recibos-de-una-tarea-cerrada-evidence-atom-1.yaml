@@ -1,0 +1,37 @@
+name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-atom-1
+path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/evidence-atom-1.md
+source_hash: a3387fb3442bea82d90180e69b78cc9e843acfc76e7e2b397a16de92871544e8
+content_hash: 42638fee1aac5d34e4b848bc620c93b34095e852cdf1cee3b608ea31a057f93e
+field_hashes:
+  id: 47a4b6b18eba1e57df0538cb3ac4883b60e2217156eb14a3c1abb931f9bd3682
+  title: 2f8b07e22f079bbcdaf9aa427ae15666a72b0f22826d7ad99980da904a18ae14
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: b0cb08b7f448d364f31be34324d9c7d9aa378814585d2ab68b51dd40080b0fa0
+  subject: c617956e7a086b5df97cf1c70cb939606cfba48ec0ad34b5e69275650adb4dec
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 3e653746dc09173abc4f89028b30efadb76a0d988d925c920759bce5fbec8400
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0921c8c551e54a10500d48147a266d8276f6277269772b4ae4bb300c47927147
+  created_at: 5875add7667956d9e4b764cc5f167225fbc0a14210af62eb896ae07c1b5b0dd2
+  disposed_at: 5875add7667956d9e4b764cc5f167225fbc0a14210af62eb896ae07c1b5b0dd2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 9f87a1cf76b49a695dc5a5e4a256cc290c570ad01bfcbb43d18719310e872557
+  disposition: 0eb6388e1cb99abac5f5df442da15d288159c7fe33d0f2b2e8a26339d57268e0
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T00:18:46Z'
+  authority: generated
+  via: create_document

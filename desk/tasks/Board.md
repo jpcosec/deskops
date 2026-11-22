@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T00:14:59Z'
+  at: '2026-11-22T00:23:11Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -15,7 +15,6 @@ tasks:
 - desk/tasks/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas.md
 - desk/tasks/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar.md
 - desk/tasks/task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store.md
-- desk/tasks/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.md
 - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
 - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
 - desk/tasks/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check.md
@@ -109,7 +108,6 @@ _Generated from the task references above._
 - supertareas y alta en lote: campo parent en TaskDoc y add task --from-yaml con varias tareas [draft] - TaskDoc tiene un campo parent (id de otra tarea) que doctor y el tablero respetan, y deskops add task --from-yaml acepta una lista de tareas y las crea en una sola transaccion (todas o ninguna).
 - rol de desk/hitl: about, faq y doctor documentan cada carpeta del desk y doctor avisa si hitl tiene archivos que no son para el humano [draft] - deskops about y deskops faq describen cada carpeta de desk/ (incluida hitl/), y doctor emite una alerta cuando desk/hitl contiene archivos que no son para el humano.
 - init en un worktree usa el nombre del repo y doctor lee el pythonpath del store [draft] - deskops init en un worktree de git deriva project_identity del repo principal (git common dir o remoto), no de la carpeta; deskops doctor usa el pythonpath que declara el store.
-- doctor no alerta como lost los recibos de una tarea cerrada [active] - Un recibo cuya tarea se cerro (closeout registrado en git o en el store) no produce alerta lost en doctor: el closeout re-ancla los recibos al commit de cierre o los marca archivados; solo los recibos de tareas que desaparecieron sin cierre siguen alertando. Los recibos lost ya existentes de tareas cerradas (p. ej. ~107 en el desk de IR, inbox 20261121-032540) dejan de alertar sin intervencion manual, y el texto de la alerta de doctor nombra un comando que de verdad la resuelve: hoy sugiere deskops desk update --apply, que responde 'Desk is up to date' sin reparar nada.
 - advance y closeout no derraman reglas de activacion ni runtimes centrales sin trackear en el desk consumidor [draft] - Las semillas centrales (deskops/data/rules, runtime por defecto) se leen del paquete en tiempo de ejecucion, o se escriben solo por deskops desk update --apply y quedan trackeadas y declaradas; nunca como archivos sueltos sin trackear tras advance o closeout.
 - closeout commit stagea solo lo que escribio el cierre: sin git add -A sobre .sldb y sin Nothing staged mudo [draft] - `deskops closeout commit` agrega al commit exactamente las rutas que el cierre escribio (TaskDoc, desk/tasks/Board.md, archivos de .sldb/core y .sldb/store.yaml creados o modificados por la transaccion del cierre) mas las de --paths; nunca un archivo de .sldb que ya estaba sin trackear antes del cierre. Sin --paths el cierre funciona con esas rutas; si aun asi no hay nada que stagear, el error lista las rutas modificadas y sugiere --paths.
 - Los 4 atomos de salud del desk dejan de dar store/structural-noise en sldb stores check [draft] - Los 4 atomos quedan sin encabezados fuera del modelo (AtomDoc declara id, title, five_wh_one_plus, answer y tags; five_wh_one_plus y title no cambian). Cada seccion no-Tags pasa al final de answer como un parrafo que empieza con su encabezado original en ingles y en negrita (p. ej. '**Boundary Rationale:** ...'), en el mismo orden; la seccion Related Atoms queda igual, como '**Related Atoms:** atom-a, atom-b'. La seccion Tags NO va a answer: sus valores se agregan al campo tags al final de los existentes, sin duplicados. Se edita con deskops edit atom <id> answer "$(cat <archivo en /dev/shm>)" --root . y deskops edit atom <id> tags '<lista JSON>' --root .. Sin perdida: cada linea no vacia de las secciones originales que no sean encabezados ni Tags (git show HEAD:<ruta del atomo>) aparece en el answer nuevo, y cada tag de la seccion Tags esta en el campo tags. Pase: sldb stores check no emite ningun store/structural-noise para estos 4 atomos (otras alertas no cuentan).
