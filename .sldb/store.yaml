@@ -2780,7 +2780,11 @@ policy: {}
 tag_models:
 - AtomDoc
 - ProtoAtomDoc
+- TaskDoc
 tag_namespaces:
+- name: artifact
+  hierarchical: false
+  folder_axis: false
 - name: domain
   hierarchical: true
   folder_axis: false
@@ -2788,11 +2792,17 @@ tag_namespaces:
     model: CrossroadDoc
     field: path
     value: bare
+- name: host
+  hierarchical: false
+  folder_axis: false
 - name: layer
   hierarchical: true
   folder_axis: false
 - name: pattern
   hierarchical: true
+  folder_axis: false
+- name: source
+  hierarchical: false
   folder_axis: false
 - name: system
   hierarchical: true
@@ -2801,5 +2811,5 @@ tag_namespaces:
   hierarchical: true
   folder_axis: false
 - name: workspace
-  hierarchical: true
+  hierarchical: false
   folder_axis: false
