@@ -1,0 +1,25 @@
+name: materialization-drawer-deskops-services-retire-py
+path: desk/materializations/materialization-drawer-deskops-services-retire-py.md
+source_hash: b92933597a0e65e30b7776ed7e54c255ba9a061e980927538c1e3369a6c5a618
+content_hash: a927db3be53fe330b913e66ae4a8ae64c5ebc21e31321e2a59c7342388f0743f
+field_hashes:
+  id: 658c83edea1b4163258aaf53dc2eb56241cc09e3755629adc94532950feee7a3
+  title: e93f989892d50438c4650670e4bd57412327a87f1d3116dc14cc0011d75fc9b7
+  source_atoms: dce2a65e8107b2cecfa38d43ee9b090f166e0bd445adbfaa7cfa8014e41fc694
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 849b27f5fbf0c8900436cfbbea516c97adc8a0013d93241a858e32b473544d40
+  intent: 2e780a34b8d60ab1cca69478b9616b07c7bd01fe45ebbc8896af0d9359d03b1f
+  validation: 25c1cbaa2233e82aa5d747c7fbe9d3a59121a0d7de4e8f79dc3c7ad37caa44e4
+  tags: 55854c9d947a497629af3819a20a0998eaa233722b852ffb068228ea0fe7121a
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:drawer
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T04:57:49Z'
+  authority: generated
+  via: create_document

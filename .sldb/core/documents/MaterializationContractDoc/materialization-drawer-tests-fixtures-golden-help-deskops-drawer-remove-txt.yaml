@@ -1,0 +1,25 @@
+name: materialization-drawer-tests-fixtures-golden-help-deskops-drawer-remove-txt
+path: desk/materializations/materialization-drawer-tests-fixtures-golden-help-deskops-drawer-remove-txt.md
+source_hash: ed16f80e6f67f107226c5a91b31a2e16cdd8a48adbc1dfec476515d4c05f5e1e
+content_hash: 38ce5aa8e01ec9fe8c981e6ad305343531c10fee4fa737f92df20deecea9d6f5
+field_hashes:
+  id: 73a6f37d406936825fe5185f4c402d25f663c5e6cb8ec569d2ba5e5833c28e6b
+  title: dd379853d7de33828dd24646a666849c847d4a9dd2871e731606426cec3021a5
+  source_atoms: dce2a65e8107b2cecfa38d43ee9b090f166e0bd445adbfaa7cfa8014e41fc694
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: cae2ba5e7f9f227e358d6b126c5e0ff82d13c051807e9e1f190275188c4ea18b
+  intent: 3df0a86a176585840dd77434b6308281052d82cde6a80c0f02530da3ed89f752
+  validation: 25c1cbaa2233e82aa5d747c7fbe9d3a59121a0d7de4e8f79dc3c7ad37caa44e4
+  tags: 55854c9d947a497629af3819a20a0998eaa233722b852ffb068228ea0fe7121a
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:drawer
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T04:58:00Z'
+  authority: generated
+  via: create_document

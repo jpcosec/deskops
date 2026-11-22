@@ -437,6 +437,12 @@ include:
   - desk/materializations/materialization-doctor-deskops-cli-commands-doctor-py.md
   - desk/materializations/materialization-doctor-deskops-doctor-findings-py.md
   - desk/materializations/materialization-doctor-tests-test-doctor-lost-receipts-py.md
+  - desk/materializations/materialization-drawer-deskops-cli-commands-drawer-py.md
+  - desk/materializations/materialization-drawer-deskops-cli-registry-py.md
+  - desk/materializations/materialization-drawer-deskops-services-drawer-py.md
+  - desk/materializations/materialization-drawer-deskops-services-retire-py.md
+  - desk/materializations/materialization-drawer-tests-fixtures-golden-help-deskops-drawer-remove-txt.md
+  - desk/materializations/materialization-drawer-tests-test-inbox-promote-cli-gaps-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2511,6 +2517,14 @@ include:
     name: review-task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co-evidence-atom-1
   - path: desk/reviews/task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co/evidence-materialization-1.md
     name: review-task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co-evidence-materialization-1
+  - path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/evidence-tests-1.md
+    name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-evidence-tests-1
+  - path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/evidence-commit-1.md
+    name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-evidence-commit-1
+  - path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/evidence-atom-1.md
+    name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-evidence-atom-1
+  - path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/evidence-materialization-1.md
+    name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

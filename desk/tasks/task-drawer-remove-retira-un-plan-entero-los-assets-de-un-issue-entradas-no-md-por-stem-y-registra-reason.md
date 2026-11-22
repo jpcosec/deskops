@@ -1,29 +1,40 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:25:45Z'
+  at: '2026-11-22T04:57:08Z'
   authority: generated
   via: save_document_payload
 id: task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261116-055429-unclear-drawer-remove-deja-colgando-from-drawer-references-y-no-retira-planes-dag-yaml.md
-- desk/inbox/20261116-004719-unclear-drawer-remove-de-un-issue-deja-sus-assets-y-retire-los-rechaza-no-hay-verbo-para-darlos-de-baja.md
-- desk/inbox/20261116-005408-unclear-desk-sin-git-sldb-ui-supersede-tambi-n-hace-commit-drawer-remove-no-acepta-el-stem.md
-- desk/inbox/20261116-004657-unclear-desk-update-apply-en-desk-legacy-56-tareas-sin-migraci-n-masiva-y-5-modelos-legacy-sin-importar.md
+- deskops/cli/commands/drawer.py
+- deskops/cli/registry.py
+- deskops/services/drawer.py
+- deskops/services/retire.py
+- tests/fixtures/golden/help/deskops_drawer_remove.txt
+- tests/test_inbox_promote_cli_gaps.py
+- 89a0ea98cf6f8d1f6938fdfac2cd05b8aae5b65c
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/cli/commands/drawer.py
+- deskops/cli/registry.py
+- deskops/services/drawer.py
+- deskops/services/retire.py
+- tests/fixtures/golden/help/deskops_drawer_remove.txt
+- tests/test_inbox_promote_cli_gaps.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-y-entradas-no-md-por-stem-y-registra-reas
 ---
 
 # drawer remove retira un plan entero, los assets de un issue, entradas no .md por stem, y registra reason y ref
