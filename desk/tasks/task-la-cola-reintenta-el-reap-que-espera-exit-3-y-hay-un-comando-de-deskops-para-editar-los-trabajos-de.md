@@ -1,17 +1,50 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T19:44:03Z'
+  at: '2026-11-22T22:27:06Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 current_node: ritual-execution
-history: []
+history:
+- task_activates
+- 'task_returns_to_execution: Tester deskops-t-a5cf682dce3f FALLA sobre e95bdb13.
+  Lo funcional está bien: ''deskops queue job set dispatch-reap retry_exit_codes [3]
+  --json'' funciona, y tanto el template como desk/config.json tienen el retry. Faltan
+  dos registros del subcomando nuevo:
+
+
+  (1) tests/test_command_registry.py:
+
+  - test_registry_paths_match_help_goldens: sobran (''queue'', ''job'') y (''queue'',
+  ''job'', ''set'') frente a los goldens;
+
+  - test_mutating_commands_are_declared_explicitly: MUTATING_COMMANDS no declara (''queue'',
+  ''job'', ''set''). El grupo (''queue'', ''job'') no muta: decláralo igual que los
+  otros grupos.
+
+
+  (2) tests/test_output_goldens.py::test_help_goldens: help/deskops_queue.txt no lista
+  ''job'', y faltan los goldens de ''queue job'' y ''queue job set''.
+
+
+  Intento 2:
+
+  - agregar el subcomando a MUTATING_COMMANDS como los demás;
+
+  - regenerar los goldens de ayuda con ''python -m pytest -q tests/test_output_goldens.py
+  --update-golden'', y revisar con git status que solo cambien deskops_queue.txt y
+  los dos goldens nuevos;
+
+  - correr tests/test_command_registry.py, tests/test_output_goldens.py, tests/test_queue.py
+  y tests/test_queue_cli.py, y la suite con -n 4;
+
+  - commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
 references: []
 depends_on: []
 pills: []

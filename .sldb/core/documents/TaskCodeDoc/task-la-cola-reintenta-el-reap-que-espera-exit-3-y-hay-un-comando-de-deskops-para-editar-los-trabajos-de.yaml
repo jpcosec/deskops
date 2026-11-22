@@ -1,15 +1,15 @@
 name: task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de
 path: desk/tasks/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de.md
-source_hash: 058f4c66190f19969c2382c294c8dd717f8987ea4b52a0a579468d6a7ada06c4
-content_hash: 1be893b382fc32105b52a84f5c967df8214ad14f6c1f7eff2af4640d35181968
+source_hash: 288f76b6d53306731720b5d1217598c8550e275f65f9279081dd1b09d8f15c5e
+content_hash: 39a4a2927819a36393aa2b3dbb7ec66292a4c7c2ddc923de7d962945d7e29788
 field_hashes:
   title: 2cc8a1fd8ba765024d8e648d52ec730bcccf562f470baea346f48755aa5e4339
   id: 6a1dc17c816393373553e9b8f67ae4197b416ecdefecfcdff2ece5f67327a25d
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  history: 47c20bb72e296f49489b7230954e5ccd92525a0060aee0e5a9574c441bddbb34
   why: 0e281eaea3c46c6946000129a085cbc4368e26c56f5d328f3c97ec4d25b9c21a
   goal: d6d97b90dd1c001cfecabe746510ebc45e0bc07a810e478251f627af4cb5b75b
   scope: da90497931e71d8f2f116a454aa4d833ab609f6d6820b7096b4b21ff4fb7ca90
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T19:44:03Z'
+  at: '2026-11-22T22:27:06Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
