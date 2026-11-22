@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T00:14:55Z'
+  at: '2026-11-22T01:47:38Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/doctor_findings.py
+- tests/test_doctor_lost_receipts.py
+- 0b00985e1389d3b9440b3cf05b674e1f8bbb9bce
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/doctor_findings.py
+- tests/test_doctor_lost_receipts.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-la-alerta-lost-de-doctor-nombra-el-remedio-real
 ---
 
 # doctor: la alerta lost restante dice cómo repararla sin nombrar desk update --apply, y su test cierra con closeout commit real
