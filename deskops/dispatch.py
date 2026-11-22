@@ -422,6 +422,7 @@ def start(root: Path, role: str, task_id: str) -> int:
             kind=role_cfg.harness,
             agent_slug=name,
             run_dir=run_dir,
+            attempt=int(identity["attempt"]),
         )
     except Exception:
         leftover = root / run_dir
@@ -476,6 +477,14 @@ def start(root: Path, role: str, task_id: str) -> int:
         print(started.stderr.strip())
         if worktree is not None:
             _remove_worktree(root, name)
+    else:
+        from deskops.runtime.scion import confirm_scion_dispatch
+
+        if any(str(agent.get("name")) == name for agent in _list_agents(cfg)):
+            try:
+                confirm_scion_dispatch(root, run_dir)
+            except Exception as exc:  # noqa: BLE001 - confirmation is best effort
+                print(f"aviso: no se pudo confirmar el despacho de {name}: {exc}")
     print(f"agente {name} run_dir {run_dir}")
     return started.returncode
 

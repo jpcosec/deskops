@@ -948,6 +948,7 @@ def record_scion_run(
     run_dir: str | None = None,
     outcome: str = "in_progress",
     summary: str = "",
+    attempt: int = 1,
 ) -> Path:
     """Write the in_progress intent RunDoc for one Scion dispatch.
 
@@ -959,7 +960,13 @@ def record_scion_run(
     """
     now = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     run_dir = run_dir or f"runs/subagents/{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}-{_slug(task_id)}"
-    run_id = f"run-{_slug(agent_slug)}"
+    if isinstance(attempt, bool) or attempt not in (1, 2):
+        raise ValueError(f"attempt must be 1 or 2, got {attempt!r}")
+    slug = _slug(agent_slug)
+    if attempt == 2 and not slug.endswith("-a2"):
+        slug += "-a2"
+    # attempt 1 is the bare slug; a child name already carries its -a2 suffix.
+    run_id = f"run-{slug}"
     payload = {
         "id": run_id,
         "title": f"Scion agent {agent_slug} on {task_id}",
@@ -972,7 +979,10 @@ def record_scion_run(
         "kind": kind,
         "run_dir": run_dir,
         "herdr_pane_id": "",
-        "session_path": f"scion://agent/{agent_slug}",
+        "session_path": f"scion://agent/{slug}",
+        "intent_at": now,
+        "dispatch_confirmed_at": "",
+        "external_ref": f"scion://agent/{slug}",
         "session_sha256": "",
         "started_at": now,
         "ended_at": "" if outcome == "in_progress" else now,
@@ -988,3 +998,19 @@ def record_scion_run(
         )
     doc_access.create_doc(root, path, RunDoc, payload, run_id)
     return path
+
+
+def confirm_scion_dispatch(root: Path, run_dir: str) -> bool:
+    """Set ``dispatch_confirmed_at`` on the RunDoc of ``run_dir`` once the agent was observed in Scion.
+
+    Returns False when there is no RunDoc there or it is already confirmed.
+    """
+    path = root / Path(run_dir) / "run.md"
+    if not path.is_file():
+        return False
+    payload = doc_access.read_doc(path, RunDoc)
+    if payload.get("dispatch_confirmed_at"):
+        return False
+    payload["dispatch_confirmed_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    doc_access.write_doc(root, path, RunDoc, payload)
+    return True

@@ -635,22 +635,81 @@ class ClosureService:
         if session_sha256:
             trailers.append(f"Session-Sha256: {session_sha256}")
 
-        return self._close(
-            task_id,
-            route="run",
-            subject=message or self._default_subject(task_id),
-            trailers=trailers,
-            paths=staged_paths,
-            explicit_paths=True,
-            extra_stage_paths=[rel_run_dir],
-            index_entry={
-                "task_id": task_id,
-                "run_id": run_id,
-                "run_dir": rel_run_dir,
-                "session_sha256": session_sha256,
-            },
-            success_line=f"Closing commit {{commit}} linked to run {rel_run_dir}",
-        )
+        previous = self._update_run_doc(rel_run_dir)
+        try:
+            outcome = self._close(
+                task_id,
+                route="run",
+                subject=message or self._default_subject(task_id),
+                trailers=trailers,
+                paths=staged_paths,
+                explicit_paths=True,
+                extra_stage_paths=[rel_run_dir],
+                index_entry={
+                    "task_id": task_id,
+                    "run_id": run_id,
+                    "run_dir": rel_run_dir,
+                    "session_sha256": session_sha256,
+                },
+                success_line=f"Closing commit {{commit}} linked to run {rel_run_dir}",
+            )
+        except Exception:
+            self._restore_run_doc(rel_run_dir, previous)
+            raise
+        if outcome.exit_code != 0:
+            self._restore_run_doc(rel_run_dir, previous)
+        else:
+            # The hash cannot ride inside the commit it names: it lands in the working tree.
+            self._finish_run_doc(rel_run_dir, self._git("rev-parse", "HEAD"))
+        return outcome
+
+    def _restore_run_doc(self, rel_run_dir: str, previous: dict[str, Any] | None) -> None:
+        if previous is None:
+            return
+        from deskops.models import RunDoc
+
+        try:
+            doc_access.write_doc(self.root, self.root / rel_run_dir / "run.md", RunDoc, previous)
+        except Exception:  # noqa: BLE001
+            return
+
+    def _update_run_doc(self, rel_run_dir: str) -> dict[str, Any] | None:
+        """Mark the RunDoc whose run_dir is ``rel_run_dir`` as finished (outcome, ended_at).
+
+        Only a run-dir close reaches this; resolved-by has no run dir. commit_sha
+        is filled once the commit exists (see ``_finish_run_doc``).
+        """
+        from deskops.models import RunDoc
+
+        path = self.root / rel_run_dir / "run.md"
+        if not path.is_file():
+            return None
+        try:
+            payload = doc_access.read_doc(path, RunDoc)
+            if payload.get("run_dir") != rel_run_dir:
+                return None
+            previous = dict(payload)
+            payload["outcome"] = "success"
+            payload["ended_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+            doc_access.write_doc(self.root, path, RunDoc, payload)
+            return previous
+        except Exception:  # noqa: BLE001 - a malformed RunDoc must not block the close
+            return None
+
+    def _finish_run_doc(self, rel_run_dir: str, commit: str) -> None:
+        from deskops.models import RunDoc
+
+        path = self.root / rel_run_dir / "run.md"
+        if not path.is_file():
+            return
+        try:
+            payload = doc_access.read_doc(path, RunDoc)
+            if payload.get("run_dir") != rel_run_dir:
+                return
+            payload["commit_sha"] = commit
+            doc_access.write_doc(self.root, path, RunDoc, payload)
+        except Exception:  # noqa: BLE001
+            return
 
     def close_auto(self, payload: dict[str, Any], task_path: Path) -> None:
         """Legacy hook: close a task from its payload, committing only its own files."""

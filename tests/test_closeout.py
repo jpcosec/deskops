@@ -1463,3 +1463,54 @@ def test_closeout_commit_skips_a_registered_run_doc_without_a_run_md(
     committed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
     assert "feature.py" in committed
     assert not any(path.startswith("runs/subagents/exec-gone") for path in committed)
+
+
+def test_closeout_with_run_dir_updates_only_the_matching_attempt_rundoc(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from closeout_desk import store_repo
+    from deskops.models import RunDoc
+    from deskops.runtime.scion import record_scion_run
+    from sldb.runtime.validation import extract_model_data
+
+    root = store_repo(lifecycle_desk)
+    dirs = {1: "runs/subagents/exec-a1", 2: "runs/subagents/exec-a2"}
+    for attempt, rd in dirs.items():
+        record_scion_run(
+            root, task_id="task-x", role_id="role-deskops-executor", kind="claude",
+            agent_slug="deskops-e-abc123abc123", run_dir=rd, attempt=attempt,
+        )
+    for fname in ["board.txt", "task.txt", "git-status.txt", "result-summary.md"]:
+        (root / dirs[2] / fname).write_text(f"{fname}\n", encoding="utf-8")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    capsys.readouterr()
+
+    rc = _closeout_main(root, "--run-dir", dirs[2], "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    first = extract_model_data(RunDoc, (root / dirs[1] / "run.md").read_text(encoding="utf-8"))
+    second = extract_model_data(RunDoc, (root / dirs[2] / "run.md").read_text(encoding="utf-8"))
+    assert first["outcome"] == "in_progress" and first["ended_at"] == "" and first["commit_sha"] == ""
+    assert second["outcome"] == "success" and second["ended_at"]
+    assert second["commit_sha"] == _git(root, "rev-parse", "HEAD")
+
+
+def test_closeout_no_run_leaves_every_rundoc_alone(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from closeout_desk import store_repo
+    from deskops.runtime.scion import record_scion_run
+
+    root = store_repo(lifecycle_desk)
+    path = record_scion_run(
+        root, task_id="task-x", role_id="role-deskops-executor", kind="claude",
+        agent_slug="solo", run_dir="runs/subagents/exec-solo",
+    )
+    before = path.read_text(encoding="utf-8")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    capsys.readouterr()
+
+    rc = _closeout_main(root, "--no-run", "--reason", "sin corrida", "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    assert path.read_text(encoding="utf-8") == before

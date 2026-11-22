@@ -760,3 +760,62 @@ def test_executor_and_tester_agents_md_build_their_own_py312_venv(
     assert f'uv pip install -e "{ws}/desk[dev]" -e {ws}/sldb' in text
     assert 'PATH="/tmp/ws-venv/bin:$PATH"' in text and "unset PYTHONPATH" in text
     assert text.index("Python environment") < text.index("Recover state first")
+
+
+def test_two_attempts_get_two_rundocs_with_intent_and_external_ref(tmp_path: Path) -> None:
+    first = record_scion_run(
+        tmp_path, task_id="task-a", role_id="role-deskops-executor", kind="claude",
+        agent_slug="deskops-e-abc123abc123", run_dir="runs/subagents/exec-1", attempt=1,
+    )
+    second = record_scion_run(
+        tmp_path, task_id="task-a", role_id="role-deskops-executor", kind="claude",
+        agent_slug="deskops-e-abc123abc123", run_dir="runs/subagents/exec-2", attempt=2,
+    )
+    one = extract_model_data(RunDoc, first.read_text(encoding="utf-8"))
+    two = extract_model_data(RunDoc, second.read_text(encoding="utf-8"))
+    assert one["id"] == "run-deskops-e-abc123abc123"
+    assert two["id"] == "run-deskops-e-abc123abc123-a2"
+    assert two["external_ref"] == "scion://agent/deskops-e-abc123abc123-a2"
+    assert one["intent_at"] and one["dispatch_confirmed_at"] == ""
+    assert one["outcome"] == "in_progress"
+
+
+def test_confirm_scion_dispatch_sets_the_confirmation_once(tmp_path: Path) -> None:
+    from deskops.runtime.scion import confirm_scion_dispatch
+
+    run_dir = "runs/subagents/exec-1"
+    path = record_scion_run(
+        tmp_path, task_id="task-a", role_id="role-deskops-executor", kind="claude",
+        agent_slug="deskops-e-abc123abc123", run_dir=run_dir,
+    )
+    assert confirm_scion_dispatch(tmp_path, run_dir) is True
+    assert confirm_scion_dispatch(tmp_path, run_dir) is False
+    data = extract_model_data(RunDoc, path.read_text(encoding="utf-8"))
+    assert data["dispatch_confirmed_at"] and data["intent_at"]
+
+
+def test_a_rundoc_without_the_new_fields_still_reads() -> None:
+    old = """---
+id: run-old
+task_id: task-a
+role_id: role-x
+kind: claude
+run_dir: runs/subagents/old
+herdr_pane_id: ''
+session_path: ''
+session_sha256: ''
+started_at: '2026-10-01T00:00:00+00:00'
+ended_at: ''
+outcome: in_progress
+commit_sha: ''
+tags: []
+---
+
+# Old
+
+## Summary
+
+old
+"""
+    data = extract_model_data(RunDoc, old)
+    assert data["id"] == "run-old"
