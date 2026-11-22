@@ -1,25 +1,33 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T02:33:30Z'
+  at: '2026-11-22T10:49:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- a8a7c3e8b2fa3d853ca0470e005eebc44f923991
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-dispatch-start-tester-espera-a-que-la-rama-del-ejecutor-este-integrada
 ---
 
 # dispatch start tester no lanza si la rama del ejecutor de la tarea todavía no está integrada
