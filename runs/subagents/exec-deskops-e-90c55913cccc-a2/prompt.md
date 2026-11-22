@@ -1,7 +1,20 @@
+Task: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
+Title: deskops declara el namespace de tags host para marcar en que maquina corre cada tarea
+Status: active
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T20:03:08Z'
+  at: '2026-11-22T13:13:42Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
@@ -11,7 +24,7 @@ tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
+current_node: ritual-execution
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-52556b8a9207 FALLA.
@@ -45,32 +58,22 @@ history:
   5. Correr los tests de la tarea y la suite con -n 4 (pytest-xdist ya está en [dev]).
 
   6. Commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
-- task_activates
 references:
-- deskops/atom_tags.py
-- deskops/data/templates/atoms/tag-namespaces.yaml
-- docs/workflow-policy-reference.md
-- tests/fixtures/golden/scaffold/init.json
-- tests/fixtures/golden/scaffold/update.json
-- tests/test_atom_tags.py
-- tests/test_domain_tree.py
-- 3b4c5ac8fff2660c95468fe24af7e9658468b60d
-- 5d10b2eb6284b96b27c9fc3bc7eeb8407644e682
+- desk/inbox/20261116-003533-suggestion-namespace-de-tags-host-para-marcar-en-qu-m-quina-corre-cada-tarea.md
+- desk/inbox/20261116-003602-suggestion-namespace-de-tags-host-para-separar-tareas-de-ui-local-y-backend-robocop2.md
+- desk/inbox/20261116-004642-suggestion-namespace-de-tags-host-para-rutear-tareas-por-m-quina-host-local-host-robocop2.md
 depends_on: []
 pills: []
 files:
 - deskops/atom_tags.py
-- deskops/data/templates/atoms/tag-namespaces.yaml
 - docs/workflow-policy-reference.md
-- tests/fixtures/golden/scaffold/init.json
-- tests/fixtures/golden/scaffold/update.json
-- tests/test_atom_tags.py
-- tests/test_domain_tree.py
+- .sldb/store.yaml
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-deskops-declara-el-namespace-de-tags-host
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
 ---
 
 # deskops declara el namespace de tags host para marcar en que maquina corre cada tarea
@@ -113,3 +116,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El store de deskops declara host; una tarea con host:robocop2 no da alertas; el test pasa; la doc lo explica.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-90c55913cccc-a2`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-90c55913cccc-a2
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

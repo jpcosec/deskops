@@ -1,0 +1,5 @@
+pytest tests/test_atom_tags.py tests/test_domain_tree.py: exit 0 (after aligning tag_models assertion)
+desk update --apply (worktree code) + sldb stores check --store .sldb: 0 tag_namespace alerts
+pytest -n 4 -q tests (full): 3 failed, 1322 passed; exit=1
+  test_scaffold_golden x2: caused by the template change; golden recaptured with --update-golden; now 3 passed
+  e2e_agent test_reference_solutions[first-task-to-closeout]: passes on clean origin/main and passes again on this branch run alone (failed only in the loaded full run; flaky)

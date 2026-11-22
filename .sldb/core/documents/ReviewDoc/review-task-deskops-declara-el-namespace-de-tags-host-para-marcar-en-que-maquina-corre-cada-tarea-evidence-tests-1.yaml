@@ -1,0 +1,37 @@
+name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-evidence-tests-1
+path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/evidence-tests-1.md
+source_hash: 464c18135f31fab07a545c4b959d97c9e6b3779bbcd542aec9c535fd1a663b41
+content_hash: 8c3a8b5f000b2f679a948a9145a434313d530b8bfffc259fd47e0dd722053d6e
+field_hashes:
+  id: e95296a01f04d9ef7ded2c9c30d927524016043ea10c3cac7f160621937d98c6
+  title: 9dfb9f20bfc3dd0db95873258ebcb1708315448fe3ed7aec80e71f909c174384
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: d67a94e3c8d3572d9d57a678bd6f9b5d39caa459eee03150bc3f91a4f31eef41
+  subject: 22515df63d0f3055f0cb7c30cadb10a37ec407139c18f4083057ce8d649ed527
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 831caf7f1eeff5ac0eed250dcf5bcf7d30b48e3c593517e9e6803027fc16e645
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 7f3ade3165f4bec45ce413fbd0a356e8a8bd725b2ee9828cf17d155fd5d6e475
+  created_at: 4aedfae8e7cdb2a2c6f58c0ddb61e6a827bf2cb8705e161f54497ffcafe3b4c8
+  disposed_at: 4aedfae8e7cdb2a2c6f58c0ddb61e6a827bf2cb8705e161f54497ffcafe3b4c8
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 1b633ce667af00e8ecfddd3730b257febe3e2963cfffe52644bb06697ad3ba55
+  disposition: e509b13e94da4e6079b78a43939e063809d34b27236a5b357ff57a9e6090a678
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T20:04:37Z'
+  authority: generated
+  via: create_document
