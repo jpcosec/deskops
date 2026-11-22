@@ -1,29 +1,29 @@
 name: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p
 path: desk/tasks/task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p.md
-source_hash: 5c07ee42fdb4f0a869a4716da3672126dfc2b8414cd852225149d10d02d22490
-content_hash: cd5a0757a793328591bf8db7ffdbdbe0103f4134ecaca8d54e31e33976f7c043
+source_hash: 0238b5e49ea2dfdcde012baf7fe3fcfba42df73a2babb7fa4cefc13dadbe0aea
+content_hash: f2d5e938bbd1d9fc717b3c326f355ef2d4c3c1f2da4a0658ed0d0bd4826866b4
 field_hashes:
   title: 05b55e1e073faa994de86a9787ef210d816d0cb53bfaa7f708f35088bc4a81c2
   id: f2431f422c9326378556d82e77b2383c2b542a6d4591a580e8f28537a2f52a1b
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 467b3fc43ba98b07114b297ba9934fc4c60ce8976f0eab1c266202b13b616d31
   goal: e06ccd6831fc9227d98489ac193f448bbff20e7d0fe94fd109953bcb440d8aef
   scope: 4f681dd1f59fb07394e24c6bb320e33e6cba275a52ba6dd2792f645d45455c20
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: f286c62401f9ccadf4446f82950e9b41505e0d1c2760a1877ffbcea8cd97ba1c
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 82039547758bb54f2631d45d6084cfb8f1e0ad739d071305ee2dbb2fdc9eb6d2
   implementation_path: d7230681603631aad96c95c3c144f36a04fe0e7eec2b098ec59b368ba1f99eee
   validation: 8a6553f8ae234d1a5b594a142028d442e7f3b21988dabc472b99561d73621718
   done_when: ea48f8dcd4c6fa62a14a33e7fa79e4a40b6b8aa6c0874a90cfb5e5e0d3a71fb3
   task_type: 17aef8a679138336d87167505c61b03a7bc28c9a12b1ccf78947b619d28fae69
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: 6a884b10bfb806b697b03aa0df0c3413ad55b7aadc4155dc25c8e509bac70d54
 semantic_tags:
 - artifact:task
 - representation.markdown
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T12:16:08Z'
+  at: '2026-11-22T15:02:51Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

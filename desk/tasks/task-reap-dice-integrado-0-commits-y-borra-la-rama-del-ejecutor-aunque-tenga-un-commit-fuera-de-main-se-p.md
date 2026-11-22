@@ -1,25 +1,34 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T12:16:08Z'
+  at: '2026-11-22T15:02:51Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- 43b17685326610719574807f78044110330af4b9
+- 67f55538ddc6ce8bb025ab49f928e3aa9eaeb91c
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.debug
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-reap-no-pierde-los-commits-del-ejecutor
 ---
 
 # reap dice 'integrado 0 commits' y borra la rama del ejecutor aunque tenga un commit fuera de main (se pierde el trabajo)
