@@ -1,0 +1,37 @@
+name: review-task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove-bundle-1
+path: desk/reviews/task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove/bundle-1.md
+source_hash: c7f637f93e8a6400b92b577027e2aad2541af3e823d1977b83571e640223197b
+content_hash: 1b420bb691d281bd91f4f0ff02e6c89131ef819b06bdec4fd30053da06f35d32
+field_hashes:
+  id: 8d43ad51acb17a878398b3030989e106360b95189a7973405be0313ecdea58b9
+  title: 1dd0c40ea35c657da09ff3e7bf3e13d325d06c89b5239dd3c03b4ba659dee552
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 70e9aa7091c7ce6974d7c73cd19217a952c9a6a6633fbb0d16910436f5a9e68a
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 0fe923ef26a66d3b0987149c7117c0b9c844620f1dec1716138d267d47f629a2
+  input_sha256: c00a429d9c675c4740f6b9f2edf991c1d709ddac5151ce0b6fbc3448e0679917
+  contract_sha256: db9702320d2a304c789c315310bf49816c7650f93a584666a58a03c9581d89f6
+  output_sha256: 6da507419dd21e7b78f681aed2188520fd04c0dc91b188cdfc2531510d095de5
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 7920bcf8150fc508ca76af4603762af69a797cde67049f499f0d346a022daa41
+  created_at: 3ea882d58d0a77be2fce678bd2bb2df334415d6df96570e24cb8dcca8d8bdbef
+  disposed_at: 3818e78e730223b6387282199a751d970f7cb6cc9e9f5b60c9074dde2e23cfe7
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5b49d8b3b54e8daaab768ed715ba78c55c94be3b9a76cb00808bae8d95dfacf6
+  disposition: b77cbbc96881342213c8abef3bf2260fa59b21c26191a4c4b7c5dafa26ec4199
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T08:53:53Z'
+  authority: generated
+  via: save_document_payload
