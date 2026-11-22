@@ -1,0 +1,6 @@
+tests/test_scion_runtime.py tests/test_closeout.py tests/test_model_contract_snapshot.py: 122 passed (exit 0)
+tests/test_task_types.py + snapshot + scion_runtime (PYTHONPATH unset): 63 passed (exit 0)
+tests/test_closeout.py + tests/test_dispatch*.py (PYTHONPATH unset): 119 passed (exit 0)
+Full suite -n 4: 1334 passed, 3 skipped, 1 xfailed, 1 failed (exit 1):
+  tests/test_task_types.py::test_legacy_task_type_migrates_idempotently
+  Cause: the shell had PYTHONPATH=/mnt/ssd/proyectos/SLDB_1/deskops, so the test's CLI subprocess imported the OLD RunDoc from the main checkout. Passes with PYTHONPATH unset (63 passed above). Passes on origin/main too (unchanged model). Not a code failure.

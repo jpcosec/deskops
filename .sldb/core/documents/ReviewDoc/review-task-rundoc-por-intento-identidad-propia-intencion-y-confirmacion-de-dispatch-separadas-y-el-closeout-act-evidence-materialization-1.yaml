@@ -1,0 +1,37 @@
+name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-materialization-1
+path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/evidence-materialization-1.md
+source_hash: f009bfa15367d0c663c0ac86d4677a3e7bf90df1f3c23ab0030f2be310329b33
+content_hash: a2bb94e7fd76886232dc32469c2994a3170f2a3cbd9476e5a4615ee08b776f42
+field_hashes:
+  id: 27b6091fa19c7d27742f139a4d9be5e1829b99d2ed2f8147932e3c8999164ea3
+  title: 14f3f0725808f28f3b9001ac644db2e42d3be211ed437dd4fed431c20848c19c
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: d3269ac1dabbc09c945e4bf079d81c082954d231a316bd8903469fe3bb70472d
+  subject: 1f190d34ad275fbe181cbd95d0e379b06144615a1e545877be5a80876744e694
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: f56851c74435dd241d8371d83ac6d32451bbaf45726ace4d25741f816294396e
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 228962ab91f51885cd80643795dc4f3755ff53562c5f1b03d5ea4099a408bbb1
+  created_at: 69ff362b929247682c70bc77d10fede38041c879bb9b2d4f4a353a4f7ccf4f3c
+  disposed_at: 69ff362b929247682c70bc77d10fede38041c879bb9b2d4f4a353a4f7ccf4f3c
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 90b2d58abcdca6b82f75b303568db60eb1974fcf82da2c3eabce19a66e0abc27
+  disposition: 220ea1147dd5ac482635adb20cd70cdf16dfb07714f0266c6adf9245baf82d20
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T19:20:24Z'
+  authority: generated
+  via: create_document
