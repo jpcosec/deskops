@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T20:09:35Z'
+  at: '2026-11-22T21:14:55Z'
   authority: generated
   via: save_document_payload
 id: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check
@@ -18,15 +18,24 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references: []
+references:
+- desk/atoms/atom-desk-health-delegates-store-diagnostics-to-sldb.md
+- desk/atoms/atom-desk-health-is-measured-by-cli-diagnostics.md
+- desk/atoms/atom-desk-health-is-workspace-integrity-state.md
+- desk/atoms/atom-desk-repair-is-owned-by-deskops.md
+- 3db24df949fe497dc00bbfe0fe73fce39d83c3ba
 depends_on: []
 pills: []
 files:
-- desk/atoms (los 4 atomos nombrados)
+- desk/atoms/atom-desk-health-delegates-store-diagnostics-to-sldb.md
+- desk/atoms/atom-desk-health-is-measured-by-cli-diagnostics.md
+- desk/atoms/atom-desk-health-is-workspace-integrity-state.md
+- desk/atoms/atom-desk-repair-is-owned-by-deskops.md
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-los-4-atomos-de-salud-del-desk-dejan-de-dar-ruido-estructural-en-sldb-stores-check
 from_drawer: desk/drawer/tasks/task-l-nea-base-de-sldb-stores-check-en-el-desk-de-deskops-32-anchors-doc-lost-2-doc-changed-y-4-structural-noise-sin-due-o.md
 ---
 

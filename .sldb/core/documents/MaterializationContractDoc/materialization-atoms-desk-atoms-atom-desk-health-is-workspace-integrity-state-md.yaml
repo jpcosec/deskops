@@ -1,0 +1,25 @@
+name: materialization-atoms-desk-atoms-atom-desk-health-is-workspace-integrity-state-md
+path: desk/materializations/materialization-atoms-desk-atoms-atom-desk-health-is-workspace-integrity-state-md.md
+source_hash: 75e59aa71e014617a506df4e7e6ba6f6f85132d95180bcb2a9a490918b645309
+content_hash: da3f708062022bc35b711aa62e2caa0447e677e4f33e3c1eecec3e3cfe05e597
+field_hashes:
+  id: f18f3ea62a61bb1233404dbb175124f9beca0268ecc04bd9ac703d55bb2dfd00
+  title: 065a16336af42f7c48bd4c76c3f6b943071348846966268bf1b700a90381fe4c
+  source_atoms: 74d4335b4ed966fd85bb952a562aa0dfd87e0bea64ad858492e1cc86db60f17d
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 2932782489fb0ddf1829fc15d9ba625e912c81cce6ac106fc21c622a5402fc8c
+  intent: 9bd6f60421911ed80f5d647230210ddca57e482ae3916b66a2004a6e2f9d38f8
+  validation: d3d749fefa517c80620f133c2a3fb0dfcf22212f01d6a850a9dce5ba087d1192
+  tags: d4e7faac8fbdb4c703756dfb37381560dd10777a00df029043e52b7fabce7963
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:atoms
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T21:15:27Z'
+  authority: generated
+  via: create_document

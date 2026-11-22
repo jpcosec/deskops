@@ -499,6 +499,10 @@ include:
   - desk/materializations/materialization-tags-tests-fixtures-golden-scaffold-update-json.md
   - desk/materializations/materialization-tags-tests-test-atom-tags-py.md
   - desk/materializations/materialization-tags-tests-test-domain-tree-py.md
+  - desk/materializations/materialization-atoms-oms-atom-desk-health-delegates-store-diagnostics-to-sldb-md.md
+  - desk/materializations/materialization-atoms-sk-atoms-atom-desk-health-is-measured-by-cli-diagnostics-md.md
+  - desk/materializations/materialization-atoms-desk-atoms-atom-desk-health-is-workspace-integrity-state-md.md
+  - desk/materializations/materialization-atoms-desk-atoms-atom-desk-repair-is-owned-by-deskops-md.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2713,6 +2717,14 @@ include:
     name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-evidence-atom-1
   - path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/evidence-materialization-1.md
     name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-evidence-materialization-1
+  - path: desk/reviews/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/evidence-commit-1.md
+    name: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-evidence-commit-1
+  - path: desk/reviews/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/evidence-document-1.md
+    name: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-evidence-document-1
+  - path: desk/reviews/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/evidence-commit-2.md
+    name: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-evidence-commit-2
+  - path: desk/reviews/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/evidence-document-2.md
+    name: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-evidence-document-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

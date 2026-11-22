@@ -1,0 +1,25 @@
+name: materialization-atoms-oms-atom-desk-health-delegates-store-diagnostics-to-sldb-md
+path: desk/materializations/materialization-atoms-oms-atom-desk-health-delegates-store-diagnostics-to-sldb-md.md
+source_hash: 854c275e19b2fa5e7d4f6ee7d044a41df39adea5c8db6acd494e3164a6e1d130
+content_hash: 4b87e787b88cabd1830234bb8add9aa89e7a3f3f51f581a4b019263bcc0be76e
+field_hashes:
+  id: 0edce876d122d2b711e556f6c2330b856edcf79a84365f3aaf0b3738f3c13ec3
+  title: 00ab23dcc923d80e594c69d5e68228e76db406a4a24e9a123444f762f22ab425
+  source_atoms: 74d4335b4ed966fd85bb952a562aa0dfd87e0bea64ad858492e1cc86db60f17d
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: c2921899f1d25e26b03cf2ab85cb1a320c479ec8f8a560cd0d1a55a17f68494c
+  intent: 3ddc96bf42410636ba36b53d523e6599a46b2721d94d96b6b5868aef9eaa8180
+  validation: d3d749fefa517c80620f133c2a3fb0dfcf22212f01d6a850a9dce5ba087d1192
+  tags: d4e7faac8fbdb4c703756dfb37381560dd10777a00df029043e52b7fabce7963
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:atoms
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T21:15:05Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,25 @@
+name: materialization-atoms-sk-atoms-atom-desk-health-is-measured-by-cli-diagnostics-md
+path: desk/materializations/materialization-atoms-sk-atoms-atom-desk-health-is-measured-by-cli-diagnostics-md.md
+source_hash: e8e0d78d8b9c90f14ffb9e64ab6ea5a1afb578e470c314856a30f52fbb2bc5fb
+content_hash: f01d5b0f8f80134578aa64a853144ace8fd14a5c5644618541d7bae04644ed28
+field_hashes:
+  id: 321ff035c78e4222c9fd71437e08a8c22b1485f324816ed9dd213dfb6d5f52ae
+  title: df39efb05d1a38efc3f3dcda052f7dbc7f73b8c02d5ad5c01b6c8b13e87a3326
+  source_atoms: 74d4335b4ed966fd85bb952a562aa0dfd87e0bea64ad858492e1cc86db60f17d
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 0ccecab86735710647bdabdd9f546550e05f03833001674ec575cbc06420b426
+  intent: 6baf0134c14ba34874bb0d4451ca6d5ab6fe2b4389dd9e3ab023c6ef920ccb5a
+  validation: d3d749fefa517c80620f133c2a3fb0dfcf22212f01d6a850a9dce5ba087d1192
+  tags: d4e7faac8fbdb4c703756dfb37381560dd10777a00df029043e52b7fabce7963
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:atoms
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T21:15:16Z'
+  authority: generated
+  via: create_document

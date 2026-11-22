@@ -1,0 +1,25 @@
+name: materialization-atoms-desk-atoms-atom-desk-repair-is-owned-by-deskops-md
+path: desk/materializations/materialization-atoms-desk-atoms-atom-desk-repair-is-owned-by-deskops-md.md
+source_hash: 29fdef8b121b2f83d881d67aa143e7f6b47c36fc8b964a6aa1e8577e10828734
+content_hash: 02694ecfbfe4c7af0bc23fb2bfb84a6d0d80fe5af59134d52caec5e0478107e3
+field_hashes:
+  id: 38381742a08b9de4e1dccd307fe98c29b600325035c5198bd148b46e32843ad6
+  title: a3a2f9d5646a273de3c88f57a4fcfd29b23ba3eb3fba0d54da411b151187b04e
+  source_atoms: 74d4335b4ed966fd85bb952a562aa0dfd87e0bea64ad858492e1cc86db60f17d
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: ed755b322a8aa46f58bb30b35b2411ca181e0b04451c93c6a1825f07469aa815
+  intent: f7de1bf340ee9e04fcfb3eb72ba66c35f9b5b9c5cbf60e355d5ff13b98e4ba20
+  validation: d3d749fefa517c80620f133c2a3fb0dfcf22212f01d6a850a9dce5ba087d1192
+  tags: d4e7faac8fbdb4c703756dfb37381560dd10777a00df029043e52b7fabce7963
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:atoms
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T21:15:38Z'
+  authority: generated
+  via: create_document
