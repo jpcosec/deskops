@@ -21,6 +21,7 @@ from deskops.doctor_findings import (
     read_store_check,
     seed_drift,
 )
+from deskops.sldb_layout import old_layout_message
 from deskops.identity import resolve_registered_root
 from deskops.lifecycle import hooks_from_text
 from deskops.foreign_files import open_foreign_tasks, task_warning
@@ -59,6 +60,8 @@ class DoctorCLI:
             print(f"No desk at {root}: this repository has no desk/ (run deskops init to create one).")
             return 0
         findings = Findings()
+        if message := old_layout_message(root):
+            findings.errors.append(message)
         self._check_structure(root, desk_dir, inspection, repair, findings)
         if desk_dir.exists():
             self._check_documents(root, desk_dir, repair, findings)

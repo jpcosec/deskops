@@ -109,6 +109,15 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
 | Close a task's code | run the task's validation, then `deskops closeout commit --root . --task <id> --run-dir <dir> ...` (or plain commit if no run-dir) |
 | Check consistency | `deskops doctor --root .`, `deskops drift check --root .`, `deskops graph missing --root .` |
 
+## Old `.sldb` layout
+
+`deskops doctor` errors (no "Desk is healthy") and `deskops init` refuses when a repo has the
+old layout: `.sldb/runtime/`, `.sldb/journal`, or a root `.gitignore` line ignoring `.sldb/core`
+or `.sldb/runtime`. Per repo: catch up with the integration branch; run
+`sldb stores migrate-layout --store <repo>/.sldb`; review `git status` (an ignored `.sldb/core/`
+shows as new); `git add .gitignore .sldb` (never `git add -A`); `deskops doctor --root .`;
+commit with `[skip ci]` and push; tell the other sessions of the repo.
+
 ## Additional resources
 
 - `references/deskops-cli.md` — full `deskops` subcommand reference (all `add`/`edit`/`list`/`show`

@@ -122,6 +122,22 @@ sldb stores update --store .sldb --pythonpath .
 sldb stores build --check --store .sldb
 ```
 
+## Migrating an old `.sldb` layout
+
+Since sldb c420809c `.sldb/` is versioned whole and the derived cache lives in `.sldb_cache/`.
+`deskops doctor` reports the old layout as an error (and never prints "Desk is healthy") while
+any of these signals remains: `.sldb/runtime/` exists, `.sldb/journal` exists, or the root
+`.gitignore` has a line ignoring `.sldb/core` or `.sldb/runtime`. `deskops init` refuses such a repo
+with the same remedy. Per repo:
+
+1. Catch up with the integration branch.
+2. `sldb stores migrate-layout --store <repo>/.sldb` (idempotent).
+3. `git status`: if `.sldb/core/` was ignored it now shows as new.
+4. `git add .gitignore .sldb` (never `git add -A`).
+5. `deskops doctor --root .`
+6. Commit with `[skip ci]` and push.
+7. Tell the other sessions of the repo.
+
 ## Spec2viz Boundary
 
 `spec2viz` owns structured diagram generation in the same way `sldb` owns structured Markdown operations.
