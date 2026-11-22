@@ -1,7 +1,17 @@
+Task: task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada
+Title: dispatch start tester no lanza si la rama del ejecutor de la tarea todavía no está integrada
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T10:49:16Z'
+  at: '2026-11-22T09:46:57Z'
   authority: generated
   via: save_document_payload
 id: task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada
@@ -13,21 +23,14 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- deskops/dispatch.py
-- tests/test_dispatch.py
-- a8a7c3e8b2fa3d853ca0470e005eebc44f923991
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/dispatch.py
-- tests/test_dispatch.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-dispatch-start-tester-espera-a-que-la-rama-del-ejecutor-este-integrada
+atoms: []
 ---
 
 # dispatch start tester no lanza si la rama del ejecutor de la tarea todavía no está integrada
@@ -67,3 +70,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El test nuevo y tests/test_dispatch.py pasan.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

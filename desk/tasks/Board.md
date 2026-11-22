@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T09:33:31Z'
+  at: '2026-11-22T10:54:05Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -41,7 +41,6 @@ tasks:
 - desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
 - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-governance-e-g-other-repo.md
-- desk/tasks/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada.md
 - desk/tasks/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.md
 - desk/tasks/task-jp-decide-si-deskops-exige-git-en-cada-desk-o-acepta-otra-evidencia-de-cierre.md
 - desk/tasks/task-governance-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11.md
@@ -130,7 +129,6 @@ _Generated from the task references above._
 - graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales [draft] - Cuando el origen de un missing_declared_target es un TaskDoc abierto (status distinto de closed, superseded, cancelled o retired) y el destino es un source_file, test_file o doc inexistente, graph missing lo reporta como informational con el codigo planned_target, separado de la lista de faltantes; los mismos destinos desde documentos que no son tareas abiertas siguen como missing. La salida dice cuantos son de cada tipo.
 - AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [active] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - Governance: versionar deskops con tags y fijar la versión en quienes lo usan [draft] - Lo que pide la nota 20261120-193931-suggestion-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11, según la propuesta de Governance (orden de implementación en su sección 11 y decisiones en la 12). Antes de despachar, el coordinador la prepara con el texto completo de la propuesta: alcance, archivos, camino y validación.
-- dispatch start tester no lanza si la rama del ejecutor de la tarea todavía no está integrada [draft] - dispatch start tester sale con EXIT_BUSY (3, así la cola lo reintenta) e imprime 'en espera: la rama deskops/<ejecutor> de la tarea no está integrada' si existe alguna rama deskops/<nombre> de un ejecutor de esa tarea (por scion_child_identity, intentos 1 y 2) con commits que no están en la rama principal. Cuando el reap la integra y la borra, el tester lanza.
 - deskops usa las APIs publicas de sldb ya integradas y borra sus rodeos: rewrite_references con graph y excluded_sources, template_anchors y create_document que pinnea anclas [draft] - (a) deskops/services/references.py deja de tener _rewrite_mentions y _in_frontmatter (lineas ~143-230) y usa sldb.api.rewrite_references(..., graph=g, excluded_sources=[...]) y referrers(..., graph=g). (b) deskops/doc_access.py template_placeholders (~linea 546) usa sldb.api.template_anchors en vez de AST_Handler().split_nodes + TemplateExtractor().extract_nodes, y el import de TemplateExtractor desaparece si no queda otro uso. (c) deskops/services/closure.py, en los recibos de evidencia (~lineas 1102-1171), deja el rodeo de create + update sin cambios en la misma transaccion y crea el recibo con un solo create, que ya queda pinneado. El comportamiento observable no cambia: los tests existentes pasan sin tocar sus aserciones.
 - JP decide si deskops exige git en cada desk o acepta otra evidencia de cierre [draft] - Decision registrada de JP entre: (A) deskops exige git: init falla o avisa y doctor da issue si la raiz no es un repo git; (B) deskops admite desks sin git con otra evidencia de cierre (document/external) y supersede sin commit. Segun la opcion, el coordinador crea la tarea task.code que la implementa.
 - Governance: propuesta de workflow de deskops con las decisiones de JP del 20-11 [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.

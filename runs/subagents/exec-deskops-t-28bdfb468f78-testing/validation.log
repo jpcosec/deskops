@@ -1,0 +1,22 @@
+Tester validation — exec-deskops-t-28bdfb468f78-testing
+Task: task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada
+Executor commit: a8a7c3e8b2fa3d853ca0470e005eebc44f923991
+Files changed by executor:
+  CHANGELOG.md
+  deskops/dispatch.py
+  tests/test_dispatch.py
+
+Command:
+  cd /workspace/deskops
+  TMPDIR=/tmp PYTHONPATH=/workspace/deskops /dev/shm/t311/bin/python -m pytest -q -p no:cacheprovider tests/test_dispatch.py
+
+Output (tail):
+........................................                                 [100%]
+=============================== warnings summary ===============================
+../../dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+40 passed, 1 warning in 450.78s (0:07:30)
+
+VERDICT: PASA
