@@ -2608,6 +2608,10 @@ include:
     name: review-task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada-evidence-atom-1
   - path: desk/reviews/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada/evidence-materialization-1.md
     name: review-task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada-evidence-materialization-1
+  - path: desk/reviews/task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p/preflight-1.md
+    name: review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-preflight-1
+  - path: desk/reviews/task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p/bundle-1.md
+    name: review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
