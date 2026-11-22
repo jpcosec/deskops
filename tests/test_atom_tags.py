@@ -121,3 +121,33 @@ def test_store_declares_flat_host_namespace_and_task_doc_model(tmp_path: Path) -
     for name in ("host", "workspace", "artifact", "source"):
         assert by_name[name].hierarchical is False
     assert by_name["topic"].hierarchical is True
+
+
+def test_desk_update_reports_no_divergence_after_declaring_host(tmp_path: Path, capsys) -> None:
+    from deskops.cli.main import CLI
+    import subprocess
+
+    cli = CLI()
+    assert cli.run(["init", str(tmp_path)]) == 0
+    assert cli.run(["desk", "update", "--root", str(tmp_path), "--apply"]) == 0
+    capsys.readouterr()
+    assert cli.run(["desk", "update", "--root", str(tmp_path)]) == 0
+    assert "Tag namespace declaration" not in capsys.readouterr().out
+
+    declared = (tmp_path / ".sldb" / "store.yaml").read_text(encoding="utf-8")
+    assert "name: host" in declared and "- TaskDoc" in declared
+
+    assert cli.run(["add", "task", "--root", str(tmp_path), "--title", "Host sandbox", "--goal", "g",
+                    "--scope", "s", "--implementation-path", "i", "--done-when", "d",
+                    "--validation", "pytest"]) == 0
+    assert cli.run(["edit", "task", "task-host-sandbox", "tags",
+                    '["workspace:desk", "artifact:task", "host:robocop2"]', "--root", str(tmp_path)]) == 0
+    task = tmp_path / "desk" / "tasks" / "task-host-sandbox.md"
+    assert "host:robocop2" in task.read_text(encoding="utf-8")
+    capsys.readouterr()
+    assert cli.run(["desk", "update", "--root", str(tmp_path)]) == 0
+    assert "Tag namespace declaration" not in capsys.readouterr().out
+    checked = subprocess.run(["sldb", "stores", "check", "--store", str(tmp_path / ".sldb")],
+                             capture_output=True, text=True)
+    assert "host:robocop2" not in checked.stdout + checked.stderr, checked.stdout
+    assert "tag" not in "".join(l for l in checked.stdout.splitlines() if "alert" in l and "doc_" not in l).lower()
