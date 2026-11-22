@@ -619,3 +619,33 @@ def test_reap_keeps_the_branch_when_no_commit_is_counted_but_the_tip_is_not_in_m
     code, message = dispatch._integrate_branch(env.root, name)
     assert code == 8 and f"deskops/{name}" in message and sha in message
     assert worktree.is_dir() and f"deskops/{name}" in _git(env.root, "branch", "--list", "deskops/*")
+
+
+def test_reap_waits_while_the_worktree_has_uncommitted_changes(env: Env) -> None:
+    name = _start_executor(env)
+    worktree = env.root / ".worktrees" / name
+    (worktree / "late.txt").write_text("not committed yet")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 3, result.stdout + result.stderr
+    assert f"en espera: el worktree de {name} tiene cambios sin commitear" in result.stdout
+    assert (worktree / "late.txt").read_text() == "not committed yet"
+    assert f"deskops/{name}" in _git(env.root, "branch", "--list", "deskops/*")
+    assert not any(c[0] == "delete" for c in env.calls())
+    _git(worktree, "add", "late.txt")
+    sha = _commit_in(worktree, "other.txt", "o")
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert _git(env.root, "rev-parse", "main") == sha and (env.root / "late.txt").is_file()
+    assert not worktree.exists()
+
+
+def test_reap_waits_while_the_executor_is_alive(env: Env) -> None:
+    name = _start_executor(env)
+    (env.root / "runs" / "subagents" / f"exec-{name}" / "result-summary.md").write_text("done")
+    env.agents({"name": name, "phase": "running", "activity": "working", "labels": {"deskops.task_id": TASK, "deskops.role": "executor"}})
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 3, result.stdout + result.stderr
+    assert f"en espera: {name} sigue vivo" in result.stdout
+    assert (env.root / ".worktrees" / name).is_dir()
+    assert not any(c[0] in ("stop", "delete") for c in env.calls())

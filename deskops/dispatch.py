@@ -130,11 +130,22 @@ def _ignore_worktrees(root: Path) -> None:
     exclude.write_text(current + ("" if not current or current.endswith("\n") else "\n") + line + "\n", encoding="utf-8")
 
 
+def _dirty_worktree_message(root: Path, name: str) -> str | None:
+    """Wait message when the worktree of ``name`` holds uncommitted changes, else None."""
+    path = _worktree_path(root, name)
+    if not path.is_dir():
+        return None
+    status = _git(path, "status", "--porcelain")
+    if status.returncode == 0 and status.stdout.strip():
+        return f"en espera: el worktree de {name} tiene cambios sin commitear"
+    return None
+
+
 def _remove_worktree(root: Path, name: str) -> subprocess.CompletedProcess[str] | None:
     """Remove the worktree and branch of an agent; the failing git result, or None."""
     path = _worktree_path(root, name)
     if path.exists():
-        removed = _git(root, "worktree", "remove", "--force", str(path))
+        removed = _git(root, "worktree", "remove", str(path))
         if removed.returncode != 0:
             return removed
     deleted = _git(root, "branch", "-D", _agent_branch(name))
@@ -150,6 +161,9 @@ def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
     branch = _agent_branch(name)
     if _git(root, "rev-parse", "--verify", "--quiet", f"refs/heads/{branch}").returncode != 0:
         return 0, ""
+    waiting = _dirty_worktree_message(root, name)
+    if waiting:
+        return EXIT_BUSY, waiting
     base = _base_branch(root)
     problem = _check_on_base(root, base)
     if problem:
@@ -474,6 +488,7 @@ def reap(root: Path, task_id: str) -> int:
     alive = 0
     failed = False
     conflict = False
+    busy = False
     for agent in _list_agents(cfg):
         labels = agent.get("labels") or {}
         if labels.get("deskops.task_id") != label:
@@ -493,6 +508,16 @@ def reap(root: Path, task_id: str) -> int:
             print(f"{name} {role} vivo")
             alive += 1
             continue
+        if role == "executor":
+            if reason == "result-summary" and phase == "running" and activity not in ("completed", "stopped", "exited"):
+                print(f"en espera: {name} sigue vivo")
+                busy = True
+                continue
+            waiting = _dirty_worktree_message(root, name)
+            if waiting:
+                print(waiting)
+                busy = True
+                continue
         stopped = _scion(["scion", "stop", name, "--project", cfg.project])
         if stopped.returncode != 0:
             print(f"{name} {role} error:{stopped.returncode}")
@@ -508,12 +533,16 @@ def reap(root: Path, task_id: str) -> int:
             code, message = _integrate_branch(root, name)
             if message:
                 print(f"{name} {message}")
-            if code:
+            if code == EXIT_BUSY:
+                busy = True
+            elif code:
                 conflict = True
     if alive:
         return EXIT_ALIVE
     if conflict:
         return EXIT_WORKTREE
+    if busy:
+        return EXIT_BUSY
     return EXIT_SCION_ERROR if failed else 0
 
 
