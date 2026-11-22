@@ -1,25 +1,32 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T08:52:13Z'
+  at: '2026-11-22T09:28:03Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- tests/fixtures/golden/help/deskops_drawer.txt
+- tests/test_output_goldens.py
+- 8d140cac08e101cf23307193af940a17540b3817
 depends_on: []
 pills: []
-files: []
+files:
+- tests/fixtures/golden/help/deskops_drawer.txt
+- tests/test_output_goldens.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-el-golden-de-help-de-deskops-drawer-refleja-la-descripcion-nueva-de-drawer-remove
 ---
 
 # Golden de help de deskops drawer al día con la descripción nueva de drawer remove

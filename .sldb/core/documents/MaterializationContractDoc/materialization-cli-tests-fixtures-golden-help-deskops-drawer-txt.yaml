@@ -1,0 +1,25 @@
+name: materialization-cli-tests-fixtures-golden-help-deskops-drawer-txt
+path: desk/materializations/materialization-cli-tests-fixtures-golden-help-deskops-drawer-txt.md
+source_hash: f795bd05f97ae47198bdde23e29edad0573dbff8d7b388a0e83cde5e3d8e6415
+content_hash: bff9019ab43842eb99b8843589582091a72f9131377ece180ae422dd166366c4
+field_hashes:
+  id: 0d281e5faa92fe91af08d21627072ef86fdb9ba85fa246875f60164d167b09b6
+  title: 9cde730f1643a11289994f1b996d70791f9d9f3f4c5d9607a5a48ffc2fdde79a
+  source_atoms: 9dcb9696dc92409bf6763b80d040e53c17ea5536c6eafd103b9777d95a4f04cc
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: d886e06d9b50a5702079de0238e37d834b7c1d6e2918918ba6b9514129589da3
+  intent: 82caaacedd362b6747b9a6763f5a23eadffaf959ca9696ecbdb3b1f8753f27b8
+  validation: 7711445738ea330f751b880976f634a32781a9153dc2dd73996f186d84af0028
+  tags: a628e7f4b1cb54f114b8dcad9a42365ba3a5751d942595018033590ba0c8c716
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:cli
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T09:26:50Z'
+  authority: generated
+  via: create_document

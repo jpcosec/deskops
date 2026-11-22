@@ -1,0 +1,25 @@
+name: materialization-cli-tests-test-output-goldens-py
+path: desk/materializations/materialization-cli-tests-test-output-goldens-py.md
+source_hash: 1799498049c5a92105d27e4b898b273c68d6fc36571e1ee77c6df767e447ee95
+content_hash: 52e3c8aba50d673654027bf38904ea22cd92f3f2086e328fa9e1facefc96f746
+field_hashes:
+  id: 223c5674ff5daa1368d3af8a76d025d3bf86119e67debf6e0e3e84946ba61a9c
+  title: f647bf1aca9ef329177e59a122f35c98fd4e7a8339a6f696483c7d4aadad266e
+  source_atoms: 9dcb9696dc92409bf6763b80d040e53c17ea5536c6eafd103b9777d95a4f04cc
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: a2b94edfa73cc6d24a4e5897e37107936202b8220926ccf54d5c42de39ee4df4
+  intent: 3b692c3d774653f694e6a4e066274aed33b6c001e263d9dd757b7c07787399ec
+  validation: 7711445738ea330f751b880976f634a32781a9153dc2dd73996f186d84af0028
+  tags: a628e7f4b1cb54f114b8dcad9a42365ba3a5751d942595018033590ba0c8c716
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:cli
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T09:28:15Z'
+  authority: generated
+  via: create_document
