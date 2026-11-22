@@ -58,7 +58,9 @@ def test_receipts_of_a_task_gone_without_closeout_still_alert_without_desk_updat
     assert code == 0
     assert "task-vanished: lost" in out and "1 alert(s)" in out
     assert "register edits" not in out
-    assert "does not repair these" in out
+    assert "the task was deleted without closeout: restore it from git or close it with" in out
+    assert "deskops closeout resolved-by" in out
+    assert "desk update --apply" not in out
 
 
 def test_closeout_known_only_by_its_subject_does_not_alert(tmp_path: Path, monkeypatch, capsys) -> None:
@@ -71,3 +73,24 @@ def test_closeout_known_only_by_its_subject_does_not_alert(tmp_path: Path, monke
     assert code == 0
     assert "task-subj-other: lost" in out and "1 alert(s)" in out
     assert "TaskCodeDoc:task-subj: lost" not in out
+
+
+def test_a_task_closed_with_a_real_closeout_commit_leaves_no_lost_alert(lifecycle_desk: Path, capsys) -> None:
+    from deskops.cli.main import main
+    from test_closeout_rules import _desk as _closeable_task
+    from test_closeout_rules import _route
+    from test_closeout_rules import _run
+
+    root = lifecycle_desk
+    task_id = _closeable_task(root)
+    _route(root, task_id)
+    code, out = _run(["closeout", "verify", "--task", task_id, "--root", str(root)])
+    assert code == 0, out
+    args = ["closeout", "commit", "--task", task_id, "--no-run", "--reason", "doctor test", "--paths", "desk", "--root", str(root)]
+    code, out = _run(args)
+    assert code == 0, out
+    assert not (root / "desk" / "tasks" / f"{task_id}.md").exists()
+    capsys.readouterr()
+    main(["doctor", "--root", str(root)])
+    out = capsys.readouterr().out
+    assert "lost" not in out and "does not repair" not in out

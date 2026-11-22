@@ -266,8 +266,8 @@ def print_findings(findings: Findings, *, repair: bool) -> None:
             findings.lost,
         )
         print(
-            "  `deskops desk update --apply` does not repair these. Restore the task, or close it with "
-            "`deskops closeout commit` (a closed task's receipts stop alerting)."
+            "  the task was deleted without closeout: restore it from git or close it with "
+            "`deskops closeout resolved-by`."
         )
     if findings.fixed:
         _section("Repairs applied:", findings.fixed)
