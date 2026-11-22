@@ -1,12 +1,16 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:59:59Z'
+  at: '2026-11-22T11:14:47Z'
   authority: generated
   via: save_document_payload
 id: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check
 status: draft
-summary: ''
+summary: 'Bloqueada (2026-11-22): el ejecutor deskops-e-dda7a5dc881c no pudo limpiar
+  el ruido estructural porque refuse_lossy_overwrite de sldb rechaza quitar encabezados
+  aunque su contenido quede en un campo. Espera la tarea de sldb ''El guard de sobrescritura
+  con pérdida acepta quitar un encabezado no declarado si su contenido queda en un
+  campo''. Las respuestas redactadas están en runs/subagents/exec-deskops-e-dda7a5dc881c/.'
 tags:
 - workspace:desk
 - artifact:task
