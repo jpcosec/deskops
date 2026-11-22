@@ -281,6 +281,46 @@ def run_queue(root: Path, run_all: bool) -> int:
                 return 0
 
 
+def set_job_field(root: Path, job: str, field: str, raw_value: str) -> str:
+    """Set one field of a queue_jobs entry in ``desk/config.json``; nothing else in the file changes.
+
+    ``raw_value`` is parsed as JSON (``[3]``, ``600``, ``["sh", "-c", "x"]``) and falls back to a plain string.
+    The edited config must still validate as a DeskConfig, otherwise the file is left untouched.
+    """
+    from pydantic import ValidationError
+
+    from deskops.config import QueueJob
+
+    config_path = root / "desk" / "config.json"
+    if not config_path.is_file():
+        raise UsageError(f"No desk/config.json under {root}")
+    try:
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise UsageError(f"desk/config.json is not valid JSON: {exc.msg}") from exc
+    jobs = data.get("queue_jobs") if isinstance(data, dict) else None
+    if not isinstance(jobs, dict) or job not in jobs or not isinstance(jobs[job], dict):
+        declared = ", ".join(sorted(jobs)) if isinstance(jobs, dict) else "(none)"
+        raise UsageError(f"Unknown queue job '{job}' in desk/config.json. Declared: {declared or '(none)'}")
+    fields = sorted(QueueJob.model_fields)
+    if field not in fields:
+        raise UsageError(f"Unknown queue job field '{field}'. Valid fields: {', '.join(fields)}")
+    try:
+        value = json.loads(raw_value)
+    except json.JSONDecodeError:
+        value = raw_value
+    updated = dict(jobs[job])
+    updated[field] = value
+    try:
+        QueueJob.model_validate(updated)
+    except ValidationError as exc:
+        first = exc.errors()[0]
+        raise UsageError(f"Invalid value for {job}.{field}: {first['msg']}") from exc
+    jobs[job] = updated
+    config_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return f"{job}.{field} = {json.dumps(value, ensure_ascii=False)}"
+
+
 def list_jobs(root: Path) -> dict[str, list[dict[str, Any]]]:
     queue = queue_dir(root)
     result: dict[str, list[dict[str, Any]]] = {}
@@ -295,7 +335,7 @@ def list_jobs(root: Path) -> dict[str, list[dict[str, Any]]]:
 
 
 class QueueCLI:
-    """`deskops queue {add|run|list}`; the subcommand is required."""
+    """`deskops queue {add|run|list|job set}`; the subcommand is required."""
 
     def run(self, args: Any) -> int:
         root = Path(args.root).resolve()
@@ -305,6 +345,9 @@ class QueueCLI:
             return 0
         if cmd == "run":
             return run_queue(root, bool(args.all))
+        if cmd == "job" and args.queue_job_command == "set":
+            print(set_job_field(root, args.job, args.field, args.value))
+            return 0
         if cmd == "list":
             return render(list_jobs(root), args.format, _format_list)
         raise UsageError(f"Unknown queue command: {cmd}")

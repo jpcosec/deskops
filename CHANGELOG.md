@@ -9,6 +9,7 @@ Entries cover the unreleased changes since tag `v-stable-2026.08.29`.
 
 ### Added
 
+- `deskops queue job set <job> <field> <value> --root .` edits one `queue_jobs` entry of `desk/config.json` (`run`, `timeout` or `retry_exit_codes`; the value is JSON or a plain string), validates it as a `QueueJob` and rewrites only that entry; and the `deskops init` seed `config.json` now declares `dispatch-executor`, `dispatch-tester` and `dispatch-reap` with `retry_exit_codes: [3]`, so a reap that waits (exit 3) is retried instead of landing in `runs/queue/failed`. deskops' own `desk/config.json` got `retry_exit_codes: [3]` on `dispatch-reap` through the new command (`tests/test_queue_cli.py`).
 - `deskops dispatch start executor` launches each executor in its own git worktree (`<root>/.worktrees/<name>`, branch `deskops/<name>` from the local base branch) so parallel agents no longer share working tree or index; `dispatch reap` brings the branch's commits onto the base branch (fast-forward or cherry-pick) and removes worktree and branch, and on conflict aborts, keeps them and exits 8 (`tests/test_dispatch.py`).
 
 ### Fixed

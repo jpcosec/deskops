@@ -7,5 +7,40 @@
   "sandbox": {
     "enabled": false,
     "sandbox_root": ".tmp/deskops-sandbox"
+  },
+  "queue_jobs": {
+    "dispatch-executor": {
+      "run": [
+        "sh",
+        "-c",
+        "deskops dispatch start executor --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""
+      ],
+      "timeout": 600,
+      "retry_exit_codes": [
+        3
+      ]
+    },
+    "dispatch-tester": {
+      "run": [
+        "sh",
+        "-c",
+        "deskops dispatch start tester --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""
+      ],
+      "timeout": 600,
+      "retry_exit_codes": [
+        3
+      ]
+    },
+    "dispatch-reap": {
+      "run": [
+        "sh",
+        "-c",
+        "deskops dispatch reap --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""
+      ],
+      "timeout": 600,
+      "retry_exit_codes": [
+        3
+      ]
+    }
   }
 }

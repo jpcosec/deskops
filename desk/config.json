@@ -73,7 +73,10 @@
         "-c",
         "deskops dispatch reap --task \"$DESKOPS_TASK_ID\" --root \"$DESKOPS_ROOT\""
       ],
-      "timeout": 600
+      "timeout": 600,
+      "retry_exit_codes": [
+        3
+      ]
     },
     "integrate": {
       "run": [

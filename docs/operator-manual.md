@@ -683,6 +683,9 @@ Declare job kinds in `desk/config.json`:
   `queue run` leaves the job in `pending` without an inbox note, prints
   `en espera: <id> ocupado (exit <n>)`, increments the job's `attempts` counter and exits 0 without failing. Without `--all` the run stops there; with `--all` it skips that job for the rest of the run and continues with the next pending ones (so a `dispatch-reap` behind a waiting executor still runs), and ends when no runnable job is left. The next run retries it.
   Any other non-zero code is still a failure.
+- Edit a job with `deskops queue job set <job> <field> <value> --root .` (for example
+  `deskops queue job set dispatch-reap retry_exit_codes '[3]' --root .`): the value is JSON or a
+  plain string, the job is validated and only that entry of `desk/config.json` changes.
 - `queue_min_available_gb` (default 8) and `queue_max_psi_avg60` (default 10)
   are the memory gates: `queue run` leaves the job pending and prints
   `en espera: ...` when `MemAvailable` is below the first or the `some avg60`

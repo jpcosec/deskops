@@ -716,6 +716,7 @@ Examples:
   deskops queue add full-suite --task task-x --transition task_hands_to_closeout --root .
   deskops queue run --root .
   deskops queue list --root . --format json
+  deskops queue job set dispatch-reap retry_exit_codes '[3]' --root .
 """.strip(),
             raw_text=True,
             subcommand_dest="queue_command",
@@ -737,6 +738,26 @@ Examples:
             help="Run at most one pending job (all of them with --all).",
             args=(
                 A("--all", action="store_true", help="Keep running until the queue is empty or a job fails"),
+                ROOT_ARG,
+            ),
+            handler="deskops.queue:QueueCLI",
+            mutates=True,
+        ),
+        Command(
+            path=("queue", "job"),
+            help="Edit the queue_jobs declared in desk/config.json.",
+            args=(),
+            handler="deskops.queue:QueueCLI",
+            mutates=True,
+            subcommand_dest="queue_job_command",
+        ),
+        Command(
+            path=("queue", "job", "set"),
+            help="Set one field (run, timeout, retry_exit_codes) of a queue job in desk/config.json.",
+            args=(
+                A("job", help="Job kind declared in queue_jobs"),
+                A("field", help="Field of the job: run, timeout or retry_exit_codes"),
+                A("value", help="JSON value (e.g. '[3]', 600, '[\"sh\", \"-c\", \"x\"]'); anything else is a string"),
                 ROOT_ARG,
             ),
             handler="deskops.queue:QueueCLI",
