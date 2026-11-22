@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-data-templates-atoms-tag-namespaces-yaml
+path: desk/materializations/materialization-tags-deskops-data-templates-atoms-tag-namespaces-yaml.md
+source_hash: 93dc9c0667e7c32eee68e7847076a8b9165e5bd2a086c2c20d8694d5ef237a0a
+content_hash: a7c3058c5364b5887a9a549bcd1f376fec6ff08b23eee5f12d0fc97f63821bf5
+field_hashes:
+  id: 7fa1dfcce4aa0ee95f05c4009f943ec651bde03a5fe78ede33ec4a0527f5135c
+  title: afca1b891d932492ae47da589adb28e838c1d11e1c9313c877f29e3a6589e17f
+  source_atoms: c92b4db2b9fd740c1af2c57f2d2c4aaf2db1d2e780b0d908fc2e33a378a6f332
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 3a4c046206bea019385a4fc9f45f5e21e903e1d474176239b9e6de6b5927e7f0
+  intent: 463fe3a70f6e24229ed306af5cf75b8b031681697cade973aa7d9469803b3a5b
+  validation: 66b7eec9d971ae9d00c5fe27de407fdc58ea20ff974d10d9a76c8a0415a05091
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T20:03:29Z'
+  authority: generated
+  via: create_document

@@ -492,6 +492,13 @@ include:
   - desk/materializations/materialization-graph-deskops-graph-checks-py.md
   - desk/materializations/materialization-graph-tests-test-graph-checks-py.md
   - desk/materializations/materialization-graph-tests-test-graph-declared-edges-py.md
+  - desk/materializations/materialization-tags-deskops-atom-tags-py.md
+  - desk/materializations/materialization-tags-deskops-data-templates-atoms-tag-namespaces-yaml.md
+  - desk/materializations/materialization-tags-docs-workflow-policy-reference-md.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-scaffold-init-json.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-scaffold-update-json.md
+  - desk/materializations/materialization-tags-tests-test-atom-tags-py.md
+  - desk/materializations/materialization-tags-tests-test-domain-tree-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2694,6 +2701,14 @@ include:
     name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-evidence-atom-1
   - path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/evidence-materialization-1.md
     name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-evidence-materialization-1
+  - path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/evidence-tests-1.md
+    name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-evidence-tests-1
+  - path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/evidence-commit-1.md
+    name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-evidence-commit-1
+  - path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/evidence-atom-1.md
+    name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-evidence-atom-1
+  - path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/evidence-materialization-1.md
+    name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

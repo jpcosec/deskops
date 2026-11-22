@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T16:45:30Z'
+  at: '2026-11-22T20:03:08Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
@@ -47,21 +47,30 @@ history:
   6. Commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
 - task_activates
 references:
-- desk/inbox/20261116-003533-suggestion-namespace-de-tags-host-para-marcar-en-qu-m-quina-corre-cada-tarea.md
-- desk/inbox/20261116-003602-suggestion-namespace-de-tags-host-para-separar-tareas-de-ui-local-y-backend-robocop2.md
-- desk/inbox/20261116-004642-suggestion-namespace-de-tags-host-para-rutear-tareas-por-m-quina-host-local-host-robocop2.md
+- deskops/atom_tags.py
+- deskops/data/templates/atoms/tag-namespaces.yaml
+- docs/workflow-policy-reference.md
+- tests/fixtures/golden/scaffold/init.json
+- tests/fixtures/golden/scaffold/update.json
+- tests/test_atom_tags.py
+- tests/test_domain_tree.py
+- 3b4c5ac8fff2660c95468fe24af7e9658468b60d
+- 5d10b2eb6284b96b27c9fc3bc7eeb8407644e682
 depends_on: []
 pills: []
 files:
 - deskops/atom_tags.py
+- deskops/data/templates/atoms/tag-namespaces.yaml
 - docs/workflow-policy-reference.md
-- .sldb/store.yaml
+- tests/fixtures/golden/scaffold/init.json
+- tests/fixtures/golden/scaffold/update.json
+- tests/test_atom_tags.py
+- tests/test_domain_tree.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-deskops-declara-el-namespace-de-tags-host
 ---
 
 # deskops declara el namespace de tags host para marcar en que maquina corre cada tarea
