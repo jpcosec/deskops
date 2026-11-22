@@ -169,7 +169,7 @@ def test_live_issue_with_a_dangling_path_still_fails(tmp_path: Path, capsys) -> 
     captured = capsys.readouterr()
     assert result == 1
     assert "Missing graph references:" in captured.out
-    assert "1 missing, 0 informational" in captured.out
+    assert "1 missing, 0 informational (0 planned_target)" in captured.out
 
 
 def test_record_issue_with_the_same_dangling_path_is_informational(tmp_path: Path, capsys) -> None:
@@ -188,7 +188,7 @@ def test_record_issue_with_the_same_dangling_path_is_informational(tmp_path: Pat
     captured = capsys.readouterr()
     assert result == 0
     assert "Informational (archived records):" in captured.out
-    assert "0 missing, 1 informational" in captured.out
+    assert "0 missing, 1 informational (0 planned_target)" in captured.out
 
 
 @pytest.mark.parametrize(

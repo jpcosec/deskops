@@ -128,3 +128,43 @@ def test_existing_files_sldb_cannot_declare_are_not_missing(tmp_path: Path) -> N
     assert [finding.target_id for finding in find_missing_graph_references(tmp_path)] == [
         "desk/drawer/plans/p/gone.yaml"
     ]
+
+
+def _planned_sandbox(tmp_path: Path, status_line: str) -> None:
+    write(
+        tmp_path / "desk/tasks/task-a.md",
+        f"---\nid: task-a\n{status_line}---\n\n# A\n\nCrea tests/test_future.py en esta tarea.\n",
+    )
+
+
+def test_open_task_citing_missing_test_file_is_planned_target(tmp_path: Path) -> None:
+    _planned_sandbox(tmp_path, "status: draft\n")
+
+    findings = find_missing_graph_references(tmp_path)
+
+    assert [(f.kind, f.target_id, f.record) for f in findings] == [("planned_target", "test_file:tests/test_future.py", True)]
+    assert findings[0].reason
+
+
+def test_task_without_status_counts_as_open(tmp_path: Path) -> None:
+    _planned_sandbox(tmp_path, "")
+
+    assert [f.kind for f in find_missing_graph_references(tmp_path)] == ["planned_target"]
+
+
+def test_closed_task_citing_missing_test_file_stays_missing(tmp_path: Path) -> None:
+    _planned_sandbox(tmp_path, "status: closed\n")
+
+    findings = find_missing_graph_references(tmp_path)
+
+    assert [(f.kind, f.record) for f in findings] == [("missing_declared_target", None)]
+
+
+def test_non_task_citing_same_missing_file_stays_missing(tmp_path: Path) -> None:
+    write(tmp_path / "desk/drawer/issues/issue-live.md", "# Live issue\n\n## Kind\n\nbug\n\nVer `tests/test_future.py`.\n")
+
+    findings = find_missing_graph_references(tmp_path)
+
+    assert [(f.kind, f.target_id, f.record) for f in findings] == [
+        ("missing_declared_target", "test_file:tests/test_future.py", None)
+    ]

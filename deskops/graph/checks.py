@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import asdict
 from dataclasses import dataclass
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -47,7 +48,7 @@ class GraphMissingFinding:
 def find_missing_graph_references(root: Path, graph_path: Path | None = None) -> list[GraphMissingFinding]:
     """Missing references of sldb's project graph (GD21), plus the dangling edges of a ``--graph`` file."""
     findings = [
-        _finding_from_missing_target(missing)
+        _classify_planned_target(root, _finding_from_missing_target(missing))
         for missing in extract_declared_edges(root).missing_targets
         if not declared_target_is_a_file(root, missing.target_id)
     ]
@@ -111,6 +112,32 @@ def find_missing_snapshot_targets(snapshot: GraphView) -> list[GraphMissingFindi
             )
         )
     return sorted(findings, key=lambda finding: (finding.source_id, finding.target_id, finding.role or ""))
+
+
+PLANNED_TARGET_KIND = "planned_target"
+PLANNED_TARGET_NODE_KINDS = ("source_file:", "test_file:", "doc:")
+CLOSED_TASK_STATUSES = frozenset({"closed", "superseded", "cancelled", "retired"})
+
+
+def _classify_planned_target(root: Path, finding: GraphMissingFinding) -> GraphMissingFinding:
+    """A missing file named by an open TaskDoc is a file the task plans to create: informational.
+
+    The source's state is the ``status`` of its frontmatter (absent or unknown counts as open);
+    the target kind is the node kind the extractor gave it. A misspelled path in an open task is
+    reported as planned too (accepted); the same target from any other document stays missing.
+    """
+    if finding.kind != "missing_declared_target" or not finding.source_id.startswith("task:"):
+        return finding
+    if not finding.target_id.startswith(PLANNED_TARGET_NODE_KINDS) or not finding.provenance_path:
+        return finding
+    try:
+        text = (Path(root) / finding.provenance_path).read_text(encoding="utf-8")
+    except OSError:
+        return finding
+    status = (_frontmatter_mapping(text) or {}).get("status")
+    if isinstance(status, str) and status.strip().lower() in CLOSED_TASK_STATUSES:
+        return finding
+    return replace(finding, kind=PLANNED_TARGET_KIND, record=True)
 
 
 def _finding_from_missing_target(missing: MissingGraphTarget) -> GraphMissingFinding:

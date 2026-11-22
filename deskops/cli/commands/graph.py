@@ -100,7 +100,8 @@ class GraphCLI:
             for finding in informational:
                 self._print_missing_finding(finding)
 
-        print(f"{len(failing)} missing, {len(informational)} informational")
+        planned = sum(1 for finding in informational if finding.kind == "planned_target")
+        print(f"{len(failing)} missing, {len(informational)} informational ({planned} planned_target)")
         return 1 if failing else 0
 
     def _print_missing_finding(self, finding: Any) -> None:
