@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-22T21:20:56Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,11 +13,13 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-22T13:23:16'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-22T18:20:48'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: Convertida en tarea borrador task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits-from-o-las-herederas-siguen.
 ---
 
 # closeout borra una tarea aunque otras hereden de ella (inherits_from) y esas dejan de cargar

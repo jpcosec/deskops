@@ -1,14 +1,16 @@
 name: 20261122-132316-suggestion-closeout-borra-una-tarea-aunque-otras-hereden-de-ella-inherits-from-y-esas-dejan-de-cargar
 path: desk/inbox/20261122-132316-suggestion-closeout-borra-una-tarea-aunque-otras-hereden-de-ella-inherits-from-y-esas-dejan-de-cargar.md
-source_hash: 2b06add0644961f97d3f3fe7e7c0debe26ade37c3e18d574c244a1671bdecb05
-content_hash: 83f6cc3b8400f944041657b5cd07ac47d6347e1e08f29fdebbe9adb75a569f35
+source_hash: 7b54bb7aa66cbb880f669efb689a33e979346e4a5373748405e93c8c1f9b15c3
+content_hash: b5afdd3e87afb5032a093f5adcba3f8e44716a5e7784d5e8c09b11334072a606
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 3c894b699286d85f1511fdbcb79fa8e20b368f377466132c43b01c94611d9e89
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 678be1d5e94da6c98a9431051a1c8b76e75da42c6a6277ecb8ebca630b2e5648
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: cc41bd0d310c12ce4820dbd4097b06ff64c3eaefe8e26f33fcf7d7699704377d
+  ack_reason: a9bc98e641ba5a09ae387b78b77a6b7f50ffb81b5adc84a8800be20be2277447
   title: 7aaed55680694ba0659ed6bd4f334e449729db2b3013461c902c098177652ce0
   body: ce35ac277befcfbee7614f5944d27a686632839f44375cad566cccc60a89e2b9
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-22T21:20:56Z'
+  authority: generated
+  via: save_document_payload
