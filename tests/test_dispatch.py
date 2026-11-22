@@ -416,6 +416,24 @@ def test_start_tester_has_no_worktree(env: Env) -> None:
     assert not (env.root / ".worktrees").exists()
 
 
+def test_start_tester_waits_while_the_executor_branch_is_not_integrated(env: Env) -> None:
+    name = _start_executor(env)
+    _commit_in(env.root / ".worktrees" / name, "one.txt", "1")
+    _finished(env, name)
+    result = env.cli("dispatch", "start", "tester", "--task", TASK)
+    assert result.returncode == 3, result.stdout + result.stderr
+    assert f"en espera: la rama deskops/{name} de la tarea no está integrada" in result.stdout
+    assert not any(c[0] == "start" and c[1].startswith("deskops-t-") for c in env.calls())
+    assert env.cli("dispatch", "reap", "--task", TASK).returncode == 0
+    assert env.cli("dispatch", "start", "tester", "--task", TASK).returncode == 0
+
+
+def test_start_tester_launches_when_the_executor_branch_has_no_new_commits(env: Env) -> None:
+    name = _start_executor(env)
+    _finished(env, name)
+    assert env.cli("dispatch", "start", "tester", "--task", TASK).returncode == 0
+
+
 def test_start_refuses_when_checkout_is_not_on_base_branch(env: Env) -> None:
     _git(env.root, "checkout", "-q", "-b", "other")
     result = env.cli("dispatch", "start", "executor", "--task", TASK)

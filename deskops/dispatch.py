@@ -303,6 +303,21 @@ def _base_instructions(role: str, task_id: str) -> str:
     return ""
 
 
+def _unintegrated_executor_branch(root: Path, task_path: Path) -> str | None:
+    """Branch of an executor of the task (attempts 1 and 2) with commits not on the base branch."""
+    from deskops.runtime.scion import scion_child_identity
+
+    base = _base_branch(root)
+    for attempt in (1, 2):
+        branch = _agent_branch(scion_child_identity(task_path, "executor", attempt)["name"])
+        if _git(root, "rev-parse", "--verify", "-q", f"refs/heads/{branch}").returncode != 0:
+            continue
+        ahead = _git(root, "rev-list", "--count", f"{base}..{branch}")
+        if ahead.returncode == 0 and ahead.stdout.strip() not in ("", "0"):
+            return branch
+    return None
+
+
 def start(root: Path, role: str, task_id: str) -> int:
     from deskops.cli.main import main as deskops_main
     from deskops.runtime.scion import (
@@ -329,6 +344,12 @@ def start(root: Path, role: str, task_id: str) -> int:
     for agent in _list_agents(cfg):
         if agent.get("phase") == "running" and str(agent.get("name", "")).startswith(identity["name"]):
             print(f"ocupado: la tarea ya tiene agente {agent.get('name')}")
+            return EXIT_BUSY
+
+    if role == "tester":
+        pending = _unintegrated_executor_branch(root, task_path)
+        if pending:
+            print(f"en espera: la rama {pending} de la tarea no está integrada")
             return EXIT_BUSY
 
     run_dir = _run_dir_for(identity["name"], role)
