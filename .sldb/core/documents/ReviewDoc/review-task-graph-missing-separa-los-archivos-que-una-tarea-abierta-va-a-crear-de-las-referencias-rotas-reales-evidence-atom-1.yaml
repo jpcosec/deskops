@@ -1,0 +1,37 @@
+name: review-task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales-evidence-atom-1
+path: desk/reviews/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/evidence-atom-1.md
+source_hash: 1370853adada82e54afb8b70c3690d6e26cc75c3deb83f91a19da616f05b9b6c
+content_hash: d5f4d06e306bcb9ff0291ed0ef7441532f393b43292b8a1f43f4e906bbabf19f
+field_hashes:
+  id: 91f04f6a771182bd602f026952a28fac9bc34fb91d41087395a2ff46708d71f6
+  title: 6c1fdb143dfc3689420609782a63ef7007bb958e274bb0a0b70d79cfa239796f
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 872898605878af3257468ba5aefb5934486373d27bf2d4bebeee2a85081c290f
+  subject: cac5b249d9a16ff81f7949d664c18a6f0b71885e55709878f01751504b4949e3
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 0e3aa01458632e3fad8592a14b883b4d2349be34edd18209e4a203475f998fe9
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 70d72e4543c9bd521c0a0c6637d340c6a6aa17678caf5b606aa5fd46edca3e96
+  created_at: af898d78377794eca9a4bd44c76890f9929db5e2237fb10c4341beb3d5ab0902
+  disposed_at: af898d78377794eca9a4bd44c76890f9929db5e2237fb10c4341beb3d5ab0902
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: b045dad52a7ecc27e8843224ec1517f2730a4a573104ac632ac30d742beb85eb
+  disposition: 554ec05d73b0b35b149993d39303104dfd2afd80810b5f73c2b420bd6c7e44f3
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T19:54:30Z'
+  authority: generated
+  via: create_document

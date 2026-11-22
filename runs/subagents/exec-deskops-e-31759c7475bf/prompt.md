@@ -1,37 +1,45 @@
+Task: task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales
+Title: graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-knowledge-graph-connects-desk-and-source-files
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T19:53:26Z'
+  at: '2026-11-16T06:21:59Z'
   authority: generated
   via: save_document_payload
 id: task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
-- deskops/cli/commands/graph.py
-- deskops/graph/checks.py
-- tests/test_graph_checks.py
-- tests/test_graph_declared_edges.py
-- 97007d8085fe4414128642e5584a2fece72448d7
+- desk/inbox/20261116-010912-unclear-graph-missing-no-distingue-archivos-que-la-tarea-va-a-crear-ya-borrados-o-de-otro-repo.md
 depends_on: []
 pills: []
 files:
-- deskops/cli/commands/graph.py
 - deskops/graph/checks.py
+- deskops/cli/commands/graph.py
 - tests/test_graph_checks.py
-- tests/test_graph_declared_edges.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas
+- atom-code-changes-close-with-tests-and-commit
+- atom-knowledge-graph-connects-desk-and-source-files
 ---
 
 # graph missing separa los archivos que una tarea abierta va a crear de las referencias rotas reales
@@ -74,3 +82,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tres casos del paso 3 pasan y graph missing en el desk de deskops separa planned_target de missing.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-31759c7475bf`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-31759c7475bf
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.
