@@ -1,15 +1,15 @@
 name: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check
 path: desk/tasks/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check.md
-source_hash: f895ec1283643cfb79d8ccc2da913286d97d3245be58aa700751749932c3e30b
-content_hash: fe7dc3330baf0463d33e95676aaf180ec03250d2887bbeeba83eb34a891a8736
+source_hash: 65055785b335bfb38d8dbd718e4f7875d986f3ab4f6afd6c3c6dba64de0be8a7
+content_hash: 3bdaa94880b9ee006906de1595ca77072b14b7dcb1da897a6fc9e53f050d783f
 field_hashes:
   title: 487a58abc708f9a6023fe32e44b045e87d787e92f830873d09ac6694c04524a3
   id: dc4e22d456c86e4df9b9d0739a1da85c6bac70ed61fb99a6235c851234b58e02
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: e61026563081039384f6bfb8e6376109c59dc37fd62f3f4111463213a46ad8e5
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 3c9e210bb778ba23e84ce760a76a32ec94f4a96e3ddc1b13c63f494237cdee3b
   goal: 5c247869d23403c06f36c78a7559c0897ba6ca56b5a211b28b3cf3d1f422615c
   scope: 4fe6b19da1dc57450cfd15804a965408e0543761f7a57b2b5932cb4ddcc65a97
@@ -35,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T11:14:47Z'
+  at: '2026-11-22T20:09:35Z'
   authority: generated
   via: save_document_payload
