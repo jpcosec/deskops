@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:38:56Z'
+  at: '2026-11-22T21:40:26Z'
   authority: generated
   via: save_document_payload
 id: task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d
@@ -29,13 +29,13 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-Nota de Governance 20261122-182810-unclear-orden-pedido-por-el-concilio-clones-primero-y-rutas-de-m-quina-en-desk-config-json (2026-11-22, concilio): desk/config.json de deskops y sldb guarda en dispatch e integrate rutas de una máquina (/mnt/ssd/..., /home/robocop/.scion/...) y un credential.helper con la cuenta de una persona. Para llevar dispatch a otros desks hay que separar lo de cada máquina sin versionarlo. El mecanismo ya existe: DeskConfig.load (deskops/config.py:104) mezcla desk/config.local.json sobre config.json, con deep merge, y desk/config.local.json está en .gitignore. Queue, dispatch e integrate leen por DeskConfig.load, así que cubre dispatch e integrate. Falta usarlo y poder escribirlo sin editar a mano.
+Nota de Governance 20261122-182810-unclear-orden-pedido-por-el-concilio-clones-primero-y-rutas-de-m-quina-en-desk-config-json (2026-11-22, concilio): desk/config.json de deskops y sldb guarda en dispatch e integrate rutas de una máquina (/mnt/ssd/..., /home/robocop/.scion/...) y un credential.helper con la cuenta de una persona. Para llevar dispatch a otros desks hay que separar lo de cada máquina sin versionarlo. El mecanismo ya existe: DeskConfig.load (deskops/config.py:104) mezcla el config.local.json del desk (no versionado) sobre config.json, con deep merge, y el config.local.json del desk (no versionado) está en .gitignore. Queue, dispatch e integrate leen por DeskConfig.load, así que cubre dispatch e integrate. Falta usarlo y poder escribirlo sin editar a mano.
 
 ## Goal
 
 _Describe the concrete result this task must produce._
 
-1) Un comando de deskops escribe una clave en desk/config.local.json (por ejemplo deskops config set --local <ruta.de.clave> <valor> --root ., o el que encaje con el comando queue job set de la tarea hermana de la cola), validando el resultado con DeskConfig. 2) En deskops y sldb, las claves de máquina de dispatch e integrate (suite con rutas absolutas, tools_checkout, tests_lock, push_env con credential.helper, rutas de scion) pasan a config.local.json con ese comando, y config.json queda solo con lo versionable (branch, mode, remote_url sin credenciales, timeouts, retry_exit_codes). 3) deskops doctor avisa si config.json versionado contiene rutas absolutas o un credential.helper.
+1) Un comando de deskops escribe una clave en el config.local.json del desk (no versionado) (por ejemplo deskops config set --local <ruta.de.clave> <valor> --root ., o el que encaje con el comando queue job set de la tarea hermana de la cola), validando el resultado con DeskConfig. 2) En deskops y sldb, las claves de máquina de dispatch e integrate (suite con rutas absolutas, tools_checkout, tests_lock, push_env con credential.helper, rutas de scion) pasan a config.local.json con ese comando, y config.json queda solo con lo versionable (branch, mode, remote_url sin credenciales, timeouts, retry_exit_codes). 3) deskops doctor avisa si config.json versionado contiene rutas absolutas o un credential.helper.
 
 ## Scope
 

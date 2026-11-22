@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:37:51Z'
+  at: '2026-11-22T21:39:57Z'
   authority: generated
   via: save_document_payload
 id: task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el
@@ -35,7 +35,7 @@ Nota de Governance 20261122-182718-suggestion-dispatch-reap-e-integrate-empujan-
 
 _Describe the concrete result this task must produce._
 
-IntegrateConfig (deskops/config.py) gana un campo mode con dos valores: 'push' (el de hoy, por defecto, para deskops y sldb) y 'pr'. En modo pr, el ciclo dispatch start, reap e integrate termina en un PR abierto hacia integrate.branch (la rama base declarada, por ejemplo dev). No hay push directo ni merge local a la rama base. 1) reap en modo pr lleva los commits del ejecutor a una rama local de la tarea, task/<task-id>, creada desde la base, y no a la base. 2) El closeout de la tarea se commitea en esa misma rama, así el cierre va dentro del PR. 3) integrate en modo pr corre las mismas compuertas sobre la punta de task/<task-id>, la empuja al remoto como rama task/<task-id> y abre o actualiza el PR hacia integrate.branch con gh pr create (base = integrate.branch, título = el de la tarea, cuerpo con el id de la tarea y el resumen del closeout). Si el PR ya existe, solo empuja. Imprime la URL del PR. 4) El modo push queda igual. 5) La configuración por máquina (remote_url con credenciales, push_env, tools_checkout, rutas de suite) puede ir en desk/config.local.json, que DeskConfig.load ya mezcla sobre config.json (deskops/config.py:104) y que está en .gitignore. La tarea documenta esa división en docs/ y no versiona rutas de máquina nuevas.
+IntegrateConfig (deskops/config.py) gana un campo mode con dos valores: 'push' (el de hoy, por defecto, para deskops y sldb) y 'pr'. En modo pr, el ciclo dispatch start, reap e integrate termina en un PR abierto hacia integrate.branch (la rama base declarada, por ejemplo dev). No hay push directo ni merge local a la rama base. 1) reap en modo pr lleva los commits del ejecutor a una rama local de la tarea, task/<task-id>, creada desde la base, y no a la base. 2) El closeout de la tarea se commitea en esa misma rama, así el cierre va dentro del PR. 3) integrate en modo pr corre las mismas compuertas sobre la punta de task/<task-id>, la empuja al remoto como rama task/<task-id> y abre o actualiza el PR hacia integrate.branch con gh pr create (base = integrate.branch, título = el de la tarea, cuerpo con el id de la tarea y el resumen del closeout). Si el PR ya existe, solo empuja. Imprime la URL del PR. 4) El modo push queda igual. 5) La configuración por máquina (remote_url con credenciales, push_env, tools_checkout, rutas de suite) puede ir en el config.local.json del desk (no versionado), que DeskConfig.load ya mezcla sobre config.json (deskops/config.py:104) y que está en .gitignore. La tarea documenta esa división en docs/ y no versiona rutas de máquina nuevas.
 
 ## Scope
 

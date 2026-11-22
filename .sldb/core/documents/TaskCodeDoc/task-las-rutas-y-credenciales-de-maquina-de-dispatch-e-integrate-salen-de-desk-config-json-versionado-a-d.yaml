@@ -1,7 +1,7 @@
 name: task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d
 path: desk/tasks/task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d.md
-source_hash: 145ca5f0a79f77c24d5c9c545c88d45f3ec570ca44ea8509a98f7b48b041c12f
-content_hash: e05cd5c6f960761ee021de811c4e42d16f9d4d7bd76dcef4f8c93da4bfa8e739
+source_hash: 0fa24eaed802972a5413afde8667967df9672fe292759ae8754055abce58a479
+content_hash: 7c090ea0d0a92aab0c4dc7ff91c33ee35364609ba021c38c863e91e4cb406531
 field_hashes:
   title: 2c95a10687d5a49109a7acc9c26946f42b7ab94a3d91c279e2cabf083fda4d41
   id: 89b213744e55e5e39bf75c024f08fd9305e36055aa7eac6f7417e603e6996359
@@ -10,8 +10,8 @@ field_hashes:
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: e7d8865390445b0bc7ae3f055337f837f0489724d9a5f32b5783e162f5e365c1
-  goal: 3e0858f20f7ab81a23c10ba67366a32d302b23e467e5b1de1bc13570f7861aeb
+  why: 66e8f9ea41dba4170f6d5c2728d840e3984a2e273d54d2b7c2cef173854c20c2
+  goal: dbb6c2d15eeba01a9915ba605f057969d05104c12508b26515e0d7b456fc2454
   scope: fca4a6561b4343342b57370bd568825616f4ed3d8b8623e7ff715c5aac5edca5
   references: 5a86ccdd6565e44f89f9d0cf97bfd77e5abdc581210a9a77a5f6db690c5c525f
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T21:38:56Z'
+  at: '2026-11-22T21:40:26Z'
   authority: generated
   via: save_document_payload

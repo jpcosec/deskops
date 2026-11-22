@@ -1,7 +1,7 @@
 name: task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el
 path: desk/tasks/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el.md
-source_hash: 8cb685ebc2d3ffcc07a9f6fde89d5e120ec32d4ddf52a6cb49f3a0978f66ee16
-content_hash: 22bc3443a88780529572e9f86ed88a2c69028d2a124c7c1a81a613497c91b06f
+source_hash: 571f0a395c454bf2344162a9712e3aa73aaf681c2649c5e0f112d881eaef24b4
+content_hash: 673bdf0e0cd678fd1994f0da88a689126058df92f812946335a68c3eb1a96448
 field_hashes:
   title: 1bd303151c72e38e0ff3a9507b7152bb7fdb9a26b0fc5d8b608c70eaa30ae44b
   id: bd3274b2f0e01afd67adfe45318be9368c7d2312d10bb0892896edf8a7a36ee2
@@ -11,7 +11,7 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: f8880c7d977b07ee7f45636d164fa6cdae8cfea656ffc807b2bb707f5ad40dff
-  goal: efb8510b26fc06840a6cb67e1201cafd36c891b946ca8dd00cfa2ddc1aadacda
+  goal: fcbaac6a31de51d59544512d7ebd1bdd816690e0cceb42827d6a8b5afb180ea4
   scope: d375b98ac9ad0701412a1cfe2068f9a7907620cc4f13da3c248e2a6d25a7f3e9
   references: cd8d5b938087579ba2ec4331bcfd5dc2941803642093b480f151c9bb0606394a
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T21:37:51Z'
+  at: '2026-11-22T21:39:57Z'
   authority: generated
   via: save_document_payload
