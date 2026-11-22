@@ -1,0 +1,37 @@
+name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-bundle-1
+path: desk/reviews/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de/bundle-1.md
+source_hash: e3f7c6119662a17bbe30d6eb63745aedc4c342765e829e75da56e54244e38275
+content_hash: 849edce332b403cc6ee3142e1bb50f23ea76f95b2b377f6dfdce833c5bf39881
+field_hashes:
+  id: 2df4548e3965111b722083f822175fb720f3837a24503a617137052d964f02e7
+  title: 2700b5aa35d9f7d34721427406676e7dd11178de7769df61ae16832601782239
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: cb418764275e0d5c39b3975af50280e2d781bc7770a29dc5f75c350c19ef68a6
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: c8cb30273c7a7ff5e7a85caf652952d1b6eac9eff6b3a6557796da6263f4ba58
+  input_sha256: 9e9e56e2f34b1b2784ef8d9ea6e1de857c880cb0d63e454f6e22fb9d5ee80dc8
+  contract_sha256: 9e3ce82063a5eae7409636e94daf53a1eed26a8cd3e8eb557f00527867b2c2f9
+  output_sha256: 8f70e65c38cec23aeefa9b298b8d1811c8faa1d774dd4ea1bdb5a5fe0d4e9eb0
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: d37f85f05df6e70a7f0a898fe64efbd07700da44cc3a21c4d979ca35689610fd
+  created_at: b8296d8de659d6a4e3622657ee3158c0f18ffbae078b6b7c46969c28d8e247f6
+  disposed_at: 173583abc375402178960803f383d361149d1ae3434d0350c35feee2414ed5d8
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 5308d8c0a03bd5c03084f9cbe9da0cc1517d316e8b091252c8dae123c1290691
+  disposition: 78b684dc0caf37655901ac9bc4c04eb5ad2b87b03a357474d2725abf7faec755
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T21:24:08Z'
+  authority: generated
+  via: save_document_payload
