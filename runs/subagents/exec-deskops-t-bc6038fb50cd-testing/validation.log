@@ -1,0 +1,100 @@
+Tester validation — 2026-11-22T04:42:00Z
+Repo: /mnt/ssd/proyectos/SLDB_1/deskops
+Commit under test: 89a0ea98cf6f8d1f6938fdfac2cd05b8aae5b65c drawer remove: planes, assets de issues, .yml por stem, --reason/--ref
+Python env: /workspace/sldb/.venv/bin/python (3.13.18, pytest 9.1.1)
+NOTE: ../.venv from the brief is broken in this container (python symlink to /usr/bin/python3 3.11, no pytest); used /workspace/sldb/.venv, which imports the same /mnt/ssd/proyectos/SLDB_1/sldb/src and the working-tree deskops.
+
+===== TMPDIR=/tmp python -m pytest -q tests/test_inbox_promote_cli_gaps.py =====
+..........................                                               [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+26 passed, 1 warning in 30.80s
+
+===== TMPDIR=/tmp python -m pytest -q tests/test_retire_cli.py =====
+.............                                                            [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 162.30s (0:02:42)
+
+===== TMPDIR=/tmp python -m pytest -q tests/test_add_task_from_drawer.py =====
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 18.10s
+
+===== TMPDIR=/tmp python -m pytest -q tests/test_cli_help_examples.py =====
+.............                                                            [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 54.24s
+
+===== TMPDIR=/tmp python -m pytest -q tests -k 'drawer or retire' =====
+........................................................................ [ 85%]
+............                                                             [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+84 passed, 1217 deselected, 1 warning in 324.13s (0:05:24)
+
+===== Comprobaciones funcionales manuales (temp desks bajo /tmp, sin tocar el repo) =====
+- .yml anidado desk/drawer/tasks/granular/g01-cli-exec-core.yml por stem -> rc 0, archivo eliminado, salida "Reason: done" / "Refs: abc123".
+- plan desk/drawer/plans/plan-x por ruta -> rc 0, dag.yaml y nodes/ eliminados, bullet `- \`plan-x\` ` quitado del Board, resto intacto; salida "Reason: done now" / "Refs: abc, def".
+- add task --from-drawer desk/drawer/plans/plan-x/nodes/n01.md y luego drawer remove plan-x sin --force -> rc 0, plan eliminado. Riesgo no bloqueante reportado en result-summary.md.
+
+===== TMPDIR=/tmp python -m pytest -q tests/test_command_registry.py =====
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 1.25s
+
+===== TMPDIR=/tmp python -m pytest -q tests/test_skill_cli_drift.py =====
+..                                                                       [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 1 warning in 0.16s
+
+===== TMPDIR=/tmp python -m pytest -q tests/test_closeout.py =====
+........................................................................ [ 98%]
+.                                                                        [100%]
+=============================== warnings summary ===============================
+../../../../../workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464
+  /workspace/sldb/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+73 passed, 1 warning in 51.03s

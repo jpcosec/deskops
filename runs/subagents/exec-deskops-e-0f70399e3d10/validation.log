@@ -1,0 +1,15 @@
+$ pytest -q tests/test_inbox_promote_cli_gaps.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+26 passed, 1 warning in 30.28s
+exit=0
+$ pytest -q tests -k drawer\ or\ retire
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+84 passed, 1217 deselected, 1 warning in 333.82s (0:05:33)
+exit=0
+$ pytest -q tests/test_cli_help_examples.py
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 58.12s
+exit=0

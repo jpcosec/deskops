@@ -1,7 +1,17 @@
+Task: task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason
+Title: drawer remove retira un plan entero, los assets de un issue, entradas no .md por stem, y registra reason y ref
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T04:57:08Z'
+  at: '2026-11-22T04:25:31Z'
   authority: generated
   via: save_document_payload
 id: task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason
@@ -14,27 +24,17 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- deskops/cli/commands/drawer.py
-- deskops/cli/registry.py
-- deskops/services/drawer.py
-- deskops/services/retire.py
-- tests/fixtures/golden/help/deskops_drawer_remove.txt
-- tests/test_inbox_promote_cli_gaps.py
-- 89a0ea98cf6f8d1f6938fdfac2cd05b8aae5b65c
+- desk/inbox/20261116-055429-unclear-drawer-remove-deja-colgando-from-drawer-references-y-no-retira-planes-dag-yaml.md
+- desk/inbox/20261116-004719-unclear-drawer-remove-de-un-issue-deja-sus-assets-y-retire-los-rechaza-no-hay-verbo-para-darlos-de-baja.md
+- desk/inbox/20261116-005408-unclear-desk-sin-git-sldb-ui-supersede-tambi-n-hace-commit-drawer-remove-no-acepta-el-stem.md
+- desk/inbox/20261116-004657-unclear-desk-update-apply-en-desk-legacy-56-tareas-sin-migraci-n-masiva-y-5-modelos-legacy-sin-importar.md
 depends_on: []
 pills: []
-files:
-- deskops/cli/commands/drawer.py
-- deskops/cli/registry.py
-- deskops/services/drawer.py
-- deskops/services/retire.py
-- tests/fixtures/golden/help/deskops_drawer_remove.txt
-- tests/test_inbox_promote_cli_gaps.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-y-entradas-no-md-por-stem-y-registra-reas
+atoms: []
 ---
 
 # drawer remove retira un plan entero, los assets de un issue, entradas no .md por stem, y registra reason y ref
@@ -77,3 +77,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Tests nuevos: drawer remove retira un plan con dag.yaml, retira los assets de un issue, resuelve un .yml por stem y deja reason y ref registrados; retire acepta un asset huerfano de un issue inexistente.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

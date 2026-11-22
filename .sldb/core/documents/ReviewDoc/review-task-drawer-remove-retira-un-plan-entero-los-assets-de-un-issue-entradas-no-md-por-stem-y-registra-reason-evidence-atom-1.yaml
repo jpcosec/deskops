@@ -1,0 +1,37 @@
+name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-evidence-atom-1
+path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/evidence-atom-1.md
+source_hash: f9482e8df116cee034efea06da1d0b559ca10760f60a9a087a82bcba96a367b5
+content_hash: 1ac0bdbc0717aa8d3d1e8669e13b3430ebd3e8e1bf3d7fa6dee336809f73b207
+field_hashes:
+  id: dd5c74745460b307fb0597538ed560ec4dc60b7b0cf0f1120307e6b54a80ac00
+  title: a26d6eb1c51712d7e64a39b2d865f0fba4d225225d7d7779095158cc9234c1c9
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: fce23eead2be30bb8053942ac885bee786cfacf5efa57f95d7d20083d8e610c4
+  subject: 2098f2d1805463330c3a7bc93cbec9d41270fce01e4c316c4c92541360a061d8
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 5577bb28b730aa74dda8d8c48af73c023341a7ed448c18a510b21cc898097cbd
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 44941a5d4f064ca79d719667af01076c064de3d8ef461c859413a1d2d30ad324
+  created_at: 12d5c6e6e77023d5060797f73c74e93f8de796c3682153a78cbf8bebe95f2063
+  disposed_at: 12d5c6e6e77023d5060797f73c74e93f8de796c3682153a78cbf8bebe95f2063
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: b350c57f91e48ed5f819d15f8e18601ede63d83863d1ca87ee5d36ad6afcc705
+  disposition: 2f68a1a1e8e28e9484475e813486d37c81a95869ef45126feb60c179b5cf3211
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T04:58:31Z'
+  authority: generated
+  via: create_document
