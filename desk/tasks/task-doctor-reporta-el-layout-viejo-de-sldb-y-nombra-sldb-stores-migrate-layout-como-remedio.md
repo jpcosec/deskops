@@ -1,17 +1,49 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:38:48Z'
+  at: '2026-11-22T06:32:13Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 current_node: ritual-execution
-history: []
+history:
+- task_activates
+- 'task_returns_to_execution: Tester deskops-t-6a1436989fc7 FALLA sobre 2373f55d.
+
+
+  (1) deskops/sldb_layout.py no detecta en .gitignore las variantes .sldb/core/**,
+  .sldb/core/*, .sldb/runtime/** ni .sldb/runtime/*. La resolución aceptada pide quitar
+  la barra inicial y los sufijos ''/**'', ''/*'' o la barra final, y dar señal si
+  queda exactamente .sldb/core o .sldb/runtime. El tester lo reprodujo: con .sldb/core/**
+  en el .gitignore, doctor dice healthy.
+
+
+  (2) init rechaza un directorio sin store que solo hereda una línea vieja en .gitignore.
+  El chequeo de init va en deskops/bootstrap.py (init_local_store, antes de _init_store
+  y de cualquier escritura), y solo si la carpeta de store del repo ya existe.
+
+
+  (3) Se acepta la ubicación deskops/sldb_layout.py. El mensaje tiene que ser el resuelto:
+  "old .sldb layout (SEÑALES): run sldb stores migrate-layout --store RUTA", donde
+  RUTA es la ruta absoluta de la carpeta de store del repo.
+
+
+  Intento 2:
+
+  - arreglar 1, 2 y 3, con tests para las cuatro variantes del .gitignore y para init
+  en un repo sin store (sale 0 e inicializa);
+
+  - correr tests/test_doctor_sldb_layout.py, test_doctor_alerts.py y test_gitignore_policy.py;
+
+  - correr la suite completa con -n 4 (pip install pytest-xdist en /tmp/ws-venv);
+  si no termina en 30 minutos, entregar con los tests enfocados y anotarlo;
+
+  - commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
 references:
 - desk/inbox/20261119-230958-suggestion-guiar-a-los-repos-que-usan-deskops-a-migrar-el-layout-de-sldb-sldb-stores-migrate-layout.md
 depends_on:

@@ -1,15 +1,15 @@
 name: task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio
 path: desk/tasks/task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio.md
-source_hash: db24c4546eb478937b6b4fcfc564a44406345f3a8097ce864f20c46c67a65652
-content_hash: dc9e7df201e7e1c453c4b2730bb5145a96a9fac946a687addf16064cd8893a17
+source_hash: 22717ad5ca76697f025f3490e1441d67bdbead4f2b3b948cc5d5d20106e12db1
+content_hash: 785dd2c3bce49f676e5f5b3368feb7d8a2addc69e2c24fd0052d45ff2296b1c6
 field_hashes:
   title: 16e802094009a2487771d9f1606b18f4cbfcce9ab113af112e75c4b8e805419b
   id: f0bab32ec9e3ba06907cf486e499d449423f0a6c5e9686e96c3dc2486ed8d913
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  history: 57e034f88310091ecb4a39f50cd2d7b7e2623d0160ba2c47b8fbda47572a9ca2
   why: 2687255cd300d3851cd631ce3ec885a1de54d3169ea3b44e0f8cc86b469a1c0f
   goal: fd8d6b1b003855c07fed1a9861bcc4dc1f58d81f3285a916d9092a7d270b67b4
   scope: 52d0e9f12d167e37e78fe62b33f78b837d8e62111c960c82788a76f0496e74c5
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T06:38:48Z'
+  at: '2026-11-22T06:32:13Z'
   authority: generated
   via: save_document_payload
