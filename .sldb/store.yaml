@@ -482,6 +482,12 @@ include:
   - desk/materializations/materialization-runtime-tests-test-scion-runtime-py.md
   - desk/materializations/materialization-cli-tests-fixtures-golden-help-deskops-drawer-txt.md
   - desk/materializations/materialization-cli-tests-test-output-goldens-py.md
+  - desk/materializations/materialization-dispatch-deskops-models-run-py.md
+  - desk/materializations/materialization-dispatch-deskops-runtime-scion-py.md
+  - desk/materializations/materialization-dispatch-deskops-services-closure-py.md
+  - desk/materializations/materialization-dispatch-tests-fixtures-model-contract-hashes-json.md
+  - desk/materializations/materialization-dispatch-tests-test-closeout-py.md
+  - desk/materializations/materialization-dispatch-tests-test-scion-runtime-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2666,6 +2672,14 @@ include:
     name: review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-evidence-atom-1
   - path: desk/reviews/task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p/evidence-materialization-1.md
     name: review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-evidence-materialization-1
+  - path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/evidence-tests-1.md
+    name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-tests-1
+  - path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/evidence-commit-1.md
+    name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-commit-1
+  - path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/evidence-atom-1.md
+    name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-atom-1
+  - path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/evidence-materialization-1.md
+    name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

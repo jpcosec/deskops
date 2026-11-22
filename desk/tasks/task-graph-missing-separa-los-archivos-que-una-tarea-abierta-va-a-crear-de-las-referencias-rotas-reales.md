@@ -1,18 +1,19 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:21:59Z'
+  at: '2026-11-22T18:35:28Z'
   authority: generated
   via: save_document_payload
 id: task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - desk/inbox/20261116-010912-unclear-graph-missing-no-distingue-archivos-que-la-tarea-va-a-crear-ya-borrados-o-de-otro-repo.md
 depends_on: []

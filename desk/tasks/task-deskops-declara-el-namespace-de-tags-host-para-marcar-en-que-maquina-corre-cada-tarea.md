@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T13:13:42Z'
+  at: '2026-11-22T16:45:30Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea
@@ -11,7 +11,7 @@ tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
+current_node: ritual-testing
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-52556b8a9207 FALLA.
@@ -45,6 +45,7 @@ history:
   5. Correr los tests de la tarea y la suite con -n 4 (pytest-xdist ya está en [dev]).
 
   6. Commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
+- task_activates
 references:
 - desk/inbox/20261116-003533-suggestion-namespace-de-tags-host-para-marcar-en-qu-m-quina-corre-cada-tarea.md
 - desk/inbox/20261116-003602-suggestion-namespace-de-tags-host-para-separar-tareas-de-ui-local-y-backend-robocop2.md

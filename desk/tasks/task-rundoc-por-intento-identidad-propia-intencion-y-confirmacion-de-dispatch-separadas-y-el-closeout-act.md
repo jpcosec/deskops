@@ -1,35 +1,43 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:01:09Z'
+  at: '2026-11-22T19:18:53Z'
   authority: generated
   via: save_document_payload
 id: task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261116-002453-suggestion-piloto-scion-fase-1-brechas-del-coordinador-y-del-ejecutor-claude-en-contenedor.md
+- deskops/dispatch.py
+- deskops/models/run.py
+- deskops/runtime/scion.py
+- deskops/services/closure.py
+- tests/fixtures/model_contract_hashes.json
+- tests/test_closeout.py
+- tests/test_scion_runtime.py
+- b6b51d8ce463a05aad028e6f2cdbab0638f710d4
 depends_on: []
 pills: []
 files:
-- deskops/runtime/scion.py
+- deskops/dispatch.py
 - deskops/models/run.py
+- deskops/runtime/scion.py
 - deskops/services/closure.py
-- tests/test_scion_runtime.py
+- tests/fixtures/model_contract_hashes.json
 - tests/test_closeout.py
+- tests/test_scion_runtime.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
-- atom-scion-coordinator-progresses-authorized-work
+- atom-cada-intento-de-dispatch-tiene-su-propio-rundoc-con-intencion-y-confirmacion-separadas
 from_drawer: desk/drawer/tasks/task-correlacionar-intentos-scion-con-rundoc-y-closeout.md
 ---
 

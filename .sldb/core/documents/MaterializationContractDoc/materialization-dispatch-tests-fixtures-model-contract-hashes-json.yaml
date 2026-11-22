@@ -1,0 +1,25 @@
+name: materialization-dispatch-tests-fixtures-model-contract-hashes-json
+path: desk/materializations/materialization-dispatch-tests-fixtures-model-contract-hashes-json.md
+source_hash: ef57747bead5e2de9bdc43712de5a2fb61dce1b3c52edd914d0804956168fcbf
+content_hash: f70f8208e84c6c897ce224a0bb1254df178ad35cc1d1032c4f08843b27cc6207
+field_hashes:
+  id: 92ca254840fcb51474935cb2dd3272e2f7d01222e32ee957d861234e03347531
+  title: 9c15773eecc09864acd93dabc5b249f9cd4a3706eeaccac56d7e11611e609571
+  source_atoms: 4214c48a87c51b1643e838515cb650f48d35cd46dfe16c5c4a670fa333a6cb52
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 63010393512eba8902dd4e437dd58ffdc51ff42b7acf107af6f438c78a0fe9e1
+  intent: 42fb1b447f27bbff08fe1536b27db8eb12033c2854a583ca6ba08852d8d4e15c
+  validation: 340951368d39a789d16e234c1e9ff15d7997028722922dc49ad05aba124d75a6
+  tags: f30d545e32452daf97627c990ab27f8dbd56f3c2e7e49c86826acd38cfb84e8f
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:dispatch
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T19:19:37Z'
+  authority: generated
+  via: create_document

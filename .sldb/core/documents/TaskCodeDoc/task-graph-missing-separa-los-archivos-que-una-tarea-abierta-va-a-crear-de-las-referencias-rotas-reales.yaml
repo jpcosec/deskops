@@ -1,15 +1,15 @@
 name: task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales
 path: desk/tasks/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales.md
-source_hash: 1b4c68d08c9d90adbabc438ec4dcbf33ec0b3d36af1eaf0969571eb948a27b8e
-content_hash: 3d3f06069cef30da31aec67a3c8d725d62a40d6c747442875efc719d64b61f99
+source_hash: 23722777f7b193d03a01f288ac4cece79fb23172ea78bf79ea073434b49b6f13
+content_hash: 6c43e5bbee11d662b80e5fa2d034932f3f973cabe57f4d81b760002c4a7523df
 field_hashes:
   title: 14493566fc744c77ddea0ecb0830d42680e8dc51ec843bec82c787b90f86ee82
   id: 8d0704937fab014ff5303750eda7904b193401464dd029351c0eb7aca35c810e
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 62f02a9b3a00bd67eacc7f83279535d3656bf0f3a22ef9e15d8c14fc27a28b1c
   goal: dc799edfb6773f01a3563e4131d18292016272d90653be0860099b9dfe375fd4
   scope: b468221884bef38343a6df7696ac9ba94f068f290d5dd4bb554c2a18cae4ab3e
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:21:59Z'
+  at: '2026-11-22T18:35:28Z'
   authority: generated
   via: save_document_payload
