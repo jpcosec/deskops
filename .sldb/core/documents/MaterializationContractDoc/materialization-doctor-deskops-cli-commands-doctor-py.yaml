@@ -1,0 +1,25 @@
+name: materialization-doctor-deskops-cli-commands-doctor-py
+path: desk/materializations/materialization-doctor-deskops-cli-commands-doctor-py.md
+source_hash: ee9d8880b7aa16f644fd5cbaa660d57abe032331c18f1237b1be30e617878008
+content_hash: ccb4846f37980c31959cfac8c16c89a98ab607b512f49f54d4918c150b141eb4
+field_hashes:
+  id: 673b0b2a0b672771362b25352cabedd20859b0321437f176715a7f310a99efbe
+  title: 7e7836d639980eb982ccfebc204db4f95b531f0254f0ddc3ada1c2f1aaf19682
+  source_atoms: 74971e4c3e5eb6fcc89e8d5a5c1322d267bbaac1af08cfa5a6b9b3612d0cf2b5
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 2d898c2f2534e1930e61bf2036dfd25331235bda4b4f0578b6826edf178a3b32
+  intent: b9f1493e7352a12b754ca7f950a72e3e2506a751b670b5e48a8ce688fcf2066b
+  validation: b308cc8056e6da95367bca034a0d0f28a95005ac00ede36f228becb55cc754a6
+  tags: a295f31ea8b767a3d4d9b81f96b64801ff54d0bf94f7af0522fcc9398be86372
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:doctor
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T00:18:04Z'
+  authority: generated
+  via: create_document

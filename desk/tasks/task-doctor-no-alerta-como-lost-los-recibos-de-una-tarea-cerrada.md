@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T23:36:39Z'
+  at: '2026-11-22T00:17:54Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
@@ -11,7 +11,7 @@ tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
+current_node: ritual-testing
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-ce3a6e33bbbc FALLA sobre c0df7045.
@@ -28,15 +28,24 @@ history:
   de tareas con commit ''closeout:''; anotar el conteo antes y después en el run dir.
   Correr tests/test_doctor_*.py. Commit desde tu worktree con ''git commit -- <rutas>''
   y el trailer Task-Id.'
+- task_activates
 references:
-- desk/inbox/20261121-032540-unclear-doctor-alertas-subject-lost-de-revisiones-de-tareas-cerradas-que-desk-update-no-repara.md
+- deskops/cli/commands/doctor.py
+- deskops/doctor_findings.py
+- tests/test_doctor_lost_receipts.py
+- 91f44d0d1710c2c428d5edebb8a9e8424c42f89f
+- c0df7045058dc5c4ddd6d5f143f9fae4038cd47f
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/cli/commands/doctor.py
+- deskops/doctor_findings.py
+- tests/test_doctor_lost_receipts.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
 from_drawer: desk/drawer/tasks/task-doctor-los-recibos-de-una-tarea-cerrada-quedan-como-alerta-lost.md
 ---
 

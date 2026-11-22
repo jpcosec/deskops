@@ -1,0 +1,25 @@
+name: materialization-doctor-deskops-doctor-findings-py
+path: desk/materializations/materialization-doctor-deskops-doctor-findings-py.md
+source_hash: 788674084c0365cea4aeaea91ddf7d6f04edc58456d5a6dc60a9e698beb723c4
+content_hash: d6023438e5f1da6185468502a997c701b0cf3341ce571f6c6cf56652120b5a43
+field_hashes:
+  id: b548bbb622e487e89c67a2eddb91d72a9da03f0270e087b28f0ff0f637a8f369
+  title: ef319e29721def0be73c7b7639b0ec3a12b7f9afa9a7610a12698aa721c1fe18
+  source_atoms: 74971e4c3e5eb6fcc89e8d5a5c1322d267bbaac1af08cfa5a6b9b3612d0cf2b5
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 5a495f3e90683ae54150aa63bd0dd1214d48ec3b35f4df0f4cc288fedf71c942
+  intent: 2e09f6f06df022e191d6bb848d003d74437c614a827ada5f40c079ba4bd0fdd8
+  validation: b308cc8056e6da95367bca034a0d0f28a95005ac00ede36f228becb55cc754a6
+  tags: a295f31ea8b767a3d4d9b81f96b64801ff54d0bf94f7af0522fcc9398be86372
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:doctor
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T00:18:15Z'
+  authority: generated
+  via: create_document

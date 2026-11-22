@@ -434,6 +434,9 @@ include:
   - desk/materializations/materialization-graph-tests-test-graph-self-reflection-py.md
   - desk/materializations/materialization-graph-tests-test-graph-snapshot-py.md
   - desk/materializations/materialization-graph-tests-test-output-goldens-py.md
+  - desk/materializations/materialization-doctor-deskops-cli-commands-doctor-py.md
+  - desk/materializations/materialization-doctor-deskops-doctor-findings-py.md
+  - desk/materializations/materialization-doctor-tests-test-doctor-lost-receipts-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2484,6 +2487,14 @@ include:
     name: review-task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co-preflight-1
   - path: desk/reviews/task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co/bundle-1.md
     name: review-task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co-bundle-1
+  - path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/evidence-tests-1.md
+    name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-tests-1
+  - path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/evidence-commit-1.md
+    name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-commit-1
+  - path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/evidence-atom-1.md
+    name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-atom-1
+  - path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/evidence-materialization-1.md
+    name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
