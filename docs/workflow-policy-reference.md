@@ -56,6 +56,7 @@ A task is the atomic workflow unit.
 
 - One coherent deliverable.
 - May depend on other tasks.
+- `TaskDoc.tags` may carry `host:local` or `host:robocop2`: the machine that runs and validates the task (UI and browser checks run locally; backend on robocop2).
 - Executes in a fresh subagent context.
 - Declares how it activates and how it closes by choosing a task type (`deskops add task --task-type`); the type's activation rule names the review receipts it needs, the type's closeout rule names the evidence receipts it closes with, and the task closes only when `deskops closeout verify` has written them accepted and intact, with its own atomic closing commit. `--evidence` only adds kinds to the type's floor, never removes one the type requires.
 

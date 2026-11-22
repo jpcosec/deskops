@@ -6,6 +6,13 @@ namespaces:
     - domain:task-execution
     meaning: Problem domain or durable area of concern.
     use_when: The atom belongs to a reusable problem domain.
+  host:
+    do_not_use_when: atoms y pills
+    examples:
+    - host:local
+    - host:robocop2
+    meaning: maquina donde se ejecuta y valida la tarea
+    use_when: tareas con UI o verificacion en navegador -> host:local; backend, suites, migraciones, scion y revisiones -> host:robocop2
   layer:
     do_not_use_when: The tag names only a broad topic or system.
     examples:

@@ -101,3 +101,23 @@ def test_add_namespace_rejects_duplicate_namespace(tmp_path: Path) -> None:
             do_not_use_when="Duplicate.",
             examples=[],
         )
+
+
+def test_store_declares_flat_host_namespace_and_task_doc_model(tmp_path: Path) -> None:
+    from deskops.atom_tags import DEFAULT_ATOM_TAG_NAMESPACES
+    from deskops.atom_tags import wanted_tag_declaration
+
+    host = DEFAULT_ATOM_TAG_NAMESPACES["host"]
+    assert host["meaning"] == "maquina donde se ejecuta y valida la tarea"
+    assert host["do_not_use_when"] == "atoms y pills"
+    registry = tmp_path / "desk" / "atoms" / "tag-namespaces.yaml"
+    registry.parent.mkdir(parents=True)
+    registry.write_text("namespaces:\n  topic:\n    meaning: m\n", encoding="utf-8")
+
+    namespaces, models = wanted_tag_declaration(tmp_path)
+
+    by_name = {item.name: item for item in namespaces}
+    assert "TaskDoc" in models
+    for name in ("host", "workspace", "artifact", "source"):
+        assert by_name[name].hierarchical is False
+    assert by_name["topic"].hierarchical is True

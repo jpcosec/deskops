@@ -39,6 +39,12 @@ DEFAULT_ATOM_TAG_NAMESPACES: dict[str, dict[str, Any]] = {
         "do_not_use_when": "A more specific system, topic, layer, or pattern tag applies.",
         "examples": ["domain:knowledge-management", "domain:task-execution"],
     },
+    "host": {
+        "meaning": "maquina donde se ejecuta y valida la tarea",
+        "use_when": "tareas con UI o verificacion en navegador -> host:local; backend, suites, migraciones, scion y revisiones -> host:robocop2",
+        "do_not_use_when": "atoms y pills",
+        "examples": ["host:local", "host:robocop2"],
+    },
 }
 
 
@@ -141,7 +147,11 @@ def axis_folder(value: str) -> Path:
 
 #: The models whose tags the family checks: atoms and protoatoms (the protoatom exists to hang
 #: from a domain). Tasks, pills and the rest carry namespaces the registry does not declare.
-TAG_MODELS = ["AtomDoc", "ProtoAtomDoc"]
+TAG_MODELS = ["AtomDoc", "ProtoAtomDoc", "TaskDoc"]
+#: Flat namespaces (no hierarchy) the store always declares: ``host`` marks the machine that runs a
+#: task, and ``workspace``, ``artifact`` and ``source`` are what tasks already carry now that
+#: ``TaskDoc`` is a tag model (``tag_models`` is global in sldb). Values are not restricted.
+FLAT_NAMESPACES = ("host", "workspace", "artifact", "source")
 #: A ``domain:a.b`` tag is anchored by the CrossroadDoc whose ``path`` is ``a.b``.
 DOMAIN_ANCHOR = {"model": "CrossroadDoc", "field": "path", "value": "bare"}
 _SEEN = "(seen: "
@@ -167,11 +177,19 @@ def wanted_tag_declaration(root: Path) -> tuple[list[Any], list[str]]:
     from deskops.models.atom import DOMAIN_NAMESPACE
 
     root = Path(root)
+    names = set(load_namespaces(default_registry_path(root)))
+    if not names:
+        return [], []
+    names.update(FLAT_NAMESPACES)
     namespaces = [
-        TagNamespace(name=name, anchored_by=dict(DOMAIN_ANCHOR) if name == DOMAIN_NAMESPACE else None)
-        for name in sorted(load_namespaces(default_registry_path(root)))
+        TagNamespace(
+            name=name,
+            hierarchical=name not in FLAT_NAMESPACES,
+            anchored_by=dict(DOMAIN_ANCHOR) if name == DOMAIN_NAMESPACE else None,
+        )
+        for name in sorted(names)
     ]
-    return namespaces, list(TAG_MODELS) if namespaces else []
+    return namespaces, list(TAG_MODELS)
 
 
 def sync_tag_declaration(root: Path, *, apply: bool = True) -> bool:

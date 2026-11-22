@@ -161,6 +161,34 @@ include:
   - desk/lifecycle/type-task_completes.md
   - desk/lifecycle/type-task_hands_to_closeout.md
   - desk/lifecycle/type-task_returns_to_execution.md
+  - path: sldb/relation_types/applies_to_source.md
+    name: reltype-applies_to_source
+  - path: sldb/relation_types/applies_to_target.md
+    name: reltype-applies_to_target
+  - path: sldb/relation_types/composes.md
+    name: reltype-composes
+  - path: sldb/relation_types/contains.md
+    name: reltype-contains
+  - path: sldb/relation_types/extends.md
+    name: reltype-extends
+  - path: sldb/relation_types/has_document.md
+    name: reltype-has_document
+  - path: sldb/relation_types/has_field.md
+    name: reltype-has_field
+  - path: sldb/relation_types/has_model.md
+    name: reltype-has_model
+  - path: sldb/relation_types/has_section.md
+    name: reltype-has_section
+  - path: sldb/relation_types/names.md
+    name: reltype-names
+  - path: sldb/relation_types/references.md
+    name: reltype-references
+  - path: sldb/relation_types/semantic_equivalent.md
+    name: reltype-semantic_equivalent
+  - path: sldb/relation_types/semantic_parent.md
+    name: reltype-semantic_parent
+  - path: sldb/relation_types/tagged_as.md
+    name: reltype-tagged_as
 - model: RelationTypeDoc
   paths:
   - path: sldb/relation_types/applies_to_source.md

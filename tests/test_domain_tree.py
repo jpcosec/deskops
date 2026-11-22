@@ -286,7 +286,7 @@ def test_desk_update_apply_writes_the_tag_declaration_once(lifecycle_desk: Path,
     assert "Declared the tag namespaces of desk/atoms/tag-namespaces.yaml in .sldb/store.yaml." in capsys.readouterr().out
     declared = {item["name"]: item for item in tag_namespaces(root / ".sldb")}
     assert declared["domain"]["anchored_by"] == {"model": "CrossroadDoc", "field": "path", "value": "bare"}
-    assert load_declaration(root / ".sldb").tag_models == ["AtomDoc", "ProtoAtomDoc"]
+    assert load_declaration(root / ".sldb").tag_models == ["AtomDoc", "ProtoAtomDoc", "TaskDoc"]
     text = (root / ".sldb" / "store.yaml").read_text(encoding="utf-8")
 
     assert main(["desk", "update", "--apply", "--root", str(root)]) == 0
@@ -301,3 +301,23 @@ def test_desk_update_apply_writes_the_tag_declaration_once(lifecycle_desk: Path,
     assert "pattern" in {item["name"] for item in tag_namespaces(root / ".sldb")}
     capsys.readouterr()
     assert main(["desk", "update", "--root", str(root)]) == 0
+
+
+def test_task_with_host_tag_raises_no_tag_alert(desk: Path) -> None:
+    """A TaskDoc tagged host:robocop2 passes sldb's tag family on the sandbox desk."""
+    import subprocess
+    import sys
+
+    assert main([
+        "add", "task", "--root", str(desk), "--title", "Host probe", "--why", "w", "--goal", "g",
+        "--scope", "s", "--implementation-path", "i", "--done-when", "d", "--validation", "v",
+    ]) == 0
+    (task,) = [p for p in (desk / "desk" / "tasks").glob("task-host-probe*.md")]
+    text = task.read_text(encoding="utf-8")
+    assert "\ntags:\n" in text
+    task.write_text(text.replace("\ntags:\n", "\ntags:\n- host:robocop2\n", 1), encoding="utf-8")
+    result = subprocess.run(
+        [sys.executable, "-m", "sldb", "stores", "check", "--store", str(desk / ".sldb")],
+        capture_output=True, text=True, cwd=desk,
+    )
+    assert "tag_namespace" not in result.stdout + result.stderr, result.stdout
