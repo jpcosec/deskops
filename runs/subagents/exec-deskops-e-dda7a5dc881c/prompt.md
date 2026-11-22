@@ -1,41 +1,38 @@
+Task: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check
+Title: Los 4 atomos de salud del desk dejan de dar store/structural-noise en sldb stores check
+Status: draft
+Current node: ritual-execution
+Task type: task.docs
+From drawer: desk/drawer/tasks/task-l-nea-base-de-sldb-stores-check-en-el-desk-de-deskops-32-anchors-doc-lost-2-doc-changed-y-4-structural-noise-sin-due-o.md
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:14:55Z'
+  at: '2026-11-16T05:59:59Z'
   authority: generated
   via: save_document_payload
 id: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check
-status: active
-summary: 'Bloqueada (2026-11-22): el ejecutor deskops-e-dda7a5dc881c no pudo limpiar
-  el ruido estructural porque refuse_lossy_overwrite de sldb rechaza quitar encabezados
-  aunque su contenido quede en un campo. Espera la tarea de sldb ''El guard de sobrescritura
-  con pérdida acepta quitar un encabezado no declarado si su contenido queda en un
-  campo''. Las respuestas redactadas están en runs/subagents/exec-deskops-e-dda7a5dc881c/.'
+status: draft
+summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- desk/atoms/atom-desk-health-delegates-store-diagnostics-to-sldb.md
-- desk/atoms/atom-desk-health-is-measured-by-cli-diagnostics.md
-- desk/atoms/atom-desk-health-is-workspace-integrity-state.md
-- desk/atoms/atom-desk-repair-is-owned-by-deskops.md
-- 3db24df949fe497dc00bbfe0fe73fce39d83c3ba
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
 files:
-- desk/atoms/atom-desk-health-delegates-store-diagnostics-to-sldb.md
-- desk/atoms/atom-desk-health-is-measured-by-cli-diagnostics.md
-- desk/atoms/atom-desk-health-is-workspace-integrity-state.md
-- desk/atoms/atom-desk-repair-is-owned-by-deskops.md
+- desk/atoms (los 4 atomos nombrados)
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-los-4-atomos-de-salud-del-desk-dejan-de-dar-ruido-estructural-en-sldb-stores-check
+atoms: []
 from_drawer: desk/drawer/tasks/task-l-nea-base-de-sldb-stores-check-en-el-desk-de-deskops-32-anchors-doc-lost-2-doc-changed-y-4-structural-noise-sin-due-o.md
 ---
 
@@ -77,3 +74,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 stores check no lista store/structural-noise y cada atomo conserva su contenido original en sus campos.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-dda7a5dc881c`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-dda7a5dc881c
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

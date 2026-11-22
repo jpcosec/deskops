@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T20:05:35Z'
+  at: '2026-11-22T21:19:51Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -17,7 +17,6 @@ tasks:
 - desk/tasks/task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store.md
 - desk/tasks/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.md
 - desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
-- desk/tasks/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check.md
 - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
 - desk/tasks/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.md
 - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
@@ -103,7 +102,6 @@ _Generated from the task references above._
 - init en un worktree usa el nombre del repo y doctor lee el pythonpath del store [draft] - deskops init en un worktree de git deriva project_identity del repo principal (git common dir o remoto), no de la carpeta; deskops doctor usa el pythonpath que declara el store.
 - advance y closeout no derraman reglas de activacion ni runtimes centrales sin trackear en el desk consumidor [draft] - Las semillas centrales (deskops/data/rules, runtime por defecto) se leen del paquete en tiempo de ejecucion, o se escriben solo por deskops desk update --apply y quedan trackeadas y declaradas; nunca como archivos sueltos sin trackear tras advance o closeout.
 - closeout commit stagea solo lo que escribio el cierre: sin git add -A sobre .sldb y sin Nothing staged mudo [draft] - `deskops closeout commit` agrega al commit exactamente las rutas que el cierre escribio (TaskDoc, desk/tasks/Board.md, archivos de .sldb/core y .sldb/store.yaml creados o modificados por la transaccion del cierre) mas las de --paths; nunca un archivo de .sldb que ya estaba sin trackear antes del cierre. Sin --paths el cierre funciona con esas rutas; si aun asi no hay nada que stagear, el error lista las rutas modificadas y sugiere --paths.
-- Los 4 atomos de salud del desk dejan de dar store/structural-noise en sldb stores check [draft] - Los 4 atomos quedan sin encabezados fuera del modelo (AtomDoc declara id, title, five_wh_one_plus, answer y tags; five_wh_one_plus y title no cambian). Cada seccion no-Tags pasa al final de answer como un parrafo que empieza con su encabezado original en ingles y en negrita (p. ej. '**Boundary Rationale:** ...'), en el mismo orden; la seccion Related Atoms queda igual, como '**Related Atoms:** atom-a, atom-b'. La seccion Tags NO va a answer: sus valores se agregan al campo tags al final de los existentes, sin duplicados. Se edita con deskops edit atom <id> answer "$(cat <archivo en /dev/shm>)" --root . y deskops edit atom <id> tags '<lista JSON>' --root .. Sin perdida: cada linea no vacia de las secciones originales que no sean encabezados ni Tags (git show HEAD:<ruta del atomo>) aparece en el answer nuevo, y cada tag de la seccion Tags esta en el campo tags. Pase: sldb stores check no emite ningun store/structural-noise para estos 4 atomos (otras alertas no cuentan).
 - closeout reconoce una materialization declarada sobre un golden en tests/fixtures sin dejar entrar el ruido de fixtures [draft] - Reproducir y corregir: una MaterializationContractDoc cuyo target_identity es un .txt bajo tests/fixtures es nodo del grafo y cubre ese archivo en closeout; los archivos de tests/fixtures no declarados siguen excluidos. Si el corte esta en sldb, la parte de sldb se pide por `deskops message send --to sldb` y en deskops se deja el test marcado xfail con el id de esa nota.
 - JP decide como se alimenta deskops atoms split por el CLI (opcion a, b o c) [draft] - JP elige: (a) split recibe las partes por flags sin encabezados (p. ej. `--part a="texto"`), cambia la gramatica del CLI y sus goldens; (b) un modelo de atomo con secciones declaradas como campos; (c) dejar split como esta, inalcanzable por el CLI, o retirarlo. El coordinador del plan recomendo (a), que choca con el invariante 2 de alcance.md de deskops-como-config. Con la eleccion se crea la tarea de codigo.
 - Inbox y drawer quedan trackeados en el store del desk y las vistas los leen del store (H10 de CC34) [draft] - deskops/data/desk_declaration.yaml incluye los globs de inbox y drawer; los comandos que escriben en el drawer (promote inbox-to-drawer-task y el alta de items del drawer) trackean al escribir; `deskops view` saca drawer e inbox de run_view como board y task. Al cerrar, se avisa a graph_ui para que verifique en navegador sus vistas de drawer e inbox.

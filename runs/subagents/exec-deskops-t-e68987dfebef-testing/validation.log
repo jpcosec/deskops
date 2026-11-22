@@ -1,0 +1,50 @@
+# Validación tester — task-los-4-atomos-de-salud...
+# Commit: 3db24df949fe497dc00bbfe0fe73fce39d83c3ba
+
+## 1. stores check (códigos presentes)
+$ PYTHONPATH=../sldb/src:. ../sldb/.venv/bin/python -m sldb stores check --store .sldb --format json > /tmp/stores_check.json
+rc=1
+summary: FAIL: store integrity — 1844 documents in 27 models — 5 damaged — 1 roster-only — 1 contract moved — 5 error(es), 942 alerta(s)
+# Conteo de códigos en errors+alerts:
+#   5 store/data-mutation
+#   194 store/contract-mutation
+#   1 store/roster-stale
+#   1 store/contract-moved
+#   726 anchors/doc_lost
+#   20 anchors/doc_changed
+#   0 store/structural-noise
+# subjects que mencionan los 4 atomos: 0
+# Las únicas coincidencias de "structural-noise" son en los ids de dos ReviewDoc preflight
+# de esta misma tarea (anchors/doc_changed), no en el código de alerta.
+
+## 2. graph missing
+$ PYTHONPATH=../sldb/src:. ../sldb/.venv/bin/python -m deskops graph missing --root .
+rc=1
+missing declared targets: 12
+informational planned_target: 12
+ninguna referencia a atom-desk-health-*/atom-desk-repair-*
+
+## 3. Sin pérdida vs commit padre (3db24df9^)
+# Script de comparación: para cada átomo, todas las líneas no vacías, no-encabezado y no-Tags
+# de las secciones originales aparecen en el answer nuevo; cada tag de la sección Tags está
+# en el campo tags; title y five_wh_one_plus sin cambios; answer nuevo sin líneas que empiecen '#'
+== atom-desk-health-delegates-store-diagnostics-to-sldb: OK
+== atom-desk-health-is-measured-by-cli-diagnostics: OK
+== atom-desk-health-is-workspace-integrity-state: OK
+== atom-desk-repair-is-owned-by-deskops: OK
+ALL OK
+
+## 4. Tests
+$ TMPDIR=/tmp PYTHONPATH=../sldb/src:. ../sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_atom_tags.py
+11 passed, 1 warning
+$ TMPDIR=/tmp PYTHONPATH=../sldb/src:. ../sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_atoms_cli.py
+4 passed, 1 warning
+$ TMPDIR=/tmp PYTHONPATH=../sldb/src:. ../sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_atom_reference_convention.py
+6 passed, 1 warning
+
+
+## 5. Estado de los 4 documentos en el store
+# En models[AtomDoc].documents, los 4 salen:
+#   path_exists=true hash_c_ok=true hash_d_ok=true content_ok=true fields_ok=true note=ok
+# El alert store/roster-stale de AtomDoc es del roster global ("all 214 documents present are clean"),
+# no de los 4 atomos. Los 5 errores store/data-mutation son de InboxNoteDoc/ReviewDoc.

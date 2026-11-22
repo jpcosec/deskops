@@ -1,0 +1,2 @@
+$ deskops edit atom atom-desk-repair-is-owned-by-deskops answer "$(cat /dev/shm/ans/<id>.txt)" --root .   (worktree)
+exit 1 for all 4 atoms: SLDBValidationError: ruido estructural ... el documento trae N headings que AtomDoc no declara

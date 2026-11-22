@@ -1,0 +1,10 @@
+Task: task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check
+Title: Los 4 atomos de salud del desk dejan de dar store/structural-noise en sldb stores check
+Status: draft
+Current node: ritual-execution
+Task type: task.docs
+From drawer: desk/drawer/tasks/task-l-nea-base-de-sldb-stores-check-en-el-desk-de-deskops-32-anchors-doc-lost-2-doc-changed-y-4-structural-noise-sin-due-o.md
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .

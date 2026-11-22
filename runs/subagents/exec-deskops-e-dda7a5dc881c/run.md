@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T10:59:25Z'
+  at: '2026-11-22T21:19:41Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # run-xxx
 id: run-deskops-e-dda7a5dc881c
 # Task identifier this run executed against
@@ -22,10 +22,16 @@ session_path: scion://agent/deskops-e-dda7a5dc881c
 session_sha256: ''
 # ISO 8601 start timestamp
 started_at: '2026-11-22T10:59:18+00:00'
+# ISO 8601 timestamp when the dispatch intent was recorded
+intent_at: ''
+# ISO 8601 timestamp when the agent was observed in Scion, empty until then
+dispatch_confirmed_at: ''
+# External reference, e.g. scion://agent/<slug>
+external_ref: ''
 # ISO 8601 end timestamp, empty while in progress
-ended_at: ''
+ended_at: '2026-11-22T21:19:34+00:00'
 # in_progress | success | failure | aborted
-outcome: in_progress
+outcome: success
 # Closeout commit hash, empty until closeout completes
 commit_sha: ''
 # e.g. system:deskops
