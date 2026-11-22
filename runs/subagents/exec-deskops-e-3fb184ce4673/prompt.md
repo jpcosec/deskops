@@ -1,34 +1,36 @@
+Task: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p
+Title: reap dice 'integrado 0 commits' y borra la rama del ejecutor aunque tenga un commit fuera de main (se pierde el trabajo)
+Status: draft
+Current node: ritual-execution
+Task type: task.debug
+Lifecycle gates:
+- task_activates -> ritual-testing: closed [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+  blocked by: error: [rules/rule-activation-task-debug] TaskDebugDoc:task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p: Una tarea task.debug se activa con recibos preflight y reproduction aceptados e intactos y sus dependencias cerradas. | any(^subject: anchor_state = "intact" and verdict = "accepted" and kind = "reproduction") (seen: {}) (witness: ReviewDoc:review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-bundle-1 {"kind":"bundle"})
+
 ---
 sldb:
   by: agent
-  at: '2026-11-22T15:02:51Z'
+  at: '2026-11-22T12:16:08Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/dispatch.py
-- tests/test_dispatch.py
-- 43b17685326610719574807f78044110330af4b9
-- 67f55538ddc6ce8bb025ab49f928e3aa9eaeb91c
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/dispatch.py
-- tests/test_dispatch.py
+files: []
 task_type: task.debug
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-reap-no-pierde-los-commits-del-ejecutor
+atoms: []
 ---
 
 # reap dice 'integrado 0 commits' y borra la rama del ejecutor aunque tenga un commit fuera de main (se pierde el trabajo)
@@ -68,3 +70,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El test de reproducción pasa y tests/test_dispatch.py pasa en los dos locales.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-3fb184ce4673`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-3fb184ce4673
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

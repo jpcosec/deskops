@@ -1,0 +1,10 @@
+Task: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p
+Title: reap dice 'integrado 0 commits' y borra la rama del ejecutor aunque tenga un commit fuera de main (se pierde el trabajo)
+Status: draft
+Current node: ritual-execution
+Task type: task.debug
+Lifecycle gates:
+- task_activates -> ritual-testing: closed [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+  blocked by: error: [rules/rule-activation-task-debug] TaskDebugDoc:task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p: Una tarea task.debug se activa con recibos preflight y reproduction aceptados e intactos y sus dependencias cerradas. | any(^subject: anchor_state = "intact" and verdict = "accepted" and kind = "reproduction") (seen: {}) (witness: ReviewDoc:review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-bundle-1 {"kind":"bundle"})

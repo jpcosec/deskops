@@ -1,0 +1,83 @@
+Task: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p
+Title: reap dice 'integrado 0 commits' y borra la rama del ejecutor aunque tenga un commit fuera de main (se pierde el trabajo)
+Status: active
+Current node: ritual-testing
+Task type: task.debug
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
+---
+sldb:
+  by: agent
+  at: '2026-11-22T14:27:14Z'
+  authority: generated
+  via: save_document_payload
+id: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p
+status: active
+summary: ''
+tags:
+- workspace:desk
+- artifact:task
+current_node: ritual-testing
+history:
+- task_activates
+references: []
+depends_on: []
+pills: []
+files: []
+task_type: task.debug
+inherits_from: []
+inherit_acceptance_context: false
+atoms: []
+---
+
+# reap dice 'integrado 0 commits' y borra la rama del ejecutor aunque tenga un commit fuera de main (se pierde el trabajo)
+
+## Rationale
+
+_Explain why this task exists or the business driver behind it._
+
+2026-11-22, sldb: el reap de deskops-e-01426e49e09c-a2 (intento 2 del guard de sobrescritura) imprimió 'integrado 0 commit(s) de deskops/deskops-e-01426e49e09c-a2 en main' y borró la rama y el worktree. Pero el ejecutor había commiteado b424ce65 en esa rama, con su Task-Id, y el padre de ese commit (490beb90, 'run: deskops-e-01426e49e09c-a2') está en main. El commit quedó colgante: el coordinador lo encontró con git fsck --lost-found y lo trajo a mano (074bc3bc). El tester a2 probó main sin el arreglo y gastó el segundo intento. 490beb90 es el commit 'run:' que dispatch start hace en main desde el arreglo de RunDoc (d42ee663 y el de run.md): la rama del ejecutor nace antes o después de ese commit, y el cálculo de commits a integrar del reap parece no contemplarlo.
+
+## Goal
+
+_Describe the concrete result this task must produce._
+
+dispatch reap nunca borra una rama deskops/<agente> que tiene commits alcanzables desde ella y no desde la rama principal. Calcula los commits con git rev-list <main>..<rama> en el momento del reap y los trae todos con cherry-pick. Si el cálculo da 0 pero la punta de la rama no está en main, no borra nada y sale con error nombrando la rama y la punta. Un test reproduce el caso del commit 'run:' hecho en main entre la creación de la rama y el commit del ejecutor.
+
+## Scope
+
+_State what is in scope and what is out of scope._
+
+Dentro: deskops/dispatch.py (reap y el cálculo de commits), tests/test_dispatch.py y CHANGELOG. Fuera: el resto.
+
+## Implementation Path
+
+_Outline the expected implementation route or affected surface._
+
+p1: reproducir en test: crear la rama del ejecutor, hacer en main el commit 'run:' (como _commit_run_store), commitear en la rama sobre ese commit, y correr reap: hoy integra 0 y borra. Guardar la salida como reproducción en el run dir. p2: arreglar el cálculo y agregar la guarda de no borrar. p3: tests/test_dispatch.py con -n 4, en es_ES y en_US. p4: CHANGELOG; commit desde el worktree que dispatch te da con 'git commit -- <rutas>' y el trailer 'Task-Id: <id de esta tarea>' en el cuerpo.
+
+## Validation
+
+_List the checks required before this task can close._
+
+- TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_dispatch.py
+
+## Done When
+
+_Name the observable condition that makes the task complete._
+
+El test de reproducción pasa y tests/test_dispatch.py pasa en los dos locales.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

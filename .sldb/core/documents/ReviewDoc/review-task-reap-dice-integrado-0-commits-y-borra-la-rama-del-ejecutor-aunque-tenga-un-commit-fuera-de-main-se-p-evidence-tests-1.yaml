@@ -1,0 +1,37 @@
+name: review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-evidence-tests-1
+path: desk/reviews/task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p/evidence-tests-1.md
+source_hash: cbfd4a88cbce3e7252e93dd7e88f9ac23b5672943b1139422aee77756baaf2e4
+content_hash: 39b2e8a61283660b73d08415310f9da60fd56095751af95d2780e879b044ff55
+field_hashes:
+  id: d59da78e6c1a0638de7ccec3749c4aabda25a09199024686a9c2eea7d9bc556e
+  title: 2273a4bf069e9b4500a388f2aa702aac8e1d9b22c60c10e1396d70e3f7ee84e1
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 0effbf961689811ed60d6a5f3afd26a461664f60e7ffb78cb273cf331f0c72e2
+  subject: dc7d5a72bad704e5294034d9a9ad4822b9ff8a1fa3c0819398ff4676c1a721fe
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 4c59c58ec6d266a71c42770a22f3b8610974c7d8f14ad1260907c0ee145836a5
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 86c6494e93739305f94b06bf040c9453fb11d7d3b85f5bd6c83a87861bbffa1e
+  created_at: c7a535144e4f7665218439697166ccd66acb41da4eb145cfd9c49d6a4f3fb005
+  disposed_at: c7a535144e4f7665218439697166ccd66acb41da4eb145cfd9c49d6a4f3fb005
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 2683f58970855a7b756fabac9249fa5cf16fd30922d1e483139bac882ec2c9e6
+  disposition: b9083d9769d41d44e18642f2bf1e43ebc1ac6bb45ed639450496f14f6d056cb9
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T15:03:06Z'
+  authority: generated
+  via: create_document

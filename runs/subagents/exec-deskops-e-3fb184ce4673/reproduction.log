@@ -1,0 +1,55 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main _____
+
+env = <test_dispatch.Env object at 0x73efbe74dd00>
+
+    def test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main(env: Env) -> None:
+        name = _start_executor(env)
+        worktree = env.root / ".worktrees" / name
+        (env.root / "marker.txt").write_text("r")  # the 'run:' commit made in main after the branch was created
+        _git(env.root, "add", "marker.txt")
+        _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", f"run: {name}")
+        _git(worktree, "merge", "--ff-only", "-q", "main")  # the executor's commit sits on top of it ...
+        (worktree / "marker.txt").write_text("r2")
+        _git(worktree, "add", "marker.txt")
+        _git(worktree, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "mine", "-m", "Task-Id: t")
+        tip = _git(worktree, "rev-parse", "HEAD")
+        # ... and a second main commit repeats its patch, so `--cherry-pick` would count it as already in main
+        _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "cherry-pick", tip)
+        _finished(env, name)
+        result = env.cli("dispatch", "reap", "--task", TASK)
+        assert result.returncode == 0, result.stdout + result.stderr
+>       assert "integrado 1 commit(s)" in result.stdout
+E       AssertionError: assert 'integrado 1 commit(s)' in 'deskops-e-7fc08c3ad3f9 executor phase:stopped\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n'
+E        +  where 'deskops-e-7fc08c3ad3f9 executor phase:stopped\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n' = CompletedProcess(args=['/tmp/ws-venv/bin/python', '-m', 'deskops', 'dispatch', 'reap', '--task', 'task-dispatch-me', '...or phase:stopped\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n', stderr='').stdout
+
+tests/test_dispatch.py:599: AssertionError
+=============================== warnings summary ===============================
+../../../../../../../tmp/ws-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /tmp/ws-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_dispatch.py::test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main
+1 failed, 41 deselected, 1 warning in 20.92s
+
+== race reproduction BEFORE the fix (commit 8ef54883 dispatch.py)
+E       AssertionError: deskops-e-7fc08c3ad3f9 executor phase:stopped
+E         deskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main
+E         
+E       assert 0 == 3
+E        +  where 0 = CompletedProcess(args=['/tmp/ws-venv/bin/python', '-m', 'deskops', 'dispatch', 'reap', '--task', 'task-dispatch-me', '...or phase:stopped\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n', stderr='').returncode
+E       AssertionError: deskops-e-7fc08c3ad3f9 executor result-summary
+E         deskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main
+E         
+E       assert 0 == 3
+E        +  where 0 = CompletedProcess(args=['/tmp/ws-venv/bin/python', '-m', 'deskops', 'dispatch', 'reap', '--task', 'task-dispatch-me', '...r result-summary\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n', stderr='').returncode
+FAILED tests/test_dispatch.py::test_reap_waits_while_the_worktree_has_uncommitted_changes
+FAILED tests/test_dispatch.py::test_reap_waits_while_the_executor_is_alive - ...
+2 failed, 1 passed, 3 warnings in 35.91s
+
+== race reproduction AFTER the fix
+3 passed, 3 warnings in 36.44s

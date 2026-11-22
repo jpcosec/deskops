@@ -1,0 +1,18 @@
+Entorno: /dev/shm/t311/bin/python (el .venv del repo no es ejecutable en este contenedor).
+
+== tests/test_dispatch.py (locale por defecto / en_US)
+44 passed, 1 warning in 463.91s
+
+== tests/test_dispatch.py (es_ES)
+44 passed, 1 warning in 463.95s
+Ver validation-es.log.
+
+== reproducción del caso del commit 'run:' (pre-fix 67f55538^, test nuevo de 67f55538)
+1 failed, 41 deselected
+FAILED tests/test_dispatch.py::test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main
+salida del reap: "integrado 0 commit(s) de deskops/<agente> en main"
+Ver reproduction-prefix.log.
+
+== tests nuevos en el árbol actual (post-fix)
+4 passed, 40 deselected
+Ver reproduction-postfix.log.

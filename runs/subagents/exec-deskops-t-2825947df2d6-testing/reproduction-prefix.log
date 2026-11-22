@@ -1,0 +1,38 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main _____
+
+env = <test_dispatch.Env object at 0x7da47996c350>
+
+    def test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main(env: Env) -> None:
+        name = _start_executor(env)
+        worktree = env.root / ".worktrees" / name
+        (env.root / "marker.txt").write_text("r")  # the 'run:' commit made in main after the branch was created
+        _git(env.root, "add", "marker.txt")
+        _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", f"run: {name}")
+        _git(worktree, "merge", "--ff-only", "-q", "main")  # the executor's commit sits on top of it ...
+        (worktree / "marker.txt").write_text("r2")
+        _git(worktree, "add", "marker.txt")
+        _git(worktree, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "mine", "-m", "Task-Id: t")
+        # ... and another main commit repeats its patch, so `--cherry-pick` would count it as already in main
+        (env.root / "marker.txt").write_text("r2")
+        _git(env.root, "add", "marker.txt")
+        _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "same patch")
+        _finished(env, name)
+        result = env.cli("dispatch", "reap", "--task", TASK)
+        assert result.returncode == 0, result.stdout + result.stderr
+>       assert "integrado 1 commit(s)" in result.stdout
+E       AssertionError: assert 'integrado 1 commit(s)' in 'deskops-e-7fc08c3ad3f9 executor phase:stopped\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n'
+E        +  where 'deskops-e-7fc08c3ad3f9 executor phase:stopped\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n' = CompletedProcess(args=['/dev/shm/t311/bin/python', '-m', 'deskops', 'dispatch', 'reap', '--task', 'task-dispatch-me', ...or phase:stopped\ndeskops-e-7fc08c3ad3f9 integrado 0 commit(s) de deskops/deskops-e-7fc08c3ad3f9 en main\n', stderr='').stdout
+
+tests/test_dispatch.py:600: AssertionError
+=============================== warnings summary ===============================
+../../dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/t311/lib/python3.11/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_dispatch.py::test_reap_brings_the_commit_made_on_top_of_a_run_commit_made_in_main
+1 failed, 41 deselected, 1 warning in 18.73s
