@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T00:23:11Z'
+  at: '2026-11-22T01:51:26Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -61,7 +61,6 @@ tasks:
 - desk/tasks/task-governance-el-store-se-actualiza-solo-hook-de-pre-commit-o-pr-check-que-falla-si-el-store-no-corresp.md
 - desk/tasks/task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare.md
 - desk/tasks/task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con.md
-- desk/tasks/task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -154,4 +153,3 @@ _Generated from the task references above._
 - Governance: el store se actualiza solo (hook de pre-commit o pr check que falla si el store no corresponde al árbol) [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
 - Governance: puesta al día de los clones base de la máquina coordinadora y doctor que valida cada tarea contra su modelo [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
 - Los contenedores de scion de ejecutor y tester traen pytest-xdist para correr la suite completa con -n 4 [draft] - El venv que usan los roles executor y tester en los contenedores de scion trae pytest-xdist instalado (en la imagen o en el paso de preparación del runtime template de scion), y el prompt de esos roles corre la suite completa con -n 4.
-- doctor: la alerta lost restante dice cómo repararla sin nombrar desk update --apply, y su test cierra con closeout commit real [draft] - La alerta lost restante (tarea borrada sin closeout) dice: 'the task was deleted without closeout: restore it from git or close it with deskops closeout resolved-by', sin mencionar desk update --apply. El pie 'register ... with: deskops desk update --apply' solo se imprime si queda alguna alerta que ese comando sí registre. Un test cierra una tarea real con deskops closeout commit en un desk temporal y comprueba que doctor no da alertas lost de sus recibos. Los tests de tests/test_doctor_lost_receipts.py dejan de fijar el texto viejo.

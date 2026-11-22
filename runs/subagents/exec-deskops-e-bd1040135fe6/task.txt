@@ -1,0 +1,9 @@
+Task: task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co
+Title: doctor: la alerta lost restante dice cómo repararla sin nombrar desk update --apply, y su test cierra con closeout commit real
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .

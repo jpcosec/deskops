@@ -1,0 +1,37 @@
+name: review-task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co-evidence-tests-1
+path: desk/reviews/task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co/evidence-tests-1.md
+source_hash: 91731c9899947c8c9c2fd343e2018a641814f233b0232f6a42af19c6f9eaed23
+content_hash: 2611b92bee631c77a628e1766426383fa9cf29230fdc535953e95f35ea547fee
+field_hashes:
+  id: 5a120849d50ba1612b82873fe32e7ef2a24edfd220e79ccc58169b8687a1ce52
+  title: 92cee37015d697023c47a80b1d9fec6f3b9714d3af6af8fad275527cbbe7790f
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 68f05093bc600659c0aecd265fad80c71a658cc857e91cdfeeee782eb670c200
+  value: 35055dc9e80c4e35a617caf3c3f574201142aeaa5773ed68ddb9fb6e7d34906c
+  subject: 4a3cde49cfdfb49ca9c7d0ef8b182a301f5df2453117ffb757c54fa6f7d6f979
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 9e7a620542c8a762736674595afb7c4511cb74a6e76b4410c70fb659b7c1df64
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: fdadaec2c9fa54bd7c816fcbdcd5efafe8aaa841951c50c4033c2dcaf62948b3
+  created_at: 16b485c652ea5f27361b60de05a7e5e47ab7b8e8cd7c9ef09382de2449ec4278
+  disposed_at: 16b485c652ea5f27361b60de05a7e5e47ab7b8e8cd7c9ef09382de2449ec4278
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 9db154a80fe52fb7c9f40ccb8e8c4f227df879213a4f9e4b9404b61955781411
+  disposition: 9e59e0ee1132192bf74dba23b1a2c65d35015d67b14b85fda6fe8d52101c1da3
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-22T01:47:53Z'
+  authority: generated
+  via: create_document

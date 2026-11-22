@@ -1,0 +1,27 @@
+Environment: no `python` in PATH. Used /dev/shm/t311/bin/python3.11 (Python 3.11, pytest 9.2.0).
+All runs: TMPDIR=/tmp, cwd=/workspace/deskops (bind mount of /mnt/ssd/proyectos/SLDB_1/deskops).
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python3.11 -m pytest -q -p no:cacheprovider tests/test_doctor_lost_receipts.py
+4 passed, 1 warning in 49.65s
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python3.11 -m pytest -q -p no:cacheprovider tests/test_doctor_alerts.py
+5 passed, 1 warning in 53.71s
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python3.11 -m pytest -q -p no:cacheprovider tests/test_doctor_lost_receipts.py tests/test_doctor_alerts.py
+9 passed, 1 warning in 97.32s  # Validation exacta del task
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python3.11 -m pytest -q -p no:cacheprovider tests/test_doctor_absolute_paths.py
+14 passed, 1 warning in 179.90s
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python3.11 -m pytest -q -p no:cacheprovider tests/test_doctor_model_registration.py
+9 passed, 1 warning in 109.56s
+
+$ TMPDIR=/tmp /dev/shm/t311/bin/python3.11 -m pytest -q -p no:cacheprovider tests/test_doctor_unmodeled_surfaces.py
+4 passed, 1 warning in 31.42s
+
+Tambien: probe manual en /tmp/probe-pgbz0qnt con un desk temporal real:
+- closeout verify -> 0; doctor antes del cierre sin alertas lost (la tarea aun existe).
+- closeout commit real -> 0; la tarea desaparece pero quedan sus 3 ReviewDoc.
+- doctor despues con closed_task_ids normal -> sin lost, "Desk is healthy".
+- doctor con deskops.doctor_findings.closed_task_ids forzado a set() -> imprime las 3 lineas lost,
+  lo que confirma que el test nuevo ejercita de verdad el camino de recibos lost.
