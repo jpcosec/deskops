@@ -1,0 +1,25 @@
+name: materialization-doctor-deskops-sldb-layout-py
+path: desk/materializations/materialization-doctor-deskops-sldb-layout-py.md
+source_hash: 3d6b1708b3c7f285ad21bd963de1878e235424827ca0f3ecb85890ea090431af
+content_hash: be33c57141c0574f3e43f09a229e64819067745a6f406ee5bbec13669b802ec6
+field_hashes:
+  id: f0f107abe5ab5857ad67cd2dd99f34448ed4c1d675d6b92842e7c397dbe22d48
+  title: ee7d5677729eb71f242904881d5e4a8dc26f70564018bf1d32195ab46a4b34c6
+  source_atoms: b2816232c6099aa82e1b00d4d85353214ee615aa55d19dfc08fd221aaed7c837
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: a949bdb1d05d04a7d0809ef6b7e29ba7ef8c9803cf27d0d544f7e927f30776ab
+  intent: c5172007ab85c2e9d766cd6afc977c91933208df5f4fa2c85950722cdce71711
+  validation: 4acb6d4953b503afd7b6987c43006ad35ec435db294c918d004fc29804b9d4d6
+  tags: a295f31ea8b767a3d4d9b81f96b64801ff54d0bf94f7af0522fcc9398be86372
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:doctor
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T07:46:45Z'
+  authority: generated
+  via: create_document

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T06:32:13Z'
+  at: '2026-11-22T07:45:51Z'
   authority: generated
   via: save_document_payload
 id: task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio
@@ -10,7 +10,7 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
+current_node: ritual-testing
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-6a1436989fc7 FALLA sobre 2373f55d.
@@ -44,16 +44,33 @@ history:
   si no termina en 30 minutos, entregar con los tests enfocados y anotarlo;
 
   - commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
+- task_activates
 references:
-- desk/inbox/20261119-230958-suggestion-guiar-a-los-repos-que-usan-deskops-a-migrar-el-layout-de-sldb-sldb-stores-migrate-layout.md
+- .claude/skills/deskops-workflow/SKILL.md
+- README.md
+- deskops/bootstrap.py
+- deskops/cli/commands/core.py
+- deskops/cli/commands/doctor.py
+- deskops/sldb_layout.py
+- tests/test_doctor_sldb_layout.py
+- 5f8e878f129103e3bdbd8f4591431867ec7478b4
+- 2373f55deeff3db66bc4a6791264ff8a8490f0b3
 depends_on:
 - task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime
 pills: []
-files: []
+files:
+- .claude/skills/deskops-workflow/SKILL.md
+- README.md
+- deskops/bootstrap.py
+- deskops/cli/commands/core.py
+- deskops/cli/commands/doctor.py
+- deskops/sldb_layout.py
+- tests/test_doctor_sldb_layout.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-doctor-e-init-reportan-el-layout-viejo-de-sldb-con-el-remedio-migrate-layout
 ---
 
 # doctor reporta el layout viejo de .sldb y nombra sldb stores migrate-layout como remedio

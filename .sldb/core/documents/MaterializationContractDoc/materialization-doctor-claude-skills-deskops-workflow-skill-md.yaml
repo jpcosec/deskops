@@ -1,0 +1,25 @@
+name: materialization-doctor-claude-skills-deskops-workflow-skill-md
+path: desk/materializations/materialization-doctor-claude-skills-deskops-workflow-skill-md.md
+source_hash: 928b93111b44f119083bba7b9d294270264ab5a6a5c8a7997f4c068d151ebe4e
+content_hash: 04f00ebd42fecb1476dbab8a683b475383ba80899540bfbbe00c57d3edd0dcdd
+field_hashes:
+  id: 9e1c6efd0bf008e2fb94756d5ef4dad843bbcf49a5434cbfd4ad10d8a07bc575
+  title: 466a0d388cdad7cca128da45b500d967a03f332ae2428f8ae5e18e982f3d9e0d
+  source_atoms: b2816232c6099aa82e1b00d4d85353214ee615aa55d19dfc08fd221aaed7c837
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 691fead00ef78ed058c888f70481306704c873d0e2612e0e00919c79bb608b0f
+  intent: 2a7060577a7bbe6979ce686cea31dec5a215be945725344e39c011bfdd069291
+  validation: 4acb6d4953b503afd7b6987c43006ad35ec435db294c918d004fc29804b9d4d6
+  tags: a295f31ea8b767a3d4d9b81f96b64801ff54d0bf94f7af0522fcc9398be86372
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:doctor
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T07:46:01Z'
+  authority: generated
+  via: create_document

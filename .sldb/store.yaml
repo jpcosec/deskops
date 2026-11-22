@@ -443,6 +443,12 @@ include:
   - desk/materializations/materialization-drawer-deskops-services-retire-py.md
   - desk/materializations/materialization-drawer-tests-fixtures-golden-help-deskops-drawer-remove-txt.md
   - desk/materializations/materialization-drawer-tests-test-inbox-promote-cli-gaps-py.md
+  - desk/materializations/materialization-doctor-claude-skills-deskops-workflow-skill-md.md
+  - desk/materializations/materialization-doctor-readme-md.md
+  - desk/materializations/materialization-doctor-deskops-bootstrap-py.md
+  - desk/materializations/materialization-doctor-deskops-cli-commands-core-py.md
+  - desk/materializations/materialization-doctor-deskops-sldb-layout-py.md
+  - desk/materializations/materialization-doctor-tests-test-doctor-sldb-layout-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2537,6 +2543,14 @@ include:
     name: review-task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con-preflight-1
   - path: desk/reviews/task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con/bundle-1.md
     name: review-task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con-bundle-1
+  - path: desk/reviews/task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio/evidence-tests-1.md
+    name: review-task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio-evidence-tests-1
+  - path: desk/reviews/task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio/evidence-commit-1.md
+    name: review-task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio-evidence-commit-1
+  - path: desk/reviews/task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio/evidence-atom-1.md
+    name: review-task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio-evidence-atom-1
+  - path: desk/reviews/task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio/evidence-materialization-1.md
+    name: review-task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

@@ -1,0 +1,25 @@
+name: materialization-doctor-readme-md
+path: desk/materializations/materialization-doctor-readme-md.md
+source_hash: 1ec93210b3bc200738dd527ef5a3920a2f7adf57e5e8fbe6fa160538baeab73f
+content_hash: 355bf5841a3120aeb1fcf977a018955f122e8490c834b77bfbeb2e4b95fafca1
+field_hashes:
+  id: 940019d082a5d75d4f1c6b9d9133dff062ef95a5963cb41dad19734e29a3fb21
+  title: 1d823b73eb783e353478da2c63e02c7156f017cb3c84347e9563dbe0ae767ed3
+  source_atoms: b2816232c6099aa82e1b00d4d85353214ee615aa55d19dfc08fd221aaed7c837
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: d82ab49f91a6ba1662d933820377bd073d4da4fb04bd2911a20ecfde554cdd93
+  intent: 5e0ab7c63029c2aa88a4956b4b42144d7212f8c65ba4ce30492115a87c157273
+  validation: 4acb6d4953b503afd7b6987c43006ad35ec435db294c918d004fc29804b9d4d6
+  tags: a295f31ea8b767a3d4d9b81f96b64801ff54d0bf94f7af0522fcc9398be86372
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:doctor
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-22T07:46:12Z'
+  authority: generated
+  via: create_document
