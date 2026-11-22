@@ -1,14 +1,16 @@
 name: 20261122-182718-suggestion-dispatch-reap-e-integrate-empujan-directo-no-sirven-en-repos-con-dev-protegida-ni-cumplen-la-regla-de-pr
 path: desk/inbox/20261122-182718-suggestion-dispatch-reap-e-integrate-empujan-directo-no-sirven-en-repos-con-dev-protegida-ni-cumplen-la-regla-de-pr.md
-source_hash: 2f5032290ced8e70e3c4392a900d4b719cceb48eee972d7bbd9315e52e7a835e
-content_hash: 8f77ce9fe840075720b723b6b0c57107854d020b9f40165c909f566e3a2f3c43
+source_hash: 433cb079e1b246f1219ebe47514ab076480bcdf04ab385f1db304056a07363f4
+content_hash: 9ee43fc365d7aeae37323f8cfad5ce43974d7823443cfc32bdeb026a6f69a019
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 3c894b699286d85f1511fdbcb79fa8e20b368f377466132c43b01c94611d9e89
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 4e9069c1c71d25241696409d2b638fd76824d64820b35dedc71397ec1948222d
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 8e5eeff4d9eca0ba4297b062e76299d6772e4d6e1432e8ea31b2684fba53b9ca
+  ack_reason: 9169fc8326218919b7d1b7c9117350b1e2d24ed2bd25c8d58cef0e7e08d82f55
   title: 14dd08f96072f39458d8d8c436f3bb94b17e26514fe4c0eaf5baa8583c61962d
   body: b08a85b63ab9943364c83e99817df90c3fed951c0f735d97dab34659a88a25c9
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-22T21:38:03Z'
+  authority: generated
+  via: save_document_payload

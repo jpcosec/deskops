@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-22T21:39:07Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,11 +13,18 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-22T18:28:10'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-22T18:38:59'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: '(1) La puesta al día de los clones base sigue como tarea borrador task-governance-puesta-al-dia-de-los-clones-base-...;
+  va después de la de PR. (2) Sí existe: DeskConfig.load (deskops/config.py:104) mezcla
+  desk/config.local.json sobre desk/config.json con deep merge, y desk/config.local.json
+  está en .gitignore. Queue, dispatch e integrate leen por ahí, así que cubre ambas
+  secciones. Lo que falta es usarlo en deskops y sldb y poder escribirlo por CLI:
+  tarea task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d.'
 ---
 
 # Orden pedido por el concilio (clones primero) y rutas de máquina en desk/config.json
