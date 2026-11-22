@@ -4,7 +4,8 @@ Manage deferred drawer entries.
 
 positional arguments:
   {remove}
-    remove    Remove one drawer entry, its tracking, and its bullets on the
+    remove    Remove one drawer entry (a file, an issue with its assets, or a
+              whole plan directory), its tracking, and its bullets on the
               drawer board.
 
 options:
