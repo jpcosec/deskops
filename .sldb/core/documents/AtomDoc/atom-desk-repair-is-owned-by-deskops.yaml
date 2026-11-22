@@ -1,12 +1,12 @@
 name: atom-desk-repair-is-owned-by-deskops
 path: desk/atoms/atom-desk-repair-is-owned-by-deskops.md
-source_hash: 9576022302014dd80dd6ce427855858460fe8b822f8adbe8639761c3e7a436b8
-content_hash: 88ef92c7a77b6f84ff0605c12321d1e4a67c2cb5c686e3b0c4538a32a57358ab
+source_hash: 4ca9d1d6545335b1f55c5bfc529fe388c321f2e3583cb5d920d158fb8f5c3a82
+content_hash: 2851c1f01b369bcc53fdca29956d0feb77e571eebbdc6b3b9f2acdf730a8b493
 field_hashes:
   id: 4cf316c436065991850846b12d6af8f38b710f876339818bc723b545ab3b8a09
   title: 8952cd6ee142cd5e97d27e010d514c6db7df8ac68500ee702eeb94eba9f32ebb
   five_wh_one_plus: 0ac5b48a10a651e75b01f8d26468c18977ea336c90a9607a6163d0d330a4bb40
-  answer: a0618f2f6d078e958aae40fafe2239fe4861a9d6fab1cf7ffaab084c3a5b4212
+  answer: 98817bc7776c85b6aefb5840800fff524706f76b144199bbeb4fea37dfa31036
   tags: 82d002a87d7f4c9ba243bf5bf0c57755b84d13db557e9602a510512c27087825
 semantic_tags:
 - representation.markdown
@@ -17,3 +17,8 @@ semantic_tags:
 - topic:workspace-health
 - type.knowledge.atom
 - workspace.desk.atoms
+provenance:
+  by: agent
+  at: '2026-11-22T20:07:06Z'
+  authority: generated
+  via: save_document_payload

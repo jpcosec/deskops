@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-22T20:06:48Z'
+  authority: generated
+  via: save_document_payload
 id: atom-desk-health-is-measured-by-cli-diagnostics
 title: Desk health is measured by CLI diagnostics
 five_wh_one_plus: how
@@ -15,8 +20,7 @@ tags:
 
 Desk health is measured through deskops doctor, which separates **errors** from **alerts**. An error is something broken: the desk cannot be worked as it is, and doctor exits 1. An alert is the store having moved under an expected change (a document edited, moved or added by hand, a model contract that changed): nothing is broken, the change only has to be registered with `deskops desk update --apply`. Alerts alone exit 0 and are always printed. --repair acts on errors only.
 
-## Diagnostic Surface
-
+**Diagnostic Surface:**
 Errors (exit 1):
 1. **Missing desk structure** — `desk/tasks/Board.md`, `desk/drawer/`, `desk/rituals/phase.md`
 2. **Legacy desk** — no `desk/config.json`, an old `desk_format`, or a surface sldb reports in a state deskops does not know
@@ -33,8 +37,7 @@ Alerts (exit 0, always printed):
 
 An edited or moved document never makes the desk legacy.
 
-## Repairability
-
+**Repairability:**
 | Finding | Kind | Handled by |
 |---------|------|------------|
 | Missing structure | error | `deskops doctor --repair` scaffolds it |
@@ -42,13 +45,5 @@ An edited or moved document never makes the desk legacy.
 | Document gone, unreadable or invalid | error | manual: restore or fix the text |
 | Edited, moved, not tracked yet, store moves | alert | `deskops desk update --apply` registers them |
 
-## Evidence
-
+**Evidence:**
 `deskops/cli/commands/doctor.py` (`DoctorCLI`) runs the checks; `deskops/doctor_findings.py` holds the error/alert rule; `tests/test_doctor_alerts.py` pins it.
-
-## Tags
-
-- system:deskops
-- topic:workspace-health
-- topic:diagnosis
-- topic:cli
