@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T08:20:18Z'
+  at: '2026-11-22T08:52:18Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -58,6 +58,7 @@ tasks:
 - desk/tasks/task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada.md
 - desk/tasks/task-governance-el-store-se-actualiza-solo-hook-de-pre-commit-o-pr-check-que-falla-si-el-store-no-corresp.md
 - desk/tasks/task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare.md
+- desk/tasks/task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -147,3 +148,4 @@ _Generated from the task references above._
 - Governance: migración del workflow nuevo a los diez desks a la vez con vuelta atrás probada [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
 - Governance: el store se actualiza solo (hook de pre-commit o pr check que falla si el store no corresponde al árbol) [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
 - Governance: puesta al día de los clones base de la máquina coordinadora y doctor que valida cada tarea contra su modelo [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
+- Golden de help de deskops drawer al día con la descripción nueva de drawer remove [draft] - tests/fixtures/golden/help/deskops_drawer.txt coincide con la salida actual de 'deskops drawer --help' con COLUMNS=80. Se regenera con el mecanismo del propio test (pytest tests/test_output_goldens.py --update-golden), y solo cambia ese archivo; si --update-golden toca otros goldens, se revierten y se explica por qué.
