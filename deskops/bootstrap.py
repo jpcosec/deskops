@@ -109,6 +109,11 @@ class SLDBBootstrap:
     def init_local_store(self, target_path: Path) -> int:
         local_store = target_path / ".sldb"
         if local_store.exists():
+            from deskops.sldb_layout import old_layout_message
+
+            if message := old_layout_message(target_path):
+                print(f"Error: {message}")
+                return 1
             print(f"Local store already exists at {local_store}.")
         else:
             print(f"Initializing local store at {local_store}...")

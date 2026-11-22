@@ -8,7 +8,12 @@ _IGNORED_OLD = {".sldb/core", ".sldb/runtime"}
 
 
 def _ignore_pattern(line: str) -> str:
-    return line.strip().lstrip("/").rstrip("/")
+    pattern = line.strip().lstrip("/")
+    for suffix in ("/**", "/*", "/"):
+        if pattern.endswith(suffix):
+            pattern = pattern[: -len(suffix)]
+            break
+    return pattern
 
 
 def old_layout_signals(repo_root: Path) -> list[str]:
@@ -42,4 +47,4 @@ def old_layout_message(repo_root: Path) -> str | None:
     signals = old_layout_signals(repo_root)
     if not signals:
         return None
-    return f"Old .sldb layout ({'; '.join(signals)}). Migrate with: {remedy(repo_root)}"
+    return f"old .sldb layout ({'; '.join(signals)}): run {remedy(repo_root)}"

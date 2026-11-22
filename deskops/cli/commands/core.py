@@ -29,12 +29,6 @@ class InitCLI:
             print(error)
             return 1
 
-        from deskops.sldb_layout import old_layout_message
-
-        if message := old_layout_message(target_path):
-            print(f"Error: {message}")
-            return 1
-
         bootstrap = SLDBBootstrap()
         ready = bootstrap.ensure_machine_ready()
         if ready != 0:

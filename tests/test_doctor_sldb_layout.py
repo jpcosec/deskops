@@ -32,7 +32,26 @@ def _signal_ignore_runtime(root: Path) -> None:
     gitignore.write_text(gitignore.read_text(encoding="utf-8") + ".sldb/runtime\n", encoding="utf-8")
 
 
-@pytest.mark.parametrize("signal", [_signal_runtime, _signal_journal, _signal_ignore_core, _signal_ignore_runtime])
+def _ignore_line(line: str):
+    def _signal(root: Path) -> None:
+        gitignore = root / ".gitignore"
+        gitignore.write_text(gitignore.read_text(encoding="utf-8") + line + "\n", encoding="utf-8")
+
+    return _signal
+
+
+_IGNORE_VARIANTS = [
+    _ignore_line(f"{prefix}.sldb/{name}{suffix}")
+    for prefix in ("", "/")
+    for name in ("core", "runtime")
+    for suffix in ("", "/", "/**", "/*")
+]
+
+
+@pytest.mark.parametrize(
+    "signal",
+    [_signal_runtime, _signal_journal, _signal_ignore_core, _signal_ignore_runtime, *_IGNORE_VARIANTS],
+)
 def test_each_old_layout_signal_is_an_error_with_the_remedy(tmp_path: Path, capsys, signal) -> None:
     root = tmp_path / "project"
     _init_repo(root, capsys)
@@ -57,3 +76,21 @@ def test_init_refuses_an_old_layout_and_names_the_remedy(tmp_path: Path, capsys)
     capsys.readouterr()
     assert main(["init", str(root)]) != 0
     assert f"sldb stores migrate-layout --store {root / '.sldb'}" in capsys.readouterr().out
+
+
+def test_init_in_a_repo_without_a_store_succeeds_even_with_an_old_gitignore_line(tmp_path: Path, capsys) -> None:
+    root = tmp_path / "project"
+    root.mkdir()
+    (root / ".gitignore").write_text(".sldb/core/**\n", encoding="utf-8")
+    assert main(["init", str(root)]) == 0
+    assert (root / ".sldb").is_dir()
+
+
+def test_init_message_format(tmp_path: Path, capsys) -> None:
+    root = tmp_path / "project"
+    _init_repo(root, capsys)
+    _signal_journal(root)
+    capsys.readouterr()
+    assert main(["init", str(root)]) != 0
+    out = capsys.readouterr().out
+    assert f"old .sldb layout (.sldb/journal exists): run sldb stores migrate-layout --store {root / '.sldb'}" in out
