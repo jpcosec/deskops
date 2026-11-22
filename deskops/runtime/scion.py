@@ -800,7 +800,9 @@ def _render_python_env_section(desk_root: str, context: dict[str, str] | None) -
         "uv venv /tmp/ws-venv --python 3.12\n"
         f"VIRTUAL_ENV=/tmp/ws-venv uv pip install -e \"{desk_root}[dev]\" -e {sldb_pkg}\n"
         "export VIRTUAL_ENV=/tmp/ws-venv PATH=\"/tmp/ws-venv/bin:$PATH\"\n"
+        "python -c 'import xdist'  # pytest-xdist comes with the [dev] extra\n"
         "python -m pytest -q -p no:cacheprovider <tests>\n"
+        "python -m pytest -q -p no:cacheprovider -n 4  # full suite, always with -n 4\n"
         "```\n"
         "\n"
     )

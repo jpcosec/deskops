@@ -756,6 +756,7 @@ def test_executor_and_tester_agents_md_build_their_own_py312_venv(
     files = scion_template_files(executor, profiles["claude"], harness="claude", mode=mode, context=ctx)
     text = files["agents.md"]
     assert "uv venv /tmp/ws-venv --python 3.12" in text
+    assert "import xdist" in text and "-n 4" in text
     assert f'uv pip install -e "{ws}/desk[dev]" -e {ws}/sldb' in text
     assert 'PATH="/tmp/ws-venv/bin:$PATH"' in text and "unset PYTHONPATH" in text
     assert text.index("Python environment") < text.index("Recover state first")
