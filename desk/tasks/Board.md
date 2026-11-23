@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T12:36:00Z'
+  at: '2026-11-23T13:18:55Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -22,7 +22,6 @@ tasks:
 - desk/tasks/task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance.md
 - desk/tasks/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.md
 - desk/tasks/task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro.md
-- desk/tasks/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale.md
 - desk/tasks/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global.md
 - desk/tasks/task-jp-confirma-o-revierte-do4-review-record-acepta-preflight-y-bundle-humanos-solo-para-quickstart-y-e2.md
 - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
@@ -114,7 +113,6 @@ _Generated from the task references above._
 - JP decide si deskops adopta D4 (PR en TaskDoc) y D5 (kind alert en el inbox) del spec de Governance [draft] - JP decide, por separado para D4 y D5: adoptarlo ahora (se crea la tarea de codigo), esperar a que el spec de Governance salga de draft, o descartarlo.
 - Huecos de atomos de la auditoria de Chatbot_Infra: renombrar id, retire de atomos, validate --all y editar contexts/pills.md [draft] - Para cada hueco 1, 3, 4, 5 y 6: un recibo de reproduccion (o la constancia de que no se reproduce, con el comando y la salida) y, si se reproduce, la correccion con test: (1) `deskops atoms rename <id> <nuevo-id>` que reescribe referrers con la API de sldb; (3) retire acepta atomos o hay un verbo de retiro de atomos; (4) validate --all sin falsos positivos; (5) contexts/pills.md editable por un verbo de deskops; (6) doctor resuelve el store enlazado de deskops aunque se mueva el workspace.
 - JP decide el release 0.2.0 de deskops y que hacer con el tag v0.2.0 prematuro [draft] - JP decide: (1) si la suite ya funciona junta y se hace el release (fecha en CHANGELOG, tag apuntando a un commit verde); (2) que hacer con el tag v0.2.0 existente: dejarlo, moverlo (exige borrar el tag remoto, irreversible para quien ya lo bajo) o saltar a 0.2.1/0.3.0. Con la decision se crea la tarea de release.
-- runtime template de scion: image, resources y volumes van en un archivo --config y el tipo de hijo sale de un flag [ready_for_testing] - deskops runtime template escribe image, resources, volumes, kubernetes y telemetry en scion-env.yaml (mismo directorio de salida que scion-agent.yaml, sobrescrito en cada corrida) y ya no en scion-agent.yaml; scion_start_argv agrega --config <ruta de scion-env.yaml>; el agents.md del coordinador usa ese --config al lanzar hijos. Dos flags nuevos de runtime template, --executor-role y --tester-role, reciben un id de RoleDoc completo (con prefijo role-; defaults role-deskops-executor y role-deskops-tester); el --type de cada hijo es ese id sin 'role-'. Ejemplo: --executor-role role-ir-executor -> rol role-ir-executor y --type ir-executor.
 - La suite de deskops en un solo proceso cabe en MemoryMax=2G: fixture autouse limpia los caches globales [draft] - tests/conftest.py tiene una fixture autouse que despues de cada test llama a sldb.store.runtime_cache.invalidate_runtime_cache(), sldb.store.io.invalidate_index_cache(), sldb.store.built_cache.clear() y sldb.cli.alert_sink.forget(), y vacia los caches propios de deskops en deskops/doc_access.py (alrededor de las lineas 150-154). La suite completa en un proceso termina bajo MemoryMax=2G.
 - JP confirma o revierte DO4: review record acepta preflight y bundle humanos solo para quickstart y e2e del CI [draft] - Queda registrada la decision de JP entre: (a) confirmar DO4 tal cual; (b) confirmar y que el codigo rechace `review record --kind preflight|bundle` fuera del CI (p. ej. si no hay CI=true); (c) revertir: quitar esos kinds de review record y dar al e2e otra via. Si elige (b) o (c), se crea la tarea task.code correspondiente.
 - TraderBot y sldb migran sus task_type viejos con deskops desk update --apply [draft] - En los desks de TraderBot y sldb, `deskops desk update --apply` migro los task_type viejos y quedo commiteado; ninguna tarea de esos desks usa ya code/implementation/test/docs/spec/design/external sin prefijo task.

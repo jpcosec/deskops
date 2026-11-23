@@ -1,0 +1,5 @@
+cd .worktrees/deskops-e-85084b2b474c; python -m pytest -q tests/test_scion_runtime.py tests/test_runtime_profiles.py tests/test_output_goldens.py  -> exit 0 (passed)
+python -m pytest -q -p no:cacheprovider -n 4 -rf tests -> exit 1: 1 failed, 1365 passed, 3 skipped, 1 xfailed (4086s)
+FAILED tests/test_command_registry.py::test_mutating_commands_are_declared_explicitly (extra ('repo','whoami'))
+Same failure in a clean detached worktree of the branch HEAD a23f5eb8 (without my changes): pre-existing, unrelated.
+(origin/main a7694665 passes it, but is behind the branch base; the failure comes from the branch base.)
