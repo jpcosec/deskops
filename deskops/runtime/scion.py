@@ -88,6 +88,21 @@ HARNESS_AUTH_TYPES: tuple[str, ...] = ("api-key", "oauth-token", "auth-file", "v
 
 TEMPLATE_FILES: tuple[str, ...] = ("scion-agent.yaml", "system-prompt.md", "agents.md")
 
+#: Scion ignores image/resources/volumes/kubernetes/telemetry inside scion-agent.yaml; they
+#: only apply through ``scion start --config <file>``. They go to this file, next to the template.
+ENV_CONFIG_FILE = "scion-env.yaml"
+ENV_CONFIG_KEYS: tuple[str, ...] = ("image", "resources", "volumes", "kubernetes", "telemetry")
+
+DEFAULT_EXECUTOR_ROLE = "role-deskops-executor"
+DEFAULT_TESTER_ROLE = "role-deskops-tester"
+
+
+def _child_type(role_id: str) -> str:
+    """The ``scion start --type`` of a child: its RoleDoc id without the ``role-`` prefix."""
+    if not role_id.startswith("role-") or len(role_id) == len("role-"):
+        raise ValueError(f"role id must be a full RoleDoc id with the 'role-' prefix, got '{role_id}'")
+    return role_id[len("role-"):]
+
 #: The only keys a Scion runtime context may carry. Paths are absolute and inside
 #: ``workspace_root``; ``project`` is the Scion project slug or UUID, never a path.
 SCION_CONTEXT_KEYS: tuple[str, ...] = ("project", "workspace_root", "desk_root", "source_root", "sldb_root")
@@ -283,12 +298,15 @@ def scion_start_argv(
     workspace: str,
     template: str,
     harness_auth: str | None = DEFAULT_HARNESS_AUTH,
+    env_config: str | None = None,
 ) -> list[str]:
     """The explicit native Scion start argv for one deterministic child identity.
 
     ``harness_auth`` is the auth the child's template selects (``auth_selectedType``);
     by default ``oauth-token``, the claude template default. ``None`` leaves
-    ``--harness-auth`` out so the child's template decides alone.
+    ``--harness-auth`` out so the child's template decides alone. ``env_config`` is the
+    path of the template's ``scion-env.yaml``; it is passed as ``--config`` because Scion
+    only applies image/resources/volumes from there.
     """
     if not prompt.strip():
         raise ValueError("prompt must not be empty")
@@ -307,6 +325,7 @@ def scion_start_argv(
         workspace,
         *(["--harness-auth", harness_auth] if harness_auth is not None else []),
         "--non-interactive",
+        *(["--config", env_config] if env_config else []),
     ]
     for key, value in (identity.get("labels") or {}).items():
         argv += ["--label", f"{key}={value}"]
@@ -378,8 +397,14 @@ def scion_template_files(
     mode: str | None = None,
     context: dict[str, Any] | None = None,
     harness_auth: str | None = None,
+    executor_role: str = DEFAULT_EXECUTOR_ROLE,
+    tester_role: str = DEFAULT_TESTER_ROLE,
 ) -> dict[str, str]:
-    """Render the three template files as ``{filename: text}``.
+    """Render the template files as ``{filename: text}``.
+
+    ``scion-env.yaml`` is included only when there is environment config (image, resources,
+    volumes, kubernetes, telemetry); it is a ``scion start --config`` file, not template content.
+    ``executor_role``/``tester_role`` are the full RoleDoc ids a coordinator launches children with.
 
     ``source`` is a human-readable provenance line (role path + runtime path)
     written at the top of ``scion-agent.yaml``. ``mode`` picks the
@@ -411,6 +436,8 @@ def scion_template_files(
         raise ValueError(f"unknown Scion harness-config '{harness}' (known: {', '.join(sorted(set(HARNESS_BY_KIND.values())))})")
 
     runtime_context = validate_scion_context(context) if context is not None else None
+    _child_type(executor_role)
+    _child_type(tester_role)
 
     role_name = str(role_doc.get("name") or role_doc.get("id") or "role")
     role_id = str(role_doc.get("id") or "")
@@ -465,6 +492,7 @@ def scion_template_files(
         lines.append("# RoleDoc.tools, folded through the runtime profile's tools flag:")
         lines.append(f"command_args: {_yaml_scalar(command_args)}")
 
+    env_lines: list[str] = []
     if runtime_context is not None:
         lines.append("# Runtime context from --context-file (absolute paths, no secrets):")
         lines.append("env:")
@@ -479,15 +507,15 @@ def scion_template_files(
             lines.append(f"  {key}: {_yaml_scalar(value)}")
         for key, value in (runtime_context.get("env") or {}).items():
             lines.append(f"  {key}: {_yaml_scalar(value)}")
-        lines.append("volumes:")
+        env_lines.append("volumes:")
         for path in (runtime_context["workspace_root"], *(runtime_context.get("shared_paths") or [])):
-            lines.append(f"  - source: {_yaml_scalar(path)}")
-            lines.append(f"    target: {_yaml_scalar(path)}")
+            env_lines.append(f"  - source: {_yaml_scalar(path)}")
+            env_lines.append(f"    target: {_yaml_scalar(path)}")
         limits = [(key, runtime_context[f"{key}_limit"]) for key in ("cpu", "memory") if runtime_context.get(f"{key}_limit")]
         if limits:
-            lines.append("resources:")
-            lines.append("  limits:")
-            lines.extend(f"    {key}: {_yaml_scalar(value)}" for key, value in limits)
+            env_lines.append("resources:")
+            env_lines.append("  limits:")
+            env_lines.extend(f"    {key}: {_yaml_scalar(value)}" for key, value in limits)
 
     omitted: list[str] = []
     fallback_models = role_doc.get("fallback_models") or []
@@ -517,7 +545,8 @@ def scion_template_files(
     system_prompt = (body or f"# {role_name}") + "\n"
     if resolved_mode == "coordinator":
         agents_md = _render_coordinator_agents_md(
-            role_name, harness, task_repo, runtime_context, child_auth=auth_type or DEFAULT_HARNESS_AUTH
+            role_name, harness, task_repo, runtime_context, child_auth=auth_type or DEFAULT_HARNESS_AUTH,
+            executor_role=executor_role, tester_role=tester_role,
         )
     elif resolved_mode == "tester":
         agents_md = _render_tester_agents_md(role_name, harness, task_repo, runtime_context)
@@ -525,7 +554,14 @@ def scion_template_files(
         agents_md = _render_specialist_agents_md(role_name, harness, task_repo, runtime_context)
     else:
         agents_md = _render_agents_md(role_name, harness, task_repo, runtime_context)
-    return {"scion-agent.yaml": agent_yaml, "system-prompt.md": system_prompt, "agents.md": agents_md}
+    files = {"scion-agent.yaml": agent_yaml, "system-prompt.md": system_prompt, "agents.md": agents_md}
+    if env_lines:
+        header = (
+            f"# Generated by `deskops runtime template {role_doc.get('id') or role_name} --harness {harness}`.\n"
+            "# Scion ignores these keys in scion-agent.yaml; pass this file with `scion start --config`.\n"
+        )
+        files[ENV_CONFIG_FILE] = header + "\n".join(env_lines) + "\n"
+    return files
 
 
 def _example_roots(task_repo: str | None, context: dict[str, str] | None) -> tuple[str, str, str, str]:
@@ -543,6 +579,8 @@ def _render_coordinator_agents_md(
     context: dict[str, str] | None,
     *,
     child_auth: str = DEFAULT_HARNESS_AUTH,
+    executor_role: str = DEFAULT_EXECUTOR_ROLE,
+    tester_role: str = DEFAULT_TESTER_ROLE,
 ) -> str:
     """Instructions for the long-lived agent that owns one desk.
 
@@ -556,6 +594,8 @@ def _render_coordinator_agents_md(
     repo = task_repo or "<repo>"
     workspace, desk_root, source_root, project = _example_roots(task_repo, context)
     sldb_root = str((context or {}).get("sldb_root", "<sldb_root>"))
+    executor_type = _child_type(executor_role)
+    tester_type = _child_type(tester_role)
     return (
         f"# {role_name}: coordinator of the `{repo}` desk on Scion ({harness})\n"
         "\n"
@@ -615,10 +655,11 @@ def _render_coordinator_agents_md(
         "\n"
         "```bash\n"
         f"RUN_DIR={desk_root}/runs/subagents/<run>\n"
-        f"deskops runtime template role-deskops-executor --root {source_root} --out \"$RUN_DIR/scion-template\" \\\n"
+        f"deskops runtime template {executor_role} --root {source_root} --out \"$RUN_DIR/scion-template\" \\\n"
         f"  --mode executor --task <task-id> --agent deskops-e-<12hex> --task-root {desk_root} --run-dir runs/subagents/<run>\n"
-        f"scion start deskops-e-<12hex> \"<task prompt>\" --type deskops-executor --project {project} \\\n"
+        f"scion start deskops-e-<12hex> \"<task prompt>\" --type {executor_type} --project {project} \\\n"
         f"  --workspace {workspace} --harness-auth {child_auth} --non-interactive \\\n"
+        "  --config \"$RUN_DIR/scion-template/scion-env.yaml\" \\\n"
         "  --label deskops.task_id=<helper-task-label> --label deskops.contract_sha256=<helper-contract-label> \\\n"
         "  --label deskops.role=executor --label deskops.attempt=1\n"
         f"sciontool status blocked \"waiting on deskops-e-<12hex>\"\n"
@@ -631,16 +672,17 @@ def _render_coordinator_agents_md(
         "6. **Test independently.** When activity=completed, verify that the executor's advance happened with\n"
         f"   `deskops show task <id> --root {desk_root}` (status and current_node changed) and inspect its handoff\n"
         "   before testing. Dispatch a\n"
-        "   fresh tester with role-deskops-tester, `--mode tester`, its own `deskops-t-<12hex>` identity and a run dir\n"
+        f"   fresh tester with {tester_role}, `--mode tester`, its own `deskops-t-<12hex>` identity and a run dir\n"
         f"   ending in `-testing`. Tell it to run validation from `{desk_root}`. The tester proves the contract and\n"
         "   guardrails; it does not implement or close.\n"
         "\n"
         "```bash\n"
         f"TEST_RUN={desk_root}/runs/subagents/<run>-testing\n"
-        f"deskops runtime template role-deskops-tester --root {source_root} --out \"$TEST_RUN/scion-template\" \\\n"
+        f"deskops runtime template {tester_role} --root {source_root} --out \"$TEST_RUN/scion-template\" \\\n"
         f"  --mode tester --task <task-id> --agent deskops-t-<12hex> --task-root {desk_root} --run-dir runs/subagents/<run>-testing\n"
-        f"scion start deskops-t-<12hex> \"<test prompt>\" --type deskops-tester --project {project} \\\n"
+        f"scion start deskops-t-<12hex> \"<test prompt>\" --type {tester_type} --project {project} \\\n"
         f"  --workspace {workspace} --harness-auth {child_auth} --non-interactive \\\n"
+        "  --config \"$TEST_RUN/scion-template/scion-env.yaml\" \\\n"
         "  --label deskops.task_id=<helper-task-label> --label deskops.contract_sha256=<helper-contract-label> \\\n"
         "  --label deskops.role=tester --label deskops.attempt=1\n"
         "```\n"
@@ -921,6 +963,8 @@ def materialize_scion_template(
     mode: str | None = None,
     context: dict[str, Any] | None = None,
     harness_auth: str | None = None,
+    executor_role: str = DEFAULT_EXECUTOR_ROLE,
+    tester_role: str = DEFAULT_TESTER_ROLE,
 ) -> Path:
     """Write the template for ``role_id`` and return its directory.
 
@@ -946,11 +990,15 @@ def materialize_scion_template(
         mode=mode,
         context=context,
         harness_auth=harness_auth,
+        executor_role=executor_role,
+        tester_role=tester_role,
     )
     target = template_dir_for(root, role_doc, out_dir)
     target.mkdir(parents=True, exist_ok=True)
     for name, text in files.items():
         (target / name).write_text(text, encoding="utf-8")
+    if ENV_CONFIG_FILE not in files:
+        (target / ENV_CONFIG_FILE).unlink(missing_ok=True)  # never leave a stale --config file
     return target
 
 

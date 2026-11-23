@@ -404,7 +404,9 @@ def test_context_emits_environment_volume_and_concrete_examples(tmp_path: Path) 
         "DESKOPS_SCION_PROJECT": "sldb-1",
         "PYTHONPATH": f"{paths['source']}:{paths['sldb']}",
     }
-    assert agent["volumes"] == [{"source": str(paths["workspace"]), "target": str(paths["workspace"])}]
+    assert "volumes" not in agent and "resources" not in agent
+    env_config = yaml.safe_load(files["scion-env.yaml"])
+    assert env_config["volumes"] == [{"source": str(paths["workspace"]), "target": str(paths["workspace"])}]
     agents = files["agents.md"]
     for fragment in (
         f"--root {paths['desk']}",
@@ -465,8 +467,11 @@ def test_context_container_keys_emit_limits_shared_paths_and_env(tmp_path: Path)
         executor_role, load_runtime_profiles(ROOT)["claude"], harness="claude", mode="executor", context=context
     )
     agent = yaml.safe_load(files["scion-agent.yaml"])
-    assert agent["resources"] == {"limits": {"cpu": "4", "memory": "6Gi"}}
-    assert agent["volumes"] == [
+    assert "resources" not in agent and "volumes" not in agent
+    env_config = yaml.safe_load(files["scion-env.yaml"])
+    assert set(env_config) == {"resources", "volumes"}
+    assert env_config["resources"] == {"limits": {"cpu": "4", "memory": "6Gi"}}
+    assert env_config["volumes"] == [
         {"source": str(paths["workspace"]), "target": str(paths["workspace"])},
         {"source": str(shared), "target": str(shared)},
     ]
@@ -481,8 +486,9 @@ def test_context_without_container_keys_has_no_resources(tmp_path: Path) -> None
         executor_role, load_runtime_profiles(ROOT)["claude"], harness="claude", mode="executor", context=context
     )
     agent = yaml.safe_load(files["scion-agent.yaml"])
-    assert "resources" not in agent
-    assert len(agent["volumes"]) == 1 and "TMPDIR" not in agent["env"]
+    env_config = yaml.safe_load(files["scion-env.yaml"])
+    assert "resources" not in env_config
+    assert len(env_config["volumes"]) == 1 and "TMPDIR" not in agent["env"]
 
 
 def test_harness_auth_selects_the_template_auth_type(tmp_path: Path) -> None:
@@ -837,3 +843,53 @@ def test_model_alias_derived_from_role_model(executor: dict, profiles: dict[str,
     text = scion_template_files({**executor, "model": "gpt-5.4"}, profiles["claude"], harness="claude")["scion-agent.yaml"]
     assert yaml.safe_load(text)["model"] == "medium"
     assert "# model alias medium: no mapping for RoleDoc.model gpt-5.4" in text
+
+
+def test_start_argv_adds_config_only_when_given(tmp_path: Path) -> None:
+    identity = scion_child_identity(_write_task(tmp_path, "task"), "executor")
+    common = dict(prompt="Go.", project="p", workspace="/workspace", template="ir-executor")
+    assert "--config" not in scion_start_argv(identity, **common)
+    argv = scion_start_argv(identity, **common, env_config="/x/scion-env.yaml")
+    assert argv[argv.index("--config") + 1] == "/x/scion-env.yaml"
+
+
+def test_env_config_file_is_written_beside_the_template_and_overwritten(tmp_path: Path) -> None:
+    context, _ = _context(tmp_path)
+    context.update(memory_limit="6Gi", cpu_limit="2")
+    out = tmp_path / "t"
+    materialize_scion_template(ROOT, "deskops-executor", harness="claude", out_dir=out, context=context)
+    env_config = yaml.safe_load((out / "scion-env.yaml").read_text(encoding="utf-8"))
+    assert env_config["resources"] == {"limits": {"cpu": "2", "memory": "6Gi"}}
+    agent = yaml.safe_load((out / "scion-agent.yaml").read_text(encoding="utf-8"))
+    assert not {"image", "resources", "volumes", "kubernetes", "telemetry"} & set(agent)
+    materialize_scion_template(ROOT, "deskops-executor", harness="claude", out_dir=out)
+    assert not (out / "scion-env.yaml").exists()
+
+
+def test_coordinator_agents_md_uses_config_and_the_given_child_roles() -> None:
+    _, supervisor = find_role_doc(ROOT, "role-deskops-supervisor")
+    profile = load_runtime_profiles(ROOT)["claude"]
+    default = scion_template_files(supervisor, profile, harness="claude", mode="coordinator")["agents.md"]
+    assert "--type deskops-executor" in default and "--type deskops-tester" in default
+    assert "--config \"$RUN_DIR/scion-template/scion-env.yaml\"" in default
+    assert "--config \"$TEST_RUN/scion-template/scion-env.yaml\"" in default
+    custom = scion_template_files(
+        supervisor, profile, harness="claude", mode="coordinator",
+        executor_role="role-ir-executor", tester_role="role-ir-tester",
+    )["agents.md"]
+    assert "template role-ir-executor " in custom and "--type ir-executor" in custom
+    assert "template role-ir-tester " in custom and "--type ir-tester" in custom
+    assert "deskops-executor" not in custom and "deskops-tester" not in custom
+    with pytest.raises(ValueError, match="role-"):
+        scion_template_files(supervisor, profile, harness="claude", mode="coordinator", executor_role="ir-executor")
+
+
+def test_cli_executor_role_flag_reaches_agents_md(tmp_path: Path) -> None:
+    out = tmp_path / "c"
+    code = main([
+        "runtime", "template", "role-deskops-supervisor", "--root", str(ROOT), "--out", str(out),
+        "--mode", "coordinator", "--executor-role", "role-ir-executor",
+    ])
+    assert code == 0
+    agents = (out / "agents.md").read_text(encoding="utf-8")
+    assert "--type ir-executor" in agents and "deskops-executor" not in agents

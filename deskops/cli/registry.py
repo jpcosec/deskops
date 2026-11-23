@@ -2008,6 +2008,18 @@ the dir is a finding with the commit's own text and the report is not ok.
                 ),
                 A("--task-repo", default=None, help="Repository under /workspace the agent may write to; named in agents.md."),
                 A(
+                    "--executor-role",
+                    default="role-deskops-executor",
+                    help="Full RoleDoc id (with the role- prefix) of the executor a coordinator launches; its "
+                    "scion start --type is the id without 'role-'.",
+                ),
+                A(
+                    "--tester-role",
+                    default="role-deskops-tester",
+                    help="Full RoleDoc id (with the role- prefix) of the tester a coordinator launches; its "
+                    "scion start --type is the id without 'role-'.",
+                ),
+                A(
                     "--mode",
                     choices=("executor", "coordinator", "tester", "specialist"),
                     default=None,

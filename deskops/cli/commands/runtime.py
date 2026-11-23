@@ -73,7 +73,14 @@ class RuntimeCLI:
         Never calls ``scion``: launching (``scion start <agent> "<task>"
         --type <template>``) stays a deliberate gesture of the supervisor.
         """
-        from deskops.runtime.scion import load_scion_context, materialize_scion_template, record_scion_run
+        from deskops.runtime.scion import (
+            DEFAULT_EXECUTOR_ROLE,
+            DEFAULT_TESTER_ROLE,
+            ENV_CONFIG_FILE,
+            load_scion_context,
+            materialize_scion_template,
+            record_scion_run,
+        )
 
         out_dir = Path(args.out).expanduser().resolve() if getattr(args, "out", None) else None
         task_id = getattr(args, "task", None)
@@ -92,10 +99,13 @@ class RuntimeCLI:
             mode=getattr(args, "mode", None),
             context=context,
             harness_auth=getattr(args, "harness_auth", None),
+            executor_role=getattr(args, "executor_role", None) or DEFAULT_EXECUTOR_ROLE,
+            tester_role=getattr(args, "tester_role", None) or DEFAULT_TESTER_ROLE,
         )
         print(f"Scion template: {target}")
-        for name in ("scion-agent.yaml", "system-prompt.md", "agents.md"):
-            print(f"  {name}")
+        for name in ("scion-agent.yaml", "system-prompt.md", "agents.md", ENV_CONFIG_FILE):
+            if (target / name).is_file():
+                print(f"  {name}")
         if task_id and agent:
             harness = getattr(args, "harness", None) or ""
             # Roles live in the deskops desk; the task may live in another repo's
@@ -110,7 +120,8 @@ class RuntimeCLI:
                 run_dir=getattr(args, "run_dir", None),
             )
             print(f"RunDoc: {run_path.relative_to(task_root)} (in {task_root})")
-        print(f"Next: scion start {agent or '<agent>'} \"<task>\" --type {target.name}")
+        config = f" --config {target / ENV_CONFIG_FILE}" if (target / ENV_CONFIG_FILE).is_file() else ""
+        print(f"Next: scion start {agent or '<agent>'} \"<task>\" --type {target.name}{config}")
         return 0
 
     def _supervise(self, args: Any, executable: str) -> int:

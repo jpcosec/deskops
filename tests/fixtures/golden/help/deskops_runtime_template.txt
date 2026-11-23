@@ -3,6 +3,8 @@ usage: deskops runtime template [-h] [--root ROOT] [--harness HARNESS]
                                 [--model-alias {small,medium,large,extra-large}]
                                 [--harness-auth {api-key,oauth-token,auth-file,vertex-ai}]
                                 [--task-repo TASK_REPO]
+                                [--executor-role EXECUTOR_ROLE]
+                                [--tester-role TESTER_ROLE]
                                 [--mode {executor,coordinator,tester,specialist}]
                                 [--context-file CONTEXT_FILE] [--task TASK]
                                 [--agent AGENT] [--task-root TASK_ROOT]
@@ -34,6 +36,14 @@ options:
   --task-repo TASK_REPO
                         Repository under /workspace the agent may write to;
                         named in agents.md.
+  --executor-role EXECUTOR_ROLE
+                        Full RoleDoc id (with the role- prefix) of the
+                        executor a coordinator launches; its scion start
+                        --type is the id without 'role-'.
+  --tester-role TESTER_ROLE
+                        Full RoleDoc id (with the role- prefix) of the tester
+                        a coordinator launches; its scion start --type is the
+                        id without 'role-'.
   --mode {executor,coordinator,tester,specialist}
                         Which agents.md to write: executor (one bounded task),
                         tester (independent verification), specialist (leaves
