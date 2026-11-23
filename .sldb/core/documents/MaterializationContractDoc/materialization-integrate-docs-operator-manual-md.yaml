@@ -1,0 +1,25 @@
+name: materialization-integrate-docs-operator-manual-md
+path: desk/materializations/materialization-integrate-docs-operator-manual-md.md
+source_hash: 124cf3882d9c55c8ffd66630871af54a53d3e1dfc7bc80750b2c7f598f8b85f2
+content_hash: 0d02cc2cac75fbdefcc4043d982fedbc326bd78f09fc8088b170549cb2a1dccc
+field_hashes:
+  id: 85e07596d2f454ca2c3ca18f1e891f874a56b5bb96cca25090fe71409d8a3cc6
+  title: 8dc7f57fc0d203529e13fe68e2e4d637db34427f7e232490537f6b5e10e9b1f9
+  source_atoms: 0d9ab829edaaa4b2bea9c28b1a97123aa21349762af9f90724d04485dfccb6a5
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 3bed947441017806533d525d02305a7a0ba4430336a3781093dbc5810d8c74a6
+  intent: 3b0ce61e3c6d3c6f1038ee5b0a5521bd89bb14998d499e94a8842d37863af519
+  validation: fd109d67f6ce34b09e7ba37809162fa0ef1cd6bb393d235d8a37f001a7a731a9
+  tags: 65032db1e03e5284dea572e86b9855bf76a3a572761c6bc01fd3324ed696f2e1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:integrate
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T01:56:32Z'
+  authority: generated
+  via: create_document

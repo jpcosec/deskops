@@ -1,0 +1,25 @@
+name: materialization-integrate-tests-test-dispatch-py
+path: desk/materializations/materialization-integrate-tests-test-dispatch-py.md
+source_hash: 2d056b6e3ca4bf8613ff182f8acfbada0c0383dbbe9a73c0f6da71de50b538a5
+content_hash: 81bd997f6234eff60d16bd40d6f7cb7eed50d9c7ba686e7124470079ae93b7ee
+field_hashes:
+  id: d47ae2685a1696c722b4908e9ae7965c0d85e05bbe04df96ae740297560518d5
+  title: 9c665b3bc4ba7849864703e7cb786ea7fbcd6a93ba282714b9938f8a0dab7ee9
+  source_atoms: 0d9ab829edaaa4b2bea9c28b1a97123aa21349762af9f90724d04485dfccb6a5
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 93529867a43e58bec44237233aeb1d4138785aea59ee7f81ad966f3b4540ca38
+  intent: 02aa7d110adf970d4bf0b78540c2a4741b900fd6b1500d9ffebcc61ba46520ea
+  validation: fd109d67f6ce34b09e7ba37809162fa0ef1cd6bb393d235d8a37f001a7a731a9
+  tags: 65032db1e03e5284dea572e86b9855bf76a3a572761c6bc01fd3324ed696f2e1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:integrate
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T01:56:43Z'
+  authority: generated
+  via: create_document

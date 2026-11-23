@@ -1,0 +1,25 @@
+name: materialization-integrate-deskops-dispatch-py
+path: desk/materializations/materialization-integrate-deskops-dispatch-py.md
+source_hash: f9c3f877c81820982e71c096f75091162cb6009233691e3c9bfe2737ac1c4ac6
+content_hash: 867c117a839b482e6bd7f477465807aa05d342a4f168d61525b00e581f74fbf6
+field_hashes:
+  id: 6a32f0cec9124063f1c2fff954740cabf5ab7c980968bc8e117e2d849967f123
+  title: 30aacd9c23e07c213ecc477d3ae4b5bf24287de27d87a0f22b1b7474c059149e
+  source_atoms: 0d9ab829edaaa4b2bea9c28b1a97123aa21349762af9f90724d04485dfccb6a5
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 98e1fb23ed84d4f22eeee4319718025c9d4d82ad8ef3055dc925efb520cd987f
+  intent: 8f5cb13ef60529c3e2deb3e46e6271b682aefb8d60a7ab7a47c79217fa4ffaa7
+  validation: fd109d67f6ce34b09e7ba37809162fa0ef1cd6bb393d235d8a37f001a7a731a9
+  tags: 65032db1e03e5284dea572e86b9855bf76a3a572761c6bc01fd3324ed696f2e1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:integrate
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T01:56:19Z'
+  authority: generated
+  via: create_document

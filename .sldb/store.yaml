@@ -514,6 +514,10 @@ include:
   - desk/materializations/materialization-queue-tests-fixtures-golden-scaffold-update-json.md
   - desk/materializations/materialization-queue-tests-test-command-registry-py.md
   - desk/materializations/materialization-queue-tests-test-queue-cli-py.md
+  - desk/materializations/materialization-integrate-deskops-config-py.md
+  - desk/materializations/materialization-integrate-deskops-dispatch-py.md
+  - desk/materializations/materialization-integrate-docs-operator-manual-md.md
+  - desk/materializations/materialization-integrate-tests-test-dispatch-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2772,6 +2776,14 @@ include:
     name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-evidence-atom-1
   - path: desk/reviews/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de/evidence-materialization-1.md
     name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-evidence-materialization-1
+  - path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/evidence-tests-1.md
+    name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-evidence-tests-1
+  - path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/evidence-commit-1.md
+    name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-evidence-commit-1
+  - path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/evidence-atom-1.md
+    name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-evidence-atom-1
+  - path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/evidence-materialization-1.md
+    name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

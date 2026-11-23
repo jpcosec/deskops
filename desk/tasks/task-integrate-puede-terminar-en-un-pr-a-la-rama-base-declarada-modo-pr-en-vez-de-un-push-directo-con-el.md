@@ -1,26 +1,41 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:39:57Z'
+  at: '2026-11-23T01:55:57Z'
   authority: generated
   via: save_document_payload
 id: task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261122-182718-suggestion-dispatch-reap-e-integrate-empujan-directo-no-sirven-en-repos-con-dev-protegida-ni-cumplen-la-regla-de-pr.md
+- deskops/config.py
+- deskops/dispatch.py
+- deskops/integrate.py
+- docs/operator-manual.md
+- tests/test_dispatch.py
+- tests/test_integrate.py
+- ca7ecfc518fa8955e2d51e99caa72449fe5b5e1c
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/config.py
+- deskops/dispatch.py
+- deskops/integrate.py
+- docs/operator-manual.md
+- tests/test_dispatch.py
+- tests/test_integrate.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-integrate-en-modo-pr-termina-en-un-pr-hacia-la-rama-base-declarada
 ---
 
 # integrate puede terminar en un PR a la rama base declarada (modo pr) en vez de un push directo, con el cierre dentro del PR
