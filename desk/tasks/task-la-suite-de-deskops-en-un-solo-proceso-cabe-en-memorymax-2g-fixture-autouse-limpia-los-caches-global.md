@@ -1,19 +1,20 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T16:12:15Z'
+  at: '2026-11-23T16:13:14Z'
   authority: generated
   via: save_document_payload
 id: task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global
-status: active
+status: ready_for_testing
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
+- task_hands_to_closeout
 references:
 - tests/conftest.py
 - 196f3cb912269562b1282745f23e58fc63fef758

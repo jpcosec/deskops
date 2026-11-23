@@ -1,0 +1,53 @@
+---
+sldb:
+  by: agent
+  at: '2026-11-23T16:12:53Z'
+  authority: generated
+  via: create_document
+# review-<task>-<kind>-<n>
+id: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-atom-1
+# preflight | bundle | reproduction | goldens | owner | node | evidence
+kind: evidence
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: atom
+# kind evidence only: what the producer verified, one item per line
+value: atom-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-gracias-a-una-fixture-autouse-que-limpia
+# doc:<Model>:<id> or empty for reviews of plan nodes
+subject: doc:TaskCodeDoc:task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global@sha256:d8a61abf23f274657a0b8f01812d7e0043dfe2ea767316f7c073c3b1208100a6
+# <plan>/dag.yaml#node:<ID>; empty when subject names a document
+subject_ref: ''
+# RuntimeProfileDoc name or "human"
+engine: deskops-closeout
+actor: deskops
+# Run evidence directory under runs/, relative to the project root
+run_dir: ''
+input_sha256: d7ebfcf387b3a591e2d843c5f38fcf00f121c446409b7939ca756e9c37b7bf85
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
+output_sha256: ''
+# pending | accepted | rejected | incomplete
+verdict: accepted
+reason: 'verified: atom atom-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-gracias-a-una-fixture-autouse-que-limpia'
+# ISO 8601 timestamp
+created_at: '2026-11-23T16:12:42.194435+00:00'
+# ISO 8601 timestamp, empty while pending
+disposed_at: '2026-11-23T16:12:42.194435+00:00'
+disposed_by: deskops
+# e.g. workspace:desk
+tags:
+- workspace:desk
+---
+
+# Closeout evidence atom of task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global
+
+## Summary
+
+_Summarize what was reviewed and the evidence this receipt records._
+
+closeout verify checked atom: atom-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-gracias-a-una-fixture-autouse-que-limpia
+
+## Disposition
+
+_Record the verdict rationale and who disposed of the review._
+
+Verdict accepted: verified: atom atom-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-gracias-a-una-fixture-autouse-que-limpia

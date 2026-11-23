@@ -1,0 +1,37 @@
+name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-materialization-1
+path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/evidence-materialization-1.md
+source_hash: 5add14c892cc510b0d5220fce60712bf47617954ca76fa992ffbf12462fd7b24
+content_hash: fff7af73cfe968bb705662f3afd79266901040e30e8999b92ac91b585228b684
+field_hashes:
+  id: df5d3262896ed086f5f9589a94326a6efedb5519ed4b95ba48e6841c2773bda5
+  title: 426071f31c4e310315c5359cbea50215db6e847cb227f27cce02b31d4b22c0b5
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 9060dfb0a2b89c6a83a914c3ab04385fd730439a5deb96c7920fe4d1940d83c0
+  subject: 832a9d77ebd8689d56afc1cbc6d2d8e688c0f687b409548e6f3c48ee541e20ee
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 6c2aff6ae76792695521187846c36ee1ef4053209f3d3dc5ee67c775cba636a1
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 415aa368210e97352f76fbd6aaf13d37b3762637558c48132e478d359c965ae2
+  created_at: 544b4ac8cab518e60aefeac7e28bb751596a1033e8c5fa7f078b40e9a6d4c4c7
+  disposed_at: 544b4ac8cab518e60aefeac7e28bb751596a1033e8c5fa7f078b40e9a6d4c4c7
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 3b855faebcf125a992640bb314be7de08119fcb87691ed606be35264c87ea751
+  disposition: 69cc3a5678abffabe1f5a1d65c41fc2405b3b32f2be067a0889118375c0ff39f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T16:12:57Z'
+  authority: generated
+  via: create_document

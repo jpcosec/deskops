@@ -1,15 +1,15 @@
 name: task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global
 path: desk/tasks/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global.md
-source_hash: 038d01325aae9d80ffe53ac2b7fccdbc61aa9132e0e1e99a56c8b3f1e50bd0a0
-content_hash: bc387215f0c612a7db9256fd145a57f9d1e92268a8167bc4ea3883208e7c5f04
+source_hash: 30feb76b591f00a22a539452605d10219e0d5b33ecaa4bd0da28a7a0ed2d632d
+content_hash: f8be70369dbd8d44b849cafff7fe897acb55881d536c01b3d2f44ef53b1e7589
 field_hashes:
   title: f4bed0a4f30a546d40bbcaab74f16eb05e730a032569c1c99402a867da48c71e
   id: f0c0ce5227cae9329a0ec54fe8dd6d30b955db0cb66d3acf99965fa99160a5b8
-  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
-  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: 5f45caa3442dbd41a36d449cc80f8ca3f74a35809ac6afd3965162fd7c7d75ca
   goal: 3d5b3d8e28099e1e4a3a5618efc011fcf2c743432fc4a028691003b729b6937b
   scope: 5b752c36f9980f2ca3f934c2f37d0588431aa0775f154480d2d1c62c1966dfe1
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T16:12:15Z'
+  at: '2026-11-23T16:13:14Z'
   authority: generated
   via: save_document_payload
