@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T14:43:16Z'
+  at: '2026-11-23T15:11:49Z'
   authority: generated
   via: save_document_payload
 id: task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n
@@ -13,14 +13,20 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references: []
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- f7772acdee9f620051ad4551b48fc24c294173cd
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.debug
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-redirige-por-entorno-y-los-tests-del-cli-no-tocan
 ---
 
 # La limpieza de pytest-of-scion en dispatch reap se puede redirigir por entorno y los tests del CLI no tocan el /dev/shm real
