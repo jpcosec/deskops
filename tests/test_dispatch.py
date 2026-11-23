@@ -649,3 +649,18 @@ def test_reap_waits_while_the_executor_is_alive(env: Env) -> None:
     assert f"en espera: {name} sigue vivo" in result.stdout
     assert (env.root / ".worktrees" / name).is_dir()
     assert not any(c[0] in ("stop", "delete") for c in env.calls())
+
+
+def test_reap_in_pr_mode_brings_commits_to_the_task_branch_not_the_base(env: Env) -> None:
+    _set_config(env, integrate={"remote_url": "unused", "branch": "main", "suite": ["true"], "mode": "pr"})
+    name = _start_executor(env)
+    base_sha = _git(env.root, "rev-parse", "main")  # start commits the RunDoc on the base
+    worktree = env.root / ".worktrees" / name
+    sha = _commit_in(worktree, "one.txt", "1")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert _git(env.root, "rev-parse", "main") == base_sha
+    assert _git(env.root, "rev-parse", f"task/{TASK}") == sha
+    assert _git(env.root, "rev-parse", "--abbrev-ref", "HEAD") == f"task/{TASK}"
+    assert not worktree.exists()

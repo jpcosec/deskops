@@ -96,6 +96,15 @@ def _base_branch(root: Path) -> str:
     return integrate.branch if integrate is not None else "main"
 
 
+def _pr_mode(root: Path) -> bool:
+    integrate = DeskConfig.load(root / "desk").integrate
+    return integrate is not None and integrate.mode == "pr"
+
+
+def task_branch(task_id: str) -> str:
+    return f"task/{task_id}"
+
+
 def _agent_branch(name: str) -> str:
     return f"deskops/{name}"
 
@@ -105,10 +114,15 @@ def _worktree_path(root: Path, name: str) -> Path:
 
 
 def _check_on_base(root: Path, base: str) -> str | None:
-    """Error text when the main checkout is not on ``base``, else None."""
+    """Error text when the main checkout is not on ``base``, else None.
+
+    In pr mode a ``task/<id>`` branch (where reap left the executor's commits and the closeout goes) also counts.
+    """
     head = _git(root, "rev-parse", "--abbrev-ref", "HEAD")
     if head.returncode != 0:
         return f"{root} no es un repo git: {_git_error(head)}"
+    if _pr_mode(root) and head.stdout.strip().startswith("task/"):
+        return None
     if head.stdout.strip() != base:
         return f"el checkout principal esta en '{head.stdout.strip()}', no en '{base}'"
     return None
@@ -152,8 +166,30 @@ def _remove_worktree(root: Path, name: str) -> subprocess.CompletedProcess[str] 
     return deleted if deleted.returncode != 0 else None
 
 
-def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
+def _prepare_target(root: Path, base: str, task_id: str) -> tuple[str, str]:
+    """(branch that receives the commits, error). In pr mode: ``task/<id>`` from the base, checked out."""
+    if not _pr_mode(root):
+        return base, ""
+    target = task_branch(task_id)
+    head = _git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
+    if head == target:
+        return target, ""
+    exists = _git(root, "rev-parse", "--verify", "--quiet", f"refs/heads/{target}").returncode == 0
+    if not exists:
+        made = _git(root, "branch", target, base)
+        if made.returncode != 0:
+            return target, f"git branch {target} {base}: {_git_error(made)}"
+    switched = _git(root, "checkout", "-q", target)
+    if switched.returncode != 0:
+        return target, f"git checkout {target}: {_dirty_overwrite_hint(root, base, target, _git_error(switched))}"
+    return target, ""
+
+
+def _integrate_branch(root: Path, name: str, task_id: str = "") -> tuple[int, str]:
     """Bring the commits of ``deskops/<name>`` onto the local base branch, then drop worktree and branch.
+
+    In pr mode the target is the local branch ``task/<task id>`` (created from the base and checked out
+    in the main checkout, so the closeout commits land on it), never the base itself.
 
     Returns (0, "") when there was nothing to do or it went through, else (code, message)
     leaving worktree and branch in place.
@@ -168,6 +204,9 @@ def _integrate_branch(root: Path, name: str) -> tuple[int, str]:
     problem = _check_on_base(root, base)
     if problem:
         return EXIT_WORKTREE, f"{problem}: no se integra {branch}"
+    base, problem = _prepare_target(root, base, task_id)
+    if problem:
+        return EXIT_WORKTREE, f"no se pudo preparar {base}: {problem}"
     pending = _git(root, "rev-list", "--reverse", "--no-merges", f"{base}..{branch}")
     if pending.returncode != 0:
         return EXIT_WORKTREE, f"git rev-list {base}..{branch}: {_git_error(pending)}"
@@ -328,7 +367,7 @@ def _unintegrated_executor_branch(root: Path, task_path: Path) -> str | None:
     """Branch of an executor of the task (attempts 1 and 2) with commits not on the base branch."""
     from deskops.runtime.scion import scion_child_identity
 
-    base = _base_branch(root)
+    base = "HEAD" if _pr_mode(root) else _base_branch(root)
     for attempt in (1, 2):
         branch = _agent_branch(scion_child_identity(task_path, "executor", attempt)["name"])
         if _git(root, "rev-parse", "--verify", "-q", f"refs/heads/{branch}").returncode != 0:
@@ -389,6 +428,8 @@ def start(root: Path, role: str, task_id: str) -> int:
         if problem:
             print(f"worktree: {problem}; no se lanza")
             return EXIT_WORKTREE
+        if _pr_mode(root):
+            base = "HEAD"  # the base or the task branch the checkout is on
         worktree = _worktree_path(root, name)
 
     roles_root = _roles_root(root, cfg)
@@ -539,7 +580,7 @@ def reap(root: Path, task_id: str) -> int:
             continue
         print(f"{name} {role} {reason}")
         if role == "executor":
-            code, message = _integrate_branch(root, name)
+            code, message = _integrate_branch(root, name, task_id)
             if message:
                 print(f"{name} {message}")
             if code == EXIT_BUSY:

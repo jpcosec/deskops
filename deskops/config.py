@@ -5,6 +5,8 @@ import warnings
 from pathlib import Path
 from typing import Any
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 from deskops.constants import CURRENT_DESK_FORMAT
@@ -36,7 +38,11 @@ class IntegrateConfig(BaseModel):
     suite_timeout: int = Field(default=5400, gt=0, description="Seconds before the suite is killed")
     tests_lock: str | None = Field(default=None, description="Lock file taken exclusively around the suite")
     tools_checkout: str | None = Field(default=None, description="Tools checkout updated after the push")
-    push_env: dict[str, str] = Field(default_factory=dict, description="Environment added to the git push commands")
+    push_env: dict[str, str] = Field(default_factory=dict, description="Environment added to the git push and gh commands")
+    mode: Literal["push", "pr"] = Field(
+        default="push",
+        description="'push' pushes the tip to the branch; 'pr' pushes task/<id> and opens a PR to the branch",
+    )
 
 
 class DispatchRole(BaseModel):

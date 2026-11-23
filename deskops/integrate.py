@@ -284,7 +284,8 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
             shutil.rmtree(temp, ignore_errors=True)
         _append_event(root, task_id, result if not (dry_run and result == "ok") else "dry-run", tip)
     verb = "simulado" if dry_run else "integrado"
-    print(f"{verb} {code[:SHORT]} {tip[:SHORT]} en {cfg.branch}")
+    where = f"en PR a {cfg.branch}" if cfg.mode == "pr" else f"en {cfg.branch}"
+    print(f"{verb} {code[:SHORT]} {tip[:SHORT]} {where}")
     return 0
 
 
@@ -344,6 +345,9 @@ def _steps(
 
     env = dict(os.environ)
     env.update(cfg.push_env)
+    if cfg.mode == "pr":
+        _open_pr(root, copy, cfg, task_id, tip, code, env, dry_run)
+        return
     code_in_origin = _run(["git", "merge-base", "--is-ancestor", code, remote_ref], copy).returncode == 0
     if code_in_origin:
         print(f"código ya en origin: {code[:SHORT]}")
@@ -363,6 +367,55 @@ def _steps(
         tools = Path(cfg.tools_checkout)
         _git(tools, "fetch", "origin", step="herramientas")
         _git(tools, "checkout", "--detach", remote_ref, step="herramientas")
+
+
+def _task_title(root: Path, tip: str, task_id: str) -> str:
+    """First ``# `` heading of the last recorded version of the task document (task id when none)."""
+    task_rel = f"desk/tasks/{task_id}.md"
+    text = _show(root, "HEAD", task_rel)
+    if text is None:
+        before = _run(["git", "log", "-1", "--format=%H", f"{tip}^", "--", task_rel], root)
+        revision = before.stdout.strip() if before.returncode == 0 else ""
+        text = _show(root, revision, task_rel) if revision else None
+    for line in (text or "").splitlines():
+        if line.startswith("# "):
+            return line[2:].strip() or task_id
+    return task_id
+
+
+def _open_pr(
+    root: Path, copy: Path, cfg: IntegrateConfig, task_id: str, tip: str, code: str,
+    env: dict[str, str], dry_run: bool,
+) -> None:
+    """pr mode: push the tip as ``task/<id>`` and open the PR to ``cfg.branch`` unless one is open already."""
+    from deskops.dispatch import task_branch
+
+    head = task_branch(task_id)
+    title = _task_title(root, tip, task_id)
+    closeout = _git(copy, "log", "-1", "--format=%B", tip, step="pr")
+    body = f"Task-Id: {task_id}\n\nCodigo: {code}\nCierre: {tip}\n\n{closeout}\n"
+    push = f"git push origin {tip}:refs/heads/{head}"
+    create = f"gh pr create --base {cfg.branch} --head {head} --title {title!r}"
+    if dry_run:
+        print(f"dry-run: {push}")
+        print(f"dry-run: {create}")
+        return
+    _git(copy, *push.split()[1:], step="push", env=env)
+    listed = _run(
+        ["gh", "pr", "list", "--head", head, "--base", cfg.branch, "--state", "open", "--json", "url", "--jq", ".[0].url"],
+        copy, env,
+    )
+    if listed.returncode != 0:
+        raise StepFailed("pr", f"gh pr list: {' '.join((listed.stderr or listed.stdout).split())}")
+    url = listed.stdout.strip()
+    if not url or url == "null":
+        made = _run(
+            ["gh", "pr", "create", "--base", cfg.branch, "--head", head, "--title", title, "--body", body], copy, env
+        )
+        if made.returncode != 0:
+            raise StepFailed("pr", f"gh pr create: {' '.join((made.stderr or made.stdout).split())}")
+        url = made.stdout.strip().splitlines()[-1] if made.stdout.strip() else ""
+    print(f"PR: {url}")
 
 
 class IntegrateCLI:

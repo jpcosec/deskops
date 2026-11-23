@@ -843,6 +843,37 @@ exits 2 with `falta el campo integrate en desk/config.json`):
 }
 ```
 
+### Integrate modes: `push` and `pr`
+
+`integrate.mode` is `"push"` (default) or `"pr"`.
+
+- `push`: today's behavior. `reap` fast-forwards or cherry-picks the executor's
+  commits onto the local `integrate.branch` and `integrate` pushes the code and
+  the closing tip straight to that remote branch.
+- `pr`: for repos whose base branch (for example `dev`) is protected. Nothing is
+  merged locally into the base and nothing is pushed to it. `dispatch reap`
+  creates the local branch `task/<task-id>` from the base, checks it out in the
+  main checkout and brings the executor's commits onto it, so the task's
+  `closeout commit` lands on the same branch (the closeout travels inside the
+  PR). `integrate` runs the same gates on the tip of `task/<task-id>`, pushes it
+  to the remote as `task/<task-id>` and opens a PR with
+  `gh pr create --base <integrate.branch> --head task/<task-id>` (title: the
+  task title; body: the task id, the code and closing commits and the closeout
+  message). When an open PR for that branch exists it only pushes. It prints
+  `PR: <url>`. `tools_checkout` is not touched in this mode. After the PR is
+  merged, return the main checkout to the base branch before the next task.
+
+### What goes in `config.json` and what in `config.local.json`
+
+`desk/config.json` is versioned and holds what is the same on every machine:
+`integrate.branch`, `integrate.mode`, `integrate.suite`, the roles of
+`dispatch`. `desk/config.local.json` is not versioned (it is in `.gitignore`)
+and `DeskConfig.load` merges it over `config.json`; put there what depends on
+the machine: `integrate.remote_url` (it may carry credentials),
+`integrate.push_env`, `integrate.tools_checkout`, `integrate.tests_lock`, suite
+paths and the `dispatch` workspace/templates/context paths. Do not version new
+machine paths in `config.json`.
+
 - `remote_url`, `branch` and `suite` (argv) are required. `suite_timeout`
   (seconds, default 5400), `tests_lock` (lock file), `tools_checkout` and
   `push_env` (environment added to the push commands) are optional.

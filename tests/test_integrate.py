@@ -481,3 +481,83 @@ def test_tip_stays_at_closeout_when_a_later_commit_touches_code(closed: Path, tm
     assert "tip extendido" not in result.stdout
     assert result.returncode == 1 and "fallo: graph" in result.stdout
     assert _remote_head(root) != tip
+
+
+# --- mode pr: remote with a protected dev and a fake gh -----------------------
+
+FAKE_GH = """#!{python}
+import json, os, sys
+with open(os.environ["FAKE_GH_LOG"], "a") as log:
+    log.write(json.dumps(sys.argv[1:]) + "\\n")
+if sys.argv[1:3] == ["pr", "list"]:
+    print(os.environ.get("FAKE_GH_EXISTING", ""))
+elif sys.argv[1:3] == ["pr", "create"]:
+    print("https://example.test/org/repo/pull/7")
+"""
+
+
+def _pr_setup(root: Path, tmp_path: Path) -> tuple[Path, Path, dict[str, str]]:
+    remote = root.parent / "remote.git"
+    base_commit = _find(root, "base")
+    _git(remote, "update-ref", "refs/heads/dev", base_commit)
+    hook = remote / "hooks" / "pre-receive"
+    hook.write_text('#!/bin/sh\nwhile read old new ref; do [ "$ref" = refs/heads/dev ] && { echo protected >&2; exit 1; }; done\nexit 0\n')
+    hook.chmod(0o755)
+    _git(root, "branch", "dev", base_commit)
+    _git(root, "checkout", "-q", "-B", f"task/{TASK}", BRANCH)
+    _configure(root, mode="pr", branch="dev")
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+    gh = bin_dir / "gh"
+    gh.write_text(FAKE_GH.format(python=sys.executable))
+    gh.chmod(0o755)
+    log = tmp_path / "gh.log"
+    return remote, log, {"PATH": f"{bin_dir}{os.pathsep}{os.environ['PATH']}", "FAKE_GH_LOG": str(log)}
+
+
+def _integrate_env(root: Path, extra: dict[str, str], *args: str) -> subprocess.CompletedProcess[str]:
+    tmp = root.parent / "tmpdir"
+    tmp.mkdir(exist_ok=True)
+    return _cli(root, "integrate", "--task", TASK, "--root", ".", *args, env={"TMPDIR": str(tmp), **extra}, check=False)
+
+
+def test_pr_mode_pushes_the_task_branch_and_opens_the_pr_leaving_dev_alone(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    remote, log, env = _pr_setup(root, tmp_path)
+    tip = _git(root, "rev-parse", "HEAD")
+    dev_before = _git(remote, "rev-parse", "dev")
+    local_dev = _git(root, "rev-parse", "dev")
+    result = _integrate_env(root, env)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "PR: https://example.test/org/repo/pull/7" in result.stdout
+    assert _git(remote, "rev-parse", f"task/{TASK}") == tip
+    assert _git(remote, "rev-parse", "dev") == dev_before
+    assert _git(root, "rev-parse", "dev") == local_dev
+    calls = [json.loads(line) for line in log.read_text().splitlines()]
+    create = next(c for c in calls if c[:2] == ["pr", "create"])
+    assert create[create.index("--base") + 1] == "dev"
+    assert create[create.index("--head") + 1] == f"task/{TASK}"
+    assert create[create.index("--title") + 1] == "Foo"
+    assert TASK in create[create.index("--body") + 1]
+    assert _leftovers(root) == []
+
+
+def test_pr_mode_with_an_open_pr_only_pushes(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    remote, log, env = _pr_setup(root, tmp_path)
+    env["FAKE_GH_EXISTING"] = "https://example.test/org/repo/pull/3"
+    result = _integrate_env(root, env)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "PR: https://example.test/org/repo/pull/3" in result.stdout
+    assert not any(json.loads(line)[:2] == ["pr", "create"] for line in log.read_text().splitlines())
+    assert _git(remote, "rev-parse", f"task/{TASK}") == _git(root, "rev-parse", "HEAD")
+
+
+def test_pr_mode_dry_run_pushes_nothing(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    remote, log, env = _pr_setup(root, tmp_path)
+    result = _integrate_env(root, env, "--dry-run")
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "dry-run: gh pr create --base dev" in result.stdout
+    assert _git(remote, "branch", "--list", "task/*") == ""
+    assert not log.exists()
