@@ -6,8 +6,9 @@ usage: deskops add inbox-note [-h] [--root ROOT] [--from-yaml FROM_YAML]
                               [--status {open,closed}]
                               [--acknowledged-by ACKNOWLEDGED_BY]
                               [--acknowledged-at ACKNOWLEDGED_AT]
-                              [--ack-reason ACK_REASON] [--title TITLE]
-                              [--body BODY]
+                              [--ack-reason ACK_REASON]
+                              [--conversation-ref CONVERSATION_REF]
+                              [--title TITLE] [--body BODY]
 
 Create an inbox-note artifact.
 
@@ -40,6 +41,10 @@ options:
                         Why the inbox note was acknowledged, recorded by
                         `deskops message ack --reason`; empty when none was
                         given.
+  --conversation-ref CONVERSATION_REF, --conv CONVERSATION_REF
+                        Optional conversation reference in the form
+                        "<thread>/<message id>" or just "<thread>" (e.g.
+                        "#acuerdos-sldb1/1234"); empty is not written.
   --title TITLE         Inbox note title shown as the H1 heading.
   --body BODY           Markdown body describing the question or suggestion in
                         detail.

@@ -158,7 +158,8 @@ def _add_subject_commands() -> list[Command]:
                     REQUIRED,
                 ):
                     kwargs["default"] = fmeta.default
-                args.append(A(fmeta.cli_option, **kwargs))
+                flags = (fmeta.cli_option, "--conv") if fmeta.name == "conversation_ref" else fmeta.cli_option
+                args.append(A(flags, **kwargs))
         commands.append(
             Command(
                 path=("add", subject),
@@ -211,6 +212,12 @@ def _list_subject_commands() -> list[Command]:
                 A(
                     "--axis-value",
                     help="Filter atoms by the configured atom_folder_axis namespace value (e.g. licitaciones).",
+                )
+            )
+            args.append(
+                A(
+                    "--conv",
+                    help="Filter atoms by conversation thread: conversation_ref equal to it or starting with '<thread>/'.",
                 )
             )
         args.append(OUTPUT_FORMAT_ARG)
@@ -664,6 +671,11 @@ read/ack selector: filename, stem, or unique slug fragment.
                     help="Type of message to send",
                 ),
                 A("--to", dest="repo", help="Target a registered repository name in the ecosystem"),
+                A(
+                    "--conv",
+                    dest="conversation_ref",
+                    help="Conversation reference of the message: '<thread>/<message id>' or '<thread>'",
+                ),
                 A(
                     "--from",
                     dest="sender",

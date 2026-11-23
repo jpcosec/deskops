@@ -234,7 +234,7 @@ class AtomsService:
     def _resolve_artifact_selector_multi(self, artifact_id: str, directories: list[Path], selector: str) -> Path:
         return doc_access.resolve_artifact_selector_multi(self.root, artifact_id, directories, selector)
 
-    def list_atoms(self, axis_value: str | None = None) -> tuple[str | None, list[dict[str, Any]]]:
+    def list_atoms(self, axis_value: str | None = None, conv: str | None = None) -> tuple[str | None, list[dict[str, Any]]]:
         """List atoms annotated with their folder-axis value.
 
         Returns (axis, payloads). Each payload carries 'axis_values' with every
@@ -252,6 +252,11 @@ class AtomsService:
             payload["axis_values"] = values
             if axis_value is not None and axis_value not in values:
                 continue
+            if conv is not None:
+                thread = conv.strip()
+                ref = str(payload.get("conversation_ref") or "").strip()
+                if not ref or not (ref == thread or ref.startswith(thread + "/")):
+                    continue
             results.append(payload)
         return axis, results
 

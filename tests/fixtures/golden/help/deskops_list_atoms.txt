@@ -1,5 +1,5 @@
 usage: deskops list atoms [-h] [--root ROOT] [--axis-value AXIS_VALUE]
-                          [--format {text,json}]
+                          [--conv CONV] [--format {text,json}]
 
 List atoms.
 
@@ -9,4 +9,6 @@ options:
   --axis-value AXIS_VALUE
                         Filter atoms by the configured atom_folder_axis
                         namespace value (e.g. licitaciones).
+  --conv CONV           Filter atoms by conversation thread: conversation_ref
+                        equal to it or starting with '<thread>/'.
   --format {text,json}  Output format.

@@ -3,6 +3,7 @@ usage: deskops add atom [-h] [--root ROOT] [--from-yaml FROM_YAML]
                         [--five-wh-one-plus {what,why,how,how_not,when,where,for_whom}]
                         [--answer ANSWER] [--tags TAGS [TAGS ...]]
                         [--provenance PROVENANCE]
+                        [--conversation-ref CONVERSATION_REF]
 
 Create an atom artifact.
 
@@ -27,6 +28,10 @@ options:
                         Optional URL or path to the authoritative source of
                         this atom's knowledge. Used for traceability and
                         provenance tracking.
+  --conversation-ref CONVERSATION_REF, --conv CONVERSATION_REF
+                        Optional conversation reference in the form
+                        "<thread>/<message id>" or just "<thread>" (e.g.
+                        "#acuerdos-sldb1/1234"); empty is not written.
 
 Example:
   deskops add atom --root . --title "Example" --five-wh-one-plus "what" --answer "..."

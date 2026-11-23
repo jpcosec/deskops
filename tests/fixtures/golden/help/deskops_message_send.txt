@@ -1,5 +1,6 @@
 usage: deskops message send [-h] [--title TITLE] [--kind {unclear,suggestion}]
-                            [--to REPO] [--from SENDER] [--root ROOT]
+                            [--to REPO] [--conv CONVERSATION_REF]
+                            [--from SENDER] [--root ROOT]
                             [--desk-root DESK_ROOT] [--store STORE]
                             [--pythonpath PYTHONPATH]
                             [--format {text,json,yaml}]
@@ -16,6 +17,9 @@ options:
   --kind {unclear,suggestion}
                         Type of message to send
   --to REPO             Target a registered repository name in the ecosystem
+  --conv CONVERSATION_REF
+                        Conversation reference of the message:
+                        '<thread>/<message id>' or '<thread>'
   --from SENDER         Override the resolved sender identity with a
                         registered project id
   --root ROOT           Repository root whose desk/ holds the inbox

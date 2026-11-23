@@ -88,6 +88,19 @@ class OperationsCLI:
         if args.command == "add" and args.subject in artifact_subjects:
             artifact_id = artifact_subjects[args.subject]
             payload = parse_artifact_input(artifact_id, args)
+            if args.subject == "atom":
+                conv = str(payload.get("conversation_ref") or "").strip()
+                if conv:
+                    payload["conversation_ref"] = conv
+                    for existing in operations.list_artifacts(artifact_id):
+                        if str(existing.get("conversation_ref") or "").strip() == conv:
+                            print(
+                                f"ya existe {existing.get('id')} con conversation_ref {conv}",
+                                file=sys.stderr,
+                            )
+                            return 1
+                else:
+                    payload.pop("conversation_ref", None)
             record = operations.create_artifact(artifact_id, payload)
             print(f"Created {record.kind} {record.doc_id}")
             print(f"Path: {record.path}")
@@ -139,7 +152,7 @@ class OperationsCLI:
         list_artifacts = {meta["list_subject"]: artifact_id for artifact_id, meta in ARTIFACT_SUBJECTS.items()}
         if args.command == "list" and args.subject == "atoms":
             try:
-                axis, payloads = operations.list_atoms(getattr(args, "axis_value", None))
+                axis, payloads = operations.list_atoms(getattr(args, "axis_value", None), getattr(args, "conv", None))
             except (FileNotFoundError, ValueError) as exc:
                 return render_error(
                     str(exc),

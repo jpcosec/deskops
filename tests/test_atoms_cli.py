@@ -133,3 +133,45 @@ def test_atoms_delete_force_removes_file_and_untracks_store(tmp_path: Path, caps
     models_index = load_models_index(tmp_path / model_entry.models_index)
     documents_index = load_documents_index(tmp_path / models_index.documents_index)
     assert all(entry.name != "atom-trackable-atom" for entry in documents_index.documents)
+
+
+def _add_conv_atom(root: Path, title: str, conv: str) -> int:
+    args = ["--title", title, "--five-wh-one-plus", "what", "--answer", "Acuerdo."]
+    return main(["add", "atom", "--root", str(root), *args, "--conv", conv])
+
+
+def test_add_atom_with_conv_writes_conversation_ref(tmp_path: Path, capsys) -> None:
+    _install_sandbox(tmp_path)
+    assert _add_conv_atom(tmp_path, "Acuerdo uno", "#acuerdos-sldb1/1234") == 0
+    capsys.readouterr()
+    text = (tmp_path / "desk" / "atoms" / "atom-acuerdo-uno.md").read_text(encoding="utf-8")
+    assert "conversation_ref: '#acuerdos-sldb1/1234'" in text or "conversation_ref: #acuerdos-sldb1/1234" in text
+    assert main(["add", "atom", "--root", str(tmp_path), *ATOM_ARGS]) == 0
+    assert "conversation_ref" not in (tmp_path / "desk" / "atoms" / "atom-trackable-atom.md").read_text(encoding="utf-8")
+
+
+def test_list_atoms_filters_by_conv(tmp_path: Path, capsys) -> None:
+    import json
+
+    _install_sandbox(tmp_path)
+    assert _add_conv_atom(tmp_path, "Uno", "#acuerdos-sldb1/1") == 0
+    assert _add_conv_atom(tmp_path, "Dos", "#acuerdos-sldb1") == 0
+    assert _add_conv_atom(tmp_path, "Tres", "#otro/9") == 0
+    assert _add_conv_atom(tmp_path, "Cuatro", "#acuerdos-sldb10/1") == 0
+    assert main(["add", "atom", "--root", str(tmp_path), *ATOM_ARGS]) == 0
+    capsys.readouterr()
+
+    assert main(["list", "atoms", "--root", str(tmp_path), "--conv", "#acuerdos-sldb1", "--format", "json"]) == 0
+    atoms = json.loads(capsys.readouterr().out)["atoms"]
+    assert sorted(a["id"] for a in atoms) == ["atom-dos", "atom-uno"]
+    assert {a["conversation_ref"] for a in atoms} == {"#acuerdos-sldb1/1", "#acuerdos-sldb1"}
+
+
+def test_add_atom_refuses_duplicate_conv(tmp_path: Path, capsys) -> None:
+    _install_sandbox(tmp_path)
+    assert _add_conv_atom(tmp_path, "Primero", "#h/5") == 0
+    capsys.readouterr()
+    assert _add_conv_atom(tmp_path, "Segundo", "#h/5") == 1
+    captured = capsys.readouterr()
+    assert "ya existe atom-primero con conversation_ref #h/5" in captured.err
+    assert not (tmp_path / "desk" / "atoms" / "atom-segundo.md").exists()

@@ -241,8 +241,10 @@ class DeskopsOperations:
     def atom_folder_axis(self) -> str | None:
         return self.atoms.atom_folder_axis()
 
-    def list_atoms(self, axis_value: str | None = None) -> tuple[str | None, list[dict[str, Any]]]:
-        return self.atoms.list_atoms(axis_value)
+    def list_atoms(
+        self, axis_value: str | None = None, conv: str | None = None
+    ) -> tuple[str | None, list[dict[str, Any]]]:
+        return self.atoms.list_atoms(axis_value, conv)
 
     def reorganize_atoms(self, *, dry_run: bool = False) -> dict[str, Any]:
         return self.atoms.reorganize_atoms(dry_run=dry_run)

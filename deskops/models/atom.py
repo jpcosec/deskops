@@ -100,6 +100,7 @@ title: ⸢rev•title⸥
 five_wh_one_plus: ⸢rev•five_wh_one_plus⸥
 tags: ⸢rev•tags⸥
 provenance: ⸢optrev•provenance⸥
+conversation_ref: ⸢optrev•conversation_ref⸥
 ---
 
 # ⸢render•title⸥
@@ -142,6 +143,20 @@ provenance: ⸢optrev•provenance⸥
             "knowledge. Used for traceability and provenance tracking."
         ),
     )
+
+    conversation_ref: str | None = Field(
+        default=None,
+        description=(
+            'Optional conversation reference in the form "<thread>/<message id>" or just "<thread>" (e.g. "#acuerdos-sldb1/1234"); empty is not written.'
+        ),
+    )
+
+    @field_validator("conversation_ref", mode="before")
+    @classmethod
+    def _blank_conversation_ref_is_absent(cls, value: object) -> object:
+        if isinstance(value, str) and not value.strip():
+            return None
+        return value.strip() if isinstance(value, str) else value
 
     @field_validator("id", mode="before")
     @classmethod

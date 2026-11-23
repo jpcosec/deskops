@@ -91,6 +91,23 @@ def test_retired_inbox_alias_is_an_unknown_command(capsys) -> None:
     assert "invalid choice: 'inbox'" in capsys.readouterr().err
 
 
+def test_send_with_conv_writes_conversation_ref(tmp_path: Path, monkeypatch, capsys) -> None:
+    sender_repo, target_repo, store_path = _setup_inbox_identity_env(tmp_path, monkeypatch)
+    monkeypatch.chdir(sender_repo)
+
+    assert main(
+        ["message", "send", "Con hilo.", "--title", "Con conv", "--to", "target-repo",
+         "--store", str(store_path), "--conv", "#acuerdos-sldb1/1234", "--format", "json"]
+    ) == 0
+    capsys.readouterr()
+    note = next((target_repo / "desk" / "inbox").glob("*.md"))
+    assert "#acuerdos-sldb1/1234" in note.read_text(encoding="utf-8")
+    monkeypatch.chdir(target_repo)
+    assert main(
+        ["message", "read", note.stem, "--root", str(target_repo), "--store", str(target_repo / ".sldb"), "--format", "json"]
+    ) == 0
+
+
 def test_message_send_list_read_ack_roundtrip(tmp_path: Path, monkeypatch, capsys) -> None:
     sender_repo, target_repo, store_path = _setup_inbox_identity_env(tmp_path, monkeypatch)
     monkeypatch.chdir(sender_repo)

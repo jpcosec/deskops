@@ -34,6 +34,8 @@ acknowledged_by: ⸢optrev•acknowledged_by⸥
 acknowledged_at: ⸢optrev•acknowledged_at⸥
 # why the note was acknowledged; empty when no reason was given
 ack_reason: ⸢optrev•ack_reason⸥
+# conversation thread/message the note came from, e.g. #hilo/1234
+conversation_ref: ⸢optrev•conversation_ref⸥
 ---
 
 # ⸢rev•title⸥
@@ -70,6 +72,18 @@ _Describe the incoming message with enough evidence to triage._
         default="",
         description="Why the inbox note was acknowledged, recorded by `deskops message ack --reason`; empty when none was given."
     )
+
+    conversation_ref: Optional[str] = Field(
+        default=None,
+        description='Optional conversation reference in the form "<thread>/<message id>" or just "<thread>" (e.g. "#acuerdos-sldb1/1234"); empty is not written.',
+    )
+
+    @field_validator("conversation_ref", mode="before")
+    @classmethod
+    def _blank_conversation_ref_is_absent(cls, value: object) -> object:
+        if isinstance(value, str) and not value.strip():
+            return None
+        return value.strip() if isinstance(value, str) else value
 
     @field_validator("ack_reason", mode="before")
     @classmethod

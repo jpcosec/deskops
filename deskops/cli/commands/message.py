@@ -90,6 +90,9 @@ class MessageCLI:
             "title": title,
             "body": args.message.strip(),
         }
+        conversation_ref = (getattr(args, "conversation_ref", None) or "").strip()
+        if conversation_ref:
+            payload["conversation_ref"] = conversation_ref
         rendered = render_model_markdown(InboxNoteDoc, payload) + "\n"
         # Validate before writing: a note that cannot be read back should never
         # reach the target's inbox.
