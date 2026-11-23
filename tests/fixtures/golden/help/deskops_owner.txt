@@ -1,0 +1,11 @@
+usage: deskops owner [-h] [--root ROOT] target
+
+Print the id of the repo that owns a path or a topic (rc 1: nobody, rc 2:
+tie).
+
+positional arguments:
+  target       Path (relative to the ecosystem root or absolute) or topic
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  Target repository root.

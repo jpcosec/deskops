@@ -1,7 +1,7 @@
 name: repo-spec2viz
 path: desk/registry/repo-spec2viz.md
 source_hash: e0162c7a6389c6774549ef8c6cf9575b4dd40e032bff506293706b7f9e55aec3
-content_hash: 1a0262b0125048da516ad6ae3432930b7cc26ecff9733eccc0fd1e917bd12cb1
+content_hash: 5390db54e73ca0a894d81059da6c3aa27f44b2dc30101d15f2b2b2391d129754
 field_hashes:
   name: ceff6202e6805e3bc22d70f0f2e7fee9f6478bcff2cb6a60430793b5268a8e12
   id: ceff6202e6805e3bc22d70f0f2e7fee9f6478bcff2cb6a60430793b5268a8e12
@@ -9,6 +9,8 @@ field_hashes:
   status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   description: a03e24d34244fdc2f667e40bc86c45b1ebe37f997b52cddc6bf5413545b016bc
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  owns_paths: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  owns_topics: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown

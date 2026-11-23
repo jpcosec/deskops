@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from sldb import StructuredNLDoc
 
@@ -28,6 +28,10 @@ path: ⸢rev•path⸥
 status: ⸢rev•status⸥
 # e.g., type:tool, layer:infra
 tags: ⸢rev•tags⸥
+# Globs relative to the ecosystem root that this repo owns
+owns_paths: ⸢rev•owns_paths⸥
+# Topics this repo owns
+owns_topics: ⸢rev•owns_topics⸥
 ---
 
 # Repository: ⸢rev•name⸥
@@ -57,3 +61,17 @@ _Describe the repository purpose, scope, and role in the ecosystem._
         default_factory=list,
         description="Semantic tags for categorization (e.g., type:tool, layer:infra).",
     )
+    owns_paths: list[str] = Field(
+        default_factory=list,
+        description="Globs relative to the ecosystem root of the paths this repository owns.",
+    )
+    owns_topics: list[str] = Field(
+        default_factory=list,
+        description="Topics this repository owns (answers `deskops owner <topic>`).",
+    )
+
+    @field_validator("owns_paths", "owns_topics", mode="before")
+    @classmethod
+    def _missing_owns_is_empty(cls, value: object) -> object:
+        # Cards written before these fields existed leave the template placeholder empty.
+        return [] if value is None else value

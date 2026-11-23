@@ -2,6 +2,8 @@ usage: deskops add repository [-h] [--root ROOT] [--from-yaml FROM_YAML]
                               [--name NAME] [--path PATH] [--status STATUS]
                               [--description DESCRIPTION]
                               [--tags TAGS [TAGS ...]]
+                              [--owns-paths OWNS_PATHS [OWNS_PATHS ...]]
+                              [--owns-topics OWNS_TOPICS [OWNS_TOPICS ...]]
 
 Create a local repository artifact doc; use 'deskops repo register' for canonical ecosystem registration.
 
@@ -21,6 +23,12 @@ options:
   --tags TAGS [TAGS ...]
                         Semantic tags for categorization (e.g., type:tool,
                         layer:infra).
+  --owns-paths OWNS_PATHS [OWNS_PATHS ...]
+                        Globs relative to the ecosystem root of the paths this
+                        repository owns.
+  --owns-topics OWNS_TOPICS [OWNS_TOPICS ...]
+                        Topics this repository owns (answers `deskops owner
+                        <topic>`).
 
 Example:
   deskops add repository --root . --name "example" --description "..."

@@ -1,7 +1,7 @@
 name: repo-workflow
 path: desk/registry/repo-workflow.md
 source_hash: dc8ddb8444b93422f2e25a2c2342cc8d861baf790a077a4b0e2b6ebd520c1fbc
-content_hash: d4e952aa3ec6e50653bd003bec4378641752c2dfa4a766b535286dade96118de
+content_hash: 51799e792be4ff9f1a109206446582d529597725bf77c726bce72a9c2cce537e
 field_hashes:
   name: 1688d51cb2decc79d2c2d21d78c57a76c7ed3e9bd2a2e245da0c35e213c857a9
   id: 1688d51cb2decc79d2c2d21d78c57a76c7ed3e9bd2a2e245da0c35e213c857a9
@@ -9,6 +9,8 @@ field_hashes:
   status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   description: 25e36c22b709ce672a5933320a403d92803af885261ede919cdeadab2da1bddd
   tags: dc4cb10dd16f60be604357d05f115b98f58bed649b0e969d3cfed10971b7c65e
+  owns_paths: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  owns_topics: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - layer:workflow
 - representation.markdown

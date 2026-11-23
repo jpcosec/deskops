@@ -104,3 +104,10 @@ def test_load_takes_identity_from_config_local_json(tmp_path: Path) -> None:
     assert config.identity is not None
     assert (config.identity.scion_project, config.identity.agent, config.identity.wake) == ("p", "a", True)
     assert config.identity.command[:3] == ["scion", "message", "--wake"]
+
+
+def test_unowned_target_comes_from_config_local_json(tmp_path: Path) -> None:
+    assert DeskConfig.load(tmp_path).unowned_target is None
+    (tmp_path / "config.local.json").write_text('{"unowned_target": "governance"}', encoding="utf-8")
+
+    assert DeskConfig.load(tmp_path).unowned_target == "governance"

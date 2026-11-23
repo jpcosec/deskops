@@ -44,6 +44,7 @@ TOP_LEVEL_GRAMMAR: dict[str, frozenset[str]] = {
             "bootstrap",
             "init",
             "repo",
+            "owner",
             "desk",
         }
     ),

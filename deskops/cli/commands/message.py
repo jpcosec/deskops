@@ -71,7 +71,23 @@ class MessageCLI:
             type_name="DomainError",
         )
 
+    def _resolve_unowned(self, args: Any) -> None:
+        """`--to unowned` becomes the repo of config `unowned_target`."""
+        if getattr(args, "repo", None) != "unowned":
+            return
+        sender_desk = (
+            Path(args.root).resolve() / "desk" if getattr(args, "root", None) else None
+        )
+        if sender_desk is None:
+            store = find_local_store()
+            sender_desk = (project_root(store) / "desk") if store is not None else Path.cwd() / "desk"
+        target = DeskConfig.load(sender_desk).unowned_target if sender_desk.exists() else None
+        if not target:
+            raise ValueError("unowned_target no configurado en desk/config.json ni en config.local.json")
+        args.repo = target
+
     def _deliver_note(self, args: Any) -> int:
+        self._resolve_unowned(args)
         target_project, desk_root = self._resolve_target(args)
         inbox_dir = desk_root / "inbox"
         inbox_dir.mkdir(parents=True, exist_ok=True)

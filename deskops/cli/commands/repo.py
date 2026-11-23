@@ -10,10 +10,11 @@ from sldb.cli.model_utils import registered_model
 from sldb.cli.store_context import get_store_context
 from sldb.api import transaction
 from sldb.core.exceptions import SLDBStoreError, SLDBValidationError
-from sldb.runtime.validation import render_model_markdown, validate_model_input_roundtrip
+from sldb.runtime.validation import extract_model_data, render_model_markdown, validate_model_input_roundtrip
 from sldb.store.layout import project_root
 
 from deskops import doc_access
+from deskops.models import RepositoryDoc
 from deskops.identity import load_repository_registry, EcosystemIdentity
 from deskops.identity import find_local_store
 from deskops.identity import resolve_registered_root
@@ -40,6 +41,8 @@ class RepoCLI:
         repo_id = args.id or self._slug(name)
         description = args.description or f"Repository for {name}."
         tags = [t.strip() for p in (args.tags or "").split(",") if (t := p.strip())]
+        owns_paths = [t for p in (getattr(args, "owns_paths", None) or "").split(",") if (t := p.strip())]
+        owns_topics = [t for p in (getattr(args, "owns_topics", None) or "").split(",") if (t := p.strip())]
 
         # Preflight: resolve store context and model before any mutation
         try:
@@ -61,6 +64,8 @@ class RepoCLI:
             "status": "active",
             "description": description,
             "tags": tags,
+            "owns_paths": owns_paths,
+            "owns_topics": owns_topics,
         }
 
         try:
@@ -214,3 +219,82 @@ class RepoCLI:
         """``repo_root`` relative to the repo containing ``registry_dir`` (its grandparent)."""
         registry_repo_root = registry_dir.resolve().parent.parent
         return Path(os.path.relpath(repo_root, registry_repo_root)).as_posix()
+
+
+class OwnerCLI:
+    """`deskops owner <path|topic>`: which registered repo owns it."""
+
+    def run(self, args: Any) -> int:
+        import fnmatch
+
+        from deskops.identity import ecosystem_registry_dir, load_ecosystem_registry
+
+        root = Path(args.root).resolve()
+        try:
+            entries = {e.id: e for e in load_ecosystem_registry()}
+            for e in load_repository_registry(root / "desk", root):
+                entries[e.id] = e
+        except SLDBStoreError as e:
+            print(f"Error: {e}")
+            return 1
+        eco_root = ecosystem_registry_dir().parent.parent
+        target = args.target
+        owners: dict[str, dict[str, Any]] = {}
+        for entry in entries.values():
+            payload = extract_model_data(RepositoryDoc, entry.source_path.read_text(encoding="utf-8"))
+            owners[entry.id] = payload
+
+        matches: list[str] = []
+        looks_like_path = "/" in target or target.startswith((".", "~")) or Path(target).exists()
+        rel = self._relative(target, eco_root)
+        best = -1
+        for repo_id, payload in owners.items():
+            for glob in payload.get("owns_paths") or []:
+                if rel is not None and self._glob_covers(glob, rel, fnmatch) and len(glob) > best:
+                    best, matches = len(glob), [repo_id]
+                elif rel is not None and self._glob_covers(glob, rel, fnmatch) and len(glob) == best and repo_id not in matches:
+                    matches.append(repo_id)
+        if not matches and looks_like_path:
+            absolute = Path(target).expanduser()
+            absolute = absolute if absolute.is_absolute() else eco_root / absolute
+            absolute = absolute.resolve()
+            deepest = -1
+            for entry in entries.values():
+                if entry.repo_root is None:
+                    continue
+                if absolute == entry.repo_root or entry.repo_root in absolute.parents:
+                    depth = len(entry.repo_root.parts)
+                    if depth > deepest:
+                        deepest, matches = depth, [entry.id]
+                    elif depth == deepest and entry.id not in matches:
+                        matches.append(entry.id)
+        if not matches:
+            matches = [rid for rid, p in owners.items() if target in (p.get("owns_topics") or [])]
+        if not matches:
+            print("sin dueno")
+            return 1
+        if len(matches) > 1:
+            for repo_id in sorted(matches):
+                print(repo_id)
+            return 2
+        print(matches[0])
+        return 0
+
+    @staticmethod
+    def _relative(target: str, eco_root: Path) -> str | None:
+        path = Path(target).expanduser()
+        if path.is_absolute():
+            try:
+                return path.resolve().relative_to(eco_root).as_posix()
+            except ValueError:
+                return None
+        return Path(os.path.normpath(target)).as_posix()
+
+    @staticmethod
+    def _glob_covers(glob: str, rel: str, fnmatch: Any) -> bool:
+        glob = glob.rstrip("/")
+        if fnmatch.fnmatchcase(rel, glob):
+            return True
+        # A glob also covers everything under a directory it matches.
+        parts = rel.split("/")
+        return any(fnmatch.fnmatchcase("/".join(parts[:i]), glob) for i in range(1, len(parts)))

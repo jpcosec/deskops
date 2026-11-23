@@ -1181,6 +1181,8 @@ The issue status is set to closed and a ## Resolution section records Closed, Re
                 A("--id", help="Stable unique ID, defaults to slugified name"),
                 A("--description", help="Markdown description"),
                 A("--tags", help="Comma-separated tags"),
+                A("--owns-paths", dest="owns_paths", help="Comma-separated globs (relative to the ecosystem root) this repo owns"),
+                A("--owns-topics", dest="owns_topics", help="Comma-separated topics this repo owns"),
                 A("--store", help="Store path to anchor the registry"),
                 A("--pythonpath", help="Python path for model resolution"),
             ),
@@ -1199,6 +1201,17 @@ The issue status is set to closed and a ## Resolution section records Closed, Re
             handler="deskops.cli.commands.repo:RepoCLI",
             mutates=True,
             description="Print the canonical project identity for the current repository.",
+        ),
+        Command(
+            path=("owner",),
+            help="Print the id of the repo that owns a path or a topic.",
+            args=(
+                A("target", help="Path (relative to the ecosystem root or absolute) or topic"),
+                ROOT_ARG,
+            ),
+            handler="deskops.cli.commands.repo:OwnerCLI",
+            mutates=False,
+            description="Print the id of the repo that owns a path or a topic (rc 1: nobody, rc 2: tie).",
         ),
         Command(
             path=("repo", "remove"),

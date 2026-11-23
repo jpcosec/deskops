@@ -1,6 +1,8 @@
 usage: deskops repo register [-h] [--path PATH_OPTION] [--id ID]
                              [--description DESCRIPTION] [--tags TAGS]
-                             [--store STORE] [--pythonpath PYTHONPATH]
+                             [--owns-paths OWNS_PATHS]
+                             [--owns-topics OWNS_TOPICS] [--store STORE]
+                             [--pythonpath PYTHONPATH]
                              name [path]
 
 Canonically register a repository in the ecosystem registry and track it in
@@ -19,6 +21,11 @@ options:
   --description DESCRIPTION
                         Markdown description
   --tags TAGS           Comma-separated tags
+  --owns-paths OWNS_PATHS
+                        Comma-separated globs (relative to the ecosystem root)
+                        this repo owns
+  --owns-topics OWNS_TOPICS
+                        Comma-separated topics this repo owns
   --store STORE         Store path to anchor the registry
   --pythonpath PYTHONPATH
                         Python path for model resolution

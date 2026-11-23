@@ -112,6 +112,10 @@ class DeskConfig(BaseModel):
         default=None,
         description="deskops integrate: remote, branch, suite and tools checkout of the integration.",
     )
+    unowned_target: str | None = Field(
+        default=None,
+        description="Registered repo id that receives `message send --to unowned` (what no repo owns).",
+    )
     queue_min_available_gb: int = Field(default=8, description="Minimum MemAvailable (GB) to start a queued job.")
     queue_max_psi_avg60: float = Field(default=10, description="Memory PSI some avg60 at or above which jobs wait.")
     load_warnings: list[str] = Field(default_factory=list, exclude=True)

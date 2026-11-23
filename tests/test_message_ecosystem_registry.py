@@ -44,7 +44,13 @@ def _init_repo(path: Path) -> Path:
     return path
 
 
-def _register(registry_dir: Path, repo_id: str, repo_path: str) -> None:
+def _register(
+    registry_dir: Path,
+    repo_id: str,
+    repo_path: str,
+    owns_paths: list[str] | None = None,
+    owns_topics: list[str] | None = None,
+) -> None:
     registry_dir.mkdir(parents=True, exist_ok=True)
     payload = {
         "id": repo_id,
@@ -53,6 +59,8 @@ def _register(registry_dir: Path, repo_id: str, repo_path: str) -> None:
         "status": "active",
         "description": f"Repository for {repo_id}.",
         "tags": [],
+        "owns_paths": owns_paths or [],
+        "owns_topics": owns_topics or [],
     }
     (registry_dir / f"repo-{repo_id}.md").write_text(
         render_model_markdown(RepositoryDoc, payload) + "\n", encoding="utf-8"
@@ -157,3 +165,81 @@ def test_unknown_repo_names_both_registries(tmp_path: Path) -> None:
     assert "Repository id 'ghost' not found" in output
     assert "ecosystem registry" in output
     assert "sldb" in output
+
+
+def _eco(tmp_path: Path, **owns: tuple[list[str], list[str]]) -> Path:
+    registry = _home() / "setup" / "desk" / "registry"
+    for repo_id, (paths, topics) in owns.items():
+        _register(registry, repo_id, f"~/setup/{repo_id}", paths, topics)
+    return _home() / "setup"
+
+
+def _owner(cwd: Path, target: str) -> subprocess.CompletedProcess[str]:
+    return _cli(cwd, "owner", target, "--root", str(cwd))
+
+
+def test_owner_resolves_path_by_longest_glob(tmp_path: Path) -> None:
+    _eco(tmp_path, wide=(["shared_etl/*"], []), narrow=(["shared_etl/plataforma/*"], []))
+    cwd = _init_repo(tmp_path / "x")
+
+    result = _owner(cwd, "shared_etl/plataforma/etlkit/a.py")
+
+    assert result.returncode == 0, result.stderr or result.stdout
+    assert result.stdout.strip() == "narrow"
+
+
+def test_owner_resolves_topic(tmp_path: Path) -> None:
+    _eco(tmp_path, one=([], ["etl"]), two=([], ["ui"]))
+    cwd = _init_repo(tmp_path / "x")
+
+    result = _owner(cwd, "ui")
+
+    assert result.returncode == 0, result.stderr or result.stdout
+    assert result.stdout.strip() == "two"
+
+
+def test_owner_without_owner_exits_1(tmp_path: Path) -> None:
+    _eco(tmp_path, one=(["a/*"], ["etl"]))
+    cwd = _init_repo(tmp_path / "x")
+
+    result = _owner(cwd, "nothing")
+
+    assert result.returncode == 1
+    assert "sin dueno" in result.stdout
+
+
+def test_owner_tie_exits_2(tmp_path: Path) -> None:
+    _eco(tmp_path, one=(["a/*"], []), two=(["a/*"], []))
+    cwd = _init_repo(tmp_path / "x")
+
+    result = _owner(cwd, "a/file.py")
+
+    assert result.returncode == 2
+    assert result.stdout.split() == ["one", "two"]
+
+
+def test_send_to_unowned_uses_unowned_target(tmp_path: Path) -> None:
+    sender = _init_repo(tmp_path / "sender")
+    target = _init_repo(tmp_path / "gov")
+    _register(_home() / "setup" / "desk" / "registry", "gov", str(target))
+    (sender / "desk" / "config.local.json").write_text(
+        json.dumps({"unowned_target": "gov"}), encoding="utf-8"
+    )
+
+    result = _send(sender, "unowned")
+
+    assert result.returncode == 0, result.stderr or result.stdout
+    assert len(_inbox(target)) == 1
+    assert _inbox(sender) == []
+
+
+def test_send_to_unowned_without_config_fails(tmp_path: Path) -> None:
+    sender = _init_repo(tmp_path / "sender")
+
+    result = _send(sender, "unowned")
+
+    assert result.returncode != 0
+    assert "unowned_target no configurado en desk/config.json ni en config.local.json" in (
+        result.stdout + result.stderr
+    )
+    assert _inbox(sender) == []
