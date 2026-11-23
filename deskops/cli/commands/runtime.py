@@ -87,7 +87,7 @@ class RuntimeCLI:
             args.role_id,
             harness=getattr(args, "harness", None),
             out_dir=out_dir,
-            model_alias=getattr(args, "model_alias", "medium"),
+            model_alias=getattr(args, "model_alias", None),
             task_repo=getattr(args, "task_repo", None),
             mode=getattr(args, "mode", None),
             context=context,

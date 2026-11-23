@@ -1984,7 +1984,7 @@ the dir is a finding with the commit's own text and the report is not ok.
                 A(
                     "--model-alias",
                     choices=("small", "medium", "large", "extra-large"),
-                    default="medium",
+                    default=None,
                     help="Portable Scion model size alias written to the template (the harness-config resolves it).",
                 ),
                 A(

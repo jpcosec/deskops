@@ -819,3 +819,21 @@ old
 """
     data = extract_model_data(RunDoc, old)
     assert data["id"] == "run-old"
+
+
+def test_model_alias_derived_from_role_model(executor: dict, profiles: dict[str, dict]) -> None:
+    from deskops.runtime.scion import model_alias_for
+
+    assert model_alias_for("anthropic/claude-opus-4-8") == "large"
+    assert model_alias_for("Claude-SONNET-4") == "medium"
+    assert model_alias_for("claude-haiku") == "small"
+    assert model_alias_for("gpt-5.4") is None
+
+    def alias(role: dict, **kw) -> dict:
+        return yaml.safe_load(scion_template_files(role, profiles["claude"], harness="claude", **kw)["scion-agent.yaml"])
+
+    assert alias({**executor, "model": "anthropic/claude-opus-4-8"})["model"] == "large"
+    assert alias({**executor, "model": "anthropic/claude-opus-4-8"}, model_alias="small")["model"] == "small"
+    text = scion_template_files({**executor, "model": "gpt-5.4"}, profiles["claude"], harness="claude")["scion-agent.yaml"]
+    assert yaml.safe_load(text)["model"] == "medium"
+    assert "# model alias medium: no mapping for RoleDoc.model gpt-5.4" in text

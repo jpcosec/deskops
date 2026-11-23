@@ -18,6 +18,37 @@ from deskops.models import RuntimeProfileDoc
 JOIN_MODES = {"comma", "space", "repeat"}
 SYSTEM_PROMPT_DELIVERIES = {"inline", "file"}
 
+#: RoleDoc tools are written in pi vocabulary; harnesses with their own tool
+#: names get them translated (first appearance order, no duplicates).
+TOOL_NAMES_BY_HARNESS: dict[str, dict[str, str]] = {
+    "claude": {
+        "read": "Read",
+        "grep": "Grep",
+        "find": "Glob",
+        "ls": "Glob",
+        "bash": "Bash",
+        "edit": "Edit",
+        "write": "Write",
+    },
+}
+
+
+def translate_tools(tools: list[str], kind: str | None) -> list[str]:
+    table = TOOL_NAMES_BY_HARNESS.get(kind or "")
+    if table is None:
+        return list(tools)
+    out: list[str] = []
+    for tool in tools:
+        if tool in table:
+            translated = table[tool]
+        elif tool in table.values():
+            translated = tool  # already in the harness vocabulary
+        else:
+            raise ValueError(f"tool '{tool}' has no translation for harness {kind}")
+        if translated not in out:
+            out.append(translated)
+    return out
+
 
 def runtime_profiles_dir(root: Path) -> Path:
     return root / "desk" / "runtimes"
@@ -75,7 +106,7 @@ def build_agent_spec_args(
     if profile.get("fallback_models_flag") and fallback_models:
         args += _join_flag(profile["fallback_models_flag"], fallback_models, profile.get("fallback_models_join", "comma"))
 
-    tools = role_doc.get("tools") or []
+    tools = translate_tools(role_doc.get("tools") or [], profile.get("kind"))
     if profile.get("tools_flag") and tools:
         args += _join_flag(profile["tools_flag"], tools, profile.get("tools_join", "comma"))
 

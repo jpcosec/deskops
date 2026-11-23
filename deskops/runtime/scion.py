@@ -53,6 +53,18 @@ MODEL_SIZE_ALIASES: tuple[str, ...] = ("small", "medium", "large", "extra-large"
 #: ``medium`` by default: the owner's rule is that subagents never run on the
 #: largest tier. Pass ``model_alias`` to change it per template.
 DEFAULT_MODEL_ALIAS = "medium"
+
+#: RoleDoc.model substring (case-insensitive) -> Scion size alias.
+_MODEL_ALIAS_BY_SUBSTRING: tuple[tuple[str, str], ...] = (("opus", "large"), ("sonnet", "medium"), ("haiku", "small"))
+
+
+def model_alias_for(role_model: str | None) -> str | None:
+    """Alias derived from RoleDoc.model, or None when nothing matches."""
+    lowered = str(role_model or "").lower()
+    for needle, alias in _MODEL_ALIAS_BY_SUBSTRING:
+        if needle in lowered:
+            return alias
+    return None
 DEFAULT_MAX_TURNS = 200
 DEFAULT_MAX_DURATION = "2h"
 #: A coordinator waits blocked on its children and Scion counts that idle time,
@@ -360,7 +372,7 @@ def scion_template_files(
     profile: dict[str, Any],
     *,
     harness: str,
-    model_alias: str = DEFAULT_MODEL_ALIAS,
+    model_alias: str | None = None,
     task_repo: str | None = None,
     source: str | None = None,
     mode: str | None = None,
@@ -384,6 +396,15 @@ def scion_template_files(
         raise ValueError(f"mode must be executor, coordinator, tester or specialist, got '{mode}'")
     if harness_auth is not None and harness_auth not in HARNESS_AUTH_TYPES:
         raise ValueError(f"harness auth must be one of {HARNESS_AUTH_TYPES}, got '{harness_auth}'")
+    alias_note: str | None = None
+    if model_alias is None:
+        model_alias = model_alias_for(role_doc.get("model"))
+        if model_alias is None:
+            model_alias = DEFAULT_MODEL_ALIAS
+            if role_doc.get("model"):
+                alias_note = (
+                    f"# model alias {DEFAULT_MODEL_ALIAS}: no mapping for RoleDoc.model {role_doc['model']}"
+                )
     if model_alias not in MODEL_SIZE_ALIASES:
         raise ValueError(f"model alias must be one of {MODEL_SIZE_ALIASES}, got '{model_alias}'")
     if harness not in HARNESS_BY_KIND.values():
@@ -429,6 +450,8 @@ def scion_template_files(
             f"# RoleDoc.model is {_yaml_scalar(concrete_model)}. A template carries a portable size alias; "
             f"the harness-config '{harness}' resolves it to a concrete model (Scion local/templates.md)."
         )
+    if alias_note:
+        lines.append(alias_note)
     lines.append(f"model: {model_alias}")
     auth_type = harness_auth or HARNESS_AUTH.get(harness)
     if auth_type:
@@ -893,7 +916,7 @@ def materialize_scion_template(
     *,
     harness: str | None = None,
     out_dir: Path | None = None,
-    model_alias: str = DEFAULT_MODEL_ALIAS,
+    model_alias: str | None = None,
     task_repo: str | None = None,
     mode: str | None = None,
     context: dict[str, Any] | None = None,

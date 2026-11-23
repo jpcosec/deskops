@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from pathlib import Path
 
 from deskops.materializers.runtime_profiles import (
@@ -74,8 +76,13 @@ def test_build_agent_spec_args_repeat_joins_tools() -> None:
     args = build_agent_spec_args(SUPERVISOR_ROLE, CLAUDE_PROFILE, system_prompt_path="/tmp/prompt.md")
 
     tools_positions = [i for i, a in enumerate(args) if a == "--allowedTools"]
-    assert len(tools_positions) == 5
-    assert [args[i + 1] for i in tools_positions] == ["read", "grep", "find", "ls", "bash"]
+    assert [args[i + 1] for i in tools_positions] == ["Read", "Grep", "Glob", "Bash"]
+
+
+def test_build_agent_spec_args_claude_unknown_tool_fails() -> None:
+    role = {**SUPERVISOR_ROLE, "tools": ["read", "teleport"]}
+    with pytest.raises(ValueError, match="tool 'teleport' has no translation for harness claude"):
+        build_agent_spec_args(role, CLAUDE_PROFILE, system_prompt_path="/tmp/prompt.md")
 
 
 def test_build_agent_spec_args_file_delivery_needs_a_path() -> None:
