@@ -31,7 +31,6 @@ from sldb.api.edges.project_graph import extract_file_nodes
 from deskops.atom_references import ALLOWED_ROLES
 from deskops.atom_references import CANONICAL_FIELD
 from deskops.atom_references import DEFAULT_ROLE
-from deskops.atom_references import LEGACY_FIELDS
 from deskops.atom_references import MATERIALIZATION_FIELD
 
 
@@ -108,7 +107,7 @@ def _target_field(*path: str) -> ReferenceField:
 
 
 REFERENCE_FIELDS = (
-    *(_atom_field(field, index_owned=True) for field in (CANONICAL_FIELD, MATERIALIZATION_FIELD, *LEGACY_FIELDS)),
+    *(_atom_field(field, index_owned=True) for field in (CANONICAL_FIELD, MATERIALIZATION_FIELD)),
     _atom_field("materialization", "source_atoms"),
     _target_field("materialization", "target_identity"),
     _target_field("target_identity"),

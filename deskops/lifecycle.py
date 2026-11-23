@@ -574,6 +574,3 @@ def write_lifecycle_graph(root: Path) -> list[str]:
     return changes
 
 
-# Alias de compatibilidad hacia atrás
-ensure_lifecycle_graph = write_lifecycle_graph
-

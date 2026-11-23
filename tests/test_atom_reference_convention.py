@@ -5,7 +5,6 @@ from pathlib import Path
 from deskops.atom_references import ALLOWED_ROLES
 from deskops.atom_references import CANONICAL_FIELD
 from deskops.atom_references import DEFAULT_ROLE
-from deskops.atom_references import LEGACY_FIELD_VIOLATION
 from deskops.atom_references import parse_atom_reference
 from deskops.graph.checks import find_atom_reference_violations
 
@@ -50,32 +49,6 @@ atoms:
             "atom_id": "atom-unknown",
             "role": "explains",
             "field_name": "atoms",
-        }
-    ]
-
-
-def test_related_atoms_produces_one_legacy_finding(tmp_path: Path) -> None:
-    write(
-        tmp_path / "desk/atoms/atom-source.md",
-        """---
-id: atom-source
-related_atoms:
-  - atom-first
-  - atom-second
----
-# Source
-""",
-    )
-
-    findings = find_atom_reference_violations(tmp_path)
-
-    assert [finding.to_dict() for finding in findings] == [
-        {
-            "kind": LEGACY_FIELD_VIOLATION,
-            "path": "desk/atoms/atom-source.md",
-            "locator": "frontmatter:related_atoms",
-            "reason": "uses legacy atom reference field related_atoms; declare atom references in atoms",
-            "field_name": "related_atoms",
         }
     ]
 

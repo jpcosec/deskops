@@ -2,8 +2,7 @@
 
 One artifact field carries structured atom references: ``atoms``. A reference is
 either a bare atom id or a mapping with an ``id`` and an optional ``role``. The
-role vocabulary is deliberately small; ``related_atoms`` is a legacy alias that
-``deskops drift check`` reports, and ``source_atoms`` remains the
+role vocabulary is deliberately small; ``source_atoms`` remains the
 ``MaterializationContractDoc`` field.
 """
 
@@ -14,13 +13,11 @@ from typing import Any
 
 
 CANONICAL_FIELD = "atoms"
-LEGACY_FIELDS = ("related_atoms",)
 MATERIALIZATION_FIELD = "source_atoms"
 ALLOWED_ROLES = ("references", "documents", "specifies", "constrains", "validates")
 DEFAULT_ROLE = "references"
 
 INVALID_ROLE_VIOLATION = "invalid_atom_reference_role"
-LEGACY_FIELD_VIOLATION = "legacy_atom_reference_field"
 
 
 @dataclass(frozen=True)

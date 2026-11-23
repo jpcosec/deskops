@@ -816,9 +816,6 @@ def migrate_task_types(root: Path) -> list[str]:
     return changes
 
 
-# Alias de compatibilidad hacia atrás
-scaffold_desk = seed_desk
-
 
 
 # ---------------------------------------------------------------------------

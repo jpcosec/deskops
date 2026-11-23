@@ -11,8 +11,6 @@ from sldb.api.edges.project_graph import MissingProjectTarget as MissingGraphTar
 
 from deskops.atom_references import ALLOWED_ROLES
 from deskops.atom_references import CANONICAL_FIELD
-from deskops.atom_references import LEGACY_FIELD_VIOLATION
-from deskops.atom_references import LEGACY_FIELDS
 from deskops.atom_references import MATERIALIZATION_FIELD
 from deskops.atom_references import iter_atom_reference_values
 from deskops.atom_references import parse_atom_reference
@@ -217,25 +215,8 @@ def _atom_reference_findings(mapping: dict[Any, Any], path: str) -> list[AtomRef
         fields.append(
             (f"materialization.{MATERIALIZATION_FIELD}", materialization[MATERIALIZATION_FIELD])
         )
-    for field_name in LEGACY_FIELDS:
-        if field_name in mapping:
-            fields.append((field_name, mapping[field_name]))
 
     for field_name, value in fields:
-        if field_name in LEGACY_FIELDS:
-            findings.append(
-                AtomReferenceFinding(
-                    kind=LEGACY_FIELD_VIOLATION,
-                    path=path,
-                    locator=f"frontmatter:{field_name}",
-                    field_name=field_name,
-                    reason=(
-                        f"uses legacy atom reference field {field_name}; "
-                        f"declare atom references in {CANONICAL_FIELD}"
-                    ),
-                )
-            )
-
         for index, item in enumerate(iter_atom_reference_values(value)):
             parsed = parse_atom_reference(item, field_name)
             if parsed is None or parsed.violation is None:
