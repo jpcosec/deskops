@@ -1,7 +1,17 @@
+Task: task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt
+Title: Los agentes despachados corren pytest con basetemp en el /tmp del contenedor y reap borra /dev/shm/pytest-of-scion cuando no queda ningún agente vivo
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T08:07:55Z'
+  at: '2026-11-23T07:42:57Z'
   authority: generated
   via: save_document_payload
 id: task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt
@@ -14,9 +24,7 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- deskops/dispatch.py
-- tests/test_dispatch.py
-- 0a40890cdfe7e7aa12af07ba6e17036a7cf2f796
+- desk/inbox/20261123-024315-unclear-sin-dueno-nadie-limpia-dev-shm-pytest-of-scion.md
 depends_on: []
 pills: []
 files:
@@ -25,8 +33,7 @@ files:
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-los-agentes-despachados-corren-pytest-con-basetemp-en-tmp-del-contenedor-y-reap-limpia-dev-shm-pytes
+atoms: []
 ---
 
 # Los agentes despachados corren pytest con basetemp en el /tmp del contenedor y reap borra /dev/shm/pytest-of-scion cuando no queda ningún agente vivo
@@ -67,3 +74,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tres tests nuevos pasan y los tests existentes de tests/test_dispatch.py siguen verdes.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

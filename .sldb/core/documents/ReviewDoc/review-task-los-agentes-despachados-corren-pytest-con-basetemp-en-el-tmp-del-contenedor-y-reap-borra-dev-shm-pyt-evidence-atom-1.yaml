@@ -1,0 +1,37 @@
+name: review-task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt-evidence-atom-1
+path: desk/reviews/task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt/evidence-atom-1.md
+source_hash: bb164d5659d60a7402c97c4376b55b958f5deff46d74cc34b6504b805e754469
+content_hash: 3a7b65d0e03af43f7df339518fe3f397da1f88e96e775f384e0bf0cf9c8b9104
+field_hashes:
+  id: 39c74566942d2db41fd262745f2ec52eaa36eee1212d0cfa72748cc7e39925db
+  title: 8a1c0339c40ab49c14dd115b69b49a5507d62c2cb8bea754a2010f1ab24a887c
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 98737a9e18b861235cd72ba074274e6c5a10568abaa8b9dc85bf574f54bcde08
+  subject: 0a6fe925b82f49429bd80f53740ad7ba489412559a9a469a28000f4eb5388ddb
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 496ab93940074f407d7999ff121f86ea84ba0c3c8905e48bec7946a765146552
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 89d3745f3d6c512b4b76c3a8e7bd46b703b1f295c871431ca74dff5bfaa0fd2b
+  created_at: 5fa6020b9b7703a12703755fed9e1aff523b667159cf0de32826d6f4d024fae7
+  disposed_at: 5fa6020b9b7703a12703755fed9e1aff523b667159cf0de32826d6f4d024fae7
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 4bd2ac5ff3c24a36391646574c0fa087f24207d788822788029d40b7396900a1
+  disposition: d4fdbddf257e123a9052ec3ce86a55d2238636e805a2eeccd560414ef93115b0
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T08:08:22Z'
+  authority: generated
+  via: create_document

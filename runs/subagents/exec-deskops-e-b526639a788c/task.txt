@@ -1,0 +1,9 @@
+Task: task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt
+Title: Los agentes despachados corren pytest con basetemp en el /tmp del contenedor y reap borra /dev/shm/pytest-of-scion cuando no queda ningún agente vivo
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .

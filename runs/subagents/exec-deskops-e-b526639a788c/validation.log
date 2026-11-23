@@ -1,0 +1,6 @@
+$ python -m pytest -q -p no:cacheprovider tests/test_dispatch.py  (TMPDIR=/tmp, venv /tmp/ws-venv)
+49 passed — rc 0
+$ python -m pytest -n 4 -q -p no:cacheprovider tests
+1 failed, 1349 passed, 3 skipped, 1 xfailed — rc 1
+FAILED tests/test_global_store_isolation.py::test_deskops_init_does_not_touch_the_real_global_store
+(compares the hash of the REAL global store index before/after; unrelated to dispatch.py, likely other agents writing to the shared global store during the 93-min run)
