@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T17:32:00Z'
+  at: '2026-11-23T17:52:01Z'
   authority: generated
   via: save_document_payload
 id: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig
@@ -14,6 +14,7 @@ current_node: ritual-execution
 history: []
 references:
 - desk/inbox/20261123-142641-suggestion-jp-arreglar-el-store-sem-ntico-de-deskops-dos-vocabularios-de-tags.md
+- desk/inbox/20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb.md
 depends_on: []
 pills: []
 files: []
@@ -35,13 +36,13 @@ Nota 20261123-142641-suggestion-jp-arreglar-el-store-sem-ntico-de-deskops-dos-vo
 
 _Describe the concrete result this task must produce._
 
-deskops tiene un vocabulario unico de tags semanticos: cada tag libre que sobrevive tiene padre declarado con sldb semantic parent o es equivalente declarado (sldb semantic equivalent) del tag de modelo; deskops add y deskops edit dejan de escribir los duplicados; los documentos existentes del desk de deskops quedan migrados por CLI; .sldb_cache/semantic_dag.yaml ya no tiene tags planos sin padre salvo los que el informe justifique.
+Criterio de JP (nota 20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb), demostrable sobre el desk real de deskops y desde el lector de surface: (1) un apartado declarado con una semantica (ejemplo de JP: board.tareas) lista todas las tareas; (2) filtrar por una semantica mas especifica (por ejemplo tareas de UI) devuelve solo esas; (3) ambas consultas se resuelven con el store semantico de sldb (tags, padres, descendientes), sin listas ni filtros propios de deskops. Para eso los tags que escribe deskops pasan a ser tags del store semantico de sldb con padres declarados (sldb semantic parent/equivalent), los duplicados desaparecen y los documentos existentes quedan migrados por CLI.
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-Entra: inventario de tags (sldb semantic / store de deskops), tabla de mapeo vieja->nueva en el informe, cambios en los templates o validadores de deskops que escriben tags, comando o paso de migracion por CLI y su ejecucion sobre el desk de deskops, tests. Si a sldb le falta una operacion para migrar tags en bloque: no se edita .sldb a mano; se deja nota a sldb con deskops message send --to sldb y se migra lo que el CLI permita. Fuera: otros desks (se migran despues con el mismo comando) y el lector de surface.
+Regla del workspace: deskops es configuracion sobre sldb y nunca reimplementa lo que sldb tiene. Entra: inventario de tags del desk de deskops y sus documentos; tabla de mapeo a semanticas del store de sldb con padres (board.tareas o equivalente como padre de las tareas, y semanticas hijas como tareas de UI); declaracion con sldb semantic parent/equivalent; cambios en deskops add/edit y sus templates para escribir esas semanticas y no los tags propios con dos puntos; migracion de los documentos existentes por CLI; tests. Si a sldb le falta una operacion (consulta por tag con descendientes, migracion de tags en bloque), no se edita .sldb a mano ni se reimplementa en deskops: va nota a sldb con deskops message send --to sldb. Un intento previo (worktree .worktrees/deskops-e-5f0471f4b90c, sin commit) cambio 23 archivos de modelos y templates en la direccion anterior; se puede consultar pero no se da por bueno. Fuera: el lector de surface y otros desks.
 
 ## Implementation Path
 
@@ -59,4 +60,4 @@ _List the checks required before this task can close._
 
 _Name the observable condition that makes the task complete._
 
-Los tests nuevos pasan; deskops add task/atom/pill de prueba no escribe tags duplicados; el informe muestra la tabla de mapeo y el conteo antes/despues de tags planos sin padre, con el despues en 0 o justificado; el desk de deskops queda migrado y deskops doctor no suma errores.
+Sobre el desk real: una consulta de sldb por la semantica del apartado (board.tareas o la que el informe fije como equivalente) devuelve todas las tareas trackeadas, y una por una semantica hija (tareas de UI) devuelve solo esas; sldb semantic show de esas semanticas muestra padres e hijos; el informe trae los comandos y sus salidas; deskops no agrega listas ni filtros propios; si a sldb le falta una operacion (consulta por tag con descendientes, migracion en bloque) queda nota a sldb y lo no resuelto se lista; deskops doctor no suma errores.

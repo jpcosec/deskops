@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T17:31:42Z'
+  at: '2026-11-23T17:51:16Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -146,4 +146,4 @@ _Generated from the task references above._
 - El runner de revisiones lanza al revisor con stdin DEVNULL cuando la entrada va por archivo [draft] - Cuando command["stdin"] es None, subprocess.run recibe stdin=subprocess.DEVNULL (y no input); cuando hay entrada por stdin, se sigue pasando por input como hoy.
 - deskops list tasks y deskops next filtran por máquina con --host (tag host:<valor>) y la salida de list tasks muestra el host [draft] - (1) deskops list tasks --host <valor> lista solo las tareas con el tag host:<valor>; --host none lista las que no tienen tag host. La salida de texto agrega el host de cada tarea (o "-") y la json un campo host. (2) deskops next sin task_id acepta --host <valor> y elige solo entre tareas de ese host. Sin --host, ambas salidas listan lo mismo que hoy (solo se agrega la columna/campo host).
 - El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing [draft] - Despues de integrar el commit de un ejecutor, dispatch reap encola dispatch-tester de la tarea si no hay un tester vivo ni pendiente, sea el intento que sea.
-- Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI [draft] - deskops tiene un vocabulario unico de tags semanticos: cada tag libre que sobrevive tiene padre declarado con sldb semantic parent o es equivalente declarado (sldb semantic equivalent) del tag de modelo; deskops add y deskops edit dejan de escribir los duplicados; los documentos existentes del desk de deskops quedan migrados por CLI; .sldb_cache/semantic_dag.yaml ya no tiene tags planos sin padre salvo los que el informe justifique.
+- Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI [draft] - Criterio de JP (nota 20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb), demostrable sobre el desk real de deskops y desde el lector de surface: (1) un apartado declarado con una semantica (ejemplo de JP: board.tareas) lista todas las tareas; (2) filtrar por una semantica mas especifica (por ejemplo tareas de UI) devuelve solo esas; (3) ambas consultas se resuelven con el store semantico de sldb (tags, padres, descendientes), sin listas ni filtros propios de deskops. Para eso los tags que escribe deskops pasan a ser tags del store semantico de sldb con padres declarados (sldb semantic parent/equivalent), los duplicados desaparecen y los documentos existentes quedan migrados por CLI.

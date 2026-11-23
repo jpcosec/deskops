@@ -1,7 +1,7 @@
 name: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig
 path: desk/tasks/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig.md
-source_hash: 2b1481d81a483e1a16a33504fce2b9b2df92293a97979c33306a9c2b44280362
-content_hash: 1780d9a55ec77dfc0b83621e89a087c9caffb9c9966cc9ca5aa8b47d0e28c684
+source_hash: f4dfaa7ebd5da3274e20577082a0b825835538eb85ada6a546c4889bd286377e
+content_hash: 3686fbb4f0bd0c179f08b86c323e0df9b228cbc9e1b6d101bed849de3230a1f3
 field_hashes:
   title: 8ca4c7c0255c8e426fef619c59f93d11b5187b4dd4a41630436b60a2f559aad2
   id: 691c72677c7e2076a1ce4882c57bdea86b7c0a7ab0c8d34b063ddc7fe4f0b162
@@ -11,15 +11,15 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: dec19a0cd0bbd0b1e198976d8fc238624c9970cc11b793299e71da9209e0079d
-  goal: 497bad8026106e8740ad9c141bf97587361a62476b65bae624b876550723e33a
-  scope: d8c87dc1187baf96ef631d2d7faf0e628ec88ab5f8c5d3c1a27a0080e05903ff
-  references: cf6fc135cbb5b27bf40feeca3ab5324d333d032568b88d329a39033c37bcbf08
+  goal: 050f761b130a4bc3c779a847062ad6315c0068a9c9a39f9420395b9581d1eed9
+  scope: 34ac3f80c6252b56cc1537b88d6e7e286c9dae8ea4e3ec9f92cbe76836d48bdb
+  references: e9ec9f14fffab8aa95b73431cf6eb72d2d3842f1f4ee09820726712f1d7c1c11
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 0f6046b58a938afa93d40f2972c62428e69cc3a6400de85e4116e1ecb610355e
   validation: b9b2323b1af11bd430357cf7ec04e5bb24fdc391f025264e19b76d963e53c5e8
-  done_when: e22c7f8da709abbd139328a27806053aa8e600c236340d1d09e74db9df05960e
+  done_when: 7de283a5273c4fbb4714de66680e0c4a24c849ddd0229e42039d46c1458be11f
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T17:32:00Z'
+  at: '2026-11-23T17:52:01Z'
   authority: generated
   via: save_document_payload
