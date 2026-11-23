@@ -1,0 +1,25 @@
+name: materialization-conversation-tests-fixtures-model-contract-hashes-json
+path: desk/materializations/materialization-conversation-tests-fixtures-model-contract-hashes-json.md
+source_hash: 227ec5478f295376e319f1e013e8f42d421d3179b20398d8f6d086befc745d39
+content_hash: 4bc291e3ee5f7e076182ce43eb43e568d22536796b10c4e4f87472b557e0b996
+field_hashes:
+  id: 718b3a6c4adbf8c38a0a4ffa0eb2e85ff242a7a8d662d930de8b84bfb36478b0
+  title: 67804ded28b1e0f52281dfdadb480c86eec46647cf137f0513dd25d19b41099e
+  source_atoms: e818ddbfcc6009c849c091f1f6d5413a38165fe17ab79796d3292540a920116d
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 63010393512eba8902dd4e437dd58ffdc51ff42b7acf107af6f438c78a0fe9e1
+  intent: e349e91aee5dd327b2f174d24dc53ad269f5cac45d81b230a73df7ad31b8e0fb
+  validation: 7e9e06e614ec3b8f76dde855413cde5da981de5cf3597ea1fe2ff86abe171dc3
+  tags: 72e65fb2e64dd971b884669d718ebb38143b7a44c2ed1b5bb56313751f0e0ef1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:conversation
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T18:56:18Z'
+  authority: generated
+  via: create_document

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T13:32:50Z'
+  at: '2026-11-23T18:53:34Z'
   authority: generated
   via: save_document_payload
 id: task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt
@@ -15,27 +15,44 @@ history:
 - task_activates
 - task_hands_to_closeout
 references:
-- desk/inbox/20261123-024325-suggestion-campo-propio-para-la-referencia-de-conversacion-scion-en-atoms-y-notas.md
+- deskops/cli/commands/message.py
+- deskops/cli/commands/operations.py
+- deskops/cli/registry.py
+- deskops/models/atom.py
+- deskops/models/inbox.py
+- deskops/operations.py
+- deskops/services/atoms.py
+- tests/fixtures/golden/help/deskops_add_atom.txt
+- tests/fixtures/golden/help/deskops_add_inbox-note.txt
+- tests/fixtures/golden/help/deskops_list_atoms.txt
+- tests/fixtures/golden/help/deskops_message_send.txt
+- tests/fixtures/model_contract_hashes.json
+- tests/test_atoms_cli.py
+- tests/test_message_cli.py
+- 3db148a0b73c7b314ab805c04685c05680e03cc2
+- 44e71c26
 depends_on: []
 pills: []
 files:
+- deskops/cli/commands/message.py
+- deskops/cli/commands/operations.py
+- deskops/cli/registry.py
 - deskops/models/atom.py
 - deskops/models/inbox.py
-- deskops/cli/registry.py
-- deskops/cli/commands/operations.py
 - deskops/operations.py
 - deskops/services/atoms.py
-- deskops/cli/commands/message.py
-- tests/test_atoms_cli.py
-- tests/test_message_cli.py
-- tests/fixtures/model_contract_hashes.json
 - tests/fixtures/golden/help/deskops_add_atom.txt
+- tests/fixtures/golden/help/deskops_add_inbox-note.txt
 - tests/fixtures/golden/help/deskops_list_atoms.txt
 - tests/fixtures/golden/help/deskops_message_send.txt
+- tests/fixtures/model_contract_hashes.json
+- tests/test_atoms_cli.py
+- tests/test_message_cli.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-message-send-y-list-atoms-aceptan-conv
 ---
 
 # AtomDoc e InboxNoteDoc ganan conversation_ref, add atom y message send aceptan --conv y list atoms filtra por --conv

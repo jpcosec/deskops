@@ -1,0 +1,25 @@
+name: materialization-conversation-deskops-models-atom-py
+path: desk/materializations/materialization-conversation-deskops-models-atom-py.md
+source_hash: 4f96a1619b2b7821536d795b72c1c15595ec9c13c050b99c9c5bb322a53ab272
+content_hash: 0e3cee6435f79f2957358c35694e70e4c59696246a4306d07c1f428b777fbcb2
+field_hashes:
+  id: 548a292140414153e732f63eb062bfe86ea7216469f0532c04280530dfdd6b71
+  title: b9fe8b7c1f44a6b9b2353c5147c9565e50a5664cad63dd2334c79b06ad76f40c
+  source_atoms: e818ddbfcc6009c849c091f1f6d5413a38165fe17ab79796d3292540a920116d
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 71d439d6952cb8e912b37f29074da069efbacac955d17e12d57efd2439c185a6
+  intent: 0dbeb6914083301953dac9e06ba10aec4ca7b87e5be8251c096a2d96bb396525
+  validation: 7e9e06e614ec3b8f76dde855413cde5da981de5cf3597ea1fe2ff86abe171dc3
+  tags: 72e65fb2e64dd971b884669d718ebb38143b7a44c2ed1b5bb56313751f0e0ef1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:conversation
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T18:54:29Z'
+  authority: generated
+  via: create_document

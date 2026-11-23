@@ -1,0 +1,25 @@
+name: materialization-conversation-tests-fixtures-golden-help-deskops-list-atoms-txt
+path: desk/materializations/materialization-conversation-tests-fixtures-golden-help-deskops-list-atoms-txt.md
+source_hash: 354c8146eeefccf9f77001e0780b8c0b3aae9a3e0fcb88f1bbe24f399f664e19
+content_hash: 54f4c35bb09c82baedd2c0d54964b9e431e73423e0cc9cbff40cac257dee6fef
+field_hashes:
+  id: 9c08ee3796bf4017e15ecec8965f040167278cab3a6baab02bb7dc5caaee8c78
+  title: f5464ea7fc595f0029d383d488bb6228a11030194a7c765c11563a32497853da
+  source_atoms: e818ddbfcc6009c849c091f1f6d5413a38165fe17ab79796d3292540a920116d
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: ef64ea1d0978c68fb708dba30bad71e3df106a5de84642b1905e8a2b08a8096c
+  intent: fd89c12127566b9517d4e89578340b556a8625b24caa26967d7b0c5672a33e2b
+  validation: 7e9e06e614ec3b8f76dde855413cde5da981de5cf3597ea1fe2ff86abe171dc3
+  tags: 72e65fb2e64dd971b884669d718ebb38143b7a44c2ed1b5bb56313751f0e0ef1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:conversation
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T18:55:52Z'
+  authority: generated
+  via: create_document
