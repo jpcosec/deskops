@@ -1,18 +1,19 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:03:10Z'
+  at: '2026-11-23T11:07:33Z'
   authority: generated
   via: save_document_payload
 id: task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - desk/inbox/20261115-232023-suggestion-runtime-template-scion-ignora-resources-y-volumes-del-template-van-como-config-del-agente.md
 depends_on: []

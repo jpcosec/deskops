@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T08:23:53Z'
+  at: '2026-11-23T11:16:52Z'
   authority: generated
   via: save_document_payload
 id: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
@@ -14,19 +14,33 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- desk/inbox/20261122-234436-suggestion-hook-que-despierta-a-la-identidad-scion-del-desk-cuando-llega-una-nota-al-inbox.md
+- deskops/cli/commands/message.py
+- deskops/cli/registry.py
+- deskops/config.py
+- deskops/wake.py
+- tests/fixtures/golden/help/deskops_message.txt
+- tests/fixtures/golden/help/deskops_message_wake.txt
+- tests/test_config.py
+- tests/test_message_cli.py
+- tests/test_message_delivery.py
+- 465b442bd9437b4e4bd4538a755678ebda94c602
 depends_on: []
 pills: []
 files:
-- deskops/config.py
 - deskops/cli/commands/message.py
-- deskops/queue.py
-- tests/test_message_delivery.py
+- deskops/cli/registry.py
+- deskops/config.py
+- deskops/wake.py
+- tests/fixtures/golden/help/deskops_message.txt
+- tests/fixtures/golden/help/deskops_message_wake.txt
 - tests/test_config.py
+- tests/test_message_cli.py
+- tests/test_message_delivery.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-al-llegar-una-nota-al-inbox-deskops-despierta-a-la-identidad-scion-del-desk-si-su-config-lo-pide
 ---
 
 # Al llegar una nota al inbox de un desk, deskops despierta a la identidad scion de ese desk si su config lo pide (identity.wake), respetando el gate de memoria

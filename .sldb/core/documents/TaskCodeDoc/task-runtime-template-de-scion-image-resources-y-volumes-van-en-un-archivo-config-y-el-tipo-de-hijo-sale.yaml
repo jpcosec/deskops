@@ -1,15 +1,15 @@
 name: task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale
 path: desk/tasks/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale.md
-source_hash: 10e603d909ebd035b7f8831dc5736a6c65569c9526dada9b5bbbfa5a7f4893c7
-content_hash: d0b00dc501b9db44afd5de570e28bdbab1e035ebcb4aa3ac6c379f0a4d583c16
+source_hash: 37a70353967db405d30c0a23b25616731cfd4af2f3b576f3855377fba192fde4
+content_hash: 082a613b27a855afc479a71f7019a757c0b8aa4e2f0e0820ef462c0d47c16a8d
 field_hashes:
   title: 5d00b7594142d5b22348250251ea95f95d20a0fdafcbd48eb42ccbc8670e9e43
   id: 9fd4e2683a2ec1af3e794b7933a4a6b660f873c0a498a69a48e629f8a9df09b2
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 0d5422a0f14886f54a2b908d8f354ab60de65f689d75bfc6e87fb8595caa521a
   goal: 76cb83a8aa95c3df5d44480e879770f4cd7003589bb2842a7b2e78b18db48a00
   scope: 54ce2a68225c72c22ad728e113b9bbb5d4cce32630c582f5d782bde23eca9c62
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:03:10Z'
+  at: '2026-11-23T11:07:33Z'
   authority: generated
   via: save_document_payload

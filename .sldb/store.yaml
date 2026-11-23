@@ -525,6 +525,15 @@ include:
   - desk/materializations/materialization-closeout-deskops-services-closure-py.md
   - desk/materializations/materialization-closeout-tests-test-closeout-py.md
   - desk/materializations/materialization-closeout-tests-test-closeout-resolved-by-py.md
+  - desk/materializations/materialization-identity-deskops-cli-commands-message-py.md
+  - desk/materializations/materialization-identity-deskops-cli-registry-py.md
+  - desk/materializations/materialization-identity-deskops-config-py.md
+  - desk/materializations/materialization-identity-deskops-wake-py.md
+  - desk/materializations/materialization-identity-tests-fixtures-golden-help-deskops-message-txt.md
+  - desk/materializations/materialization-identity-tests-fixtures-golden-help-deskops-message-wake-txt.md
+  - desk/materializations/materialization-identity-tests-test-config-py.md
+  - desk/materializations/materialization-identity-tests-test-message-cli-py.md
+  - desk/materializations/materialization-identity-tests-test-message-delivery-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2907,6 +2916,14 @@ include:
     name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-evidence-atom-1
   - path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/evidence-materialization-1.md
     name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-evidence-materialization-1
+  - path: desk/reviews/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf/evidence-tests-1.md
+    name: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-tests-1
+  - path: desk/reviews/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf/evidence-commit-1.md
+    name: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-commit-1
+  - path: desk/reviews/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf/evidence-atom-1.md
+    name: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-atom-1
+  - path: desk/reviews/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf/evidence-materialization-1.md
+    name: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

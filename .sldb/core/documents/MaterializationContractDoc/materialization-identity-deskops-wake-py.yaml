@@ -1,0 +1,25 @@
+name: materialization-identity-deskops-wake-py
+path: desk/materializations/materialization-identity-deskops-wake-py.md
+source_hash: 5ae2336e086c04e311133f85477e366d98bbeac3b2abe325042c8f7529970b10
+content_hash: 36d98fb796d9a1bb93e561bdd13ba08d6f5f7638cea7d39e17c68b6feb166a47
+field_hashes:
+  id: 0635ef179bbb745c1ae1824e4cced3f04da2f3fa4a0e82d96a7466a5ddf76e3a
+  title: 4d97f5a64bfc1b7234f4e9eca1f15ea31bb55c89623fbf45e6a7ee0df4b91e26
+  source_atoms: d2633e899ec7f94ae7e70a8248f2ea78ebf1ae1e140646f11fc28deb0f6e3a7c
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 7782882fa1488e86ab457648bb179ad1a81438a0166e4a8a8e960ed38c51960c
+  intent: 3d692eea2b2841b399baa6b6282e2e1b0857f37924bc9917de0c2a05634d3883
+  validation: 7f8a225f9eb61ffd07041afafa60c873559f6065d41600f4bd72d310e9705c74
+  tags: 7949a3576e914d92b081efaaae84e41239d8f8b22c53a58e0c8350a13fbc6152
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:identity
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T11:17:42Z'
+  authority: generated
+  via: create_document

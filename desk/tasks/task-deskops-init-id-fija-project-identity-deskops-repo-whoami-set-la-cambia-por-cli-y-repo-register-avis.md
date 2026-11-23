@@ -1,18 +1,19 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T08:22:32Z'
+  at: '2026-11-23T10:34:41Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis
-status: active
+status: ready_for_testing
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
+- task_hands_to_closeout
 references:
 - desk/inbox/20261122-234848-suggestion-deskops-init-fija-project-identity-con-el-nombre-de-la-carpeta-y-no-hay-comando-para-cambiarlo.md
 - desk/inbox/20261122-222005-unclear-de-labchile-chatbots-no-hay-verbo-para-cambiar-project-identity-editar-la-portada-de-pills-ni-fusionar-dos-desks.md

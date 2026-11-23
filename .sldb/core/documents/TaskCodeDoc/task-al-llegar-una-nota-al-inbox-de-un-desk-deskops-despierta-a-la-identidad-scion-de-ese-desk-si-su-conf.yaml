@@ -1,7 +1,7 @@
 name: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
 path: desk/tasks/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf.md
-source_hash: 79c794afce564281a20f45f029013a863a689e127c33ecbbe77e96ab1ec8d9c9
-content_hash: 7e389288210fc4758bfb398f2ada3b77cb3c6798acfff304aca98edac7ebdded
+source_hash: efaf65f1d7f8507282080293525334e212162a17ce46d9813a2e5208cc141b3e
+content_hash: f23b43c19e905ed7a28462b20dba27769229adf2e3f252d863d1225ed69d8f5f
 field_hashes:
   title: 695c868cc90cb387853fdc538313d45b1231ac959134b0938c6fd875ab96b4b5
   id: fc25c766b458cf7f1dd80337446a78846d21fac574a62bd8679f577167e8468b
@@ -13,17 +13,17 @@ field_hashes:
   why: da64fb53fd01f8a633fda77009823db6bd651f06cabd6b32ee0820b4ed5b5ee4
   goal: c6deb2771abde8b77d5996e44798aaf3c473e2aaaa1c10fc0411b837295d9b6b
   scope: 1d3fa5f293f125c13d84f278ac1a7462717b74d7119c818fbe35390b2e7589e3
-  references: 2794fde48926b0796cd4d2f7e442be0f9d1c6a3a58ab97f8c7dce1c5011881f9
+  references: d81e081a007deed116fe56e7d62a425ea64588aa82025be7317dca9bd489749d
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: bb4520c96dc60085141a37faaca66be9eed76a99a7ff2b19f753cb3598ae9f8f
+  files: b79609543d7562f4c4bb1ef3ef968908631c34deb36905cf10b813a77909315f
   implementation_path: 35487cb32576049bde58f08cf73959c143e6f4e63cc62c727a11bb73a95fd727
   validation: fbd5b23cfa33075a88d9d646a9921aeb26a21d547bc9a819bf7b29855da5e365
   done_when: 7c8e3209898f0c5c579a6c93581c10f6ef10f8feca80b64295635acafadc4376
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: d2633e899ec7f94ae7e70a8248f2ea78ebf1ae1e140646f11fc28deb0f6e3a7c
 semantic_tags:
 - artifact:task
 - representation.markdown
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T08:23:53Z'
+  at: '2026-11-23T11:16:52Z'
   authority: generated
   via: save_document_payload

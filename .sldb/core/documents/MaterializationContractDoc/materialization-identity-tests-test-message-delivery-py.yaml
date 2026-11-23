@@ -1,0 +1,25 @@
+name: materialization-identity-tests-test-message-delivery-py
+path: desk/materializations/materialization-identity-tests-test-message-delivery-py.md
+source_hash: ade875b12cccbff6ac87726203910bfed95ae3e7494c54ad2c5f0935f2f0013f
+content_hash: 4aee38d1684f93ff4a07a1186b293bae2a92c51164b811d4905fa8f99e46c349
+field_hashes:
+  id: 834f3743c72847e228f51b54cd1b8f1ee6d8a5888abb2b791bd6b9019e777e7f
+  title: ce8b61fd091e56d991ffb1532a6447e3140eb7ae192035b7b57dad05a82c023c
+  source_atoms: d2633e899ec7f94ae7e70a8248f2ea78ebf1ae1e140646f11fc28deb0f6e3a7c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 7c0a0ab9137d8da75e504fcd3a2c00e7dc90fa5bbfc345899b94a05d6decfe56
+  intent: 87293e46ae7b2184b990095d9e579929fba6499e8c17f484e98420313eeae8f8
+  validation: 7f8a225f9eb61ffd07041afafa60c873559f6065d41600f4bd72d310e9705c74
+  tags: 7949a3576e914d92b081efaaae84e41239d8f8b22c53a58e0c8350a13fbc6152
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:identity
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T11:18:46Z'
+  authority: generated
+  via: create_document
