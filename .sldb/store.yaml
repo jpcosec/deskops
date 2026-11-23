@@ -574,6 +574,8 @@ include:
   - desk/materializations/materialization-conversation-tests-fixtures-model-contract-hashes-json.md
   - desk/materializations/materialization-conversation-tests-test-atoms-cli-py.md
   - desk/materializations/materialization-conversation-tests-test-message-cli-py.md
+  - desk/materializations/materialization-closeout-deskops-services-closeout-gates-py.md
+  - desk/materializations/materialization-closeout-tests-test-closeout-test-paths-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3070,6 +3072,14 @@ include:
     name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-preflight-1
   - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/bundle-1.md
     name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-bundle-1
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/evidence-tests-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-tests-1
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/evidence-commit-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-commit-1
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/evidence-atom-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-atom-1
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/evidence-materialization-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

@@ -1,25 +1,34 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T19:07:33Z'
+  at: '2026-11-23T20:00:33Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/services/closeout_gates.py
+- deskops/services/closure.py
+- tests/test_closeout_test_paths.py
+- 8c836050d304cef91b70e0482ccdc9470d4d6846
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/services/closeout_gates.py
+- deskops/services/closure.py
+- tests/test_closeout_test_paths.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript
 ---
 
 # El gate de tests del closeout acepta archivos de test de TypeScript (*.test.ts, *.test.tsx, *.spec.ts) declarados en files

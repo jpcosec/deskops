@@ -1,14 +1,16 @@
 name: 20261123-161706-unclear-queue-20261123t191008z-dispatch-reap-task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt
 path: desk/inbox/20261123-161706-unclear-queue-20261123t191008z-dispatch-reap-task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt.md
-source_hash: 56d1535b2684e4817894ee5bee491d0d62d71a650dd7a586097e8d0fc80c1838
-content_hash: f4150ff8a2457e133e200f3a99197e7b8ae918c7ce9832e92998cb70895dfcca
+source_hash: 02e5352727c333937587db6fee0536dc2982f0d5ebb3c564171baffa60172daa
+content_hash: 612252e42784c2ed134ed27ff83c89281bc003f447e4c316b068610dd6f246b2
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: c3f2aae7dd252c4b4f0e7ff51f9d020f25581c3ce4ca193718584df49f9f8fe6
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: b74f915c6234860b1b94739d4896af680409d916e1f730f256edba8582678360
+  ack_reason: 471499177aeaecf21660797c7f49f5b2e8541f725a4b65e62dfa642a5c104016
   title: 4e17dc29dafc0f5a9ea71bdf689635cfe2001c2240df08250892d3c8abeee71e
   body: 6d49a45f09de814e4735956b926c0172a2ba8bc92c4e1eb25fcbc1c76425272c
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-23T19:19:19Z'
+  authority: generated
+  via: save_document_payload

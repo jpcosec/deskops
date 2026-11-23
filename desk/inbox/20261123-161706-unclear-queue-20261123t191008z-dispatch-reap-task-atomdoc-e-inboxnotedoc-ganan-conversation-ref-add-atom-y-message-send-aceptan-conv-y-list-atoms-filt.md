@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T19:19:19Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,11 +13,14 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-23T16:17:06'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-23T16:19:17'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: timeout del hub de scion por carga; el tester ya no existe en scion, reap
+  sin efecto pendiente
 # conversation thread/message the note came from, e.g. #hilo/1234
 ---
 
