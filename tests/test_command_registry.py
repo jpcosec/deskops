@@ -103,6 +103,7 @@ MUTATING_COMMANDS: set[tuple[str, ...]] = {
     ("advance", "task"),
     ("repo",),
     ("repo", "register"),
+    ("repo", "whoami"),
     ("repo", "remove"),
     ("retire",),
     ("desk",),
