@@ -1,0 +1,9 @@
+# result-summary
+run_id: exec-deskops-e-6531427835e6 (session/session_sha256: not available to the executor)
+Commit (worktree branch deskops/deskops-e-6531427835e6): deskops/services/closure.py, tests/test_closeout.py
+
+- `_close` takes a snapshot of `git status --porcelain -z --untracked-files=all -- .sldb` at the start (A) and again before committing (B). Only paths new or with a changed status code are staged with `git add -A -- <path>` and added to the commit pathspec; no `git add -A .sldb` and no `.sldb` directory in the pathspec. All routes (run-dir, manual, resolved-by, supersede, retire, legacy) share `_close`, so all get it.
+- Deviation to review: paths already dirty before the close are still carried when they are (1) store bookkeeping (`.sldb/store.yaml`, `core/store_index.yaml`, `core/models/**`) or (2) `.sldb/core/documents/**` whose name/body names the task id or a stem of an explicit path (verify receipts, AtomDoc of a committed atom). Existing tests (verify-receipt projection, registered RunDocs, store delta) require it; a foreign file (test a) is unaffected.
+- Without --paths nothing is returned early any more: Board/TaskDoc/.sldb are staged first; if the index is still empty the error lists `git status --porcelain` paths and suggests --paths (desk restored).
+- Tests added in tests/test_closeout.py: foreign untracked .sldb file stays untracked and out of HEAD; tracked .sldb change made before stays unstaged; closeout commit without --paths commits TaskDoc + Board; empty-index error lists modified paths.
+- Full suite: 1349 passed, 1 failed (test_transaction store_delta, caused by my first version, fixed and re-run green with the closeout suites). Full suite not re-run after that last tweak (88 min per run); the failing-file group was re-run. No failures needing base comparison.

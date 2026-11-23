@@ -1,38 +1,49 @@
+Task: task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged
+Title: closeout commit stagea solo lo que escribio el cierre: sin git add -A sobre .sldb y sin Nothing staged mudo
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Effective pills:
+- desk/contexts/pill-closeout-knowledge-gates-require-traceable-evidence.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T10:32:06Z'
+  at: '2026-11-23T07:06:40Z'
   authority: generated
   via: save_document_payload
 id: task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged
-status: ready_for_testing
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-closeout
+current_node: ritual-testing
 history:
 - task_activates
-- task_hands_to_closeout
 references:
-- deskops/services/closure.py
-- tests/test_closeout.py
-- tests/test_closeout_resolved_by.py
-- f629463d95dff106aca307f623e3df9b2d9c448d
-- 2fe1b60e
+- desk/inbox/20261106-145349-suggestion-closeout-commit-arrastra-archivos-sin-trackear-de-sldb.md
+- desk/inbox/inbox-note-closeout-commit-sin-paths-dice-nothing-staged-aunque-el-cli-dejó-cambios.md
 depends_on: []
 pills:
 - desk/contexts/pill-closeout-knowledge-gates-require-traceable-evidence.md
 files:
 - deskops/services/closure.py
 - tests/test_closeout.py
-- tests/test_closeout_resolved_by.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-el-commit-de-cierre-stagea-solo-lo-que-escribio-el-cierre-en-sldb
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
 ---
 
 # closeout commit stagea solo lo que escribio el cierre: sin git add -A sobre .sldb y sin Nothing staged mudo
@@ -75,3 +86,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los dos tests nuevos pasan; el archivo ajeno sin trackear no aparece en el commit de cierre del test; closeout commit sin --paths ya no responde 'Nothing staged' cuando el cierre escribio archivos; suite completa sin fallas nuevas.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-6531427835e6-a2`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-6531427835e6-a2
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

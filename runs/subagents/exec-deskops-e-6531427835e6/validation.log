@@ -1,0 +1,3 @@
+pytest -q tests/test_closeout.py tests/test_closeout_atomless.py tests/test_closeout_resolved_by.py: exit 0 (119 passed on first full pass after fixes)
+pytest -n 4 -q tests (full, before final tweak): 1 failed, 1349 passed -> test_transaction.py::test_closeout_commit_includes_the_store_delta_it_causes (new failure from my change; fixed)
+pytest -n 4 -q tests/test_transaction.py tests/test_closeout*.py after fix: 130 passed, exit 0
