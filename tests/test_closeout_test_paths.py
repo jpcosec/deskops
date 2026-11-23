@@ -147,3 +147,26 @@ def test_third_party_code_is_not_evidence(repo: Path, reference: str) -> None:
 )
 def test_strings_that_only_look_like_evidence_are_not_evidence(repo: Path, reference: str) -> None:
     assert _tests_evidence(repo, [reference], files=[reference]) == []
+
+
+# TypeScript tests -------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "relative", ["surface/src/x.test.ts", "surface/src/y.test.tsx", "surface/src/z.spec.ts", "surface/src/w.spec.tsx"]
+)
+def test_typescript_test_declared_in_files_is_evidence(repo: Path, relative: str) -> None:
+    _touch(repo, relative)
+    assert _tests_evidence(repo, [relative], files=[relative]) == [relative]
+    assert _tests_evidence(repo, [relative]) == []
+
+
+def test_typescript_test_in_node_modules_is_not_evidence(repo: Path) -> None:
+    relative = "surface/node_modules/pkg/x.test.ts"
+    _touch(repo, relative)
+    assert _tests_evidence(repo, [relative], files=[relative]) == []
+
+
+def test_plain_typescript_file_is_not_evidence(repo: Path) -> None:
+    _touch(repo, "surface/src/x.ts")
+    assert _tests_evidence(repo, ["surface/src/x.ts"], files=["surface/src/x.ts"]) == []

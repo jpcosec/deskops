@@ -379,7 +379,7 @@ class ClosureService:
                 1,
                 [
                     f"Unresolvable --test: {', '.join(unresolved_tests)} "
-                    "(need an existing .py file under a tests/ directory or declared in the task's files)."
+                    "(need an existing .py, .test.ts, .test.tsx, .spec.ts or .spec.tsx file under a tests/ directory or declared in the task's files)."
                 ],
             )
 

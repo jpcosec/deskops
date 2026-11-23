@@ -87,6 +87,14 @@ def gate_summary(declared: list[str], found: list[str]) -> str:
     return f"esta tarea declaró {declared_text}; encontré {found_text}"
 
 
+TEST_FILE_SUFFIXES = (".py", ".test.ts", ".test.tsx", ".spec.ts", ".spec.tsx")
+
+
+def _has_test_suffix_hint(text: str) -> bool:
+    path_text = text.split("::", 1)[0]
+    return ".py" in text or path_text.endswith(TEST_FILE_SUFFIXES)
+
+
 class CloseoutGatesService:
     def __init__(self, root: Path) -> None:
         self.root = root.resolve()
@@ -164,7 +172,10 @@ class CloseoutGatesService:
         return not any(resolved.is_relative_to(parent) for parent in excluded)
 
     def reference_points_to_test(self, reference: str, files: list[Any] | None = None) -> bool:
-        """True only for an existing .py file inside the repository that is a test location.
+        """True only for an existing test file inside the repository that is a test location.
+
+        A test file is a ``.py`` file or a TypeScript test (``.test.ts``, ``.test.tsx``,
+        ``.spec.ts``, ``.spec.tsx``).
 
         After dropping an optional ``::node`` suffix (the node is not validated) and the
         ``pytest <path>`` form, the reference must name an existing file, relative to the
@@ -183,7 +194,7 @@ class CloseoutGatesService:
             if not path_text or path.is_absolute():
                 continue
             resolved = (self.root / path).resolve()
-            if resolved.suffix != ".py" or not resolved.is_file():
+            if not self._is_test_suffix(resolved.name) or not resolved.is_file():
                 continue
             if not resolved.is_relative_to(self.root):
                 continue
@@ -256,6 +267,10 @@ class CloseoutGatesService:
 
         return CloseoutGraph(desk_graph(self.root))
 
+    @staticmethod
+    def _is_test_suffix(name: str) -> bool:
+        return name.endswith(TEST_FILE_SUFFIXES)
+
     def _test_path_candidates(self, reference: str) -> list[str]:
         candidates: list[str] = []
         stripped = reference.strip()
@@ -264,9 +279,9 @@ class CloseoutGatesService:
                 token = token.strip("\"'")
                 if token.startswith("-"):
                     continue
-                if ".py" in token:
+                if _has_test_suffix_hint(token):
                     candidates.append(token)
-        elif ".py" in stripped:
+        elif _has_test_suffix_hint(stripped):
             candidates.append(stripped)
         return candidates
 
