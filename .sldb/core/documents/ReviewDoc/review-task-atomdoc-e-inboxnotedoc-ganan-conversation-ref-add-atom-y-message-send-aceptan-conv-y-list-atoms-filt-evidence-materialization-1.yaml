@@ -1,0 +1,37 @@
+name: review-task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt-evidence-materialization-1
+path: desk/reviews/task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt/evidence-materialization-1.md
+source_hash: 2fc3e8843267670ee0489cd63cd4f2457bb42aeda7d9afc9b448fc48ad116230
+content_hash: f58b11397c42e522e84dfb363a02429ed28f17d1ebe6739e4fcb774c8cb089a1
+field_hashes:
+  id: 288010b71b91d77618d9a18085b4a12e5c79b96c91324b8f8cfd3de87c36afc0
+  title: 11a643ed9cc30e9dc4e9073bc52ff56b66ba6715f29d136cb5f6aaa32cc919eb
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: cb66358ab39cd9e3da23e50dd8a94c61d66ff3c744901517d685313fa23cdc22
+  subject: 47b074a14b2c7551cc9e1ec56a1ccfe56edef08db1e81bcd421b7cc4d83e33d2
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: cd0d6c3491645242a7d3f2a15e31df9ef84310012ab4aa396a29737eda22923e
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 5a187077a0f0fa75fc6ecd65052978b4c68f83a8bd4536d5294aa1f86a1548a8
+  created_at: 0a82ef60956e540be135b3a12a0a6e94280ca4710cec64ba3ea918b8c042cfd3
+  disposed_at: 0a82ef60956e540be135b3a12a0a6e94280ca4710cec64ba3ea918b8c042cfd3
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: b94e87330510d50649af0f2b108227978ea23fe5286eb595311a56fd0cef9465
+  disposition: 03fb4d867bf61c6385cde762614185a8888abf7a1790bff04521bc09e9fb5ebd
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T18:57:22Z'
+  authority: generated
+  via: create_document

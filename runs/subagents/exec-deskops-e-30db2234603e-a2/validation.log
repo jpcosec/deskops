@@ -1,0 +1,4 @@
+pytest tests/test_atoms_cli.py tests/test_message_cli.py tests/test_model_contract_snapshot.py (worktree): 27 passed, exit 0
+sldb stores update --store .sldb --pythonpath . : exit 0
+sldb stores check: contract moved de AtomDoc/InboxNoteDoc desaparece; errores 213 -> 195 (resto preexistente: enlaces de registry del worktree, RunDocs)
+deskops doctor: sin errores de contract para Atom/InboxNote

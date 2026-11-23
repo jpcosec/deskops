@@ -1,0 +1,5 @@
+tests/test_atoms_cli.py + tests/test_message_cli.py: 25 passed (exit 0)
+tests/test_output_goldens.py: 7 passed (exit 0)
+full suite pytest -n 4 tests: 1374 passed, 3 skipped, 1 xfailed (exit 0)
+sldb models update AtomDoc / InboxNoteDoc --store .sldb: ok
+deskops doctor --root . : only pre-existing anchors/doc_lost alerts on reviews (unrelated to atoms/inbox)
