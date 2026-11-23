@@ -1,7 +1,21 @@
+Task: task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no
+Title: Borrar el detector legacy de related_atoms y los alias scaffold_desk y ensure_lifecycle_graph, que no tienen consumidores
+Status: active
+Current node: ritual-testing
+Task type: task.code
+From drawer: desk/drawer/tasks/task-retirar-caminos-legacy-migrar-los-datos-y-borrar-el-c-digo-de-compatibilidad.md
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T11:32:38Z'
+  at: '2026-11-23T10:20:31Z'
   authority: generated
   via: save_document_payload
 id: task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no
@@ -14,28 +28,21 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- deskops/atom_references.py
-- deskops/graph/checks.py
-- deskops/graph/desk_graph.py
-- deskops/lifecycle.py
-- deskops/workspace.py
-- tests/test_atom_reference_convention.py
-- 5fff4cdaf4fd8a5f4513b41281fbeac1ed84ae0b
+references: []
 depends_on: []
 pills: []
 files:
 - deskops/atom_references.py
 - deskops/graph/checks.py
-- deskops/graph/desk_graph.py
-- deskops/lifecycle.py
 - deskops/workspace.py
+- deskops/lifecycle.py
 - tests/test_atom_reference_convention.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-se-borra-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
 from_drawer: desk/drawer/tasks/task-retirar-caminos-legacy-migrar-los-datos-y-borrar-el-c-digo-de-compatibilidad.md
 ---
 
@@ -80,3 +87,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los greps quedan vacios y la suite no tiene fallas nuevas.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
