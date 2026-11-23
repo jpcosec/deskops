@@ -1,19 +1,22 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T04:39:09Z'
+  at: '2026-11-23T08:07:55Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261123-024315-unclear-sin-dueno-nadie-limpia-dev-shm-pytest-of-scion.md
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- 0a40890cdfe7e7aa12af07ba6e17036a7cf2f796
 depends_on: []
 pills: []
 files:
@@ -22,7 +25,8 @@ files:
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-los-agentes-despachados-corren-pytest-con-basetemp-en-tmp-del-contenedor-y-reap-limpia-dev-shm-pytes
 ---
 
 # Los agentes despachados corren pytest con basetemp en el /tmp del contenedor y reap borra /dev/shm/pytest-of-scion cuando no queda ningún agente vivo

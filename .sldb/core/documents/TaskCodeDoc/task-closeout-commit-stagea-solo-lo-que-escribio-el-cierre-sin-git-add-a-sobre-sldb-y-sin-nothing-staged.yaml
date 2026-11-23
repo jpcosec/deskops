@@ -1,15 +1,15 @@
 name: task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged
 path: desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
-source_hash: 38485495430927350b04cb2a2e9817f828cf28639e69a15ab731fbb0226022fc
-content_hash: d72728018dde016e75213002604cbb11ed28b40edada95766117d0f4690e2ce6
+source_hash: d74768caddccde675fafc708190bddc2f0b5f374395c0b5d3e070d3d9d7d2cb3
+content_hash: 95fab2a7baf2556fdcfa75a6cf9a98f193ef1a65ae98ccee2c3b6a0b22b322bc
 field_hashes:
   title: 32ca2820a83ff99e2b8397fa614735efdb5de507f090295db58b89ba7f53f0c0
   id: 97729f264ca01b6d749ad072f9d972c48f4e22bfa314fc985fc9e2ed968bfa67
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 2b873fa8a781ebf1ba09777ec5adcbd2514caabc10321f76006fe5764c12ecf0
   goal: 71a3290633d40a52c16a017430321ad11409f6093ee584cb5d672f8859850e71
   scope: 6cc55a3c0df2f12fa108544d35bd33173c35b4e0782c5a75f1151e4f5b712645
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:59:50Z'
+  at: '2026-11-23T07:06:40Z'
   authority: generated
   via: save_document_payload
