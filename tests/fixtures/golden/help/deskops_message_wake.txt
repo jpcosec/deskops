@@ -1,0 +1,23 @@
+usage: deskops message wake [-h] [--note NOTE] [--root ROOT]
+                            [--desk-root DESK_ROOT] [--store STORE]
+                            [--repo REPO] [--pythonpath PYTHONPATH]
+                            [--format {text,json,yaml}]
+
+Wake the desk's scion identity for a note (exit 3 when the memory gate
+blocks).
+
+options:
+  -h, --help            show this help message and exit
+  --note NOTE           Note id; defaults to the newest note in the inbox
+  --root ROOT           Repository root whose desk/ holds the inbox
+  --desk-root DESK_ROOT
+                        Desk root directory override; defaults to the active
+                        project desk
+  --store STORE         Store path used to resolve the target project root for
+                        the default desk
+  --repo REPO           Target a registered repository name in the ecosystem
+  --pythonpath PYTHONPATH
+                        Project path used when auto-tracking messages through
+                        the registered model
+  --format {text,json,yaml}
+                        Output format.

@@ -644,6 +644,7 @@ Examples:
   deskops message list --root .
   deskops message read 20260614-cli-help --root .
   deskops message ack 20260614-cli-help --root .
+  deskops message wake --root . --note 20260614-cli-help
 
 read/ack selector: filename, stem, or unique slug fragment.
 """.strip(),
@@ -672,6 +673,16 @@ read/ack selector: filename, stem, or unique slug fragment.
             ),
             handler="deskops.cli.commands.message:MessageCLI",
             mutates=True,
+        ),
+        Command(
+            path=("message", "wake"),
+            help="Wake the desk's scion identity for a note (exit 3 when the memory gate blocks).",
+            args=(
+                A("--note", help="Note id; defaults to the newest note in the inbox"),
+                *_message_target_args(root_arg=ROOT_ARG_MESSAGE),
+            ),
+            handler="deskops.cli.commands.message:MessageCLI",
+            mutates=False,
         ),
         Command(
             path=("message", "list"),

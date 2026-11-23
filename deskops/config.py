@@ -31,6 +31,20 @@ class QueueJob(BaseModel):
     )
 
 
+DEFAULT_WAKE_COMMAND = ["scion", "message", "--wake", "@{agent}", "--project", "{project}", "nota nueva: {note}"]
+
+
+class IdentityConfig(BaseModel):
+    scion_project: str = Field(min_length=1, description="Scion project of the desk's identity agent")
+    agent: str = Field(min_length=1, description="Scion agent name of the desk's identity")
+    wake: bool = Field(default=False, description="Wake the identity when a note reaches the inbox")
+    command: list[str] = Field(
+        default_factory=lambda: list(DEFAULT_WAKE_COMMAND),
+        min_length=1,
+        description="argv (no shell) with the markers {agent}, {project} and {note}",
+    )
+
+
 class IntegrateConfig(BaseModel):
     remote_url: str = Field(min_length=1, description="URL or path of the remote that receives the push")
     branch: str = Field(min_length=1, description="Remote branch that receives the code commit and the tip")
@@ -89,6 +103,10 @@ class DeskConfig(BaseModel):
     dispatch: DispatchConfig | None = Field(
         default=None,
         description="deskops dispatch: scion project, workspace, templates and per-role launch settings.",
+    )
+    identity: IdentityConfig | None = Field(
+        default=None,
+        description="Scion identity of the desk, woken by deskops when a note reaches the inbox (usually in config.local.json).",
     )
     integrate: IntegrateConfig | None = Field(
         default=None,

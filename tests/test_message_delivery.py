@@ -233,3 +233,93 @@ def test_ack_falls_back_to_config_when_registry_lacks_itself(tmp_path: Path) -> 
     assert payload["status"] == "closed"
     assert payload["acknowledged_by"] == "graph-repo"
     assert payload["target_project"] == "graph-repo"
+
+
+# --- identity wake ------------------------------------------------------------
+
+
+def _set_local_config(repo: Path, data: dict) -> None:
+    (repo / "desk" / "config.local.json").write_text(json.dumps(data), encoding="utf-8")
+
+
+def _identity(log: Path, *, wake: bool = True) -> dict:
+    return {
+        "identity": {
+            "scion_project": "proj",
+            "agent": "desk-id",
+            "wake": wake,
+            "command": ["sh", "-c", f'echo "$0 $1" >> {log}', "{agent}", "{note}"],
+        }
+    }
+
+
+def _send(sender: Path, target: Path, *extra: str) -> subprocess.CompletedProcess[str]:
+    return _cli(
+        sender, "message", "send", "Hay trabajo.", "--title", "Trabajo", "--root", str(target),
+        "--format", "json", *extra,
+    )
+
+
+def test_send_wakes_the_target_identity(tmp_path: Path) -> None:
+    sender = _init_repo(tmp_path / "sender-repo")
+    target = _init_repo(tmp_path / "target-repo")
+    log = tmp_path / "wake.log"
+    _set_local_config(target, _identity(log))
+
+    result = _send(sender, target)
+
+    assert result.returncode == 0, result.stderr or result.stdout
+    note = next((target / "desk" / "inbox").glob("*.md"))
+    assert log.read_text(encoding="utf-8").split() == ["desk-id", note.stem]
+
+
+def test_send_does_not_wake_when_wake_is_false(tmp_path: Path) -> None:
+    sender = _init_repo(tmp_path / "sender-repo")
+    target = _init_repo(tmp_path / "target-repo")
+    log = tmp_path / "wake.log"
+    _set_local_config(target, _identity(log, wake=False))
+
+    result = _send(sender, target)
+
+    assert result.returncode == 0, result.stderr or result.stdout
+    assert not log.exists()
+
+
+def test_send_with_memory_gate_blocked_enqueues_wake_identity(tmp_path: Path, monkeypatch) -> None:
+    from types import SimpleNamespace
+
+    from deskops import queue
+    from deskops.cli.commands.message import MessageCLI
+
+    sender = _init_repo(tmp_path / "sender-repo")
+    target = _init_repo(tmp_path / "target-repo")
+    log = tmp_path / "wake.log"
+    config = _identity(log)
+    config["queue_jobs"] = {"wake-identity": {"run": ["true"], "retry_exit_codes": [3]}}
+    _set_local_config(target, config)
+    monkeypatch.setattr(queue, "wait_reason", lambda _config: "memoria baja")
+    monkeypatch.chdir(sender)
+    args = SimpleNamespace(
+        title="Trabajo", message="Hay trabajo.", kind="suggestion", root=str(target), desk_root=None,
+        repo=None, store=None, pythonpath=None, sender="sender-repo", format="json",
+    )
+
+    assert MessageCLI()._deliver_note(args) == 0
+
+    assert not log.exists()
+    pending = list((target / "runs" / "queue" / "pending").glob("*wake-identity*.json"))
+    assert len(pending) == 1
+
+
+def test_wake_command_exits_3_when_blocked(tmp_path: Path) -> None:
+    target = _init_repo(tmp_path / "target-repo")
+    log = tmp_path / "wake.log"
+    config = _identity(log)
+    config["queue_min_available_gb"] = 10**9
+    _set_local_config(target, config)
+
+    result = _cli(target, "message", "wake", "--root", str(target), "--note", "n1")
+
+    assert result.returncode == 3, result.stderr or result.stdout
+    assert "bloqueado" in result.stdout
+    assert not log.exists()

@@ -91,3 +91,16 @@ def test_load_desk_config_surfaces_malformed_json_warning(tmp_path: Path):
     assert config.has_load_warnings is True
     assert config.load_warnings
     assert config.sandbox.enabled is False
+
+
+def test_load_takes_identity_from_config_local_json(tmp_path: Path) -> None:
+    (tmp_path / "config.json").write_text('{"project_identity": "x"}', encoding="utf-8")
+    (tmp_path / "config.local.json").write_text(
+        '{"identity": {"scion_project": "p", "agent": "a", "wake": true}}', encoding="utf-8"
+    )
+
+    config = DeskConfig.load(tmp_path)
+
+    assert config.identity is not None
+    assert (config.identity.scion_project, config.identity.agent, config.identity.wake) == ("p", "a", True)
+    assert config.identity.command[:3] == ["scion", "message", "--wake"]

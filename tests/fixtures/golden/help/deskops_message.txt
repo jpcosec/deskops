@@ -1,10 +1,12 @@
-usage: deskops message [-h] {send,list,read,ack} ...
+usage: deskops message [-h] {send,wake,list,read,ack} ...
 
 Send, list, read, or acknowledge cross-desk messages.
 
 positional arguments:
-  {send,list,read,ack}
+  {send,wake,list,read,ack}
     send                Send a message to a project desk.
+    wake                Wake the desk's scion identity for a note (exit 3 when
+                        the memory gate blocks).
     list                List received messages.
     read                Read one received message.
     ack                 Acknowledge one received message.
@@ -17,5 +19,6 @@ Examples:
   deskops message list --root .
   deskops message read 20260614-cli-help --root .
   deskops message ack 20260614-cli-help --root .
+  deskops message wake --root . --note 20260614-cli-help
 
 read/ack selector: filename, stem, or unique slug fragment.

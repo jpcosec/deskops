@@ -55,6 +55,8 @@ class MessageCLI:
         if subcmd == "send":
             args.message = args.body
             return self._deliver_note(args)
+        if subcmd == "wake":
+            return self._wake(args)
         if subcmd == "list":
             return self._list_notes(args)
         if subcmd == "read":
@@ -123,7 +125,45 @@ class MessageCLI:
             "tracked_name": tracked_name,
             "verified": tracked_name is not None,
         }
+        self._wake_after_delivery(desk_root, path.stem)
         return self._print_delivery_result(result, args.format)
+
+    @staticmethod
+    def _wake_after_delivery(desk_root: Path, note_name: str) -> None:
+        """Wake the target's identity; a failure or a block never fails the send."""
+        from deskops import queue
+        from deskops.wake import WAKE_JOB_KIND, wake_identity
+
+        root = desk_root.parent
+        try:
+            outcome = wake_identity(root, note_name)
+        except Exception as exc:
+            outcome = f"fallo: {exc}"
+        if outcome is None or outcome == "despertado":
+            return
+        print(f"Warning: identity of {root} not woken ({outcome}).", file=sys.stderr)
+        if not outcome.startswith("bloqueado"):
+            return
+        try:
+            if WAKE_JOB_KIND in DeskConfig.load(desk_root).queue_jobs:
+                queue.enqueue(root, WAKE_JOB_KIND, note_name, None)
+        except Exception as exc:
+            print(f"Warning: could not enqueue {WAKE_JOB_KIND}: {exc}", file=sys.stderr)
+
+    def _wake(self, args: Any) -> int:
+        from deskops.wake import wake_identity
+
+        desk_root = self._desk_root(args)
+        note_name = args.note
+        if note_name is None:
+            notes = self._iter_notes(desk_root)
+            note_name = notes[0].stem if notes else ""
+        outcome = wake_identity(desk_root.parent, note_name)
+        fmt = getattr(args, "format", "text")
+        rc = 3 if outcome and outcome.startswith("bloqueado") else 1 if outcome and outcome.startswith("fallo") else 0
+        result = {"note": note_name, "outcome": outcome or "sin identity"}
+        render(result, fmt, lambda d: f"{d['note'] or '(sin nota)'}: {d['outcome']}")
+        return rc
 
     def _list_notes(self, args: Any) -> int:
         notes = self._iter_notes(self._desk_root(args))[: args.limit]

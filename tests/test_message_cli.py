@@ -73,7 +73,7 @@ def _deliver(repo_a: Path, repo_b: Path, title: str) -> tuple[Path, dict]:
 def test_message_help_documents_transport_verbs(capsys) -> None:
     assert main(["message", "--help"]) == 0
     output = " ".join(capsys.readouterr().out.split())
-    assert "{send,list,read,ack}" in output
+    assert "{send,wake,list,read,ack}" in output
     assert "deskops message send" in output
 
 
