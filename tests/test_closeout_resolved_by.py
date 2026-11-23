@@ -554,3 +554,19 @@ def test_resolved_by_test_does_not_resolve_through_the_ecosystem_registry(
     assert rc == 1, out
     assert f"Unresolvable --test: {test}" in out
     assert _snapshot(repo) == before
+
+
+def test_resolved_by_leaves_a_foreign_untracked_sldb_file_untracked(
+    repo: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    ref = _work_commit(repo)
+    foreign = repo / ".sldb" / "core" / "documents" / "foreign.yaml"
+    foreign.parent.mkdir(parents=True, exist_ok=True)
+    foreign.write_text("id: foreign\n", encoding="utf-8")
+
+    rc = _resolved_by(repo, "--reason", "Merged", "--ref", ref, "--test", TEST_REF)
+
+    assert rc == 0, capsys.readouterr().out
+    rel = ".sldb/core/documents/foreign.yaml"
+    assert _git(repo, "status", "--porcelain", "--untracked-files=all", "--", ".sldb") == f"?? {rel}"
+    assert rel not in _git(repo, "show", "--name-only", "--format=", "HEAD")

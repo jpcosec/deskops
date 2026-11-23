@@ -1435,7 +1435,8 @@ def test_closeout_commit_includes_the_run_md_of_every_registered_run_doc_git_lac
         if item.get("model") == "RunDoc"
         for entry in item["paths"]
     ]
-    assert f"{own_dir}/run.md" in head_paths
+    # store.yaml was already modified before the close and the close does not rewrite it,
+    # so it stays out of the commit; what HEAD registers must still all be in HEAD.
     for path in head_paths:
         assert subprocess.run(
             ["git", "cat-file", "-e", f"HEAD:{path}"], cwd=root, capture_output=True
@@ -1599,3 +1600,86 @@ def test_closeout_commit_without_paths_and_nothing_to_stage_lists_modified_paths
     out = capsys.readouterr().out
     assert rc == 1
     assert "Nothing staged" in out and "?? loose.txt" in out and "--paths" in out
+
+
+def test_closeout_supersede_leaves_a_foreign_untracked_sldb_file_untracked(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    ref = _git(root, "rev-parse", "HEAD")
+    foreign = ".sldb/core/documents/foreign.yaml"
+    _write(root / foreign, "id: foreign\n")
+
+    rc = _supersede_main(root, "--reason", "gone", "--ref", ref)
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain", "--untracked-files=all", "--", ".sldb") == f"?? {foreign}"
+    assert foreign not in _git(root, "show", "--name-only", "--format=", "HEAD")
+
+
+def test_closeout_retire_leaves_a_foreign_untracked_sldb_file_untracked(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_legacy_task_on_board(root, status="resolved")
+    ref = _git(root, "rev-parse", "HEAD")
+    foreign = ".sldb/core/documents/foreign.yaml"
+    _write(root / foreign, "id: foreign\n")
+
+    rc = _retire_main(root, "--reason", "legacy", "--ref", ref)
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain", "--untracked-files=all", "--", ".sldb") == f"?? {foreign}"
+    assert foreign not in _git(root, "show", "--name-only", "--format=", "HEAD")
+
+
+def test_closeout_commit_without_paths_leaves_foreign_sldb_and_staged_changes_out(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from closeout_desk import store_repo
+    from deskops.operations import DeskopsOperations
+
+    root = store_repo(lifecycle_desk)
+    task_id = DeskopsOperations(root).create_task_bundle(
+        {
+            "title": "Sin paths ajenos",
+            "goal": "g",
+            "scope": "s",
+            "implementation_path": "i",
+            "done_when": "d",
+            "validation": ["echo ok"],
+            "task_type": "task.external",
+        }
+    ).task_id
+    assert main(["edit", "task", task_id, "references", '["https://example.com/e"]', "--root", str(root)]) == 0
+    tracked_model = ".sldb/core/models/UnusedDoc.yaml"
+    tracked_doc = ".sldb/core/documents/unused-other.yaml"
+    _write(root / tracked_model, "id: unused\n")
+    _write(root / tracked_doc, "id: unused\n")
+    _git(root, "add", "-A")
+    _git(root, "commit", "-q", "-m", "task")
+    assert main(["closeout", "verify", "--task", task_id, "--root", str(root)]) == 0
+    capsys.readouterr()
+
+    # Foreign state left before the close: modified tracked, untracked (one naming the task), staged.
+    _write(root / tracked_model, "id: unused\nedited: true\n")
+    _write(root / tracked_doc, "id: unused\nedited: true\n")
+    untracked_model = ".sldb/core/models/ForeignModelDoc.yaml"
+    untracked_doc = ".sldb/core/documents/foreign-other.yaml"
+    _write(root / untracked_model, "id: foreign\n")
+    _write(root / untracked_doc, f"id: foreign\nnote: {task_id}\n")
+    (root / "unrelated.txt").write_text("x\n", encoding="utf-8")
+    _git(root, "add", "unrelated.txt")
+
+    rc = main(["closeout", "commit", "--root", str(root), "--task", task_id, "--no-run", "--reason", "sin paths"])
+
+    out = capsys.readouterr().out
+    assert rc == 0, out
+    changed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
+    assert f"desk/tasks/{task_id}.md" in changed
+    for foreign in (tracked_model, tracked_doc, untracked_model, untracked_doc, "unrelated.txt"):
+        assert foreign not in changed
+    assert _git(root, "diff", "--name-only", "--", ".sldb").split() == [tracked_doc, tracked_model]
+    assert _git(root, "diff", "--cached", "--name-only") == "unrelated.txt"
+    assert _git(root, "status", "--porcelain", "--untracked-files=all", "--", ".sldb").count("??") == 2

@@ -818,8 +818,8 @@ class ClosureService:
                 # (or already modified and left alone) before it started.
                 after = self._sldb_snapshot()
                 tokens = [task_id, *(Path(item).stem for item in [*paths, *(extra_stage_paths or [])] if Path(item).stem)]
-                for sldb_rel, code in after.items():
-                    if sldb_before.get(sldb_rel) == code and not self._sldb_belongs_to_close(sldb_rel, tokens):
+                for sldb_rel, state in after.items():
+                    if sldb_before.get(sldb_rel) == state and not self._is_close_projection(sldb_rel, tokens):
                         continue
                     self._git("add", "-A", "--", sldb_rel, check=False)
                     add_commit_path(sldb_rel)
@@ -858,7 +858,9 @@ class ClosureService:
                     else:
                         paths_to_remove.append(task_path)
 
-                if not explicit_paths and not self._git("diff", "--cached", "--name-only", check=False):
+                if not explicit_paths and not (
+                    commit_paths and self._git("diff", "--cached", "--name-only", "--", *commit_paths, check=False)
+                ):
                     modified = self._git("status", "--porcelain", "--untracked-files=all", check=False)
                     hint = "Pass --paths" if route == "manual" else "Pass --paths or record 'touched' in run.yaml"
                     raise _NothingStaged(
@@ -874,7 +876,9 @@ class ClosureService:
                 head_mode = self._git(
                     "log", "-1", "--format=%(trailers:key=Closeout-Mode,valueonly)", check=False
                 )
-                pathspec = list(dict.fromkeys(commit_paths)) if explicit_paths else None
+                # Without --paths the commit is still limited to what the close itself staged:
+                # a change somebody else already staged must not ride along.
+                pathspec = list(dict.fromkeys(commit_paths))
                 if pathspec:
                     # A path git knows neither in the index nor in HEAD (a directory whose
                     # only file was the never-committed task) would fail the whole commit.
@@ -1781,27 +1785,39 @@ class ClosureService:
             f"desk/tasks/{task_id}.md",
         }
 
-    def _sldb_belongs_to_close(self, rel: str, tokens: list[str]) -> bool:
-        """Store bookkeeping and the close's own documents ride in even when written earlier.
+    def _is_close_projection(self, rel: str, tokens: list[str]) -> bool:
+        """A document projection the close publishes although it was written before the close started.
 
-        ``store.yaml``, the store index and the model registry only describe what the store
-        holds. A document projection (``closeout verify`` receipts, the AtomDoc of an atom the
-        close was told to commit) belongs to the close when its name or body names the task or
-        a stem of an explicit path. Any other .sldb file already changed before the close is
-        somebody else's work and stays as it was.
+        ReviewDocs ``closeout verify`` wrote for the task (the close commits their desk/reviews
+        projection) and the AtomDoc of an atom named by ``--paths`` qualify when their body
+        names the task or the path stem; the model file rides with them. Any other .sldb file
+        already changed before the close stays as it was.
         """
-        if rel in (".sldb/store.yaml", ".sldb/core/store_index.yaml") or rel.startswith(".sldb/core/models/"):
-            return True
-        if not rel.startswith(".sldb/core/documents/"):
-            return False
-        try:
-            body = (self.root / rel).read_text(encoding="utf-8")
-        except (OSError, UnicodeDecodeError):
-            body = ""
-        return any(token in rel or token in body for token in tokens)
+        for model in ("ReviewDoc", "AtomDoc"):
+            if rel == f".sldb/core/models/{model}.yaml":
+                return bool(self._projection_docs(model, tokens))
+            if rel in self._projection_docs(model, tokens):
+                return True
+        return False
 
-    def _sldb_snapshot(self) -> dict[str, str]:
-        """Path -> porcelain status code for everything under ``.sldb`` (untracked files listed one by one)."""
+    def _projection_docs(self, model: str, tokens: list[str]) -> set[str]:
+        found: set[str] = set()
+        directory = self.root / ".sldb" / "core" / "documents" / model
+        for path in directory.glob("*.yaml") if directory.is_dir() else []:
+            try:
+                body = path.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError):
+                continue
+            if any(token in path.name or token in body for token in tokens):
+                found.add(path.relative_to(self.root).as_posix())
+        return found
+
+    def _sldb_snapshot(self) -> dict[str, tuple[str, str | None]]:
+        """Path -> (porcelain status code, content sha256) for everything under ``.sldb``.
+
+        Untracked files are listed one by one. The hash tells a file the close rewrote
+        from one that merely sat there changed (same code, different bytes).
+        """
         result = subprocess.run(
             ["git", "status", "--porcelain", "-z", "--untracked-files=all", "--", ".sldb"],
             cwd=self.root,
@@ -1809,7 +1825,7 @@ class ClosureService:
             text=True,
         )
         entries = result.stdout.split("\0")
-        snapshot: dict[str, str] = {}
+        snapshot: dict[str, tuple[str, str | None]] = {}
         index = 0
         while index < len(entries):
             entry = entries[index]
@@ -1819,7 +1835,11 @@ class ClosureService:
             code, path = entry[:2], entry[3:]
             if code[0] in "RC":
                 index += 1  # the origin path follows a rename/copy entry
-            snapshot[path] = code
+            try:
+                digest: str | None = hashlib.sha256((self.root / path).read_bytes()).hexdigest()
+            except OSError:
+                digest = None
+            snapshot[path] = (code, digest)
         return snapshot
 
     def _restore_index(self, commit_paths: list[str], task_rel: str) -> None:
