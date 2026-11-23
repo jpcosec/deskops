@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T11:21:50Z'
+  at: '2026-11-23T11:27:39Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -61,6 +61,7 @@ tasks:
 - desk/tasks/task-desk-update-en-seco-lista-los-tags-de-tareas-con-namespace-sin-declarar-y-apply-no-mete-taskdoc-en-t.md
 - desk/tasks/task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo.md
 - desk/tasks/task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.md
+- desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -153,3 +154,4 @@ _Generated from the task references above._
 - desk update en seco lista los tags de tareas con namespace sin declarar y --apply no mete TaskDoc en tag_models mientras queden [draft] - (1) deskops desk update (en seco) lista, por namespace no declarado (ni en desk/atoms/tag-namespaces.yaml ni en FLAT_NAMESPACES), cuántas tareas lo usan y hasta 5 ids: "- Tags de tareas sin namespace declarado: capa (12: task-a, ...)". (2) Con --apply, si hay alguno, declara los namespaces para AtomDoc y ProtoAtomDoc pero NO agrega TaskDoc a tag_models, imprime la misma lista y "TaskDoc queda sin validar: declara los namespaces con deskops atoms add-namespace y vuelve a correr desk update --apply". Sin tags sin declarar, el comportamiento es el de hoy (TaskDoc entra). (3) Si el store ya tiene TaskDoc en tag_models y hay tags sin declarar, --apply lo saca, para que deskops edit task vuelva a funcionar.
 - El runner de revisiones lanza al revisor con stdin DEVNULL cuando la entrada va por archivo [draft] - Cuando command["stdin"] es None, subprocess.run recibe stdin=subprocess.DEVNULL (y no input); cuando hay entrada por stdin, se sigue pasando por input como hoy.
 - deskops list tasks y deskops next filtran por máquina con --host (tag host:<valor>) y la salida de list tasks muestra el host [draft] - (1) deskops list tasks --host <valor> lista solo las tareas con el tag host:<valor>; --host none lista las que no tienen tag host. La salida de texto agrega el host de cada tarea (o "-") y la json un campo host. (2) deskops next sin task_id acepta --host <valor> y elige solo entre tareas de ese host. Sin --host, ambas salidas listan lo mismo que hoy (solo se agrega la columna/campo host).
+- El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing [draft] - Despues de integrar el commit de un ejecutor, dispatch reap encola dispatch-tester de la tarea si no hay un tester vivo ni pendiente, sea el intento que sea.
