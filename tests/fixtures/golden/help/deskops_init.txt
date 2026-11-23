@@ -1,4 +1,4 @@
-usage: deskops init [-h] [path]
+usage: deskops init [-h] [--id ID] [path]
 
 Initialize a local .sldb store and scaffold desk/ if needed.
 
@@ -7,3 +7,5 @@ positional arguments:
 
 options:
   -h, --help  show this help message and exit
+  --id ID     Project identity to write in desk/config.json (default: the
+              folder name)

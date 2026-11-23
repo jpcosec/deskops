@@ -372,6 +372,43 @@ def _write_or_patch_config(root: Path) -> str | None:
     return None
 
 
+IDENTITY_SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+
+
+def read_project_identity(root: Path) -> str | None:
+    """The ``project_identity`` declared in ``desk/config.json`` (None when absent or unreadable)."""
+    config_path = root / "desk" / "config.json"
+    try:
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    value = data.get("project_identity") if isinstance(data, dict) else None
+    return value if isinstance(value, str) else None
+
+
+def set_project_identity(root: Path, identity: str) -> str | None:
+    """Rewrite only ``project_identity`` in ``desk/config.json``; returns the previous value."""
+    from deskops.errors import UsageError
+
+    if not IDENTITY_SLUG.match(identity):
+        raise UsageError(
+            f"Invalid project identity '{identity}': use a slug (lowercase letters, digits and hyphens)."
+        )
+    config_path = root / "desk" / "config.json"
+    if not config_path.is_file():
+        raise UsageError(f"No desk/config.json under {root}")
+    try:
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise UsageError(f"desk/config.json is not valid JSON: {exc.msg}") from exc
+    if not isinstance(data, dict):
+        raise UsageError("desk/config.json must hold a JSON object.")
+    previous = data.get("project_identity")
+    data["project_identity"] = identity
+    config_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return previous if isinstance(previous, str) else None
+
+
 def desk_markdown_docs(desk_dir: Path) -> list[Path]:
     return sorted(path for path in desk_dir.rglob("*.md") if path.is_file())
 

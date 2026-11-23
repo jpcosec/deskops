@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import sys
 from pathlib import Path
 import re
 from typing import Any
@@ -122,6 +123,16 @@ class RepoCLI:
             tx.track(output_path, "RepositoryDoc", f"repo-{repo_id}")
         print(f"Tracked 'repo-{repo_id}'")
 
+        from deskops.workspace import read_project_identity
+
+        desk_identity = read_project_identity(resolved_repo_root)
+        if desk_identity is not None and desk_identity != repo_id:
+            print(
+                f"el desk de {path} dice project_identity {desk_identity}; "
+                f"alinéalo con deskops repo whoami --set {repo_id} --root {path}",
+                file=sys.stderr,
+            )
+
         return 0
 
     def remove(self, args: Any) -> int:
@@ -154,6 +165,17 @@ class RepoCLI:
         return 0
 
     def whoami(self, args: Any) -> int:
+        if getattr(args, "set_identity", None) is not None:
+            from deskops.errors import UsageError
+            from deskops.workspace import set_project_identity
+
+            try:
+                previous = set_project_identity(Path(args.root).resolve(), args.set_identity)
+            except UsageError as e:
+                print(f"Error: {e}")
+                return 1
+            print(f"project_identity: {previous} -> {args.set_identity}")
+            return 0
         try:
             project_id = EcosystemIdentity(args.store).what_repository_am_i_in(Path(args.root), require_registry_match=True)
         except SLDBStoreError as e:

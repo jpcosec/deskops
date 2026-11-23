@@ -625,7 +625,10 @@ def _commands() -> list[Command]:
         Command(
             path=("init",),
             help="Initialize a local .sldb store and scaffold desk/ if needed.",
-            args=(A("path", nargs="?", default=".", help="Target repository path"),),
+            args=(
+                A("path", nargs="?", default=".", help="Target repository path"),
+                A("--id", help="Project identity to write in desk/config.json (default: the folder name)"),
+            ),
             handler="deskops.cli.commands.core:InitCLI",
             mutates=True,
         ),
@@ -1168,9 +1171,10 @@ The issue status is set to closed and a ## Resolution section records Closed, Re
             args=(
                 ROOT_ARG_WHOAMI,
                 A("--store", help="Store path to anchor the registry lookup"),
+                A("--set", dest="set_identity", metavar="IDENTITY", help="Rewrite project_identity in desk/config.json (a slug)"),
             ),
             handler="deskops.cli.commands.repo:RepoCLI",
-            mutates=False,
+            mutates=True,
             description="Print the canonical project identity for the current repository.",
         ),
         Command(

@@ -79,7 +79,7 @@ def test_repo_whoami_prints_canonical_identity(tmp_path: Path, monkeypatch: pyte
     _write_repo_doc(registry_dir, repo_id="deskops-child", repo_path=".")
 
     store_path = repo_root / ".sldb"
-    monkeypatch.setattr("deskops.cli.main.SLDBBootstrap.ensure_sldb_available", lambda self: 0)
+    monkeypatch.setattr("deskops.cli.main.SLDBBootstrap.ensure_sldb_available", lambda self, **kw: 0)
     monkeypatch.setattr("deskops.identity.get_store_context", lambda _arg: (store_path, repo_root))
 
     result = main(["repo", "whoami", "--root", str(repo_root), "--store", str(store_path)])
@@ -169,3 +169,53 @@ def test_nested_sandbox_uses_its_own_store_when_it_has_one(
 
     assert store == sandbox_store.resolve()
     assert root == sandbox.resolve()
+
+
+def _init_desk(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, name: str, *extra: str) -> Path:
+    monkeypatch.setattr("deskops.cli.main.SLDBBootstrap.ensure_sldb_available", lambda self, **kw: 0)
+    root = tmp_path / name
+    root.mkdir()
+    assert main(["init", str(root), *extra]) == 0
+    return root
+
+
+def test_init_with_id_sets_project_identity(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    root = _init_desk(tmp_path, monkeypatch, "wf-desks", "--id", "workflow")
+    capsys.readouterr()
+    assert json.loads((root / "desk" / "config.json").read_text())["project_identity"] == "workflow"
+
+    assert main(["init", str(root), "--id", "other"]) == 0
+    out = capsys.readouterr().out
+    assert "repo whoami --set other" in out
+    assert json.loads((root / "desk" / "config.json").read_text())["project_identity"] == "workflow"
+
+    plain = _init_desk(tmp_path, monkeypatch, "plain-desk")
+    assert json.loads((plain / "desk" / "config.json").read_text())["project_identity"] == "plain-desk"
+
+
+def test_whoami_set_rewrites_only_project_identity(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    config = tmp_path / "desk" / "config.json"
+    config.parent.mkdir()
+    config.write_text(json.dumps({"project_identity": "old", "versions": {"desk_format": 1}, "x": [1, 2]}, indent=2) + "\n", encoding="utf-8")
+    before = config.read_text()
+
+    assert main(["repo", "whoami", "--set", "new-id", "--root", str(tmp_path)]) == 0
+    assert capsys.readouterr().out.strip() == "project_identity: old -> new-id"
+    assert config.read_text() == before.replace('"old"', '"new-id"')
+
+
+def test_whoami_set_rejects_non_slug(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    _write_config(tmp_path, "old")
+    before = (tmp_path / "desk" / "config.json").read_text()
+    assert main(["repo", "whoami", "--set", "Bad_Id", "--root", str(tmp_path)]) == 1
+    assert "slug" in capsys.readouterr().out
+    assert (tmp_path / "desk" / "config.json").read_text() == before
+
+
+def test_register_warns_when_id_differs_from_desk_identity(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    root = _init_desk(tmp_path, monkeypatch, "wf-desks")
+    capsys.readouterr()
+    assert main(["repo", "register", "workflow", str(root), "--id", "workflow", "--store", str(root / ".sldb")]) == 0
+    err = capsys.readouterr().err
+    assert "project_identity wf-desks" in err
+    assert f"deskops repo whoami --set workflow --root {root}" in err

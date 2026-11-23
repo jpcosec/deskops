@@ -5,7 +5,10 @@ from typing import Any
 
 from deskops.bootstrap import SLDBBootstrap
 from deskops.workspace import ensure_target_directory
+from deskops.workspace import IDENTITY_SLUG
+from deskops.workspace import read_project_identity
 from deskops.workspace import seed_desk
+from deskops.workspace import set_project_identity
 
 
 class AboutCLI:
@@ -38,7 +41,21 @@ class InitCLI:
         if local_store != 0:
             return local_store
 
+        wanted_id = getattr(args, "id", None)
+        if wanted_id is not None and not IDENTITY_SLUG.match(wanted_id):
+            print(f"Error: Invalid project identity '{wanted_id}': use a slug (lowercase letters, digits and hyphens).")
+            return 1
+        existing_id = read_project_identity(target_path) if wanted_id else None
+
         result = seed_desk(target_path)
+        if wanted_id and existing_id is None:
+            set_project_identity(target_path, wanted_id)
+            print(f"project_identity: {wanted_id}")
+        elif wanted_id and existing_id != wanted_id:
+            print(
+                f"Warning: the desk already exists with project_identity {existing_id}; "
+                f"left as is. Change it with: deskops repo whoami --set {wanted_id} --root {target_path}"
+            )
         if result.wrote_anything:
             print(f"Scaffolded desk at {target_path / 'desk'}.")
             for path in result.created_paths:

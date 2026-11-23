@@ -1,8 +1,9 @@
-usage: deskops repo whoami [-h] [--root ROOT] [--store STORE]
+usage: deskops repo whoami [-h] [--root ROOT] [--store STORE] [--set IDENTITY]
 
 Print the canonical project identity for the current repository.
 
 options:
-  -h, --help     show this help message and exit
-  --root ROOT    Repository root to identify
-  --store STORE  Store path to anchor the registry lookup
+  -h, --help      show this help message and exit
+  --root ROOT     Repository root to identify
+  --store STORE   Store path to anchor the registry lookup
+  --set IDENTITY  Rewrite project_identity in desk/config.json (a slug)
