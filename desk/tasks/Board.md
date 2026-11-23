@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T16:47:31Z'
+  at: '2026-11-23T17:31:42Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -57,6 +57,7 @@ tasks:
 - desk/tasks/task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo.md
 - desk/tasks/task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.md
 - desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
+- desk/tasks/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -145,3 +146,4 @@ _Generated from the task references above._
 - El runner de revisiones lanza al revisor con stdin DEVNULL cuando la entrada va por archivo [draft] - Cuando command["stdin"] es None, subprocess.run recibe stdin=subprocess.DEVNULL (y no input); cuando hay entrada por stdin, se sigue pasando por input como hoy.
 - deskops list tasks y deskops next filtran por máquina con --host (tag host:<valor>) y la salida de list tasks muestra el host [draft] - (1) deskops list tasks --host <valor> lista solo las tareas con el tag host:<valor>; --host none lista las que no tienen tag host. La salida de texto agrega el host de cada tarea (o "-") y la json un campo host. (2) deskops next sin task_id acepta --host <valor> y elige solo entre tareas de ese host. Sin --host, ambas salidas listan lo mismo que hoy (solo se agrega la columna/campo host).
 - El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing [draft] - Despues de integrar el commit de un ejecutor, dispatch reap encola dispatch-tester de la tarea si no hay un tester vivo ni pendiente, sea el intento que sea.
+- Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI [draft] - deskops tiene un vocabulario unico de tags semanticos: cada tag libre que sobrevive tiene padre declarado con sldb semantic parent o es equivalente declarado (sldb semantic equivalent) del tag de modelo; deskops add y deskops edit dejan de escribir los duplicados; los documentos existentes del desk de deskops quedan migrados por CLI; .sldb_cache/semantic_dag.yaml ya no tiene tags planos sin padre salvo los que el informe justifique.
