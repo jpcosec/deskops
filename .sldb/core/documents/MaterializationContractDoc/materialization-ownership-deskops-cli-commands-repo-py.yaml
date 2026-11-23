@@ -1,0 +1,25 @@
+name: materialization-ownership-deskops-cli-commands-repo-py
+path: desk/materializations/materialization-ownership-deskops-cli-commands-repo-py.md
+source_hash: d2a7cc2a35e9779972b2b7d5e994c5a768b46761d92d1d38991f608fd71c50ac
+content_hash: 02468a4f20a466c3bf21d7abf9e3f64776b95ad5dc9eb44a7bbc09cb7efc7e37
+field_hashes:
+  id: ecbd3214d8a7c14161e7ede458b1b950f7dd5321f0a55cdaf19c92ef3d355ba7
+  title: 732b3963721945524b69a248257bf80479b4e35476fed9cb66b2677612b6f3a3
+  source_atoms: 8106a334e09038ef7a4e9b7b73456a3420cb41cd61fda2ecd993fd1adb03e145
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 1951266db871cc4b2e405a250a1397550c09c99ea8cbd14fafb0e829c78afc7e
+  intent: 6dad726932d5d528dc4f1a5cea72e112c69aaf9f109b21fa3d3851882f1dbbd6
+  validation: 13ee385a25b6f8a95e9eca098b66d93f805b6ab172514c6c846c55436d2ac722
+  tags: 7fbb6cfc531fd29ea7366088a2f2705f075d2d8e2fd7bc1941bd6326f2c65a79
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:ownership
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T14:59:16Z'
+  authority: generated
+  via: create_document

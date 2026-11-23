@@ -542,6 +542,23 @@ include:
   - desk/materializations/materialization-identity-tests-test-command-registry-py.md
   - desk/materializations/materialization-runtime-deskops-dispatch-py.md
   - desk/materializations/materialization-runtime-tests-test-dispatch-py.md
+  - desk/materializations/materialization-ownership-deskops-cli-commands-message-py.md
+  - desk/materializations/materialization-ownership-deskops-cli-commands-repo-py.md
+  - desk/materializations/materialization-ownership-deskops-cli-registry-py.md
+  - desk/materializations/materialization-ownership-deskops-config-py.md
+  - desk/materializations/materialization-ownership-deskops-models-repository-py.md
+  - desk/materializations/materialization-ownership-tests-fixtures-golden-help-deskops-txt.md
+  - desk/materializations/materialization-ownership-tests-fixtures-golden-help-deskops-add-repository-txt.md
+  - desk/materializations/materialization-ownership-tests-fixtures-golden-help-deskops-owner-txt.md
+  - desk/materializations/materialization-ownership-tests-fixtures-golden-help-deskops-repo-register-txt.md
+  - desk/materializations/materialization-ownership-tests-fixtures-golden-output-list-repositories-json.md
+  - desk/materializations/materialization-ownership-tests-fixtures-golden-output-show-repository-json.md
+  - desk/materializations/materialization-ownership-tests-fixtures-golden-output-show-repository-text.md
+  - desk/materializations/materialization-ownership-tests-fixtures-model-contract-hashes-json.md
+  - desk/materializations/materialization-ownership-tests-test-cli-py.md
+  - desk/materializations/materialization-ownership-tests-test-cli-grammar-py.md
+  - desk/materializations/materialization-ownership-tests-test-config-py.md
+  - desk/materializations/materialization-ownership-tests-test-message-ecosystem-registry-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2982,6 +2999,14 @@ include:
     name: review-task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n-reproduction-1
   - path: desk/reviews/task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n/preflight-1.md
     name: review-task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n-preflight-1
+  - path: desk/reviews/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/evidence-tests-1.md
+    name: review-task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un-evidence-tests-1
+  - path: desk/reviews/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/evidence-commit-1.md
+    name: review-task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un-evidence-commit-1
+  - path: desk/reviews/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/evidence-atom-1.md
+    name: review-task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un-evidence-atom-1
+  - path: desk/reviews/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/evidence-materialization-1.md
+    name: review-task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

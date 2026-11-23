@@ -1,0 +1,25 @@
+name: materialization-ownership-tests-fixtures-golden-help-deskops-owner-txt
+path: desk/materializations/materialization-ownership-tests-fixtures-golden-help-deskops-owner-txt.md
+source_hash: 6f0434f4c13a7d3014f642c6c328b12dd3a01d8dc3b1813c1646ddedfe2b7a70
+content_hash: 3c4ef38129dc5ad41a03705013a94a3ee83f27c174f857e68e5795ec00f0cfa7
+field_hashes:
+  id: 857b782be4e71473d65d2e9eb7ff53d15176caca7a74e0c513c451d0ef7a53b7
+  title: 1486912a623f5197b23dbbcb1c5702b9813dc5e5aae59d09de7d5cd3d5e1fd2a
+  source_atoms: 8106a334e09038ef7a4e9b7b73456a3420cb41cd61fda2ecd993fd1adb03e145
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 39f3b229f236c455d169f0f3abc2485f258a372906e949246d713102765b735f
+  intent: b849a4f84b336a91b00e1c80cc361554acf96891b2367dc81c4e72e1693b196f
+  validation: 13ee385a25b6f8a95e9eca098b66d93f805b6ab172514c6c846c55436d2ac722
+  tags: 7fbb6cfc531fd29ea7366088a2f2705f075d2d8e2fd7bc1941bd6326f2c65a79
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:ownership
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T15:00:30Z'
+  authority: generated
+  via: create_document

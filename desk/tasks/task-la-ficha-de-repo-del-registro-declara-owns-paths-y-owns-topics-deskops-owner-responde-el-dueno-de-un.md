@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T14:12:03Z'
+  at: '2026-11-23T14:58:52Z'
   authority: generated
   via: save_document_payload
 id: task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un
@@ -14,21 +14,49 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- desk/inbox/20261122-234458-suggestion-mapa-de-propiedad-por-desk-y-destino-unico-de-lo-sin-dueno-governance-en-el-registro.md
-- desk/atoms/atom-sin-dueno-lo-que-no-tiene-dueno-en-sldb-1-va-al-inbox-de-deskops.md
+- deskops/cli/commands/message.py
+- deskops/cli/commands/repo.py
+- deskops/cli/registry.py
+- deskops/config.py
+- deskops/models/repository.py
+- tests/fixtures/golden/help/deskops.txt
+- tests/fixtures/golden/help/deskops_add_repository.txt
+- tests/fixtures/golden/help/deskops_owner.txt
+- tests/fixtures/golden/help/deskops_repo_register.txt
+- tests/fixtures/golden/output/list_repositories.json
+- tests/fixtures/golden/output/show_repository.json
+- tests/fixtures/golden/output/show_repository.text
+- tests/fixtures/model_contract_hashes.json
+- tests/test_cli.py
+- tests/test_cli_grammar.py
+- tests/test_config.py
+- tests/test_message_ecosystem_registry.py
+- 05ac75a9952b657734dd767351b0c0e7feef4d49
 depends_on: []
 pills: []
 files:
-- deskops/models/repository.py
-- deskops/config.py
-- deskops/cli/commands/repo.py
 - deskops/cli/commands/message.py
-- tests/test_message_ecosystem_registry.py
+- deskops/cli/commands/repo.py
+- deskops/cli/registry.py
+- deskops/config.py
+- deskops/models/repository.py
+- tests/fixtures/golden/help/deskops.txt
+- tests/fixtures/golden/help/deskops_add_repository.txt
+- tests/fixtures/golden/help/deskops_owner.txt
+- tests/fixtures/golden/help/deskops_repo_register.txt
+- tests/fixtures/golden/output/list_repositories.json
+- tests/fixtures/golden/output/show_repository.json
+- tests/fixtures/golden/output/show_repository.text
+- tests/fixtures/model_contract_hashes.json
+- tests/test_cli.py
+- tests/test_cli_grammar.py
 - tests/test_config.py
+- tests/test_message_ecosystem_registry.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-y-deskops-owner-responde-el-dueno
 ---
 
 # La ficha de repo del registro declara owns_paths y owns_topics, deskops owner responde el dueño de una ruta o tema, y message send --to unowned va al destino de config unowned_target

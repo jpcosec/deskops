@@ -1,0 +1,25 @@
+name: materialization-ownership-tests-test-config-py
+path: desk/materializations/materialization-ownership-tests-test-config-py.md
+source_hash: 8b1283e9f22355c7f356eef466a4468dfaf4c8cdcf39ddd3741d0ce3531eda1e
+content_hash: b1b9ce830e1f13ed070da79d16b4be55e316ef72eeb8795ece6f765bc4dd1532
+field_hashes:
+  id: 3e33a2b028f03ecb512d4912be7b1c8ca4a27822b7e916d12035b8642f28175f
+  title: 6e5f873c381707c776c0f75a0a62d084acf10579967d2112d9ffb12d173ce1e6
+  source_atoms: 8106a334e09038ef7a4e9b7b73456a3420cb41cd61fda2ecd993fd1adb03e145
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 50b2253fc2f031aa73e65ca756a9122e548092b810f349f4a4b360927ab701f2
+  intent: a55a56107081b8b2b6da0da08948559bedfb62dc63cfef02c9e21ac6a3abfb30
+  validation: 13ee385a25b6f8a95e9eca098b66d93f805b6ab172514c6c846c55436d2ac722
+  tags: 7fbb6cfc531fd29ea7366088a2f2705f075d2d8e2fd7bc1941bd6326f2c65a79
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:ownership
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T15:02:08Z'
+  authority: generated
+  via: create_document

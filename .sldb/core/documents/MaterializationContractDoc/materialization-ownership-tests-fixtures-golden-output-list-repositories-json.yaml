@@ -1,0 +1,25 @@
+name: materialization-ownership-tests-fixtures-golden-output-list-repositories-json
+path: desk/materializations/materialization-ownership-tests-fixtures-golden-output-list-repositories-json.md
+source_hash: 44bb4774aaea18f12302b24c1f95993adbd0159abe76df93338f219744dfc39e
+content_hash: c841308075096535b08a5ca5bc24491a0ef3ec009a446b4f04463ff10bb15ef9
+field_hashes:
+  id: fa856d322ee9ca4026f636f5b43e1a80c1ec683152ef59c222d4f9192d164178
+  title: d16077366c511fdfde7a8a93845a365f8d65916f6cb7cce96273fdc1af7b8f84
+  source_atoms: 8106a334e09038ef7a4e9b7b73456a3420cb41cd61fda2ecd993fd1adb03e145
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: af709a32b0f4cf065f15107d261d9fda322390e6dc6fbc345e4055a68da35721
+  intent: 8d164c4e4593e133d61a3fdeb6bab69893b982e74b687bb38becaf57eb4f20c2
+  validation: 13ee385a25b6f8a95e9eca098b66d93f805b6ab172514c6c846c55436d2ac722
+  tags: 7fbb6cfc531fd29ea7366088a2f2705f075d2d8e2fd7bc1941bd6326f2c65a79
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:ownership
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T15:00:54Z'
+  authority: generated
+  via: create_document
