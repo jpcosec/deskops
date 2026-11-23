@@ -1,0 +1,21 @@
+Commit: 465b442bd9437b4e4bd4538a755678ebda94c602
+Task-Id: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
+
+# Entorno: /dev/shm/tester-venv (CPython 3.12.16, uv) con deskops/sldb editables,
+# pytest 9.2.0, pytest-xdist 3.8.0, pydantic 2.x, PyYAML. TMPDIR=/tmp.
+# El venv original /workspace/.venv tenia python3.12 -> /usr/bin/python3 (3.11), roto.
+
+tests/test_message_delivery.py  -> 9 passed  (204.00s)
+tests/test_message_cli.py       -> 17 passed (221.52s)
+tests/test_config.py            -> 6 passed  (0.12s)
+tests/test_output_goldens.py    -> 7 passed  (442.05s)
+tests/test_command_registry.py  -> 3 passed  (1.43s)
+tests/test_queue.py             -> 18 passed (62.46s, venv limpio)
+tests/test_message_delivery.py+test_config.py -k 'wake or identity' -> 6 passed (116.73s)
+
+Smoke manual:
+  send a desk target con identity.wake=true y command=["sh","-c","exit 7"]
+  -> rc 0; stderr: Warning: identity of /dev/shm/wake-smoke/target not woken (fallo: 7).
+  -> nota 20261123-105216-suggestion-t.md presente en desk/inbox.
+
+Sin fallos atribuibles al commit. Suite completa no ejecutada (instruccion del rol tester).

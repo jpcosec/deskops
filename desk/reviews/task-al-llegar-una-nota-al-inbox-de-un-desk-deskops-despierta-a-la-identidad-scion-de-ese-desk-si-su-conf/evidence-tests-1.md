@@ -1,0 +1,83 @@
+---
+sldb:
+  by: agent
+  at: '2026-11-23T11:19:02Z'
+  authority: generated
+  via: create_document
+# review-<task>-<kind>-<n>
+id: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-tests-1
+# preflight | bundle | reproduction | goldens | owner | node | evidence
+kind: evidence
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: tests
+# kind evidence only: what the producer verified, one item per line
+value: 'deskops/cli/commands/message.py
+
+  deskops/cli/registry.py
+
+  deskops/config.py
+
+  deskops/wake.py
+
+  tests/test_config.py
+
+  tests/test_message_cli.py
+
+  tests/test_message_delivery.py'
+# doc:<Model>:<id> or empty for reviews of plan nodes
+subject: doc:TaskCodeDoc:task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf@sha256:1db171618998cedc3ba481cdf1953d91e1d6721e60fa4a2426d1591122a8664d
+# <plan>/dag.yaml#node:<ID>; empty when subject names a document
+subject_ref: ''
+# RuntimeProfileDoc name or "human"
+engine: deskops-closeout
+actor: deskops
+# Run evidence directory under runs/, relative to the project root
+run_dir: ''
+input_sha256: 458a78f367a99712f29ed527380f1988719b717bf74e1889214069883be30041
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
+output_sha256: ''
+# pending | accepted | rejected | incomplete
+verdict: accepted
+reason: 'verified: tests deskops/cli/commands/message.py
+
+  deskops/cli/registry.py
+
+  deskops/config.py
+
+  deskops/wake.py
+
+  tests/test_config.py
+
+  tests/test_message_cli.py
+
+  tests/test_message_delivery.py'
+# ISO 8601 timestamp
+created_at: '2026-11-23T11:19:01.131410+00:00'
+# ISO 8601 timestamp, empty while pending
+disposed_at: '2026-11-23T11:19:01.131410+00:00'
+disposed_by: deskops
+# e.g. workspace:desk
+tags:
+- workspace:desk
+---
+
+# Closeout evidence tests of task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
+
+## Summary
+
+_Summarize what was reviewed and the evidence this receipt records._
+
+closeout verify checked tests: deskops/cli/commands/message.py, deskops/cli/registry.py, deskops/config.py, deskops/wake.py, tests/test_config.py, tests/test_message_cli.py, tests/test_message_delivery.py
+
+## Disposition
+
+_Record the verdict rationale and who disposed of the review._
+
+Verdict accepted: verified: tests deskops/cli/commands/message.py
+deskops/cli/registry.py
+deskops/config.py
+deskops/wake.py
+tests/test_config.py
+tests/test_message_cli.py
+tests/test_message_delivery.py

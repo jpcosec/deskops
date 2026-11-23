@@ -1,7 +1,17 @@
+Task: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
+Title: Al llegar una nota al inbox de un desk, deskops despierta a la identidad scion de ese desk si su config lo pide (identity.wake), respetando el gate de memoria
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T11:16:52Z'
+  at: '2026-11-23T08:23:53Z'
   authority: generated
   via: save_document_payload
 id: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
@@ -14,33 +24,19 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- deskops/cli/commands/message.py
-- deskops/cli/registry.py
-- deskops/config.py
-- deskops/wake.py
-- tests/fixtures/golden/help/deskops_message.txt
-- tests/fixtures/golden/help/deskops_message_wake.txt
-- tests/test_config.py
-- tests/test_message_cli.py
-- tests/test_message_delivery.py
-- 465b442bd9437b4e4bd4538a755678ebda94c602
+- desk/inbox/20261122-234436-suggestion-hook-que-despierta-a-la-identidad-scion-del-desk-cuando-llega-una-nota-al-inbox.md
 depends_on: []
 pills: []
 files:
-- deskops/cli/commands/message.py
-- deskops/cli/registry.py
 - deskops/config.py
-- deskops/wake.py
-- tests/fixtures/golden/help/deskops_message.txt
-- tests/fixtures/golden/help/deskops_message_wake.txt
-- tests/test_config.py
-- tests/test_message_cli.py
+- deskops/cli/commands/message.py
+- deskops/queue.py
 - tests/test_message_delivery.py
+- tests/test_config.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-al-llegar-una-nota-al-inbox-deskops-despierta-a-la-identidad-scion-del-desk-si-su-config-lo-pide
+atoms: []
 ---
 
 # Al llegar una nota al inbox de un desk, deskops despierta a la identidad scion de ese desk si su config lo pide (identity.wake), respetando el gate de memoria
@@ -84,3 +80,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los cinco tests nuevos pasan; deskops message send en un desk sin identity se comporta igual que hoy (los tests existentes de tests/test_message_delivery.py y tests/test_message_cli.py siguen verdes sin cambios).
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

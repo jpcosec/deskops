@@ -1,0 +1,3 @@
+cd .worktrees/deskops-e-25a8e8eb9097 && TMPDIR=/tmp python -m pytest -q -p no:cacheprovider -n 4 tests/test_message_delivery.py tests/test_message_cli.py tests/test_config.py tests/test_output_goldens.py
+39 passed in 620s, exit code 0
+(suite completa -n 4 no corrida por el limite de tiempo; el encargo de retomar pidio solo los tests de los archivos tocados)

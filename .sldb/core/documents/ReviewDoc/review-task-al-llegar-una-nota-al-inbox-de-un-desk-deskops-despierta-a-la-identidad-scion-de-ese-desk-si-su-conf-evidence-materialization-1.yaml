@@ -1,0 +1,37 @@
+name: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-materialization-1
+path: desk/reviews/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf/evidence-materialization-1.md
+source_hash: c944cb030c7a84bb7f00b69ea49b7d08777ca96659185cbe5d3d131f52cf8f2b
+content_hash: b410bbe22cea14bab51de5509ddd9b4e30b52f324e5eb3db7a1e65cdfae61daa
+field_hashes:
+  id: 66f942c899dc6b482f6ddd788514550a84ea9ae52163561b97e29915b2e7a633
+  title: 9a3311713d85f08ebcb23280be06cac4782fa8281111fda233eee377094cc29a
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 1435554d29654d0ae9a09d0b274c9ec78e37da4e5b10cd8ffc656dd9e9c6fdb0
+  subject: c9148a3e8d85456824f7dd853e584aa111a7c3e13b30ff125d35a6fc592f638d
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 3704636290d62c8f0338f83be9593c5cbcaff3e134f10ee45b9a449c6a9624a7
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 87ca69bd96d84ca42577e2f3083be7ca472acc6333ab622d5d30a748b2838b46
+  created_at: 007b3fdfed182c047e89c9c3576d9ba08d373ee6ef801ccae0a5bdfa51fded4a
+  disposed_at: 007b3fdfed182c047e89c9c3576d9ba08d373ee6ef801ccae0a5bdfa51fded4a
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 11a35989994984d899f55fc653394740b2e0485c5860bf0f7d4fa715d355621d
+  disposition: 4a37cb4476096a9af7520c06193ad936a6e62ee1fa2b82020bdc5085d9fa6b53
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T11:19:16Z'
+  authority: generated
+  via: create_document

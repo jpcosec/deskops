@@ -1,0 +1,9 @@
+Task: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
+Title: Al llegar una nota al inbox de un desk, deskops despierta a la identidad scion de ese desk si su config lo pide (identity.wake), respetando el gate de memoria
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
