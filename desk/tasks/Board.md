@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T19:05:20Z'
+  at: '2026-11-23T19:07:39Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -58,6 +58,7 @@ tasks:
 - desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
 - desk/tasks/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig.md
 - desk/tasks/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.md
+- desk/tasks/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -147,3 +148,4 @@ _Generated from the task references above._
 - El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing [draft] - Despues de integrar el commit de un ejecutor, dispatch reap encola dispatch-tester de la tarea si no hay un tester vivo ni pendiente, sea el intento que sea.
 - Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI [draft] - Criterio de JP (nota 20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb), demostrable sobre el desk real de deskops y desde el lector de surface: (1) un apartado declarado con una semantica (ejemplo de JP: board.tareas) lista todas las tareas; (2) filtrar por una semantica mas especifica (por ejemplo tareas de UI) devuelve solo esas; (3) ambas consultas se resuelven con el store semantico de sldb (tags, padres, descendientes), sin listas ni filtros propios de deskops. Para eso los tags que escribe deskops pasan a ser tags del store semantico de sldb con padres declarados (sldb semantic parent/equivalent), los duplicados desaparecen y los documentos existentes quedan migrados por CLI.
 - integrate por lote: una sola integracion por desk con todo lo cerrado pendiente (un tip, una suite, un grafo, un store, un push) [draft] - deskops integrate integra de una vez todo lo cerrado y pendiente de subir del desk: toma el tip local, corre una suite completa, una comprobacion de grafo y una de store, y hace un solo push (o un PR en modo pr); varios cierres seguidos encolan un solo trabajo de integrate por desk (los repetidos se funden); un integrate que termina bien da por resueltos los trabajos de integrate anteriores de ese desk que quedaron en failed y cuyo contenido ya esta en origin.
+- El gate de tests del closeout acepta archivos de test de TypeScript (*.test.ts, *.test.tsx, *.spec.ts) declarados en files [draft] - reference_points_to_test acepta tambien archivos existentes con sufijo .test.ts, .test.tsx, .spec.ts o .spec.tsx dentro del repo (fuera de node_modules y directorios ocultos), en un directorio de tests o declarados en files; closeout verify de una tarea cuyo commit trae tests de vitest pasa el gate de tests.
