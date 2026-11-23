@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T10:20:31Z'
+  at: '2026-11-23T11:32:38Z'
   authority: generated
   via: save_document_payload
 id: task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no
@@ -14,21 +14,28 @@ tags:
 current_node: ritual-testing
 history:
 - task_activates
-references: []
+references:
+- deskops/atom_references.py
+- deskops/graph/checks.py
+- deskops/graph/desk_graph.py
+- deskops/lifecycle.py
+- deskops/workspace.py
+- tests/test_atom_reference_convention.py
+- 5fff4cdaf4fd8a5f4513b41281fbeac1ed84ae0b
 depends_on: []
 pills: []
 files:
 - deskops/atom_references.py
 - deskops/graph/checks.py
-- deskops/workspace.py
+- deskops/graph/desk_graph.py
 - deskops/lifecycle.py
+- deskops/workspace.py
 - tests/test_atom_reference_convention.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-se-borra-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph
 from_drawer: desk/drawer/tasks/task-retirar-caminos-legacy-migrar-los-datos-y-borrar-el-c-digo-de-compatibilidad.md
 ---
 

@@ -534,6 +534,11 @@ include:
   - desk/materializations/materialization-identity-tests-test-config-py.md
   - desk/materializations/materialization-identity-tests-test-message-cli-py.md
   - desk/materializations/materialization-identity-tests-test-message-delivery-py.md
+  - desk/materializations/materialization-graph-deskops-atom-references-py.md
+  - desk/materializations/materialization-graph-deskops-graph-desk-graph-py.md
+  - desk/materializations/materialization-graph-deskops-lifecycle-py.md
+  - desk/materializations/materialization-graph-deskops-workspace-py.md
+  - desk/materializations/materialization-graph-tests-test-atom-reference-convention-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2928,6 +2933,14 @@ include:
     name: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-atom-1
   - path: desk/reviews/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf/evidence-materialization-1.md
     name: review-task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf-evidence-materialization-1
+  - path: desk/reviews/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/evidence-tests-1.md
+    name: review-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no-evidence-tests-1
+  - path: desk/reviews/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/evidence-commit-1.md
+    name: review-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no-evidence-commit-1
+  - path: desk/reviews/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/evidence-atom-1.md
+    name: review-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no-evidence-atom-1
+  - path: desk/reviews/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/evidence-materialization-1.md
+    name: review-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

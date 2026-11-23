@@ -1,0 +1,25 @@
+name: materialization-graph-tests-test-atom-reference-convention-py
+path: desk/materializations/materialization-graph-tests-test-atom-reference-convention-py.md
+source_hash: 61189b42d5c06d93183a904870401c7fadd1906c79eb07329d21463beb0f1f07
+content_hash: b83753885cd1c1d96af9911a6a730a8377c753036d13b54254604a6770378e65
+field_hashes:
+  id: d22326e864f122225a9f9882e7b9896984210c7dbc495b23d96b4ca463c8296f
+  title: 5f04aafa312f9960608dd164c78d8df6013298afa561f7b12fe3c5fc1527bae2
+  source_atoms: ce63bcf00a7e445df946c1a13cefb3ae6182ebc6b3ff8d82868018dd1e29433c
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: ca5d9ad7a84285c043b7475a5dad7cde7b8d8400490ca601f54bf80eb7fe0888
+  intent: f0d4f815bbb486f5a9c99df18300a7d1f2d1adfa786ed6f5a197a35059fd9135
+  validation: d92141d8a07f7feddb59a4d767508822b67976ceafc20916044a4e16e5757207
+  tags: b15a9beb6d645f45465945d899a2e0fa4bfc3287b88afd3cf231ac658507d8d3
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:graph
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T11:33:46Z'
+  authority: generated
+  via: create_document
