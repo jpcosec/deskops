@@ -559,6 +559,7 @@ include:
   - desk/materializations/materialization-ownership-tests-test-cli-grammar-py.md
   - desk/materializations/materialization-ownership-tests-test-config-py.md
   - desk/materializations/materialization-ownership-tests-test-message-ecosystem-registry-py.md
+  - desk/materializations/materialization-tests-tests-conftest-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3017,6 +3018,14 @@ include:
     name: review-task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n-evidence-atom-1
   - path: desk/reviews/task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n/evidence-materialization-1.md
     name: review-task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n-evidence-materialization-1
+  - path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/evidence-tests-1.md
+    name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-tests-1
+  - path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/evidence-commit-1.md
+    name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-commit-1
+  - path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/evidence-atom-1.md
+    name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-atom-1
+  - path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/evidence-materialization-1.md
+    name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

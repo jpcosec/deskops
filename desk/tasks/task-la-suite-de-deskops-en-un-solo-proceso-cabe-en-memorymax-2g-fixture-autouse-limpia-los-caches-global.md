@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T13:55:04Z'
+  at: '2026-11-23T16:12:15Z'
   authority: generated
   via: save_document_payload
 id: task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global
@@ -15,18 +15,17 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- desk/inbox/20261106-171908-suggestion-tests-fixture-autouse-que-limpia-los-caches-globales-de-sldb-despu-s-de-cada-test.md
+- tests/conftest.py
+- 196f3cb912269562b1282745f23e58fc63fef758
 depends_on: []
 pills: []
 files:
 - tests/conftest.py
-- deskops/doc_access.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-gracias-a-una-fixture-autouse-que-limpia
 ---
 
 # La suite de deskops en un solo proceso cabe en MemoryMax=2G: fixture autouse limpia los caches globales
