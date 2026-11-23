@@ -1,0 +1,25 @@
+name: 20261122-234436-suggestion-hook-que-despierta-a-la-identidad-scion-del-desk-cuando-llega-una-nota-al-inbox
+path: desk/inbox/20261122-234436-suggestion-hook-que-despierta-a-la-identidad-scion-del-desk-cuando-llega-una-nota-al-inbox.md
+source_hash: 9529af97366aafb6f452dc4f75a7bc98fd3be05505bf4139937d9663448b67fd
+content_hash: b03fcc7f7b8a5ceff8e19bbe037aadfa43a59a1a908ffa63d34c0aa343efca8a
+field_hashes:
+  kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
+  sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  created_at: 571771ad7f831d2db6535cc6c90277dd47c14888b8f85aa5d203c694ea48cd26
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: ef478182f6962f1649f16edfd462e6fb47b3ef3e2f9a464467a48e42b7d174de
+  ack_reason: c2f85eb73c48bdad8d961a4a9075193a7b41c9295f7335ab8051305fed4df7ca
+  title: aaac318f2e9de5d4c76bfba3f09ef9066fd5e86c55d4202a1a63e6ef0a5be7b0
+  body: d36cea50e420bdbd80a28ede54e61d0e604c026e7a64cf724f12df45dc48959f
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+provenance:
+  by: agent
+  at: '2026-11-23T04:41:50Z'
+  authority: generated
+  via: save_document_payload

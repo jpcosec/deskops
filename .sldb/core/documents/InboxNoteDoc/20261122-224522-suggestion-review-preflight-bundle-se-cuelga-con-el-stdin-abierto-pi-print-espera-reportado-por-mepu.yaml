@@ -1,14 +1,16 @@
 name: 20261122-224522-suggestion-review-preflight-bundle-se-cuelga-con-el-stdin-abierto-pi-print-espera-reportado-por-mepu
 path: desk/inbox/20261122-224522-suggestion-review-preflight-bundle-se-cuelga-con-el-stdin-abierto-pi-print-espera-reportado-por-mepu.md
-source_hash: 77cceae9d8388578fcacba1581c6cdcecdceeb2012ac49d6d2e44d623023cca3
-content_hash: d3b8656045e0fd9271452906f9c981d5ca85559703cd63c5d47a42bf92b072c1
+source_hash: 855f4d39b06961ef56b385f07699646b90cb3898ecfdcc7e8035e472abb2602c
+content_hash: 01887567f2833ef1e642810ebff7bd381481f9fbe27fe1370f40ab2051496490
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: a1d2aa8d7a8331c58d8882ddccee4d1b5fce006396c27d78fd6b349be90bc050
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 16a24f070cd60e2ac6efa7de5c494639a9592ef0011c950f9fda937048746698
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: f78eabc4b077d94e55f0aea54ef7acc8d8eedf43857ecf39913b62388f553a02
+  ack_reason: 1339212c212a690b5699afe9b49f73deec8d3b853da420256dabf70092aee748
   title: ebbb666e07c89054199a055da68b0ac6b02095bd63e5f152195e68e0534159b0
   body: 5b749f57885944c681633e1615b49d832244cbd4208eeb3aae258a9e72c91d66
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-23T04:43:05Z'
+  authority: generated
+  via: save_document_payload

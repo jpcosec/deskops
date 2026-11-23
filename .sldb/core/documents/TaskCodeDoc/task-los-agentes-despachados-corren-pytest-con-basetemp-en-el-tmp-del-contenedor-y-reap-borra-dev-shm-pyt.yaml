@@ -1,0 +1,38 @@
+name: task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt
+path: desk/tasks/task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt.md
+source_hash: 01898bcc95f3bb5d4221e1d8862134d90f112b88c8d7e59f9f0c1f730acb7fe4
+content_hash: d5e448a09f839e31db0359be5a2884a49390d74deb884a20bedc9998f157378d
+field_hashes:
+  title: 69b48abf8e40f05dce1ce76638c0a662276218fdee7a93fe56e94f5958cc5766
+  id: d25ee56500bfdfd771ad8f87e89c21e8eeda541566fbef1a21b2e5673330a4fb
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 7dcdbfa0d28ea548d82b3dea98f237df74fb7676ee8c984cf6cb3274c229cac6
+  goal: 119171338143218b7ce131aa0b048214693ec5c8f4b827069587ee63e70a0da9
+  scope: e1fe47a1c142e41fd60d87199775d070d70c7f6bf5fd7db6fa4dce1e555454e5
+  references: 66a073b9cae154b8fcb2dbba04259d96bf87b6348c5b0ddc5cd64302231f6937
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 2a781ca8ffbb81d36dd318d0d5739c379672f1d10d40d68e16b2d621b77129b4
+  implementation_path: 6c1a3f8b23a9ca0ca032473d6b03913ca8a764406173280aeda06a856bd326a8
+  validation: d74a317a4fd27587fa561485543dcc7fdb9560d3f6e5f22b1c34afcdbbb8e63c
+  done_when: c0ef5c75c036f740b2a875abd3feaa9166d0ba2a1934ba1957015c872eeae9d1
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- artifact:task
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T04:39:09Z'
+  authority: generated
+  via: create_document

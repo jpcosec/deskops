@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T04:43:16Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: unclear
 # e.g., other_repo
@@ -8,11 +13,17 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-22T21:47:48'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-23T01:43:08'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: La máquina ya se declara con el namespace de tags host (5d10b2eb, closeout
+  9a308322). Lo que falta, filtrar por host en list tasks y next, se convirtió en
+  tarea task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.
+  El ejecutor lo fija por desk dispatch.roles en desk/config.json; un ejecutor por
+  tarea no se pidió con un caso concreto y queda fuera.
 ---
 
 # De ftcourier: a la tarea le falta un campo para decir en qué máquina y con qué ejecutor corre

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:25:55Z'
+  at: '2026-11-23T04:40:36Z'
   authority: generated
   via: save_document_payload
 id: task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops
@@ -14,6 +14,8 @@ current_node: ritual-execution
 history: []
 references:
 - desk/inbox/20261120-194002-suggestion-agente-interno-por-desk-en-scion-activado-por-hooks.md
+- desk/inbox/20261122-234436-suggestion-hook-que-despierta-a-la-identidad-scion-del-desk-cuando-llega-una-nota-al-inbox.md
+- desk/inbox/20261122-234447-suggestion-roledoc-de-identidad-de-desk-desk-identity-y-su-traduccion-a-agente-scion.md
 depends_on: []
 pills: []
 files: []
