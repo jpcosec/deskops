@@ -1,7 +1,7 @@
 name: task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt
 path: desk/tasks/task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt.md
-source_hash: a3ea4997b83e91c9895aca887e2732ccaabc4cf6901c6bebf382f7a504a7bf53
-content_hash: 121426b6c653b7326883b50388508b64fb1a6513f85f7b3c0138109c3e5411a5
+source_hash: 8a72b74aac47915eced48c772ecc7a0d6229c0c01296d9b0774b5b12a8b60ab8
+content_hash: 6efce4ee2ba7a2e0ffb7fe1306fef117ec6c86280e955fd47f9621fee5d33e94
 field_hashes:
   title: dd4bcb5daf0f46fbbf673d802c59a6bfe6d6c56c861a95e37e2f528c899f0ac6
   id: 4979f45d08ebf51a250090b34d04e8dafbca583b12df78db2163ea40b025999f
@@ -12,12 +12,12 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 01035245dcddeb48225a8e6feea933c1825189e77874a95b99966f45ba42c96a
   goal: 5c68f07dbcd9abbc8890ff349f7e87c8e499c7f6b4efab94cd31f8853849a6a7
-  scope: 7189baba19511fdb5929e713ba56ef8a5c79679bee4e9a32522d051c37d1dab8
+  scope: 6bb6539bdda82b68cac7844e7d67f11ffbe38747276589d882e4810d05e0de4e
   references: e9a826210f266effac4cd47e28c5e8e2ceff77598b01c590571a264ea1cdf3dc
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 94e596d583015364112988066b16e88e7cba7191f561782acf103354ae8e9b6e
-  implementation_path: 101eae54ddc63f408d82801f27fe54e54aaa712b609af4b3c5741fab8f85d993
+  files: d75fb82586f9302fb8411ac42230ca31e4422a1dc9dae921ddee7ce475b0d47d
+  implementation_path: 9db73eb76e0e5748632d1d15e222b1095f9b0fb218d916bd56c3d903e74a8915
   validation: c3c9a1bdcd8bd17f11a9ee0e3558e23ae7d75646232e3d6f9a232599cfe4310d
   done_when: 8bca71e904d8314e5292d9cd3c3dcf048fc8cf84a790dd723a1a45872ae76de3
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T04:38:53Z'
+  at: '2026-11-23T05:07:56Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

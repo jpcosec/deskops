@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T04:38:53Z'
+  at: '2026-11-23T05:07:56Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt
 status: draft
 summary: ''
@@ -19,10 +19,17 @@ pills: []
 files:
 - deskops/models/atom.py
 - deskops/models/inbox.py
-- deskops/cli/commands/atoms.py
+- deskops/cli/registry.py
+- deskops/cli/commands/operations.py
+- deskops/operations.py
+- deskops/services/atoms.py
 - deskops/cli/commands/message.py
 - tests/test_atoms_cli.py
 - tests/test_message_cli.py
+- tests/fixtures/model_contract_hashes.json
+- tests/fixtures/golden/help/deskops_add_atom.txt
+- tests/fixtures/golden/help/deskops_list_atoms.txt
+- tests/fixtures/golden/help/deskops_message_send.txt
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
@@ -47,13 +54,13 @@ _Describe the concrete result this task must produce._
 
 _State what is in scope and what is out of scope._
 
-Entra: los dos modelos, deskops/cli/commands/atoms.py, deskops/cli/commands/message.py, los goldens de contrato y de ayuda, sldb models update de los dos modelos en el store del desk, tests/test_atoms_cli.py y tests/test_message_cli.py. No entra: un verbo nuevo add agreement (el campo cubre el pedido), migrar los atoms viejos que tienen la referencia en provenance.
+Entra: los dos modelos, la superficie real de add atom y list atoms (deskops/cli/registry.py, deskops/cli/commands/operations.py, deskops/operations.py, deskops/services/atoms.py), deskops/cli/commands/message.py, tests/fixtures/model_contract_hashes.json, los goldens de ayuda deskops_add_atom.txt, deskops_list_atoms.txt y deskops_message_send.txt, sldb models update de AtomDoc e InboxNoteDoc en el .sldb del repo, tests/test_atoms_cli.py y tests/test_message_cli.py. No entra: deskops/cli/commands/atoms.py (los alias viejos deskops atoms ... no ganan --conv), un verbo nuevo add agreement (el campo cubre el pedido), migrar los atoms viejos que tienen la referencia en provenance.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-p1: tests en tests/test_atoms_cli.py: test_add_atom_with_conv_writes_conversation_ref, test_list_atoms_filters_by_conv, test_add_atom_refuses_duplicate_conv. p2: test en tests/test_message_cli.py: test_send_with_conv_writes_conversation_ref. p3: implementar. p4: goldens y sldb models update AtomDoc e InboxNoteDoc en .sldb. p5: suite con -n 4. p6: commit desde el worktree que dispatch te da con 'git commit -- <rutas>' y el trailer 'Task-Id: <id de esta tarea>' en el cuerpo.
+p1: tests en tests/test_atoms_cli.py (usan main(["add", "atom", "--root", ...]) en proceso, como los existentes): test_add_atom_with_conv_writes_conversation_ref, test_list_atoms_filters_by_conv, test_add_atom_refuses_duplicate_conv. p2: test en tests/test_message_cli.py: test_send_with_conv_writes_conversation_ref. p3: implementar. Superficie real (verificada): deskops add atom NO pasa por deskops/cli/commands/atoms.py (AtomsCLI es "deskops atoms ...", alias viejos); sus flags se generan de los campos del modelo en _add_subject_commands de deskops/cli/registry.py, el payload lo arma parse_artifact_input (deskops/cli/parse_input.py) y el add lo hace OperationsCLI (deskops/cli/commands/operations.py, rama args.command == "add") con doc_access.create_artifact. El campo nuevo genera solo --conversation-ref; --conv se agrega como alias del mismo argumento (flags ("--conversation-ref", "--conv")) en _add_subject_commands. deskops list atoms lo atiende OperationsCLI (rama list atoms) -> DeskopsOperations.list_atoms (deskops/operations.py) -> AtomsService.list_atoms (deskops/services/atoms.py); --conv se declara en _list_subject_commands (registry.py, junto a --axis-value) y se pasa como segundo filtro. message send --conv se declara en el Command ("message", "send") de registry.py (dest conversation_ref) y _deliver_note (deskops/cli/commands/message.py) lo agrega al payload. Semantica: comparacion literal sin normalizar "#"; vacio = None o solo espacios, no se escribe; el filtro de list acepta ref == hilo o ref que empieza por hilo + "/"; duplicado = otro atom con conversation_ref exactamente igual (tras strip), chequeado antes de crear en la rama add de OperationsCLI, mensaje a stderr "ya existe <atom id> con conversation_ref <ref>" y return 1 (add no tiene --format); message send no chequea duplicados; los atoms con la referencia solo en provenance no se listan. p4: contrato y goldens: actualizar AtomDoc e InboxNoteDoc en tests/fixtures/model_contract_hashes.json; regenerar goldens de ayuda con TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_output_goldens.py --update-golden (cambian tests/fixtures/golden/help/deskops_add_atom.txt, deskops_list_atoms.txt, deskops_message_send.txt) y revisar el diff; en el store del desk: sldb models update AtomDoc --store .sldb --pythonpath . y sldb models update InboxNoteDoc --store .sldb --pythonpath . desde la raiz del worktree. p5: suite con -n 4. p6: commit desde el worktree que dispatch te da con 'git commit -- <rutas>' y el trailer 'Task-Id: <id de esta tarea>' en el cuerpo.
 
 ## Validation
 

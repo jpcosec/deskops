@@ -1,0 +1,37 @@
+name: review-task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas-bundle-1
+path: desk/reviews/task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas/bundle-1.md
+source_hash: ce116dacd89ed06b8efc1bc2e3e2b7c3c30ef472eff47d85a48a44de36f55084
+content_hash: 1633e27b949efb908190458f22a2caff9063db8c8d6c0df38ed77dadeb548080
+field_hashes:
+  id: e73da7564cdd4fbd04a30f6954b74b920282cf023ca1fc5d7d596a0a167d9a9b
+  title: 2a35b00fccab43fd80730b7c1fb1de7803b46cd6ede33f04dc83e6a441c07968
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: f6ef0c744e1c8598c9bd749931e15c181599cfa94632c3d64e896d1d191ce0b7
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 196b4f75cdd0cf561f417db434d115e56f20f7ea6ae153befedc77c2499e6764
+  input_sha256: b03dd8ae4cfcbd563a856627e69249696aab91520f5424fb58f6e92b068ad210
+  contract_sha256: 9264327d304ed5417203beab470ff96847a256cb5fcd261167a8e47402a4cea9
+  output_sha256: b9dd755a0ca0714e0cb498592280b05cc69c94c0dba7a6525382b7a9b3a8e0dd
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 8e6bca6d5fb7c41e95838f064cb71b34cff1a3d5e38d4fb99787eef4eb67eb31
+  created_at: 3acb8943a419b3749d6d94365ca825d7ef6ec5d9d35301f684c7f3a95fe5dfb6
+  disposed_at: f7bab7049edb65e8134ed37ed6d41cae5dc7091f21b2c22a87a76c0ea3529e46
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: c5ee831d97523597156305fb2ddba10c8c7a73d4ade4729a0bb4f92d9b6a71e1
+  disposition: af68eca24596071dc691cd22e32dcd6b8a6d9e4f171c42e3dc3283f8339c37e6
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T05:02:54Z'
+  authority: generated
+  via: save_document_payload

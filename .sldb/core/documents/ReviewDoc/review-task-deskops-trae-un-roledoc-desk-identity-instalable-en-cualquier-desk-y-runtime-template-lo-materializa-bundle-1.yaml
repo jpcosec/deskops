@@ -1,0 +1,37 @@
+name: review-task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa-bundle-1
+path: desk/reviews/task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa/bundle-1.md
+source_hash: 5ce353887c1b8ead184640481c10eadc9c0647e692b5d8091f96af6e9948318c
+content_hash: 47621e22545d1f23c1fffe3abf97b8ecc981b20f23828515d7fc13ee6464c981
+field_hashes:
+  id: 364dfb17dad102037402bc3f48e766270e76ad6d87bfd42fab7e8f9e838f9790
+  title: fecdfc5a8863ba5ae3d6762a2f01cacdbab1ede004bdd3662a5f3403109be78f
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: a993e03b810f1b5c897130bc685029217983d1e6799e8af294667d981060d652
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: ab6040b81871b91597000f2dbe64f14e46dae9c3ea9e88d9b90c9644a04d0717
+  input_sha256: e73129673b7f4bbd4677cd85ce0840b1998ab7f486f6f330c19b11f2f2cb8df0
+  contract_sha256: 949097668c531345de7d619dc9956de9d25de47d3d4ba4603a116dcdb855a006
+  output_sha256: 4dacd6d2f5af6f8c9b8597a6d87edf70780245ef98f0ca15c69876cbf60c8b68
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 5a1fff41bd75726e0ff927d0fe67b123a29097ac1747d5969667a08d085b315e
+  created_at: 14a77459f49d6b2da4657edcbefe59312df9a1eeb7cdce8178b0a1b02c740b1a
+  disposed_at: 51e404c982b29d1b886db0aa337b2008d58bcf6731779bd25c93741d86f92dc6
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: ba78cab67c1018ddec639a0875af2af45f09ba00d2577b1d974864a6ef80bdba
+  disposition: 64598f6bc67f8171a339b7eeda6d102e8a6022bbcfacd56a627a325afbf02f0d
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T05:16:21Z'
+  authority: generated
+  via: save_document_payload
