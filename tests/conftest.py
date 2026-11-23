@@ -62,6 +62,27 @@ def _isolated_home(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     return home
 
 
+@pytest.fixture(autouse=True)
+def _clear_global_caches():
+    """Empty the process-global sldb and deskops caches after each test.
+
+    Without it a whole-suite run in one process keeps every test's store alive and grows to GBs.
+    """
+    yield
+    from sldb.cli import alert_sink
+    from sldb.store import built_cache, io as store_io, runtime_cache
+
+    from deskops import doc_access
+
+    runtime_cache.invalidate_runtime_cache()
+    store_io.invalidate_index_cache()
+    built_cache.clear()
+    alert_sink.forget()
+    doc_access._DOC_PAYLOADS.clear()
+    doc_access._READ_HASHES.clear()
+    doc_access._INDEX_ENTRIES.clear()
+
+
 def _git(root: Path, *argv: str) -> None:
     subprocess.run(["git", *argv], cwd=root, check=True, capture_output=True, text=True)
 
