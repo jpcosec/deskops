@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T11:44:54Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,11 +13,15 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-23T03:45:22'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-23T08:44:45'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: 'anexada a task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d
+  (referencia agregada): esa tarea parte dispatch entre lo portable versionado y lo
+  de maquina en config.local.json, y solo dispatch start exige las rutas locales'
 ---
 
 # dispatch no se puede partir entre config.json y config.local.json: el proyecto y los roles no quedan versionados
