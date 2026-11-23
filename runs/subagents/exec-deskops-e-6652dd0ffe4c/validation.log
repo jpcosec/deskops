@@ -1,0 +1,3 @@
+pytest -q -n 4 tests/test_dispatch.py (worktree, /dev/shm/pytest-of-scion pre-created): 49 passed, exit 0
+Dir was absent afterwards: removed by something outside the suite during the 8 min run (likely a real reap of another agent); not by these tests.
+Rerun of reap tests (-k "reap_scion_error or scion_pytest_tmp or test_reap_fast"): 4 passed, dir still present.

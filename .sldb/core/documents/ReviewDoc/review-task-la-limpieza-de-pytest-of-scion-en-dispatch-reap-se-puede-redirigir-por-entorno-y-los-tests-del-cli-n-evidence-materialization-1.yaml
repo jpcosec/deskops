@@ -1,0 +1,37 @@
+name: review-task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n-evidence-materialization-1
+path: desk/reviews/task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n/evidence-materialization-1.md
+source_hash: a4b1cf174a27fbb7766cef72df9d1d4aa50a95e13c3234c436c1b56ade59dde4
+content_hash: 4e532d7c3821d8ac50bf004382474f593df7cb89ae2a5f1dbb05ac049c68cd35
+field_hashes:
+  id: 8c095ed7c0b853876540a7f5f1253bfc0283b0dec30d163df765d9576c0a2dc0
+  title: 1e27da735ac905dfe5b251861e99a1419f285239a750ce888eb6263c8ad94e7a
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 3f5a7071b35323ba6d55847e19c81573bd03f6dda8fb633c8ca6b78d30bee95c
+  subject: 146e9d1e92ab106ebf2a006f161c174994e178aa876232ac2127f32578a46b95
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: abeca5c9a1cd0de343a0cfbde6757c1385110f8b308c9d5f3127e4aee87e6580
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: ff49377504fb267aa73ce8e370becd0c9974299414f9737c752bc851c57b67fd
+  created_at: 09dc04fb7092a2a402872c2a737102c23329c0be44178575be1d4cfc836ddddd
+  disposed_at: 09dc04fb7092a2a402872c2a737102c23329c0be44178575be1d4cfc836ddddd
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: e5a60c105fb5af003303a57c14584038c33a87b32db3732a1db6c203e4cb43dd
+  disposition: 994042721a0a95d31f38e7a52a1b2b2cf6f9fc4abf7e14e094f55ee8a6f6200f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T15:12:23Z'
+  authority: generated
+  via: create_document

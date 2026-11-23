@@ -1,0 +1,34 @@
+.................................................                        [100%]
+=============================== warnings summary ===============================
+../../dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+49 passed, 1 warning in 524.87s (0:08:44)
+
+# Comandos de verificación (tester)
+# Commit del ejecutor: f7772acdee9f620051ad4551b48fc24c294173cd
+# git show --name-only f7772acd:
+#   deskops/dispatch.py
+#   tests/test_dispatch.py
+#
+# Verificación con el /dev/shm real protegido por un centinela:
+#   mkdir -p /dev/shm/pytest-of-scion
+#   echo sentinel > /dev/shm/pytest-of-scion/.sentinel
+#   cd /workspace/deskops
+#   TMPDIR=/tmp /dev/shm/deskops-test-venv/bin/python -m pytest -q tests/test_dispatch.py
+#   pytest_rc=0
+#   test -d /dev/shm/pytest-of-scion  -> rc 0
+#   test -f /dev/shm/pytest-of-scion/.sentinel -> rc 0
+# Salida: 49 passed, 1 warning in 524.87s (0:08:44)
+#
+# Test focal aislado:
+#   TMPDIR=/tmp /dev/shm/deskops-test-venv/bin/python -m pytest -q \
+#     tests/test_dispatch.py::test_tester_prompt_runs_only_touched_tests
+#   -> 1 passed in 18.82s
+#
+# Nota: /workspace/.venv/bin/python no es ejecutable en este contenedor (venv construido
+# para 3.12 y symlink a python3 3.11 sin pytest). Se usó el venv 3.12.16 de /dev/shm con
+# las dependencias del proyecto; no se modificó el repositorio para probar.

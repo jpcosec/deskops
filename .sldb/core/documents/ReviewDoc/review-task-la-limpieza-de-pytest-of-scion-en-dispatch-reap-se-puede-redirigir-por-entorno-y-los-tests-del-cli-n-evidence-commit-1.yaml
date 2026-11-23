@@ -1,0 +1,37 @@
+name: review-task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n-evidence-commit-1
+path: desk/reviews/task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n/evidence-commit-1.md
+source_hash: e03afd0adc9dfd12c182c53ef2e739c354caab89dd42430784f87f9cb116b9aa
+content_hash: 965497e18263d1f87521b1a05864d3c677e24a2fae4b351731b04a7f9af0b705
+field_hashes:
+  id: d8d76effe0408a5d79231a416827271293126d1141a00dca77662975ef5359d7
+  title: b5ef1943f60c153ef1aedad4f54a601ab07f5a0dc416710a4e76f5f64f2bc3cc
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: d36ad0fae8e8c5e0ca8e89422e6e669ca954409aabc0a75b39f43fabec63d3b3
+  subject: 146e9d1e92ab106ebf2a006f161c174994e178aa876232ac2127f32578a46b95
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 7f136a9216136fa110395dc7f027854b5cb072435b6fb5a2ce0005de59a9bae7
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 60f7af1f6ad147c935221f2a76d8770f626b63e20c13f8d645ed5c4676b1c5e9
+  created_at: 09dc04fb7092a2a402872c2a737102c23329c0be44178575be1d4cfc836ddddd
+  disposed_at: 09dc04fb7092a2a402872c2a737102c23329c0be44178575be1d4cfc836ddddd
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: c11333e5ae720866d89fdfc84c093c3f4b384137d3a7933e3218bfe704a59385
+  disposition: 8939c08eeac6ce59ba65f65998457f1eadbad85aa89ad20f97f01959af64e9a3
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T15:12:15Z'
+  authority: generated
+  via: create_document
