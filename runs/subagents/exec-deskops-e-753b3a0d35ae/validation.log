@@ -1,0 +1,4 @@
+python -m pytest -q -p no:cacheprovider tests/test_integrate.py (serial) -> 28 passed
+python -m pytest -q -p no:cacheprovider tests/test_dispatch.py -n 4 -> 44 passed, 1 failed (my new test, wrong base_sha taken before start; fixed, then -k pr_mode -> 1 passed)
+python -m pytest -q -p no:cacheprovider -n 4 -> 1345 passed, 3 skipped, 1 xfailed, 1 failed (same pre-fix test, collected before the fix)
+Note: test_integrate.py under -n 4 errored in the module fixture while the machine was loaded (fixture timing); serial it is green.

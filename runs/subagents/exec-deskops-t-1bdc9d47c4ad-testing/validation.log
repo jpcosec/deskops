@@ -1,0 +1,17 @@
+Task: task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el
+Commit: ca7ecfc518fa8955e2d51e99caa72449fe5b5e1c
+
+Environment: shared /workspace/.venv is broken (python3.12 symlink target missing).
+Used: uv run --no-project --python 3.12 (CPython 3.12.16) with pytest 9.2.0 and sldb deps,
+      PYTHONPATH=/workspace/deskops:/workspace/sldb/src, TMPDIR=/tmp.
+
+[1] TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_config.py
+    5 passed, 1 warning in 0.10s
+
+[2] TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_dispatch.py
+    45 passed, 1 warning in 467.63s (0:07:47)
+
+[3] TMPDIR=/tmp python -m pytest -q -p no:cacheprovider tests/test_integrate.py
+    28 passed, 1 warning in 314.47s (0:05:14)
+
+All green. No failures.

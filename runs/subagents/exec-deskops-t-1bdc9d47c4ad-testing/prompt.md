@@ -1,7 +1,17 @@
+Task: task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el
+Title: integrate puede terminar en un PR a la rama base declarada (modo pr) en vez de un push directo, con el cierre dentro del PR
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T01:55:57Z'
+  at: '2026-11-23T01:36:07Z'
   authority: generated
   via: save_document_payload
 id: task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el
@@ -14,28 +24,14 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- deskops/config.py
-- deskops/dispatch.py
-- deskops/integrate.py
-- docs/operator-manual.md
-- tests/test_dispatch.py
-- tests/test_integrate.py
-- ca7ecfc518fa8955e2d51e99caa72449fe5b5e1c
+- desk/inbox/20261122-182718-suggestion-dispatch-reap-e-integrate-empujan-directo-no-sirven-en-repos-con-dev-protegida-ni-cumplen-la-regla-de-pr.md
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/config.py
-- deskops/dispatch.py
-- deskops/integrate.py
-- docs/operator-manual.md
-- tests/test_dispatch.py
-- tests/test_integrate.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-integrate-en-modo-pr-termina-en-un-pr-hacia-la-rama-base-declarada
+atoms: []
 ---
 
 # integrate puede terminar en un PR a la rama base declarada (modo pr) en vez de un push directo, con el cierre dentro del PR
@@ -75,3 +71,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 El test de remoto con dev protegida y gh falso pasa en modo pr, los tests de modo push siguen pasando y la suite completa está verde.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.

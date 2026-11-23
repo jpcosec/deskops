@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T00:16:33Z'
+  at: '2026-11-23T02:00:36Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -54,7 +54,6 @@ tasks:
 - desk/tasks/task-governance-el-store-se-actualiza-solo-hook-de-pre-commit-o-pr-check-que-falla-si-el-store-no-corresp.md
 - desk/tasks/task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare.md
 - desk/tasks/task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits-from-o-las-herederas-siguen.md
-- desk/tasks/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el.md
 - desk/tasks/task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d.md
 # List of pill-xxx paths
 pills:
@@ -141,5 +140,4 @@ _Generated from the task references above._
 - Governance: el store se actualiza solo (hook de pre-commit o pr check que falla si el store no corresponde al árbol) [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
 - Governance: puesta al día de los clones base de la máquina coordinadora y doctor que valida cada tarea contra su modelo [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión abierta. Borrador: no despachar hasta prepararlo.
 - Governance: closeout no borra una tarea de la que otras heredan (inherits_from), o las herederas siguen cargando [draft] - Concretar el pedido en una tarea preparada: que closeout se niegue a borrar (o avise y conserve una referencia resoluble de) una tarea que otras abiertas tienen en inherits_from, y que list tasks no salte en silencio a las herederas. Borrador: no despachar hasta prepararlo.
-- integrate puede terminar en un PR a la rama base declarada (modo pr) en vez de un push directo, con el cierre dentro del PR [draft] - IntegrateConfig (deskops/config.py) gana un campo mode con dos valores: 'push' (el de hoy, por defecto, para deskops y sldb) y 'pr'. En modo pr, el ciclo dispatch start, reap e integrate termina en un PR abierto hacia integrate.branch (la rama base declarada, por ejemplo dev). No hay push directo ni merge local a la rama base. 1) reap en modo pr lleva los commits del ejecutor a una rama local de la tarea, task/<task-id>, creada desde la base, y no a la base. 2) El closeout de la tarea se commitea en esa misma rama, así el cierre va dentro del PR. 3) integrate en modo pr corre las mismas compuertas sobre la punta de task/<task-id>, la empuja al remoto como rama task/<task-id> y abre o actualiza el PR hacia integrate.branch con gh pr create (base = integrate.branch, título = el de la tarea, cuerpo con el id de la tarea y el resumen del closeout). Si el PR ya existe, solo empuja. Imprime la URL del PR. 4) El modo push queda igual. 5) La configuración por máquina (remote_url con credenciales, push_env, tools_checkout, rutas de suite) puede ir en el config.local.json del desk (no versionado), que DeskConfig.load ya mezcla sobre config.json (deskops/config.py:104) y que está en .gitignore. La tarea documenta esa división en docs/ y no versiona rutas de máquina nuevas.
 - Las rutas y credenciales de máquina de dispatch e integrate salen de desk/config.json (versionado) a desk/config.local.json en deskops y sldb [draft] - 1) Un comando de deskops escribe una clave en el config.local.json del desk (no versionado) (por ejemplo deskops config set --local <ruta.de.clave> <valor> --root ., o el que encaje con el comando queue job set de la tarea hermana de la cola), validando el resultado con DeskConfig. 2) En deskops y sldb, las claves de máquina de dispatch e integrate (suite con rutas absolutas, tools_checkout, tests_lock, push_env con credential.helper, rutas de scion) pasan a config.local.json con ese comando, y config.json queda solo con lo versionable (branch, mode, remote_url sin credenciales, timeouts, retry_exit_codes). 3) deskops doctor avisa si config.json versionado contiene rutas absolutas o un credential.helper.
