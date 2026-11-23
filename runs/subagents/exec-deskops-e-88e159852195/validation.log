@@ -1,0 +1,1 @@
+pytest -q tests/test_closeout_test_paths.py tests/test_closeout_gates.py tests/test_closeout_resolved_by.py -> exit 0 (75 passed)

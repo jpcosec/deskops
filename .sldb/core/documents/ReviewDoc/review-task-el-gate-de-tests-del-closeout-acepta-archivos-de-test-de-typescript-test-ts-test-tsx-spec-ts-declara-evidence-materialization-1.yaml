@@ -1,0 +1,37 @@
+name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-materialization-1
+path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/evidence-materialization-1.md
+source_hash: 3480ca8a67946e9fe97f757ce4fd65c9ea6991c78c4da0b3bcfe04a356852c6a
+content_hash: 7dea680914f3c7f40b9f7e084a5762d6e74d10bf1f090ec62d6e8b7884f76945
+field_hashes:
+  id: 5ae621ad11a80911f25deabb7b9dedc6216b21482c3909f7484730e5bd4a7bc9
+  title: 74280c296756af138a38c77890bef0e470e77869ecb9127bc2609aac8657f8ac
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 01bbb3413b4774bb6ace101e8da21c31365bf1bed9e1b3ee26296b1e7ab1f46b
+  subject: 2e930e76dc5f08cee5efeec0fda0b38422e5cdfa04f3181deae81feb7a085799
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: e12e3b47aacceed2e21493db8ba28ee4d67df1654a85aefdf3d0f5a19e6fb6d6
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 0f0d5bb344502a607479f59c217146ac2793c07725721f10542c87591817f571
+  created_at: 58c2e06daac88295d4e9a24699d6e8f0d8f4c360ab339d452fc24fa12d99d02a
+  disposed_at: 58c2e06daac88295d4e9a24699d6e8f0d8f4c360ab339d452fc24fa12d99d02a
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 1630ccba8e563d4b3dec441517ec156e42c29e28b4b994ee66fa8da0aafc72e5
+  disposition: e397702bfd734b7022a0cae8f74e136a87882c2042e54d00fc80fad0b0aceed7
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T20:01:30Z'
+  authority: generated
+  via: create_document
