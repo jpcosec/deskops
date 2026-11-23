@@ -12,6 +12,7 @@ import io
 import json
 import os
 import shlex
+import shutil
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -26,6 +27,7 @@ EXIT_SCION_ERROR = 6
 EXIT_WORKTREE = 8
 WORKTREES_DIR = ".worktrees"
 DONE_ACTIVITIES = ("completed", "blocked", "limits_exceeded")
+SCION_PYTEST_TMP = "/dev/shm/pytest-of-scion"  # patchable in tests
 
 
 def _scion(argv: list[str]) -> subprocess.CompletedProcess[str]:
@@ -327,12 +329,22 @@ def _worktree_text(worktree: Path | None, root: Path) -> str:
     )
 
 
+def _pytest_tmp_text(name: str) -> str:
+    return (
+        "\n## Temporales de pytest\n\n"
+        "Antes de cualquier pytest exporta, para que sus temporales caigan en el /tmp del contenedor "
+        "(muere con el agente) y no en el /dev/shm del host:\n\n"
+        f"    export PYTEST_ADDOPTS=\"--basetemp=/tmp/pytest-{name}\"\n"
+    )
+
+
 def _role_instructions(
     role: str, task_id: str, quick_gates: list[str] | None = None,
-    worktree: Path | None = None, root: Path | None = None,
+    worktree: Path | None = None, root: Path | None = None, name: str = "",
 ) -> str:
     return (
         _base_instructions(role, task_id)
+        + (_pytest_tmp_text(name) if name else "")
         + _quick_gates_text(role, quick_gates)
         + (_worktree_text(worktree, root) if root is not None else "")
     )
@@ -489,7 +501,7 @@ def start(root: Path, role: str, task_id: str) -> int:
         + "\n\n"
         + task_path.read_text(encoding="utf-8").rstrip("\n")
         + "\n\n"
-        + _role_instructions(role, task_id, cfg.quick_gates, worktree, root),
+        + _role_instructions(role, task_id, cfg.quick_gates, worktree, root, name),
         encoding="utf-8",
     )
 
@@ -530,12 +542,25 @@ def start(root: Path, role: str, task_id: str) -> int:
     return started.returncode
 
 
+def _clean_scion_pytest_tmp(cfg: DispatchConfig, reaped: set[str]) -> bool:
+    """Remove scion's pytest temp dir when no agent of the project is left running."""
+    for agent in _list_agents(cfg):
+        if agent.get("phase") == "running" and str(agent.get("name")) not in reaped:
+            return False
+    path = Path(SCION_PYTEST_TMP)
+    if not path.is_dir():
+        return False
+    shutil.rmtree(path, ignore_errors=True)
+    return True
+
+
 def reap(root: Path, task_id: str) -> int:
     from deskops.runtime.scion import _scion_task_label
 
     cfg = _dispatch_config(root)
     label = _scion_task_label(task_id)  # no TaskDoc read: the task may be closed already
     alive = 0
+    reaped: set[str] = set()
     failed = False
     conflict = False
     busy = False
@@ -579,6 +604,7 @@ def reap(root: Path, task_id: str) -> int:
             failed = True
             continue
         print(f"{name} {role} {reason}")
+        reaped.add(name)
         if role == "executor":
             code, message = _integrate_branch(root, name, task_id)
             if message:
@@ -587,6 +613,8 @@ def reap(root: Path, task_id: str) -> int:
                 busy = True
             elif code:
                 conflict = True
+    if _clean_scion_pytest_tmp(cfg, reaped):
+        print(f"limpieza: {SCION_PYTEST_TMP}")
     if alive:
         return EXIT_ALIVE
     if conflict:

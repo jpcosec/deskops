@@ -664,3 +664,43 @@ def test_reap_in_pr_mode_brings_commits_to_the_task_branch_not_the_base(env: Env
     assert _git(env.root, "rev-parse", f"task/{TASK}") == sha
     assert _git(env.root, "rev-parse", "--abbrev-ref", "HEAD") == f"task/{TASK}"
     assert not worktree.exists()
+
+
+@pytest.mark.parametrize("role", ["executor", "tester"])
+def test_prompt_sets_pytest_basetemp_in_container_tmp(env: Env, role: str) -> None:
+    assert env.cli("dispatch", "start", role, "--task", TASK).returncode == 0
+    name = _start_call(env)[1]
+    suffix = "-testing" if role == "tester" else ""
+    text = (env.root / f"runs/subagents/exec-{name}{suffix}/prompt.md").read_text()
+    assert "Temporales de pytest" in text
+    assert f'PYTEST_ADDOPTS="--basetemp=/tmp/pytest-{name}"' in text
+
+
+def _reap_in_process(env: Env, monkeypatch, scion_tmp: Path) -> int:
+    from deskops import dispatch
+
+    for key in ("PATH", "FAKE_SCION_LOG", "FAKE_SCION_LIST"):
+        monkeypatch.setenv(key, env.env[key])
+    monkeypatch.setattr(dispatch, "SCION_PYTEST_TMP", str(scion_tmp))
+    return dispatch.reap(env.root, TASK)
+
+
+def test_reap_cleans_scion_pytest_tmp_when_no_agent_is_alive(env: Env, monkeypatch, tmp_path: Path, capsys) -> None:
+    scion_tmp = tmp_path / "pytest-of-scion"
+    (scion_tmp / "pytest-0").mkdir(parents=True)
+    env.agents({"name": "deskops-t-x", "phase": "stopped", "labels": {"deskops.task_id": TASK, "deskops.role": "tester"}})
+    assert _reap_in_process(env, monkeypatch, scion_tmp) == 0
+    assert not scion_tmp.exists()
+    assert f"limpieza: {scion_tmp}" in capsys.readouterr().out
+
+
+def test_reap_keeps_scion_pytest_tmp_while_an_agent_runs(env: Env, monkeypatch, tmp_path: Path, capsys) -> None:
+    scion_tmp = tmp_path / "pytest-of-scion"
+    (scion_tmp / "pytest-0").mkdir(parents=True)
+    env.agents(
+        {"name": "deskops-t-x", "phase": "stopped", "labels": {"deskops.task_id": TASK, "deskops.role": "tester"}},
+        {"name": "other", "phase": "running", "activity": "working", "labels": {"deskops.task_id": "task-other", "deskops.role": "executor"}},
+    )
+    _reap_in_process(env, monkeypatch, scion_tmp)
+    assert scion_tmp.is_dir()
+    assert "limpieza" not in capsys.readouterr().out
