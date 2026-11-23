@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T19:05:41Z'
+  at: '2026-11-23T19:16:24Z'
   authority: generated
   via: save_document_payload
 id: task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g
@@ -14,7 +14,9 @@ current_node: ritual-execution
 history: []
 references:
 - desk/inbox/20261123-160333-suggestion-jp-integrar-por-lote-una-suite-y-un-push-por-desk-y-ordenar-los-fallidos-de-la-cola.md
-depends_on: []
+- desk/inbox/20261123-161332-suggestion-jp-el-lote-de-integraci-n-es-la-fase-del-dag-declarada-en-el-board-falta-en-la-herramienta-y-en-el-skill.md
+depends_on:
+- task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase
 pills: []
 files: []
 task_type: task.code
@@ -23,7 +25,7 @@ inherit_acceptance_context: false
 atoms: []
 ---
 
-# integrate por lote: una sola integracion por desk con todo lo cerrado pendiente (un tip, una suite, un grafo, un store, un push)
+# integrate por fase: la unidad de integracion es la fase del Board (una suite, un grafo, un store y un push por fase)
 
 ## Rationale
 
@@ -35,13 +37,13 @@ Nota 20261123-160333-suggestion-jp-integrar-por-lote-una-suite-y-un-push-por-des
 
 _Describe the concrete result this task must produce._
 
-deskops integrate integra de una vez todo lo cerrado y pendiente de subir del desk: toma el tip local, corre una suite completa, una comprobacion de grafo y una de store, y hace un solo push (o un PR en modo pr); varios cierres seguidos encolan un solo trabajo de integrate por desk (los repetidos se funden); un integrate que termina bien da por resueltos los trabajos de integrate anteriores de ese desk que quedaron en failed y cuyo contenido ya esta en origin.
+deskops integrate toma como unidad la fase declarada en el Board: cada tarea de la fase cierra con su validacion dirigida; cuando cierra la ultima tarea de la fase se encola un solo trabajo integrate de esa fase, que corre una suite completa, una comprobacion de grafo y una de store sobre el tip y hace un push (o un PR en modo pr) y el commit de cierre de fase de ritual-phase; un integrate exitoso da por resueltos los integrate anteriores de ese desk que quedaron en failed y cuyo contenido ya esta en origin. Una tarea sin fase declarada se integra como fase de una sola tarea.
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-deskops/integrate.py, deskops/queue.py (encolado y fusion de trabajos integrate por desk), el disparo desde closeout, y sus tests. Fuera: dispatch y reap.
+deskops/integrate.py (opcion --phase), deskops/queue.py (encolado del integrate de fase al cerrar la ultima tarea, sin duplicados), el disparo desde closeout, el trabajo integrate de desk/config.json (--task-from-env pasa a la fase de la tarea) y sus tests. Fuera: el modelo del Board (tarea task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase) y el skill.
 
 ## Implementation Path
 
@@ -59,4 +61,4 @@ _List the checks required before this task can close._
 
 _Name the observable condition that makes the task complete._
 
-Tres cierres seguidos dejan un solo trabajo de integrate pendiente; un integrate exitoso sube los tres con una sola suite y un push y limpia los integrate fallidos ya presentes en origin; tests nuevos y la suite de integrate y queue verdes.
+Con una fase de tres tareas: los dos primeros cierres no encolan integrate; el tercero encola uno solo, que sube las tres con una suite y un push; un integrate exitoso limpia los integrate fallidos ya presentes en origin; tests nuevos y los de integrate y queue verdes.

@@ -1,9 +1,9 @@
 name: task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g
 path: desk/tasks/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.md
-source_hash: f68303f63a82b6f5faba5e0eb477b6e25fd0412c657ce90d68128cab382b8c98
-content_hash: b6879f0c1062fc8e0cf26d10aef4f920e3eaa05ede143c31bed70b562cf245a9
+source_hash: 4327ad459a590cea411d376f1c0bb1d1422a27442c39e187d42bd738a3f36028
+content_hash: 7b1179c4f51c5d1e559f364c84377be408fe8329f44d878e527f14d2ed898ebd
 field_hashes:
-  title: ac3695cea82c641b8cd8c83921fb60309977206311b00a38ff071a9761e8d1b7
+  title: 4c15810169783b46ec15851816cbf19981afb0dcb45020cbf487c7c3a9e56ca8
   id: cab6eeca1d2c91cb574900fe322b5584ae3b7e3578bb8308a4bdd2dc1e23fed9
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
@@ -11,15 +11,15 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 95cf6f73b4ee69b4644df69c9b6eae8f97fbe88c7fe0ad873485e25d4cc7525e
-  goal: 9f85f7c5a9df31273742f093fab4292f3694209ebda3db4f8310aa184c0f89aa
-  scope: 314dcfdc09ff6ef6b062ac3eab95b49dcd863df286ec08162e71f35c55b947b4
-  references: 408c2bb2ffbb035df9c0843e5084f130fa3fd2b7302317f464e1c5b6ff8cd5c9
-  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  goal: 8fd86404c095935c1c7fc861c10d67c419f40ec5c9af33e876af0fa879fd4068
+  scope: ecadb54c5b48f91cb6a371bafd845598baf4d807639279c18eee05c8cf91d34e
+  references: 2eaeeb02e7b328749e809bbc844fe7d001f4b8db086fdaa8e26f79c43e7f7a33
+  depends_on: cf8b0ac630317e1108bd187e27a2631ca8f3dfe47fd3379889d91ebc5e6fbbe7
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 79f0ef7c16e0f71654ad947444ea19cb9d32ea69c24fa5824b8a5831280c31da
   validation: ece69c9507c73ed4483b0883360ab71fe6576c17cec3417e2c264b48ac893b5b
-  done_when: 8a253b32fe994ff145a0b6b0c16a7e4921c8abebab5a36636856bf6e0a86841b
+  done_when: b1b63f3d0b1c5bfaef17ece4d2a81d5f51d06461c2e7b53943b7bf38af4f4e23
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T19:05:41Z'
+  at: '2026-11-23T19:16:24Z'
   authority: generated
   via: save_document_payload
