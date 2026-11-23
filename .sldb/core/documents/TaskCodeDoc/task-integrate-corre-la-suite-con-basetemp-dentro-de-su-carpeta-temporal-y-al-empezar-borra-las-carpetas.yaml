@@ -1,19 +1,19 @@
 name: task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas
 path: desk/tasks/task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas.md
-source_hash: 0a7f80620ce7169b075dcd0534370e00ed22c51ff3f64191a667e599d77f8f00
-content_hash: fc4b07ea93681a784e2462f4f92c724fd9bfbfe3e748a2bca7bad7f80eb63221
+source_hash: c654d2339d7ae1f8a50464db2b29cefcb362e56566d69507fb87a7191f854244
+content_hash: 9361b01cce03369cc2fe3d3370504670933a79d7825ff9ded4d0a9327abd66eb
 field_hashes:
   title: 22113ba8776cd77e9bbbdeed4d1d279b626d4749c577796664a89c9d7d31ed2e
   id: ad5e4234c5553be76b2a767be110ba946fe843531ab7272c33aeddc52b0302a3
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: d8cbd917c4f24a508ad75546fc0b98620011af56bf5848d01f335bb41543a304
   goal: 33b78dbb0ac954966cae0a2dbec4aba5c8182cc4437b65d85a89d3119d38d700
   scope: b2411f4f4d8cb82040f1a9444ac62341781f2fcb814fd5bfac444bdb7f91c994
-  references: e7b6424307ba5f0490cc68ab6d1a0661fc9819eb4108c34e1fe65c3dffbd9c31
+  references: 9f8d8aadfaa66d015a48d0f950a3564dcb64ba2ad1a8e98997aed90cd32bc056
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 10cf095552106bb51aeee178a8b53e296eb18d8f013439af86ed158a13ff2894
@@ -23,7 +23,7 @@ field_hashes:
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: d803fcfc7ae276efa1f6c1d611ca9c7c8308dde5fdee414dc35660f72cdbe4ff
 semantic_tags:
 - artifact:task
 - representation.markdown
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T04:37:25Z'
+  at: '2026-11-23T06:15:33Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,19 +1,22 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T04:37:25Z'
+  at: '2026-11-23T06:15:33Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - deskops/integrate.py
+- tests/test_integrate.py
+- 498d51755c799cb837c156da8ce863890c40629d
 depends_on: []
 pills: []
 files:
@@ -22,7 +25,8 @@ files:
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-integrate-corre-la-suite-con-basetemp-propio-y-limpia-temporales-de-corridas-muertas
 ---
 
 # integrate corre la suite con --basetemp dentro de su carpeta temporal y al empezar borra las carpetas deskops-integrate-* de corridas muertas
