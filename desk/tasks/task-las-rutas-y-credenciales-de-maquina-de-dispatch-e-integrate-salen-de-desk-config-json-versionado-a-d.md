@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:40:26Z'
+  at: '2026-11-23T02:33:44Z'
   authority: generated
   via: save_document_payload
 id: task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d
@@ -23,7 +23,7 @@ inherit_acceptance_context: false
 atoms: []
 ---
 
-# Las rutas y credenciales de máquina de dispatch e integrate salen de desk/config.json (versionado) a desk/config.local.json en deskops y sldb
+# Las rutas y credenciales de máquina de dispatch e integrate salen del config.json versionado del desk a su config.local.json (no versionado) en deskops y sldb
 
 ## Rationale
 
