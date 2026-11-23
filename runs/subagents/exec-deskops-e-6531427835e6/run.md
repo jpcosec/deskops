@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:25:36Z'
+  at: '2026-11-23T05:25:52Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # run-xxx
 id: run-deskops-e-6531427835e6
 # Task identifier this run executed against
@@ -25,7 +25,7 @@ started_at: '2026-11-23T05:25:28+00:00'
 # ISO 8601 timestamp when the dispatch intent was recorded
 intent_at: '2026-11-23T05:25:28+00:00'
 # ISO 8601 timestamp when the agent was observed in Scion, empty until then
-dispatch_confirmed_at: ''
+dispatch_confirmed_at: '2026-11-23T05:25:51+00:00'
 # External reference, e.g. scion://agent/<slug>
 external_ref: scion://agent/deskops-e-6531427835e6
 # ISO 8601 end timestamp, empty while in progress
