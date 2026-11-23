@@ -541,12 +541,16 @@ def start(root: Path, role: str, task_id: str) -> int:
     return started.returncode
 
 
+def _scion_pytest_tmp() -> str:
+    return os.environ.get("DESKOPS_SCION_PYTEST_TMP") or SCION_PYTEST_TMP
+
+
 def _clean_scion_pytest_tmp(cfg: DispatchConfig, reaped: set[str]) -> bool:
     """Remove scion's pytest temp dir when no agent of the project is left running."""
     for agent in _list_agents(cfg):
         if agent.get("phase") == "running" and str(agent.get("name")) not in reaped:
             return False
-    path = Path(SCION_PYTEST_TMP)
+    path = Path(_scion_pytest_tmp())
     if not path.is_dir():
         return False
     shutil.rmtree(path, ignore_errors=True)
@@ -613,7 +617,7 @@ def reap(root: Path, task_id: str) -> int:
             elif code:
                 conflict = True
     if _clean_scion_pytest_tmp(cfg, reaped):
-        print(f"limpieza: {SCION_PYTEST_TMP}")
+        print(f"limpieza: {_scion_pytest_tmp()}")
     if alive:
         return EXIT_ALIVE
     if conflict:

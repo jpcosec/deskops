@@ -42,6 +42,8 @@ class Env:
         self.env["PYTHONPATH"] = str(ROOT) + os.pathsep + self.env.get("PYTHONPATH", "")
         self.env["FAKE_SCION_LOG"] = str(self.log)
         self.env["FAKE_SCION_LIST"] = str(self.listing)
+        self.scion_tmp = tmp_path / "pytest-of-scion"
+        self.env["DESKOPS_SCION_PYTEST_TMP"] = str(self.scion_tmp)
 
     def cli(self, *argv: str) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
@@ -684,7 +686,7 @@ def _reap_in_process(env: Env, monkeypatch, scion_tmp: Path) -> int:
 
     for key in ("PATH", "FAKE_SCION_LOG", "FAKE_SCION_LIST"):
         monkeypatch.setenv(key, env.env[key])
-    monkeypatch.setattr(dispatch, "SCION_PYTEST_TMP", str(scion_tmp))
+    monkeypatch.setenv("DESKOPS_SCION_PYTEST_TMP", str(scion_tmp))
     return dispatch.reap(env.root, TASK)
 
 
