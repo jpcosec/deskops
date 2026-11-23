@@ -1,18 +1,19 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T12:20:41Z'
+  at: '2026-11-23T13:32:50Z'
   authority: generated
   via: save_document_payload
 id: task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt
-status: active
+status: ready_for_testing
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
+- task_hands_to_closeout
 references:
 - desk/inbox/20261123-024325-suggestion-campo-propio-para-la-referencia-de-conversacion-scion-en-atoms-y-notas.md
 depends_on: []

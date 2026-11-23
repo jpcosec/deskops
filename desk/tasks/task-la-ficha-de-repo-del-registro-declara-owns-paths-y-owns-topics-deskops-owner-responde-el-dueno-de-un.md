@@ -1,17 +1,18 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T04:38:22Z'
+  at: '2026-11-23T14:12:03Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - desk/inbox/20261122-234458-suggestion-mapa-de-propiedad-por-desk-y-destino-unico-de-lo-sin-dueno-governance-en-el-registro.md
 - desk/atoms/atom-sin-dueno-lo-que-no-tiene-dueno-en-sldb-1-va-al-inbox-de-deskops.md

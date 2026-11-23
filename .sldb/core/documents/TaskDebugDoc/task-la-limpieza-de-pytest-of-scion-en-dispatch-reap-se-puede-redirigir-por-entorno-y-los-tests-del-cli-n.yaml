@@ -1,15 +1,15 @@
 name: task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n
 path: desk/tasks/task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n.md
-source_hash: 27f88a0214d0e71c8ec4bc6514b19fc75484e499d5b0d2894cf37a82d358aad8
-content_hash: 21d8ad265051fb198af1498651ed536f4a55fe1efb33560c46a42580625585e0
+source_hash: 3e07d48fe64eba0fe96d7c623c01f99b9935d77d264a892699d53176cd70402b
+content_hash: a5fdb6c9d76c837b246ffd4e1377982f11bf3479a2431b54b7e3b42ee0eb4bb3
 field_hashes:
   title: c6690f1a14a0822829829c833896a39a1739e606d3ad88f1400d8a289f79cc96
   id: 5173dcc38fbb73f44d9e328593c786d04e556656ad183d17e9f2548cb6b83649
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 8c9dc0bf185192bd4554f0dfc3381cec903286fb9ee154069b1c8693846e5afd
   goal: 06647f0b6648b670615147f7d9f23778b8153c68015f38df5fbf7f03228ad0d1
   scope: 7405d4ffdf4f44472c180d50c3aa1dea5f9e7e2178cefd18d4b78bea9e5922b0
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T12:33:19Z'
+  at: '2026-11-23T14:43:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,17 +1,18 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T12:33:19Z'
+  at: '2026-11-23T14:43:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references: []
 depends_on: []
 pills: []
