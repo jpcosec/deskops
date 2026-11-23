@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T11:45:18Z'
+  at: '2026-11-23T13:16:58Z'
   authority: generated
   via: save_document_payload
 id: task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale
@@ -16,21 +16,24 @@ history:
 - task_activates
 - task_hands_to_closeout
 references:
-- desk/inbox/20261115-232023-suggestion-runtime-template-scion-ignora-resources-y-volumes-del-template-van-como-config-del-agente.md
+- deskops/dispatch.py
+- deskops/runtime/scion.py
+- tests/test_dispatch.py
+- tests/test_scion_runtime.py
+- 1858aca9036f7fab82df93d841850db70aa9ac06
+- 8c58e338
 depends_on: []
 pills: []
 files:
+- deskops/dispatch.py
 - deskops/runtime/scion.py
-- deskops/cli/commands/runtime.py
+- tests/test_dispatch.py
 - tests/test_scion_runtime.py
-- tests/fixtures/golden (ayuda de runtime template)
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
-- atom-scion-coordinator-progresses-authorized-work
+- atom-runtime-template-de-scion-escribe-image-resources-volumes-kubernetes-y-telemetry-en-scion-env-yaml-y
 ---
 
 # runtime template de scion: image, resources y volumes van en un archivo --config y el tipo de hijo sale de un flag

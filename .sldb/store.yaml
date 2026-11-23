@@ -540,6 +540,8 @@ include:
   - desk/materializations/materialization-graph-deskops-workspace-py.md
   - desk/materializations/materialization-graph-tests-test-atom-reference-convention-py.md
   - desk/materializations/materialization-identity-tests-test-command-registry-py.md
+  - desk/materializations/materialization-runtime-deskops-dispatch-py.md
+  - desk/materializations/materialization-runtime-tests-test-dispatch-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2960,6 +2962,14 @@ include:
     name: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-atom-1
   - path: desk/reviews/task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis/evidence-materialization-1.md
     name: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-materialization-1
+  - path: desk/reviews/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/evidence-tests-1.md
+    name: review-task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale-evidence-tests-1
+  - path: desk/reviews/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/evidence-commit-1.md
+    name: review-task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale-evidence-commit-1
+  - path: desk/reviews/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/evidence-atom-1.md
+    name: review-task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale-evidence-atom-1
+  - path: desk/reviews/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/evidence-materialization-1.md
+    name: review-task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
