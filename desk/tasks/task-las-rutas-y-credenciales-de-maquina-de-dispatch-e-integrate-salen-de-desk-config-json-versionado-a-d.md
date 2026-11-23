@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T11:44:42Z'
+  at: '2026-11-23T13:15:48Z'
   authority: generated
   via: save_document_payload
 id: task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d
@@ -15,6 +15,7 @@ history: []
 references:
 - desk/inbox/20261122-182810-unclear-orden-pedido-por-el-concilio-clones-primero-y-rutas-de-m-quina-en-desk-config-json.md
 - desk/inbox/20261123-034522-suggestion-dispatch-no-se-puede-partir-entre-config-json-y-config-local-json-el-proyecto-y-los-roles-no-quedan-versionados.md
+- desk/inbox/20261123-101520-suggestion-no-hay-comando-para-declarar-un-queue-job-nuevo-ni-el-bloque-integrate-en-desk-config-json.md
 depends_on: []
 pills: []
 files: []

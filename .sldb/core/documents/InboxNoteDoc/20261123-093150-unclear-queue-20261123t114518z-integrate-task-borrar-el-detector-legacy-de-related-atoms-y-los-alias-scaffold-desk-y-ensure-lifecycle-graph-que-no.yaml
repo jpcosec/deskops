@@ -1,14 +1,16 @@
 name: 20261123-093150-unclear-queue-20261123t114518z-integrate-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no
 path: desk/inbox/20261123-093150-unclear-queue-20261123t114518z-integrate-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no.md
-source_hash: f83447e602dded6a1d5bd9e75fefc4c95ef2286caa21fbd69160770ca273fefc
-content_hash: 4c9e9fabf28b1ed1adce58b2863e752e2701811aab30cd80b6047020b7735dc7
+source_hash: 44fd34b4a288504395e48218ae51fac242e3bfcb5389a0173cc2bfb37c9abcb3
+content_hash: 112d5ca103ccfa3e4e4035b571f88e630da181319480808fe0979aff41e78182
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 1917c544434c185b14f6cf4d34403835023d1acd0e6122969f204d1731da7c83
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 401ac6029c18f519f5f18e95c9996faef4e22ea5f146d4c6753f803f195ec5d2
+  ack_reason: b85472e6ba6d960fd53f99fe648ebe6ad003dca7e799799b53784afbbc6e77a6
   title: 6456a3ed93d662a96b85945519201ef42c241e5b8e4af0ea6b72f2738694cf72
   body: 687d88ea32a6ce1cca640ed1f55449812b5d7697b127745c4d31555ebcd1a7ed
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-23T13:14:43Z'
+  authority: generated
+  via: save_document_payload

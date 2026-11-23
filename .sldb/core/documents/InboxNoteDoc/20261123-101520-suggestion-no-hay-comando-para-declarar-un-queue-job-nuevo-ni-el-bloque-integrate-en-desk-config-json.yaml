@@ -1,0 +1,25 @@
+name: 20261123-101520-suggestion-no-hay-comando-para-declarar-un-queue-job-nuevo-ni-el-bloque-integrate-en-desk-config-json
+path: desk/inbox/20261123-101520-suggestion-no-hay-comando-para-declarar-un-queue-job-nuevo-ni-el-bloque-integrate-en-desk-config-json.md
+source_hash: ad54bf181cfbcb42fcf36cdc8092fcbbb415aba4156ab17d1bae67d712c1468d
+content_hash: 02f92311bce955a5e653ddcfbeaae1c146b328a3b86813b6629511d4a6b845c1
+field_hashes:
+  kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
+  sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  created_at: 366d7c61c34217c3a398126e5111bd1556c82c98a2629ab8aa5f80b5fe6b21c3
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: f34981e3fcf1dca56bc562416fd8776ea1e7a49ec53843cc01f2404d88dca927
+  ack_reason: 108b4e92adf0b05e70a2afbccdf19ae66e5df640e8064c2039fd3cd69fb3435a
+  title: da032fa4f96ab2d3d749b1b7df488a23af569223418fa249a41fe4223b3d2336
+  body: ff171333e97b3dd273b01473e098615ffc8180ee6d653daf4ef27ca5207c7f01
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+provenance:
+  by: agent
+  at: '2026-11-23T13:16:00Z'
+  authority: generated
+  via: save_document_payload

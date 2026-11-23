@@ -1,14 +1,16 @@
 name: 20261123-052735-unclear-queue-20261123t082244z-dispatch-reap-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis
 path: desk/inbox/20261123-052735-unclear-queue-20261123t082244z-dispatch-reap-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis.md
-source_hash: 3937441cfbbbb8d74618d3a125dc802576557a826b8d7758fe7cf74e31508358
-content_hash: d171c2fb89c0fc9f19333178e30bb2cce6435054ac2846c7ae37b5739df88feb
+source_hash: 82b845823b6314f086f6ff1e444a114118620be4a5194a8a1ba5f355d4f25d0e
+content_hash: 87497a2020420c8f89822497d2008a87d01c491df493595394dd053951d5311b
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 428e23c179e0f36f7766e79bfa95262df3050f44775d4c5a9dccf480e1c761c3
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: c9f2d6185af4781b6d1c063ac0c40fa21076beaef4ecb40079a6020e651a9808
+  ack_reason: a6de68ff1c9bfcdd7a9abd6d4bfac7fa857acce65c6f9d1510a3bebd3148a58a
   title: 8e76266dd639919c987437e7cb20d9a0190ed52e65a11ebce93a9436adc374bb
   body: f3588db5a0b238421e5fb900909dd276c794fe98924f4c3c74bb9800c74350fc
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-23T13:15:08Z'
+  authority: generated
+  via: save_document_payload
