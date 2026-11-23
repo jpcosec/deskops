@@ -950,6 +950,8 @@ include:
     name: run-deskops-t-6e105b58313e
   - path: runs/subagents/exec-deskops-t-25099aeb9432-testing/run.md
     name: run-deskops-t-25099aeb9432
+  - path: runs/subagents/exec-deskops-e-85084b2b474c/run.md
+    name: run-deskops-e-85084b2b474c
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
