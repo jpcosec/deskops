@@ -1,0 +1,25 @@
+name: materialization-queue-tests-test-queue-cli-py
+path: desk/materializations/materialization-queue-tests-test-queue-cli-py.md
+source_hash: 97ba2e855fdf773b6f7942c996a37a28b5aad0e5877a17afa9fba41e9d1ed328
+content_hash: 354d66430c95974c06035789ccbf2a377bdf907207560046bb02618a2d6d087a
+field_hashes:
+  id: 11b344ec54935dbe147dcc0f6dd9fc52fbec5a262fed9f78ad794a65646d7848
+  title: b7f866796c872e60b275262adcce0a4a6cf7212fe4062b87e4f21e714982ed58
+  source_atoms: eb4f505ad2b92aacc18f6ce241e37157823037d04bdaf1b7625c858d6819478d
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 570df549f05dc4e2147cc971e1fe3e4a0ef02b37b7b475a71f646aff0574de70
+  intent: 65c59e7317ea6d6b7de54f1c429afc4c1f9ea7a550ac4712ad8831c5dffc3c11
+  validation: 903e773add105fde2bb6dc7a453d674742bb74107ba82988e9361e48c864fec1
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T00:12:41Z'
+  authority: generated
+  via: create_document

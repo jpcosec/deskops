@@ -1,0 +1,25 @@
+name: materialization-queue-tests-fixtures-golden-help-deskops-queue-job-set-txt
+path: desk/materializations/materialization-queue-tests-fixtures-golden-help-deskops-queue-job-set-txt.md
+source_hash: 2c16e3121663c188e1b66384189a4b3697ad0b4587849026685d5c6145acd0d1
+content_hash: 5e8f2d30ca04f77d40469cc29f1de6181ab99e2888cf3c90d387b2f84d580144
+field_hashes:
+  id: a450996d4d2c5b7759a47580b61d69146dd4f0bfe50743c51e7a55e1417e1e27
+  title: a153ef58e97181c369d8cad1bafc7942c093e24a3335e02ca36f5103ae36c727
+  source_atoms: eb4f505ad2b92aacc18f6ce241e37157823037d04bdaf1b7625c858d6819478d
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 712bbecb0467a4ff287a5a64952259c077eb8f012a971825a7b0ac6f363b676a
+  intent: c2703be2a7634547a0389eae69329de99cf339b291f8baaa2fd279fb68aeefaa
+  validation: 903e773add105fde2bb6dc7a453d674742bb74107ba82988e9361e48c864fec1
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T00:11:57Z'
+  authority: generated
+  via: create_document

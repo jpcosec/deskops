@@ -503,6 +503,17 @@ include:
   - desk/materializations/materialization-atoms-sk-atoms-atom-desk-health-is-measured-by-cli-diagnostics-md.md
   - desk/materializations/materialization-atoms-desk-atoms-atom-desk-health-is-workspace-integrity-state-md.md
   - desk/materializations/materialization-atoms-desk-atoms-atom-desk-repair-is-owned-by-deskops-md.md
+  - desk/materializations/materialization-queue-deskops-cli-registry-py.md
+  - desk/materializations/materialization-queue-deskops-data-templates-config-json.md
+  - desk/materializations/materialization-queue-deskops-queue-py.md
+  - desk/materializations/materialization-queue-docs-operator-manual-md.md
+  - desk/materializations/materialization-queue-tests-fixtures-golden-help-deskops-queue-txt.md
+  - desk/materializations/materialization-queue-tests-fixtures-golden-help-deskops-queue-job-txt.md
+  - desk/materializations/materialization-queue-tests-fixtures-golden-help-deskops-queue-job-set-txt.md
+  - desk/materializations/materialization-queue-tests-fixtures-golden-scaffold-init-json.md
+  - desk/materializations/materialization-queue-tests-fixtures-golden-scaffold-update-json.md
+  - desk/materializations/materialization-queue-tests-test-command-registry-py.md
+  - desk/materializations/materialization-queue-tests-test-queue-cli-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2749,6 +2760,14 @@ include:
     name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-preflight-3
   - path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/bundle-3.md
     name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-bundle-3
+  - path: desk/reviews/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de/evidence-tests-1.md
+    name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-evidence-tests-1
+  - path: desk/reviews/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de/evidence-commit-1.md
+    name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-evidence-commit-1
+  - path: desk/reviews/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de/evidence-atom-1.md
+    name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-evidence-atom-1
+  - path: desk/reviews/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de/evidence-materialization-1.md
+    name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

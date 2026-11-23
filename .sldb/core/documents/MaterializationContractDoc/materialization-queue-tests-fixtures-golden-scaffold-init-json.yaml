@@ -1,0 +1,25 @@
+name: materialization-queue-tests-fixtures-golden-scaffold-init-json
+path: desk/materializations/materialization-queue-tests-fixtures-golden-scaffold-init-json.md
+source_hash: 623443626f19de48a1131052419b9b953c6be5e9ad8722961f2a90c0384f3388
+content_hash: ffbed843c13bd2d720764469edb60fdd6a59f1bdd34caa607b24bfd40b426d4c
+field_hashes:
+  id: 42124c787c60742595d6088939c251aae8ba4b8c558d2717d3c10fbf4202b22e
+  title: 941a233e6476191312f16cfb73b21fa28810be446b5ff8d04f2a7ea697508271
+  source_atoms: eb4f505ad2b92aacc18f6ce241e37157823037d04bdaf1b7625c858d6819478d
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 2889cdecb60daabef2ca1cb7f16ab1928616cc0808da05ce8fc5f1577f5d9e81
+  intent: fbdb8cfd01153c6c33369d33b51808e01a8856b644ef0cd1e7ec64b524a146a8
+  validation: 903e773add105fde2bb6dc7a453d674742bb74107ba82988e9361e48c864fec1
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T00:12:08Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,25 @@
+name: materialization-queue-deskops-data-templates-config-json
+path: desk/materializations/materialization-queue-deskops-data-templates-config-json.md
+source_hash: bf77407e1dc99e1119792636325c6338a1897cbca7921cddb978f33125d4c6e0
+content_hash: 8b5cabeb6638dca34b8a3f8524cbd0c5597f5ec70ea2975508d735222db8cdcf
+field_hashes:
+  id: 526a2c96df1cdd13bb71cf06fc8048492bde11e7ffec06f021aad7ce07b0ae3c
+  title: 80ea9d6c47dd65f1f0b189f247b7d3d3dcfc0d45184366e6d27e4da920315272
+  source_atoms: eb4f505ad2b92aacc18f6ce241e37157823037d04bdaf1b7625c858d6819478d
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 04a2c557a0f8b9b029a1817f49909e7d43d9e0b5a13120387c46ec169e129d69
+  intent: 15cb7ddf1f8918de2385a278519859d68cf85e1aa3d1f8bb593f444fe2783f1e
+  validation: 903e773add105fde2bb6dc7a453d674742bb74107ba82988e9361e48c864fec1
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T00:11:01Z'
+  authority: generated
+  via: create_document

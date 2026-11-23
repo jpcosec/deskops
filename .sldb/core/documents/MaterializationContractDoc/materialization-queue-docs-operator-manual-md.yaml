@@ -1,0 +1,25 @@
+name: materialization-queue-docs-operator-manual-md
+path: desk/materializations/materialization-queue-docs-operator-manual-md.md
+source_hash: c774f5ca5350a143ff8061eda84433a3fd9dcc6b19399d5f3028fc32e2c98b20
+content_hash: b83136168f45c55b97dd2a40005d6170ba479323737d0cb9772da908714738f8
+field_hashes:
+  id: 0a85f64f914042101916624f7493e04489ffca4912d37439762682b2bddf2aed
+  title: 0187a4e5bd19e722157db93fad3a75f07cb692ee10396f8f67f56d766c1570bb
+  source_atoms: eb4f505ad2b92aacc18f6ce241e37157823037d04bdaf1b7625c858d6819478d
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 3bed947441017806533d525d02305a7a0ba4430336a3781093dbc5810d8c74a6
+  intent: 7ba83a8f0a3375e610dade07e826a3bc0a056afbda8866060040a94e8520a391
+  validation: 903e773add105fde2bb6dc7a453d674742bb74107ba82988e9361e48c864fec1
+  tags: e55f80d895eb136799f811b796e1a06b7c29418e35e702be20a1aceecd16516d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:queue
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T00:11:23Z'
+  authority: generated
+  via: create_document

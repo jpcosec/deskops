@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T22:27:06Z'
+  at: '2026-11-23T00:10:39Z'
   authority: generated
   via: save_document_payload
 id: task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de
@@ -10,7 +10,7 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
+current_node: ritual-testing
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-a5cf682dce3f FALLA sobre e95bdb13.
@@ -45,14 +45,41 @@ history:
   y tests/test_queue_cli.py, y la suite con -n 4;
 
   - commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
-references: []
+- task_activates
+references:
+- deskops/cli/registry.py
+- deskops/data/templates/config.json
+- deskops/queue.py
+- docs/operator-manual.md
+- tests/fixtures/golden/help/deskops_queue.txt
+- tests/fixtures/golden/help/deskops_queue_job.txt
+- tests/fixtures/golden/help/deskops_queue_job_set.txt
+- tests/fixtures/golden/scaffold/init.json
+- tests/fixtures/golden/scaffold/update.json
+- tests/test_command_registry.py
+- tests/test_queue_cli.py
+- b37b57cdf5a4f73e8e40931edfad11f306ce7a5c
+- e95bdb13
 depends_on: []
 pills: []
-files: []
+files:
+- CHANGELOG.md
+- deskops/cli/registry.py
+- deskops/data/templates/config.json
+- deskops/queue.py
+- docs/operator-manual.md
+- tests/fixtures/golden/help/deskops_queue.txt
+- tests/fixtures/golden/help/deskops_queue_job.txt
+- tests/fixtures/golden/help/deskops_queue_job_set.txt
+- tests/fixtures/golden/scaffold/init.json
+- tests/fixtures/golden/scaffold/update.json
+- tests/test_command_registry.py
+- tests/test_queue_cli.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-deskops-queue-job-set-edita-los-trabajos-de-la-cola
 ---
 
 # La cola reintenta el reap que espera (exit 3), y hay un comando de deskops para editar los trabajos de la cola en desk/config.json
