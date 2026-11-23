@@ -1514,3 +1514,88 @@ def test_closeout_no_run_leaves_every_rundoc_alone(
 
     assert rc == 0, capsys.readouterr().out
     assert path.read_text(encoding="utf-8") == before
+
+
+def _manual_close(root: Path, *extra: str) -> int:
+    return _closeout_main(root, "--no-run", "--reason", "no subagent ran", *extra)
+
+
+def test_closeout_commit_leaves_a_foreign_untracked_sldb_file_untracked(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    foreign = ".sldb/core/documents/foreign.yaml"
+    _write(root / foreign, "id: foreign\n")
+
+    rc = _manual_close(root, "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain", "--untracked-files=all", "--", ".sldb") == f"?? {foreign}"
+    assert foreign not in _git(root, "show", "--name-only", "--format=", "HEAD")
+
+
+def test_closeout_commit_leaves_a_tracked_sldb_change_made_before_unstaged(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    tracked = ".sldb/core/documents/tracked.yaml"
+    _write(root / tracked, "id: tracked\n")
+    _git(root, "add", tracked)
+    _git(root, "commit", "-q", "-m", "track")
+    _write(root / tracked, "id: tracked\nedited: true\n")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    rc = _manual_close(root, "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "diff", "--name-only", "--", ".sldb") == tracked
+    assert _git(root, "diff", "--cached", "--name-only", "--", ".sldb") == ""
+    assert tracked not in _git(root, "show", "--name-only", "--format=", "HEAD")
+
+
+def test_closeout_commit_without_paths_commits_the_task_and_the_board(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    from closeout_desk import store_repo
+    from deskops.operations import DeskopsOperations
+
+    root = store_repo(lifecycle_desk)
+    task_id = DeskopsOperations(root).create_task_bundle(
+        {
+            "title": "Sin paths",
+            "goal": "g",
+            "scope": "s",
+            "implementation_path": "i",
+            "done_when": "d",
+            "validation": ["echo ok"],
+            "task_type": "task.external",
+        }
+    ).task_id
+    assert main(["edit", "task", task_id, "references", '["https://example.com/e"]', "--root", str(root)]) == 0
+    _git(root, "add", "-A")
+    _git(root, "commit", "-q", "-m", "task")
+    assert main(["closeout", "verify", "--task", task_id, "--root", str(root)]) == 0
+    capsys.readouterr()
+
+    rc = main(["closeout", "commit", "--root", str(root), "--task", task_id, "--no-run", "--reason", "sin paths"])
+
+    out = capsys.readouterr().out
+    assert rc == 0, out
+    assert "Nothing staged" not in out
+    changed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
+    assert f"desk/tasks/{task_id}.md" in changed
+    assert "desk/tasks/Board.md" in changed
+
+
+def test_closeout_commit_without_paths_and_nothing_to_stage_lists_modified_paths(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    (root / "loose.txt").write_text("x\n", encoding="utf-8")
+
+    rc = _manual_close(root)
+
+    out = capsys.readouterr().out
+    assert rc == 1
+    assert "Nothing staged" in out and "?? loose.txt" in out and "--paths" in out

@@ -20,6 +20,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 from typing import Any
 from typing import TYPE_CHECKING
 
@@ -97,6 +98,10 @@ def target_covers(target: str, path: str) -> bool:
     if not normalized_target or not normalized_path:
         return False
     return normalized_path == normalized_target or normalized_path.startswith(f"{normalized_target}/")
+
+
+class _NothingStaged(RuntimeError):
+    """No path to commit: reported as an exit-1 outcome, with the desk restored."""
 
 
 class ClosureCommitError(RuntimeError):
@@ -751,6 +756,7 @@ class ClosureService:
         run_gates: bool = True,
     ) -> ClosureOutcome:
         self._gate_notes = []
+        sldb_before = self._sldb_snapshot()
         task_path = task_path or self._task_path(task_id)
         task_rel = self._relative(task_path)
         board_path = self.desk_root / "tasks" / "Board.md"
@@ -762,19 +768,11 @@ class ClosureService:
             if gate_outcome is not None:
                 return gate_outcome
 
-        staged_before = self._git("diff", "--cached", "--name-only", check=False)
         if explicit_paths:
             for path in paths:
                 self._git("add", "-A", "--", path, check=False)
             for path in extra_stage_paths or []:
                 self._git("add", "-A", "--", path, check=False)
-        elif not staged_before:
-            if route == "manual":
-                return ClosureOutcome(1, ["Nothing staged and no paths given. Pass --paths."])
-            return ClosureOutcome(
-                1,
-                ["Nothing staged and no paths given. Pass --paths or record 'touched' in run.yaml."],
-            )
 
         commit_paths: list[str] = []
         if explicit_paths:
@@ -816,10 +814,15 @@ class ClosureService:
                 if task_bytes is not None:
                     doc_access.untrack_doc(self.root, task_path)
 
-                sldb_status = self._git("status", "--porcelain", "--", ".sldb", check=False)
-                if sldb_status:
-                    self._git("add", "-A", "--", ".sldb", check=False)
-                    add_commit_path(".sldb")
+                # Only what this close wrote: never a .sldb file that was already untracked
+                # (or already modified and left alone) before it started.
+                after = self._sldb_snapshot()
+                tokens = [task_id, *(Path(item).stem for item in [*paths, *(extra_stage_paths or [])] if Path(item).stem)]
+                for sldb_rel, code in after.items():
+                    if sldb_before.get(sldb_rel) == code and not self._sldb_belongs_to_close(sldb_rel, tokens):
+                        continue
+                    self._git("add", "-A", "--", sldb_rel, check=False)
+                    add_commit_path(sldb_rel)
 
                 # The store this commit publishes may register RunDocs of other runs whose
                 # run.md git has never seen; a clean clone could not build that store.
@@ -854,6 +857,14 @@ class ClosureService:
                         add_commit_path(task_rel)
                     else:
                         paths_to_remove.append(task_path)
+
+                if not explicit_paths and not self._git("diff", "--cached", "--name-only", check=False):
+                    modified = self._git("status", "--porcelain", "--untracked-files=all", check=False)
+                    hint = "Pass --paths" if route == "manual" else "Pass --paths or record 'touched' in run.yaml"
+                    raise _NothingStaged(
+                        f"Nothing staged and no paths given. {hint}."
+                        + (f"\nModified paths (git status --porcelain):\n{modified}" if modified else "\nNo modified paths.")
+                    )
 
                 message = subject + "\n\n" + "\n".join(trailers) + "\n"
 
@@ -896,6 +907,8 @@ class ClosureService:
                 task_path.write_bytes(task_bytes)
             if board_before is not None:
                 board_path.write_text(board_before, encoding="utf-8")
+            if isinstance(sys.exc_info()[1], _NothingStaged):
+                return ClosureOutcome(1, [str(sys.exc_info()[1])])
             raise
 
         alert_dangling(task_rel, dangling)
@@ -1767,6 +1780,47 @@ class ClosureService:
             f"desk/tasks/{task_id}",
             f"desk/tasks/{task_id}.md",
         }
+
+    def _sldb_belongs_to_close(self, rel: str, tokens: list[str]) -> bool:
+        """Store bookkeeping and the close's own documents ride in even when written earlier.
+
+        ``store.yaml``, the store index and the model registry only describe what the store
+        holds. A document projection (``closeout verify`` receipts, the AtomDoc of an atom the
+        close was told to commit) belongs to the close when its name or body names the task or
+        a stem of an explicit path. Any other .sldb file already changed before the close is
+        somebody else's work and stays as it was.
+        """
+        if rel in (".sldb/store.yaml", ".sldb/core/store_index.yaml") or rel.startswith(".sldb/core/models/"):
+            return True
+        if not rel.startswith(".sldb/core/documents/"):
+            return False
+        try:
+            body = (self.root / rel).read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            body = ""
+        return any(token in rel or token in body for token in tokens)
+
+    def _sldb_snapshot(self) -> dict[str, str]:
+        """Path -> porcelain status code for everything under ``.sldb`` (untracked files listed one by one)."""
+        result = subprocess.run(
+            ["git", "status", "--porcelain", "-z", "--untracked-files=all", "--", ".sldb"],
+            cwd=self.root,
+            capture_output=True,
+            text=True,
+        )
+        entries = result.stdout.split("\0")
+        snapshot: dict[str, str] = {}
+        index = 0
+        while index < len(entries):
+            entry = entries[index]
+            index += 1
+            if len(entry) < 4:
+                continue
+            code, path = entry[:2], entry[3:]
+            if code[0] in "RC":
+                index += 1  # the origin path follows a rename/copy entry
+            snapshot[path] = code
+        return snapshot
 
     def _restore_index(self, commit_paths: list[str], task_rel: str) -> None:
         for path in dict.fromkeys([*commit_paths, task_rel]):
