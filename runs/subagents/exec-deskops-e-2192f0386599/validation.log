@@ -1,0 +1,2 @@
+TMPDIR=/tmp pytest -q -p no:cacheprovider tests/test_queue_cli.py tests/test_queue.py -> exit 0 (21 passed)
+Full suite -n 4: no terminó (proceso en segundo plano sin salida); omitida por indicación del coordinador.

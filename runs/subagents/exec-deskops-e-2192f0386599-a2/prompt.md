@@ -1,7 +1,17 @@
+Task: task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de
+Title: La cola reintenta el reap que espera (exit 3), y hay un comando de deskops para editar los trabajos de la cola en desk/config.json
+Status: active
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T00:10:39Z'
+  at: '2026-11-22T22:27:06Z'
   authority: generated
   via: save_document_payload
 id: task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de
@@ -10,7 +20,7 @@ summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
+current_node: ritual-execution
 history:
 - task_activates
 - 'task_returns_to_execution: Tester deskops-t-a5cf682dce3f FALLA sobre e95bdb13.
@@ -45,41 +55,14 @@ history:
   y tests/test_queue_cli.py, y la suite con -n 4;
 
   - commitear desde tu worktree con ''git commit -- <rutas>'' y el trailer Task-Id.'
-- task_activates
-references:
-- deskops/cli/registry.py
-- deskops/data/templates/config.json
-- deskops/queue.py
-- docs/operator-manual.md
-- tests/fixtures/golden/help/deskops_queue.txt
-- tests/fixtures/golden/help/deskops_queue_job.txt
-- tests/fixtures/golden/help/deskops_queue_job_set.txt
-- tests/fixtures/golden/scaffold/init.json
-- tests/fixtures/golden/scaffold/update.json
-- tests/test_command_registry.py
-- tests/test_queue_cli.py
-- b37b57cdf5a4f73e8e40931edfad11f306ce7a5c
-- e95bdb13
+references: []
 depends_on: []
 pills: []
-files:
-- CHANGELOG.md
-- deskops/cli/registry.py
-- deskops/data/templates/config.json
-- deskops/queue.py
-- docs/operator-manual.md
-- tests/fixtures/golden/help/deskops_queue.txt
-- tests/fixtures/golden/help/deskops_queue_job.txt
-- tests/fixtures/golden/help/deskops_queue_job_set.txt
-- tests/fixtures/golden/scaffold/init.json
-- tests/fixtures/golden/scaffold/update.json
-- tests/test_command_registry.py
-- tests/test_queue_cli.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-deskops-queue-job-set-edita-los-trabajos-de-la-cola
+atoms: []
 ---
 
 # La cola reintenta el reap que espera (exit 3), y hay un comando de deskops para editar los trabajos de la cola en desk/config.json
@@ -119,3 +102,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los tests nuevos pasan y desk/config.json de deskops tiene retry_exit_codes [3] en dispatch-reap.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-2192f0386599-a2`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-2192f0386599-a2
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

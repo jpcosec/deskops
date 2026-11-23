@@ -1,0 +1,3 @@
+registry+goldens+queue tests (-n 4): 30 passed, 1 failed (queue job group undeclared) -> fixed
+full suite -n 4: 2 failed (scaffold goldens, config default changed) -> regenerated with --update-golden
+tests/test_scaffold_golden.py: 3 passed (exit 0); tests/test_command_registry.py passed
