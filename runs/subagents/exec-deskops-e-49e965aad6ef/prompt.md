@@ -1,32 +1,36 @@
+Task: task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale
+Title: El runtime profile traduce los tools del RoleDoc al vocabulario de claude y el alias de modelo sale del RoleDoc
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Effective atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T09:09:39Z'
+  at: '2026-11-16T06:03:30Z'
   authority: generated
   via: save_document_payload
 id: task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
-- deskops/cli/commands/runtime.py
-- deskops/cli/registry.py
-- deskops/materializers/runtime_profiles.py
-- deskops/runtime/scion.py
-- tests/test_runtime_profiles.py
-- tests/test_scion_runtime.py
-- 89777a0e0618be2cbfc5596d5ce2ad215d5389bf
+- desk/inbox/20261116-002453-suggestion-piloto-scion-fase-1-brechas-del-coordinador-y-del-ejecutor-claude-en-contenedor.md
 depends_on: []
 pills: []
 files:
-- deskops/cli/commands/runtime.py
-- deskops/cli/registry.py
 - deskops/materializers/runtime_profiles.py
 - deskops/runtime/scion.py
 - tests/test_runtime_profiles.py
@@ -35,7 +39,8 @@ task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-deriva-el-alias-de-model
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
 ---
 
 # El runtime profile traduce los tools del RoleDoc al vocabulario de claude y el alias de modelo sale del RoleDoc
@@ -78,3 +83,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los casos del paso 3 pasan; para el harness pi los tests existentes siguen verdes sin cambios.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-49e965aad6ef`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-49e965aad6ef
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

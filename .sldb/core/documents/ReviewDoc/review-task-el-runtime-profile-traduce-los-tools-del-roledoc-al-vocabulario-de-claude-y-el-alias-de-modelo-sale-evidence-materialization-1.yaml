@@ -1,0 +1,37 @@
+name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-materialization-1
+path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/evidence-materialization-1.md
+source_hash: 78951d74b0a65d19c2dac263ba4c5ad121b31c91d3f0519129f53e741be73de6
+content_hash: 9ffd5bc791e4acdbeae9d29c3b5090b7ce72c1af784a84c54604df90776063e1
+field_hashes:
+  id: a912b38b2b5a4bed46eed7024dcdf6c306830ded788af5b768d9f662d24c62b9
+  title: a78064af159f03eb458624943777b6bf3ebce72103f154268bbf0c75dffa27a2
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 99b984011f7ec86bf61d4f3dc270e4cccffd2de1d1c15a34577072274c707b17
+  subject: bc3936d4c4c8f2792f9e8478642bb727687a0e131e8dad39bd053eb9d92076da
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 836dd61b3996f684622bb3c7a858279e1653dda7eca219379260727052823eac
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 9df9e14332ed1ec8dfea1f59fd8c1e5d08208f48975effa82a4cfe8cb6453d8f
+  created_at: 6a505c72aba3320ac2e083235da840eb1b5f09d6e3312ed5aff8af37cdadd071
+  disposed_at: 6a505c72aba3320ac2e083235da840eb1b5f09d6e3312ed5aff8af37cdadd071
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: e8874f9149ebe44e4fc9719108607fa306067e565e1d7847e316bf78dbc21b59
+  disposition: f6bc0ac7291e6e2c12d3fb150ead38dd09849ebeecfc439daae1150a26b89a6f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T09:11:07Z'
+  authority: generated
+  via: create_document
