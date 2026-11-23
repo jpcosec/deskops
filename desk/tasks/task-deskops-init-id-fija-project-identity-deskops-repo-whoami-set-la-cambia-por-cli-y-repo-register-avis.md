@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T10:34:41Z'
+  at: '2026-11-23T12:34:21Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis
@@ -15,19 +15,18 @@ history:
 - task_activates
 - task_hands_to_closeout
 references:
-- desk/inbox/20261122-234848-suggestion-deskops-init-fija-project-identity-con-el-nombre-de-la-carpeta-y-no-hay-comando-para-cambiarlo.md
-- desk/inbox/20261122-222005-unclear-de-labchile-chatbots-no-hay-verbo-para-cambiar-project-identity-editar-la-portada-de-pills-ni-fusionar-dos-desks.md
+- tests/test_command_registry.py
+- 9162620670c432e13f5dc02e5dee9f27e9d3a889
+- b5725369
 depends_on: []
 pills: []
 files:
-- deskops/workspace.py
-- deskops/cli/registry.py
-- deskops/cli/commands/repo.py
-- tests/test_repo_identity.py
+- tests/test_command_registry.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-deskops-init-id-fija-la-project-identity-repo-whoami-set-la-cambia-por-cli-y-repo-register-avisa
 ---
 
 # deskops init --id fija project_identity, deskops repo whoami --set la cambia por CLI y repo register avisa si --id no coincide con la identidad del desk

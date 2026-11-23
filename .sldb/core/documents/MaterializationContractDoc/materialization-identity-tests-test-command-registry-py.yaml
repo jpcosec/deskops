@@ -1,0 +1,25 @@
+name: materialization-identity-tests-test-command-registry-py
+path: desk/materializations/materialization-identity-tests-test-command-registry-py.md
+source_hash: 3a9d1c09e5ad8af8c93f419d261e79aee509d1b3b048ade20e1953be52b7be67
+content_hash: cf84cc9f54b6e5a7957c18f41fe680b1bdf1bba97ad968deba2d356a6d8d9e6d
+field_hashes:
+  id: 8e4e8e5351a829178915e5b45142162d36901de71d1c2623e3d5029c76ed810d
+  title: 06b8cfb9e6ba3ab9f2e96d536e415bbbc7414bbea99d765b5bf70cf3ff48b954
+  source_atoms: c8c8346f81ba940ab4409296e660938d7abd5d02144831a94305f419dd4cd2ed
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: a3be59043154783f5d59fd29b77ed96f4c43359aa2cdc5a032f2ee4cb7d4f091
+  intent: c68cdcd1464b88f87a4f3ac4167c63c4c5b965819a5c4be86c955470f3b35d52
+  validation: 58757e8ae29e17687ab2da47f719e1343a3d7cba0f7b3aa88a673663c6837d2c
+  tags: 7949a3576e914d92b081efaaae84e41239d8f8b22c53a58e0c8350a13fbc6152
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:identity
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-23T12:34:33Z'
+  authority: generated
+  via: create_document

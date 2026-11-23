@@ -539,6 +539,7 @@ include:
   - desk/materializations/materialization-graph-deskops-lifecycle-py.md
   - desk/materializations/materialization-graph-deskops-workspace-py.md
   - desk/materializations/materialization-graph-tests-test-atom-reference-convention-py.md
+  - desk/materializations/materialization-identity-tests-test-command-registry-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2943,6 +2944,14 @@ include:
     name: review-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no-evidence-atom-1
   - path: desk/reviews/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/evidence-materialization-1.md
     name: review-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no-evidence-materialization-1
+  - path: desk/reviews/task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis/evidence-tests-1.md
+    name: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-tests-1
+  - path: desk/reviews/task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis/evidence-commit-1.md
+    name: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-commit-1
+  - path: desk/reviews/task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis/evidence-atom-1.md
+    name: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-atom-1
+  - path: desk/reviews/task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis/evidence-materialization-1.md
+    name: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
