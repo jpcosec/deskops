@@ -522,9 +522,8 @@ def start(root: Path, role: str, task_id: str) -> int:
         workspace=cfg.workspace,
         template=role_name,
         harness_auth=role_cfg.harness_auth,
+        config=str(target / "scion-env.yaml") if (target / "scion-env.yaml").is_file() else role_cfg.env_config,
     )
-    if role_cfg.env_config:
-        argv += ["--config", role_cfg.env_config]
     started = _scion(argv)
     if started.returncode != 0:
         print(started.stderr.strip())

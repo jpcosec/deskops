@@ -124,7 +124,10 @@ def test_start_executor(env: Env, tmp_path: Path) -> None:
     )
     assert start[3:9] == ["--type", "disp-executor", "--project", "proj", "--workspace", str(tmp_path)]
     assert "--harness-auth" in start and "oauth-token" in start
-    assert start[start.index("--config") + 1] == str(tmp_path / "env.yaml")
+    materialized = tmp_path / "templates" / "disp-executor" / "scion-env.yaml"
+    assert materialized.is_file()
+    assert start[start.index("--config") + 1] == str(materialized)
+    assert start.index("--config") == start.index("--workspace") + 2
     assert "deskops.role=executor" in start and f"deskops.task_id={TASK}" in start
     assert (tmp_path / "templates" / "disp-executor" / "scion-agent.yaml").is_file()
     assert (env.root / run_dir / "run.md").is_file()
@@ -150,7 +153,7 @@ def test_start_tester_run_dir_has_testing_suffix(env: Env, tmp_path: Path) -> No
     assert name.startswith("deskops-t-") and not name.endswith("-testing")
     run_dir = f"runs/subagents/exec-{name}-testing"
     assert result.stdout.strip() == f"agente {name} run_dir {run_dir}"
-    assert "--config" not in start
+    assert start[start.index("--config") + 1] == str(tmp_path / "templates" / "disp-tester" / "scion-env.yaml")
     assert (env.root / run_dir / "prompt.md").is_file() and (env.root / run_dir / "run.md").is_file()
     assert ["templates", "sync", str((tmp_path / "templates" / "disp-tester").resolve()), "--project", "proj"] in env.calls()
     assert (tmp_path / "templates" / "disp-tester").is_dir()

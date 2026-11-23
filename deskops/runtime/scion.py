@@ -26,6 +26,8 @@ from pathlib import Path
 import re
 from typing import Any
 
+import yaml
+
 from sldb.runtime.validation import extract_model_data
 from sldb.store.graph.language.contract_hash import contract_hash
 from sldb.store.hashing import hash_fields_with_map
@@ -110,8 +112,9 @@ SCION_CONTEXT_KEYS: tuple[str, ...] = ("project", "workspace_root", "desk_root",
 #: Optional container keys: how this machine runs the agent, not where the desk is.
 #: ``memory_limit``/``cpu_limit`` become ``resources.limits``; ``shared_paths`` are host
 #: paths bound at the same path (e.g. ``/dev/shm``, so tests share the host's tmpfs and
-#: its lock files); ``env`` adds static variables (e.g. ``TMPDIR``). Omitted: no change.
-SCION_CONTEXT_OPTIONAL_KEYS: tuple[str, ...] = ("memory_limit", "cpu_limit", "shared_paths", "env")
+#: its lock files); ``env`` adds static variables (e.g. ``TMPDIR``). ``image``, ``kubernetes`` and
+#: ``telemetry`` pass through as-is to ``scion-env.yaml``. Omitted: no change.
+SCION_CONTEXT_OPTIONAL_KEYS: tuple[str, ...] = ("memory_limit", "cpu_limit", "shared_paths", "env", "image", "kubernetes", "telemetry")
 
 _PROJECT_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 _MEMORY_RE = re.compile(r"^[0-9]+(\.[0-9]+)?([KMGT]i?)?$")
@@ -174,6 +177,16 @@ def _validate_container_keys(context: dict[str, Any], workspace_root: Path) -> d
                 raise ValueError(f"context env {name} must be a string")
             env[name] = item
         resolved["env"] = env
+    if "image" in context:
+        value = context["image"]
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"context image must be a non-empty string, got {value!r}")
+        resolved["image"] = value.strip()
+    for key in ("kubernetes", "telemetry"):
+        if key in context:
+            if not isinstance(context[key], dict):
+                raise ValueError(f"context {key} must be an object")
+            resolved[key] = context[key]
     return resolved
 
 
@@ -298,13 +311,13 @@ def scion_start_argv(
     workspace: str,
     template: str,
     harness_auth: str | None = DEFAULT_HARNESS_AUTH,
-    env_config: str | None = None,
+    config: str | None = None,
 ) -> list[str]:
     """The explicit native Scion start argv for one deterministic child identity.
 
     ``harness_auth`` is the auth the child's template selects (``auth_selectedType``);
     by default ``oauth-token``, the claude template default. ``None`` leaves
-    ``--harness-auth`` out so the child's template decides alone. ``env_config`` is the
+    ``--harness-auth`` out so the child's template decides alone. ``config`` is the
     path of the template's ``scion-env.yaml``; it is passed as ``--config`` because Scion
     only applies image/resources/volumes from there.
     """
@@ -323,9 +336,9 @@ def scion_start_argv(
         project,
         "--workspace",
         workspace,
+        *(["--config", config] if config else []),
         *(["--harness-auth", harness_auth] if harness_auth is not None else []),
         "--non-interactive",
-        *(["--config", env_config] if env_config else []),
     ]
     for key, value in (identity.get("labels") or {}).items():
         argv += ["--label", f"{key}={value}"]
@@ -507,6 +520,8 @@ def scion_template_files(
             lines.append(f"  {key}: {_yaml_scalar(value)}")
         for key, value in (runtime_context.get("env") or {}).items():
             lines.append(f"  {key}: {_yaml_scalar(value)}")
+        if "image" in runtime_context:
+            env_lines.append(f"image: {_yaml_scalar(runtime_context['image'])}")
         env_lines.append("volumes:")
         for path in (runtime_context["workspace_root"], *(runtime_context.get("shared_paths") or [])):
             env_lines.append(f"  - source: {_yaml_scalar(path)}")
@@ -516,6 +531,11 @@ def scion_template_files(
             env_lines.append("resources:")
             env_lines.append("  limits:")
             env_lines.extend(f"    {key}: {_yaml_scalar(value)}" for key, value in limits)
+        for key in ("kubernetes", "telemetry"):
+            if key in runtime_context:
+                env_lines.extend(
+                    yaml.safe_dump({key: runtime_context[key]}, sort_keys=False, default_flow_style=False).splitlines()
+                )
 
     omitted: list[str] = []
     fallback_models = role_doc.get("fallback_models") or []

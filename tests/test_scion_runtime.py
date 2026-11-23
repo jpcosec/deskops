@@ -849,8 +849,24 @@ def test_start_argv_adds_config_only_when_given(tmp_path: Path) -> None:
     identity = scion_child_identity(_write_task(tmp_path, "task"), "executor")
     common = dict(prompt="Go.", project="p", workspace="/workspace", template="ir-executor")
     assert "--config" not in scion_start_argv(identity, **common)
-    argv = scion_start_argv(identity, **common, env_config="/x/scion-env.yaml")
+    argv = scion_start_argv(identity, **common, config="/x/scion-env.yaml")
     assert argv[argv.index("--config") + 1] == "/x/scion-env.yaml"
+    assert argv.index("--config") == argv.index("--workspace") + 2
+
+
+def test_context_passes_image_kubernetes_and_telemetry_to_env_config(tmp_path: Path) -> None:
+    context, _ = _context(tmp_path)
+    context.update(image="reg/img:1", kubernetes={"namespace": "ns"}, telemetry={"enabled": True})
+    out = tmp_path / "t"
+    materialize_scion_template(ROOT, "deskops-executor", harness="claude", out_dir=out, context=context)
+    env_config = yaml.safe_load((out / "scion-env.yaml").read_text(encoding="utf-8"))
+    assert env_config["image"] == "reg/img:1"
+    assert env_config["kubernetes"] == {"namespace": "ns"}
+    assert env_config["telemetry"] == {"enabled": True}
+    agent = yaml.safe_load((out / "scion-agent.yaml").read_text(encoding="utf-8"))
+    assert not {"image", "kubernetes", "telemetry"} & set(agent)
+    with pytest.raises(ValueError, match="image"):
+        validate_scion_context({**context, "image": ""})
 
 
 def test_env_config_file_is_written_beside_the_template_and_overwritten(tmp_path: Path) -> None:
