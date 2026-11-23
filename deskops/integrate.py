@@ -17,6 +17,7 @@ import shutil
 import signal
 import subprocess
 import tempfile
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterator
@@ -192,11 +193,52 @@ def _suite_lock(path: str | None) -> Iterator[None]:
             fcntl.flock(handle, fcntl.LOCK_UN)
 
 
+def _pid_alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
+def _clean_stale_integrate_dirs(own: Path, max_age: float) -> None:
+    """Remove ``deskops-integrate-*`` temp dirs left by dead runs (never ``own`` nor a live pid's)."""
+    base = Path(tempfile.gettempdir())
+    try:
+        candidates = sorted(base.glob("deskops-integrate-*"))
+    except OSError:
+        return
+    for path in candidates:
+        try:
+            if not path.is_dir() or path.resolve() == own.resolve():
+                continue
+            owner = path / "owner.pid"
+            if owner.is_file():
+                try:
+                    pid = int(owner.read_text(encoding="utf-8").strip())
+                except (ValueError, OSError):
+                    continue
+                if pid <= 0 or _pid_alive(pid):
+                    continue
+            elif time.time() - path.stat().st_mtime <= max_age:
+                continue
+            shutil.rmtree(path, ignore_errors=True)
+            print(f"limpieza: {path}")
+        except OSError:
+            continue
+
+
 def _run_suite(cfg: IntegrateConfig, copy: Path, log_path: Path) -> None:
     log_path.parent.mkdir(parents=True, exist_ok=True)
+    work = copy.parent
     env = dict(os.environ)
     env["PYTHONPATH"] = str(copy)
+    basetemp = f"--basetemp={work / 'pytest'}"
+    env["PYTEST_ADDOPTS"] = " ".join(filter(None, [env.get("PYTEST_ADDOPTS", "").strip(), basetemp]))
     with _suite_lock(cfg.tests_lock), log_path.open("wb") as log:
+        _clean_stale_integrate_dirs(work, cfg.suite_timeout)
         try:
             proc = subprocess.Popen(
                 cfg.suite, cwd=copy, env=env, stdout=log, stderr=subprocess.STDOUT,
@@ -302,6 +344,7 @@ def _steps(
 
     work = Path(tempfile.mkdtemp(prefix="deskops-integrate-"))
     temps.append(work)
+    (work / "owner.pid").write_text(f"{os.getpid()}\n", encoding="utf-8")
     copy = work / "copia"
     _git(root, "clone", "-q", "--no-hardlinks", str(root), str(copy), step="copia")
     _git(copy, "checkout", "-q", "--detach", tip, step="copia")

@@ -561,3 +561,54 @@ def test_pr_mode_dry_run_pushes_nothing(closed: Path, tmp_path: Path) -> None:
     assert "dry-run: gh pr create --base dev" in result.stdout
     assert _git(remote, "branch", "--list", "task/*") == ""
     assert not log.exists()
+
+
+def _suite_cfg(suite: list[str], **extra: object):
+    from deskops.config import IntegrateConfig
+
+    return IntegrateConfig(remote_url="x", branch="main", suite=suite, **extra)
+
+
+def test_suite_gets_basetemp_inside_work(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    from deskops import integrate
+
+    work = tmp_path / "work"
+    copy = work / "copia"
+    copy.mkdir(parents=True)
+    probe = tmp_path / "probe.txt"
+    cfg = _suite_cfg(["sh", "-c", f'echo "$PYTEST_ADDOPTS" > {probe}'])
+    monkeypatch.setenv("PYTEST_ADDOPTS", "-p no:cacheprovider")
+    integrate._run_suite(cfg, copy, tmp_path / "log.txt")
+    assert probe.read_text(encoding="utf-8").strip() == f"-p no:cacheprovider --basetemp={work}/pytest"
+    monkeypatch.delenv("PYTEST_ADDOPTS")
+    integrate._run_suite(cfg, copy, tmp_path / "log.txt")
+    assert probe.read_text(encoding="utf-8").strip() == f"--basetemp={work}/pytest"
+
+
+def test_stale_integrate_dirs_are_removed_under_the_lock(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
+    from deskops import integrate
+
+    tmpdir = tmp_path / "tmp"
+    tmpdir.mkdir()
+    monkeypatch.setenv("TMPDIR", str(tmpdir))
+    monkeypatch.setattr("tempfile.tempdir", None)
+    dead = subprocess.Popen(["true"])
+    dead.wait()
+    a = tmpdir / "deskops-integrate-a"
+    a.mkdir()
+    (a / "owner.pid").write_text(str(dead.pid))
+    b = tmpdir / "deskops-integrate-b"
+    b.mkdir()
+    os.utime(b, (1, 1))
+    c = tmpdir / "deskops-integrate-c"
+    c.mkdir()
+    (c / "owner.pid").write_text(str(os.getpid()))
+    own = tmpdir / "deskops-integrate-own"
+    (own / "copia").mkdir(parents=True)
+    (own / "owner.pid").write_text("999999999")
+    cfg = _suite_cfg(["sh", "-c", "exit 0"], tests_lock=str(tmp_path / "t.lock"), suite_timeout=60)
+    integrate._run_suite(cfg, own / "copia", tmp_path / "log.txt")
+    assert not a.exists() and not b.exists()
+    assert c.exists() and own.exists()
+    out = capsys.readouterr().out
+    assert f"limpieza: {a}" in out and f"limpieza: {b}" in out
