@@ -1,14 +1,16 @@
 name: 20261122-233246-unclear-queue-20261123t020109z-integrate-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el
 path: desk/inbox/20261122-233246-unclear-queue-20261123t020109z-integrate-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el.md
-source_hash: 66930d2fbf555ed5ccc59c327c9c6daac4790789376f7e0ea854989d2618f58b
-content_hash: 03d747a76d0e0c98b31ae341ad269d4586a018cf7df389891acf92fcd8757294
+source_hash: 48d9a2fc187c47e9f177416ae4883f7ce5bac0a25d13131654b85b0071f19503
+content_hash: c094c27468c5910154a4316f8d4b965966ecb51ee001bd96d23988b8b3999c1e
 field_hashes:
   kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 89cbf3cc75b9795b4f078b81a2b379d731aa72bc7a7747f08e2c27bfcd770c63
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 4349760c9da3b502f615e1917309146efd220f676261a97a3a704a6970f3ad5d
+  ack_reason: 3dde09b952dab6c7addbc5ecbd2c96ba85940529a45d813f474dd83e5ed41117
   title: 993c1cba20313292a42a6cd618aa23bcdee48245ae4e098f2d9c35c017aaed8c
   body: 151420f2bfa9078ed666999b9044e7d75fb88fe63078e6542e6ad55bd7bae5dc
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-23T02:34:31Z'
+  authority: generated
+  via: save_document_payload
