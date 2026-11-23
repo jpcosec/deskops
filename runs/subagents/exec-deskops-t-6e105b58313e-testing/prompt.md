@@ -1,32 +1,42 @@
+Task: task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis
+Title: deskops init --id fija project_identity, deskops repo whoami --set la cambia por CLI y repo register avisa si --id no coincide con la identidad del desk
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T12:34:21Z'
+  at: '2026-11-23T08:22:32Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis
-status: ready_for_testing
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-closeout
+current_node: ritual-testing
 history:
 - task_activates
-- task_hands_to_closeout
 references:
-- tests/test_command_registry.py
-- 9162620670c432e13f5dc02e5dee9f27e9d3a889
-- b5725369
+- desk/inbox/20261122-234848-suggestion-deskops-init-fija-project-identity-con-el-nombre-de-la-carpeta-y-no-hay-comando-para-cambiarlo.md
+- desk/inbox/20261122-222005-unclear-de-labchile-chatbots-no-hay-verbo-para-cambiar-project-identity-editar-la-portada-de-pills-ni-fusionar-dos-desks.md
 depends_on: []
 pills: []
 files:
-- tests/test_command_registry.py
+- deskops/workspace.py
+- deskops/cli/registry.py
+- deskops/cli/commands/repo.py
+- tests/test_repo_identity.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-deskops-init-id-fija-la-project-identity-repo-whoami-set-la-cambia-por-cli-y-repo-register-avisa
+atoms: []
 ---
 
 # deskops init --id fija project_identity, deskops repo whoami --set la cambia por CLI y repo register avisa si --id no coincide con la identidad del desk
@@ -69,3 +79,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los cuatro tests nuevos pasan y deskops init sin --id deja el mismo desk/config.json que hoy (test existente de scaffold verde).
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
