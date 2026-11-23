@@ -1,0 +1,3 @@
+(venv /tmp/ws-venv, worktree .worktrees/deskops-e-38bd0e939f96)
+pytest -n 4 tests/test_cli.py tests/test_cli_grammar.py tests/test_edit_template_placeholder.py tests/test_message_ecosystem_registry.py tests/test_config.py tests/test_model_contract_snapshot.py tests/test_output_goldens.py -> 140 passed, rc=0
+Full suite (-n 4) before the last fixes: 1383 passed, 3 failed (test_cli help, grammar nouns, edit_template_placeholder) -> all fixed and re-run green above.

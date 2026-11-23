@@ -1,7 +1,17 @@
+Task: task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un
+Title: La ficha de repo del registro declara owns_paths y owns_topics, deskops owner responde el dueño de una ruta o tema, y message send --to unowned va al destino de config unowned_target
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T14:58:52Z'
+  at: '2026-11-23T14:12:03Z'
   authority: generated
   via: save_document_payload
 id: task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un
@@ -14,49 +24,21 @@ current_node: ritual-testing
 history:
 - task_activates
 references:
-- deskops/cli/commands/message.py
-- deskops/cli/commands/repo.py
-- deskops/cli/registry.py
-- deskops/config.py
-- deskops/models/repository.py
-- tests/fixtures/golden/help/deskops.txt
-- tests/fixtures/golden/help/deskops_add_repository.txt
-- tests/fixtures/golden/help/deskops_owner.txt
-- tests/fixtures/golden/help/deskops_repo_register.txt
-- tests/fixtures/golden/output/list_repositories.json
-- tests/fixtures/golden/output/show_repository.json
-- tests/fixtures/golden/output/show_repository.text
-- tests/fixtures/model_contract_hashes.json
-- tests/test_cli.py
-- tests/test_cli_grammar.py
-- tests/test_config.py
-- tests/test_message_ecosystem_registry.py
-- 05ac75a9952b657734dd767351b0c0e7feef4d49
+- desk/inbox/20261122-234458-suggestion-mapa-de-propiedad-por-desk-y-destino-unico-de-lo-sin-dueno-governance-en-el-registro.md
+- desk/atoms/atom-sin-dueno-lo-que-no-tiene-dueno-en-sldb-1-va-al-inbox-de-deskops.md
 depends_on: []
 pills: []
 files:
-- deskops/cli/commands/message.py
-- deskops/cli/commands/repo.py
-- deskops/cli/registry.py
-- deskops/config.py
 - deskops/models/repository.py
-- tests/fixtures/golden/help/deskops.txt
-- tests/fixtures/golden/help/deskops_add_repository.txt
-- tests/fixtures/golden/help/deskops_owner.txt
-- tests/fixtures/golden/help/deskops_repo_register.txt
-- tests/fixtures/golden/output/list_repositories.json
-- tests/fixtures/golden/output/show_repository.json
-- tests/fixtures/golden/output/show_repository.text
-- tests/fixtures/model_contract_hashes.json
-- tests/test_cli.py
-- tests/test_cli_grammar.py
-- tests/test_config.py
+- deskops/config.py
+- deskops/cli/commands/repo.py
+- deskops/cli/commands/message.py
 - tests/test_message_ecosystem_registry.py
+- tests/test_config.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-y-deskops-owner-responde-el-dueno
+atoms: []
 ---
 
 # La ficha de repo del registro declara owns_paths y owns_topics, deskops owner responde el dueño de una ruta o tema, y message send --to unowned va al destino de config unowned_target
@@ -100,3 +82,14 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los siete tests nuevos pasan y las fichas de desk/registry existentes siguen cargando sin cambios (owns_* vacíos por defecto).
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
