@@ -1,34 +1,38 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T07:06:40Z'
+  at: '2026-11-23T10:32:06Z'
   authority: generated
   via: save_document_payload
 id: task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged
-status: active
+status: ready_for_testing
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
+- task_hands_to_closeout
 references:
-- desk/inbox/20261106-145349-suggestion-closeout-commit-arrastra-archivos-sin-trackear-de-sldb.md
-- desk/inbox/inbox-note-closeout-commit-sin-paths-dice-nothing-staged-aunque-el-cli-dejó-cambios.md
+- deskops/services/closure.py
+- tests/test_closeout.py
+- tests/test_closeout_resolved_by.py
+- f629463d95dff106aca307f623e3df9b2d9c448d
+- 2fe1b60e
 depends_on: []
 pills:
 - desk/contexts/pill-closeout-knowledge-gates-require-traceable-evidence.md
 files:
 - deskops/services/closure.py
 - tests/test_closeout.py
+- tests/test_closeout_resolved_by.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-el-commit-de-cierre-stagea-solo-lo-que-escribio-el-cierre-en-sldb
 ---
 
 # closeout commit stagea solo lo que escribio el cierre: sin git add -A sobre .sldb y sin Nothing staged mudo

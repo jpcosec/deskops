@@ -522,6 +522,9 @@ include:
   - desk/materializations/materialization-runtime-deskops-cli-registry-py.md
   - desk/materializations/materialization-runtime-deskops-materializers-runtime-profiles-py.md
   - desk/materializations/materialization-runtime-tests-test-runtime-profiles-py.md
+  - desk/materializations/materialization-closeout-deskops-services-closure-py.md
+  - desk/materializations/materialization-closeout-tests-test-closeout-py.md
+  - desk/materializations/materialization-closeout-tests-test-closeout-resolved-by-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2892,6 +2895,14 @@ include:
     name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-atom-1
   - path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/evidence-materialization-1.md
     name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-materialization-1
+  - path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/evidence-tests-1.md
+    name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-evidence-tests-1
+  - path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/evidence-commit-1.md
+    name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-evidence-commit-1
+  - path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/evidence-atom-1.md
+    name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-evidence-atom-1
+  - path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/evidence-materialization-1.md
+    name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

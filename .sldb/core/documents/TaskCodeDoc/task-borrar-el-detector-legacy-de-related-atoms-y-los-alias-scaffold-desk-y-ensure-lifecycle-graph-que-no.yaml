@@ -1,15 +1,15 @@
 name: task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no
 path: desk/tasks/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no.md
-source_hash: 5b4389ca49ff905fb7b574e4c4f24cc715c46b8721e9772961fe24632dec96cc
-content_hash: 5f71e777dd3d17e5702480f3506ce39efc44d9f8ff3965eaa87853132e578135
+source_hash: 53212cf7e3e9cc0fb5f39b94b01d22e0f2bc8dcfa6860c39b3607d8b6eb3bca3
+content_hash: d322b6db3c0e8c96279cc629d8db29aa4373f775a86e7a43f57baf07435cb657
 field_hashes:
   title: e39fb25856898fdc3b18c3c1ec9a76038b39b4a21c9bdc4f3903705c59472fd1
   id: a636caae049802d0d8aa405d2110ec0476cfde4891bce8870fa8098ac6fb70dc
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 22696296db9397227beb1f61aff74a4c2a22d72301d1d6b4e00f3ff52727fe0d
   goal: 35ea16f2021de87e20f91e2ad0ab5841a38b032b93304703e37ecb75f5f5a368
   scope: 3806ccb57484a708883060abf4c4b1f0ced409ffeccf28913db71e6a0b64120d
@@ -35,6 +35,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:05:08Z'
+  at: '2026-11-23T10:20:31Z'
   authority: generated
   via: save_document_payload

@@ -1,29 +1,29 @@
 name: task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged
 path: desk/tasks/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged.md
-source_hash: d74768caddccde675fafc708190bddc2f0b5f374395c0b5d3e070d3d9d7d2cb3
-content_hash: 95fab2a7baf2556fdcfa75a6cf9a98f193ef1a65ae98ccee2c3b6a0b22b322bc
+source_hash: f748da51b4b067e81f6cdda435dc24a289ae51a67b8671bbcd4904d8d7dc25f6
+content_hash: d8ce191f7f5d38254498a1d02e230783195beed29cbce07b642e8e1e0106bb92
 field_hashes:
   title: 32ca2820a83ff99e2b8397fa614735efdb5de507f090295db58b89ba7f53f0c0
   id: 97729f264ca01b6d749ad072f9d972c48f4e22bfa314fc985fc9e2ed968bfa67
-  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
-  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
-  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: 2b873fa8a781ebf1ba09777ec5adcbd2514caabc10321f76006fe5764c12ecf0
   goal: 71a3290633d40a52c16a017430321ad11409f6093ee584cb5d672f8859850e71
   scope: 6cc55a3c0df2f12fa108544d35bd33173c35b4e0782c5a75f1151e4f5b712645
-  references: 927112820e51c48f31a7bfa4fb7b2c9f1a2016b4852d21b47bdb693e9d6867d3
+  references: 4b0f071de4c07168f70da4fd7367f11d86eeaeb88c1e0e405dd20a6706865c13
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 657736cb95f9b9bdf8bfa7e9efc13dffce11a26e8e991c865b67ef43018ef9b3
-  files: 0e44a4e66178d616d6a5ceed9ebd6bdcf6f5e48526bea75bc5c644e0749a9f08
+  files: 1e976bd12f5890954293f61bfaacb7d669b77538d7b66a83c51dcf2a196bf0bd
   implementation_path: 50b3a87bbf4042ea92eeec2c92841954f456222faaa61516e4b6e85f0057aaa0
   validation: 926aded44abb799990004a4368a6a8e5a439cd48d77f3d5b94b6e7914ea240cb
   done_when: 0e0ab5fcd29d8431a5e1fec76949ac67d11eb6b6ec0371b2f7e1ebd3c2913db5
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
+  atoms: 346635e47519bbe6a99b05b06b7dcb07127529bd9f8946340c8fecf273921849
 semantic_tags:
 - artifact:task
 - host:robocop2
@@ -34,6 +34,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T07:06:40Z'
+  at: '2026-11-23T10:32:06Z'
   authority: generated
   via: save_document_payload
