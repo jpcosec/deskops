@@ -1026,6 +1026,8 @@ include:
     name: run-deskops-t-41db8f794236
   - path: runs/subagents/exec-deskops-t-6450501c31c0-testing/run.md
     name: run-deskops-t-6450501c31c0
+  - path: runs/subagents/exec-deskops-e-5f0471f4b90c/run.md
+    name: run-deskops-e-5f0471f4b90c
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -3026,6 +3028,8 @@ include:
     name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-atom-1
   - path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/evidence-materialization-1.md
     name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-evidence-materialization-1
+  - path: desk/reviews/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig/preflight-1.md
+    name: review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-preflight-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
