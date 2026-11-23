@@ -1,23 +1,32 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:03:30Z'
+  at: '2026-11-23T09:09:39Z'
   authority: generated
   via: save_document_payload
 id: task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 - host:robocop2
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
-- desk/inbox/20261116-002453-suggestion-piloto-scion-fase-1-brechas-del-coordinador-y-del-ejecutor-claude-en-contenedor.md
+- deskops/cli/commands/runtime.py
+- deskops/cli/registry.py
+- deskops/materializers/runtime_profiles.py
+- deskops/runtime/scion.py
+- tests/test_runtime_profiles.py
+- tests/test_scion_runtime.py
+- 89777a0e0618be2cbfc5596d5ce2ad215d5389bf
 depends_on: []
 pills: []
 files:
+- deskops/cli/commands/runtime.py
+- deskops/cli/registry.py
 - deskops/materializers/runtime_profiles.py
 - deskops/runtime/scion.py
 - tests/test_runtime_profiles.py
@@ -26,8 +35,7 @@ task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
 atoms:
-- atom-code-changes-close-with-tests-and-commit
-- atom-cli-mutation-testing-uses-sandbox-desk-roots
+- atom-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-deriva-el-alias-de-model
 ---
 
 # El runtime profile traduce los tools del RoleDoc al vocabulario de claude y el alias de modelo sale del RoleDoc

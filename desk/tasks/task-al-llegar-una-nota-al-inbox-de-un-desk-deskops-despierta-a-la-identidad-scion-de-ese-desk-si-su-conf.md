@@ -1,17 +1,18 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T04:37:52Z'
+  at: '2026-11-23T08:23:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references:
 - desk/inbox/20261122-234436-suggestion-hook-que-despierta-a-la-identidad-scion-del-desk-cuando-llega-una-nota-al-inbox.md
 depends_on: []

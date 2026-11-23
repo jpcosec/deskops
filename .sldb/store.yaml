@@ -518,6 +518,10 @@ include:
   - desk/materializations/materialization-integrate-deskops-dispatch-py.md
   - desk/materializations/materialization-integrate-docs-operator-manual-md.md
   - desk/materializations/materialization-integrate-tests-test-dispatch-py.md
+  - desk/materializations/materialization-runtime-deskops-cli-commands-runtime-py.md
+  - desk/materializations/materialization-runtime-deskops-cli-registry-py.md
+  - desk/materializations/materialization-runtime-deskops-materializers-runtime-profiles-py.md
+  - desk/materializations/materialization-runtime-tests-test-runtime-profiles-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -2870,6 +2874,14 @@ include:
     name: review-task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt-evidence-atom-1
   - path: desk/reviews/task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt/evidence-materialization-1.md
     name: review-task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt-evidence-materialization-1
+  - path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/evidence-tests-1.md
+    name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-tests-1
+  - path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/evidence-commit-1.md
+    name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-commit-1
+  - path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/evidence-atom-1.md
+    name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-atom-1
+  - path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/evidence-materialization-1.md
+    name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

@@ -1,15 +1,15 @@
 name: task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf
 path: desk/tasks/task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf.md
-source_hash: a0c09b20e0c3243eca539b9ae590b79b6f0b4b5648b1f27da78d9989cf107e6f
-content_hash: 4d6e293731352e216665ae7d7d12702a49bed5dc130350a5d9165bfd5bf2d7c3
+source_hash: 79c794afce564281a20f45f029013a863a689e127c33ecbbe77e96ab1ec8d9c9
+content_hash: 7e389288210fc4758bfb398f2ada3b77cb3c6798acfff304aca98edac7ebdded
 field_hashes:
   title: 695c868cc90cb387853fdc538313d45b1231ac959134b0938c6fd875ab96b4b5
   id: fc25c766b458cf7f1dd80337446a78846d21fac574a62bd8679f577167e8468b
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: da64fb53fd01f8a633fda77009823db6bd651f06cabd6b32ee0820b4ed5b5ee4
   goal: c6deb2771abde8b77d5996e44798aaf3c473e2aaaa1c10fc0411b837295d9b6b
   scope: 1d3fa5f293f125c13d84f278ac1a7462717b74d7119c818fbe35390b2e7589e3
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T04:37:52Z'
+  at: '2026-11-23T08:23:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
