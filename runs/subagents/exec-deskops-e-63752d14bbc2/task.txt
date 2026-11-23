@@ -1,0 +1,9 @@
+Task: task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas
+Title: integrate corre la suite con --basetemp dentro de su carpeta temporal y al empezar borra las carpetas deskops-integrate-* de corridas muertas
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .

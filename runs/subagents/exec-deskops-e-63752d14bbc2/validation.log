@@ -1,0 +1,2 @@
+pytest -q -p no:cacheprovider tests/test_integrate.py (worktree): 30 passed, exit 0
+pytest -n 4 tests (worktree): 1348 errors in setup (FileNotFoundError: No store_index.yaml ...) - sandbox env; tests/test_view.py also errors on main checkout (6 passed, 1 error with -x), so not caused by this change.

@@ -1,0 +1,31 @@
+# Validación tester run-deskops-t-78553b2e9172
+# Commit ejecutor: 498d51755c799cb837c156da8ce863890c40629d
+
+$ git log -1 --format='%H %s' --grep 'Task-Id: task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas'
+498d51755c799cb837c156da8ce863890c40629d integrate: suite basetemp inside work dir and stale temp cleanup
+
+$ git show --stat --oneline 498d5175
+498d5175 integrate: suite basetemp inside work dir and stale temp cleanup
+ deskops/integrate.py    | 43 +++++++++++++++++++++++++++++++++++++++++
+ tests/test_integrate.py | 51 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 94 insertions(+)
+
+$ TMPDIR=/tmp /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_integrate.py -k 'basetemp or stale_integrate'
+..                                                                       [100%]
+2 passed, 28 deselected, 1 warning in 0.51s
+
+$ TMPDIR=/dev/shm /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_integrate.py -k 'basetemp or stale_integrate'
+..                                                                       [100%]
+2 passed, 28 deselected, 1 warning in 0.41s
+
+$ TMPDIR=/tmp /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_integrate.py
+..............................                                           [100%]
+30 passed, 1 warning in 427.32s (0:07:07)
+
+# Regresión: tests nuevos contra el commit padre en worktree temporal
+$ git worktree add --detach /tmp/wt-old-integrate 498d5175^
+$ git show 498d5175:tests/test_integrate.py > /tmp/wt-old-integrate/tests/test_integrate.py
+$ cd /tmp/wt-old-integrate && TMPDIR=/tmp /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_integrate.py -k 'basetemp or stale_integrate'
+FAILED tests/test_integrate.py::test_suite_gets_basetemp_inside_work - Assert...
+FAILED tests/test_integrate.py::test_stale_integrate_dirs_are_removed_under_the_lock
+2 failed, 28 deselected, 1 warning in 0.64s

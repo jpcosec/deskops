@@ -1,22 +1,29 @@
+Task: task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas
+Title: integrate corre la suite con --basetemp dentro de su carpeta temporal y al empezar borra las carpetas deskops-integrate-* de corridas muertas
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-23T06:15:33Z'
+  at: '2026-11-23T04:37:25Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
 id: task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas
-status: active
+status: draft
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
-current_node: ritual-testing
-history:
-- task_activates
+current_node: ritual-execution
+history: []
 references:
 - deskops/integrate.py
-- tests/test_integrate.py
-- 498d51755c799cb837c156da8ce863890c40629d
 depends_on: []
 pills: []
 files:
@@ -25,8 +32,7 @@ files:
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-integrate-corre-la-suite-con-basetemp-propio-y-limpia-temporales-de-corridas-muertas
+atoms: []
 ---
 
 # integrate corre la suite con --basetemp dentro de su carpeta temporal y al empezar borra las carpetas deskops-integrate-* de corridas muertas
@@ -67,3 +73,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Los dos tests nuevos de tests/test_integrate.py pasan, el resto de tests/test_integrate.py sigue verde, y una corrida real de integrate deja los temporales de pytest dentro de su carpeta deskops-integrate-* (y por lo tanto los borra el finally).
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-63752d14bbc2`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-63752d14bbc2
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.
