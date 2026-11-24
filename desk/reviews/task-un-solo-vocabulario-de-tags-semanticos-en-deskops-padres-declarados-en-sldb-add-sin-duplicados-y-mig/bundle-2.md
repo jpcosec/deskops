@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T18:02:23Z'
+  at: '2026-11-24T18:26:02Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -46,9 +46,8 @@ created_at: '2026-11-23T17:52:57.584008+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T18:02:14.347773+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig

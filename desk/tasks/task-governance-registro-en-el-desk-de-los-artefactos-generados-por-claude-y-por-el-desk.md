@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:12:24Z'
+  at: '2026-11-24T18:28:46Z'
   authority: generated
   via: save_document_payload
 id: task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

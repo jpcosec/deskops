@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:05:24Z'
+  at: '2026-11-24T18:27:17Z'
   authority: generated
   via: save_document_payload
 id: task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar
 status: draft
 summary: ''
 tags:
-- workspace:desk
-- artifact:task
 - host:robocop2
 current_node: ritual-execution
 history: []

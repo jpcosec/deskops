@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:24:35Z'
+  at: '2026-11-24T18:27:39Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T21:45:15Z'
+  at: '2026-11-24T18:17:35Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -45,9 +45,8 @@ created_at: '2026-11-19T21:43:59.120941+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-19T21:45:09.256333+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d

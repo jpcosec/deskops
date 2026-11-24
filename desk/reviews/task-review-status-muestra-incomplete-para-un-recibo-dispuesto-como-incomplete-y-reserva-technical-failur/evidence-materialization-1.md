@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:40:44Z'
+  at: '2026-11-24T18:20:56Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -81,9 +81,8 @@ created_at: '2026-11-21T08:40:32.466335+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T08:40:32.466335+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur

@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T04:04:22Z'
+  at: '2026-11-24T18:29:47Z'
   authority: generated
   via: save_document_payload
 id: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig
 status: active
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-testing
 history:
 - task_activates

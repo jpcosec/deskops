@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T15:11:12Z'
+  at: '2026-11-24T18:28:43Z'
   authority: generated
   via: save_document_payload
 id: task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

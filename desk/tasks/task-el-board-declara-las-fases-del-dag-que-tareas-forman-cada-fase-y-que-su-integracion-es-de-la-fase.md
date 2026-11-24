@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T19:18:15Z'
+  at: '2026-11-24T18:27:49Z'
   authority: generated
   via: save_document_payload
 id: task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

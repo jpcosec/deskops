@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T04:39:40Z'
+  at: '2026-11-24T18:27:27Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-desk-update-en-seco-lista-los-tags-de-tareas-con-namespace-sin-declarar-y-apply-no-mete-taskdoc-en-t
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T07:39:38Z'
+  at: '2026-11-24T18:25:52Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-evidence-tests-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-18T07:39:37.218985+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T07:39:37.218985+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks

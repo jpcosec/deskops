@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T04:01:37Z'
+  at: '2026-11-24T18:29:09Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references: []

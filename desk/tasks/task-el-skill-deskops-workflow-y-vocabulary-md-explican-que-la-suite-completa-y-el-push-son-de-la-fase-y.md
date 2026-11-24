@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T19:17:51Z'
+  at: '2026-11-24T18:27:58Z'
   authority: generated
   via: save_document_payload
 id: task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

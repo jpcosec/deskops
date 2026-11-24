@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T12:04:34Z'
+  at: '2026-11-24T18:24:17Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar-evidence-tests-2
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-21T12:04:32.841463+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T12:04:32.841463+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar

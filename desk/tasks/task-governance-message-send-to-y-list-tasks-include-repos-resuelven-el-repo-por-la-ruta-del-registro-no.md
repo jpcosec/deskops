@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:12:51Z'
+  at: '2026-11-24T18:28:33Z'
   authority: generated
   via: save_document_payload
 id: task-governance-message-send-to-y-list-tasks-include-repos-resuelven-el-repo-por-la-ruta-del-registro-no
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

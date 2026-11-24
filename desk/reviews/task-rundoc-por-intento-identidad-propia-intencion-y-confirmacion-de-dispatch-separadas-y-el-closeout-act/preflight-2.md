@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:33:52Z'
+  at: '2026-11-24T18:22:02Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/preflight/ebad03bfc0300cb3c5576740cf5a4e70d3e6c7ad507e2ec0b1bfe71674077fd4/attempt-1
 input_sha256: ebad03bfc0300cb3c5576740cf5a4e70d3e6c7ad507e2ec0b1bfe71674077fd4
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: c372c943fcbb7e2aae237645a23c5076f008dc2b3f7e482cca8139472203a253
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:16:55.457821+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:33:49.540123+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act

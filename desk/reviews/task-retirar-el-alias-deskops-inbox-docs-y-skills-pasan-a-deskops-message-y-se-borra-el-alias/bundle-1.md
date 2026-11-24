@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:46:10Z'
+  at: '2026-11-24T18:19:31Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle/context-review/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/bundle/aa4603ad7b503a1cfa0a3fc30709acfe3e93d5c67c517fb164bfce4033a5c48d/attempt-1
 input_sha256: aa4603ad7b503a1cfa0a3fc30709acfe3e93d5c67c517fb164bfce4033a5c48d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 8ccdf9ee86a9371c8d44168aa6bae3eab5a08d97a22c2feaca8f689209c267a1
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -34,9 +36,8 @@ created_at: '2026-11-16T05:43:27.614690+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:46:05.766485+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias

@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T04:07:26Z'
+  at: '2026-11-24T18:29:16Z'
   authority: generated
   via: save_document_payload
 id: task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references: []

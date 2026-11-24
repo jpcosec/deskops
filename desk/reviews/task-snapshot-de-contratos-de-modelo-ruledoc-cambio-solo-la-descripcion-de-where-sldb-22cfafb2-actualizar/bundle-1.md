@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T11:48:05Z'
+  at: '2026-11-24T18:23:51Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -71,9 +71,8 @@ created_at: '2026-11-21T11:44:56.228635+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T11:47:58.401046+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar

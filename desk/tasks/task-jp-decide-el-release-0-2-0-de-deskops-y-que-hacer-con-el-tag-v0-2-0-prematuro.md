@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T04:02:14Z'
+  at: '2026-11-24T18:29:12Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references: []

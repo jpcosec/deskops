@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:59:37Z'
+  at: '2026-11-24T18:20:20Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261117-025620/context-review/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/bundle/6eb6788639bbed2b5b423aeecfdefd8f029077748758139f7e3e400a9059bdc0/attempt-1
 input_sha256: 6eb6788639bbed2b5b423aeecfdefd8f029077748758139f7e3e400a9059bdc0
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: be2fe673c1d33f3f8855e3835c3a6ee2c91509d126e9c9081bd21d58b243cdf9
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -43,9 +45,8 @@ created_at: '2026-11-17T02:56:40.910789+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T02:59:26.587999+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r

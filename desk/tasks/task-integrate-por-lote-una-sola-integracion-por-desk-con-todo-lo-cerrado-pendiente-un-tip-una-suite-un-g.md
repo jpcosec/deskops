@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T19:16:24Z'
+  at: '2026-11-24T18:29:02Z'
   authority: generated
   via: save_document_payload
 id: task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:17:12Z'
+  at: '2026-11-24T18:19:24Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-nuevas/context-review/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis/preflight/675d5001b7d702401226bc40dccf54e21b635e51be346567853cc084150a8b2d/attempt-1
 input_sha256: 675d5001b7d702401226bc40dccf54e21b635e51be346567853cc084150a8b2d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 03b21dfac2940c87c5d54db131007936f55490dacf4d5b6648aec503df19d157
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T06:13:58.005823+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T06:17:09.433691+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis

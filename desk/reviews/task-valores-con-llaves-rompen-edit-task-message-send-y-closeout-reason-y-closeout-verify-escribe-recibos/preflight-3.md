@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T03:00:02Z'
+  at: '2026-11-24T18:26:38Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261117-025329/context-review/task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos/preflight/aa4da9506b4727a4e59cc8b4262e3229032fa7f13ec67243950ff104d3d75cb7/attempt-1
 input_sha256: aa4da9506b4727a4e59cc8b4262e3229032fa7f13ec67243950ff104d3d75cb7
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: bb53277b5ccf6cc870e8319654a291ba16e92680a751404e431dff8529d26033
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -41,9 +43,8 @@ created_at: '2026-11-17T02:53:46.136106+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T02:59:48.988983+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos

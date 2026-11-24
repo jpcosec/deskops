@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:04:57Z'
+  at: '2026-11-24T18:27:14Z'
   authority: generated
   via: save_document_payload
 id: task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests
 status: draft
 summary: ''
 tags:
-- workspace:desk
-- artifact:task
 - host:robocop2
 current_node: ritual-execution
 history: []

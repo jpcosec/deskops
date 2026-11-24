@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:01:44Z'
+  at: '2026-11-24T18:28:53Z'
   authority: generated
   via: save_document_payload
 id: task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita
 status: draft
 summary: ''
 tags:
-- workspace:desk
-- artifact:task
 - host:robocop2
 current_node: ritual-execution
 history: []

@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:26:15Z'
+  at: '2026-11-24T18:28:27Z'
   authority: generated
   via: save_document_payload
 id: task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflow-de-deskops
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

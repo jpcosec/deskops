@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T18:27:00Z'
+  authority: generated
+  via: save_document_payload
 # ritual-xxx
 id: ritual-knowledge-distillation-pass
 # Ordered prose steps; not document references
@@ -25,7 +30,6 @@ steps:
 tags:
 - system:deskops
 - system:sldb
-- workspace:desk
 - topic:atoms
 - topic:knowledge-distillation
 - topic:workflow

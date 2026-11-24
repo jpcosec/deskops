@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:24:25Z'
+  at: '2026-11-24T18:28:11Z'
   authority: generated
   via: save_document_payload
 id: task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

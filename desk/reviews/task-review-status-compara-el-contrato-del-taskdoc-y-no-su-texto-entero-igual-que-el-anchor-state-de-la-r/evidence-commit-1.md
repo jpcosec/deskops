@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T04:23:42Z'
+  at: '2026-11-24T18:20:27Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-commit-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: efabd4652ac5697b72b99c55fbd75e4ae5a90caa5d2678f4805f0e4e800c84de
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -31,9 +33,8 @@ created_at: '2026-11-17T04:23:22.068604+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T04:23:22.068604+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence commit of task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r

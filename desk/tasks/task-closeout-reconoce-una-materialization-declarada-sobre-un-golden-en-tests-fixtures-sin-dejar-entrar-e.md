@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:00:27Z'
+  at: '2026-11-24T18:27:24Z'
   authority: generated
   via: save_document_payload
 id: task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e
 status: draft
 summary: ''
 tags:
-- workspace:desk
-- artifact:task
 - host:robocop2
 current_node: ritual-execution
 history: []

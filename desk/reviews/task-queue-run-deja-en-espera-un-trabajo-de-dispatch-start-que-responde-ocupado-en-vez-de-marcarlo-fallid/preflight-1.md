@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T12:43:56Z'
+  at: '2026-11-24T18:17:32Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -47,9 +47,8 @@ created_at: '2026-11-19T12:43:00.348029+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-19T12:43:50.452528+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-queue-run-deja-en-espera-un-trabajo-de-dispatch-start-que-responde-ocupado-en-vez-de-marcarlo-fallid

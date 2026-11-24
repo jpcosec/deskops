@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T18:25:16Z'
+  at: '2026-11-24T18:17:58Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30-evidence-commit-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-19T18:25:10.581312+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-19T18:25:10.581312+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence commit of task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30

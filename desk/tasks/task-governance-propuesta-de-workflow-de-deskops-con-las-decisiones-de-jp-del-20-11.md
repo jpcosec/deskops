@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:25:25Z'
+  at: '2026-11-24T18:28:40Z'
   authority: generated
   via: save_document_payload
 id: task-governance-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:
