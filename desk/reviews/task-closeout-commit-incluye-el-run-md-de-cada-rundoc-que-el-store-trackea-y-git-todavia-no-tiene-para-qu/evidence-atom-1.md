@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T12:25:51Z'
+  at: '2026-11-23T19:03:00Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -37,9 +37,8 @@ created_at: '2026-11-17T12:25:37.529413+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T12:25:37.529413+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu

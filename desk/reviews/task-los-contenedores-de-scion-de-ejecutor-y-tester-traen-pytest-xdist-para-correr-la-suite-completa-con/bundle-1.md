@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T05:44:49Z'
+  at: '2026-11-23T19:34:36Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -56,9 +56,8 @@ created_at: '2026-11-22T05:43:40.793116+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T05:44:41.564519+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con

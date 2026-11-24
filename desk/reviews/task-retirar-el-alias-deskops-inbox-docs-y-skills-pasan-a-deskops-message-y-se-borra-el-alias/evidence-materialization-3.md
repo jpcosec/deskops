@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:12:34Z'
+  at: '2026-11-23T19:40:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-evidence-materialization-3
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -48,6 +48,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: beb8d514444a625d627e83b1e95ff9e8c3b0d4a2a52dc866cb39ec8087e08fe7
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -83,9 +85,8 @@ created_at: '2026-11-17T01:12:33.233856+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T01:12:33.233856+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias

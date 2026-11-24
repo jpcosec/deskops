@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T14:05:41Z'
+  at: '2026-11-23T19:07:11Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj-evidence-commit-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-17T14:05:34.932505+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T14:05:34.932505+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence commit of task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj

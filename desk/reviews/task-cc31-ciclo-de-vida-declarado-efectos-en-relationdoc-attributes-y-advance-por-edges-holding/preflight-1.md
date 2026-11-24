@@ -1,8 +1,17 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:59:28Z'
+  authority: generated
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-cc31-ciclo-de-vida-declarado-efectos-en-relationdoc-attributes-y-advance-por-edges-holding-preflight-1
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: preflight
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-cc31-ciclo-de-vida-declarado-efectos-en-relationdoc-attributes-y-advance-por-edges-holding
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -13,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261106-234010/context-review/task-cc31-ciclo-de-vida-declarado-efectos-en-relationdoc-attributes-y-advance-por-edges-holding/preflight/0406ed481cfe2b5a883181b71f8408040fb568c9537b86ba79550a40f1b2e900/attempt-1
 input_sha256: 0406ed481cfe2b5a883181b71f8408040fb568c9537b86ba79550a40f1b2e900
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 29e4f350390526b7a171e5c893f3fe6ea30cd24e68d29f9c34793f6ef3ce85b2
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -25,9 +36,8 @@ created_at: '2026-11-06T23:40:27.975031+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-06T23:40:54.231916+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc31-ciclo-de-vida-declarado-efectos-en-relationdoc-attributes-y-advance-por-edges-holding

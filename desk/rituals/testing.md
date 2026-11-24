@@ -1,7 +1,12 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T02:17:09Z'
+  authority: generated
+  via: save_document_payload
 # ritual-xxx
 id: ritual-testing
-# List of step-xxx paths
+# Ordered prose steps; not document references
 steps:
 - 1. Confirm the incoming handoff names the intended contract, touched surfaces, and
   pill guardrails to prove.
@@ -17,7 +22,6 @@ steps:
 # e.g., layer:workflow, system:sldb
 tags:
 - system:sldb
-- workspace:desk
 - topic:rituals
 - topic:testing
 ---

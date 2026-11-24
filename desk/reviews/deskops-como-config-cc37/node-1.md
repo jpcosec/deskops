@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:59:06Z'
+  at: '2026-11-23T18:49:52Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-deskops-como-config/context-review/deskops-como-config/CC37/e37555195335ab8ce9acfd3b12a4bc2062823b694f147b23a94c34a483d4c4f1/attempt-1
 input_sha256: e37555195335ab8ce9acfd3b12a4bc2062823b694f147b23a94c34a483d4c4f1
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 615b8940e98eafaffc8f28d045bf6fa6489cf75d2de731073487b3253df6ff8b
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-17T02:52:45.755918+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T02:59:04.297621+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of CC37

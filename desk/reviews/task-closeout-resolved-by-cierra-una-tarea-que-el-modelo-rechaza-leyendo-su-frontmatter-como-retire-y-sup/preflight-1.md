@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T17:43:42Z'
+  at: '2026-11-23T19:04:41Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261111-174241/context-review/task-closeout-resolved-by-cierra-una-tarea-que-el-modelo-rechaza-leyendo-su-frontmatter-como-retire-y-sup/preflight/4b5d498689ab694e8bdd036413af9cf1dd919b834ec6aebcaaba828cb57f488e/attempt-1
 input_sha256: 4b5d498689ab694e8bdd036413af9cf1dd919b834ec6aebcaaba828cb57f488e
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: f26d8a260592883d9c3687912a3cb635c6fc72fa500e6c291e076e2f67005401
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -50,9 +52,8 @@ created_at: '2026-11-11T17:42:50.167564+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T17:43:39.672987+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-resolved-by-cierra-una-tarea-que-el-modelo-rechaza-leyendo-su-frontmatter-como-retire-y-sup

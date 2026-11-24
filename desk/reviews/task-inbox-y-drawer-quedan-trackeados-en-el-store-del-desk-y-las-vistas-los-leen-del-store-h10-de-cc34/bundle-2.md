@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:57:52Z'
+  at: '2026-11-23T19:26:12Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle2/context-review/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/bundle/307edd4aed20d90b86293678b24704077a3f1ab51c34cea8adaa01d619a8cb6d/attempt-1
 input_sha256: 307edd4aed20d90b86293678b24704077a3f1ab51c34cea8adaa01d619a8cb6d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: b2e039c20b781ff716aa44c5dce439acb526432317af97ca79b9682c1074c262
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -33,9 +35,8 @@ created_at: '2026-11-16T05:56:37.594554+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:57:47.777255+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34

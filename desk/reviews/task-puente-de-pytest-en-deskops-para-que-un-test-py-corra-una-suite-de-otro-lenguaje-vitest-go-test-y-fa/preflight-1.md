@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T16:01:44Z'
+  at: '2026-11-23T19:37:59Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-160103/context-review/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/preflight/0cc9281bd95d9b1eaba2ada63ca8de4d7fefd3c3a09789e02b7f2b1f03973322/attempt-1
 input_sha256: 0cc9281bd95d9b1eaba2ada63ca8de4d7fefd3c3a09789e02b7f2b1f03973322
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 8c9062f6f7f5ccb710ef6a8174d52020f21039448cbbf7dd89d96cb9a6bf3189
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -43,9 +45,8 @@ created_at: '2026-11-16T16:01:16.586707+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T16:01:41.209284+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa

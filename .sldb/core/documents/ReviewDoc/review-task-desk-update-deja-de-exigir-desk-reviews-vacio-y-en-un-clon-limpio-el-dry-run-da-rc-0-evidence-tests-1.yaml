@@ -1,7 +1,7 @@
 name: review-task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0-evidence-tests-1
 path: desk/reviews/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/evidence-tests-1.md
-source_hash: 50e01bf812c3ac3159097bf4f25e77c896a67008bc47bc5600953589d8bdd71b
-content_hash: a6a3b65509ca2e2307ccf9cf1a6795a5f5ac9a452fc325488b18de547644a4b8
+source_hash: c0cee618b0bfa8822a8aa7d99229bb29c1dc4c051756d74f5c4d7c22c8e0f9a3
+content_hash: 2b31052fbeb7a85972cac60060314f90c32cf69935ea743c44ea4f28bd3f4ce7
 field_hashes:
   id: a5aa4052bf714a2ac753ec472b9cf8cdf500c453acaa2786efe9fd1fe074255a
   title: 541ff27515765441c5781a0bfb5d7bb805755d9c9d59e884f0be23fcde7c4673
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b0486ef32dce35a4a1f0ceb684ef4104c6409b1fec6c6956251c880a3c0cc2db
   disposition: 8926cfe05161a3bc750c661520d2db05019a3aa2e476161ba1d2e374d847ebba
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T12:59:12Z'
+  at: '2026-11-23T19:07:39Z'
   authority: generated
   via: save_document_payload

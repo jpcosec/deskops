@@ -26,14 +26,16 @@ def test_every_artifact_model_declares_its_artifact_defaults() -> None:
         assert isinstance(artifact, dict), artifact_id
         assert set(artifact) == ARTIFACT_KEYS, artifact_id
         assert artifact["id_pattern"].endswith("-{slug}"), artifact_id
-        assert isinstance(artifact["tags"], list) and artifact["tags"], artifact_id
+        assert isinstance(artifact["tags"], list), artifact_id
+        # the model's own tags (__semantics__) are not written as default frontmatter tags
+        assert not any(t.startswith(("workspace:", "artifact:")) for t in artifact["tags"]), artifact_id
 
 
 def test_task_artifact_defaults_are_inherited_by_every_task_type() -> None:
     assert TaskDoc.__artifact__ == {
         "id_pattern": "task-{slug}",
         "status_default": "draft",
-        "tags": ["workspace:desk", "artifact:task"],
+        "tags": [],
     }
     for model in TASK_TYPE_MODELS.values():
         assert model.__artifact__ is TaskDoc.__artifact__
@@ -64,7 +66,7 @@ def test_task_spec_compiler_builds_only_the_task_at_the_lifecycle_entry() -> Non
     assert compiled.task_payload["validation"] == ["pytest"]
     assert compiled.task_payload["done_when"] == "The task is produced from specs."
     assert compiled.task_payload["status"] == "draft"
-    assert compiled.task_payload["tags"] == ["workspace:desk", "artifact:task"]
+    assert compiled.task_payload["tags"] == []  # the model says workspace.desk / type.workflow.task itself
 
 
 def test_task_spec_compiler_is_the_one_task_normalization() -> None:

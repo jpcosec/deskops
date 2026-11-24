@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T03:33:48Z'
+  at: '2026-11-23T19:00:58Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261111-033244/context-review/task-cc34-vistas-de-la-ui-como-viewdoc-servidas-por-sldb-desk-view-py-desaparece/bundle/9873e0a5718be6f76979ae8568473cd6b776a9de5c717559306ad386911dea35/attempt-1
 input_sha256: 9873e0a5718be6f76979ae8568473cd6b776a9de5c717559306ad386911dea35
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: eb55341409ddad77d6d670ca3c6b07627993e43d296fcf3dad1348bfdfa121de
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -56,9 +58,8 @@ created_at: '2026-11-11T03:33:21.688878+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T03:33:45.769648+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-cc34-vistas-de-la-ui-como-viewdoc-servidas-por-sldb-desk-view-py-desaparece

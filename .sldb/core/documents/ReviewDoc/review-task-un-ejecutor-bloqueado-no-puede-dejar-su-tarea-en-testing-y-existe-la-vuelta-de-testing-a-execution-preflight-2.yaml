@@ -1,7 +1,7 @@
 name: review-task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution-preflight-2
 path: desk/reviews/task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution/preflight-2.md
-source_hash: 7a462b2c4a3ba125ef33d5ee842bd383e772232054b6f0c10e9cdad78011d2fc
-content_hash: 9de52dad70894e682b808becfefd8c13086ef123c2d4717d2d1f751896033ee2
+source_hash: 75e44b96d11d00489c5d406754a4f247a85ae16236882060f737282a95dfbf4a
+content_hash: 15091a464d5313c5c8f6a2f20ba9dc47e92e7b3e6ed6581ab6443c70d0f0737b
 field_hashes:
   id: 59e914e3a03c4614a9d5a6135cf1f7e6310d747ff72e2a478b3117653f3d6a12
   title: 8d0d318ac3072ed5e4e5909cd01499f61112b23edd55f419621572a345723e22
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 5b17496b03eecb7ac2be71f7813e611ea622649538a1da4a5b3f8a3ce9be5675
   disposition: 19d1079b5cf1957e02c3995a6d87432950033505ae8fe1a3ec59f98dfd04a1df
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T07:07:33Z'
+  at: '2026-11-24T02:15:37Z'
   authority: generated
   via: save_document_payload

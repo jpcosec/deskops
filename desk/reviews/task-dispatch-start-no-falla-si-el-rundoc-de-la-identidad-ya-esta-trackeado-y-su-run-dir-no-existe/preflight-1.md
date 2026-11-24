@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:07:54Z'
+  at: '2026-11-23T19:19:38Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -46,9 +46,8 @@ created_at: '2026-11-21T07:04:06.663849+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:07:46.510944+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe

@@ -17,7 +17,7 @@ class RuntimeProfileDoc(PrimitiveDoc):
     __artifact__ = {
         "id_pattern": "runtime-{slug}",
         "status_default": None,
-        "tags": ["workspace:desk", "artifact:runtime-profile"],
+        "tags": [],
     }
     __semantics__ = {"type": ["workflow", "runtime_profile"], "workspace": ["desk", "runtimes"]}
     __template__ = """---

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T20:40:03Z'
+  at: '2026-11-23T19:08:15Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-evidence-materialization-2
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -28,6 +28,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 1f616e724a93e95e2ace5abe320c9d96b968f32d0b2f2184849ff2707b605533
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -43,9 +45,8 @@ created_at: '2026-11-16T20:40:02.762441+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T20:40:02.762441+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe

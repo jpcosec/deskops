@@ -1,11 +1,15 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:46:34Z'
+  authority: generated
+  via: save_document_payload
 id: atom-desk-is-document-data-only
 title: Desk is document data only
 five_wh_one_plus: what
 tags:
 - system:deskops
 - system:sldb
-- workspace:desk
 - topic:boundary
 ---
 

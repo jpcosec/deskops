@@ -1,7 +1,7 @@
 name: review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-bundle-1
 path: desk/reviews/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig/bundle-1.md
-source_hash: 81a01ef2e7cb681a5273f4249fe52f5127f67f75fd671ada6480c4def3279283
-content_hash: dd0dbcd98c5da90f29f4dca7669887173cb19dbb35bfe5f1cde81e4d4b8e7070
+source_hash: 4bf4de453f4ab873dcdd1380e7ddb386fa570125bfe570ec8c1d18553d6a13d6
+content_hash: d6789bf01bce139d1f401e1ebbee2d714884cdf357310f84bcfb9f3b7687bab7
 field_hashes:
   id: ab1c8e257394a03b1f45a765cc41a198493159eec4674d1d52bf29e6513a122d
   title: f6bc9f467ca0d85907b23443f1fe7652c77a487ee7e9cd1dbc84efb1112dceb6
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 6ef69b08f657e6e907e9f5e830e7422d7dd33ca39e5c4297d8c3d172271a4fd3
   disposition: 4a235102f392743b60828eb7038fea98dcf91d0f6f9556d4ecaa5c6891d36972
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T17:34:00Z'
+  at: '2026-11-24T02:16:06Z'
   authority: generated
   via: save_document_payload

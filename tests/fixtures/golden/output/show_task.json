@@ -3,10 +3,7 @@
   "title": "Golden alpha task",
   "status": "draft",
   "summary": "Alpha goal.",
-  "tags": [
-    "workspace:desk",
-    "artifact:task"
-  ],
+  "tags": [],
   "current_node": "ritual-execution",
   "history": [],
   "goal": "Alpha goal.",
@@ -32,10 +29,7 @@
   "effective_pills": [
     "desk/contexts/pill-golden-rule.md"
   ],
-  "effective_tags": [
-    "workspace:desk",
-    "artifact:task"
-  ],
+  "effective_tags": [],
   "effective_atoms": [],
   "effective_validation": [
     "pytest tests/test_output_goldens.py"

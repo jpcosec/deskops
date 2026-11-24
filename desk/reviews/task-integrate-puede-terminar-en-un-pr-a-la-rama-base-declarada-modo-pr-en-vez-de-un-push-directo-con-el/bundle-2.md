@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T22:11:49Z'
+  at: '2026-11-23T19:28:48Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-bundle-2
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-22T22:11:41.496157+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: ''
 disposed_by: ''
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el

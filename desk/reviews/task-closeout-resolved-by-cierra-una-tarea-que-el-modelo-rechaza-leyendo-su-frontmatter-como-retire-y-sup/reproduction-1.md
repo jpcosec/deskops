@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T17:42:29Z'
+  at: '2026-11-23T19:04:45Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-closeout-resolved-by-cierra-una-tarea-que-el-modelo-rechaza-leyendo-su-frontmatter-como-retire-y-sup-reproduction-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -22,6 +22,8 @@ actor: coord2
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 6cf0c93c0e625246585ac9ffb1259240691d7026b7483f5827a4797f34733e8c
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: pending
@@ -34,9 +36,8 @@ created_at: '2026-11-11T17:42:29.584652+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: ''
 disposed_by: ''
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Reproduction review of task-closeout-resolved-by-cierra-una-tarea-que-el-modelo-rechaza-leyendo-su-frontmatter-como-retire-y-sup

@@ -1,7 +1,7 @@
 name: review-deskops-ui-pu01-node-1
 path: desk/reviews/deskops-ui-pu01/node-1.md
-source_hash: 683f038fbd218fd7204d7d75c9a55b8a0e119b18024023ba740f2edcf5eb6c17
-content_hash: 4b1973dc0a8597832cb64f963a1fbb2146853aa80346308571a13c586d85c215
+source_hash: 03c0e9956260cd1394364e9a84f287821bafe0256bcc89eae216afe5efc19e6a
+content_hash: cd12e5e33c98aa1790e57b2ded826996ac8600d45e534863dc9764beb04fbe1d
 field_hashes:
   id: aec75d185f8f3ebe0c63d6dbc875b8bc4710092f9628559ab6640c0649d46542
   title: 6cabfad797fc8cd6319b37a1ebdc52ec89389ab2e7f630a916a1d06afb12c066
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 8e5ccbeea47618c8851b265d389acedfe17e353668d9398cc624106a9321dee6
   disposition: 220592a3c6bd74e87f529fcb84b65c1275096038b2295d322f5fd11566e273ae
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T03:05:19Z'
+  at: '2026-11-23T18:51:36Z'
   authority: generated
   via: save_document_payload

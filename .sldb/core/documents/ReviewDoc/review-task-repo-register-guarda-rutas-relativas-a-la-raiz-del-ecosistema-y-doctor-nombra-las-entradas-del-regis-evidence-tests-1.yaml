@@ -1,7 +1,7 @@
 name: review-task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis-evidence-tests-1
 path: desk/reviews/task-repo-register-guarda-rutas-relativas-a-la-raiz-del-ecosistema-y-doctor-nombra-las-entradas-del-regis/evidence-tests-1.md
-source_hash: b2b5e98d5dbbe2d03a3ff0479f18dd8d6d609dad30539a80e136b61e78f91840
-content_hash: 82b324744f7b35c7eb89d784565f90d21c56626a1da6c879397d0f87b5402437
+source_hash: 29e5e65e32939e266669b8f0bd715ecee560ce2cad7ec5fa2245421250d3cd05
+content_hash: 2d992bacf6a34d14674689a2746ebf51d6e532539510051ce3f2b57ce1dfed07
 field_hashes:
   id: 90eec407887d908b3aaef507c6b5ab95af8c5d70cc7a89b48585ab61b56d7391
   title: 645449dd99d20626699ff90da5ff97bdd21d07b1a528fbfc4839d6c934470c5e
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 22cf934f2351069b96b9b9582b0281edcd0ed45de94ad494e7cbb34e581f0ddf
   disposition: 20ff6763df09bc2ef509f40f725952afe51416ffd626bbc1a41cc760f045f3c2
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T11:56:30Z'
+  at: '2026-11-23T19:40:18Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

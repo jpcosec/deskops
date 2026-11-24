@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:50:50Z'
+  at: '2026-11-24T02:14:30Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -37,9 +37,8 @@ created_at: '2026-11-21T07:49:15.781192+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:50:43.032766+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas

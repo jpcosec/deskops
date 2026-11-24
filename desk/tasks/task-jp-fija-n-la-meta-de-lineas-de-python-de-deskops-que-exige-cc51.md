@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T04:08:01Z'
+  at: '2026-11-24T02:19:30Z'
   authority: generated
   via: save_document_payload
 id: task-jp-fija-n-la-meta-de-lineas-de-python-de-deskops-que-exige-cc51
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:32:02Z'
+  at: '2026-11-23T19:32:54Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13/preflight/3c43b4efdcfe39a9b1fa6db6ac02159034701e9756a6e095287f96e8ac529259/attempt-1
 input_sha256: 3c43b4efdcfe39a9b1fa6db6ac02159034701e9756a6e095287f96e8ac529259
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 8ca95ba47ed179d53771b3ab13b559e08741e0627cdcd0336158d58f6969862f
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:23:48.861504+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:31:58.348212+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13

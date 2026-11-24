@@ -32,7 +32,7 @@ class TaskDoc(OperationalArtifactDoc):
     __artifact__ = {
         "id_pattern": "task-{slug}",
         "status_default": "draft",
-        "tags": ["workspace:desk", "artifact:task"],
+        "tags": [],
     }
     # The contract fields: editing any of these changes the task contract and (once sldb reads
     # GO02 (e)) leaves receipts `changed`; editing references/pills/status/history/tags does not.
@@ -46,7 +46,7 @@ class TaskDoc(OperationalArtifactDoc):
         "atoms": ["AtomDoc"],
     }
     model_config = {"extra": "ignore"}
-    __semantics__ = {"type": ["workflow", "task"], "workspace": ["desk"]}
+    __semantics__ = {"type": ["workflow", "task"], "workspace": ["desk"], "board": ["tareas"]}
 
     __template__ = """---
 id: ⸢rev•id⸥

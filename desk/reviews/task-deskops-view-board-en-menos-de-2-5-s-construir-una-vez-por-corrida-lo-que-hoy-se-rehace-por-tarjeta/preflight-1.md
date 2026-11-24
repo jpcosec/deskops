@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-12T03:40:17Z'
+  at: '2026-11-23T19:16:18Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261112-033829/context-review/task-deskops-view-board-en-menos-de-2-5-s-construir-una-vez-por-corrida-lo-que-hoy-se-rehace-por-tarjeta/preflight/85e401bd354af5d51a8490b87a026006a0178f663cd7a2327e9af462145acd29/attempt-1
 input_sha256: 85e401bd354af5d51a8490b87a026006a0178f663cd7a2327e9af462145acd29
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 1e1d2cc5beba5ef8a951b57c1ab7260b6609f6cde877812b77f822c7ab19b485
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -54,9 +56,8 @@ created_at: '2026-11-12T03:38:47.770329+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-12T03:40:15.103797+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-view-board-en-menos-de-2-5-s-construir-una-vez-por-corrida-lo-que-hoy-se-rehace-por-tarjeta

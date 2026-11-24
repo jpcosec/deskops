@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T07:07:33Z'
+  at: '2026-11-24T02:15:37Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -35,9 +35,8 @@ created_at: '2026-11-18T07:06:21.920637+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T07:07:26.560569+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-un-ejecutor-bloqueado-no-puede-dejar-su-tarea-en-testing-y-existe-la-vuelta-de-testing-a-execution

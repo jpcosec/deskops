@@ -11,7 +11,7 @@ class InboxNoteDoc(StructuredNLDoc):
     __artifact__ = {
         "id_pattern": "inbox-note-{slug}",
         "status_default": "open",
-        "tags": ["workspace:desk", "artifact:inbox-note"],
+        "tags": [],
     }
     __semantics__ = {
         "type": ["desk", "inbox-note"],

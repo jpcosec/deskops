@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T04:14:49Z'
+  at: '2026-11-24T02:19:24Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

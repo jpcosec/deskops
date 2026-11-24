@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T07:47:12Z'
+  at: '2026-11-23T19:21:37Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio-evidence-commit-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -37,9 +37,8 @@ created_at: '2026-11-22T07:47:07.377780+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T07:47:07.377780+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence commit of task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio

@@ -1,7 +1,7 @@
 name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-atom-1
 path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-atom-1.md
-source_hash: 6197036200cac83e05c1e4ffd7ff5395ce6c18d86a0556b167bf2c6f054794e0
-content_hash: 7bf6807ccc28b0022a8edc0bfb318bbb662b00695308a8f0528e160f20783d82
+source_hash: 55430cf799d9ddd4239c9fe5b1f974d66957d1e67b1fd1104c9ecc8a6bf38520
+content_hash: dea09fbf93eeb776f799f0e165329062a6c94151af927db3f06f9b94f015bd8c
 field_hashes:
   id: e549b42e021316973323116e63ffb2f99498f4be6d9101ded952e289c33b4582
   title: e1a57ca538cd3637006408521db0d65ff652d2e6e34a463cd1c7bd797f3f00cc
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: 705540ce3e91d69adfe9a28eab144c329c663bc8cc21cf1e9e2f7a7352b5b293
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 203f34d877117bef92d25185b4510d6a4ffe6cbd29d45df7a36634bdb85a2f12
@@ -22,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 21a7a16cbb556737f38e231308184f89b4fefff8e26e554d32ab927993dc7329
   disposition: 1906c9a3bb1127c261ccfde6f3bdf56e18379e9719ed397d1b77298f0e89b220
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T04:23:46Z'
+  at: '2026-11-23T19:41:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

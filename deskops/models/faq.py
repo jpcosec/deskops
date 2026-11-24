@@ -9,7 +9,7 @@ class DeskFAQDoc(StructuredNLDoc):
     __artifact__ = {
         "id_pattern": "faq-{slug}",
         "status_default": "active",
-        "tags": ["workspace:docs", "artifact:faq"],
+        "tags": [],
     }
     __semantics__ = {
         "type": ["documentation", "faq"],

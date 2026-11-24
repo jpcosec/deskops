@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:58:22Z'
+  at: '2026-11-23T18:58:50Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle2/context-review/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests/bundle/9ff0358cf51e515c3b2f8682c4a6473d7726092038e1d0d94d5f3ff0f73b686d/attempt-1
 input_sha256: 9ff0358cf51e515c3b2f8682c4a6473d7726092038e1d0d94d5f3ff0f73b686d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 4f72c0e539cba51d427668e6cdca673d6414ae631ce980afe934d77462686794
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T05:54:22.311245+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:58:17.254660+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests

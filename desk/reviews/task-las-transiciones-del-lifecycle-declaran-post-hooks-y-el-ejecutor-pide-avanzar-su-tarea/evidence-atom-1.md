@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T23:02:07Z'
+  at: '2026-11-23T19:33:01Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -42,9 +42,8 @@ created_at: '2026-11-17T23:01:57.876736+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T23:01:57.876736+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea

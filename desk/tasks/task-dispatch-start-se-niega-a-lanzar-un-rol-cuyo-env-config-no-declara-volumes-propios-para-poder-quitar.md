@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T04:38:38Z'
+  at: '2026-11-24T02:17:54Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-dispatch-start-se-niega-a-lanzar-un-rol-cuyo-env-config-no-declara-volumes-propios-para-poder-quitar
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

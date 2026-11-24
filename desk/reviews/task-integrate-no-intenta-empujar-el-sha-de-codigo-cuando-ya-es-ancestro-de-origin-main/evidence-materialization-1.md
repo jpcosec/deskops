@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T05:48:33Z'
+  at: '2026-11-23T19:28:35Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -41,9 +41,8 @@ created_at: '2026-11-20T05:48:23.152125+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T05:48:23.152125+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main

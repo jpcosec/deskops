@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T23:37:10Z'
+  at: '2026-11-23T19:04:27Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261111-233620/context-review/task-closeout-resolved-by-acepta-referencias-calificadas-por-repo-repo-sha-repo-ruta-de-test-verificadas/preflight/dc01ee0a45c3050c33093c706b860392878917f64f0872d724038120a44963f8/attempt-1
 input_sha256: dc01ee0a45c3050c33093c706b860392878917f64f0872d724038120a44963f8
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 3671adc3bbcf26ce5e2e0b18029adcd15daabd34ece2966a16d89d0165a1980d
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -48,9 +50,8 @@ created_at: '2026-11-11T23:36:30.940364+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T23:37:07.942610+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-resolved-by-acepta-referencias-calificadas-por-repo-repo-sha-repo-ruta-de-test-verificadas

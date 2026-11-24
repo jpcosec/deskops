@@ -111,6 +111,8 @@ MUTATING_COMMANDS: set[tuple[str, ...]] = {
     ("desk", "migrate"),
     ("desk", "replace"),
     ("desk", "update"),
+    ("tags",),
+    ("tags", "migrate"),
     ("atoms",),
     ("atoms", "add-namespace"),
     ("atoms", "reorganize"),

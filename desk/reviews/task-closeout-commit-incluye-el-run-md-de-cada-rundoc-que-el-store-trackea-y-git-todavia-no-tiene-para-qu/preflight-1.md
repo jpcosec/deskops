@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T12:06:10Z'
+  at: '2026-11-23T19:03:13Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -45,9 +45,8 @@ created_at: '2026-11-17T11:59:10.215275+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T12:05:58.577572+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu

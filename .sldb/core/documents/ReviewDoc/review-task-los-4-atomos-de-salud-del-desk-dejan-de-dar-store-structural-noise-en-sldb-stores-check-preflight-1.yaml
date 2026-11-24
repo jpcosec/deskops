@@ -1,7 +1,7 @@
 name: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-preflight-1
 path: desk/reviews/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/preflight-1.md
-source_hash: 87629f9c43dcdc1b150d89c826087d16c9810f7af561ab0441edef88835dd43b
-content_hash: ff719c5f1b6f72aea0d8ce69a5c70ca456350076e7abeb586e0267ab879b5c9b
+source_hash: dfdf6f9085a1f12c4869dacc90fa03146b22ebb2347bf3ef1d497b31fd5ad7e9
+content_hash: ab1ea8e149a271eae2cff73f43f9a601df85d547284c86da1247900928625c85
 field_hashes:
   id: eb86e973b665cde8696db9e6435a432aa616c65a638947e521936b527fe8bec1
   title: 318173f95c3d9fa1442664a48ec476ae1cb091c155925ce9e2552857c1e7c301
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 948727d06098709bc82e69bb7e20a6be890bc35725d3700c105f79e5d493366f
   disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:06:40Z'
+  at: '2026-11-23T19:34:02Z'
   authority: generated
   via: save_document_payload

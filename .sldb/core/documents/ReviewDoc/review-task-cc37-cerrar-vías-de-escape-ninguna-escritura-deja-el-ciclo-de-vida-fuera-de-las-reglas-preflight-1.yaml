@@ -1,7 +1,7 @@
 name: review-task-cc37-cerrar-vías-de-escape-ninguna-escritura-deja-el-ciclo-de-vida-fuera-de-las-reglas-preflight-1
 path: desk/reviews/task-cc37-cerrar-vías-de-escape-ninguna-escritura-deja-el-ciclo-de-vida-fuera-de-las-reglas/preflight-1.md
-source_hash: c9d3a525e6817fe26e10d3835eea7c0fbc544182749ab20e016f809edbe176c6
-content_hash: 39b2e361bb8efc1815abc4e3eeeb8ffa76c6acd4cd6881f1a1078a923ec99519
+source_hash: 9e45d28e31a5f20e8ae8ebafa76d17e5e2bed607f0cf4ed636cb64fff0e25fc5
+content_hash: 73cca551c4a7e66279144914f9b2313c01b563abcd47e0bf0184304618b981aa
 field_hashes:
   id: 84b1ed9d5570a2c1cb03033142518da44f558a8e7774bb4552a5772215d6d078
   title: 9b8f25d57ec3b8623e3cde05062b0f43e20c33dbbd3c9576e05cf1a84925f554
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: ee9f766c8f26883c055439649669824988c7fc0cd3d98701b345439aaf222b6e
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-09T19:30:27Z'
+  at: '2026-11-23T19:02:07Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

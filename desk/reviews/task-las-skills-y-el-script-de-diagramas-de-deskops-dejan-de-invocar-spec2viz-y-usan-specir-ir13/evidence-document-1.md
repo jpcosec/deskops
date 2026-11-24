@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T20:54:45Z'
+  at: '2026-11-23T19:32:47Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13-evidence-document-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -30,6 +30,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 2608a2de91cfeb64560e88d66f6159029951cd610b9593441073f11054929598
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -47,9 +49,8 @@ created_at: '2026-11-16T20:54:38.625409+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T20:54:38.625409+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence document of task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13

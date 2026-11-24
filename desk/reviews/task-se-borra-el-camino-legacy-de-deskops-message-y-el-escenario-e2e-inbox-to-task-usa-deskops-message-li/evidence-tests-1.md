@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T23:09:58Z'
+  at: '2026-11-24T02:13:30Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li-evidence-tests-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -45,9 +45,8 @@ created_at: '2026-11-20T23:09:57.322442+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T23:09:57.322442+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li

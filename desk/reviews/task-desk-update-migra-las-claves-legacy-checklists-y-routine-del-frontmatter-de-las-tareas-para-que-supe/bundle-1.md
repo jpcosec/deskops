@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T15:59:54Z'
+  at: '2026-11-23T19:07:59Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-bundle-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-152950/context-review/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/bundle/9c2b43f2557cb69ec151ae6b208259fdd24a10f5c4e419fc4ac649dea9e8302a/attempt-1
 input_sha256: 9c2b43f2557cb69ec151ae6b208259fdd24a10f5c4e419fc4ac649dea9e8302a
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 # pending | accepted | rejected | incomplete
 verdict: incomplete
@@ -31,9 +33,8 @@ created_at: '2026-11-16T15:59:51.475258+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: ''
 disposed_by: ''
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe

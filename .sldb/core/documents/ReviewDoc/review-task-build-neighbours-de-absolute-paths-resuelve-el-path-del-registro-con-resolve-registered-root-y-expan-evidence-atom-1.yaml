@@ -1,7 +1,7 @@
 name: review-task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan-evidence-atom-1
 path: desk/reviews/task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan/evidence-atom-1.md
-source_hash: b567f6636f18b8f652deb09d68826294ee5bbe7bf63525452e8605bf9be01e95
-content_hash: 5be2476e1815274a9a0cd5cd1dd3d817beff5ac2745fa014c6a6489656cfd282
+source_hash: 2fd30273e1606b0a28330c7d64017332f9df5c3a9c976b7c66b7bd7a2da11a1d
+content_hash: ea2a0850e90174882838a453c579d41a65f520f04d0b85b3abdcf7e1927c59f0
 field_hashes:
   id: 1dfd288129c294875def63f53d5aa10c614b9d1d3256b84821a4dd1c061361d2
   title: 3d85ae1ac1bfd119c28b4ec7a23406d42b7b89e21658c5fcc268793873b7cefd
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: de24afd00b4ae9d2fcaea6a2e66d4d2e39002901a4891de154d686db6d359683
   disposition: cec45a926620f048dde27d4a72c5b5285374bc2d08362901dc4f4f48703f3776
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T12:16:20Z'
+  at: '2026-11-23T18:59:03Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

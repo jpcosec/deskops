@@ -1,7 +1,7 @@
 name: review-task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent-preflight-2
 path: desk/reviews/task-deskops-dispatch-lanza-y-recoge-por-scion-al-ejecutor-y-al-tester-de-una-tarea-sin-coordinador-agent/preflight-2.md
-source_hash: 1a9afdb1c5332cf1611f82b237244f4ae2f3e425e0ba446cd765c764ac2ffe83
-content_hash: 128f7389cf5bcedf860c13e4e7899145b1d5ebec93fd4b276b25e108d1bf3305
+source_hash: d34a53e18c377ddf911e696005838627e3e6674a2668454665c282e414b9d198
+content_hash: 359dee032b3c2e10bcca42eb0e3ff801c31599244a3f7655c8fed5385468c9cc
 field_hashes:
   id: d81f118f6009fcdc079e88d34efbfb18eed49a2c412619fa488f01a563832c08
   title: af609a7a4583e2a7450f1dadc9ff4fc0ead9af50c0b490c652c2651e09d3586f
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 3349796ffaa42b666b0987805f246879c521b7bdcdc3f4d9a5cde48ae48d6867
   disposition: 19d1079b5cf1957e02c3995a6d87432950033505ae8fe1a3ec59f98dfd04a1df
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T07:08:34Z'
+  at: '2026-11-23T19:11:19Z'
   authority: generated
   via: save_document_payload

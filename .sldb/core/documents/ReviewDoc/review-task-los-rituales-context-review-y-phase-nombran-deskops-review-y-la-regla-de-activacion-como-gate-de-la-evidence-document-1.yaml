@@ -1,7 +1,7 @@
 name: review-task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la-evidence-document-1
 path: desk/reviews/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la/evidence-document-1.md
-source_hash: 12127a02a5fb4e4c51774663530071663c168f83dbf2e501a3bf0cad386599dd
-content_hash: 6a8f90049378240834bb1b3a9acd8ea1cd7429f6198838c51c07a8aa38f0a9a6
+source_hash: bb3131ecd30609e90765f659b18be903553152227897d84936996c2cb8044ed4
+content_hash: fdd95f438bca0ce96672c133a713dc986893652f895d3cc51acbcdddd91f8c11
 field_hashes:
   id: c40a337bf98311fc2143586b0fb85baa9359a0202991519b15f201e26676745f
   title: ea6da6af6385d62c2f788fc4eb02d4ea316872b610309b098211dfd9789d2e6f
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 83bd63d2478e87dd02ea927080070ff2ba92cdf8be2514ebe7285190365324f1
   disposition: be182e6724dd8f54ab264c4341ed5dfcb3fb4116be2e860d24d29f9b185a9b97
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T02:25:02Z'
+  at: '2026-11-23T19:36:12Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

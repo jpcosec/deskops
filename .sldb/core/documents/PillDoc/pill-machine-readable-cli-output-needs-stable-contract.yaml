@@ -1,11 +1,11 @@
 name: pill-machine-readable-cli-output-needs-stable-contract
 path: desk/contexts/pill-machine-readable-cli-output-needs-stable-contract.md
-source_hash: 2feeb224f2ba4ec65fb70b20897bb8b6eb4a840c141de92f22d2efd4423e382d
-content_hash: 22d9c21784f529ffcff311a4260fd2f152900a970f8e3a11cbfa1a2007f445f0
+source_hash: a674a815f651e9c5dcc01df456484721bfcdda48cd2f7e34befcfc542508a696
+content_hash: 04d041497e5343da781dbf8dd71108f6af58640cdd7edbfdd33848a9c8ad9868
 field_hashes:
   title: 96806e15d62e980a3edc7d186760b0aa8d718edcb77e3503eaae5403424e5373
   id: 84cd5f5dfe15a0ff8b50a3e05f97b96f22d8751b3a51f42a777fb0e9591219ed
-  tags: d84b41b0f49503242e1728c849ac56744b4e7e88a14a587d928dbc4db4bede57
+  tags: db3c8fd1b1a66eb0b1f02f987bc67bd8de0fe80a6d48aef9dcde270100c3e13e
   what: af803e3a6913928fdb9f078474de3dd134ebfebf4766ac3eed8147014bad01fd
   why: 42be84a7e6771ff39e65d001ca1b29c36e389d29aa57f925e892002826af1990
   when: 5240bad7fb7406722880ffec1449609c91e597b59c4c757c596bc6277e61cd0e
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:serialization
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T18:47:45Z'
+  authority: generated
+  via: save_document_payload

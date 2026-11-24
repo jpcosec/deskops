@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T10:33:13Z'
+  at: '2026-11-23T19:03:45Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-23T10:33:02.104586+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T10:33:02.104586+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:47:03Z'
+  at: '2026-11-24T02:11:19Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -36,9 +36,8 @@ created_at: '2026-11-21T07:45:41.966003+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:46:55.317200+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar

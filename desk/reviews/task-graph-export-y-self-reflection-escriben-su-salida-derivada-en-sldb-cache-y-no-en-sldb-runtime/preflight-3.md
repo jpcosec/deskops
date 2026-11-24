@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:18:46Z'
+  at: '2026-11-23T19:25:18Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -51,9 +51,8 @@ created_at: '2026-11-21T07:17:01.745850+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:18:39.255075+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime

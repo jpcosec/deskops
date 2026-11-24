@@ -1,7 +1,7 @@
 name: review-task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int-preflight-1
 path: desk/reviews/task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int/preflight-1.md
-source_hash: 48726f5317b168e2cfd06ab7e86709ed9900135f2ec91f5bf4920e426c6b263d
-content_hash: 4a709d07309531771f30fb54c117af7c29a3b37dcfc5c2c2e5b5df07e70b2d12
+source_hash: b432d01490df3df9e62da6c2adb7326ec30a8ce02d2cdf0cfe5000a1b41bc49b
+content_hash: 8c44109e1d5d229bdacda3f232466a4e8991ffc79b551d99fb2c6ebd6bd9ccb7
 field_hashes:
   id: 784f74d06fc453b5e6ac6a16aad8f80f6d336b437486e1450279902be1e5e184
   title: 2e6205d8f6c1892b5a1dee30933c5e74760b7bef4a3919b36711b9965690e816
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b7e85d7f679dc01379c9b79208f4fdada8b58af6becb853febf6b8448642863c
   disposition: ffca30a66c80d4daa46298683bda1910950f10c17bc1b22c99ddce7074cb3e8d
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T13:43:48Z'
+  at: '2026-11-23T19:11:58Z'
   authority: generated
   via: save_document_payload

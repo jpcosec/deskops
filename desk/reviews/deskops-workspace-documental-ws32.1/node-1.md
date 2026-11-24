@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T04:20:40Z'
+  at: '2026-11-23T18:55:02Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-workspace-documental-r2/context-review/deskops-workspace-documental/WS32.1/d9ece8723968e3b36db9fbb8aff162b0618a9d9612a653add9c030647e5aa747/attempt-1
 input_sha256: d9ece8723968e3b36db9fbb8aff162b0618a9d9612a653add9c030647e5aa747
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 7c8372af0838a5f1f57c62caac80b96ca064c55da7fcb4ed53cde32ce55d9363
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-17T04:14:22.808050+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T04:20:34.615942+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of WS32.1

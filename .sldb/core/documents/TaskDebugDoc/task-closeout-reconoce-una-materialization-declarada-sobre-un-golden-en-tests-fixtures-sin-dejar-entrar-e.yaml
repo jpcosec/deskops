@@ -1,13 +1,13 @@
 name: task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e
 path: desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
-source_hash: 1f616c4d1eda4c4107475377f2d6261abefe9eabd23e7d00c30cb1af38dab472
-content_hash: 48d17e49d8ccb9d54911f58fcd22badcfc6576b173c47d388701038bdf949571
+source_hash: 8b1f1c86126785521ccda05a9501123735d1566ce48c4f2995e13ba569febe73
+content_hash: 290d4adff9a83519b0d460b71279a009ad154fc4f8fd8680ac7d484a8547a98e
 field_hashes:
   title: 80d780bb2ac90ac4c2ad65fcf5e60a4d7cdab00191117635dfe35bf02df298b2
   id: 2f1ef8548ca844452b0608d6a245644b7f3597cfd24c7580acd79323a1d30145
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 6095cd0774eb807eeaa1bd45b83a65a447c3c1e9706931a5c1f80503c1a7ec0e
@@ -26,15 +26,14 @@ field_hashes:
   atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
   from_drawer: 39c2f5433d82ceead21fc24b1f6800a720daca941e96f77ddd6aca7b913a1172
 semantic_tags:
-- artifact:task
+- board.tareas
 - host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:00:27Z'
+  at: '2026-11-24T02:17:34Z'
   authority: generated
   via: save_document_payload

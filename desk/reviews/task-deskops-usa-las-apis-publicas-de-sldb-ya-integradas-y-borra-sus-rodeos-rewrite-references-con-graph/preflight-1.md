@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:07:37Z'
+  at: '2026-11-23T19:16:09Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -49,9 +49,8 @@ created_at: '2026-11-21T07:03:46.480694+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:07:28.177191+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph

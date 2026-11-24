@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T05:57:33Z'
+  at: '2026-11-23T19:23:21Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -33,9 +33,8 @@ created_at: '2026-11-18T05:57:05.847998+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T05:57:26.893396+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual

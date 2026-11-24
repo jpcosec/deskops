@@ -1,7 +1,7 @@
 name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-bundle-2
 path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/bundle-2.md
-source_hash: dead62acc8e2912904fb6db1697f73deba8ec85d79bd7114d83fce9bf16c9ac0
-content_hash: de3bc96764c9e51ff5a788bf5e6e2d88a0ee6f23bf63078e22b07f6ee8d83090
+source_hash: 4981b17cd1114570e17ab74771a0dabeac4815be5e44b47cccd7e9daba1cc760
+content_hash: d762c7018634a86eec972331d7e3db43b46a2ab12096df2141757fd85008466c
 field_hashes:
   id: d91fca6524950d546d5fbc71c113097014d031f5e846847d8910272a7ec296c1
   title: b9e4953921e748ef218af42e55ceb2ef2ea31869c549954e069034287ebbd6c1
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: 6ac25f32b9920b3c86b5c0ecde2a2f2d07c1ab39fb2f4c8d6977593a11c8dcf9
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T22:11:49Z'
+  at: '2026-11-23T19:28:48Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

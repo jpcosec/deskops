@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:32:56Z'
+  at: '2026-11-23T19:41:08Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/preflight/d71389f63f73bc0d5862885d928f0489fe26696a6a3781962224de5a83f06d50/attempt-1
 input_sha256: d71389f63f73bc0d5862885d928f0489fe26696a6a3781962224de5a83f06d50
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 162dabbb8575ad946616fee0c299c986ce24b9ed50129a7ec7722bf5bcd19b05
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:26:47.282307+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:32:51.929249+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias

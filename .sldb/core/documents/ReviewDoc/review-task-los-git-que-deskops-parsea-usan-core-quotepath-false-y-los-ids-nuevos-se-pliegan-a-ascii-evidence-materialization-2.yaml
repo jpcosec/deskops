@@ -1,7 +1,7 @@
 name: review-task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii-evidence-materialization-2
 path: desk/reviews/task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii/evidence-materialization-2.md
-source_hash: a1a1abbb68ed07f7417276c26bab9f91ebf0d81257f933dc215316fdc73021fd
-content_hash: d912e58241ab6031634ae53eb19d9d30671982de239ee35dd222419672df2666
+source_hash: 272bbadbedbe41f5858563c6003616947569618ecb29b0efe349a0210d9e42b4
+content_hash: 4e2b1eec73e267ae2f91e56d5ebf7a5d69dc61e2a63c454a28f5531a61d008de
 field_hashes:
   id: 5e0acd229348ae78304ece05ef47672e0110e730fb933ddf34b82d153d52f1d3
   title: 6f57b599d620be15548ac9fbba3fd5e71f8de54abe28a4c544023a92026774b4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 3d76d8b2dc050b6a5deb63810bd0bebb709938fc3a5d51352baa2f0c6854fa9f
   disposition: f2d935ccd8b60c9f70e439976b0af926fe16446b10b88791478d2a08450eabb7
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T21:27:18Z'
+  at: '2026-11-23T19:35:48Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

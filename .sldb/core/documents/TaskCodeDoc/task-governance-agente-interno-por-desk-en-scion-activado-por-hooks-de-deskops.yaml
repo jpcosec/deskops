@@ -1,13 +1,13 @@
 name: task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops
 path: desk/tasks/task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops.md
-source_hash: d6f97883bf9f2b9a29bab8e71cca1ca07fa9eb630940c71c58212c084465e71e
-content_hash: b345b9aaaeac39fba646343f88c4ef95129965f7ff054c7b94909dde65f2e5b9
+source_hash: 1a6f960a5afa176e15d462ce6a1b228ed6e7858821a1aff7f737f30e8a4cc01a
+content_hash: 1531226e688421d0977fc29c4041f4ae586d710cb2dc8ec643ba56f0ef7d7166
 field_hashes:
   title: bd599e5cdc222bed00918cdc810e2e3fa123f346e59a728b25aae4bfe5166631
   id: 3f1659df9d8bd6b2b0a43478c81e3fae9ac23a7f555c14e870bf276d7e6a6dc8
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 24e0f874685ba6a6627915bb7b71eff5741ebeffe56191f0b20d99320e8a2641
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T04:40:36Z'
+  at: '2026-11-24T02:18:08Z'
   authority: generated
   via: save_document_payload

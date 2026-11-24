@@ -1,11 +1,11 @@
 name: pill-pattern-supervisor-playbook-buenas-tareas-bundle-contexto-cero-y-frontera-de-modelos
 path: desk/contexts/pill-pattern-supervisor-playbook-buenas-tareas-bundle-contexto-cero-y-frontera-de-modelos.md
-source_hash: 87962fe471e6a54eea59a761ba01121aca06b5999c904ef8a60d914ada748126
-content_hash: fdd8ec9cdd7c19c78df5f47e787514ec9cd2280c8d9185b4752c05a293040c6b
+source_hash: 4c59b64f2bd8c324e2ad87ab182aa18ac7d2966b835bd52611760ed5524df8d7
+content_hash: d605715a8413e450d3c1cbd0449e5deffdd8af6297c7945016ab40f1253b5267
 field_hashes:
   title: 35acd4e70cad115010f80a71d1617bc77b666c893747db726bfd90fe50fecccf
   id: aa8ac7a947a120566dbb221ac785aeeeab3baae4a605198508392a75b4722328
-  tags: f8b4fc12669a1b45325580f7f61a11d7bbb000601be5fc89c8c9ec122665926f
+  tags: 1f942bcf2cdaf5614a0838171734ca00ef80c85e2bf26a963422f2eee805ddb0
   what: 476e2bc3bd639c049c479c03358c7645364494d65e1917f390d79d7654f12fac
   why: 2b1ca9bbc5e22f4e32ebc7d5eb000147c287e01b6c5ec16113d86744e74d4b2c
   when: 191ff0fb4de900584aa2d7c759d9f13423de15cb0b5971e6fa2cf044773519e6
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:task-authoring
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T18:47:58Z'
+  authority: generated
+  via: save_document_payload

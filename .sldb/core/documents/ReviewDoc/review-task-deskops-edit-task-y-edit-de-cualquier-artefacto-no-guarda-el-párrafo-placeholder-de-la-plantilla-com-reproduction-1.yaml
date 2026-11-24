@@ -1,7 +1,7 @@
 name: review-task-deskops-edit-task-y-edit-de-cualquier-artefacto-no-guarda-el-párrafo-placeholder-de-la-plantilla-com-reproduction-1
 path: desk/reviews/task-deskops-edit-task-y-edit-de-cualquier-artefacto-no-guarda-el-párrafo-placeholder-de-la-plantilla-com/reproduction-1.md
-source_hash: 386ea2f397295a9b5acd3ce5ae7bb1844c3e68bcbe78b0bce1d54a061353a6ec
-content_hash: d8967c72c2e5e9bbcc0142990498ccd8da7f43cf853bdea6e77ec56e7097f3e3
+source_hash: a209b7d9d1faf266a0341978bf70e2e3217df8a7586ce8a7776e8081459c976a
+content_hash: 8d48b49f28cbb36610875cbf60ac30e39373280c79091c80baf9071ead515f96
 field_hashes:
   id: 567cc1b4ecf634344d58cc05fbf8081df1502525c5e114e4429fdc885aec442c
   title: 990497cfe4743b5faebfd0fbfa0f3928c89aa1f74efe4d15cb60964d26f5ee15
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: a97a0b5af0182b50f8db96d3af87334265906f1f06a7adf7dc9964ed0f8fefc7
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-11T22:49:02Z'
+  at: '2026-11-23T19:12:15Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

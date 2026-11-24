@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T19:20:24Z'
+  at: '2026-11-24T02:12:02Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -105,9 +105,8 @@ created_at: '2026-11-22T19:20:11.248854+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T19:20:11.248854+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:33:11Z'
+  at: '2026-11-23T19:02:38Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2/preflight/5ee73ec6934554f64db91261b78e84daf32bb55f7dc17d8dfd66fb6be5f94ced/attempt-1
 input_sha256: 5ee73ec6934554f64db91261b78e84daf32bb55f7dc17d8dfd66fb6be5f94ced
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 2d55adeb3333667909f8a4fd93aaabb945250719481cb3a14c0eaed60f65f07e
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:27:43.235163+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:33:07.419769+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2

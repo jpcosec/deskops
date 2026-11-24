@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:17:06Z'
+  at: '2026-11-23T19:09:57Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-nuevas/context-review/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y/bundle/e880437c0d76d6f39b851970e8622db0f41326316806b4c9f2c72f2c7bb7f8e5/attempt-1
 input_sha256: e880437c0d76d6f39b851970e8622db0f41326316806b4c9f2c72f2c7bb7f8e5
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: b070de5741b094e9a1140366ac4df37a472ddaa54fdfea9caa50a9f3048b292e
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T06:13:34.777085+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T06:17:03.652738+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y

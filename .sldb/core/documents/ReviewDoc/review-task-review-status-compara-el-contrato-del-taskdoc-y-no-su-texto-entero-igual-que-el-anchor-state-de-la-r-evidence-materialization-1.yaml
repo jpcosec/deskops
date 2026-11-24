@@ -1,7 +1,7 @@
 name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-evidence-materialization-1
 path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/evidence-materialization-1.md
-source_hash: 199caa1749baafe6a1c96fa60a161a2323fb479f72d224c933a716ec04dcf11c
-content_hash: 442a549b597e75c127e4fa9d58bd2c9529191bde0067ddcda8e1f5c7b1889a14
+source_hash: 0203ce81eda704ef4db557145466e1b9e5129c6debd2621c5b71a39becc125b1
+content_hash: 4a5efee1f314eb0db16b27fb9d4ac31cac4d886728c6e9094c07a798c656b232
 field_hashes:
   id: f72eb9367165bf326151e91fc5a61a68c0e046c9f3068c95d8a28c2f3251de8b
   title: 3d36f5f4749ff08bb7f4151eb8e2d24ea7a6f918000fa11c065ed917f063e868
@@ -14,6 +14,7 @@ field_hashes:
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   input_sha256: dc2655acc7039cd54b4cdc0870fdc7b50f1a70b25ae58377e7b0102342f0eb06
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
   reason: 2a45cf0e46b7f2ace162e1980ede0f51878d742c352c824da0ab4bfc917b7ee8
@@ -22,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: dfedc287b6cb6a3ef59f28713f1658ddb56d996c40365743ba6d3ddd43c7ea1f
   disposition: 36de4745126406e32908cf5fb28ef4e4a1c587fba8ecf143f49dc915d4ad5675
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T04:23:52Z'
+  at: '2026-11-24T02:10:46Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

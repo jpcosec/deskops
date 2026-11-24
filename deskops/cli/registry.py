@@ -1653,6 +1653,24 @@ The issue status is set to closed and a ## Resolution section records Closed, Re
             mutates=True,
         ),
         Command(
+            path=("tags",),
+            help="Keep the desk's documents on one semantic tag vocabulary.",
+            args=(),
+            handler="deskops.cli.commands.tags:TagsCLI",
+            mutates=True,
+            subcommand_dest="tags_command",
+        ),
+        Command(
+            path=("tags", "migrate"),
+            help="Drop from every document the tags its model already says, repeats and class names (dry run unless --apply).",
+            args=(
+                ROOT_ARG,
+                A("--apply", action="store_true", help="Rewrite the documents; without it only report."),
+            ),
+            handler="deskops.cli.commands.tags:TagsCLI",
+            mutates=True,
+        ),
+        Command(
             path=("drift",),
             help="Check for role-agent drift between tracked role docs and installed agent files.",
             args=(),

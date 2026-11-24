@@ -1,7 +1,7 @@
 name: review-task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un-evidence-materialization-1
 path: desk/reviews/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/evidence-materialization-1.md
-source_hash: 6147e12f874236626b8c67a91a35b693cabfbf539d8305e67f3efd6556c4ad58
-content_hash: fea520458c8a0e119a5eb0817957202daa5e898b5423778236e11167cd730456
+source_hash: 7e34530afdbb4c6d8455103ba5b25c4048d7a9f0644713dcc68ad5cbb31a1d3f
+content_hash: acec9efa9e820da127f73a4aedb05ceb62d54cee74bb758c6d55837185ab4ded
 field_hashes:
   id: b23e7b471f4618f2fba8f503c3af646f6facd2b2aa00f42ff9cea1190428f7b2
   title: 6db55c76c14e26e550c8b21dec40236d441e24a6d296f8b92a99193ffa05740e
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 041479ba96c552514f46a489921fa04e5b8fda1c58b1dfd9437d8c5bd0982f5c
   disposition: 21bb50d100563ef3f6789d7aa301e86cd7e71d4b3113ea2709369672829d3cd5
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T15:02:49Z'
+  at: '2026-11-23T19:30:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

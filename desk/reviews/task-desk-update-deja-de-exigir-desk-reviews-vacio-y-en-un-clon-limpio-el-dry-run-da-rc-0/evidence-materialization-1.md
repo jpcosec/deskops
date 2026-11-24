@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T12:59:31Z'
+  at: '2026-11-23T19:07:33Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -24,6 +24,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 7d3c38ecefd13926e3df4d3960cfd0f530c938730a528a0d20e842bb5b350a5b
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T12:59:03.741544+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T12:59:03.741544+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0

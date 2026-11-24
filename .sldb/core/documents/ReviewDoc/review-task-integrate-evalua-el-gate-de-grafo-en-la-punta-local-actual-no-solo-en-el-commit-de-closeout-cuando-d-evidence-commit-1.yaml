@@ -1,7 +1,7 @@
 name: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-commit-1
 path: desk/reviews/task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d/evidence-commit-1.md
-source_hash: dc1a2edeee1517b93b6d4153a6fffd523b4e1ab092abc0de3b6ba7ab14991d3b
-content_hash: 25f7a4b7815f26421025d9bbdb2a0fa6b997210ed8e5b52c35a335b3dde1bc1e
+source_hash: a4e9b9a04a06dca96782c867cfbbfe9806be43c20d18d1f5350514305a031cbe
+content_hash: cb3011334bfcda67352e5bc2f06701ceba1a69193ff6a15c8228dfda78ff2308
 field_hashes:
   id: 11d1daf3b5108da604ebb65564c23ec4aa5230765f19444078e48ccb70458014
   title: 92d87afe37432c8708720f64f12ed56477956595fd78d264605792743b4bd1b5
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 346ec7af9e98c14bfdef19ad0adc6fbbe4b41d50764e8b6059c96dda1b4846b1
   disposition: fbbe6cbad6dc4645ff1390634b94cb7be179c21d3a12e0640970fd4b5164a71c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T11:05:40Z'
+  at: '2026-11-23T19:27:25Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

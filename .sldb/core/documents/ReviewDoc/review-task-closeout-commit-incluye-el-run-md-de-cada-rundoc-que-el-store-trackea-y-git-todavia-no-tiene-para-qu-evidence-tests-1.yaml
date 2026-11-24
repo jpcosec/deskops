@@ -1,7 +1,7 @@
 name: review-task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu-evidence-tests-1
 path: desk/reviews/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu/evidence-tests-1.md
-source_hash: c343de1618cb5dd91eb42751bf76f1511a209a3b85ca7053aa781d71953fd0a2
-content_hash: 9e1068e29cb5e5240d8df4d8c10ed72677e0af6fe7a6c3bd224e286715157385
+source_hash: 044d1b128f824c4f5aaf1ab6f7fc0c7019c8a05ae9d901ba04445fda7ba22846
+content_hash: 928ef60cdcf080b2be3858a0c62c88000ba96c81895982d7dbd392bd379c248c
 field_hashes:
   id: f0e1951610d3149202f766d8bf84d139d76be65ca3dbaf041e30090dc31eaa52
   title: 4fb50adc408569cdb018b095b70308eb317143d451877147380b4603218280e3
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 568b649c02aa801bf7fe5600c2cdc86046a3e5d793452111be346072cad6e7bd
   disposition: 492aeaf9e104efa38ee3489cbfa30e6318435788df4938b8366fb4136c4f3594
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T12:25:38Z'
+  at: '2026-11-23T19:03:10Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

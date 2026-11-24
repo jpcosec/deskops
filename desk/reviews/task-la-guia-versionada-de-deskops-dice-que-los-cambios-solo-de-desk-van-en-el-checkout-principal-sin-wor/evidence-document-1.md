@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T20:28:50Z'
+  at: '2026-11-23T19:30:52Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-evidence-document-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -37,9 +37,8 @@ created_at: '2026-11-21T20:28:39.439313+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T20:28:39.439313+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence document of task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor

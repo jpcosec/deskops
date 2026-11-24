@@ -1,7 +1,7 @@
 name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-evidence-materialization-1
 path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/evidence-materialization-1.md
-source_hash: 5d0f300e2f41725295683fa1a58cd1bdc31349224d42db7b2a99d3f611ce722e
-content_hash: a9359edeb157145e6c01fea37c8011256acdde2436181747e24ed7067f8343b1
+source_hash: cfe70b624a11a01777be20f21f1dd3dee0c244cdc0e41d4ad011c169aab7a306
+content_hash: 9ad37478ec2d1c96a5b1d2fe73dcade802747a51769dde0a53a2f2529c033136
 field_hashes:
   id: 3b218bdf44e837cc261844b88f063f943cb28761ee8e5ba4a469225494aad0f8
   title: 712c66c6747b178398ac7e188421ed0ea73a6b71966d5275f72c03d99fa971a4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 38f866378ce11950c1ad98b66dcdb97cc2e3198b4c587b627854e2131071b40a
   disposition: fbad35a0198bf1a272121b0e6d89cc72dcfb56a70639d4642624b015a61408ab
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T01:57:10Z'
+  at: '2026-11-23T19:29:02Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

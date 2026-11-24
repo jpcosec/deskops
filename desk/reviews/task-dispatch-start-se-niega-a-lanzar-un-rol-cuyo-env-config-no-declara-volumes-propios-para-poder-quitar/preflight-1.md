@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:12:33Z'
+  at: '2026-11-23T19:19:46Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -100,9 +100,8 @@ created_at: '2026-11-23T04:51:13.243203+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:12:25.204393+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-dispatch-start-se-niega-a-lanzar-un-rol-cuyo-env-config-no-declara-volumes-propios-para-poder-quitar

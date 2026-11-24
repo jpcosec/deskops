@@ -1,7 +1,7 @@
 name: review-task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados-bundle-1
 path: desk/reviews/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/bundle-1.md
-source_hash: 6047c4c3c9f1f88f44623935bef6d188554e86a29d86dcd3717ea44176ef5a8b
-content_hash: ad5ba23bbd81c02aca6a3186fa77a1aaec86ce86fdaae99f087c8cca679695e4
+source_hash: 70a8da0dc901de2c2c5607992003dfdd120ae70bc38fa9161f9fe708f0f18d50
+content_hash: 7722723bb1038e2c02688c6028c3e2ab75b5ed14f6d7e47be357eff37f69bad6
 field_hashes:
   id: dee974675190ae1f460329d413a70e926c9c1f129ada4401a9acabecdbbe068b
   title: 9bcddc480a09e6db450b95c58af18bccc9f3b0186cdb47d725b01888a9d8c52a
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 7438e6887dd0d18c13abd3072a3fcb268e9e26b3b11ed2fe35e8d7ba23392549
   disposition: 96bb6cd17b4ab279eaed18eb04f9e7573620208e46b8832093c206b9ea78ce02
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T20:24:07Z'
+  at: '2026-11-23T19:31:28Z'
   authority: generated
   via: save_document_payload

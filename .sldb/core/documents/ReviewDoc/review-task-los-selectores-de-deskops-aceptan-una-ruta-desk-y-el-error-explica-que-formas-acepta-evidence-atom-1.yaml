@@ -1,7 +1,7 @@
 name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-atom-1
 path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-atom-1.md
-source_hash: 10e1eedf7745f3323de2b41d3140b8744136d6287d4a25594d0f915d09ec6783
-content_hash: 897a8864edcb0f6f623d2a2ff13a0484b23693ef58e8c0990cefe4d0171ef038
+source_hash: c49fdb82bab105fada925ecca7eebf0e4ec9e45ebbb27c5be20e0a4185f00d40
+content_hash: 1b88d5347d5ed3517f89825057685f68800970e3478ea75cd5325d5aea55d397
 field_hashes:
   id: ba0dcb78a114bcdb4bd6c76a78988814720f4375453240f0d5e6ba41206ff9c2
   title: 368d3f10ce6709c9ad5467260ec268f4762caa5c06fdfb9f148af084b3b35e72
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 189231d3f8bf1c61d41e9712c8005ed44b32f067a0b0cff70b87d3d5daf8d31e
   disposition: f6a7c9ecb9e9e07e3b4474b34134dce5c4e95ca277a9adad6509def8d8ecd20c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T15:12:52Z'
+  at: '2026-11-23T19:36:23Z'
   authority: generated
   via: save_document_payload

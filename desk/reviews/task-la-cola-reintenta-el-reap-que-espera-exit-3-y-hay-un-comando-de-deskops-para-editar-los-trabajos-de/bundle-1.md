@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:24:08Z'
+  at: '2026-11-23T19:29:42Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -55,9 +55,8 @@ created_at: '2026-11-22T21:23:07.016026+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T21:24:01.254648+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de

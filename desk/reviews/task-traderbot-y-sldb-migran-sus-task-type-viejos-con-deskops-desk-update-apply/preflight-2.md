@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:32:28Z'
+  at: '2026-11-24T02:15:14Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply/preflight/4c270b44cc84e1a0058878821b693c2fa852969b9bde540f8d5340f60a20118e/attempt-1
 input_sha256: 4c270b44cc84e1a0058878821b693c2fa852969b9bde540f8d5340f60a20118e
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 2d7e456d9b828a21590ada7cb06e0a46cf10205e8f6768e1abf8de58085cd04f
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:25:20.738272+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:32:24.562534+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply

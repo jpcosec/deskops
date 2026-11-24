@@ -1,7 +1,7 @@
 name: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-atom-1
 path: desk/reviews/task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada/evidence-atom-1.md
-source_hash: a3387fb3442bea82d90180e69b78cc9e843acfc76e7e2b397a16de92871544e8
-content_hash: 42638fee1aac5d34e4b848bc620c93b34095e852cdf1cee3b608ea31a057f93e
+source_hash: 4bfca5df2585727bdf087f087acb9a47395ae3d9083074932ea8571adfafb266
+content_hash: 36c7cd7b54e911103a02ac64fa0e7b8de9492109ee98c25a9bd8b964e86014a9
 field_hashes:
   id: 47a4b6b18eba1e57df0538cb3ac4883b60e2217156eb14a3c1abb931f9bd3682
   title: 2f8b07e22f079bbcdaf9aa427ae15666a72b0f22826d7ad99980da904a18ae14
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 9f87a1cf76b49a695dc5a5e4a256cc290c570ad01bfcbb43d18719310e872557
   disposition: 0eb6388e1cb99abac5f5df442da15d288159c7fe33d0f2b2e8a26339d57268e0
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T00:18:46Z'
+  at: '2026-11-23T19:21:08Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:34:16Z'
+  at: '2026-11-24T02:12:37Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/preflight/10af4d1d1e5fe75512d115bd3c7e69189368e875f9755bcbaf1bcadbfbbbba8b/attempt-1
 input_sha256: 10af4d1d1e5fe75512d115bd3c7e69189368e875f9755bcbaf1bcadbfbbbba8b
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: b6793b7f6f123135e632853dd187a8664fd5f5bbc8f509b5c8143e82dfb0da7f
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -34,9 +36,8 @@ created_at: '2026-11-16T05:21:47.135563+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:34:12.988929+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T08:53:53Z'
+  at: '2026-11-23T19:24:09Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -40,9 +40,8 @@ created_at: '2026-11-22T08:53:04.635771+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T08:53:46.571802+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove

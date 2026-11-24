@@ -1,7 +1,7 @@
 name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-preflight-1
 path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/preflight-1.md
-source_hash: 7dcfa5adeb61101530e558d413e59284f2b80153fafafb5ffd47d479b51698da
-content_hash: bb3eb1179de9caff8246f003b63e321633306fe5bc4ced7537d02ee5efbba2e0
+source_hash: a640333bd825355d2dc07d0fd94a6b036b95ac3473ec64a00ac32980a0c89030
+content_hash: 2d186a131a7143c6b8a70e8bb1edff918fb675e93ab5262603edc1cef6f8c7aa
 field_hashes:
   id: d309751a45179c018eaee15477e8316b940977d76020d7a9f2726d7fe7fe2fef
   title: ebcdc46a7d865ab94044bb7af3be2db5d1e36936b2d51bc969e9a28f71828cba
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 76b9e44bce10b0c2c68c10c2a17bd594c7611b4cdeecea3555729cf3c487da2c
   disposition: 99d2b9b63be012d3bf7234ca51dec975fc2c443016d98b9ba5a9669d7a1ae064
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T06:58:23Z'
+  at: '2026-11-23T19:12:35Z'
   authority: generated
   via: save_document_payload

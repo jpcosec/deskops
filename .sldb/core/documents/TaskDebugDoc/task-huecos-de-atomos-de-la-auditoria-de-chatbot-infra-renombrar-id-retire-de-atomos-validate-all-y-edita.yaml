@@ -1,13 +1,13 @@
 name: task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita
 path: desk/tasks/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.md
-source_hash: f74785d46df9a7c28fff73a0d05cfbc0753f4a43f30f330fe1a2e716245267f1
-content_hash: 0ce7e0052707cbd75ebc912812953da579f6629cd7494854e8c63179849c347c
+source_hash: baece345ebadfb6d978ba552117dfaafdc6094dd6bdbc851c676d4d55a00b46f
+content_hash: 2319616f9fff36e6fbc028f0a3d747a86e2c313a9a723c5ac24a61aaf4d0ee13
 field_hashes:
   title: 6e4ac31c713ca6b7c8593342fd3f465ead0925b82811fbb4e6ce0fe58198b2aa
   id: eea5942e73ee2347f242bd308e3efc6c8afb1d7299759affae05b250bfa0680c
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: c4b5f9cc509d68ab666ceae9c6fa7fd1d2b3455f2cf837d27f5ab4b1abecadaa
@@ -25,15 +25,14 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
 semantic_tags:
-- artifact:task
+- board.tareas
 - host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:01:44Z'
+  at: '2026-11-24T02:19:00Z'
   authority: generated
   via: save_document_payload

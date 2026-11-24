@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:39:02Z'
+  at: '2026-11-23T19:23:17Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -45,9 +45,8 @@ created_at: '2026-11-21T07:36:31.376858+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:38:55.170471+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale

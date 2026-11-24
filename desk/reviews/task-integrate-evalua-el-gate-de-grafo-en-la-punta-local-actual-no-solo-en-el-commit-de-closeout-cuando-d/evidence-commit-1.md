@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T11:05:40Z'
+  at: '2026-11-23T19:27:25Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d-evidence-commit-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-20T11:05:35.373312+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T11:05:35.373312+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence commit of task-integrate-evalua-el-gate-de-grafo-en-la-punta-local-actual-no-solo-en-el-commit-de-closeout-cuando-d

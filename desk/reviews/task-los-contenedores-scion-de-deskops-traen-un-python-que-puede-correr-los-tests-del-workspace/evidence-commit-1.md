@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T22:20:26Z'
+  at: '2026-11-23T19:35:04Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace-evidence-commit-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-18T22:20:21.150047+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T22:20:21.150047+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence commit of task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace

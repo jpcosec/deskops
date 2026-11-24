@@ -1,13 +1,17 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-10T18:04:22Z'
+  at: '2026-11-24T02:13:02Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-scion-autonomy-coordinator-contract-bundle-2
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: bundle
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-scion-autonomy-coordinator-contract@sha256:45af6323032a895b6c4f8a76ebb5b5d3183ecc5b7c1989a038bea48db03c93c7
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -18,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261110-autonomy-coordinator-contract/context-review/task-scion-autonomy-coordinator-contract/bundle/797de1be92eaaf1d2e363d0f0f4d58cf7614d97bf46f92f43df5c8960ddc066e/attempt-1
 input_sha256: 797de1be92eaaf1d2e363d0f0f4d58cf7614d97bf46f92f43df5c8960ddc066e
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 2907afbd35f51a97449610a61e1636b3537f9ffb519c38bfa74f1f70b7364a1b
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -34,9 +40,8 @@ created_at: '2026-11-10T18:01:58.849372+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-10T18:03:53.906725+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-scion-autonomy-coordinator-contract

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T23:08:31Z'
+  at: '2026-11-23T19:19:22Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-21T23:08:22.142677+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T23:08:22.142677+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe

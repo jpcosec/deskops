@@ -1,8 +1,17 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T19:01:14Z'
+  authority: generated
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-cc35a-transacción-toda-escritura-por-sldb-api-transaction-doc-io-py-se-borra-preflight-1
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: preflight
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-cc35a-transacción-toda-escritura-por-sldb-api-transaction-doc-io-py-se-borra
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -13,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261107-011041/context-review/task-cc35a-transacción-toda-escritura-por-sldb-api-transaction-doc-io-py-se-borra/preflight/71467b6f5df0780eac95ca51bb1cbc7fa71eaa7ef6e6b5343e03b3b66ca832f9/attempt-1
 input_sha256: 71467b6f5df0780eac95ca51bb1cbc7fa71eaa7ef6e6b5343e03b3b66ca832f9
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 632da7304a719f3528c5a8145c8c79d16095738465cf5fce49029b1f427dca45
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -25,9 +36,8 @@ created_at: '2026-11-07T01:11:00.267011+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-07T01:11:59.609220+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc35a-transacción-toda-escritura-por-sldb-api-transaction-doc-io-py-se-borra

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:27:25Z'
+  at: '2026-11-23T19:26:30Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -36,9 +36,8 @@ created_at: '2026-11-21T07:25:57.651363+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:27:17.711137+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store

@@ -1,11 +1,11 @@
 name: pill-canonical-desk-identity-enables-horizontal-routing
 path: desk/contexts/pill-canonical-desk-identity-enables-horizontal-routing.md
-source_hash: bb7c677a7cada77d31c65069e2b144b40a4881f43308fcc1e365aaf1115cc71a
-content_hash: e9166d7fccafab6d457216ada153e1e4f8889bf95fc3d61504e43f4ba87b83c8
+source_hash: 8f3ff8cededb45baff071d1c06868331e877a8be54164b7f236af014c3e3b03e
+content_hash: 75df15162fe7819f5465985358361fdf516c2217e6f64c38de6f23a6f58a44c3
 field_hashes:
   title: 9f7139db9b0c69587c65c8ac37f7cb6701ddb9e473de783e725da04503ae1e16
   id: 1f92b8d022c42eab4e9dab1827c8bc712c122a23254ee1f97004ae884dd73a69
-  tags: 849f4b35b92da7a37751a02e23e7b2851cbd687fbcec0c0876460f070b784b15
+  tags: 8bffade641344b0192ce7808923afb213a2e484c9223e93077fc425c6731cfdc
   what: 811e464cfc6dc2e4075a4f6411266595ab4a479c30ff2831ade0fb46faa4663a
   why: fae10c1eb58997e30c9530aa86bc0aad846f38706886476be2505e0ae51ee855
   when: 936324c9878696dcd271337f2450f9bebf9055f8c4ea4852afd99a3adfb54d85
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:repo-identity
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T18:47:05Z'
+  authority: generated
+  via: save_document_payload

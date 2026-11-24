@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T12:19:40Z'
+  at: '2026-11-23T19:39:04Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -104,9 +104,8 @@ created_at: '2026-11-22T12:16:57.208128+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T12:19:32.540789+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p

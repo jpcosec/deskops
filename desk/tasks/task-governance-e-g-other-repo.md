@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T08:13:30Z'
+  at: '2026-11-24T02:18:21Z'
   authority: generated
   via: save_document_payload
 id: task-governance-e-g-other-repo
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

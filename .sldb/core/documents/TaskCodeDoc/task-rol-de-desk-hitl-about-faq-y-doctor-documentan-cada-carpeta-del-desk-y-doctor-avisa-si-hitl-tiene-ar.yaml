@@ -1,13 +1,13 @@
 name: task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar
 path: desk/tasks/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar.md
-source_hash: 9d06d035ef97e43c59b166f8426a52dddd7b62b09f070500c5f95c4b56dbd48d
-content_hash: a2dd106260fff18ea6bacbbac33912f805a616299a825716294a8e2dd2cae4db
+source_hash: a6abe75db4b2d6958d937e13441956fa125bd8f44bbb6b1ac52cec5be6089317
+content_hash: 64f6c9deea796a8819db3f5df29832057c3a5c724582a9517ff65a481369cf27
 field_hashes:
   title: 2afd5ba6a1e4b07446aea3ed2a28cd9b5399f787c44695c648bb7c539fd5bb87
   id: 29d1718fc5e21e91483ade20d43bedba17784865b760f4b4891ec1e34089acb3
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 4e23661f230ef7db0e3b7e6ec2984c14453ecf0a195b26ebaeeb1b2d5f9aec9d
-  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: fc3d7b6290f87de2640c10cff7cb79f0eb00c6fa25ead07e40e72f0c7c1376e2
@@ -25,15 +25,14 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:52:25Z'
+  at: '2026-11-24T02:19:36Z'
   authority: generated
   via: save_document_payload

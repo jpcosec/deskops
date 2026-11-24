@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T11:49:47Z'
+  at: '2026-11-23T19:39:46Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -70,9 +70,8 @@ created_at: '2026-11-21T11:48:26.888585+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T11:49:40.289948+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e

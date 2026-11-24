@@ -1,7 +1,7 @@
 name: review-task-board-no-refleja-deskops-edit-task-goal-evidence-commit-1
 path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/evidence-commit-1.md
-source_hash: df1d3f247ab7eb727d0fc3e377ce3afabaace705290484657abf23c877e92eef
-content_hash: eedb5d76aa7ee1c378a77a6aa174555aec4fb7358acc09e573a59d04c12f090e
+source_hash: 252738f3d293a0231496dad3fde3568c6dd9b589462c4a565ad124f11b9a59c2
+content_hash: 11bac8e588c277af40579f3c694f78064e2da6732e636e835391ab454c862855
 field_hashes:
   id: ba4347a25f165e7cdf421d57c86aa0b20612ec23e97b185e470867ca43b21312
   title: 7cd0d588ca88bd6399c84b8e28cd7a7633c5a0135e07b55bb4a04f04c19871dc
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b68947fc08107b6b043e40e815fda752b633bb0e8c7b8a5485943738608d93d3
   disposition: c54a91054ae16cd1efe108b6437ac4dad173b6c126a2a5651ad93289395daf68
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T05:31:23Z'
+  at: '2026-11-23T18:58:02Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

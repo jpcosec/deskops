@@ -1,13 +1,13 @@
 name: task-governance-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta-en-scion
 path: desk/tasks/task-governance-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta-en-scion.md
-source_hash: 3d309a29be2c6339e760f555972a413b3d2cca2b2ae8cd72856da5e6532494d9
-content_hash: ae7aa41c5829159905467a1d7cd9a9777e7db14e3d1b068faaea5cae5b165735
+source_hash: ff95705363bf23fc356d9353d250f9fdd3fe7eec3ee4a86307ca35053e83cc89
+content_hash: dc181b28deed3e5da60a38202d8f43724678f8295d825bf7dc7d6fa3416da349
 field_hashes:
   title: c27e3a36e83452b1014fe9eb8b8daa1af8dc817a1542dda064e9bd8e78d874da
   id: c3b987944b43a6bfdb3518039d65454177dee09cd4c26ac67765fb3c13f7c5fb
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: c795815ed43ce9b8f7c6d98e02100da0f6f21455313d4cfeb78d6acf61fa0e1f
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T13:26:05Z'
+  at: '2026-11-24T02:18:15Z'
   authority: generated
   via: save_document_payload

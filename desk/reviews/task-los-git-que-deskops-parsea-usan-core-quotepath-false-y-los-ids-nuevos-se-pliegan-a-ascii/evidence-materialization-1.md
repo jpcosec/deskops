@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T21:25:56Z'
+  at: '2026-11-23T19:35:45Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -46,9 +46,8 @@ created_at: '2026-11-18T21:25:42.895267+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T21:25:42.895267+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii

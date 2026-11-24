@@ -1,8 +1,7 @@
 ---
 id: ritual-testing
 steps: []
-tags:
-- workspace:desk
+tags: []
 ---
 
 # Testing ritual

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:33:32Z'
+  at: '2026-11-23T19:32:09Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s/preflight/122187ed432bc29a6aa5cf3d8cf81f698c308ee4503c642657159f09fb0cd1d6/attempt-1
 input_sha256: 122187ed432bc29a6aa5cf3d8cf81f698c308ee4503c642657159f09fb0cd1d6
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 7acbd9c615b3ba21eb7ca9065ad4840478d5ae102f71f369b93f6f6d2e50ff7a
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:29:06.705978+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:33:27.574887+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s

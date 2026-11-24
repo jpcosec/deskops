@@ -1,14 +1,14 @@
 name: review-task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro-owner-1
 path: desk/reviews/task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro/owner-1.md
-source_hash: 2c017691917385a2622502e1f062cc532faf7abc011f3c2ae3cf290aa11ac2ce
-content_hash: ef482064fcb9464a3c612fb46ab56184350b2c830688f8499b928cbd837f048c
+source_hash: 0308c43ae95d4ca916eba93ec8fdca8d6e6d78ebd0f6ee4396dff8658a923847
+content_hash: 74bef02244f07dd71d1e4cc858b4cb9dc6d1b9b7fe3e628a8528ad70223ae5ba
 field_hashes:
   id: 2758651e6985e79642ad5a1de8b6be5cb2efda2fbc382ec22ca774f9c34bac87
   title: 0407fb2eeafc837277d24dd4ad14b168bd866b7e5f043158b5d6ef9e17312435
   kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
   fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  subject: b9f7a8cbcfd3139ab651ffcd65e73dddefe74f23ad42b3ca5f65d7dce984b91a
+  subject: 86f6be54602a5f5b635b0a683a6fd3250ab0d5a04b70b0ec869f96509f59a341
   subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:09:43Z'
+  at: '2026-11-23T19:29:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

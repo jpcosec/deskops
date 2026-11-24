@@ -1,7 +1,7 @@
 name: review-task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp-evidence-commit-1
 path: desk/reviews/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp/evidence-commit-1.md
-source_hash: 6d3e701d8b4253b1513790745f94ea59220a0cef60eccd871853a5470dff3899
-content_hash: e28bc9153213ce19d43b780991f9ae08c797354cdc65e652f670ebcc7ac1ce08
+source_hash: ccb6fe0bc7f4b606e0be072aec2bbe0331d636e18c556fbb1c95a530e79c5857
+content_hash: 5402edb94f0a83c0c34d8e532e74105eb75af68a41673ae07393c626b05af81d
 field_hashes:
   id: a3e888a6ed20ae2d5fda63d914414b44b25000564792f1d4add95b92228b4a55
   title: 22ffcce224f54adb73a4966b0749aae230bb83468123494b80faf70a06186a69
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: ba53af676ebfe3ad6bb60d605f6f1739497e17511c1747fe6456481f7870ff25
   disposition: 2ef9408344d9f1349313dc870cf1becd00dd5a5d0089ff907566aabb3e0713d7
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T20:37:55Z'
+  at: '2026-11-23T19:14:24Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,9 +1,13 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:47:58Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-pattern-supervisor-playbook-buenas-tareas-bundle-contexto-cero-y-frontera-de-modelos
 # e.g., language:python, library:pydantic
 tags:
-- workspace:desk
 - pill-type:pattern
 - topic:supervision
 - topic:task-authoring

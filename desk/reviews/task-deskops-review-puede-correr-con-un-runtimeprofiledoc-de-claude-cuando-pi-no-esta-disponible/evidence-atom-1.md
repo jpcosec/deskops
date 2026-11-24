@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T00:04:23Z'
+  at: '2026-11-23T19:15:13Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -26,6 +26,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 4a9f5b8d76c9ba6642d48f5c33d6b58c22f573e422642a3be420dd92e6e064f0
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -39,9 +41,8 @@ created_at: '2026-11-17T00:04:16.808978+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T00:04:16.808978+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible

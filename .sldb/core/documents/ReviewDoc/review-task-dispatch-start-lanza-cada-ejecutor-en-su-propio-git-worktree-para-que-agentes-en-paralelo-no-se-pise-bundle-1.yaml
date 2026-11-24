@@ -1,7 +1,7 @@
 name: review-task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise-bundle-1
 path: desk/reviews/task-dispatch-start-lanza-cada-ejecutor-en-su-propio-git-worktree-para-que-agentes-en-paralelo-no-se-pise/bundle-1.md
-source_hash: cfe2768481973006bbc5c3e3799bfcdfdf98d299d13fd4ae8624b539c1daf13b
-content_hash: f006d0dfaadfa3019f024e6758ea6237ab143a063dce7e45062d5af6475bd0ba
+source_hash: bfa4811d16c57fe2b15ebbe0b67ab122d7f10f6c872bf89555c52a568d84bcbd
+content_hash: f72108761d552b8644c4c372ac1a0fb84235416a1429d47a3a4ae6ba8fbb35bb
 field_hashes:
   id: 4115810651d3b4b9752d491dce39985bd75fd3f6fb02a4a3176698f544ac1bbc
   title: b974ebec5feae7deb18dabce3b8439fa531df334e0c1acb0a8c4e810064efe07
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 048900725a0fc29bc6759bb8cf6601b16115ce960b3b091ec19b14a9d47a56b8
   disposition: 39a99b4e444f756270904a36b86eafce14dad59bfdae87661211f5551b8e3113
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T17:48:43Z'
+  at: '2026-11-23T19:18:34Z'
   authority: generated
   via: save_document_payload

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T05:35:54Z'
+  at: '2026-11-23T19:28:06Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-21T05:35:47.159686+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T05:35:47.159686+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev

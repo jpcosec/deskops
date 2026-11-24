@@ -1,13 +1,13 @@
 name: task-jp-decide-si-deskops-exige-git-en-cada-desk-o-acepta-otra-evidencia-de-cierre
 path: desk/tasks/task-jp-decide-si-deskops-exige-git-en-cada-desk-o-acepta-otra-evidencia-de-cierre.md
-source_hash: cd1f68f1ee8ff6fe8a20c38f0767cf7f5d20fd2fffa65cbe328bd2dc0687e0e1
-content_hash: 12b6cfe4de0d22304b5668019b6074712f91792787d4a1a32a99f1eabadb4beb
+source_hash: d4537d8532dca99bfe84c844d06e9f5a77e7b33b96113f35efff3da9e1b03b3c
+content_hash: 884ee58d5f60aca4cfac4908f2d77d09a6648279dc9b9cde00336f2b742f399d
 field_hashes:
   title: cc943cc373b897b7fd5c2c738056a2fe6618e19e0ef52781ecebb0ad7f6b11b4
   id: 2ca1cb0867700f1eadb375e83a125fc8fff9d8a7e5b258682a7f10364a787aa6
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 1e335ae07335b5ed4245b82bedc6539df4372043d53ff59562fa39c206f23242
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T06:40:00Z'
+  at: '2026-11-24T02:19:21Z'
   authority: generated
   via: save_document_payload

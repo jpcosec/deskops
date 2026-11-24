@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T06:58:52Z'
+  at: '2026-11-24T02:11:16Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -46,9 +46,8 @@ created_at: '2026-11-21T06:56:55.579509+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T06:58:45.701110+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur

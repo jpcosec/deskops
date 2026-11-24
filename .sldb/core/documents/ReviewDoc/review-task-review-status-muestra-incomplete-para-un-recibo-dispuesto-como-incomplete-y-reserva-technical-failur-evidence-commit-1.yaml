@@ -1,7 +1,7 @@
 name: review-task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur-evidence-commit-1
 path: desk/reviews/task-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete-y-reserva-technical-failur/evidence-commit-1.md
-source_hash: d8fd1231419deb2985c275b2742ffd43e3c48f7997128168304213aeaac0824b
-content_hash: 08ec253be820cf9a5de769c4a43e538753e7066af8d90baa3811c93c84701184
+source_hash: 42a7881d3b4fe47cad23630cda50a2f22ad9f5d091b772fd2bb71ba0a3966bfe
+content_hash: 05adcfd839953c98c47f2fffd93416e56ea2e9a71478522849a646adb0fbd32c
 field_hashes:
   id: 63b8b97f5f7387250fff200a831b908e998e45854ce1386ef1431779dd514922
   title: 9faa6f1ce133a2dcdd74b344d2bde6125ada7415906b230a59b2594832122782
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 613d408640b6595cfe82fc5ce1d2eca31a4a9f406abe58daf37f2474a0e6cb72
   disposition: 95a1fada5da92625921b0fcfd40f2bf6f48b02dde85a085d3b48623f090e6792
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:40:38Z'
+  at: '2026-11-24T02:11:07Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

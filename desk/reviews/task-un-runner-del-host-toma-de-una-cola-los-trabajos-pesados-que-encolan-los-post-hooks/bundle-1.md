@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T04:49:14Z'
+  at: '2026-11-24T02:15:40Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -36,9 +36,8 @@ created_at: '2026-11-18T04:48:36.450100+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T04:49:04.612092+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks

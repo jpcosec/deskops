@@ -1,7 +1,7 @@
 name: review-task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act-bundle-1
 path: desk/reviews/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/bundle-1.md
-source_hash: 8401d2980f86d252c9dd8633f990a2d6dcf77a8dcf21d53f080e6d05f797a18b
-content_hash: 0dd0fe1dbc8dca2351069df69ad8e53f3d3006d102effb6040befdcd4e726c6e
+source_hash: 7d3fce8499c7e5a4cc9136d1bf5a9600097ba3dd7b55805ec3e96d6cf693eea3
+content_hash: 80fb66132beeaa8fc025ac9c9d97d94bdee6002dd136d64979630eeefe0c2a3b
 field_hashes:
   id: 8f6b0786054da18b817854dcd1342dd4cf2342cd51a549047b0d50cdcbfc9025
   title: 5c8f23082b056f2b5413b435d2b04ae0e65fb8d819f9196a9a365f4af54e6827
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: f427580fac3d5d8d9a4d9f0742064967882dd812d8bef7d7a078bb197a520c84
   disposition: dd0cc464c30c754b084ee648b86e8c76b204349dfbb765b676307db9007f1450
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:35:10Z'
+  at: '2026-11-24T02:11:53Z'
   authority: generated
   via: save_document_payload

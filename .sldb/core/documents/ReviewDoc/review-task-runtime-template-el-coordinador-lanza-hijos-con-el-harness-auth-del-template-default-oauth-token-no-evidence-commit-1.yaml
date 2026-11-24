@@ -1,7 +1,7 @@
 name: review-task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no-evidence-commit-1
 path: desk/reviews/task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no/evidence-commit-1.md
-source_hash: 8bf8e495acf07bff02a9d44965e60b13538aa2235c99bfd45dea926a7d1ca639
-content_hash: 7c8e407cc2b000e700f793465df6c9126916ab28bc9c297bb26f515e2c9a26ba
+source_hash: ebabf76cfa12ddced78d976acc5b02d47d4d247d9bbad87f8dda70fe18f70d4b
+content_hash: 629f4f70cdde4e75a711790b6419db57c0b3776372d901eb83e1f8a94144bd82
 field_hashes:
   id: c457cae5a054850b9e28bc43a5bf3d08fa6a8fd2e364cfb330d16915d7de2dc4
   title: cd14f500efe382ace16d23451024dee4da58f4fb2f5e40db72227735a3b35472
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 214d851718173d451e9ba45655d1db19490bcfe0cf9fd3e81178a437296d8365
   disposition: 587f224a1765db072b00a6ab5f0ce8e1a2894e402c0f19caefa7e55ba0bb7536
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T02:09:24Z'
+  at: '2026-11-24T02:12:50Z'
   authority: generated
   via: save_document_payload

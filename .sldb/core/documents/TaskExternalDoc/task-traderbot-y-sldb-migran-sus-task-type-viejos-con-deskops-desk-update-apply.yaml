@@ -1,13 +1,13 @@
 name: task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply
 path: desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
-source_hash: 2476f25107e8fce9f016d8901e8d5730ac092ecbec7a8dd9ee4be55a41b15fda
-content_hash: 9807c2f9764bb6c505cfb16aa625d5e07dfdf8ee3c036cef019750e7071f365f
+source_hash: e0539b53a9baffae42a3906d4bcd9c04fb4e96ffd6ad595a0aec3f6160e15b01
+content_hash: 0d542ed706b55e2621443aeb5096c7d2958e376ae6a989d54be066d321cc4c4e
 field_hashes:
   title: af0fc9852eaa55046d1b34e09c7e00c6f719ba195c39fa63104b48c7c6267b4b
   id: 1fe0c3fa9f4fdac513f599e194212ce03aa541b467c2b079718299eb17d7c455
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 7dcf95fd491144f1ab16ae66f5911df274c8a2175b613157e92f6c849cca3b6f
@@ -26,15 +26,14 @@ field_hashes:
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   from_drawer: a805a70abebc468c6e4affe814823368f41d4fe9e63a90776cdda5d59c72e737
 semantic_tags:
-- artifact:task
+- board.tareas
 - host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:04:48Z'
+  at: '2026-11-24T02:19:42Z'
   authority: generated
   via: save_document_payload

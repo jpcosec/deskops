@@ -1,7 +1,7 @@
 name: review-task-cc34-vistas-de-la-ui-como-viewdoc-servidas-por-sldb-desk-view-py-desaparece-preflight-3
 path: desk/reviews/task-cc34-vistas-de-la-ui-como-viewdoc-servidas-por-sldb-desk-view-py-desaparece/preflight-3.md
-source_hash: 5fe3553e6956ea685db3ea6f5bc96f152cdf21936af81e1f49a48e6bc88cd735
-content_hash: 797f6dbbf2d34c6c8a8e580678c1b14f210b7662bc14dfad5b6f3a9e6eab5898
+source_hash: 5fab756ac605193d7b5d9d9a57bf6f82c06e4781c5d3afcb7db74972dc552911
+content_hash: 02ef90f5121d6e76b032c70c4f6eb901952548c1934f8a82b05147571cab97a3
 field_hashes:
   id: e831ef1a8c0cd436f4598a764a5df3acffbd8d33106cb9926fd6594fe63319f1
   title: d02c0ab2c3c0f1577f81b2f236267dedcb62c5900820f495b49909c62d46cc8e
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 2ab5bc1908c6bd1bb1d2df32c1da56a6cc7a9bf1c8822f1817dc70efe1b2bf64
   disposition: c9f6e7f5565a3b30b28ccb0c2b40a715c5e2e673a36a79fa0a567ad0bb330847
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-11T03:33:43Z'
+  at: '2026-11-23T19:01:07Z'
   authority: generated
   via: save_document_payload

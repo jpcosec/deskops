@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:30:57Z'
+  at: '2026-11-23T19:39:00Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30/preflight/44289eb19f6cf6f5ba092186f1a9e1ffcdb6024844e5cd6bc0d69c68c09e22c6/attempt-1
 input_sha256: 44289eb19f6cf6f5ba092186f1a9e1ffcdb6024844e5cd6bc0d69c68c09e22c6
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 3c048dad84b0faea2a733b1535d66315954241d2832095a66575c42347464faf
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:15:19.729763+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:30:52.423698+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30

@@ -1,13 +1,13 @@
 name: task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store
 path: desk/tasks/task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store.md
-source_hash: 6f202e639ae2ccd04fec920b2c9fd5a288b2a4ff57b8336755c5563f6d7d980d
-content_hash: e3b1b14fc67efbabe974a86b5aa552fe4e1ca9e050234dd8ef0a381d54907688
+source_hash: dbd7768be89e40264a8970e7ad07237e48c5d6fb14053715a3ff45ecb2e063aa
+content_hash: 653de8814e494f6275b2a85a2249b7dbf0089d69444892c7b905471fb027db9c
 field_hashes:
   title: c6840a1dcadb0c9a36be0140c3a097dde734d68e2b305c6fafac00c2c8167c4a
   id: 4df3950105030acaf59efb1b7323fe9f5a0a29e2dcc9ca714488d670cf30f67c
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 76ab8b5d2a5f9856f7be43360daaabde6d1e39de24ae953955862adf6ca75915
-  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 32c43a3a3dbd765321eb9b0416891e92d36e1d4aa16ae66f394b77c0cc547d47
@@ -25,15 +25,14 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:52:14Z'
+  at: '2026-11-24T02:19:06Z'
   authority: generated
   via: save_document_payload

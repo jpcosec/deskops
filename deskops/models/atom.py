@@ -166,4 +166,6 @@ conversation_ref: ⸢optrev•conversation_ref⸥
     @field_validator("tags", mode="before")
     @classmethod
     def _tags_are_namespaced(cls, tags: object) -> object:
-        return check_atom_tags(tags)
+        from deskops.tag_vocabulary import canonical_tags
+
+        return check_atom_tags(canonical_tags(tags, cls) if isinstance(tags, list) else tags)

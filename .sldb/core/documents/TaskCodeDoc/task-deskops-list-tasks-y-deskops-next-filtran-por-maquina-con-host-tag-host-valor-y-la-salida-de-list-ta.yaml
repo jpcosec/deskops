@@ -1,13 +1,13 @@
 name: task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta
 path: desk/tasks/task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.md
-source_hash: 2faf6c3d75378e2fe98cfb0773900db65420de3711e923f94b3df6857afa382b
-content_hash: 6cf14ad8be67560d77a0304cd89c11b576be13f6b683109c33cba714ad80fe10
+source_hash: cf7846dbcb23be3f361fa865d3d748f9ef66c93580554072ecc83de3c82c631c
+content_hash: d1b2cb5b2c31d82a3f5d725f2bcba1903b62d893577487e3b22d94a6cc7bf60d
 field_hashes:
   title: c55fcc6a944fadfd06f49ab2693c0b4e0b8046c1850faa8bfdc2b879b5c9f24f
   id: f8ba058e1a6121ca3f3cb06cef7c48c23e5aa6cdb0605453c7625fb9e93d75ec
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 049e5aab47ff3a6d2444fc838a14bfeb38b5e58543e5524a58ef870eb8cc868e
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T04:40:11Z'
+  at: '2026-11-24T02:17:41Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

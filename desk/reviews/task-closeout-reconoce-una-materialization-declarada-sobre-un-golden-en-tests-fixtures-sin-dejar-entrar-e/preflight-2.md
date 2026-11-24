@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:30:39Z'
+  at: '2026-11-23T19:04:16Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e/preflight/01016a26db63082913aed15c36544ca02e28748aa4932ed285edb3e09a7289fe/attempt-1
 input_sha256: 01016a26db63082913aed15c36544ca02e28748aa4932ed285edb3e09a7289fe
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 482fae07b7bc13d151dc371ef4bb81900a00c2d62606c6240a61e5d150b78ab8
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:14:35.021811+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:30:35.664113+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e

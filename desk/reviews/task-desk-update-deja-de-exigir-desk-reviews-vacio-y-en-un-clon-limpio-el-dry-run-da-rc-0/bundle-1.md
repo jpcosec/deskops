@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:45:19Z'
+  at: '2026-11-23T19:07:23Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle/context-review/task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0/bundle/c97635be5bafbc256c8a1a61d7ced346873cf68069c5ad84dd3f2950cc0261eb/attempt-1
 input_sha256: c97635be5bafbc256c8a1a61d7ced346873cf68069c5ad84dd3f2950cc0261eb
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 321cbbe4e2333e365a57f708d4c76cf5684f6adf08d94be34ac1c8f383fbf637
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -34,9 +36,8 @@ created_at: '2026-11-16T05:37:20.317366+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:45:14.780905+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-desk-update-deja-de-exigir-desk-reviews-vacio-y-en-un-clon-limpio-el-dry-run-da-rc-0

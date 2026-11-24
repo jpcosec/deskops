@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T16:19:39Z'
+  at: '2026-11-23T19:16:30Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -37,9 +37,8 @@ created_at: '2026-11-17T16:19:27.956917+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T16:19:27.956917+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error

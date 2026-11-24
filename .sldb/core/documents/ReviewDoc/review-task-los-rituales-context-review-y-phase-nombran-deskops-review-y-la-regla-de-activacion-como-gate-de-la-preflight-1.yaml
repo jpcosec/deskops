@@ -1,7 +1,7 @@
 name: review-task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la-preflight-1
 path: desk/reviews/task-los-rituales-context-review-y-phase-nombran-deskops-review-y-la-regla-de-activacion-como-gate-de-la/preflight-1.md
-source_hash: fc0e395b0df7b230a3c0a6c1c0d0310e23da2e7a9cc89586e256c9eb422d52d3
-content_hash: 23ba9b5c0f86514ecea5f0de552ab337f545c0fe4bb80e2f0be41031b51beb44
+source_hash: 783ece369a6ed49a142c07b5d59fce2aa1bf7b0e949a49ad28b2aa43d316df91
+content_hash: 2aaacdcaa06c679aecb21a0fb83b62d2364d8fac0718158301b4375c150e81f1
 field_hashes:
   id: 598aa463e5a23a69b44f18a5f6e68d0192d6199ac1a7718f3c6613e15a2648e7
   title: 02ee822cf105dc601737a504d24f9c476409bd31997d8e73c3a8997cf1c6b669
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 2af3a79b826bd5eb55a0071b27a11c2ec7d89e5796cdb49a1ebce63a4817347e
   disposition: d6ebcc5764d2390035ca64f7b516b7c2e93185d07dce2a65926fe01cd606a7c4
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T12:10:33Z'
+  at: '2026-11-23T19:36:16Z'
   authority: generated
   via: save_document_payload

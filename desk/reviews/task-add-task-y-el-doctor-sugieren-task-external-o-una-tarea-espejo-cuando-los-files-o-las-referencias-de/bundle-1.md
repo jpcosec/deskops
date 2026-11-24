@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-12T02:30:38Z'
+  at: '2026-11-23T18:56:42Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261112-022613/context-review/task-add-task-y-el-doctor-sugieren-task-external-o-una-tarea-espejo-cuando-los-files-o-las-referencias-de/bundle/752ad7131bda15f9c8a495117b910bc50b865e3fcdf788681fe29a884c236ca8/attempt-1
 input_sha256: 752ad7131bda15f9c8a495117b910bc50b865e3fcdf788681fe29a884c236ca8
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 20e27bd5f6c544d6a377d21a691be2e6b408a6e84abbdd5c2cb1dcf67303ed8d
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -51,9 +53,8 @@ created_at: '2026-11-12T02:26:26.911907+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-12T02:30:36.303646+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-add-task-y-el-doctor-sugieren-task-external-o-una-tarea-espejo-cuando-los-files-o-las-referencias-de

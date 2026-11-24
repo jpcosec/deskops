@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T03:00:51Z'
+  at: '2026-11-23T18:50:26Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-deskops-como-config/context-review/deskops-como-config/PF3/67b730651734d68112c6a03a56401f1d98d48c273bf2971f2271f883524ac912/attempt-1
 input_sha256: 67b730651734d68112c6a03a56401f1d98d48c273bf2971f2271f883524ac912
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: d20b6353b3fed1571e59de860076e58c25beaf0a6fb828fe3e91be5304bc3b58
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-17T02:43:29.591259+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T03:00:38.389439+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of PF3

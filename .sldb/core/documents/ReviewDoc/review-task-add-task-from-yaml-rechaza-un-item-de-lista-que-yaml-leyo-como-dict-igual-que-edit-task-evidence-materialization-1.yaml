@@ -1,7 +1,7 @@
 name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-evidence-materialization-1
 path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/evidence-materialization-1.md
-source_hash: 1924e8b0ba195e01471a2510697e236c4367a4dd9badbeca91bc1af5ec4162fb
-content_hash: 84599009f531db13945fcc1b91887f205f1349bfdecb4f9e5e6705df730d28c3
+source_hash: 09a284c89a69f769e80d5642d2827ffea066ab1bd0de2385767132c84fa1a8fd
+content_hash: 15cd03207fe3b16b8d7d2192a10b93eb971146e3a5955c3e5798eeb2a85d456d
 field_hashes:
   id: 74574f0370be7b4594429777fbe72ecd7c947d16eb760761369f002ea3ee190d
   title: 59eee6a36843eca224edb94880e27305e0704d4a6c7edad9b840f3898429a6a5
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 71e8632cdf8c054c5d6ff6a2fe71a8456bdbb02e5c989930f2f429b9b991927c
   disposition: c932b0bf1181bc1d5a3b1326d6c1a6d4606b6d2e62818672ff4a43431f7d780a
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T18:35:34Z'
+  at: '2026-11-23T18:56:32Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

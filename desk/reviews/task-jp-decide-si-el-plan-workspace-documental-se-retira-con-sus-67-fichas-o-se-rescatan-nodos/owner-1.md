@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T04:09:52Z'
+  at: '2026-11-23T19:29:35Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos-owner-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -13,7 +13,7 @@ fact: ''
 # kind evidence only: what the producer verified, one item per line
 value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
-subject: doc:TaskDecisionDoc:task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos
+subject: doc:TaskDecisionDoc:task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos@sha256:e6cc1610878d4169040ae492cbbb92d71438c0ec844e9e97f78b3b320e17d269
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
 subject_ref: ''
 # RuntimeProfileDoc name or "human"
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: ''
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: pending
@@ -32,9 +34,8 @@ created_at: '2026-11-16T04:09:50.222483+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: ''
 disposed_by: ''
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Owner review of task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos

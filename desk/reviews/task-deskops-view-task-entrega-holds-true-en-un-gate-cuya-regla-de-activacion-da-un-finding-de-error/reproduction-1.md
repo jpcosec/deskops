@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T15:07:34Z'
+  at: '2026-11-23T19:16:50Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -39,9 +39,8 @@ created_at: '2026-11-17T15:05:24.397089+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T15:07:29.579873+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Reproduction review of task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error

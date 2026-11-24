@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-10T21:34:53Z'
+  at: '2026-11-24T02:14:37Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261110-213415/context-review/task-tareas-con-status-terminal-heredado-y-history-vacía-desks-pre-cc31-desk-update-las-migra-y-doctor-de/bundle/66bd723403813b74b26b38261a5301b17ca3428ad0180755e8bdc7953e1cd905/attempt-1
 input_sha256: 66bd723403813b74b26b38261a5301b17ca3428ad0180755e8bdc7953e1cd905
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 26a1ba5170e3ec3d1bae3b1b17a8ea26ee375959448f5c30e5ad639ca435f249
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -38,9 +40,8 @@ created_at: '2026-11-10T21:34:31.718127+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-10T21:34:51.334314+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-tareas-con-status-terminal-heredado-y-history-vacía-desks-pre-cc31-desk-update-las-migra-y-doctor-de

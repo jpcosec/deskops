@@ -1,13 +1,13 @@
 name: task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt
 path: desk/tasks/task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt.md
-source_hash: 6b400d3639ee3efdb5f75c83bbb7f0347a16f55db2601c22500b42a459c78125
-content_hash: b9a81c810eb6623df30e6fa746fb586cc4562072b37cc26688e3c2fef01146cf
+source_hash: d7a2892184fe8b60fcf4f0d5b84f46e1f75b28b2c86696e2648b8bc8d84644d2
+content_hash: 6880b6a554cdf7b29b2b2adac3f930253fd62c352a0df86f382fe1817ad22a2a
 field_hashes:
   title: dd4bcb5daf0f46fbbf673d802c59a6bfe6d6c56c861a95e37e2f528c899f0ac6
   id: 4979f45d08ebf51a250090b34d04e8dafbca583b12df78db2163ea40b025999f
   status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
   history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: 01035245dcddeb48225a8e6feea933c1825189e77874a95b99966f45ba42c96a
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T13:32:50Z'
+  at: '2026-11-24T02:17:21Z'
   authority: generated
   via: save_document_payload

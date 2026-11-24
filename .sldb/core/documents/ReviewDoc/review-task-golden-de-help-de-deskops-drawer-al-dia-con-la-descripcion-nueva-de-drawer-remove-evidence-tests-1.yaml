@@ -1,7 +1,7 @@
 name: review-task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove-evidence-tests-1
 path: desk/reviews/task-golden-de-help-de-deskops-drawer-al-dia-con-la-descripcion-nueva-de-drawer-remove/evidence-tests-1.md
-source_hash: cfcda6916874177858e317de3b02eb4ceae1c95e9f23c0ee51ca5010ce078b76
-content_hash: 49b50a79d871f8ad70771f40b08192b3861bfa90a5efee58c4f652a66df375f8
+source_hash: 00493da7fb369ce6fe77730b0f4b6491f343911a45e89b14e343d88f6428491e
+content_hash: 6c764c74b6c84829452d41a133e05a4ea34e405cc0035e60df87309ee7a479fc
 field_hashes:
   id: 530faed669eb980f9a38ac5c2732bece1d8fc1099dc67365f180da9968074bb3
   title: 378827dd99129d92d85318d09f4285989b905d0604c51702c1cf8588977b6f8b
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 669717fa858046ea937fd9744f662e023d2df3fd2ace1881eeeec1fb6cc8ec81
   disposition: bece2f59242fb27903eccf458b3d9c510eae8f1d832f65f19e0062ea7beaf059
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T09:27:03Z'
+  at: '2026-11-23T19:24:35Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

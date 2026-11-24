@@ -1,11 +1,11 @@
 name: pill-cross-desk-inbox-needs-delivery-verification-and-follow-up
 path: desk/contexts/pill-cross-desk-inbox-needs-delivery-verification-and-follow-up.md
-source_hash: e652449f10a9f9df266db6594ca3448d0079655ea1f38d0a320db71b644fe1e1
-content_hash: 6c09b9886dc687815c4b9efb984834703858f9f3c001dff903e2aec8030ccfec
+source_hash: 83a4a1b10770c67fbbe9e42c3dd27ad5258a82d4fe16bc0e814a9adf4e0d1be7
+content_hash: 2f4e79c76e9e2e2c1b1e65401f9b26ec9f958b6ec4dc6a9d649de0a1867dd228
 field_hashes:
   title: 21d9e9c69f62477ca718454d4124f5881762b33e94ff09fde9f9b5494ec78427
   id: c79bfbe268209e7c4cbdf05a6b94c9b85a49b3a02f458eaef0a3b57862e590c0
-  tags: be3c34c569b80f42c36eb74822a121458e6d611e813451e0ce609d2231894f06
+  tags: 89d6fa21b2622f018405634a231fe91dfa4c0e8761ad331628a1a2ff1c5e38ac
   what: aaa15af6e1f6107ae7135a506ceba701a2b04e4be2618d9b756fac62f6030454
   why: bbebd4cb15ad22e3a264b8c3a735630e12c492d57125e48d207050f062971c42
   when: 751dd3aed904561cc8945523842ec4897cc909913170d04efafcbb2fce2a54c8
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:inbox
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T18:47:19Z'
+  authority: generated
+  via: save_document_payload

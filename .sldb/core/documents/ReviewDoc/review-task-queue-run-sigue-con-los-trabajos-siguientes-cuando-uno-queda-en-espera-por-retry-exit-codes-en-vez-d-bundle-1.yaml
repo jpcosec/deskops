@@ -1,7 +1,7 @@
 name: review-task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d-bundle-1
 path: desk/reviews/task-queue-run-sigue-con-los-trabajos-siguientes-cuando-uno-queda-en-espera-por-retry-exit-codes-en-vez-d/bundle-1.md
-source_hash: 3f62cf630367eec8e5139fe6cc7a95b2e2329dc852d9e8722585149508f6cca3
-content_hash: 42b1319544e54500beaaa652d8ac832c01fa4e618a73f0b2cb2e626b18119f41
+source_hash: c6856e88a83845eb0a0d2c252f01efe4e3093354cb2b5ca3602d36214d1147b6
+content_hash: 268d6fd518431296a9723b2bb346611aa5a2662d1c06127955ca78925d124354
 field_hashes:
   id: 46878639a18202e4915dc6f6d7dceefe3126b18450870dc304816b73ca737d15
   title: 4ae8de5d18efb77ecaec64b45c1259d8388c107614490fbe1036a580182edf7d
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: ee004b3ddeb56d0f74e2ee1e6f2f493db527782d56ca057aad46c46fa63872e6
   disposition: 5339fddd463276a6397f51ff69ee9d31845a44ac86146194c76019aff1b71d6c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T21:45:15Z'
+  at: '2026-11-23T19:38:24Z'
   authority: generated
   via: save_document_payload

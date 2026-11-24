@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T06:21:03Z'
+  at: '2026-11-23T19:25:25Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-nuevas2/context-review/task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales/bundle/cc3592d40dd7b6ea79c6380326a233ef1b7a3fd7c156d05370c2b7ce522682a5/attempt-1
 input_sha256: cc3592d40dd7b6ea79c6380326a233ef1b7a3fd7c156d05370c2b7ce522682a5
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: a04af51578c77898fa39c0ad410ed110aa1d839a2ad5ef8ac7b5b56b29ae7153
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -34,9 +36,8 @@ created_at: '2026-11-16T06:20:03.390851+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T06:21:00.591922+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas-reales

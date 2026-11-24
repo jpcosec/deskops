@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T14:48:36Z'
+  at: '2026-11-23T19:01:37Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261111-144753/context-review/task-cc35d-resto-dominios-namespaces-y-tag-folder-por-la-api-de-tags-de-sldb-gd27-con-value-bare-y-tag-mo/bundle/5105a9c4cc65ab6da2842efa9305b426a8040c8703764827d1a77ee4467c000a/attempt-1
 input_sha256: 5105a9c4cc65ab6da2842efa9305b426a8040c8703764827d1a77ee4467c000a
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 30f1b26c5344e1cb9f8ca8010d8af1722e0cd7084e68bd1cec24c3f9c01f43c2
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -54,9 +56,8 @@ created_at: '2026-11-11T14:48:07.783900+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T14:48:34.234323+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-cc35d-resto-dominios-namespaces-y-tag-folder-por-la-api-de-tags-de-sldb-gd27-con-value-bare-y-tag-mo

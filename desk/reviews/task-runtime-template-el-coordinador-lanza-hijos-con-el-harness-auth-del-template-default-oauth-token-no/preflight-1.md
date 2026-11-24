@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T02:05:00Z'
+  at: '2026-11-24T02:12:56Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-020404/context-review/task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no/preflight/e53f0bbf0342ce0d12ddfe8286cb44a711290935573517f53a5614167614c399/attempt-1
 input_sha256: e53f0bbf0342ce0d12ddfe8286cb44a711290935573517f53a5614167614c399
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 8e41d3de5efcf09eec2f5590d65faab4c9c054dabe0d564057f523defb2fb0c8
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -36,9 +38,8 @@ created_at: '2026-11-16T02:04:15.316747+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T02:04:58.158183+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no

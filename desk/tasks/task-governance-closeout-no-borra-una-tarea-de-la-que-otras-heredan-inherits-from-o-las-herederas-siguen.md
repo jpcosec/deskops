@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:20:45Z'
+  at: '2026-11-24T02:18:11Z'
   authority: generated
   via: save_document_payload
 id: task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits-from-o-las-herederas-siguen
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

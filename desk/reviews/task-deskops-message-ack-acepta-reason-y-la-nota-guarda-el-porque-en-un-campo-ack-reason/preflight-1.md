@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T12:07:03Z'
+  at: '2026-11-23T19:14:14Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -42,9 +42,8 @@ created_at: '2026-11-17T11:59:50.409118+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T12:06:51.550294+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-12T02:31:03Z'
+  at: '2026-11-23T19:36:49Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261112-022829/context-review/task-los-tests-de-deskops-leen-la-ruta-del-sldb-hermano-de-la-variable-de-entorno-sldb-src-con-un-helper/preflight/8fd8636c1e85b4662e1426ace2e22148414ff9aea96c8df311cb5f7037417e8a/attempt-1
 input_sha256: 8fd8636c1e85b4662e1426ace2e22148414ff9aea96c8df311cb5f7037417e8a
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 6cdfbeb8f65878a34b1240c87c9c3f6cf4fd1d3750559326f4e80f098f715f02
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -46,9 +48,8 @@ created_at: '2026-11-12T02:28:46.336114+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-12T02:31:00.403349+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-los-tests-de-deskops-leen-la-ruta-del-sldb-hermano-de-la-variable-de-entorno-sldb-src-con-un-helper

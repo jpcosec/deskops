@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:48:21Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-zero-context-preflight-precedes-executor
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:subagents
 - topic:preflight

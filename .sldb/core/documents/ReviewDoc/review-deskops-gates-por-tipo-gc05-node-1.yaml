@@ -1,7 +1,7 @@
 name: review-deskops-gates-por-tipo-gc05-node-1
 path: desk/reviews/deskops-gates-por-tipo-gc05/node-1.md
-source_hash: 67fb6ba4baea4f3883e4f370bfa550eb2a2f64edb953a651fd1d5de8af1bf63f
-content_hash: 956c5cc33e20b3d91b56a4bef4e5002e7d0691252f2feb5182c0f62b1e5f0f78
+source_hash: 13e7a78b99c846dd1e3138f0ad21a6700148771904abdfad47681af3d7f4c226
+content_hash: abbf41b48f31d5768a3c6ff51260e1efa03bc818ab3a92b02a0ff358cc4a2f9d
 field_hashes:
   id: 1ed1f1698afa6169f0abd1e81d191a32310561bae11b3d40a56acdc7f9a4531d
   title: 23df0edcb01d415239916faf1fa8778d1de43bcc87c1104fba0045badb2df37f
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: aac987ce22b7b9099e5a07f0bf66c3930a4675dc3a29a7a976df5909d44d839b
   disposition: 84b9bd86f3ce442c30be7a7762178ff20ecc55ad70e6d19139824e1a335d9060
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T03:03:04Z'
+  at: '2026-11-23T18:50:58Z'
   authority: generated
   via: save_document_payload

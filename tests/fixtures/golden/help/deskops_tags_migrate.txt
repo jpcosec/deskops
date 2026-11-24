@@ -1,0 +1,9 @@
+usage: deskops tags migrate [-h] [--root ROOT] [--apply]
+
+Drop from every document the tags its model already says, repeats and class
+names (dry run unless --apply).
+
+options:
+  -h, --help   show this help message and exit
+  --root ROOT  Target repository root.
+  --apply      Rewrite the documents; without it only report.

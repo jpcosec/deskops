@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T03:06:03Z'
+  at: '2026-11-23T18:51:49Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-deskops-ui/context-review/deskops-ui/UI02/aa5c0298cb843eb6da39f105fe5445e580d41c902c0199c14ce64571f1bf8ca1/attempt-1
 input_sha256: aa5c0298cb843eb6da39f105fe5445e580d41c902c0199c14ce64571f1bf8ca1
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ae8efd7b2cf607669125136beabc37e13fa85696f9c50d555adc0510ba841eaa
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-17T02:13:00.048902+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T03:05:56.926493+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of UI02

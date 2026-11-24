@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:32:48Z'
+  at: '2026-11-23T18:58:41Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/preflight/e0e4cdf6da5de5c99035cad35dbd2d78e8c5a8f1c18857cb9a84347bc4f69238/attempt-1
 input_sha256: e0e4cdf6da5de5c99035cad35dbd2d78e8c5a8f1c18857cb9a84347bc4f69238
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 1e76e6fe62c7b7b9067c4743dd04240a9446d9a81498643a9594ecb1a8409ba6
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:26:05.197021+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:32:43.087334+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no

@@ -1,7 +1,7 @@
 name: review-task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con-evidence-document-1
 path: desk/reviews/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con/evidence-document-1.md
-source_hash: fe103627a5e621ead143e21be61eab3a01c76293f22be0f867a186685e10cea7
-content_hash: dc94f61fd4eef8e767520d21eba61949d0a17f7dca2a2e10e645b01623b3c409
+source_hash: d41560ff497ec9191c7c9acdfe26497031e5c43e603d50d70a12b76f069051fb
+content_hash: fb2909cb810e39a94ef4d5e15c1414ffeabbd93500365b174cfc84fb3df323f3
 field_hashes:
   id: be28dcc56aa6a592559ee8cbde28f1c53ef8c69a7c4ef76fd5dbd70d7a50e4c2
   title: 20ad3965d192c70842e05cc6a18f39253bc3823b1451cc932bc35513c63cabe3
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 481bcec10814d1add3c7a4aedfa290c3aba14e36daaa03b46b668a85afcc2489
   disposition: 147344bb096e4c1e25e9e7beec965ac4ad2360e1cc1b2109dd78a6acc43b78ac
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T13:44:27Z'
+  at: '2026-11-23T19:02:47Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:56:59Z'
+  at: '2026-11-23T19:15:05Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261117-025359/context-review/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo/preflight/d3d167f0ff0730037bc2e034b7a920bc2e875ff31ad9bc97951b665de4f4a5bd/attempt-1
 input_sha256: d3d167f0ff0730037bc2e034b7a920bc2e875ff31ad9bc97951b665de4f4a5bd
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: d11e910f297838efff21b1c124eff39d493213e460fa8005936302948907230b
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -42,9 +44,8 @@ created_at: '2026-11-17T02:54:08.663285+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T02:56:47.913233+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo

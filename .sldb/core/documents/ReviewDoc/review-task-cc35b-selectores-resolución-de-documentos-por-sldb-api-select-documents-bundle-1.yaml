@@ -1,7 +1,7 @@
 name: review-task-cc35b-selectores-resolución-de-documentos-por-sldb-api-select-documents-bundle-1
 path: desk/reviews/task-cc35b-selectores-resolución-de-documentos-por-sldb-api-select-documents/bundle-1.md
-source_hash: d85689da9e248dbf4df20b8da81a3ddcf4df035b432e87abedff40c3e6813688
-content_hash: eb29a471a72f10972a1d6ed62f209ce8724a68133dc6b177434f89e7e43ebf77
+source_hash: ebce94e7d6a0ca19b3527545d96145b4daaff573fff73642059ae64aca0c74c7
+content_hash: 0c39ff4f63418b042c87809b11e549fd71e7edb3c29b13582c01dec9dd09bedc
 field_hashes:
   id: 2d0497870512bae74e5b4a651341ae8955c63f9ada46a6b46aa7848693117e01
   title: 73df24433cc4ea196bf4e8f2950983c67d7f97845fa3ca0bdd20227df7bb23f7
@@ -23,11 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: ed621190f66465b2c25ec968e473e1245a3db1e0cbc05fd5a0f9eb871077b9a3
   disposition: c3a5bc32e4f89a7cd5cf22de1a3ad7f498b46a5cd3cf64095173055989db4791
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-23T19:01:17Z'
+  authority: generated
+  via: save_document_payload

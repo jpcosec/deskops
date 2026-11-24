@@ -1,7 +1,7 @@
 name: review-task-scion-autonomy-review-status-bundle-1
 path: desk/reviews/task-scion-autonomy-review-status/bundle-1.md
-source_hash: 4d5a4841063036ebc578a8e54796a73acbcb35dea5b12ae1281eca13570b7f9e
-content_hash: 0b6810bd2e2f603d783f708911d4a406aa70a1b7cfc9367aa8a4874c58e5c541
+source_hash: c5f9b54597e1f2512e76e508b3a89801035b5667861063d63fee448e04f10614
+content_hash: 430f10d95d819835a448f1dcd50286ff1e19a48816356dee2a2157ab5ccd88ec
 field_hashes:
   id: 707ea7087794a91708d338ba366f2cc0c4f39bf3a86847dcdae188da4e930c5a
   title: 825f1f9218d0916d29a2c2ed50bf628377709103b5cecf6cafaa01c3a1402efd
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: c20a29b813fceaeaf9034946cb67020be18ea8914804a8ccc6f1d4d9f428716f
   disposition: 56ed1fa03e06696d51fbd7ed9f8372816b37965fbd73e2ae7e1818d9fce26970
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-10T15:14:42Z'
+  at: '2026-11-24T02:13:11Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del-evidence-atom-1
 path: desk/reviews/task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del/evidence-atom-1.md
-source_hash: eae6e05d66ede16b0363a54d1211385afc9bee1fa6c200e4429d0f1a5bdee67f
-content_hash: e744932e6f05746af0e3f0b06202f85eca7b3ec5547c86086a178bfd813f9cb9
+source_hash: c3b7d4718d4ac9c47149be7dd0e8ffe52f0a6570bcebc1a233f879ea11842124
+content_hash: ecc171b05254c7b7a80b6c2a1e79e4de332aa185a869d3e39f62e861420b7eaa
 field_hashes:
   id: 0f9d902e694ddb8de742b68ae8dfa5021876d0ecae5c3a889565ec964cfc2942
   title: 20b5a6a9f22f486f7ef185313bcdc2ba2cce0852e76a2d2a96fc7cb12e40fb99
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 8a033ecf3632c6ddb4aab3e6dfdc6af3d4de17f88dabbbf28e852d5e9791f74d
   disposition: 1df7f32235b4bbfe45b688ca44bb7a76329dae75535667d15efa569befc51c2a
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T01:11:46Z'
+  at: '2026-11-23T19:18:18Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

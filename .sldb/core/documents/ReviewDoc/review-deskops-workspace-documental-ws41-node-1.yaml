@@ -1,7 +1,7 @@
 name: review-deskops-workspace-documental-ws41-node-1
 path: desk/reviews/deskops-workspace-documental-ws41/node-1.md
-source_hash: e280901c1a0ee848d296fb089506007708e8cdca3b5a1d557334bed07e033d16
-content_hash: 57041e42b015ba2118049807be986a7b10262d0ae7d1008044056bd8593b08b3
+source_hash: 6aa7488747db41522f6c675d73236446c0f5bd67003f8fcff0b47243e61c6890
+content_hash: f7c5f44d86c353f13899e5f96a20f16feb7ac7365c0fd20886b4d7be1ed58283
 field_hashes:
   id: bd0c775a1b768c92cbb71acb07fb6511c98ca1878e85a3dc5a91d7c35d3074b9
   title: c02eab9dc204f8147518922f89a9d4303ec18b83fbca6376f9361a33123dafad
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 40b2ab0011cc2388b3ce6e7fdf529482dface01b623357bad1b0adf3c0cdb0cd
   disposition: 5a91e867f8830c620f35d7a9cee0da141c59aafd200191e0f6c0ef13b3237b76
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T03:18:18Z'
+  at: '2026-11-23T18:55:54Z'
   authority: generated
   via: save_document_payload

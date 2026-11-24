@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T02:09:27Z'
+  at: '2026-11-24T02:12:47Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 4155f1d271d604932873bf8d4b74c7d7f5082372acd31e1584e2f159585e11a3
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -31,9 +33,8 @@ created_at: '2026-11-16T02:09:21.107854+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T02:09:21.107854+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-runtime-template-el-coordinador-lanza-hijos-con-el-harness-auth-del-template-default-oauth-token-no

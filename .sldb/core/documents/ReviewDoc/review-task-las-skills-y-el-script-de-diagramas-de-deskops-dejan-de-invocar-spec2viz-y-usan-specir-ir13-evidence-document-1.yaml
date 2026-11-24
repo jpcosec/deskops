@@ -1,7 +1,7 @@
 name: review-task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13-evidence-document-1
 path: desk/reviews/task-las-skills-y-el-script-de-diagramas-de-deskops-dejan-de-invocar-spec2viz-y-usan-specir-ir13/evidence-document-1.md
-source_hash: 16373f63bf6e37da4f64a250195c7a33ef2fc9dbdcfd02c0cece4a97af69d940
-content_hash: 999c86fceb775cd313c193bcea6e73d0a31cc4199266a7861fccb7cbf96c9a5e
+source_hash: a02f5564c91b367d0c2b9c01b1ad7a46ce7cfe52b483d15ba8b1321f71025585
+content_hash: 659036956022f5ed77f3bd2af08cf67f0ce04892267dca140d4e83585b758e3c
 field_hashes:
   id: 15aed93a715f4ac80a14751605d9282b9075c3cc4b9b600df2d97cff854666cc
   title: 9f0c4d7085bc04c9bc3befcf1b7f48311bb80aaeb879691bccae9c932f1431b5
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: a35c4c0b429b4447b620e6dfa26ea31d5cb0a81eb7fb51303646a187dfa10ddc
   disposition: 102b3c0c06aba2e24a5f3e74a09b64ee851830e6194a58f63c5bed1e7f5f2d12
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T20:54:45Z'
+  at: '2026-11-23T19:32:47Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

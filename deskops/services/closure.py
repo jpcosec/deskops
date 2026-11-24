@@ -1234,7 +1234,7 @@ class ClosureService:
                         "disposed_by": actor,
                         "summary": f"closeout verify checked {fact}: " + (", ".join(items) if items else "(nothing found)"),
                         "disposition": f"Verdict {verdict}: {reason}",
-                        "tags": ["workspace:desk"],
+                        "tags": [],
                     },
                 )
             )

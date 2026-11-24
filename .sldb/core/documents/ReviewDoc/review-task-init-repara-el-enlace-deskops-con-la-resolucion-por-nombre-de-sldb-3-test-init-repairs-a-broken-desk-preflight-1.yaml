@@ -1,7 +1,7 @@
 name: review-task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk-preflight-1
 path: desk/reviews/task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk/preflight-1.md
-source_hash: 2741089c0ec6a9a78dac22ba0e53e91fd5d81cd4186c2709f046bfe4f25ba82b
-content_hash: 508a5cb5c73fa49a304d73abd08d35afaeb803be89076726e59226555100f5f0
+source_hash: 81f80cbb281b546e189bb5a6dde6668e9c467cddf22f24456b00415d587e6bb2
+content_hash: 247d5ebd5059141ddab6b8590183bdf9d499f628455b13ecfef5cde3ca9073d8
 field_hashes:
   id: 3f240b475596ea0faf1b11ba1469e79c0d252111077c3b32ea5a589e95aef7c8
   title: a54a98c1c11cae9df914ea6a33d9e27e6587e8aad9650945a1696f19fddd4ad9
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: d46ab37651003ae1d01ec4d0f367277e21e54681f98ac3226536a04510bce701
   disposition: 602e21f7713f8229a36dcd9e758bbd4c839a2d53045b5b474f85c15cb5b09c4c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T09:16:20Z'
+  at: '2026-11-23T19:26:52Z'
   authority: generated
   via: save_document_payload

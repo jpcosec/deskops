@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:01:36Z'
+  at: '2026-11-23T19:12:18Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -42,9 +42,8 @@ created_at: '2026-11-21T06:59:28.836256+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:01:26.709220+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-init-agrega-deskops-log-al-gitignore-del-repo

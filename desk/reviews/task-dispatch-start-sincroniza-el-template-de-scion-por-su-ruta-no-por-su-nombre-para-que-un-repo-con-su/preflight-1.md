@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T19:24:11Z'
+  at: '2026-11-23T19:20:09Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -51,9 +51,8 @@ created_at: '2026-11-20T19:23:10.017645+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T19:24:05.470359+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su

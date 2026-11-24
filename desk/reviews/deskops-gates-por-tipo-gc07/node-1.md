@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T03:03:26Z'
+  at: '2026-11-23T18:51:05Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-gates-por-tipo/context-review/deskops-gates-por-tipo/GC07/05fb0502906dd32a2a7dd9b80c345b1a144440456d79f85686bf4b0ef7eb8a03/attempt-1
 input_sha256: 05fb0502906dd32a2a7dd9b80c345b1a144440456d79f85686bf4b0ef7eb8a03
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: fa317f042a48884fa98f8e86987fe9e68f6c3fd46f63fd2e35ef24fd456e387b
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -36,9 +38,8 @@ created_at: '2026-11-17T01:40:20.044605+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T03:03:21.326487+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of GC07

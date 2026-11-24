@@ -1,7 +1,7 @@
 name: review-task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime-bundle-1
 path: desk/reviews/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/bundle-1.md
-source_hash: 47193d2b755ed925924c67c835c483ab63bec20103f124d25ca302d7fd10a070
-content_hash: 5ceff0ca171ed148b5eff056a463f9290b5b91e31427ea20e075076a5f5677a4
+source_hash: 5dce447898f59601c3d222a60cb42a1aa1f1dc42d7fff26923ee48fbade9089e
+content_hash: 850f6dedec50ae765d997bf3900fcfc2aa0b215d7154ff02c951e7e9162edc99
 field_hashes:
   id: d5251737b8de5054cd8f71341120585e28f4d29f641a1a987618d88411232087
   title: f4ba84db9ee43dba7a0a6b98cf1fb20ff8ff623a1acbfec09936a5b67e9651f2
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: da2eca89afe77701c8c4bb1ff33302fdbf361d7f8acd44b5b07e0a88e0307994
   disposition: c450bb2c98ca3b620595d82d154f0252a322816757086556a841b89765482951
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:47:14Z'
+  at: '2026-11-23T19:24:45Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:04:49Z'
+  at: '2026-11-23T18:57:40Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -94,9 +94,8 @@ created_at: '2026-11-23T04:49:41.605757+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:04:41.148266+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-al-llegar-una-nota-al-inbox-de-un-desk-deskops-despierta-a-la-identidad-scion-de-ese-desk-si-su-conf

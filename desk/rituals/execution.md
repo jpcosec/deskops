@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-09T19:13:53Z'
+  at: '2026-11-24T02:16:57Z'
   authority: generated
   via: save_document_payload
 # ritual-xxx
@@ -50,7 +50,6 @@ steps:
 # e.g., layer:workflow, system:sldb
 tags:
 - system:sldb
-- workspace:desk
 - topic:rituals
 - topic:execution
 ---

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:31:55Z'
+  at: '2026-11-23T19:03:17Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261117-012922/context-review/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/bundle/f6ce083fc42f00f82e3ddd689f7505d6ffd266c90c70667b345c69bfe7853a03/attempt-1
 input_sha256: f6ce083fc42f00f82e3ddd689f7505d6ffd266c90c70667b345c69bfe7853a03
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: aae9261dbe2040401483f23a2fe17c705720e1c99b0b480e3ef7057c6d55f242
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-17T01:29:36.677629+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T01:31:47.249171+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit

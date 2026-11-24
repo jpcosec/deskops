@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T03:28:32Z'
+  at: '2026-11-23T19:01:26Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261111-032752/context-review/task-cc35c-referencias-entrantes-referrers-y-rewrite-references-dentro-de-la-transacción-menciones-en-pro/bundle/ccdea5ae1adc788c854140186ffb7c806b0281d453f8828b0c228933632a63dc/attempt-1
 input_sha256: ccdea5ae1adc788c854140186ffb7c806b0281d453f8828b0c228933632a63dc
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 929fbda77959608d37fbbe8089bd10e42d0ea52a14fcc4fc0bf5057be2a9f1a7
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -56,9 +58,8 @@ created_at: '2026-11-11T03:28:07.781091+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T03:28:30.289168+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-cc35c-referencias-entrantes-referrers-y-rewrite-references-dentro-de-la-transacción-menciones-en-pro

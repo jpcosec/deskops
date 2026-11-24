@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:26:55Z'
+  at: '2026-11-23T19:15:36Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -37,9 +37,8 @@ created_at: '2026-11-21T07:25:07.056430+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:26:47.596194+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk

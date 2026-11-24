@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T17:51:16Z'
+  at: '2026-11-24T02:17:14Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -74,10 +74,9 @@ rituals:
 - ritual-closeout
 - ritual-testing
 - context-review
-# e.g., system:sldb, workspace:desk
+# e.g., system:sldb
 tags:
 - system:sldb
-- workspace:desk
 - topic:routing
 ---
 

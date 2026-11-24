@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T04:17:59Z'
+  at: '2026-11-23T19:27:39Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -56,9 +56,8 @@ created_at: '2026-11-21T04:16:26.541240+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T04:17:53.777012+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s

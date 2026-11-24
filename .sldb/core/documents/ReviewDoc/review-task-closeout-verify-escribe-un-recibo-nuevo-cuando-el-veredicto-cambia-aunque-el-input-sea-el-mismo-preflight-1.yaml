@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo-preflight-1
 path: desk/reviews/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo/preflight-1.md
-source_hash: ed7fcf613f4bb72e44405d74641df056652ce213fd865882a214450e86ce89ac
-content_hash: 9ce482589279f63f2f75f913de7ee517cba68173599322a11117f4964ffb9243
+source_hash: fb7ced95e344dc6cb2a1e6a3ee3cde8c53e54018a3aaa248fae66b6be7776d81
+content_hash: bb86e15fbeddb28322931795afb7ed5f0fbc176df87207908540f1cb72776d4d
 field_hashes:
   id: 215e1fcf6597db924a12808df895f48137c03ccf510807daf1331545e00c6a47
   title: b5d67740fa8fec3bd3e73fe0f39de5102abc2137444f15912cdabf596f32004c
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 610ec76332319082f0ded87bb3deec0d7c36b01143a2465d2c7d7fca84f7c1dd
   disposition: d5fe9d336b5a47c9d69efbf168a6f3010f6b6baf90202d655dc998325b4ca55c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T01:32:09Z'
+  at: '2026-11-23T19:07:01Z'
   authority: generated
   via: save_document_payload

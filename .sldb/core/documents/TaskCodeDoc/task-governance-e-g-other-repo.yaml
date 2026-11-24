@@ -1,13 +1,13 @@
 name: task-governance-e-g-other-repo
 path: desk/tasks/task-governance-e-g-other-repo.md
-source_hash: 943385ca546c8e613e9ef23b4640c170728a989617921ea0964f48e1413c75c8
-content_hash: ba5f821f5d2179f35a9b51c2bd731381cdc7d42039bc2edf5e77c717d7498707
+source_hash: 72a304b8648cbf7c26dc76ed737b1da2a2440cf47a99d9254d1801f22c987f47
+content_hash: 0002735e1f5a32f154c7c30be4ce0c846276ae249af0dc9ecbbc4298d594ff32
 field_hashes:
   title: 93269a6c7c4d3675eddd1e4acd4cb21071fbbb2062de86b3241d93120a7defa4
   id: c75cd50f9f48f34d271116fe9a14fcad46afee5c604614435c93fb1ff44f3b01
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: d0db58c5920ddf3da47b649af3f5d74b723b4b8b13ac32d358beb95db38156df
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:13:30Z'
+  at: '2026-11-24T02:18:21Z'
   authority: generated
   via: save_document_payload

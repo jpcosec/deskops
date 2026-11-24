@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:47:01Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-board-routed-pills-stay-minimal-and-reusable
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:pills
 - topic:boards

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T22:50:10Z'
+  at: '2026-11-23T19:12:09Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261111-224928/context-review/task-deskops-edit-task-y-edit-de-cualquier-artefacto-no-guarda-el-párrafo-placeholder-de-la-plantilla-com/bundle/30436bab32b0df9096437deb00e9f978c3a77ba11a5807bfa94492fa1638d53d/attempt-1
 input_sha256: 30436bab32b0df9096437deb00e9f978c3a77ba11a5807bfa94492fa1638d53d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: c28e2d31268a056aa55cc76bd1f402a26717b34ad493fac6d5c40190efb7c9df
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -48,9 +50,8 @@ created_at: '2026-11-11T22:49:46.078998+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T22:50:07.437415+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-edit-task-y-edit-de-cualquier-artefacto-no-guarda-el-párrafo-placeholder-de-la-plantilla-com

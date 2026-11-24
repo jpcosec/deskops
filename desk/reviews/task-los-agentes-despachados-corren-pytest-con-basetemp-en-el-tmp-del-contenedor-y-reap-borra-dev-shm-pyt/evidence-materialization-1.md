@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T08:08:26Z'
+  at: '2026-11-23T19:34:24Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -53,9 +53,8 @@ created_at: '2026-11-23T08:08:12.203067+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T08:08:12.203067+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt

@@ -1,13 +1,13 @@
 name: task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable
 path: desk/tasks/task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable.md
-source_hash: 3c0eb1ccdc70e5f51e4dc6b8a29187c464703e7b766af39b0242693d30569007
-content_hash: c3cee83e438a266efd2dfef3b8f992ca8d1bc0848acec5ad1f2e2364bde3774b
+source_hash: 290786dc3dc5b20222335dc88b4828e464803a7615d280475864fbb5b816ee9b
+content_hash: ae8b44b494462293255638abf39926ad9df9cc57692e8c9525003cb5f0460318
 field_hashes:
   title: db23773062712a6780eaaa4ee774f961c02eef69f9c31739dd8d5eb331b1c4d4
   id: fe60532c58504ee4c0d8f3747b5ec8956599814c909d1a96de12c534fb8e7149
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: b6906eaffe7a46808a8860437e78eea02b6816a54a0184a8ad4101a90b621812
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T13:24:55Z'
+  at: '2026-11-24T02:18:38Z'
   authority: generated
   via: save_document_payload

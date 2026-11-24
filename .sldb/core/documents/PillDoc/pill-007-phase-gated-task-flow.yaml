@@ -1,11 +1,11 @@
 name: pill-007-phase-gated-task-flow
 path: desk/contexts/pill-007-phase-gated-task-flow.md
-source_hash: b1e28c062e135464c036aa0dc41b2532fdbc921d3c90526dcc0d7213fa126398
-content_hash: 4255d8f999318f7619f56e5b1451f2c451100115fd26e74c6fde64d164dcbc1c
+source_hash: d1a59090cd0888d7f3f26ae5e9c2d63f8844d1e481e5bb6bec14c29b21a3cd3d
+content_hash: 0dab03f7def65524229e73ea813b86b754e0e1cb40ac7c7df153af889b893508
 field_hashes:
   title: 795db55a4c76270a5d7b425f1feb6fda2ec215788e30c0376b5ce16754552186
   id: 102286b930727c5a08fb296b3ee8e128ea0929c3dcdd303ea85db4c41613dc62
-  tags: a040a11afe7b4f455ba910062f411fc2cd4ffe34278e7d25c0372fca2fb3303e
+  tags: e3e5cb2ecd4da6633f2e137e9af7b6008494572647cb45287c7c23546475628f
   what: ee25754878c9019d7624500d5f89b8c7efabbd257a18924b77916c4f401c3ac9
   why: 16093c95ac679901926385eed100603628ffce7b9c67680e06b11196bc1ffb72
   when: e26ff9ec8fd8f9556fcc0ea228ef95fed79ee2a5317e8b1019c9c78b37e5dc39
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:workflow
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-23T18:46:52Z'
+  authority: generated
+  via: save_document_payload

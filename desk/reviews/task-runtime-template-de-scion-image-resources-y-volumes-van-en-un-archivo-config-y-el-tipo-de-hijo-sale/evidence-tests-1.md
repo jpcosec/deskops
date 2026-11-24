@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T13:17:42Z'
+  at: '2026-11-24T02:12:30Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale-evidence-tests-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -45,9 +45,8 @@ created_at: '2026-11-23T13:17:41.724757+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T13:17:41.724757+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale

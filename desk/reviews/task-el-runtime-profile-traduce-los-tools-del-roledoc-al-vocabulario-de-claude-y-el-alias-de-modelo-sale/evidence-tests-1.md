@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T09:10:52Z'
+  at: '2026-11-23T19:23:06Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-tests-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -53,9 +53,8 @@ created_at: '2026-11-23T09:10:51.007080+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T09:10:51.007080+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T12:34:53Z'
+  at: '2026-11-23T19:12:45Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-commit-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -37,9 +37,8 @@ created_at: '2026-11-23T12:34:47.354887+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T12:34:47.354887+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence commit of task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis

@@ -1,7 +1,7 @@
 name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-evidence-materialization-1
 path: desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/evidence-materialization-1.md
-source_hash: 0cadad1864a7e33c6b806bab911707bfae00fc241585beee784e2846c6ef98e5
-content_hash: a3fc97c10caf9517d74d64578ee5d264ecd773964df2067b823672e1e6976695
+source_hash: 6ba3ea88e57f8ba5094353823e8e71aadcc5a318f699869ffdb5404a05946150
+content_hash: 897f59cd35c3c9c8e087fe1d4f13f59bf8d1d6c64bf0d75c67ff906a4367cf29
 field_hashes:
   id: 49a72f89c81eff33fb2d5b2257b83833c7fa45eb5a939ce80c32d25c7c3eca39
   title: b50df0e82308ea39fc9b212f15465b66e018efb8e53a14e4d885c318f2cfd376
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 1abd743f5610663b8e6cc381f2e2838f3b3f008a3a779d3ab2d81a09ffd04492
   disposition: 29302ee7db47b3a311a39a9c2f8a36d7200358a9681dfb5ceac6b73fe1d6f8a7
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T22:31:56Z'
+  at: '2026-11-23T19:37:03Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

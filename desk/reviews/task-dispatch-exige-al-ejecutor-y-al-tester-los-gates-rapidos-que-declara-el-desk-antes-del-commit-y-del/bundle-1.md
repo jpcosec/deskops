@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T00:45:07Z'
+  at: '2026-11-23T19:18:14Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -43,9 +43,8 @@ created_at: '2026-11-19T00:44:16.622281+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-19T00:45:01.104172+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-dispatch-exige-al-ejecutor-y-al-tester-los-gates-rapidos-que-declara-el-desk-antes-del-commit-y-del

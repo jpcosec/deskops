@@ -16,7 +16,7 @@ options:
   --summary SUMMARY     Short semantic summary for the primitive.
   --tags TAGS [TAGS ...]
                         Semantic tags placed at the end, using namespaced
-                        forms such as 'system:sldb' or 'workspace:desk'.
+                        forms such as 'system:sldb'.
   --scope SCOPE         What area or workspace this board routes.
   --purpose PURPOSE     Why this board exists and what it indexes.
   --tasks TASKS [TASKS ...]

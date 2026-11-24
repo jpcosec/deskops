@@ -1,7 +1,7 @@
 name: review-task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks-bundle-1
 path: desk/reviews/task-un-runner-del-host-toma-de-una-cola-los-trabajos-pesados-que-encolan-los-post-hooks/bundle-1.md
-source_hash: a0f054a31d8af1dc40c6f51fd8bf6dbb05cfd239feeb218c2ae3b70460a9cea6
-content_hash: e671acce60098d2a3f3ee2728bcae4fd2fabf3e6e2f8f6bfa8667301cced87f6
+source_hash: 70a68872526a73019dc80c70563c5e50fe4480ba71ffb0209f3c5299361d0c4c
+content_hash: b4b517a0e533b519dd53be4c8fd6bfe5257718980c84ce71af4cb3504620243b
 field_hashes:
   id: 21dd51c1ee9191fb14e8bbf615164923ef33a4ff78b4d1e8df540a0a62ec04c2
   title: 0e8475c64ae33fb4011eebd868d2dd6d3c267ab0fd9b5884dd9f7ee118dec4a6
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 104073cfd398825f81bddae1385db445ea48f0110ef9cffe0fc9a3cb49e29624
   disposition: 3fcd6b809d155afeb4d478f0f86ec7240bce30ffda4be7a3c2495be06397aa95
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T04:49:14Z'
+  at: '2026-11-24T02:15:40Z'
   authority: generated
   via: save_document_payload

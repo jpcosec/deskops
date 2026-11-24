@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T19:30:04Z'
+  at: '2026-11-23T19:17:38Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -49,9 +49,8 @@ created_at: '2026-11-21T19:29:50.811728+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T19:29:50.811728+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u

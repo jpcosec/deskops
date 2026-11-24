@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:47:40Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-list-surfaces-must-expose-malformed-docs
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:list
 - topic:data-integrity

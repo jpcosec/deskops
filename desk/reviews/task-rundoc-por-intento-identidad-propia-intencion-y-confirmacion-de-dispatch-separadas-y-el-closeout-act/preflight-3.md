@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:31:26Z'
+  at: '2026-11-24T02:12:14Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -47,9 +47,8 @@ created_at: '2026-11-21T07:28:49.473470+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:31:19.171339+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act

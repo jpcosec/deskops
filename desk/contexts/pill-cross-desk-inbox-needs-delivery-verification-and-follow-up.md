@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:47:19Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-cross-desk-inbox-needs-delivery-verification-and-follow-up
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:inbox
 - topic:cross-repo

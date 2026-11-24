@@ -9,7 +9,7 @@ class BoardDoc(OperationalArtifactDoc):
     __artifact__ = {
         "id_pattern": "board-{slug}",
         "status_default": "active",
-        "tags": ["workspace:desk", "artifact:board"],
+        "tags": [],
     }
     __containment__ = {"tasks": ["TaskDoc"], "pills": ["PillDoc"], "rituals": ["RitualDoc"]}
     __semantics__ = {"type": ["workflow", "board"], "workspace": ["desk"]}
@@ -31,7 +31,7 @@ tasks: ⸢rev•tasks⸥
 pills: ⸢rev•pills⸥
 # List of ritual-xxx paths
 rituals: ⸢rev•rituals⸥
-# e.g., system:sldb, workspace:desk
+# e.g., system:sldb
 tags: ⸢rev•tags⸥
 ---
 
@@ -79,5 +79,5 @@ _Generated from the task references above._
     )
     tags: list[str] = Field(
         default_factory=list,
-        description="Semantic tags placed at the end, using namespaced forms such as 'system:sldb' or 'workspace:desk'.",
+        description="Semantic tags placed at the end, using namespaced forms such as 'system:sldb'.",
     )

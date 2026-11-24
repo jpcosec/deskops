@@ -1,13 +1,17 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-09T19:48:46Z'
+  at: '2026-11-23T18:59:38Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador-bundle-1
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: bundle
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador@sha256:375b064b4bfe025ca9a057e9b2754640af9a5f41e67abd27db78e89df43a1069
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -18,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261109-194653/context-review/task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador/bundle/f8a6907f73a91701393769635b86d076fe0864fa4d77cabb8d983e4828d4e0ac/attempt-1
 input_sha256: f8a6907f73a91701393769635b86d076fe0864fa4d77cabb8d983e4828d4e0ac
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 7d2d7a37b7a34d32326a1fe67b970c3d07a3b55ba3cb40a9b6585f13bcb3b3b2
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -27,9 +33,8 @@ created_at: '2026-11-09T19:47:12.515309+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-09T19:48:46.780326+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador

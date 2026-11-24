@@ -1,7 +1,7 @@
 name: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-preflight-1
 path: desk/reviews/task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task/preflight-1.md
-source_hash: bd910a0fb7242780793f5e0e1e537b570c10156f5275ead36fa38ff8dbe68bff
-content_hash: cd2d13414e5f8f8ba0a9fda7f52ce94750355e04c0c4a21088103be4665531c9
+source_hash: 3c1635790584c8b84dffdb53a2b1ea177d035b63dd4fd81e361c33d221e66ddf
+content_hash: 9a39270455ed2c8295d67941b9fe822dbdff7ba5249c44780e1adc6dd0bdb177
 field_hashes:
   id: dade6bb0e793d65c937fa6bf05025ccedfdcc6ac69854a8e4b00eba5fae952bb
   title: a52529efdf40f6d0f5aa0ebf6a662de4e11541354a4f0563620be06990e69a4a
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: fa91bc695bf4616f254d3cb653a2814b81a11a800e7b8a40892658a0a4a7df32
   disposition: 544cd01fb1e591663ed675aa51ee764aaa2e78f69a5aebd4269c89165a2e545a
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T06:58:38Z'
+  at: '2026-11-23T18:56:39Z'
   authority: generated
   via: save_document_payload

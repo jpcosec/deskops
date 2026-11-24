@@ -1,7 +1,7 @@
 name: review-task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar-preflight-1
 path: desk/reviews/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar/preflight-1.md
-source_hash: e823fdcc857cc608ca98d28e29841d87f1b35fb89db0a0308f5b5402d5500d14
-content_hash: a508eedd10ea1a2f6daeeebf01a8e9ed8d637402a4ad35ce5a158b81678ab678
+source_hash: 7f44944d0cdf8e39f676dd75ca6f27849e8294593b591ae151fbf3e2ce0ab9b7
+content_hash: 20f3e90b5461f0d10e30b9d5aba4feea0fc5aacd737ae6b1562a861da8f521de
 field_hashes:
   id: f50952d1defd18b197a8f0fb49c2ffa67526896fffce17551e052cb65e058b82
   title: 1905081af007160665ee8f6c6df5826eefef8675409b02bdfd173fe7ed9173c4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: f7e1ff923c0fa30e324bd7691e90ca2403e98024527684840717a76fdeea2895
   disposition: 89a316134cee67b499163380c7c76cae31440f8cf4d5c44ceb2fdb965763e251
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:47:03Z'
+  at: '2026-11-24T02:11:19Z'
   authority: generated
   via: save_document_payload

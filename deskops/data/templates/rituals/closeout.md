@@ -1,8 +1,7 @@
 ---
 id: ritual-closeout
 steps: []
-tags:
-- workspace:desk
+tags: []
 ---
 
 # Closeout ritual

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:30:23Z'
+  at: '2026-11-23T19:06:41Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references/preflight/a41fd2666ef21e86966c1ba776f6b06e8c5ba1efa4d284ab4b89e5223ceccb68/attempt-1
 input_sha256: a41fd2666ef21e86966c1ba776f6b06e8c5ba1efa4d284ab4b89e5223ceccb68
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 9858a1e6a12003d8c1445a142e59334ebbc908ce4ca8b9343b7049109a6a3aa0
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:13:41.858850+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:30:18.491247+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references

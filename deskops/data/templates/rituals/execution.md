@@ -1,8 +1,7 @@
 ---
 id: ritual-execution
 steps: []
-tags:
-- workspace:desk
+tags: []
 ---
 
 # Execution ritual

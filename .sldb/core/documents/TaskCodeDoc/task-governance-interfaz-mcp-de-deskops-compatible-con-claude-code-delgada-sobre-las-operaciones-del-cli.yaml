@@ -1,13 +1,13 @@
 name: task-governance-interfaz-mcp-de-deskops-compatible-con-claude-code-delgada-sobre-las-operaciones-del-cli
 path: desk/tasks/task-governance-interfaz-mcp-de-deskops-compatible-con-claude-code-delgada-sobre-las-operaciones-del-cli.md
-source_hash: 6fef22e73254cec5a82230170e9be110092081adf29ad3d07224407910c354d2
-content_hash: 46c10d2e2c16944ad7894fc6d44ba3098557e374d92a915e26c4cb04c6fefcc5
+source_hash: 2d99a7fb8b34fb722a64da435f92b286f47235ffed8b8bee893c8d5d9a159279
+content_hash: cb500e62284ff41b0b8f8c9eeb405249bdfdb9ac89a8838ade46179baffbda89
 field_hashes:
   title: 26b51d781a7e12712c51225fad8ad98460acc79b7701d5e20caa0d8533e436e6
   id: c502857264bea320acaf5f418fbaaa375913a02a0d93f74e121f18d95e36c8c0
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 5db2931b9cbb57f099d44d6e3775e14582af8fea7523c25edb83966927320d4c
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T13:25:35Z'
+  at: '2026-11-24T02:18:32Z'
   authority: generated
   via: save_document_payload

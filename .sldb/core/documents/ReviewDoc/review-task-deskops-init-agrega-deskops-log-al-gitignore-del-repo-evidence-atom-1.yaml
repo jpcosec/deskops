@@ -1,7 +1,7 @@
 name: review-task-deskops-init-agrega-deskops-log-al-gitignore-del-repo-evidence-atom-1
 path: desk/reviews/task-deskops-init-agrega-deskops-log-al-gitignore-del-repo/evidence-atom-1.md
-source_hash: 35a09c54047be598cc13091383fbd89f3f9f8438e8bc55cea734e04aea8b110b
-content_hash: 106c3b977795f2165a13b66654de53514f886d578dcfec4e3078b3e00e040293
+source_hash: b05b889dfe0f258ca71b0d22a2da01d35fa1b0f78f71f1015578bd14dc5cb835
+content_hash: 062f2587e95a4751f29c6937ce43a09036015c805f712e340c5309593bedf2a4
 field_hashes:
   id: 3de77b1248e3e6b3b1c4fa76900b53118040538622b741458013501d380ea87e
   title: 93e63fdde7c78bce5de4d8bcc6cf1a9cb292e38af9b7d48e3bd7c66e9e07e777
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 47acabffd2221a727cec283d4c97e47a88f59e59dd7a673c537559dd64c84ac6
   disposition: 389d82cf258384729774d38358e63dbcac7485498972ff4400a89a3e5308a068
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T17:23:16Z'
+  at: '2026-11-23T19:12:22Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

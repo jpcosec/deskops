@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:46:30Z'
+  at: '2026-11-23T19:22:44Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle/context-review/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/bundle/9a6f43a6125bda8af6bc0900c0fbc6cc60e967e58af36169318a02357f09007f/attempt-1
 input_sha256: 9a6f43a6125bda8af6bc0900c0fbc6cc60e967e58af36169318a02357f09007f
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 94c9dbba106f4cb4f1cc82ad0babda9a58d6572f827e5bd2f23975bf804473f0
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-16T05:40:05.948544+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:46:25.409398+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale

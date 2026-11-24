@@ -1,7 +1,7 @@
 name: review-task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34-preflight-2
 path: desk/reviews/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/preflight-2.md
-source_hash: 1fb5c68b4cc1dbce0601f6eecbca894e397af3e120ac9b4fa4c0cb510dd8c105
-content_hash: e80b820b8519cb4b40039ab726246e931f17082c8b1dff339cae93d82092236c
+source_hash: 45f1352c45cbe0ba49863cca0bd5d19baa46cd8efcc7cd8883182d82cd188c11
+content_hash: 0a9a66a081fbc6482918ff37f4e48dfe4c9fbf6edad4034dad063cf05a4c1de7
 field_hashes:
   id: 50c9063084b8acfba2a690a9634c3ab5b43ef6a53a9904f27ce79ebced00360c
   title: 4371e362c340463ade0463c34210cf5c8adc7ef7c790ea4516aa5a5cb8eb4398
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 07baba1da029fb43241b08ecd612fd58fbcc1d931594d0fbcccfacc3b54245ac
   disposition: a8c14ceeb0591843ac87f4406365b7c9ec486a50ca0a7d6778388a1f7d29fd90
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:31:10Z'
+  at: '2026-11-23T19:26:22Z'
   authority: generated
   via: save_document_payload

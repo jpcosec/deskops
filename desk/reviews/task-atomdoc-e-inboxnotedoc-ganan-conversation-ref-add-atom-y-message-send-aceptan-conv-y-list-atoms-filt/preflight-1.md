@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:08:11Z'
+  at: '2026-11-23T18:57:49Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -39,9 +39,8 @@ created_at: '2026-11-23T04:50:26.952516+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:08:03.711381+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt

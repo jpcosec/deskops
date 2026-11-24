@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T16:14:45Z'
+  at: '2026-11-23T19:09:22Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -41,9 +41,8 @@ created_at: '2026-11-20T16:13:44.344905+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T16:14:39.004708+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage

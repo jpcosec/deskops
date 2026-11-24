@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:07:50Z'
+  at: '2026-11-23T19:36:38Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/preflight/f0c1cc73a8c06408abe31786754702e1425d23ae72c8499463c50fbe0457dff8/attempt-1
 input_sha256: f0c1cc73a8c06408abe31786754702e1425d23ae72c8499463c50fbe0457dff8
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 590711528809ff6100b8847d3fd265c69604ce4d578c2fb2c3794f33cccd1c9d
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:34:08.048195+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:07:45.202566+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta

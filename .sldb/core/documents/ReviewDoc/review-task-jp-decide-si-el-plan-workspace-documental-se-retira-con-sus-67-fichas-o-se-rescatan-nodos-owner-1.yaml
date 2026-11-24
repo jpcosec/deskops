@@ -1,14 +1,14 @@
 name: review-task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos-owner-1
 path: desk/reviews/task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos/owner-1.md
-source_hash: ed9924accc8f0b7ebe99c20af6d7dd1d5be88fef679b8f0c9265d79671c865c0
-content_hash: 88e7207816b35bb717b9f6efc74969ed898a6bd1c5973032a058ebd35c3317db
+source_hash: f0dcbe8d945e7ecb440f697eb28f3976c9a7f69156b6f4eb8ef38b28ccb39768
+content_hash: 1aaec2f81abcbc012e0e44896c7ad8fc53c69c6f68b7c82fbddf26b4fa80eb97
 field_hashes:
   id: 811f965dc91e2688a921571e5654850c90b21ce14d127d6726d928f2bde099c1
   title: 18cb53fc7805600fe37abe121ea0584b5b98e75a3909b8f8429ac44b1f820dda
   kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
   fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  subject: 984d4f35b0033b4dab031425a8550b4e7aff58845e5596ded33747b0dd3e815a
+  subject: 1ecf9377ccda24e00ae529a50ffc19ef222bbc3185e915fc6596cc047100d626
   subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:09:52Z'
+  at: '2026-11-23T19:29:35Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

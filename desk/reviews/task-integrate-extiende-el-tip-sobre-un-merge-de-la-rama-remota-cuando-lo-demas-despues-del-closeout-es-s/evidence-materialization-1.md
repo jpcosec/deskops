@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T04:34:30Z'
+  at: '2026-11-23T19:27:51Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -57,9 +57,8 @@ created_at: '2026-11-21T04:34:20.258535+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T04:34:20.258535+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s

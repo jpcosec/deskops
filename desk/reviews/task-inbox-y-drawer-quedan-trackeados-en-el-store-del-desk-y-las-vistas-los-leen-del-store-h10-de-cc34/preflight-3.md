@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:39:16Z'
+  at: '2026-11-23T19:26:26Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -49,9 +49,8 @@ created_at: '2026-11-21T07:36:55.165577+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:39:09.325739+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34

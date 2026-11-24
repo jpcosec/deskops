@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T05:56:22Z'
+  at: '2026-11-23T19:07:55Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: coord2
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: a4a8d08936fd7be09b84c149b2d7e5ab16062f836342eb5a40118642188afc0e
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -31,9 +33,8 @@ created_at: '2026-11-11T05:56:16.160392+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T05:56:19.380408+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Reproduction review of task-desk-update-migra-a-draft-las-tareas-no-terminales-con-history-vacía-desks-pre-cc31-y-deja-nota-de-m

@@ -1,7 +1,7 @@
 name: review-task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas-preflight-1
 path: desk/reviews/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas/preflight-1.md
-source_hash: af4ee116e09976ab6577f0325e0cb0eb66119bba32e8f45c202dea146f3be288
-content_hash: 19319475ecb7e9091ea88d93d7789811de07e6a029b0a0ef1705686ec46faa15
+source_hash: 851c4a358e6a9842b2bd3302782765c092493a312e83f303b0f552ce95b4406f
+content_hash: 17934d7bacd696634b1ac28de7ed355f687cf44f19c634726794b34a46f6acf9
 field_hashes:
   id: 802e1c4940dece3c02bd204237470236360b3b3df5b37d331e26e73485e53369
   title: 35b2a5725b54d405fdbfbd03d0d3785dc9df476c0fa732d294d546bb13020ac4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: a16b82c77c98a9207e2dfa0c8ad45d892bd3eb340e366b02f8e244b063439b87
   disposition: 3880376032813e22479453f350b3045fe32aa304b804a0bd1fe227d3375f3135
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:50:50Z'
+  at: '2026-11-24T02:14:30Z'
   authority: generated
   via: save_document_payload

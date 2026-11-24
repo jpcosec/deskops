@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T01:57:10Z'
+  at: '2026-11-23T19:29:02Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -137,9 +137,8 @@ created_at: '2026-11-23T01:56:57.406669+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T01:56:57.406669+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el

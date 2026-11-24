@@ -1,7 +1,7 @@
 name: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-preflight-2
 path: desk/reviews/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/preflight-2.md
-source_hash: 31894d90792a43d9b358b52f4c2f4578864e037289380356a54fd7023f052da1
-content_hash: 214c6f01195cb17b41c2a76ed6166dcf5785b4fcc9255e01648c02f3cefce7dd
+source_hash: 7604d3643fdb012af7b2a70102204b2ca9fa6e561e8bd20dfb4e2f88b8a7d646
+content_hash: 0ed0a0d5717132f6e3b0e88cd4e271257caa2a726a8a75408ca9dc584eb51a7c
 field_hashes:
   id: 806f3f7f4f078a33062c982daa5faa3ef615cc3667d20d8e1c70f384ebea1252
   title: 3dcdd0f7bc66c7833134f828062c49da19ce3767991f81f7d0237a38815e07af
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 00fee179fff4b0897bd6e4c8322c04904ccb52431e26ec55d1584b7470e97637
   disposition: a8c14ceeb0591843ac87f4406365b7c9ec486a50ca0a7d6778388a1f7d29fd90
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:31:19Z'
+  at: '2026-11-23T19:08:49Z'
   authority: generated
   via: save_document_payload

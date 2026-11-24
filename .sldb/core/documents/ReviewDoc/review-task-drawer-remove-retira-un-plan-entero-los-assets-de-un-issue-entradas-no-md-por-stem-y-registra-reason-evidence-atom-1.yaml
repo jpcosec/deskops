@@ -1,7 +1,7 @@
 name: review-task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason-evidence-atom-1
 path: desk/reviews/task-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-entradas-no-md-por-stem-y-registra-reason/evidence-atom-1.md
-source_hash: f9482e8df116cee034efea06da1d0b559ca10760f60a9a087a82bcba96a367b5
-content_hash: 1ac0bdbc0717aa8d3d1e8669e13b3430ebd3e8e1bf3d7fa6dee336809f73b207
+source_hash: c1baafd89690d2b63cb8e23b4766cdc1287afad1a1864920d19610a418b04114
+content_hash: 0d555316b74e97da79ebdc2330a82751fa85ceb65021d600fafd3a008d2c50f0
 field_hashes:
   id: dd5c74745460b307fb0597538ed560ec4dc60b7b0cf0f1120307e6b54a80ac00
   title: a26d6eb1c51712d7e64a39b2d865f0fba4d225225d7d7779095158cc9234c1c9
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b350c57f91e48ed5f819d15f8e18601ede63d83863d1ca87ee5d36ad6afcc705
   disposition: 2f68a1a1e8e28e9484475e813486d37c81a95869ef45126feb60c179b5cf3211
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T04:58:31Z'
+  at: '2026-11-23T19:21:55Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

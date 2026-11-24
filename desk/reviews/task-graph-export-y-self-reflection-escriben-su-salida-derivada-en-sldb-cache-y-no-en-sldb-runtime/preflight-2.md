@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:32:11Z'
+  at: '2026-11-23T19:25:15Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/preflight/7045b01812984b84d6907e091a6840bf067d9726330fe0f296ea2f02bde6ab87/attempt-1
 input_sha256: 7045b01812984b84d6907e091a6840bf067d9726330fe0f296ea2f02bde6ab87
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: c91bb2fc2e019965594867e4a285cc2e77868dd3e2afcc2b33e9967a63448d62
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T05:24:24.012823+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:32:07.307660+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime

@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:24:55Z'
+  at: '2026-11-24T02:18:38Z'
   authority: generated
   via: save_document_payload
 id: task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable
 status: draft
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-execution
 history: []
 references:

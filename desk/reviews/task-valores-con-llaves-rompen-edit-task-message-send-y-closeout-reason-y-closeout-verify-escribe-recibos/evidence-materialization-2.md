@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T07:52:26Z'
+  at: '2026-11-24T02:16:31Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-evidence-materialization-2
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -77,9 +77,8 @@ created_at: '2026-11-17T07:52:22.115687+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T07:52:22.115687+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos

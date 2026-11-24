@@ -1,7 +1,7 @@
 name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-evidence-materialization-1
 path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/evidence-materialization-1.md
-source_hash: 230d85ff4ce39a0eca5bbfbff79094ed20df79c6a84d9e4963567a9fca09cb69
-content_hash: 619dd594540c3ba086bad650f3a6cc5129f6513b2c9f5e65f0367b38806c8b19
+source_hash: fdf307f35e13c0638feb906276826418d0ef61c4aeae8fccd810b810608fa10a
+content_hash: 108d58ff2c57e9628e48011bf19b793c36a4c7222994c007858eb3a9e3f18884
 field_hashes:
   id: 6a60b99a1ae9106123dc0dcac50fdd01d9b8bf815d8689a7633e644989e6d7a7
   title: 416a3747a49255ec291da82d681e1529f7d3bd0be1ac76c0133a9ffbe1fdc0ae
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 5c30d1a3f2baa50d2f11f9c17ab541f0d82eaebac5343ff272c1b9c1bf10515d
   disposition: e75ed415266bcb870a3b6a0dcac8698714ef1422f350467bd368b0877b98d073
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T15:12:57Z'
+  at: '2026-11-23T19:36:30Z'
   authority: generated
   via: save_document_payload

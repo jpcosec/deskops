@@ -1,15 +1,13 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T13:32:50Z'
+  at: '2026-11-24T02:17:21Z'
   authority: generated
   via: save_document_payload
 id: task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt
 status: ready_for_testing
 summary: ''
-tags:
-- workspace:desk
-- artifact:task
+tags: []
 current_node: ritual-closeout
 history:
 - task_activates

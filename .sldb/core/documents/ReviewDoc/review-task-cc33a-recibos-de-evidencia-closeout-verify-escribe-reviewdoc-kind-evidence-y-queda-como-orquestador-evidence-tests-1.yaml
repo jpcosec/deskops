@@ -1,7 +1,7 @@
 name: review-task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador-evidence-tests-1
 path: desk/reviews/task-cc33a-recibos-de-evidencia-closeout-verify-escribe-reviewdoc-kind-evidence-y-queda-como-orquestador/evidence-tests-1.md
-source_hash: 59bfc0446aae00cdc133222fbc322293e25c5482f1bcbf510adfeda75a4fb217
-content_hash: 143dac487c594fed14615601449d9c33543b8fd92c5a683ce229b83cd89b319d
+source_hash: 55a108a9a7eb4322fe317bf0be01e4e2d9510f25ffc8cf5316f671061c7b22eb
+content_hash: 9ebe87018ce34b44fe129a0ba3fca92948edd2598067fc7ae8d63892560a5415
 field_hashes:
   id: b3412c5e57fd24972186c7f9b31872e9303618541b71c17c96961c5f4900a83f
   title: 133a99bb81b181a9b575f06348e2a0c77b1a9761e1d727fb4b13cc5d6c54b61d
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 669717fa858046ea937fd9744f662e023d2df3fd2ace1881eeeec1fb6cc8ec81
   disposition: bece2f59242fb27903eccf458b3d9c510eae8f1d832f65f19e0062ea7beaf059
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-10T20:13:28Z'
+  at: '2026-11-23T18:59:54Z'
   authority: generated
   via: save_document_payload

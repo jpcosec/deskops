@@ -1,7 +1,7 @@
 name: review-task-review-record-recibos-reproduction-goldens-y-owner-sin-modelo-seguimiento-de-cc32-preflight-1
 path: desk/reviews/task-review-record-recibos-reproduction-goldens-y-owner-sin-modelo-seguimiento-de-cc32/preflight-1.md
-source_hash: 708dc10e90cecaca01e7a62926f1c21cd7db1e6832ea530f81832d4c6c95fcac
-content_hash: dbfb0455d00b89ec0d1b9f717afb689228a63f37b3d317d9132d15354dbdd75c
+source_hash: 3eb74af79ed67b8e5b17f92d41b433e892b2f15fb2723dbf73fd154757935e09
+content_hash: c3f4b53dce2592d0f1186d3694390987b59b67dd25ff1c35ca5d1ef2b122d5f0
 field_hashes:
   id: 34f02e572c5af49797123e8322e352972ec970924d108968dec23d4b8abda944
   title: fedba88eed47daac89d1dbe63dc049bcfcfc5d7d066522d0071f788551f032b2
@@ -23,11 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 2b19d69bb89aa34aa183c32283ff1229e01cdbf842f2d4cfa1ecfc9e59158e04
   disposition: ec81b8e4cc818b9677810894466f292d2edf375855c719ac312f25133028585e
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-23T19:41:12Z'
+  authority: generated
+  via: save_document_payload

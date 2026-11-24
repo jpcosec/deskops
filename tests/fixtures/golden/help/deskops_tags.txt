@@ -1,0 +1,11 @@
+usage: deskops tags [-h] {migrate} ...
+
+Keep the desk's documents on one semantic tag vocabulary.
+
+positional arguments:
+  {migrate}
+    migrate   Drop from every document the tags its model already says,
+              repeats and class names (dry run unless --apply).
+
+options:
+  -h, --help  show this help message and exit

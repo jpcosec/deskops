@@ -1,7 +1,7 @@
 name: review-task-board-no-refleja-deskops-edit-task-goal-evidence-atom-1
 path: desk/reviews/task-board-no-refleja-deskops-edit-task-goal/evidence-atom-1.md
-source_hash: 676c932a07bb7d6040d2f1d81a5af948ac0e23cfe075e4f02a844675fe652e6b
-content_hash: 70311b67fc5f154e939f87c71f55ba090825460e0f75b610194e2f36cfc31ddb
+source_hash: 7bc09501566dd2253d7c40c10dc6c311dc12d324fd0d6cf750c8e1bc00285b20
+content_hash: 2232eb3d9c3ce78612d8a34413cac47becc2d419b401867da46ea567905fad5a
 field_hashes:
   id: a86d58c947ce3a6821dfb87e8445759cdfadaa3ea47d9edad91ed677515491d7
   title: 7639717a6b3beed68d077fb287df1f1a9318091fa3bb4f571e631da2deca3a73
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 7ba9b27b850ccfee233b9e09a28394d3d409cff3adc157ab92eb95d1be05f4f0
   disposition: 1e811aa9adba0ec508e9f6653594d28867114933b247c6e3b4ce7abee0bc2add
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T05:31:26Z'
+  at: '2026-11-23T18:57:59Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

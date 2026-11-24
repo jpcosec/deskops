@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:47:23Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-doctor-separates-desk-repair-from-sldb-health
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:health
 - topic:boundary

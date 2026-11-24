@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:52:25Z'
+  at: '2026-11-24T02:19:36Z'
   authority: generated
   via: save_document_payload
 id: task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar
@@ -10,8 +10,6 @@ summary: 'Borrador sin preparar: preflight rechazado el 2026-11-21 (ver desk/rev
   Falta Implementation Path concreto, decisiones de diseno y nombre del test antes
   de revisar de nuevo.'
 tags:
-- workspace:desk
-- artifact:task
 - host:robocop2
 current_node: ritual-execution
 history: []

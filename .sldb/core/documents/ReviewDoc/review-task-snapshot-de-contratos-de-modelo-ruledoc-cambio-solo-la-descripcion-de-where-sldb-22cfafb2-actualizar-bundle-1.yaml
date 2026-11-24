@@ -1,7 +1,7 @@
 name: review-task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar-bundle-1
 path: desk/reviews/task-snapshot-de-contratos-de-modelo-ruledoc-cambio-solo-la-descripcion-de-where-sldb-22cfafb2-actualizar/bundle-1.md
-source_hash: 25dbd421d9060ef3442ca5048c7c82481df8903c69ea6a7b7d54e0a17f449523
-content_hash: ce45cf579974bf5c04a101979c78a21f019ab89048d85768e6ae27d1f2bfff8b
+source_hash: 51184b542f775bbe20d96eda5c8fef4f0f12228ba19872f67c006aa33a442200
+content_hash: da54603b5fe4b06321515f1960906210da16288c31322c6d81fae6111311f505
 field_hashes:
   id: 61eebf874888e36248130f48b969b5ae79727da9f34a61b0cee9420d81fab9b1
   title: 70687087ec0bf5969bd942abc6bbd72b19143b9e9a6e1ae87957d32b182c7f50
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: df8cbae7fa4d4d2a8c7761b5e56bb0cb8b5898286f0dd39c6d548e6b35c32145
   disposition: 5635e90eb8194410be9d34a1b8be467708e6d6602a8f56ee300db5fac3b35881
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T11:48:05Z'
+  at: '2026-11-24T02:13:57Z'
   authority: generated
   via: save_document_payload

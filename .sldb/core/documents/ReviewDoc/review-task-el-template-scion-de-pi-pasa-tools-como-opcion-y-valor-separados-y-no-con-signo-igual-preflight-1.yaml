@@ -1,7 +1,7 @@
 name: review-task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual-preflight-1
 path: desk/reviews/task-el-template-scion-de-pi-pasa-tools-como-opcion-y-valor-separados-y-no-con-signo-igual/preflight-1.md
-source_hash: 0be48f8f294579bd6a3f3a15af5f0bf03c956d1fb2d5c5dfd4ec8da65fc94b6e
-content_hash: f73745d4071e6e5803b07c7e2433494c98dae802414a3e2a12fbbf7255ac6d28
+source_hash: 4ff6434c52593432150fe2402a857fa095d0faa6bb9bee0346a20e0f86e2400e
+content_hash: 78ecf7b4e97b571fb6e649b19e50c3056a8216ad5316236cc76998122a3ea29e
 field_hashes:
   id: b8b3794c542b9f08d7243d5f6743cd8905e4fc97ac79ddb8722420ece17b8dc1
   title: decb507cf782ab769340cf8e4e89ee3b513543483467acc9a4f284024e1ed709
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 59b50bab9c4a4d11a8ac1488ea90178e7634efde7cbe1cb89e30918cc2abf405
   disposition: 501d4f597844c5ca9022ea4fdc6491b57e9d48c47c11f2a0a04f5cd2d69d13d5
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T05:56:42Z'
+  at: '2026-11-23T19:23:40Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-deskops-view-board-en-menos-de-2-5-s-construir-una-vez-por-corrida-lo-que-hoy-se-rehace-por-tarjeta-bundle-1
 path: desk/reviews/task-deskops-view-board-en-menos-de-2-5-s-construir-una-vez-por-corrida-lo-que-hoy-se-rehace-por-tarjeta/bundle-1.md
-source_hash: f602a6921dc82510e64e8ddb1656ad62cb3913f56cda60b0925b30741c3f70aa
-content_hash: aa57353da43480944d13b619b8118d765a490292b989a98a47a4d94dfaea69ce
+source_hash: a31cd15d275e1c96cc7d5cfd3e4afb847ab294de94a30a87081fb1f5b4a250b9
+content_hash: e76a35e1e8bfd1c2f6a503b9b7032561d4f94ebdc6098f10f7b926609c0712da
 field_hashes:
   id: 5f81c3b71b3da22ad87b9846592291a76e54d919b81137a6102158220115c1f2
   title: 89daf07edeb8959764b5e35166b4552bb8b68452c12e80c10ad51d19f41a4e70
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 644631aaa44e39128f80d691e6ac6a5e69ec6b06bef367e5affcb0d64aa8ea4e
   disposition: e57c6c95b38d2c5038099ac2c8f6b47619f421d55568983bf1da15e6443efbac
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-12T03:40:12Z'
+  at: '2026-11-23T19:16:14Z'
   authority: generated
   via: save_document_payload

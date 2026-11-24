@@ -1,7 +1,7 @@
 name: review-task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb-bundle-1
 path: desk/reviews/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/bundle-1.md
-source_hash: b2f05ea5a1108e8dcb6fc0b631a5b2b001196a7a7e53bd57282027ec9f25daf5
-content_hash: 5318955b60ccba1a60b6ac3fbd6980269578368a8ec8ddd9a2bddd9034e220cc
+source_hash: e704213e537973174244187855d41c470991731a17191a3d30c435c131f53d18
+content_hash: d57962f1342ac2cd57c0887e10cca9a83105c82afb90ee8abfbb7541763f7e5c
 field_hashes:
   id: f9a10cf6c9186057db5444f17704484ad7b283c91c49bf81f6812e428fea48c5
   title: 848cf6787b3d80ceaff61e68e746c91c7d7e9dda162f82b636bbe13463f4eb85
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: d66c2ac422e520678b301a80322cb4499a1f09352a0d7b5c34d14feba4988715
   disposition: 707b2dbf5e7f086439b12e69ba81fd4e56df9b282022dcc01b965b0e069fd0b4
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T21:35:12Z'
+  at: '2026-11-23T19:36:52Z'
   authority: generated
   via: save_document_payload

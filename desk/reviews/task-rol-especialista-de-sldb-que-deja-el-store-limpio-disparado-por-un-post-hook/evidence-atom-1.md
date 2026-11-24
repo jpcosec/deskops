@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T05:50:03Z'
+  at: '2026-11-24T02:11:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -37,9 +37,8 @@ created_at: '2026-11-18T05:49:49.314790+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T05:49:49.314790+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook

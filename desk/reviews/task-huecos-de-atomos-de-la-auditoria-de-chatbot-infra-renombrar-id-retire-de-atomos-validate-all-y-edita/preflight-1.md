@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:08:44Z'
+  at: '2026-11-23T19:25:58Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita/preflight/687dcde945a5308a3b1764bbbdd907716ea57c72030b2517b5054d47e45cee6a/attempt-1
 input_sha256: 687dcde945a5308a3b1764bbbdd907716ea57c72030b2517b5054d47e45cee6a
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 210aaaad4aaaa1667835541f37a6c4287a8c0600b8e8d35d204d96b4c7d10178
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:37:53.941373+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:08:34.753736+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita

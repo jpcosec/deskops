@@ -1,7 +1,7 @@
 name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-evidence-commit-1
 path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/evidence-commit-1.md
-source_hash: 7af4fdf357a7cefd0958b77833da6d0365327cee076d072ebd1f65eba4b1d3c3
-content_hash: 5702d89bedcf33411261a2a3977c2e1a541bfa7fece459ad35992b89b35d1734
+source_hash: 441175db94cc41b1ab3035cdd3e5959b7f2acb0e5d124cb9441d08a1db866802
+content_hash: 12ea73f5c3736c09194b172881581cf2f0db5b37a2b77ed2ac270f0924fa7ba3
 field_hashes:
   id: f3f3bd83503eb9446ca4b1fb7ffa2876ea7d02a76fc8d3e83f085601424716aa
   title: b7c7b2895bb2c6b037944332ac77f95bd0611d08d65c394a8cc72bf8e70cdedf
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: bf4eefae5520cdece0e0b2620d9db2633ba6348a5bb71128a6b5f71d83c3d634
   disposition: 9b6e6dd72b019c773a08564655e9d609495a9cdac2a0579ebd5903b5db3c6842
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T01:57:03Z'
+  at: '2026-11-23T19:28:58Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

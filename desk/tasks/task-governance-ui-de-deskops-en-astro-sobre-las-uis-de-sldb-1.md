@@ -1,15 +1,14 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T13:25:05Z'
+  at: '2026-11-24T02:20:07Z'
   authority: generated
   via: save_document_payload
 id: task-governance-ui-de-deskops-en-astro-sobre-las-uis-de-sldb-1
 status: draft
 summary: ''
 tags:
-- workspace:desk
-- artifact:task
+- board.tareas.ui
 current_node: ritual-execution
 history: []
 references:

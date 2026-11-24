@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:48:12Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-ready-phases-prove-dependencies-and-non-overlap
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:phases
 - topic:dependencies

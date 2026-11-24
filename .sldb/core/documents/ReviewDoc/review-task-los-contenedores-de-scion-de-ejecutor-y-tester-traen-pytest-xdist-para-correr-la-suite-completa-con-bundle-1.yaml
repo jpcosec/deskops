@@ -1,7 +1,7 @@
 name: review-task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con-bundle-1
 path: desk/reviews/task-los-contenedores-de-scion-de-ejecutor-y-tester-traen-pytest-xdist-para-correr-la-suite-completa-con/bundle-1.md
-source_hash: 259b2dc26b9672728202ec7214abbd8b726b71d03f40031c7905b7ef0a513e2b
-content_hash: cc9a6183b447f6dda338295998a69a646fd16e7b3a7b48862aebe9567daa8314
+source_hash: 5d6113dba09679345f189429b677d9d1a997419273d6f8672685c9851f97f23b
+content_hash: 303f475b1b635b59e00c457593d5bf7d15acccb26d70e524e5c9a4af0e3be77a
 field_hashes:
   id: c43f974c8f7566fcac9abad0c151a433837fc4188e165af261f221eb60b48f82
   title: cebf71cedd9b09c02b5462937f64ac12296428eb76dbed826ad77229150e6740
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 443fa7f055ac27542e0fe91b8ba0bd4bde9d66f6a9b0aaf6906912face6c19ce
   disposition: 3feac804eae4b63e7d1de20f5b7f1576d7e4f9c74a28bd05dc39b13787af18a6
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T05:44:49Z'
+  at: '2026-11-23T19:34:36Z'
   authority: generated
   via: save_document_payload

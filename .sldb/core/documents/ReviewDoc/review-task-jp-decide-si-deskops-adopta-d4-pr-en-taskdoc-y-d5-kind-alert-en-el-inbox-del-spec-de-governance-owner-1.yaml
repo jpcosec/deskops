@@ -1,14 +1,14 @@
 name: review-task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance-owner-1
 path: desk/reviews/task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance/owner-1.md
-source_hash: e08192829d61f3d5f6735119a8394a7c50509990e8a108198176a68eb0eb7fee
-content_hash: b2859b8315d667f712e11b9e85ace7dcb63aebe009447e05814ae36c4d057c0e
+source_hash: cc642f4ed24b1ed883c3b23f2aa59229899b252ebdd97600c11d9689e440d9d1
+content_hash: 4b18237da3200d6f9f4590cf77f6153a259b7b0664a2a0e4610dfaf96943fba2
 field_hashes:
   id: ec9ccb03d3f8e82d33bd070868385367177c8902dfa1bf6d842903f7edb23e66
   title: e20043ef4eeab941c6cac04c42c28541892eb5aa69f5ef4cdbf9dd4906df2e4f
   kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
   fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  subject: 1af24e09bfda8109b015424a626cc682784c75cf6069a6581b7582c42423ab3a
+  subject: 97a101ff4d619d333868ecebfd98f3791b860413dcce0ab5ac64b288031b1133
   subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:09:39Z'
+  at: '2026-11-23T19:29:29Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

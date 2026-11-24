@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T14:11:04Z'
+  at: '2026-11-23T19:06:12Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -46,9 +46,8 @@ created_at: '2026-11-19T14:09:09.198842+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-19T14:10:58.357631+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb

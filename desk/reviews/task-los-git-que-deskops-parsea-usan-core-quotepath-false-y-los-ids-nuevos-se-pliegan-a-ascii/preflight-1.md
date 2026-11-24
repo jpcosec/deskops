@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:09:11Z'
+  at: '2026-11-23T19:35:55Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii/preflight/7ee7facf65e83723b4fb7c3cd009c4e51212218cefb14cd043ea5c479afaf759/attempt-1
 input_sha256: 7ee7facf65e83723b4fb7c3cd009c4e51212218cefb14cd043ea5c479afaf759
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: e6400e83fc8c211fe53c9bbfa119ade46f5ce8bce412713bbab2105c92bcbe47
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:39:24.747727+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:09:04.170476+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii

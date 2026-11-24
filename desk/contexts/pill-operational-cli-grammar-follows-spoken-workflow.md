@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-23T18:47:54Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-operational-cli-grammar-follows-spoken-workflow
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:pattern
 - topic:cli
 - topic:workflow-language

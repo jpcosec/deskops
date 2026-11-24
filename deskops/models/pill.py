@@ -9,7 +9,7 @@ class PillDoc(OperationalArtifactDoc):
     __artifact__ = {
         "id_pattern": "pill-{slug}",
         "status_default": "active",
-        "tags": ["workspace:desk", "artifact:pill"],
+        "tags": [],
     }
     __semantics__ = {"type": ["workflow", "pill"], "workspace": ["desk"]}
     __template__ = """---

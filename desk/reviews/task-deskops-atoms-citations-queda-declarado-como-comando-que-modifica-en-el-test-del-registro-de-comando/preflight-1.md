@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T23:06:06Z'
+  at: '2026-11-23T19:09:08Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-230533/context-review/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/preflight/8b747f3e58da0314ef141b7df48d8c2607f2ce1566d926bb0ddfc9ff4ab76861/attempt-1
 input_sha256: 8b747f3e58da0314ef141b7df48d8c2607f2ce1566d926bb0ddfc9ff4ab76861
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: c22a6b1a8d26ebba19ced4d977dd882f72fcd4d006308dff9ec2c83e92d6a57c
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -31,9 +33,8 @@ created_at: '2026-11-16T23:05:51.804799+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T23:06:02.970133+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando

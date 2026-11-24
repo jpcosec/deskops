@@ -1,14 +1,14 @@
 name: review-task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c-owner-1
 path: desk/reviews/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c/owner-1.md
-source_hash: ced447888be5c85d4ea786950752bd781d7149ec5d7704feea1b675734e3b12a
-content_hash: 851bc306e666f956136bd25be6735783924d3775526ce2488065c248bf35bea0
+source_hash: 520d948ec5808a0465f72d4a410d314f6dfe83cef173ddaa58a41478d22af1b3
+content_hash: 34b5705fa4490085426377d9c315f94a96f01674feb85ec49c771763810e194d
 field_hashes:
   id: 947556fee828e8c123abcfad546459689357f94a7fb0c62bdaae8ef9eda3e50c
   title: 284e8845a9df63667dcd462fbc8ee1d31dbdd304a5f3d2509f8c2883a9b08cf8
   kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
   fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  subject: f5277c92c1217670bf27f09ff705bdb5d1e08b5cb3464d9d9bf91f515f461c4b
+  subject: 3f1ca5d99045a0cd3129809260667dd89ba06c1cd4203d755a8e72dc0868c8f1
   subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:09:35Z'
+  at: '2026-11-23T19:29:22Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

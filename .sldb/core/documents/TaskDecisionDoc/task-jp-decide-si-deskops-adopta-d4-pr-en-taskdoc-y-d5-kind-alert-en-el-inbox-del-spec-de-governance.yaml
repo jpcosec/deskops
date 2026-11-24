@@ -1,13 +1,13 @@
 name: task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance
 path: desk/tasks/task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance.md
-source_hash: 9319863b8c4a04587ca3f338fd6a31448ef1fb62e4f67b30e804c54339b2ac7b
-content_hash: b65b43f19c45337acc8ff1ffad4cec408517eea202e51a8a7686e8f3293f7eab
+source_hash: 032070565c607c5593ae3b7fd22812cb3954fcdfc775a941ba50cd2d4a424a48
+content_hash: f822ce04b39d9219f86b26cd710497349b281519171b85352ddaaba123940d0d
 field_hashes:
   title: 62b44403478bd7db252eb8dbffac18d5e16536f24347c31c3b7630f66e802e63
   id: 29c8d37d6ba147e7bdf0a3239f849fdf27b93d0a4afc1e75dad2890c18665d56
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 5685e90a4b7a7b68485c8edcceedfe104fd1a9ede366c5e9d80dd0f438e85b92
@@ -26,14 +26,13 @@ field_hashes:
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   from_drawer: d7d51393435a119f2d1e679d62c8369fd349f4c4292f804c13637db6a3bb2a65
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:07:26Z'
+  at: '2026-11-24T02:19:18Z'
   authority: generated
   via: save_document_payload
