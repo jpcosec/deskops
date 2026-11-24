@@ -3,9 +3,9 @@ model_ref: deskops.models:TaskExternalDoc
 path: deskops/models/task_types.py
 documents_index: .sldb/core/documents/TaskExternalDoc.yaml
 sections_index: .sldb/runtime/sections/TaskExternalDoc.yaml
-model_hash: 00929548b04efca0d43e9121f97fb55289582a4b5e3500ceb336d2d3590bcd25
-roster_hash: e2e2b5ee5a9b776802511c9f5126ad070feb0d25f0f23d5655a3c7235ceb7712
-contract_hash: 18c9b4f737e2efd59001a6b1d09075cac4eca474b2b89b816d2b4ee631fd1e1c
+model_hash: 254778e3a065c8dc7e4c7824118d67d8341220f7e680bcddc9a12769af57dc0c
+roster_hash: ec6cd99ad009923e1ffe0b24bc4e2bae5065369ce804c366ce0ba15f842a648d
+contract_hash: e734b217c8dc346862754f1058aecd29e3235e3e0b40915dce7a6129a1c6269d
 documents_count: 1
 version: 1
 canonical: false

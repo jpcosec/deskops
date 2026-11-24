@@ -1,13 +1,13 @@
 name: context-review
 path: desk/rituals/context-review.md
-source_hash: cadc3da2c5dbf96b55198f44802387d6291c4cca78b3ad6e2fc343781cd7b105
-content_hash: 3c8d9148406aedcabdce6e185576112d34a4a471dfc07ee92e04b94ec7f751d7
+source_hash: 23383f58a724ad629b861a67ff054af5175b52443278af39efe0329961cf6a1d
+content_hash: e4c78d7d6974e9725377680aa4151015558eb4940e63bec86e19bc0756033b7c
 field_hashes:
   title: 68b5ce62319faffcd92d20311a89fe02a501ccd62f48b9d18cfac144544fbf2a
   id: 47cdc93ad2c09b91930ed45e8652bf83c0abe9092e49b00e2ad04c13a6b93912
   status: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 6309413870c22f99b36eb8886d6636e4626247e18f5e86907c84377c0b3ba748
+  tags: 4e861130deec6570998790f5d436688d10e0d37ce3a95ce371fb57360156dd22
   current_node: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   purpose: 4a228bb5bf20dda5bcdb7a642b8c1437b0dcdaf3468fe5dbb501f31dc7c8cab4
@@ -25,9 +25,8 @@ semantic_tags:
 - topic:rituals
 - type.workflow.ritual
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T01:58:41Z'
+  at: '2026-11-24T18:26:47Z'
   authority: generated
   via: save_document_payload

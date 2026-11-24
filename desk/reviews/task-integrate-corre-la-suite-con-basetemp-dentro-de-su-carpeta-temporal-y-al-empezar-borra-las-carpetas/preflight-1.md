@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:02:36Z'
+  at: '2026-11-24T18:06:51Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -84,9 +84,8 @@ created_at: '2026-11-23T04:47:18.051303+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:02:34.861585+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas

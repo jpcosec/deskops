@@ -1,7 +1,7 @@
 name: review-task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook-evidence-tests-1
 path: desk/reviews/task-rol-especialista-de-sldb-que-deja-el-store-limpio-disparado-por-un-post-hook/evidence-tests-1.md
-source_hash: 7a05ab31016083884d63817d580a9ac331b6c28687fc509e95207cd1c7c1a364
-content_hash: 7b1fe0315de230c6eb56a3f1ea38a18527e04a136e5fbb71ab181127089682bb
+source_hash: 98fe0afdf7b830159ce8a5c302a5f7d09244ec14bbc0587647dc79cfe6de39eb
+content_hash: 9aa53f70354e6fc780780f1a40992d1ba9ab75dac5cde7cf32d3922c0a9b6a19
 field_hashes:
   id: f954c659b07bd870b16a33608cbbdc4a76a2a668a99e48601dc2d48d54797604
   title: b78a41032b7cc1866e1dfefa790e4ef71b71ba20ae562d4d417779661648cd16
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 669717fa858046ea937fd9744f662e023d2df3fd2ace1881eeeec1fb6cc8ec81
   disposition: bece2f59242fb27903eccf458b3d9c510eae8f1d832f65f19e0062ea7beaf059
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T05:49:50Z'
+  at: '2026-11-24T18:21:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

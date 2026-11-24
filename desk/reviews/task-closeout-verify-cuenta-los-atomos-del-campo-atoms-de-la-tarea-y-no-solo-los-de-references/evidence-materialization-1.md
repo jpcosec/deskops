@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T08:35:58Z'
+  at: '2026-11-24T17:45:21Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -34,6 +34,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 96090f66cc624c5d9abdd360177ea2acff241d7fb1a79d580d6d170a38885e7f
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -55,9 +57,8 @@ created_at: '2026-11-16T08:35:49.254547+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T08:35:49.254547+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references

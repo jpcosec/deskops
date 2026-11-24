@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T20:00:42Z'
+  at: '2026-11-24T17:59:27Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su-evidence-tests-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -37,9 +37,8 @@ created_at: '2026-11-20T20:00:41.207870+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T20:00:41.207870+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta-no-por-su-nombre-para-que-un-repo-con-su

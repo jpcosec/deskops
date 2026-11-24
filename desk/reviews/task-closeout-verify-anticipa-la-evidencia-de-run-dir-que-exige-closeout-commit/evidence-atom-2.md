@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T23:32:07Z'
+  at: '2026-11-24T17:44:18Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-atom-2
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -24,6 +24,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: f0166e3c9922384f3e7d9b94083ebebbfa38eb6a939558bf0d708ca26592dc1d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T23:32:01.319203+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T23:32:01.319203+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit

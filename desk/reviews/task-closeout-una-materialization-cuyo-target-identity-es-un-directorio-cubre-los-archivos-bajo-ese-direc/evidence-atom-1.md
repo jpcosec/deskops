@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T10:47:09Z'
+  at: '2026-11-24T17:43:50Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -26,6 +26,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 17eee38f6008767623b97f4b9a51527d4e0a5cf0569aa073831ea0e98de84249
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -39,9 +41,8 @@ created_at: '2026-11-16T10:47:01.608345+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T10:47:01.608345+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:08:26Z'
+  at: '2026-11-24T17:47:56Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l/preflight/e1c31ed339dbb7d925d29a355003510a33deca8e8411a82e8dd25b9358ae01bb/attempt-1
 input_sha256: e1c31ed339dbb7d925d29a355003510a33deca8e8411a82e8dd25b9358ae01bb
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 16931e792119a9def3430febaa53b88a2b3a00efbd5ffffed3360ff26c59f447
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:37:05.851418+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:08:19.996522+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l

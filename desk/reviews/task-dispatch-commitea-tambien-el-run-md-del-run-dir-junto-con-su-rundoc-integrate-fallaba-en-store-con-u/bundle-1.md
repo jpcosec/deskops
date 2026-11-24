@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T18:09:25Z'
+  at: '2026-11-24T17:56:54Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -70,9 +70,8 @@ created_at: '2026-11-21T18:08:23.395976+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T18:09:18.335613+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u

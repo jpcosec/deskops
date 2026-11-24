@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T17:16:59Z'
+  at: '2026-11-24T18:17:01Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -24,6 +24,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 770a4651dffe0a77a398a736b1750bd7c93d40352718c08ff0e9b56ce655b577
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -35,9 +37,8 @@ created_at: '2026-11-16T17:16:56.483991+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T17:16:56.483991+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa

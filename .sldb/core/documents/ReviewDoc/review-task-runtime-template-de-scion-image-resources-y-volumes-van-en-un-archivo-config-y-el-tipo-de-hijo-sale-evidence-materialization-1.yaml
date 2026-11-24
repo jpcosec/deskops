@@ -1,7 +1,7 @@
 name: review-task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale-evidence-materialization-1
 path: desk/reviews/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/evidence-materialization-1.md
-source_hash: 5765074295e4836bca5dfe2074078eb49a346c49e1de8329f6187146d38f8019
-content_hash: e9ab1ced8cdf01b1f65c2631e96792d8a56009ff50eb04386612f0db5dc1843d
+source_hash: 0297abc432ce8d8a05c6c255f95309e9204d9a95a6cb3f63c57163e80f0aeee9
+content_hash: aff2145d771c6506d3c29cd9efc05459f697ace28bcfd75e40edc3558a939335
 field_hashes:
   id: fec9a98a5b5506742f2751788d29dec90e4343e98bec33430e1c292cb3b372fb
   title: 251072d1c6608dbe7548108848d03605e88e852d6686a75eaf227fe9a4c39958
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 4993828e6f033f3d01f431327945edda8dcc819cfa14902ddd4458178b870182
   disposition: 2fabf9fa158a4f79cd012aac002f31389da877458d19ddd77e1ed79d99ff5579
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T13:17:56Z'
+  at: '2026-11-24T18:22:18Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

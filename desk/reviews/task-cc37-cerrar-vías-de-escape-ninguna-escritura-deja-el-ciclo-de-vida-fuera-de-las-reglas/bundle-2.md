@@ -1,13 +1,17 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-09T19:48:41Z'
+  at: '2026-11-24T17:40:55Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-cc37-cerrar-vías-de-escape-ninguna-escritura-deja-el-ciclo-de-vida-fuera-de-las-reglas-bundle-2
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: bundle
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-cc37-cerrar-vías-de-escape-ninguna-escritura-deja-el-ciclo-de-vida-fuera-de-las-reglas@sha256:b1f2df7f72b35fb93d7a04b22306fdead2027b0e5a48944feaaba098878b169b
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -18,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261109-194717/context-review/task-cc37-cerrar-vías-de-escape-ninguna-escritura-deja-el-ciclo-de-vida-fuera-de-las-reglas/bundle/7962ae62ba43b18375167c6a85bf8f9f2a5aada0822e1968f797d87331351f9e/attempt-2
 input_sha256: 7962ae62ba43b18375167c6a85bf8f9f2a5aada0822e1968f797d87331351f9e
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 908ae6c806554e257e8f1a945d86c78bd5539cb5c8f174092162c07b2e6be9dd
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -27,9 +33,8 @@ created_at: '2026-11-09T19:47:29.280657+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-09T19:48:41.550681+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-cc37-cerrar-vías-de-escape-ninguna-escritura-deja-el-ciclo-de-vida-fuera-de-las-reglas

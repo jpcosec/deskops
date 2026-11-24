@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:10:19Z'
+  at: '2026-11-24T17:36:25Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -36,9 +36,8 @@ reason: 'Aceptado. Resoluciones de la preflight-2 (la tarea ya trae files, scope
 
   2) sldb models update AtomDoc|InboxNoteDoc --store .sldb --pythonpath . actualiza
   el modelo registrado y re-extrae los documentos del modelo en el indice; no reescribe
-  los .md. El campo va en la plantilla con marcador opcional (⸢optrev•conversation_ref⸥),
-  asi que un atom o una nota viejos sin la linea leen conversation_ref = None y no
-  cambian en disco.
+  los .md. El campo va en la plantilla con marcador opcional (), asi que un atom o
+  una nota viejos sin la linea leen conversation_ref = None y no cambian en disco.
 
   3) --update-golden existe: tests/conftest.py lo declara en pytest_addoption (linea
   37) y tests/test_output_goldens.py lo documenta en su docstring (linea 8). Comando:
@@ -68,18 +67,17 @@ reason: 'Aceptado. Resoluciones de la preflight-2 (la tarea ya trae files, scope
   AtomsService.list_atoms (deskops/services/atoms.py linea 237); el texto de list
   lo da _format_artifact_list (operations.py linea 299): "<id> | <titulo>". message
   send: Command ("message", "send") en registry.py linea 651; _deliver_note en deskops/cli/commands/message.py
-  linea 72. Las plantillas usan marcadores opcionales: provenance: ⸢optrev•provenance⸥
-  en AtomDoc; sender_project: ⸢optrev•sender_project⸥ y ack_reason: ⸢optrev•ack_reason⸥
-  en InboxNoteDoc. --update-golden existe: lo declara tests/conftest.py (pytest_addoption,
-  linea 37). El contrato vive en tests/fixtures/model_contract_hashes.json (tests/test_model_contract_snapshot.py).'
+  linea 72. Las plantillas usan marcadores opcionales: provenance: en AtomDoc; sender_project:  y
+  ack_reason: en InboxNoteDoc. --update-golden existe: lo declara tests/conftest.py
+  (pytest_addoption, linea 37). El contrato vive en tests/fixtures/model_contract_hashes.json
+  (tests/test_model_contract_snapshot.py).'
 # ISO 8601 timestamp
 created_at: '2026-11-23T05:08:48.284572+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:10:11.743350+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt

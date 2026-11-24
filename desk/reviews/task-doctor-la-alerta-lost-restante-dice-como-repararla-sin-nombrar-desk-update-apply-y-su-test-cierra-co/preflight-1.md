@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T00:16:51Z'
+  at: '2026-11-24T18:00:20Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -76,9 +76,8 @@ created_at: '2026-11-22T00:15:27.762413+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T00:16:43.808996+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co

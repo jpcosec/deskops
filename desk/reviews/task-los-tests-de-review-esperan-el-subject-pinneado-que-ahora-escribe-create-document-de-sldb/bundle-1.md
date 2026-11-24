@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T21:35:12Z'
+  at: '2026-11-24T18:16:12Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-213418/context-review/task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb/bundle/562968dccfbb0988335b622610360f8839dba4c5daa64f95035a6e29ae80e6fd/attempt-1
 input_sha256: 562968dccfbb0988335b622610360f8839dba4c5daa64f95035a6e29ae80e6fd
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 6bddf5cfc8289edd4dc2a0c8162fd6e5c61855365bccc7026df166c4dde0b8fb
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -36,9 +38,8 @@ created_at: '2026-11-16T21:34:40.097748+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T21:35:04.849887+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-los-tests-de-review-esperan-el-subject-pinneado-que-ahora-escribe-create-document-de-sldb

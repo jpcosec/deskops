@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T04:55:11Z'
+  at: '2026-11-24T17:36:46Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -33,9 +33,8 @@ created_at: '2026-11-19T04:54:53.966487+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-19T04:55:06.097229+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Reproduction review of task-board-no-refleja-deskops-edit-task-goal

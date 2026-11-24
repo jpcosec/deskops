@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T16:02:49Z'
+  at: '2026-11-24T18:16:51Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-160203/context-review/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/bundle/e29d0e0516c45b02065cd9315416b328bd0c14f7b9c03d3ca3031f554516ceac/attempt-1
 input_sha256: e29d0e0516c45b02065cd9315416b328bd0c14f7b9c03d3ca3031f554516ceac
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 0ad79a782b17ffa714488c0be617f5f9fd8581a2b2a90538d43cb70183fadbe4
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -38,9 +40,8 @@ created_at: '2026-11-16T16:02:21.053384+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T16:02:48.821347+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa

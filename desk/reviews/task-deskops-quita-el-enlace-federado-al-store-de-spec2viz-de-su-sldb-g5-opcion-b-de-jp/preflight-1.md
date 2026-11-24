@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T16:02:28Z'
+  at: '2026-11-24T17:54:15Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-160142/context-review/task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp/preflight/070831c38cb770a649e3f7387a30b20f708e6d5ea7c7830b0354b2e1320da354/attempt-1
 input_sha256: 070831c38cb770a649e3f7387a30b20f708e6d5ea7c7830b0354b2e1320da354
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 1534c877450e3704970d6f1e228cc2f5be87003a5e38a66395f3a399fc90fcea
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -39,9 +41,8 @@ created_at: '2026-11-16T16:01:57.890054+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T16:02:25.208567+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-quita-el-enlace-federado-al-store-de-spec2viz-de-su-sldb-g5-opcion-b-de-jp

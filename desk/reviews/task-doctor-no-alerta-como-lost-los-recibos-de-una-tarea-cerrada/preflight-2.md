@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:09:05Z'
+  at: '2026-11-24T18:00:46Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -54,9 +54,8 @@ created_at: '2026-11-21T07:05:37.755171+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:08:56.479216+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada

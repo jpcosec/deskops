@@ -1,7 +1,7 @@
 name: review-task-test-gitignore-policy-quedó-viejo-sldb-core-se-versiona-entero-preflight-1
 path: desk/reviews/task-test-gitignore-policy-quedó-viejo-sldb-core-se-versiona-entero/preflight-1.md
-source_hash: f8031ad9fc763f2557f996ca46b4dca4cc4f3258d9b3cd207e127a57c5f1547d
-content_hash: 96a6675b5fc50b76c5daeffea3082f3a238733c23645acfdea2d82975e16d151
+source_hash: f3f1be53a7d8849c5a7ecb55ddd2ca928afdbf5aba994181a3f4e459695637a1
+content_hash: fd43c008004e02044ddc28e87026f9eef02e7956744035b6bc587d6fa63f8a18
 field_hashes:
   id: 60a6c24a7486b630e2179e7511cf992aa76c3b972eaf316e9754f370b29a9286
   title: cfb7e82b56340cd9d8461d4898d1a7704116b743d53e8884aed4fc0b85677c3d
@@ -23,11 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: 387d6d9bf173da1dae1e173f0771383b01efdb7418bf229411052ce395c026ad
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-24T18:24:53Z'
+  authority: generated
+  via: save_document_payload

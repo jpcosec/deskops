@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:26:26Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-drift-checks-are-review-surfaces-not-mutators
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:drift
 - topic:review

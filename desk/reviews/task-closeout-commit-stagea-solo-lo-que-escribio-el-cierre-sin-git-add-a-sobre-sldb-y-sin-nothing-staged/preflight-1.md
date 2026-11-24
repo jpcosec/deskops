@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:12:39Z'
+  at: '2026-11-24T17:42:57Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/preflight/ecb749c859475154726d2440ad53925523b927da8e0b5289e9de27336ffcbcc8/attempt-1
 input_sha256: ecb749c859475154726d2440ad53925523b927da8e0b5289e9de27336ffcbcc8
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: f122d0fc002cc455fdc74dacceed7b90f340e53980c72d57a11cc88801a0dd6e
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:11:04.229654+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:12:35.245539+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged

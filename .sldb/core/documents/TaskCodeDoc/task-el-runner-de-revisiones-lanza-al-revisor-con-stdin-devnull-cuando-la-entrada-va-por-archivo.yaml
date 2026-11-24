@@ -1,13 +1,13 @@
 name: task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo
 path: desk/tasks/task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo.md
-source_hash: c4ea91ffdf2705091f5b4b74c9091d6ef958db5c104a43ed2cb21546b1eb0f48
-content_hash: 6cf92b5a1a5477b22152d6e482d31c01965cc039e12596a213a2c0e223f6db99
+source_hash: 798a89d03a39f8a65f43abe1ac7c160854f2300e088ff323f1970ce327b551ea
+content_hash: f03cf6244171b1ba2466fe5da11ae0e4142bb1f6daa6a0035846076fb271e0da
 field_hashes:
   title: 52df4195278f0fb0e0360c2a3a518ccabe4e86847b5def61a46293f54c26fcf7
   id: 2af37ce52c8039ee6202339a1fa73728f77c11e257062a152639c4b0c9ab93f1
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 5a14b838cebf4087845b71337988de5a96a81864c465fd1c7bf21fd265cff8ed
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T04:39:56Z'
+  at: '2026-11-24T18:27:55Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

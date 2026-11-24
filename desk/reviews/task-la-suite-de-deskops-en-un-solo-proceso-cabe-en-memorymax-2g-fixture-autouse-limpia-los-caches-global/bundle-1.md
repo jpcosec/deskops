@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:34:56Z'
+  at: '2026-11-24T18:11:50Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -41,9 +41,8 @@ created_at: '2026-11-21T07:32:38.312533+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:34:49.684833+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global

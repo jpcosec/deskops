@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T09:16:20Z'
+  at: '2026-11-24T18:06:30Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -80,9 +80,8 @@ created_at: '2026-11-21T09:14:58.707226+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T09:16:13.629406+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-init-repara-el-enlace-deskops-con-la-resolucion-por-nombre-de-sldb-3-test-init-repairs-a-broken-desk

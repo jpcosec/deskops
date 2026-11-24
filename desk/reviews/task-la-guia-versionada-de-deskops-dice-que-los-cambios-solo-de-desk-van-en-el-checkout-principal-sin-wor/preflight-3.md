@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:39:30Z'
+  at: '2026-11-24T18:10:43Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -38,9 +38,8 @@ created_at: '2026-11-21T07:37:21.508261+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:39:23.511004+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor

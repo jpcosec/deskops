@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:11:56Z'
+  at: '2026-11-24T17:41:47Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con/preflight/889fdbc0e61f2637f784b768b8114825bbf833f9fd1e0d5f7d0b1736a041e4be/attempt-1
 input_sha256: 889fdbc0e61f2637f784b768b8114825bbf833f9fd1e0d5f7d0b1736a041e4be
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: d6a15b9cf1be97e3da23337d69bfe650f1e1c2e7fb91f99c16b0923bf426eb88
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:52:08.218680+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:11:51.601762+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con

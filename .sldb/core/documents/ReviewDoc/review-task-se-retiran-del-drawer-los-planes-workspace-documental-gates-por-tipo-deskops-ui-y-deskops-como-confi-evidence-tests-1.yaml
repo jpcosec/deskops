@@ -1,7 +1,7 @@
 name: review-task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi-evidence-tests-1
 path: desk/reviews/task-se-retiran-del-drawer-los-planes-workspace-documental-gates-por-tipo-deskops-ui-y-deskops-como-confi/evidence-tests-1.md
-source_hash: 9aeea4801199bcc104a40fed309230a731976404298220281e1234c833c5edfd
-content_hash: 96812aadeff6eda5dbe2635b7ee2547df3513b417e021167e690e0dd80b80501
+source_hash: 47ed34c245ed7044210f473dbd3b58fea53d009a490745d81a860dfa0fabee93
+content_hash: c269284d038797f9455e90766a9ddc093c9c84539bf0799a24b5850f06accb96
 field_hashes:
   id: 54dc20801ec53be2e37152cb4be8b957a9db9fdf9757d07de03d54a37eaa760f
   title: 41ec7c90a136a1062a6b01b13b1998299bd9c3066ac33b3ebe28c12a9a9ce9dc
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: a857e86abe796a9a6ab4cf7f82f0685346b15eecb0eff53dc6b7d368e3defc0d
   disposition: 8b04fa1a4dad113bf0b1d24eb31760393553964ab3674a74985b88ddb8babd1d
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T08:29:27Z'
+  at: '2026-11-24T18:23:44Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

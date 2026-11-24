@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T00:04:25Z'
+  at: '2026-11-24T17:54:58Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -26,6 +26,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: d54493b9510b7c24ff12d9b9f2d04b2a202f38482ddddf938fbf2b8c423757e2
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -39,9 +41,8 @@ created_at: '2026-11-17T00:04:16.808978+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T00:04:16.808978+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible

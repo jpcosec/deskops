@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:26:00Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-007
 # e.g., language:python, library:pydantic
 tags:
 - system:sldb
-- workspace:desk
 - pill-type:guardrail
 - topic:workflow
 - topic:phase-gates

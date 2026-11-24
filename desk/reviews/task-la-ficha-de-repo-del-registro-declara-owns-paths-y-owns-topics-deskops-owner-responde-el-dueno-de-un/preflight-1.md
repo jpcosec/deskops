@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:34:01Z'
+  at: '2026-11-24T18:10:21Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -99,9 +99,8 @@ created_at: '2026-11-23T04:54:52.124005+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:33:53.790206+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un

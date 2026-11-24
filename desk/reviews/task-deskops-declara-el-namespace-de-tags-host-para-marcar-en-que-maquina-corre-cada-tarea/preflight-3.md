@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:19:18Z'
+  at: '2026-11-24T17:49:14Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -47,9 +47,8 @@ created_at: '2026-11-21T07:17:22.753191+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:19:11.063377+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea

@@ -1,11 +1,15 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:25:56Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-006
 # e.g., language:python, library:pydantic
 tags:
 - source-atom:atom-001
 - system:sldb
-- workspace:desk
 - pill-type:index
 - topic:atoms
 - topic:store

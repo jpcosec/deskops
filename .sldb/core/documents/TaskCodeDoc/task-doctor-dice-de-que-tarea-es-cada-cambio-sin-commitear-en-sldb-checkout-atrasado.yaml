@@ -1,13 +1,13 @@
 name: task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado
 path: desk/tasks/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado.md
-source_hash: 272505e42b59efaf2488186237def6643325ea767afd590c5f5475bc0895d785
-content_hash: d5bf8afc2d5b350704b1a78998820c51c410d01de08fb1c2e6959cceb5dcf681
+source_hash: ac51325b5260f2733f97cd9587770feca21d7aae505ec702a0435e1a5eedcf40
+content_hash: 2d2ddb5fc48cca3939a6f049c4c5874beb8eaa5a0318d2782e373bbf5f08a4f6
 field_hashes:
   title: 92be87d210b1abb0ec04b812a626483835b5ac45d4a84870ff9310bc34d9c71f
   id: 61880a095aec4410191f7bfc97fcd41eae0ada89e366fbf0284f81828c0184c6
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 3f66bd44e082e327549dcea97da3dd4a75fa490a994482dc96dabd92f133d2d4
-  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: f751a39ddf7a6eb93b1ceed199c0ea3a4b0b09d79be47b07b47acf1c4bc26746
@@ -25,15 +25,14 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:52:03Z'
+  at: '2026-11-24T18:27:46Z'
   authority: generated
   via: save_document_payload

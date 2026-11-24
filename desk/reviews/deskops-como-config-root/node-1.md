@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T03:01:47Z'
+  at: '2026-11-24T17:28:29Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-deskops-como-config/context-review/deskops-como-config/ROOT/c556752aac9c72058914fabad2fe43447499c36088a7a0a6cd389ffaa9013fea/attempt-1
 input_sha256: c556752aac9c72058914fabad2fe43447499c36088a7a0a6cd389ffaa9013fea
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: c1cb6f6c12ad64dc9c88e8c032e7577d5f896ceb796b5518237767e007d62b38
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-17T02:42:08.803106+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T03:01:32.189759+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of ROOT

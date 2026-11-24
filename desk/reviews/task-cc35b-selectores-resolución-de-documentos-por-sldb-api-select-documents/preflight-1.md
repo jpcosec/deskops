@@ -1,8 +1,17 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:40:13Z'
+  authority: generated
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-cc35b-selectores-resolución-de-documentos-por-sldb-api-select-documents-preflight-1
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: preflight
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-cc35b-selectores-resolución-de-documentos-por-sldb-api-select-documents
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -13,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261109-163300/context-review/task-cc35b-selectores-resolución-de-documentos-por-sldb-api-select-documents/preflight/cd2c0f4a85aff31637e357a16147f03f3cbce06739d1f9c8002bdcc569f756b1/attempt-1
 input_sha256: cd2c0f4a85aff31637e357a16147f03f3cbce06739d1f9c8002bdcc569f756b1
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: d0f1c039b6f5f46ce017b548a51cc7b0f981855939738a3bdcf0b04d4cb5e6d3
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -23,9 +34,8 @@ created_at: '2026-11-09T16:33:18.835616+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-09T16:33:33.079283+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc35b-selectores-resolución-de-documentos-por-sldb-api-select-documents

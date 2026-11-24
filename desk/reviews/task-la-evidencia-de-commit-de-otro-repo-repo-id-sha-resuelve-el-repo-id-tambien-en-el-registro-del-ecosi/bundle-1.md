@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T17:09:39Z'
+  at: '2026-11-24T18:09:42Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-170855/context-review/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi/bundle/9e814f152087dcc851d02522b42612e951e593177e47cf16f5a89cb3b1e0da81/attempt-1
 input_sha256: 9e814f152087dcc851d02522b42612e951e593177e47cf16f5a89cb3b1e0da81
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: b4c618dd3713eff4905f0973bbf62b4c8f5e880075f7cec0a33550ad6c58e1e3
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -40,9 +42,8 @@ created_at: '2026-11-16T17:09:10.743829+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T17:09:32.121024+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi

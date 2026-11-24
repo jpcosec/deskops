@@ -1,7 +1,7 @@
 name: review-task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos-evidence-materialization-2
 path: desk/reviews/task-valores-con-llaves-rompen-edit-task-message-send-y-closeout-reason-y-closeout-verify-escribe-recibos/evidence-materialization-2.md
-source_hash: 259238c2bcd9b2da8a12032e28f1410570168477a69359ce8eebc96b30f237bd
-content_hash: 64c566a43dd5234e795e633ef04215c2c452ea1bb3dc67fe36efcb673e818d95
+source_hash: 7beaab581ae2b393df1b8b7fff4b0ae7d75fa957e38c1fcfb1e134b1d030e86f
+content_hash: 33b0ec5e3c1b03abe34eb1f4c72270c229cb014c2219dd23444d107a6066d10b
 field_hashes:
   id: 7f9a36df990efda435b68ef65a546911051f8aa4840ad3f7bdf54dd476c40e5a
   title: d004ca3180ec0728d7179582cac4b4506e18a519a2c43f13a02298c2e5651a73
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 8e0eafdcdf33494ad36e3c21c24262bcc8c3f2eb9ef38b44569ff866d7ea3f52
   disposition: d20eff872c762042935d1a322c8aa434a165365215546bc171d732d0216e7854
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T07:52:26Z'
+  at: '2026-11-24T18:26:25Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

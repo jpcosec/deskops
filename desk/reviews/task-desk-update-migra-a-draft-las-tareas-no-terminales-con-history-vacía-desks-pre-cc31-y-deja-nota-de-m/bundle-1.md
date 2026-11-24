@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-11T05:56:13Z'
+  at: '2026-11-24T17:46:50Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261111-055520/context-review/task-desk-update-migra-a-draft-las-tareas-no-terminales-con-history-vacía-desks-pre-cc31-y-deja-nota-de-m/bundle/76a70fa5377e75f3793d52cf8c4bb0ad840edf7ebd183aa55d2e42f89807891d/attempt-1
 input_sha256: 76a70fa5377e75f3793d52cf8c4bb0ad840edf7ebd183aa55d2e42f89807891d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ca6493bb899d584e176770c1909fc48beb13500573e1e2daa2eea6bcab60c389
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -57,9 +59,8 @@ created_at: '2026-11-11T05:55:39.993282+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-11T05:56:09.536712+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-desk-update-migra-a-draft-las-tareas-no-terminales-con-history-vacía-desks-pre-cc31-y-deja-nota-de-m

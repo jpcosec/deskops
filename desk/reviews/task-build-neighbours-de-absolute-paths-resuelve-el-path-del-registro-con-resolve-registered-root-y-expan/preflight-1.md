@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T12:11:00Z'
+  at: '2026-11-24T17:37:55Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -40,9 +40,8 @@ created_at: '2026-11-17T12:04:16.794060+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T12:10:53.383710+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-build-neighbours-de-absolute-paths-resuelve-el-path-del-registro-con-resolve-registered-root-y-expan

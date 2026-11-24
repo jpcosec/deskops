@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T00:18:46Z'
+  at: '2026-11-24T18:00:27Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -33,9 +33,8 @@ created_at: '2026-11-22T00:18:37.502179+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T00:18:37.502179+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada

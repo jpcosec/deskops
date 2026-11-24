@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-22T21:14:05Z'
+  at: '2026-11-24T18:13:29Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check-evidence-document-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -34,9 +34,8 @@ created_at: '2026-11-22T21:13:52.908331+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-22T21:13:52.908331+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence document of task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check

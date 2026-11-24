@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:26:39Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-machine-readable-cli-output-needs-stable-contract
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:cli
 - topic:serialization

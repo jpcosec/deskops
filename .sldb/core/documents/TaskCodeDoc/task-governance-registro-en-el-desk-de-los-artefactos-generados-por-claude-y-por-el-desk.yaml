@@ -1,13 +1,13 @@
 name: task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk
 path: desk/tasks/task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk.md
-source_hash: 59c6df7e018a4b66c61c32da32374b0266efbe8cda0225186f66b4ad8b9d20a9
-content_hash: 30816176876a4b957864e9c23931a249a1e446e38edecee8ddbc7b604867d58b
+source_hash: 10ef2412e126f3bb9aa7209d40f6b09cc04504f9c754f5fb92027a8f76f2fe4c
+content_hash: ac97e72c6010a8b0558e03786651724bb12114ecf8d98419e71356b84f45cd83
 field_hashes:
   title: 2501167011193c6a977981656a1f6d4be75471558408bcd5beea4a87520b3483
   id: 3b8d8385d2733ca86c5ea86db62b5e12edf76960bd118b1f01e5484d55c6c6b5
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 36fc7a7463c08f847032008bc8d2bcfc0bf55ca9a957d100ab644f3667e28cdd
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T08:12:24Z'
+  at: '2026-11-24T18:28:46Z'
   authority: generated
   via: save_document_payload

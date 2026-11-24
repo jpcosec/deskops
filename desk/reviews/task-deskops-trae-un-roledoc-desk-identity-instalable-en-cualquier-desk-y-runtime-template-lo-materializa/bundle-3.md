@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:38:51Z'
+  at: '2026-11-24T17:55:24Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -78,9 +78,8 @@ created_at: '2026-11-23T05:38:11.746330+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:38:43.634627+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa

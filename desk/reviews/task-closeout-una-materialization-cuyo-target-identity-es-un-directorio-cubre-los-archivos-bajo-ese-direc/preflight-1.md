@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:07:05Z'
+  at: '2026-11-24T17:44:04Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc/preflight/df0f21e5672efd85efd5ac625aac747dd388d0543e94c9a2b2928925a110947d/attempt-1
 input_sha256: df0f21e5672efd85efd5ac625aac747dd388d0543e94c9a2b2928925a110947d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 8988f11e7ae43336b7bcbc659fe83f86bb7bfd7de608c37ac2e82b12d25ad3b5
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:30:26.632890+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:06:59.504296+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:10:34Z'
+  at: '2026-11-24T17:36:05Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -34,9 +34,8 @@ reason: 'Aceptado. Resoluciones del bundle-2:
   Asi el hash de contrato cambia solo por el campo nuevo.
 
   2) Plantillas: si, las dos ganan una linea opcional junto a las otras opcionales,
-  con el marcador conversation_ref: ⸢optrev•conversation_ref⸥ (AtomDoc despues de
-  provenance: ⸢optrev•provenance⸥; InboxNoteDoc despues de ack_reason: ⸢optrev•ack_reason⸥),
-  mismo patron que los campos opcionales existentes.
+  con el marcador conversation_ref:  (AtomDoc despues de provenance: ; InboxNoteDoc
+  despues de ack_reason: ), mismo patron que los campos opcionales existentes.
 
   3) El texto de list atoms no cambia (_format_artifact_list, "<id> | <titulo>");
   solo --format json/yaml lo incluye, porque el payload sale del modelo.
@@ -63,18 +62,17 @@ reason: 'Aceptado. Resoluciones del bundle-2:
   AtomsService.list_atoms (deskops/services/atoms.py linea 237); el texto de list
   lo da _format_artifact_list (operations.py linea 299): "<id> | <titulo>". message
   send: Command ("message", "send") en registry.py linea 651; _deliver_note en deskops/cli/commands/message.py
-  linea 72. Las plantillas usan marcadores opcionales: provenance: ⸢optrev•provenance⸥
-  en AtomDoc; sender_project: ⸢optrev•sender_project⸥ y ack_reason: ⸢optrev•ack_reason⸥
-  en InboxNoteDoc. --update-golden existe: lo declara tests/conftest.py (pytest_addoption,
-  linea 37). El contrato vive en tests/fixtures/model_contract_hashes.json (tests/test_model_contract_snapshot.py).'
+  linea 72. Las plantillas usan marcadores opcionales: provenance: en AtomDoc; sender_project:  y
+  ack_reason: en InboxNoteDoc. --update-golden existe: lo declara tests/conftest.py
+  (pytest_addoption, linea 37). El contrato vive en tests/fixtures/model_contract_hashes.json
+  (tests/test_model_contract_snapshot.py).'
 # ISO 8601 timestamp
 created_at: '2026-11-23T05:09:24.134563+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:10:27.250503+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt

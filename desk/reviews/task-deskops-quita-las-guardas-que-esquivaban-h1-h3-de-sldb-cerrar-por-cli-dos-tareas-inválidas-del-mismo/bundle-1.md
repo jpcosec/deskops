@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-12T02:30:48Z'
+  at: '2026-11-24T17:54:18Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261112-022755/context-review/task-deskops-quita-las-guardas-que-esquivaban-h1-h3-de-sldb-cerrar-por-cli-dos-tareas-inválidas-del-mismo/bundle/95f4709b271b9257eafedc2f68cca0d46064a0ebb290754d2f03e3c84d5c6b58/attempt-1
 input_sha256: 95f4709b271b9257eafedc2f68cca0d46064a0ebb290754d2f03e3c84d5c6b58
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 748398b2989b04c6bf1778c4a6bd17a485488edf53db404df577b751a382a029
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -50,9 +52,8 @@ created_at: '2026-11-12T02:28:09.649905+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-12T02:30:45.905068+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-quita-las-guardas-que-esquivaban-h1-h3-de-sldb-cerrar-por-cli-dos-tareas-inválidas-del-mismo

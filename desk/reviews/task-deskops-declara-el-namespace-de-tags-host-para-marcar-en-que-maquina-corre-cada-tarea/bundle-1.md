@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:47:25Z'
+  at: '2026-11-24T17:48:40Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle/context-review/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/bundle/9900c34623e829f9f62cb9cb63dbd28f99084c89f2056b34c26baa4f1d7ad9f8/attempt-1
 input_sha256: 9900c34623e829f9f62cb9cb63dbd28f99084c89f2056b34c26baa4f1d7ad9f8
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 5d784d0d1456d02c30fd78c8978cb1972e70a9bd43e6837a940a5040f0acd547
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-16T05:41:28.433583+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:47:20.409004+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea

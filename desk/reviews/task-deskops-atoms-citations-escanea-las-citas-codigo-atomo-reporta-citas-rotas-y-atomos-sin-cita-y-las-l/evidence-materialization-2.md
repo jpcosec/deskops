@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T22:30:36Z'
+  at: '2026-11-24T17:47:48Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l-evidence-materialization-2
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -28,6 +28,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 1163b4bb0b50793c9bfc2efe51dfe8150aaa2082dc18ed6ae000b233c9df40de
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -43,9 +45,8 @@ created_at: '2026-11-16T22:30:36.012950+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T22:30:36.012950+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-deskops-atoms-citations-escanea-las-citas-codigo-atomo-reporta-citas-rotas-y-atomos-sin-cita-y-las-l

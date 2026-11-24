@@ -1,7 +1,7 @@
 name: review-task-test-model-contract-snapshot-actualizar-deliberadamente-el-hash-de-relationdoc-tras-go09-preflight-1
 path: desk/reviews/task-test-model-contract-snapshot-actualizar-deliberadamente-el-hash-de-relationdoc-tras-go09/preflight-1.md
-source_hash: e311ba13f862a627faa959f0bcabcac9d8e7a3585b7ec31ebb9f2262360eb38e
-content_hash: 31ba6c56b63c966b30c29cd3c2b91e23ddc51f425edc8d223be4d68385f2b865
+source_hash: 79e4ed4f80cec909ad5346bd6f6983759d3fb6400e3c5936c7bcdccaa8b10834
+content_hash: a953498da15e59773f4f75b2a50b77df66e66ec8e7864acd36c43c05e2b77fd5
 field_hashes:
   id: 119c50d6e1a99beb7b371ef831a05474353a0923a25ce6d559cf90773eee0bfa
   title: 0d9c1d37806b56cd1af4031133c5da2ecb74aa1cf7a8403ca2b589cbecc4c03d
@@ -23,11 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 82005075d6c435e22d7fc360e9eb73406db81976dfe4d24bb614f88129cabaf6
   disposition: 65b7ba1732be333c867227b37aad1e097a2b6c119a66e38e0cdd7dd3d93d5d22
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-24T18:25:00Z'
+  authority: generated
+  via: save_document_payload

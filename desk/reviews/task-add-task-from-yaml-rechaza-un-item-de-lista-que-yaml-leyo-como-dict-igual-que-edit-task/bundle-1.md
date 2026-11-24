@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:01:55Z'
+  at: '2026-11-24T17:34:40Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -44,9 +44,8 @@ created_at: '2026-11-21T06:59:55.450118+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:01:46.601955+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task

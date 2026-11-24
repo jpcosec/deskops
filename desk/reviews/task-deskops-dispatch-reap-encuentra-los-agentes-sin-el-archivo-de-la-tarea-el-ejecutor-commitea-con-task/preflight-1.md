@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T16:43:34Z'
+  at: '2026-11-24T17:51:01Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -35,9 +35,8 @@ created_at: '2026-11-18T16:42:58.658482+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T16:43:29.290914+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task

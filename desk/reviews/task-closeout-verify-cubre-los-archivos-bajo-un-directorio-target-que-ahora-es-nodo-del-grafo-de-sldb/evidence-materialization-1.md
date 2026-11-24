@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-19T14:55:08Z'
+  at: '2026-11-24T17:45:00Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -49,9 +49,8 @@ created_at: '2026-11-19T14:54:54.923232+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-19T14:54:54.923232+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb

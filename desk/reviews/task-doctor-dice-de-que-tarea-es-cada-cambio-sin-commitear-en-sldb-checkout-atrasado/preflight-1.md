@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:27:09Z'
+  at: '2026-11-24T17:59:57Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -37,9 +37,8 @@ created_at: '2026-11-21T07:25:27.320870+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:27:02.808262+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado

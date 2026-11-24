@@ -1,13 +1,13 @@
 name: task-governance-ui-de-deskops-en-astro-sobre-las-uis-de-sldb-1
 path: desk/tasks/task-governance-ui-de-deskops-en-astro-sobre-las-uis-de-sldb-1.md
-source_hash: c51b2c78b757078a7790131b21cf8937036b8b09355eda45488cb4455ac8c4b6
-content_hash: 152519d8a2c26ee3013f7d56e9da0e57de63bb98f9bd3a63f49118a525a306ef
+source_hash: da7f2df6c3c0e0ffc6909c8e8e4ddecb85cccaf29edea4d5e920d9cc2f72c42c
+content_hash: 15e66f7c110867753724954c17802d5d14288f45d47c78d3923784c2f53cafe2
 field_hashes:
   title: b6e996d6c8acae647f26ca727d65ee0c603b957f0d4b065bb2cf4685a45a1d16
   id: 0677899540485e01406f06a12197295d225495c7d89af88743cefe021d0eab44
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 5771fef6f466ccdf7d9202bb5711a850fe96654c0d7c44936e926488d78d24db
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: e9cf86d6597aed2b4fc5613bfa68bdd3fb2499f22eb7d0ccac7942ade68d7ce9
@@ -25,14 +25,14 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
+- board.tareas.ui
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T13:25:05Z'
+  at: '2026-11-24T18:29:58Z'
   authority: generated
   via: save_document_payload

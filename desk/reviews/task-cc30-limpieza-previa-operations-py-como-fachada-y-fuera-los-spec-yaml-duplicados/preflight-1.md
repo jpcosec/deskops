@@ -1,8 +1,17 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:38:02Z'
+  authority: generated
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados-preflight-1
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: preflight
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskRefactorDoc:task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -13,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/deskops-como-config-context-reviews/context-review/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight/c8f23e0e4d2a02595f6f5ed40651acb9cddedf4f52d11661f9a37a1b7110357d/attempt-1
 input_sha256: c8f23e0e4d2a02595f6f5ed40651acb9cddedf4f52d11661f9a37a1b7110357d
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: f9fefffcfdbb57810105fea78f17b7c9566692aa37414b35a666b38703f01564
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -26,9 +37,8 @@ created_at: '2026-11-06T17:53:02.728957+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-06T17:54:28.437932+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados

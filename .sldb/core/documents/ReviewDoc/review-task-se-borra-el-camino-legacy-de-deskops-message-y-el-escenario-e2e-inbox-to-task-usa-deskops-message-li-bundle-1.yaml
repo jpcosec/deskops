@@ -1,7 +1,7 @@
 name: review-task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li-bundle-1
 path: desk/reviews/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li/bundle-1.md
-source_hash: 5013e5779024289fcc699e172681fd8725d4e22ee2e230dc024559543e2adb28
-content_hash: abd7756854dad8e9718a2e0b1261f68e81ae99979d849b36bd570ed59400a6c5
+source_hash: 2a066ef84dc7cb4c201170fde421df3ea8e51366b4a705b76a6f7ccf7180c181
+content_hash: 605e98b765f2e8dd736206ed417a6890c8d1c4ff8399e4b705d8c36cd75375c3
 field_hashes:
   id: ebb2043de9da87ba234175269976c8945270b67c3b13c5a8bcca906c907cc761
   title: 97ede05da610c125c8848fa83f23b46a9e95fede6b78962e4867d0ea263ca224
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: e23a659b6800e8cfd3f1c164f9663910fa475bd45badf3eb0c14bed1f0bdb89e
   disposition: e0885466fbeeae1f01c50e44084c9645ccf675b9865b6fd2e5d789f4a991568a
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T12:09:56Z'
+  at: '2026-11-24T18:23:11Z'
   authority: generated
   via: save_document_payload

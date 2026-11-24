@@ -1,13 +1,13 @@
 name: task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa
 path: desk/tasks/task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa.md
-source_hash: 8657bbea99b61e94bef415b128e6a4216ed9798092c16863dc1089e5dc4538bb
-content_hash: 0247677fc7f730b70e4b72aeb405b76ed516b3575f8632726aa0822e5af200d7
+source_hash: 8496885197da27654b2066be2de848c29ebbe8e04fe7e84c537a8ba149b2a887
+content_hash: 1cfe4df55f34e4eb0e1507f29b64901b3a21f65239f48418906fb8dc557ce1e3
 field_hashes:
   title: 73e4ecadfd97e6d6cd59379fcce33f071dc821a8a799e350a23e51d27ee95e48
   id: 5147456e0238b36e95a22412d67a99c56aa85596b2d69e7f573dae677f1d9832
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 87d8b472d8908b25a02792e9b7b07fd9b4ec5aa1eb562734bf340478a222de1a
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T05:36:27Z'
+  at: '2026-11-24T18:27:36Z'
   authority: generated
   via: save_document_payload

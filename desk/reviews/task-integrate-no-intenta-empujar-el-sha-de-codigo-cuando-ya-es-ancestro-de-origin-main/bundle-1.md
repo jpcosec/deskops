@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T05:14:49Z'
+  at: '2026-11-24T18:07:59Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -48,9 +48,8 @@ created_at: '2026-11-20T05:13:50.374921+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T05:14:43.479293+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main

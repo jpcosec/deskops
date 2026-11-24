@@ -1,13 +1,13 @@
 name: ritual-drawer-triage
 path: desk/rituals/ritual-drawer-triage.md
-source_hash: 877a39351dc80312b9adf443fde27e8e4ca3f7ad2b872df9ede4de6910550cf7
-content_hash: be3d73c74abd987e1b205508c9460b78ce9feafce212adbaed63f4c880fee53b
+source_hash: 93c7690ca53c35a13dbce4379e0d07555060ed14e4cdd149a634927c16fb4f23
+content_hash: 55789048d535af58798a6df667c35fa049ecf931b269f0113e2c783c18c0b9ac
 field_hashes:
   title: 2806993405c52f984e5c400e5b30d7f40c939ebb34a57f2953151f2d3203db48
   id: 1b61c7babcffa8edf16e590990e3b7d6224d0e812fa973c718adc2b3ad8b134b
   status: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 31eeb323fcd7b5a76cdb3bc561e52c77e8d470ad17d3d3ca86426305b53669f1
+  tags: df5a12c50dea785529d3fdec9287350a33a7e56f806ac51d6ccbe00d0e140238
   current_node: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   purpose: 1f002313bd3f9901368840685f6fa718cc4b041a0b57de466d44fd0fe4d29819
@@ -24,9 +24,8 @@ semantic_tags:
 - topic:triage
 - type.workflow.ritual
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T11:53:14Z'
+  at: '2026-11-24T18:26:57Z'
   authority: generated
   via: save_document_payload

@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:26:12Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-cli-gaps-become-tracked-work
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:cli
 - topic:tasks

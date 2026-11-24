@@ -1,8 +1,17 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:43:08Z'
+  authority: generated
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-closeout-el-gate-de-tests-acepta-py-bajo-cualquier-tests-del-repo-o-declarados-en-files-preflight-1
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: preflight
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-closeout-el-gate-de-tests-acepta-py-bajo-cualquier-tests-del-repo-o-declarados-en-files
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -13,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261109-160810/context-review/task-closeout-el-gate-de-tests-acepta-py-bajo-cualquier-tests-del-repo-o-declarados-en-files/preflight/8ed1c6b06d61c62c39581cc9e1252444405b3ceb0b7ff4ec289e914f593a07ae/attempt-1
 input_sha256: 8ed1c6b06d61c62c39581cc9e1252444405b3ceb0b7ff4ec289e914f593a07ae
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: c42e533a0905a6d4ee5e15ebfe989aae00a070477e78108a39b2ec299515ee99
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -23,9 +34,8 @@ created_at: '2026-11-09T16:08:39.818490+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-09T16:08:52.269626+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-el-gate-de-tests-acepta-py-bajo-cualquier-tests-del-repo-o-declarados-en-files

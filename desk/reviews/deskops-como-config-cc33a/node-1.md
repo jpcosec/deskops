@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T02:55:49Z'
+  at: '2026-11-24T17:27:23Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-deskops-como-config/context-review/deskops-como-config/CC33a/b12310721562bdb18f51eb6b0afc91956d97a7ac959f4370d62af07f477348b7/attempt-1
 input_sha256: b12310721562bdb18f51eb6b0afc91956d97a7ac959f4370d62af07f477348b7
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 73b636728c77897e15cd02e9a3a3896f099bc8ecb832fb40ce4032c98dfe55cb
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-17T02:46:59.737429+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T02:55:38.061918+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of CC33a

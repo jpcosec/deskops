@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:11:31Z'
+  at: '2026-11-24T17:41:19Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar/preflight/714d88edb8f9a2e7322962ec99f07e54f988733d38fe336716202ee7cfd3840c/attempt-1
 input_sha256: 714d88edb8f9a2e7322962ec99f07e54f988733d38fe336716202ee7cfd3840c
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 257192335a4e28ef09b1ef9561cbe9aec3b0d90d6c94df67c61ab8dfa7c1b999
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:50:03.878742+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:11:25.542658+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar

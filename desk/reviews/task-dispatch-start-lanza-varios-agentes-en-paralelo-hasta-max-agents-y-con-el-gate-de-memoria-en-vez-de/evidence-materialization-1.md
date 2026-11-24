@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-20T00:53:32Z'
+  at: '2026-11-24T17:58:32Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -53,9 +53,8 @@ created_at: '2026-11-20T00:53:23.092131+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-20T00:53:23.092131+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de

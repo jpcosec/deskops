@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T00:45:13Z'
+  at: '2026-11-24T18:16:45Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-004440/context-review/task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li/bundle/53ce665d400e5dc446983d3b14069eff6f7aa2b70429da787e42b78c38f8fc36/attempt-1
 input_sha256: 53ce665d400e5dc446983d3b14069eff6f7aa2b70429da787e42b78c38f8fc36
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 6c5453d085f7256643b9b7e54ba5bcb3f6777df9a43d2d66a73e95371e5e59c2
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -32,9 +34,8 @@ created_at: '2026-11-16T00:44:53.432477+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T00:45:11.340318+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T18:35:34Z'
+  at: '2026-11-24T17:34:50Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -41,9 +41,8 @@ created_at: '2026-11-21T18:35:23.205073+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T18:35:23.205073+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict-igual-que-edit-task

@@ -1,13 +1,13 @@
 name: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
 path: desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
-source_hash: 19898a0eefb4faf847f01765ca93d88d216891636e4520ff3a5b4bd66648f5a3
-content_hash: ad88eab769683304cfeaec81745a5fde6a367dcb9b81ed3961e7d83432a5f1c1
+source_hash: c1743d75246fa0ced28c3ef9d790104de19bd310ff7ce9a3c6fcd74287f05789
+content_hash: ea42594fa41d26629e0f79e3a471fc80b6ed45f7b1a4135e3fef562dd3ef6087
 field_hashes:
   title: 7928cedfe20eac72673ee48a44d8f36cd648d2218e97cb425aa94ec6edfedea2
   id: eaf8d8f9b567f328a9fae72283884f3a351465936344f301f11bd91a07fe208e
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 1267eb8abeffc947b29318289f76552614186d64a66fe4caedd6efe673b81ca3
@@ -25,14 +25,13 @@ field_hashes:
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T11:27:26Z'
+  at: '2026-11-24T18:27:52Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

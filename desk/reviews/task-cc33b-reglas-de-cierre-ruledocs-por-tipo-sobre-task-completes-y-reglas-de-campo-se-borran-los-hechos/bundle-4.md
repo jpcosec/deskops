@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-10T22:07:41Z'
+  at: '2026-11-24T17:39:02Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261110-220707/context-review/task-cc33b-reglas-de-cierre-ruledocs-por-tipo-sobre-task-completes-y-reglas-de-campo-se-borran-los-hechos/bundle/b250233bb22e4e6adb0096b35b31aaa6de27ad34098ba94cdc302af50f80ff23/attempt-1
 input_sha256: b250233bb22e4e6adb0096b35b31aaa6de27ad34098ba94cdc302af50f80ff23
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: d539d08e4990638c9dfb7001174713fd120ba897692d0061d8b59707aae42aeb
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -37,9 +39,8 @@ created_at: '2026-11-10T22:07:19.675067+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-10T22:07:38.584637+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-cc33b-reglas-de-cierre-ruledocs-por-tipo-sobre-task-completes-y-reglas-de-campo-se-borran-los-hechos

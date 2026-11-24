@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T20:23:05Z'
+  at: '2026-11-24T18:11:25Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-202233/context-review/task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados/preflight/7e65990328de7cb529e3329d04b764c38f07f1a1686f7461bdd487971baa388e/attempt-1
 input_sha256: 7e65990328de7cb529e3329d04b764c38f07f1a1686f7461bdd487971baa388e
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: a6de92e72c20e20e9511153eaa4fb50eac9a508b7e2060ea2c47b69484f28039
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -37,9 +39,8 @@ created_at: '2026-11-16T20:22:45.870735+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T20:23:01.810683+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-la-regla-de-desk-graph-sobre-specs-deja-de-nombrar-spec2viz-y-reconoce-los-specs-yaml-sincronizados

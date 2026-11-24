@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T19:44:09Z'
+  at: '2026-11-24T18:15:25Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -38,9 +38,8 @@ created_at: '2026-11-18T19:43:37.955829+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T19:44:04.171452+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-los-git-que-deskops-parsea-usan-core-quotepath-false-y-los-ids-nuevos-se-pliegan-a-ascii

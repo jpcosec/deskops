@@ -1,7 +1,7 @@
 name: review-task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias-bundle-1
 path: desk/reviews/task-retirar-el-alias-deskops-inbox-docs-y-skills-pasan-a-deskops-message-y-se-borra-el-alias/bundle-1.md
-source_hash: c12ced3263bc64b9baf526fee744673da1e27d547d19a7840d076f850a39008e
-content_hash: 5626e818da3c0b8fd9699b1d1c29903d93ea55b33ae405427505864abfacb1d2
+source_hash: d328d36bc9b955e45c21962c2a8a91db94f9ba995ae05226e8f8d3e10404ce0a
+content_hash: 8593c2cf5f0882189158706a481083c2937a78ccaee21f243ab9fe500a4dec91
 field_hashes:
   id: 0705942bd5426f6711b1035605a7d39bba6c4afed133189d532ded052361711d
   title: a0861ca2c4e09334c10a3894aaa25bab44cdf1afd673f8abe02a37fa0f1b7c18
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 900fac9be1e81c804f045928fd3cbac2c4bf60ebb4808e759230041aa9155f2a
   disposition: 6796bafd38eddc8c3800609f848428bebe19584bca1cbb94f1a9f39769b3cb86
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:46:10Z'
+  at: '2026-11-24T18:19:31Z'
   authority: generated
   via: save_document_payload

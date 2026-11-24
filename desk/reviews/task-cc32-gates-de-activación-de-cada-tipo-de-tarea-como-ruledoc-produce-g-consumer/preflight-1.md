@@ -1,8 +1,17 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:38:16Z'
+  authority: generated
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-cc32-gates-de-activación-de-cada-tipo-de-tarea-como-ruledoc-produce-g-consumer-preflight-1
-# preflight | bundle | reproduction | goldens | owner | node
+# preflight | bundle | reproduction | goldens | owner | node | evidence
 kind: preflight
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
 # doc:<Model>:<id> or empty for reviews of plan nodes
 subject: doc:TaskCodeDoc:task-cc32-gates-de-activación-de-cada-tipo-de-tarea-como-ruledoc-produce-g-consumer
 # <plan>/dag.yaml#node:<ID>; empty when subject names a document
@@ -13,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261108-103601/context-review/task-cc32-gates-de-activación-de-cada-tipo-de-tarea-como-ruledoc-produce-g-consumer/preflight/6e0531373e5363ced95d403771d75ead1724d9f481c38bc9fa4fcfc70bdd8902/attempt-1
 input_sha256: 6e0531373e5363ced95d403771d75ead1724d9f481c38bc9fa4fcfc70bdd8902
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 83aba87de621c3f706b88c4bc0e000f499fbe842cbf5e70aae231920519583d6
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -25,9 +36,8 @@ created_at: '2026-11-08T10:36:33.179863+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-08T10:37:40.285481+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-cc32-gates-de-activación-de-cada-tipo-de-tarea-como-ruledoc-produce-g-consumer

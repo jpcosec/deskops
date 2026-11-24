@@ -1,7 +1,7 @@
 name: review-task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r-bundle-3
 path: desk/reviews/task-review-status-compara-el-contrato-del-taskdoc-y-no-su-texto-entero-igual-que-el-anchor-state-de-la-r/bundle-3.md
-source_hash: 15122373b32b1d88627bfd9913efc3c97ca6048ea22f723f07e3e886b44ace22
-content_hash: 12d5f7179ee4bed6c18302878527ade7e6ab470d0c19b01f586196ca8763a8f9
+source_hash: ff3a0d76360f0d05467ca13b6b77c4cfff377f9a5c603b5e4aab15bce706ad25
+content_hash: 3899d0f68169c7259c64f8736a363ba5cfda9392105cf67c9438585cfec2517e
 field_hashes:
   id: d57886d7a7a09d385e5585763a217fb626859c434a1727786d56a358236c9c74
   title: 9c66c98dc25dc0d0429700633d18c7d57c173cfb06d7cdef1eb14dc4601232d2
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: d038d102f39943c8a0d9e7bd372f9ef1a7e298373197c8f07da827ca703f262b
   disposition: 2eda5ced7f21e4d43b7659a249930006aa588b3c6d63d4042ab15465fba2c49a
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T02:59:37Z'
+  at: '2026-11-24T18:20:20Z'
   authority: generated
   via: save_document_payload

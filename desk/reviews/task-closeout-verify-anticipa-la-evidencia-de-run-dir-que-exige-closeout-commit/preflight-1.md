@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:08:57Z'
+  at: '2026-11-24T17:44:43Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/preflight/2f897cbac4ed35605afe2cab86b3b30901e80556d0444f7e5e6481a3012124d9/attempt-1
 input_sha256: 2f897cbac4ed35605afe2cab86b3b30901e80556d0444f7e5e6481a3012124d9
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 94ea48b84a14dbca291ebeeb3c19e427d9a57e857d321dcf3c814ce5b43b8fe9
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:38:40.215005+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:08:51.566014+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit

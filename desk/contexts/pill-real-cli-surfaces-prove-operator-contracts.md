@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:27:02Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-real-cli-surfaces-prove-operator-contracts
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:pattern
 - topic:cli
 - topic:validation

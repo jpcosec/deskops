@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:46:00Z'
+  at: '2026-11-24T17:54:47Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle/context-review/task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible/bundle/3a5f13f98232a0beb2a42572818b1d107048808d7842b10516bb99d2b04507eb/attempt-1
 input_sha256: 3a5f13f98232a0beb2a42572818b1d107048808d7842b10516bb99d2b04507eb
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: d991eef058b405b4015f311c5ce3d6e86896a1f0bd2a98d6ebdb8e0bc2a8153e
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -34,9 +36,8 @@ created_at: '2026-11-16T05:40:33.381115+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:45:54.203437+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible

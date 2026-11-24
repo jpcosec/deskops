@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T03:07:34Z'
+  at: '2026-11-24T17:30:02Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-workspace-documental/context-review/deskops-workspace-documental/PK02/66691d1c6ae6b549f2d124b0d2f723b9fae47a31ef9f0ed71c9e67a8d28ef8ad/attempt-1
 input_sha256: 66691d1c6ae6b549f2d124b0d2f723b9fae47a31ef9f0ed71c9e67a8d28ef8ad
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 95a47b37e8681b4d34df4c558490673e95f4675248afd105438de737dddd53dc
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-17T01:45:13.257151+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T03:07:26.112796+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of PK02

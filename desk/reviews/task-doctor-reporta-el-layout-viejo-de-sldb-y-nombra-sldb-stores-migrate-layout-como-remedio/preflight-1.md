@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:16:32Z'
+  at: '2026-11-24T18:01:08Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -45,9 +45,8 @@ created_at: '2026-11-21T07:13:10.643135+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:16:25.886881+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-doctor-reporta-el-layout-viejo-de-sldb-y-nombra-sldb-stores-migrate-layout-como-remedio

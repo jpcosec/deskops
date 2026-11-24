@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T14:42:59Z'
+  at: '2026-11-24T18:11:04Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -34,9 +34,8 @@ created_at: '2026-11-23T14:41:17.204810+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T14:42:58.142772+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Reproduction review of task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n

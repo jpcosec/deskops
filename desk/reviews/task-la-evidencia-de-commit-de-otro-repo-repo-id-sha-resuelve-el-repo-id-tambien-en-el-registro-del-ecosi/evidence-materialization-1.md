@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T21:24:01Z'
+  at: '2026-11-24T18:09:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -36,6 +36,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: ''
 input_sha256: 08b014dc1b40afe29bc0fd1ad8036d71dfcea78194cacde96ee1e856a6a58fba
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: ''
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -59,9 +61,8 @@ created_at: '2026-11-16T21:23:53.291237+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T21:23:53.291237+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T18:57:07Z'
+  at: '2026-11-24T17:36:18Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt-evidence-tests-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -65,9 +65,8 @@ created_at: '2026-11-23T18:57:06.058596+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T18:57:06.058596+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt

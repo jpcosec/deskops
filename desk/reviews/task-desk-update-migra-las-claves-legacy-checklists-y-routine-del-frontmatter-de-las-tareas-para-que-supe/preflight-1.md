@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T15:28:55Z'
+  at: '2026-11-24T17:47:26Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261116-152759/context-review/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/preflight/60f82b487e62d433eaa35b21a925c2cb7124134662cb40c190a86eb8d40f1165/attempt-1
 input_sha256: 60f82b487e62d433eaa35b21a925c2cb7124134662cb40c190a86eb8d40f1165
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 27325d9668ceab65f75d0b01cf48c733346818f5c183950db9f7f0925001b283
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T15:28:08.889979+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T15:28:50.516061+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe

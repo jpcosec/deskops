@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T05:33:30Z'
+  at: '2026-11-24T17:52:23Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -84,9 +84,8 @@ created_at: '2026-11-23T04:53:59.819420+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T05:33:22.252708+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis

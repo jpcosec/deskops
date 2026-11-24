@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:58:42Z'
+  at: '2026-11-24T18:01:37Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-bundle2/context-review/task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado/bundle/cef17fa4fbc995e9777ce5d1d48e87c446de2688e8cde0bd9c9ba4090784751a/attempt-1
 input_sha256: cef17fa4fbc995e9777ce5d1d48e87c446de2688e8cde0bd9c9ba4090784751a
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: d7341b840aa681cf460e73f310b8f99b1d7560a9a2befbf7e9d65545105cf0b8
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T05:53:29.349035+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:58:37.924804+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-el-closeout-acepta-tests-de-otros-lenguajes-y-evidencia-de-commit-de-otro-repo-registrado

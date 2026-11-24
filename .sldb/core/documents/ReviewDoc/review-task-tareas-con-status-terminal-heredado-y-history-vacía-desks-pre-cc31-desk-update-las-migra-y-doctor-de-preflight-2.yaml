@@ -1,7 +1,7 @@
 name: review-task-tareas-con-status-terminal-heredado-y-history-vacía-desks-pre-cc31-desk-update-las-migra-y-doctor-de-preflight-2
 path: desk/reviews/task-tareas-con-status-terminal-heredado-y-history-vacía-desks-pre-cc31-desk-update-las-migra-y-doctor-de/preflight-2.md
-source_hash: 61e9977d01d1872cd1b850a1722fafb728028ee77ec662d89965528251a21981
-content_hash: a6655d5cf10948b43d4d0c42f4267a864a1e0339489d26e5d9d9cb6b511d34e2
+source_hash: 191659af9c9b9ce4cf4384e5c7bb0ee1f33be1a752edb88276b959479a5fcdd5
+content_hash: 8cecb1685ca496aa23482bb8d468d1fa760149d69d924ff32b6e66c5055322d9
 field_hashes:
   id: 4fe6ef4a9e7071e16ca0ba68f2779ce86a3c648f434ce753c2a59e32dde40e7b
   title: 2311b911f2233d5c61df75c538b65b3549ba9f75329c648812b200f5f9337c59
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 02f9ec14009fc53ab5024dd31ac9531caaa3dbebb33b1838ebfd9e5c0b769e54
   disposition: b543ee00ca679ac953bafa512e8d1f0c5bce9f5186b0ebe6ecf5e80c6d1ede75
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-10T21:34:49Z'
+  at: '2026-11-24T18:24:40Z'
   authority: generated
   via: save_document_payload

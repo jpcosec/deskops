@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T11:16:08Z'
+  at: '2026-11-24T17:49:26Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y-evidence-atom-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -38,9 +38,8 @@ created_at: '2026-11-17T11:15:53.718889+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T11:15:53.718889+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence atom of task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y

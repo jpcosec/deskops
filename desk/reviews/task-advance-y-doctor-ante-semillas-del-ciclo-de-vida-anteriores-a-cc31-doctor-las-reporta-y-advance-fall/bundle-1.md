@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-10T21:20:02Z'
+  at: '2026-11-24T17:35:11Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261110-211721/context-review/task-advance-y-doctor-ante-semillas-del-ciclo-de-vida-anteriores-a-cc31-doctor-las-reporta-y-advance-fall/bundle/100670c06d50a849b10dc647faea76e8c45cf4405a62a358c18b0a43c0f8a80f/attempt-1
 input_sha256: 100670c06d50a849b10dc647faea76e8c45cf4405a62a358c18b0a43c0f8a80f
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: dd108fec8f2376e03210a7cd3139686d7842820b07802c4dec9a96aed0afbb37
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-10T21:17:33.716632+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-10T21:20:00.302731+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-advance-y-doctor-ante-semillas-del-ciclo-de-vida-anteriores-a-cc31-doctor-las-reporta-y-advance-fall

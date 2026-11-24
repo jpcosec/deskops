@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T03:04:53Z'
+  at: '2026-11-24T17:29:18Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/node-gates-por-tipo/context-review/deskops-gates-por-tipo/PC03/c64e027e02bbd17682421cd7d5d82e6b0ecf6fc5e83e02ea1d30a66a3cb5e7dc/attempt-1
 input_sha256: c64e027e02bbd17682421cd7d5d82e6b0ecf6fc5e83e02ea1d30a66a3cb5e7dc
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: f792653bdbc48064d00d40d32674e7fb5a03f06985a9d879100198fa640248b3
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -32,9 +34,8 @@ created_at: '2026-11-17T01:34:52.815820+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T03:04:46.532539+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Node review of PC03

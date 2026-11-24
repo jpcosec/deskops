@@ -1,7 +1,7 @@
 name: review-task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply-preflight-1
 path: desk/reviews/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply/preflight-1.md
-source_hash: 010383ad2a1ac5d3cbbca34584b66caf78d84bc8887cae47b0ed5430a7f3b81e
-content_hash: db7994a9244b01e5163cf8d02f08381d86b442d539bd60fb1250259e32b06788
+source_hash: 205ea50a5b619dcc8b257ac0e221e454da2fe03b69e9a8d4eef762fc912feb56
+content_hash: 812353baefb5e375198a4272e0d325158ec8771d2cf8852b45d73a0c38a58458
 field_hashes:
   id: 7bf5dab2f5a2ac1426191c6281dce4b98fddfe593a37f39547c5a509dbea220b
   title: 1bfd353bb77dcdf5d99cf2d46f779f8d5d85c21ce2682cc17da4e931bfbf6147
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: f8bd6aba9e92b136f4357c170b1b2bbae618a82d3e1f0b87e86db28e9ec7abcb
   disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:10:47Z'
+  at: '2026-11-24T18:25:03Z'
   authority: generated
   via: save_document_payload

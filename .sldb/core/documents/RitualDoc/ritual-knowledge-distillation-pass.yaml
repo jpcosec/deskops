@@ -1,13 +1,13 @@
 name: ritual-knowledge-distillation-pass
 path: desk/rituals/ritual-knowledge-distillation-pass.md
-source_hash: ba9b8e832d13c2f7070bb2ad45f7ef8c334ef9ed319623786980bbe6d7c1813a
-content_hash: f84897e101ae5b87a3f9153835ac92c9d0c445af4f5347c9e8c3e5c70ad7ebdb
+source_hash: 3518b5ee8f8cbe898851b2a87f368ba390d74bd22ac775a4a4e839c3eee3d8af
+content_hash: 43b8b485cbffca6ea2d7daf462211aaf3671cbeb8297aad062b6eb77d9d9b8f4
 field_hashes:
   title: 3778e246f3073e3d4ba7eeff1af43d34670640034f9627da394c4f26d1264a5b
   id: 3e2d0bef6347b5f2d8c9fb497ca710f759b1b140ab4e829b750765444c0f2bf7
   status: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: a1f4b2f1c600592ec4855a95ceb678dc3cd0285c37d80262928621908082390a
+  tags: 7bbe0c69350ffd216abddda0a5d8d8a214b097c279e4d0e385d2f90b4ee4d209
   current_node: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   purpose: b261bc59fab89bcf20802dafe56511d45d0520901f91990dc488079e2bcb1a2f
@@ -27,4 +27,8 @@ semantic_tags:
 - topic:workflow
 - type.workflow.ritual
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T18:27:00Z'
+  authority: generated
+  via: save_document_payload

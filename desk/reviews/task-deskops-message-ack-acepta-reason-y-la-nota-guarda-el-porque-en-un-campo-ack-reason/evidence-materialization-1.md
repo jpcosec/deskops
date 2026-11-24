@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T13:31:34Z'
+  at: '2026-11-24T17:53:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason-evidence-materialization-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -53,9 +53,8 @@ created_at: '2026-11-17T13:31:23.583198+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T13:31:23.583198+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence materialization of task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason

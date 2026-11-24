@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:10:29Z'
+  at: '2026-11-24T18:10:36Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight/context-review/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/preflight/69c5b3d5b452f47faa9beaff0e0b54f94183c2794ee4aefd9b0bdfdaf569731c/attempt-1
 input_sha256: 69c5b3d5b452f47faa9beaff0e0b54f94183c2794ee4aefd9b0bdfdaf569731c
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: dae0aa1b97a188efbc8126a5c3912a0bbcee584950309a21faf9d3fc966bab37
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -33,9 +35,8 @@ created_at: '2026-11-16T04:44:41.525577+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:10:23.412411+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor

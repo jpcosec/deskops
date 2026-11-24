@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-18T13:47:09Z'
+  at: '2026-11-24T17:51:08Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -38,9 +38,8 @@ created_at: '2026-11-18T13:46:39.392892+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-18T13:47:04.323500+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Bundle review of task-deskops-dispatch-toma-los-roles-del-desk-de-deskops-para-tareas-de-otros-desks-sldb-ir-y-deskops-int

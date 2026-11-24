@@ -1,13 +1,13 @@
 name: task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests
 path: desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
-source_hash: 6a24a171ce39f4122ba8550515c5f795684c69343020abee0ed35f736c2e8eec
-content_hash: 44cf4b822ff2508951410dbf72dba8721e53cd397be64c14eb883305e779012d
+source_hash: 6da2e6c78852e1b5ed52eae59cffcd7f76adc2493714c913c2e3e0608babbd17
+content_hash: 6e97d33e5cbb47bb1502c220022484bfbf521c26a93855aaca0838cdcc56a96f
 field_hashes:
   title: 32b80b54dc33866dc8e061b49b95178609d764c34e73b192c6da5fdd1a5c86ad
   id: f0b39d969fc153bc6f9779a6b661e2cba98e309e96e14ecaadad7d37672f1835
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: cdc41ecb0faeea4fd54d89a0af9704fa317051793e9578e08cc68ba3342d3caa
+  tags: 11bb1031122f37d8732140cbea164dabb926ef21d6bfde10ce845b776ef0913c
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: ce939e5b2ee2423cf01e767b0b6c86eb423226efd425696b14ff5fb6803019d4
@@ -26,15 +26,14 @@ field_hashes:
   atoms: 74f5f1bc53734380abd76fcd36aa85bf3101906e6a80e551eca8d9e8e7892d24
   from_drawer: a805a70abebc468c6e4affe814823368f41d4fe9e63a90776cdda5d59c72e737
 semantic_tags:
-- artifact:task
+- board.tareas
 - host:robocop2
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T06:04:57Z'
+  at: '2026-11-24T18:27:14Z'
   authority: generated
   via: save_document_payload

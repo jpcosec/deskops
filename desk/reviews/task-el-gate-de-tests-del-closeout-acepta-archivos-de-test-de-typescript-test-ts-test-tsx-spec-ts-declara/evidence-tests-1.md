@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T20:01:16Z'
+  at: '2026-11-24T18:02:18Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 # review-<task>-<kind>-<n>
 id: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-tests-1
 # preflight | bundle | reproduction | goldens | owner | node | evidence
@@ -41,9 +41,8 @@ created_at: '2026-11-23T20:01:15.132920+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-23T20:01:15.132920+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Closeout evidence tests of task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara

@@ -1,13 +1,13 @@
 name: task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro
 path: desk/tasks/task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro.md
-source_hash: ff0c11b813268b63f9cee0244102d2837283f730d4c6ded60df235b6837aa8c4
-content_hash: 9f954b2192df330dd45c44f4f892e4689793dc8d66c413045919a41811d6f5f0
+source_hash: d7abe8db1f024e77e72b48ba14951f0698596740c0ace2ee9dfd2eb19f19ccbd
+content_hash: dbe3f4df3ab587bd9719f875bb1c1883ae853d9471e05d63d42f2bd45ccdf14d
 field_hashes:
   title: 036b8c032b85d2b7118a5c487a823ec3182badaecfc8e3ebe3cb03a1bae01cd8
   id: 16aeb743841fad4451a2385b8ef91641e20d50b2da59b6f75197967536bab0a3
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 17b33f03c2757899c81f401dd1b4b32c237937b2cb2ffd7058a0deeb329c77b7
@@ -26,14 +26,13 @@ field_hashes:
   atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   from_drawer: 7e8dfb29c57f1459d795268a02aff18f9eef7c94cc9e65c704991afbd2849020
 semantic_tags:
-- artifact:task
+- board.tareas
 - representation.markdown
 - source.document.markdown
 - type.workflow.task
 - workspace.desk
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:02:14Z'
+  at: '2026-11-24T18:29:12Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

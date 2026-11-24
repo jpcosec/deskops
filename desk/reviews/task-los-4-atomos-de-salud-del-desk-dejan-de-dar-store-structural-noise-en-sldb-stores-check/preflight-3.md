@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-21T07:47:35Z'
+  at: '2026-11-24T18:13:43Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -43,9 +43,8 @@ created_at: '2026-11-21T07:45:14.312089+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-21T07:47:28.697008+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check

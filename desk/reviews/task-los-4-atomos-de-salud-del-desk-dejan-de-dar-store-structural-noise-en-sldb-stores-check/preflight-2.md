@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-16T05:34:04Z'
+  at: '2026-11-24T18:13:39Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/triaje-20261116-preflight2/context-review/task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check/preflight/db8a67ee78c7fc2413d2ff81784e1f103583a825ca801a5042dcb7d093c23a34/attempt-1
 input_sha256: db8a67ee78c7fc2413d2ff81784e1f103583a825ca801a5042dcb7d093c23a34
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 46fc3931d2a0ee3ddb7d6ff467874620fe3529bb5536d8390da43fe52647192f
 # pending | accepted | rejected | incomplete
 verdict: rejected
@@ -34,9 +36,8 @@ created_at: '2026-11-16T05:13:17.434090+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-16T05:34:01.707072+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-los-4-atomos-de-salud-del-desk-dejan-de-dar-store-structural-noise-en-sldb-stores-check

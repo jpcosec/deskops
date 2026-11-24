@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-17T01:32:09Z'
+  at: '2026-11-24T17:45:56Z'
   authority: generated
   via: save_document_payload
 # review-<task>-<kind>-<n>
@@ -22,6 +22,8 @@ actor: deskops
 # Run evidence directory under runs/, relative to the project root
 run_dir: runs/subagents/20261117-012951/context-review/task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo/preflight/e2b8d9fdbe856e562eace4b949336ce328b1e9487f6b8529e5341365c2eefc06/attempt-1
 input_sha256: e2b8d9fdbe856e562eace4b949336ce328b1e9487f6b8529e5341365c2eefc06
+# preflight/bundle: SHA-256 of the input with the TaskDoc replaced by its __contract__ digest
+contract_sha256: ''
 output_sha256: 863927b6fcf800ea91cfdaa3e5e655205d64304e6f215218caa119dc14724eef
 # pending | accepted | rejected | incomplete
 verdict: accepted
@@ -38,9 +40,8 @@ created_at: '2026-11-17T01:30:07.016029+00:00'
 # ISO 8601 timestamp, empty while pending
 disposed_at: '2026-11-17T01:32:02.190013+00:00'
 disposed_by: deskops
-# e.g. workspace:desk
-tags:
-- workspace:desk
+# e.g. system:deskops
+tags: []
 ---
 
 # Preflight review of task-closeout-verify-escribe-un-recibo-nuevo-cuando-el-veredicto-cambia-aunque-el-input-sea-el-mismo

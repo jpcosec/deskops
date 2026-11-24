@@ -1,10 +1,14 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-24T17:26:32Z'
+  authority: generated
+  via: save_document_payload
 # pill-xxx
 id: pill-legacy-desk-formats-need-explicit-adaptation
 # e.g., language:python, library:pydantic
 tags:
 - system:deskops
-- workspace:desk
 - pill-type:guardrail
 - topic:migration
 - topic:legacy
