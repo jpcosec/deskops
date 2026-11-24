@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-models-faq-py
+path: desk/materializations/materialization-tags-deskops-models-faq-py.md
+source_hash: 1b4e06f0e4638973278de4d040f8f92319283cd98b46c1ace92932770e84e0e2
+content_hash: fde1f0dcb90e62f486cc667ccb290d7361ab08692d72e826a243dd592a419d25
+field_hashes:
+  id: 2343313145886057ae4e0bc45502381c7b0098d05ec3bdd60e9bb21fe8d5aaeb
+  title: 682cb0205d1dd9ab215414df5de79f13d34257631e28cd6137f00524ee00e411
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 81d334b6760f2cef00030726d2115bc03ac3de8ebbaf4a3b1cf5d9a8057acece
+  intent: 0dd8f9178ff92879366fbe63a10b472cc03527ee2102d8742cb728b75d508732
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:12:20Z'
+  authority: generated
+  via: create_document

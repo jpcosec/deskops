@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-tag-vocabulary-py
+path: desk/materializations/materialization-tags-deskops-tag-vocabulary-py.md
+source_hash: bea36f5436012822531de69e6f4c7a66dc26a8632d341777e74ea36b90b55ca2
+content_hash: adf886a07260115d69fb084e57215f99cecfc2c02ff94a7da9eaaa86bd6303fb
+field_hashes:
+  id: 6d9af05cad8305e10767e9304204894164b5b90210b409fa2caac7d67f3ebe68
+  title: 92a8cb8d94b4c288481859bf89bad5da68c2320a88f8f33ba61cc182417a22f6
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 8a1972bfac37106984d5856dd7c5f433a32f623a3b35b6cadc869c64eb3c3efe
+  intent: 172dc80e06d03f72898226eb7e0314dd730543933e0515d2db1172915780a719
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:15:05Z'
+  authority: generated
+  via: create_document

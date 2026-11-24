@@ -1,0 +1,25 @@
+name: materialization-tags-tests-fixtures-golden-output-list-rituals-json
+path: desk/materializations/materialization-tags-tests-fixtures-golden-output-list-rituals-json.md
+source_hash: 049af0b3c07f86ee4bd42e2506774421a821b6cc0b5e36b33b5b6920c42ad35b
+content_hash: 45781999b3e0740ec1e83602d37eb910d9bb8b6198a79fb713a6a1ddaaac73a3
+field_hashes:
+  id: b94a2efd32e8e8a83272f29c80defb4b693c9354079d866369b5812503991cec
+  title: 30a1292c91a0b74bc4158125dcdff7b3fe3a8ef841b5ee9e9ad8385091d8b36e
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: b7c9830349617e456fd687c1616c11059cb42a029110dea0d76db06240a657fe
+  intent: 3beb6d08d957250d52642d0bd3f6ba7182276b58738ab367e567f33abec1b50c
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:16:30Z'
+  authority: generated
+  via: create_document

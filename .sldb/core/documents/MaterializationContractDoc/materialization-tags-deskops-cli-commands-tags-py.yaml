@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-cli-commands-tags-py
+path: desk/materializations/materialization-tags-deskops-cli-commands-tags-py.md
+source_hash: d85b9593ef643f1ff9e072a0b0f77d64e99d50cb7e5f10e1441e734b20b1141b
+content_hash: 5ab6fee6495cca1cecb84307c2b05a832895900d995ac9db88bae813f91ce4fd
+field_hashes:
+  id: 8e202a86ce5a34eb769edebbb8518f5da22bbc5014616b548d20223c03fb577d
+  title: a719c11db8962ae6167040cc7d6b9222649f09bfbe7feca091fada93c4951827
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: ca98d44c31094e56d0e3902a305db7ade21d71c4292b8d0617e012fe4ec3ba90
+  intent: cb27bc90f41522854a5ace9ea2df755273a5385781d1c84ce038eafaf8cd9d6f
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:10:11Z'
+  authority: generated
+  via: create_document

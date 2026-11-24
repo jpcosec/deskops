@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T19:09:42Z'
+  at: '2026-11-24T20:10:00Z'
   authority: generated
   via: save_document_payload
 id: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig
@@ -13,15 +13,108 @@ history:
 - task_activates
 - task_hands_to_closeout
 references:
-- desk/inbox/20261123-142641-suggestion-jp-arreglar-el-store-sem-ntico-de-deskops-dos-vocabularios-de-tags.md
-- desk/inbox/20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb.md
+- deskops/cli/commands/tags.py
+- deskops/cli/registry.py
+- deskops/data/desk_declaration.yaml
+- deskops/data/templates/contexts/pills.md
+- deskops/data/templates/rituals/closeout.md
+- deskops/data/templates/rituals/execution.md
+- deskops/data/templates/rituals/phase.md
+- deskops/data/templates/rituals/testing.md
+- deskops/models/atom.py
+- deskops/models/base.py
+- deskops/models/board.py
+- deskops/models/faq.py
+- deskops/models/inbox.py
+- deskops/models/pill.py
+- deskops/models/repository.py
+- deskops/models/review.py
+- deskops/models/ritual.py
+- deskops/models/role.py
+- deskops/models/runtime_profile.py
+- deskops/models/step.py
+- deskops/models/task.py
+- deskops/services/closure.py
+- deskops/services/drawer.py
+- deskops/services/review.py
+- deskops/tag_migration.py
+- deskops/tag_vocabulary.py
+- tests/fixtures/golden/help/deskops.txt
+- tests/fixtures/golden/help/deskops_add_board.txt
+- tests/fixtures/golden/help/deskops_add_step.txt
+- tests/fixtures/golden/help/deskops_tags.txt
+- tests/fixtures/golden/help/deskops_tags_migrate.txt
+- tests/fixtures/golden/output/list_boards.json
+- tests/fixtures/golden/output/list_rituals.json
+- tests/fixtures/golden/output/list_tasks.json
+- tests/fixtures/golden/output/show_task.json
+- tests/fixtures/golden/output/view_drawer.json
+- tests/fixtures/golden/scaffold/init.json
+- tests/fixtures/golden/scaffold/update.json
+- tests/fixtures/model_contract_hashes.json
+- tests/test_cli.py
+- tests/test_cli_grammar.py
+- tests/test_command_registry.py
+- tests/test_domain_tree.py
+- tests/test_specs.py
+- tests/test_tag_vocabulary.py
+- 86d8608fdadfde42f06814a26bb0ac9e158aa0b7
+- a6d09f0d
+- 08dc4181
+- 58203c77
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/cli/commands/tags.py
+- deskops/cli/registry.py
+- deskops/data/desk_declaration.yaml
+- deskops/data/templates/contexts/pills.md
+- deskops/data/templates/rituals/closeout.md
+- deskops/data/templates/rituals/execution.md
+- deskops/data/templates/rituals/phase.md
+- deskops/data/templates/rituals/testing.md
+- deskops/models/atom.py
+- deskops/models/base.py
+- deskops/models/board.py
+- deskops/models/faq.py
+- deskops/models/inbox.py
+- deskops/models/pill.py
+- deskops/models/repository.py
+- deskops/models/review.py
+- deskops/models/ritual.py
+- deskops/models/role.py
+- deskops/models/runtime_profile.py
+- deskops/models/step.py
+- deskops/models/task.py
+- deskops/services/closure.py
+- deskops/services/drawer.py
+- deskops/services/review.py
+- deskops/tag_migration.py
+- deskops/tag_vocabulary.py
+- tests/fixtures/golden/help/deskops.txt
+- tests/fixtures/golden/help/deskops_add_board.txt
+- tests/fixtures/golden/help/deskops_add_step.txt
+- tests/fixtures/golden/help/deskops_tags.txt
+- tests/fixtures/golden/help/deskops_tags_migrate.txt
+- tests/fixtures/golden/output/list_boards.json
+- tests/fixtures/golden/output/list_rituals.json
+- tests/fixtures/golden/output/list_tasks.json
+- tests/fixtures/golden/output/show_task.json
+- tests/fixtures/golden/output/view_drawer.json
+- tests/fixtures/golden/scaffold/init.json
+- tests/fixtures/golden/scaffold/update.json
+- tests/fixtures/model_contract_hashes.json
+- tests/test_cli.py
+- tests/test_cli_grammar.py
+- tests/test_command_registry.py
+- tests/test_domain_tree.py
+- tests/test_specs.py
+- tests/test_tag_vocabulary.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-un-solo-vocabulario-de-tags-semanticos-en-deskops-resuelto-por-el-store-semantico-de-sldb
 ---
 
 # Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI

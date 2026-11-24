@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-data-templates-contexts-pills-md
+path: desk/materializations/materialization-tags-deskops-data-templates-contexts-pills-md.md
+source_hash: 8d1185d86834d731181aa68dfb12fc7b2cd518305d3f1368feccac8b96010459
+content_hash: 79aff979bfe46046032f5048bddbdfabab4f081579ab752b59891a4e31586e29
+field_hashes:
+  id: f4ac55318cabcd48bf713f48f9620a46c09ae2a15a4666e12557c5ef445981aa
+  title: 6c8a89f497bea7ac8376394361133bfb03678802df2cd9c4b8a29f7dff13ab6e
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 5e630556ad0184fd1a1116dc7e89dc07b78bcc5cbf7a32b3b1d62bd3380d135f
+  intent: 6bc293929a5ee959d5aae36726386112f41dbbda7e345efb5388dd95be65222c
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:10:46Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,25 @@
+name: materialization-tags-tests-fixtures-model-contract-hashes-json
+path: desk/materializations/materialization-tags-tests-fixtures-model-contract-hashes-json.md
+source_hash: 7d72d20c7796da852e675f335e34adbd84bc3101f20b8db448abada18b4da86f
+content_hash: d5ddbb5910c25f7d575017b0b7f10a90762a36909f458785ab99556149a6b8cf
+field_hashes:
+  id: 380bde2546df860a6845bb780d36e01d7cdfa51fb159391eff69ff91c7335ed1
+  title: dd9eaf63543adba4ab3130fb3a7a086e4e98eb2b701d882970eaf8c72e80c78c
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 63010393512eba8902dd4e437dd58ffdc51ff42b7acf107af6f438c78a0fe9e1
+  intent: e495009affa467ab44fa11a77c9c76a34ef9d8274ad8f378d6e2798970ea1077
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:17:22Z'
+  authority: generated
+  via: create_document

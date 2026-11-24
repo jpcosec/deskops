@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-services-review-py
+path: desk/materializations/materialization-tags-deskops-services-review-py.md
+source_hash: 102a409ab23e91c5e9c4cf67d5537b673b2f1aa02ac49bd91745e1b0b2662da3
+content_hash: ca0b65eaeabc8a55f4e9d79a9e45ddf40c0ed58b1ef09f2a1d7596a77f177f87
+field_hashes:
+  id: 280af9f48f5f55b0ce1b6730993f71bfdd6b3551cc1ca00c85b8750bac4c0c45
+  title: b68390f81d37d6268a62d3055b3cd99ac9282dc9b1444aa6885256406dd28b4b
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: e37804389c38d9312e301ca584cd6e208f7c932b7403f41021773d24ac0522df
+  intent: 94bafef65be067c14d44f38834b4cc5eb492c2e57fe649f97d6c4317101f03c9
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:14:41Z'
+  authority: generated
+  via: create_document

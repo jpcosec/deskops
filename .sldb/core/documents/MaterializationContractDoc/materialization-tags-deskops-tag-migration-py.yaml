@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-tag-migration-py
+path: desk/materializations/materialization-tags-deskops-tag-migration-py.md
+source_hash: 4bacce013e6b98578f69960896a1ac46e9fd3c8578522663954d9cc42dee99b5
+content_hash: 379f0512a948939adcfa1a09f327fed8e751e5788e1fcf9adef2e7520ab8da84
+field_hashes:
+  id: 57499a6ba5e12cb0d8e2a22fde42053fc2b67737c93760dcdfb0a661009897c3
+  title: 2e18292ddcf5b86aa9a4ef8402743b664607cab575e2c1aa6777bfb2724ac3a9
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 76090d06fe66946ca0fb60a76770d5a98044fdc785bb7e8dd262b03584d0c611
+  intent: 6a8670d20abe487d74b54f2247ad30ca002b09050eab8ba840288c0abb14ca05
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:14:53Z'
+  authority: generated
+  via: create_document

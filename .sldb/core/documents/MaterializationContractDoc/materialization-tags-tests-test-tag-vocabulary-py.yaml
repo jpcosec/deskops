@@ -1,0 +1,25 @@
+name: materialization-tags-tests-test-tag-vocabulary-py
+path: desk/materializations/materialization-tags-tests-test-tag-vocabulary-py.md
+source_hash: 2e0c65b2acba77892e697e3b7c2dd66edcff8887450da46f8553cd7f4b29ff39
+content_hash: 37d9abf7754d536e7a2487a18a6b7fdc77eb146662495a10fed15d548653f270
+field_hashes:
+  id: 5495b2c4e9544486a724d4fcd3a4e50228b1aff63c193ae6af5c4f6ce61d0dad
+  title: a6ec36701974b6d4912dd9637d676821834d4284769c28d7f4acef5ad134722d
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: f0475cd7499a30ef709ba5b37d595e3a16d20304a0bedf05c53451f283ef9560
+  intent: 422b4caf0bb3c40a31c99f894759e69deb4171197a62636db02e0046ef74a918
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:18:27Z'
+  authority: generated
+  via: create_document

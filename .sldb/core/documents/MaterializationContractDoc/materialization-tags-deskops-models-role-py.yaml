@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-models-role-py
+path: desk/materializations/materialization-tags-deskops-models-role-py.md
+source_hash: fc7c1b622a0bf831d758c0202aa9bf52869bab503f99f284be2aaa9a79484a2f
+content_hash: bf34af5a8169537e96c833b4723c9df97a94798f1ab4590932f5f01ae6edc344
+field_hashes:
+  id: ce2ba1323b80eb8638b66a38f78529288c74a643d79cedc2dcb37207b25190f6
+  title: cbdbf55a07c0977518ccb2d7630d2e631d3d8e5f2f2ec7ea143d219c45938120
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 3b6407fb17d799412a96516403e0782092065e950da3c313f7ec5b8e4d2c5b75
+  intent: ccb4035b43351f8972be14b7f0803fbad8999a43ead882b9c23bc240bd2d033c
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:13:30Z'
+  authority: generated
+  via: create_document

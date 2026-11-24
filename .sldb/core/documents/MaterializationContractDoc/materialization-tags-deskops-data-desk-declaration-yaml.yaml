@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-data-desk-declaration-yaml
+path: desk/materializations/materialization-tags-deskops-data-desk-declaration-yaml.md
+source_hash: 34647224466ea77170751ef0ba0ecf4eea4b405bc2c68f8dd77af059324ccf8e
+content_hash: 5d8a8d594561cb48f1b33489f9171ce6ebd6cb33deae037c433ba11650f42246
+field_hashes:
+  id: 2d3258f7a6095681092c23244720b6ec04f9fe7c1d88e23df59919a56c31244f
+  title: 04c28161476b90a9e7b131c32633910739b684231cc53e4b48869aaebd150c7a
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 483c26d6048f22034bb86e17dea42641a5aace5e780de265fabc921f36fa7b7b
+  intent: 8fe9067577df29e42b019f83d8491834bf087b0bbdb5f27bd0b04c6808065802
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:10:34Z'
+  authority: generated
+  via: create_document

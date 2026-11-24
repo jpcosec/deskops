@@ -576,6 +576,48 @@ include:
   - desk/materializations/materialization-conversation-tests-test-message-cli-py.md
   - desk/materializations/materialization-closeout-deskops-services-closeout-gates-py.md
   - desk/materializations/materialization-closeout-tests-test-closeout-test-paths-py.md
+  - desk/materializations/materialization-tags-deskops-cli-commands-tags-py.md
+  - desk/materializations/materialization-tags-deskops-cli-registry-py.md
+  - desk/materializations/materialization-tags-deskops-data-desk-declaration-yaml.md
+  - desk/materializations/materialization-tags-deskops-data-templates-contexts-pills-md.md
+  - desk/materializations/materialization-tags-deskops-data-templates-rituals-closeout-md.md
+  - desk/materializations/materialization-tags-deskops-data-templates-rituals-execution-md.md
+  - desk/materializations/materialization-tags-deskops-data-templates-rituals-phase-md.md
+  - desk/materializations/materialization-tags-deskops-data-templates-rituals-testing-md.md
+  - desk/materializations/materialization-tags-deskops-models-atom-py.md
+  - desk/materializations/materialization-tags-deskops-models-base-py.md
+  - desk/materializations/materialization-tags-deskops-models-board-py.md
+  - desk/materializations/materialization-tags-deskops-models-faq-py.md
+  - desk/materializations/materialization-tags-deskops-models-inbox-py.md
+  - desk/materializations/materialization-tags-deskops-models-pill-py.md
+  - desk/materializations/materialization-tags-deskops-models-repository-py.md
+  - desk/materializations/materialization-tags-deskops-models-review-py.md
+  - desk/materializations/materialization-tags-deskops-models-ritual-py.md
+  - desk/materializations/materialization-tags-deskops-models-role-py.md
+  - desk/materializations/materialization-tags-deskops-models-runtime-profile-py.md
+  - desk/materializations/materialization-tags-deskops-models-step-py.md
+  - desk/materializations/materialization-tags-deskops-models-task-py.md
+  - desk/materializations/materialization-tags-deskops-services-closure-py.md
+  - desk/materializations/materialization-tags-deskops-services-drawer-py.md
+  - desk/materializations/materialization-tags-deskops-services-review-py.md
+  - desk/materializations/materialization-tags-deskops-tag-migration-py.md
+  - desk/materializations/materialization-tags-deskops-tag-vocabulary-py.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-help-deskops-txt.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-help-deskops-add-board-txt.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-help-deskops-add-step-txt.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-help-deskops-tags-txt.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-help-deskops-tags-migrate-txt.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-output-list-boards-json.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-output-list-rituals-json.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-output-list-tasks-json.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-output-show-task-json.md
+  - desk/materializations/materialization-tags-tests-fixtures-golden-output-view-drawer-json.md
+  - desk/materializations/materialization-tags-tests-fixtures-model-contract-hashes-json.md
+  - desk/materializations/materialization-tags-tests-test-cli-py.md
+  - desk/materializations/materialization-tags-tests-test-cli-grammar-py.md
+  - desk/materializations/materialization-tags-tests-test-command-registry-py.md
+  - desk/materializations/materialization-tags-tests-test-specs-py.md
+  - desk/materializations/materialization-tags-tests-test-tag-vocabulary-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3086,6 +3128,14 @@ include:
     name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-atom-1
   - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/evidence-materialization-1.md
     name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-evidence-materialization-1
+  - path: desk/reviews/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig/evidence-tests-1.md
+    name: review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-tests-1
+  - path: desk/reviews/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig/evidence-commit-1.md
+    name: review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-commit-1
+  - path: desk/reviews/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig/evidence-atom-1.md
+    name: review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-atom-1
+  - path: desk/reviews/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig/evidence-materialization-1.md
+    name: review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

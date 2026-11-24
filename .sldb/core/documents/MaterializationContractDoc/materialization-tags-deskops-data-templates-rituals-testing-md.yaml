@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-data-templates-rituals-testing-md
+path: desk/materializations/materialization-tags-deskops-data-templates-rituals-testing-md.md
+source_hash: 87db3ee51d222fc72486ceb8acb7df0f903ae64247bfa90fba36159a48dc72ee
+content_hash: 1da833297f1167085fda57e9e415409d9dd0e82363d8e930196224fd33724669
+field_hashes:
+  id: a4d3ef64a2b9a46e1bfbf0847264565f79c5809993e23f06fdc4dd75d2e2670c
+  title: eb955a15b2602ab37d54c39aaf7c4387b7b8fabab0b2dd24019e63340c71622e
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: 5ad450b86c3d7211a90bcaba0adc805da5df9cc53af0f54fb4510ca72dd02c1e
+  intent: 09cd5fe96e0c701ac6cb25a47dcd7213d49a1203800811d7f2de8b1548df34b4
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:11:32Z'
+  authority: generated
+  via: create_document

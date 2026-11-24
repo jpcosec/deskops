@@ -1,0 +1,25 @@
+name: materialization-tags-deskops-services-drawer-py
+path: desk/materializations/materialization-tags-deskops-services-drawer-py.md
+source_hash: 7c215fac2d49c3bd8ebd1738392aac53d4add8c84220bf42f4d391cf403415cc
+content_hash: 655965f12d767ebc6515a7c42c263519212561790fc92adacd4842a2f6fc0569
+field_hashes:
+  id: 860170368cb9ebc970bd7f1763f9e9a8dad12dcd0486458cdfb35f64665b2f3d
+  title: f66076eb6be78e7186d90380b602093f454b468d416a20d67ab9ee0af3438b75
+  source_atoms: af8b00bfe669f9e3d257ecffcb77dac67d278f7db2b1c54bb5fa76fc44b545ad
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 808f8eea552acbf6098e65d461965e931e567671d5731d3311cc33b9971bf84d
+  intent: f272448c303dba8ff188ad8218e88e3f708aa769bb708c77db67730d5343dbe5
+  validation: 075b6933b7cbcbad83072ab3cc3b98737e536160443452f47d111bbd3104f4f4
+  tags: a7592b8e9978524720516b88fb1d5f60c1bf7feaf2440de7d8ee42fd232a52f2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:tags
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-24T20:14:29Z'
+  authority: generated
+  via: create_document
