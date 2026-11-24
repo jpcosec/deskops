@@ -405,7 +405,7 @@ class DrawerService:
             "validation": validation,
             "done_when": fields.get("done_when") or "The message is resolved, answered, or promoted into active work.",
             # The source note is deleted below, so it is named in `why`, not referenced.
-            "tags": ["workspace:desk", "artifact:task", "source:inbox"],
+            "tags": ["source:inbox"],
         }
         return render_model_markdown(TaskDoc, payload) + "\n"
 

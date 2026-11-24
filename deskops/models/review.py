@@ -21,7 +21,7 @@ import re
 from typing import Any
 from typing import Literal
 
-from pydantic import Field, model_validator
+from pydantic import Field, field_validator, model_validator
 
 from sldb import StructuredNLDoc
 
@@ -78,7 +78,7 @@ created_at: ⸢rev•created_at⸥
 # ISO 8601 timestamp, empty while pending
 disposed_at: ⸢rev•disposed_at⸥
 disposed_by: ⸢rev•disposed_by⸥
-# e.g. workspace:desk
+# e.g. system:deskops
 tags: ⸢rev•tags⸥
 ---
 
@@ -156,8 +156,17 @@ _Record the verdict rationale and who disposed of the review._
     disposition: str = Field(default="", description="Verdict rationale and who disposed of the review.")
     tags: list[str] = Field(
         default_factory=list,
-        description="Semantic tags placed at the end, using namespaced forms such as 'workspace:desk'.",
+        description="Semantic tags placed at the end; the model's own tags (workspace.desk.runs, type.workflow.review) are not repeated here.",
     )
+
+    @field_validator("tags", mode="before")
+    @classmethod
+    def _one_tag_vocabulary(cls, tags: object) -> object:
+        if not isinstance(tags, (list, tuple)):
+            return tags
+        from deskops.tag_vocabulary import canonical_tags
+
+        return canonical_tags(tags, cls)
 
     @model_validator(mode="after")
     def _validate_review(self) -> "ReviewDoc":

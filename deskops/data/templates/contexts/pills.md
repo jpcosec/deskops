@@ -1,7 +1,6 @@
 ---
 id: contexts-pills
-tags:
-- workspace:desk
+tags: []
 ---
 
 # Pills

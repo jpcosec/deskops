@@ -11,7 +11,7 @@ class RepositoryDoc(StructuredNLDoc):
     __artifact__ = {
         "id_pattern": "repo-{slug}",
         "status_default": "active",
-        "tags": ["workspace:desk", "artifact:repository"],
+        "tags": [],
     }
     """Model for registering a repository/tool within the opsys ecosystem."""
 

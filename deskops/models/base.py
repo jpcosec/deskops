@@ -1,4 +1,4 @@
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from sldb import StructuredNLDoc
 
@@ -31,6 +31,17 @@ tags: ⸢rev•tags⸥
         default_factory=list,
         description="Semantic tags placed at the end using namespaced forms.",
     )
+
+    @field_validator("tags", mode="before")
+    @classmethod
+    def _one_tag_vocabulary(cls, tags: object) -> object:
+        # The model's own tags (``__semantics__``) are canonical: no repeats, class names or
+        # flat restatements of them are written (deskops.tag_vocabulary).
+        if not isinstance(tags, (list, tuple)):
+            return tags
+        from deskops.tag_vocabulary import canonical_tags
+
+        return canonical_tags(tags, cls)
 
 
 class OperationalArtifactDoc(PrimitiveDoc):

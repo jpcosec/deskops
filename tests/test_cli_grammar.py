@@ -46,6 +46,7 @@ TOP_LEVEL_GRAMMAR: dict[str, frozenset[str]] = {
             "repo",
             "owner",
             "desk",
+            "tags",
         }
     ),
     "mixed": frozenset({"atoms"}),

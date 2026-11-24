@@ -73,8 +73,7 @@ seeds:
       - desk/rituals/testing.md
       - desk/rituals/closeout.md
       notes: Bootstrap complete. Add active task docs under `desk/tasks/` and route them here.
-      tags:
-      - workspace:desk
+      tags: []
 - path: desk/contexts/pills.md
   mode: if_missing
   file: templates/contexts/pills.md

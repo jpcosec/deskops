@@ -9,7 +9,7 @@ class RitualDoc(OperationalArtifactDoc):
     __artifact__ = {
         "id_pattern": "ritual-{slug}",
         "status_default": "active",
-        "tags": ["workspace:desk", "artifact:ritual"],
+        "tags": [],
     }
     __semantics__ = {"type": ["workflow", "ritual"], "workspace": ["desk"]}
     __template__ = """---

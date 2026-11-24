@@ -731,7 +731,7 @@ class ReviewService:
             "disposed_by": "",
             "summary": summary if summary is not None else f"{kind} review; engine {engine}; evidence under {run_dir}.",
             "disposition": "",
-            "tags": ["workspace:desk"],
+            "tags": [],
         }
         doc_access.create_doc(self.root, path, ReviewDoc, payload, review_id)
         return review_id, path

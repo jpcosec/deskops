@@ -248,12 +248,12 @@ def test_an_atom_with_an_undeclared_namespace_is_an_sldb_finding(desk: Path, cap
 
 
 def test_tasks_and_pills_with_undeclared_namespaces_are_not_findings(desk: Path) -> None:
-    """``tag_models`` limits the family to atoms and protoatoms: a task or a pill keeps its
-    ``workspace:``, ``artifact:`` or ``pill-type:`` tags (none declared) without a finding."""
+    """``tag_models`` limits the family to atoms and protoatoms: a pill keeps its ``pill-type:``
+    tag (none declared) without a finding, and a task carries no flat copy of its model's tags."""
     assert main([
         "add", "pill", "--root", str(desk), "--title", "Una pill", "--summary", "s", "--what", "w",
         "--why", "y", "--when", "n", "--where", "e", "--how", "h", "--how-not", "x",
-        "--tags", "workspace:desk", "pill-type:rule",
+        "--tags", "workspace:desk", "pill-type:rule",  # workspace:desk restates the model: dropped
     ]) == 0
     assert main([
         "add", "task", "--root", str(desk), "--title", "Una tarea", "--goal", "g", "--scope", "s",
@@ -261,7 +261,7 @@ def test_tasks_and_pills_with_undeclared_namespaces_are_not_findings(desk: Path)
     ]) == 0
     texts = [path.read_text(encoding="utf-8") for path in (desk / "desk").rglob("*.md")]
     assert any("pill-type:rule" in text for text in texts)
-    assert any("artifact:task" in text for text in texts)
+    assert not any("artifact:task" in text or "workspace:desk" in text for text in texts)
 
     assert tag_check(desk / ".sldb") == []
 
@@ -314,8 +314,8 @@ def test_task_with_host_tag_raises_no_tag_alert(desk: Path) -> None:
     ]) == 0
     (task,) = [p for p in (desk / "desk" / "tasks").glob("task-host-probe*.md")]
     text = task.read_text(encoding="utf-8")
-    assert "\ntags:\n" in text
-    task.write_text(text.replace("\ntags:\n", "\ntags:\n- host:robocop2\n", 1), encoding="utf-8")
+    assert "\ntags: []\n" in text
+    task.write_text(text.replace("\ntags: []\n", "\ntags:\n- host:robocop2\n", 1), encoding="utf-8")
     result = subprocess.run(
         [sys.executable, "-m", "sldb", "stores", "check", "--store", str(desk / ".sldb")],
         capture_output=True, text=True, cwd=desk,

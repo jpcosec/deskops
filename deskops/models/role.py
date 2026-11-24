@@ -8,7 +8,7 @@ class RoleDoc(StructuredNLDoc):
     __artifact__ = {
         "id_pattern": "role-{slug}",
         "status_default": None,
-        "tags": ["workspace:desk", "artifact:role"],
+        "tags": [],
     }
     __semantics__ = {
         "type": ["workflow", "role"],

@@ -1,8 +1,7 @@
 ---
 id: ritual-phase
 steps: []
-tags:
-- workspace:desk
+tags: []
 ---
 
 # Phase ritual for dependency-layer execution
