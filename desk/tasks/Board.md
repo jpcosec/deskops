@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T18:27:08Z'
+  at: '2026-11-24T20:20:15Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -56,7 +56,6 @@ tasks:
 - desk/tasks/task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo.md
 - desk/tasks/task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.md
 - desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
-- desk/tasks/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig.md
 - desk/tasks/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.md
 - desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
 - desk/tasks/task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y.md
@@ -76,7 +75,7 @@ rituals:
 - ritual-closeout
 - ritual-testing
 - context-review
-# e.g., system:sldb
+# e.g., system:sldb, workspace:desk
 tags:
 - system:sldb
 - topic:routing
@@ -146,7 +145,6 @@ _Generated from the task references above._
 - El runner de revisiones lanza al revisor con stdin DEVNULL cuando la entrada va por archivo [draft] - Cuando command["stdin"] es None, subprocess.run recibe stdin=subprocess.DEVNULL (y no input); cuando hay entrada por stdin, se sigue pasando por input como hoy.
 - deskops list tasks y deskops next filtran por máquina con --host (tag host:<valor>) y la salida de list tasks muestra el host [draft] - (1) deskops list tasks --host <valor> lista solo las tareas con el tag host:<valor>; --host none lista las que no tienen tag host. La salida de texto agrega el host de cada tarea (o "-") y la json un campo host. (2) deskops next sin task_id acepta --host <valor> y elige solo entre tareas de ese host. Sin --host, ambas salidas listan lo mismo que hoy (solo se agrega la columna/campo host).
 - El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing [draft] - Despues de integrar el commit de un ejecutor, dispatch reap encola dispatch-tester de la tarea si no hay un tester vivo ni pendiente, sea el intento que sea.
-- Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI [active] - Criterio de JP (nota 20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb), demostrable sobre el desk real de deskops y desde el lector de surface: (1) un apartado declarado con una semantica (ejemplo de JP: board.tareas) lista todas las tareas; (2) filtrar por una semantica mas especifica (por ejemplo tareas de UI) devuelve solo esas; (3) ambas consultas se resuelven con el store semantico de sldb (tags, padres, descendientes), sin listas ni filtros propios de deskops. Para eso los tags que escribe deskops pasan a ser tags del store semantico de sldb con padres declarados (sldb semantic parent/equivalent), los duplicados desaparecen y los documentos existentes quedan migrados por CLI.
 - integrate por fase: la unidad de integracion es la fase del Board (una suite, un grafo, un store y un push por fase) [draft] - deskops integrate toma como unidad la fase declarada en el Board: cada tarea de la fase cierra con su validacion dirigida; cuando cierra la ultima tarea de la fase se encola un solo trabajo integrate de esa fase, que corre una suite completa, una comprobacion de grafo y una de store sobre el tip y hace un push (o un PR en modo pr) y el commit de cierre de fase de ritual-phase; un integrate exitoso da por resueltos los integrate anteriores de ese desk que quedaron en failed y cuyo contenido ya esta en origin. Una tarea sin fase declarada se integra como fase de una sola tarea.
 - El Board declara las fases del DAG: que tareas forman cada fase y que su integracion es de la fase [draft] - BoardDoc tiene un campo de fases (id, tareas, integracion de la fase: validacion combinada y commit de cierre de fase); deskops tiene comandos para declarar una fase y agregar o quitar tareas de ella; deskops view board las muestra; el store del desk se actualiza con sldb stores update.
 - El skill deskops-workflow y vocabulary.md explican que la suite completa y el push son de la fase y cada tarea solo corre su validacion dirigida [draft] - SKILL.md explica como se declaran las fases en el Board al descomponer el DAG y que la integracion (suite completa, grafo, store, push y commit de cierre de fase) es de la fase, mientras cada tarea cierra con su validacion dirigida; vocabulary.md define fase como capa de dependencias declarada en el Board y unidad de integracion; los comandos citados existen en la ayuda del CLI.

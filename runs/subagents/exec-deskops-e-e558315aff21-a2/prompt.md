@@ -1,120 +1,36 @@
+Task: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig
+Title: Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI
+Status: active
+Current node: ritual-testing
+Task type: task.code
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-24T20:10:00Z'
+  at: '2026-11-24T18:29:47Z'
   authority: generated
   via: save_document_payload
 id: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig
-status: ready_for_testing
+status: active
 summary: ''
 tags: []
-current_node: ritual-closeout
+current_node: ritual-testing
 history:
 - task_activates
-- task_hands_to_closeout
 references:
-- deskops/cli/commands/tags.py
-- deskops/cli/registry.py
-- deskops/data/desk_declaration.yaml
-- deskops/data/templates/contexts/pills.md
-- deskops/data/templates/rituals/closeout.md
-- deskops/data/templates/rituals/execution.md
-- deskops/data/templates/rituals/phase.md
-- deskops/data/templates/rituals/testing.md
-- deskops/models/atom.py
-- deskops/models/base.py
-- deskops/models/board.py
-- deskops/models/faq.py
-- deskops/models/inbox.py
-- deskops/models/pill.py
-- deskops/models/repository.py
-- deskops/models/review.py
-- deskops/models/ritual.py
-- deskops/models/role.py
-- deskops/models/runtime_profile.py
-- deskops/models/step.py
-- deskops/models/task.py
-- deskops/services/closure.py
-- deskops/services/drawer.py
-- deskops/services/review.py
-- deskops/tag_migration.py
-- deskops/tag_vocabulary.py
-- tests/fixtures/golden/help/deskops.txt
-- tests/fixtures/golden/help/deskops_add_board.txt
-- tests/fixtures/golden/help/deskops_add_step.txt
-- tests/fixtures/golden/help/deskops_tags.txt
-- tests/fixtures/golden/help/deskops_tags_migrate.txt
-- tests/fixtures/golden/output/list_boards.json
-- tests/fixtures/golden/output/list_rituals.json
-- tests/fixtures/golden/output/list_tasks.json
-- tests/fixtures/golden/output/show_task.json
-- tests/fixtures/golden/output/view_drawer.json
-- tests/fixtures/golden/scaffold/init.json
-- tests/fixtures/golden/scaffold/update.json
-- tests/fixtures/model_contract_hashes.json
-- tests/test_cli.py
-- tests/test_cli_grammar.py
-- tests/test_command_registry.py
-- tests/test_domain_tree.py
-- tests/test_specs.py
-- tests/test_tag_vocabulary.py
-- 86d8608fdadfde42f06814a26bb0ac9e158aa0b7
-- a6d09f0d
-- 08dc4181
-- 58203c77
+- desk/inbox/20261123-142641-suggestion-jp-arreglar-el-store-sem-ntico-de-deskops-dos-vocabularios-de-tags.md
+- desk/inbox/20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb.md
 depends_on: []
 pills: []
-files:
-- deskops/cli/commands/tags.py
-- deskops/cli/registry.py
-- deskops/data/desk_declaration.yaml
-- deskops/data/templates/contexts/pills.md
-- deskops/data/templates/rituals/closeout.md
-- deskops/data/templates/rituals/execution.md
-- deskops/data/templates/rituals/phase.md
-- deskops/data/templates/rituals/testing.md
-- deskops/models/atom.py
-- deskops/models/base.py
-- deskops/models/board.py
-- deskops/models/faq.py
-- deskops/models/inbox.py
-- deskops/models/pill.py
-- deskops/models/repository.py
-- deskops/models/review.py
-- deskops/models/ritual.py
-- deskops/models/role.py
-- deskops/models/runtime_profile.py
-- deskops/models/step.py
-- deskops/models/task.py
-- deskops/services/closure.py
-- deskops/services/drawer.py
-- deskops/services/review.py
-- deskops/tag_migration.py
-- deskops/tag_vocabulary.py
-- tests/fixtures/golden/help/deskops.txt
-- tests/fixtures/golden/help/deskops_add_board.txt
-- tests/fixtures/golden/help/deskops_add_step.txt
-- tests/fixtures/golden/help/deskops_tags.txt
-- tests/fixtures/golden/help/deskops_tags_migrate.txt
-- tests/fixtures/golden/output/list_boards.json
-- tests/fixtures/golden/output/list_rituals.json
-- tests/fixtures/golden/output/list_tasks.json
-- tests/fixtures/golden/output/show_task.json
-- tests/fixtures/golden/output/view_drawer.json
-- tests/fixtures/golden/scaffold/init.json
-- tests/fixtures/golden/scaffold/update.json
-- tests/fixtures/model_contract_hashes.json
-- tests/test_cli.py
-- tests/test_cli_grammar.py
-- tests/test_command_registry.py
-- tests/test_domain_tree.py
-- tests/test_specs.py
-- tests/test_tag_vocabulary.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-un-solo-vocabulario-de-tags-semanticos-en-deskops-resuelto-por-el-store-semantico-de-sldb
+atoms: []
 ---
 
 # Un solo vocabulario de tags semanticos en deskops: padres declarados en sldb, add sin duplicados y migracion por CLI
@@ -154,3 +70,26 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Sobre el desk real: una consulta de sldb por la semantica del apartado (board.tareas o la que el informe fije como equivalente) devuelve todas las tareas trackeadas, y una por una semantica hija (tareas de UI) devuelve solo esas; sldb semantic show de esas semanticas muestra padres e hijos; el informe trae los comandos y sus salidas; deskops no agrega listas ni filtros propios; si a sldb le falta una operacion (consulta por tag con descendientes, migracion en bloque) queda nota a sldb y lo no resuelto se lista; deskops doctor no suma errores.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Temporales de pytest
+
+Antes de cualquier pytest exporta, para que sus temporales caigan en el /tmp del contenedor (muere con el agente) y no en el /dev/shm del host:
+
+    export PYTEST_ADDOPTS="--basetemp=/tmp/pytest-deskops-e-e558315aff21-a2"
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-e558315aff21-a2`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-e558315aff21-a2
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

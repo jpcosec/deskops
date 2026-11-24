@@ -1,0 +1,10 @@
+# worktree .worktrees/deskops-e-e558315aff21, PYTHONPATH=worktree, venv /tmp/ws-venv
+1) python -m pytest -q -p no:cacheprovider -n 4  (suite completa, antes de regenerar goldens)
+   -> 10 failed, 1382 passed, 3 skipped, 1 xfailed  (3675 s). Los 10: help/output/scaffold/view goldens, grammar, registry,
+      snapshot de hashes de contrato: todos esperados por el comando nuevo `tags` y por los cambios de modelo.
+2) goldens regenerados (--update-golden) y tests/fixtures/model_contract_hashes.json actualizado; tests de help restaurados a su ajuste de linea original.
+3) python -m pytest -q -n 4 tests/test_cli.py tests/test_command_registry.py tests/test_output_goldens.py tests/test_cli_grammar.py -> 115 passed (exit 0)
+4) python -m pytest -q -n 4 tests/test_cli.py tests/test_cli_grammar.py tests/test_command_registry.py tests/test_model_contract_snapshot.py tests/test_output_goldens.py tests/test_scaffold_golden.py tests/test_view_goldens.py tests/test_tag_vocabulary.py -> solo fallaban los 2 de test_cli/test_command_registry (corregidos en 3)
+5) tests/test_tag_vocabulary.py tests/test_specs.py tests/test_domain_tree.py -> 21 passed
+6) deskops tags migrate --root . (tras --apply) -> "No document carries a duplicate, class-name or model-restating tag." exit 0
+7) deskops doctor --root . : mismos errores de antes en el desk (RunDoc/ReviewDoc 'lost'); la diferencia es solo RunDoc de otros runs que en el worktree estan commiteados en otro estado que en el checkout principal; ningun hallazgo de tags.

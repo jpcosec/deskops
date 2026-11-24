@@ -1,0 +1,37 @@
+name: review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-materialization-1
+path: desk/reviews/task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig/evidence-materialization-1.md
+source_hash: 197502ff8d187f28fd4d68d39e446c4226735f7bdf78e2afc99e1ef76bb2d506
+content_hash: 16e655989b98066833821c2ed2fbe15f6bd5432eff3b08bc8955e02fbe149d0f
+field_hashes:
+  id: 419cf79b33e576e2887ec74097c232299857d00f77470aefd4cce23ade323f96
+  title: 315bac7479b16375965f5cdd6dce36e8def02d0a122b748fad89fc64d9e9f681
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: dda048fb2ced7f3ddaeafbb6252c714bbe66f7913fce8d4c9e12be025cf2472f
+  subject: 56c87bea6053786b8ce8a829e6034290a1676eaca6bca56c8b602f37122bb97b
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 2baf8b9f2ab66ce5695c08a41f82e1dc6261a7a003848fb28bf25e7462089345
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: bfcdbb0d494cebc2c7e26dcb60bc1ec9982952f0af9c8913909ffea6d38068c9
+  created_at: d62eb589f2338c0d4feb213b46d290e20d2ecf77b2e779e1aacae4568c8cdf09
+  disposed_at: d62eb589f2338c0d4feb213b46d290e20d2ecf77b2e779e1aacae4568c8cdf09
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f2e71b71b0016f1cc94646c51fa3458da74077d99f7b63046c1db530918b2161
+  disposition: e549289c182dabb0b4c047f1e294d1c4ce8f6b6a2364499c21c22cfcbf8b1405
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T20:19:16Z'
+  authority: generated
+  via: create_document
