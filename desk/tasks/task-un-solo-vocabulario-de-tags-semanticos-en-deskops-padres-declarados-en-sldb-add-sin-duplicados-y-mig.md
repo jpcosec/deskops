@@ -1,16 +1,17 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T18:29:47Z'
+  at: '2026-11-24T19:09:42Z'
   authority: generated
   via: save_document_payload
 id: task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig
-status: active
+status: ready_for_testing
 summary: ''
 tags: []
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
+- task_hands_to_closeout
 references:
 - desk/inbox/20261123-142641-suggestion-jp-arreglar-el-store-sem-ntico-de-deskops-dos-vocabularios-de-tags.md
 - desk/inbox/20261123-145007-suggestion-jp-precisa-el-store-sem-ntico-apartados-y-filtros-por-sem-ntica-resueltos-por-sldb.md
