@@ -15,7 +15,9 @@ from typing import Any
 import re
 
 import yaml
+from sldb.api import describe_model
 from sldb.api import select_documents
+from sldb.store.semantic_tags import flatten_model_semantics
 
 from deskops import doc_access
 from deskops.tag_vocabulary import canonical_tags
@@ -83,6 +85,48 @@ def apply_tag_migration(root: Path, changes: list[TagChange]) -> int:
             payload["tags"] = list(change.after)
             doc_access.write_doc(root, path, model, payload)
     return len(changes)
+
+
+def stale_semantic_documents(root: Path) -> dict[str, list[tuple[str, str]]]:
+    """Model name -> (name, path) of its documents whose semantic index lacks a tag the model's
+    ``__semantics__`` says (a document written before the model gained that semantic).
+
+    The check is sldb's own data: the tags the store indexed per document (``describe_model``)
+    against ``flatten_model_semantics`` of the model.
+    """
+    import deskops.models as models
+
+    store = doc_access.store_path(root)
+    stale: dict[str, list[tuple[str, str]]] = {}
+    for name in sorted({row["model"] for row in select_documents(store, {})}):
+        model = getattr(models, name, None)
+        if model is None:
+            continue
+        wanted = set(flatten_model_semantics(model))
+        behind = [(doc.name, doc.path) for doc in describe_model(store, name, doc_access.package_pythonpath()).documents if not wanted <= set(doc.semantic_tags)]
+        if behind:
+            stale[name] = behind
+    return stale
+
+
+def reindex_stale_documents(root: Path, stale: dict[str, list[tuple[str, str]]]) -> int:
+    """Untrack and track again each document of ``stale``, in one desk transaction.
+
+    sldb keeps a document's semantic shard under its source hash: a model reindex, a ``track``
+    of the same text or a rewrite that changes nothing leave it as it was, and untracking is
+    what drops it. sldb has no bulk operation for this (see the note to sldb), so it is per document.
+    """
+    import deskops.models as models
+
+    count = 0
+    with doc_access.desk_transaction(root):
+        for model_name, documents in stale.items():
+            model = getattr(models, model_name)
+            for name, path in documents:
+                doc_access.untrack_doc(root, name)
+                doc_access.track_created_document(root, model, root / path, name)
+                count += 1
+    return count
 
 
 def summarize(changes: list[TagChange]) -> Counter:
