@@ -1,7 +1,7 @@
 name: review-task-cc35c-referencias-entrantes-referrers-y-rewrite-references-dentro-de-la-transacción-menciones-en-pro-preflight-2
 path: desk/reviews/task-cc35c-referencias-entrantes-referrers-y-rewrite-references-dentro-de-la-transacción-menciones-en-pro/preflight-2.md
-source_hash: c382f6000c61104722a5a6f04650a9ad9ab28e246c1ede9df4ba95730f1e8f38
-content_hash: 26860ca817f0b297f43c738cff40fc2ef32afe33ce48cf0156102ecc8c405992
+source_hash: 1d7909df1fc7f189167b725556086362da8b4834d2073fa416aee33a28b72f9d
+content_hash: ed22b5601a022da140d602876fae59f450f1ac07d41d092eac1d861e531cb6a7
 field_hashes:
   id: fb91209645026ad4706e007c12efd04703e219b9f5459bd00c5c30d7d29032a0
   title: 529a41dfadc2a34b0f2d69ad19352d45fc5b154900655a1a10a6e3be350f14c7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 40127977add69c0c4178acad3befcb9b8e71cfbfe7e1da89165fbb9b081af31b
   disposition: 49a7652e52f717e96b624bd8cd1907f39d6bb2911974e013a9715d6c10ea7540
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-11T03:28:28Z'
+  at: '2026-11-24T17:40:27Z'
   authority: generated
   via: save_document_payload

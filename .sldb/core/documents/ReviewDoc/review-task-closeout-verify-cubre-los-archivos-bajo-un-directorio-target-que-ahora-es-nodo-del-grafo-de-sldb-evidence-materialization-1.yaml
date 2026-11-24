@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb-evidence-materialization-1
 path: desk/reviews/task-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-que-ahora-es-nodo-del-grafo-de-sldb/evidence-materialization-1.md
-source_hash: 2d15f6a5d025c7ceae93b5c84c65d50d29658b7c5c61358804937b21136185e5
-content_hash: 49c6fa04c9bd07ceb76cd4e35fcd414342257a07c90b9453bd6c8e00d23dcc3b
+source_hash: 87983e2c251894fd5b3f2e9aa636cb723b4e9288dd63dc934e32345fd0dabb48
+content_hash: 7d5d59432121a8e539d74093b36be00b968cd6e77134060a9f122f353f6b64dd
 field_hashes:
   id: 54ea424d1a75911c455f2096d3602e844d50f541edc36dc60e86de09ad13710f
   title: 051096e4e14bd9ecdb0ed35781e339466c59fd200e0ff6ffdb83dd6f341e79a1
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 82fe4a6926cfdd1822e23873d56bf522c65c6dd5ff2b0efcae46062171b1f01a
   disposition: 03c68014b26f273706716ff1fd87ca89ff5646077f237b9091479e4b5de89147
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T14:55:08Z'
+  at: '2026-11-24T17:45:00Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

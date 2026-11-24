@@ -1,7 +1,7 @@
 name: review-task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta-preflight-1
 path: desk/reviews/task-los-selectores-de-deskops-aceptan-una-ruta-desk-y-el-error-explica-que-formas-acepta/preflight-1.md
-source_hash: 37929e9b99b1f96cf9475adeee3a05bca98b67568f79ea614c31d809f3e6f6f2
-content_hash: 1ea9e8fe802cc7f6bb76db10e935449d94267ffb08970f24f7804c69f409718d
+source_hash: 822d95e693ffc97fe4447c7c3d94871f1f1d61e53e08819840510773a693f237
+content_hash: e6c39bf640e6a00a28fbb788eea2073e28bb2926dc99ad537ba15da5ab1e90ce
 field_hashes:
   id: c936e5f324f019f6bb8e94ee0407f5dca3f91674183219e2e80b8aef199011ee
   title: 08856c2682f3ef47d4f36c793371c82df60d4e07c7a5d6107c5751e64f052284
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: bd00fb81a371a0aa38eb8c5cb42360faf97c0caae668105f1de5bfa201ea81f7
   disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:07:50Z'
+  at: '2026-11-24T18:15:58Z'
   authority: generated
   via: save_document_payload

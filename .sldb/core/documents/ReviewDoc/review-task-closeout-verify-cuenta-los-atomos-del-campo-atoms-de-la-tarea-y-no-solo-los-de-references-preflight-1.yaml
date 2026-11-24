@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references-preflight-1
 path: desk/reviews/task-closeout-verify-cuenta-los-atomos-del-campo-atoms-de-la-tarea-y-no-solo-los-de-references/preflight-1.md
-source_hash: 98f15343fae185ce79c992f2aabfd32375ba9242632fc723a3a2aacf895dad5b
-content_hash: b706f391add6810a6cba194258560fcfba7367284d8bfd16ed4e028c7403b4a6
+source_hash: db2af601bf6497a0dc192093e5f46a023d7d38baddcb928a9df9f059e2b5696a
+content_hash: 1766af55686a19f46bb8d8263abf055d49fc161a3d677131af595d59705e5fa3
 field_hashes:
   id: 31dfeff429a6c10db3836ac82cdb2266d41a69aebb79265d592a0311b1f05338
   title: f69854cfb45eb68fa847e36ec1eeaf793e2f36dcecec351eef9540efe9b38703
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 65262a6b503a6012ec2d69b864435e0f7674a4ec958aab5a0cac54a57ccd8549
   disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:06:53Z'
+  at: '2026-11-24T17:45:31Z'
   authority: generated
   via: save_document_payload

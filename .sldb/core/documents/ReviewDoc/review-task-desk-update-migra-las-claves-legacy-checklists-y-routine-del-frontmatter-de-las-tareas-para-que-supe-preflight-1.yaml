@@ -1,7 +1,7 @@
 name: review-task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe-preflight-1
 path: desk/reviews/task-desk-update-migra-las-claves-legacy-checklists-y-routine-del-frontmatter-de-las-tareas-para-que-supe/preflight-1.md
-source_hash: e82a5226f977066593fb2effdf189fa041bdabb5cf28eab5659377bb490d5c1b
-content_hash: f7fbe081d7d7e0cbe2595a72fabf10566d1538fd5b25a006d3a5fb7037d43995
+source_hash: 58bced1f7ce633c7b22a348e8f4d97378f009b2026073b1c9bb7c1132f76af50
+content_hash: 81e7328e8ba5194143e2328948bc72698d1476f252d3c2190c95c458eecea6cf
 field_hashes:
   id: ba7e3b2c128f4394e5c41ca6849de2c2f170f2d2a50fb5032d82774009a00c5e
   title: 1a205c01c6ea1561af5f2257c7c5dc5a64be9c7cb8e26ca4c41c2c6b0c09d9df
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: f2ec2fe35379209cf92912645d160d4720d3241fd60d1ae7e36b203ccca963c8
   disposition: c342314da82ef89882ec2bb3ae6899ece4abf6656e96ecca862609cec9c2d517
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T15:28:55Z'
+  at: '2026-11-24T17:47:26Z'
   authority: generated
   via: save_document_payload

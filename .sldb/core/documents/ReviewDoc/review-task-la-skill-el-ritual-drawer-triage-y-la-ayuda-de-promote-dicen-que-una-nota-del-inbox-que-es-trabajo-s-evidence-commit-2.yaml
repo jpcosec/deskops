@@ -1,7 +1,7 @@
 name: review-task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s-evidence-commit-2
 path: desk/reviews/task-la-skill-el-ritual-drawer-triage-y-la-ayuda-de-promote-dicen-que-una-nota-del-inbox-que-es-trabajo-s/evidence-commit-2.md
-source_hash: d29a21ed0acd3733134b43611bd490f5a7af4817c83f93fb81bebd61c18a7eee
-content_hash: c15312329138c5c1679a47e57cce3120908f96b3b0053e1292e938a1f5c4185f
+source_hash: dbf2ec679d8c94c9ff4167c5a6ff869289a6bc2546f17a563c35b104d2cd0c19
+content_hash: 6b381501eabedf9595164ee47fcb7980f28b69ffcb7eddef7f7d136395a11955
 field_hashes:
   id: fb00ac4ecf2ebdfef4112a74b766e350df83d6fbe14fee2c5ab2bd2977266b10
   title: 9deacb093fef5093228781225df4dd1fb3a73f06df42d59992aef5153c5e1ca4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 82d08b64f8a2d54cf56393db254b007d9074cfce068aaf2a97295474bcba39ae
   disposition: 510621b17833c4f0317c3d963d04336f0fd6e05d0227054de100b5ee49524e89
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T15:18:21Z'
+  at: '2026-11-24T18:11:32Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

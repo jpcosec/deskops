@@ -1,7 +1,7 @@
 name: review-task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de-evidence-atom-1
 path: desk/reviews/task-la-cola-reintenta-el-reap-que-espera-exit-3-y-hay-un-comando-de-deskops-para-editar-los-trabajos-de/evidence-atom-1.md
-source_hash: 1ea8566fcd2d1107d5f2f18a78672ed42134195d9f723a7d1cdfc59deda263ab
-content_hash: af83a19be801d3edd7717553dbe80b4b217189f5687cf50de8f3303a9dc5ec9f
+source_hash: bfa931c433c696b59ba055b62151767b9d7fabf6b4cdf196647dbdeb57b5a82a
+content_hash: a62773ce31db474592eaeb77ffc24bbbe348fb2e6d489a27f81adaf8ce9ed443
 field_hashes:
   id: b8e79dced29f872a29d5760c8af494f3fa15147d462b6d82e537be7fbc8a88d2
   title: 3af1f04252fd719f8c1f93cd48bbd333f048227281e175c6d6662a5445116f6f
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: fd6f66251ae88e65f134784f81411264becf6e19e0eaa6f36dc99d821e03925e
   disposition: c87d1d9848e3a2b751bfc939f8f7c3669f26122519d68b38799ff156082b4808
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T00:13:03Z'
+  at: '2026-11-24T18:09:25Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

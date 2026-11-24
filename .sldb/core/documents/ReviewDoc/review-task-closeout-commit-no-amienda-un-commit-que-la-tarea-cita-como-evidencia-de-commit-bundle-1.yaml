@@ -1,7 +1,7 @@
 name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-bundle-1
 path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/bundle-1.md
-source_hash: b345c413b39ddaa630ac2ad6d4852d6d79abf30f12d30d093719e29372d56910
-content_hash: 05282a1902e41167f5b26aacbbfa71724c66024a38d07944839f807cc6331839
+source_hash: ff498f45299e8c0814b017477ab2c2bf70031200bb47eedcd8eef2c93851ddc1
+content_hash: f3c79da84677e9d6017551d315fcd078d4bb7df45da3bf8a4a81a3d435cd751b
 field_hashes:
   id: eb1ef0b26d95dd986f6c41f9214d9d67d86a5152206414e8df36ba4db3a0dcd8
   title: be074cb38ba3334e74c953e8b468f22b21b937c926d5f535a9d5024c11baf0fb
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 8f9c7263a3ead41bf633a334925e39851a1063c60bcba19a52cbb25d81e3d2bc
   disposition: 1d2485637595911462ba8d0649d0bc29ab19c45f6b380c8810f349826799607c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T01:31:55Z'
+  at: '2026-11-24T17:42:15Z'
   authority: generated
   via: save_document_payload

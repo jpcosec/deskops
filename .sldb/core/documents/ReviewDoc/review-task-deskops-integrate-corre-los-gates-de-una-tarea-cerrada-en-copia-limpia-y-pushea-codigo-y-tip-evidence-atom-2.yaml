@@ -1,7 +1,7 @@
 name: review-task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip-evidence-atom-2
 path: desk/reviews/task-deskops-integrate-corre-los-gates-de-una-tarea-cerrada-en-copia-limpia-y-pushea-codigo-y-tip/evidence-atom-2.md
-source_hash: 1f3f4eba8779a0b03e78f234c4caf9c5a5f408d5fee37f5fc227347b31cb3fd3
-content_hash: 538a466a797c7dad83c96ed84bf5430f4d76e7a3c177cc405ca865e06db61b16
+source_hash: cfd2fe0345b0d63a251f87ed6b36508df94df776e9105fc9a380206f8295fb17
+content_hash: 7a4056a3876b48e285a555bdb8ea76d550b98bff8ff7f6a3403d85cebfaba299
 field_hashes:
   id: 617097563752f48fb919c46b3b60f12309d75d1de54c3b6fca5c5d0e85af84a3
   title: 01af299950ac59abf6ba9070ed0dd203531566da2fc0bc009172ec0b4d898aad
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 189231d3f8bf1c61d41e9712c8005ed44b32f067a0b0cff70b87d3d5daf8d31e
   disposition: f6a7c9ecb9e9e07e3b4474b34134dce5c4e95ca277a9adad6509def8d8ecd20c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T12:45:20Z'
+  at: '2026-11-24T17:52:57Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-desk-update-migra-a-draft-las-tareas-no-terminales-con-history-vacía-desks-pre-cc31-y-deja-nota-de-m-reproduction-1
 path: desk/reviews/task-desk-update-migra-a-draft-las-tareas-no-terminales-con-history-vacía-desks-pre-cc31-y-deja-nota-de-m/reproduction-1.md
-source_hash: aa74cd29433b33db5987df43da5d6c9cfcf8f78bccf12b081ca4a2477fd5f2f2
-content_hash: 1447d00607541934cff65fa56912a5988ec8bc0c74abe3c29271ff179e5773eb
+source_hash: 1a07f0754952e331e09195eec4501a8f7986b40877b5d39a7b7f81b45d25574e
+content_hash: 81f17a4ee4572964620d8673a5e3e037c1ebc9da3c7d3d832e9bc348f6d3d116
 field_hashes:
   id: c4e21c923fe6b5a7b15a85944189c8a342d0ec131b70dfd584291f2976149b28
   title: fe0948d4ada55c360c36b832585253bda0715f08a5bb6e549bdf6ea7268d2d11
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 916a4ddd6a9feb6621a8e0415b26399b06aae596f4b77fea306fd108c99c3a93
   disposition: 8e4f41e2e25bbf817aed8e44fb90f053aee7558650e918e2c9dfb9f426636aa8
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-11T05:56:22Z'
+  at: '2026-11-24T17:46:57Z'
   authority: generated
   via: save_document_payload

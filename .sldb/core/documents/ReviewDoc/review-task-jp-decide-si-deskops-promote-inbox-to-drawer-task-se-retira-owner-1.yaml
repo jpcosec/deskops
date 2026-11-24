@@ -1,14 +1,14 @@
 name: review-task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira-owner-1
 path: desk/reviews/task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira/owner-1.md
-source_hash: 9232aff6b4f83cb20f2077ec6b9fe5735e81b1b36faa1be59615643b68e70e13
-content_hash: 798e57d88c91d4d7539239c9d8ec9cb7b15f83cd33bd3e72a0cb35afea70faf3
+source_hash: 5a9a2b22462ed3f738c893017e2efb570afa3b8f8b4510405e0408600ed550c8
+content_hash: 51ee6218be75d29f488273ba8ddbb7da7b6d8bbc7a1d921e7359d20b6fd42daa
 field_hashes:
   id: 9864c72383d27c0756e4c3f57916134515f95578309abe0da543a70b569c819c
   title: e8c7244f5b547d134c0e4f74c5881d4b20084de11d55308cd08d65f0458c3e52
   kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
   fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  subject: f9b4b329b59e35bd08cbda6c32a2c76121a588c9328b7fcb7697def293ecbbbc
+  subject: 6a3769453e360a0ae0303fc6e9cc7c55ca7e7e95785202230d93a980480d7e3e
   subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:15:02Z'
+  at: '2026-11-24T18:09:10Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co-preflight-1
 path: desk/reviews/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co/preflight-1.md
-source_hash: 020d0907573e7e37c518718cfef745d767a4d48c4702ad62c727dcd633f48d79
-content_hash: 74bd79f29c2eb2455f4e28f21585ea27c4fe7f8cb1139725e6aa3ce3708b2d78
+source_hash: 208bea2b2628679954c90c67a9f32af386a16de5f540ba8d8d46af1b6f1b7c6f
+content_hash: 8696491a9b66e71177611c622f8901f6d915c9b842f71ec8e2c920dab28bc224
 field_hashes:
   id: f48e8ecaf039f5296ad36481b633ccba98634a642e84032c26d49f903d6b3ff6
   title: 7877cfb87d21f55c6e6a0005c16a429f0e09c2221b5c592a493cee39424fdce9
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 6da2536ed4306b5ef1cefd29a1ba688bfafb3853ebb85c5aa1a5b8ee4c24305d
   disposition: 1dff0493b1d8793a864aa4cd3d067ce35120a44bcf6b318b19f7b8a63d46f947
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:26:39Z'
+  at: '2026-11-24T17:35:08Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n-evidence-materialization-1
 path: desk/reviews/task-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-puede-redirigir-por-entorno-y-los-tests-del-cli-n/evidence-materialization-1.md
-source_hash: a4b1cf174a27fbb7766cef72df9d1d4aa50a95e13c3234c436c1b56ade59dde4
-content_hash: 4e532d7c3821d8ac50bf004382474f593df7cb89ae2a5f1dbb05ac049c68cd35
+source_hash: 6cfdb2175936b17a464d824b8b7864dde89f09f1f2aaa65289fb40482d4df376
+content_hash: f7a044009677a43ba1f9227fe820d8238e2241396664d73f781b082b45d1a0ca
 field_hashes:
   id: 8c095ed7c0b853876540a7f5f1253bfc0283b0dec30d163df765d9576c0a2dc0
   title: 1e27da735ac905dfe5b251861e99a1419f285239a750ce888eb6263c8ad94e7a
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: e5a60c105fb5af003303a57c14584038c33a87b32db3732a1db6c203e4cb43dd
   disposition: 994042721a0a95d31f38e7a52a1b2b2cf6f9fc4abf7e14e094f55ee8a6f6200f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T15:12:23Z'
+  at: '2026-11-24T18:10:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

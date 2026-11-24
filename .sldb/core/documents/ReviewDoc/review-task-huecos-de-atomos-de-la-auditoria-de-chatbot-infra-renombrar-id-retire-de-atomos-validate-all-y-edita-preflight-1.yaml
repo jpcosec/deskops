@@ -1,7 +1,7 @@
 name: review-task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita-preflight-1
 path: desk/reviews/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita/preflight-1.md
-source_hash: 2e15265354bcc932d84ae9cb6ff1f7a78e3eb5d9ac929669b12a0bd3100305bd
-content_hash: 526b10b7f87ee4239398060b6fee935a5420e34032c8ad8342fbb4951c843625
+source_hash: 3bb6d679dc646849ab9b77959e488f71867f83437fa6c1e6c65009e75b7f3851
+content_hash: 670eec285aec6e51f4432e837c9557b1315f4b9cba555ce6d68ff37a6cb4ec63
 field_hashes:
   id: 17f84cd9b1e0dc9a4531b0f0fb8c72441986dc5a1552a1b1d87a52e913cc8912
   title: 3530f12fbefed9a9d06beac210d7298ade170712b1fe08e178218fa381708cf8
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0d4fd0bd968c6f26d18ae1d30adf50f091b561f9ecfe264af2a78dbde55fddb2
   disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:08:44Z'
+  at: '2026-11-24T18:05:36Z'
   authority: generated
   via: save_document_payload

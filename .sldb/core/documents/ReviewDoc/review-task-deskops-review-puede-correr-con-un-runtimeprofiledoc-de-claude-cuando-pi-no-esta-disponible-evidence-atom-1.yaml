@@ -1,7 +1,7 @@
 name: review-task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible-evidence-atom-1
 path: desk/reviews/task-deskops-review-puede-correr-con-un-runtimeprofiledoc-de-claude-cuando-pi-no-esta-disponible/evidence-atom-1.md
-source_hash: 68953b06ee8e9347b9e1a464567e8bb0fe0dba5ac224cc04dfd98b86ec5a651b
-content_hash: 77fcf77047904a95209bb4b360c153021d9fb359e21e38639973cfe08610864b
+source_hash: fa0094cf04a50aca36ba425d5f6198080c9aaae4c28bec792cd28a2d59313ad9
+content_hash: cb625d41f6b86fb6e1aa27ae36a54c4c89c2555f8ae201c84f837dda902b6c70
 field_hashes:
   id: 54f5e5c0a58375a3df7d0f11ef652d6af10a2028cf24f2c5e121c5bb0d12a1d1
   title: e17bcc9c03d110772c0afd6ebc4af6788d9312a90118896a0dc26121ca7db6c3
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 8042d7adb2535187c66ddebcec973557e077af94a2eef319cfb87092d62b5a96
   disposition: 45fdd1669aa7f6d3d34c48f0ea2f542e51c70c78bf5ff1fb8a0027aede4a3ab2
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T00:04:23Z'
+  at: '2026-11-24T17:54:51Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

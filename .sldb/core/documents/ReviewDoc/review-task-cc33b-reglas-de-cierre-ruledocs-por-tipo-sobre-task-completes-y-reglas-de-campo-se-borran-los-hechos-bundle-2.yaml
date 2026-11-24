@@ -1,7 +1,7 @@
 name: review-task-cc33b-reglas-de-cierre-ruledocs-por-tipo-sobre-task-completes-y-reglas-de-campo-se-borran-los-hechos-bundle-2
 path: desk/reviews/task-cc33b-reglas-de-cierre-ruledocs-por-tipo-sobre-task-completes-y-reglas-de-campo-se-borran-los-hechos/bundle-2.md
-source_hash: 8629d97eea032466f3c6005ee33517d9dc85cbbd3b4666c46d62ed960d91d8db
-content_hash: ae0d14bb37e84d8e81594e76b5d5e7e9140bcd7c39613dd8bb4f9e9b149af899
+source_hash: 35ae46d68b003df3dcffee3e4837774e03e92086da4b56e236e09a8242bdb1f6
+content_hash: 1db6f3da94c6773f61ee301535a58e0a1d44da46cc0489330b54026464a10fc3
 field_hashes:
   id: 29fb67a09b5c7fb7aa521210ed30661950d88bff756a53dd83b634243ee25efd
   title: 8b7da89802cf4b93305582d04f9537d87f3bb008024146dd04b7d7cce982ed5c
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 4198de36d34492cb7b699872ffd6d4a93aec34435ca72823a6cf24db1bcdfe65
   disposition: df154948916bbac81752b9bd0740c9569f5a3bd3aa2a02648cc6b0f85c5c2874
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-10T20:49:40Z'
+  at: '2026-11-24T17:38:55Z'
   authority: generated
   via: save_document_payload

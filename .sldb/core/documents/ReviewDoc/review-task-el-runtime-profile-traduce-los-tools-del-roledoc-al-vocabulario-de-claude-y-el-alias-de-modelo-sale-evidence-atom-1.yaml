@@ -1,7 +1,7 @@
 name: review-task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale-evidence-atom-1
 path: desk/reviews/task-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-el-alias-de-modelo-sale/evidence-atom-1.md
-source_hash: 4a5c91fa2bfef4e116ac7c24bdbe4e45106f12935593fcf1acf32c9709523499
-content_hash: b9ac0a41520eafa4cbc72a84da6a6068aebf01be599abff45c489e8a73ff7430
+source_hash: 7dfbfb63b9d12b6e476be52d274b6ea997b42233bf5e27bddd8b1803d1958de4
+content_hash: c1f7d1c7fe647435d57adbafd27cf2abff62e4e7b170b563226afaeda0fc68f6
 field_hashes:
   id: c9b17a3ac6d86c1455ef483eeddbbbd8c500146dd2142c1ac16e8dbc5c9973d2
   title: 2704830708dd7d53e5f57bd4fa5bb8c99657a0edb0c9dc3682df9e5a848ad38f
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 68199e4e4b6cd7c6e03a0e76ba7758f4064de3c7040ded454db794178b2df355
   disposition: b65cfc6cb670d42ad5a893ddd1a5c11d95a06f0e02f393a52e679b6069ae684f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T09:11:02Z'
+  at: '2026-11-24T18:02:36Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

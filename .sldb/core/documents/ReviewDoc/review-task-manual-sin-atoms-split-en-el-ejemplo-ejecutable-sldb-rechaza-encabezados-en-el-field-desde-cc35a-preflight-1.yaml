@@ -1,7 +1,7 @@
 name: review-task-manual-sin-atoms-split-en-el-ejemplo-ejecutable-sldb-rechaza-encabezados-en-el-field-desde-cc35a-preflight-1
 path: desk/reviews/task-manual-sin-atoms-split-en-el-ejemplo-ejecutable-sldb-rechaza-encabezados-en-el-field-desde-cc35a/preflight-1.md
-source_hash: a4f8e7f971a1b71e8cb2c6f965486d6b0d4c6ff6eba75204e212d8b1b9f49baa
-content_hash: 166da1ab306f0589fb09cac6965130019c4e5f9eccf55a29c3dbcb0c7dde39f0
+source_hash: d8c300c369e34042273f8ba6441ee2bf8953b681ff14d037e3107df5bf0b04d0
+content_hash: fa2515fddd09997bdcfcbec94f552a9cd4c37205aec85a712d69d9dc48d25fb5
 field_hashes:
   id: 2177a920a4128b0fa5634ba4df9c1e1e572afa4e6fb0f5c1818afb3fbb75d1d5
   title: ea4f55f09b50deb18d6f198fbd4abbb776797f58f6abc665151dad82c127846c
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 6757320d69956a69f0a91931af0ab4f41bdc13ae889ed2552219f3adfa231168
   disposition: 5142335919e40ebed8ea37a31d26465eaed75611b672136a4db9951d9e8c2452
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-09T17:47:48Z'
+  at: '2026-11-24T18:16:42Z'
   authority: generated
   via: save_document_payload

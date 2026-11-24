@@ -1,7 +1,7 @@
 name: review-task-closeout-resolved-by-acepta-referencias-calificadas-por-repo-repo-sha-repo-ruta-de-test-verificadas-preflight-1
 path: desk/reviews/task-closeout-resolved-by-acepta-referencias-calificadas-por-repo-repo-sha-repo-ruta-de-test-verificadas/preflight-1.md
-source_hash: 7e1ebaa917913c9e05a63709b664838ec02bc0fbbe0be5fc2697c228dc9999ac
-content_hash: bbfb15d503d3f94c1da01f436b1d9a4a3d6efd9aaa549e60a21fece157cbfe98
+source_hash: 4dbc0d9d07954c3b8ab8a93457967c6abe025334519446a735885dca42b67dfa
+content_hash: 7f2c486758a7406a763b727b098e6bac1458ce60f579ac0ef551ab6857809996
 field_hashes:
   id: ea1a4e7506f7ea0f677bfbe6b2640476eab0f77710685ea2a68649b642a74ec5
   title: 4aa713fca75d02e832aa9e26cf3f1882e11b9ea9b327684e54d3684975563e54
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: da1c145c3fd0a1e63943be69c6d6f90cd0a6f93af0baee841ee2b5142232b943
   disposition: 1da7519d98cf0af27f9affb73fdaf4c74ae027f71edd46e4572e2410949033cb
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-11T23:37:10Z'
+  at: '2026-11-24T17:43:26Z'
   authority: generated
   via: save_document_payload

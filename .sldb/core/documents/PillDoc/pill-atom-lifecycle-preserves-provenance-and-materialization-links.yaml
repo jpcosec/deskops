@@ -1,11 +1,11 @@
 name: pill-atom-lifecycle-preserves-provenance-and-materialization-links
 path: desk/contexts/pill-atom-lifecycle-preserves-provenance-and-materialization-links.md
-source_hash: 996126085e2cdb823162277ea531335b8faa55597fb38109a4c6f4b94ab1c87d
-content_hash: c669fe663cb841d5b52b7d1ef1d70a7e3835564ff188fc06a305624bba699d46
+source_hash: 7a49a3523abefbe941d43936788d5521d4591d96861dd4aa328fd50daabd50d3
+content_hash: 447ef523ee72c94b6581183b8b0c45b6f1f6c0973e3b4c20532b6a8a7b335500
 field_hashes:
   title: 836c79e044ead0cfc40472ef6c144e7cf40d31663e06a3e0315b9b8da441a4f5
   id: 80e2c3a5552be6a537c20b85d8203bc77dc863d16a090e534ff012888bbd83c1
-  tags: fd4433965c1a7ed2a28d8a7ffabb7697ef229cd3355e0be40f90b54c01993314
+  tags: 2461787ca4e7571a14f8e9a5b14c5f57737c0328c95d25857217ce540da5d14d
   what: dbcb78971f0ac518ada409d363e4991696a1c5711ef840731112e57f1dd77da6
   why: 061b96e4dcfda6c931ba210c1c6dce4362b973d6ef55b20f08dc5f39f2882d69
   when: c5e403dfd381bf7bab16aa01783435483e9fb12e3a69dcfd9d2781555dce8a61
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:provenance
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:03Z'
+  authority: generated
+  via: save_document_payload

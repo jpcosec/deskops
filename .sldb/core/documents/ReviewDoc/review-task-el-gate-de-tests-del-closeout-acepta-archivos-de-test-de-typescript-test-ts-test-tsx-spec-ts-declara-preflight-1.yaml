@@ -1,7 +1,7 @@
 name: review-task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara-preflight-1
 path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript-test-ts-test-tsx-spec-ts-declara/preflight-1.md
-source_hash: 6b804889aa3fc6bf40dcc33368e716ec855d035bf4eff6f295b023fa6ce3b706
-content_hash: 3ec6fefad0f4dfd53965fa53944472fc823e3fe434511a208d58af82a3ada966
+source_hash: bb3a47c9f5cfe34f2e9415041c1bed2b96faee93c102e8e4d7dd1a9deba7a790
+content_hash: ae1df586cdd08a502110799c6e6570e7dc834f343d66b55e65b75f1adfd79a98
 field_hashes:
   id: d541b8caa681c6424971787374aab37a0787530add0872170319fdc18cd8111a
   title: 00eb551c1431718116363aa132e47a7d9cfd0008ae4171de5ec07fa0f14e9f90
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: a496c15868a55e1aef2f9813334bf1fcccd90b736cd042067e6f0ff9de036856
   disposition: e976bf36c445196469564dc89cdeb7ec80a28e79c48b2cc160e3969899dde995
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T19:09:07Z'
+  at: '2026-11-24T18:02:21Z'
   authority: generated
   via: save_document_payload

@@ -1,11 +1,11 @@
 name: pill-legacy-desk-formats-need-explicit-adaptation
 path: desk/contexts/pill-legacy-desk-formats-need-explicit-adaptation.md
-source_hash: b2deb641a4dd628d932ecffaabc95777f33939c59f261bcacdd77dd96ce2d8fd
-content_hash: ead4bd7bf8cd64437064e130034b52838dc86ff29afdb678bff6a88cf0e9382e
+source_hash: 0a91388e32285824b39433aca520306f59fb466ce52f9296aec1535eee515714
+content_hash: 0ffcd02d910b88c79714acbae52e33f92fee880b09bebf06dcc5f1f3c47d00d2
 field_hashes:
   title: 7065097ca54e07399f937d7b35038e052d033b013cef537b8bd4eeb594a16925
   id: 01e31e198f888613c2dbfa1d1b408eb451f6c87bc5ddb5986cd7d79dc0165673
-  tags: f8b4f1cad9d30b49a7a1d653f2974e54d0ae45bd775d07a3b330b37631877088
+  tags: cd08930b0adda11225366e40d242c1c28cfdfcda8170043179170285177134ca
   what: 334b6a068c1950bc7b9532df359b77e23a9d1f21c1cbc7d52a05b57835ca7382
   why: be1860a201d2484a55f1a2e89124649851243b9580eb3667fcec2dd85fc003e3
   when: 9642935cabdd63641d27bf1c4a846343e654579d1d39c2ead95f505773168f27
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:migration
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:32Z'
+  authority: generated
+  via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-cc35a-transacción-toda-escritura-por-sldb-api-transaction-doc-io-py-se-borra-bundle-1
 path: desk/reviews/task-cc35a-transacción-toda-escritura-por-sldb-api-transaction-doc-io-py-se-borra/bundle-1.md
-source_hash: 2dc42aba05200a212dbb968ff59053ad385d7a75ecb06a6426ed428daeff73a1
-content_hash: d8dd5f7356b5cddf21ee8c913816fb2065a8ef2013250ce585ddbb6a36a8c304
+source_hash: 6760ab8c3e33e4588c79be10d91887f7941e4f5e408cff0f8737faecb50f3ed5
+content_hash: 955bc1967d5bfea3ed2ba504000dad385a90bebd0ad757869c8b98c3d89f491d
 field_hashes:
   id: f33ee2826b069e1e870c516b98615a0a08dd7d107647a4f40e3b074337bc05cd
   title: 4019bcb6f250bfcfc76c9b53b3e9693e582fb0e606709ea6f1bb0a00c1e718dc
@@ -23,11 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 99f0d084a2a18a4e72b604545b004ae80f183394bfefd321162b981d1791b02e
   disposition: 105f9b6ccfe816706b4915e3efe568c39e06e3771f61f15fec89bd441e31141d
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-24T17:40:02Z'
+  authority: generated
+  via: save_document_payload

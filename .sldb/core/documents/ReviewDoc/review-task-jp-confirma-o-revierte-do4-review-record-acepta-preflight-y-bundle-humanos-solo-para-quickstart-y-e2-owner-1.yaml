@@ -1,14 +1,14 @@
 name: review-task-jp-confirma-o-revierte-do4-review-record-acepta-preflight-y-bundle-humanos-solo-para-quickstart-y-e2-owner-1
 path: desk/reviews/task-jp-confirma-o-revierte-do4-review-record-acepta-preflight-y-bundle-humanos-solo-para-quickstart-y-e2/owner-1.md
-source_hash: 44cf01abc45e5fc301b8ef50769fe7f7e9fab308c442ec3877b2525f4fdfa2da
-content_hash: 0dc48621842777fd3f3e11490839e9d9717cdb21addea6ffafd7dc82de167af7
+source_hash: b967a4aeadc385d21edcb868821854e829da79dbeb77856a3071991d5005ebc3
+content_hash: f144415959b8f2c21f49ce5398889b4e1909f8ee830f83b005ab342ad650ec92
 field_hashes:
   id: f0c4867f6a6edb0b84c5c0bc825caaeda641f5dd459ebe7e948ee253cc50f55e
   title: 7707cf2e9b2eaf7d2c4ce3ce85477e936318bcc9a25f8ddeabe0ac334435923a
   kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
   fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  subject: 2f8eb29cf23af44f00e43daf8f53f1a008a22fd7b98e581c98936a9803aeb78a
+  subject: 1e5d1be32867f3acdf820224719410f87c2791a5626a7a8c52ef65da5ae6eb67
   subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
   actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T04:09:31Z'
+  at: '2026-11-24T18:08:57Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

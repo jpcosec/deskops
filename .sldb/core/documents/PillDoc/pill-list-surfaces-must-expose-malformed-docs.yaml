@@ -1,11 +1,11 @@
 name: pill-list-surfaces-must-expose-malformed-docs
 path: desk/contexts/pill-list-surfaces-must-expose-malformed-docs.md
-source_hash: 9fd81b3c622a6c2fe422de93ef14ae3cf904d74fa27ca0c50a506bc86a527f5a
-content_hash: 1bec6e078de89fafdd29b22677635e59ba57370c06bb61c591f3e1aef9fd1ade
+source_hash: b06a5e3bdc164bc288b7c6d9ced79886be0291606bdf6c3062975af56f0c22d5
+content_hash: 9b5b598ae36355e0140974c314ce26334d0a930061084f6b083fe5da3fb722b3
 field_hashes:
   title: db7d53ba26ef2fd6c6f49d62479660ce6eeee378edc2a27e0fa1dd7c7f25577c
   id: b06f9bda6308efdf8bd6b9b538eb7131190ba875ec8370b150af1b04d1452b9f
-  tags: a0a622c77d214d5e49aeb36c6324ee96b8ac5d86b71d1ecf7db5b5ef4a421cb7
+  tags: a1e5907d9613f3a479241cd2562d400cec7c5478d2f443e60c13fb5f99e9d36d
   what: be8e102a3ba85cdca3d2b73791a8b73d7a466b7ae1cb5cf69e83b8abd73d2b51
   why: 31cbbf6ec4aaf0a4c35d08f629c030d32e024869d9e81645d18e9abace598d36
   when: 377c6e096399ce60c03e85e2d58e5245c49c1f9437dd3dd0b2429c4a02489d17
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:list
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:35Z'
+  authority: generated
+  via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando-evidence-commit-1
 path: desk/reviews/task-deskops-atoms-citations-queda-declarado-como-comando-que-modifica-en-el-test-del-registro-de-comando/evidence-commit-1.md
-source_hash: 827741ac901d3613b14aa9eb7bcca7b23d6cf9ab52f0c6b5e0f11f8ad858f595
-content_hash: 9226d45ea63ee24e5cdac6d42d7db96966b00ef84c268b7851668d4b474fdfb0
+source_hash: 839087082246c5d1a0545ce5a98ca2909e0ad3b1ddb84e681238b1af31cd5d98
+content_hash: 4c43efc89b951605b8d15c77b1c6fd89da68f66b4d930254649984d69744ba37
 field_hashes:
   id: 4c53486e4c2f32f8465e4c52af3b4f66a3c450472846242a20f0eb10aaea46cd
   title: a2fa5b2c73850904f848b3bcdd9d79abf7357c5c380997961bb74050a4c1c4d9
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 556f9d2d53c5356997e1a497add8230c9414375d11bd00a69d5993c36775f572
   disposition: 3c568502571123f128a157cec465848c85d5a9b536b46bcb091bcd417ed268b0
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T23:12:43Z'
+  at: '2026-11-24T17:48:10Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

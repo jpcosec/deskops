@@ -1,7 +1,7 @@
 name: review-task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global-preflight-2
 path: desk/reviews/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/preflight-2.md
-source_hash: eaa21ed4cafe08dc544b4d74f166e9c254567851dbfd5b968f1fb5df46410d03
-content_hash: d57fe1a74c5f893c49fdc0167faccc685d390552d79639dc711af504329af961
+source_hash: cee0ac2bb7770b56f6635a6f7c16afd6b9a1924490a62d4201478a927ba5f01c
+content_hash: 2a87441de6d57c4bc2c3ef363a13fbf1e1291a5cebbbb2c04e6ec2faba5fdc39
 field_hashes:
   id: 3d874d025b9fc89ace21119d45769c43ef35bc2d34f2139eec7879d5c0801bf0
   title: 4cde1d7e3ac59cee59b7d976333f86a2c49950f93d044d62235a6338e5dd46b4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: cd9e435462733d9bf2e187412d6b667c86860225ed6ddc47de9f034b976c3cf0
   disposition: bfd701c774eec047ea46665cceb5c394f64c0b9899cfee039300b96784100195
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:34:10Z'
+  at: '2026-11-24T18:12:11Z'
   authority: generated
   via: save_document_payload

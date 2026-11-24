@@ -1,11 +1,11 @@
 name: pill-board-routed-pills-stay-minimal-and-reusable
 path: desk/contexts/pill-board-routed-pills-stay-minimal-and-reusable.md
-source_hash: be15c872c7041037964d2084cdd1503f952e147cdd9373080215427470bb3f33
-content_hash: c35ee7c586347f8c88edaa7145ec5295def86797520e07c96f025a80590dc3af
+source_hash: cc40ee6530db5fb971c146b2c71f8bb7a28075837ae28f6c88eac1202b72f6cc
+content_hash: 00fd19158f33a38ba35632b574af596c6ab50f078308dfb632718ad941febc04
 field_hashes:
   title: 7c91f188c2a53141d92cd3173b10f0dbba4516e5d3a9b83197d2a062ea46a72e
   id: f39d780d90eab3d92e15e087b93da44f9b1cbf0caa86de4549743247430ee11d
-  tags: b89a717955d674917f950761c1f4447d6190827dbe7a25f6dfb1b1794adb1245
+  tags: 44221d7b7e45ba3dbf858988bfcb2185cbfa7ef1d451e7028a7d5ddaef22f3a4
   what: 46b519ce49387425a11d395df1e54fbfba1d03de58c6944b4bc9698b834e74f9
   why: d9aba75a487d78f096917e762f3a2ee970565a3910aa3c9c57eaa55674a7c504
   when: 4b5af7eaedef17b34eef6fd086cc6b19eb53801dba4bb1f04b5f7765fc4420cd
@@ -22,4 +22,8 @@ semantic_tags:
 - topic:routing
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:06Z'
+  authority: generated
+  via: save_document_payload

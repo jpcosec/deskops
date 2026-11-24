@@ -1,7 +1,7 @@
 name: review-task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s-preflight-1
 path: desk/reviews/task-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota-cuando-lo-demas-despues-del-closeout-es-s/preflight-1.md
-source_hash: 10980d409ca55d2aeb1d4e5cebbfd784cd503681877c489a845b7f4086468317
-content_hash: fd7a1527e69a68d5034fb255eacd6be1bcab1296881f28f7c064590ba695e526
+source_hash: 4375c2b3e35ed587ba24387483d0afbfa20d7dacd4e1220cb766ad07d3d043a9
+content_hash: 7417976d110bde0d2813eca543ec264784ff6c74ed1c8ef527b3ede1f123c9d3
 field_hashes:
   id: 3bcc41cd4c5d7dcc7206e451811b11daf0362debe3866e64aa11c32b35d7c514
   title: 2c4889eebf3b20141ebf327863bc95f58e7f5180b221a3333dbe452d8586ceec
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: cf509f6a16c9706c84d568d2170924bf4921f94d64289897034d9bfdd20aa0b3
   disposition: 8db8052121e74afa53ef6df75ec793ed344b204b6e7b50b497d02e951769d5bd
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T04:17:47Z'
+  at: '2026-11-24T18:07:34Z'
   authority: generated
   via: save_document_payload

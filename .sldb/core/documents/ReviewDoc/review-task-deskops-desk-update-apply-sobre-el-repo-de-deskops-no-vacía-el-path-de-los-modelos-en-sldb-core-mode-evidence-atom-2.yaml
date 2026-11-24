@@ -1,7 +1,7 @@
 name: review-task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode-evidence-atom-2
 path: desk/reviews/task-deskops-desk-update-apply-sobre-el-repo-de-deskops-no-vacía-el-path-de-los-modelos-en-sldb-core-mode/evidence-atom-2.md
-source_hash: 338e0f2922983c11101ccf0f8c2f95c247dac31fcb64c49c7ce89fd614786c32
-content_hash: 1f65d9b33ec0e9bcfe85bdfa44c277fd219d98a46b6c2c926073a0bd5b0ef09d
+source_hash: f18188bc9381d57c3002b766b4e77fa01501e70ae28256a78b1950bb5d457da7
+content_hash: 0da0beaf3e03ed1fc4f372817c197624a1a01f2ecb54cf4bd1fd9ab167301503
 field_hashes:
   id: 81d2d10214263aba4fbe3ef13020c563f386c260a6c8027525e756746ac49f97
   title: 7a5e8e7ec0d712157c935bc81e5f9dcddb2a028bb7fff53147dd2481b7d035c4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 600c349b3ca2959507371b5abd0b026104a366ccbd05e38e7a2c9429d4d8f7af
   disposition: 8f554069eed56ae2d6f70af9be2316bf9f24dbe98c529601bc9f406ae927ff07
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T18:41:36Z'
+  at: '2026-11-24T17:50:02Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

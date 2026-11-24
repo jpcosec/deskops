@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj-preflight-1
 path: desk/reviews/task-closeout-verify-no-trata-como-artefacto-generado-un-golden-json-que-tiene-un-golden-yaml-hermano-baj/preflight-1.md
-source_hash: 4bbf964c5026809c005dcdb90df21f4261e55abf10c8b71493c84ef2f0ff91d4
-content_hash: 4b63bfabf716f33cfa0a0c94cfae3bfd5208b45852e3bc8cb074485482820a1d
+source_hash: 64271be8afb183dff2eaef43ade6d79037ed62caadebcf40e084fa82c5b0b44a
+content_hash: 542191fa4b8d474b49179e0a82130d4bd4d56a39e5fd9cba769334e59d2c9057
 field_hashes:
   id: 1f006fe9e34f1d87aebcf63709b6c19276dd9b24e8c09cb96f257eb00c8e4e9b
   title: c178a07b2e520658fb3e16aa719f90ef019a6ec3417ff7ad9040a9cef68137a4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: f7b5e0d34f31118de9fbef0f083cc69cc6718eeb3294aecfd93277614a917261
   disposition: 4c4a2ceac981c21b216c8e63a640fd4f7f1af1a1befb5a74db15658f727f1c70
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T13:37:15Z'
+  at: '2026-11-24T17:46:18Z'
   authority: generated
   via: save_document_payload

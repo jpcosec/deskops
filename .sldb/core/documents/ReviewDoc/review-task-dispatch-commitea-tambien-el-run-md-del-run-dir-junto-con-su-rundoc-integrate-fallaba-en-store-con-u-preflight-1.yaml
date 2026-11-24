@@ -1,7 +1,7 @@
 name: review-task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u-preflight-1
 path: desk/reviews/task-dispatch-commitea-tambien-el-run-md-del-run-dir-junto-con-su-rundoc-integrate-fallaba-en-store-con-u/preflight-1.md
-source_hash: 8e52841c6b53e34c063457a989b331fb950b646d6225241438a059e4a138df54
-content_hash: eddc39f0a870e80bc4c0838cb977ba38cddc94450af5c7d7ca13649476b99e51
+source_hash: 8fdd6cf95570d4231ad643bb06ac3fe64ce4479d21d54175a402739c4edc1634
+content_hash: 7ffb36108a1ad02a756dce6e736b66100fa7505ea0ab4a05bd18b01ebaddec97
 field_hashes:
   id: 7fa91c9339e764cd445de6df06842bc693109e16fece31f6fd2380072530203c
   title: bf57fd07660ec793c186d3ab3f47ecaa3d66710987fc5c0ba1b85e83084822a2
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: dc291207a2a3a245521af0eeef35507f3c313c224005338acd6edd494b6cece7
   disposition: 5cd8a3d0b73bed815bc48fadd572d42f0a10589c12efcf1fc4fa43d586d2f19d
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T18:09:10Z'
+  at: '2026-11-24T17:57:13Z'
   authority: generated
   via: save_document_payload

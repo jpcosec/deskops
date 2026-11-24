@@ -1,7 +1,7 @@
 name: review-task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co-preflight-1
 path: desk/reviews/task-doctor-la-alerta-lost-restante-dice-como-repararla-sin-nombrar-desk-update-apply-y-su-test-cierra-co/preflight-1.md
-source_hash: ad3b9682414b0d63bf7be80bd72d2abe0970e50c03e248d0ec298e44f71cb2c5
-content_hash: 27d632d8ee1e3289debbb9378edb2af7c47cdc5ce1f7c22bf3d7090ba7547a7e
+source_hash: e6a9b1ee6239263ad480e846f853b886a3ef4f2f37845ce68aee73e6f8be9598
+content_hash: 43efc767f25a97bff9aea6025c0dce29ea8a0019bb08eaea0bec711f2a013d53
 field_hashes:
   id: 92a6bd2d25ebbd8478b0503d727123914bb0450c238a6f7612734261ca303ad2
   title: 8228c1f79bee4a24d5ccc059f6f0314465ea50c976cd63939347173b3113cbbe
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 29b45854e285c209641e64b66b3ab0940c65654eee525d1443537488ec0a38a7
   disposition: c16af6140e85c017c611db045dafd59d5d336e9256a79f840f7970c24f1c5231
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T00:16:51Z'
+  at: '2026-11-24T18:00:20Z'
   authority: generated
   via: save_document_payload

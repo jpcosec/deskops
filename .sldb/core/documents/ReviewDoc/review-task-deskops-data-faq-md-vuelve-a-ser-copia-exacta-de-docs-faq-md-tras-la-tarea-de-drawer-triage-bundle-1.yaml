@@ -1,7 +1,7 @@
 name: review-task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage-bundle-1
 path: desk/reviews/task-deskops-data-faq-md-vuelve-a-ser-copia-exacta-de-docs-faq-md-tras-la-tarea-de-drawer-triage/bundle-1.md
-source_hash: 48d981a75036c69d5ebb5e6b1ec3a10210b401359ff49287e777c02dbdea1bb2
-content_hash: afc7cbf9357fe6c891add033486ce0f08fa9d3ff05034b595d08bf02157176a9
+source_hash: c47c7f3cb9f9bcd74a83f45e972260b3622e8f22fa1d550958026bfead7a6b82
+content_hash: 7e8cf1dae40a244a99fc30fb8bddaf657edfdbbb2b5178ad169728c43464ba10
 field_hashes:
   id: 097951ff32553c98c13273da3e1bd2ced6cdfd44a1c2a53e488babd6ca6015ec
   title: 748f26baf0d54b7ac8dc59b699d721bd987568e132aac6c9386085996c62a37d
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: d7ac158ec49b1fe31e842488ee35463dff04e5e69c9e1d65ce8912c963d93b9b
   disposition: ad8bce4c16164b093664feea1511df3c1ae7364881b546d541498ac12e66465a
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T16:14:57Z'
+  at: '2026-11-24T17:48:25Z'
   authority: generated
   via: save_document_payload

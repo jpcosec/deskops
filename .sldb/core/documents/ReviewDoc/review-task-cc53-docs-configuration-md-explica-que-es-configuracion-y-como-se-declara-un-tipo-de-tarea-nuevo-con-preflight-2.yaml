@@ -1,7 +1,7 @@
 name: review-task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con-preflight-2
 path: desk/reviews/task-cc53-docs-configuration-md-explica-que-es-configuracion-y-como-se-declara-un-tipo-de-tarea-nuevo-con/preflight-2.md
-source_hash: cd4747a7841b5c6cd9e13b676662faddd05c83b11b6ae95d74cf91f0d86d3da6
-content_hash: df8ea754cc8625eb8ad611e9a376da0c14179e714e885d178891f8d2ea28eb3b
+source_hash: ea88701acaeb6fc85f89e88b61b743df921117b945f06f807933ea0b07e5c5a1
+content_hash: c871c5936b5e24f87b0d6d6f1ce3b95db740f7a1a8f086dadfb687c332689d6c
 field_hashes:
   id: fd1789563cc74e80a9a6043af399ba17033751989abb39816226727b52e617c6
   title: dd5514164409e3eac534fe6ede93cef3eb72f443662be3f81dddc9a8c5317326
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: f80b4e5ddba6801bf1ef84aeb430fba5346e88e00744984f05e048cd010eb004
   disposition: a8c14ceeb0591843ac87f4406365b7c9ec486a50ca0a7d6778388a1f7d29fd90
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:33:18Z'
+  at: '2026-11-24T17:41:51Z'
   authority: generated
   via: save_document_payload

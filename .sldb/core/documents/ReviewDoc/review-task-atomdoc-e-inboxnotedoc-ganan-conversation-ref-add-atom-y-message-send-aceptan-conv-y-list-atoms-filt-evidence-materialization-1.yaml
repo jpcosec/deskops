@@ -1,7 +1,7 @@
 name: review-task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt-evidence-materialization-1
 path: desk/reviews/task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt/evidence-materialization-1.md
-source_hash: 2fc3e8843267670ee0489cd63cd4f2457bb42aeda7d9afc9b448fc48ad116230
-content_hash: f58b11397c42e522e84dfb363a02429ed28f17d1ebe6739e4fcb774c8cb089a1
+source_hash: cac9a830d9d6206cfb9bb7ab5cc95546cbc3f16d4910f4ad83cc4836bd30af9c
+content_hash: affd26fd280a703b976294946729e8ec7f9a209ac365283d18eb3fd699e8a548
 field_hashes:
   id: 288010b71b91d77618d9a18085b4a12e5c79b96c91324b8f8cfd3de87c36afc0
   title: 11a643ed9cc30e9dc4e9073bc52ff56b66ba6715f29d136cb5f6aaa32cc919eb
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b94e87330510d50649af0f2b108227978ea23fe5286eb595311a56fd0cef9465
   disposition: 03fb4d867bf61c6385cde762614185a8888abf7a1790bff04521bc09e9fb5ebd
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T18:57:22Z'
+  at: '2026-11-24T17:36:15Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

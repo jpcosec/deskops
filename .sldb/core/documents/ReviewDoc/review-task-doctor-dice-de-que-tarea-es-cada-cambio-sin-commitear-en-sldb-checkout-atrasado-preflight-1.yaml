@@ -1,7 +1,7 @@
 name: review-task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado-preflight-1
 path: desk/reviews/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado/preflight-1.md
-source_hash: e6d2b16b64a47a5ae478642d8f73070a0481e4b2aa9b5d0b62f5ff1e64081811
-content_hash: 9d5dbb61f606b47c1fde9a721055087151462c6994a7408b8e9c491fef194e55
+source_hash: 79760995f3318c1fa5a167b56ce1ac487efca0c70dcd850928235f83f2f2fdef
+content_hash: 349e8d592e582ea72e4a0af4a5c7d7cbfdcb2f2b6b01d34bc0464dd026ad45d7
 field_hashes:
   id: 0cd15d6e6450b5a7587820b1d02a75d10260fa52b55e2c04baf365672424137f
   title: ec661d7572c5741813a8d524f5cc3523642a1c5f84a401d4abb63b24e4e336a3
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0f074e44b39dd8120b10844a816e20b5dd666099ac1057ade211595bf7c7fff8
   disposition: 8042e4f077ea7ca85381ca42f2fea622fe6ab184774dd2375b94ba936e3fa2f9
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:27:09Z'
+  at: '2026-11-24T17:59:57Z'
   authority: generated
   via: save_document_payload

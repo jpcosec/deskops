@@ -1,7 +1,7 @@
 name: review-task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li-preflight-1
 path: desk/reviews/task-message-send-to-resuelve-el-destino-en-el-registro-del-ecosistema-cuando-el-registro-propio-no-lo-li/preflight-1.md
-source_hash: 8db668a704b3d88f88421cce3fa078f1fb0eaa48fffef67438cf92e396fa5441
-content_hash: a45ad818abe1f0aa97aba341c44cf146230033ecdf895d20a6f1d5d33ef4d3ce
+source_hash: 9b0328f839e036393cba29e6f1a08c7921339ed0ae3ca5b97c295e6c94279e88
+content_hash: e5398b0f6ee65ce279c3466a7cc9762701bdafa15d37b2890308ade1ac6234ce
 field_hashes:
   id: a60bce02a2ab37f3c1e46d2f4f33bf24cd6adc59673d793cbe55c6726024c391
   title: dadbf974a30f13ef635d6bf6c4332b8bdeb9f0ba094aacf75e069578d78eba6a
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b7ca59393c7a4de0fadfae875765fe04b0d1fa602ae536c12d72757b04d8bf93
   disposition: 6e7cb44da90a8bdf45bc2d8774be6e942d482fad2b183e8b1435952dd3381e1d
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T00:44:35Z'
+  at: '2026-11-24T18:16:48Z'
   authority: generated
   via: save_document_payload

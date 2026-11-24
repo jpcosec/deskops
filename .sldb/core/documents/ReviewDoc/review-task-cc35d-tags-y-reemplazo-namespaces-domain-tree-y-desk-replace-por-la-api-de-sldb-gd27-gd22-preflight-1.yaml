@@ -1,7 +1,7 @@
 name: review-task-cc35d-tags-y-reemplazo-namespaces-domain-tree-y-desk-replace-por-la-api-de-sldb-gd27-gd22-preflight-1
 path: desk/reviews/task-cc35d-tags-y-reemplazo-namespaces-domain-tree-y-desk-replace-por-la-api-de-sldb-gd27-gd22/preflight-1.md
-source_hash: 1903b00149e55f09c33593710a44d612ca5cc4b011b76d6247b7c20f3263c309
-content_hash: dac03899411c10e48696dcda989826133b1d56a2be715f073c9f73b6a8e1eae4
+source_hash: bcc999f7f3d49d528fcd06aa0ecc3e39472fe66ca73f29d4e2461eb978b7575d
+content_hash: 618f6b08bdea2472cef0d4fc628bd16b6cd522f244a064acedad1e1c56dbf6dd
 field_hashes:
   id: a619bf7274e9a95b47eb573381ed981ef7a604f752739de5284c1a26f714098d
   title: 30b3f3ae23625fd5a9dd4067d040c03420b93502e00bc0cb657e26c145c63492
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: e4156b5339b3b2493f999da02df3537dc50970af8b8274e4dcd95bc404617cf3
   disposition: 80da8692661153cd3d3afae06d257b8335be1d86be805605f8d1d55f8fb102cc
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-10T12:25:00Z'
+  at: '2026-11-24T17:40:41Z'
   authority: generated
   via: save_document_payload

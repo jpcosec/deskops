@@ -1,7 +1,7 @@
 name: review-task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph-preflight-1
 path: desk/reviews/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph/preflight-1.md
-source_hash: cbf2e8fa260e48006fa3d4fb0f3854f976312f1a96b438342fa260041205328f
-content_hash: aa8cc3aad38d5cfe7d12ec3c1e79b6f2f3b632f1f4337831d54f9922f57d5357
+source_hash: 86795f7565770832044f2dd84ec36bb70967fa7e5ad7a32b7e34155fbd1005ce
+content_hash: ffe6a3d66776d8b9cd657366c4140cdff71ec0f661f1fd91ebd558d285d4ac76
 field_hashes:
   id: cd014703750334a00c6e0bf8cba6cf411b5fac4edb9a356c0fb9f780ce879fb8
   title: 477a15103972ec7adf994d505456ba812e9cf36d1f3be340981601a808d377dd
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: c9f246a3dfaed34d627217487489b53de006a60a1f425b45aae3e3d5f8897ac5
   disposition: b8c59cdd5858655e23d356fa574b3529a2d96560b9957dfba4175a573c3a3466
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:07:37Z'
+  at: '2026-11-24T17:55:43Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el-preflight-1
 path: desk/reviews/task-integrate-puede-terminar-en-un-pr-a-la-rama-base-declarada-modo-pr-en-vez-de-un-push-directo-con-el/preflight-1.md
-source_hash: 19a115c114d3fb25aac03a4788ada054eaa8103835d15e6aa764e3605148de00
-content_hash: 2cca8226a411982885c6fa8778ac38ca5caca0884adf21319ff76795dd4f1af9
+source_hash: cc44e005588ffb541c90725a0c90f396c1dce7ffff7645481c16a403a75b4eb2
+content_hash: 421aaa051453a3d88058da35199f29a3ac0c89f093e6bb4ec76c77d1c1eb632a
 field_hashes:
   id: be2adb3f3b3716940b1655d51ac79cc474b3da27fd9806005c8dc62bd4840914
   title: 488a2790ffea1ad0f0d1597296a72c94d922f0edf67999fa35508388acc87153
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   summary: 6bd59504394753370f7a431c7df40d4210c806bcaae4667b47f298b75b795b80
   disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T21:39:46Z'
+  at: '2026-11-24T18:08:46Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

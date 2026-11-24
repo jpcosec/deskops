@@ -1,7 +1,7 @@
 name: review-task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace-evidence-materialization-1
 path: desk/reviews/task-los-contenedores-scion-de-deskops-traen-un-python-que-puede-correr-los-tests-del-workspace/evidence-materialization-1.md
-source_hash: 0d5d12344ff17acc8a880725566123ac9775a93c69f878c5249cac214220a95d
-content_hash: 84f502f186a36192dec4d3df8ee5b03e4dd8db8e660908a47e5458c1a4302731
+source_hash: bc43dd90f692375840a6874fc1f92ac921dcc1ac8ea92e933fb9c606c46f3269
+content_hash: b736ae1ae74f1e36a177e55dab2ec32b7f94976d0d3a16ab420d0369d8944151
 field_hashes:
   id: 71a03244187e76f81a652207019989bba51bf62e170b4291ba9436bc0ae0f433
   title: c25004124972814f527e7a0a111787d4c75f2d8eb8e72e141f82e64e533af597
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 7bbda6c72c56700ac912f440715bbdc5d5e32e399f4d55e821805145117656f8
   disposition: 5271079b33d2f7a9a2c5ce1aab2eb1840ee9764b776ff57e3526fdd720b49773
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T22:20:34Z'
+  at: '2026-11-24T18:14:36Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo-evidence-atom-1
 path: desk/reviews/task-deskops-review-node-acepta-ids-de-nodo-con-punto-como-ws13-1-en-el-subject-ref-del-recibo/evidence-atom-1.md
-source_hash: ee1d61b02b44e776d5fbb0c6b68fe5e89b3b9aad47b6733f7b89929a6413c2c3
-content_hash: 51b102de767b088327ff9c951dc3d2492c6a3fbe43d3a5d51a324301fa8c32ce
+source_hash: cf15aa85e0355629519d79f5b4740aefaa199aec7d3e470a56d3b2a29cffbd01
+content_hash: 380c1121a27a39ab3ef51f0a564032992d94db76db8e713e15c09fb7e84c28fc
 field_hashes:
   id: ea1c17e14ff57ed5bf63de14be4bb93efe899452d25d8a55e2c3fc8a64022d0a
   title: 443e1be3b75762082160aede034fed359fda88a03d32e1ea9d640b303a676d31
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 189231d3f8bf1c61d41e9712c8005ed44b32f067a0b0cff70b87d3d5daf8d31e
   disposition: f6a7c9ecb9e9e07e3b4474b34134dce5c4e95ca277a9adad6509def8d8ecd20c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T03:18:01Z'
+  at: '2026-11-24T17:54:29Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

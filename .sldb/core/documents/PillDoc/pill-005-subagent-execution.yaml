@@ -1,11 +1,11 @@
 name: pill-005-subagent-execution
 path: desk/contexts/pill-005-subagent-execution.md
-source_hash: 2e0ea89eababbd5cdc7aca4f0bf515b3e7b9f20c3cfcefcbf9b974449bc9bea7
-content_hash: 31ebb6f01f5d038b81e358e63f19cc2621e4d64227bcf1649ba39d90918c8774
+source_hash: d2241f324160db29becee04781f41275aec15b7942add6f0f3bbeff3f349873a
+content_hash: f33641956fbd7a5e5572d16281f0da28b8d39e246c9bfe22f7584f17dd02dfdd
 field_hashes:
   title: 07a57d1f3d7103e64a23baaf8123b955f0d0999562bf31c9695e578e2d05d04a
   id: afb60f03beeb4c3528a2464dcf3c91d3cde89b3dc7842c2f403aab2fbe5a08b8
-  tags: 8cc30a01ea332960e02af70d25c39e4e41c44a2af6120032b119f68a38a3aa45
+  tags: 91d1776dae1e52edd5f2f45f1bcfe7acd1e9c3d153de345e84affbe4df25ac63
   what: 5e164db203b75ade37f98dae31dcf280b06fff88bfc8a44788f32fde508df37a
   why: aae26077d044bbb3e0c06be0e48c9a38cc0dae856dcb181e615f01c261bb326c
   when: 28ecca633e033b44bef62ff179c53e95c767d222dbc616f7cb51cb86190ea782
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:subagents
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:25:53Z'
+  authority: generated
+  via: save_document_payload

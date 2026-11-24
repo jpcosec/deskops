@@ -1,7 +1,7 @@
 name: review-task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30-evidence-document-1
 path: desk/reviews/task-readme-y-docs-dejan-de-nombrar-spec-artifacts-spec-fields-y-specregistry-borrados-en-cc30/evidence-document-1.md
-source_hash: 18f7b8b514185462528082db72910d3e74290af020d3bbd9e2bb8dcf04685cfa
-content_hash: c30238d02f2de5b324c45bae0fd55f5517b86f1481b86940abdb52f767733bb9
+source_hash: 6f26acb7775ee762b3ed75c35499ef728b3cd2d79086079bf96dff4870713a02
+content_hash: 4442c4203178ef257ac5777f9a2cd06ee37bb5e4bab3397b7a235bf2a6175cbf
 field_hashes:
   id: 6f03f1c8ad63c79a14fc69943637786e189c15d5438e5022355af61c6b4a6db4
   title: 994c40ed07f919bcaeca70093934434316feb1cb2bb2b5072ea9cbad72bcfd7a
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: d42db65b7016ce090a0ba22cb5f1d739b773624b89ea4cb2396811e026bf6dd2
   disposition: d7c9f8f77dcca5702834edc9a073c4b9db73580634b3b50f2e3e39d8b76073a2
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T18:25:19Z'
+  at: '2026-11-24T18:18:02Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

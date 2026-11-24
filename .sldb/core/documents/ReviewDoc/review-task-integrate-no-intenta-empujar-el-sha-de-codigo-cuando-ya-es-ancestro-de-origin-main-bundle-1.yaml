@@ -1,7 +1,7 @@
 name: review-task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main-bundle-1
 path: desk/reviews/task-integrate-no-intenta-empujar-el-sha-de-codigo-cuando-ya-es-ancestro-de-origin-main/bundle-1.md
-source_hash: d38112b4213ed0c301643f13dcdc8161692860c57fba13e03c776200cf8a30e0
-content_hash: dba1e10744c1bbc65e448f03ae9ce53a80b0f158765ecd6f2936b4b55fb0ef89
+source_hash: d88d2e19db1ec31303a0a7717146912258025ff8bdb76c23c9ba026d3c12f940
+content_hash: f5a460b016c68aae8de6d0c4503058886a5a019465746904e440824150f946e3
 field_hashes:
   id: 6cc40fae385a53b1c2e512aa3257143f06001ef2140bd188f207d28fe27e48c9
   title: e7c0fb4b77f9c0612bd414f643b2749a69b073e4308a06df4931d9f116d0ddc6
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: aad9dfe7b6c75088af387676031e51468467a069ce89a19925f6c7b70b176e12
   disposition: e6af46d7e122eba5a3324cd39f58ecad23ca61ce8dd96a0d569d3984ec95e30d
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T05:14:49Z'
+  at: '2026-11-24T18:07:59Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason-evidence-materialization-1
 path: desk/reviews/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/evidence-materialization-1.md
-source_hash: 3189229fd02810cd9a7242d587bb07e2d35d78556512043c522a3e309d5631b9
-content_hash: d3ae086ac5001e03a97de066790d6173904f37f3c75441c6257c38508d8e5b4c
+source_hash: 551f5fedb2405311d654375c65d2b575cfc74f75ed67cd199fa18237ce089dbf
+content_hash: 6986a057c0d73718e8323842fd96411342a0c6974e5080c0f128fcfc33e600c5
 field_hashes:
   id: 7416ef6cce4c8177d1206e1703832b080a9dd244e268cbdbc2ccaf3bb9559172
   title: 74aedb9c8e1e0a6a64c66ef47eb2fb763252c28f8bdf4168d693abfaacfd7009
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: dd4776be992355325ede484d821f82550ef973a7ddd116a100bf4a4dcb663df6
   disposition: 059042adb0aedb1299d457c1a197c02bd81c773410ca77cb1cfaea69017ac870
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T13:31:34Z'
+  at: '2026-11-24T17:53:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

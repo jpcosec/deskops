@@ -1,7 +1,7 @@
 name: review-task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis-evidence-atom-1
 path: desk/reviews/task-deskops-init-id-fija-project-identity-deskops-repo-whoami-set-la-cambia-por-cli-y-repo-register-avis/evidence-atom-1.md
-source_hash: 0b734791b82f250c1e63f81aa7fcb1e636b6c91237cf94214b46733a8a0263c2
-content_hash: b5da4fe1eea29d104f13b78d7891cf95f1ac7baf85262c37bdc65f7ec3432cc2
+source_hash: 6cc7b440eeadfcfa83e7db6afaff6b669fa2055a898e18928c137fdeecb03e63
+content_hash: 9b8b83f6f48df4c5f8e8b2958ae1e17aae9f04c6e56c25f739281f96db18ef62
 field_hashes:
   id: ff4b8b88bff972b65cfff4431e3a36834a1a11097fe3cff05ebc58701ed5a128
   title: 3393d866402ad750898bb9bfabb735d4f38488c1a0718badb1e02213cf97c00e
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0a0b39736f57010bd34e2f742399831be574bef8eacdad9918d99b4ffce4f19a
   disposition: d17d35ffe0cf675fdf7a07c243d560732b9191dcc4fa4abb50d639db2d9520c6
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T12:34:57Z'
+  at: '2026-11-24T17:52:09Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

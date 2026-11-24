@@ -1,7 +1,7 @@
 name: review-task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa-preflight-3
 path: desk/reviews/task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa/preflight-3.md
-source_hash: 720c4585cfccdf0e2bb8567ce18a37d14a435387e25e7eee480e58188804d1d1
-content_hash: 21b7785fe9f505e3daadcd351127fa4f3951a523097479b5b9c8ed90fac9d608
+source_hash: 4da60b27935a3e8bd0a32e5c7741aefdcf1df72ffb65f194db27b57de0b8b327
+content_hash: cbc822c1bfae94050fcaa8aedbdf4d8805775fcc03cc941a357ba3522c97f6e2
 field_hashes:
   id: 98dbd4295a546748eb79f783028c8911bd3b02ef4343bb12251bfbca091ea3b0
   title: 5920e5de7e40c4e1cb1ad6c24d86d10242e1cc859714d0b0c4d164ea01efeadc
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: f5e396f26445f7e8785d7d86977c8aebf3a59c971bf717ad486f2d7d0496e89f
   disposition: 828fc1be860706862d445a5f03d82f45398ae1accb4eec942ce6675add13dd71
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T05:37:49Z'
+  at: '2026-11-24T17:55:35Z'
   authority: generated
   via: save_document_payload

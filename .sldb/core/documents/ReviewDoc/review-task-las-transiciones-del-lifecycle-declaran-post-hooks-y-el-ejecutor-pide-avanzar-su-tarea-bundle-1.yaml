@@ -1,7 +1,7 @@
 name: review-task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea-bundle-1
 path: desk/reviews/task-las-transiciones-del-lifecycle-declaran-post-hooks-y-el-ejecutor-pide-avanzar-su-tarea/bundle-1.md
-source_hash: 492dc0d53175fdc031e9f0bd23d8603c641b7d2fe2b37598f143a0f6188e51be
-content_hash: 01143ed44681c45946e7bcb19bfdf1e9c34e4851af3158489c6901369a24387c
+source_hash: b68bd5b0597b0f17770858373b80eb830685642d342a781ae2189c4276389990
+content_hash: 15c58ba140e4ffc616d86796fc690b184aa49feecbde98c49a707fd92a3ccd60
 field_hashes:
   id: c22ac7d33614cbc99f61a54b52255486a8caaf712024291b2f953ac5d97b0731
   title: 85815dac212a1653509c2938bc3cd31372033bd36f6fb252dc16f0360cdbfae0
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0dbe4f721a73823ca7a07f6ac02018b1b7d39d42d6980fe432762b93761c5844
   disposition: 20bb4b2971d5a2c8947a1eae57931a16bac61d81f28fcf9b44888373edced89f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T20:14:53Z'
+  at: '2026-11-24T18:12:32Z'
   authority: generated
   via: save_document_payload

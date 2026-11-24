@@ -1,7 +1,7 @@
 name: review-task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar-preflight-1
 path: desk/reviews/task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar/preflight-1.md
-source_hash: ca1ac51c1c516387c7872d9a4dfd8f94d25e4dd26e08e1c1b0b22e9270a02cf6
-content_hash: b8fddb731791df6ad3cdc0fd8b1547c459ff45424201378617b75e88a6c0eaf5
+source_hash: 3159ea5d438826198ae9cbd38c8f0cd261ac481ba38530a398f1890a6d056d3f
+content_hash: dea39e746f8285536743bcb23bd510d1ecd235335935040239e11769d763944a
 field_hashes:
   id: b2688ee41ad77e8c6c11f3cd1039b1c280eb966363b48775989819adc32f840e
   title: 0ef973ed575985d2b517ef0123e94ca316d36c408df4f574fe04ca0abb0355b0
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 05b1602c85e077f0e0c76800e569093b49a15d397a98cc286d7165a2f5a60ae5
   disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:11:31Z'
+  at: '2026-11-24T17:41:19Z'
   authority: generated
   via: save_document_payload

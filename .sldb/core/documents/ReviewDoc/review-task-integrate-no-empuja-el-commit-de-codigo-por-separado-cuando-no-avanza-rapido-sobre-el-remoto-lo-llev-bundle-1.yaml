@@ -1,7 +1,7 @@
 name: review-task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev-bundle-1
 path: desk/reviews/task-integrate-no-empuja-el-commit-de-codigo-por-separado-cuando-no-avanza-rapido-sobre-el-remoto-lo-llev/bundle-1.md
-source_hash: c1d0f43aea7358d3ef871c0a588daaef4c4cfc87cb1653c28c42c0292d22f1a2
-content_hash: 5809b52dc56c71724d15000341e2b78651950bfc258e0bcf7b049935133f689d
+source_hash: 642c1e89f426d0a0de159f7a93ee0ec85bbc61cb280368fe024b5d5bb5c67744
+content_hash: 289c4e57442524516ea2d6632b4780ea465751a8e8365775d055d2d2ee0f4e71
 field_hashes:
   id: a7425a5d7a3ae9bb42b77da511301cc1d9199d59cdb3a8b19aeb093fcafc0789
   title: 97382b797ffb5189243f89b76e03e7681338b160133df0d8226723cef97bc004
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 8443627e6bd941ff12220373f0e126b618016b751c2db611ccfdba2c4e8d4186
   disposition: 3df2681fd0148b65eff11a6da44ecd18ddcf517679ad6c25661165103097603f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T05:14:44Z'
+  at: '2026-11-24T18:07:37Z'
   authority: generated
   via: save_document_payload

@@ -1,11 +1,11 @@
 name: pill-ready-phases-prove-dependencies-and-non-overlap
 path: desk/contexts/pill-ready-phases-prove-dependencies-and-non-overlap.md
-source_hash: 94d70a8848564cc8ca03f625d517e1be662999673386f7b87752906dad44e5e1
-content_hash: 7de3323ea25f220ffc18f4154523c3cf61f5738fa224006a8e893b93e4cfe270
+source_hash: bcdad795631fd01ed79703f9af92ab857099840769411ecf25af6f2f970bd554
+content_hash: 3256fd0bdccbaf4ea327496708b0266630b4a450ace0b07f29f5a03e954e2e63
 field_hashes:
   title: 50866527c7b485ea30bd4320f421338bb1ccffbb66b1f29fb4e0e2e6c5b51473
   id: c13356287f143e40c6c74b497b7ea122a6baa318e7400d949b8038f418027f54
-  tags: 4df0d924b8df149e4a01e8bca5668dc7530a548374c5faa3d1084ad8646cebe7
+  tags: d4000dfba7ada9e11a278d25a27541c663965edaae3bfc0b6deac187427275f5
   what: 0cb13437fb02f49c384e3dfbdd4ffb8bcf7d5db91cb72db72a301b9fc0b91f7e
   why: 962d6ddfd53965321264301bae724452c80f1b19c5a19857cf7fbe6e3427c529
   when: 016f76d514448951f6cd2b9c9ec3c22865a7e2033619cd6447919eaca66614c6
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:phases
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:59Z'
+  authority: generated
+  via: save_document_payload

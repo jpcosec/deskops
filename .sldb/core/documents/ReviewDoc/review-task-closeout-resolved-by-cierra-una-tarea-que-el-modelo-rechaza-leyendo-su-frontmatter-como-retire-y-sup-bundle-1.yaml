@@ -1,7 +1,7 @@
 name: review-task-closeout-resolved-by-cierra-una-tarea-que-el-modelo-rechaza-leyendo-su-frontmatter-como-retire-y-sup-bundle-1
 path: desk/reviews/task-closeout-resolved-by-cierra-una-tarea-que-el-modelo-rechaza-leyendo-su-frontmatter-como-retire-y-sup/bundle-1.md
-source_hash: 060226a61b7adaa3a12728792a4633bcc72daad77fdbb9c85c6a2e5542f339a4
-content_hash: 78e053a4f45e7be0f0a3de5540bd342c45aff577fbfe0129cae5c7e2de0e74a0
+source_hash: 148e8a2fcc594a2b6b709f036df2f63b7f488ded13f88fcfe336d7df9cde3899
+content_hash: 1813b6457c85c046e4c40d444227b7a57c9261348304b1b981f037ed989dbc50
 field_hashes:
   id: 633c44aebb09d8e5c5d95e27f019175b96e1625ffe42ad46c69c1ef4de3c0589
   title: f9991658437758eba0a654f0ab2a3fb57eb93fecd1ec53d5b6448d14f98146f1
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0aa1fcdedcb9fc214485744364db658da84cf0dbd021a310cbb007ce93722559
   disposition: 93fb5ca707345358c94a4d1b6653d2ccc99c0de2f434080ad3cf66ae24f89cd0
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-11T17:43:46Z'
+  at: '2026-11-24T17:43:36Z'
   authority: generated
   via: save_document_payload

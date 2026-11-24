@@ -1,7 +1,7 @@
 name: review-task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2-preflight-2
 path: desk/reviews/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2/preflight-2.md
-source_hash: 2f5180f7974f8d3540f67df95cfec051dc8f433fe4a5ecd8f10dbb13be54a573
-content_hash: 641c34e365be69e157f3608c01849f983f77496d07eae2a7a8eebf8790670179
+source_hash: 54e33a3317b08863d5b913c139f7fddbcc1b6e0cca37615b8f8994c3e2d9b70f
+content_hash: 1aacd0b96348de6a31a3d2f5079d4241395ddcce5675402e5dac3a5d04e2a5fa
 field_hashes:
   id: cc1471783386fc041dbba58496d5fc0fc7bc9c1f53839782a1e2fd66b0b1665b
   title: d1cdcd66a84a23e58c6de5b89c8353fd12dd7b1ac441ebdf63da4489a58481d7
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 23c189087a6c45ff7dcaa8c2b894774d6243ddbc8b7f8c2103fbb490c0fb59c1
   disposition: a8c14ceeb0591843ac87f4406365b7c9ec486a50ca0a7d6778388a1f7d29fd90
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:33:11Z'
+  at: '2026-11-24T17:41:33Z'
   authority: generated
   via: save_document_payload

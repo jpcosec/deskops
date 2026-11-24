@@ -1,7 +1,7 @@
 name: review-task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task-preflight-2
 path: desk/reviews/task-deskops-dispatch-reap-encuentra-los-agentes-sin-el-archivo-de-la-tarea-el-ejecutor-commitea-con-task/preflight-2.md
-source_hash: 3e6985b634b8eb54d30c60e6c0e5c09e910fe3d567ff31cf829dfca86a120498
-content_hash: 2282d4ff7f12a7077d5675ead0fbd49c1e57b3184b2191c10f6e235194c95e10
+source_hash: ba64b01d0a3c69b1953629519afcb116a0ac6489a5374eca90a0ea1e65245abb
+content_hash: bf419b7533a8b93a971f7a4d843f5ec1b0c1b5d43680ed145036b3cf700e3f77
 field_hashes:
   id: 947a61d98c0cc9d65f20182c994d907c2b41b94e6c68b16218451bc0556fdf06
   title: 00a21c74158e3495df3cb66e42ad33c27dcefd87159ae1c6c8c8759d93214fce
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 68845922d1985e89d05d4d7c9ace99397e38ed5743364d147b6c87f883114423
   disposition: 96c33909009c3c0d8e73b421d8fa838fa3d62b1bc4adbca6a1a19027016d5277
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-18T16:44:47Z'
+  at: '2026-11-24T17:51:04Z'
   authority: generated
   via: save_document_payload

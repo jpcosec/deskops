@@ -1,7 +1,7 @@
 name: review-task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk-evidence-materialization-1
 path: desk/reviews/task-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk/evidence-materialization-1.md
-source_hash: 67a98b455e8b6e1d20bba7d7d7859fbe116c7ffef06681a734127351328ec780
-content_hash: 64c83a97f060779eff1dc2d1fe068d1b10761a0a41cd3fd4c8e4ddd710c494f6
+source_hash: dd7ca93e7925026626a6385545848d990ad50359b2bef4c57f2f75fa7a964ffb
+content_hash: d319d38f954c2a83b4ac279d8875bc19d84215ea24684c7122383a9849f25874
 field_hashes:
   id: 1d46a1dca97e61aa91630f187fc536626fc0ab26e92ef21dca94b938390c9a16
   title: b2a2c9fb784d4a15b9594ab59378a668a4d4aa0d2b4a39b924f1419e0b64eb39
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 5b8be99b9c88ef4f5914304470fc321a302d80fb3d10c6a539864d2d3600a50e
   disposition: 893d101b5baa2eee9374372d280adcc99144ed16ce46b6a14b86faa14f1f3d62
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T09:23:40Z'
+  at: '2026-11-24T17:52:38Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

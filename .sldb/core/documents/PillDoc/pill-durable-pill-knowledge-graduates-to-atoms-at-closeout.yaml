@@ -1,11 +1,11 @@
 name: pill-durable-pill-knowledge-graduates-to-atoms-at-closeout
 path: desk/contexts/pill-durable-pill-knowledge-graduates-to-atoms-at-closeout.md
-source_hash: 0ddc822bd37c474643fb954cb0312c15f4390ef9a829f376f4f185f6571f9613
-content_hash: f91df751e548f72e0c9d40e077267b889edba1cb01dab8ad820ba62585d06296
+source_hash: f0d1353855312448da1e723b29230ee66fd26cd9af3836fc4fa6a5e9fa3c3d6d
+content_hash: a3eb42a3321a6aacf01748f5d63cea0286591210364201bf5345c47ad80c0f91
 field_hashes:
   title: f091398b87741ea0e68f22dc5cf896cad79fd8fc0cd6a3de72415488bf23b3e4
   id: 98f5c8d425de541127b5a000549b88dced0dd70ee31e2d9b2b207ad703350390
-  tags: b68116c24cfd500920d3dcee7fa10fbe5e02870b1aa578a1286e948afbc0a0a6
+  tags: d0f3bf29bccdc5df4a4d3943a94c2306f80bd4b6f133f70e689888065bc2b005
   what: 6bba11834521d9ab52799e9cc83ccef2868182771f43dd6d904bc9f7ca8c9c50
   why: 410ef7dad43b685443417b086a993955bc9201baef7c707e6dfad4ccce64670c
   when: d4faa1b71a4751075d8bdb3bfb27615104623bfabcfc67928e40020c99b82271
@@ -22,4 +22,8 @@ semantic_tags:
 - topic:pills
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:29Z'
+  authority: generated
+  via: save_document_payload

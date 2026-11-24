@@ -1,7 +1,7 @@
 name: review-task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada-preflight-1
 path: desk/reviews/task-dispatch-start-tester-no-lanza-si-la-rama-del-ejecutor-de-la-tarea-todavia-no-esta-integrada/preflight-1.md
-source_hash: edec427e7bf99b4baa80bc7b282657f6fa04982d8ba917966ef5d94ef3353290
-content_hash: 36ae6783d133175c8a59c5b7206e664125d0d1184d4353093ae170ff86e7d373
+source_hash: 395473e4fc34f76770bd7c551ef04830240cf3266221f651c69342fc5e96abc2
+content_hash: 48675d79ec09fefe86243f953621fa018ea93e66bf27970489c80eb38d205087
 field_hashes:
   id: b2574ecf86ca29a058eabb45e5d4d3adcf66044b1efe77c55078ece3c73bf8a4
   title: ba20da40658deabb58adcb261280df47686cd691d579f4551bf9455fd102585c
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 118807834cd42d2706763a2b45ddf55b1d774eab5fe99c972b86736e4a19afb6
   disposition: 0eca8222f59a5a5b83c5a44a6a1b3755cf85c440fc1ebda0c1ac79807d341550
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T06:59:05Z'
+  at: '2026-11-24T17:59:54Z'
   authority: generated
   via: save_document_payload

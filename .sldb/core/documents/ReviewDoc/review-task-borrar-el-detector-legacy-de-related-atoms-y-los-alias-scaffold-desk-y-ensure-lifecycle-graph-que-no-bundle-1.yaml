@@ -1,7 +1,7 @@
 name: review-task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no-bundle-1
 path: desk/reviews/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/bundle-1.md
-source_hash: d756d9c33b4f4c950b6e6cf25de57b11a2ed7cfbf8437d01d0572401df6ffd25
-content_hash: 2d6acaa9b49d3ff47a9d488bda8c52c8b9ac68fbc31279c6cdf23ad9aed724c0
+source_hash: f8b0e4f6abf546a234c2eb5a8868980265744709f0a2ce595c3fd73de8b19afc
+content_hash: c7997bd05711f51ecf39a451d973591f1878cb8dfcc8e9c037fe88d1f8e73833
 field_hashes:
   id: 9b4f694c82be4e93a2a2899f80de302bb6a2760671960b6c75da53817674333c
   title: 85c8d34d0b841eaf6bc7ad26613c1087c2c4eff26047fa90080793e8107a6181
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 900761aea01bdb8847997d839e3ca6fadfbbdd2ebf1f5863a930163b41745cd3
   disposition: c450bb2c98ca3b620595d82d154f0252a322816757086556a841b89765482951
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:47:04Z'
+  at: '2026-11-24T17:36:49Z'
   authority: generated
   via: save_document_payload

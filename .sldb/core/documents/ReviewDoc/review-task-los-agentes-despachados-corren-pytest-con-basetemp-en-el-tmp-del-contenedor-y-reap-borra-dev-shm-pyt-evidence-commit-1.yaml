@@ -1,7 +1,7 @@
 name: review-task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt-evidence-commit-1
 path: desk/reviews/task-los-agentes-despachados-corren-pytest-con-basetemp-en-el-tmp-del-contenedor-y-reap-borra-dev-shm-pyt/evidence-commit-1.md
-source_hash: f643b44fd8fb6446073003fd50713d6f13fd7bbadf88ac9afaedfd7d0b3c8b34
-content_hash: 19c80727ec3695017dccd355d7b369cd9219500699e88bafc74155df007cd05a
+source_hash: 6b717e805f6122bc2b3a4c8eef617df20fea341d969b2a3f223dfb202ad65be9
+content_hash: dfed726b9aa82a7b715b9e73c298ecffbf3df6036f1b40c8cd225b1177faca73
 field_hashes:
   id: 3adced55fab87612e3fcb561530147c1c5fd35c8df6999d4dba4faac5fb3af15
   title: f09a0847f803e025489cd59ba9cbcc18f1d9dad42f646d7489156460d1cd3c61
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 179117ad788b4a4a0be129bd5c609c89ab3971a9f5d2f5e3b9617080d90aeeb6
   disposition: 5852d7d6ff26ccecdfa984fc52a5ff9701059e35c1b257aa270277b2ec6d3874
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T08:08:18Z'
+  at: '2026-11-24T18:13:53Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

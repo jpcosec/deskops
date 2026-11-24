@@ -1,11 +1,11 @@
 name: pill-project-local-config-carries-version-and-sandbox-policy
 path: desk/contexts/pill-project-local-config-carries-version-and-sandbox-policy.md
-source_hash: 88fbd655fbd34bb9c9deb682dd75b3349d7e974495911a70bf30dbd44bf1c388
-content_hash: 7c7fce0b12f933ba1f47add46f0cd18c14645f9fdab292595b7eb03c73579137
+source_hash: 9fdf2ed9dde7d30cd0a30e80f02250034e69dcb067655c87787668a26eeba569
+content_hash: 2cdca829a54aefeb990fa9719582de9760674f40fea6ccefe1db52226c3b0e47
 field_hashes:
   title: 2fc24f090469b0b5744e13fe9a7131f30f31336a5902f94b50acdd5ca3e36cd6
   id: 74c72818e54a286155393d63192c1d56ccda6ace6e34be3a56660020be5703a3
-  tags: 2f107400293e276ac2d6f2f13844fba6a9ed461482feb1c297b5eb8179ee6693
+  tags: 563ec83ba9f036de0a75a915808b58b0f76a64c9dc13ee0e8341fec13d93275f
   what: 9c660da38ad1a5b6e523c391e0c37be9c85b00404d90589e266bc4e91d5e713b
   why: 9609810916dd7cf797f5b1472b0f1bd0436b16e11bc36aee18b8bb5733dcef03
   when: f800cdb80bbad9e31af67eb06dc6ff335e491dfc0d65d177962d1c9febcef631
@@ -21,4 +21,8 @@ semantic_tags:
 - topic:versioning
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:55Z'
+  authority: generated
+  via: save_document_payload

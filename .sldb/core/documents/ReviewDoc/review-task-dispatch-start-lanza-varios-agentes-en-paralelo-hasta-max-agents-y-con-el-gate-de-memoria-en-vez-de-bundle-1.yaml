@@ -1,7 +1,7 @@
 name: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-bundle-1
 path: desk/reviews/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de/bundle-1.md
-source_hash: 4c253af1526c260ea232780ffc2f862e01ea35129d6c63c52d69e93c2298b5c6
-content_hash: b3884466a92d2062d2ece6412c2dcfd1b290aa1031fd518152209ba1d5a4dfe0
+source_hash: c2bd675ee5e67e1d69f3db16f8ba900116a05c0290867583fb29ba26190ac75e
+content_hash: 55751c297a3ec3b3243dd1b844c979eb3095b9cff98aa5115c56d64900a7d039
 field_hashes:
   id: b41d903104b309cacd36ffe90acc7ac22fd6cd67c8a97e6633259922220ace27
   title: 05adebc70c34d9c557bea8e56ee0044c794482c2795616b2133526231e53d4e8
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 16f3cd18debeb81be40dc841ce5d73d98799e9934150496feb5c320ac2c5260f
   disposition: d244fb3f2bb1539a34104f1bb94cfc3c269218d9e90b4c5a45f59da747dec909
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-19T21:44:51Z'
+  at: '2026-11-24T17:58:20Z'
   authority: generated
   via: save_document_payload

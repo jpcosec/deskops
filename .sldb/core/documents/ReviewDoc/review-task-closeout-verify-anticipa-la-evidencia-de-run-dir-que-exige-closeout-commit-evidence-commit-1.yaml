@@ -1,7 +1,7 @@
 name: review-task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit-evidence-commit-1
 path: desk/reviews/task-closeout-verify-anticipa-la-evidencia-de-run-dir-que-exige-closeout-commit/evidence-commit-1.md
-source_hash: ddac23357c32cd1892f0737aa668ca0dbfe56ec0cbd3a026513707d44a244991
-content_hash: 0c72d10aeda08b43e96079cb3ef3c25c9031843698eec58fb218eba24303a6cd
+source_hash: d1141e984669c8eaeedb011f3d94f4f2e08229fe230daf46d53c921965946760
+content_hash: 6dce066dc12b2a46c8d7989e192c477e999f01768f57c5561edcdcbcd2431328
 field_hashes:
   id: e2f08c93953e211565963644baf6cba190f8faaddff1806b24ed5e7498ad2f05
   title: 46c55e36782f7a267bc27b4659069c911e27ad7d32d5e43f3158827ebafbd382
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 7e21edc8225637f77a50f8ac2f358feb64929f37bcf5b943bf6049fb8485de04
   disposition: 532c97afb4392eb47274243e4363f2dc8194a1805ff0483a3aa0b90dcee61c44
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T23:31:02Z'
+  at: '2026-11-24T17:44:22Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

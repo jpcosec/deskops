@@ -1,7 +1,7 @@
 name: review-task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor-evidence-document-1
 path: desk/reviews/task-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal-sin-wor/evidence-document-1.md
-source_hash: f7ea32bb56a5f97c3868519ca63d6e1c598d34254c4c95f0b019491cd924e4ea
-content_hash: 3b82c233f3d76e81f5f240b82df86e2904cfada06070f913850d3e304e28c90a
+source_hash: d09e5f5cd7715f37fabf5454f417347e0650f95de91cd2161d93a002435dd9c8
+content_hash: 55d7b3a75a1b7f6e78e439a74e494511447ae3a46993c1ca7b0262352508ac78
 field_hashes:
   id: 63f3f859f8a36267e826e304fe667ada7e1bde7f6aa0a86022618e3ce0f5c9e1
   title: ff51886b22c32f442823b86e87f06966f935a42ed0e3fa18d2128d471a98652b
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: acb8da12c0666464f5be835671d2fa936890edf4580fc0af2a66471963046c94
   disposition: f37ed35d1320fd6a2f7910a839dfd3be9259ea090a4dfc5b0444608b03cf1de5
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T20:28:50Z'
+  at: '2026-11-24T18:10:32Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

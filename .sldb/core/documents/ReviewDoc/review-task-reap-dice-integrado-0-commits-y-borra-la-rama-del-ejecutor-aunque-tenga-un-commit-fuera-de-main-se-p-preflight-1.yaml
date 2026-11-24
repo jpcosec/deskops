@@ -1,7 +1,7 @@
 name: review-task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p-preflight-1
 path: desk/reviews/task-reap-dice-integrado-0-commits-y-borra-la-rama-del-ejecutor-aunque-tenga-un-commit-fuera-de-main-se-p/preflight-1.md
-source_hash: 58dc07a88dae79043db4195c8fc487f863daa46ddeacf2d8c33cee31c4cb3ae4
-content_hash: 6f0e8cb2f7c1973a87c1a0ab627976cbf5ee2c518566812bac2c96a8e30fde8c
+source_hash: 4045e0394087250435ac5a3255059933086cfee8bf30bb6365a053af26e59a61
+content_hash: daed56c0a43831ed51f4e3446271e02ac008a309c740803e9c2ad348a7fd837c
 field_hashes:
   id: a8aa353e3a8d980d66a64f3283b69e861db53cd61f1255dc08c13e0a0bb0a96c
   title: 8f5c35d3d5217ab628059a0f5ffab9b2ddb73c39bdc2d2b5df288f7bfd8da492
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0f41514e0e8044b827e1f6672a7ba2096aff1239a62213417110372503a0eb01
   disposition: a54fa9d854cf35ceece28889af9fd4b0d2620eee38d8498f4dc26ef305986c36
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-22T12:19:24Z'
+  at: '2026-11-24T18:18:28Z'
   authority: generated
   via: save_document_payload

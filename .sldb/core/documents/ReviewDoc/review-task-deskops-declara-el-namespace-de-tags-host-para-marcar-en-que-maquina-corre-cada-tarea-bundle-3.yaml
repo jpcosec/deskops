@@ -1,7 +1,7 @@
 name: review-task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea-bundle-3
 path: desk/reviews/task-deskops-declara-el-namespace-de-tags-host-para-marcar-en-que-maquina-corre-cada-tarea/bundle-3.md
-source_hash: df3c214f152abec51ecc1beb06d00f38aa27a15c1f86563ad8870a175daa43ad
-content_hash: 307abc69dfe3dd1fcc3ddf8b3bcce73394ae367d366e4120efe3ab67c356d9b0
+source_hash: e878f3fd51c626b53341939b77c3ad5e843d20e369dff59326732cb7c5244a27
+content_hash: dd062c243e45ccebd9d8a189fc7b26d9800026b8d02a5f7e9e887425c5d3ee3d
 field_hashes:
   id: 530035359e4ac096c835987c34e8c751eb689de020a2f16738a5940dbcde52a9
   title: ceb95cc7094a0ee54f29164c942976d23d5d27ae19b22a9d1d8cf034e969b1e5
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: b93b6e41f9478dcb7c0fb0f3fc6853b742e1e3ee8da40c0a4340a014cd10870b
   disposition: 86e9a6a7f7b541daa9751a0fad6f62f974ef6c8399aa4131b95971cd6effb6ae
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:22:49Z'
+  at: '2026-11-24T17:48:47Z'
   authority: generated
   via: save_document_payload

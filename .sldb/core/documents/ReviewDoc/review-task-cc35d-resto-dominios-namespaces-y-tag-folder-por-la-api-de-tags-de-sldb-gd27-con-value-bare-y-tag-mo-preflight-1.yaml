@@ -1,7 +1,7 @@
 name: review-task-cc35d-resto-dominios-namespaces-y-tag-folder-por-la-api-de-tags-de-sldb-gd27-con-value-bare-y-tag-mo-preflight-1
 path: desk/reviews/task-cc35d-resto-dominios-namespaces-y-tag-folder-por-la-api-de-tags-de-sldb-gd27-con-value-bare-y-tag-mo/preflight-1.md
-source_hash: ede08c8ed2b6c69c820b5e856609fb159ed2cd99485a035ba332192777f84544
-content_hash: 8aa8833f53a394a10efb97246f27f0b4f26eb1a3d9185db78d8eb54cafedc2e4
+source_hash: 89fa15b37f229627cdde727c8cc1a75b8c2d71b849430440b2b312e9c3900c54
+content_hash: 5e1b4f62ca9904d5ba1046f419631398177d4f7170e4e32b0f45075ba45980e6
 field_hashes:
   id: f9ded30916d6f34b9459b9287358b7262ffb6593cd333d5690674773d89efe09
   title: 09dd9bb724401919e74b3acada9b7219d9e2f8b3ba7ae68fa89bba3635483610
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: c0ee51f8f1b81c1231f7ce056b86d8aa942b368e4d1ba94faf409c736a6821d0
   disposition: 273ccbcd51d57b027e77036c0ac77ef370ba5143b0e95da16b19a2e22ca5bfd6
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-11T14:48:32Z'
+  at: '2026-11-24T17:40:34Z'
   authority: generated
   via: save_document_payload

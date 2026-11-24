@@ -1,7 +1,7 @@
 name: review-task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e-bundle-1
 path: desk/reviews/task-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-sin-depender-del-idioma-de-git-falla-con-lang-e/bundle-1.md
-source_hash: 3ffd2edd47f55dcfb1cb0c1435a6795537ee7c8b2fa8d57fa1c4a2db4221cb78
-content_hash: 5ffbd1451f11ae0e9672cad3f95baba38102d8c572f2e61c7d2386f2386daa05
+source_hash: 38c789b48ff539b20d642718f619a8361572c0c823f2b74c6e416fd509f5fd43
+content_hash: 74d29b177b8bfe987d459a791b34b6d4a84baeb107ce860fe5c0f77629ed595e
 field_hashes:
   id: 7cf9e86eb19876274943bdf9e100becc7d131a7d557c8cc3fd90f6d8a282ba39
   title: 662fa2a03cb1b0967cd4e12d2c88b447039a6b42541dc1cb2b176d718f28bcef
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 2d3b3d824d8772277efe3030d1ae94a75c9cb54afdea482f3bf54afff85b129b
   disposition: 48f54a36d80f648525f9c2f2851c626697e6eaaedd4dd04784401cbee514703c
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T11:50:00Z'
+  at: '2026-11-24T18:18:35Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-task-rendimiento-cada-comando-cli-tarda-30-s-desde-cc32-cc35b-preflight-1
 path: desk/reviews/task-rendimiento-cada-comando-cli-tarda-30-s-desde-cc32-cc35b/preflight-1.md
-source_hash: 3398101ce0ebb277ea0b4a3f0fd69df48e5ac71d60e1896b1a06b8a7bd10bc50
-content_hash: f2ec48a83127873ef6cba3244bd625931cad849dbffe7f3d583c3e780012ffd8
+source_hash: dad8f720b8fc715d823608e4dceece5b455e6ec9666cd03a7fa346e0c42a9593
+content_hash: 53cd667973cb7bded02ba0a9fd5cce1453b959aa9f275feaebdacf5491cd197d
 field_hashes:
   id: 158de46c048617a05ceda62af09878bb688ed5debbc87f25a6a05f50bdb63b17
   title: ae234a95fca93121c2d098773941f6320c46ed92d775d0ec035a4c33a38c1fe6
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 4ed60a01a0c6053dec4b98d1840df540a73d980ef43d76a24f960a059df8e261
   disposition: ff91ad6e9b9af453c9d0244ed4609214e36694173c76ea61a678e0957e6bc963
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-10T02:37:19Z'
+  at: '2026-11-24T18:18:54Z'
   authority: generated
   via: save_document_payload

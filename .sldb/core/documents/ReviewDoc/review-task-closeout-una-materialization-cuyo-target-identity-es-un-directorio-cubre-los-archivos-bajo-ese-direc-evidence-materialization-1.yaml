@@ -1,7 +1,7 @@
 name: review-task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc-evidence-materialization-1
 path: desk/reviews/task-closeout-una-materialization-cuyo-target-identity-es-un-directorio-cubre-los-archivos-bajo-ese-direc/evidence-materialization-1.md
-source_hash: 11f74f00aa8b244345dedcc9d089a72de1c07c7efece5eee5deae36364bdb641
-content_hash: 8e74b1e192ad6dd8a86ebe99a61c6389cf39bb1cbab1097aca914a9f2a215cab
+source_hash: 6e3d9ad3ae72f6d70bdd9765160fdd6dd925d458ae9ab8613c4c26b5967b9966
+content_hash: 0a814fc6f76c66ad98a40dc3ffa83f1fb097573e9d4bcf3bd918db769ca8d6f0
 field_hashes:
   id: 1ec4ea5fa1a1a0f7b71fa5841cbbc58fcd5408a39be96d63a9cfc8f8d83444ab
   title: b6c5d4e5115c2ea7a66a8625c5659331afd5e84b34b40e8f8cc7cd2e4dcf1aee
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: e80daf48d7e03de90d1b20f8b2801f3f0fd618eda4818b4189bb0adeea8fea47
   disposition: b7df2f083259e0a9b646c86e44e6056a1923ab19966d3ef39e870d9bd26b6628
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T10:47:12Z'
+  at: '2026-11-24T17:43:57Z'
   authority: generated
   via: save_document_payload

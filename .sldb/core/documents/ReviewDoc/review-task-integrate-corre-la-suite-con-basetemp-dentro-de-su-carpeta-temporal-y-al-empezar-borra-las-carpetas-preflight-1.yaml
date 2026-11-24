@@ -1,7 +1,7 @@
 name: review-task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas-preflight-1
 path: desk/reviews/task-integrate-corre-la-suite-con-basetemp-dentro-de-su-carpeta-temporal-y-al-empezar-borra-las-carpetas/preflight-1.md
-source_hash: 51b918843f912c3750f2394d2a546293c829833d5aa2bbe770d50b85efed3fbf
-content_hash: 33cd347e0df1f6defd6aeb6ccc4a6b8a9ce8a6faf5f8e2c274f3df2117e64e74
+source_hash: 042110236cde816357846657cc613a866340486bea328b9e08bb7e6885d0a9b5
+content_hash: 9e13a98a89420d352d31870e718597b2095289684207cd99cba1b464849895f8
 field_hashes:
   id: 16619e31666759df9814136a2f0cda2da6a37b07227d59005be3f57053b06bf0
   title: 9a0c533c401c0199196bf24e8da505ba49797c080c898dc221568c3dbbb612bc
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 60b1b7d12001144a7fbe4ae734498b10abab3d4313cea3c95f4adc6289ffafc2
   disposition: 34995e9274f423ce6374a2d993f477112cd494cea8f96f91f256eb969c94f176
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T05:02:36Z'
+  at: '2026-11-24T18:06:51Z'
   authority: generated
   via: save_document_payload

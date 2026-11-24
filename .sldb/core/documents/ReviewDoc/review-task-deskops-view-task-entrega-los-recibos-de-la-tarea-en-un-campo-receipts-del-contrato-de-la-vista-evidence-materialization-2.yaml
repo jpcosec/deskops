@@ -1,7 +1,7 @@
 name: review-task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista-evidence-materialization-2
 path: desk/reviews/task-deskops-view-task-entrega-los-recibos-de-la-tarea-en-un-campo-receipts-del-contrato-de-la-vista/evidence-materialization-2.md
-source_hash: f553936987ec01a2508f9761b89d9ee753596d7d299c78758a0576486763c0d3
-content_hash: bcbb558bc6d8a4c9f56c5d8e228be8cea9fa0ef5c97277a2b20e523190ee59ff
+source_hash: 02f22fb2140abcdb2e20b7fe48a211388c984754da741780a7c0b72990d6eb4f
+content_hash: a9a58d810e4189f5b9ff91b2b7105c45e48532f54e7d0a14f80d599fc9ce2ab5
 field_hashes:
   id: b4f8bfeec6a3f4f5e8a21662361e928eeeaacbffc546520d776ea0c99dcf8155
   title: 969552df606c5ef8467079812a65936c87e5bfbad73a643d3b363223229accec
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 9d5e567e63e2e1625eb203f8105374d682b4540ed1561588952aba6431fa3e24
   disposition: b61dc6a6ca0f71a77ac7386d218418ae4e3663ef26dbd80945693006890160cd
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T15:00:56Z'
+  at: '2026-11-24T17:56:43Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

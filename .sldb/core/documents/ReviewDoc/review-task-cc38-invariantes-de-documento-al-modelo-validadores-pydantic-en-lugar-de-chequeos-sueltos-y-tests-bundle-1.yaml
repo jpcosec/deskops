@@ -1,7 +1,7 @@
 name: review-task-cc38-invariantes-de-documento-al-modelo-validadores-pydantic-en-lugar-de-chequeos-sueltos-y-tests-bundle-1
 path: desk/reviews/task-cc38-invariantes-de-documento-al-modelo-validadores-pydantic-en-lugar-de-chequeos-sueltos-y-tests/bundle-1.md
-source_hash: cd9ed5fe6eddd1bdfbbdf59cf2ffab76ab34e456f737e3b465afb571701a79fb
-content_hash: 288c52bc5406bc4cfa839c0e4504fa0b6327e3caf88d133c94679507759809c0
+source_hash: 2971f9bdba9e9794efedb618620b641f07e0e5b5031739182b1712acbcc89ac8
+content_hash: 83fe5eedf11ed6cc4a4c09ede9bc15f8ccc51490f0f9c90951795609ed6005a4
 field_hashes:
   id: 113107bc5f91bda027270919b7729ba54163f8fd946a0d7a8012719a7b1fdf6f
   title: 87ce39998a619f23c4c637caef66495d56eb1e198fb1c30d0fd786ae35d259fe
@@ -23,11 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 53dfb7f64b4ef40ae4827bb0ce3329b201e1210387f68ab9ff81b78bd069061f
   disposition: d83873f04fc5c5188b30f4f500097a0cdf71d09645e638882dc47f640589ef43
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-24T17:41:12Z'
+  authority: generated
+  via: save_document_payload

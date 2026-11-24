@@ -1,11 +1,11 @@
 name: pill-cli-gaps-become-tracked-work
 path: desk/contexts/pill-cli-gaps-become-tracked-work.md
-source_hash: e24a9143653b5c64b074bd11e7cd0214148a97af74e9b99faca22b3d79e21a74
-content_hash: aa4b2cf0c3652691f5fbd31189cde0673a3753abe51c5962f87082bbdc112e56
+source_hash: c8feb28b8324d250d2126746370346e630adf6f8c043912df3f0c717cd573d86
+content_hash: d5cdebd5dba7a7f562b398b6779f01862f268fdd202ccef0e69591a80a18afc3
 field_hashes:
   title: a053e0cc226049a653c49b507c6689a5410eb3073158b30fcf9a8b289450d266
   id: ddde0c720a35e7fbc4f88e02bc5a8e8af25ca3843a3f79d1e65e4dfd5bc4ca62
-  tags: 5c30d051ab4e80de3e4c55d441d0655d84a4eb4b10c12f1a3fbf35434a64aebc
+  tags: 38470c905d7d2fea17bc89ec044835e0a3108c0527f77333ca1610d288b0f603
   what: 3e982306c691f9709f6ac1d7ed331f6e9c671ec0ad7378db9a7e8b3a37681367
   why: ccf907a1adcd82108acf46f271d992537496866c27c2857c7e8c50778cd903ee
   when: 380d1040c20ede87f11f9ba40450cabacbf1630c253d4458203a2534575fc27e
@@ -22,4 +22,8 @@ semantic_tags:
 - topic:tasks
 - type.workflow.pill
 - workspace.desk
-- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-24T17:26:12Z'
+  authority: generated
+  via: save_document_payload

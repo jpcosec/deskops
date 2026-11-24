@@ -1,7 +1,7 @@
 name: review-task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un-preflight-1
 path: desk/reviews/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/preflight-1.md
-source_hash: d5691f3e41ffa880dd6bf9a28a4c54189a65e503d0359679157ad5a2edd43455
-content_hash: aefadcd22c149731e0063fd2d2dcfdc83b282d4cb63d51377b95f1fd827906de
+source_hash: 03b8e9626c728d59c23326e0b8f17a878acf47d7b92d07d26bed2b3fb9058682
+content_hash: c4fa1ba171df1d806af8506352889a677618ffcb7821aec1086e8afd6ba6defc
 field_hashes:
   id: 9d433d91075d46b69ef83c4b5fda8d44ef1e1db267f6154cf5a7c39e42709ed9
   title: b29cac5aa4cd48b718507d9190bfdb5a57efac81bb92089aba9f5702eae340c4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 8290dd17fc5395b55b05e2d4817a37c6d5d6a45621d4a40c112312b05714d9aa
   disposition: 6edecc9551adf6bcfdb557b3269279e0654d0eeb85f5736daab7d9b78dca9907
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-23T05:34:01Z'
+  at: '2026-11-24T18:10:21Z'
   authority: generated
   via: save_document_payload

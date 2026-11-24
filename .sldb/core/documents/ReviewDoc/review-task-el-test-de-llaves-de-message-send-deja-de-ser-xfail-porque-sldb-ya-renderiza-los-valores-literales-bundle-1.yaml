@@ -1,7 +1,7 @@
 name: review-task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales-bundle-1
 path: desk/reviews/task-el-test-de-llaves-de-message-send-deja-de-ser-xfail-porque-sldb-ya-renderiza-los-valores-literales/bundle-1.md
-source_hash: c8f5377f285c9e16b0fd194ad2f9846ad45e639bdf6a0399ed5e4069127ddbf9
-content_hash: 3d27b3cb2b0621c8e2862c2e2e7dfcac6a6f8a2fecadfc6063abe00e48f74a62
+source_hash: 1f187ebaa172d89305778a20da71ab54300a4e08dc183b129bf3ae9e6d4a0d70
+content_hash: b60d99ec0229bd11537449799aad5064d6715c8d6108982a9f6603c3e844abb4
 field_hashes:
   id: 17a14b92e96b562d7b294e01b15fdb9e1ffe6aa99d8dbaf71c09e4805c1b81bc
   title: 7bf1919a2d26afb4110d686bfff8787672f801f5c0050daada65716f28849904
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: a151d28998fb298cafc8075bc712fd37af2fd92f5b90f0838325c4a097589c45
   disposition: 0fc5471f561389f417c239f0ba600e3f9d8a557173abecf8bd32d8cb66cbdefb
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T13:37:05Z'
+  at: '2026-11-24T18:03:23Z'
   authority: generated
   via: save_document_payload

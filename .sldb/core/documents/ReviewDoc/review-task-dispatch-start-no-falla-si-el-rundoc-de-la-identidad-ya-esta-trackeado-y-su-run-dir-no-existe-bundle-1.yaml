@@ -1,7 +1,7 @@
 name: review-task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe-bundle-1
 path: desk/reviews/task-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado-y-su-run-dir-no-existe/bundle-1.md
-source_hash: ab306526d40c672546a4015f07f649054c90fffa4eb0638a6bc186d7777cfd61
-content_hash: d7018c38312875bb2c7d95c12473a2001a350db4a065264d644a65b9d9031ebe
+source_hash: 6504eb79ac83216a4626971867d20284f518abe18e3a8640f6e4cddf243b3e7a
+content_hash: ed8951edbc68709313672eccf764d51409a388e3c483ba73efdf0305fa97d891
 field_hashes:
   id: 97745d607f1ab961049d16c217c91219726cc4d7510fa716ff1f01d6c738b536
   title: 047c741aae791303c655cd3c7c3e3759fd1254a7d51ada808b898e0d98c27cb6
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 71fa66320efadd26a4d84af537aa737e08373367baab2f78c6587f381548dfb3
   disposition: d35fb8c76b43c73824769c2fe560695d1d7573ceca94eecfe60a2d96a7a1e0c6
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-21T07:12:09Z'
+  at: '2026-11-24T17:58:43Z'
   authority: generated
   via: save_document_payload

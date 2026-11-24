@@ -1,7 +1,7 @@
 name: review-task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error-preflight-1
 path: desk/reviews/task-deskops-view-task-entrega-holds-true-en-un-gate-cuya-regla-de-activacion-da-un-finding-de-error/preflight-1.md
-source_hash: 6abb95d7d08d8ced47e3637e16d3e45800b7707fea29a579357ef842657ee722
-content_hash: d43e81b4f2506be0f84ed7a0e3259077164ec75dca2b208a868381e29d8043b9
+source_hash: 49f691c5881fc135f6c1ed237ea969760c6dfb6128b15e73fc92f04f1226f793
+content_hash: e4205c251ed2cb2e7f567dbc1ce2fb4764ea8119a082f21176cebde50061be51
 field_hashes:
   id: ef93a9951beaca1cf86311a4e7c3b1063086df4d8a970b0a985cb9d65f616d08
   title: 86d9f470b763b3a367300aead6f924733bb31699f5f8a6f0e902963111bc14cc
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0b68e57e98e1b56d6f08a0de7a3e7c751fec100360efe10cbfac6233967d6f32
   disposition: ada62604992e8c1ae370a322d41e4a05a8936c6b131c7f4072b2e999cc5a1551
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T12:08:43Z'
+  at: '2026-11-24T17:56:16Z'
   authority: generated
   via: save_document_payload

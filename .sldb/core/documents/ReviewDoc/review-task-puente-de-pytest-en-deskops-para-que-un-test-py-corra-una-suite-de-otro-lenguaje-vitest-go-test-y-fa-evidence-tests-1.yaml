@@ -1,7 +1,7 @@
 name: review-task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa-evidence-tests-1
 path: desk/reviews/task-puente-de-pytest-en-deskops-para-que-un-test-py-corra-una-suite-de-otro-lenguaje-vitest-go-test-y-fa/evidence-tests-1.md
-source_hash: b65f2bb75882a436ecff3da929b02c9e183cedcf380ee5d4677da61d7d34f406
-content_hash: 3c95e3ded47e841ee157bba278e35ea0c2f2109b81849d93c3ea5a0704a5bd8c
+source_hash: 230fa77dabe260735a9108aac8057b0122e36ceea4491fe6aa3b169ebb8c89d2
+content_hash: 5e6809ded3c811e367bd798f7f6f0338d638f5b24ed248b7e993cc0351f426fb
 field_hashes:
   id: e66cb8448654bc1c0c94cf3e6292d09a2f2277a49b3638b696d86828d4c3b9b1
   title: 3e0cc5888cab0e852c93e4037b9c0100b7d652e2ff36e27663406d6cd8b0fdec
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0d5949339c75bf4ff1be2cbfc97399dc1391e8b89078400483a9abd735cd6789
   disposition: 40896849bb331476d782689c3cb50bb223954fee23f4850e2bd75573e2f3381e
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T17:15:54Z'
+  at: '2026-11-24T18:17:09Z'
   authority: generated
   via: save_document_payload

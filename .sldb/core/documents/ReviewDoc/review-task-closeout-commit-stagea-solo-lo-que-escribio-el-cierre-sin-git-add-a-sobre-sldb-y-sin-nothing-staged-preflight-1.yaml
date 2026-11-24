@@ -1,7 +1,7 @@
 name: review-task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged-preflight-1
 path: desk/reviews/task-closeout-commit-stagea-solo-lo-que-escribio-el-cierre-sin-git-add-a-sobre-sldb-y-sin-nothing-staged/preflight-1.md
-source_hash: 871ee1e36f61feef171aec20356c652a33c86e362fa42cd7a49bd3915ef6c1e7
-content_hash: 22b7d66c62ebb5fe0b45a328f791a7016cc3d5ba851b9b74ccc4b15692ce2481
+source_hash: 73abdd8d968320c32f5b107bb0bfba9c10cdce2dd962ff25e4e0c416a0e4da6b
+content_hash: fb9fa3c7b92c3c06554570c479a3f1fea318cd8d8293a5256f572a8966d80b37
 field_hashes:
   id: 4cfb3e92ba6771a39352ad335e2ab71b2190649251c7de0e5113d09efaf5c758
   title: 0614f1efd09f857745647cdd2d1b6e0fc4cfe2bc9a9fce0644f616558b6b5f2f
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 0126eef3f81fb35f9043eda6f6c5d7738db3eadcad05055f4e20a946cf70233b
   disposition: 8d1ac4f2636a98ee983dc85a8f39cc59cf094b69fba75663ad505f301723026f
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T05:12:39Z'
+  at: '2026-11-24T17:42:57Z'
   authority: generated
   via: save_document_payload

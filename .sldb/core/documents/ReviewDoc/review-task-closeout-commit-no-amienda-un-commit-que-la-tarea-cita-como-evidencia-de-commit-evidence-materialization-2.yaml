@@ -1,7 +1,7 @@
 name: review-task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit-evidence-materialization-2
 path: desk/reviews/task-closeout-commit-no-amienda-un-commit-que-la-tarea-cita-como-evidencia-de-commit/evidence-materialization-2.md
-source_hash: fb558b56d247302bf7db9d636f7895ff4cae9944e177720b90ba4030416c0bab
-content_hash: 7f6cdabf9663a3a2cf13854dee9cf9e2b3eae32c351db30d5e09bfe359560784
+source_hash: aa56856278f7cc1fe2d51bff27831c8a290e22a164a66d91ad51e099fe0d2643
+content_hash: 87e7f80ef9110c5087a36eff1e03798fdde8407563659bb6a72856f356ae7b88
 field_hashes:
   id: a427f5afb5e79540956050efb7e5e93d5398c2b753dcbc22e5c4383fb836f44c
   title: f35cb921b8324a96dceddffbd84f12d196fc77aa12fbf4d5e02850c313943a96
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 2483545d14558591cb773ee97f0c26b371bc5cc6a02f91ca4c0db527ee1cc469
   disposition: b59cd2a15ec0e6dc97f5ba22d22836bbfc7f587b54d0972bd074cdec16690928
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T02:04:04Z'
+  at: '2026-11-24T17:42:29Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,7 +1,7 @@
 name: review-deskops-como-config-cc38-node-1
 path: desk/reviews/deskops-como-config-cc38/node-1.md
-source_hash: 0d72f5e7df8f5673b8da5816b1a16e08893606d38a50230b771d5b132b2164d8
-content_hash: f17720caf3afc074202ac8718de9db27d4870f277a1c96507f3fb8f55d3b830b
+source_hash: 5f40d3996e0670a6ece11a853d8e2d9276cd7fe1ce8fbf7d6d6ced027dcc89da
+content_hash: 7d046ca7ce95f0c2977f44d4fe4271b0defa93f17e4f414dc1a9def0c69bed70
 field_hashes:
   id: 12c44b07e200f9e2c1ebcf6682b523c21d8d515b386806e52737650119e73733
   title: 071d1a953f18e2df538515a9ba5864294c0b61f7e7890c2321b28c916ea0ea7a
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: fccde34fdcbc23d9fc14edf2c8e474058052003e6092777b09360230d00bca3e
   disposition: 39f060258314428b6f6e1c5c5ba7098b8c4fdf8a725b1527b70b9e25797ee1e9
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T02:59:33Z'
+  at: '2026-11-24T17:28:02Z'
   authority: generated
   via: save_document_payload

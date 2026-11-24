@@ -1,7 +1,7 @@
 name: review-task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y-evidence-atom-2
 path: desk/reviews/task-deskops-declara-su-project-graph-con-closed-y-declared-file-targets-de-sldb-y-borra-los-desvios-h1-y/evidence-atom-2.md
-source_hash: 4bd66ca2f6c1465dbd97bc85594debe5aa1bdf7fd1562a10ff3a6a413b679eb7
-content_hash: a87c7d379f4449558c95b60c4f513988d88db2fb4efabc6ffad28e209793d3ac
+source_hash: 303ecd6e7fdefba713d92aa368b9a27df9e6b6fd02de604c7f1e22b2fb564560
+content_hash: a803df041952a0035764c834353bc43554508481d0b7c3ef9efdfc044af50323
 field_hashes:
   id: f4d6fbc45f9b2abc2ba56d06354251b700157a387abdf97cafa5aabb011f5c97
   title: 00780e87e0dc042604c02c1c2547e264c6c574d068198906486107912b8b161d
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: c036b0575a0c7d95fd8d115c0f1501fb5ad687a213d4111b119e825be65ce88a
   disposition: 052fa897f5f89603510aae15a7e0e89a37286e48eec6bb119341dafda66b4aa3
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-17T11:17:28Z'
+  at: '2026-11-24T17:49:30Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

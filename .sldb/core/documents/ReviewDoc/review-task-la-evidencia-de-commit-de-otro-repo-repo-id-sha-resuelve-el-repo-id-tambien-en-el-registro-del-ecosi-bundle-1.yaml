@@ -1,7 +1,7 @@
 name: review-task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi-bundle-1
 path: desk/reviews/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi/bundle-1.md
-source_hash: a12d8cee0e4c5f252ec56171da4bbc9d90e2d1e2450bcaf483c042bd5a863435
-content_hash: 1f82b1f3810b99289ea2474c403fb7e017123c01f169dab0854cd94720da0834
+source_hash: e8640a06fc7094db319253347e3916af0143418452137b756dbfd5608a2acb89
+content_hash: a01ac084123ab98cc22a577e83d3a3febe547d1f5c0a50637cf922c8592adf8d
 field_hashes:
   id: 59e19e97822df7b1d46e652afda3dbd5f97b342aa120ea8918899e6f38650bf4
   title: e4211e47e0796621321bcaed55ae89e17a16aa172b8985792367242bebf64d75
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 77562350f99fd2e9626f2364454a2a84c07af60fba952e5548ffb021e424b9d0
   disposition: b5c258c5e123882b61c1e993f91cd181aa70293a238d8562f2329da0988e4155
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-16T17:09:39Z'
+  at: '2026-11-24T18:09:42Z'
   authority: generated
   via: save_document_payload

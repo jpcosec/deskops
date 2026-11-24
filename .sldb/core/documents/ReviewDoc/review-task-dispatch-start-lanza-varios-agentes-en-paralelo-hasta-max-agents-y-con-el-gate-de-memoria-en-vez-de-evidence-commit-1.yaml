@@ -1,7 +1,7 @@
 name: review-task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de-evidence-commit-1
 path: desk/reviews/task-dispatch-start-lanza-varios-agentes-en-paralelo-hasta-max-agents-y-con-el-gate-de-memoria-en-vez-de/evidence-commit-1.md
-source_hash: 307f97a9b2a5e85b0c952d94c0b748e2c7377970fed2689af8bb4f2b8f1a7641
-content_hash: ef4d27ba677f6dbdddc0d53221212d1cf37420e92d725b4d5bd521367ebc9d52
+source_hash: 6475017439b2f5f759eb8751fa21ecaa93aed9ce2c6d7ee0567019c8417d4b7d
+content_hash: a7b7e9b13098014d935aa4b88caf30b3cd688e2c78881b461fb4ad3a700ecc09
 field_hashes:
   id: 8d7546f3f7db53211266aafbe05acc4a5a457b6e3ae731becf9e96722d09878c
   title: 7f80900d12c5a371a26613d830ba6dcff5bc8aa7a60a01bf476cc7faae4384c4
@@ -23,15 +23,14 @@ field_hashes:
   disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   summary: 591adfb4319f50fad1c8cd853ef49d982fca7dd59e5b6da6e22b38ea9920e011
   disposition: 8f6988d79d7d4aabcfcbbd55ca6299fcb377d9c5ebf2b1c2e801503a8581aa9a
-  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
 - type.workflow.review
 - workspace.desk.runs
-- workspace:desk
 provenance:
   by: agent
-  at: '2026-11-20T00:53:27Z'
+  at: '2026-11-24T17:58:28Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
