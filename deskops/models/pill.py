@@ -1,6 +1,7 @@
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from .base import OperationalArtifactDoc
+from .pointers import check_pointers
 
 
 class PillDoc(OperationalArtifactDoc):
@@ -21,6 +22,7 @@ current_node: ⸢optrev•current_node⸥
 history: ⸢optrev,list•history⸥
 # e.g., language:python, library:pydantic
 tags: ⸢rev•tags⸥
+pointers: ⸢optrev,list•pointers⸥
 ---
 
 # ⸢rev•title⸥
@@ -85,3 +87,17 @@ _Describe the shortcut or failure mode to avoid._
         default_factory=list,
         description="Semantic tags placed at the end, using namespaced forms such as 'language:python' or 'library:pydantic'.",
     )
+
+    pointers: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Where this applies, as pointers with a class prefix: 'doc:<Model>:<id>', "
+            "'tag:<namespace>:<value>' or 'code:<path>::<qualified_name>'. Optional; the free-text "
+            "where/files stay as they are."
+        ),
+    )
+
+    @field_validator("pointers", mode="before")
+    @classmethod
+    def _pointers_are_well_formed(cls, value: object) -> object:
+        return check_pointers(value)

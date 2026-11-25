@@ -855,6 +855,7 @@ def hydrate_task(payload: dict[str, Any]) -> Task:
         inherit_acceptance_context=bool(payload.get("inherit_acceptance_context") or False),
         atoms=list(payload.get("atoms") or []),
         from_drawer=payload.get("from_drawer") or "",
+        pointers=list(payload.get("pointers") or []),
         closeout_evidence=list(payload.get("closeout_evidence") or []),
         effective_references=list(payload.get("effective_references") or payload.get("references") or []),
         effective_pills=list(payload.get("effective_pills") or payload.get("pills") or []),

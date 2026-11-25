@@ -334,6 +334,9 @@ class OperationsCLI:
             lines.extend(f"- {item}" for item in task.inherits_from)
         if task.from_drawer:
             lines.append(f"From drawer: {task.from_drawer}")
+        if task.pointers:
+            lines.append("Pointers:")
+            lines.extend(f"- {item}" for item in task.pointers)
         if getattr(task, "closeout_evidence", None):
             lines.append(f"Closeout evidence: {', '.join(task.closeout_evidence)}")
         if task.effective_pills:

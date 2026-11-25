@@ -56,6 +56,7 @@ def compile_task_spec(
         "depends_on": _coerce_list(raw_payload.get("depends_on") or []),
         "pills": _coerce_list(raw_payload.get("pills") or []),
         "files": _coerce_list(raw_payload.get("files") or []),
+        "pointers": _coerce_list(raw_payload.get("pointers") or []),
         "implementation_path": str(raw_payload.get("implementation_path") or ""),
         "validation": _coerce_list(raw_payload.get("validation") or []),
         "done_when": str(raw_payload.get("done_when") or ""),

@@ -1,6 +1,7 @@
 from pydantic import Field, field_validator, model_serializer, model_validator
 
 from .base import OperationalArtifactDoc
+from .pointers import check_pointers
 from .task_lifecycle import lifecycle_errors
 
 
@@ -16,6 +17,7 @@ _ABSENT_FRONTMATTER_DEFAULTS = frozenset({
     "depends_on",
     "pills",
     "files",
+    "pointers",
     "task_type",
     "inherits_from",
     "inherit_acceptance_context",
@@ -59,6 +61,7 @@ references: ⸢optrev,list•references⸥
 depends_on: ⸢optrev,list•depends_on⸥
 pills: ⸢optrev,list•pills⸥
 files: ⸢optrev,list•files⸥
+pointers: ⸢optrev,list•pointers⸥
 task_type: ⸢optrev•task_type⸥
 inherits_from: ⸢optrev,list•inherits_from⸥
 inherit_acceptance_context: ⸢optrev•inherit_acceptance_context⸥
@@ -140,6 +143,20 @@ _Name the observable condition that makes the task complete._
         default_factory=list,
         description="Files or paths expected to change during the task.",
     )
+    pointers: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Where this applies, as pointers with a class prefix: 'doc:<Model>:<id>', "
+            "'tag:<namespace>:<value>' or 'code:<path>::<qualified_name>'. Optional; the free-text "
+            "where/files stay as they are."
+        ),
+    )
+
+    @field_validator("pointers", mode="before")
+    @classmethod
+    def _pointers_are_well_formed(cls, value: object) -> object:
+        return check_pointers(value)
+
     implementation_path: str = Field(
         description="Suggested implementation path for completing the task."
     )

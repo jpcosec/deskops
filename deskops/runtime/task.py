@@ -34,6 +34,7 @@ class Task:
     inherit_acceptance_context: bool = False
     atoms: list[str] = field(default_factory=list)
     from_drawer: str = ""
+    pointers: list[str] = field(default_factory=list)
     closeout_evidence: list[str] = field(default_factory=list)
     effective_references: list[str] = field(default_factory=list)
     effective_pills: list[str] = field(default_factory=list)

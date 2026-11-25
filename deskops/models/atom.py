@@ -7,6 +7,7 @@ from pydantic import Field, field_validator
 from sldb import StructuredNLDoc
 
 from .crossroad import check_domain_path
+from .pointers import check_pointers
 
 ATOM_TAG_PATTERN = r"^[a-z][a-z0-9_]*:[a-z][a-z0-9_.-]*$"
 # The value is dot-separated segments, none empty (no ``a..b``, ``a.`` or ``.a``): sldb's
@@ -101,6 +102,7 @@ five_wh_one_plus: ⸢rev•five_wh_one_plus⸥
 tags: ⸢rev•tags⸥
 provenance: ⸢optrev•provenance⸥
 conversation_ref: ⸢optrev•conversation_ref⸥
+pointers: ⸢optrev,list•pointers⸥
 ---
 
 # ⸢render•title⸥
@@ -150,6 +152,20 @@ conversation_ref: ⸢optrev•conversation_ref⸥
             'Optional conversation reference in the form "<thread>/<message id>" or just "<thread>" (e.g. "#acuerdos-sldb1/1234"); empty is not written.'
         ),
     )
+
+    pointers: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Where this applies, as pointers with a class prefix: 'doc:<Model>:<id>', "
+            "'tag:<namespace>:<value>' or 'code:<path>::<qualified_name>'. Optional; the free-text "
+            "where/files stay as they are."
+        ),
+    )
+
+    @field_validator("pointers", mode="before")
+    @classmethod
+    def _pointers_are_well_formed(cls, value: object) -> object:
+        return check_pointers(value)
 
     @field_validator("conversation_ref", mode="before")
     @classmethod
