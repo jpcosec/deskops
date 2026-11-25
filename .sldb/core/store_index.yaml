@@ -307,6 +307,18 @@ models:
   - source.document.markdown
   - system.spec2viz
   - type.view
+- name: AtomAdrDoc
+  model_ref: deskops.models:AtomAdrDoc
+  path: deskops/models/adr.py
+  models_index: .sldb/core/models/AtomAdrDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.atom
+  - workspace.desk.atoms
 predicates:
 - name: has_model
   axis: WHAT

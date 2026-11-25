@@ -293,6 +293,21 @@ class ReviewService:
         task_id = str(self._task_payload(task_path).get("id") or "").strip() or task_path.stem
         return task_path, task_id
 
+    def _adr_subject(self, selector: str) -> tuple[str, str] | None:
+        """``(id, doc:AtomAdrDoc:<id>)`` when ``selector`` names an ``atom.adr`` of the desk, else ``None``."""
+        if not selector.startswith("atom-"):
+            return None
+        from deskops.models.adr import AtomAdrDoc
+
+        try:
+            path = doc_access.resolve_artifact_selector(self.root, "artifact.atom", self.desk_root / "atoms", selector)
+            payload = doc_access.read_doc(path, AtomAdrDoc)
+        except (FileNotFoundError, ValueError, DomainError):
+            return None
+        if payload.get("atom_type") != "atom.adr":
+            return None
+        return str(payload["id"]), f"doc:AtomAdrDoc:{payload['id']}"
+
     def _task_model(self, task_path: Path) -> str:
         store = self.root / ".sldb"
         if not store.exists():
@@ -774,8 +789,13 @@ class ReviewService:
         if not paths and kind != "owner":
             raise UsageError(f"--kind {kind} requires at least one --evidence")
 
-        task_path, task_id = self._resolve_task(task_id)
-        subject = f"doc:{self._task_model(task_path)}:{task_id}"
+        adr = self._adr_subject(task_id) if kind == "owner" else None
+        if adr is not None:
+            # An atom.adr is accepted by its owner (rule-adr-owner-receipt): the receipt's subject is the ADR.
+            task_id, subject = adr
+        else:
+            task_path, task_id = self._resolve_task(task_id)
+            subject = f"doc:{self._task_model(task_path)}:{task_id}"
         input_sha256 = ""
         if paths:
             data = b"".join(rel.encode() + b"\n" + (self.root / rel).read_bytes() + b"\n" for rel in paths)

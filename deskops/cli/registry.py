@@ -142,7 +142,29 @@ def _add_subject_commands() -> list[Command]:
         model = models.get(artifact_id)
         if model is not None:
             include_special = artifact_id in {"artifact.task"}
-            for fmeta in model_cli_fields(model, include_special=include_special):
+            fields = list(model_cli_fields(model, include_special=include_special))
+            if artifact_id == "artifact.atom":
+                # An atom type only adds fields (deskops/models/adr.py): its own flags come with --atom-type.
+                from deskops.models import ATOM_TYPE_MODELS
+
+                args.append(
+                    A(
+                        "--atom-type",
+                        choices=tuple(sorted(ATOM_TYPE_MODELS)),
+                        help=(
+                            "Create a typed atom: its model adds the fields of the type "
+                            "(atom.adr: decided-on, decided-by, context, consequences, alternatives, "
+                            "supersedes, partial-supersedes, superseded-section, references, status)."
+                        ),
+                    )
+                )
+                known = {fmeta.name for fmeta in fields}
+                for type_model in ATOM_TYPE_MODELS.values():
+                    for fmeta in model_cli_fields(type_model):
+                        if fmeta.name not in known and fmeta.name != "atom_type":
+                            known.add(fmeta.name)
+                            fields.append(fmeta)
+            for fmeta in fields:
                 # No model field is argparse-required: --from-yaml may supply it,
                 # and the model validates what the payload still misses.
                 kwargs: dict[str, object] = {"required": False, "help": fmeta.help}
@@ -220,6 +242,14 @@ def _list_subject_commands() -> list[Command]:
                     help="Filter atoms by conversation thread: conversation_ref equal to it or starting with '<thread>/'.",
                 )
             )
+            args.append(
+                A(
+                    "--type",
+                    dest="atom_type",
+                    help="List only the atoms of this type (atom.adr); a typed list shows by default only those in force (accepted).",
+                )
+            )
+            args.append(A("--all", action="store_true", help="With --type, also list the superseded ones."))
         args.append(OUTPUT_FORMAT_ARG)
         commands.append(
             Command(
@@ -1644,10 +1674,11 @@ The issue status is set to closed and a ## Resolution section records Closed, Re
         ),
         Command(
             path=("materialize",),
-            help="Render tracked desk role prompts into installed pi-agent files.",
+            help="Render tracked desk role prompts into installed pi-agent files, or one atom.adr as Markdown (--adr).",
             args=(
                 ROOT_ARG,
-                A("--out", help="Output directory override; defaults to ~/.pi/agent/agents."),
+                A("--out", help="Output directory override; defaults to ~/.pi/agent/agents (with --adr: the output file, default docs/decisions/<id>.md)."),
+                A("--adr", help="Materialize this atom.adr (id or selector) as Markdown instead of the role prompts."),
             ),
             handler="deskops.cli.commands.materialize:MaterializeCLI",
             mutates=True,

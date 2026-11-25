@@ -1,3 +1,5 @@
+from .adr import ATOM_TYPE_MODELS
+from .adr import AtomAdrDoc
 from .atom import AtomDoc
 from .base import OperationalArtifactDoc
 from .base import PrimitiveDoc
@@ -25,6 +27,8 @@ from .task_types import TaskExternalDoc
 from .task_types import TaskRefactorDoc
 
 __all__ = [
+    "ATOM_TYPE_MODELS",
+    "AtomAdrDoc",
     "CrossroadDoc",
     "AtomDoc",
     "BoardDoc",

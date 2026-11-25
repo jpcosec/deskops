@@ -234,12 +234,27 @@ class AtomsService:
     def _resolve_artifact_selector_multi(self, artifact_id: str, directories: list[Path], selector: str) -> Path:
         return doc_access.resolve_artifact_selector_multi(self.root, artifact_id, directories, selector)
 
-    def list_atoms(self, axis_value: str | None = None, conv: str | None = None) -> tuple[str | None, list[dict[str, Any]]]:
+    def list_atoms(
+        self,
+        axis_value: str | None = None,
+        conv: str | None = None,
+        atom_type: str | None = None,
+        include_all: bool = False,
+    ) -> tuple[str | None, list[dict[str, Any]]]:
         """List atoms annotated with their folder-axis value.
 
         Returns (axis, payloads). Each payload carries 'axis_values' with every
         value of the configured axis namespace found on the atom's tags.
+
+        With ``atom_type`` only the atoms of that type are listed (``atom.adr``); a typed list
+        shows by default only those in force (``status`` accepted), ``include_all`` shows the rest.
+        The general listing (no ``atom_type``) is unchanged.
         """
+        if atom_type is not None:
+            from deskops.models import ATOM_TYPE_MODELS
+
+            if atom_type not in ATOM_TYPE_MODELS:
+                raise ValueError(f"Unknown atom type '{atom_type}'. Known: {', '.join(sorted(ATOM_TYPE_MODELS))}.")
         axis = self.atom_folder_axis()
         if axis_value is not None and axis is None:
             raise ValueError(
@@ -250,6 +265,11 @@ class AtomsService:
         for payload in payloads:
             values = axis_values(list(payload.get("tags") or []), axis) if axis else []
             payload["axis_values"] = values
+            if atom_type is not None:
+                if payload.get("atom_type") != atom_type:
+                    continue
+                if not include_all and payload.get("status", "accepted") != "accepted":
+                    continue
             if axis_value is not None and axis_value not in values:
                 continue
             if conv is not None:
@@ -832,7 +852,10 @@ class AtomsService:
 
     def _validate_atom_path(self, path: Path, namespace_errors: list[str] | None = None) -> AtomValidationRecord:
         try:
-            payload, errors = check_document(AtomDoc, path.read_text(encoding="utf-8"), invalid="model validation failed")
+            text = path.read_text(encoding="utf-8")
+            payload, errors = check_document(
+                doc_access.atom_subtype_model(AtomDoc, text=text), text, invalid="model validation failed"
+            )
         except Exception as exc:
             return AtomValidationRecord(doc_id=path.stem, path=path, errors=[f"model validation failed: {exc}"])
         doc_id = str(payload.get("id") or path.stem)

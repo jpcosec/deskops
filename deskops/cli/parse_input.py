@@ -82,7 +82,14 @@ def parse_artifact_input(artifact_id: str, args: Any) -> dict[str, Any]:
     model = ARTIFACT_MODELS.get(artifact_id)
     if model is not None:
         # Iterate over model fields, not YAML spec fields
-        for field_name in model.model_fields:
+        field_names = list(model.model_fields)
+        if artifact_id == "artifact.atom":
+            from deskops.models import ATOM_TYPE_MODELS
+
+            field_names += ["atom_type"] + [
+                name for type_model in ATOM_TYPE_MODELS.values() for name in type_model.model_fields if name not in field_names
+            ]
+        for field_name in field_names:
             if field_name == "id":
                 continue  # id is generated from slug
             value = getattr(args, field_name, None)

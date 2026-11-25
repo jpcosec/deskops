@@ -1,0 +1,19 @@
+name: AtomAdrDoc
+model_ref: deskops.models:AtomAdrDoc
+path: deskops/models/adr.py
+documents_index: .sldb/core/documents/AtomAdrDoc.yaml
+sections_index: ''
+model_hash: b9672cbc1bc64428818ee58bafd4882db5c5b4239b57250288c758035c611841
+roster_hash: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+contract_hash: 5d8af44dd6948ca148fd1cd606efefede0a578bb20463d9b94c468202b50f6ed
+documents_count: 0
+version: 1
+canonical: false
+family: null
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.atom
+- workspace.desk.atoms
+base_models:
+- AtomDoc

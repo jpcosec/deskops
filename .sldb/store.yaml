@@ -84,6 +84,9 @@ models:
   model_ref: sldb.models.rule_doc:RuleDoc
 - name: ViewDoc
   model_ref: sldb.models.notation_models:ViewDoc
+- name: AtomAdrDoc
+  model_ref: deskops.models:AtomAdrDoc
+  path: deskops/models/adr.py
 predicates:
   applies_to_source:
     axis: WHAT
@@ -3454,6 +3457,7 @@ include:
   - desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
   - desk/tasks/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.md
   - desk/tasks/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.md
+  - desk/tasks/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
@@ -3464,6 +3468,7 @@ include:
   - desk/tasks/task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar.md
   - desk/tasks/task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y.md
   - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
+  - desk/tasks/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p.md
 - model: TaskDecisionDoc
   paths:
   - desk/tasks/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.md

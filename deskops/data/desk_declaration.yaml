@@ -207,6 +207,12 @@ seeds:
 - path: desk/lifecycle/rule-closeout-alert-pill-graduation.md
   mode: managed
   file: rules/rule-closeout-alert-pill-graduation.md
+- path: desk/lifecycle/rule-adr-owner-receipt.md
+  mode: managed
+  file: rules/rule-adr-owner-receipt.md
+- path: desk/lifecycle/rule-adr-supersedes.md
+  mode: managed
+  file: rules/rule-adr-supersedes.md
 include:
 - model: RelationTypeDoc
   glob: desk/lifecycle/type-*.md
@@ -220,6 +226,8 @@ include:
   glob: desk/lifecycle/rule-activation-*.md
 - model: RuleDoc
   glob: desk/lifecycle/rule-closeout-*.md
+- model: RuleDoc
+  glob: desk/lifecycle/rule-adr-*.md
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

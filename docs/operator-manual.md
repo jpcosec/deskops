@@ -1272,6 +1272,55 @@ deskops show atom atom-typed-manual --root .
 `atoms show` are deprecated aliases. `atoms delete` refuses to delete an atom with inbound references
 unless `--force` is passed.
 
+### Architecture decisions: `atom.adr`
+
+An accepted architecture decision is an atom of type `atom.adr`: it answers *why*, with the
+decision as the answer, and adds `decided_on`, `decided_by`, `context`, `consequences`, an optional
+`alternatives` (what was discarded) and `references` (what the decision applies to). The type is a
+model, `AtomAdrDoc`, that only adds fields to `AtomDoc` (`deskops/models/adr.py`, registered in
+`ATOM_TYPE_MODELS` like `TASK_TYPE_MODELS`); the untyped atom is unchanged. A decision still
+pending is not an atom: it is a `task.decision`, which closes citing the ADR in its `atoms` field.
+
+```bash
+deskops add atom --atom-type atom.adr --root . --title "pron is archived" \
+  --decided-on 2026-11-25 --decided-by "JP" \
+  --context "..." --answer "The decision." --consequences "..." \
+  --references sldb/docs/architecture/pron-is-archived.md
+```
+
+An ADR has two states, `accepted` and `superseded`. Replacing one is declared when the new ADR is
+created, and `deskops` flips the earlier one:
+
+```bash
+# replaces atom-old-decision in full: it becomes superseded
+deskops add atom --atom-type atom.adr --root . --title "New decision" ... --supersedes atom-old-decision
+# replaces only one section: the earlier ADR stays accepted
+deskops add atom --atom-type atom.adr --root . --title "New decision" ... \
+  --partial-supersedes atom-old-decision --superseded-section "pron is a semantic shell"
+```
+
+Each replacement is also a `supersedes` `RelationDoc` under `desk/supersessions/` (its
+`attributes.section` names the replaced section of a partial one). Two seeded `RuleDoc`s
+(`on_check`, `deskops/data/rules/`) guard the type; `sldb rules check` runs them:
+
+- `rule-adr-owner-receipt`: the ADR needs an `owner` receipt, accepted and intact, whose subject is
+  the ADR. Record it with `deskops review record <atom-id> --kind owner --reason "..." --root .`
+  and only the owner disposes it: `deskops review dispose <review-id> --verdict accepted ...`.
+- `rule-adr-supersedes`: no `accepted` ADR is fully replaced by another `accepted` one (a partial
+  replacement is ignored).
+
+`deskops list atoms --type atom.adr` lists only the `accepted` ADRs; add `--all` to see the
+superseded ones too. The plain `deskops list atoms` is unchanged. The Markdown a reader opens is a
+materialization of the atom, not the source:
+
+```bash
+deskops materialize --adr atom-pron-is-archived --root .   # docs/decisions/pron-is-archived.md
+```
+
+It has Status, Date, Decision Maker, Supersedes, Context, Decision and Consequences (and
+Alternatives and Applies to when the ADR has them). What the ADR applies to goes in `references`
+until the common pointers field of atoms exists.
+
 ### Reorganize atoms by tag namespace
 
 `atoms reorganize` moves atoms into folders derived from the

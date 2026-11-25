@@ -78,6 +78,7 @@ def compile_artifact_spec(
     raw_payload: dict[str, Any],
     *,
     model_fields: Collection[str] | None = None,
+    model: type | None = None,
 ) -> CompiledArtifactSpec:
     """Compile a raw payload into an artifact payload using the Pydantic model.
 
@@ -103,7 +104,7 @@ def compile_artifact_spec(
     if "title" in supported:
         payload["title"] = title
 
-    model = ARTIFACT_MODELS.get(artifact_id)
+    model = model or ARTIFACT_MODELS.get(artifact_id)
     if model is not None:
         for field_name, field_info in model.model_fields.items():
             if field_name == "id":

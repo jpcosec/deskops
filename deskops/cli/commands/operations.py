@@ -152,7 +152,12 @@ class OperationsCLI:
         list_artifacts = {meta["list_subject"]: artifact_id for artifact_id, meta in ARTIFACT_SUBJECTS.items()}
         if args.command == "list" and args.subject == "atoms":
             try:
-                axis, payloads = operations.list_atoms(getattr(args, "axis_value", None), getattr(args, "conv", None))
+                axis, payloads = operations.list_atoms(
+                    getattr(args, "axis_value", None),
+                    getattr(args, "conv", None),
+                    getattr(args, "atom_type", None),
+                    bool(getattr(args, "all", False)),
+                )
             except (FileNotFoundError, ValueError) as exc:
                 return render_error(
                     str(exc),

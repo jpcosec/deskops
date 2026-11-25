@@ -15,6 +15,7 @@ from typing import Iterator
 from typing import TYPE_CHECKING
 
 from deskops import doc_access
+from deskops.models.adr import ADR_TYPE
 from deskops import lifecycle
 from deskops.doc_access import ARTIFACT_MODELS
 from deskops.doc_access import ARTIFACT_PATHS
@@ -144,6 +145,10 @@ class DeskopsOperations:
         doc_access.ensure_workspace(self.root)
 
     def create_artifact(self, artifact_id: str, raw_payload: dict[str, Any]) -> DocumentRecord:
+        if artifact_id == "artifact.atom" and raw_payload.get("atom_type") == ADR_TYPE:
+            from deskops.services.adr import create_adr
+
+            return create_adr(self.root, raw_payload)
         return doc_access.create_artifact(self.root, artifact_id, raw_payload)
 
     def edit_artifact_field(self, subject: str, selector: str, field: str, raw_value: str) -> DocumentRecord:
@@ -242,9 +247,13 @@ class DeskopsOperations:
         return self.atoms.atom_folder_axis()
 
     def list_atoms(
-        self, axis_value: str | None = None, conv: str | None = None
+        self,
+        axis_value: str | None = None,
+        conv: str | None = None,
+        atom_type: str | None = None,
+        include_all: bool = False,
     ) -> tuple[str | None, list[dict[str, Any]]]:
-        return self.atoms.list_atoms(axis_value, conv)
+        return self.atoms.list_atoms(axis_value, conv, atom_type, include_all)
 
     def reorganize_atoms(self, *, dry_run: bool = False) -> dict[str, Any]:
         return self.atoms.reorganize_atoms(dry_run=dry_run)

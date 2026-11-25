@@ -26,6 +26,7 @@ from functools import lru_cache
 from dataclasses import dataclass
 import json
 import os
+import re
 from pathlib import Path
 import sys
 from typing import Any, Iterator
@@ -61,6 +62,7 @@ from deskops.desk_paths import selector_stem
 from deskops.desk_paths import relative_candidates
 from deskops.doc_readability import is_unreadable_by_model, unread_section_fields
 from deskops.errors import DomainError
+from deskops.models import ATOM_TYPE_MODELS
 from deskops.models import AtomDoc
 from deskops.models import BoardDoc
 from deskops.models import DeskFAQDoc
@@ -389,6 +391,28 @@ def untrack_doc(root: Path, ref: Path | str) -> bool:
 
 
 # ---------------------------------------------------------------- read / write
+_ATOM_TYPE_LINE = re.compile(r"^atom_type:\s*['\"]?([A-Za-z0-9_.-]+)['\"]?\s*$", re.MULTILINE)
+
+
+def atom_subtype_model(model: type[Any], text: str | None = None, payload: dict[str, Any] | None = None) -> type[Any]:
+    """The atom type model (``ATOM_TYPE_MODELS``) a document of ``AtomDoc`` really is.
+
+    ``AtomDoc`` is the untyped atom; a document whose front matter (or payload) says
+    ``atom_type: atom.adr`` is read and rendered under its type's model, which only adds fields,
+    so every reader that asks for ``AtomDoc`` keeps the typed fields. Any other model is returned as is.
+    """
+    if model is not AtomDoc:
+        return model
+    name = ""
+    if payload is not None:
+        name = str(payload.get("atom_type") or "")
+    elif text is not None:
+        head = text.split("\n---", 1)[0] if text.startswith("---") else ""
+        found = _ATOM_TYPE_LINE.search(head)
+        name = found.group(1) if found else ""
+    return ATOM_TYPE_MODELS.get(name, model)
+
+
 def read_doc(path: Path, model: type[Any]) -> dict[str, Any]:
     """The model payload of a document, parsed once per text of the file.
 
@@ -399,6 +423,7 @@ def read_doc(path: Path, model: type[Any]) -> dict[str, Any]:
     """
     raw_text = path.read_text(encoding="utf-8")
     _note_read(path)
+    model = atom_subtype_model(model, text=raw_text)
     key = (os.path.abspath(path), model)
     hit = _DOC_PAYLOADS.get(key)
     if hit is not None and hit[0] == raw_text:
@@ -411,6 +436,7 @@ def read_doc(path: Path, model: type[Any]) -> dict[str, Any]:
 
 
 def write_doc(root: Path, path: Path, model: type[Any], payload: dict[str, Any]) -> None:
+    model = atom_subtype_model(model, payload=payload)
     rendered = render_model_markdown(model, payload) + "\n"
     if path.exists():
         existing = path.read_text(encoding="utf-8")
@@ -760,6 +786,8 @@ def editable_artifact(root: Path, subject: str, selector: str) -> tuple[type[Any
     if artifact_id == "artifact.pill":
         directories.append(desk_root(root) / "drawer" / "pills")
     path = resolve_artifact_selector_multi(root, artifact_id, directories, selector)
+    if artifact_id == "artifact.atom":
+        model = atom_subtype_model(model, text=path.read_text(encoding="utf-8"))
     return model, path, subject
 
 
@@ -901,7 +929,12 @@ def show_artifact(root: Path, artifact_id: str, doc_id: str) -> dict[str, Any]:
 def create_artifact(root: Path, artifact_id: str, raw_payload: dict[str, Any]) -> DocumentRecord:
     ensure_workspace(root)
     model = ARTIFACT_MODELS[artifact_id]
-    compiled = compile_artifact_spec(artifact_id, raw_payload, model_fields=model.model_fields.keys())
+    if artifact_id == "artifact.atom" and raw_payload.get("atom_type"):
+        atom_type = str(raw_payload["atom_type"])
+        if atom_type not in ATOM_TYPE_MODELS:
+            raise ValueError(f"Unknown atom type '{atom_type}'. Known: {', '.join(sorted(ATOM_TYPE_MODELS))}.")
+        model = ATOM_TYPE_MODELS[atom_type]
+    compiled = compile_artifact_spec(artifact_id, raw_payload, model_fields=model.model_fields.keys(), model=model)
     validated(model, compiled.artifact_payload)
     doc_id = compiled.artifact_payload["id"]
     if artifact_id == "artifact.atom":
