@@ -1,14 +1,16 @@
 name: 20261125-092140-suggestion-gate-de-cierre-exigir-un-tomo-por-cada-archivo-de-files-bloquea-las
 path: desk/inbox/20261125-092140-suggestion-gate-de-cierre-exigir-un-tomo-por-cada-archivo-de-files-bloquea-las.md
-source_hash: 1224ba140ad96badd292e59b7689c2ae3078f3a4d92509a59724b4586390e1e6
-content_hash: c156f12d5c64d68bf82c605734f58267a662bc661dad322ae5ff705efbc2cb7b
+source_hash: 8312f502cac156b4e9b6bb8257e6ff789f27b4c33a902e45fe3184d9525b44f1
+content_hash: 3a85e22f18420aac7330728797eef11cae5e197d7a3b218ff2b2d7ae06a972b0
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: 3e8f568c8d3cd0db69ac3cc61f359bb3a3e3d3bf50b7e5a35e5d364f7961af00
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 2ce5bcc54e73383593f65cd55ed71f46dd1947ae628a14fdc27fea697c0475b9
+  ack_reason: 96ba7aa4ed33fe3ef610e782b6a2821f527910a0eac323a98c034248b704d44b
   title: b5f9c0367b6cc958c04392dd185700db17dac529457b512d74e8e0fa017a7e1b
   body: e8abfa3ee52682ca08dc4d274dc9d9178944e268d7b7d9ab45e2b85a437edb9b
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-25T16:54:04Z'
+  authority: generated
+  via: save_document_payload

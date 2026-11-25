@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-25T16:53:41Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,15 +13,17 @@ target_project: deskops
 # ISO 8601 timestamp
 created_at: '2026-11-25T01:49:36'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: deskops
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-25T13:53:34'
 # why the note was acknowledged; empty when no reason was given
-ack_reason: ''
+ack_reason: triada en task-la-suite-de-deskops-baja-su-ram-por-worker...
 # conversation thread/message the note came from, e.g. #hilo/1234
 ---
 
-# Suite de deskops: ~6 GB de RAM con -n 4. El 25-11 ~01:00 en johanes (16 
+# Suite de deskops: ~6 GB de RAM con -n 4. El 25-11 ~01:00 en johanes (16
 
 _Describe the incoming message with enough evidence to triage._
 

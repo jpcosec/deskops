@@ -1,14 +1,16 @@
 name: 20261122-231220-suggestion-desk-update-apply-activa-la-validaci-n-de-tags-de-taskdoc-y-deja-tareas-sin-poder-editarse-namespaces-del-roadmap-sin-declarar
 path: desk/inbox/20261122-231220-suggestion-desk-update-apply-activa-la-validaci-n-de-tags-de-taskdoc-y-deja-tareas-sin-poder-editarse-namespaces-del-roadmap-sin-declarar.md
-source_hash: 97ac03f7019e3453c2318c887d18afb87391ee6cfaf0396942e988dd5b508ea5
-content_hash: 487475f4117915f233c2e142ff6fd4602e5789cd46f024e8836cd28dbc7db347
+source_hash: 6a3ba0a1de35c3baa4fc815860d6f37bd043eda580c8ca87e0fb9a70b669157e
+content_hash: b27baf739346add1aab1f073ad2a0cad1b0722fc136591915cb593df9fdbaffd
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: 3c894b699286d85f1511fdbcb79fa8e20b368f377466132c43b01c94611d9e89
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: be4d9abc7915fb397ce8d8adfe7d68a0e96a6ebb1380938ac93a08b7e2fffc84
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 9f709f6a833c01a97f865505984c41096ef5921c67e117fd740a4bd5a231b4e7
+  ack_reason: 5e93e4be82068a33119a65f9397bef56a064f6a8a7d586b194870a6b51618527
   title: 93a36cc2f39438807251050670af48a75d6401adef4ea3e693ad5d61475d41e8
   body: 98a0efc73437dfb622ce40c39b4fc0f6433ca48ce855a5b862f4c63bf11e09f7
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-25T16:52:22Z'
+  authority: generated
+  via: save_document_payload

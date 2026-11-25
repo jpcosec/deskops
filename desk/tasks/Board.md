@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T01:44:32Z'
+  at: '2026-11-25T16:53:27Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -30,7 +30,6 @@ tasks:
 - desk/tasks/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2.md
 - desk/tasks/task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos.md
 - desk/tasks/task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira.md
-- desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
 - desk/tasks/task-governance-e-g-other-repo.md
 - desk/tasks/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.md
 - desk/tasks/task-jp-decide-si-deskops-exige-git-en-cada-desk-o-acepta-otra-evidencia-de-cierre.md
@@ -62,6 +61,9 @@ tasks:
 - desk/tasks/task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d.md
 - desk/tasks/task-el-gate-atom-materialization-del-closeout-reconoce-un-atomo-declarado-por-la-tarea-que-cita-el-archi.md
 - desk/tasks/task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento.md
+- desk/tasks/task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre.md
+- desk/tasks/task-el-skill-deskops-workflow-pasa-a-un-nucleo-corto-que-delega-en-deskops-next-y-dispatch-start-gana-on.md
+- desk/tasks/task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -122,7 +124,6 @@ _Generated from the task references above._
 - CC52: suite, doctor y Board verdes en los 6 desks, con tiempos de view board medidos en robocop2 [draft] - Una tabla en docs/config-vs-code.md (seccion Verificacion) y en el TaskDoc con, para deskops, sldb, spec2viz, scion, pron y graph_ui (en /mnt/ssd/proyectos/SLDB_1/<repo>, graph_ui en UIs/graph_ui): `deskops desk update` (dry-run, sin --apply en desks ajenos), `deskops doctor`, `deskops view board`, `sldb stores check` y `sldb rules check`, con rc y resumen. Suite completa de deskops y de sldb con -n 4: sin fallas nuevas contra main. Tiempos de `deskops view board --root .` en el desk de deskops: 3 corridas en frio (antes de cada una se borran /mnt/ssd/proyectos/SLDB_1/deskops/.sldb_cache y ${XDG_CACHE_HOME:-$HOME/.cache}/sldb) y 3 en caliente; se reportan medianas; caliente < 1 s.
 - JP decide si el plan workspace-documental se retira con sus 67 fichas o se rescatan nodos [draft] - JP decide: (a) retirar el plan entero (se borran el directorio del plan y las 67 fichas en un commit que cita los cierres); o (b) rescatar nodos concretos (candidatos: WS20/WS45/WS47 escritura en sldb, WS19/WS21 edicion, WS32-WS38 scion), que se convierten en tareas en su desk, y retirar el resto.
 - JP decide si deskops promote inbox-to-drawer-task se retira [draft] - JP elige: (a) retirar promote inbox-to-drawer-task (se crea la tarea de codigo que borra el comando, sus goldens y sus tests, tests/test_inbox_promote_cli_gaps.py incluido); (b) mantenerlo con la advertencia en su ayuda (la cubre la tarea de alineacion de skill y ritual); (c) cambiarlo para que conserve la nota y la referencie.
-- AGENTS.md, README.md y la carpeta de la skill de opencode dejan de nombrar use-spec2viz y pasan a use-specir [active] - AGENTS.md y README.md nombran la skill use-specir del repo IR en vez de use-spec2viz y de references/spec2viz-cli.md, y la carpeta .opencode/skills/use-spec2viz pasa a .opencode/skills/use-specir (git mv) con su SKILL.md sin cambios de contenido.
 - Governance: versionar deskops con tags y fijar la versión en quienes lo usan [draft] - Lo que pide la nota 20261120-193931-suggestion-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11, según la propuesta de Governance (orden de implementación en su sección 11 y decisiones en la 12). Antes de despachar, el coordinador la prepara con el texto completo de la propuesta: alcance, archivos, camino y validación.
 - deskops usa las APIs publicas de sldb ya integradas y borra sus rodeos: rewrite_references con graph y excluded_sources, template_anchors y create_document que pinnea anclas [draft] - (a) deskops/services/references.py deja de tener _rewrite_mentions y _in_frontmatter (lineas ~143-230) y usa sldb.api.rewrite_references(..., graph=g, excluded_sources=[...]) y referrers(..., graph=g). (b) deskops/doc_access.py template_placeholders (~linea 546) usa sldb.api.template_anchors en vez de AST_Handler().split_nodes + TemplateExtractor().extract_nodes, y el import de TemplateExtractor desaparece si no queda otro uso. (c) deskops/services/closure.py, en los recibos de evidencia (~lineas 1102-1171), deja el rodeo de create + update sin cambios en la misma transaccion y crea el recibo con un solo create, que ya queda pinneado. El comportamiento observable no cambia: los tests existentes pasan sin tocar sus aserciones.
 - JP decide si deskops exige git en cada desk o acepta otra evidencia de cierre [draft] - Decision registrada de JP entre: (A) deskops exige git: init falla o avisa y doctor da issue si la raiz no es un repo git; (B) deskops admite desks sin git con otra evidencia de cierre (document/external) y supersede sin commit. Segun la opcion, el coordinador crea la tarea task.code que la implementa.
@@ -154,3 +155,6 @@ _Generated from the task references above._
 - El modo pr de dispatch e integrate trabaja en un worktree propio de task/<id> y nunca cambia la rama del checkout principal [draft] - En modo pr, dispatch reap trae los commits del ejecutor a task/<id> en el worktree <root>/.worktrees/<task-id>; closeout verify/commit e integrate usan ese worktree cuando existe la rama task/<id>; el checkout principal no cambia de rama.
 - El gate atom|materialization del closeout reconoce un atomo declarado por la tarea que cita el archivo cambiado, de cualquier tipo [draft] - closeout verify acepta como enlace de un archivo cambiado un atomo declarado en atoms o references cuya provenance o texto cite la ruta (o su directorio); el mensaje del hallazgo dice que forma de enlace se acepta.
 - Un dispatch start que falla antes de que arranque el agente no gasta intento [draft] - Si scion templates sync o scion start fallan, o el agente queda en fase error, dispatch start borra el run_dir, destrackea el RunDoc, deshace su commit (o commitea el borrado), quita worktree y rama, y avisa fallo tecnico reintentable; el siguiente start usa el mismo intento.
+- La suite de deskops baja su RAM por worker y declara en qué máquina y con cuántos workers corre [draft] - Medir qué tests o fixtures hacen crecer el RSS de cada worker de xdist, bajar los que más pesan y dejar escrito en qué máquina y con cuántos workers corre la suite completa.
+- El skill deskops-workflow pasa a un núcleo corto que delega en deskops next y dispatch start gana --only-prompt [draft] - Un skill núcleo de unas 30 líneas que manda a correr deskops next en cada paso, más references/ por situación (dispatch, varias sesiones, falta en otra herramienta, gates y reviews), y el comando deskops dispatch start <rol> --task <id> --only-prompt, que escribe prompt.md sin lanzar scion.
+- El gate de cierre acepta el commit de la tarea como vínculo de cada archivo de files en vez de exigir un átomo por archivo [draft] - missing_changed_file_link en deskops/services/closure.py da por vinculado un archivo de 'files' cuando lo toca un commit con el trailer Task-Id de la tarea; el átomo pasa a exigirse por tarea y no por archivo.

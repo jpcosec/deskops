@@ -1,14 +1,16 @@
 name: 20261125-014936-suggestion-suite-de-deskops-6-gb-de-ram-con-n-4-el-25-11-01-00-en-johanes-16
 path: desk/inbox/20261125-014936-suggestion-suite-de-deskops-6-gb-de-ram-con-n-4-el-25-11-01-00-en-johanes-16.md
-source_hash: de39f22c628b5606053dbfac44d4a36eabd20a758609b35c68dc90ec2a49cfc5
-content_hash: 6c009e863f4461262a54b3b208f7adf3f3554c49d1f9438b20bcf6b0a0f51d28
+source_hash: 31ecc9b4203bfee2ec7d6498a65b402b546a2f9df96228fc38b9246064bb9ca6
+content_hash: debb8bce9b5cd3856c8c0d4b6da63520660f91967e9b51063c4f71bd9ffecc07
 field_hashes:
   kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
   sender_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   target_project: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
   created_at: ab06fd8c68c080120e81e21af8af0ba08d199a6b2889fc925f5a768eb895a698
-  status: 35ff74aeea25311f4fe759a6b762c8cd41a79adb23dd5615b92cf215175a63e5
-  ack_reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  acknowledged_at: 97efc819a16408adaa360a4f15056ac811aa1f72da88833e46439a0db7ec47c5
+  ack_reason: f95f2fc7fd431fbefae0f5cdabbf3952618f6547e0eead58882c678aeac4a2a8
   title: 7c32b4273e4e55845d7c5fa7b541c13c5389dae40c141cf96186fc10f4afe78f
   body: 52c0f0787954e5243a138d37ddd473fc52e381e67c6fc5dac79aa2010678d912
 semantic_tags:
@@ -16,4 +18,8 @@ semantic_tags:
 - source.document.markdown
 - type.desk.inbox-note
 - workspace.desk.inbox
-provenance: null
+provenance:
+  by: agent
+  at: '2026-11-25T16:53:41Z'
+  authority: generated
+  via: save_document_payload
