@@ -1,0 +1,36 @@
+name: review-deskops-plugin-de-sldb-b03-node-2
+path: desk/reviews/deskops-plugin-de-sldb-b03/node-2.md
+source_hash: a3add9cd4a288c34cc87bba51af12b1ad4fbf0552a12a5e4136333475ebc0ef0
+content_hash: 8ccf38c07ed682567c67179a339a7afcab1856cf404e4bab4493f5405b9d57c6
+field_hashes:
+  id: c036178cf6c769ac3840c715e34b29eb6ef9061b46204cd1d286f9347174b2d0
+  title: 615242ddee6a02b903828b169d8115faedc6d6032f617a594de44a58b815d97a
+  kind: 0f61677887e8c665271ec70d4b9e18812f4528206ad3161dc70021a0b1bda2e3
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject_ref: c6a0297494b9076a809a42e6812e529103422cc8d1786481fa27d901c9773be2
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 6e177a58caaeca5d8f16c36e229d330c8a7ed15407aa68a5fb7f70331f500f3a
+  input_sha256: 95a013c1bbea364a6cc7e4be37413347100c511bddf3b254dc5bbb5e24f31cf7
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 1d75e41c2694ff540eac997109cb1f0c5921c651ee512de7b2235490098f5d8c
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  created_at: 37b307f0323181a80f2ad052f202be70969dad6607ee637fd6c891e2d802219d
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: 694a629f9fe2383d65aab3292900d9ff705683645f45e512d15ae5533ebca782
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T18:37:36Z'
+  authority: generated
+  via: create_document
