@@ -1,15 +1,15 @@
 name: task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase
 path: desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
-source_hash: f3dd794aff2c49ac97c7e725c137c033d44c9c09c588643c7bb27362b0de51fd
-content_hash: 5da0fb0d4015e618069ec3fea6c8906a76d6e3e50236c92e8baf6eb4e01a2ae2
+source_hash: a47db00bc115c00c69d6727ebfb620cb6563ab1c0349fa497208c9b817ba3e0d
+content_hash: 382429312a30c8bc8f5e88787ea0c71432ac167314749fa1ff82ae469cbbc321
 field_hashes:
   title: 1a9eeb9bb61dbd5802bbc43039412eddff3c94e7094895cd97be92f639f2bd9a
   id: 4660b1b4114a401dfac963e78ca0c92c1f01b6896f4ca0126c65d4d617e19fcd
-  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
-  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: 5c01070356128a88d83713f5a3f1d871068a344694a0724e857844fcf4d1a565
   goal: 874b90d03fb232505965ed3cc655eb6e31c30e59ffba86e67de72945aea87d71
   scope: 02ad70137f3131acfc31186c9892d5286064febfab352f2fb994a6efe75e647b
@@ -17,8 +17,8 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  implementation_path: 815bd8842217ba895d0e1789900efcb36cd86a4d09dd0fc11d8139258e127970
-  validation: 5330ef2ed2aecfb8023ce5d09ad0c44368f9c5efa428ce74d676b6d4e8d69631
+  implementation_path: 0ea65ea2eeef5035cd79560f91b8b2b358165d3713c36e6352d08969b97c0e40
+  validation: 62f6bbe29d0e57f0d4f99444957839b0809adff7e3b4fb2c40a49fa7d635c3ca
   done_when: be7db98ef87a32b2eb92a2ecb823374675e11a58a77b5e8d24a84c46aeb6563f
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T03:14:06Z'
+  at: '2026-11-25T05:28:18Z'
   authority: generated
   via: save_document_payload

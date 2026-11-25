@@ -1,0 +1,37 @@
+name: task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente
+path: desk/tasks/task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente.md
+source_hash: aab47c1e6c55ef65ebe7d071222909294a50fa1f50c7c03bffbf0553b0ae1ec3
+content_hash: 0c3efb5e47929eced81c37ab762ec4966f782c50a93218f6a486915d92fc800f
+field_hashes:
+  title: 638c29a1ebf84ccf767086d2c765a4cfcf89722b876df3237214b60db528f769
+  id: 59a09fae5cca41e92e1e7e19e225a41b8986ecd43a6ebb26fc0d8d2ea7dfa0b4
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 7fa1e9e1308b4fd6d6bdf9bcc79da2359f1839e3c71766dd693a491213ed6c43
+  goal: e2b92aeab5e173c339950c8f2de224ff8b646a38e3d3329f4d16edd595aebf8a
+  scope: 50a9b5c9a04dcab9b088ac5767a3ac42ae9b1e28f5e802fdd5bfd83d88a92d2b
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 5e20e42ade2b3dac756094fdc9c41b3e2158dd3aa11e2b80abdfc11d674db36b
+  validation: 296f1e2142efecccc71e780ea0e3b2f9650598ef86a8b1ba48ece300291341cd
+  done_when: 1ddf2cd20af56683eaf9c6cafa3b737b28c84271715df4fdd1786da6c4f69399
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T05:34:47Z'
+  authority: generated
+  via: create_document
