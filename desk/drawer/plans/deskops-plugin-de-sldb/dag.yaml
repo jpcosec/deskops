@@ -1,5 +1,6 @@
 id: deskops-plugin-de-sldb
-revision: 1
+revision: 5
+revision_note: 'Revisión en frío del 25-11 (deepseek-flash): ROOT, PK3, PK4 y PK5 rechazados por ambigüedades; agregada W00, umbral de líneas a P1, criterio de cierre de PK4, catálogo citado en PK5. Pedidos C1-C9 enviados al inbox de sldb.'
 status: proposed
 as_of: '2026-11-25'
 source: 'brief.md, alcance.md y decisiones.md de esta carpeta; medido sobre deskops main 85f1f766 y sldb main.'
@@ -21,23 +22,23 @@ gates:
   G_C1:
     title: sldb aplica RuleDoc y RelationDoc de un store enlazado
     state: pending
-    resolver: pedido C1 al inbox de sldb (P01)
+    resolver: nota sldb/desk/inbox/20261125-143612 (C1)
   G_C2:
     title: sldb ofrece la primitiva "tomar transición" (edges holding, apply_effects, history, hooks)
     state: pending
-    resolver: pedido C2 (P01)
+    resolver: nota sldb/desk/inbox/20261125-143642 (C2)
   G_C3:
     title: El lenguaje de reglas de sldb lee el último elemento de una lista
     state: pending
-    resolver: pedido C3 (P01)
+    resolver: nota sldb/desk/inbox/20261125-143658 (C3)
   G_C6_C9:
     title: sldb resuelve rutas absolutas de referencia (C6) y crea documentos desde el esquema (C9)
     state: pending
-    resolver: pedidos C6 y C9 (P01)
+    resolver: notas sldb/desk/inbox/20261125-143748 (C6) y 20261125-143840 (C9)
   G_C7:
     title: sldb resuelve un store por nombre en el catálogo de la máquina
     state: pending
-    resolver: pedido C7 (P01)
+    resolver: nota sldb/desk/inbox/20261125-143805 (C7)
   G_LEGACY_MIGRATED:
     title: TraderBot y sldb migraron sus task_type viejos
     state: pending
@@ -51,7 +52,8 @@ hierarchy:
       falta se pide a sldb, y el código propio queda limpio, linteado y con un test de aceptación por capacidad. Después se
       revisan las 53 tareas del Board contra el deskops resultante.
     acceptance: Todos los hijos cerrados; W1-W7 cerrados; CI en verde en 3.12 y 3.13; ruff limpio; las capacidades de
-      G_CAPABILITIES pasan; líneas de Python de deskops/ medidas contra 27 236.
+      G_CAPABILITIES pasan; las líneas de Python de deskops/ quedan medidas y escritas contra las 27 236 de partida (L04).
+      La meta numérica es la decisión P1 de JP y no condiciona el cierre de ROOT.
     children: [PK0, PK1, PK2, PK3, PK4, PK5]
   packages:
   - id: PK0
@@ -79,23 +81,38 @@ hierarchy:
     title: F3 Workflow como dato
     node_role: aggregate
     owner_repo: deskops
-    children: [W03, W02, W05, W07, W04, W06, W01, D01, D02, D03, D04]
-    scope: Cerrar W1-W7 y pasar a modelos, reglas y vistas la lógica de workflow escrita en Python.
-    acceptance: Ninguna decisión de workflow vive solo en Python; cada compuerta de cierre es una cláusula de una RuleDoc.
+    children: [W00, W03, W02, W05, W07, W04, W06, W01, D01, D02, D03, D04]
+    scope: Cerrar W1-W7 y pasar a modelos, RuleDoc y ViewDoc (las ViewDoc las entrega D04) la lógica de workflow escrita
+      en Python. El universo de "decisión de workflow" y de "compuerta de cierre" es el inventario que entrega W00.
+    acceptance: Toda compuerta de cierre del inventario de W00 es una cláusula de una RuleDoc (una compuerta nunca queda
+      como propia). Las demás filas tienen su destino (RuleDoc, RelationDoc, campo de modelo o ViewDoc) o están marcadas como
+      propias con motivo. Una fila con destino está cumplida cuando el hijo de PK3 que la mueve está cerrado con su acceptance;
+      una fila propia está cumplida con su motivo escrito en el inventario y no necesita hijo. El agregado se verifica
+      recorriendo el inventario.
   - id: PK4
     title: F4 Pedidos a sldb
     node_role: aggregate
     owner_repo: sldb
     children: [P01, P02, P03, P04]
-    scope: Pedir a sldb lo genérico que falta y borrar en deskops lo que cada entrega reemplaza.
-    acceptance: Los nueve pedidos están en el inbox de sldb; cada entrega de sldb tiene su borrado en deskops cerrado.
+    scope: Pedir a sldb lo genérico que falta y borrar en deskops lo que cada entrega reemplaza. Dentro de este plan,
+      reemplazan código de deskops C1 (P02), C2 (P03), C6 y C9 (P04); C3 lo consume W06 y C7 lo consume S07, en sus paquetes.
+      C4, C5 y C8 no tienen borrado ni gate en este plan; quedan pedidos, citados en alcance.md, y se revisan en L05.
+      Como excepción a la regla de un PR por paquete, cada hoja P02, P03 y P04 va en su propio PR, porque cada una espera una entrega
+      distinta de sldb en un momento distinto.
+    acceptance: Las nueve notas están en el inbox de sldb, y el campo resolver de los gates G_C1, G_C2, G_C3, G_C6_C9 y
+      G_C7 de este dag.yaml nombra la nota que espera. Cada uno de P02, P03 y P04 está cerrado (acceptance cumplida y PR
+      integrado en main) o su gate sigue pending en este dag.yaml; lo segundo se comprueba leyendo el campo state del gate,
+      y en ese caso L05 lista la hoja como pendiente de sldb.
   - id: PK5
     title: F5 Limpieza y revisión de tareas
     node_role: aggregate
     owner_repo: deskops
     children: [L01, L02, L03, L04, L05]
-    scope: Tests añejos, docs desde átomos, legacy, goldens regenerados y la revisión de las 53 tareas congeladas.
-    acceptance: Un test de aceptación por capacidad y ninguno de implementación borrada; docs materializan átomos; Board revisado.
+    scope: Tests añejos, docs desde átomos, legacy, goldens regenerados y la revisión de las 53 tareas congeladas. El
+      catálogo de capacidades es docs/architecture/capacidades.md, producido por C03 (gate G_CAPABILITIES).
+    acceptance: Un test de aceptación por capacidad de ese catálogo y ningún test que importe o pruebe un módulo borrado
+      (lo verifica L01); cada sección (encabezado de nivel 2) de los docs reescritos en L02 cita el átomo del que sale y deskops atoms validate pasa;
+      la acceptance de L05 se cumple.
 tasks:
 # ---------------------------------------------------------------- PK0
 - id: B01
@@ -107,13 +124,15 @@ tasks:
   estimate: S
   depends_on: []
   requires: []
-  scope: Sección [tool.ruff] en pyproject.toml (line-length, target py312, reglas E,F,I,UP,B) y un commit que solo corre
-    ruff format sobre deskops/ y tests/, con su sha en .git-blame-ignore-revs.
-  acceptance: ruff format --check deskops tests sale limpio; la suite dirigida (tests/test_output_goldens.py y
-    tests/test_dispatch.py) pasa igual que antes del commit.
+  scope: 'Tres commits en este orden: (1) solo la sección [tool.ruff] de pyproject.toml con line-length = 120, target-version
+      = py312 y lint.select = [E, F, I, UP, B]; (2) solo el resultado de ruff format sobre deskops/ y tests/, sin ningún otro
+      cambio; (3) .git-blame-ignore-revs con el sha del commit (2).'
+  acceptance: 'ruff format --check deskops tests sale limpio. Línea base, tomada antes del commit (1): el resumen final
+      de python -m pytest -q tests/test_output_goldens.py tests/test_dispatch.py (cantidad de passed, failed y skipped). Después
+      del commit (2) ese resumen es idéntico y git diff de tests/fixtures/golden/ contra la línea base es vacío.'
   output_scope: pyproject.toml, .git-blame-ignore-revs, deskops/, tests/
 - id: B02
-  title: Los 175 errores de ruff arreglados
+  title: ruff check limpio con la configuración de B01
   kind: code
   node_role: delivery
   parent_id: PK0
@@ -121,9 +140,12 @@ tasks:
   estimate: M
   depends_on: [B01]
   requires: []
-  scope: Arreglar los hallazgos de ruff check (127 E402, 20 F401, 17 E701, F841, F541, E741, E731, F811) sin cambiar
-    comportamiento; un noqa solo con motivo escrito.
-  acceptance: ruff check deskops tests sale limpio y la suite completa pasa.
+  scope: Arreglar todo hallazgo que ruff check deskops tests reporta con la configuración de B01 (reglas E, F, I, UP y B;
+      con la configuración por defecto del 25-11 eran 175 de E y F, y I, UP y B agregan más). Se usa ruff check --fix para
+      lo automático y se arregla a mano el resto. Un noqa solo se admite en un E402 cuyo import debe ir después de un efecto
+      necesario (sys.path, variables de entorno, monkeypatch de import), con el motivo en el mismo comentario.
+  acceptance: ruff check deskops tests sale con 0; python -m pytest -q tests (suite completa) da el mismo resumen de passed,
+      failed y skipped que en main antes de B01; git diff de tests/fixtures/golden/ es vacío; cada noqa del diff tiene motivo.
   output_scope: deskops/, tests/
 - id: B03
   title: pre-commit y ruff en el CI
@@ -134,9 +156,13 @@ tasks:
   estimate: S
   depends_on: [B01]
   requires: []
-  scope: .pre-commit-config.yaml con ruff check y ruff format; un paso de ruff en .github/workflows/tests.yml antes de pytest.
-  acceptance: pre-commit run --all-files limpio; el CI falla si ruff falla.
-  output_scope: .pre-commit-config.yaml, .github/workflows/tests.yml
+  scope: 'pre-commit como dependencia del extra dev de pyproject.toml; .pre-commit-config.yaml con los hooks ruff (check)
+      y ruff-format de astral-sh/ruff-pre-commit, limitados con files: ^(deskops|tests)/; y en .github/workflows/tests.yml,
+      antes de pytest, un paso que instala ruff y corre ruff check deskops tests y ruff format --check deskops tests, sin
+      pre-commit.'
+  acceptance: pip install -e .[dev] instala pre-commit; pre-commit run --all-files sale limpio y solo toca deskops/ y tests/;
+      una rama de prueba con un error de ruff hace fallar el paso de ruff del CI.
+  output_scope: pyproject.toml, .pre-commit-config.yaml, .github/workflows/tests.yml
 - id: B04
   title: CI en verde
   kind: code
@@ -146,10 +172,16 @@ tasks:
   estimate: S
   depends_on: []
   requires: []
-  scope: El golden help/deskops_add_atom.txt da lo mismo en 3.12 y 3.13 (normalizar la diferencia de argparse en el test o
-    en el texto de ayuda), y el tag domain:knowledge-management queda anclado o retirado para que sldb stores build --check
-    pase. Absorbe la tarea task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.
-  acceptance: tests/test_output_goldens.py pasa en 3.12 y 3.13; sldb stores build --check --store .sldb sale con 0.
+  scope: 'Dos fallas del run 45486095078 de GitHub: (a) el golden help/deskops_add_atom.txt difiere entre 3.12 y 3.13; se
+      normaliza la diferencia de formato de argparse en tests/test_output_goldens.py o en el texto de ayuda, para que ambas
+      versiones den el mismo golden. (b) sldb stores build --check --store .sldb falla con rules/builtin:tag_namespace:domain
+      diciendo que falta el ancla de domain:knowledge-management, aunque el ancla existe: desk/atoms/crossroad-knowledge-management.md
+      es un CrossroadDoc trackeado con path knowledge-management y la declaración de domain en .sldb/store.yaml es anchored_by
+      CrossroadDoc.path con value bare. B04 diagnostica por qué la regla no la ve y lo arregla en deskops; si la causa está
+      en sldb, la deja como nota en el inbox de sldb y en deskops aplica solo lo mínimo para que el check pase, con el motivo
+      escrito. El tiempo del CI es de B05.'
+  acceptance: tests/test_output_goldens.py pasa con Python 3.12 y con 3.13; sldb stores build --check --store .sldb sale
+      con 0; el commit explica la causa de (b).
   output_scope: tests/test_output_goldens.py, tests/fixtures/golden/help/, .sldb/, desk/atoms/
 - id: B05
   title: CI en menos de 20 minutos
@@ -160,10 +192,15 @@ tasks:
   estimate: M
   depends_on: [B04]
   requires: []
-  scope: pytest-xdist en el install del CI con -n acorde a la RAM del runner, concurrency cancel-in-progress, y medir y bajar
-    los tests o fixtures que más RSS ocupan por worker (absorbe la tarea de la suite de 6 GB).
-  acceptance: Una corrida del workflow tests en main termina en success en 3.12 y 3.13 en menos de 20 minutos.
-  output_scope: .github/workflows/tests.yml, pyproject.toml, tests/conftest.py
+  scope: 'pytest-xdist en el install del CI con -n 2 por job; concurrency con cancel-in-progress en el workflow; y la RAM
+      de la suite: un hook de tests/conftest.py registra el pico de RSS de cada test (resource.getrusage, ru_maxrss) y escribe
+      los 10 mayores al final, y se bajan los tests o fixtures de ese top que cargan stores enteros o no liberan recursos.
+      Al cerrar, la tarea task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre
+      se cierra como resuelta por B05.'
+  acceptance: En una corrida del workflow tests sobre main, cada job de la matriz (3.12 y 3.13) termina en success en menos
+      de 20 minutos. En local, python -m pytest -q -n 4 tests no supera 3 GB de RSS sumado entre workers (medido con el hook),
+      y AGENTS.md dice con cuántos workers y en qué máquina se corre la suite completa.
+  output_scope: .github/workflows/tests.yml, pyproject.toml, tests/conftest.py, AGENTS.md
 - id: B06
   title: Inventario de tests por capacidad o por implementación
   kind: docs
@@ -173,10 +210,12 @@ tasks:
   estimate: M
   depends_on: []
   requires: []
-  scope: Para cada uno de los 118 archivos de tests/, una fila con la capacidad que prueba o el módulo de implementación que
-    fija, y si sobrevive al refactor según alcance.md. No borra nada.
-  acceptance: El inventario cubre los 118 archivos y cada fila nombra capacidad o módulo y su destino (queda, se reescribe con
-    su nodo, se borra con su nodo).
+  scope: 'Una fila por cada archivo tests/test_*.py que exista al ejecutar (118 en main 85f1f766). Cada fila nombra la capacidad
+      que prueba o el módulo que fija, y su destino: queda (el módulo está en la lista Queda propio de alcance.md, o está
+      fuera de alcance), se reescribe en el nodo <id>, o se borra en el nodo <id>. El id es el de la hoja de este dag.yaml
+      cuyo output_scope incluye el módulo que el test fija. No borra nada.'
+  acceptance: El inventario tiene una fila por cada archivo tests/test_*.py del árbol al ejecutar; cada fila trae capacidad
+      o módulo y uno de los tres destinos; cada destino con nodo nombra una hoja existente de este dag.yaml.
   output_scope: desk/drawer/plans/deskops-plugin-de-sldb/tests-inventario.md
 # ---------------------------------------------------------------- PK1
 - id: C01
@@ -345,6 +384,23 @@ tasks:
   acceptance: Las capacidades de cierre del catálogo pasan, incluido un cierre fallido que no deja el store a medias.
   output_scope: deskops/services/closure.py
 # ---------------------------------------------------------------- PK3
+- id: W00
+  title: Inventario de decisiones de workflow y compuertas de cierre escritas en Python
+  kind: docs
+  node_role: delivery
+  parent_id: PK3
+  owner_repo: deskops
+  estimate: M
+  depends_on: [C03]
+  requires: []
+  scope: Una fila por cada lugar de deskops/ donde Python decide algo del workflow (transición, estado, compuerta de cierre o
+    activación, selección de tareas, nodo siguiente) con su archivo y función, el dato que lo debería declarar (RuleDoc,
+    RelationDoc, campo de modelo, ViewDoc) y el hijo de PK3 que lo mueve, o "propio" con motivo. Parte de las compuertas de
+    W7 y de los módulos de alcance.md, y los completa leyendo services/closure.py, services/closeout_gates.py,
+    lifecycle.py, models/task_lifecycle.py, task_policy.py y cli/commands/view.py.
+  acceptance: El inventario existe, cada fila tiene archivo, función, destino y nodo, y cada compuerta de cierre de
+    services/closure.py y services/closeout_gates.py aparece en él.
+  output_scope: desk/drawer/plans/deskops-plugin-de-sldb/workflow-inventario.md
 - id: W03
   title: El cierre toma la arista task_completes
   kind: code
@@ -392,9 +448,9 @@ tasks:
   parent_id: PK3
   owner_repo: deskops
   estimate: L
-  depends_on: [W03]
+  depends_on: [W03, W00]
   requires: []
-  scope: _closeout_link_gate, _changed_file_link_evidence, _skill_guard_test_evidence y _generated_artifact_source_finding
+  scope: Todas las compuertas de cierre del inventario de W00, empezando por _closeout_link_gate, _changed_file_link_evidence, _skill_guard_test_evidence y _generated_artifact_source_finding
     pasan a cláusulas de rule-closeout-<tipo>; el vínculo de un archivo de files acepta el commit con Task-Id que lo toca
     (destraba UI-122, UI-123 y TST-16 de MEPU). Se borra data/rules/closeout-evidence.yaml.
   acceptance: Cada compuerta tiene su cláusula en una RuleDoc y sldb rules explain la muestra; una tarea con files completos
@@ -496,9 +552,9 @@ tasks:
   estimate: S
   depends_on: []
   requires: []
-  scope: Una nota por pedido C1-C9 de alcance.md con deskops message send --to sldb --kind unclear, con evidencia y el módulo
-    de deskops que se borra con cada entrega; sin repetir los ya pedidos.
-  acceptance: Nueve notas abiertas en el inbox de sldb, cada una citada en el gate G_C* que resuelve.
+  scope: Una nota por pedido C1-C9 de alcance.md con deskops message send --to sldb, con evidencia y el módulo de deskops
+    que se borra con cada entrega; sin repetir los ya pedidos. Hecho el 2026-11-25 (sldb main, commit de inbox C1-C9).
+  acceptance: Nueve notas en el inbox de sldb; las de C1, C2, C3, C6, C7 y C9 citadas en el gate que resuelven.
   output_scope: sldb/desk/inbox/
 - id: P02
   title: Con C1, deskops deja de copiar semillas a cada desk
@@ -545,8 +601,9 @@ tasks:
   owner_repo: deskops
   estimate: M
   depends_on: [B06, S09, W01, D04]
-  requires: []
-  scope: Borrar los tests que el inventario B06 marcó como fijados a implementación borrada; cada capacidad conserva su test.
+  requires: [G_CAPABILITIES]
+  scope: Borrar los tests que el inventario B06 marcó como fijados a implementación borrada; cada capacidad del catálogo
+    docs/architecture/capacidades.md (producido por C03) conserva su test en tests/acceptance/.
   acceptance: Cada capacidad del catálogo tiene su test; ningún test importa un módulo borrado; la suite pasa.
   output_scope: tests/
 - id: L02
@@ -560,7 +617,8 @@ tasks:
   requires: []
   scope: operator-manual.md, workflow-policy-reference.md, quickstart.md, faq.md y README.md se reescriben desde átomos;
     se borra lo que contradice los ritos y las menciones de herramientas retiradas.
-  acceptance: Cada doc cita sus átomos; ningún comando citado falta en el --help; ningún doc contradice un rito.
+  acceptance: Cada sección (encabezado de nivel 2) de cada doc reescrito cita el átomo del que sale; deskops atoms validate pasa;
+    ningún comando citado falta en el --help; ningún doc contradice un rito.
   output_scope: docs/, README.md, desk/atoms/
 - id: L03
   title: Migración legacy de task_type borrada
