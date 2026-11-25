@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T17:02:09Z'
+  at: '2026-11-25T17:03:35Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -61,6 +61,8 @@ tasks:
 - desk/tasks/task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre.md
 - desk/tasks/task-el-skill-deskops-workflow-pasa-a-un-nucleo-corto-que-delega-en-deskops-next-y-dispatch-start-gana-on.md
 - desk/tasks/task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi.md
+- desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
+- desk/tasks/task-jp-decide-si-deskops-pasa-a-ser-un-plugin-de-sldb-modelos-reglas-vistas-y-ritos-como-datos-del-store.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -152,3 +154,5 @@ _Generated from the task references above._
 - La suite de deskops baja su RAM por worker y declara en qué máquina y con cuántos workers corre [draft] - Medir qué tests o fixtures hacen crecer el RSS de cada worker de xdist, bajar los que más pesan y dejar escrito en qué máquina y con cuántos workers corre la suite completa.
 - El skill deskops-workflow pasa a un núcleo corto que delega en deskops next y dispatch start gana --only-prompt [draft] - Un skill núcleo de unas 30 líneas que manda a correr deskops next en cada paso, más references/ por situación (dispatch, varias sesiones, falta en otra herramienta, gates y reviews), y el comando deskops dispatch start <rol> --task <id> --only-prompt, que escribe prompt.md sin lanzar scion.
 - El gate de cierre acepta el commit de la tarea como vínculo de cada archivo de files en vez de exigir un átomo por archivo [draft] - missing_changed_file_link en deskops/services/closure.py da por vinculado un archivo de 'files' cuando lo toca un commit con el trailer Task-Id de la tarea; el átomo pasa a exigirse por tarea y no por archivo.
+- El CI de deskops vuelve a verde y baja de 1h30 a menos de 20 minutos [draft] - El workflow tests de main pasa en 3.12 y 3.13 y tarda menos de 20 minutos.
+- JP decide si deskops pasa a ser un plugin de sldb (modelos, reglas, vistas y ritos como datos del store) y qué queda como código propio [draft] - Una decisión escrita de JP: qué partes de deskops pasan a ser modelos, reglas, ViewDocs y ritos declarados en el store (y qué pide eso a sldb, por su inbox), qué queda como código (dispatch/scion, git, CLI delgado) y en qué orden se migra.
