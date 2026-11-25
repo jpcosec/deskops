@@ -1,0 +1,25 @@
+name: materialization-dispatch-reap-deskops-dispatch-py
+path: desk/materializations/materialization-dispatch-reap-deskops-dispatch-py.md
+source_hash: 754d9af956ba7988342a35e0323a3221caf3bff17c235c488b85e45f89c2546c
+content_hash: 0a01f568303660885a10b0e1cf3d23084412813882b10abac6acc04bf575d009
+field_hashes:
+  id: 7422e110aaa21fe95b7989d940bc2c91a1c88f512d58775cf6df8cdd06102237
+  title: c8e7b1ddd6af071a06a34e962d0cc4b69f5fc1c10a218b8e00989049642066e1
+  source_atoms: f2509b231f49233e3527f913a0b6a9146e0b8801aba6224d32ff61e448b4918f
+  target_kind: 4a1933b06cf695fcff4acaba1fdbaa7f10ce109d3c7f57bbf62f6bb572658de8
+  target_identity: 98e1fb23ed84d4f22eeee4319718025c9d4d82ad8ef3055dc925efb520cd987f
+  intent: e2e77c80ac2a2fde523f52bb39f78263c5cab83c9167ebcda3792951592d5b6f
+  validation: 6ec704a314d503f48ed42cb4f089618362f9aade3420d978952bcc6875aa76b0
+  tags: 3613cfc1d079b305cc63962d4d2da61c569b224ca969d295843111f5380a5372
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:dispatch-reap
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-25T03:15:13Z'
+  authority: generated
+  via: create_document

@@ -1,23 +1,30 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T01:26:18Z'
+  at: '2026-11-25T03:15:02Z'
   authority: generated
   via: save_document_payload
 id: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
-status: draft
+status: active
 summary: ''
 tags: []
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/dispatch.py
+- tests/test_dispatch.py
+- 3b9d6f5ed73c6556c34c2801a3f4c8da01f955b5
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/dispatch.py
+- tests/test_dispatch.py
 task_type: task.debug
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-el-reap-encola-el-tester-tras-integrar-un-ejecutor
 ---
 
 # El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing

@@ -1,29 +1,29 @@
 name: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
 path: desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
-source_hash: 0bfaba30fa9aa8b8249df92ac28e0cb6462a007d8941c269bfb232624e531b96
-content_hash: 91563e759d4a6084ead8fd09ac40d7018f1edf130bc24ae770e9f9ad3a80b0e0
+source_hash: 3edf04d60fc67858def90f48ce8d0cc8a923d205d1e2a655c5df2bdec59007a0
+content_hash: 212ddacc1c4379b28cc0dcd38667157a4ad063160d26c37e5b4c7d0bf524aa6f
 field_hashes:
   title: 7928cedfe20eac72673ee48a44d8f36cd648d2218e97cb425aa94ec6edfedea2
   id: eaf8d8f9b567f328a9fae72283884f3a351465936344f301f11bd91a07fe208e
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: 1267eb8abeffc947b29318289f76552614186d64a66fe4caedd6efe673b81ca3
   goal: 92808f2d631aff0935bb342a9cd384429be730e516da9b45d66a7131f8fdddda
   scope: eb53e6cf111b5e5f2f3f787d96f38e1af8b3cbe37219a13404888f09212ac35c
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: cdaac2537126fae9a0dbc14450e378fdc938c18bd23c37108f7d5a94ffcaf5d7
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 2a781ca8ffbb81d36dd318d0d5739c379672f1d10d40d68e16b2d621b77129b4
   implementation_path: ecb2276be756760bf839d2736e825380ffaf1ecee67fb5eb1baa7b8acdcdfa3e
   validation: 5f68569c013c2e45d9e822fd22d963e45d7216499f33890e3813c77f5db7f3b9
   done_when: 2da8cf455265d69e4ba80cb8d6aecf044b9e67164d4734a3f7f08a65dfbe65d3
   task_type: 17aef8a679138336d87167505c61b03a7bc28c9a12b1ccf78947b619d28fae69
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: f2509b231f49233e3527f913a0b6a9146e0b8801aba6224d32ff61e448b4918f
 semantic_tags:
 - board.tareas
 - representation.markdown
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T01:26:18Z'
+  at: '2026-11-25T03:15:02Z'
   authority: generated
   via: save_document_payload

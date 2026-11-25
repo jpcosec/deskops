@@ -618,6 +618,8 @@ include:
   - desk/materializations/materialization-tags-tests-test-command-registry-py.md
   - desk/materializations/materialization-tags-tests-test-specs-py.md
   - desk/materializations/materialization-tags-tests-test-tag-vocabulary-py.md
+  - desk/materializations/materialization-dispatch-reap-deskops-dispatch-py.md
+  - desk/materializations/materialization-dispatch-reap-tests-test-dispatch-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3166,6 +3168,14 @@ include:
     name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-reproduction-1
   - path: desk/reviews/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase/bundle-1.md
     name: review-task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase-bundle-1
+  - path: desk/reviews/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing/evidence-tests-1.md
+    name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-tests-1
+  - path: desk/reviews/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing/evidence-commit-1.md
+    name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-commit-1
+  - path: desk/reviews/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing/evidence-atom-1.md
+    name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-atom-1
+  - path: desk/reviews/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing/evidence-materialization-1.md
+    name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
