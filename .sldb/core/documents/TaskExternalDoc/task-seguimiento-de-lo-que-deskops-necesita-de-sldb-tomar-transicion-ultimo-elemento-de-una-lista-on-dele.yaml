@@ -1,7 +1,7 @@
 name: task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele
 path: desk/tasks/task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele.md
-source_hash: 4d9e1748ca6aab010e14a9523b0cb27e4b7ac2b9a953df3142e7f8bf4892b779
-content_hash: 5c451fb50e8021bbc27fcdf86306024423524d8c3a0d211746379c3aed343bf7
+source_hash: 9269f0443aa73f486020a234451b64c33d40124e1b346cea3ec00df7777344ba
+content_hash: f9914ab884df25bdb0899af637dae710800c5cdf25892bcf6823665ee670434c
 field_hashes:
   title: d33328a4be6b1ccc54f8169ca670e147adbe8a3963a04112894ec4a27151302e
   id: ca9e81885bc47b788da0c743292f3d8c418972e842925978be34f6be66b45f57
@@ -11,7 +11,7 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: 05f50be98019af044daaed287dd1cfe9aa89a2976f6b1b741812e25f076b86c6
+  goal: 2274b1f177df0450273459224ad328513db8469355b96f2d4c1f1642952abe54
   scope: 3ae727b33544ef8b3b79c46194b170e045c4e271c081b85bd0bf1fc3cde4b2d1
   references: 8cbbbbc513f90426c4eb672b98b6ac30ab04945e20912198df6f7ba5741bf163
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:49:28Z'
+  at: '2026-11-25T20:28:03Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

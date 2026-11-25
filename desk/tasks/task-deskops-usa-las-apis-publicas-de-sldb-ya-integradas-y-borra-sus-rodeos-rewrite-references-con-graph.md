@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T18:27:39Z'
+  at: '2026-11-25T20:27:55Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph
@@ -41,7 +41,7 @@ _Describe the concrete result this task must produce._
 
 _State what is in scope and what is out of scope._
 
-Entra: deskops/services/references.py, deskops/doc_access.py, deskops/services/closure.py y los tests que cubren esos caminos (tests/test_edit_template_placeholder.py, tests/test_closeout_evidence_receipts.py, tests de references/retire). No entra: cambiar sldb; si alguna API no se comporta como dice la nota, se para esa parte y se deja nota a sldb por inbox, las otras partes siguen.
+Entra: deskops/services/references.py, deskops/doc_access.py, deskops/services/closure.py y los tests que cubren esos caminos (tests/test_edit_template_placeholder.py, tests/test_closeout_evidence_receipts.py, tests de references/retire). No entra: cambiar sldb; si alguna API no se comporta como dice la nota, se para esa parte y se deja nota a sldb por inbox, las otras partes siguen. Incluye además: cli/model_introspection.py pasa a sldb.api.describe_model_fields y doc_access.template_placeholders a sldb.api.template_anchors (lo que falte, como default y pattern, se pide a sldb).
 
 ## Implementation Path
 

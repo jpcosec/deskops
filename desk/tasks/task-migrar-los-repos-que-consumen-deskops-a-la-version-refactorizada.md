@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:15:34Z'
+  at: '2026-11-25T20:29:04Z'
   authority: generated
   via: save_document_payload
 id: task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada
@@ -12,7 +12,11 @@ current_node: ritual-execution
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
-depends_on: []
+depends_on:
+- task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy
+- task-e2-pluginizacion-las-operaciones-como-herramientas-mcp-sobre-sldb-cli-generado-y-docs-que-salen-de-a
+- task-e3-responsabilidades-a-sldb-deskops-deja-de-envolver-sldb-y-declara-su-workflow-como-dato-que-sldb-e
+- task-e4-rediseno-del-testing-suite-nueva-por-capa-guardas-de-arquitectura-escenarios-del-workflow-y-tests
 pills: []
 files: []
 task_type: task.code

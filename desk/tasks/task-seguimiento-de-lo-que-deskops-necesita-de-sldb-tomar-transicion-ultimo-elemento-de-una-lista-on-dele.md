@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:49:28Z'
+  at: '2026-11-25T20:28:03Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele
 status: draft
 summary: ''
@@ -34,7 +34,7 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-Los pedidos C2, C3, C4 y la parte de reglas de C1 están en el inbox de sldb; cuando sldb entrega cada uno, deskops borra lo que reemplaza (lifecycle.advance, el validador, el borrado protegido, la siembra de reglas).
+Los pedidos C2, C3, C4, la parte de reglas de C1 y el pedido de que una máquina de estados se haga respetar (inbox de sldb 20261125-172648) están en sldb; cuando sldb entrega cada uno, deskops lo adopta y borra lo que reemplaza (lifecycle.advance, el validador, el borrado protegido, la siembra de reglas, los if de estado en closure.py).
 
 ## Scope
 

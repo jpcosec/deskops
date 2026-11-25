@@ -1,7 +1,7 @@
 name: task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada
 path: desk/tasks/task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada.md
-source_hash: ffab3bf2e3931bd0253a2deb1613a0a5da9e1ddc6c03ba0b39512828db2ea31c
-content_hash: 8116032586c2192afbd682788ccff8952fdca86a7f6f7a280c6e00214fb6f957
+source_hash: 415d57fe25ae091532693ff7aef2dd9958d3e2a8f75766c78dcb5f3e0396e8f2
+content_hash: 28b8d9df7e0e21ee33aa0665e740750c8eeaa178fc451d93486b6d1602c6ab1c
 field_hashes:
   title: bde2b560778f7e8071c830b1c1573dc3655d6622413ac9c2494e3e65e90f98b1
   id: 82337a1d12acc1190beec2da39f023b1152ce69999e54a690b8268f206468c55
@@ -14,7 +14,7 @@ field_hashes:
   goal: 375770c2001fe7225096fa7f2586e4b28c1e9a1af740fb81b118b8732f75d5c9
   scope: 46b1457e222fabef96e07ac578c26ceec98bf43acef09878b76e2f5edabe5049
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 0fa67c871fc9db1da50a54999e56cbd4117f433223868cbc4b2c9dfe76f2af49
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 85a0928d08c1f23f295c14801c185a871415676428dbe65a0e5c8481c0002c53
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T20:15:34Z'
+  at: '2026-11-25T20:29:04Z'
   authority: generated
   via: save_document_payload
