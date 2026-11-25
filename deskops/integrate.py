@@ -302,8 +302,15 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
     cfg = config.integrate
     if cfg is None:
         raise UsageError("falta el campo integrate en desk/config.json")
-    tip, code = load_closed_task(root, task_id)
-    extended = extend_tip(root, tip, cfg.remote_url, cfg.branch)
+    repo = root
+    if cfg.mode == "pr":
+        from deskops.dispatch import pr_task_root
+
+        repo = pr_task_root(root, task_id)  # task/<id> lives in its own worktree, not in the main checkout
+        if repo != root:
+            print(f"modo pr: rama task/{task_id} en el worktree {repo}")
+    tip, code = load_closed_task(repo, task_id)
+    extended = extend_tip(repo, tip, cfg.remote_url, cfg.branch)
     if extended != tip:
         tip = extended
         print(f"tip extendido a {tip[:SHORT]}: solo commits de desk")
@@ -312,7 +319,7 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
     result = "ok"
     try:
         try:
-            _steps(root, config, cfg, task_id, tip, code, dry_run, temps)
+            _steps(repo, config, cfg, task_id, tip, code, dry_run, temps, log_root=root)
         except AlreadyIntegrated:
             result = "ya-integrado"
             print(f"ya integrado: {tip[:SHORT]}")
@@ -333,8 +340,9 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
 
 def _steps(
     root: Path, config: DeskConfig, cfg: IntegrateConfig, task_id: str, tip: str, code: str,
-    dry_run: bool, temps: list[Path],
+    dry_run: bool, temps: list[Path], log_root: Path | None = None,
 ) -> None:
+    """The gates and pushes; ``root`` is the repo holding the tip, ``log_root`` where runs/ logs go."""
     branch = cfg.branch
     remote_ref = f"origin/{branch}"
 
@@ -359,7 +367,7 @@ def _steps(
 
     changed = _git(copy, "diff", "--name-only", remote_ref, "HEAD", step="suite").splitlines()
     if any(not path.startswith(DESK_ONLY_PREFIXES) for path in changed if path):
-        _run_suite(cfg, copy, root / "runs" / "queue" / "logs" / f"integrate-{task_id}.log")
+        _run_suite(cfg, copy, (log_root or root) / "runs" / "queue" / "logs" / f"integrate-{task_id}.log")
 
     store_text = _show(copy, "HEAD", ".sldb/store.yaml")
     if store_text is None:

@@ -1,0 +1,36 @@
+name: review-task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento-preflight-2
+path: desk/reviews/task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento/preflight-2.md
+source_hash: 28a346adf08aa227aa66fa5d4067c961096e556ab8028a396bc42713548888b6
+content_hash: f8de157d1e3cf813397928a76f8454438a8828309fc9b76cf2471c724502d90f
+field_hashes:
+  id: 8cdcc7554c560a72c6442e81c57e85916ecc32bce967c2967ff265a74dfb314f
+  title: a5a86a6a8d5119114d21c05a0e98a6617c9bf3cedc5fe6ae0f5440e78913f08b
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: e32aa3fa699741e212aebac85d05385ef0d8abb69c512bb88d0ce6f78c562ac1
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 264b4458d51e15141e2e6fedfd4e683cbf2071a802a03c92cce551f7ef2a2252
+  input_sha256: cab0ac84de9d5f993f8425aa905b22cb3ecd974269e9304e34da2c42229a943b
+  contract_sha256: 213f2cab1c23556de6f6c8705cc509bf9ec50cf945a47428279bb35a31862553
+  output_sha256: 44ac04f4ea0576a991442f7bb4ce301ead39041bdf888deb716dc2cf4a74e7a5
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 836bdf4192eb1280c14800ef4472564df371170eb13be0407a61d434dd9889e7
+  created_at: 648f7d8581711da08e22d50bbea779baae10748804cbef0ec08b24f8246806ff
+  disposed_at: f9be6d08ede97e1b1aed645164a69a347213e3453b2490a4356faa89eb40ca3f
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: a3c6df24391f52a2a34650fa071113f88690402a4c4008dfaba03e22199b2192
+  disposition: 3c279734174a30e3d84177aeb30d5d1cd0f473047a8704fe3b279ff14f8a1702
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T02:32:59Z'
+  authority: generated
+  via: save_document_payload

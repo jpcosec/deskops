@@ -22,6 +22,10 @@ if sys.argv[1:2] == ["list"]:
         sys.stdout.write(handle.read())
 if sys.argv[1:2] == ["stop"] and sys.argv[2:3] == [os.environ.get("FAKE_SCION_FAIL_STOP")]:
     sys.exit(9)
+if sys.argv[1:2] == ["start"] and os.environ.get("FAKE_SCION_FAIL") == "start":
+    sys.exit(7)
+if sys.argv[1:3] == ["templates", "sync"] and os.environ.get("FAKE_SCION_FAIL") == "sync":
+    sys.exit(7)
 sys.exit(int(os.environ.get("FAKE_SCION_START_CODE", "0")) if sys.argv[1:2] == ["start"] else 0)
 """
 
@@ -210,7 +214,79 @@ def test_attempts_then_no_more(env: Env) -> None:
 def test_start_returns_scion_start_exit_code(env: Env) -> None:
     env.env["FAKE_SCION_START_CODE"] = "7"
     result = env.cli("dispatch", "start", "executor", "--task", TASK)
-    assert result.returncode == 7 and "agente deskops-e-" in result.stdout
+    assert result.returncode == 7, result.stdout + result.stderr
+    assert "fallo tecnico: scion start fallo (7)" in result.stdout
+    assert f"no se gasto el intento 1 de {TASK} executor: reintentable" in result.stdout
+
+
+def _committed_desk(env: Env) -> str:
+    _git(env.root, "add", ".sldb", "desk")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "desk")
+    return _git(env.root, "rev-parse", "HEAD")
+
+
+@pytest.mark.parametrize("failure", ["start", "sync"])
+def test_a_failed_launch_does_not_spend_the_attempt(env: Env, failure: str) -> None:
+    before = _committed_desk(env)
+    env.env["FAKE_SCION_FAIL"] = failure
+    for _ in range(3):  # twice used to leave the task without attempts
+        result = env.cli("dispatch", "start", "executor", "--task", TASK)
+        assert result.returncode == 7, result.stdout + result.stderr
+        assert "no se gasto el intento 1" in result.stdout
+    assert not list((env.root / "runs" / "subagents").glob("exec-*"))
+    assert _git(env.root, "rev-parse", "HEAD") == before  # the RunDoc commit was dropped
+    assert _git(env.root, "status", "--porcelain", "--", ".sldb", "runs") == ""
+    assert not list((env.root / ".worktrees").glob("*")) and "deskops/" not in _git(env.root, "branch", "--list")
+    env.env.pop("FAKE_SCION_FAIL")
+    name = _start_executor(env)
+    assert not name.endswith("-a2")  # the next launch still uses attempt 1
+    assert (env.root / f"runs/subagents/exec-{name}/run.md").is_file()
+
+
+def test_an_agent_left_in_error_phase_is_deleted_and_does_not_spend_the_attempt(env: Env) -> None:
+    _committed_desk(env)
+    identity = subprocess.run(
+        [sys.executable, "-c", "from pathlib import Path; from deskops.runtime.scion import scion_child_identity as s; "
+         f"print(s(Path('desk/tasks/{TASK}.md'), 'executor', 1)['name'])"],
+        cwd=env.root, capture_output=True, text=True, env=env.env, check=True,
+    ).stdout.strip()
+    env.agents({"name": identity, "phase": "error", "labels": {"deskops.task_id": TASK, "deskops.role": "executor"}})
+    result = env.cli("dispatch", "start", "executor", "--task", TASK)
+    assert result.returncode == 6, result.stdout + result.stderr
+    assert f"el agente {identity} quedo en fase error" in result.stdout
+    assert ["delete", identity, "--project", "proj", "--yes"] in env.calls()
+    assert not (env.root / f"runs/subagents/exec-{identity}").exists()
+
+
+def test_a_failed_launch_after_another_commit_commits_the_rundoc_removal(env: Env, monkeypatch) -> None:
+    """When HEAD moved past the RunDoc commit, the undo is a new commit, never a reset of foreign work."""
+    from deskops import dispatch
+
+    root = env.root
+    _committed_desk(env)
+    monkeypatch.chdir(root)
+    _git(root, "config", "user.email", "a@b")
+    _git(root, "config", "user.name", "A")
+    real = dispatch._scion
+
+    def fake(argv: list[str]):
+        if argv[1:2] == ["start"]:
+            (root / "foreign.txt").write_text("x")
+            _git(root, "add", "foreign.txt")
+            _git(root, "commit", "-q", "-m", "foreign")
+            return subprocess.CompletedProcess(argv, 7, "", "broker no disponible")
+        return real(argv)
+
+    monkeypatch.setattr(dispatch, "_scion", fake)
+    monkeypatch.setenv("PATH", env.env["PATH"])
+    monkeypatch.setenv("FAKE_SCION_LOG", env.env["FAKE_SCION_LOG"])
+    monkeypatch.setenv("FAKE_SCION_LIST", env.env["FAKE_SCION_LIST"])
+    assert dispatch.start(root, "executor", TASK) == 7
+    subjects = _git(root, "log", "-3", "--format=%s").splitlines()
+    assert subjects[0].startswith("run: deskops-e-") and subjects[0].endswith("deshecho (fallo tecnico de scion)")
+    assert subjects[1] == "foreign"
+    assert not list((root / "runs" / "subagents").glob("exec-*"))
+    assert _git(root, "status", "--porcelain", "--", ".sldb", "runs") == ""
 
 
 def test_reap(env: Env) -> None:
@@ -667,8 +743,40 @@ def test_reap_in_pr_mode_brings_commits_to_the_task_branch_not_the_base(env: Env
     assert result.returncode == 0, result.stdout + result.stderr
     assert _git(env.root, "rev-parse", "main") == base_sha
     assert _git(env.root, "rev-parse", f"task/{TASK}") == sha
-    assert _git(env.root, "rev-parse", "--abbrev-ref", "HEAD") == f"task/{TASK}"
+    assert _git(env.root, "rev-parse", "--abbrev-ref", "HEAD") == "main"  # the main checkout never moves
+    task_tree = env.root / ".worktrees" / TASK
+    assert _git(task_tree, "rev-parse", "--abbrev-ref", "HEAD") == f"task/{TASK}"
+    assert (task_tree / "one.txt").is_file() and not (env.root / "one.txt").exists()
+    assert f"en task/{TASK} (worktree {task_tree})" in result.stdout
     assert not worktree.exists()
+
+
+def test_pr_mode_second_attempt_builds_on_the_task_branch_and_reap_fast_forwards_it(env: Env) -> None:
+    _set_config(env, integrate={"remote_url": "unused", "branch": "main", "suite": ["true"], "mode": "pr"})
+    first = _start_executor(env)
+    _commit_in(env.root / ".worktrees" / first, "one.txt", "1")
+    _finished(env, first)
+    assert env.cli("dispatch", "reap", "--task", TASK).returncode == 0
+    second = _start_executor(env)
+    worktree = env.root / ".worktrees" / second
+    assert _git(worktree, "rev-parse", "HEAD") == _git(env.root, "rev-parse", f"task/{TASK}")
+    sha = _commit_in(worktree, "two.txt", "2")
+    _finished(env, second)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert _git(env.root, "rev-parse", f"task/{TASK}") == sha
+    assert _git(env.root, "rev-parse", "--abbrev-ref", "HEAD") == "main"
+
+
+def test_pr_mode_closeout_runs_in_the_task_worktree(env: Env) -> None:
+    _set_config(env, integrate={"remote_url": "unused", "branch": "main", "suite": ["true"], "mode": "pr"})
+    name = _start_executor(env)
+    _commit_in(env.root / ".worktrees" / name, "one.txt", "1")
+    _finished(env, name)
+    assert env.cli("dispatch", "reap", "--task", TASK).returncode == 0
+    result = env.cli("closeout", "verify", "--task", TASK)
+    assert f"modo pr: closeout en el worktree {env.root / '.worktrees' / TASK}" in result.stderr
+    assert _git(env.root, "rev-parse", "--abbrev-ref", "HEAD") == "main"
 
 
 @pytest.mark.parametrize("role", ["executor", "tester"])

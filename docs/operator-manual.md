@@ -851,17 +851,38 @@ exits 2 with `falta el campo integrate en desk/config.json`):
   commits onto the local `integrate.branch` and `integrate` pushes the code and
   the closing tip straight to that remote branch.
 - `pr`: for repos whose base branch (for example `dev`) is protected. Nothing is
-  merged locally into the base and nothing is pushed to it. `dispatch reap`
-  creates the local branch `task/<task-id>` from the base, checks it out in the
-  main checkout and brings the executor's commits onto it, so the task's
-  `closeout commit` lands on the same branch (the closeout travels inside the
-  PR). `integrate` runs the same gates on the tip of `task/<task-id>`, pushes it
-  to the remote as `task/<task-id>` and opens a PR with
+  merged locally into the base and nothing is pushed to it. The main checkout
+  never changes branch (other sessions share it): the task branch
+  `task/<task-id>` lives only in its own worktree, `<root>/.worktrees/<task-id>`
+  (`.worktrees/task-<id>` when the id does not start with `task-`).
+  `dispatch reap` creates that branch from the base the first time, adds the
+  worktree and brings the executor's commits onto it there (fast-forward, or
+  cherry-pick when the branch moved). A second executor attempt starts from
+  `task/<task-id>`, not from the base. `closeout verify`, `closeout commit` and
+  `integrate` with `--root <main checkout>` notice the `task/<task-id>` branch
+  and run in its worktree (they say so: `modo pr: ... worktree <path>`; the
+  worktree is created from the branch when missing), so the closeout is
+  committed on `task/<task-id>` and travels inside the PR. RunDoc commits
+  (`run: <agent>`) still go to the main checkout's branch, which must be the
+  base. `integrate` runs the same gates on the tip of `task/<task-id>`, pushes
+  it to the remote as `task/<task-id>` and opens a PR with
   `gh pr create --base <integrate.branch> --head task/<task-id>` (title: the
   task title; body: the task id, the code and closing commits and the closeout
   message). When an open PR for that branch exists it only pushes. It prints
   `PR: <url>`. `tools_checkout` is not touched in this mode. After the PR is
-  merged, return the main checkout to the base branch before the next task.
+  merged, remove the worktree and the branch (`git worktree remove
+  .worktrees/<task-id>`, `git branch -D task/<task-id>`). If `task/<task-id>`
+  is checked out somewhere else (an older reap left it in the main checkout),
+  return that checkout to the base first: git checks a branch out in one
+  worktree only.
+
+A `dispatch start` whose launch fails before the agent runs (`scion templates
+sync` or `scion start` exit non-zero, or the agent shows phase `error`/`failed`
+right after start) is a technical failure: it removes the run dir, the RunDoc
+and its commit (soft reset while it is still HEAD; otherwise a
+`run: <agent> deshecho` commit), the worktree and the agent branch, deletes the
+broken agent, and prints `fallo tecnico: ...` and `no se gasto el intento N`.
+The next `dispatch start` uses the same attempt.
 
 ### What goes in `config.json` and what in `config.local.json`
 
@@ -928,7 +949,7 @@ and prints `esta tarea declaró X; encontré Y` (declared X; found Y):
 | Evidence | What counts |
 |---|---|
 | `tests` | an existing `.py` file under `tests/`, optionally with `::node`, or a `pytest <path>` reference |
-| `atom` / `materialization` | one gate: an atom reference, or graph/materialization coverage or a routed follow-up reference for every path in `files`; exempt in a desk without local atom documents |
+| `atom` / `materialization` | one gate: every path in `files` needs a link: an atom the task declares (`atoms` or an atom in `references`) whose provenance or text cites the path or a directory containing it (any file type: `.tsx`, `.css`, a build directory), a graph edge from the file to an atom, a materialization targeting it, or a routed follow-up reference (`task:<id>`, `issue:<id>`, a `desk/tasks` or `desk/drawer` `.md`); exempt in a desk without local atom documents |
 | `commit` | a lowercase 7-40 character commit id resolving to `HEAD` or an ancestor |
 | `document` | an existing `.md`, `.rst`, `.txt`, `.adoc`, or `.yaml` file in `references` or `files`, outside `tests/` and `desk/tasks/` |
 | `external` | an `http(s)` URL in `references`, for work tracked outside the repository |
