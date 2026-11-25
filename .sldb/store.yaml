@@ -620,6 +620,8 @@ include:
   - desk/materializations/materialization-tags-tests-test-tag-vocabulary-py.md
   - desk/materializations/materialization-dispatch-reap-deskops-dispatch-py.md
   - desk/materializations/materialization-dispatch-reap-tests-test-dispatch-py.md
+  - desk/materializations/materialization-integrate-cleanup-deskops-integrate-py.md
+  - desk/materializations/materialization-integrate-cleanup-tests-test-integrate-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3182,6 +3184,14 @@ include:
     name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-materialization-1
   - path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/bundle-1.md
     name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-bundle-1
+  - path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/evidence-tests-1.md
+    name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-evidence-tests-1
+  - path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/evidence-commit-1.md
+    name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-evidence-commit-1
+  - path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/evidence-atom-1.md
+    name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-evidence-atom-1
+  - path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/evidence-materialization-1.md
+    name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

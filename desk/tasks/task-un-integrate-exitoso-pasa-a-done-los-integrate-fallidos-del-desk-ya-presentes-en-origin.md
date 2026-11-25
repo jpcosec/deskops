@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T03:32:49Z'
+  at: '2026-11-25T05:05:54Z'
   authority: generated
   via: save_document_payload
 id: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin
@@ -11,14 +11,20 @@ tags: []
 current_node: ritual-testing
 history:
 - task_activates
-references: []
+references:
+- deskops/integrate.py
+- tests/test_integrate.py
+- 58ce512897651a6bce9e7169bca0d42a1b481466
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/integrate.py
+- tests/test_integrate.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-ya-presentes-en-origin
 ---
 
 # Un integrate exitoso pasa a done los integrate fallidos del desk ya presentes en origin
