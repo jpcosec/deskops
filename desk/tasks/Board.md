@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:10:35Z'
+  at: '2026-11-25T20:14:54Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -15,12 +15,9 @@ tasks:
 - desk/tasks/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar.md
 - desk/tasks/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.md
 - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
-- desk/tasks/task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance.md
 - desk/tasks/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.md
-- desk/tasks/task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro.md
 - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
 - desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
-- desk/tasks/task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira.md
 - desk/tasks/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.md
 - desk/tasks/task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci.md
 - desk/tasks/task-governance-el-cierre-de-la-tarea-ocurre-dentro-del-pr-y-deskops-reconcile-lo-cruza-con-github.md
@@ -96,6 +93,9 @@ tasks:
 - desk/tasks/task-como-se-hace-respetar-la-maquina-de-estados-del-workflow.md
 - desk/tasks/task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada.md
 - desk/tasks/task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto.md
+- desk/tasks/task-taskdoc-declara-el-pr-o-la-rama-que-la-realiza-como-referencia-a-un-pullrequestdoc-d4-de-governance.md
+- desk/tasks/task-el-inbox-admite-avisos-kind-alert-ademas-de-unclear-y-suggestion-d5-de-governance.md
+- desk/tasks/task-lo-retirado-se-borra-y-la-tarea-guarda-un-puntero-a-git-para-ver-su-genealogia.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -141,12 +141,9 @@ _Generated from the task references above._
 - rol de desk/hitl: about, faq y doctor documentan cada carpeta del desk y doctor avisa si hitl tiene archivos que no son para el humano [draft] - deskops about y deskops faq describen cada carpeta de desk/ (incluida hitl/), y doctor emite una alerta cuando desk/hitl contiene archivos que no son para el humano.
 - JP decide como se alimenta deskops atoms split por el CLI (opcion a, b o c) [draft] - JP elige: (a) split recibe las partes por flags sin encabezados (p. ej. `--part a="texto"`), cambia la gramatica del CLI y sus goldens; (b) un modelo de atomo con secciones declaradas como campos; (c) dejar split como esta, inalcanzable por el CLI, o retirarlo. El coordinador del plan recomendo (a), que choca con el invariante 2 de alcance.md de deskops-como-config. Con la eleccion se crea la tarea de codigo.
 - Inbox y drawer quedan trackeados en el store del desk y las vistas los leen del store (H10 de CC34) [draft] - deskops/data/desk_declaration.yaml incluye los globs de inbox y drawer; los comandos que escriben en el drawer (promote inbox-to-drawer-task y el alta de items del drawer) trackean al escribir; `deskops view` saca drawer e inbox de run_view como board y task. Al cerrar, se avisa a graph_ui para que verifique en navegador sus vistas de drawer e inbox.
-- JP decide si deskops adopta D4 (PR en TaskDoc) y D5 (kind alert en el inbox) del spec de Governance [draft] - JP decide, por separado para D4 y D5: adoptarlo ahora (se crea la tarea de codigo), esperar a que el spec de Governance salga de draft, o descartarlo.
 - Huecos de atomos de la auditoria de Chatbot_Infra: renombrar id, retire de atomos, validate --all y editar contexts/pills.md [draft] - Para cada hueco 1, 3, 4, 5 y 6: un recibo de reproduccion (o la constancia de que no se reproduce, con el comando y la salida) y, si se reproduce, la correccion con test: (1) `deskops atoms rename <id> <nuevo-id>` que reescribe referrers con la API de sldb; (3) retire acepta atomos o hay un verbo de retiro de atomos; (4) validate --all sin falsos positivos; (5) contexts/pills.md editable por un verbo de deskops; (6) doctor resuelve el store enlazado de deskops aunque se mueva el workspace.
-- JP decide el release 0.2.0 de deskops y que hacer con el tag v0.2.0 prematuro [draft] - JP decide: (1) si la suite ya funciona junta y se hace el release (fecha en CHANGELOG, tag apuntando a un commit verde); (2) que hacer con el tag v0.2.0 existente: dejarlo, moverlo (exige borrar el tag remoto, irreversible para quien ya lo bajo) o saltar a 0.2.1/0.3.0. Con la decision se crea la tarea de release.
 - TraderBot y sldb migran sus task_type viejos con deskops desk update --apply [draft] - En los desks de TraderBot y sldb, `deskops desk update --apply` migro los task_type viejos y quedo commiteado; ninguna tarea de esos desks usa ya code/implementation/test/docs/spec/design/external sin prefijo task.
 - Borrar la migracion de task_type viejo (LEGACY_TASK_TYPE_KEYS y migrate_task_types) y sus tests [draft] - Se borra el camino de migracion de task_type del desk: en deskops/workspace.py LEGACY_TASK_TYPE_KEYS, _task_type_migration_plan, pending_task_type_migration, _task_type_migration_line y migrate_task_types; en deskops/cli/commands/desk.py el import y el uso de pending_task_type_migration (alrededor de las lineas 25 y 375) y la llamada a la migracion (alrededor de 452); y los tests que ejercitan esas funciones. Se conservan LEGACY_TASK_TYPE_MAP y canonical_task_type_name de deskops/models/task_types.py, porque los usan add task (deskops/services/tasks.py:102) y closeout (deskops/services/closure.py:1222); no son parte de esta tarea. TaskDoc generico sigue aceptando cualquier task_type como hoy (test_generic_task_doc_accepts_empty_legacy_or_any_task_type no cambia); lo unico que deja de existir es que desk update proponga o aplique la migracion. En docs/workflow-policy-reference.md (linea 75) se quita la parte 'and migrates legacy task_type strings (...)' y la oracion termina en 'registers them'.
-- JP decide si deskops promote inbox-to-drawer-task se retira [draft] - JP elige: (a) retirar promote inbox-to-drawer-task (se crea la tarea de codigo que borra el comando, sus goldens y sus tests, tests/test_inbox_promote_cli_gaps.py incluido); (b) mantenerlo con la advertencia en su ayuda (la cubre la tarea de alineacion de skill y ritual); (c) cambiarlo para que conserve la nota y la referencie.
 - deskops usa las APIs publicas de sldb ya integradas y borra sus rodeos: rewrite_references con graph y excluded_sources, template_anchors y create_document que pinnea anclas [draft] - (a) deskops/services/references.py deja de tener _rewrite_mentions y _in_frontmatter (lineas ~143-230) y usa sldb.api.rewrite_references(..., graph=g, excluded_sources=[...]) y referrers(..., graph=g). (b) deskops/doc_access.py template_placeholders (~linea 546) usa sldb.api.template_anchors en vez de AST_Handler().split_nodes + TemplateExtractor().extract_nodes, y el import de TemplateExtractor desaparece si no queda otro uso. (c) deskops/services/closure.py, en los recibos de evidencia (~lineas 1102-1171), deja el rodeo de create + update sin cambios en la misma transaccion y crea el recibo con un solo create, que ya queda pinneado. El comportamiento observable no cambia: los tests existentes pasan sin tocar sus aserciones.
 - Governance: documento de PR en desk/PRS y deskops pr check en CI [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
 - Governance: el cierre de la tarea ocurre dentro del PR y deskops reconcile lo cruza con GitHub [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
@@ -222,3 +219,6 @@ _Generated from the task references above._
 - Cómo se hace respetar la máquina de estados del workflow [draft] - Una decisión de diseño escrita, con su átomo, sobre el mecanismo que hace respetar las transiciones y gates que un desk declare, y las tareas que salen de ella.
 - Migrar los repos que consumen deskops a la versión refactorizada [draft] - Cada repo del registro de deskops usa la versión refactorizada y pasa deskops doctor.
 - Antes del CI se corren solo los tests que corresponden a lo que mutó [draft] - Una operación que, a partir de lo que cambió (git diff contra la base y git status), elige los tests que lo cubren y los corre, y deja el resultado como recibo de evidencia de la tarea; el CI y la integración de la fase corren la suite completa.
+- TaskDoc declara el PR o la rama que la realiza como referencia a un PullRequestDoc (D4 de Governance) [draft] - TaskDoc tiene un campo que referencia el PullRequestDoc (o la rama) que realiza la tarea, el modelo PullRequestDoc existe y una regla puede leerlo.
+- El inbox admite avisos (kind alert) además de unclear y suggestion (D5 de Governance) [draft] - Una nota de inbox puede ser de kind alert, message send la acepta y la vista del inbox la distingue.
+- Lo retirado se borra y la tarea guarda un puntero a git para ver su genealogía [draft] - Cada vez que una tarea nace de otro documento (nota del inbox, ítem del drawer, otra tarea) el documento de origen se borra y la tarea guarda un puntero de git a él (ruta y commit donde existía), y una operación muestra la genealogía de una tarea leyendo esos punteros con git.

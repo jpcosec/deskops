@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:11:15Z'
+  at: '2026-11-25T20:15:34Z'
   authority: generated
   via: save_document_payload
 id: task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada
@@ -39,7 +39,7 @@ Cada repo del registro de deskops usa la versión refactorizada y pasa deskops d
 
 _State what is in scope and what is out of scope._
 
-Entra: versionar deskops con tags y fijar la versión en cada repo consumidor; la lista de repos desde desk/registry; un desk update por repo y lo que cada uno necesite; avisar a la sesión de cada repo qué cambió. Sale: cambios de código propios de cada repo.
+Entra: la versión refactorizada sale como 0.3.0 (el tag v0.2.0 existente no se toca); fijar esa versión en cada repo consumidor; la lista de repos desde desk/registry; un desk update por repo y lo que cada uno necesite; avisar a la sesión de cada repo qué cambió. Sale: cambios de código propios de cada repo.
 
 ## Implementation Path
 

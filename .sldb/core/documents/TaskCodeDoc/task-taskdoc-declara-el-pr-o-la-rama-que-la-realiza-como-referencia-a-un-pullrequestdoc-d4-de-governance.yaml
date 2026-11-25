@@ -1,0 +1,37 @@
+name: task-taskdoc-declara-el-pr-o-la-rama-que-la-realiza-como-referencia-a-un-pullrequestdoc-d4-de-governance
+path: desk/tasks/task-taskdoc-declara-el-pr-o-la-rama-que-la-realiza-como-referencia-a-un-pullrequestdoc-d4-de-governance.md
+source_hash: c2d1612b8af5ca81a837c0cb42f106383347c8c42e1f9d81e4a604536eae0134
+content_hash: 4d70a805768e53f764caff6b56517548ef63a164490540b9e47690630c1a84ec
+field_hashes:
+  title: 92132c33eb0d73e9feedef4c60502be17df206cec9f18d96f2ee49da45cab3af
+  id: 804543c75bc8febd44accbb69706d412f92a9f836c96c5b319b983164d477a24
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 1bd9cb574c9013c5a6dde8212c801a746d6f00706079a87f39e309ea932d658a
+  goal: 58cf33454c8c4d7d4584cfb9ca7d7adcdc60df0270e31565a0427d5bd68fea2f
+  scope: 68b9dbede92394b2c7a975462c5f9d35f6fe06c92243d8e17aef2c18950e116d
+  references: 23bb4f119093c6e1130efd1606a94a42836906def58cd13429d44cea6777ca92
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 1ffd3dc738a3ce42dcc4612663e1e9274ac4e183abfcfc026ced0ea04fbf68bc
+  validation: 49f7b6b890c4af15806de61a578bd24b1f7fe881b3c48dd7ab25892bd51db215
+  done_when: da2a680df3eb6f98f42b45f11cf0d23f4a17495a83e28b6d623e7323e0de535b
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T20:14:23Z'
+  authority: generated
+  via: create_document

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:09:38Z'
+  at: '2026-11-25T20:15:24Z'
   authority: generated
   via: save_document_payload
 id: task-m3-mantenimiento-deskops-usa-sldb-en-vez-de-envolverlo-y-cada-modulo-se-muda-a-su-capa
@@ -30,6 +30,7 @@ depends_on:
 - task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests
 - task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita
 - task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk
+- task-el-inbox-admite-avisos-kind-alert-ademas-de-unclear-y-suggestion-d5-de-governance
 pills: []
 files: []
 task_type: task.aggregate
