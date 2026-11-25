@@ -131,6 +131,55 @@ pill.pointer ──► se borra
 Conviene aplicar primero las tres preguntas a lo que existe: tipar antes le pondría estructura a
 contenido mal ubicado.
 
+## Una pregunta, un tipo de documento
+
+JP (2026-11-25): los tipos de arriba responden un qué. Falta un tipo de documento transversal y
+componible que detalle el dónde; el porqué va en el ADR, el cómo en la pill, y el cuándo en los
+rituales.
+
+Leído así, cada pregunta tiene su documento, y los documentos se componen en vez de que cada uno
+cargue con todas las preguntas:
+
+| Pregunta | Documento | Estado |
+|---|---|---|
+| Qué | Átomo (`atom.intent`, `atom.invariant`) | propuesto arriba |
+| Por qué | ADR (`atom.adr`) | con tarea en este desk |
+| Cómo | Pill: cómo hacer este trabajo | propuesto arriba |
+| Dónde | Un documento transversal y componible | **falta** |
+| Cuándo | Ritual | existe en deskops |
+| Para quién | sin asignar; puede ser el rol, que deskops ya modela, o quedar dentro de `atom.intent` | abierto |
+| Cómo no | sin asignar; hoy cae en `pill.constraint` o en `atom.invariant` | abierto |
+
+### El documento de dónde
+
+Hoy el dónde está repetido y en tres formas distintas: texto libre en la pill (`where`), una lista
+de rutas en la tarea (`files`), y estructurado solo en el ancla de código de sldb
+(`code:<ruta>::<nombre>`, con su huella y su estado).
+
+Lo que debería ser: un lugar con nombre, definido una vez y compuesto en cualquier ADR, átomo,
+pill o tarea que hable de él. Por ejemplo "la vista de notación de graph_ui" como un solo
+documento, y no como una lista de rutas copiada en cada parte.
+
+Lo que eso da:
+
+- cuando el código se mueve, se corrige en un lugar;
+- el estado de las anclas dice qué documentos hay que volver a mirar;
+- specIR, que sabe a qué afecta un cambio, puede decir qué lugares toca un diff y por lo tanto
+  qué decisiones, átomos y trabajos alcanza.
+
+Hipótesis sin verificar, para no inventar un modelo: sldb ya tiene con qué armarlo. Un `ViewDoc`
+es una selección con nombre de documentos del store; los nodos que specIR extrae del código y las
+anclas de código son documentos; y la composición de sldb ya incrusta una vista dentro de otro
+documento. Un lugar sería entonces una vista sobre nodos de specIR y anclas, sin modelo nuevo. Hay
+que comprobar si alcanza o si hace falta un tipo propio.
+
+### Lo que esto cambia en los modelos de hoy
+
+- La pill carga hoy las seis preguntas como secciones (qué, por qué, cuándo, dónde, cómo, cómo
+  no). Pasaría a llevar el cómo, y a componer el dónde y apuntar al porqué.
+- El átomo elige hoy su pregunta con un campo. Con un tipo por pregunta, ese campo sobra.
+- La tarea dejaría su lista de rutas por una referencia al lugar.
+
 ## Sin resolver
 
 - Dónde viven las capacidades (lo que un producto tiene que poder hacer) y su prueba: ¿átomo con
@@ -139,6 +188,9 @@ contenido mal ubicado.
   Si se puede comprobar, debería ser la regla.
 - Qué partes del contexto que hoy va en pills puede entregar specIR directamente a quien ejecuta.
 - Cómo se revisa lo que ya existe sin hacerlo a mano.
+- Si el documento de dónde es una vista de sldb sobre nodos de specIR y anclas, o un tipo propio; y
+  en qué repo vive, dado que es transversal.
+- Qué documento responde para quién y cuál cómo no.
 
 ## Lo que hay hoy, solo como referencia
 
