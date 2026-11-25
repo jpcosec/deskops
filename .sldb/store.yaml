@@ -622,6 +622,7 @@ include:
   - desk/materializations/materialization-dispatch-reap-tests-test-dispatch-py.md
   - desk/materializations/materialization-integrate-cleanup-deskops-integrate-py.md
   - desk/materializations/materialization-integrate-cleanup-tests-test-integrate-py.md
+  - desk/materializations/materialization-board-phases-tests-fixtures-model-contract-hashes-json.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3196,6 +3197,14 @@ include:
     name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-evidence-atom-1
   - path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/evidence-materialization-1.md
     name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-evidence-materialization-1
+  - path: desk/reviews/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase/evidence-tests-1.md
+    name: review-task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase-evidence-tests-1
+  - path: desk/reviews/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase/evidence-commit-1.md
+    name: review-task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase-evidence-commit-1
+  - path: desk/reviews/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase/evidence-atom-1.md
+    name: review-task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase-evidence-atom-1
+  - path: desk/reviews/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase/evidence-materialization-1.md
+    name: review-task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -3261,6 +3270,8 @@ include:
   - desk/tasks/task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado.md
   - desk/tasks/task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase.md
   - desk/tasks/task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente.md
+  - desk/tasks/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js.md
+  - desk/tasks/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md

@@ -1,0 +1,48 @@
+{
+  "key": "task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej/preflight",
+  "input_sha256": "329b3478b1ecbbb899684b1ec84c6d8522a951e65b90c99d63fa08386fc5a342",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261121-065253/context-review/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej/preflight/329b3478b1ecbbb899684b1ec84c6d8522a951e65b90c99d63fa08386fc5a342/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-dispatch-deja-commiteados-los-rundoc-que-escribe-para-que-el-reap-pueda-traer-al-main-commits-del-ej.md",
+      "sha256": "67ae4eeea5b6d9eac2cc03ada4af60e56f0652927ba9512cdf2d8b8b6b1296df",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [],
+  "started": "2026-11-21T06:52:54.626840+00:00",
+  "finished": "2026-11-21T06:53:05.108429+00:00"
+}

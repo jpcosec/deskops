@@ -1,0 +1,11 @@
+## REFORMULACION
+WS20 es un nodo `implementation` ejecutable, no un agregado. Su propósito es comprobar si sldb ya ofrece guardado reversible de documentos raw-source y, solo si falta o está incompleto, completarlo. El resultado es una API pública de extracción/validación/guardado con revisión y preservación de campos protegidos, más pruebas de roundtrip, conflicto, recuperación tras fallo y campos protegidos. Repo dueño: `sldb`. Límites: conserva solo raw-source; no sobrescribe Markdown desde browser; no duplica código si la capacidad existe; si es parcial, completa solo lo faltante y reprueba todo el contrato; la precondición de payload por campos es un hueco separado de WS45 y las pruebas de conflicto usan la precondición raw-source que fije WS12. Cambios acotados a `src/sldb/api/documents/`, `src/sldb/cli/serve/` y `tests/`.
+
+## AMBIGUEDADES
+Ninguna. El resultado, el repo, la aceptación, el fallback y los límites están definidos. Las citas relevantes —«Si la capacidad existe, esos tests bastan y no se duplica código» y «Si falta, se implementa en sldb mediante tarea propia aceptada en G_SLDB_WRITE»— delimitan las dos ramas sin obligar a inventar. «Revisión» y «campos protegidos» remiten a WS12/modelos auditados, y la ausencia de contrato se resuelve por las reglas comunes de alcance, no por invención local.
+
+## DRY-RUN
+Lecturas hipotéticas: contrato WS12, whitelist/campos protegidos y precondición raw-source; API/CLI y pruebas existentes de sldb; inventarios WS02–04 citados por WS12. Cambios previstos: verificar capacidad; si existe, añadir/completar pruebas; si falta o es parcial, implementar lo mínimo en `output_scope` y probar el contrato completo. Dependencias: WS12 y gates `G_WRITE_CONTRACT`/`G_SLDB_WRITE` por delta. Validaciones futuras: API pública, roundtrip sin pérdida, conflicto con la precondición fijada por WS12, recuperación tras fallo y campos protegidos. No es agregado: no hay hijos que recorrer.
+
+## FUTURO
+WS12 produce el contrato técnico y la representación de la precondición raw-source; el receptor humano P01 emite el acta `G_SLDB_WRITE` del delta concreto al promover. WS45 produce la precondición de escritura de payload por campos; WS21 queda bloqueado por `G_PAYLOAD_PRECONDITION` y, solo en variante editable, por `G_SOURCE`. El TaskDoc de promoción fija archivos y escenarios concretos.

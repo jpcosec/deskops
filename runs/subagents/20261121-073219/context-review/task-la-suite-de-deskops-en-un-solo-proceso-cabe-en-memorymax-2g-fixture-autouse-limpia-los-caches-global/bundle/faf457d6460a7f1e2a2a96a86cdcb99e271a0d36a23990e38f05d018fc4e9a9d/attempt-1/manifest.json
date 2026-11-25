@@ -1,0 +1,89 @@
+{
+  "key": "task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/bundle",
+  "input_sha256": "faf457d6460a7f1e2a2a96a86cdcb99e271a0d36a23990e38f05d018fc4e9a9d",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261121-073219/context-review/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global/bundle/faf457d6460a7f1e2a2a96a86cdcb99e271a0d36a23990e38f05d018fc4e9a9d/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-fixture-autouse-limpia-los-caches-global.md",
+      "sha256": "b49d4a6bdb0d369041fbeedcb76a91409b4416a435b307f15aa120074c0951e1",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "1bc3f76b7abda0b131cdd45f8a405529f4886623261b074e4e65ef40f09942cd",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/doc_access.py",
+      "sha256": "ac45fd7b6dcac4e476190bd6d9de657ac8be1c0adf2e19e27a3bb2b3cbe91e3b",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-21T07:32:20.290674+00:00",
+  "finished": "2026-11-21T07:32:38.311556+00:00"
+}

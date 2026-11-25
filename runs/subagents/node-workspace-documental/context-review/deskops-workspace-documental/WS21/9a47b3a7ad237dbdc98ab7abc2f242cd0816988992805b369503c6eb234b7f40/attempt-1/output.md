@@ -1,0 +1,12 @@
+## REFORMULACION
+WS21 es un encargo de implementación en `graph_ui`: integrar en `frontends/mindmap/views/workspace/` el alternado fuente/render sobre el mismo origen, conservando el buffer sucio y usando el guardado fuente autorizado. Debe ejecutar solo la variante P04 vigente —hoy `source_mode=editable`— y probar edición, conflicto y roundtrip con `G_SOURCE` y `G_WRITE_CONTRACT`; si existe composición en WS12, esta solo escribe en el documento dueño de cada campo, y si no hay soporte queda en solo lectura declarada. Límites: no descartar el buffer sin confirmación, no escribir composición sin origen trazable soportado, no habilitar la variante no elegida y respetar `G_PAYLOAD_PRECONDITION`, `G_UI_WRITE` y `G_WRITE_CONTRACT`.
+
+## AMBIGUEDADES
+1. «Al alternar con cambios sin guardar se conserva el buffer; nunca se descarta sin confirmación explícita de la persona usuaria» frente a «En editable, G_SOURCE y G_WRITE_CONTRACT pasan y se prueba edición/conflicto/roundtrip». La aceptación no menciona el alternado fuente/render ni la conservación del buffer; obligaría a decidir si esas conductas deben verificarse y con qué criterio, en vez de dejarlo al TaskDoc.
+2. «Con pending no se prepara ni se promueve este nodo». No nombra qué queda pendiente; obligaría a decidir si se refiere a P04, a un gate o a otro estado. No cuestiona que los gates pendientes sean intencionales, sino la falta de referente.
+
+## DRY-RUN
+Un ejecutor futuro leería WS21, P04 en `decisiones.md`, el contrato WS12 y las salidas de WS19.1/WS19.2 y WS48; comprobaría evidencia de `G_SOURCE` (WS20), `G_PAYLOAD_PRECONDITION` (WS45), `G_WRITE_CONTRACT` y el acta `G_UI_WRITE` por delta. Revisaría `frontends/mindmap/views/workspace/` y `tests/`. Cambios previstos: punto de alternado fuente/render con identidad de origen, estado dirty y confirmación; cableado del guardado autorizado; pruebas de edición/conflicto/roundtrip y de composición —solo escritura en el dueño del campo o solo lectura declarada—. WS19 es agregado: no se ejecuta, termina cuando terminan sus hijos. WS48 aporta la admisión común de escrituras. Validaciones futuras: variante editable, gates satisfechos, pruebas en store temporal y ausencia de commit/closeout. Nada se ejecuta aquí.
+
+## FUTURO
+WS12 debe fijar operaciones y composición; WS20 produce `G_SOURCE`; WS45 produce `G_PAYLOAD_PRECONDITION`; el receptor P01 emite `G_UI_WRITE` por delta; WS48 debe estar disponible como admisión común; WS30 valida después.

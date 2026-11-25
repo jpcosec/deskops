@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-23T11:21:38Z'
+  at: '2026-11-23T11:21:59Z'
   authority: generated
   via: save_document_payload
 # run-xxx
@@ -33,7 +33,7 @@ ended_at: '2026-11-23T11:21:29+00:00'
 # in_progress | success | failure | aborted
 outcome: success
 # Closeout commit hash, empty until closeout completes
-commit_sha: ''
+commit_sha: c14529f0616e316856e8c1cb9e5169fc77531c6a
 # e.g. system:deskops
 tags:
 - system:deskops

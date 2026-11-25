@@ -1,0 +1,105 @@
+{
+  "key": "task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/bundle",
+  "input_sha256": "6aab0eacc93ceaf2285104ac42c6b1de1f88fbd1cd25c9346376db789d101564",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261121-072020/context-review/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime/bundle/6aab0eacc93ceaf2285104ac42c6b1de1f88fbd1cd25c9346376db789d101564/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache-y-no-en-sldb-runtime.md",
+      "sha256": "9bd82c37b5475acb1592848766e07fff99e698e297842f212a0532224965fc83",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/contexts/pill-010-graph-runtime-output-policy.md",
+      "sha256": "2dea2f646adae1585e121fcf21d8b192be456a3fc44102c8e5e968b127edbbae",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/graph/export.py",
+      "sha256": "5056c2f737926261c69ac221c2968c5efd2e2bd37ec671910816a432eb8ea01f",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/graph/self_reflection.py",
+      "sha256": "22e765c74314e35bdec53c46712ff3aa287a8294e44e426d17014e10406795cf",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_graph_snapshot.py",
+      "sha256": "1228d5ab78a7f075ef0f94e26cd189ce40b32f6de79f8c7282d94d82af18a31f",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_graph_self_reflection.py",
+      "sha256": "d55341f76871b338b7080f72e1fc3527591e422112340faf0ba0773220dd414a",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-21T07:20:21.537468+00:00",
+  "finished": "2026-11-21T07:20:44.069035+00:00",
+  "retry_reason": "El contrato del TaskDoc cambio desde la ultima revision (estado stale); ronda de revision de la tanda 2026-11-21."
+}

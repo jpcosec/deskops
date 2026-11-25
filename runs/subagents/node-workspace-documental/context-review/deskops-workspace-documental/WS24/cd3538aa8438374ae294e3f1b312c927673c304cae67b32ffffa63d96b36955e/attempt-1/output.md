@@ -1,0 +1,12 @@
+REFORMULACION
+Propósito: integrar conocimiento y grafo local en `graph_ui` reutilizando el gráfico actual y una vista de documento genérica registrada en `shell/registry.js`. Resultado: vista única para átomos/protoátomos/crossroads/materializaciones/pills con clasificación (tipo y tags), backlinks entrantes vía API de grafo de sldb y vecindad de hasta 2 hops; Markdown no modelado heredado de WS13, visible con ruta de origen y sin clasificación ficticia; preservar Code local `a1b2b22`. Repo dueño: `graph_ui`. Límites: no segundo lector, no renderer nuevo obligatorio por clase, tags solo desde payload/`semantic_tags` públicos según WS03/WS11, sin inferencia por carpeta; ViewDoc WS18 solo extensión opcional tras `G_SPEC_VIEW`; depende de WS13 y WS09; `G_UI_READ` es `per_delta`. Nodo `implementation`, no agregado.
+
+AMBIGUEDADES
+1. «preservar Code local existente del workspace integrado a1b2b22» / «Code local = proyección Code del workspace integrado a1b2b22». La aceptación no incluye criterio para comprobar la preservación; el ejecutor tendría que inventar qué significa preservar y cómo verificarlo.
+2. «Vecindad = hasta 2 hops» y «La vista muestra … la vecindad de hasta 2 hops». No se fija origen, dirección ni tipos de relación (entrantes, salientes o ambas) ni si incluye los backlinks; «La vecindad existente se reutiliza» no identifica esa vecindad. El ejecutor tendría que inventar el conjunto de aristas.
+
+DRY-RUN
+Lecturas: WS24, salidas de WS13, catálogo WS09, auditoría WS03, contrato WS11, `shell/registry.js`, grafo actual, `materialization.py`, tests y recibo `G_UI_READ`. Cambios previstos: registrar la vista genérica en registry; integrarla en `graph/` y panel Context; calcular backlinks con la API de grafo de sldb; mostrar tipo/tags y vecindad; conservar Code local; añadir pruebas. Dependencias: WS13 completo, WS09, WS11/WS03 transitivos y `G_UI_READ`; WS18 solo con `G_SPEC_VIEW`. Validaciones futuras: ida/vuelta por fuentes y backlinks; Markdown no modelado con ruta; tipo/tags; vecindad ≤2 hops; ausencia de clasificación ficticia; no regresión de Code local; recibo por delta.
+
+FUTURO
+WS13 entrega lector/explorador/historia/foco; WS09 el catálogo; WS03 el inventario/auditoría; WS11 el contrato. El humano P01 emite `G_UI_READ` por delta. El TaskDoc fija archivos, pruebas y textos. WS30 valida manualmente; WS29 y WS42 consumen WS24; WS18 se conecta solo tras `G_SPEC_VIEW`. Si falta contrato, se aplica la regla común: detenerse y registrar el hueco.

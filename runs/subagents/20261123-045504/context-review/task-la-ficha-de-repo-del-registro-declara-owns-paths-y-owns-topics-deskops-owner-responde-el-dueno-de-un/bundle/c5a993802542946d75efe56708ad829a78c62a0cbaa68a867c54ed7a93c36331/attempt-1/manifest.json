@@ -1,0 +1,99 @@
+{
+  "key": "task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/bundle",
+  "input_sha256": "c5a993802542946d75efe56708ad829a78c62a0cbaa68a867c54ed7a93c36331",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261123-045504/context-review/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un/bundle/c5a993802542946d75efe56708ad829a78c62a0cbaa68a867c54ed7a93c36331/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-deskops-owner-responde-el-dueno-de-un.md",
+      "sha256": "0a73cdeb596172cb0d13ee081b673045ec3c4fbd1b1bbb96f19971df1f0a8d3c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/models/repository.py",
+      "sha256": "65814caad289ef167148266ee161ec19c86b54bcad7c28f2f91ec0df90f30cf5",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/config.py",
+      "sha256": "2e97900e1ca4aa5ac0e4994dc5022982546bb32d3bbfb5f8c881030c8b1a0cea",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/repo.py",
+      "sha256": "381d3689440879ba07315ecacd5ccffe61df43449fb0eee13519a70be5b3cda9",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/message.py",
+      "sha256": "c73f308d0e1a18fedc7dba23684166e9b0476d16868438950b62ffcef47b4b6c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_ecosystem_registry.py",
+      "sha256": "795dd10e4b4c7ffda2e18e971af791b4e8e488f6885f809c1309a177d376703c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_config.py",
+      "sha256": "cdd349cf7047b200cdec71e38b9a29643103532ac9f105838a1b2af0a5701b31",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-23T04:55:05.329452+00:00",
+  "finished": "2026-11-23T04:55:27.862183+00:00"
+}

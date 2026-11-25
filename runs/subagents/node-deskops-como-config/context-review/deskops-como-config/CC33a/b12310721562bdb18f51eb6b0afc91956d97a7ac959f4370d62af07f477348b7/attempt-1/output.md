@@ -1,0 +1,13 @@
+## REFORMULACION
+CC33a es un nodo `delivery` de deskops: convierte `deskops closeout verify` en escritor de recibos `ReviewDoc kind evidence` por cada kind verificado (`fact`, `value`, `verdict`, `reason`, `subject` anclado al contrato de la tarea), sin duplicar recibos si no cambia `input_sha256`, y deja `verify_task_closeout` como orquestador que devuelve el mismo envelope. `closeout_gates.py` conserva solo los productores de hechos de git y archivos. Límites: las reglas que leen los recibos son de CC33b; hasta entonces el gate de cierre sigue siendo el actual; no escribe en sldb ni suple reglas con Python; `output_scope` acota los archivos. Depende de CC32 y CC38; G_GO06 y G_GO08 están satisfechos.
+
+## AMBIGUEDADES
+1. Contradicción entre alcance y `output_scope`: el scope dice “verify_task_closeout queda como orquestador (corre productores, escribe recibos, devuelve el mismo envelope que hoy)”, pero `output_scope` enumera “deskops/services/closeout_gates.py, deskops/services/closure.py (solo la llamada a verify), deskops/models/review.py…” y no incluye `operations.py`, donde `alcance.md` ubica `verify_task_closeout` (`operations.py:602-723`). Obliga a inventar si puede editar `operations.py` o mover la función.
+2. Kind `external` sin productor: el scope exige escribir recibo “por cada kind de evidencia verificado” con “fact = <kind> (tests | commit | atom | materialization | document | external)”, pero los productores listados son solo de git/archivos y no incluyen `external`. Obliga a inventar cómo se verifica `external` o si debe escribirse un recibo `rejected`.
+3. `input_sha256` sin composición definida: “una verificación repetida sin cambios no crea recibo nuevo (mismo input_sha256)” no dice qué insumos entran en ese hash. Obliga a inventar qué se hashea y cuándo dos verificaciones son “sin cambios”.
+
+## DRY-RUN
+Lecturas: brief, alcance, decisiones, `dag.yaml`, artefactos de CC32/CC38, `closeout_gates.py`, `verify_task_closeout`, `models/review.py`, CLI de closeout y tests de closeout. Cambios previstos: refactor de productores, escritura de recibos en `verify`, ajuste del modelo y de la llamada en `closure.py`, tests y CHANGELOG. Dependencias: CC32/CC38 cerrados; gates satisfechos. Validaciones futuras: tests `test_closeout*.py`, goldens de ayuda/salida, conteo de líneas de `closeout_gates.py`, segunda verify idempotente y cambio de `anchor_state` al editar `goal`. Sin ejecutar nada.
+
+## FUTURO
+CC33b escribirá las `RuleDoc` que leen los recibos y decidirá, según DO6, si `closeout commit` escribe recibos antes de leerlos. CC33c cubrirá el resto del agregado. La integración y la suite completa las valida el supervisor; no son ambigüedad de este nodo.

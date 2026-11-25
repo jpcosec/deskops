@@ -1,0 +1,103 @@
+{
+  "key": "task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/bundle",
+  "input_sha256": "abc9315719b4f357b09838f2e2daeb2d8a91de0f5943f6d6d446c027a7e2b897",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261121-073320/context-review/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale/bundle/abc9315719b4f357b09838f2e2daeb2d8a91de0f5943f6d6d446c027a7e2b897/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-runtime-template-de-scion-image-resources-y-volumes-van-en-un-archivo-config-y-el-tipo-de-hijo-sale.md",
+      "sha256": "10e603d909ebd035b7f8831dc5736a6c65569c9526dada9b5bbbfa5a7f4893c7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-scion-coordinator-progresses-authorized-work.md",
+      "sha256": "6d4649499c28df7536cae9623f35148501072f595316d1b5de575cf51569ac94",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/runtime/scion.py",
+      "sha256": "a8d9b8c2cde857a013f1f9e1fa956ba0b509357a9f63420a5abbf056a94ce3de",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/runtime.py",
+      "sha256": "325556789a2a0cffce5edf64306a98bde32a04515fb791967c1e868220dc23d7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_scion_runtime.py",
+      "sha256": "369b5ba5710fb1ce0466fe93ce16bfab0dc60023554f90dee48a30474031d6e9",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "tests/fixtures/golden (ayuda de runtime template)",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-21T07:33:21.301861+00:00",
+  "finished": "2026-11-21T07:33:35.178579+00:00"
+}

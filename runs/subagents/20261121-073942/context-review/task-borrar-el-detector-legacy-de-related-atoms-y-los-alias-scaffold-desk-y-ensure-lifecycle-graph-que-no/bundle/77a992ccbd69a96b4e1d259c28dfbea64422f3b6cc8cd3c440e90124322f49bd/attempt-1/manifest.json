@@ -1,0 +1,105 @@
+{
+  "key": "task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/bundle",
+  "input_sha256": "77a992ccbd69a96b4e1d259c28dfbea64422f3b6cc8cd3c440e90124322f49bd",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261121-073942/context-review/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no/bundle/77a992ccbd69a96b4e1d259c28dfbea64422f3b6cc8cd3c440e90124322f49bd/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-borrar-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph-que-no.md",
+      "sha256": "5b4389ca49ff905fb7b574e4c4f24cc715c46b8721e9772961fe24632dec96cc",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/atom_references.py",
+      "sha256": "c093100f10b6bf7082b51a56065635939d13de86baa60ae4db7a054c1f574869",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/graph/checks.py",
+      "sha256": "bdf7ad687fb7d2ff1232ff2c788df474353c1cb83dc11d40fa21fc670013c08d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/workspace.py",
+      "sha256": "b779b11a7d6bae55266b42596fac927d468dd32d2edb413c4964890270a8d989",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/lifecycle.py",
+      "sha256": "146c86db1b9ff3cb2775124d35398b9ab90aab168048949f175390c9d9904692",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_atom_reference_convention.py",
+      "sha256": "e50e2d8fae6b599a717edaafcf39adbdafb05d9f364fdc19562809226c933d87",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-21T07:39:43.429835+00:00",
+  "finished": "2026-11-21T07:39:53.686934+00:00",
+  "retry_reason": "El contrato del TaskDoc cambio desde la ultima revision (estado stale); ronda de revision de la tanda 2026-11-21."
+}

@@ -1,0 +1,104 @@
+{
+  "key": "task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li/bundle",
+  "input_sha256": "7a03d6638785361b96b499a9c6b2aaef47fb0dec92290bdc5c8da673661107dc",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261117-120211/context-review/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li/bundle/7a03d6638785361b96b499a9c6b2aaef47fb0dec92290bdc5c8da673661107dc/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-se-borra-el-camino-legacy-de-deskops-message-y-el-escenario-e2e-inbox-to-task-usa-deskops-message-li.md",
+      "sha256": "a532fad5734dce249885276ef46aa9f58a0761b172cef12462aaca4b012c31fa",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk.md",
+      "sha256": "5fa9e0312a209998511d41edd92b501cdda589e9b96cb7732f7c4dab31c772d5",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/message.py",
+      "sha256": "acd0aae9edd847dcde86379a38180d9a412d4d43094592385aa2fa3cd50777f7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/e2e_agent/scenarios/inbox-to-task.yaml",
+      "sha256": "5a17a68da19e17f82ca5c52247ceb3ee8faf9205796a34299c708737fe2d740a",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_repo_identity.py",
+      "sha256": "7a41f656dd9dda9c7a5cd1aca3008e0f5052d1624998d51d338e1f3ab884ced3",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_inbox_promote_cli_gaps.py",
+      "sha256": "27cc21ee531ea7600784d6820056d66c4dd8e8994e8a54b97f1690e86788cc1e",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_cli.py",
+      "sha256": "4129087c11e12884ca145537756ac12e8127756195203e20df0968bfd0fb5952",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-17T12:02:12.190207+00:00",
+  "finished": "2026-11-17T12:02:24.626229+00:00"
+}

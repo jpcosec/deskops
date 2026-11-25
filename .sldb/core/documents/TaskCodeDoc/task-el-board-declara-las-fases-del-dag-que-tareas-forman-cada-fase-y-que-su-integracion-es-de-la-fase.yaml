@@ -1,7 +1,7 @@
 name: task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase
 path: desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
-source_hash: a47db00bc115c00c69d6727ebfb620cb6563ab1c0349fa497208c9b817ba3e0d
-content_hash: 382429312a30c8bc8f5e88787ea0c71432ac167314749fa1ff82ae469cbbc321
+source_hash: 50d04ffddd9dd45bc675537f9ee2cb03f27084645c1447a3cbe02afa208475ae
+content_hash: e3d96b3ca49cadafc5274e3d48beb5d498c368c8f4e7a4d9d4d7c667802f7489
 field_hashes:
   title: 1a9eeb9bb61dbd5802bbc43039412eddff3c94e7094895cd97be92f639f2bd9a
   id: 4660b1b4114a401dfac963e78ca0c92c1f01b6896f4ca0126c65d4d617e19fcd
@@ -13,17 +13,17 @@ field_hashes:
   why: 5c01070356128a88d83713f5a3f1d871068a344694a0724e857844fcf4d1a565
   goal: 874b90d03fb232505965ed3cc655eb6e31c30e59ffba86e67de72945aea87d71
   scope: 02ad70137f3131acfc31186c9892d5286064febfab352f2fb994a6efe75e647b
-  references: 03c20d77ef72d6bec430f496ef47d51bbf54fe0aaf97545c50916734613a554f
+  references: 6186bb20565de86b07e7ba7d4579424eb0b674af951ef0690071c8078ad3b81a
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 7d58a2667c7687cc97eddf7aa2fecf7aa135e06ffe3d739d906d280890b24d9e
   implementation_path: 0ea65ea2eeef5035cd79560f91b8b2b358165d3713c36e6352d08969b97c0e40
   validation: 62f6bbe29d0e57f0d4f99444957839b0809adff7e3b4fb2c40a49fa7d635c3ca
   done_when: be7db98ef87a32b2eb92a2ecb823374675e11a58a77b5e8d24a84c46aeb6563f
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
-  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  atoms: 88ad54010318089b9b9b8942a483698a5ccd1e0cd60bc3f59ea40e2d671c6892
 semantic_tags:
 - board.tareas
 - representation.markdown
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T05:28:18Z'
+  at: '2026-11-25T12:38:11Z'
   authority: generated
   via: save_document_payload

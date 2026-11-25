@@ -1,0 +1,93 @@
+{
+  "key": "task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi/bundle",
+  "input_sha256": "9e814f152087dcc851d02522b42612e951e593177e47cf16f5a89cb3b1e0da81",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261116-170855/context-review/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi/bundle/9e814f152087dcc851d02522b42612e951e593177e47cf16f5a89cb3b1e0da81/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-la-evidencia-de-commit-de-otro-repo-repo-id-sha-resuelve-el-repo-id-tambien-en-el-registro-del-ecosi.md",
+      "sha256": "cd78b7be5aaa21bd22ceb9afe1ed5d760f0ca1e176ec4b96ad3928fd74304d9c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/services/closeout_gates.py",
+      "sha256": "7a38f5b4ad7d8664e7955ce54e42263677e99039cbb8460bfab99ada6360f5cf",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/workflow-policy-reference.md",
+      "sha256": "d9aa145ca24615431ae12d1989eba1ed509b52357c20b9727b613920343643fe",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_closeout_gates.py",
+      "sha256": "a266205bc8e47e8ff0e176d194735d448ec867275b119a0015e3a47aa9d23e7e",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_closeout_resolved_by.py",
+      "sha256": "cd920bdd5c3d3270c5a38ac89daf22bf8c7e383f47759128bc5e92fad27feb92",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/services/closure.py",
+      "reason": "size>=60000",
+      "size": 75515
+    }
+  ],
+  "started": "2026-11-16T17:08:56.105734+00:00",
+  "finished": "2026-11-16T17:09:10.741237+00:00"
+}

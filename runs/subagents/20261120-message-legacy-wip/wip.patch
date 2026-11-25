@@ -1,0 +1,108 @@
+diff --git a/deskops/cli/commands/message.py b/deskops/cli/commands/message.py
+index f59c2ba8..0c6ef9cd 100644
+--- a/deskops/cli/commands/message.py
++++ b/deskops/cli/commands/message.py
+@@ -35,16 +35,13 @@ from deskops.errors import UsageError
+ class MessageCLI:
+     """Send, list, read, or acknowledge cross-desk messages.
+ 
+-    Canonical surface is `deskops message {send|list|read|ack}`. The legacy
+-    `deskops inbox` flag grammar routes through `_run_legacy` for backward
+-    compatibility.
++    The surface is `deskops message {send|list|read|ack}`; argparse requires
++    the subcommand, so `deskops message` alone is a usage error (rc 2).
+     """
+ 
+     def run(self, args: Any) -> int:
+         try:
+-            if getattr(args, "message_command", None) is not None:
+-                return self._run_message_command(args)
+-            return self._run_legacy(args)
++            return self._run_message_command(args)
+         except (SLDBStoreError, SLDBValidationError, ValueError) as exc:
+             return render_error(
+                 str(exc),
+@@ -72,21 +69,6 @@ class MessageCLI:
+             type_name="DomainError",
+         )
+ 
+-    def _run_legacy(self, args: Any) -> int:
+-        if getattr(args, "list", False):
+-            return self._list_notes(args)
+-        if getattr(args, "show", None):
+-            return self._show_note(args)
+-        if getattr(args, "ack", None):
+-            return self._ack_note(args)
+-        if not getattr(args, "message", None):
+-            return render_error(
+-                "Provide a message or use send/list/read/ack.",
+-                getattr(args, "format", "text"),
+-                type_name="DomainError",
+-            )
+-        return self._deliver_note(args)
+-
+     def _deliver_note(self, args: Any) -> int:
+         target_project, desk_root = self._resolve_target(args)
+         inbox_dir = desk_root / "inbox"
+diff --git a/tests/e2e_agent/scenarios/inbox-to-task.yaml b/tests/e2e_agent/scenarios/inbox-to-task.yaml
+index 66160e9e..041f0b44 100644
+--- a/tests/e2e_agent/scenarios/inbox-to-task.yaml
++++ b/tests/e2e_agent/scenarios/inbox-to-task.yaml
+@@ -13,7 +13,7 @@ setup:
+   - deskops add inbox-note --root . --title "Document the release process" --kind suggestion --sender-project other-project --target-project repo --created-at 2026-10-16T12:00:00 --status open --body "Please document how this repo cuts a release." >/dev/null
+   - git add -A && git commit -qm "initial"
+ reference:
+-  - deskops inbox list --root . || deskops list inbox-notes --root .
++  - deskops message list --root .
+   - deskops promote inbox-to-drawer-task document-the-release-process --root .
+   - deskops add task --root . --title "Document the release process" --goal "Write down how releases are made" --scope "docs only" --task-type task.docs --validation pytest
+ checks:
+diff --git a/tests/test_inbox_promote_cli_gaps.py b/tests/test_inbox_promote_cli_gaps.py
+index 9eeb4b8e..60dfd53a 100644
+--- a/tests/test_inbox_promote_cli_gaps.py
++++ b/tests/test_inbox_promote_cli_gaps.py
+@@ -1,8 +1,8 @@
+ """Regression tests for the CLI gaps reported in desk/inbox/.
+ 
+-Covers the inbox note:
+-  - 20260827-160657 "CLI gaps: inbox --root, promote deja notas tracked
+-    huerfanas, sin listado de drawer"
++Covers the inbox note 20260827-160657 (CLI gaps): listing a desk's messages by
++--root (today `deskops message list --root`), promote leaving orphan tracked
++notes, and no drawer listing.
+ 
+ Drawer -> active task promotion was removed rather than repaired: the drawer
+ is loose by design and an active task is a compiled, fully authored bundle,
+diff --git a/tests/test_message_cli.py b/tests/test_message_cli.py
+index c5dc9866..1ab77364 100644
+--- a/tests/test_message_cli.py
++++ b/tests/test_message_cli.py
+@@ -77,6 +77,15 @@ def test_message_help_documents_transport_verbs(capsys) -> None:
+     assert "deskops message send" in output
+ 
+ 
++def test_message_without_subcommand_is_a_usage_error_naming_the_verbs(capsys) -> None:
++    assert main(["message"]) == 2
++    captured = capsys.readouterr()
++    for verb in ("send", "list", "read", "ack"):
++        assert verb in captured.err
++    # A usage error, not the full help.
++    assert "Examples:" not in captured.err + captured.out
++
++
+ def test_retired_inbox_alias_is_an_unknown_command(capsys) -> None:
+     assert main(["inbox", "--list"]) == 2
+     assert "invalid choice: 'inbox'" in capsys.readouterr().err
+diff --git a/tests/test_repo_identity.py b/tests/test_repo_identity.py
+index 9e80bb0f..f67293f6 100644
+--- a/tests/test_repo_identity.py
++++ b/tests/test_repo_identity.py
+@@ -94,7 +94,7 @@ def test_repo_local_desk_without_a_registry_is_its_own_authority(
+ ) -> None:
+     """A desk that keeps no registry must still resolve its own identity.
+ 
+-    Without this, `deskops inbox --ack` and `deskops next` inside such a repo
++    Without this, `deskops message ack` and `deskops next` inside such a repo
+     fail with "Repository id '<name>' not found in registry", which makes inbox
+     triage impossible from the repository the note is addressed to.
+     """

@@ -1,0 +1,3 @@
+pytest tests/test_skill_cli_drift.py -> 2 passed (rc 0)
+grep -rn use-spec2viz AGENTS.md README.md .opencode -> rc 0, 3 matches, all historical text in files out of scope/unchanged:
+ .opencode/skills/use-deskops/SKILL.md:159 ; .opencode/skills/use-specir/SKILL.md:6,8

@@ -1,0 +1,93 @@
+{
+  "key": "deskops-workspace-documental/WS47",
+  "input_sha256": "1f9d8be6eed70bfada45e0b8da1b23b0bca8517fa3af073226fb288b031fbb47",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/node-workspace-documental/context-review/deskops-workspace-documental/WS47/1f9d8be6eed70bfada45e0b8da1b23b0bca8517fa3af073226fb288b031fbb47/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/drawer/plans/workspace-documental/context-review-guide.md",
+      "sha256": "dec1766a708b1fdfea8af1233c8f2fbe5aa03ce5d7c07e431082bf9d00975d0e",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/brief.md",
+      "sha256": "c36f08057d0995449a83b24d6439bed1e20b7a0fd2baffafc3706561c3f22abc",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/alcance.md",
+      "sha256": "203ef33a2a98706a6746f93d1912bd518c27ba88768c0d2181d553dbb802eba2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/decisiones.md",
+      "sha256": "f2d4b58f41587ff91d511e801a21a11795b3ad54ec59b91edcc2c3e4a12bd72d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/dag.yaml#node:WS47",
+      "sha256": "a2a4c7bb5724f94ce62b0fe99955d0ff647378a342c17d6991f04caf449acb4d",
+      "projection": "node_contract"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/dag.yaml#edge:WS12",
+      "sha256": "8d43ed46529d071c5285743eef51814320ce20dcf928c6956e10491437cee774",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/dag.yaml#edge:WS19.1",
+      "sha256": "97fa359262240069c03708e084447cfdec3d53d7f08b78b5041f6d5fe28a6410",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/dag.yaml#edge:WS19.2",
+      "sha256": "f4cd51c146eb8765e9767d788304eabcc3774c916b0fc2586dd4e0cbee17c87d",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/dag.yaml#edge:WS26.1",
+      "sha256": "3a1e11a2c265a1405e41d15c87b86b456d69267f93f005d0b9e0b3e04c67cbcf",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/workspace-documental/dag.yaml#gates",
+      "sha256": "ae70c26b6cae40454d907d9abee0c24c2a433a59a74668999e6f9fa838c6b361",
+      "projection": "gate_contracts"
+    }
+  ],
+  "omitted_sources": [],
+  "started": "2026-11-17T02:40:06.764009+00:00",
+  "finished": "2026-11-17T02:40:24.097003+00:00"
+}

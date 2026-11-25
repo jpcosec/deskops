@@ -1,0 +1,25 @@
+name: materialization-board-phases-tests-fixtures-model-contract-hashes-json
+path: desk/materializations/materialization-board-phases-tests-fixtures-model-contract-hashes-json.md
+source_hash: da6416320e07593707c702f12c1192c275949be9f51164fe4498f5af3a862880
+content_hash: d3c4213ebcb1a56df5a1ad228ae73dc144f1c368a10cc0e68746bdbf414a57a0
+field_hashes:
+  id: f077d913039c4bd2fcd32747449b89f39d2c2df1d007babb75d456273706ec3c
+  title: 0f491fb5bfe8ef1a2114fa54b3ed8ce0cabb53527ec92a87d903bbc5886be87f
+  source_atoms: 88ad54010318089b9b9b8942a483698a5ccd1e0cd60bc3f59ea40e2d671c6892
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 63010393512eba8902dd4e437dd58ffdc51ff42b7acf107af6f438c78a0fe9e1
+  intent: 2981780d76f6bf5a651d72714fe0291fe95dcb0ad32f8372e29328fc2913bec0
+  validation: 499ee9a88e4a4c3003aa5d1656a0967c860599c1b3ce7156c44dbc3357801af8
+  tags: d80371905f27193496c878d6f79289d87f202c7f1855afe0121d09d9b4c2c037
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:board-phases
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-25T12:38:23Z'
+  authority: generated
+  via: create_document

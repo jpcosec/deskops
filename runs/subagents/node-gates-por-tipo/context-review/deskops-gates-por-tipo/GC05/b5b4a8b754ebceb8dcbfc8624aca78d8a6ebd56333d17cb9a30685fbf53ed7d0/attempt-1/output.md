@@ -1,0 +1,12 @@
+## REFORMULACION
+**Propósito:** que la activación de una tarea en deskops sea un conjunto de `RuleDoc` por tipo, evaluadas por sldb, y que `advance` explique el bloqueo con `edges_blocked`. **Resultado:** reglas comunes y por tipo en `desk/rules/`, generación idempotente por `init`/`desk update --apply`, `add rule --type`, `advance`/`show`/`next` con findings, test de integración que produce `G_CONSUMER`, docs y nota a sldb. **Repo:** deskops. **Límites:** no reimplementa el evaluador en Python; no toca sldb salvo `message send`; no autentica; no cambia la autoridad de `closeout commit`; depende de GC01, GC02, GC04 y de los gates `G_SLDB_*`.
+
+## AMBIGUEDADES
+1. **Cobertura de `init` no comprobable.** El scope dice “Reglas escritas por init y desk update --apply en desk/rules/”, pero la aceptación solo prueba “desk update --apply sobre un desk sin desk/rules/ las escribe”. Obliga a inventar si `init` debe generar las mismas reglas, con qué idempotencia y cómo se valida; no hay criterio de aceptación para esa parte del resultado.
+2. **Propiedad de reglas propias frente a `desk update --apply`.** Se dice que las reglas son “idempotentes, reescritas si difieren” y que un desk con tipos propios escribe su regla con “deskops add rule --type <tipo>”. No se fija si `desk update --apply` debe preservar, ignorar o reescribir esas reglas de tipo propio. Obliga a decidir el comportamiento ante una regla de desk que difiera de la generación de fábrica y a extender la aceptación.
+
+## DRY-RUN
+Sin ejecutar: leería `dag.yaml` GC05, tabla de tipos de `brief.md`, DC2/DC6 y contratos de GC01/GC02/GC04; revisaría `lifecycle.py`, `workspace.py`, `services/rules.py`, `operations.py` y CLI. Cambiaría generación de reglas, `advance` a `edges_holding`/`edges_blocked`, `show`/`next`, tests, `docs/workflow-policy-reference.md`, `CHANGELOG.md` y nota a sldb. Dependencias: tipos y `__activation_receipts__` de GC01, `ReviewDoc` de GC02, efectos de GC04 y gates `G_SLDB_LANG/RULES/ANCHORS/EVAL` pinneados. Validaría con `pytest tests`, `sldb rules check`, los tres pasos de `G_CONSUMER`, idempotencia de `desk update --apply` y existencia de la nota.
+
+## FUTURO
+GC06/GC07/GC08 consumen o documentan lo producido; GC09 aporta la regla de `task.aggregate`. sldb debe cerrar los nodos GO05/GO06/GO07/GO08 y deskops pinnear la versión. El dueño autoriza el plan, confirma pendientes (tipos propios, `--evidence`, Scion) y escribe la disposición de revisión; otro nodo/sldb valida `G_CONSUMER`.

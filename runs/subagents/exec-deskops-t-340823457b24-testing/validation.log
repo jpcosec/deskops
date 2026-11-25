@@ -1,0 +1,116 @@
+## environment
+python: Python 3.12.16
+pytest 9.2.0
+pydantic 2.14.4
+sldb /mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/__init__.py
+deskops /mnt/ssd/proyectos/SLDB_1/deskops/deskops/__init__.py
+
+## tests/test_board_phases.py
+....                                                                     [100%]
+=============================== warnings summary ===============================
+../../../../../dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+4 passed, 1 warning in 0.64s
+exit=0
+
+## tests/test_board_portable_references.py
+...                                                                      [100%]
+=============================== warnings summary ===============================
+../../../../../dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 8.71s
+exit=0
+
+## tests/test_model_contract_snapshot.py
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+________________ test_model_contract_hashes_match_the_snapshot _________________
+
+    def test_model_contract_hashes_match_the_snapshot() -> None:
+        snapshot = _snapshot()
+        discovered = _contract_hashes()
+    
+        changed = sorted(name for name in snapshot if name in discovered and snapshot[name] != discovered[name])
+>       assert not changed, (
+            f"Model contract changed for: {', '.join(changed)}. "
+            f"This requires a store migration (task-rw-f6-migrate-tracking-stores). {FIXTURE_UPDATE}\n"
+            f"New hashes:\n{json.dumps(discovered, indent=2, sort_keys=True)}\n"
+        )
+E       AssertionError: Model contract changed for: BoardDoc. This requires a store migration (task-rw-f6-migrate-tracking-stores). Update tests/fixtures/model_contract_hashes.json only as part of a deliberate contract change requiring a store migration (task-rw-f6-migrate-tracking-stores).
+E         New hashes:
+E         {
+E           "AtomDoc": "84cf8be0e59e01c752330ada36e1174dce79206752a45c4837eb2607d88ac8d8",
+E           "BoardDoc": "333c7d0c3ade74d3b040870e21c33dd9a5403a4c87a67ebaeae685b1860246b0",
+E           "CrossroadDoc": "f1cb8901cf0b6375518de54bbd527963dd396e071243e9d8e2f15f9142ab971d",
+E           "DeskFAQDoc": "c05ce9c314e00f8a9338ce1cbaab37e5a6a16fb880dc41371ef78e6403037f80",
+E           "InboxNoteDoc": "923f97f6b3ed4ecde2d4880707b20bef4116f5de18e7aa2908f6b59e0b16bf47",
+E           "MaterializationContractDoc": "7a9c4f2a6d1393a581170cb62c4c3779b80310e3b31ebe865e8bfd92d6beaf1b",
+E           "PillDoc": "16cbc282a5f20f99f8e31d890d1006d8c243049a78e1d1fca1c0a62737fee5a6",
+E           "ProtoAtomDoc": "d9f08880b80caae90116c3c56c49aecad56db507843df80f706feef2318ca25d",
+E           "RelationDoc": "a71cc04505ddc23c00b8a9ff917e000e955fe11de68ddbaeb08da2bb1e68c9a6",
+E           "RelationTypeDoc": "57b63063959eb2f0b721697bc626d10bc4d960672ed03fa04f9d0a5e1f499699",
+E           "RepositoryDoc": "947814e5bf500816d28eb6e1679386ddb02dfe8826e24fb83e7f1573f0e52036",
+E           "ReviewDoc": "d60dba8a7b7b3c037e61fba2b373b75b0132e359d64d84ef709e74c2d0058fc4",
+E           "RitualDoc": "fd5777c6019cce9e2c3425026376c9de410e9f8c9c66fe52f88a26a8e8f398d6",
+E           "RoleDoc": "0133498aec7921a98513106e1893442b6dd39484b2ec2b5ea700ec6ed837705f",
+E           "RuleDoc": "411e41fc4ed0641c8436fc5c5c32aef148da868661d58951614298568a237fd2",
+E           "RunDoc": "39ae36d6191a211083ab84985efaa456d227f5a48ba4136dc86298e8a8c4d67e",
+E           "RuntimeProfileDoc": "b8ff370537a32427fddde6b889bb45fefe0ea3bb30ee7a7d88c8bb18834bde5e",
+E           "StepDoc": "69888a481258d35844b24fc421a8af6d1560e5b2168270bfedf493f6b15601f0",
+E           "TaskAggregateDoc": "6161d05a36c66c113c1eec817c0ab0f9907eb1b2bfbe4c7fc3bd8fc66eaafed5",
+E           "TaskCodeDoc": "33b0fbf464bb255b3b283bead30b685c8210890b2f4462a3b1d08514365c9ca2",
+E           "TaskDebugDoc": "d5d05d2a7b8edc9e89b556d0a7d03be23f393958d891b1df96dc1c9496112296",
+E           "TaskDecisionDoc": "41c686f918b14ba97418db6d8bc6bd542ec3920d5c16ec816094bf13c8b0eb15",
+E           "TaskDoc": "67492f9436472b6374a1c44499e9ee2b533887803147d9097eabce8cbd71109b",
+E           "TaskDocsDoc": "625a0f7c71ddcd69ead143b3b9f89e0d355fb5bd95ace181df90ec3dc66337f2",
+E           "TaskExternalDoc": "e734b217c8dc346862754f1058aecd29e3235e3e0b40915dce7a6129a1c6269d",
+E           "TaskRefactorDoc": "f68af83792a372bdb0c150a1f11a95678327ae33ad58e6b75ff7cd4a0ab66261",
+E           "ViewDoc": "1616bd1b499ad0c18556a9a4cc0ccd4982aad885727c41aa8e7fd53262d69c2b"
+E         }
+E         
+E       assert not ['BoardDoc']
+
+tests/test_model_contract_snapshot.py:63: AssertionError
+=============================== warnings summary ===============================
+../../../../../dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_model_contract_snapshot.py::test_model_contract_hashes_match_the_snapshot
+1 failed, 1 passed, 1 warning in 0.73s
+exit=1
+
+## tests/test_model_templates.py
+..............                                                           [100%]
+=============================== warnings summary ===============================
+../../../../../dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+14 passed, 1 warning in 0.78s
+exit=0
+
+## tests/test_edit_task_refreshes_board.py
+.                                                                        [100%]
+=============================== warnings summary ===============================
+../../../../../dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  /dev/shm/deskops-test-venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_default_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 1 warning in 14.31s
+exit=0

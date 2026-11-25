@@ -1,0 +1,12 @@
+**REFORMULACION**
+CC31 es un nodo `delivery` de código en deskops. Propósito: rehacer GC04 declarando las transiciones de `desk/lifecycle/` como `RelationDoc` con `attributes.sets/terminal` y semillas managed, y reducir `lifecycle.py` a cargar configuración, llamar a sldb y escribir `history`. Resultado: `advance` usa `edges_holding` y `apply_effects`; `task_lifecycle.yaml` conserva solo `states`; `Transition.sets_status/terminal` y `LifecycleSpec.effect` desaparecen; la migración legada se conserva solo si algún desk la necesita. Repo dueño: deskops. Límites: no escribe en sldb ni suple reglas con Python; mantiene formato del desk, gramática del CLI y cierre por `closeout commit`; `_add_closeout_facts` sigue hasta CC33.
+
+**AMBIGUEDADES**
+1. “se declaran como semillas managed del paquete (deskops/data/lifecycle/, mecanismo de CC36 sobre sldb scaffold_store, GD26)”: su `output_scope` no incluye `deskops/data/desk_declaration.yaml`. Obliga a inventar si CC31 edita la declaración creada por CC36 o asume que CC36 ya declara un glob para lifecycle; sin eso no hay semilla managed.
+2. “si terminal, current_node = complete” frente a “La transición terminal sigue sin persistirse desde advance”. Obliga a inventar si `advance` puede escribir `current_node = complete` o si “terminal” solo marca la arista y la persistencia queda para `closeout commit`; la aceptación no cubre ese caso.
+
+**DRY-RUN**
+Lecturas: TaskDoc, `dag.yaml`, brief/alcance/decisiones, `lifecycle.py`, `lifecycle_migration.py`, `task_lifecycle.yaml`, `data/lifecycle/`, `tasks.py`, `next_actions.py`, `desk.py`, tests y docs. Cambios previstos: agregar RelationDoc semilla con `attributes.sets/terminal`; ajustar declaración/scaffold según se resuelva; borrar `Transition.sets_status/terminal` y `LifecycleSpec.effect`; hacer `advance` por `edges_holding` + `apply_effects`; dejar `task_lifecycle.yaml` sin `transitions`; conservar o borrar migración legada según dry-run de los 6 desks; reducir `lifecycle.py`. Dependencias: CC30, CC36; gates `G_GO09` y `G_GD26` figuran satisfechos. Validaciones futuras: desk temporal; cambio de `sets` sin tocar YAML; reescritura de RelationDoc viejo e idempotencia; greps; tests de lifecycle; goldens de `advance`/`next`; `doctor` en 6 desks; líneas antes/después; CHANGELOG y doc.
+
+**FUTURO**
+CC36 entrega el mecanismo de declaración/scaffold; CC33 retira `_add_closeout_facts` y define cierre por recibos; CC37 consume la consistencia del ciclo de vida; el supervisor corre suite integrada y decide hallazgos.

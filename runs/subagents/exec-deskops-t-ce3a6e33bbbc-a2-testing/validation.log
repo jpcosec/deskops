@@ -1,0 +1,55 @@
+# Tester validation evidence
+# Task: task-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada
+# Commit 91f44d0d1710c2c428d5edebb8a9e8424c42f89f (intento 2)
+# Python: /workspace/sldb/.venv/bin/python 3.13.18, pytest 9.1.1
+# deskops imported from /mnt/ssd/proyectos/SLDB_1/deskops (HEAD c60b476e, tree of 91f44d0d)
+# All pytest runs with TMPDIR=/tmp, one file at a time.
+
+$ TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q tests/test_doctor_lost_receipts.py
+3 passed, 1 warning in 28.70s
+
+$ TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q tests/test_doctor_alerts.py
+5 passed, 1 warning in 50.48s
+
+$ TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q tests/test_doctor_absolute_paths.py
+14 passed, 1 warning in 161.78s
+
+$ TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q tests/test_doctor_model_registration.py
+9 passed, 1 warning in 90.04s
+
+$ TMPDIR=/tmp /workspace/sldb/.venv/bin/python -m pytest -q tests/test_doctor_unmodeled_surfaces.py
+4 passed, 1 warning in 20.00s
+
+# IR read-only verification (current code)
+$ PYTHONPATH=/workspace/deskops /workspace/sldb/.venv/bin/python -m deskops.cli.main doctor --root /mnt/ssd/proyectos/SLDB_1/IR
+exit=0
+grep -ci lost -> 0
+Desk is healthy, with 6 alert(s).
+
+# IR comparison with the c0df7045 logic (only trailers Closeout-Mode/Run-Id)
+$ ... closed_task_ids monkeypatched to the c0df7045 implementation over the same IR payload ...
+trailer-only closed ids: 34
+lost receipts under c0df7045 logic: 83
+
+# IR with current code (subject + trailers)
+$ ... current closed_task_ids over the same IR payload ...
+closed_task_ids with subject+trailers: 46
+lost receipts with current code: 0
+lost receipt alerts total: 293
+of those whose task in closed: 293
+
+# Remaining lost-alert message still names desk update --apply (Done When violation)
+$ PYTHONPATH=/workspace/deskops /workspace/sldb/.venv/bin/python -m deskops.cli.main doctor --root /workspace/deskops
+...
+Alerts (review receipts whose task is gone with no closeout on record; nothing is broken):
+- ReviewDoc:...
+  `deskops desk update --apply` does not repair these. Restore the task, or close it with `deskops closeout commit` (a closed task's receipts stop alerting).
+
+# Accepted preflight-2 asks for the informative line "N receipts of closed tasks (history, not alerts)"
+$ grep -in "receipts of closed\|history, not alerts" /tmp/ir-doctor-new.out /tmp/deskops-doctor.out
+no info line found
+
+VERDICT: FALLA
+- Primary subject-recognition bug fixed; 35 doctor tests pass; IR 83 -> 0 lost.
+- Done When still violated: lost section prints `deskops desk update --apply` although it does not repair.
+- Missing: real-closeout test, accepted informative line, CHANGELOG entry.

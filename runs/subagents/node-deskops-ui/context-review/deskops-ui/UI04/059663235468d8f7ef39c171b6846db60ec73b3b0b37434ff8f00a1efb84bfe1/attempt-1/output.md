@@ -1,0 +1,12 @@
+REFORMULACION
+Propósito: entregar en graph_ui la pantalla de lectura de una tarea del desk, al estilo de "The Desk - Markdown Wiki Doc" y la columna derecha de "Tareas Concurrentes & Herencia", dentro del frontend `frontends/desk/` que sirve la vista de deskops. Resultado: cabecera con id, status y etapa; secciones del TaskDoc en orden; gates con detalle; pills como callouts; atoms con su respuesta; herencia enlazada; referencias y archivos como chips; pie fijo con estado de gates y Avanzar; enlace "Inspeccionar" al visor KIMUN. Repo dueño: graph_ui. Límites: vista de lectura; la única escritura es Avanzar por el POST existente con confirmación y guarda de revisión; nada de datos inventados (DU5); archivos acotados a `frontends/desk/` y `tests/e2e_desk_ui.py`; depende de UI03 y de G_SHELL (satisfecho).
+
+AMBIGUEDADES
+1. "secciones del TaskDoc en orden (why, goal, scope, implementation_path, validation, done_when)" y aceptación "cada sección con el texto de deskops view task": el input no define la salida de `deskops view task` ni garantiza que esos seis campos existan con esos nombres; el ejecutor tendría que inventar el mapeo sección→campo y qué mostrar si falta una.
+2. "herencia (inherits_from y depends_on como enlaces a otras tareas del desk); referencias y archivos como chips": `inherits_from` y "referencias" no figuran entre las fuentes listadas en alcance.md, ni se dice qué pasa si el id enlazado no está en el desk; se inventarían el origen de esos campos y el comportamiento del enlace roto (la aceptación solo cubre "un depends_on navega a la otra tarea").
+
+DRY-RUN (hipotético, sin ejecutar)
+Lecturas: dag/alcance/brief/decisiones, `DESIGN.md`, lo que UI03 deje en `frontends/desk/` (shell y ruta advance), la salida de la vista de deskops y los HTML de Stitch citados. Cambios previstos: pantalla Tarea en `frontends/desk/` y su e2e en `tests/e2e_desk_ui.py`. Dependencias: shell y POST advance de UI03; vista de deskops; G_SHELL ya satisfecho. Validaciones futuras: pytest de graph_ui; e2e sobre desk temporal comparando secciones con `deskops view task`; navegación de un depends_on; Avanzar igual que el Board; ausencia de los textos de ejemplo de Stitch; captura comparada con Stitch anotada en el TaskDoc; suite completa en robocop2.
+
+FUTURO
+El TaskDoc de promoción (DU6) fija nombres de archivos, ruta de la pantalla y textos; UI05 reutiliza el shell; la comparación visual la registra el ejecutor; G_SHELL no cambia de estado.

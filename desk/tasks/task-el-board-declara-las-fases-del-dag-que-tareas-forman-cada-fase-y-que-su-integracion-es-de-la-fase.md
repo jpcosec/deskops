@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T05:28:18Z'
+  at: '2026-11-25T12:38:11Z'
   authority: generated
   via: save_document_payload
 id: task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase
@@ -13,14 +13,17 @@ history:
 - task_activates
 - task_hands_to_closeout
 references:
-- desk/inbox/20261123-161332-suggestion-jp-el-lote-de-integraci-n-es-la-fase-del-dag-declarada-en-el-board-falta-en-la-herramienta-y-en-el-skill.md
+- tests/fixtures/model_contract_hashes.json
+- 61806d776c023c8f4ad2fef97f982ed84c4bd532
 depends_on: []
 pills: []
-files: []
+files:
+- tests/fixtures/model_contract_hashes.json
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-el-board-declara-las-fases-del-dag
 ---
 
 # El Board declara las fases del DAG: que tareas forman cada fase y que su integracion es de la fase

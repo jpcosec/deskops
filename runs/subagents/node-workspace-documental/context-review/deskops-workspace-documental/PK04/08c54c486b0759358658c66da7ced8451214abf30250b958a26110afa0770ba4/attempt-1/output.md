@@ -1,0 +1,11 @@
+## REFORMULACION
+PK04 es un agregado no ejecutable del repo deskops: no tiene dry-run propio ni produce artefactos directamente; termina cuando terminan sus hijos. Su propósito es que las entradas authored y las representaciones del desk sean navegables sobre una identidad común. El resultado sustantivo del paquete exige: plantillas de índices authored de WS17 materializadas por el corpus WS40; Board navegable de WS22 en lista, tablero y dependencias; procedimiento de WS23 con rituales/pasos/lifecycle; conocimiento y grafo local de WS24 con backlinks, clasificación y vecindad; y, opcionalmente, ViewDoc/NotationDoc de WS18 validados con el evaluador de graph_ui. Límites: no escribir status desde renderers, no marcar pasos por lectura, no duplicar fuentes ni crear aristas/tareas nuevas; WS18 no bloquea WS24.
+
+## AMBIGUEDADES
+ninguna
+
+## DRY-RUN
+Hipotéticamente, tras disponer de WS11, WS09, WS13 y WS40, y con G_UI_READ recibido por delta: WS17 escribe plantillas bajo `ejemplo/nav/` y regenera el corpus WS40 con ellas; WS40 aporta manifiesto, roots, stores y documentos. WS22, WS23 y WS24 consumen WS13/WS09 en paralelo, sin entregarse artefactos entre hermanos: WS22 materializa Board como lista/tablero/dependencias abriendo TaskDoc reales; WS23 representa rituales/pasos sin controles de avance; WS24 registra vista genérica, clasificación, backlinks y vecindad de hasta 2 hops. WS18, solo tras G_SPEC_VIEW, declara ViewDoc/NotationDoc y prueba su selección en store real con el evaluador de graph_ui. Validación conjunta: abrir los mismos documentos desde lista, tablero, dependencias, procedimiento y conocimiento; comprobar que índices resuelven roots/aliases y no duplican registry; verificar ausencia de escrituras desde renderers y que lector no completa pasos; confirmar que Markdown no modelado es visible con origen y sin clasificación ficticia.
+
+## FUTURO
+El receptor P01/solicitante emite G_SPEC_VIEW por delta para WS18; el dueño de spec2viz promueve y ejecuta WS18. WS11, WS09, WS13 y WS40 producen contrato, catálogo, lector y corpus. Los receptores registran G_UI_READ por delta. Los TaskDoc de promoción fijan archivos, pruebas y textos. La aceptación de implementación corresponde a los dueños de graph_ui/spec2viz/deskops.

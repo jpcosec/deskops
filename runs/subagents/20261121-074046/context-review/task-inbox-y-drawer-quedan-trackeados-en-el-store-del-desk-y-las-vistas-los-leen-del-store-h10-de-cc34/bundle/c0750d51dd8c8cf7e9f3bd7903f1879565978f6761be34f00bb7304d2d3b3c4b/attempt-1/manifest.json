@@ -1,0 +1,125 @@
+{
+  "key": "task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/bundle",
+  "input_sha256": "c0750d51dd8c8cf7e9f3bd7903f1879565978f6761be34f00bb7304d2d3b3c4b",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261121-074046/context-review/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34/bundle/c0750d51dd8c8cf7e9f3bd7903f1879565978f6761be34f00bb7304d2d3b3c4b/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md",
+      "sha256": "7445cd6afef83ff9096fe944d6c573120dda58f4f897986b21d508b8f2e81293",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/data/desk_declaration.yaml",
+      "sha256": "09c69bf2956bc2236b2b58f469f6caae54798372db432f811ddd1a150b20e6b7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/data/views/board.md",
+      "sha256": "cf98f6c85a6cb86f30a1677eaade1623d10433ee2a31bcfde1ab613bed84a2ca",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/view.py",
+      "sha256": "c4f52f6425f67636aa384ac608732a71d734f466827b6138521d2d5fd8e409a4",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/message.py",
+      "sha256": "c73f308d0e1a18fedc7dba23684166e9b0476d16868438950b62ffcef47b4b6c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/promote.py",
+      "sha256": "06b6699812a96d0927acd93654342c5081ba0a74345c9230f76d02f20c7ade46",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/drawer.py",
+      "sha256": "16ddc6c77410f9f25b9e69cb4660919bcf4cdca42dfb3c3a7a6792aee0e77310",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_view.py",
+      "sha256": "0b0fb6732dbadaf46c2eeec0c7cdb718e2f50863ca6c34b90606ea259023683c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_delivery.py",
+      "sha256": "dc46642af6ce9b07519b5f0882dcab18bccd12808ca11ded6226cad4d906e030",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_inbox_promote_cli_gaps.py",
+      "sha256": "822f3ce5660fbd2bf8859f881defda7f8b6a49092ef43370b8d4410de8730ed8",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    }
+  ],
+  "started": "2026-11-21T07:40:47.299438+00:00",
+  "finished": "2026-11-21T07:41:02.272527+00:00",
+  "retry_reason": "El contrato del TaskDoc cambio desde la ultima revision (estado stale); ronda de revision de la tanda 2026-11-21."
+}

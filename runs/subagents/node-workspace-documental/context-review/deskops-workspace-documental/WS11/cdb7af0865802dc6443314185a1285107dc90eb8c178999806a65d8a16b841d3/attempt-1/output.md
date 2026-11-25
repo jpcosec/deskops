@@ -1,0 +1,11 @@
+## REFORMULACION
+Nodo WS11 («Cerrar contrato de navegación e identidad»), `kind: planning`, `node_role: delivery`, repo dueño **deskops**. Propósito: producir el contrato básico de navegación —identidad/ruta/modelo opcional de un documento, resolución explícita repo/store, foco, enlaces/historia y lectura multidesk read-only— citando APIs reales de las auditorías WS02–04 con path/símbolo/commit, clasificando cada hueco (instancia/vínculo/consulta/API/renderer) con su productor dueño y mapeando la recepción por delta en graph_ui. Resultado: `contratos/navegacion.md`, con enlaces (no actas propias) a recibos externos G_UI_READ por delta y, opcionalmente, G_SPEC_VIEW. Límites: solo escribe contrato y enlaces en deskops; no implementa UI, no escribe/commitea actas interrepo, no afirma recepción alguna, no requiere aceptación de Changes, Scion ni ViewDoc, y G_SPEC_VIEW se obtiene aparte al preparar WS18.
+
+## AMBIGUEDADES
+1. «Mapear recepción requerida por delta en graph_ui (actor P01, IDs y efectos)» — no fija el universo de deltas: ¿solo los derivados de este contrato de navegación (WS13/WS40/WS41 y afines) o todos los `scope_nodes` de G_UI_READ en `dag.yaml#gates`? Obliga a inventar el alcance del mapa y, con él, qué IDs habría que cubrir.
+
+## DRY-RUN
+Lecturas: nodo WS11 en `dag.yaml`, guía, brief, alcance.md, decisiones.md (P01/P07/P09, T-P07), salidas de WS08 (`borradores/user-flows.md`), WS09 (`borradores/vistas.md`) y auditorías WS02–WS04 (path/símbolo/commit). Cambios previstos: redactar `contratos/navegacion.md`; añadir enlaces a recibos externos si ya existen. Dependencias: WS08 y WS09 como prerrequisitos directos; G_PRODUCT ya satisfecho vía WS07. Validaciones futuras: verificar que cada afirmación de API cita símbolo y commit, que cada hueco tiene clase y productor, y que el mapa de deltas no afirma recibos. G_UI_READ/G_SPEC_VIEW quedan pendientes por delta; su ausencia no bloquea el cierre del contrato básico.
+
+## FUTURO
+Producen otros: WS02–04 (auditorías), WS08 (UFs), WS09 (catálogo), WS40 (corpus), WS41/WS13 (consumidores), WS18 (obtención de G_SPEC_VIEW). Decide un humano (P01 receptor) cada acta por delta en su repo. El Executor de deskops solo registra el enlace, nunca la aceptación.

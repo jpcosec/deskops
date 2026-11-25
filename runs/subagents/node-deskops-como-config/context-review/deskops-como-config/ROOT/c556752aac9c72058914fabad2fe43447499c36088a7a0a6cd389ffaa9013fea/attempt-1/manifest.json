@@ -1,0 +1,93 @@
+{
+  "key": "deskops-como-config/ROOT",
+  "input_sha256": "c556752aac9c72058914fabad2fe43447499c36088a7a0a6cd389ffaa9013fea",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/node-deskops-como-config/context-review/deskops-como-config/ROOT/c556752aac9c72058914fabad2fe43447499c36088a7a0a6cd389ffaa9013fea/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/drawer/plans/deskops-como-config/context-review-guide.md",
+      "sha256": "636ae5dd663a6834a4d8b318cab4c5f07be0f0111c98790dbcf040b8826159a0",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/brief.md",
+      "sha256": "8d0e2e8b1d85aaebb3d5dcd0c9579299bac8ef6d8a0a7e6c78100eb280b1e8e1",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/alcance.md",
+      "sha256": "feec2e4012c15c027f002f951f18b19a7759ba59ac58853da0b391db3d13884a",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/decisiones.md",
+      "sha256": "e448e4ab0a989a0b9de7d1397d0e5bfd2886067fd21978c7d014facb91e7a1a8",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#node:ROOT",
+      "sha256": "2b7ad94c43368f914b63f7378dae3f4f9a23b0c6cb14fea78b8f20e221b7a9df",
+      "projection": "node_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:PF1",
+      "sha256": "2dcf1e1350cd89490bb2a7c132e1ca35518446655b6778d3c39cea5eb94b13e0",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:PF2",
+      "sha256": "1588734a31f6e0585b947d992b10e96d36856819ecd2efc6c1e47d95b8b14a27",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:PF3",
+      "sha256": "3ae1c726593ccd6cc23526beda80dd826114427e932fcc6c7e741a9fc8abcb6e",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:PF4",
+      "sha256": "e950bae6df487fb92240a3970bc5a12a0d13e6940a278942abe98bba9f187230",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#gates",
+      "sha256": "79c1f487045449719fdac4d4ee033e6fb0b9cd04583ceedfd07a0596f9bfa39f",
+      "projection": "gate_contracts"
+    }
+  ],
+  "omitted_sources": [],
+  "started": "2026-11-17T02:41:40.287590+00:00",
+  "finished": "2026-11-17T02:42:08.802452+00:00"
+}

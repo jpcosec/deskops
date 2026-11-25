@@ -1,0 +1,1494 @@
+FILE:desk/tasks/task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu.md
+---
+sldb:
+  by: agent
+  at: '2026-11-17T07:06:45Z'
+  authority: generated
+  via: create_document
+id: task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu
+status: draft
+summary: ''
+tags:
+- host:robocop2
+current_node: ritual-execution
+history: []
+references:
+- desk/inbox/20261117-021713-suggestion-bug-deskops-trackea-un-rundoc-sin-archivo-y-rompe-sldb-stores-build-en-la-ci-de-graph-ui.md
+depends_on: []
+pills: []
+files:
+- deskops/services/closure.py
+- tests/test_closeout.py
+task_type: task.code
+inherits_from: []
+inherit_acceptance_context: false
+atoms:
+- atom-code-changes-close-with-tests-and-commit
+- atom-cli-mutation-testing-uses-sandbox-desk-roots
+---
+
+# closeout commit incluye el run.md de cada RunDoc que el store trackea y git todavia no tiene, para que un clon limpio pase sldb stores build
+
+## Rationale
+
+_Explain why this task exists or the business driver behind it._
+
+graph_ui (nota 20261117-021713): su CI clona deskops y corre sldb stores build, que falla con 'missing: runs/subagents/<run>/run.md' cuando .sldb/store.yaml registra un RunDoc cuyo run.md no esta en el repo. Pasa porque deskops runtime template registra el RunDoc en el store al anotar la intencion, y el closeout de OTRA tarea, que hace git add de .sldb, publica ese registro antes de que el run dir de esa corrida se commitee (caso real: el closeout 9dbcfc7c publico el RunDoc de exec-deskops-e-289fe7bfa1df; se arreglo a mano en 6b502362 para otros dos).
+
+## Goal
+
+_Describe the concrete result this task must produce._
+
+Todo commit que hace deskops closeout commit (en cualquier modo) incluye, ademas de lo de hoy, el run.md de cada RunDoc que .sldb/store.yaml registra y que git todavia no conoce (no esta en el indice ni en HEAD), de modo que despues del cierre todo run.md registrado existe en el commit.
+
+## Scope
+
+_State what is in scope and what is out of scope._
+
+Entra: el armado de rutas del commit de cierre en deskops/services/closure.py y tests en tests/test_closeout.py. Sale: deskops runtime template (sigue registrando el RunDoc al anotar la intencion), otros archivos del run dir (solo run.md, que es lo que el store exige) y la CI de graph_ui.
+
+## Implementation Path
+
+_Outline the expected implementation route or affected surface._
+
+1) Leer en closure.py como se arman las rutas del commit de cierre y el git add de .sldb. 2) Antes de commitear, listar los path de RunDoc de .sldb/store.yaml, quedarse con los run.md que existen en disco y que git no conoce, y sumarlos a las rutas. 3) Test en desk sandbox (tmp_path): dos RunDoc registrados (uno de la tarea que se cierra y otro de otra corrida con su run.md sin commitear); despues de closeout commit, el run.md de la otra corrida esta en HEAD y git clone del sandbox + sldb stores build da rc 0.
+
+## Validation
+
+_List the checks required before this task can close._
+
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout.py
+
+## Done When
+
+_Name the observable condition that makes the task complete._
+
+El test nuevo pasa (el run.md de otra corrida entra en el commit de cierre y el clon limpio construye el store) y tests/test_closeout.py pasa.
+
+FILE:desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md
+---
+id: atom-code-changes-close-with-tests-and-commit
+title: Code changes close with tests and commit
+five_wh_one_plus: when
+tags:
+- system:deskops
+- topic:testing
+- topic:git
+- topic:closeout
+---
+
+# Code changes close with tests and commit
+
+## Answer
+
+A task that modifies code is not closed until relevant tests pass and the completed change is recorded in a descriptive git commit.
+
+FILE:desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md
+---
+id: atom-cli-mutation-testing-uses-sandbox-desk-roots
+title: CLI mutation testing uses sandbox desk roots
+five_wh_one_plus: how
+tags:
+- system:deskops
+- topic:testing
+- topic:cli
+- topic:materialization
+---
+
+# CLI mutation testing uses sandbox desk roots
+
+## Answer
+
+When testing or exploring mutating deskops CLI commands, agents should point writes at a disposable sandbox root such as `.tmp/deskops-cli-test` instead of the repository's real `desk/`. This keeps generated tasks, lifecycle documents, inbox notes, and other workflow artifacts out of tracked project surfaces unless the mutation is intentionally changing the real desk.
+
+FILE:tests/test_closeout.py
+from __future__ import annotations
+
+import json
+from pathlib import Path
+import subprocess
+import sys
+from types import SimpleNamespace
+
+import pytest
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from deskops.cli.commands.closeout import CloseoutCLI
+from deskops.cli.main import main
+
+
+def _git(root: Path, *argv: str) -> str:
+    result = subprocess.run(["git", *argv], cwd=root, capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+    return result.stdout.strip()
+
+
+def _make_repo(tmp_path: Path) -> Path:
+    root = tmp_path / "repo"
+    root.mkdir()
+    _git(root, "init", "-q")
+    _git(root, "config", "user.email", "test@example.com")
+    _git(root, "config", "user.name", "Test")
+    (root / "seed.txt").write_text("seed\n", encoding="utf-8")
+    (root / ".gitignore").write_text(".deskops.log\n", encoding="utf-8")
+    _git(root, "add", "seed.txt", ".gitignore")
+    _git(root, "commit", "-q", "-m", "seed")
+    return root
+
+
+def _make_run_dir(root: Path, name: str = "20260729-120000-task-x") -> Path:
+    run_dir = root / "runs" / "subagents" / name
+    run_dir.mkdir(parents=True)
+    for fname in ["board.txt", "task.txt", "git-status.txt", "result-summary.md"]:
+        (run_dir / fname).write_text(f"{fname}\n", encoding="utf-8")
+    return run_dir
+
+
+def _args(root: Path, **overrides) -> SimpleNamespace:
+    base = {
+        "closeout_command": "commit",
+        "root": str(root),
+        "run_dir": "runs/subagents/20260729-120000-task-x",
+        "task": "task-x",
+        "message": None,
+        "paths": None,
+        "run_id": None,
+        "session": None,
+    }
+    base.update(overrides)
+    return SimpleNamespace(**base)
+
+
+def _write(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
+def _write_atom(root: Path, atom_id: str = "atom-evidence") -> None:
+    _write(
+        root / "desk" / "atoms" / f"{atom_id}.md",
+        f"""---
+id: {atom_id}
+title: Evidence Atom
+five_wh_one_plus: what
+tags: []
+provenance: null
+---
+
+# Evidence Atom
+
+## Answer
+
+Closeout evidence.
+""",
+    )
+
+
+def _write_task(root: Path, references: list[str], files: list[str], *, task_id: str = "task-x") -> None:
+    _write(
+        root / "desk" / "tasks" / f"{task_id}.md",
+        f"""---
+id: {task_id}
+status: active
+current_node: ritual-testing
+history:
+- task_activates
+references:
+{yaml.safe_dump(references, sort_keys=False).rstrip()}
+depends_on: []
+pills: []
+files:
+{yaml.safe_dump(files, sort_keys=False).rstrip()}
+checklists: []
+tags: []
+---
+
+# Task X
+
+## Rationale
+
+Not provided.
+
+## Goal
+
+Verify closeout.
+
+## Scope
+
+Stay scoped.
+
+## Implementation Path
+
+Implement verify.
+
+## Validation
+
+- pytest
+
+## Done When
+
+Verified.
+""",
+    )
+
+
+def test_closeout_commit_links_commit_to_run(tmp_path: Path) -> None:
+    root = _make_repo(tmp_path)
+    run_dir = _make_run_dir(root)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    session = tmp_path / "session.jsonl"
+    session.write_text('{"type":"session"}\n', encoding="utf-8")
+
+    rc = CloseoutCLI().run(
+        _args(
+            root,
+            paths=["feature.py"],
+            run_id="6046eaef",
+            session=str(session),
+        )
+    )
+
+    assert rc == 0
+    message = _git(root, "log", "-1", "--format=%B")
+    assert "closeout: task-x" in message
+    assert "Task-Id: task-x" in message
+    assert "Run-Dir: runs/subagents/20260729-120000-task-x" in message
+    assert "Run-Id: 6046eaef" in message
+    assert "Session-Sha256:" in message
+
+    commit = _git(root, "rev-parse", "HEAD")
+    index = (root / "runs" / "subagents" / "index.jsonl").read_text(encoding="utf-8").strip()
+    entry = json.loads(index.splitlines()[-1])
+    assert entry["commit"] is None
+    assert entry["run_id"] == "6046eaef"
+    assert entry["task_id"] == "task-x"
+    assert _git(root, "log", "-1", "--format=%H", "--grep", "Task-Id: task-x") == commit
+
+    manifest = yaml.safe_load((run_dir / "run.yaml").read_text(encoding="utf-8"))
+    assert manifest["run_id"] == "6046eaef"
+    assert manifest["session_sha256"] == entry["session_sha256"]
+
+    committed_files = _git(root, "show", "--name-only", "--format=", "HEAD").split()
+    assert "feature.py" in committed_files
+    assert "runs/subagents/20260729-120000-task-x/run.yaml" in committed_files
+
+
+def test_closeout_commit_requires_evidence(tmp_path: Path) -> None:
+    root = _make_repo(tmp_path)
+    run_dir = root / "runs" / "subagents" / "20260729-120000-task-x"
+    run_dir.mkdir(parents=True)
+
+    rc = CloseoutCLI().run(_args(root, paths=["feature.py"]))
+
+    assert rc == 1
+
+
+def test_closeout_commit_rejects_run_dir_outside_surface(tmp_path: Path) -> None:
+    root = _make_repo(tmp_path)
+    elsewhere = root / "tmp" / "fake-run"
+    elsewhere.mkdir(parents=True)
+    for fname in ["board.txt", "task.txt", "git-status.txt", "result-summary.md"]:
+        (elsewhere / fname).write_text("x\n", encoding="utf-8")
+
+    rc = CloseoutCLI().run(_args(root, run_dir="tmp/fake-run", paths=["feature.py"]))
+
+    assert rc == 1
+
+
+def test_closeout_commit_uses_staged_index_without_paths(tmp_path: Path) -> None:
+    root = _make_repo(tmp_path)
+    _make_run_dir(root)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    _git(root, "add", "feature.py")
+
+    rc = CloseoutCLI().run(_args(root))
+
+    assert rc == 0
+    assert "closeout: task-x" in _git(root, "log", "-1", "--format=%B")
+
+
+def _closeout_main(root: Path, *argv: str) -> int:
+    return main(["closeout", "commit", "--root", str(root), "--task", "task-x", *argv])
+
+
+def test_closeout_commit_no_run_makes_a_manual_commit(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    root = _make_repo(tmp_path)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    rc = _closeout_main(root, "--no-run", "--reason", "Fixed by the supervisor; no subagent ran", "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    message = _git(root, "log", "-1", "--format=%B")
+    assert message.splitlines()[0] == "closeout: task-x"
+    assert "Task-Id: task-x" in message
+    assert "Closeout-Mode: manual" in message
+    assert "Closeout-Reason: Fixed by the supervisor; no subagent ran" in message
+    assert "Run-Dir:" not in message
+    trailers = _git(root, "log", "-1", "--format=%(trailers:key=Closeout-Mode,valueonly)")
+    assert trailers == "manual", "Closeout-Mode must parse as a git trailer"
+
+    commit = _git(root, "rev-parse", "HEAD")
+    entry = json.loads((root / "runs" / "subagents" / "index.jsonl").read_text(encoding="utf-8").splitlines()[-1])
+    assert entry == {
+        "task_id": "task-x",
+        "run_id": None,
+        "run_dir": None,
+        "commit": None,
+        "session_sha256": None,
+        "mode": "manual",
+    }
+    assert _git(root, "log", "-1", "--format=%H", "--grep", "Task-Id: task-x") == commit
+    assert _git(root, "show", "--name-only", "--format=", "HEAD").split() == [
+        "feature.py",
+        "runs/subagents/index.jsonl",
+    ]
+
+
+@pytest.mark.parametrize("reason", [None, "", "   "])
+def test_closeout_commit_no_run_requires_a_reason(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], reason: str | None
+) -> None:
+    root = _make_repo(tmp_path)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    head = _git(root, "rev-parse", "HEAD")
+
+    extra = [] if reason is None else ["--reason", reason]
+    rc = _closeout_main(root, "--no-run", *extra, "--paths", "feature.py")
+
+    assert rc == 1
+    assert "--no-run needs a non-empty --reason" in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert not (root / "runs" / "subagents" / "index.jsonl").exists()
+
+
+def test_closeout_commit_rejects_run_dir_and_no_run_together(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _make_run_dir(root)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = _closeout_main(
+        root, "--run-dir", "runs/subagents/20260729-120000-task-x",
+        "--no-run", "--reason", "r", "--paths", "feature.py",
+    )
+    assert rc == 2
+    assert "argument --no-run: not allowed with argument --run-dir" in capsys.readouterr().err
+
+    # Direct callers that bypass argparse get the same refusal.
+    rc = CloseoutCLI().run(_args(root, no_run=True, reason="r", paths=["feature.py"]))
+    assert rc == 1
+    assert "either --run-dir or --no-run, not both" in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+
+
+def test_closeout_commit_without_a_route_names_both_routes(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = _closeout_main(root, "--paths", "feature.py")
+
+    assert rc == 1
+    out = capsys.readouterr().out
+    assert "--run-dir" in out and "--no-run --reason" in out
+    assert _git(root, "rev-parse", "HEAD") == head
+
+
+@pytest.mark.parametrize(
+    ("argv", "message"),
+    [
+        (["--no-run", "--reason", "r", "--run-id", "6046eaef"], "--run-id applies only to --run-dir"),
+        (["--run-dir", "runs/subagents/20260729-120000-task-x", "--reason", "r"], "--reason applies only to --no-run"),
+    ],
+)
+def test_closeout_commit_rejects_flags_from_the_other_route(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], argv: list[str], message: str
+) -> None:
+    root = _make_repo(tmp_path)
+    _make_run_dir(root)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = _closeout_main(root, *argv, "--paths", "feature.py")
+
+    assert rc == 1
+    assert message in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+
+
+def test_closeout_commit_run_dir_through_main_is_unchanged(tmp_path: Path) -> None:
+    root = _make_repo(tmp_path)
+    _make_run_dir(root)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    rc = _closeout_main(root, "--run-dir", "runs/subagents/20260729-120000-task-x", "--paths", "feature.py")
+
+    assert rc == 0
+    message = _git(root, "log", "-1", "--format=%B")
+    assert message == (
+        "closeout: task-x\n\n"
+        "Task-Id: task-x\n"
+        "Run-Dir: runs/subagents/20260729-120000-task-x"
+    )
+    entry = json.loads((root / "runs" / "subagents" / "index.jsonl").read_text(encoding="utf-8").splitlines()[-1])
+    assert set(entry) == {"task_id", "run_id", "run_dir", "commit", "session_sha256"}
+    assert entry["run_dir"] == "runs/subagents/20260729-120000-task-x"
+    assert entry["commit"] is None
+
+
+@pytest.mark.parametrize("route", ["run-dir", "no-run"])
+def test_closeout_commit_keeps_an_ignored_run_index_local(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], route: str
+) -> None:
+    """A project that ignores runs/subagents/index.jsonl gets the closing commit without it and
+    without an error; the entry is still written to the local index."""
+    root = _make_repo(tmp_path)
+    (root / ".gitignore").write_text(".deskops.log\nruns/subagents/index.jsonl\n", encoding="utf-8")
+    _git(root, "commit", "-q", "-am", "ignore the run index")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    if route == "run-dir":
+        _make_run_dir(root)
+        rc = _closeout_main(root, "--run-dir", "runs/subagents/20260729-120000-task-x", "--paths", "feature.py")
+    else:
+        rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", "feature.py")
+
+    out = capsys.readouterr()
+    assert rc == 0, out.out + out.err
+    assert "ignored" not in (out.out + out.err).lower()
+    assert _git(root, "ls-files", "runs/subagents/index.jsonl") == ""
+    assert "runs/subagents/index.jsonl" not in _git(root, "show", "--name-only", "--format=", "HEAD").splitlines()
+    assert _git(root, "show", "--name-only", "--format=", "HEAD").splitlines()[0] == "feature.py"
+    assert "Task-Id: task-x" in _git(root, "log", "-1", "--format=%B")
+    entry = json.loads((root / "runs" / "subagents" / "index.jsonl").read_text(encoding="utf-8").splitlines()[-1])
+    assert entry["task_id"] == "task-x" and entry["commit"] is None
+    assert _git(root, "status", "--porcelain", "--untracked-files=all", "--", "feature.py") == ""
+
+
+@pytest.mark.parametrize("route", ["run-dir", "no-run"])
+def test_closeout_commit_leaves_the_working_tree_clean(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], route: str
+) -> None:
+    root = _make_repo(tmp_path)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    if route == "run-dir":
+        _make_run_dir(root)
+        rc = _closeout_main(root, "--run-dir", "runs/subagents/20260729-120000-task-x", "--paths", "feature.py")
+    else:
+        rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain") == ""
+    assert _git(root, "ls-files", "runs/subagents/index.jsonl") == "runs/subagents/index.jsonl"
+    entry = json.loads((root / "runs" / "subagents" / "index.jsonl").read_text(encoding="utf-8").splitlines()[-1])
+    assert entry["task_id"] == "task-x"
+    assert entry["commit"] is None
+    head = _git(root, "rev-parse", "HEAD")
+    assert _git(root, "log", "-1", "--format=%H", "--grep", "Task-Id: task-x") == head
+
+
+def test_closeout_verify_passes_with_complete_evidence(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    root = _make_repo(tmp_path)
+    commit = _git(root, "rev-parse", "HEAD")
+    _write_atom(root)
+    _write_task(
+        root,
+        references=[
+            "pytest tests/test_feature.py::test_feature",
+            "desk/atoms/atom-evidence.md",
+            commit,
+        ],
+        files=["desk/atoms/atom-evidence.md"],
+    )
+    _write(root / "tests" / "test_feature.py", "def test_feature():\n    assert True\n")
+
+    rc = main(["closeout", "verify", "--root", str(root), "--task", "task-x"])
+    out = capsys.readouterr()
+
+    assert rc == 0
+    report = json.loads(out.out)
+    assert report["ok"] is True
+    assert report["gates"]["tests"]["ok"] is True
+    assert report["gates"]["atom_or_materialization_link"]["ok"] is True
+    assert report["gates"]["commit"]["ok"] is True
+
+
+def test_closeout_verify_rejects_loose_commit_and_test_references(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    ancestor = _git(root, "rev-parse", "HEAD")
+    _git(root, "commit", "--allow-empty", "-q", "-m", "later")
+    _write_atom(root)
+    _write(root / "deskops" / "x.py", "x = 1\n")
+    _write(root / "tests" / "test_x.py", "def test_y():\n    assert True\n")
+    _write_task(
+        root,
+        references=[
+            "HEAD",
+            "main",
+            "deskops/x.py",
+            str(root / "tests" / "test_x.py"),
+            "tests/../deskops/x.py",
+            ancestor,
+        ],
+        files=["desk/atoms/atom-evidence.md"],
+    )
+
+    rc = main(["closeout", "verify", "--root", str(root), "--task", "task-x"])
+    out = capsys.readouterr()
+
+    assert rc == 1
+    report = json.loads(out.out)
+    assert report["gates"]["tests"]["evidence"] == []
+    assert report["gates"]["commit"]["evidence"] == [ancestor]
+
+
+def test_closeout_verify_accepts_ancestor_commit_and_test_node(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    ancestor = _git(root, "rev-parse", "HEAD")
+    _git(root, "commit", "--allow-empty", "-q", "-m", "later")
+    _write_atom(root)
+    _write(root / "tests" / "test_x.py", "def test_y():\n    assert True\n")
+    _write_task(
+        root,
+        references=[
+            "pytest tests/test_x.py::test_y",
+            ancestor,
+        ],
+        files=["desk/atoms/atom-evidence.md"],
+    )
+
+    rc = main(["closeout", "verify", "--root", str(root), "--task", "task-x"])
+    out = capsys.readouterr()
+
+    assert rc == 0
+    report = json.loads(out.out)
+    assert report["gates"]["tests"]["evidence"] == ["pytest tests/test_x.py::test_y"]
+    assert report["gates"]["commit"]["evidence"] == [ancestor]
+    assert report["ok"] is True
+
+
+def test_closeout_verify_fails_non_zero_when_required_gate_is_missing(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    root = _make_repo(tmp_path)
+    _write_atom(root)
+    _write_task(
+        root,
+        references=[
+            "pytest tests/test_feature.py::test_feature",
+            "desk/atoms/atom-evidence.md",
+        ],
+        files=["desk/atoms/atom-evidence.md"],
+    )
+    _write(root / "tests" / "test_feature.py", "def test_feature():\n    assert True\n")
+
+    rc = main(["closeout", "verify", "--root", str(root), "--task", "task-x"])
+    out = capsys.readouterr()
+
+    assert rc == 1
+    report = json.loads(out.out)
+    assert report["ok"] is False
+    assert report["gates"]["commit"]["ok"] is False
+    assert report["findings"][0]["code"] == "missing_commit_evidence"
+
+
+def test_closeout_verify_reports_structured_generated_artifact_findings(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    root = _make_repo(tmp_path)
+    commit = _git(root, "rev-parse", "HEAD")
+    _write_task(
+        root,
+        references=[
+            "pytest tests/test_diagram.py::test_diagram",
+            commit,
+            "task:task-follow-up",
+        ],
+        files=["docs/diagrams/example.md"],
+    )
+    _write(
+        root / "desk" / "tasks" / "task-follow-up.md",
+        """---
+id: task-follow-up
+status: active
+current_node: ritual-testing
+history:
+- task_activates
+references: []
+depends_on: []
+pills: []
+files: []
+checklists: []
+tags: []
+---
+
+# Task Follow Up
+
+## Rationale
+
+Not provided.
+
+## Goal
+
+Follow up.
+
+## Scope
+
+Scoped.
+
+## Implementation Path
+
+Route follow-up.
+
+## Validation
+
+- pytest
+
+## Done When
+
+Done.
+""",
+    )
+    _write(root / "tests" / "test_diagram.py", "def test_diagram():\n    assert True\n")
+    _write(root / "docs" / "diagrams" / "example.mmd", "flowchart TD\n    A-->B\n")
+    _write(root / "docs" / "diagrams" / "example.md", "# Example\n")
+
+    rc = main(["closeout", "verify", "--root", str(root), "--task", "task-x"])
+    out = capsys.readouterr()
+
+    assert rc == 1
+    report = json.loads(out.out)
+    assert set(report["gates"].keys()) == {"tests", "atom_or_materialization_link", "commit"}
+    assert report["gates"]["tests"]["ok"] is True
+    assert report["gates"]["commit"]["ok"] is True
+    assert report["gates"]["atom_or_materialization_link"]["ok"] is False
+    assert any(item["code"] == "generated_artifact_missing_declared_sources" for item in report["findings"])
+    assert any("follow-up:task:task-follow-up -> docs/diagrams/example.md" == item for item in report["gates"]["atom_or_materialization_link"]["evidence"])
+
+
+def test_closeout_verify_tolerates_multi_document_yaml(tmp_path: Path) -> None:
+    root = _make_repo(tmp_path)
+    commit = _git(root, "rev-parse", "HEAD")
+    _write_atom(root)
+    _write_task(
+        root,
+        references=[
+            "pytest tests/test_feature.py::test_feature",
+            "desk/atoms/atom-evidence.md",
+            commit,
+        ],
+        files=["desk/atoms/atom-evidence.md"],
+    )
+    _write(root / "tests" / "test_feature.py", "def test_feature():\n    assert True\n")
+    # Graph extraction scans docs/ Markdown for fenced YAML blocks and spec/
+    # YAML files for metadata. A block or file that holds several documents is
+    # not evidence of atom declarations; verify must skip it, not abort.
+    _write(
+        root / "docs" / "vocabulario.md",
+        "# Vocabulario\n\n```yaml\nname: uml-clases\n---\nname: glyph-interfaz\n```\n",
+    )
+    _write(root / "spec" / "vocabulario.yaml", "name: a\n---\nname: b\n")
+
+    result = subprocess.run(
+        [sys.executable, "-m", "deskops", "closeout", "verify", "--root", str(root), "--task", "task-x"],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert "Unexpected" not in result.stderr
+    assert result.returncode == 0, result.stderr
+    report = json.loads(result.stdout)
+    assert report["ok"] is True
+
+
+@pytest.mark.parametrize("committed", [False, True], ids=["new-task", "committed-task"])
+def test_closeout_commit_accepts_a_directory_holding_the_task(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], committed: bool
+) -> None:
+    root = _make_repo(tmp_path)
+    _write_task(root, references=[], files=[])
+    if committed:
+        _git(root, "add", "desk/tasks/task-x.md")
+        _git(root, "commit", "-q", "-m", "add task")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", "desk/tasks", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+    assert _git(root, "status", "--porcelain") == ""
+    assert "feature.py" in _git(root, "show", "--name-only", "--format=", "HEAD").splitlines()
+
+
+def test_closeout_records_a_never_committed_task_before_the_closing_commit(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _write_task(root, references=[], files=[])
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    before = _git(root, "rev-parse", "HEAD")
+
+    rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", "desk/tasks", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain") == ""
+    assert _git(root, "log", "--format=%s", f"{before}..HEAD").splitlines() == [
+        "closeout: task-x",
+        "desk: registra task-x",
+    ]
+    record = _git(root, "log", "-1", "--format=%B", "HEAD~1")
+    assert record.splitlines()[0] == "desk: registra task-x"
+    assert "Task-Id: task-x" in record
+    assert _git(root, "log", "-1", "--format=%(trailers:key=Closeout-Mode,valueonly)", "HEAD~1") == "record"
+    body = _git(root, "show", "HEAD~1:desk/tasks/task-x.md")
+    assert "# Task X" in body
+    assert "Verify closeout." in body
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+
+
+def test_closeout_committed_task_keeps_a_single_closing_commit(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _write_task(root, references=[], files=[])
+    _git(root, "add", "desk/tasks/task-x.md")
+    _git(root, "commit", "-q", "-m", "add task")
+    before = _git(root, "rev-parse", "HEAD")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", "desk/tasks", "feature.py")
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain") == ""
+    assert _git(root, "log", "--format=%s", f"{before}..HEAD").splitlines() == ["closeout: task-x"]
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+
+
+def _write_board(root: Path, task_id: str = "task-x") -> None:
+    _write(
+        root / "desk" / "tasks" / "Board.md",
+        f"""---
+id: board-tasks
+scope: desk
+tasks:
+- desk/tasks/{task_id}.md
+pills: []
+rituals: []
+tags: []
+---
+
+# Repo Board
+
+## Purpose
+
+Route the active task.
+
+## Notes
+
+No additional notes.
+
+## Task Details
+""",
+    )
+
+
+def _write_lifecycle_task(root: Path, task_id: str = "task-x") -> None:
+    _write(
+        root / "desk" / "tasks" / f"{task_id}.md",
+        f"""---
+id: {task_id}
+status: active
+summary: ''
+tags: []
+current_node: ritual-testing
+history:
+- task_activates
+references: []
+depends_on: []
+pills: []
+files: []
+task_type: implementation
+inherits_from: []
+inherit_acceptance_context: false
+atoms: []
+---
+
+# Task X
+
+## Rationale
+
+The subject was removed.
+
+## Goal
+
+Close it honestly.
+
+## Scope
+
+Stay scoped.
+
+## Implementation Path
+
+Supersede it.
+
+## Validation
+
+- pytest
+
+## Done When
+
+Closed.
+""",
+    )
+
+
+def _commit_task_on_board(root: Path, task_id: str = "task-x") -> None:
+    _write_lifecycle_task(root, task_id)
+    _write_board(root, task_id)
+    _git(root, "add", "desk/tasks")
+    _git(root, "commit", "-q", "-m", "add task and board")
+
+
+def _supersede_main(root: Path, *argv: str) -> int:
+    return main(["closeout", "supersede", "--root", str(root), "--task", "task-x", *argv])
+
+
+def test_closeout_supersede_closes_a_task_with_a_reason_and_commit_ref(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    ref = _git(root, "rev-parse", "HEAD")
+
+    rc = _supersede_main(root, "--reason", "The owner removed the subject", "--ref", ref)
+
+    assert rc == 0, capsys.readouterr().out
+    message = _git(root, "log", "-1", "--format=%B")
+    assert message.splitlines()[0] == "closeout: task-x"
+    assert "Task-Id: task-x" in message
+    assert "Closeout-Mode: superseded" in message
+    assert "Closeout-Reason: The owner removed the subject" in message
+    assert f"Closeout-Ref: {ref}" in message
+    assert _git(root, "log", "-1", "--format=%(trailers:key=Closeout-Mode,valueonly)") == "superseded"
+
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+    assert "desk/tasks/task-x.md" not in (root / "desk" / "tasks" / "Board.md").read_text(encoding="utf-8")
+    assert _git(root, "status", "--porcelain") == ""
+
+    entry = json.loads((root / "runs" / "subagents" / "index.jsonl").read_text(encoding="utf-8").splitlines()[-1])
+    assert entry == {
+        "task_id": "task-x",
+        "run_id": None,
+        "run_dir": None,
+        "commit": None,
+        "session_sha256": None,
+        "mode": "superseded",
+    }
+    assert _git(root, "log", "-1", "--format=%H", "--grep", "Task-Id: task-x") == _git(root, "rev-parse", "HEAD")
+    assert sorted(_git(root, "show", "--name-only", "--format=", "HEAD").splitlines()) == [
+        "desk/tasks/Board.md",
+        "desk/tasks/task-x.md",
+        "runs/subagents/index.jsonl",
+    ]
+
+
+def test_closeout_supersede_closes_a_task_whose_lifecycle_the_model_rejects(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """A draft after task_hands_to_closeout (shared_llm-gateway, no migration decides it): supersede
+    reads its frontmatter instead of the model and closes it with the same commit and trailers."""
+    from deskops.models.task_lifecycle import lifecycle_errors
+
+    root = _make_repo(tmp_path)
+    _write_lifecycle_task(root)
+    path = root / "desk" / "tasks" / "task-x.md"
+    text = path.read_text(encoding="utf-8")
+    text = text.replace("status: active\n", "status: draft\n").replace("current_node: ritual-testing\n", "current_node: ritual-closeout\n")
+    text = text.replace("history:\n- task_activates\n", "history:\n- task_activates\n- task_hands_to_closeout\n")
+    path.write_text(text, encoding="utf-8")
+    assert lifecycle_errors("draft", "ritual-closeout", ["task_activates", "task_hands_to_closeout"])
+    _write_board(root, "task-x")
+    _git(root, "add", "desk/tasks")
+    _git(root, "commit", "-q", "-m", "add incoherent task and board")
+    ref = _git(root, "rev-parse", "HEAD")
+
+    rc = _supersede_main(root, "--reason", "The owner replaced it", "--ref", ref)
+
+    assert rc == 0, capsys.readouterr().out
+    message = _git(root, "log", "-1", "--format=%B")
+    assert message.splitlines()[0] == "closeout: task-x"
+    assert "Task-Id: task-x" in message
+    assert "Closeout-Mode: superseded" in message
+    assert "Closeout-Reason: The owner replaced it" in message
+    assert f"Closeout-Ref: {ref}" in message
+    assert not path.exists()
+    assert "desk/tasks/task-x.md" not in (root / "desk" / "tasks" / "Board.md").read_text(encoding="utf-8")
+    assert _git(root, "status", "--porcelain") == ""
+    assert sorted(_git(root, "show", "--name-only", "--format=", "HEAD").splitlines()) == [
+        "desk/tasks/Board.md",
+        "desk/tasks/task-x.md",
+        "runs/subagents/index.jsonl",
+    ]
+
+
+def test_closeout_supersede_accepts_an_existing_path_ref(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+
+    rc = _supersede_main(root, "--reason", "subject path was deleted", "--ref", "desk/tasks/Board.md")
+
+    assert rc == 0, capsys.readouterr().out
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+    assert "Closeout-Ref: desk/tasks/Board.md" in _git(root, "log", "-1", "--format=%B")
+
+
+@pytest.mark.parametrize("reason", ["", "   "])
+def test_closeout_supersede_requires_a_reason(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], reason: str
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+    ref = "desk/tasks/Board.md"
+
+    rc = _supersede_main(root, "--reason", reason, "--ref", ref)
+
+    assert rc == 1
+    assert "Supersede needs a non-empty --reason" in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert _git(root, "status", "--porcelain") == ""
+    assert (root / "desk" / "tasks" / "task-x.md").exists()
+    assert not (root / "runs" / "subagents" / "index.jsonl").exists()
+
+
+@pytest.mark.parametrize("ref", ["does-not-exist.txt", "deadbeef", "0" * 40])
+def test_closeout_supersede_refuses_an_unresolvable_ref_and_leaves_the_tree_unchanged(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], ref: str
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = _supersede_main(root, "--reason", "subject removed", "--ref", ref)
+
+    assert rc == 1
+    assert "Unresolvable --ref" in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert _git(root, "status", "--porcelain") == ""
+    assert (root / "desk" / "tasks" / "task-x.md").read_text(encoding="utf-8").count("status: active") == 1
+    assert not (root / "runs" / "subagents" / "index.jsonl").exists()
+
+
+def test_closeout_supersede_requires_at_least_one_ref(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = main(["closeout", "supersede", "--root", str(root), "--task", "task-x", "--reason", "subject removed"])
+
+    assert rc == 2
+    assert "--ref" in capsys.readouterr().err
+    assert _git(root, "rev-parse", "HEAD") == head
+
+
+def test_closeout_supersede_requires_the_reason_flag(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = _supersede_main(root, "--ref", "desk/tasks/Board.md")
+
+    assert rc == 2
+    assert "--reason" in capsys.readouterr().err
+    assert _git(root, "rev-parse", "HEAD") == head
+
+
+def _write_legacy_task(
+    root: Path,
+    task_id: str = "task-x",
+    status: str = "resolved",
+    filename: str | None = None,
+) -> None:
+    _write(
+        root / "desk" / "tasks" / (filename or f"{task_id}.md"),
+        f"""---
+id: "{task_id}"
+status: {status}
+summary: ''
+tags: []
+references:
+- 3900ad4
+depends_on: []
+pills: []
+files: []
+task_type: implementation
+atoms: []
+---
+
+# Task X
+
+## Rationale
+
+Resolved before the ritual lifecycle existed.
+
+## Goal
+
+Remove the resolved task.
+
+## Scope
+
+Stay scoped.
+
+## Implementation Path
+
+Retire it.
+
+## Validation
+
+- pytest
+
+## Done When
+
+Retired.
+""",
+    )
+
+
+def _commit_legacy_task_on_board(
+    root: Path,
+    task_id: str = "task-x",
+    status: str = "resolved",
+    filename: str | None = None,
+) -> None:
+    _write_legacy_task(root, task_id, status, filename)
+    _write_board(root, task_id)
+    _git(root, "add", "desk/tasks")
+    _git(root, "commit", "-q", "-m", "add legacy task and board")
+
+
+def _retire_main(root: Path, *argv: str) -> int:
+    return main(["closeout", "retire", "--root", str(root), "--task", "task-x", *argv])
+
+
+@pytest.mark.parametrize("status", ["resolved", "closed", "done", "complete", "cancelled"])
+def test_closeout_retire_removes_a_legacy_resolved_task(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], status: str
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_legacy_task_on_board(root, status=status)
+    ref = _git(root, "rev-parse", "HEAD")
+    before = (root / "desk" / "tasks" / "task-x.md").read_text(encoding="utf-8")
+
+    rc = _retire_main(root, "--reason", "Resolved before the ritual lifecycle existed", "--ref", ref)
+
+    assert rc == 0, capsys.readouterr().out
+    message = _git(root, "log", "-1", "--format=%B")
+    assert message.splitlines()[0] == "closeout: task-x"
+    assert "Task-Id: task-x" in message
+    assert "Closeout-Mode: legacy-resolved" in message
+    assert "Closeout-Reason: Resolved before the ritual lifecycle existed" in message
+    assert f"Closeout-Ref: {ref}" in message
+    assert _git(root, "log", "-1", "--format=%(trailers:key=Closeout-Mode,valueonly)") == "legacy-resolved"
+
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+    assert f"status: {status}" in before
+    assert "desk/tasks/task-x.md" not in (root / "desk" / "tasks" / "Board.md").read_text(encoding="utf-8")
+    assert _git(root, "status", "--porcelain") == ""
+
+    entry = json.loads((root / "runs" / "subagents" / "index.jsonl").read_text(encoding="utf-8").splitlines()[-1])
+    assert entry == {
+        "task_id": "task-x",
+        "run_id": None,
+        "run_dir": None,
+        "commit": None,
+        "session_sha256": None,
+        "mode": "legacy-resolved",
+    }
+    assert _git(root, "log", "-1", "--format=%H", "--grep", "Task-Id: task-x") == _git(root, "rev-parse", "HEAD")
+    assert sorted(_git(root, "show", "--name-only", "--format=", "HEAD").splitlines()) == [
+        "desk/tasks/Board.md",
+        "desk/tasks/task-x.md",
+        "runs/subagents/index.jsonl",
+    ]
+
+
+def _commit_pre_cc31_task_on_board(root: Path, status: str) -> None:
+    """A task as a desk migrated before CC31 left it: a terminal or drawer status with an empty
+    history at the entry node, which TaskDoc's validator rejects."""
+    _write_legacy_task(root, status=status)
+    path = root / "desk" / "tasks" / "task-x.md"
+    text = path.read_text(encoding="utf-8")
+    path.write_text(text.replace("atoms: []\n", "atoms: []\ncurrent_node: ritual-execution\nhistory: []\n", 1), encoding="utf-8")
+    _write_board(root, "task-x")
+    _git(root, "add", "desk/tasks")
+    _git(root, "commit", "-q", "-m", "add pre-CC31 task and board")
+
+
+@pytest.mark.parametrize("status", ["superseded", "cancelled", "deferred", "candidate"])
+def test_closeout_retire_removes_a_pre_cc31_task_the_model_rejects(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], status: str
+) -> None:
+    """d3: retire reads the frontmatter, so the model's rejection of the legacy state does not stop it."""
+    from deskops.models.task_lifecycle import lifecycle_errors
+
+    assert lifecycle_errors(status, "ritual-execution", [])
+    root = _make_repo(tmp_path)
+    _commit_pre_cc31_task_on_board(root, status)
+    ref = _git(root, "rev-parse", "HEAD")
+
+    rc = _retire_main(root, "--reason", "Left by the pre-CC31 migration", "--ref", ref)
+
+    assert rc == 0, capsys.readouterr().out
+    message = _git(root, "log", "-1", "--format=%B")
+    assert "Task-Id: task-x" in message
+    assert "Closeout-Mode: legacy-resolved" in message
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+    assert "desk/tasks/task-x.md" not in (root / "desk" / "tasks" / "Board.md").read_text(encoding="utf-8")
+    assert _git(root, "status", "--porcelain") == ""
+
+
+@pytest.mark.parametrize("status", ["superseded", "deferred", "candidate"])
+def test_closeout_retire_refuses_a_terminal_or_drawer_status_with_a_history(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], status: str
+) -> None:
+    """Only the pre-CC31 shape (empty history) is retired; a task closed through the lifecycle is not."""
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    path = root / "desk" / "tasks" / "task-x.md"
+    path.write_text(path.read_text(encoding="utf-8").replace("status: active", f"status: {status}"), encoding="utf-8")
+    _git(root, "commit", "-qam", "status by hand")
+    head = _git(root, "rev-parse", "HEAD")
+
+    assert _retire_main(root, "--reason", "not legacy", "--ref", head) == 1
+    assert "can be retired" in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert path.exists()
+
+
+def test_closeout_retire_refuses_a_coherent_task_at_ritual_execution(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_pre_cc31_task_on_board(root, "draft")
+    head = _git(root, "rev-parse", "HEAD")
+
+    assert _retire_main(root, "--reason", "still to do", "--ref", head) == 1
+    assert "has status 'draft'" in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert (root / "desk" / "tasks" / "task-x.md").exists()
+
+
+def test_closeout_retire_default_subject_names_the_task_file(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_legacy_task_on_board(root, task_id="001", filename="001-some-title.md")
+    ref = _git(root, "rev-parse", "HEAD")
+
+    rc = main(
+        [
+            "closeout",
+            "retire",
+            "--root",
+            str(root),
+            "--task",
+            "001",
+            "--reason",
+            "Resolved before the ritual lifecycle existed",
+            "--ref",
+            ref,
+        ]
+    )
+
+    assert rc == 0, capsys.readouterr().out
+    message = _git(root, "log", "-1", "--format=%B")
+    assert message.splitlines()[0] == "closeout: 001-some-title"
+    assert "Task-Id: 001" in message
+    assert not (root / "desk" / "tasks" / "001-some-title.md").exists()
+
+
+def test_closeout_retire_default_subject_is_unchanged_when_the_stem_matches_the_id(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_legacy_task_on_board(root)
+    ref = _git(root, "rev-parse", "HEAD")
+
+    rc = _retire_main(root, "--reason", "Resolved before the ritual lifecycle existed", "--ref", ref)
+
+    assert rc == 0, capsys.readouterr().out
+    message = _git(root, "log", "-1", "--format=%B")
+    assert message.splitlines()[0] == "closeout: task-x"
+    assert "Task-Id: task-x" in message
+
+
+def test_closeout_retire_refuses_a_task_that_is_not_resolved(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+    ref = _git(root, "rev-parse", "HEAD")
+
+    rc = _retire_main(root, "--reason", "not resolved yet", "--ref", ref)
+
+    assert rc == 1
+    assert (
+        "only resolved, closed, done, complete or cancelled tasks, or superseded, deferred or "
+        "candidate tasks with an empty history, can be retired"
+    ) in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert _git(root, "status", "--porcelain") == ""
+    assert (root / "desk" / "tasks" / "task-x.md").read_text(encoding="utf-8").count("status: active") == 1
+    assert "desk/tasks/task-x.md" in (root / "desk" / "tasks" / "Board.md").read_text(encoding="utf-8")
+    assert not (root / "runs" / "subagents" / "index.jsonl").exists()
+
+
+@pytest.mark.parametrize("ref", ["does-not-exist.txt", "deadbeef", "0" * 40, "desk/tasks/Board.md"])
+def test_closeout_retire_refuses_a_ref_that_is_not_an_ancestor_commit_and_leaves_the_tree_unchanged(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], ref: str
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_legacy_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = _retire_main(root, "--reason", "resolved long ago", "--ref", ref)
+
+    assert rc == 1
+    printed = capsys.readouterr().out
+    assert "Unresolvable --ref" in printed
+    assert "need a commit that is HEAD or an ancestor" in printed
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert _git(root, "status", "--porcelain") == ""
+    assert (root / "desk" / "tasks" / "task-x.md").read_text(encoding="utf-8").count("status: resolved") == 1
+    assert not (root / "runs" / "subagents" / "index.jsonl").exists()
+
+
+def test_closeout_retire_requires_at_least_one_ref(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_legacy_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+
+    rc = main(["closeout", "retire", "--root", str(root), "--task", "task-x", "--reason", "resolved"])
+
+    assert rc == 2
+    assert "--ref" in capsys.readouterr().err
+    assert _git(root, "rev-parse", "HEAD") == head
+
+
+def test_closeout_retire_requires_a_reason(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    root = _make_repo(tmp_path)
+    _commit_legacy_task_on_board(root)
+    head = _git(root, "rev-parse", "HEAD")
+    ref = _git(root, "rev-parse", "HEAD")
+
+    rc = _retire_main(root, "--reason", "   ", "--ref", ref)
+
+    assert rc == 1
+    assert "Retire needs a non-empty --reason" in capsys.readouterr().out
+    assert _git(root, "rev-parse", "HEAD") == head
+    assert _git(root, "status", "--porcelain") == ""
+    assert (root / "desk" / "tasks" / "task-x.md").exists()
+    assert not (root / "runs" / "subagents" / "index.jsonl").exists()
+
+
+def _commit_code_with_task_trailer(root: Path) -> str:
+    """A code commit carrying the task's Task-Id trailer, on top of a committed task."""
+    _write_task(root, references=["seed.txt"], files=["feature.py"])
+    _git(root, "add", "desk/tasks/task-x.md")
+    _git(root, "commit", "-q", "-m", "add task")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    _git(root, "add", "feature.py")
+    _git(root, "commit", "-q", "-m", "feature\n\nTask-Id: task-x")
+    return _git(root, "rev-parse", "HEAD")
+
+
+def _write_commit_receipt(root: Path, sha: str, verdict: str = "accepted") -> None:
+    _write(
+        root / "desk" / "reviews" / "task-x" / "evidence-commit-1.md",
+        f"""---
+id: review-task-x-evidence-commit-1
+kind: evidence
+fact: commit
+value: {sha}
+subject: doc:TaskDoc:task-x
+subject_ref: ''
+engine: deskops-closeout
+actor: deskops
+run_dir: ''
+input_sha256: ''
+output_sha256: ''
+verdict: {verdict}
+reason: 'verified: commit {sha}'
+created_at: '2026-11-16T00:00:00+00:00'
+disposed_at: '2026-11-16T00:00:00+00:00'
+disposed_by: deskops
+tags:
+- workspace:desk
+---
+
+# Closeout evidence commit of task-x
+
+## Summary
+
+closeout verify checked commit: {sha}
+
+## Disposition
+
+Verdict {verdict}: verified: commit {sha}
+""",
+    )
+
+
+@pytest.mark.parametrize("citation", ["reference", "receipt"])
+def test_closeout_commit_does_not_amend_a_head_the_task_cites_as_commit_evidence(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], citation: str
+) -> None:
+    """A HEAD with the task's Task-Id that the task cites as commit evidence (its short sha in
+    references, or the value of an accepted evidence-commit receipt) survives with its sha;
+    the close is a separate commit on top of it."""
+    root = _make_repo(tmp_path)
+    code = _commit_code_with_task_trailer(root)
+    if citation == "reference":
+        _write_task(root, references=["seed.txt", code[:8]], files=["feature.py"])
+    else:
+        _write_commit_receipt(root, code)
+    capsys.readouterr()
+
+    assert main(["closeout", "verify", "--root", str(root), "--task", "task-x"]) in (0, 1)
+    report = json.loads(capsys.readouterr().out)
+    if citation == "reference":
+        assert report["gates"]["commit"]["evidence"] == [code[:8]]
+
+    paths = ["desk/tasks"] if citation == "reference" else ["desk/tasks", "desk/reviews"]
+    rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", *paths)
+
+    assert rc == 0, capsys.readouterr().out
+    head = _git(root, "rev-parse", "HEAD")
+    assert head != code
+    assert _git(root, "rev-parse", "HEAD^") == code
+    assert _git(root, "log", "-1", "--format=%s") == "closeout: task-x"
+    assert subprocess.run(["git", "merge-base", "--is-ancestor", code, head], cwd=root).returncode == 0
+    assert _git(root, "show", "--name-only", "--format=", code).splitlines() == ["feature.py"]
+    assert not (root / "desk" / "tasks" / "task-x.md").exists()
+
+
+def test_closeout_commit_still_amends_an_uncited_head_with_the_task_id(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """A HEAD with the task's Task-Id that the task does not cite (no reference, only a
+    rejected receipt) is folded into the close as before."""
+    root = _make_repo(tmp_path)
+    code = _commit_code_with_task_trailer(root)
+    before = _git(root, "rev-parse", "HEAD^")
+    _write_commit_receipt(root, code, verdict="rejected")
+
+    rc = _closeout_main(root, "--no-run", "--reason", "no subagent ran", "--paths", "desk/tasks", "desk/reviews")
+
+    assert rc == 0, capsys.readouterr().out
+    head = _git(root, "rev-parse", "HEAD")
+    assert head != code
+    assert _git(root, "rev-parse", "HEAD^") == before
+    assert subprocess.run(["git", "merge-base", "--is-ancestor", code, head], cwd=root).returncode != 0
+    assert "feature.py" in _git(root, "show", "--name-only", "--format=", "HEAD").splitlines()
+    assert "Task-Id: task-x" in _git(root, "log", "-1", "--format=%B")
+
+
+# --- braces in --reason and the desk/reviews projection (task-valores-con-llaves-...) ------------
+
+
+@pytest.mark.parametrize(
+    "reason",
+    [
+        "cierre {a}",
+        "cierre {{a}} docker {{.State}}",
+        "cierre {{{a}}}",
+        "cierre a}",
+        "cierre a}}",
+        "cierre a}}}",
+        "cierre {commit} literal",
+    ],
+)
+def test_closeout_commit_keeps_braces_in_the_reason_byte_for_byte(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], reason: str
+) -> None:
+    """The reason is text: the commit trailer and the printed line carry it unchanged, rc 0."""
+    root = _make_repo(tmp_path)
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+
+    rc = _closeout_main(root, "--no-run", "--reason", reason, "--paths", "feature.py")
+
+    out = capsys.readouterr().out
+    assert rc == 0, out
+    assert _git(root, "log", "-1", "--format=%(trailers:key=Closeout-Reason,valueonly)") == reason
+    commit = _git(root, "rev-parse", "HEAD")[:12]
+    assert out.splitlines()[0] == f"Closing commit {commit} made manually (no run): {reason}"
+
+
+def test_closeout_commit_folds_the_verify_receipt_projection_into_the_closing_commit(
+    lifecycle_desk: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """verify writes its receipts without committing them; the close commits their
+    desk/reviews/<task> projection with the rest and leaves no file behind."""
+    from closeout_desk import store_repo
+    from deskops.operations import DeskopsOperations
+
+    root = store_repo(lifecycle_desk)
+    task_id = DeskopsOperations(root).create_task_bundle(
+        {
+            "title": "Llaves",
+            "goal": "g",
+            "scope": "s",
+            "implementation_path": "i",
+            "done_when": "d",
+            "validation": ["echo ok"],
+            "task_type": "task.external",
+        }
+    ).task_id
+    assert main(["edit", "task", task_id, "references", '["https://example.com/e"]', "--root", str(root)]) == 0
+    _git(root, "add", "-A")
+    _git(root, "commit", "-q", "-m", "task")
+
+    assert main(["closeout", "verify", "--task", task_id, "--root", str(root)]) == 0
+    projection = f"desk/reviews/{task_id}/evidence-external-1.md"
+    assert "?? desk/reviews/" in _git(root, "status", "--porcelain", "--untracked-files=normal")
+    (root / "feature.py").write_text("x = 1\n", encoding="utf-8")
+    capsys.readouterr()
+
+    rc = main(
+        ["closeout", "commit", "--root", str(root), "--task", task_id,
+         "--no-run", "--reason", "cierre {a}", "--paths", "feature.py"]
+    )
+
+    assert rc == 0, capsys.readouterr().out
+    assert _git(root, "status", "--porcelain") == ""
+    committed = _git(root, "show", "--name-only", "--format=", "HEAD").split()
+    assert projection in committed
+    assert "feature.py" in committed
+
+FILE:instruccion
+Cold-bundle de la tarea task-closeout-commit-incluye-el-run-md-de-cada-rundoc-que-el-store-trackea-y-git-todavia-no-tiene-para-qu: con el TaskDoc, los rituales enrutados por el Board, las pills ligadas, los átomos ligados y los archivos que el TaskDoc nombra, reformula el encargo, lista ambigüedades con cita textual del input y da el DRY-RUN sin ejecutar nada. No ejecutes nada.
+
+Sección de validación del TaskDoc:
+- cd /mnt/ssd/proyectos/SLDB_1/deskops && PYTHONPATH=$PWD TMPDIR=/dev/shm ../.venv/bin/python -m pytest -q tests/test_closeout.py
+

@@ -1,0 +1,11 @@
+REFORMULACION
+ROOT es un agregado no ejecutable (paquete) cuyo dueño es deskops. Propósito: entregar la superficie de trabajo de la fábrica con el lenguaje visual de Stitch y datos reales. Resultado: vista de datos y contrato en deskops, más frontend `frontends/desk/` en graph_ui que la sirve en loopback; una persona ve el Board por etapa con gates reales, abre tareas, drawer, inbox y agentes, y ejecuta avanzar, reconocer y pasar al drawer solo mediante operaciones de deskops, con confirmación y guarda de revisión. Límites: sin edición en navegador, Spec Studio, autenticación/remoto, dispatch Scion ni gates por tipo; sin datos de ejemplo; verificación contra `deskops view`. Repos: deskops dueña de la vista/contrato; graph_ui cliente.
+
+AMBIGUEDADES
+Ninguna. El placeholder de puerto, la forma de elegir desk y los nombres concretos quedan para los TaskDoc de los hijos; no cambian el resultado ni la aceptación del paquete.
+
+DRY-RUN
+Hipotético, sin ejecutar. Primero PU01: UI01 produce en deskops la vista/CLI y `docs/deskops-ui.md`; entrega el contrato y los datos reales. UI02 consume ese contrato, levanta el servidor y shell en graph_ui, reutiliza `DeskRoutes` y deja el punto de entrada loopback. Luego PU02, en serie sobre un worktree de graph_ui: UI03 monta Board y selección; entrega navegación y componentes base. UI04 añade Tarea con gates, evidencia, pills/atoms y acciones; entrega el panel y las guardas. UI05 añade Drawer e Inbox con ack y paso al drawer; entrega esas operaciones visibles. UI06 añade Agentes y corridas; entrega la última pantalla. Validación conjunta: pytest de deskops con desks temporales; pytest de rutas de graph_ui; e2e de navegador que compara lo mostrado con `deskops view`, comprueba que no aparece texto de Stitch y que las acciones pasan por deskops con guarda; suite completa en robocop2; capturas comparadas con Stitch y diferencias deliberadas registradas.
+
+FUTURO
+Cada TaskDoc fijará archivos, tests, puerto y selector de desk al promover. Un humano dispone la revisión de preflight y autoriza merge. Otros planes (`gates-por-tipo`, `grafo-operable`) aportarán fuentes GC/GO y el dispatch Scion llegará después; hasta entonces esos elementos no se dibujan.

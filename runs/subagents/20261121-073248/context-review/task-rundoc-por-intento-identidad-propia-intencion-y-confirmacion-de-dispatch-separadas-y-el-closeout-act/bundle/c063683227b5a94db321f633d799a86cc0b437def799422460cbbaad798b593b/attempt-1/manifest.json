@@ -1,0 +1,109 @@
+{
+  "key": "task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/bundle",
+  "input_sha256": "c063683227b5a94db321f633d799a86cc0b437def799422460cbbaad798b593b",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261121-073248/context-review/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act/bundle/c063683227b5a94db321f633d799a86cc0b437def799422460cbbaad798b593b/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-rundoc-por-intento-identidad-propia-intencion-y-confirmacion-de-dispatch-separadas-y-el-closeout-act.md",
+      "sha256": "d3a003dac46a2d70e57ceffcf36bd173288e293044c58aceeddbe51b627e1b19",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md",
+      "sha256": "8423ba19e7de4c5105c4ff7ee725075bfa2da9184950da26496bf004fc7fe734",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-scion-coordinator-progresses-authorized-work.md",
+      "sha256": "6d4649499c28df7536cae9623f35148501072f595316d1b5de575cf51569ac94",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/runtime/scion.py",
+      "sha256": "a8d9b8c2cde857a013f1f9e1fa956ba0b509357a9f63420a5abbf056a94ce3de",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/models/run.py",
+      "sha256": "05ffbdf1f3586db8bbb6a81777a036af0d25955aa440b2e4355e534c9908ba96",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_scion_runtime.py",
+      "sha256": "369b5ba5710fb1ce0466fe93ce16bfab0dc60023554f90dee48a30474031d6e9",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_closeout.py",
+      "sha256": "5079478f275c06a504d383efaafc87b1e4603b90278a491bc085e76fa41821f9",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/services/closure.py",
+      "reason": "size>=60000",
+      "size": 84267
+    }
+  ],
+  "started": "2026-11-21T07:32:49.402647+00:00",
+  "finished": "2026-11-21T07:33:10.003818+00:00"
+}

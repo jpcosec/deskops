@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T05:34:53Z'
+  at: '2026-11-25T17:45:28Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -62,6 +62,8 @@ tasks:
 - desk/tasks/task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado.md
 - desk/tasks/task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase.md
 - desk/tasks/task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente.md
+- desk/tasks/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js.md
+- desk/tasks/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -154,3 +156,5 @@ _Generated from the task references above._
 - deskops view board muestra las fases del DAG con sus tareas y su estado [draft] - deskops view board (texto y json) lista cada fase con sus tareas y el estado de cada una, y si la fase esta completa.
 - closeout encola un solo integrate cuando cierra la ultima tarea de la fase [draft] - Al cerrar una tarea que pertenece a una fase del Board: si quedan tareas abiertas en la fase no se encola nada; si era la ultima se encola un solo trabajo integrate --phase, sin duplicar uno pendiente. Una tarea sin fase encola su integrate como hoy.
 - El reap integra la rama de un ejecutor de la tarea aunque scion ya no liste al agente [draft] - Que reap integre toda rama deskops/<ejecutor> de la tarea con commits fuera de la base aunque el agente ya no exista, y encole el tester como hoy.
+- El gate de tests del closeout acepta pruebas de node: .test.mjs, .test.js, .spec.mjs y .spec.js [draft] - Que _is_test_suffix acepte tambien .test.mjs, .test.js, .spec.mjs y .spec.js, con las mismas reglas de ubicacion (bajo tests/ o declarado en files).
+- deskops add adr crea un registro de decisión con estado, contexto, decisión, consecuencias y a cuál reemplaza, y deskops list adrs muestra los vigentes [draft] - Que una decisión de arquitectura sea un artefacto modelado del desk, que se crea y se lista por CLI y que sabe a qué decisión anterior reemplaza.

@@ -1,0 +1,99 @@
+{
+  "key": "task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/bundle",
+  "input_sha256": "55541e5ef90ab8e56cd3c38ce7896610aa19c10d754d6fa9039553083df55cb2",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261117-115958/context-review/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason/bundle/55541e5ef90ab8e56cd3c38ce7896610aa19c10d754d6fa9039553083df55cb2/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-deskops-message-ack-acepta-reason-y-la-nota-guarda-el-porque-en-un-campo-ack-reason.md",
+      "sha256": "60b15a9cd2dfba61311959ecae1b8b5c9a2b5b3bced6734c39aa43955d1b0278",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md",
+      "sha256": "861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/atoms/atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk.md",
+      "sha256": "5fa9e0312a209998511d41edd92b501cdda589e9b96cb7732f7c4dab31c772d5",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/models/inbox.py",
+      "sha256": "a231a3813ed997b0c4c827505c935af73f4fa062458ed8a971122f49a34468a9",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/message.py",
+      "sha256": "acd0aae9edd847dcde86379a38180d9a412d4d43094592385aa2fa3cd50777f7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_cli.py",
+      "sha256": "4129087c11e12884ca145537756ac12e8127756195203e20df0968bfd0fb5952",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 82331
+    }
+  ],
+  "started": "2026-11-17T11:59:59.080174+00:00",
+  "finished": "2026-11-17T12:00:13.895584+00:00"
+}

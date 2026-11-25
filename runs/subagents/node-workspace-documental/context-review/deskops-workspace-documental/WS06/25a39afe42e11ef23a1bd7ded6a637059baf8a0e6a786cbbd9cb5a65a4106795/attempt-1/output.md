@@ -1,0 +1,13 @@
+## REFORMULACION
+WS06 es un nodo de planificación en `deskops` (delivery) que debe producir `reconciliacion.md`: una matriz con una fila por delta o capacidad única, agrupada por repo dueño, clasificada como ya cubierta (código observable con path/símbolo y commit), extender ticket existente (incluido draft del Board) o nuevo delta. Debe conservar la fila Scion RunDoc/cierre y su descomposición en WS32/33 sin ejecutar WS05; WS32/33 mantienen dependencias y gates. Registrará la atomización propuesta sin notificar, despachar ni modificar el Board de graph_ui. Los recibos externos los produce el receptor P01 en su repo al preparar cada delta; WS11/WS12 son fuente de contrato y solo enlazan esas actas. No habrá firmas, gates ni recepción ficticia. «No designado en P01» para deskops es dato de tabla, no permiso para frenar trabajo local. Límite: solo `reconciliacion.md`; depende de WS02, WS03 y WS04; no aprueba deltas ni genera gates.
+
+## AMBIGUEDADES
+1. «correspondencia ticket/delta y responsable ya designado P01»: P01 designa responsabilidad de producto/recepción, no un owner técnico, y para deskops indica «No designado en P01». Obliga a inventar qué “responsable” registrar por fila o a atribuir uno técnico no designado.
+2. «ya cubierto (capacidad observable en código implementado, citando path/símbolo y commit observado)»: no hay regla para código implementado sin commit (working tree) o con varios commits. Obliga a inventar si cuenta como cubierto y qué commit citar.
+3. «una fila por delta o capacidad única (varios nodos pueden remitir a la misma fila)»: no fija la granularidad de “capacidad única” ni si la fila debe listar los nodos que remiten. Obliga a inventar el criterio de agrupación.
+
+## DRY-RUN
+Lecturas: `dag.yaml` (WS06 y dependencias), `reconciliacion.md` existente, `decisiones.md`/P01 y salidas de WS02–WS04 (`auditoria/deskops.md`, `infraestructura.md`, `ui.md`), además de tickets/código citados. Cambios previstos: solo escribir la matriz en `reconciliacion.md`, agrupada por repo, con estado, evidencia/ticket y responsable; preservar la fila Scion WS32/33 y anotar deskops como no designado en P01. Dependencias: WS02–WS04 completos; las actas P01 son futuras y WS11/WS12 las enlazan, no WS06. Validaciones futuras: cada fila con repo, estado, evidencia y responsable; sin gates, firmas, notificaciones ni cambios de Board; operador Scion solo para ramal E. Sin ejecución.
+
+## FUTURO
+P01 producirá actas por delta en su repo; WS11/WS12 las enlazarán. WS07 consumirá la matriz. WS32/33 conservarán y ejecutarán después su descomposición. La aceptación de deltas y cualquier cambio de Board corresponden a actores autorizados, no a WS06.

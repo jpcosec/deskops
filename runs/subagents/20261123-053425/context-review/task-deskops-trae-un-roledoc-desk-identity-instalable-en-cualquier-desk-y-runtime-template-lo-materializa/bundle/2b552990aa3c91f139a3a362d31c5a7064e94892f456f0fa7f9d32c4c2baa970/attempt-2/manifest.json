@@ -1,0 +1,128 @@
+{
+  "key": "task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa/bundle",
+  "input_sha256": "2b552990aa3c91f139a3a362d31c5a7064e94892f456f0fa7f9d32c4c2baa970",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261123-053425/context-review/task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa/bundle/2b552990aa3c91f139a3a362d31c5a7064e94892f456f0fa7f9d32c4c2baa970/attempt-2/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa.md",
+      "sha256": "6813555f97af637789cf39e3f4b85dad516d0c145767b98ad906af6a9be83e77",
+      "projection": "whole_file"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "35080283e73e3cc6e49242982bb20b0357b22dfae2da7b83667cf2af197f84ac",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/desk.py",
+      "sha256": "3e9c0f11ecd5c746c44f24afa31a12089a438fecc76b250af4ceaf92d9b84ee1",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/core.py",
+      "sha256": "9bde3d10e6297eb46c4e4bcae4c0a66b981782b66bf002d895dbffcdd8492166",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/runtime/scion.py",
+      "sha256": "d63eaef8bf8318b8aa0c229a87d2da9f7db274192d46330ac3259b4406d6edca",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/runtime.py",
+      "sha256": "325556789a2a0cffce5edf64306a98bde32a04515fb791967c1e868220dc23d7",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_desk_sync.py",
+      "sha256": "dacabc17d33f33d7457508ffe4d79db423ebbdd6ac48490e3558a96d472e5818",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_scion_runtime.py",
+      "sha256": "2261f8535b404036e0645dd53442b75dc207f0437170afd1bca6f30fe9da9081",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/fixtures/golden/help/deskops_runtime_template.txt",
+      "sha256": "05c31a25f5a3d9c62653bd5158781ba7df3ed1cc2b850b03a4dad3dac8378c3e",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/fixtures/golden/scaffold/init.json",
+      "sha256": "f8726f7fbeaacf6deb1fc05e1e76a39b30b0cb48e29549e3501d10af5ac3a452",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/fixtures/golden/scaffold/update.json",
+      "sha256": "71cbe102434e7916b196bbc91c426118ce0d6918ae393f744e17dd8bd8c3bd3e",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/data/roles/desk-identity.yaml",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 88245
+    }
+  ],
+  "started": "2026-11-23T05:34:26.160109+00:00",
+  "finished": "2026-11-23T05:34:36.439796+00:00"
+}

@@ -1,0 +1,13 @@
+## REFORMULACION
+CC35 es un **agregado no ejecutable** de PF3, repo dueño **deskops**. Encargo: que toda escritura de deskops pase por `sldb.api.transaction`/`apply_batch`, con `expected_source_hash`; que selectores, referencias entrantes, tags y reemplazo usen las APIs de sldb; y que se borren `doc_io.py` y los caminos propios. Resultado: escrituras atómicas, selectores con los mismos mensajes, referencias reescritas en la misma transacción y reemplazo con guarda de conteo. Límites: no escribe en sldb, no suple reglas con Python, no cambia formato del desk ni gramática del CLI, y cada superficie borra su código viejo en el mismo paso. Se cumple por sus hijos CC35a–d.
+
+## AMBIGUEDADES
+1. “Se parte al promover en cuatro hijos (transacción, selectores, referencias, tags/reemplazo), cada uno con el mismo criterio de aceptación sobre su superficie” choca con DO7: “CC35d se corta: entrega solo a4… Árbol de dominios, require_domain_parents, tag_namespaces y tag_folder (b6) esperan a sldb H1-H3”. Obliga a inventar si el agregado cierra con tags/dominios diferidos o si su aceptación se recorta.
+2. La aceptación exige “`require_domain_parents` … deskops/ vacío” y “domain:a.b sin crossroad de domain:a falla como antes”, pero DO7 difiere `require_domain_parents`. Obliga a decidir si esas validaciones quedan fuera del cierre o si CC35 no puede cerrar.
+3. DK5 ordena “CC35←GD22+GD23+GD24”, mientras el nodo declara `requires: G_GD22, G_GD23, G_GD24, G_GD27`. Obliga a decidir si GD27 es requisito de promoción o sobra.
+
+## DRY-RUN
+No se ejecuta CC35: se promueven sus hijos. **Lecturas:** DAG, alcance, decisiones DO7 y scope del agregado. **Cambios previstos:** CC35a migra callers a transacción y borra `doc_io.py`; CC35b pasa selectores a `select_documents` conservando mensajes; CC35c usa `referrers/rewrite_references` dentro de la transacción y declara `MentionPattern`; CC35d, según DO7, solo lleva `replace` a `sldb.replace_text`. **Transferencias:** a deja la transacción obligatoria; b deja selectores resueltos; c deja mutaciones con referencias seguras; d deja reemplazo y lo diferido marcado. **Validaciones futuras:** grep pactado, rollback inyectado en merge, conflicto por hash viejo, retiro de pill, menciones reescritas, goldens de selectores y ayuda/salida, tests tocados, `doctor` en 6 desks, líneas y CHANGELOG. El chequeo `domain:a.b` queda en conflicto por DO7.
+
+## FUTURO
+Los TaskDoc de CC35a–d fijan archivos, tests y orden; el coordinador/dueño decide el alcance diferido de CC35d y si se ajusta la aceptación del agregado; el supervisor corre la suite integrada; CC51/CC52 miden y verifican el resultado conjunto.

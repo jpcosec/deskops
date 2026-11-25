@@ -1,0 +1,11 @@
+## REFORMULACION
+PC02 es un nodo `aggregate` del plan `gates-por-tipo` (repo deskops; no ejecuta, cierra cuando cierran sus hijos). Propósito: que el ciclo de vida sea entero grafo y que los gates sean reglas evaluadas por sldb, no hechos en Python. Resultado: efectos en las aristas y `advance` por `edges_holding` (GC04); `RuleDoc` de activación por tipo y explicación por `edges_blocked` (GC05, produce `G_CONSUMER`); cierre de `advance --to` y de `edit task` sobre campos del ciclo (GC06); herencia leída del grafo (GC07); rituales y documentación al día (GC08). Límites: no toca sldb (solo `message send`), no autentica, no reimplementa el evaluador, no cambia la autoridad de `closeout commit`.
+
+## AMBIGUEDADES
+1. «GC06 puede correr apenas cierre GC01; GC04 y GC05 esperan a sldb». GC07 también requiere `G_SLDB_LANG` y la frase no lo menciona: obligaría a inventar si GC07 está bloqueado hasta sldb o puede promoverse tras GC01.
+
+## DRY-RUN (agregado, sin ejecutar)
+Orden: GC06 tras GC01; GC04 y GC05 tras los gates `G_SLDB_EFFECTS`/`G_SLDB_LANG|RULES|ANCHORS|EVAL` y GC01/GC02 (GC05); GC07 tras GC01 y `G_SLDB_LANG`; GC08 tras GC03, GC05 y GC06. Transferencias: GC04 deja `RelationDoc.attributes.sets/terminal`, `advance` por `edges_holding` y `apply_effects`; GC05 deja `desk/rules/` con la regla común y una por tipo, findings en `advance/show/next` y el test de `G_CONSUMER`; GC06 retira `--to` y rechaza `status`, `current_node`, `task_type`, `closeout_evidence`, `history`; GC07 resuelve ancestros vía sldb y cierra sobre `effective_*`; GC08 actualiza rituales, manual y guía. Validación conjunta: aceptación de PC02 en desk temporal (tarea `task.code` sin recibos bloqueada con finding; con recibos intactos activa y el `status` viene del efecto; `advance --to` inexistente; `edit task status` falla; YAML sin `sets_status`/`terminal`; rituales nombrando `deskops review`), `pytest tests`, `desk update --apply` idempotente dos veces, y cierre de `G_CONSUMER` con nota a sldb.
+
+## FUTURO
+sldb cierra los gates `G_SLDB_*` y valida `G_CONSUMER`; el dueño resuelve los pendientes (`--evidence`, DC7, `task.external`, plantilla Scion) y autoriza/promueve cada hijo; GC03 y los nodos de PC01 habilitan GC08.

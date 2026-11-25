@@ -1,0 +1,113 @@
+{
+  "key": "deskops-como-config/CC31",
+  "input_sha256": "86d8ac88ea34088767a4892076e1cb30d95f4eb41b4bf3859f0ebf856eeb48a0",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/node-deskops-como-config/context-review/deskops-como-config/CC31/86d8ac88ea34088767a4892076e1cb30d95f4eb41b4bf3859f0ebf856eeb48a0/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/drawer/plans/deskops-como-config/context-review-guide.md",
+      "sha256": "636ae5dd663a6834a4d8b318cab4c5f07be0f0111c98790dbcf040b8826159a0",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/brief.md",
+      "sha256": "8d0e2e8b1d85aaebb3d5dcd0c9579299bac8ef6d8a0a7e6c78100eb280b1e8e1",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/alcance.md",
+      "sha256": "feec2e4012c15c027f002f951f18b19a7759ba59ac58853da0b391db3d13884a",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/decisiones.md",
+      "sha256": "e448e4ab0a989a0b9de7d1397d0e5bfd2886067fd21978c7d014facb91e7a1a8",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#node:CC31",
+      "sha256": "005a0ab43234f2ce3698c55f62b4bda7f308a8a8e9a96145262edfd90433d7d2",
+      "projection": "node_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:CC30",
+      "sha256": "30a238bfd9135c295d8af9b4c9fbb6b6fcca8be8ce7ccaecfc3e6a8bd24713c5",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:CC36",
+      "sha256": "9c7330ad7e64e43263cdd5308de83b2572960be5bda313d5bdc5c8bbb69e8e60",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:CC32",
+      "sha256": "3a1a94406465ade2537d8f21c14e4a25ce0b3e85dc4bb11998bef91aa3f55b76",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:CC37",
+      "sha256": "250d71b11f919df5c7f14ddfef217ae76d0cb04aafae3e98bf822900c94cd926",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:CC51",
+      "sha256": "5c1d704e2abba776cd8d66ffb75d9eea097e935acc6e034d713b4d593e0011e6",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:CC52",
+      "sha256": "c9079d1fcdb7505b93f5226c3144f26b72a85a08499972bd38bc1791600337fb",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:CC53",
+      "sha256": "b5bbdaf790c9a70d1271e737c12fd181c06de9774e67e0df614268babc70ae6d",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#edge:PF2",
+      "sha256": "1588734a31f6e0585b947d992b10e96d36856819ecd2efc6c1e47d95b8b14a27",
+      "projection": "edge_contract"
+    },
+    {
+      "path": "desk/drawer/plans/deskops-como-config/dag.yaml#gates",
+      "sha256": "552e25323b956d99c701d536bfc21f5723bb52ad644af8ba5328b6051c320a7a",
+      "projection": "gate_contracts"
+    }
+  ],
+  "omitted_sources": [],
+  "started": "2026-11-17T02:44:23.943324+00:00",
+  "finished": "2026-11-17T02:44:51.873891+00:00"
+}

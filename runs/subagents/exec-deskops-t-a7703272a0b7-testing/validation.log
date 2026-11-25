@@ -1,0 +1,18 @@
+# Tester validation evidence
+# Commit: eee49b8993879f4c54ac3720fbc1eaf7524cfdbb
+# Worktree: /tmp/deskops-test-eee49b89 (detached, removed after run)
+# Python: /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python 3.13.18, pytest 9.1.1
+
+$ cd /tmp/deskops-test-eee49b89
+$ PYTHONPATH=$PWD TMPDIR=/tmp /mnt/ssd/proyectos/SLDB_1/sldb/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_skill_cli_drift.py
+..                                                                       [100%]
+2 passed, 1 warning in 0.02s
+PYTEST_RC=0
+
+$ grep -rn use-spec2viz AGENTS.md README.md .opencode
+.opencode/skills/use-specir/SKILL.md:6:# use-spec2viz → use-specir
+.opencode/skills/use-specir/SKILL.md:8:spec2viz is retired (IR13). This file stays only so that whoever loads the old `use-spec2viz` path
+.opencode/skills/use-deskops/SKILL.md:159:- Load `use-specir` (IR repo, `skills/use-specir/SKILL.md`; replaces the retired `use-spec2viz`) for structured diagram specs and generated diagram projections.
+GREP_RC=0
+
+VERDICT: FALLA - grep validation requires rc 1/no matches; acceptance context also requires removing the use-spec2viz token from .opencode.

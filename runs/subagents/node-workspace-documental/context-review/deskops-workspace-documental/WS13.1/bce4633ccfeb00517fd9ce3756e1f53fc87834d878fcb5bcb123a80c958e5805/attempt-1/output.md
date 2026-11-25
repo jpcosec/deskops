@@ -1,0 +1,11 @@
+REFORMULACION
+WS13.1 es un nodo de implementación, no agregado, en graph_ui: producir un delta conciliado sobre el workspace integrado a1b2b22 para lectura de documento/fuente, panel de contexto (identidad, relaciones y origen), enlaces y Code local con selección por documento/nodo. Resultado: Markdown no modelado con lectura y fuente cruda legibles, contexto con identidad/relaciones/ruta reales y foco compartido entre representaciones del mismo documento sin abrir copia ni depender de IDs. Límites: solo graph_ui, rutas del host, sin índices nuevos ni workspace independiente, sin inventar mapeo texto→código; cierre con evidencia propia del delta y recibo G_UI_READ, sin sustituirlo por f16fcd1 ni commits previos.
+
+AMBIGUEDADES
+1. La aceptación dice «seleccionar en Code, texto o graph actualiza ese foco y las demás representaciones del mismo documento lo comparten», mientras el scope limita «Compartir foco solo donde exista correspondencia real de origen definida WS11; no inventar mapeo texto→código». Si WS11 no define correspondencia, el ejecutor no sabe si debe compartir el foco entre todas las representaciones o solo entre las mapeadas; compartir sin contrato le obligaría a inventar el mapeo, y restringirlo podría incumplir la aceptación literal.
+
+DRY-RUN
+Un ejecutor futuro leería el contrato WS11, el catálogo WS09 y el workspace graph_ui en a1b2b22, componentes existentes y el recibo G_UI_READ del delta. Cambios previstos: frontends/mindmap/views/workspace/ reutilizando node/workspace-view.js y componentes Document/Graph/Code/contexto; tests. Dependencias: WS11 —con WS09/WS08 transitivas— y recibo externo por delta. Validaciones futuras: Markdown no modelado con lectura y fuente íntegra y mismo origen; panel con identidad, relaciones WS11 y ruta real; enlaces y alternancia texto/graph/code preservando origen; foco compartido solo con correspondencia; sin IDs ni workspace nuevo; evidencia de aceptación del delta. Sin ejecutar.
+
+FUTURO
+WS11 produce el contrato de navegación/identidad y las correspondencias; WS09 aporta el catálogo de vistas; WS13.2 y WS13.3 aportan explorador y pestañas/historia al agregado; el receptor humano P01 emite el recibo G_UI_READ del delta. WS13 cierra cuando sus hijos cumplen.

@@ -1,0 +1,11 @@
+## REFORMULACION
+Propósito: implementar en el workspace integrado a1b2b22 la edición de campos reutilizando editores y API, con precondición de escritura de payload y conflicto visible. Resultado: guardar/recargar persiste el dato; una escritura obsoleta conserva el texto local y muestra el conflicto; no se editan campos protegidos por workflow ni documentos con contenido no declarado hasta que WS47 pruebe su guarda; la mutación se limita a desk en modo manual exclusivo admitida por WS48, y otros modos quedan read-only hasta contrato. Repo dueño: graph_ui. Límites: no cambia el contrato WS12; consume sus endpoints; no edita workflow-protected fields; no habilita uso de mutaciones en UI sin G_HUMAN_READ, aunque desarrollo/pruebas aisladas de API pueden avanzar con gates técnicos; salidas en `frontends/mindmap/views/workspace/fields/` y `tests/`.
+
+## AMBIGUEDADES
+ninguna
+
+## DRY-RUN
+Un ejecutor futuro leería el nodo WS19.1, los contratos de WS12/WS47/WS48, los gates y el estado del repo graph_ui en el workspace indicado. Revisaría los editores de campos existentes y el cliente de API ya integrado, sin modificar el contrato. Cambios previstos: rutas de edición de campos en `frontends/mindmap/views/workspace/fields/`, consumo de endpoints WS12 y pruebas en `tests/`. Dependencias: contrato WS12, guarda probada por WS47, admisión común de WS48 y gates G_PAYLOAD_PRECONDITION (WS45), G_WRITE_CONTRACT (WS12), G_UI_WRITE por delta y G_HUMAN_READ para uso en UI. Si falta contrato, API, dato o permiso, se detendría y registraría el hueco con repo dueño, sin sustituto. Validaciones futuras: guardar/recargar sobre store temporal real; escritura obsoleta sin pérdida de texto local y conflicto visible; campos protegidos no editables; documentos con contenido no declarado bloqueados hasta WS47; admisión de WS48; resto de modos en lectura/handoff.
+
+## FUTURO
+WS12 fija el contrato y verifica G_WRITE_CONTRACT; WS45 verifica la precondición de payload y resuelve G_PAYLOAD_PRECONDITION; WS47 produce y prueba la guarda de contenido no declarado; WS48 produce el punto común de admisión en modo manual exclusivo. El receptor P01 emite el acta G_UI_WRITE del delta concreto; WS16 resuelve G_HUMAN_READ. WS19.2 y el agregado WS19 completan la integración cuando sus hijos cumplan.

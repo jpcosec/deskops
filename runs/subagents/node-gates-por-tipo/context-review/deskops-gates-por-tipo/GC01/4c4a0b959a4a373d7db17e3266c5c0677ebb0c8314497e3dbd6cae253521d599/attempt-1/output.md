@@ -1,0 +1,13 @@
+## REFORMULACION
+Propósito: convertir los tipos de tarea de deskops en modelos sldb con jerarquía, para que `task_type` sea un nombre registrado y cada tipo declare su evidencia de cierre y los kinds de recibo que exigirá GC05. Resultado: `deskops/models/task_types.py` con las subclases de brief §Tipos, registro en `MODEL_REFS`, `add task --task-type` validado, evidencia leída del tipo, migración idempotente de tareas legadas y `G_TYPES` producido. Repo dueño: deskops. Límites: no reimplementa el evaluador ni escribe reglas en Python; no toca sldb; no cambia la autoridad de cierre; no implementa composición ni verificación de goldens/children (GC09/nodo posterior); sin dependencias ni gates sldb requeridos.
+
+## AMBIGUEDADES
+1. «migración: … (code|implementation|test → task.code; docs|spec|design → task.docs; external → task.external; vacío → task.code)». No cubre otros valores legacy posibles —`task_type` era string libre— ni valores ya migrados («task.code») en la segunda corrida. Obliga a inventar si fallar, mapear a `task.code` o dejarlos; la aceptación solo exige que la segunda corrida no cambie nada.
+2. «task.decision … ningún recibo de revisión; owner (recibo del dueño)» frente a «`__activation_receipts__` (tupla de kinds de ReviewDoc …: preflight, bundle, reproduction, goldens, owner)». Obliga a inventar si `TaskDecisionDoc` declara `()` o `("owner",)`, y con ello qué exigirá GC05.
+3. «`--evidence` solo puede agregar kinds a los del tipo (piso; …) y un kind que quite falla». No fija si `--evidence` es aditivo o una lista de reemplazo con piso; obliga a inventar cómo se detecta «quitar» y si el resultado es unión o validación de superconjunto.
+
+## DRY-RUN
+Lecturas: brief §Tipos, `closeout_gates.py:23,30-38`, `task.py:144-147`, `bootstrap.py:26,118-160`, `operations.py` (creación y verify), `cli/registry.py`. Cambios previstos en `task_types.py`, `task.py`, `models/__init__.py`, `bootstrap.py`, `closeout_gates.py`, `tasks.py`, `operations.py`, `registry.py`, `workspace.py` (desk/models), tests, fixture de hashes, docs y CHANGELOG. Dependencias: ninguna; produce `G_TYPES`. Validaciones futuras: `pytest tests`; acceptance; `sldb docs find --where "model <= TaskCodeDoc"`; segunda corrida de `desk update --apply`; cierre de `G_TYPES` con revisión en frío aceptada, tests verdes y closeout commit.
+
+## FUTURO
+El dueño confirma o retira `--evidence` y DC7. sldb debe leer `__contract__` (GO02(e)) y registrar subclases federadas; si no, el atributo queda inerte y se registra la hipótesis. GC05 consume `__activation_receipts__`; GC09 agrega `parent_id`/`children` y verifica children; un nodo posterior verifica goldens. `G_TYPES` lo cierra la revisión en frío aceptada por el desk de deskops.

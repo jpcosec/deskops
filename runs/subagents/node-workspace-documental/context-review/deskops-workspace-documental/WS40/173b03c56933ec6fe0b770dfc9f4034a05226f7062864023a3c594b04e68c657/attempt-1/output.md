@@ -1,0 +1,13 @@
+REFORMULACION
+WS40 es un nodo de implementación, no un agregado. Propósito: versionar en `graph_ui` un generador reproducible del corpus Taller usando el contrato WS11 y los CLI reales de deskops/sldb verificados en WS02/WS03, sin servidor fake. Resultado: un comando que crea/recrea un entorno aislado con dos repos temporales con desk —stores, documentos, Markdown no modelado, Code local, referencia rota, Board, FAQ, documentos de conocimiento, entrada mínima y README de arranque—, un tercer repo sin desk y enlaces authored entre desks; hace commits git reales en los temporales e imprime un manifiesto JSON con roots, stores, commits y documentos clave. Acepta opcionalmente plantillas WS17 y cierra sin ellas. Límites: no toca desk real; es productor único de corpus para WS16/30; WS17 solo aporta contenido authored. `output_scope`: `tests/fixtures/workspace_documental/`, script de seed y `tests/`. Depende de WS11, WS08 y G_UI_READ por delta.
+
+AMBIGUEDADES
+1. «generador reproducible» junto a «hace commits git reales»: obliga a inventar si reproducibilidad significa mismo contenido, mismos árboles o mismos hashes/commits, y qué autor/fechas usar. Sin eso, «Un comando crea/recrea entorno aislado» no fija una aceptación comprobable de reproducibilidad.
+2. «Code local»: no se define si es un nodo de código, un archivo fuente o una entrada de store, ni cómo debe representarse. El ejecutor tendría que inventar el artefacto exigido.
+3. «documentos clave» en el manifiesto y «documentos de conocimiento» del corpus: no se enumeran cuáles ni cuántos. El ejecutor tendría que inventar el conjunto que verifica la aceptación.
+
+DRY-RUN
+Leería `dag.yaml` de WS40, contrato WS11, user-flows WS08, auditorías/CLI WS02–WS03 por dependencia transitiva y el recibo G_UI_READ del delta. Planificaría cambios solo en `tests/fixtures/workspace_documental/`, script de seed y `tests/` de `graph_ui`. El script crearía roots temporales —fijos o `tmp_path`—, dos desks con stores/documentos, tercer repo sin desk, commits locales y manifiesto; generaría README/entrada y enlaces. No tocaría desk real ni usaría servidor fake. Validaciones futuras: ejecutar dos veces, comprobar manifiesto, roots/stores/commits, ausencia de desk real, enlaces, repo sin desk y cierre sin plantillas WS17; después, regeneración con plantillas. Dependencias: WS11, WS08, G_UI_READ y CLI reales.
+
+FUTURO
+WS17 escribirá plantillas/índices authored y regenerará; WS16 hará validación humana; WS30 integrará índices; P01/receptor emitirá el recibo G_UI_READ; el supervisor del repo atribuirá fallos. No son ambigüedades de WS40.

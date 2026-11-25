@@ -1,0 +1,11 @@
+REFORMULACION  
+PK03 es un agregado de revisión, sin ejecución propia, con repo dueño `deskops`. Reformula la Entrega L: lector útil y descubrimiento sin ID con validación humana temprana. El resultado sustantivo es un paquete demostrable: abrir soporte modelado y no modelado; foco, historia, Code y grafo; búsqueda navegable; errores y degradación reales; corpus Taller con dos desks y un repo sin desk; lectura segura entre desks; acta humana WS16 con mediciones P08 de apertura, búsqueda y arranque. Límites: no autoriza tareas ni añade aristas; no depende de edición, Changes ni Scion; no mide guardado —eso corresponde a WS30—; una revisión de comprensión no equivale a producto entregado.
+
+AMBIGUEDADES  
+Ninguna. «Completitud sustantiva del paquete requiere salidas de sus hijos e integración indicada» remite a las salidas ya nombradas y al acta WS16; no obliga a inventar datos, actores ni aceptación.
+
+DRY-RUN  
+Hipotético, sin ejecutar. Con WS11 y WS08 cerrados, WS13.1 produce lectura de documento/contexto/enlaces y foco; WS13.2 y WS13.3, dependientes de WS13.1, añaden explorador y pestañas/divisiones/historia; WS13 cierra al completarse sus tres hijos y entrega el workspace lector. WS40, habilitado por WS11/WS08, produce generador y manifiesto del Taller: dos desks, tercer repo sin desk, documentos y commits. WS14 consume el workspace de WS13 y los contratos WS11/WS03, y entrega búsqueda con estados sin resultados/error/degradación. WS15.1 y WS15.2 consumen WS13 y entregan errores/degradación y orientación sin desk. WS41 consume WS13, WS11 y el corpus WS40, y entrega lectura segura entre desks. WS16 consume WS14, WS15, WS08, WS40 y WS41; un humano recorre el manifiesto, abre modelado/no modelado, prueba foco/historia/Code/grafo, búsqueda, errores, segundo desk y proyecto sin desk, y registra mediciones P08. Validación conjunta: acta WS16 más evidencia de hijos; un fallo no aislado se registra y atribuye antes de corregir.
+
+FUTURO  
+WS11/WS08 producen contrato y auditorías; WS40, el manifiesto; WS16, la decisión humana y sus mediciones; WS30 mide guardado; el supervisor del repo receptor atribuye fallos. La recepción por delta y `G_UI_READ` no se resuelven en PK03.

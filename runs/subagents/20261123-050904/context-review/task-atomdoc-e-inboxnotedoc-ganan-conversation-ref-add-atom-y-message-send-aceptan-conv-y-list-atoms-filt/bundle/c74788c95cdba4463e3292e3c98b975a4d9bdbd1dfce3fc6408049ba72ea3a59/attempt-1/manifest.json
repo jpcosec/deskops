@@ -1,0 +1,134 @@
+{
+  "key": "task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt/bundle",
+  "input_sha256": "c74788c95cdba4463e3292e3c98b975a4d9bdbd1dfce3fc6408049ba72ea3a59",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/deskops/runs/subagents/20261123-050904/context-review/task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt/bundle/c74788c95cdba4463e3292e3c98b975a4d9bdbd1dfce3fc6408049ba72ea3a59/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-y-message-send-aceptan-conv-y-list-atoms-filt.md",
+      "sha256": "8a72b74aac47915eced48c772ecc7a0d6229c0c01296d9b0774b5b12a8b60ab8",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/models/atom.py",
+      "sha256": "787155c0bac67cffd7bca2c8935a1f463d5f1ba158c4ea12b57c97ac2ac0cb0c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/models/inbox.py",
+      "sha256": "6e67ac66d2608a0c7c8f115c289b25e613b62f1261909f2860fa105d23bfcf8e",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/operations.py",
+      "sha256": "71b7c13bf46d22f92c20dc869e10a652e71ebf90f4671fd654c67d16e9959b84",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/operations.py",
+      "sha256": "6a47f567f21dc8f59a4a96d6efeed581759df1e7430ed736adc2514e18a7e07c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/services/atoms.py",
+      "sha256": "7429a6bbb572328a61df10bae09e831f60ff200918222a386539733bbad2743f",
+      "projection": "whole_file"
+    },
+    {
+      "path": "deskops/cli/commands/message.py",
+      "sha256": "c73f308d0e1a18fedc7dba23684166e9b0476d16868438950b62ffcef47b4b6c",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_atoms_cli.py",
+      "sha256": "1498d32b12e6fca6b46660f9e048a544e70a92cf77695a6491d3cbeda225ebea",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/test_message_cli.py",
+      "sha256": "413c4c6b635031677a615af0963e44dfbc767ce95292173651e8ace90c67690b",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/fixtures/model_contract_hashes.json",
+      "sha256": "e99b51de95e8057970a997c5c22eab1cbba35b1d37fa25c399cb56e271aa6408",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/fixtures/golden/help/deskops_add_atom.txt",
+      "sha256": "c27838ef9c6f536beb58603cb60ff2b4a8aa1ea0856a742064a73927a7660163",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/fixtures/golden/help/deskops_list_atoms.txt",
+      "sha256": "1b15d72d90fcacc9c54deb62f4639216b6feb2ec037e726400fb7d4c918a1f8b",
+      "projection": "whole_file"
+    },
+    {
+      "path": "tests/fixtures/golden/help/deskops_message_send.txt",
+      "sha256": "f41231543b9d67e361389f56ac8e07dfa08edfc1518806a2d69fd1719eea06c8",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": "ritual-phase",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-execution",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-closeout",
+      "reason": "missing"
+    },
+    {
+      "path": "ritual-testing",
+      "reason": "missing"
+    },
+    {
+      "path": "context-review",
+      "reason": "missing"
+    },
+    {
+      "path": "deskops/cli/registry.py",
+      "reason": "size>=60000",
+      "size": 88245
+    }
+  ],
+  "started": "2026-11-23T05:09:05.771574+00:00",
+  "finished": "2026-11-23T05:09:24.133553+00:00"
+}

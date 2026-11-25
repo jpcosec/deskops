@@ -1,0 +1,1 @@
+pytest -q tests/test_board_phases.py tests/test_board_portable_references.py tests/test_model_templates.py -> 21 passed, exit 0
