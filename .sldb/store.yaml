@@ -1110,6 +1110,8 @@ include:
     name: run-deskops-t-8e7688cc843a
   - path: runs/subagents/exec-deskops-t-340823457b24-testing/run.md
     name: run-deskops-t-340823457b24
+  - path: runs/subagents/exec-deskops-e-a9630e065aa2/run.md
+    name: run-deskops-e-a9630e065aa2
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -3176,6 +3178,8 @@ include:
     name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-atom-1
   - path: desk/reviews/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing/evidence-materialization-1.md
     name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-materialization-1
+  - path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/bundle-1.md
+    name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
