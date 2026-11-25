@@ -1,7 +1,7 @@
 # Propuesta: qué debería ser un átomo y qué una pill
 
-Escrita el 2026-11-25, de una conversación con JP. Es una propuesta para discutir, no una
-decisión, y no trae tareas: JP pidió dejarla aquí y no resolverla todavía.
+Escrita el 2026-11-25, de una conversación con JP. Empezó como propuesta para discutir; el mismo
+día JP pidió repartirla en tareas ("si no pasa a tareas no sirve"). La repartición está al final.
 
 ## Lo que fijó JP
 
@@ -154,22 +154,26 @@ cargue con todas las preguntas:
 
 JP: el dónde tiene que apuntar al código, pero también a categorías como "aplica a toda la UI".
 
-Entonces el dónde es una lista de punteros, y cada puntero es de una de dos clases:
+El dónde es el mapa del sistema. Un nodo que specIR extrae ("el botón de guardar", "la operación
+de crear pedido") ya es un lugar con nombre, con su capa y con el código del que salió. El dónde
+es entonces una lista de punteros, de tres clases:
 
-| Clase | Qué nombra | Ejemplo | Con qué pieza que ya existe |
-|---|---|---|---|
-| Un lugar del código | un archivo, una clase, una función | `notation-view.js`, la función `resolve_view` | el ancla de código de sldb (`code:<ruta>::<nombre>`), que además sabe si el código cambió |
-| Una categoría | todo lo que cae bajo un nombre | "toda la UI", "el backend", "graph_ui" | un tag del árbol semántico de sldb (`layer:interface`, `system:graph_ui`), que tiene padres e hijos |
+| Qué se señala | A qué apunta | Ejemplo |
+|---|---|---|
+| Una pieza del sistema | un documento del store, normalmente un nodo de specIR | el nodo de un control de interfaz |
+| Una categoría | un tag del árbol semántico | `layer:interface` para "toda la UI", `system:graph_ui` |
+| Código que nadie modeló | un ancla de código de sldb | `code:<ruta>::<nombre>` |
 
-Una categoría se resuelve a código sin escribirlo a mano: los tipos que specIR extrae ya declaran
-su capa (un control de interfaz es `layer: interface`), así que "toda la UI" son los nodos de esa
-capa, y cada nodo sabe de qué código salió.
+Quién hace qué, igual que en el ADR de sldb `mechanism-in-sldb-content-in-specir.md`:
 
-Hoy el dónde es texto libre en la pill (`where`) y una lista de rutas en la tarea (`files`). Las
-categorías existen como tags en los átomos, pero nada las usa para decir a qué código aplica algo.
+| Parte | Quién |
+|---|---|
+| Resolver un puntero: encontrar el documento, bajar de una categoría a lo que cubre, saber si el código cambió, recorrer relaciones | sldb |
+| Poner lo que hay que resolver: los nodos, la capa de cada uno, los tipos de relación | specIR |
+| Guardar los punteros en un ADR, una pill o una tarea | deskops |
 
-Sin verificar: que el árbol semántico tenga hoy las categorías que hacen falta, y cómo se pregunta
-"qué documentos aplican a este archivo" cuando el puntero es una categoría.
+Comprobado: el impacto de specIR no recorre el grafo; usa `graph_path` de sldb y solo agrega qué
+relaciones cuentan (`IR/src/specir/impact.py`).
 
 ### Lo que esto cambia en los modelos de hoy
 
@@ -177,21 +181,6 @@ Sin verificar: que el árbol semántico tenga hoy las categorías que hacen falt
   no). Pasaría a llevar el cómo, con el dónde como punteros y una referencia al porqué.
 - El átomo elige hoy su pregunta con un campo. Con un tipo por pregunta, ese campo sobra.
 - La tarea dejaría su lista de rutas por esos mismos punteros.
-
-## Lo que choca con una tarea ya escrita
-
-La tarea de `atom.adr` de este desk
-(`task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree`,
-prioridad alta) se escribió antes de esta conversación y dice tres cosas que aquí cambiaron:
-
-| La tarea dice | Esta propuesta dice |
-|---|---|
-| Cuatro estados: propuesto, aceptado, reemplazado, rechazado | Una decisión pendiente es una tarea `task.decision`; el átomo existe solo una vez aceptada, y después puede quedar reemplazado |
-| Su pregunta queda fija en "qué" | El ADR responde el porqué |
-| Los repos afectados van como tags `repo:<nombre>` | El dónde son punteros a un lugar del código o a una categoría |
-
-Si se ejecuta tal cual, construye la forma anterior. No se modificó ni se frenó: JP pidió dejar
-esto escrito y no resolverlo. Decidir qué pasa con la tarea es parte de cerrar esta propuesta.
 
 ## Piezas que son de otros repos
 
@@ -207,12 +196,51 @@ verificar hay que mirarlo en su repo:
 | Las capas de cada tipo extraído del código, y a qué afecta un cambio | specIR |
 | Átomos, pills, tareas, rituales y roles | deskops |
 
+## Lo que specIR ya tiene
+
+Leído en `IR/src/specir/` el 2026-11-25. Más de la mitad de lo que se pensó como átomo ya está
+modelado ahí:
+
+| Lo que se propuso para deskops | Lo que specIR ya tiene |
+|---|---|
+| `atom.invariant` | `PolicyDoc` ("una regla del dominio que gobierna una operación") y los invariantes entre capas sembrados como `RuleDoc` |
+| `atom.intent` | `DomainOperationDoc`, "una capacidad del dominio, independiente de cómo se invoca"; le falta para quién y la prueba |
+| Supuestos y evidencia, descartados como átomos | cada nodo lleva origen (observado, derivado, inferido, declarado) y verificación (sin verificar, verificado, refutado), con quién y con qué evidencia; lo desconocido se nombra con su motivo |
+| `pill.pointer` | el impacto ya sabe qué nodos alcanza un cambio |
+
+Conclusión: el qué y el dónde de un sistema son de specIR. A deskops le quedan el porqué (el
+ADR), el cómo de un trabajo (la pill, la tarea) y el cuándo (los rituales). Los tipos
+`atom.invariant` y `atom.intent` de arriba no se crean en deskops.
+
+Dos límites de specIR hoy:
+
+- Sus extractores cubren una aplicación web (Django REST, React TSX, rutas, SQL). No describe una
+  librería de Python con CLI, que es lo que son sldb, deskops y specIR mismo.
+- Sus diez tipos de relación describen el flujo de una aplicación; ninguno dice que una pieza
+  depende de otra, así que un invariante de arquitectura no se puede escribir todavía.
+
+## Repartición en tareas
+
+Creadas el 2026-11-25 en los desks de robocop2, en borrador.
+
+| Repo | Tarea | Qué parte de la propuesta lleva |
+|---|---|---|
+| sldb | Qué documentos aplican a un archivo o símbolo, directo o por categoría | resolver el dónde, en los dos sentidos |
+| specIR | Decisión: cómo modela un repo de Python con CLI | que specIR pueda describir a sldb, deskops y a sí mismo |
+| specIR | Un invariante entre piezas es una regla sobre sus nodos | lo que era `atom.invariant` |
+| specIR | Una capacidad declara para quién es y su prueba de aceptación | lo que era `atom.intent`; carga las ocho capacidades de specIR |
+| specIR | El impacto de un cambio llega a las decisiones, pills y tareas que apuntan a lo afectado | lo que era `pill.pointer` escrita a mano |
+| deskops | Átomos, pills y tareas guardan el dónde como punteros | guardar el dónde |
+| deskops | `atom.adr`: una decisión aceptada responde el porqué | la tarea que ya existía, reescrita con esta forma |
+| deskops | Una pill declara su trabajo y cómo termina; tipos de pill | la pill como contexto de un trabajo |
+| deskops | Informe que clasifica cada átomo y pill con las tres preguntas | saber cuánto sobra antes de retirar nada |
+
+Sin tarea todavía: implementar el extractor de Python (espera la decisión), retirar o mover los
+átomos y pills que el informe marque (lo decide JP), y dejar de cargar las seis preguntas en la
+pill base.
+
 ## Sin resolver
 
-- Dónde viven las capacidades (lo que un producto tiene que poder hacer) y su prueba: ¿átomo con
-  su prueba como materialización, o algo que specIR ya modela?
-- Si "qué tiene que cumplirse entre varias piezas" es un átomo o una regla de sldb (`RuleDoc`).
-  Si se puede comprobar, debería ser la regla.
 - Qué partes del contexto que hoy va en pills puede entregar specIR directamente a quien ejecuta.
 - Cómo se revisa lo que ya existe sin hacerlo a mano.
 - Si los punteros del dónde son un campo común a átomo, pill y tarea, o relaciones del store.
