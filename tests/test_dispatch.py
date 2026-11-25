@@ -709,3 +709,54 @@ def test_reap_keeps_scion_pytest_tmp_while_an_agent_runs(env: Env, monkeypatch, 
     _reap_in_process(env, monkeypatch, scion_tmp)
     assert scion_tmp.is_dir()
     assert "limpieza" not in capsys.readouterr().out
+
+
+# --- reap encola el tester tras integrar --------------------------------------
+
+
+def _declare_tester_job(env: Env) -> None:
+    _set_config(env, queue_jobs={"dispatch-tester": {"run": ["true"], "timeout": 60}})
+
+
+def _pending_testers(env: Env) -> list[dict]:
+    folder = env.root / "runs" / "queue" / "pending"
+    jobs = [json.loads(p.read_text()) for p in sorted(folder.glob("*.json"))] if folder.is_dir() else []
+    return [j for j in jobs if j["kind"] == "dispatch-tester" and j["task_id"] == TASK]
+
+
+def test_reap_enqueues_the_tester_after_integrating_the_executor(env: Env) -> None:
+    _declare_tester_job(env)
+    name = _start_executor(env)
+    _commit_in(env.root / ".worktrees" / name, "one.txt", "1")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "encolado: dispatch-tester" in result.stdout
+    assert len(_pending_testers(env)) == 1
+
+
+def test_reap_does_not_duplicate_a_pending_tester(env: Env) -> None:
+    _declare_tester_job(env)
+    from deskops import queue
+
+    queue.enqueue(env.root, "dispatch-tester", TASK, "execution->testing")
+    name = _start_executor(env)
+    _commit_in(env.root / ".worktrees" / name, "one.txt", "1")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert "encolado" not in result.stdout
+    assert len(_pending_testers(env)) == 1
+
+
+def test_reap_does_not_enqueue_the_tester_when_integration_fails(env: Env) -> None:
+    _declare_tester_job(env)
+    name = _start_executor(env)
+    _commit_in(env.root / ".worktrees" / name, "same.txt", "mine")
+    (env.root / "same.txt").write_text("theirs")
+    _git(env.root, "add", "same.txt")
+    _git(env.root, "-c", "user.email=a@b", "-c", "user.name=A", "commit", "-q", "-m", "main same")
+    _finished(env, name)
+    result = env.cli("dispatch", "reap", "--task", TASK)
+    assert result.returncode == 8
+    assert _pending_testers(env) == []

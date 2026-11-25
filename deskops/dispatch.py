@@ -557,6 +557,22 @@ def _clean_scion_pytest_tmp(cfg: DispatchConfig, reaped: set[str]) -> bool:
     return True
 
 
+def _tester_queued(root: Path, task_id: str) -> bool:
+    """True when a dispatch-tester job of the task is pending or running, whatever the attempt."""
+    from deskops import queue
+
+    base = queue.queue_dir(root)
+    for state in ("pending", "running"):
+        for path in queue._jobs(base, state):
+            try:
+                job = queue._read_job(path)
+            except (OSError, ValueError):
+                continue
+            if job.get("kind") == "dispatch-tester" and job.get("task_id") == task_id:
+                return True
+    return False
+
+
 def reap(root: Path, task_id: str) -> int:
     from deskops.runtime.scion import _scion_task_label
 
@@ -567,6 +583,8 @@ def reap(root: Path, task_id: str) -> int:
     failed = False
     conflict = False
     busy = False
+    integrated = False
+    tester_alive = False
     for agent in _list_agents(cfg):
         labels = agent.get("labels") or {}
         if labels.get("deskops.task_id") != label:
@@ -585,6 +603,8 @@ def reap(root: Path, task_id: str) -> int:
         if not reason:
             print(f"{name} {role} vivo")
             alive += 1
+            if role == "tester":
+                tester_alive = True
             continue
         if role == "executor":
             if reason == "result-summary" and phase == "running" and activity not in ("completed", "stopped", "exited"):
@@ -616,6 +636,13 @@ def reap(root: Path, task_id: str) -> int:
                 busy = True
             elif code:
                 conflict = True
+            else:
+                integrated = True
+    if integrated and not tester_alive and "dispatch-tester" in DeskConfig.load(root / "desk").queue_jobs and not _tester_queued(root, task_id):
+        from deskops import queue
+
+        queue.enqueue(root, "dispatch-tester", task_id, "reap")
+        print("encolado: dispatch-tester")
     if _clean_scion_pytest_tmp(cfg, reaped):
         print(f"limpieza: {_scion_pytest_tmp()}")
     if alive:
