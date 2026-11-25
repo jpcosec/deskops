@@ -1,19 +1,19 @@
 name: task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento
 path: desk/tasks/task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento.md
-source_hash: 75d8b991cc960aca77b761117c8e2d7e5c264f7338398c2aa6b6df7b1ddb31d2
-content_hash: 14753ad46f5258cb65f329f7dcca6b4179748e6f1a6f67e78c767348a24dad6d
+source_hash: 4e52f148cfbd71f47be54b19d767414a7a543b0959b01d5909ed36c09bb447c0
+content_hash: ee0882bbb78b7351ed97be79ff1ae4284a4975b7baed3f665e34540434889e6d
 field_hashes:
   title: 0bd90c70bf07286b9e44e9d8dc5260b5c7190a483d2ada1a9b480c36a9ce5e13
   id: 3676de28990a48443ac00d4ce3e2872dcd922a81dc850054370cb30e887fba68
-  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
-  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: 098d9962601299a366c5d438a165460cfb18d59d14811e9465792b95a06ed534
   goal: 953a55a38c7f8bd1c3b1832cbab8192260a4651174f50c7c49aca32a881594b4
   scope: fb29a43eca55efd1b4bc7b97db2c3ee4e067e0d0e2c5759f2ad3c81c7e6d6d00
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: fbd10e24cc91e9d0b29b94358c4d9a658b5a4c560d0202699181a68317c64a2c
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 88901879df6260f7ec31206e66881e775dcbaaab80796371b5853860f902bdff
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T02:51:34Z'
+  at: '2026-11-25T02:58:59Z'
   authority: generated
   via: save_document_payload

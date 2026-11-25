@@ -1,17 +1,21 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T02:51:01Z'
+  at: '2026-11-25T02:58:23Z'
   authority: generated
   via: save_document_payload
 id: task-el-gate-atom-materialization-del-closeout-reconoce-un-atomo-declarado-por-la-tarea-que-cita-el-archi
-status: active
+status: ready_for_testing
 summary: ''
 tags: []
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
-references: []
+- task_hands_to_closeout
+references:
+- 9abe2d6036c1ed91f63252392366491021446ab0
+- tests/test_closeout_atom_cites_file.py
+- atom-el-gate-atom-materialization-del-closeout-acepta-un-atomo-declarado-por-la-tarea-que-cita-el-archivo
 depends_on: []
 pills: []
 files:

@@ -1,19 +1,19 @@
 name: task-el-gate-atom-materialization-del-closeout-reconoce-un-atomo-declarado-por-la-tarea-que-cita-el-archi
 path: desk/tasks/task-el-gate-atom-materialization-del-closeout-reconoce-un-atomo-declarado-por-la-tarea-que-cita-el-archi.md
-source_hash: b3f1e164d0d078d4348efb6f37b1dba26cc5fe1927778ff029d0a8f2f6f71346
-content_hash: 852491eceb9be736d69e70d0b7f93be36ca0c7519c015fa42a7bca6898ddb61c
+source_hash: 15733c659469e71b104420042942e08e2e3c60fde68669000de20badc6095064
+content_hash: 18006e698b5238d66d49109ed2c7052e07305cc79aab492f2f9f25735b9457bf
 field_hashes:
   title: fcef0b41d7b07b6ae946aacc4fa00996f338d769f8caa36571f4477899c66f0f
   id: 32fc55d6444e1c38c6ce6d51ea22eb68d925b3ab50325afd9d068b927421c14c
-  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
-  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: fef5600ead2cbf5603ca25e631695e2c4867af1269382ff8459319d1e7be1d11
   goal: 62b64d2e26da343e9a7de50eba626ba4890f1ed7ce580443c3d37b1536c0e9c2
   scope: 2bec28909e237847fa5997ed3f9c8fbe197e05ff8778496073419f297788d1ab
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: 74eb0b43aabd454ac0be303cef4d794d887c87ed3be049e10a397de6397c8872
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: b2a2c9a3b6bc9860a4daeccee8462f9d982dc360650ea07dfe0bf81edb850255
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T02:51:01Z'
+  at: '2026-11-25T02:58:23Z'
   authority: generated
   via: save_document_payload

@@ -1,17 +1,21 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T02:51:34Z'
+  at: '2026-11-25T02:58:59Z'
   authority: generated
   via: save_document_payload
 id: task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento
-status: active
+status: ready_for_testing
 summary: ''
 tags: []
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
-references: []
+- task_hands_to_closeout
+references:
+- 9abe2d6036c1ed91f63252392366491021446ab0
+- tests/test_dispatch.py
+- atom-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento
 depends_on: []
 pills: []
 files:

@@ -1,0 +1,36 @@
+name: review-task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d-evidence-atom-1
+path: desk/reviews/task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d/evidence-atom-1.md
+source_hash: b71a36904fa8ec3a9a2390226a71aeea2a569b8a02b1b9819df3cbd0ea5d8ba6
+content_hash: 9361be9a33fb46c74fc4e3247c747b6775baedb08cda9f7928ba235981cc8387
+field_hashes:
+  id: 31caee4a28afaadc28814fb2f2244863a2e2630fd239f915b4b31023cb09347a
+  title: 18c141ee4b6a3ed95f50d544bc9d1511bd741a67621e722351124d80c2d8a1c4
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: c833c202b5b45ac10909767bb422916db457ddd48188a4ee591f0618893df0ba
+  value: 5de90dadcb5aadd3ce62c3e8bafcf1d32b72bc235fda3260c0b2c7527e24dd08
+  subject: f519d832ccd8f2140ca75b2980b25a5140018a506da59d5c655a72a3cabf5eb3
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 89c6f8e27dfb790d46c249bc2b9588242641366e4114bba1c565f732a8dcb24e
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 3f1b00924d9d5d8ccce2ead91d20efbfbc80a81c0f86d12bab7d6e4d0bee394f
+  created_at: e3578eaac8dd6113d4b39db2d116fb6eb18bad60d689a6f5bb5298be105dd8a7
+  disposed_at: e3578eaac8dd6113d4b39db2d116fb6eb18bad60d689a6f5bb5298be105dd8a7
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 25965aa497648f0514f7e5ef174e50248a20df5d0a8222f2cc7bb586d27aba9e
+  disposition: 5e0d70d016858ff74a476896da237f4357d6bd6d058f554858010a6d28a922ed
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T02:56:27Z'
+  authority: generated
+  via: create_document

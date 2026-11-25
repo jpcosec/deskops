@@ -1,17 +1,22 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T02:51:18Z'
+  at: '2026-11-25T02:58:41Z'
   authority: generated
   via: save_document_payload
 id: task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d
-status: active
+status: ready_for_testing
 summary: ''
 tags: []
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
-references: []
+- task_hands_to_closeout
+references:
+- 9abe2d6036c1ed91f63252392366491021446ab0
+- tests/test_dispatch.py
+- tests/test_integrate.py
+- atom-en-modo-pr-la-rama-task-id-vive-en-su-propio-worktree-y-el-checkout-principal-nunca-cambia-de-rama
 depends_on: []
 pills: []
 files:

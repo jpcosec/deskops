@@ -1,19 +1,19 @@
 name: task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d
 path: desk/tasks/task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d.md
-source_hash: ead5ffa6accf7491fcd52cb4495b4902b9419c3f00a3624606790b897689026f
-content_hash: 2aefc3233ae92250b133ee2c15591e0ef813dd069e9f189d160dee955de219b8
+source_hash: b5b74a38ffea2ff333ec2b8cd1a3e68bc772906e886a3bf4acbc1e2c2735f5f3
+content_hash: 073f9e723189e28b6f6186b5b7e7cca2d9103a387303547eb6c4de443f9743fd
 field_hashes:
   title: 4c757075fd5903a7a1d4826bc4ba77dcb50733d1f8f8a0453412ced682e3f47a
   id: 52c19d5a72a9fa234777d6e36c5af8b7394e73c8a6651d2eac3d675e03db3f44
-  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  status: bcd94c594cf5d9863f2b143c7e4c8c150564556c8b8fccd3f0e2ea8fe2b32a44
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
-  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
+  current_node: 71574bcab867d8a2e20830806268bc698b67c239b762fe065d282e362267e872
+  history: 5e5f912dfd951bc27e8ab6d9693fb4ef1ab15074792771b91b7a7f78028c40ea
   why: 217464223d6bd7693bf53e0b07d5d7d68f039538c9cd57ba98a6abf1d3a38972
   goal: e82a512157149d3af7e4c799bd2bd6c70acc7956e6f964263d3f1e862233279f
   scope: 8ddcbd68e193914e3b5e4a99427b33408bf98372cded602265319c7d9769ed78
-  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  references: 9b1a326fd2e5788867fb22970304aff90a73ed3a3ec290e068468cd400486931
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 730044458dd866f257072217d4306fafe4cbc08e8ce508d2138ae7ab622e01f8
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T02:51:18Z'
+  at: '2026-11-25T02:58:41Z'
   authority: generated
   via: save_document_payload

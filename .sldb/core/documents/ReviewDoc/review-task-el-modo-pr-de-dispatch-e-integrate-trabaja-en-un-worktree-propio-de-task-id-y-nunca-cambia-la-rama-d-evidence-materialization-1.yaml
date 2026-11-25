@@ -1,0 +1,36 @@
+name: review-task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d-evidence-materialization-1
+path: desk/reviews/task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d/evidence-materialization-1.md
+source_hash: 84aeff03c9b0086e2b2ca9ce096b5700e8af8a4867431efc0423bbd9bc013b63
+content_hash: fdedffe79ef537b063182642162455e5fc818ad6a070cf2b18fdc99f443277a2
+field_hashes:
+  id: 79cac412a566dcdbc8982eb0eed7de2ad620690a274f1b7a8f43720e82ea4db5
+  title: 0aa57d9ead134963de49b9881a4d72bc82dbf5ba8f9302ca42d64d2f67bcefc2
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 8033b5484366407408f8e7ffe5783f82c50184990731ea28f276f9eae201a7c9
+  subject: f519d832ccd8f2140ca75b2980b25a5140018a506da59d5c655a72a3cabf5eb3
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: d4f22674423b07183e20e38115e8660cc9ee203f2345d250c3de4764f610c687
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 8604ad3d34f7f742e6fcf63d57f28930e775156e4ae49eb3906eed2f506483d9
+  created_at: e3578eaac8dd6113d4b39db2d116fb6eb18bad60d689a6f5bb5298be105dd8a7
+  disposed_at: e3578eaac8dd6113d4b39db2d116fb6eb18bad60d689a6f5bb5298be105dd8a7
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 9402a47b8ca4e106e6381c93e08ff1f738dc07d73ed76467bb3a9a70b46798ca
+  disposition: d35a068664a72edf617221cc97e70123f49cd150186cd103f45c436d1568b397
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T02:56:31Z'
+  authority: generated
+  via: create_document
