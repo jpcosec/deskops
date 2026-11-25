@@ -1,7 +1,7 @@
 name: task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
 path: desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
-source_hash: b06389e591c4bbb18f27853975ef7ea38febb7b802b984b6091531fe6471c06d
-content_hash: 0273f4b79f89bb2425b4305ecc989fd46cbae52d0791791c2736e1cc534aca15
+source_hash: a0fba5a6c829e0d9433b433b73dfce0635198d891f83368bb3129eb3306072bd
+content_hash: 7664c9622c632a68729cada3366931d80abef1c2ae3284fbad636d41b3e83a86
 field_hashes:
   title: 96fcda4ce0a4cea5bbe92534c28082008afd058eea5fe58936b90d19bc19bc04
   id: c1acb7f6f7a5c286a7b53a3e92ad8a8f659c4894cb4937716cf51657cf54753e
@@ -12,12 +12,12 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: a582827a08e0342afde4459a483180cec55afe6590b04b305bc8aea2665ecd7e
   goal: 2a4b311ce43f6e8b10b9feb840d0a350d53f0d3fcc9f4b971fa5c1fdc6b4af67
-  scope: 4c26ae0dedb105194164f98779d538a98600169dc2540a60bbc643d28772189c
+  scope: df7f31e793d8ccac4a34b6914fcb411063b6ad8b38b8a73dddca28db04ab5303
   references: 448b321e5353ed8f90068f0aff365afeff50822ac4eee48386f11ab12de3c574
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 22e319a416e7e2f1a8f9393661f73dc3e61a563b2559a7c19a4eb5ede38cb7fc
-  implementation_path: 12620f0116b958ca2bf6965e360081c12b6b512f744ecb2a91f0e8fe2176c5e7
+  implementation_path: d7400c3f3ffa495e4ffa9a1c7720bb8010c3bb53ee57ef4d0e5a11e0b9e2e6d4
   validation: 0b8833ff2ef47cc0da9cdbe7c469de4f62c26b0802f8a300972d648eeeeb49b5
   done_when: 99f1ad75fdcced3d905916ef172c603df301adcb630ec3297030fb903a85c0f4
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T22:51:56Z'
+  at: '2026-11-25T23:04:10Z'
   authority: generated
   via: save_document_payload

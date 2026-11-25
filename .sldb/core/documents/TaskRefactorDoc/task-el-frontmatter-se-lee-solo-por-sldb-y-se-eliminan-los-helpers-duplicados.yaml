@@ -1,7 +1,7 @@
 name: task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados
 path: desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
-source_hash: efb6c6fb9c384d3882a6e7107ee474d4512a9fab91c4a5ec6e2e8bd01e951fba
-content_hash: 29680bda231f65c40912087679b2dd3e714a4b6d29d533e5da0ce3192bbdaa43
+source_hash: 98147372e183782a9c3550a9be833b45c1a5a5321ea297a46d42da57f4e91d4b
+content_hash: 9704976578eb9e47f7060a79c71af238d4abb443bbcb4b84c42d80bce5708d57
 field_hashes:
   title: bf33d66b011be42d3a8b7060c942ddc579a7cf94f8c05809f093dbabe53b720a
   id: 7ef70b6e92cc5ddf7a346ac8d35764da1cff05510309baeb357691322d85160c
@@ -11,14 +11,14 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: 3caa4a06c916dc885ba135e646d0078eb2a60ae1b247a84e93d526dec5bf0722
-  scope: 92d2492df171b63d50148d8bcf73a57c4b5d1a8f13f776ded5b65669ece821e6
+  goal: 6be986a9eb10de280b70a3a51b15e2090a99fac9842b3fc446fd2a5b0bad4ef1
+  scope: b271b9630c5ac3688694b9efa9947a6da0cfa829b9ecdcc40423be4b1a362abd
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: e7a3dde90285b728916c8b68173e31c0de97931e9187b76f9abd7ec7d01c08a3
+  files: 6cf827c78217da0514056bdadfa17ee512caa1065f6469375d0b8788107498de
   implementation_path: c787c6e1191f1061a76a198ef9bcd7cbcfb2602ec41ef59d4f5936407e7f2a11
-  validation: a7ed7577dfa723372542d18cf2575793b9249b14fda8b778b4d24b19a380f724
+  validation: 230ccf23b654c791ebc0675937227ea12b3248ec1273fab62a5133005a3f757b
   done_when: 6c4e391e1fae37c24186660cec685f432cf44504d38ad669814134d14f45556f
   task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T22:54:17Z'
+  at: '2026-11-25T23:07:11Z'
   authority: generated
   via: save_document_payload

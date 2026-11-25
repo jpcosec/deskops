@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T22:51:56Z'
+  at: '2026-11-25T23:04:10Z'
   authority: generated
   via: save_document_payload
 id: task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
@@ -44,13 +44,13 @@ El workflow tests de main pasa en 3.12 y 3.13 y tarda menos de 20 minutos.
 
 _State what is in scope and what is out of scope._
 
-Entra: .github/workflows/tests.yml, el golden de help de add atom (o hacer el test independiente de la versión de argparse), el anclaje o el retiro del tag domain:knowledge-management y paralelizar pytest en CI (pytest-xdist con un -n acorde a la RAM del runner, ver la tarea de la suite de 6 GB). Sale: reescribir tests lentos uno por uno.
+Entra: .github/workflows/tests.yml, tests/test_output_goldens.py y .sldb/store.yaml del repo deskops (origin jpcosec/deskops). Sale: reescribir tests lentos y la RAM por worker (otra tarea, E4).
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-Causas verificadas el 25-11: (A) tests/test_output_goldens.py:123, el regex _SHORT_OPTION_METAVAR_RE no normaliza los alias largo+largo que 3.13 escribe distinto; (B) .sldb/store.yaml incluye los AtomDoc (líneas 139-143) antes que el CrossroadDoc (145), así que el tag domain:knowledge-management se valida antes de que exista su namespace. 1) Normalizar A en el test, sin regenerar goldens a mano. 2) Ordenar B (CrossroadDoc antes que AtomDoc). 3) pytest-xdist en el CI con -n acorde a la RAM del runner y concurrency: cancel-in-progress. 4) Medir una corrida real.
+Causas verificadas el 25-11: (A) tests/test_output_goldens.py:123, _SHORT_OPTION_METAVAR_RE no normaliza los alias largo+largo que 3.13 escribe distinto; (B) .sldb/store.yaml incluye los AtomDoc (líneas 139-143) antes que el CrossroadDoc (145), así que domain:knowledge-management se valida antes de que exista su namespace. 1) A: ampliar la normalización del test para que 3.12 y 3.13 comparen igual; no se regeneran goldens a mano. 2) B: mover el include de CrossroadDoc antes de los de AtomDoc; el tag queda anclado, no se retira. 3) pytest-xdist en las dependencias de test y pytest -n 2 en el CI (runner estándar de GitHub, 16 GB). 4) A nivel de workflow: concurrency con group tests-${{ github.ref }} y cancel-in-progress: true. 5) Medir una corrida real sobre main.
 
 ## Validation
 

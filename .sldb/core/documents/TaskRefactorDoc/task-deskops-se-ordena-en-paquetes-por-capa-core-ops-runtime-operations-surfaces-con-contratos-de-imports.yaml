@@ -1,7 +1,7 @@
 name: task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
 path: desk/tasks/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports.md
-source_hash: dde6a5988138f973881b259d8f6a91724b8b5b42efc6f5719449f930efbf97c1
-content_hash: d83e2775beb6ba6e356260dbd9ac2cc888e3c93014740a55411eadb5eb8808ed
+source_hash: b5a86b50f6edeb0ec6de412ea77a9e6def2e3214af9a0290377fb509ba394aca
+content_hash: 3d76b417776c34189577ec202521f1a4cc31b7a6dfc63b7cf633cec2a70a00f3
 field_hashes:
   title: 084e5ef6833df11c3dddbd3cff647a24ce518e3157b34efea4b53a769e728d0f
   id: 10c257a5893c92a3932a927c431de3b032f02b703938bde8ffb40241b898841b
@@ -11,13 +11,13 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: 49eaa59e7d5ebd3830f5d7e9a64efb1debb74f320ef587680aed7363363c329e
-  scope: cbd632ddf82d3715f3cde924f4b1eea7ef267449847109f30ebef1536bfff1e5
+  goal: fa1e3ccaeaa86cc47f8588d7b3399d674d948b96fc2a6b6a48aabdc3941e815a
+  scope: 5de728474e2c37c8702d9a6952731d96533ecdcae01d76da62962ba6e2117158
   references: e06cb8f2a6421e502f5a0a0227195f0b96508b1fab2f4ec2e5df4c22ae7d2028
   depends_on: 15cfff4aea6bdb7020f25c2f1fb71e511098e00c5f2571a0515732e96ec0b45e
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 0701dfeaa4f51f6f4fb2514eae705cd6dea2603be32d069d39bfe01dbc3ec56d
-  implementation_path: 4432796ddd29298336bb5d3cdc4d451f23d875d679d7557efc5add1fe1416cd5
+  implementation_path: f52856c2d061f49d82acf8236e7d915d6166394a1d5faddedf007a132ea9a10d
   validation: 57b91034e900ae5a030d392e80c7c54548504367a9ce86da0ccab35db2952139
   done_when: 32e8a7c54c4e87a641c98e13525861608c22fc0b6123431d017051eafe6b51fd
   task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T22:53:31Z'
+  at: '2026-11-25T23:06:38Z'
   authority: generated
   via: save_document_payload

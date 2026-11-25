@@ -1,7 +1,7 @@
 name: task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo
 path: desk/tasks/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo.md
-source_hash: 1d0981d4e14fd413dde7c13824c416407e018e6586f50a3468fe3eb1cbbfe2ba
-content_hash: ae20c32b8d672db37b30a96d9175e73ef802e650a82f94a06034fe14deae755d
+source_hash: 440d0fb5f3ce8b0552f407dce391097495f38b750d80c39c04c47a70492f02ac
+content_hash: 16d8e355f2856f443d1fe0ca590d5616fb7ed23b41bc4062ad5b81e9d3430fa6
 field_hashes:
   title: 556e29d80c14903048d00177c735b974cb398942a12ace529a132972e15a799e
   id: 1bc5f447eed0d1ea5518596a9036576d1e7e39c16f4695faf17959639e9708c0
@@ -11,13 +11,13 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 4dd38ac47d9c51bed01fc99dab19ab7432fe19de274071af25d9b1cb24a891ac
-  goal: 2ebff29ead465955a8e20ed8124ccdf6a530d62538d5aabb3772cc4077331fb8
-  scope: d236d2370eb44e05a486d608bb95083345c451a54e64a707de5945cb8232196e
+  goal: 1b441b4f0ff80499f73793bc431da273861265fdbebd1c685735413efb0dc498
+  scope: d0d4add5da49389c3508e49fbda44f327604e3630d1118a50d61862c94404596
   references: c0afb54317e2408b47b0809b5bf8bd59b142c91f2e434a181bca0611a1994468
   depends_on: 2cda2c4033bb45772d689cb200aa550addfd6351bcaf3644ef7da7e87b17f340
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: c6e9e5314d68e9f6214c12da42450c37b77c4dab0dc99ebea4eea95b1f1dff43
-  implementation_path: 7414f7b472e3eb84a9955552f39bfb6f601984345186df8cc125ed4b60e3bc07
+  implementation_path: dce6995af3c424e3add2f819243f114b993217922cbed8d1483682b2b51aec26
   validation: 745cd76721d8c2135326642cf083ed1da06e165802e47fc51cbc308772779d52
   done_when: 92435c72a6b63fb5ef91bf411abe34ab23a8f178c0e43a2a8f783d4dc54c45e2
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T22:51:38Z'
+  at: '2026-11-25T23:06:12Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

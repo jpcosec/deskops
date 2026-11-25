@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T22:54:34Z'
+  at: '2026-11-25T23:08:16Z'
   authority: generated
   via: save_document_payload
 id: task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
@@ -35,25 +35,25 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-Tests de escenario en tests/core que documentan cada hallazgo del núcleo (W3, N3, W4/N10, N1, N9) en sus dos versiones: el workflow exige el gate y bloquea, el workflow lo apaga y deja pasar.
+tests/core/test_escenarios.py documenta cada hallazgo del núcleo de diagnostico.md con un escenario que hoy falla: W3 (closeout commit cierra una tarea que está en ritual-execution sin tomar task_completes), N3 (closeout commit cierra con la evidencia tests aunque la validación de la tarea falle), W4/N10 (una tarea que no está en el Board se activa y cierra sin compuertas), N1 (una tarea sin task_type cierra con commit aunque verify falle) y N9 (review record con engine human cumple el gate de revisión en frío).
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-Entra: un escenario por hallazgo, marcados xfail con el id del hallazgo. Sale: arreglarlos (cada tarea de E3 quita su xfail).
+Entra: un escenario por hallazgo sobre las fixtures desk y no_subprocess de la suite nueva, cada uno con pytest.mark.xfail(strict=True, reason='<id del hallazgo>'). La variante 'el workflow apaga la compuerta y deja pasar' se escribe con la severidad de la cláusula de RuleDoc del desk, que introduce la tarea de compuertas como reglas; hasta entonces también es xfail estricto con reason='W4: severidad por desk'. Mapa de quién quita cada xfail: W3, tarea del cierre por arista; N3 y N1, tarea de compuertas como reglas; W4/N10, tarea de compuertas como reglas; N9, tarea de compuertas como reglas (motor del recibo como cláusula). Sale: arreglarlos.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Desk mínimo con su lifecycle. 2) Un escenario por hallazgo, con el workflow exigiendo y apagando el gate. 3) xfail con el id.
+1) Un escenario por hallazgo con sus dos variantes. 2) xfail estricto con el id. 3) Comprobar que cada uno falla por la razón del hallazgo y no por la fixture.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- python -m pytest -q tests/core
+- python -m pytest -q tests/core/test_escenarios.py (todos xfail estrictos)
 
 ## Done When
 

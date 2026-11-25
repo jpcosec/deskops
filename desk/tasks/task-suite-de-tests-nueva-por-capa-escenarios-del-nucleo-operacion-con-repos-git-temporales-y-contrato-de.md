@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T22:54:25Z'
+  at: '2026-11-25T23:07:44Z'
   authority: generated
   via: save_document_payload
 id: task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
@@ -40,25 +40,26 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-Existe la estructura tests/core, tests/ops y tests/surfaces con sus fixtures y convenciones: el núcleo se prueba con escenarios contra las reglas sin git ni scion, operación contra repos git temporales, superficies verificando que CLI y MCP llegan a la misma operación.
+Existe la estructura tests/core, tests/ops y tests/surfaces con sus fixtures y su convención: el núcleo se prueba con escenarios contra las reglas sin subprocesos, la operación contra repos git temporales; tests/surfaces queda con su README y se llena en E2 (CLI y MCP llegan a la misma operación).
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-Entra: estructura, fixtures base, convención escrita y retiro de los 153 goldens de --help. Sale: escribir todos los tests (cada tarea de E2 y E3 trae los suyos).
+Entra: tests/conftest.py con tres fixtures: desk (deskops init en tmp_path más una tarea task.code), git_repo (git init, usuario de prueba y un commit inicial en main) y no_subprocess (monkeypatch de subprocess que falla, usada por tests/core); un test de ejemplo por capa (core: una tarea avanza por sus aristas y la regla rechaza el salto a cierre; ops: init deja un store que sldb stores check acepta); la convención en tests/README.md; borrar tests/fixtures/golden/help/ y su test, tests/test_output_goldens.py en la parte de help. Sale: el servidor MCP en proceso y los tests de superficies (E2), y escribir los tests de cada tarea (E2 y E3 traen los suyos).
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Fixtures: desk mínimo en tmp, repo git temporal, servidor MCP en proceso. 2) Convención en tests/README.md. 3) Borrar tests/fixtures/golden/help y su test.
+1) Fixtures. 2) Ejemplo por capa. 3) README. 4) Borrar los goldens de help.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- python -m pytest -q tests/core tests/ops tests/surfaces
+- python -m pytest -q tests/core tests/ops
+- tests/fixtures/golden/help no existe
 
 ## Done When
 

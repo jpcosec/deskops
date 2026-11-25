@@ -1,0 +1,36 @@
+name: review-task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci-preflight-1
+path: desk/reviews/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci/preflight-1.md
+source_hash: ee042144fce18e0bff1a8efd8abc015e9f5c479f9a94299f885c8c02cccde814
+content_hash: 68b8c0637fd705d10084b26c2ee5b3bd17680455ead9d27b8919df6716e43351
+field_hashes:
+  id: 8f2e37090851e01def4efc6f3c3602aaa05ab5585a40f60d11cdbde17e82468d
+  title: 02a882b55832da42be5c723b64f701ecbbf24c92d857ed64d9d2ce43a427917c
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: cc345940e438a66c6b4390db844efcac34e6162603f1ee11e458910766ab5b1f
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 3010c099e2c8dad20323072ae929ddec418d0dd948d351019c81efc8eb218e20
+  input_sha256: 53cbe23529aa1abee8daa7eda1d8b33200efd2eaafac91fab6a1cf71aed6426a
+  contract_sha256: 2789555997212797fff9059e0409b356bf71c32e3a07a617054e8e5e1341438a
+  output_sha256: 616e2b59a7c539ff1db87279356c8dccea94d34a6d2bfacb70049681ad35c175
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: b4f900b4a1668287b886dfa599307d48d2397540c3c757eaf00b4cd64d077678
+  created_at: ef51dd3e76c5dbdb1f96468776c7137f70266f7fa0f9b881a3c9afe9e1009d36
+  disposed_at: 8098dcbf947db3489212e629c23cfd31d60531bd3d1d0369ba993650341a6109
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: c07a38e5a100f8ecb5de154c9c0f897891a02f33f9118f06029044d135ca0557
+  disposition: 18078cc3e2f0027e0d4679e4e5f9ed6f66275151f6f1e4ee1f3ab925c5e01d5a
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T23:09:20Z'
+  authority: generated
+  via: save_document_payload

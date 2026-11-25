@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T22:52:30Z'
+  at: '2026-11-25T23:05:31Z'
   authority: generated
   via: save_document_payload
 id: task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
@@ -14,11 +14,12 @@ references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
 - task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
+- task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo
 pills: []
 files:
 - deskops/services/closure.py
 - deskops/graph/atom_trace.py
-- deskops/testing/foreign_suites.py
+- pyproject.toml
 task_type: task.refactor
 inherits_from: []
 inherit_acceptance_context: false
@@ -37,29 +38,30 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-ClosureService.close_auto (services/closure.py:720), graph/atom_trace.py, testing/foreign_suites.py y las funciones sin llamadores se borran antes de la mudanza por capas; cada módulo público tiene un docstring que dice qué hace y quién lo usa.
+ClosureService.close_auto (services/closure.py:720), graph/atom_trace.py y las funciones sin llamadores se borran antes de la mudanza por capas; cada módulo de deskops/ tiene un docstring de módulo que dice qué hace y quién lo usa.
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-Entra: borrado y docstrings. Sale: refactors.
+Entra: borrar lo de arriba y escribir los docstrings de módulo, vaciando la lista de per-file-ignores de D100 y D104 que dejó la tarea de lint. Una función no tiene llamadores si vulture deskops --min-confidence 80 la marca y un grep de su nombre en deskops/, tests/, pyproject.toml y los repos hermanos de ~/proyectos no encuentra usos (incluye usos por nombre en cli/registry.py). Módulo público: todo módulo bajo deskops/ cuyo nombre no empieza con guion bajo. Sale: testing/foreign_suites.py (lo importan 5 tests de scion) y refactors.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Confirmar sin llamadores. 2) Borrar. 3) Docstrings.
+1) vulture y grep para la lista. 2) Borrar y correr tests/acceptance. 3) Docstrings y vaciar los per-file-ignores.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- ruff check deskops
-- python -m pytest -q
+- ruff check deskops (D100 y D104 sin per-file-ignores)
+- vulture deskops --min-confidence 80 no lista funciones sin llamadores
+- python -m pytest -q tests/acceptance
 
 ## Done When
 
 _Name the observable condition that makes the task complete._
 
-ruff D1 pasa en módulos públicos y no hay funciones sin llamadores en la lista del diagnóstico.
+No hay per-file-ignores de D100 ni D104 y vulture no marca funciones sin llamadores.

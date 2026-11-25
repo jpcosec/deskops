@@ -1,7 +1,7 @@
 name: task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
 path: desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
-source_hash: 0dfcdd13c27630b14ba29eec431f2774df6f55ef82860e736e177f3a1b2f8b59
-content_hash: c583207bd09547486f4abb74456cf010d554ed37e3ba7ca684485bbc54604a1b
+source_hash: 25a9ebd312750580f5885412932aa3e37c0d7ebd50a1d31712de3d40c6f8e5fc
+content_hash: 7a9cddb1762351d38e65ef5f73c7e1ac18f76358f650161dd586380ec980de46
 field_hashes:
   title: 0a85666e7b249406f897a3abd212144dff1dad192530ba2a1a99af21684dfbdb
   id: cf41c2831a70e9404ff463a3e953827936ff9148156d25d8bfadb34456fb885d
@@ -11,15 +11,15 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: 503791fa51d2fe928363620523ca3ac690d6d2c17d5329999bb9afce030f9a91
-  scope: 3ea903d105d997863f87b574b58a97b25678bded6b6d4dee121dad1b8200b528
+  goal: f050ac8f124dce41e3a05195eec9f783627979ccccf592e5a6b4117df38fa466
+  scope: edaf5d1f5e574b45ca8280fbd1a6f8077a3f71d78db067ad66981b5c17276ba9
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: f09a76be09f7862e6ad0381cdaeaf313253c8ad5eecdfbd6e8a28acca117131f
+  depends_on: cc23a707a501572b5f5336611dfeb088f51d74769c661115a258f562764f3e39
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: aaade541ab3e2814a2d601112ed9881700888a8ad2a3d0a2e9683807e213fa92
-  implementation_path: 233d549c47738ae8c9aafbbc06a1aa50fdd843b96215c51df4f56cea341ebd20
-  validation: 9b373d964727cc61c6019ee3d9a33eb921311a349b7d96cf58019bdc47316795
-  done_when: 6b89c0298af30c1f21b62ecc7527bdc6a902adb905f8c058d6e65fa64949ca19
+  files: 732b2f4ab57747f01a498b6c3672ec14ebad3e5c75c8a5d31530f1bfd6c3c796
+  implementation_path: a301c074a031a308499ae974d7d965f2c5cd679123d5990f1e1643e9d33309a3
+  validation: 3c69227f3d4fa38f38667481bfbaa1227221531df9123d99b7827a20124b81d0
+  done_when: 351167fddb90fd364d7f14fa8a76ee3526f8271ab2db7f06827d3f9741238b7f
   task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T22:52:30Z'
+  at: '2026-11-25T23:05:31Z'
   authority: generated
   via: save_document_payload

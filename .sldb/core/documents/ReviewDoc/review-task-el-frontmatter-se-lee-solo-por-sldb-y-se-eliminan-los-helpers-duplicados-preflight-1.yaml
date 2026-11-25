@@ -1,0 +1,36 @@
+name: review-task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados-preflight-1
+path: desk/reviews/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados/preflight-1.md
+source_hash: 0efb24a48b52e7f34c5cf42450c1209554a0671998bd1df7c28f7f51e83ae2af
+content_hash: 64df7afa4587c30a5ce67c81874522410321da943ba231abc88340de9711ff47
+field_hashes:
+  id: 21836c3630fa00cdf4687ce7c5933bfd9d74354ca6848202001150b42353be7d
+  title: 5b8d48d5a67b415289d14db3d5adeff97b539bcec317df39a26d5d44b4150140
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: b70db5af68eb06a53ff0ef21b9673795f613eac255e7d87ff9dc2701b54c84c4
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: f4b98f59c3c7589bfebd34d621b370272a771802a89f7f3474fa7bfc6b81ef25
+  input_sha256: 4e253991947b3b42f03073ff2e25aa53b9031353637099ce9400ad6ed0d246db
+  contract_sha256: e63a133a543f8f63338eb23163977aedb5eb789125bd09acace7dedfbc635c6c
+  output_sha256: 1d1e41e76dee17485fe10ecc00feab5d7ee14a2017a9b841bcfc1306485b39d4
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: b4f900b4a1668287b886dfa599307d48d2397540c3c757eaf00b4cd64d077678
+  created_at: 6f09ed6e94237226e49dfade5c7a2a445af72454f73f8985f0457cd0b43dc1d3
+  disposed_at: b92f276b7f86b99a1ad163d85524a243aa3e7ad424b54d2dd11c206e6c9e3adb
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: f9fc7b604e702065a3ad8deaad329e4d64f381b09b7cdc9f5051ef52fabffbae
+  disposition: 18078cc3e2f0027e0d4679e4e5f9ed6f66275151f6f1e4ee1f3ab925c5e01d5a
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T23:08:58Z'
+  authority: generated
+  via: save_document_payload

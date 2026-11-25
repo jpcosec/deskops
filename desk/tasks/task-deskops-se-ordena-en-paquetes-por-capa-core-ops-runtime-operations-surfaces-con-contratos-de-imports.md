@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T22:53:31Z'
+  at: '2026-11-25T23:06:38Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
@@ -40,19 +40,19 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-El código de deskops/ vive en cinco paquetes por capa y import-linter impide que core importe git, scion o superficies, y que surfaces llame a otra cosa que operations.
+El código de deskops/ vive en cinco paquetes (core, ops, runtime, operations, surfaces) según la tabla de desk/drawer/plans/deskops-plugin-de-sldb/capas.md, y import-linter hace cumplir sus tres contratos: core no importa ops, runtime, operations, surfaces ni subprocess; runtime no importa ops, operations ni surfaces, y ops no importa operations ni surfaces; surfaces importa solo operations y modelos de core.
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-Entra: mover módulos a deskops/core, ops, runtime, operations y surfaces según desk/drawer/plans/deskops-plugin-de-sldb/capas.md, partir closure.py, dispatch.py y review.py por funciones como dice ese mapa, configuración de import-linter con los tres contratos y ajustar imports. Sale: cambiar comportamiento o reescribir lógica (eso es de E2 y E3).
+Entra: mover cada módulo al paquete que le asigna la sección 'Asignación por módulo' de desk/drawer/plans/deskops-plugin-de-sldb/capas.md (incluidos __main__.py y about.py, que van a surfaces/cli); partir closure.py, dispatch.py y review.py como dice su sección 'Los tres módulos que se parten'; los contratos de import-linter en pyproject.toml; actualizar el entry point de pyproject.toml y los imports internos; dejar en las rutas viejas que otros repos importan (sección 'Rutas que otros repos importan') un módulo que solo reexporta. No hay otros reexports ni compatibilidad para rutas internas. Sale: cambiar comportamiento o reescribir lógica (E2 y E3).
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Mover por paquete con git mv según capas.md, un commit por paquete. 2) Partir los tres módulos mixtos. 3) Contratos de import-linter en pyproject.toml. 4) tests/acceptance en verde después de cada commit.
+Un commit por paquete, en este orden: core, runtime, ops, operations, surfaces; cada commit deja tests/acceptance en verde. 1) git mv según la tabla. 2) En el commit de core y runtime, partir los tres módulos mixtos. 3) Reexports de las rutas usadas por otros repos. 4) Contratos de import-linter en el último commit.
 
 ## Validation
 

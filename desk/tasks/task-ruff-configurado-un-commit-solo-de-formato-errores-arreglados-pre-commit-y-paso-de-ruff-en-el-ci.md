@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T22:52:11Z'
+  at: '2026-11-25T23:04:29Z'
   authority: generated
   via: save_document_payload
 id: task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
@@ -44,13 +44,13 @@ deskops tiene lint y formato obligatorios: [tool.ruff] en pyproject.toml, el có
 
 _State what is in scope and what is out of scope._
 
-Entra: configuración (line-length 120, py312, E F I UP B más complejidad C901 y docstrings D1 en módulos públicos), un commit solo de formato en .git-blame-ignore-revs, arreglos, .pre-commit-config.yaml y el paso del CI. Sale: refactors de lógica.
+Entra: [tool.ruff] en pyproject.toml (line-length 120, target py312, select E F I UP B C901 D100 D104 sobre deskops/; D100 y D104 con per-file-ignores para los módulos que hoy no tienen docstring, lista que vacía la tarea de código muerto), ruff fijado en las dependencias de desarrollo, un commit solo de ruff format y un segundo commit que agrega su SHA a .git-blame-ignore-revs, ruff check --fix y arreglos a mano que no cambian comportamiento (E402 moviendo imports; si un arreglo cambiaría lógica, noqa con el motivo), .pre-commit-config.yaml con los hooks ruff y ruff-format de astral-sh/ruff-pre-commit en la misma versión, y un paso del CI: ruff check deskops tests && ruff format --check deskops tests. Sale: refactors de lógica.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Configuración. 2) Commit de formato. 3) ruff check --fix y arreglos a mano. 4) pre-commit y CI.
+1) Configuración y versión fijada. 2) Commit de formato. 3) Commit con su SHA en .git-blame-ignore-revs. 4) ruff check --fix y arreglos a mano. 5) pre-commit y paso del CI.
 
 ## Validation
 

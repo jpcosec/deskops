@@ -1,0 +1,36 @@
+name: review-task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo-preflight-1
+path: desk/reviews/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo/preflight-1.md
+source_hash: 262e18b3420ad0a06f9eb27ffffc14084f8ccdd65f6085319c103cdc6fd799f6
+content_hash: 31d90e0e22a1ef957bb3aaf16a28859596ca240ac201752934fd694a5c5af853
+field_hashes:
+  id: aae28daf86549f33707b8544cf3df492175c471215a5fd73284108c301df52ba
+  title: 0bc5ca681c179f66c90728660cb0ed97277941b72e8368916aea6a7e96c312c5
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 7b8ee6ec73d7975692b17985b882f6a297564cf7f2419d452a48e5a6bf0e96d0
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 6893e1f2da6cc1a3c517415de3b5e2373ae9b665c4f9255d933fd59990c55c63
+  input_sha256: bad6a9e5f406f1a1bf03e201059afedcc4c96fa4f4388fb5ef643d6033af9950
+  contract_sha256: 0e0eeb931b6c89e818554ac81f7fca6e232984285f54786df16a4f5d22622009
+  output_sha256: 7ef6a6396cd5dd3622319021f64a4ad77cf8509e98b642d8bc060ecd93399abb
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: b4f900b4a1668287b886dfa599307d48d2397540c3c757eaf00b4cd64d077678
+  created_at: 1cb07e547d424d8b8b2682d604234e8ba1752f929fa21d9bf00e4fa688b706bb
+  disposed_at: 68fb91434d833408346c8eb85ffdc613913c3b1669f8360ea49fd2ac965130fd
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 50155b5a50a82f8141599f99153c167749d09621d715a18724ee9181c6cfd702
+  disposition: 18078cc3e2f0027e0d4679e4e5f9ed6f66275151f6f1e4ee1f3ab925c5e01d5a
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T23:09:09Z'
+  authority: generated
+  via: save_document_payload

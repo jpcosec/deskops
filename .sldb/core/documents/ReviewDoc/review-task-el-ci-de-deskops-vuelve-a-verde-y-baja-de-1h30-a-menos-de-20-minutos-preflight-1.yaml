@@ -1,0 +1,36 @@
+name: review-task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos-preflight-1
+path: desk/reviews/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos/preflight-1.md
+source_hash: b8b4b730be5e5d5a19c267f001602f6014f634dec00f3e8d0eb5abf1976a5428
+content_hash: 09c9664ffb9d6293fd17153fd75f917a9f99ce20fdc7ca8e7a43a9718f687923
+field_hashes:
+  id: c803eaa37f8d54292c193ced82f6b244ab41c17694be8ee5103860efdef1f08e
+  title: e99f7edd00e0baf3586dc350dc508d8c1f750902a55859141ae32de46c69069c
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 29edaccad8050ea0cbf9a0840432ee397313b3a04e3bd5cc91ec5190d85035ac
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 232e49b8b7c9fdb5b8a6cd0413c1e17b8c08d19d1256a8ebc74f11b76a481c7a
+  input_sha256: 79df213d369f4eaf4e0b437e9bd34c1cdb3235f46262e834545a1d2e73e3565a
+  contract_sha256: d11a90463ada1ce12dd41ada517e603758e764a8d3afcb18884e0fa672f4f09c
+  output_sha256: dfd3b5666d38f5f7c203a778b684e0fdf1a0b274aacd0720f45b3d3b7b914fa7
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: b4f900b4a1668287b886dfa599307d48d2397540c3c757eaf00b4cd64d077678
+  created_at: ece9ab0159134fc005fc78ef6b9161edf3267af9b0e57373aa50c38f51cb1d6d
+  disposed_at: 647fb0adf5f1210c585481cedfe21599654ea0097d57acb5174899b5e54df4ba
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: d88a34d1d5196f8f6c94267fe1568b2d85caea54e45643acdd02129ace15ad7b
+  disposition: 18078cc3e2f0027e0d4679e4e5f9ed6f66275151f6f1e4ee1f3ab925c5e01d5a
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T23:08:48Z'
+  authority: generated
+  via: save_document_payload

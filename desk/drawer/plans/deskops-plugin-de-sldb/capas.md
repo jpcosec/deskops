@@ -11,7 +11,7 @@ la lista única de operaciones (`operations`) y las superficies que la exponen (
 | Paquete | Capa | Qué contiene | Puede importar |
 |---|---|---|---|
 | `deskops/core` | Núcleo | Modelos (TaskDoc y demás), ciclo de vida, compuertas, vistas del núcleo (el prompt de una tarea, el Board, `next`), resolución de documentos del desk. Sin git, sin subprocesos, sin scion, sin texto de ayuda. | `sldb`, `pydantic`, stdlib |
-| `deskops/ops` | Operación y mantenimiento | Que el desk esté sano: doctor, bootstrap e init, migraciones, registro de repos, tags, grafo y chequeos. | `core`, `sldb` |
+| `deskops/ops` | Operación y mantenimiento | Que el desk esté sano: doctor, bootstrap e init, migraciones, registro de repos, tags, grafo y chequeos. | `core`, `runtime` (adaptadores como git), `sldb` |
 | `deskops/runtime` | Uso (efectos) | Lo que toca el mundo: git (commit del cierre, integrate), scion, herdr, claude y pi, cola, wake. Adaptadores sin decisiones del workflow. | `core`, `sldb`, git y subprocesos |
 | `deskops/operations` | Uso (contrato) | Una función por operación, la que publica MCP. Compone `core`, `ops` y `runtime`. | `core`, `ops`, `runtime` |
 | `deskops/surfaces` | Uso (superficies) | `cli` (lo que quede escrito a mano: bootstrap e init), `mcp` (`register`), `view` (lo que lee la UI), render de salida. | solo `operations` (y `core` para tipos) |
@@ -19,7 +19,8 @@ la lista única de operaciones (`operations`) y las superficies que la exponen (
 Contratos de import-linter (los que valida la tarea de capas y después las guardas de E4):
 
 1. `core` no importa `ops`, `runtime`, `operations` ni `surfaces`, ni `subprocess`.
-2. `ops` y `runtime` no se importan entre sí y no importan `operations` ni `surfaces`.
+2. `runtime` no importa `ops`, `operations` ni `surfaces`; `ops` no importa `operations` ni `surfaces` (sí puede usar los
+   adaptadores de `runtime`, por ejemplo git para doctor).
 3. `surfaces` importa solo `operations` (y modelos de `core`).
 
 ## Asignación por módulo
@@ -73,6 +74,7 @@ API de sldb (E3) y el módulo se borra o adelgaza. La tarea de capas solo mueve;
 | Módulo hoy | Líneas | Destino | Después |
 |---|---|---|---|
 | `runtime/*` (scion, herdr, supervise, grouping, initializer, task, desk_agents) | ~1 850 | `runtime/` | `desk_agents.py` a `surfaces/view` |
+| `testing/foreign_suites.py` | 84 | `deskops/testing/` (se queda: lo importan 5 tests de scion) | |
 | `dispatch.py`, lanzamiento y reap | ~490 de 741 | `runtime/dispatch.py` | Despacho claude, pi y scion (drawer) |
 | `services/closure.py`, git, staging y rollback | ~1 090 de 1 989 | `runtime/git_closeout.py` | |
 | `services/review.py`, lanzador del revisor | ~700 de 1 104 | `runtime/review_launcher.py` | |
@@ -101,7 +103,7 @@ API de sldb (E3) y el módulo se borra o adelgaza. La tarea de capas solo mueve;
 ## Lo que se borra antes de mover
 
 La tarea de capas depende del borrado de código muerto y del retiro de `atoms split` (E1), así que no los mueve:
-`graph/atom_trace.py`, `testing/foreign_suites.py`, `ClosureService.close_auto` (`services/closure.py:720`) y
+`graph/atom_trace.py`, `ClosureService.close_auto` (`services/closure.py:720`) y
 `split_atom` (`services/atoms.py:406`) con su comando.
 
 ## Los tres módulos que se parten
@@ -114,6 +116,22 @@ Son los que mezclan capas según el diagnóstico. La tarea de capas los parte po
 - `services/review.py`: recibos y disposición a `core/review.py`; lanzar el revisor a `runtime/review_launcher.py`.
 
 `workspace.py` no se parte entre capas: se divide dentro de `ops` (scaffold y migraciones).
+
+## Rutas que otros repos importan
+
+Otros repos importan módulos internos de deskops (grep del 25-11 sobre `~/proyectos`). La mudanza deja en esas rutas
+un módulo que solo reexporta desde su lugar nuevo, con un comentario que nombra a su consumidor. La tarea de migración
+de los repos consumidores pasa esos imports a `deskops.operations` y borra los reexports.
+
+| Ruta vieja | Consumidores |
+|---|---|
+| `deskops.doc_access` | `UIs/graph_ui/frontends/desk/serve.py`, `frontends/mindmap/deskops_routes.py` |
+| `deskops.lifecycle` | `UIs/graph_ui/frontends/mindmap/deskops_routes.py` |
+| `deskops.cli.commands.view` (`ViewError`, `project`, `task_params`) | `UIs/graph_ui/frontends/desk/serve.py` |
+| `deskops.cli.main` (`main`) | tests de `scion` |
+| `deskops.operations` (`DeskopsOperations`) | `UIs/graph_ui` (sigue siendo pública, no es reexport) |
+| `deskops.models` (`TaskDoc`, `BoardDoc`, `AtomDoc`) | `UIs/graph_ui`, `legos` (pública: `deskops.models` reexporta `core.models`) |
+| `deskops.testing.foreign_suites` | 5 tests de `scion` (pública, no se mueve) |
 
 ## Qué no decide este mapa
 

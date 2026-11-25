@@ -3232,6 +3232,24 @@ include:
     name: review-deskops-plugin-de-sldb-b04-node-2
   - path: desk/reviews/deskops-plugin-de-sldb-b05/node-2.md
     name: review-deskops-plugin-de-sldb-b05-node-2
+  - path: desk/reviews/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito/preflight-1.md
+    name: review-task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito-preflight-1
+  - path: desk/reviews/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos/preflight-1.md
+    name: review-task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos-preflight-1
+  - path: desk/reviews/task-se-retira-deskops-atoms-split/preflight-1.md
+    name: review-task-se-retira-deskops-atoms-split-preflight-1
+  - path: desk/reviews/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci/preflight-1.md
+    name: review-task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci-preflight-1
+  - path: desk/reviews/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo/preflight-1.md
+    name: review-task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo-preflight-1
+  - path: desk/reviews/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados/preflight-1.md
+    name: review-task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados-preflight-1
+  - path: desk/reviews/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports/preflight-1.md
+    name: review-task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports-preflight-1
+  - path: desk/reviews/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de/preflight-1.md
+    name: review-task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de-preflight-1
+  - path: desk/reviews/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo/preflight-1.md
+    name: review-task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo-preflight-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
