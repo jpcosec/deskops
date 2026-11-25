@@ -57,6 +57,7 @@ supersedes: ⸢optrev,list•supersedes⸥
 partial_supersedes: ⸢optrev,list•partial_supersedes⸥
 superseded_section: ⸢optrev•superseded_section⸥
 references: ⸢optrev,list•references⸥
+pointers: ⸢optrev,list•pointers⸥
 tags: ⸢optrev,list•tags⸥
 provenance: ⸢optrev•provenance⸥
 conversation_ref: ⸢optrev•conversation_ref⸥

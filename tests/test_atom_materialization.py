@@ -19,6 +19,7 @@ ATOM_SAMPLE = {
     "answer": "Deskops extracts model payloads from structured markdown with sldb runtime validation.",
     "tags": ["system:deskops", "system:sldb", "topic:composition"],
     "provenance": "",
+    "pointers": [],
 }
 
 

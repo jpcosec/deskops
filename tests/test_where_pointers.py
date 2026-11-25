@@ -74,3 +74,14 @@ def test_cli_stores_shows_and_rejects_pointers(tmp_path: Path, capsys) -> None:
         assert main(["edit", kind, name, "pointers", "['doc:nada']", "--root", str(tmp_path)]) != 0
         captured = capsys.readouterr()
         assert "doc:<Model>:<id>" in captured.out + captured.err
+
+
+def test_adr_atom_stores_pointers(tmp_path: Path, capsys) -> None:
+    assert main(["init", str(tmp_path)]) == 0
+    assert main(["add", "atom", "--root", str(tmp_path), "--atom-type", "atom.adr", "--title", "Adr P",
+                 "--answer", "a", "--context", "c", "--consequences", "q", "--decided-on", "2026-11-25",
+                 "--decided-by", "jp", "--pointers", *GOOD]) == 0, capsys.readouterr()
+    capsys.readouterr()
+    assert main(["show", "atom", "atom-adr-p", "--root", str(tmp_path)]) == 0
+    out = capsys.readouterr().out
+    assert all(p in out for p in GOOD)
