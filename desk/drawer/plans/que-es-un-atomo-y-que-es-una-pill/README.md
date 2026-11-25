@@ -178,6 +178,35 @@ Sin verificar: que el árbol semántico tenga hoy las categorías que hacen falt
 - El átomo elige hoy su pregunta con un campo. Con un tipo por pregunta, ese campo sobra.
 - La tarea dejaría su lista de rutas por esos mismos punteros.
 
+## Lo que choca con una tarea ya escrita
+
+La tarea de `atom.adr` de este desk
+(`task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree`,
+prioridad alta) se escribió antes de esta conversación y dice tres cosas que aquí cambiaron:
+
+| La tarea dice | Esta propuesta dice |
+|---|---|
+| Cuatro estados: propuesto, aceptado, reemplazado, rechazado | Una decisión pendiente es una tarea `task.decision`; el átomo existe solo una vez aceptada, y después puede quedar reemplazado |
+| Su pregunta queda fija en "qué" | El ADR responde el porqué |
+| Los repos afectados van como tags `repo:<nombre>` | El dónde son punteros a un lugar del código o a una categoría |
+
+Si se ejecuta tal cual, construye la forma anterior. No se modificó ni se frenó: JP pidió dejar
+esto escrito y no resolverlo. Decidir qué pasa con la tarea es parte de cerrar esta propuesta.
+
+## Piezas que son de otros repos
+
+La propuesta vive en el desk de deskops, pero se apoya en piezas ajenas. Lo que quedó sin
+verificar hay que mirarlo en su repo:
+
+| Pieza | Repo |
+|---|---|
+| El ancla de código y su estado | sldb |
+| El árbol semántico de tags, con padres e hijos | sldb |
+| La composición de un documento dentro de otro | sldb |
+| Las reglas (`RuleDoc`) | sldb |
+| Las capas de cada tipo extraído del código, y a qué afecta un cambio | specIR |
+| Átomos, pills, tareas, rituales y roles | deskops |
+
 ## Sin resolver
 
 - Dónde viven las capacidades (lo que un producto tiene que poder hacer) y su prueba: ¿átomo con
