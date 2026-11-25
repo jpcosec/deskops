@@ -1121,6 +1121,8 @@ include:
     name: run-deskops-e-56fb858015dd
   - path: runs/subagents/exec-deskops-t-6f7b59a53a19-testing/run.md
     name: run-deskops-t-6f7b59a53a19
+  - path: runs/subagents/exec-deskops-e-9066ff424d30/run.md
+    name: run-deskops-e-9066ff424d30
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -3247,6 +3249,10 @@ include:
     name: review-task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento-evidence-atom-1
   - path: desk/reviews/task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento/evidence-materialization-1.md
     name: review-task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento-evidence-materialization-1
+  - path: desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/preflight-1.md
+    name: review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-preflight-1
+  - path: desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/bundle-1.md
+    name: review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-bundle-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
