@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:47:13Z'
+  at: '2026-11-25T22:54:17Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados
 status: draft
 summary: ''
@@ -14,9 +14,15 @@ references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
 - task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
-- task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse
 pills: []
-files: []
+files:
+- deskops/doctor_findings.py
+- deskops/integrate.py
+- deskops/lifecycle.py
+- deskops/doc_access.py
+- deskops/absolute_paths.py
+- deskops/models/task_lifecycle.py
+- deskops/services/issues.py
 task_type: task.refactor
 inherits_from: []
 inherit_acceptance_context: false
@@ -47,16 +53,17 @@ Entra: doctor_findings, integrate, lifecycle, doc_access, absolute_paths, models
 
 _Outline the expected implementation route or affected surface._
 
-1) Reemplazos. 2) Helpers comunes en ops. 3) Vaciar su excepción en las guardas.
+1) Reemplazar los siete parseos por la API de sldb. 2) Los helpers comunes, una vez en core. 3) grep de yaml.safe_load sobre frontmatter fuera de sldb no da resultados.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- python -m pytest -q
+- python -m pytest -q tests/acceptance
+- ningún módulo de deskops/ parte un documento en '---' para leer su frontmatter
 
 ## Done When
 
 _Name the observable condition that makes the task complete._
 
-La guarda de frontmatter no tiene excepciones.
+El frontmatter se lee solo por sldb y cada helper existe una vez.

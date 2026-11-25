@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:47:24Z'
+  at: '2026-11-25T22:52:30Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
 status: draft
 summary: ''
@@ -15,7 +15,10 @@ references:
 depends_on:
 - task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
 pills: []
-files: []
+files:
+- deskops/services/closure.py
+- deskops/graph/atom_trace.py
+- deskops/testing/foreign_suites.py
 task_type: task.refactor
 inherits_from: []
 inherit_acceptance_context: false
@@ -34,7 +37,7 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-close_auto, graph/atom_trace.py, testing/foreign_suites.py y las funciones sin llamadores se borran; cada módulo público tiene un docstring que dice qué hace y quién lo usa.
+ClosureService.close_auto (services/closure.py:720), graph/atom_trace.py, testing/foreign_suites.py y las funciones sin llamadores se borran antes de la mudanza por capas; cada módulo público tiene un docstring que dice qué hace y quién lo usa.
 
 ## Scope
 

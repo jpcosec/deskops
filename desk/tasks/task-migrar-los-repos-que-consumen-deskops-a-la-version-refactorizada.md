@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:29:04Z'
+  at: '2026-11-25T22:51:31Z'
   authority: generated
   via: save_document_payload
 id: task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada
@@ -31,7 +31,7 @@ atoms: []
 
 _Explain why this task exists or the business driver behind it._
 
-El refactor del 25-11 (macros M0 a M5) cambia el CLI, las aristas y la forma de leer el store; los repos que usan deskops (MEPU, TraderBot, sldb, graph_ui y los demás del registro) hay que migrarlos.
+El refactor del 25-11 (etapas E1 a E4) cambia el CLI, las aristas y la forma de leer el store; los repos que usan deskops (MEPU, TraderBot, sldb, graph_ui y los demás del registro) hay que migrarlos.
 
 ## Goal
 

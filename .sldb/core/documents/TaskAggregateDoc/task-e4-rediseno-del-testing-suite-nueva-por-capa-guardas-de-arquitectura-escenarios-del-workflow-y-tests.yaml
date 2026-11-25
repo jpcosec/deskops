@@ -1,9 +1,9 @@
 name: task-e4-rediseno-del-testing-suite-nueva-por-capa-guardas-de-arquitectura-escenarios-del-workflow-y-tests
 path: desk/tasks/task-e4-rediseno-del-testing-suite-nueva-por-capa-guardas-de-arquitectura-escenarios-del-workflow-y-tests.md
-source_hash: 44f87be017e02c0d397656111871f578f58834dea4321e662ccc6ee5e83c7e96
-content_hash: 36c154fca1530f5ed67ccee12e955e748005a32ecf372920b5de89ab04cb44a0
+source_hash: 46260f457961cccba12db7506e782597987f80963ef387dd3eaa850e4c6fcaf4
+content_hash: 77a6c0917d3a38d85399f8ef3f15a2ff3c481e63146f21d0d679134412ed1390
 field_hashes:
-  title: 0d84545be81e40b6d46c1660364b1b3d410d69828e663b15150bd06ef719bec7
+  title: 9b96c304af8bafdf1fac5c26555e8672715a9305e9fae5d645a65c1a1537c69a
   id: 7f149ca69979dbd3e104571227e7a572b6acb4ac13123804adfe6d85f3e1fdc1
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
@@ -14,7 +14,7 @@ field_hashes:
   goal: ff8772b8e2ed6b2d4c6561854b0c319ff11364d08b2d5b93c795c5c7081db35c
   scope: e814a5e8f5f30fc08d727ae6c28ce00c47113f9721ac2879b2c177f8315fd83e
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: e09b83eaad18918eb432bfbbd91a55622a848bbd638faa020248860fb4b7f0fb
+  depends_on: 2c3698bd9a215fbec22c7a5c4078637d2ee0b35f3db305dcdf23f833ce6ca41e
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T20:28:52Z'
+  at: '2026-11-25T22:57:38Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

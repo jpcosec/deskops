@@ -1,7 +1,7 @@
 name: task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
 path: desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
-source_hash: 9e3f794e76b2fb028826a86d11df8b65a3562a3955fbeebf3d00730c601a67bf
-content_hash: 3726cce6a328572161dfb9ebffd21c7aded54e4e5a5540a875be0d2b39eab5a9
+source_hash: 0dfcdd13c27630b14ba29eec431f2774df6f55ef82860e736e177f3a1b2f8b59
+content_hash: c583207bd09547486f4abb74456cf010d554ed37e3ba7ca684485bbc54604a1b
 field_hashes:
   title: 0a85666e7b249406f897a3abd212144dff1dad192530ba2a1a99af21684dfbdb
   id: cf41c2831a70e9404ff463a3e953827936ff9148156d25d8bfadb34456fb885d
@@ -11,12 +11,12 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: 647441c10d8bbf6061726cc587b70baed134458cb70083725c0de69696751a65
+  goal: 503791fa51d2fe928363620523ca3ac690d6d2c17d5329999bb9afce030f9a91
   scope: 3ea903d105d997863f87b574b58a97b25678bded6b6d4dee121dad1b8200b528
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: f09a76be09f7862e6ad0381cdaeaf313253c8ad5eecdfbd6e8a28acca117131f
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: aaade541ab3e2814a2d601112ed9881700888a8ad2a3d0a2e9683807e213fa92
   implementation_path: 233d549c47738ae8c9aafbbc06a1aa50fdd843b96215c51df4f56cea341ebd20
   validation: 9b373d964727cc61c6019ee3d9a33eb921311a349b7d96cf58019bdc47316795
   done_when: 6b89c0298af30c1f21b62ecc7527bdc6a902adb905f8c058d6e65fa64949ca19
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:47:24Z'
+  at: '2026-11-25T22:52:30Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

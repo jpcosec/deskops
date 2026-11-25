@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:43:28Z'
+  at: '2026-11-25T22:54:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
 status: draft
 summary: ''
@@ -15,7 +15,8 @@ references:
 depends_on:
 - task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
 pills: []
-files: []
+files:
+- tests/core/
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
@@ -40,7 +41,7 @@ Tests de escenario en tests/core que documentan cada hallazgo del núcleo (W3, N
 
 _State what is in scope and what is out of scope._
 
-Entra: un escenario por hallazgo, marcados xfail con el id del hallazgo. Sale: arreglarlos (cada tarea de M2 quita su xfail).
+Entra: un escenario por hallazgo, marcados xfail con el id del hallazgo. Sale: arreglarlos (cada tarea de E3 quita su xfail).
 
 ## Implementation Path
 

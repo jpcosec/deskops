@@ -1,25 +1,25 @@
-name: task-seguimiento-del-indice-del-store-de-sldb-base-embebida-y-git-y-de-la-documentacion-de-los-hashes
-path: desk/tasks/task-seguimiento-del-indice-del-store-de-sldb-base-embebida-y-git-y-de-la-documentacion-de-los-hashes.md
-source_hash: e9564211cfdfde8ff24754e4e1b4adc2f6865719508b4f80aadcd807654b4c8b
-content_hash: 9f2cb2e29e4514a0d9f46dfaa1f1adb64ed29b9c8e5fb4dc881656de5c8b8216
+name: task-el-lenguaje-de-reglas-de-sldb-lee-el-ultimo-elemento-de-una-lista-pedido-c3
+path: desk/tasks/task-el-lenguaje-de-reglas-de-sldb-lee-el-ultimo-elemento-de-una-lista-pedido-c3.md
+source_hash: e17656f643cd249750e57c629b82fefb0e615775f583df996576366d4c29ded6
+content_hash: 28f52ad5151192249511df1c44328acf3d030932010bdc1c428688a0a368eea8
 field_hashes:
-  title: 27082ce054063977d6df7e3784641a8ef4fedbdc0c0dcde5d23ee89435af0ff4
-  id: 12f50724cb7a0c5632f3c62e38f5f1ece3b5262cd904deecb0ceaa50b0d224a9
+  title: a094ae801bf4554be644172d24be1620783cc19bd1dc8b78f52e46f33bc068cc
+  id: f046ef90eb8c45dee57dac22a49ee5fc79fd0c4af41ba3d1a4f02b82e88ef4d3
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: 56c5ddb88fe60d5ca1fd5b0360fc5b8f031df73f9c8b5209d172a1945b8f1458
-  scope: e55ecb83456b33ef3ef10bd66ca210d1e10191f89b089e95965b0baffcf5bce0
-  references: 163b2d18dea3d0f7d0aad145a8cd093804be3fea2194a6866f259590a1ff038c
+  why: 65f6db05a63471ffb6663663d7f8d8ea4ac896d824b79d998122ce8d927c7660
+  goal: 0f43a42e3a259cf76abec5956febaade40e28d49678d526f9a75420c59fecf77
+  scope: 2d84e7c2cd7ad09c980ce55edf2c0b91c0f950738c399e46d32179cfc469e426
+  references: a975fda1027ecf00ef05711f5c36ab992b6114a5853f355055e87a4bdb56f2a5
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  implementation_path: 49171f2c35e1d48db19d1cbe9a1d1bf8ab77174787f40f25c954e1f0b8b009c8
-  validation: 0e5498b917c9103436fdb98ce98c038171bee8f913dbca5232d1475bb42b8fdb
-  done_when: af671098de8b98217e5ef12424bcd743335b1504df4b6349f1e2b80d78bafc60
+  implementation_path: 9207f4afc8ba24f69decc95a666d2768cb6052b104c1021c53dbb0e5fbb02f23
+  validation: 14b6cdca4448ef73784dda86becc6b2f3cfa0a15d901740de31a60f2c138d022
+  done_when: 5f1f43342747a6cc7e6764003d566719c68454899e1c2152a875afae236192c3
   task_type: 5619d24174620ad487a0abcf96f8cf76f2194860f28794d1d441226cd2d613dd
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:49:39Z'
+  at: '2026-11-25T22:55:31Z'
   authority: generated
   via: create_document

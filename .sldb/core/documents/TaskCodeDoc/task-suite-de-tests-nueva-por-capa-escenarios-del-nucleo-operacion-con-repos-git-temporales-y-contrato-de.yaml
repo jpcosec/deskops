@@ -1,7 +1,7 @@
 name: task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
 path: desk/tasks/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de.md
-source_hash: ffc21ee5465459aac611a171b9368b06f9572f0d3ba55fff2b924d9685f69680
-content_hash: ea1bab1bec327db9cba885fbfb841d1f1b9b3dc99bd5adb9a53d05fa4a464b21
+source_hash: fb59360715ec74cd3b8a8e5083882722869ec675f78dcb172832227c012f410a
+content_hash: 7ceba4d13f346eda7768fb1d49d3800ff2c89e8deaa8f222469deb8813d36833
 field_hashes:
   title: 9901398cc39a69e0e66a14a623f813294c14602ad3e97c7fe6b6acf47e420ea0
   id: 4fd9aaa8c44291d784eb805e1583866573eef82456f5348867e53de4f04111f6
@@ -12,11 +12,11 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
   goal: af96570e06936aafb16863eaeaa8801cdfd468b868e95fc0765711e1ff659120
-  scope: 12fd9f1bc0c3ed46be2c60fb2016edea6edafd422cd0458c1e9379269fe69896
+  scope: 34cd5e1906ca5267c72fd06f033c6307ae7c884332c538fe877366d156194a84
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 21165d78bf04d2b414727d4504f41b871a4fa0a972c9fec1a2caa8e3e41077f8
   implementation_path: 92c3b71f3ad40bd4c86cd52d0a4bf78a2aa253626b6d3ab480d812e002fc7ef0
   validation: fe8fd10c1a635bbc0c2a3a0a16e910d7a608ddc07e80c170e0a37dc1e91f9f1b
   done_when: fa76e7767071c6b04826135c026c6e80c16a47952c3b62be8b68cd067748f8be
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:43:06Z'
+  at: '2026-11-25T22:54:25Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

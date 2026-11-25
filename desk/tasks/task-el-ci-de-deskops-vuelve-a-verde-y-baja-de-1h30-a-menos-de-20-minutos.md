@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T17:02:57Z'
+  at: '2026-11-25T22:51:56Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
 status: draft
 summary: ''
@@ -15,7 +15,11 @@ references:
 - desk/tasks/task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre.md
 depends_on: []
 pills: []
-files: []
+files:
+- tests/test_output_goldens.py
+- .sldb/store.yaml
+- .github/workflows/tests.yml
+- pyproject.toml
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
@@ -46,7 +50,7 @@ Entra: .github/workflows/tests.yml, el golden de help de add atom (o hacer el te
 
 _Outline the expected implementation route or affected surface._
 
-1) Regenerar o normalizar el golden help/deskops_add_atom.txt para que 3.12 y 3.13 den lo mismo. 2) Declarar el namespace domain:knowledge-management (CrossroadDoc) o quitar el tag del documento que lo usa. 3) Agregar pytest-xdist al install del CI y correr con -n auto o -n 2, y cancelar corridas viejas con concurrency: cancel-in-progress. 4) Medir el tiempo en una corrida real.
+Causas verificadas el 25-11: (A) tests/test_output_goldens.py:123, el regex _SHORT_OPTION_METAVAR_RE no normaliza los alias largo+largo que 3.13 escribe distinto; (B) .sldb/store.yaml incluye los AtomDoc (líneas 139-143) antes que el CrossroadDoc (145), así que el tag domain:knowledge-management se valida antes de que exista su namespace. 1) Normalizar A en el test, sin regenerar goldens a mano. 2) Ordenar B (CrossroadDoc antes que AtomDoc). 3) pytest-xdist en el CI con -n acorde a la RAM del runner y concurrency: cancel-in-progress. 4) Medir una corrida real.
 
 ## Validation
 

@@ -3262,7 +3262,6 @@ include:
   - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
   - desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
   - desk/tasks/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.md
-  - desk/tasks/task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable.md
   - desk/tasks/task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre.md
   - desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
   - desk/tasks/task-las-operaciones-de-deskops-se-definen-una-sola-vez-como-herramientas-mcp-en-una-extension-del-servid.md
@@ -3281,6 +3280,7 @@ include:
   - desk/tasks/task-deskops-se-instala-en-claude-code-y-otros-clientes-con-fastmcp-install.md
   - desk/tasks/task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada.md
   - desk/tasks/task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto.md
+  - desk/tasks/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-verificar-fastmcp-call-generate-cli-inspect-e-install-contra-sldb-mcp-con-una-extension-de-deskops.md
@@ -3293,8 +3293,10 @@ include:
 - model: TaskExternalDoc
   paths:
   - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
-  - desk/tasks/task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele.md
-  - desk/tasks/task-seguimiento-del-indice-del-store-de-sldb-base-embebida-y-git-y-de-la-documentacion-de-los-hashes.md
+  - desk/tasks/task-sldb-aplica-las-ruledoc-de-un-store-enlazado-parte-de-reglas-del-pedido-c1.md
+  - desk/tasks/task-sldb-ofrece-la-primitiva-tomar-transicion-en-su-cli-y-su-api-pedido-c2.md
+  - desk/tasks/task-el-lenguaje-de-reglas-de-sldb-lee-el-ultimo-elemento-de-una-lista-pedido-c3.md
+  - desk/tasks/task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista.md
 - model: TaskRefactorDoc
   paths:
   - desk/tasks/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports.md
@@ -3309,6 +3311,9 @@ include:
   - desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
   - desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
   - desk/tasks/task-se-retira-deskops-atoms-split.md
+  - desk/tasks/task-se-borra-la-copia-de-reglas-de-ciclo-de-vida-en-cada-desk-las-aplica-sldb-desde-el-paquete-enlazado.md
+  - desk/tasks/task-advance-y-el-cierre-toman-la-transicion-con-la-primitiva-de-sldb-y-se-borra-lifecycle-advance.md
+  - desk/tasks/task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py.md
 - model: TaskAggregateDoc
   paths:
   - desk/tasks/task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy.md

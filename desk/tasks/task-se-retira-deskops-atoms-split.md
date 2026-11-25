@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:18:58Z'
+  at: '2026-11-25T22:52:38Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-se-retira-deskops-atoms-split
 status: draft
 summary: ''
@@ -14,7 +14,15 @@ references:
 - deskops/services/atoms.py
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/services/atoms.py
+- deskops/cli/commands/atoms.py
+- deskops/cli/registry.py
+- deskops/doc_access.py
+- deskops/operations.py
+- tests/test_transaction.py
+- tests/fixtures/golden/help/deskops_atoms_split.txt
+- docs/operator-manual.md
 task_type: task.refactor
 inherits_from: []
 inherit_acceptance_context: false

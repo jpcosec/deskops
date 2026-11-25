@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:44:00Z'
+  at: '2026-11-25T22:54:59Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-toda-compuerta-de-cierre-y-de-activacion-es-una-clausula-de-ruledoc-con-severidad-que-declara-el-wor
 status: draft
 summary: ''
@@ -12,10 +12,16 @@ current_node: ritual-execution
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
+- desk/inbox/20261120-194022-suggestion-los-ritos-son-donde-cada-desk-declara-qu-exige.md
 depends_on:
 - task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
 pills: []
-files: []
+files:
+- deskops/services/closure.py
+- deskops/services/closeout_gates.py
+- deskops/data/rules/closeout-evidence.yaml
+- deskops/data/lifecycle/
+- desk/rituals/
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
@@ -40,7 +46,7 @@ Cada compuerta (incluidas _closeout_link_gate, _changed_file_link_evidence, _ski
 
 _State what is in scope and what is out of scope._
 
-Entra: mover las compuertas de Python a reglas, la severidad configurable por desk, borrar data/rules/closeout-evidence.yaml. Sale: decidir qué exige cada desk.
+Entra: mover las compuertas de Python a reglas, la severidad configurable por desk declarada en sus RitualDoc (pedido de Governance 20261120-194022: los ritos son donde cada desk declara qué exige, incluida la revisión en frío, el concilio y las pruebas sin contexto) y borrar data/rules/closeout-evidence.yaml. Sale: decidir qué exige cada desk (es del workflow de cada uno) y que la escritura no pueda saltarse las compuertas (pedido de máquina de estados a sldb).
 
 ## Implementation Path
 

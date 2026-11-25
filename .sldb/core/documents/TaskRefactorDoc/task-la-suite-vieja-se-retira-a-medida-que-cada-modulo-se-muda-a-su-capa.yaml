@@ -1,7 +1,7 @@
 name: task-la-suite-vieja-se-retira-a-medida-que-cada-modulo-se-muda-a-su-capa
 path: desk/tasks/task-la-suite-vieja-se-retira-a-medida-que-cada-modulo-se-muda-a-su-capa.md
-source_hash: 625131c67c85553fe5271a9465ef21de23faaca023c92f475051d3f1f3be50f5
-content_hash: 623961ee84efca7f9472e918f7b7ea292d1fdf61fc1df25273b82c6cb2c1dfdf
+source_hash: 380885127db908fcd6cdf46bf12285de12483a5a99ea91b820c3671d46952d24
+content_hash: d3941df3ddfc07fe0da4c59c445118787d059f769df49e48ce2f4c1c4864feea
 field_hashes:
   title: 00c45e98c784db65e56a880be008f4b71a1c6dd858a44f017560b59c6e3e3e79
   id: f3fc44e114bc2479d442d72d7d1cc7e58fe6d2d354fc50d3a5a70754321658c8
@@ -12,12 +12,12 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
   goal: 5f113cadff53802e89b13d0f465960cd9ab50d4d7bd8b0da4d317fb1f96d8e4a
-  scope: 7d68e22e142a044dbca30301725729077975a3385f83a030e29b881f2d15d155
+  scope: 637c7503b07965d29637c4fcb3774dfe032404c6c23f32dcb07b2f0df4329389
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: a5e3c76ff3e73aaa02771496059dc2d350515f191844202e83c725e486b66640
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  implementation_path: 03b12110aa5a304c585ffcc75dbd201dcc88122c868a45300666c1baa78a4998
+  implementation_path: 29acc6876d3d36fea8fd354f8c22455673ef46eb0516c2eec979cdee0cb1c240
   validation: c5bc2a56366144fb0d5d7338102d356edb05c79224ece46b93ce878d7737925f
   done_when: 5b4a5bb740cee208abe507978832ba57cffc49be7714bd6c5f305c956b411803
   task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:43:18Z'
+  at: '2026-11-25T22:51:00Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

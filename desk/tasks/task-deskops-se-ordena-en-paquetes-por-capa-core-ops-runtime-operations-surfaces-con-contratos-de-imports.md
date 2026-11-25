@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:41:53Z'
+  at: '2026-11-25T22:53:31Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
 status: draft
 summary: ''
@@ -12,9 +12,16 @@ current_node: ritual-execution
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
-depends_on: []
+- desk/drawer/plans/deskops-plugin-de-sldb/capas.md
+depends_on:
+- task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
+- task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
+- task-se-retira-deskops-atoms-split
+- task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo
 pills: []
-files: []
+files:
+- deskops/
+- pyproject.toml
 task_type: task.refactor
 inherits_from: []
 inherit_acceptance_context: false
@@ -39,20 +46,21 @@ El código de deskops/ vive en cinco paquetes por capa y import-linter impide qu
 
 _State what is in scope and what is out of scope._
 
-Entra: mover módulos a deskops/core, ops, runtime, operations y surfaces; configuración de import-linter con los contratos; ajustar imports. Sale: cambiar comportamiento o reescribir lógica (eso es de M2 y M3).
+Entra: mover módulos a deskops/core, ops, runtime, operations y surfaces según desk/drawer/plans/deskops-plugin-de-sldb/capas.md, partir closure.py, dispatch.py y review.py por funciones como dice ese mapa, configuración de import-linter con los tres contratos y ajustar imports. Sale: cambiar comportamiento o reescribir lógica (eso es de E2 y E3).
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Asignar cada módulo actual a una capa según diagnostico.md. 2) Mover por grupos con git mv y arreglar imports. 3) Contratos de import-linter en pyproject.toml. 4) Correr la suite.
+1) Mover por paquete con git mv según capas.md, un commit por paquete. 2) Partir los tres módulos mixtos. 3) Contratos de import-linter en pyproject.toml. 4) tests/acceptance en verde después de cada commit.
 
 ## Validation
 
 _List the checks required before this task can close._
 
 - lint-imports
-- python -m pytest -q
+- python -m pytest -q tests/acceptance
+- todo módulo de deskops/ está en una de las cinco capas
 
 ## Done When
 

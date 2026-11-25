@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:28:52Z'
+  at: '2026-11-25T22:57:38Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-e4-rediseno-del-testing-suite-nueva-por-capa-guardas-de-arquitectura-escenarios-del-workflow-y-tests
 status: draft
 summary: ''
@@ -13,9 +13,7 @@ history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
-- task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
 - task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse
-- task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
 - task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto
 - task-la-suite-vieja-se-retira-a-medida-que-cada-modulo-se-muda-a-su-capa
 - task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre
@@ -27,7 +25,7 @@ inherit_acceptance_context: false
 atoms: []
 ---
 
-# E4 Rediseño del testing: suite nueva por capa, guardas de arquitectura, escenarios del workflow y tests de lo que mutó
+# E4 Testing: guardas de arquitectura, tests de lo que mutó antes del CI, retiro de la suite vieja y suite liviana
 
 ## Rationale
 

@@ -1,7 +1,7 @@
 name: task-e3-responsabilidades-a-sldb-deskops-deja-de-envolver-sldb-y-declara-su-workflow-como-dato-que-sldb-e
 path: desk/tasks/task-e3-responsabilidades-a-sldb-deskops-deja-de-envolver-sldb-y-declara-su-workflow-como-dato-que-sldb-e.md
-source_hash: 3af462c544cd1c3d8241b2742ca2fedaa987a7434de689a25a0eaf8c4e4f1dbf
-content_hash: f352cf51186fe0d3fe74505a70c8fe9a42da2232c0f21360374fa74d1cabbc06
+source_hash: 4f137637b9dac10bdfc924aed78dacbf9528598e98d85a1f2bc83877010c81fa
+content_hash: 379ce04943db763bbb138eea8794e00494529603381956d8b64d4113bb7ac0ba
 field_hashes:
   title: cd30d57c0d208fdb836a02e1d34b4af09dc8a354dbf88a68b9d20dbd0ebc00d7
   id: 1eb9a5e3f17c0c5a4d23cdf1fa4bf8467aefbc468dd59587984647161412c8b8
@@ -14,7 +14,7 @@ field_hashes:
   goal: ee6902afb549ad157af06f7e92f8e66bc829dacdcc6fd155ac3669012d5de3e8
   scope: e814a5e8f5f30fc08d727ae6c28ce00c47113f9721ac2879b2c177f8315fd83e
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: 5ded4470adf422938b410b28cb8941716daba74884b56b681b2f9216a9490ef9
+  depends_on: 538d3dc2bb32dd3bddc26e8803a7aea1d494d0e7e41191a2bc6c052aa046b341
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T20:28:40Z'
+  at: '2026-11-25T22:57:21Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

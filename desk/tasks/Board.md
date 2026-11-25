@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:19:01Z'
+  at: '2026-11-25T22:56:20Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -14,7 +14,6 @@ tasks:
 - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
 - desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
 - desk/tasks/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.md
-- desk/tasks/task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable.md
 - desk/tasks/task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre.md
 - desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
 - desk/tasks/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports.md
@@ -46,11 +45,22 @@ tasks:
 - desk/tasks/task-la-skill-deskops-workflow-es-el-skill-md-generado-por-fastmcp-mas-una-parte-corta-del-workflow-desde.md
 - desk/tasks/task-agents-md-sin-contradicciones.md
 - desk/tasks/task-los-docs-de-deskops-son-materializaciones-de-atomos-con-una-pagina-por-capa.md
-- desk/tasks/task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele.md
-- desk/tasks/task-seguimiento-del-indice-del-store-de-sldb-base-embebida-y-git-y-de-la-documentacion-de-los-hashes.md
 - desk/tasks/task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada.md
 - desk/tasks/task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto.md
 - desk/tasks/task-se-retira-deskops-atoms-split.md
+- desk/tasks/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo.md
+- desk/tasks/task-sldb-aplica-las-ruledoc-de-un-store-enlazado-parte-de-reglas-del-pedido-c1.md
+- desk/tasks/task-sldb-ofrece-la-primitiva-tomar-transicion-en-su-cli-y-su-api-pedido-c2.md
+- desk/tasks/task-el-lenguaje-de-reglas-de-sldb-lee-el-ultimo-elemento-de-una-lista-pedido-c3.md
+- desk/tasks/task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista.md
+- desk/tasks/task-se-borra-la-copia-de-reglas-de-ciclo-de-vida-en-cada-desk-las-aplica-sldb-desde-el-paquete-enlazado.md
+- desk/tasks/task-advance-y-el-cierre-toman-la-transicion-con-la-primitiva-de-sldb-y-se-borra-lifecycle-advance.md
+- desk/tasks/task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py.md
+- desk/tasks/task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy.md
+- desk/tasks/task-e2-pluginizacion-las-operaciones-como-herramientas-mcp-sobre-sldb-cli-generado-y-docs-que-salen-de-a.md
+- desk/tasks/task-e3-responsabilidades-a-sldb-deskops-deja-de-envolver-sldb-y-declara-su-workflow-como-dato-que-sldb-e.md
+- desk/tasks/task-e4-rediseno-del-testing-suite-nueva-por-capa-guardas-de-arquitectura-escenarios-del-workflow-y-tests.md
+
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -89,13 +99,16 @@ No active tasks routed.
 
 ## Task Details
 
+- E1 Refactor: CI en verde, lint, red de tests de aceptación y deskops ordenado por capas, sin código muerto ni legacy [draft] - Todas las subtareas de E1 cerradas.
+- E2 Pluginización: las operaciones como herramientas MCP sobre sldb, CLI generado y docs que salen de ahí [draft] - Todas las subtareas de E2 cerradas.
+- E3 Responsabilidades a sldb: deskops deja de envolver sldb y declara su workflow como dato que sldb evalúa [draft] - Todas las subtareas de E3 cerradas.
+- E4 Testing: guardas de arquitectura, tests de lo que mutó antes del CI, retiro de la suite vieja y suite liviana [draft] - Todas las subtareas de E4 cerradas.
 _Generated from the task references above._
 
 - Inbox y drawer quedan trackeados en el store del desk y las vistas los leen del store (H10 de CC34) [draft] - deskops/data/desk_declaration.yaml incluye los globs de inbox y drawer; los comandos que escriben en el drawer (promote inbox-to-drawer-task y el alta de items del drawer) trackean al escribir; `deskops view` saca drawer e inbox de run_view como board y task. Al cerrar, se avisa a graph_ui para que verifique en navegador sus vistas de drawer e inbox.
 - TraderBot y sldb migran sus task_type viejos con deskops desk update --apply [draft] - En los desks de TraderBot y sldb, `deskops desk update --apply` migro los task_type viejos y quedo commiteado; ninguna tarea de esos desks usa ya code/implementation/test/docs/spec/design/external sin prefijo task.
 - Borrar la migracion de task_type viejo (LEGACY_TASK_TYPE_KEYS y migrate_task_types) y sus tests [draft] - Se borra el camino de migracion de task_type del desk: en deskops/workspace.py LEGACY_TASK_TYPE_KEYS, _task_type_migration_plan, pending_task_type_migration, _task_type_migration_line y migrate_task_types; en deskops/cli/commands/desk.py el import y el uso de pending_task_type_migration (alrededor de las lineas 25 y 375) y la llamada a la migracion (alrededor de 452); y los tests que ejercitan esas funciones. Se conservan LEGACY_TASK_TYPE_MAP y canonical_task_type_name de deskops/models/task_types.py, porque los usan add task (deskops/services/tasks.py:102) y closeout (deskops/services/closure.py:1222); no son parte de esta tarea. TaskDoc generico sigue aceptando cualquier task_type como hoy (test_generic_task_doc_accepts_empty_legacy_or_any_task_type no cambia); lo unico que deja de existir es que desk update proponga o aplique la migracion. En docs/workflow-policy-reference.md (linea 75) se quita la parte 'and migrates legacy task_type strings (...)' y la oracion termina en 'registers them'.
 - deskops usa las APIs publicas de sldb ya integradas y borra sus rodeos: rewrite_references con graph y excluded_sources, template_anchors y create_document que pinnea anclas [draft] - (a) deskops/services/references.py deja de tener _rewrite_mentions y _in_frontmatter (lineas ~143-230) y usa sldb.api.rewrite_references(..., graph=g, excluded_sources=[...]) y referrers(..., graph=g). (b) deskops/doc_access.py template_placeholders (~linea 546) usa sldb.api.template_anchors en vez de AST_Handler().split_nodes + TemplateExtractor().extract_nodes, y el import de TemplateExtractor desaparece si no queda otro uso. (c) deskops/services/closure.py, en los recibos de evidencia (~lineas 1102-1171), deja el rodeo de create + update sin cambios en la misma transaccion y crea el recibo con un solo create, que ya queda pinneado. El comportamiento observable no cambia: los tests existentes pasan sin tocar sus aserciones.
-- Governance: los ritos son donde cada desk declara qué exige (revisión en frío configurable) [draft] - Concretar el pedido de la nota en una tarea preparada (goal, scope, implementation path y validación verificables) o en task.decision para JP si depende de una decisión todavía abierta. Borrador: no despachar hasta prepararlo.
 - La suite de deskops baja su RAM por worker y declara en qué máquina y con cuántos workers corre [draft] - Medir qué tests o fixtures hacen crecer el RSS de cada worker de xdist, bajar los que más pesan y dejar escrito en qué máquina y con cuántos workers corre la suite completa.
 - El CI de deskops vuelve a verde y baja de 1h30 a menos de 20 minutos [draft] - El workflow tests de main pasa en 3.12 y 3.13 y tarda menos de 20 minutos.
 - deskops se ordena en paquetes por capa (core, ops, runtime, operations, surfaces) con contratos de imports [draft] - El código de deskops/ vive en cinco paquetes por capa y import-linter impide que core importe git, scion o superficies, y que surfaces llame a otra cosa que operations.
@@ -120,15 +133,21 @@ _Generated from the task references above._
 - El grafo del proyecto se declara en store.yaml y graph view y checks usan sldb graph project [draft] - SURFACES, FILE_RULES y EXCLUSIONS de graph/desk_graph.py pasan a project_graph: en store.yaml; graph view y graph checks usan sldb graph project; atom_trace.py se borra.
 - Los átomos se mueven con move_document de sldb [draft] - split, merge y reorganize de átomos usan move_document y move_path de sldb en vez de rename más untrack y track, y conservan la reescritura de links.
 - El frontmatter se lee solo por sldb y se eliminan los helpers duplicados [draft] - Los siete parseos a mano de frontmatter usan la API de sldb, y _git, _yaml_scalar, _coerce_list, _now y _under quedan una sola vez.
-- Se borra el código muerto y cada módulo público dice su propósito [draft] - close_auto, graph/atom_trace.py, testing/foreign_suites.py y las funciones sin llamadores se borran; cada módulo público tiene un docstring que dice qué hace y quién lo usa.
+- Se borra el código muerto y cada módulo público dice su propósito [draft] - ClosureService.close_auto (services/closure.py:720), graph/atom_trace.py, testing/foreign_suites.py y las funciones sin llamadores se borran antes de la mudanza por capas; cada módulo público tiene un docstring que dice qué hace y quién lo usa.
 - El prompt de una tarea es una vista del núcleo, un solo texto sin contradicciones [draft] - Una operación devuelve el prompt de una tarea: la tarea, su contexto (pills, átomos, archivos), lo que advance exige y las reglas de entrega del RoleDoc del rol, sin las instrucciones contradictorias de hoy (N5); dispatch start --only-prompt lo escribe sin lanzar nada.
 - El CLI de deskops sale de fastmcp generate-cli y el CLI escrito a mano queda solo para bootstrap e init [draft] - El CLI de uso diario es el que genera fastmcp generate-cli desde las herramientas (o fastmcp call), regenerado en el build; cli/registry.py deja de existir salvo lo que no es herramienta.
 - deskops se instala en Claude Code y otros clientes con fastmcp install [draft] - Un comando instala el servidor de sldb con la extensión de deskops en Claude Code (y Cursor, Gemini CLI) para el desk del repo.
 - La skill deskops-workflow es el SKILL.md generado por fastmcp más una parte corta del workflow desde átomos [draft] - La skill que leen los agentes se arma con el SKILL.md que genera fastmcp generate-cli (no puede divergir del CLI) más una parte escrita sobre los ritos, materializada desde átomos.
 - AGENTS.md sin contradicciones [draft] - AGENTS.md rutea a lo que existe: sin spec2viz como dueño, sin kgdb, sin skills inexistentes o ignoradas, con las tres capas.
 - Los docs de deskops son materializaciones de átomos, con una página por capa [draft] - operator-manual.md, quickstart.md, faq.md, workflow-policy-reference.md y README.md se reescriben desde átomos, cada sección cita su átomo, y hay una página que explica núcleo, operación y uso.
-- Seguimiento de lo que deskops necesita de sldb: tomar transición, último elemento de una lista, on_delete y reglas enlazadas [draft] - Los pedidos C2, C3, C4 y la parte de reglas de C1 están en el inbox de sldb; cuando sldb entrega cada uno, deskops borra lo que reemplaza (lifecycle.advance, el validador, el borrado protegido, la siembra de reglas).
-- Seguimiento del índice del store de sldb (base embebida y git) y de la documentación de los hashes [draft] - La propuesta del índice (sqlite, detección por git, blob ids, caché por contenido) y el pedido de documentar el propósito de cada hash quedan resueltos en sldb, y deskops adopta lo que cambie.
 - Migrar los repos que consumen deskops a la versión refactorizada [draft] - Cada repo del registro de deskops usa la versión refactorizada y pasa deskops doctor.
 - Antes del CI se corren solo los tests que corresponden a lo que mutó [draft] - Una operación que, a partir de lo que cambió (git diff contra la base y git status), elige los tests que lo cubren y los corre, y deja el resultado como recibo de evidencia de la tarea; el CI y la integración de la fase corren la suite completa.
 - Se retira deskops atoms split [draft] - deskops atoms split no existe: se borran el comando, split_atom de services/atoms.py, sus tests y sus menciones en docs y skill.
+- Cada capacidad del CLI de deskops tiene un test de aceptación de caja negra antes de mover código [draft] - tests/acceptance/ tiene un test por capacidad del CLI que corre deskops como subproceso contra un desk temporal con git y comprueba el efecto (documentos en el store, archivos, commits), no el texto de salida; el inventario de capacidades está en desk/drawer/plans/deskops-plugin-de-sldb/capacidades.md con el test de cada una.
+- sldb aplica las RuleDoc de un store enlazado (parte de reglas del pedido C1) [draft] - sldb integra en su main que rules_of y RuleGraph.domain dejan de filtrar por store local, como ya pasa con las aristas.
+- sldb ofrece la primitiva tomar transición en su CLI y su API (pedido C2) [draft] - sldb integra en su main que una llamada evalúa la arista, mueve el nodo, anota la historia y corre los hooks.
+- El lenguaje de reglas de sldb lee el último elemento de una lista (pedido C3) [draft] - sldb integra en su main que una regla puede comparar current_node con el último elemento de history.
+- sldb hace respetar una máquina de estados: el campo de estado solo cambia tomando una arista [draft] - sldb integra en su main que una escritura que cambia el campo de estado sin tomar una arista se rechaza, y el CI lo comprueba sobre la historia de git.
+- Se borra la copia de reglas de ciclo de vida en cada desk: las aplica sldb desde el paquete enlazado [draft] - desk update e init dejan de sembrar RuleDoc de ciclo de vida y un desk sin copias locales aplica las reglas del paquete.
+- advance y el cierre toman la transición con la primitiva de sldb y se borra lifecycle.advance [draft] - deskops advance y closeout llaman a la primitiva de sldb para tomar una arista y lifecycle.advance no existe.
+- El estado de una tarea solo cambia tomando una arista: se borran los if de estado de closure.py [draft] - El campo status y current_node de TaskDoc está declarado como estado de la máquina en sldb y closure.py no tiene comprobaciones de estado propias.

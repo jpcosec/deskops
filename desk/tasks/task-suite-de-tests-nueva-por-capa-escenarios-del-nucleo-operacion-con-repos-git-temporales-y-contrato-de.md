@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:43:06Z'
+  at: '2026-11-25T22:54:25Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
 status: draft
 summary: ''
@@ -15,7 +15,13 @@ references:
 depends_on:
 - task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
 pills: []
-files: []
+files:
+- tests/README.md
+- tests/conftest.py
+- tests/core/
+- tests/ops/
+- tests/surfaces/
+- tests/fixtures/golden/help/
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
@@ -40,7 +46,7 @@ Existe la estructura tests/core, tests/ops y tests/surfaces con sus fixtures y c
 
 _State what is in scope and what is out of scope._
 
-Entra: estructura, fixtures base, convención escrita y retiro de los 153 goldens de --help. Sale: escribir todos los tests (cada tarea de M2, M3 y M4 trae los suyos).
+Entra: estructura, fixtures base, convención escrita y retiro de los 153 goldens de --help. Sale: escribir todos los tests (cada tarea de E2 y E3 trae los suyos).
 
 ## Implementation Path
 

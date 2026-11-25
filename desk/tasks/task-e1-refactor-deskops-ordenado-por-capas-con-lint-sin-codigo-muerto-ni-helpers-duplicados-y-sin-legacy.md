@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:28:15Z'
+  at: '2026-11-25T22:57:10Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy
 status: draft
 summary: ''
@@ -13,12 +13,15 @@ history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
-- task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
+- task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
 - task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
-- task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados
 - task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
 - task-se-retira-deskops-atoms-split
-- task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
+- task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo
+- task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
+- task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados
+- task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
+- task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
 - task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply
 - task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests
 pills: []
@@ -29,7 +32,7 @@ inherit_acceptance_context: false
 atoms: []
 ---
 
-# E1 Refactor: deskops ordenado por capas, con lint, sin código muerto ni helpers duplicados y sin legacy
+# E1 Refactor: CI en verde, lint, red de tests de aceptación y deskops ordenado por capas, sin código muerto ni legacy
 
 ## Rationale
 

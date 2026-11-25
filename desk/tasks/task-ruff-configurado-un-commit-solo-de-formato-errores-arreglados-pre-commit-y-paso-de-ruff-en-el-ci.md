@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:42:42Z'
+  at: '2026-11-25T22:52:11Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
 status: draft
 summary: ''
@@ -13,9 +13,13 @@ history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
-- task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
+- task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
 pills: []
-files: []
+files:
+- pyproject.toml
+- .pre-commit-config.yaml
+- .git-blame-ignore-revs
+- .github/workflows/tests.yml
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false

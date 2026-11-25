@@ -1,0 +1,37 @@
+name: task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py
+path: desk/tasks/task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py.md
+source_hash: ba38fa32faa01e4ca7e874b3bd98d9b75a3b3fca316884c1394ae8ca1abe5901
+content_hash: bc77cda4ac68866a29acf92f6a60f9222b5b35d2b768d5f4d3957058c361255e
+field_hashes:
+  title: 1b3bfce0d1c6f008f479113e3912f1d22fa0d2fc8fb8d38c0c2adfa2f1da56fb
+  id: 8bdc73be2bbfaf0b5442ce7c7fd1f56ab64247be1175f28e98cbc9b71c1c525d
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 173900e64ab8cccae406b8b19555a66f9815890fa9f74c06fe12d66b045d3115
+  goal: 5133208d22d81b169008f94d831d8c6eace1a5f210ddca5c6d39af6ed99c8575
+  scope: 5caed1c1eb49233334d42e99b1801418f6de905c02412b59c60199ca0f34e66b
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: 387367cd0bb219c0d99bd4bd7e0ac6db02f1db51c2b2d8efddfc66b039ce8526
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: a2573ab112065fb61db86c18d82b7895a78ac72c94513486eed006c7b3ae8a66
+  implementation_path: f3c9bb95fc1272195e75724b7d0f6ffc211bedabff7518c97c8134d7b3997588
+  validation: 49f7b6b890c4af15806de61a578bd24b1f7fe881b3c48dd7ab25892bd51db215
+  done_when: 8e35fcc6743f0b7feda3894afd8b938a5ac4007664f12a408efdbbfcde3bbf37
+  task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T22:56:17Z'
+  authority: generated
+  via: create_document

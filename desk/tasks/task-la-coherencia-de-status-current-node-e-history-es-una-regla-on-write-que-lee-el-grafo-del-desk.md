@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:44:54Z'
+  at: '2026-11-25T22:56:45Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-la-coherencia-de-status-current-node-e-history-es-una-regla-on-write-que-lee-el-grafo-del-desk
 status: draft
 summary: ''
@@ -13,7 +13,8 @@ history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
-- task-supersede-resolved-by-y-retire-son-aristas-declaradas-del-ciclo-de-vida
+- task-el-lenguaje-de-reglas-de-sldb-lee-el-ultimo-elemento-de-una-lista-pedido-c3
+- task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
 pills: []
 files: []
 task_type: task.code
@@ -40,13 +41,13 @@ El validador de models/task_lifecycle.py pasa a una RuleDoc on_write y lee el gr
 
 _State what is in scope and what is out of scope._
 
-Entra: la regla, borrar el validador. Depende del pedido C3 a sldb (último elemento de una lista). Sale: nada más.
+Entra: la regla y borrar el validador. Sale: nada más.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Esperar C3. 2) Regla. 3) Borrar validador y _check_against_package.
+1) Regla on_write que compara current_node con el último elemento de history. 2) Borrar el validador y _check_against_package. 3) Escenario de escritura incoherente.
 
 ## Validation
 

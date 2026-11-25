@@ -1,9 +1,9 @@
 name: task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy
 path: desk/tasks/task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy.md
-source_hash: 238f5749d9df949b86756eb34e79e291942de7822ccd6cb15aeef40c7153ed1b
-content_hash: c40725c7e9ebf8c678a40032499c3a1a95a1a0c6140ea0200cafbe714b6e428f
+source_hash: 2e6b04e91c8f52d73edfd77d7970866f978fb4cc8faadbcc44e670af8d558a4c
+content_hash: cd7d9e6972ec3662a5e34ef290436f4c269aad8b9e551080b37347d50b495885
 field_hashes:
-  title: 10f74bc7f82c38409c2e0db92b7d5e7d2d48b9ed2ac40e93757acea4c9fee993
+  title: 8c99fd28fda033842e0c5a1ee6f9aa5bd841da9fe57afaff2c996e0d7db31cc3
   id: dbe51dab909848c8a4ca12f5bb8d5c8e767aec066d3e95c8bb0f0484da5c07c2
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
@@ -14,7 +14,7 @@ field_hashes:
   goal: e59ba476a59a126db7a01fe999326c93177581e30a25f499bd905841618dd48a
   scope: e814a5e8f5f30fc08d727ae6c28ce00c47113f9721ac2879b2c177f8315fd83e
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: ec49072e59bf61aa505431de0aae972767e1e29251b421c2b8e51f62458f861d
+  depends_on: fd3b5bb68f429a437a4781c0a5ed47662266e3a013badc85963912543db0bda4
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T20:28:15Z'
+  at: '2026-11-25T22:57:10Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

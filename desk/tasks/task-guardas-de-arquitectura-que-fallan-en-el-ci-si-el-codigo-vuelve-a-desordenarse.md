@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:42:54Z'
+  at: '2026-11-25T22:51:15Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse
 status: draft
 summary: ''
@@ -41,7 +41,7 @@ Tests de arquitectura que fallan si aparece un parseo de frontmatter fuera de sl
 
 _State what is in scope and what is out of scope._
 
-Entra: tests/arquitectura con esas comprobaciones sobre el AST del paquete, y su lugar en el CI. Sale: arreglar las violaciones existentes (lo hace M3; las guardas arrancan con una lista de excepciones que M3 vacía).
+Entra: tests/arquitectura con esas comprobaciones sobre el AST del paquete, y su lugar en el CI. Las guardas arrancan sin excepciones: E1 y E3 ya limpiaron; si queda alguna violación se arregla aquí. Sale: los contratos de imports entre capas (están desde E1, tarea de capas).
 
 ## Implementation Path
 

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:43:18Z'
+  at: '2026-11-25T22:51:00Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-la-suite-vieja-se-retira-a-medida-que-cada-modulo-se-muda-a-su-capa
 status: draft
 summary: ''
@@ -40,13 +40,13 @@ Cada test de la suite vieja queda reemplazado por uno de la suite nueva que prue
 
 _State what is in scope and what is out of scope._
 
-Entra: inventario de los ~118 archivos (capacidad o implementación) y su retiro coordinado con las mudanzas de M3. Sale: mantener tests de implementación.
+Entra: inventario de los ~118 archivos (capacidad o implementación) y su retiro coordinado con las mudanzas de E1 (capas) y E3. Sale: mantener tests de implementación.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Inventario. 2) Por cada mudanza de M3, retirar los tests viejos del módulo. 3) Borrar lo que quede.
+1) Inventario. 2) Por cada mudanza de E1 y E3, retirar los tests viejos del módulo. 3) Borrar lo que quede.
 
 ## Validation
 

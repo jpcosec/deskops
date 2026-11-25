@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:43:49Z'
+  at: '2026-11-25T22:56:54Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-supersede-resolved-by-y-retire-son-aristas-declaradas-del-ciclo-de-vida
 status: draft
 summary: ''
@@ -14,6 +14,7 @@ references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
 - task-el-cierre-toma-la-arista-task-completes-desde-el-nodo-real-de-la-tarea
+- task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
 pills: []
 files: []
 task_type: task.code

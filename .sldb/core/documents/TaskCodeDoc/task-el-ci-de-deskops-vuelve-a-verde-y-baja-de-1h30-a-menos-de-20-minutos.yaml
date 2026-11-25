@@ -1,7 +1,7 @@
 name: task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
 path: desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
-source_hash: d4f57e0197b87e8ac2f4664755e99cff82cde78ca08461bc2cb50cb8dc188acb
-content_hash: dc0197eed032ffa19a7bcf7418231e7f501e60c2e4999b3d91d27989a73c1f7c
+source_hash: b06389e591c4bbb18f27853975ef7ea38febb7b802b984b6091531fe6471c06d
+content_hash: 0273f4b79f89bb2425b4305ecc989fd46cbae52d0791791c2736e1cc534aca15
 field_hashes:
   title: 96fcda4ce0a4cea5bbe92534c28082008afd058eea5fe58936b90d19bc19bc04
   id: c1acb7f6f7a5c286a7b53a3e92ad8a8f659c4894cb4937716cf51657cf54753e
@@ -16,8 +16,8 @@ field_hashes:
   references: 448b321e5353ed8f90068f0aff365afeff50822ac4eee48386f11ab12de3c574
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  implementation_path: 319352790991b6e7f2e458ea8cc329c87652217331f9ece161a56cd7b60d72d0
+  files: 22e319a416e7e2f1a8f9393661f73dc3e61a563b2559a7c19a4eb5ede38cb7fc
+  implementation_path: 12620f0116b958ca2bf6965e360081c12b6b512f744ecb2a91f0e8fe2176c5e7
   validation: 0b8833ff2ef47cc0da9cdbe7c469de4f62c26b0802f8a300972d648eeeeb49b5
   done_when: 99f1ad75fdcced3d905916ef172c603df301adcb630ec3297030fb903a85c0f4
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T17:02:57Z'
+  at: '2026-11-25T22:51:56Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

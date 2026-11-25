@@ -1,7 +1,7 @@
 name: task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
 path: desk/tasks/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo.md
-source_hash: 8aec497c385278c17491bebe13653755e1cc0a58781dbd3af584001cf4f173bd
-content_hash: a55f2b0236ce2c793737f1cb267c81eb9359feab141b84c321a21645f5eef372
+source_hash: 5e616c3bb88f23cac2c5cb76824b21ef50aa1383cc01bd047246d79e008e38ec
+content_hash: bb30bcc277232bab0f65e58489884aeef5e73960c76c3b4ee45e7b18f8654b39
 field_hashes:
   title: 3b7f75728f4902e4c44d254dbbba29750db81379358d182f0dcbe139e114e5ba
   id: 8171aa9b861e8064ff72fc5957b949fe8ed6e4eca9cde2c41f3fa0cd901bcdd2
@@ -12,11 +12,11 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
   goal: 5b11a53fc328ac108e470e1dee43a708eeac8a62fc2f192b3d5ad40618f83255
-  scope: 235834580c9af993bb2d09e482e8a1edee132b065ead0793aa6960e49b73e6d8
+  scope: dcb6e7c77338edbcf1e63efcea5cbe3fc164d788b71b1881b9b5c67b1432f36d
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: a5e3c76ff3e73aaa02771496059dc2d350515f191844202e83c725e486b66640
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 3e129db3be62525d96c1ac90ac29e8b72f395f1a169b7666dd17895ddf1fa3d6
   implementation_path: 49650ed2d6bcc9ac796ec2c192e1514091c7bdef09ad75553c165bd9bf58112e
   validation: 49f7b6b890c4af15806de61a578bd24b1f7fe881b3c48dd7ab25892bd51db215
   done_when: db6374f2e78b0e460b0461435ae54b8a6a3645ee8a765a6c64c52e103b24d0fb
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:43:28Z'
+  at: '2026-11-25T22:54:34Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

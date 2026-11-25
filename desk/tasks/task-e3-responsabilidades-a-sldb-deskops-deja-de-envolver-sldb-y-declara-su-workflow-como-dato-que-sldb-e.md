@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:28:40Z'
+  at: '2026-11-25T22:57:21Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-e3-responsabilidades-a-sldb-deskops-deja-de-envolver-sldb-y-declara-su-workflow-como-dato-que-sldb-e
 status: draft
 summary: ''
@@ -28,9 +28,13 @@ depends_on:
 - task-la-coherencia-de-status-current-node-e-history-es-una-regla-on-write-que-lee-el-grafo-del-desk
 - task-un-solo-texto-por-rito-next-actions-y-nombres-de-nodo-salen-del-ritualdoc-y-se-borra-task-lifecycle
 - task-el-board-es-una-vista-calculada-sobre-las-tareas-y-deja-de-ser-un-documento-que-reescriben-todas-las
-- task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable
-- task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele
-- task-seguimiento-del-indice-del-store-de-sldb-base-embebida-y-git-y-de-la-documentacion-de-los-hashes
+- task-sldb-aplica-las-ruledoc-de-un-store-enlazado-parte-de-reglas-del-pedido-c1
+- task-sldb-ofrece-la-primitiva-tomar-transicion-en-su-cli-y-su-api-pedido-c2
+- task-el-lenguaje-de-reglas-de-sldb-lee-el-ultimo-elemento-de-una-lista-pedido-c3
+- task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista
+- task-se-borra-la-copia-de-reglas-de-ciclo-de-vida-en-cada-desk-las-aplica-sldb-desde-el-paquete-enlazado
+- task-advance-y-el-cierre-toman-la-transicion-con-la-primitiva-de-sldb-y-se-borra-lifecycle-advance
+- task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py
 pills: []
 files: []
 task_type: task.aggregate
