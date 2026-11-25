@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:14:54Z'
+  at: '2026-11-25T20:19:01Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -13,7 +13,6 @@ tasks:
 - desk/tasks/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado.md
 - desk/tasks/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas.md
 - desk/tasks/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar.md
-- desk/tasks/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.md
 - desk/tasks/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.md
 - desk/tasks/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.md
 - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
@@ -82,7 +81,6 @@ tasks:
 - desk/tasks/task-los-docs-de-deskops-son-materializaciones-de-atomos-con-una-pagina-por-capa.md
 - desk/tasks/task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele.md
 - desk/tasks/task-seguimiento-del-indice-del-store-de-sldb-base-embebida-y-git-y-de-la-documentacion-de-los-hashes.md
-- desk/tasks/task-revisar-las-tareas-congeladas-contra-las-macros-m0-a-m6.md
 - desk/tasks/task-m0-estructura-deskops-por-capas-y-una-sola-capa-de-operaciones-como-herramientas-mcp.md
 - desk/tasks/task-m1-senales-y-guardas-ci-en-verde-y-rapido-doctor-confiable-lint-guardas-de-arquitectura-y-suite-nuev.md
 - desk/tasks/task-m2-nucleo-el-workflow-se-puede-hacer-cumplir-y-cada-workflow-decide-que-exige.md
@@ -96,6 +94,7 @@ tasks:
 - desk/tasks/task-taskdoc-declara-el-pr-o-la-rama-que-la-realiza-como-referencia-a-un-pullrequestdoc-d4-de-governance.md
 - desk/tasks/task-el-inbox-admite-avisos-kind-alert-ademas-de-unclear-y-suggestion-d5-de-governance.md
 - desk/tasks/task-lo-retirado-se-borra-y-la-tarea-guarda-un-puntero-a-git-para-ver-su-genealogia.md
+- desk/tasks/task-se-retira-deskops-atoms-split.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -139,7 +138,6 @@ _Generated from the task references above._
 - doctor dice de que tarea es cada cambio sin commitear en .sldb (checkout atrasado) [draft] - deskops doctor lista los cambios sin commitear bajo .sldb/ agrupados por la tarea (o el documento de desk) que los origino, y marca los que no tienen dueno.
 - supertareas y alta en lote: campo parent en TaskDoc y add task --from-yaml con varias tareas [draft] - TaskDoc tiene un campo parent (id de otra tarea) que doctor y el tablero respetan, y deskops add task --from-yaml acepta una lista de tareas y las crea en una sola transaccion (todas o ninguna).
 - rol de desk/hitl: about, faq y doctor documentan cada carpeta del desk y doctor avisa si hitl tiene archivos que no son para el humano [draft] - deskops about y deskops faq describen cada carpeta de desk/ (incluida hitl/), y doctor emite una alerta cuando desk/hitl contiene archivos que no son para el humano.
-- JP decide como se alimenta deskops atoms split por el CLI (opcion a, b o c) [draft] - JP elige: (a) split recibe las partes por flags sin encabezados (p. ej. `--part a="texto"`), cambia la gramatica del CLI y sus goldens; (b) un modelo de atomo con secciones declaradas como campos; (c) dejar split como esta, inalcanzable por el CLI, o retirarlo. El coordinador del plan recomendo (a), que choca con el invariante 2 de alcance.md de deskops-como-config. Con la eleccion se crea la tarea de codigo.
 - Inbox y drawer quedan trackeados en el store del desk y las vistas los leen del store (H10 de CC34) [draft] - deskops/data/desk_declaration.yaml incluye los globs de inbox y drawer; los comandos que escriben en el drawer (promote inbox-to-drawer-task y el alta de items del drawer) trackean al escribir; `deskops view` saca drawer e inbox de run_view como board y task. Al cerrar, se avisa a graph_ui para que verifique en navegador sus vistas de drawer e inbox.
 - Huecos de atomos de la auditoria de Chatbot_Infra: renombrar id, retire de atomos, validate --all y editar contexts/pills.md [draft] - Para cada hueco 1, 3, 4, 5 y 6: un recibo de reproduccion (o la constancia de que no se reproduce, con el comando y la salida) y, si se reproduce, la correccion con test: (1) `deskops atoms rename <id> <nuevo-id>` que reescribe referrers con la API de sldb; (3) retire acepta atomos o hay un verbo de retiro de atomos; (4) validate --all sin falsos positivos; (5) contexts/pills.md editable por un verbo de deskops; (6) doctor resuelve el store enlazado de deskops aunque se mueva el workspace.
 - TraderBot y sldb migran sus task_type viejos con deskops desk update --apply [draft] - En los desks de TraderBot y sldb, `deskops desk update --apply` migro los task_type viejos y quedo commiteado; ninguna tarea de esos desks usa ya code/implementation/test/docs/spec/design/external sin prefijo task.
@@ -208,7 +206,6 @@ _Generated from the task references above._
 - Los docs de deskops son materializaciones de átomos, con una página por capa [draft] - operator-manual.md, quickstart.md, faq.md, workflow-policy-reference.md y README.md se reescriben desde átomos, cada sección cita su átomo, y hay una página que explica núcleo, operación y uso.
 - Seguimiento de lo que deskops necesita de sldb: tomar transición, último elemento de una lista, on_delete y reglas enlazadas [draft] - Los pedidos C2, C3, C4 y la parte de reglas de C1 están en el inbox de sldb; cuando sldb entrega cada uno, deskops borra lo que reemplaza (lifecycle.advance, el validador, el borrado protegido, la siembra de reglas).
 - Seguimiento del índice del store de sldb (base embebida y git) y de la documentación de los hashes [draft] - La propuesta del índice (sqlite, detección por git, blob ids, caché por contenido) y el pedido de documentar el propósito de cada hash quedan resueltos en sldb, y deskops adopta lo que cambie.
-- Revisar las tareas congeladas contra las macros M0 a M6 [draft] - Cada tarea que estaba en el Board antes del 25-11 se cierra con supersede hacia la tarea nueva que la cubre, se reescribe o se retira; ninguna queda apuntando a código o datos que ya no existen.
 - M0 Estructura: deskops por capas y una sola capa de operaciones como herramientas MCP [draft] - Todas las subtareas de M0 cerradas.
 - M1 Señales y guardas: CI en verde y rápido, doctor confiable, lint, guardas de arquitectura y suite nueva [draft] - Todas las subtareas de M1 cerradas.
 - M2 Núcleo: el workflow se puede hacer cumplir y cada workflow decide qué exige [draft] - Todas las subtareas de M2 cerradas.
@@ -222,3 +219,4 @@ _Generated from the task references above._
 - TaskDoc declara el PR o la rama que la realiza como referencia a un PullRequestDoc (D4 de Governance) [draft] - TaskDoc tiene un campo que referencia el PullRequestDoc (o la rama) que realiza la tarea, el modelo PullRequestDoc existe y una regla puede leerlo.
 - El inbox admite avisos (kind alert) además de unclear y suggestion (D5 de Governance) [draft] - Una nota de inbox puede ser de kind alert, message send la acepta y la vista del inbox la distingue.
 - Lo retirado se borra y la tarea guarda un puntero a git para ver su genealogía [draft] - Cada vez que una tarea nace de otro documento (nota del inbox, ítem del drawer, otra tarea) el documento de origen se borra y la tarea guarda un puntero de git a él (ruta y commit donde existía), y una operación muestra la genealogía de una tarea leyendo esos punteros con git.
+- Se retira deskops atoms split [draft] - deskops atoms split no existe: se borran el comando, split_atom de services/atoms.py, sus tests y sus menciones en docs y skill.

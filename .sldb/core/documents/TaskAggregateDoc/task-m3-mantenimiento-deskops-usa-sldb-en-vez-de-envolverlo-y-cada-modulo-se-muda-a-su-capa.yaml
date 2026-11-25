@@ -1,7 +1,7 @@
 name: task-m3-mantenimiento-deskops-usa-sldb-en-vez-de-envolverlo-y-cada-modulo-se-muda-a-su-capa
 path: desk/tasks/task-m3-mantenimiento-deskops-usa-sldb-en-vez-de-envolverlo-y-cada-modulo-se-muda-a-su-capa.md
-source_hash: 70ae2e80ae97d7de4f323e2fa1c7f8d71c1987085212b118cd6938e26cf2d1d0
-content_hash: 55c2fafeff82816b15bf2dbb53f486ac76ae701343a180ec78b0e7a58f1854b9
+source_hash: f70b6c146371ae1242ac3883fb41bdc91ab5378f4861eac3b6079b5eaa658857
+content_hash: 94ccf87f2483142c7d38c8938096dc67ab660f5bc2e93902cbdeeee08df48086
 field_hashes:
   title: 62343849f33f170d4c0d47a1ec78a1b6078a177080538b700de9b67b90126522
   id: dd1cdfc734b4f825188dd422bd3429e638b0668234f04a86db8fdcc6cb6dfb66
@@ -14,7 +14,7 @@ field_hashes:
   goal: 64f17232ccdba6561e9926343ebb9115fc9b80d1f399d3e51303dee83dadfe42
   scope: 8816436664f8ba513b3182f59f40be2395be9f2f13cc43029a365b286279c1fd
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: 20b40a1068302bd7916ae0b4e183aebe09ca767c91d83bb9cd04e2de1fd5b85d
+  depends_on: 7116fbf9e6309bba6ce2709109ff07e61f8dba82d447cb8a57aa69f4766e0c00
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T20:15:24Z'
+  at: '2026-11-25T20:19:09Z'
   authority: generated
   via: save_document_payload

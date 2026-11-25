@@ -3326,8 +3326,6 @@ include:
   - desk/tasks/task-los-docs-de-deskops-son-materializaciones-de-atomos-con-una-pagina-por-capa.md
 - model: TaskDecisionDoc
   paths:
-  - desk/tasks/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.md
-  - desk/tasks/task-revisar-las-tareas-congeladas-contra-las-macros-m0-a-m6.md
   - desk/tasks/task-como-se-hace-respetar-la-maquina-de-estados-del-workflow.md
 - model: TaskExternalDoc
   paths:
@@ -3349,6 +3347,7 @@ include:
   - desk/tasks/task-los-atomos-se-mueven-con-move-document-de-sldb.md
   - desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
   - desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
+  - desk/tasks/task-se-retira-deskops-atoms-split.md
 - model: TaskAggregateDoc
   paths:
   - desk/tasks/task-m0-estructura-deskops-por-capas-y-una-sola-capa-de-operaciones-como-herramientas-mcp.md
