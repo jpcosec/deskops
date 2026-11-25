@@ -28,7 +28,6 @@ Cada cosa se dice en un solo lugar, y se parte por el que está más cerca del c
 Un átomo guarda solo lo que no se puede leer ni extraer del código:
 
 - **por qué** es así: la decisión y su contexto;
-- **qué se descartó** y por qué no;
 - **qué tiene que cumplirse** entre varias piezas, que ninguna de ellas puede afirmar sola;
 - **para quién** es.
 
@@ -76,23 +75,25 @@ lleva al menos un ancla al código del que habla.
 | Tipo | Qué guarda | Qué agrega al átomo base | Qué se puede chequear |
 |---|---|---|---|
 | `atom.adr` | Por qué es así: una decisión | contexto, decisión, consecuencias, quién y cuándo; relación de reemplazo hacia otro ADR | uno aceptado no está reemplazado por otro aceptado; aceptarlo pide recibo del dueño |
-| `atom.discarded` | Qué se descartó y por qué no | la alternativa, el motivo, y bajo qué condición se volvería a mirar | si la condición nombra código, el ancla avisa cuando cambió |
 | `atom.invariant` | Qué tiene que cumplirse entre varias piezas | las piezas (anclas) y la regla o prueba que lo comprueba | todo invariante tiene una comprobación; la comprobación pasa |
 | `atom.intent` | Para quién es y qué necesita poder hacer | el destinatario, la necesidad, y la prueba de aceptación como materialización | toda intención tiene una prueba de aceptación |
 
 Notas:
 
 - `atom.adr` ya tiene tarea en este desk. Una decisión pendiente no es un átomo: es una tarea
-  `task.decision`. Las alternativas que un ADR descarta van dentro del ADR; `atom.discarded` es
-  para lo descartado que no pertenece a ninguna decisión registrada.
+  `task.decision`.
+- Lo descartado no tiene tipo propio. Si fue parte de una decisión, va en las alternativas del
+  ADR. Si alguien podría volver a intentarlo al leer el código, va como comentario en el código.
+  Si no es ninguna de las dos, se borra y queda en el historial de git.
 - `atom.invariant` guarda el porqué del invariante; la comprobación es una regla de sldb o una
   prueba, no texto. Un invariante que no se puede comprobar es una intención o una decisión.
 - `atom.intent` no guarda si se cumple. Eso lo dice su prueba. Por eso se descartó
   `atom.capability` con un campo de estado.
 - No hay tipo para definiciones de términos: sldb ya ata un término a su significado y a su
   referente (`AnchorDoc`).
-- Descartados en la conversación: `atom.measurement` y `atom.assumption`. Una medición es
-  evidencia y vence; un supuesto no está asentado.
+- Descartados en la conversación: `atom.measurement`, `atom.assumption` y `atom.discarded`. Una
+  medición es evidencia y vence; un supuesto no está asentado; lo descartado va al ADR, al código
+  o se borra.
 
 ### Pills
 
