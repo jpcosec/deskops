@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T17:52:44Z'
+  at: '2026-11-25T19:14:42Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -68,6 +68,9 @@ tasks:
 - desk/tasks/task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi.md
 - desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
 - desk/tasks/task-jp-decide-si-deskops-pasa-a-ser-un-plugin-de-sldb-modelos-reglas-vistas-y-ritos-como-datos-del-store.md
+- desk/tasks/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.md
+- desk/tasks/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.md
+- desk/tasks/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -160,9 +163,12 @@ _Generated from the task references above._
 - closeout encola un solo integrate cuando cierra la ultima tarea de la fase [draft] - Al cerrar una tarea que pertenece a una fase del Board: si quedan tareas abiertas en la fase no se encola nada; si era la ultima se encola un solo trabajo integrate --phase, sin duplicar uno pendiente. Una tarea sin fase encola su integrate como hoy.
 - El reap integra la rama de un ejecutor de la tarea aunque scion ya no liste al agente [draft] - Que reap integre toda rama deskops/<ejecutor> de la tarea con commits fuera de la base aunque el agente ya no exista, y encole el tester como hoy.
 - El gate de tests del closeout acepta pruebas de node: .test.mjs, .test.js, .spec.mjs y .spec.js [draft] - Que _is_test_suffix acepte tambien .test.mjs, .test.js, .spec.mjs y .spec.js, con las mismas reglas de ubicacion (bajo tests/ o declarado en files).
-- deskops add adr crea un registro de decisión con estado, contexto, decisión, consecuencias y a cuál reemplaza, y deskops list adrs muestra los vigentes [draft] - Que una decisión de arquitectura sea un artefacto modelado del desk, que se crea y se lista por CLI y que sabe a qué decisión anterior reemplaza.
+- atom.adr: una decisión aceptada es un átomo que responde el porqué, con contexto, consecuencias, a cuál reemplaza y a qué aplica [draft] - Que una decisión de arquitectura aceptada sea un subtipo de átomo, atom.adr, modelado como los tipos de tarea. Una decisión pendiente no es un átomo: es una tarea task.decision, que cierra citando el atom.adr. Propuesta deskops/desk/drawer/plans/que-es-un-atomo-y-que-es-una-pill/README.md (JP, 2026-11-25).
 - La suite de deskops baja su RAM por worker y declara en qué máquina y con cuántos workers corre [draft] - Medir qué tests o fixtures hacen crecer el RSS de cada worker de xdist, bajar los que más pesan y dejar escrito en qué máquina y con cuántos workers corre la suite completa.
 - El skill deskops-workflow pasa a un núcleo corto que delega en deskops next y dispatch start gana --only-prompt [draft] - Un skill núcleo de unas 30 líneas que manda a correr deskops next en cada paso, más references/ por situación (dispatch, varias sesiones, falta en otra herramienta, gates y reviews), y el comando deskops dispatch start <rol> --task <id> --only-prompt, que escribe prompt.md sin lanzar scion.
 - El gate de cierre acepta el commit de la tarea como vínculo de cada archivo de files en vez de exigir un átomo por archivo [draft] - missing_changed_file_link en deskops/services/closure.py da por vinculado un archivo de 'files' cuando lo toca un commit con el trailer Task-Id de la tarea; el átomo pasa a exigirse por tarea y no por archivo.
 - El CI de deskops vuelve a verde y baja de 1h30 a menos de 20 minutos [draft] - El workflow tests de main pasa en 3.12 y 3.13 y tarda menos de 20 minutos.
 - JP decide si deskops pasa a ser un plugin de sldb (modelos, reglas, vistas y ritos como datos del store) y qué queda como código propio [draft] - Una decisión escrita de JP: qué partes de deskops pasan a ser modelos, reglas, ViewDocs y ritos declarados en el store (y qué pide eso a sldb, por su inbox), qué queda como código (dispatch/scion, git, CLI delgado) y en qué orden se migra.
+- átomos, pills y tareas guardan el dónde como punteros a un documento del store, a una categoría o a un ancla de código [draft] - Un mismo campo de punteros en los tres modelos, que distingue las tres clases de puntero y rechaza uno mal formado.
+- una pill declara el trabajo al que pertenece y cómo termina, y deskops avisa de la que quedó sin trabajo abierto [draft] - Que el modelo de pill lleve el trabajo al que pertenece y su salida, con los cuatro tipos de la propuesta (pointer, question, constraint, finding) como subclases, y que la revisión del desk señale las huérfanas.
+- docs/auditoria/atomos-y-pills.md clasifica cada átomo y cada pill de los cuatro desks con las tres preguntas de la propuesta [draft] - Una tabla con un veredicto por documento, para que JP decida qué se retira, qué se mueve y qué se queda.

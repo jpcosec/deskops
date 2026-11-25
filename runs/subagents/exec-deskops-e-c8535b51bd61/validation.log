@@ -1,0 +1,2 @@
+PYTHONPATH=. python -m pytest -q -k reference_points_to_test tests -> 1433 deselected, 0 selected (no test name matches that -k; exit 5)
+PYTHONPATH=. python -m pytest -q tests/test_closeout_test_paths.py -> 46 passed, exit 0

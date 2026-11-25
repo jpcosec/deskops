@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T17:45:24Z'
+  at: '2026-11-25T19:15:06Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree
 status: draft
 summary: ''
@@ -20,7 +20,7 @@ inherit_acceptance_context: false
 atoms: []
 ---
 
-# deskops add adr crea un registro de decisión con estado, contexto, decisión, consecuencias y a cuál reemplaza, y deskops list adrs muestra los vigentes
+# atom.adr: una decisión aceptada es un átomo que responde el porqué, con contexto, consecuencias, a cuál reemplaza y a qué aplica
 
 ## Rationale
 
@@ -32,19 +32,19 @@ Pedido de JP (2026-11-25): "es en extremo importante empezar a entrar a document
 
 _Describe the concrete result this task must produce._
 
-Que una decisión de arquitectura sea un artefacto modelado del desk, que se crea y se lista por CLI y que sabe a qué decisión anterior reemplaza.
+Que una decisión de arquitectura aceptada sea un subtipo de átomo, atom.adr, modelado como los tipos de tarea. Una decisión pendiente no es un átomo: es una tarea task.decision, que cierra citando el atom.adr. Propuesta deskops/desk/drawer/plans/que-es-un-atomo-y-que-es-una-pill/README.md (JP, 2026-11-25).
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-Dentro: un tipo de artefacto nuevo con su modelo, add, list, show y edit; la relación de reemplazo; que un task.decision pueda citar un ADR como su documento de cierre. Fuera: una interfaz, migrar decisiones antiguas más allá de las cinco de la lista.
+Dentro: deskops/models/ (AtomAdrDoc y un registro ATOM_TYPE_MODELS como TASK_TYPE_MODELS), deskops add atom con --atom-type, el filtro por tipo y estado al listar átomos, el tipo de relación supersedes, las reglas sembradas en deskops/data/rules/, la materialización del ADR a Markdown y el manual del operador. Fuera: cambiar AtomDoc (su contrato y su hash no se tocan: el subtipo solo agrega), una interfaz, migrar decisiones anteriores a las cinco del 2026-11-25, federar ADR entre desks.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-Antes de modelar, leer cómo registran decisiones hoy task.decision (deskops/models/task_types.py), los átomos de decisión y deskops review dispose, y dejar escrito en la tarea por qué ninguno cubre contexto, alternativas y reemplazo. Si uno de ellos lo cubre con un cambio menor, se extiende ese y no se crea un tipo. El formato de partida es el de sldb/docs/architecture/sldb-absorbs-kgdb.md.
+Leer deskops/models/task_types.py (un tipo es un modelo; un subtipo solo agrega; las compuertas son RuleDoc sembradas) y deskops/models/atom.py. AtomAdrDoc(AtomDoc) responde why, con la decisión como respuesta; agrega decided_on, decided_by y las secciones context, consequences y alternatives (opcional; lo descartado va aquí). Dos estados: accepted y superseded. El reemplazo es una arista supersedes de ADR a ADR; crearla deja al anterior en superseded, y una RuleDoc exige que ningún accepted tenga una supersedes entrante de otro accepted. Otra RuleDoc exige recibo de owner para crearlo. A qué aplica va en el campo común de punteros si ya existe (tarea de punteros de este desk); si no, en references, sin inventar tags. Un task.decision cierra citándolo con la evidencia atom que ya existe. El Markdown en docs/ es una materialización (deskops materialize).
 
 ## Validation
 
@@ -57,4 +57,4 @@ _List the checks required before this task can close._
 
 _Name the observable condition that makes the task complete._
 
-deskops add adr crea el registro con estado propuesto, aceptado o reemplazado. Marcar que un ADR reemplaza a otro cambia el estado del anterior. deskops list adrs muestra por defecto solo los vigentes. Quedan cargados como primeros registros los cinco del 2026-11-25: cuatro de sldb/docs/architecture/ (mechanism-in-sldb-content-in-specir, pron-is-archived, one-command-taxonomy-served-by-fastmcp, surface-is-an-editor-contract) y IR/docs/decisiones/paridad-por-capacidades.md. El manual del operador describe el flujo.
+deskops add atom --atom-type atom.adr crea el registro; sin recibo de owner la regla lo rechaza. Declarar que reemplaza a otro deja al anterior en superseded y la regla de consistencia pasa. Listar los de tipo atom.adr muestra por defecto solo los accepted. Un task.decision cierra citando un atom.adr. Materializarlo produce un Markdown con Status, Date, Decision Maker, Supersedes, Context, Decision y Consequences. El hash del contrato de AtomDoc no cambia. Quedan cargados los cinco ADR del 2026-11-25 (cuatro de sldb/docs/architecture/ y IR/docs/decisiones/paridad-por-capacidades.md), con pron-is-archived reemplazando la sección de pron de sldb-absorbs-kgdb. El manual del operador describe el flujo.

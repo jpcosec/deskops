@@ -1,7 +1,7 @@
 name: task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js
 path: desk/tasks/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js.md
-source_hash: 5f121a8ed0d6c5aacc153c58bc0ddc49622a3f7e3cd907f462feae210cee782e
-content_hash: 9f9ed3ad76f2116b9f04068093af18392f884223935a35af65ae3b1494ca639c
+source_hash: d460f809ac49b4d63df47a1e47b1e4ff43ca45626c825b31306ebabacffe1535
+content_hash: b19bc537f8ff4116f9c394c819c699b47e091c57f936ae84a64d1e156567f878
 field_hashes:
   title: 68fc4083f4b5f6f3d74a37c5550304b2f34ebae69dab9f708401f792a2cb8cf3
   id: 559abf2b1b85652fc73399e24d99e1e693d3dad0255a533ce3419d4041b58cb6
@@ -17,7 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  implementation_path: 0468b558c35b72bea0804713f4525173a687705523ad155153f1afdaebe23a0a
+  implementation_path: c1dcd0ae21e576d480ab9cad2c411ac9f767bf883142d3ce443850c3b76a4642
   validation: 2c81d028c5976b82a864b79c9e516758ec8ca0713cf3d9001559f867eeb0a63d
   done_when: df12ca0e122d3a257ae5aa273b95fe751a23f6ff508fe1a27dead93f39e43998
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T15:32:16Z'
+  at: '2026-11-25T18:30:29Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,0 +1,36 @@
+name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-bundle-1
+path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js/bundle-1.md
+source_hash: b29cfa5da0fd3dee68034daf4c8eecda28a2a566a6e519c853d4bf7286be4ef5
+content_hash: e879ac7802b7ba4c828e12efaa236b96d90ce6062588326a9517374baa0f8c52
+field_hashes:
+  id: de6d55ec0e121e09d8750bde396c1bc5f746197a56cb85f23f0566b1242ded85
+  title: e3d3854fcdb08d9807af58a6732952b4a375daa7d1496f883debe210b317636a
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: fdcb0a3cce07b9c89348e37ac7ad4b512d2c366188788b54ca88ec14c4d0dae2
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: a3ed1cd46e6ed433bd83722b0c9286bd30a163a1bb521ce004ee037498e014d5
+  input_sha256: 5e4a1669f5edcc231dbbcacbf2490203f343522faf79fbf3d175f5b19c883bb4
+  contract_sha256: 8fc2b5fd1c5998723643f62a1826db520727e57316b261b5d24bb109f92cd4c8
+  output_sha256: cff15ae80dc3a358c45c09ed317c3d5a11e423dfcec2ca1c1980903b2306f230
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 174f3380e4f131f4a41d66b3e365f557d1db14a5204cd37e063e1c2bd3dd886f
+  created_at: 8d8a881e41c16e9a705818e2fc604e31b283c1efe5f09af72d2e3861a1e683cf
+  disposed_at: 6beddeac85fbdb5a18215ea560e6af9239e4580ad3565f77da602acce0a34b83
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: dcaf766da865700e97282a7e8cdeb6b31bc04cae2e89528fa3b189694c8202b2
+  disposition: 6b755c3afc25a4eaa49c567549265de855769b08c5b16a177f79472b477977a7
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T18:32:17Z'
+  authority: generated
+  via: save_document_payload

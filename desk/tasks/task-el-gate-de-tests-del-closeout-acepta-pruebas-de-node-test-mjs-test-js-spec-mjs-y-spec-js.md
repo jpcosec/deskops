@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T15:32:16Z'
+  at: '2026-11-25T18:30:29Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js
 status: draft
 summary: ''
@@ -45,6 +45,8 @@ deskops/services/closeout_gates.py y su test. Fuera: el resto de gates.
 _Outline the expected implementation route or affected surface._
 
 Repo /mnt/ssd/proyectos/SLDB_1/deskops. Extender _is_test_suffix (y el docstring de reference_points_to_test) con .test.mjs, .test.js, .spec.mjs y .spec.js. Test: agregar casos en el test existente del gate de tests (buscar con grep reference_points_to_test en tests/) para un .test.mjs bajo tests/ que cuenta y un .mjs que no es test que no cuenta. No poner Task-Id en el commit de codigo.
+
+Aclaraciones de la revisión: El test existente es tests/test_closeout_test_paths.py. Casos: los cuatro sufijos (.test.mjs, .test.js, .spec.mjs, .spec.js) cuentan bajo tests/ y cuentan si están declarados en files de la tarea; un .mjs que no es test no cuenta. 'Declarado en files' = la ruta aparece literal en el campo files del TaskDoc, igual que hoy para .test.ts. Mensaje del commit en el estilo del repo (feat:/fix:), sin trailer Task-Id.
 
 ## Validation
 
