@@ -28,7 +28,7 @@ from deskops.config import DeskConfig
 from deskops.config import IntegrateConfig
 from deskops.errors import UsageError
 from deskops.models.task_lifecycle import CLOSEOUT_STATES
-from deskops.queue import wait_reason
+from deskops.queue import _read_job, queue_dir, wait_reason
 
 SHA_RE = re.compile(r"^[0-9a-fA-F]{40}$")
 DESK_ONLY_PREFIXES = ("desk/", ".sldb/", "runs/")
@@ -316,6 +316,8 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
         except AlreadyIntegrated:
             result = "ya-integrado"
             print(f"ya integrado: {tip[:SHORT]}")
+            if not dry_run:
+                _resolve_failed(root, cfg, task_id)
             return 0
         except StepFailed as exc:
             result = f"fallo:{exc.step}"
@@ -325,10 +327,48 @@ def integrate(root: Path, task_id: str, dry_run: bool) -> int:
         for temp in temps:
             shutil.rmtree(temp, ignore_errors=True)
         _append_event(root, task_id, result if not (dry_run and result == "ok") else "dry-run", tip)
+    if not dry_run and cfg.mode != "pr":
+        _resolve_failed(root, cfg, task_id)
     verb = "simulado" if dry_run else "integrado"
     where = f"en PR a {cfg.branch}" if cfg.mode == "pr" else f"en {cfg.branch}"
     print(f"{verb} {code[:SHORT]} {tip[:SHORT]} {where}")
     return 0
+
+
+def _resolve_failed(root: Path, cfg: IntegrateConfig, current: str) -> None:
+    """Move to ``done`` the failed integrate jobs whose closing commit is already in the remote branch."""
+    failed = queue_dir(root) / "failed"
+    if not failed.is_dir():
+        return
+    if _run(["git", "fetch", "-q", cfg.remote_url, cfg.branch], root).returncode != 0:
+        return
+    remote = _run(["git", "rev-parse", "FETCH_HEAD"], root).stdout.strip()
+    if not remote:
+        return
+    for path in sorted(failed.glob("*.json")):
+        try:
+            job = _read_job(path)
+            if job.get("kind") != "integrate" or not job.get("task_id"):
+                continue
+            found = _run(
+                ["git", "log", "-1", "--format=%H", f"--grep=^Task-Id: {job['task_id']}$", cfg.branch], root
+            )
+            sha = found.stdout.strip() if found.returncode == 0 else ""
+            if not sha or _run(["git", "merge-base", "--is-ancestor", sha, remote], root).returncode != 0:
+                continue
+            line = f"resuelto por integrate {current}: {sha} ya en origin/{cfg.branch}\n"
+            if job.get("log"):
+                log = Path(str(job["log"]))
+                log.parent.mkdir(parents=True, exist_ok=True)
+                existing = log.read_text(encoding="utf-8") if log.is_file() else ""
+                with log.open("a", encoding="utf-8") as handle:
+                    handle.write(("\n" if existing and not existing.endswith("\n") else "") + line)
+            done = queue_dir(root) / "done"
+            done.mkdir(parents=True, exist_ok=True)
+            path.rename(done / path.name)
+            print(f"integrate fallido resuelto: {job.get('id', path.stem)}")
+        except (OSError, ValueError):
+            continue
 
 
 def _steps(

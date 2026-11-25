@@ -612,3 +612,47 @@ def test_stale_integrate_dirs_are_removed_under_the_lock(tmp_path: Path, monkeyp
     assert c.exists() and own.exists()
     out = capsys.readouterr().out
     assert f"limpieza: {a}" in out and f"limpieza: {b}" in out
+
+
+def _failed_job(root: Path, name: str, task_id: str) -> Path:
+    failed = root / "runs" / "queue" / "failed"
+    failed.mkdir(parents=True, exist_ok=True)
+    log = root / "runs" / "queue" / "logs" / f"{name}.log"
+    log.parent.mkdir(parents=True, exist_ok=True)
+    log.write_text("fallo: suite\n", encoding="utf-8")
+    job = failed / f"{name}.json"
+    job.write_text(json.dumps({"id": name, "kind": "integrate", "task_id": task_id, "log": str(log)}), encoding="utf-8")
+    return job
+
+
+def _task_commit(root: Path, task_id: str, code: bool = False) -> str:
+    if code:
+        _write(root / "late.py", "X = 1\n")
+        _git(root, "add", "late.py")
+    _git(root, "commit", "-q", "--allow-empty", "-m", f"work {task_id}", "-m", f"Task-Id: {task_id}")
+    return _git(root, "rev-parse", "HEAD")
+
+
+def test_integrate_moves_failed_already_in_origin_to_done(closed: Path) -> None:
+    root = closed
+    sha = _task_commit(root, "task-old")  # desk-only commit: the tip extends over it and it is pushed
+    job = _failed_job(root, "job-old", "task-old")
+    other = _failed_job(root, "job-other", "task-other")
+    result = _integrate(root)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert not job.exists()
+    assert (root / "runs" / "queue" / "done" / "job-old.json").exists()
+    assert other.exists()
+    text = (root / "runs" / "queue" / "logs" / "job-old.log").read_text(encoding="utf-8")
+    assert text.splitlines()[-1] == f"resuelto por integrate {TASK}: {sha} ya en origin/{BRANCH}"
+
+
+def test_integrate_keeps_failed_not_in_origin(closed: Path) -> None:
+    root = closed
+    _task_commit(root, "task-new", code=True)  # touches code after the closeout: not pushed
+    job = _failed_job(root, "job-new", "task-new")
+    result = _integrate(root)
+    assert result.returncode == 0, result.stdout + result.stderr
+    assert job.exists()
+    assert not (root / "runs" / "queue" / "done" / "job-new.json").exists()
+    assert (root / "runs" / "queue" / "logs" / "job-new.log").read_text(encoding="utf-8") == "fallo: suite\n"
