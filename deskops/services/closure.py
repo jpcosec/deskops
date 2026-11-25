@@ -19,6 +19,7 @@ from datetime import timezone
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 from typing import Any
@@ -1317,6 +1318,8 @@ class ClosureService:
                 atoms.append(item.rsplit("->atom:", 1)[1])
             elif item.startswith("atom-doc:"):
                 atoms.append(Path(item.removeprefix("atom-doc:")).stem)
+            elif item.startswith("atom-cites:"):
+                atoms.append(item.removeprefix("atom-cites:").split(" -> ", 1)[0])
             elif item.startswith("materialization:") and "->" in item:
                 materializations.append(item.removeprefix("materialization:").split("->", 1)[0].removeprefix("materialization:"))
             elif reference_points_to_atom(self.root, item):
@@ -1473,6 +1476,7 @@ class ClosureService:
         if not has_local_atoms:
             evidence.append("knowledge-coverage-exempt: no local atom documents")
         graph_context = self.build_closeout_graph_context()
+        declared_atoms = self._declared_atom_texts(reference_evidence["atom"])
 
         for raw_path in changed_files:
             relative_path = self._normalize_repo_relative_path(raw_path)
@@ -1492,6 +1496,8 @@ class ClosureService:
 
             file_evidence = self._changed_file_link_evidence(relative_path, graph_context)
             file_evidence.extend(self._skill_guard_test_evidence(relative_path, graph_context))
+            if not file_evidence:
+                file_evidence = self._declared_atom_citation_evidence(relative_path, declared_atoms)
             if file_evidence:
                 evidence.extend(file_evidence)
                 continue
@@ -1508,7 +1514,11 @@ class ClosureService:
                 {
                     "code": "missing_changed_file_link",
                     "path": relative_path,
-                    "message": "Changed file has no atom/materialization link and no routed follow-up reference.",
+                    "message": "Changed file has no atom/materialization link and no routed follow-up reference. "
+                    "Accepted links: an atom declared in the task's atoms or references whose provenance or text "
+                    "cites this path (or a directory containing it), a graph edge from the file to an atom, or a "
+                    "materialization whose target_identity is the file; a routed follow-up is a task:<id>, "
+                    "issue:<id> or desk/tasks|desk/drawer .md path in references.",
                 }
             )
 
@@ -1521,6 +1531,45 @@ class ClosureService:
             )
 
         return CloseoutGateReport(ok=not findings, evidence=self._dedupe_preserve_order(evidence), findings=findings)
+
+    def _declared_atom_texts(self, atom_refs: list[str]) -> dict[str, str]:
+        """{atom id: document text} of the atoms the task declares (``atoms`` or atom references)."""
+        atoms_dir = self.desk_root / "atoms"
+        texts: dict[str, str] = {}
+        for ref in atom_refs:
+            candidate = str(ref).strip().split("::", 1)[0]
+            path: Path | None = None
+            if candidate.endswith(".md"):
+                direct = Path(candidate) if Path(candidate).is_absolute() else self.root / candidate
+                path = direct if direct.is_file() else None
+            else:
+                atom_id = candidate.removeprefix("atom:")
+                path = next((item for item in atoms_dir.rglob(f"{atom_id}.md") if item.is_file()), None)
+            if path is None or path.stem in texts:
+                continue
+            try:
+                texts[path.stem] = path.read_text(encoding="utf-8")
+            except OSError:
+                continue
+        return texts
+
+    @staticmethod
+    def _declared_atom_citation_evidence(relative_path: str, declared_atoms: dict[str, str]) -> list[str]:
+        """``atom-cites:<atom> -> <path>`` for each declared atom whose text cites the path.
+
+        Any file type counts. The atom may cite the path itself (a deeper path under a changed
+        directory too) or a directory of at least two parts that contains it.
+        """
+        parts = relative_path.split("/")
+        patterns = [re.compile(r"(?<![\w./-])" + re.escape(relative_path) + r"(?![\w-]|\.\w)")]
+        for depth in range(len(parts) - 1, 1, -1):
+            directory = re.escape("/".join(parts[:depth]))
+            patterns.append(re.compile(r"(?<![\w./-])" + directory + r"/?(?![\w/-]|\.\w)"))
+        return [
+            f"atom-cites:{atom_id} -> {relative_path}"
+            for atom_id, text in declared_atoms.items()
+            if any(pattern.search(text) for pattern in patterns)
+        ]
 
     def _reference_points_to_routed_follow_up(self, reference: str) -> bool:
         candidate = reference.strip()
