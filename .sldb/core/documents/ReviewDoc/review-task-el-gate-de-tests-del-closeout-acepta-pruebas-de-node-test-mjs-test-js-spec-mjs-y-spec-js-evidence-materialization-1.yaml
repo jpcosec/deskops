@@ -1,0 +1,36 @@
+name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-evidence-materialization-1
+path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js/evidence-materialization-1.md
+source_hash: dddce1eb518cf44c7d9610f757a6051788d1e099df15a8e228a7cfb4b44953d0
+content_hash: b646e55a68f2001b65ee23010f863bf2a57d623d0f2ce2ae847c8fbaec4bb089
+field_hashes:
+  id: 93df35a4cb224e3d1555e1f7cfd02f01ee30e120144d61b6e94c7bae7dc81200
+  title: 8d048c1c32ea4dca8f9df893f9b7a56eecb0238049ae953eedbd003c2c3b555e
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 8d513c100e646879a1145125a99afd344cda1722f0642620bb2122a3c9b811f0
+  subject: 54823d7c3bce22985ec8646b28848d44679ce7b3c6758e59c2f299a7f3a71d99
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 4fc3a26770680469d5809ad67c69b010ae02208fba44dbc6af994c78fb7114a5
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 68de949244b405aec6f1cbee0a22696d7212b7b0f69bdc30d8bf744fcaabf9b9
+  created_at: 8250ed313ab3169267a0583b2bf386121ac5c1dd3297c5462c5d13dbf94c8b9d
+  disposed_at: 8250ed313ab3169267a0583b2bf386121ac5c1dd3297c5462c5d13dbf94c8b9d
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 0aafbdd189e59a5d80e95c297dc4592c5116328694a71469605d76938c0283d5
+  disposition: 0bd4c88520d478f67ea60ef9e9773a9f012449cc6caf6a967c82fe827f40642a
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T21:16:44Z'
+  authority: generated
+  via: create_document
