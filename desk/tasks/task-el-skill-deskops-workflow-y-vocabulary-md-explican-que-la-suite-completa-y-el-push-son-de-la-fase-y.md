@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T18:27:58Z'
+  at: '2026-11-25T01:07:30Z'
   authority: generated
   via: save_document_payload
 id: task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y
@@ -13,7 +13,8 @@ history: []
 references:
 - desk/inbox/20261123-161332-suggestion-jp-el-lote-de-integraci-n-es-la-fase-del-dag-declarada-en-el-board-falta-en-la-herramienta-y-en-el-skill.md
 depends_on:
-- task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g
+- task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase
+- task-deskops-declara-fases-del-board-por-cli-crear-una-fase-y-agregar-o-quitar-tareas
 pills: []
 files: []
 task_type: task.docs

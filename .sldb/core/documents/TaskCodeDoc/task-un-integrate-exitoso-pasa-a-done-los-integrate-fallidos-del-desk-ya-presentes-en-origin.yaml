@@ -1,0 +1,37 @@
+name: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin
+path: desk/tasks/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin.md
+source_hash: 1819492199f7f7b1da93e01e61188bd9310166dca65aa36135ddc704b5035e88
+content_hash: b5351dac6cf5bfac5e1330e11ec9f42e0594542966684d036c394fb256769ad2
+field_hashes:
+  title: 225e8a1600d747e8b048132bc0530661d2d087d9ac832daba6d087a7842eeea4
+  id: 0ba38dd62cf49f6d03441e99813ba757435abfb9e44c0fe80bee89ca86857f8d
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: f568168ea6cca993df77e3548b2b2d0819cf4218b2d49aa87a6ae680ce47814d
+  goal: 99367ef274742037a023cc1c8fa30ddcc11fbb2e501b71b1c737b670ec85efb9
+  scope: 9be94f268af3d8235ebe7efd331d7d6933dd8fbc51ac51f6715def7e68643b65
+  references: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 978545927d5b3e96623c8dea2ce99f46e0e7d644c75a9305d9e0d10a5d3f63cf
+  validation: 33ab043accf5dfb971e327494ac759f059f6435750babf55d4148cf487352511
+  done_when: 78af8e5c1a57abef3e2d39ccf08cb905b75809d2bca4844422eddb4c8a83f0e5
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T01:06:55Z'
+  authority: generated
+  via: create_document

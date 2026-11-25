@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T18:29:02Z'
+  at: '2026-11-25T01:06:45Z'
   authority: generated
   via: save_document_payload
 id: task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g
@@ -35,28 +35,28 @@ Nota 20261123-160333-suggestion-jp-integrar-por-lote-una-suite-y-un-push-por-des
 
 _Describe the concrete result this task must produce._
 
-deskops integrate toma como unidad la fase declarada en el Board: cada tarea de la fase cierra con su validacion dirigida; cuando cierra la ultima tarea de la fase se encola un solo trabajo integrate de esa fase, que corre una suite completa, una comprobacion de grafo y una de store sobre el tip y hace un push (o un PR en modo pr) y el commit de cierre de fase de ritual-phase; un integrate exitoso da por resueltos los integrate anteriores de ese desk que quedaron en failed y cuyo contenido ya esta en origin. Una tarea sin fase declarada se integra como fase de una sola tarea.
+deskops integrate --phase <fase> integra de una vez todas las tareas cerradas de esa fase del Board: un tip, una suite completa, una comprobacion de grafo y de store, un push y el commit de cierre de fase de ritual-phase. Una tarea sin fase se integra como fase de una sola tarea (--task sigue andando).
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-deskops/integrate.py (opcion --phase), deskops/queue.py (encolado del integrate de fase al cerrar la ultima tarea, sin duplicados), el disparo desde closeout, el trabajo integrate de desk/config.json (--task-from-env pasa a la fase de la tarea) y sus tests. Fuera: el modelo del Board (tarea task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase) y el skill.
+deskops/integrate.py (opcion --phase y resolucion de las tareas de la fase desde el Board) y tests/test_integrate.py. Fuera: el encolado al cerrar la ultima tarea (task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase), la limpieza de failed (task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin), el modelo del Board y el skill.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Encolar integrate por desk: si ya hay uno pendiente, no se agrega otro (o se funden sus tareas en el mismo trabajo). 2) integrate sin --task o con varias tareas: integra el tip local completo. 3) Al terminar bien, recorrer failed de integrate del desk y mover a done los que ya estan en origin, con una nota. 4) Tests de encolado, fusion y limpieza de failed.
+1) Leer como integrate resuelve hoy la tarea y el tip. 2) --phase lee las tareas de la fase del Board, exige que esten todas cerradas y toma el tip que las contiene. 3) Una suite, grafo, store, push y commit de cierre de fase. 4) Tests: fase de dos tareas cerradas se integra con una suite; fase con una abierta falla con mensaje claro; --task sin fase sigue igual. Correr solo tests/test_integrate.py.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- TMPDIR=/tmp pytest -q tests/test_integrate.py tests/test_queue.py
+- TMPDIR=/mnt/ssd/tmp/sldb1 pytest -q tests/test_integrate.py
 
 ## Done When
 
 _Name the observable condition that makes the task complete._
 
-Con una fase de tres tareas: los dos primeros cierres no encolan integrate; el tercero encola uno solo, que sube las tres con una suite y un push; un integrate exitoso limpia los integrate fallidos ya presentes en origin; tests nuevos y los de integrate y queue verdes.
+integrate --phase con dos tareas cerradas corre una sola suite y un push (dry-run en el test); con una tarea abierta falla claro; tests/test_integrate.py verde.

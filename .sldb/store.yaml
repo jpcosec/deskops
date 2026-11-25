@@ -3197,6 +3197,10 @@ include:
   - desk/tasks/task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.md
   - desk/tasks/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.md
   - desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
+  - desk/tasks/task-deskops-declara-fases-del-board-por-cli-crear-una-fase-y-agregar-o-quitar-tareas.md
+  - desk/tasks/task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado.md
+  - desk/tasks/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin.md
+  - desk/tasks/task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
