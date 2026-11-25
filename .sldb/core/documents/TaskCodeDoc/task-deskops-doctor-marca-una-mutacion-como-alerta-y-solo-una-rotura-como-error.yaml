@@ -1,0 +1,37 @@
+name: task-deskops-doctor-marca-una-mutacion-como-alerta-y-solo-una-rotura-como-error
+path: desk/tasks/task-deskops-doctor-marca-una-mutacion-como-alerta-y-solo-una-rotura-como-error.md
+source_hash: fb99ca8e7d835b93251d6c21af9b6538e26ce467eb378128ffd2739bc7327f42
+content_hash: 8be656cb437837fef1a08a8a6c3bea38e8968415a0d3389d6e05a0c99c45b402
+field_hashes:
+  title: 95a0a6758ed085533e81ae2c3e7f7a0132c130775df9757bf20227efdba42bc2
+  id: 182d5ca2c23b06ed246492fb7021469a750866ea9090197ac6c4bfcf24503baf
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: c545ebea33da74fe04c9d45920f603dc240351ebe6ab9aa6689add564bdd7277
+  scope: 2747a354ce3ca4b57c0c403bb9bbfda2bcacf232a71a07a3d767e22fa2782b94
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 62481d26c86998aa1e4aa714ad57a14375249bc10f4e4aafab4f888b8d2cbc09
+  validation: c5d9c05e4238d8742303d6f447a6af6b817be732806406a8feb70436cee5789e
+  done_when: 1a04eee489e4f064760f052ce8910f3c0fad4877c6cd893eb15ad3b4dae62a99
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:42:30Z'
+  authority: generated
+  via: create_document

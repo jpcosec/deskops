@@ -1,0 +1,37 @@
+name: task-el-board-es-una-vista-calculada-sobre-las-tareas-y-deja-de-ser-un-documento-que-reescriben-todas-las
+path: desk/tasks/task-el-board-es-una-vista-calculada-sobre-las-tareas-y-deja-de-ser-un-documento-que-reescriben-todas-las.md
+source_hash: beb0ed07064c79e2ebaf665a8680f8b37bcfbef50aaea718570791d5767d36da
+content_hash: b085d749a4590a3923fe08e981f5cb5dc832bf4d89534c35ba2025876831e685
+field_hashes:
+  title: 2e0583f3394073400ed31b69bda334f816c28ef94b021444139c57abc600d3a6
+  id: 316706c6004a1900c8ca3504b78b8f994446d3b793ca719cae4ce2d683b1bfb1
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: a4f22a317a02b3228b557b7410f15554129b8434ef181172850c1cc226bb399a
+  scope: 76b39eeb09a0004d8e3c9f52831917f0130d875fba2ccab300ceb0606967f7a7
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: bad9af0b21c3bd264d922cbab54bda14281cb181bbce1152c319bbbaae4ab373
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: c90f463ece6c083a1e81c63b349c3f504f961f842018d72987f5179b63616b3d
+  validation: 8402eb7fde1cfbe1ec0ce26a81fead83c918cd01f6510414c48e505a9d0aaa14
+  done_when: 807018fd6689a14749346b1eb79356d4be432c03916170ca58806a53ef409472
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:56:36Z'
+  authority: generated
+  via: save_document_payload

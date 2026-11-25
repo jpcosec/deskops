@@ -1,0 +1,37 @@
+name: task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
+path: desk/tasks/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci.md
+source_hash: 93288a3046242c9b6fc0c0b069dcb9ac793e948c9ad8747e59e6d9c3c755506a
+content_hash: 764e5f33b5ee3511614e543b6224d1a3520ce35202dcb0d0dda340fb3776bf2f
+field_hashes:
+  title: eba6e7bb8e9a23c82804a37a96cea6ee798435c2f53145185a9ce2641b0a42d1
+  id: acf4d774d2ab2c2612e00f945d502730810f5587c8139542d18d33db6aae56cd
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: 1cb8494cb9fb11e858b79c560d1e2aab27229a6405e518063b8c74e69487eab9
+  scope: d1929726d67feb0ec4bc524e37b13c9fad97aae0ec355a1801c1831e5f99d492
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 2add42683b8bcb0629cd329781badb337e895a37b5ad7835b8a71c279489e6fd
+  validation: 4a04124c84ee84b4b1b4b6c4254d748d4efe60d1c801b37d17f73a44ad63693d
+  done_when: 7c7bc7d813457eba6bdb7ea199321a119d72cd8c46b2f5b28616752acf6dc862
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:42:42Z'
+  authority: generated
+  via: create_document

@@ -1,0 +1,37 @@
+name: task-decidir-si-se-construye-el-agente-de-coherencia-del-desk-y-como
+path: desk/tasks/task-decidir-si-se-construye-el-agente-de-coherencia-del-desk-y-como.md
+source_hash: f455db81f8cf5743a0a184dc60844e9ce53499807bce45ad1dd8b39e7259023f
+content_hash: 7eec78291b9352664136d86078ba24d2dab2f0a720b35a4d8dd4a7385e8c6326
+field_hashes:
+  title: 4b22d5c91d37f454e0b83cc5be3afca12749fdc53522ab4830de85e9fabf8916
+  id: b1eae3de2407e5e370828904fb7011817fe9d962b168a83afa019e449f9c9d1e
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: 45182b063eda416773a86338fe7424f71b4c20b0c3958e909a375fd3aa286088
+  scope: 8f54ea48940fd681d0df29bcf5ecd188eb8a038688b1e7c92dd3d150f08699d6
+  references: 15afc26b2c1c00a370cf9037f57b80599bad4f4e0a785f275617c869e3d78d02
+  depends_on: b967c42364ce0d0209744dcd23ee6f13e86c84ef269cedb71059529fe34d6e4d
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: c6ee0e18fb34ef52a1304ff9b0ec8cd76b60d45121f9eb79dd7d1c693308d6e8
+  validation: 484e1d29c6a66eca6d4985fa163ca91aaeb10cd4d8e4e4b9c0aa35c027d1d633
+  done_when: ef56708d864190e2b28076c8069994fc7a195ba705dc743dd4548b2b23ebcb6f
+  task_type: a4df8849de4c7c42dff3bfe95bbeb8759b5ca37238136b51e418b9d2f5ef311c
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:47:35Z'
+  authority: generated
+  via: create_document

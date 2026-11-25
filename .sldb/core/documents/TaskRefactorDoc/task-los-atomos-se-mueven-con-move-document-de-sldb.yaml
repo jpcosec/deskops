@@ -1,0 +1,37 @@
+name: task-los-atomos-se-mueven-con-move-document-de-sldb
+path: desk/tasks/task-los-atomos-se-mueven-con-move-document-de-sldb.md
+source_hash: 6276024bae6232aeea4b73f64b27df52513cf7b0a03ec5725ccb882d46af77c3
+content_hash: 5b0f5fd6b5336fe280f8210694c87f3e7bf13d3204b954ea077f7e239dfa845c
+field_hashes:
+  title: b93ac4e99387557f779c6916b057489edbabbd867bcd2f3ddeba417fa353a20b
+  id: 1be87ed47a1c3d6636ee189380d97b52c84c01732003357dac5bf0a1e550f63e
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: 1c19403eca13fef6183a6a17b846f54a85e49632ade140f74b59c6c9cc738271
+  scope: ad234765ee2de16104e24e0c8063a86f5d72edb6814ea6863c48648949eb419c
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 3d8224f91934424af92be2b1eae66a69a694b88af5530f013b1b0eb92e3bfdb9
+  validation: c5bc2a56366144fb0d5d7338102d356edb05c79224ece46b93ce878d7737925f
+  done_when: 3ae1bc776c597f906420e0a6ba51714b9e5771b3230e663796671acc403e6842
+  task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:47:02Z'
+  authority: generated
+  via: create_document

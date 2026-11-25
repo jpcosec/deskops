@@ -1,0 +1,37 @@
+name: task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
+path: desk/tasks/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo.md
+source_hash: 8aec497c385278c17491bebe13653755e1cc0a58781dbd3af584001cf4f173bd
+content_hash: a55f2b0236ce2c793737f1cb267c81eb9359feab141b84c321a21645f5eef372
+field_hashes:
+  title: 3b7f75728f4902e4c44d254dbbba29750db81379358d182f0dcbe139e114e5ba
+  id: 8171aa9b861e8064ff72fc5957b949fe8ed6e4eca9cde2c41f3fa0cd901bcdd2
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: 5b11a53fc328ac108e470e1dee43a708eeac8a62fc2f192b3d5ad40618f83255
+  scope: 235834580c9af993bb2d09e482e8a1edee132b065ead0793aa6960e49b73e6d8
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: a5e3c76ff3e73aaa02771496059dc2d350515f191844202e83c725e486b66640
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 49650ed2d6bcc9ac796ec2c192e1514091c7bdef09ad75553c165bd9bf58112e
+  validation: 49f7b6b890c4af15806de61a578bd24b1f7fe881b3c48dd7ab25892bd51db215
+  done_when: db6374f2e78b0e460b0461435ae54b8a6a3645ee8a765a6c64c52e103b24d0fb
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:43:28Z'
+  authority: generated
+  via: create_document

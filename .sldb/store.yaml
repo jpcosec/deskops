@@ -3297,16 +3297,43 @@ include:
   - desk/tasks/task-el-skill-deskops-workflow-pasa-a-un-nucleo-corto-que-delega-en-deskops-next-y-dispatch-start-gana-on.md
   - desk/tasks/task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi.md
   - desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
+  - desk/tasks/task-las-operaciones-de-deskops-se-definen-una-sola-vez-como-herramientas-mcp-en-una-extension-del-servid.md
+  - desk/tasks/task-deskops-doctor-marca-una-mutacion-como-alerta-y-solo-una-rotura-como-error.md
+  - desk/tasks/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci.md
+  - desk/tasks/task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse.md
+  - desk/tasks/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de.md
+  - desk/tasks/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo.md
+  - desk/tasks/task-el-cierre-toma-la-arista-task-completes-desde-el-nodo-real-de-la-tarea.md
+  - desk/tasks/task-supersede-resolved-by-y-retire-son-aristas-declaradas-del-ciclo-de-vida.md
+  - desk/tasks/task-toda-compuerta-de-cierre-y-de-activacion-es-una-clausula-de-ruledoc-con-severidad-que-declara-el-wor.md
+  - desk/tasks/task-la-evidencia-de-tests-corre-la-validacion-de-la-tarea-y-registra-el-resultado-y-el-veredicto-del-tes.md
+  - desk/tasks/task-los-recibos-anclan-el-codigo-exponen-motor-y-autor-y-commit-respeta-el-resultado-de-verify.md
+  - desk/tasks/task-la-activacion-puede-exigirse-antes-del-despacho-y-el-ruteo-por-board-es-una-regla.md
+  - desk/tasks/task-un-solo-texto-por-rito-next-actions-y-nombres-de-nodo-salen-del-ritualdoc-y-se-borra-task-lifecycle.md
+  - desk/tasks/task-la-coherencia-de-status-current-node-e-history-es-una-regla-on-write-que-lee-el-grafo-del-desk.md
+  - desk/tasks/task-el-board-es-una-vista-calculada-sobre-las-tareas-y-deja-de-ser-un-documento-que-reescriben-todas-las.md
+  - desk/tasks/task-integrate-encuentra-el-cierre-por-el-trailer-task-id-y-distingue-closeout-mode.md
+  - desk/tasks/task-el-prompt-de-una-tarea-es-una-vista-del-nucleo-un-solo-texto-sin-contradicciones.md
+  - desk/tasks/task-despacho-flexible-sobre-runtimeprofiledoc-claude-headless-o-subagente-de-sesion-pi-y-scion-con-el-mi.md
+  - desk/tasks/task-el-cli-de-deskops-sale-de-fastmcp-generate-cli-y-el-cli-escrito-a-mano-queda-solo-para-bootstrap-e-i.md
+  - desk/tasks/task-deskops-se-instala-en-claude-code-y-otros-clientes-con-fastmcp-install.md
+  - desk/tasks/task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
   - desk/tasks/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.md
   - desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
+  - desk/tasks/task-verificar-fastmcp-call-generate-cli-inspect-e-install-contra-sldb-mcp-con-una-extension-de-deskops.md
+  - desk/tasks/task-verificar-y-arreglar-dependencias-inexistentes-n7-y-la-autorreferencia-que-exime-del-gate-de-vinculo.md
+  - desk/tasks/task-evaluar-el-code-mode-de-fastmcp-para-que-los-agentes-encadenen-operaciones-de-deskops-en-codigo.md
 - model: TaskDocsDoc
   paths:
   - desk/tasks/task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar.md
   - desk/tasks/task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y.md
   - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
+  - desk/tasks/task-la-skill-deskops-workflow-es-el-skill-md-generado-por-fastmcp-mas-una-parte-corta-del-workflow-desde.md
+  - desk/tasks/task-agents-md-sin-contradicciones.md
+  - desk/tasks/task-los-docs-de-deskops-son-materializaciones-de-atomos-con-una-pagina-por-capa.md
 - model: TaskDecisionDoc
   paths:
   - desk/tasks/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.md
@@ -3318,9 +3345,38 @@ include:
   - desk/tasks/task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira.md
   - desk/tasks/task-jp-decide-si-deskops-exige-git-en-cada-desk-o-acepta-otra-evidencia-de-cierre.md
   - desk/tasks/task-jp-decide-si-deskops-pasa-a-ser-un-plugin-de-sldb-modelos-reglas-vistas-y-ritos-como-datos-del-store.md
+  - desk/tasks/task-decidir-si-se-construye-el-agente-de-coherencia-del-desk-y-como.md
+  - desk/tasks/task-revisar-las-tareas-congeladas-contra-las-macros-m0-a-m6.md
+  - desk/tasks/task-como-se-hace-respetar-la-maquina-de-estados-del-workflow.md
 - model: TaskExternalDoc
   paths:
   - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
+  - desk/tasks/task-los-botones-de-graph-ui-frontends-desk-llaman-a-las-operaciones-de-deskops.md
+  - desk/tasks/task-seguimiento-de-lo-que-deskops-necesita-de-sldb-tomar-transicion-ultimo-elemento-de-una-lista-on-dele.md
+  - desk/tasks/task-seguimiento-del-indice-del-store-de-sldb-base-embebida-y-git-y-de-la-documentacion-de-los-hashes.md
+- model: TaskRefactorDoc
+  paths:
+  - desk/tasks/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports.md
+  - desk/tasks/task-la-suite-vieja-se-retira-a-medida-que-cada-modulo-se-muda-a-su-capa.md
+  - desk/tasks/task-deskops-lee-las-aristas-del-ciclo-de-vida-desde-el-store-enlazado-y-deja-de-copiarlas-donde-sldb-ya.md
+  - desk/tasks/task-model-introspection-usa-describe-model-fields-y-los-placeholders-usan-template-anchors-de-sldb.md
+  - desk/tasks/task-identity-resuelve-repos-y-stores-con-catalog-store-y-store-links-de-sldb.md
+  - desk/tasks/task-bootstrap-workspace-y-desk-update-usan-apply-declaration-y-la-api-de-stores-de-sldb-sin-subprocess.md
+  - desk/tasks/task-los-tags-usan-tag-namespaces-y-tag-tree-de-sldb.md
+  - desk/tasks/task-message-usa-sldb-inbox-y-transacciones.md
+  - desk/tasks/task-el-grafo-del-proyecto-se-declara-en-store-yaml-y-graph-view-y-checks-usan-sldb-graph-project.md
+  - desk/tasks/task-los-atomos-se-mueven-con-move-document-de-sldb.md
+  - desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
+  - desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
+- model: TaskAggregateDoc
+  paths:
+  - desk/tasks/task-m0-estructura-deskops-por-capas-y-una-sola-capa-de-operaciones-como-herramientas-mcp.md
+  - desk/tasks/task-m1-senales-y-guardas-ci-en-verde-y-rapido-doctor-confiable-lint-guardas-de-arquitectura-y-suite-nuev.md
+  - desk/tasks/task-m2-nucleo-el-workflow-se-puede-hacer-cumplir-y-cada-workflow-decide-que-exige.md
+  - desk/tasks/task-m3-mantenimiento-deskops-usa-sldb-en-vez-de-envolverlo-y-cada-modulo-se-muda-a-su-capa.md
+  - desk/tasks/task-m4-uso-prompt-como-vista-despacho-flexible-cli-generado-instalacion-en-clientes-y-ui.md
+  - desk/tasks/task-m5-documentacion-skill-generada-agents-md-y-docs-como-materializacion-de-atomos.md
+  - desk/tasks/task-m6-lo-que-depende-de-sldb-pedidos-pendientes-e-indice-del-store.md
 graph_backend: networkx
 policy: {}
 tag_models:

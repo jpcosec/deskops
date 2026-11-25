@@ -1,0 +1,37 @@
+name: task-la-coherencia-de-status-current-node-e-history-es-una-regla-on-write-que-lee-el-grafo-del-desk
+path: desk/tasks/task-la-coherencia-de-status-current-node-e-history-es-una-regla-on-write-que-lee-el-grafo-del-desk.md
+source_hash: 6aea80113d6c5881dd922deb49271b549e30f4fe9fd9ed87d8207eea28540d9d
+content_hash: ab6edafe44eb584fd5048e2e52a04e0f9283a4ac492e8d8ea23b1660611c6fde
+field_hashes:
+  title: 2a6b680d0098c1f6b3c1ed2ff6a1eea95dc1e0a16e0f01db5c3cb9e27348ca07
+  id: 2da5e060b62447312bb90fc109485e5c67650b2fcc12606338a335e023b04555
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: 2f30622aca9ea9ddfa69b84086045104808bb16ec16896841d443acfc8c33138
+  scope: cdec3d0c6745045259467bc5e7503de67b2d84025b99e4a169a3fa758058dc56
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: 305149c4b5e825cfb408f136a2403fec875c646d22cdd88a3b017a470dcc72ad
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: cb7d4e8cfebde8b1f9efc4f6e975c4d098acf8b75aab529f29945b7cff0692b3
+  validation: 49f7b6b890c4af15806de61a578bd24b1f7fe881b3c48dd7ab25892bd51db215
+  done_when: 32076508a13fe76ab483e052208d9e6417d41f3bb9252888904ba737bcca175e
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:44:54Z'
+  authority: generated
+  via: create_document

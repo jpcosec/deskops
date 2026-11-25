@@ -1,0 +1,37 @@
+name: task-verificar-y-arreglar-dependencias-inexistentes-n7-y-la-autorreferencia-que-exime-del-gate-de-vinculo
+path: desk/tasks/task-verificar-y-arreglar-dependencias-inexistentes-n7-y-la-autorreferencia-que-exime-del-gate-de-vinculo.md
+source_hash: 8aa662f7e5e293049b1332d8a1fa0fe24894bcd4305e27f549dc0a048d4d4fb0
+content_hash: 46f48216b6a938a59aa47093be9eb43102b53bdcade20959e6c6f1dfbea4358c
+field_hashes:
+  title: 4db934305c57020088c419d9542b06ff3e8c161665b8d0f229ca5860a3bb3012
+  id: fcefafeaff82ceeefe48e66805eb0816a5bede8af543fdfe11ec9dcb9f39b033
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: cc3aeaa88ca27f5cfeab6e582ccc782fa55b19262dc3131ba9a3d859d18d2330
+  scope: bcb1f7d6a79bc7852a098432cd06fd31fb60856eff34f600fccf9d8c149108bb
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: bad9af0b21c3bd264d922cbab54bda14281cb181bbce1152c319bbbaae4ab373
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: f278230f9efed9396a49393701787009f543ea00fc141a17e532a8344a404a71
+  validation: 49f7b6b890c4af15806de61a578bd24b1f7fe881b3c48dd7ab25892bd51db215
+  done_when: 022966ad5bc63702d586634986cbffeeaba24b3286554dc8a01c680441effe5c
+  task_type: 17aef8a679138336d87167505c61b03a7bc28c9a12b1ccf78947b619d28fae69
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:45:05Z'
+  authority: generated
+  via: create_document
