@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:50:59Z'
+  at: '2026-11-25T20:09:54Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-m5-documentacion-skill-generada-agents-md-y-docs-como-materializacion-de-atomos
 status: draft
 summary: ''
@@ -18,6 +18,7 @@ depends_on:
 - task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y
 - task-agents-md-sin-contradicciones
 - task-los-docs-de-deskops-son-materializaciones-de-atomos-con-una-pagina-por-capa
+- task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar
 pills: []
 files: []
 task_type: task.aggregate

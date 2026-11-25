@@ -1,7 +1,7 @@
 name: task-m5-documentacion-skill-generada-agents-md-y-docs-como-materializacion-de-atomos
 path: desk/tasks/task-m5-documentacion-skill-generada-agents-md-y-docs-como-materializacion-de-atomos.md
-source_hash: 46cd333c708422b982fdcdac1a9fb49cda96a7700f20470110642e752392516f
-content_hash: 81891eda6a3a8e0ee02740a4d4e3f10b68734049557b100fb288a96caac38912
+source_hash: 9f3ebda261b60e2854bd8bcff06c4839f1fed8641612eaabc37dc94b483873ad
+content_hash: 8b8f6f028e2d9465b573f5c44e86e43c98f631e9a1bcefcaa1298b34b6d7606c
 field_hashes:
   title: 83c64adc5717d9f680d5286fd2811ce97099663ea8e74176cb70d08f3effaf95
   id: 6a341fbdf6a6a1ce4766341aec772741129f125e87fb7023be38b2fa88d83141
@@ -14,7 +14,7 @@ field_hashes:
   goal: b5dbd72c61922ff5ecf21a625c2f3e7b81b2ad31a8be3807ba3027a823d1066a
   scope: 8816436664f8ba513b3182f59f40be2395be9f2f13cc43029a365b286279c1fd
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: 752bd541ae6873418bf904c9ba6cfa3f925564a055766cef98d4df8b18aab520
+  depends_on: 0bad98ecd03b08210b8c1eb4269f62d98ded334f8ef13c1b01bfb1c8050227c4
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:50:59Z'
+  at: '2026-11-25T20:09:54Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

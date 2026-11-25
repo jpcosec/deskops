@@ -5,7 +5,7 @@ sldb:
   authority: generated
   via: save_document_payload
 id: task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops
-status: draft
+status: deferred
 summary: ''
 tags: []
 current_node: ritual-execution

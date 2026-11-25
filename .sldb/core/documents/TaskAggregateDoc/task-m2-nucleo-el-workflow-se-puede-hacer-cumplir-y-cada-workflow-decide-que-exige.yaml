@@ -1,7 +1,7 @@
 name: task-m2-nucleo-el-workflow-se-puede-hacer-cumplir-y-cada-workflow-decide-que-exige
 path: desk/tasks/task-m2-nucleo-el-workflow-se-puede-hacer-cumplir-y-cada-workflow-decide-que-exige.md
-source_hash: 2635691669db0e2de1bba16c436072ca7fc5427f85fcd00c8bc7297aab492ba6
-content_hash: 6360bb4837769a7bc6b890d47d87b60eb37d6919bc415167ac317dc4f657fc0e
+source_hash: 11b9c49fd4c7fb0bb3f386a6f1fde932ad4311f9bcf4c82c260ba2af276ce01c
+content_hash: 9814e46a3fd3186726feead31bc4166c5b8f7b6f562bf4f059dceccdb885d465
 field_hashes:
   title: cccf2f037f1bc17895cc4fb331e8babbaa1439cf61dd071582ea1851960500e5
   id: 5c9deb1e095f7cb2d8dc38c31e3672bc8982c225c2e715307db0168df50cb4df
@@ -14,7 +14,7 @@ field_hashes:
   goal: b95347c1465ad831c5bef8798b2216d48b1c8f73b74210a668a482fdd5e06a04
   scope: 8816436664f8ba513b3182f59f40be2395be9f2f13cc43029a365b286279c1fd
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: 17e917ff88de7c1a2882331f3e317b30bce9c8541d1391517c41acad8b57e102
+  depends_on: 8eb2efc8c8ab5b442c3d21eefcf2a674b593cf43dcc256dc238d1ad8d95fc93d
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:57:35Z'
+  at: '2026-11-25T20:09:30Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: task-la-evidencia-de-tests-corre-la-validacion-de-la-tarea-y-registra-el-resultado-y-el-veredicto-del-tes
 path: desk/tasks/task-la-evidencia-de-tests-corre-la-validacion-de-la-tarea-y-registra-el-resultado-y-el-veredicto-del-tes.md
-source_hash: 319e9f65966aaf7c04f330ee612b97c49afc37273e8345f2a20a34342df1d971
-content_hash: bb88e4b91b28921d0a7a14438ec683889ec6abf6450c263e9b006b3bef1f2568
+source_hash: ba4b41119a168f0be7666160728edf4563f6b6b103593fddb20fe49ab8e4874c
+content_hash: dd1cc01cab98e4507306eeb906f36d3da2c9c362ec2d4030e7c604a727af5e34
 field_hashes:
   title: 743f162a8c6fdb10f8ae7bac9c5f7e4831a61662c53e7e59418f940cbdca60dc
   id: 2c28feca6043e66cbb66b17df15d10187a6fed3803f37bb3e983eda2e16f57fb
@@ -14,7 +14,7 @@ field_hashes:
   goal: d86ac3de17987206ecc06b692e507aed741f581c5d2c7853b63089a8cad4bcc8
   scope: 1cbd972f61573ec451a9f3533832b417c581b445dfe078d681a866f4acdb2209
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: e63b8eb91b2235ae564bbce90e92025fc2835069cd3878501b97e50f671f0982
+  depends_on: a9900030c163e85dca711cb38a3cee4210ecb5ad935ca5fb31e21cbeb13aa273
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: a414d9590a26c2f2f8a3a966d552cd9440f8432781833d089d83a32974ea203a
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:44:11Z'
+  at: '2026-11-25T20:10:57Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

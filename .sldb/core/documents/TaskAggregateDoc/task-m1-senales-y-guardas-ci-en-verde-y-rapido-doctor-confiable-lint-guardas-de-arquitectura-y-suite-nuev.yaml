@@ -1,7 +1,7 @@
 name: task-m1-senales-y-guardas-ci-en-verde-y-rapido-doctor-confiable-lint-guardas-de-arquitectura-y-suite-nuev
 path: desk/tasks/task-m1-senales-y-guardas-ci-en-verde-y-rapido-doctor-confiable-lint-guardas-de-arquitectura-y-suite-nuev.md
-source_hash: ad553289c04e429142cf6989f2a647f3db131a8fb20c74099a86440acd7aa302
-content_hash: 99cefceebb560084917b7f3064252d5f14446dca227d8fab1754d7ca2ae4bc8a
+source_hash: b87d6061eeecb37fdb21b973fa7f25c3edec8fc72bdcd5971e0f520f81436b95
+content_hash: 073c87a61e27118c868eacf4e9f4cc62e52af38c5d7589da3f7e52061a7e1689
 field_hashes:
   title: d7e3713f43a63b5d7ba5f8d259b31c7aa40a5e84f2f037ffeabaeb64455093c5
   id: edfe97800e697a180ebb4bda9be82d75b141d4a91d35adf0d731f797af37b571
@@ -14,7 +14,7 @@ field_hashes:
   goal: c8fc2bca4bc4c095fbc9a1ce2ac502153a0f028d3df2cdbfad42793415591784
   scope: 8816436664f8ba513b3182f59f40be2395be9f2f13cc43029a365b286279c1fd
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
-  depends_on: 924dd626d2dfea5d5eea6ab2eb1a112508a19f787b738b83c8a2c32fddb14edb
+  depends_on: d027a3860ad02936754eadc83aca06a525d65e8dcf01a3de36c373120567e8d0
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:50:14Z'
+  at: '2026-11-25T20:10:47Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

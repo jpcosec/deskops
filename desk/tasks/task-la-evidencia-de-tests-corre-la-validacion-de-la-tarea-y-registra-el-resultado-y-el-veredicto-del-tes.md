@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:44:11Z'
+  at: '2026-11-25T20:10:57Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-la-evidencia-de-tests-corre-la-validacion-de-la-tarea-y-registra-el-resultado-y-el-veredicto-del-tes
 status: draft
 summary: ''
@@ -14,6 +14,7 @@ references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md
 depends_on:
 - task-toda-compuerta-de-cierre-y-de-activacion-es-una-clausula-de-ruledoc-con-severidad-que-declara-el-wor
+- task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto
 pills: []
 files: []
 task_type: task.code

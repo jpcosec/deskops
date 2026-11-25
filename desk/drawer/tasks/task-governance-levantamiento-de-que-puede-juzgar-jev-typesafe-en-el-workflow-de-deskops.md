@@ -5,7 +5,7 @@ sldb:
   authority: generated
   via: save_document_payload
 id: task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflow-de-deskops
-status: draft
+status: deferred
 summary: ''
 tags: []
 current_node: ritual-execution

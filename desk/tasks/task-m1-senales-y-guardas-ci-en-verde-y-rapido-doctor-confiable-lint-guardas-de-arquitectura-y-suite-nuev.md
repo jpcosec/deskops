@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:50:14Z'
+  at: '2026-11-25T20:10:47Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-m1-senales-y-guardas-ci-en-verde-y-rapido-doctor-confiable-lint-guardas-de-arquitectura-y-suite-nuev
 status: draft
 summary: ''
@@ -20,6 +20,9 @@ depends_on:
 - task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse
 - task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
 - task-la-suite-vieja-se-retira-a-medida-que-cada-modulo-se-muda-a-su-capa
+- task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado
+- task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare
+- task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto
 pills: []
 files: []
 task_type: task.aggregate

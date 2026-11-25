@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:57:35Z'
+  at: '2026-11-25T20:09:30Z'
   authority: generated
   via: save_document_payload
 id: task-m2-nucleo-el-workflow-se-puede-hacer-cumplir-y-cada-workflow-decide-que-exige
@@ -30,6 +30,10 @@ depends_on:
 - task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits-from-o-las-herederas-siguen
 - task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi
 - task-como-se-hace-respetar-la-maquina-de-estados-del-workflow
+- task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas
+- task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci
+- task-governance-el-cierre-de-la-tarea-ocurre-dentro-del-pr-y-deskops-reconcile-lo-cruza-con-github
+- task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable
 pills: []
 files: []
 task_type: task.aggregate

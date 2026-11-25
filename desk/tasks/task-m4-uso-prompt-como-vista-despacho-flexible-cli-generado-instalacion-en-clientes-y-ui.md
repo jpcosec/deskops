@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:57:45Z'
+  at: '2026-11-25T20:09:45Z'
   authority: generated
   via: save_document_payload
 id: task-m4-uso-prompt-como-vista-despacho-flexible-cli-generado-instalacion-en-clientes-y-ui
@@ -22,6 +22,12 @@ depends_on:
 - task-los-botones-de-graph-ui-frontends-desk-llaman-a-las-operaciones-de-deskops
 - task-evaluar-el-code-mode-de-fastmcp-para-que-los-agentes-encadenen-operaciones-de-deskops-en-codigo
 - task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada
+- task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
+- task-dispatch-start-se-niega-a-lanzar-un-rol-cuyo-env-config-no-declara-volumes-propios-para-poder-quitar
+- task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d
+- task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa
+- task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta
+- task-governance-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta-en-scion
 pills: []
 files: []
 task_type: task.aggregate

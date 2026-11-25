@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:57:11Z'
+  at: '2026-11-25T20:11:06Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-como-se-hace-respetar-la-maquina-de-estados-del-workflow
 status: draft
 summary: ''
@@ -39,7 +39,7 @@ Una decisión de diseño escrita, con su átomo, sobre el mecanismo que hace res
 
 _State what is in scope and what is out of scope._
 
-Entra: comparar los mecanismos posibles y combinarlos: (a) la máquina de estados como única vía de escritura de status, current_node e history (una regla on_write que rechaza cambios a esos campos que no vengan de tomar una arista; depende de los pedidos C2 y C3 a sldb); (b) centralizar la escritura del desk en deskops o sldb (operaciones MCP como único camino); (c) git: pre-commit o pre-push locales, que se pueden saltar, y una comprobación en el CI que no se puede saltar y que recorre el historial de git de cada tarea verificando que cada cambio de estado corresponde a una arista válida. Sale: qué gates exige cada desk.
+Entra: comparar los mecanismos posibles y combinarlos: (a) la máquina de estados como única vía de escritura de status, current_node e history (una regla on_write que rechaza cambios a esos campos que no vengan de tomar una arista; depende de los pedidos C2 y C3 a sldb); (b) centralizar la escritura del desk en deskops o sldb (operaciones MCP como único camino); (c) git: pre-commit o pre-push locales, que se pueden saltar, y una comprobación en el CI que no se puede saltar y que recorre el historial de git de cada tarea verificando que cada cambio de estado corresponde a una arista válida. (d) antes del CI, correr solo los tests de lo que mutó y dejar su recibo, como gate local de cada tarea de una fase, con la suite completa en el CI para la integración de la fase. Sale: qué gates exige cada desk.
 
 ## Implementation Path
 

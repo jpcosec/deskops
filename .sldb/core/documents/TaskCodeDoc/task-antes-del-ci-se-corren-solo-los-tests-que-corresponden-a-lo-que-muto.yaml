@@ -1,25 +1,25 @@
-name: task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops
-path: desk/tasks/task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops.md
-source_hash: 0e4f8ae16ee9dff1fee3a762a4be0bafb69a3c51fe98e82bc39d8103de56b5c9
-content_hash: 1531226e688421d0977fc29c4041f4ae586d710cb2dc8ec643ba56f0ef7d7166
+name: task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto
+path: desk/tasks/task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto.md
+source_hash: 5a3815e51fd508e1dd950f5e880d5dd41a179232e24c27b42f0bf117ca68e7e6
+content_hash: 5d7a7691cb96e25084cd234a64657f3a8fca11928796502607216d7c7f88a89e
 field_hashes:
-  title: bd599e5cdc222bed00918cdc810e2e3fa123f346e59a728b25aae4bfe5166631
-  id: 3f1659df9d8bd6b2b0a43478c81e3fae9ac23a7f555c14e870bf276d7e6a6dc8
+  title: 6f855dfceb1d76fa5c0aba145283a28fe2df00189133542a339a8bc5e8ac8090
+  id: 40d4abe31f43b2829694e299c0df7fd2f58eba86cffacae4b674dce9e577a105
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  why: 24e0f874685ba6a6627915bb7b71eff5741ebeffe56191f0b20d99320e8a2641
-  goal: 2bcd7774b082dba59d7f5f687f242374c34a30350c2c5e0bc07e72cbab4ddbd0
-  scope: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  references: 7360e29617d51233acbb6f491c287dbf475d7e497d9714483ecbb5895d87a1b8
+  why: 29fcb3ab126d37d5600d5f756089edeab5d7a47d53d635cab49de2fe74bc44c0
+  goal: 73f214a1c3ea66bde48fc83b03f8dfcb99de5cd90f8cfa2987c13f00810a6073
+  scope: e74a4b036abb66778051591afb9c9e7c203921961d6dbd1da6ca094e9baf178f
+  references: c31347ea7290a17200daa63a548e2ff55b8fa96f4ea9f4e161753e9e9cdab156
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
-  validation: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  done_when: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  implementation_path: c12818b10a4762335e2f0da34660507550adf6db0f49d33c94008a265f136cf8
+  validation: 284cc4893379870c7d51f51291eb64203fd8a082f1b182509a6d5b7b98b823de
+  done_when: b9406f263a46c9c5e5e72c07d488b7d0b03c300eb36e9f7d839fdbb71c236322
   task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
   inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-24T18:28:01Z'
+  at: '2026-11-25T20:10:31Z'
   authority: generated
-  via: save_document_payload
+  via: create_document
