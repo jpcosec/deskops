@@ -1,0 +1,10 @@
+Task: task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p
+Title: docs/auditoria/atomos-y-pills.md clasifica cada átomo y cada pill de los cuatro desks con las tres preguntas de la propuesta
+Status: draft
+Current node: ritual-execution
+Task type: task.docs
+Lifecycle gates:
+- task_activates -> ritual-testing: closed [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+  blocked by: error: [rules/rule-activation-task-docs] TaskDocsDoc:task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p: Una tarea task.docs se activa con un recibo preflight aceptado e intacto y sus dependencias cerradas. | any(^subject: anchor_state = "intact" and verdict = "accepted" and kind = "preflight") (seen: {}) (witness: ReviewDoc:review-task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p-bundle-1 {"anchor_state":"changed"})

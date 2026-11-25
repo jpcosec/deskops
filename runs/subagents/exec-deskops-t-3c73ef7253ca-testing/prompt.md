@@ -1,7 +1,17 @@
+Task: task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p
+Title: docs/auditoria/atomos-y-pills.md clasifica cada átomo y cada pill de los cuatro desks con las tres preguntas de la propuesta
+Status: active
+Current node: ritual-testing
+Task type: task.docs
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-25T21:23:48Z'
+  at: '2026-11-25T20:48:16Z'
   authority: generated
   via: save_document_payload
 id: task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p
@@ -11,18 +21,14 @@ tags: []
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- docs/auditoria/atomos-y-pills.md
-- 054d76fddc000feb762e9e28a31b5565633cddcc
+references: []
 depends_on: []
 pills: []
-files:
-- docs/auditoria/atomos-y-pills.md
+files: []
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-auditoria-de-atomos-y-pills-con-las-tres-preguntas
+atoms: []
 ---
 
 # docs/auditoria/atomos-y-pills.md clasifica cada átomo y cada pill de los cuatro desks con las tres preguntas de la propuesta
@@ -64,3 +70,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Cada átomo y cada pill aparece una vez con uno de estos veredictos y su motivo en una línea: ya está en el código (con archivo y línea), falta en el docstring, lo extrae o lo extraería specIR, es una decisión, es un invariante, es contexto de un trabajo abierto, o no se sostiene. El informe trae los totales por desk y por veredicto, y lista aparte los que no se pudieron clasificar.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
+
+## Temporales de pytest
+
+Antes de cualquier pytest exporta, para que sus temporales caigan en el /tmp del contenedor (muere con el agente) y no en el /dev/shm del host:
+
+    export PYTEST_ADDOPTS="--basetemp=/tmp/pytest-deskops-t-3c73ef7253ca"

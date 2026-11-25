@@ -1,0 +1,30 @@
+# Validation for task-docs-auditoria-atomos-y-pills
+
+## Commit
+054d76fdd docs: auditoría de átomos y pills con las tres preguntas
+ docs/auditoria/atomos-y-pills.md | 819 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 819 insertions(+)
+
+## Required validation
+PASS test -f docs/auditoria/atomos-y-pills.md
+
+## Report rows and verdict counts
+rows: 716
+unique ids: 716
+duplicates: []
+by verdict: {'docstring': 14, 'codigo': 424, 'no-se-sostiene': 40, 'invariante': 46, 'decision': 180, 'contexto-trabajo': 9, 'specir-extraeria': 2, 'sin-clasificar': 1}
+by section: {('graph_ui', 'átomos'): 266, ('graph_ui', 'pills'): 2, ('deskops', 'átomos'): 240, ('deskops', 'pills'): 29, ('sldb', 'átomos'): 113, ('sldb', 'pills'): 24, ('IR', 'átomos'): 38, ('IR', 'pills'): 4}
+
+## Census at test time
+graph_ui: atoms=266 pills=2
+deskops: atoms=240 pills=29
+sldb: atoms=114 pills=24
+IR: atoms=38 pills=4
+
+## New sldb atom after the report commit
+-rw-r--r-- 1 scion scion 524 Nov 25 20:39 /mnt/ssd/proyectos/SLDB_1/sldb/desk/atoms/atom-sldb-docs-create-o-resuelve-la-ruta-relativa-contra-el-cwd.md
+?? desk/atoms/atom-sldb-docs-create-o-resuelve-la-ruta-relativa-contra-el-cwd.md
+
+## Row validity
+rows with invalid/empty verdict or empty reason: 0
+verdict labels used: ['codigo', 'contexto-trabajo', 'decision', 'docstring', 'invariante', 'no-se-sostiene', 'sin-clasificar', 'specir-extraeria']

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T21:21:30Z'
+  at: '2026-11-25T21:29:09Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -69,7 +69,6 @@ tasks:
 - desk/tasks/task-jp-decide-si-deskops-pasa-a-ser-un-plugin-de-sldb-modelos-reglas-vistas-y-ritos-como-datos-del-store.md
 - desk/tasks/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.md
 - desk/tasks/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.md
-- desk/tasks/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -169,4 +168,3 @@ _Generated from the task references above._
 - JP decide si deskops pasa a ser un plugin de sldb (modelos, reglas, vistas y ritos como datos del store) y qué queda como código propio [draft] - Una decisión escrita de JP: qué partes de deskops pasan a ser modelos, reglas, ViewDocs y ritos declarados en el store (y qué pide eso a sldb, por su inbox), qué queda como código (dispatch/scion, git, CLI delgado) y en qué orden se migra.
 - átomos, pills y tareas guardan el dónde como punteros a un documento del store, a una categoría o a un ancla de código [active] - Un mismo campo de punteros en los tres modelos, que distingue las tres clases de puntero y rechaza uno mal formado.
 - una pill declara el trabajo al que pertenece y cómo termina, y deskops avisa de la que quedó sin trabajo abierto [draft] - Que el modelo de pill lleve el trabajo al que pertenece y su salida, con los cuatro tipos de la propuesta (pointer, question, constraint, finding) como subclases, y que la revisión del desk señale las huérfanas.
-- docs/auditoria/atomos-y-pills.md clasifica cada átomo y cada pill de los cuatro desks con las tres preguntas de la propuesta [active] - Una tabla con un veredicto por documento, para que JP decida qué se retira, qué se mueve y qué se queda.

@@ -1,0 +1,49 @@
+## main...origin/main [ahead 35]
+ M .sldb/core/documents/RunDoc/run-deskops-e-4defa731dfac.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-7d4dbdc213b4.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-8265bcf88fd1.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.yaml
+ M .sldb/core/documents/TaskDocsDoc/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p.yaml
+ M .sldb/core/models/ReviewDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/models/TaskCodeDoc.yaml
+ M .sldb/core/models/TaskDocsDoc.yaml
+ M .sldb/core/store_index.yaml
+ M desk/tasks/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.md
+ M desk/tasks/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.md
+ M desk/tasks/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p.md
+ M desk/tasks/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.md
+ M runs/subagents/exec-deskops-e-4defa731dfac/run.md
+ M runs/subagents/exec-deskops-e-7d4dbdc213b4/run.md
+ M runs/subagents/exec-deskops-e-8265bcf88fd1/run.md
+?? .sldb/core/documents/ReviewDoc/review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-bundle-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-preflight-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-bundle-3.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-preflight-3.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p-bundle-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p-preflight-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab-bundle-1.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab-preflight-1.yaml
+?? desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/
+?? desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/bundle-3.md
+?? desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/preflight-3.md
+?? desk/reviews/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p/
+?? desk/reviews/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab/
+?? runs/subagents/20261125-191854/
+?? runs/subagents/20261125-191930/
+?? runs/subagents/20261125-191951/
+?? runs/subagents/20261125-192015/
+?? runs/subagents/20261125-192054/
+?? runs/subagents/20261125-192131/
+?? runs/subagents/20261125-192313/
+?? runs/subagents/20261125-192349/
+?? runs/subagents/exec-deskops-e-4defa731dfac/prompt.md
+?? runs/subagents/exec-deskops-e-7d4dbdc213b4/board.txt
+?? runs/subagents/exec-deskops-e-7d4dbdc213b4/git-status.txt
+?? runs/subagents/exec-deskops-e-7d4dbdc213b4/graph.txt
+?? runs/subagents/exec-deskops-e-7d4dbdc213b4/next.txt
+?? runs/subagents/exec-deskops-e-7d4dbdc213b4/prompt.md
+?? runs/subagents/exec-deskops-e-7d4dbdc213b4/task.txt
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/prompt.md
