@@ -1,0 +1,490 @@
+## main...origin/main [ahead 13]
+ M .sldb/core/documents/BoardDoc/Board.yaml
+ M .sldb/core/documents/ReviewDoc/review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-atom-1.yaml
+ M .sldb/core/documents/ReviewDoc/review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-commit-1.yaml
+ M .sldb/core/documents/ReviewDoc/review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-materialization-1.yaml
+ M .sldb/core/documents/ReviewDoc/review-task-un-solo-vocabulario-de-tags-semanticos-en-deskops-padres-declarados-en-sldb-add-sin-duplicados-y-mig-evidence-tests-1.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-closeout-evidence.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-closeout-suite.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-05d3e6bc3598.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-0c84525da1de.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-0f70399e3d10.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-12233e13896c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-17c5ffaf7b3c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-19b2ea183813.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-1ae7acd5a6d9.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-1c2483367c96.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-21dad6d90f62.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-265bb7a88455.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-27cde7ce0e61-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-27cde7ce0e61.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-289fe7bfa1df.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-2ea9647a5250.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-312954356a7f.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-31759c7475bf.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-383abfebb299.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-39eb55f8272d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-3a19ddae700d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-3c6efcfebee3-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-3c6efcfebee3.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-3cd90f55821f.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-3d60a97676f5.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-3f4b69d99461.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-3fb184ce4673.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-44a082df5dbe-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-44a082df5dbe.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-4ba4e5b27cdb.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-4ba5a0d9443c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-4ee2bde35767.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-519848b776fc.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-560a883f4c96.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-567211cef98d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-5a89d17e149b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-5b4af01ff753.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-63121986659c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-72feadf3fc22.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-780cd9b1b487-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-780cd9b1b487.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-79646a51295e.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-7b5f40795a7e.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-7c7a3d487722-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-7c7a3d487722.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-7cdeb2d8da8b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-7fbb23ba5137.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-8341bcf0ae0b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-86e44ee7cd8a-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-86e44ee7cd8a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-8dc2d5f09fda.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-8e9872595e09.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-90c55913cccc-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-90c55913cccc.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-929ddc02614b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-92a1eeeffc9a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-95ee81688bed.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-9fc95085d5a3.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-a2dfce03aecf.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-a3513307b96e.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-a6a9943b2333.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-a9630e065aa2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-a9bb6500e6e2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-ac841a0ca757.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-ae8bbbddff67.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-ae9a07e468ed.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-af97f091952a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-b44ae6af923e.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-bae0befe2582.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-bd1040135fe6.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-c153823881a4.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-c24d46beeb78.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-c5247d70fb6a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-c6c01f72e2a3.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-c8c3c37097e7.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-cd2f053c032d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-d5d217748798.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-d62639bcf100.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-d9b25ac30dc8-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-d9b25ac30dc8.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-dbce9a3a5f2a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-dd7c0dd65723.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-dda7a5dc881c-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-df9455e89049.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-dfba46e5c9d2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e1719ad4ee0d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e406abea57f2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e54423baf717-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e54423baf717.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e5774a62a36c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e5f89cdffe35.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e6f5a3ab8886.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e70b6cd9c7de.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-e75ce6f704e3.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-ed426a314ff1.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-edb9213453ab.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-f585f0ef0e37.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-fba0ac071a91.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-fdd607642b8a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-fddfc2cfbdeb.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-01d2e969dfaf-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-01d2e969dfaf.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-0200461b903c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-05549e84fdaf.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-070d0cbe699f.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-07d09079fe71.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-0a4577b6db6f.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-0a9701da5cf9.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-0d11889b29b5.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-0d28ced06662.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-0d2935319adb.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-0d422f0e62e9.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-1093bfcd825b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-110c70d3897b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-13d2f1181a54.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-1551a4c10d58.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-16e62e0d9f56.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-1a5d3faf9439-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-1a5d3faf9439.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-22dbf234c4bc.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-23c03e37fed7.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-2825947df2d6.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-28bdfb468f78.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-2af89ce8b87d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-2ec2a62cb644.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-2f462207c820.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-31247d0735b6.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-350841cd869d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-35f0234fa05f.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-38a62e54c041.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-3be999334b72.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-3c5aa531496b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-4466e4d961b1.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-4efc28be470c-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-4efc28be470c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-52556b8a9207-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-52556b8a9207.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-551cb023ca49.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-59a02e2fac60.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-5a0b6c7482cc.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-5ea818e706bb-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-5ea818e706bb.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-61b84ea4d8d8.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-64f1e63a41b3.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-674f356814bf.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-69899116f4ae.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-6a1436989fc7-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-6a1436989fc7.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-701c64bccb46.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-7914d82ef26c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-79da9372a710.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-7f4f0f892411.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-806c1355739d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-873e90b300b4-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-873e90b300b4.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-88eddb4a8208.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-8940972f7883-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-8940972f7883.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-908138de7331.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-91635780a910.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-93fb50d63543.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-97feb020134d.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-9a7c347eef10.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-9da54e09a30a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-9ffbb811d9f1.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-a26d2164212a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-a7703272a0b7.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-a8198da6ae1c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-a8ebbb84ed77.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-a963945f7a8c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-a96b503b0505.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-a99aa3dcd88c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-ac13b51d0d0a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-adb2be97a1a5.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-af576e976f64.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-b02c6a3c3823.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-b1a597a56632.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-b37e53faa1af.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-b40b9e0feb3a.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-b732c559b3f6.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-b9835a9a1e2c.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-bc6038fb50cd.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-bfb4a8401ae2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-c8c5ad06d492.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-ce38955d8076.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-ce3a6e33bbbc-a2.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-ce3a6e33bbbc.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-ddf033189baa.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-df230d9c8c4e.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-dfb81a781cee.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-e68987dfebef.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-e83f943bfb0b.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-ed585d19a144.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-f07425eb8191.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-fbd36e53b6d1.yaml
+ M .sldb/core/models/BoardDoc.yaml
+ M .sldb/core/models/ReviewDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/store_index.yaml
+ M runs/subagents/exec-deskops-e-2192f0386599/run.md
+ M runs/subagents/exec-deskops-e-21dad6d90f62/run.md
+ M runs/subagents/exec-deskops-e-25a8e8eb9097/run.md
+ M runs/subagents/exec-deskops-e-30db2234603e/run.md
+ M runs/subagents/exec-deskops-e-38bd0e939f96/run.md
+ M runs/subagents/exec-deskops-e-49e965aad6ef/run.md
+ M runs/subagents/exec-deskops-e-5f0471f4b90c/run.md
+ M runs/subagents/exec-deskops-e-63752d14bbc2/run.md
+ M runs/subagents/exec-deskops-e-6531427835e6/run.md
+ M runs/subagents/exec-deskops-e-6652dd0ffe4c/run.md
+ M runs/subagents/exec-deskops-e-753b3a0d35ae/run.md
+ M runs/subagents/exec-deskops-e-85084b2b474c/run.md
+ M runs/subagents/exec-deskops-e-8789fbc12501/run.md
+ M runs/subagents/exec-deskops-e-88e159852195/run.md
+ M runs/subagents/exec-deskops-e-a9630e065aa2/run.md
+ M runs/subagents/exec-deskops-e-b526639a788c/run.md
+ M runs/subagents/exec-deskops-e-c6e17d165dd8/run.md
+ M runs/subagents/exec-deskops-e-dda7a5dc881c/run.md
+ M runs/subagents/exec-deskops-e-e558315aff21/run.md
+ M runs/subagents/exec-deskops-t-1ec12a48e094-a2-testing/run.md
+ M runs/subagents/exec-deskops-t-340823457b24-testing/run.md
+ M runs/subagents/exec-deskops-t-458e549a77c2-a2-testing/run.md
+ M runs/subagents/exec-deskops-t-4f5c42ad60bb-testing/run.md
+ M runs/subagents/exec-deskops-t-6450501c31c0-testing/run.md
+ M runs/subagents/exec-deskops-t-6e105b58313e-a2-testing/run.md
+ M runs/subagents/exec-deskops-t-a1f712d51bc9-a2-testing/run.md
+ M runs/subagents/exec-deskops-t-a5cf682dce3f-a2-testing/run.md
+ M runs/subagents/exec-deskops-t-ff772f6d16de-a2-testing/run.md
+?? .sldb/core/documents/ReviewDoc/review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-bundle-1.yaml
+?? desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/bundle-1.md
+?? runs/subagents/20261116-170649/
+?? runs/subagents/20261116-170855/
+?? runs/subagents/20261116-202233/
+?? runs/subagents/20261116-202327/
+?? runs/subagents/20261116-213327/
+?? runs/subagents/20261116-213418/
+?? runs/subagents/20261116-230533/
+?? runs/subagents/20261116-230642/
+?? runs/subagents/20261117-012855/
+?? runs/subagents/20261117-012922/
+?? runs/subagents/20261117-012951/
+?? runs/subagents/20261117-013045/
+?? runs/subagents/20261117-025329/
+?? runs/subagents/20261117-025359/
+?? runs/subagents/20261117-025511/
+?? runs/subagents/20261117-025544/
+?? runs/subagents/20261117-025620/
+?? runs/subagents/20261117-043714/
+?? runs/subagents/20261117-045616/
+?? runs/subagents/20261117-115857/
+?? runs/subagents/20261117-115915/
+?? runs/subagents/20261117-115941/
+?? runs/subagents/20261117-115958/
+?? runs/subagents/20261117-120023/
+?? runs/subagents/20261117-120041/
+?? runs/subagents/20261117-120111/
+?? runs/subagents/20261117-120133/
+?? runs/subagents/20261117-120151/
+?? runs/subagents/20261117-120211/
+?? runs/subagents/20261117-120232/
+?? runs/subagents/20261117-120258/
+?? runs/subagents/20261117-120319/
+?? runs/subagents/20261117-120341/
+?? runs/subagents/20261117-120407/
+?? runs/subagents/20261117-120426/
+?? runs/subagents/20261117-133437/
+?? runs/subagents/20261117-133508/
+?? runs/subagents/20261117-133603/
+?? runs/subagents/20261117-133620/
+?? runs/subagents/20261119-004318/
+?? runs/subagents/20261119-004401/
+?? runs/subagents/20261119-045520/
+?? runs/subagents/20261119-045538/
+?? runs/subagents/20261119-124249/
+?? runs/subagents/20261119-124309/
+?? runs/subagents/20261119-140901/
+?? runs/subagents/20261119-140918/
+?? runs/subagents/20261119-174322/
+?? runs/subagents/20261119-174357/
+?? runs/subagents/20261119-214249/
+?? runs/subagents/20261119-214304/
+?? runs/subagents/20261119-214325/
+?? runs/subagents/20261119-214347/
+?? runs/subagents/20261120-051300/
+?? runs/subagents/20261120-051337/
+?? runs/subagents/20261120-084356/
+?? runs/subagents/20261120-084416/
+?? runs/subagents/20261120-104332/
+?? runs/subagents/20261120-104354/
+?? runs/subagents/20261120-161329/
+?? runs/subagents/20261120-161353/
+?? runs/subagents/20261120-174709/
+?? runs/subagents/20261120-174733/
+?? runs/subagents/20261120-192256/
+?? runs/subagents/20261120-192319/
+?? runs/subagents/20261120-message-legacy-wip/
+?? runs/subagents/20261121-041556/
+?? runs/subagents/20261121-041614/
+?? runs/subagents/20261121-051316/
+?? runs/subagents/20261121-051343/
+?? runs/subagents/20261121-065253/
+?? runs/subagents/20261121-065421/
+?? runs/subagents/20261121-065552/
+?? runs/subagents/20261121-065622/
+?? runs/subagents/20261121-065644/
+?? runs/subagents/20261121-065706/
+?? runs/subagents/20261121-065916/
+?? runs/subagents/20261121-065939/
+?? runs/subagents/20261121-070005/
+?? runs/subagents/20261121-070032/
+?? runs/subagents/20261121-070302/
+?? runs/subagents/20261121-070333/
+?? runs/subagents/20261121-070358/
+?? runs/subagents/20261121-070522/
+?? runs/subagents/20261121-070917/
+?? runs/subagents/20261121-070943/
+?? runs/subagents/20261121-071008/
+?? runs/subagents/20261121-071030/
+?? runs/subagents/20261121-071253/
+?? runs/subagents/20261121-071648/
+?? runs/subagents/20261121-071713/
+?? runs/subagents/20261121-071734/
+?? runs/subagents/20261121-071956/
+?? runs/subagents/20261121-072020/
+?? runs/subagents/20261121-072057/
+?? runs/subagents/20261121-072124/
+?? runs/subagents/20261121-072426/
+?? runs/subagents/20261121-072451/
+?? runs/subagents/20261121-072517/
+?? runs/subagents/20261121-072538/
+?? runs/subagents/20261121-072743/
+?? runs/subagents/20261121-072814/
+?? runs/subagents/20261121-072840/
+?? runs/subagents/20261121-072903/
+?? runs/subagents/20261121-073155/
+?? runs/subagents/20261121-073219/
+?? runs/subagents/20261121-073248/
+?? runs/subagents/20261121-073320/
+?? runs/subagents/20261121-073550/
+?? runs/subagents/20261121-073611/
+?? runs/subagents/20261121-073644/
+?? runs/subagents/20261121-073708/
+?? runs/subagents/20261121-073942/
+?? runs/subagents/20261121-074006/
+?? runs/subagents/20261121-074046/
+?? runs/subagents/20261121-074357/
+?? runs/subagents/20261121-074424/
+?? runs/subagents/20261121-074457/
+?? runs/subagents/20261121-074528/
+?? runs/subagents/20261121-074831/
+?? runs/subagents/20261121-074903/
+?? runs/subagents/20261121-074928/
+?? runs/subagents/20261121-091442/
+?? runs/subagents/20261121-091508/
+?? runs/subagents/20261121-114409/
+?? runs/subagents/20261121-114438/
+?? runs/subagents/20261121-114814/
+?? runs/subagents/20261121-114837/
+?? runs/subagents/20261121-180726/
+?? runs/subagents/20261121-180803/
+?? runs/subagents/20261122-001507/
+?? runs/subagents/20261122-001539/
+?? runs/subagents/20261122-054307/
+?? runs/subagents/20261122-054327/
+?? runs/subagents/20261122-085225/
+?? runs/subagents/20261122-085249/
+?? runs/subagents/20261122-121627/
+?? runs/subagents/20261122-121649/
+?? runs/subagents/20261122-212231/
+?? runs/subagents/20261122-212254/
+?? runs/subagents/20261122-213932/
+?? runs/subagents/20261122-213953/
+?? runs/subagents/20261122-214131/
+?? runs/subagents/20261122-215640/
+?? runs/subagents/20261122-221241/
+?? runs/subagents/20261122-221304/
+?? runs/subagents/20261122-verif-doctor-lost/
+?? runs/subagents/20261123-044550/
+?? runs/subagents/20261123-044846/
+?? runs/subagents/20261123-044929/
+?? runs/subagents/20261123-044956/
+?? runs/subagents/20261123-045019/
+?? runs/subagents/20261123-045038/
+?? runs/subagents/20261123-045102/
+?? runs/subagents/20261123-045125/
+?? runs/subagents/20261123-045152/
+?? runs/subagents/20261123-045218/
+?? runs/subagents/20261123-045248/
+?? runs/subagents/20261123-045315/
+?? runs/subagents/20261123-045344/
+?? runs/subagents/20261123-045411/
+?? runs/subagents/20261123-045437/
+?? runs/subagents/20261123-045504/
+?? runs/subagents/20261123-050835/
+?? runs/subagents/20261123-050904/
+?? runs/subagents/20261123-051625/
+?? runs/subagents/20261123-051653/
+?? runs/subagents/20261123-053425/
+?? runs/subagents/20261123-053703/
+?? runs/subagents/20261123-053758/
+?? runs/subagents/20261123-144129/
+?? runs/subagents/20261123-173232/
+?? runs/subagents/20261123-173314/
+?? runs/subagents/20261123-175221/
+?? runs/subagents/20261123-175242/
+?? runs/subagents/20261123-190750/
+?? runs/subagents/20261123-190813/
+?? runs/subagents/20261125-012219/
+?? runs/subagents/20261125-012303/
+?? runs/subagents/20261125-012324/
+?? runs/subagents/20261125-012752/
+?? runs/subagents/20261125-014350/
+?? runs/subagents/20261125-015937/
+?? runs/subagents/20261125-022945/
+?? runs/subagents/20261125-023010/
+?? runs/subagents/20261125-023034/
+?? runs/subagents/20261125-031126/
+?? runs/subagents/20261125-032221/
+?? runs/subagents/exec-deskops-e-451456d2eaed/board.txt
+?? runs/subagents/exec-deskops-e-451456d2eaed/git-status.txt
+?? runs/subagents/exec-deskops-e-451456d2eaed/graph.txt
+?? runs/subagents/exec-deskops-e-451456d2eaed/next.txt
+?? runs/subagents/exec-deskops-e-451456d2eaed/prompt.md
+?? runs/subagents/exec-deskops-e-451456d2eaed/result-summary.md
+?? runs/subagents/exec-deskops-e-451456d2eaed/task.txt
+?? runs/subagents/exec-deskops-e-451456d2eaed/validation.log
+?? runs/subagents/exec-deskops-e-5f0471f4b90c/prompt.md
+?? runs/subagents/exec-deskops-e-780cd9b1b487-a2/prompt.md
+?? runs/subagents/exec-deskops-e-780cd9b1b487/board.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/git-status.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/graph.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/next.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/prompt.md
+?? runs/subagents/exec-deskops-e-780cd9b1b487/result-summary.md
+?? runs/subagents/exec-deskops-e-780cd9b1b487/task.txt
+?? runs/subagents/exec-deskops-e-780cd9b1b487/validation.log
+?? runs/subagents/exec-deskops-e-a9630e065aa2/board.txt
+?? runs/subagents/exec-deskops-e-a9630e065aa2/git-status.txt
+?? runs/subagents/exec-deskops-e-a9630e065aa2/graph.txt
+?? runs/subagents/exec-deskops-e-a9630e065aa2/next.txt
+?? runs/subagents/exec-deskops-e-a9630e065aa2/prompt.md
+?? runs/subagents/exec-deskops-e-a9630e065aa2/task.txt
+?? runs/subagents/exec-deskops-e-d6d7a9319141/prompt.md
+?? runs/subagents/exec-deskops-e-d6d7a9319141/result-summary.md
+?? runs/subagents/exec-deskops-t-1ec12a48e094-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-1ec12a48e094-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-340823457b24-testing/board.txt
+?? runs/subagents/exec-deskops-t-340823457b24-testing/git-status.txt
+?? runs/subagents/exec-deskops-t-340823457b24-testing/graph.txt
+?? runs/subagents/exec-deskops-t-340823457b24-testing/next.txt
+?? runs/subagents/exec-deskops-t-340823457b24-testing/prompt.md
+?? runs/subagents/exec-deskops-t-340823457b24-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-340823457b24-testing/task.txt
+?? runs/subagents/exec-deskops-t-340823457b24-testing/validation.log
+?? runs/subagents/exec-deskops-t-458e549a77c2-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-458e549a77c2-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-4efc28be470c-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-4efc28be470c-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-4f5c42ad60bb-testing/prompt.md
+?? runs/subagents/exec-deskops-t-4f5c42ad60bb-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-52556b8a9207-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-52556b8a9207-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-6450501c31c0-testing/prompt.md
+?? runs/subagents/exec-deskops-t-6a1436989fc7-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-6a1436989fc7-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-6e105b58313e-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-6e105b58313e-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-a1f712d51bc9-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-a1f712d51bc9-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-a5cf682dce3f-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-a5cf682dce3f-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-a7703272a0b7-testing/prompt.md
+?? runs/subagents/exec-deskops-t-a7703272a0b7-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-a7703272a0b7-testing/validation.log
+?? runs/subagents/exec-deskops-t-ce3a6e33bbbc-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-ce3a6e33bbbc-a2-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-ce3a6e33bbbc-a2-testing/validation.log
+?? runs/subagents/exec-deskops-t-ff772f6d16de-a2-testing/prompt.md
+?? runs/subagents/exec-deskops-t-ff772f6d16de-a2-testing/result-summary.md
+?? runs/subagents/node-deskops-como-config/
+?? runs/subagents/node-deskops-ui/
+?? runs/subagents/node-gates-por-tipo/
+?? runs/subagents/node-workspace-documental-r2/
+?? runs/subagents/node-workspace-documental/
+?? runs/subagents/test-deskops-t-1551a4c10d58/brief.md

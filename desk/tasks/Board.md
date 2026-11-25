@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T03:21:58Z'
+  at: '2026-11-25T05:11:48Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -60,7 +60,6 @@ tasks:
 - desk/tasks/task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y.md
 - desk/tasks/task-deskops-declara-fases-del-board-por-cli-crear-una-fase-y-agregar-o-quitar-tareas.md
 - desk/tasks/task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado.md
-- desk/tasks/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin.md
 - desk/tasks/task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase.md
 # List of pill-xxx paths
 pills:
@@ -152,5 +151,4 @@ _Generated from the task references above._
 - El skill deskops-workflow y vocabulary.md explican que la suite completa y el push son de la fase y cada tarea solo corre su validacion dirigida [draft] - SKILL.md explica como se declaran las fases en el Board al descomponer el DAG y que la integracion (suite completa, grafo, store, push y commit de cierre de fase) es de la fase, mientras cada tarea cierra con su validacion dirigida; vocabulary.md define fase como capa de dependencias declarada en el Board y unidad de integracion; los comandos citados existen en la ayuda del CLI.
 - deskops declara fases del Board por CLI: crear una fase y agregar o quitar tareas [draft] - Un comando de deskops crea una fase en el Board y agrega o quita tareas de ella, validando que la tarea exista y que no este ya en otra fase; escribe por sldb.
 - deskops view board muestra las fases del DAG con sus tareas y su estado [draft] - deskops view board (texto y json) lista cada fase con sus tareas y el estado de cada una, y si la fase esta completa.
-- Un integrate exitoso pasa a done los integrate fallidos del desk ya presentes en origin [draft] - Al terminar bien, deskops integrate recorre runs/queue/failed del desk y mueve a done cada integrate cuyo tip ya es ancestro de origin, dejando una linea en su log de por que.
 - closeout encola un solo integrate cuando cierra la ultima tarea de la fase [draft] - Al cerrar una tarea que pertenece a una fase del Board: si quedan tareas abiertas en la fase no se encola nada; si era la ultima se encola un solo trabajo integrate --phase, sin duplicar uno pendiente. Una tarea sin fase encola su integrate como hoy.

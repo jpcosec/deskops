@@ -1,30 +1,33 @@
+Task: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin
+Title: Un integrate exitoso pasa a done los integrate fallidos del desk ya presentes en origin
+Status: draft
+Current node: ritual-execution
+Task type: task.code
+Lifecycle gates:
+- task_activates -> ritual-testing: open [(none)]
+  post-hook encola-reap-del-ejecutor: deskops queue add dispatch-reap --root .
+  post-hook encola-tester: deskops queue add dispatch-tester --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-25T05:05:54Z'
+  at: '2026-11-25T01:27:50Z'
   authority: generated
   via: save_document_payload
 id: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin
-status: active
+status: draft
 summary: ''
 tags: []
-current_node: ritual-testing
-history:
-- task_activates
-references:
-- deskops/integrate.py
-- tests/test_integrate.py
-- 58ce512897651a6bce9e7169bca0d42a1b481466
+current_node: ritual-execution
+history: []
+references: []
 depends_on: []
 pills: []
-files:
-- deskops/integrate.py
-- tests/test_integrate.py
+files: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-ya-presentes-en-origin
+atoms: []
 ---
 
 # Un integrate exitoso pasa a done los integrate fallidos del desk ya presentes en origin
@@ -64,3 +67,26 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Tras un integrate exitoso, un integrate en failed cuyo cierre ya esta en origin pasa a done con su linea de log, y uno cuyo cierre no esta queda en failed; tests/test_integrate.py entero pasa.
+
+## Entrega del ejecutor
+
+Al terminar, commitea solo los archivos que cambiaste para la tarea, nombrados uno por uno (los mismos que listas en result-summary.md):
+
+    git add <ruta> <ruta> ...
+    git commit -m "<resumen>" -m "Task-Id: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin"
+
+Nunca uses `git add -A`, `git add -u` sobre todo el arbol ni `git stash`: puede haber trabajo ajeno sin commitear. No hagas push. Recien despues ejecuta `deskops advance task`.
+
+## Temporales de pytest
+
+Antes de cualquier pytest exporta, para que sus temporales caigan en el /tmp del contenedor (muere con el agente) y no en el /dev/shm del host:
+
+    export PYTEST_ADDOPTS="--basetemp=/tmp/pytest-deskops-e-a9630e065aa2"
+
+## Tu worktree
+
+Tu codigo vive en un worktree propio, en la rama `deskops/deskops-e-a9630e065aa2`:
+
+    /mnt/ssd/proyectos/SLDB_1/deskops/.worktrees/deskops-e-a9630e065aa2
+
+Haz `cd` ahi: edita, corre los tests y commitea ahi (git add / git commit), no en el checkout principal /mnt/ssd/proyectos/SLDB_1/deskops. Las operaciones de desk (`deskops ... --root /mnt/ssd/proyectos/SLDB_1/deskops`, evidencia en runs/subagents/..., `deskops advance task`) siguen usando el checkout principal. Al terminar, reap trae tus commits a la rama principal y borra el worktree.

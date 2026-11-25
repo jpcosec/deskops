@@ -1,0 +1,2 @@
+pytest -q tests/test_integrate.py -k failed -> 2 passed
+pytest -q tests/test_integrate.py -> 32 passed (exit 0)

@@ -1,0 +1,36 @@
+name: review-task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin-evidence-materialization-1
+path: desk/reviews/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin/evidence-materialization-1.md
+source_hash: f3cc8efd2823acb8edd59eec3cf153411e1c43efcce72bc3b2ccd39247a07cd7
+content_hash: 3085b049915210622d282def576dd18315885cdeb5e64f78019a9207f02699db
+field_hashes:
+  id: efdf22e764e6227db008901709b0ccd1d6b4323d074f401001c35c9b554d5a17
+  title: 4b90b6a557f4e502d91fb8f435b25c6d5629f26cbad48ffcdc47dcc282acdc4b
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: e22cd2dd6f7fd8c7ebef41e0481d3e5054899c9c9fe1842752275dcfe5970715
+  subject: 840e85dfc036f28da74b0bc7e34663441f22ca86871d21606737f17789b7e1b2
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: eb1ecef9bfc9bd3d34c157c8622a6e11a1f7ca340ccea8739bb8b274cd753ad4
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 284e7b9f685701c58e12453bd31bc71b4463eeeb7fe24d2b760e21896497112a
+  created_at: 60a808516d3486321f1119831e685d89947be96c8ac6628950ad27aa053e2108
+  disposed_at: 60a808516d3486321f1119831e685d89947be96c8ac6628950ad27aa053e2108
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 26c10cd16a824d6b357b0a911611766682bed1222614f713040fd90b07e4a257
+  disposition: 714366508e0dd96f4d4693392e8be3d072bcdd78d048be99a04b20986037e022
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T05:06:47Z'
+  authority: generated
+  via: create_document
