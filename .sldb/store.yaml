@@ -625,6 +625,7 @@ include:
   - desk/materializations/materialization-board-phases-tests-fixtures-model-contract-hashes-json.md
   - desk/materializations/materialization-closeout-node-tests-deskops-services-closeout-gates-py.md
   - desk/materializations/materialization-closeout-node-tests-tests-test-closeout-test-paths-py.md
+  - desk/materializations/materialization-auditoria-atomos-pills-docs-auditoria-atomos-y-pills-md.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3377,6 +3378,10 @@ include:
     name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-evidence-atom-1
   - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js/evidence-materialization-1.md
     name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-evidence-materialization-1
+  - path: desk/reviews/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p/evidence-commit-1.md
+    name: review-task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p-evidence-commit-1
+  - path: desk/reviews/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p/evidence-document-1.md
+    name: review-task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p-evidence-document-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

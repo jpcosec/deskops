@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T20:48:16Z'
+  at: '2026-11-25T21:23:48Z'
   authority: generated
   via: save_document_payload
 id: task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p
@@ -11,14 +11,18 @@ tags: []
 current_node: ritual-testing
 history:
 - task_activates
-references: []
+references:
+- docs/auditoria/atomos-y-pills.md
+- 054d76fddc000feb762e9e28a31b5565633cddcc
 depends_on: []
 pills: []
-files: []
+files:
+- docs/auditoria/atomos-y-pills.md
 task_type: task.docs
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-auditoria-de-atomos-y-pills-con-las-tres-preguntas
 ---
 
 # docs/auditoria/atomos-y-pills.md clasifica cada átomo y cada pill de los cuatro desks con las tres preguntas de la propuesta

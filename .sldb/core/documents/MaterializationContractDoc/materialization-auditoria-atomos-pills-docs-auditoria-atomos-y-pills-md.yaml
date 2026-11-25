@@ -1,0 +1,25 @@
+name: materialization-auditoria-atomos-pills-docs-auditoria-atomos-y-pills-md
+path: desk/materializations/materialization-auditoria-atomos-pills-docs-auditoria-atomos-y-pills-md.md
+source_hash: f347c76a2030f77975a207f8f00e18cd8d78045e95d4eac767da3b3ef11c7c00
+content_hash: 44031c32ff8def763581bbd774e0a064693adc93fb0e1daebfb053694bc8eba3
+field_hashes:
+  id: 4500454cc4a9f1d59f5c7ff3fb96067e8f6bc3aa092cf141960bee6faba99179
+  title: ef92c87761f5d82f091342f31711ec63a7aee5f5acec045aa9815dec175004f1
+  source_atoms: ef90b297071a5bdc75b474f35171ae168368706880d4a1cd7961bfcc743bcd99
+  target_kind: 5310eeb1d153dad19cd89e627b129d763e0cb2029f901c1a54fcc70478405c04
+  target_identity: d61274c05af50cf1de8a5ec215e6f51a10501296b49b4a7674b7bec590a220da
+  intent: d6a1c2197a473ac11290c765c4c97c98167398d6ed700cc4619f880925a80cbb
+  validation: 592e4d63f0000066753777fab1c0ee3cb7a431c70e497ee292b5ff1bfd95f95c
+  tags: ede43b14f5eaea894dd03450d65336e661c1ba0cbd88ce3acdbf04bca3803ea8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:auditoria-atomos-pills
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-25T21:24:10Z'
+  authority: generated
+  via: create_document
