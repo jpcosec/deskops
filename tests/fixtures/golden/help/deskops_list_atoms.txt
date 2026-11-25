@@ -1,5 +1,6 @@
 usage: deskops list atoms [-h] [--root ROOT] [--axis-value AXIS_VALUE]
-                          [--conv CONV] [--format {text,json}]
+                          [--conv CONV] [--type ATOM_TYPE] [--all]
+                          [--format {text,json}]
 
 List atoms.
 
@@ -11,4 +12,7 @@ options:
                         namespace value (e.g. licitaciones).
   --conv CONV           Filter atoms by conversation thread: conversation_ref
                         equal to it or starting with '<thread>/'.
+  --type ATOM_TYPE      List only the atoms of this type (atom.adr); a typed
+                        list shows by default only those in force (accepted).
+  --all                 With --type, also list the superseded ones.
   --format {text,json}  Output format.

@@ -6,3 +6,4 @@ when: Apply when serialized output changes.
 where: Applies to tests/fixtures/golden/.
 how: Compare normalized output against committed files.
 how_not: Do not edit a golden to match a regression.
+pointers: 

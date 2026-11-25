@@ -1,5 +1,6 @@
 usage: deskops list [-h]
-                    {tasks,pills,rituals,boards,atoms,materializations,repositories,reviews,inbox-notes,faq-docs,steps,roles,runtime-profiles} ...
+                    {tasks,pills,rituals,boards,atoms,materializations,repositories,reviews,inbox-notes,faq-docs,steps,roles,runtime-profiles}
+                    ...
 
 List desk workflow artifacts.
 

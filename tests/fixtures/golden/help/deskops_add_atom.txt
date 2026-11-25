@@ -1,9 +1,18 @@
 usage: deskops add atom [-h] [--root ROOT] [--from-yaml FROM_YAML]
-                        [--title TITLE]
+                        [--atom-type {atom.adr}] [--title TITLE]
                         [--five-wh-one-plus {what,why,how,how_not,when,where,for_whom}]
                         [--answer ANSWER] [--tags TAGS [TAGS ...]]
                         [--provenance PROVENANCE]
                         [--conversation-ref CONVERSATION_REF]
+                        [--pointers POINTERS [POINTERS ...]]
+                        [--status {accepted,superseded}]
+                        [--decided-on DECIDED_ON] [--decided-by DECIDED_BY]
+                        [--context CONTEXT] [--consequences CONSEQUENCES]
+                        [--alternatives ALTERNATIVES]
+                        [--supersedes SUPERSEDES [SUPERSEDES ...]]
+                        [--partial-supersedes PARTIAL_SUPERSEDES [PARTIAL_SUPERSEDES ...]]
+                        [--superseded-section SUPERSEDED_SECTION]
+                        [--references REFERENCES [REFERENCES ...]]
 
 Create an atom artifact.
 
@@ -12,6 +21,11 @@ options:
   --root ROOT           Target repository root.
   --from-yaml FROM_YAML
                         Load the atom payload from a YAML file.
+  --atom-type {atom.adr}
+                        Create a typed atom: its model adds the fields of the
+                        type (atom.adr: decided-on, decided-by, context,
+                        consequences, alternatives, supersedes, partial-
+                        supersedes, superseded-section, references, status).
   --title TITLE         Short, descriptive title for the atomic knowledge
                         unit.
   --five-wh-one-plus {what,why,how,how_not,when,where,for_whom}
@@ -32,6 +46,37 @@ options:
                         Optional conversation reference in the form
                         "<thread>/<message id>" or just "<thread>" (e.g.
                         "#acuerdos-sldb1/1234"); empty is not written.
+  --pointers POINTERS [POINTERS ...]
+                        Where this applies, as pointers with a class prefix:
+                        'doc:<Model>:<id>', 'tag:<namespace>:<value>' or
+                        'code:<path>::<qualified_name>'. Optional; the free-
+                        text where/files stay as they are.
+  --status {accepted,superseded}
+                        'accepted' while in force; 'superseded' once an
+                        accepted ADR replaces it in full.
+  --decided-on DECIDED_ON
+                        Date of the decision, YYYY-MM-DD.
+  --decided-by DECIDED_BY
+                        Who made the decision (the owner who disposes the
+                        receipt).
+  --context CONTEXT     The forces and the situation that made the decision
+                        necessary.
+  --consequences CONSEQUENCES
+                        What the decision makes easier, harder or impossible.
+  --alternatives ALTERNATIVES
+                        Optional: what was considered and discarded.
+  --supersedes SUPERSEDES [SUPERSEDES ...]
+                        Ids of the ADRs this one replaces in full; each
+                        becomes 'superseded'.
+  --partial-supersedes PARTIAL_SUPERSEDES [PARTIAL_SUPERSEDES ...]
+                        Ids of the ADRs this one replaces only in a section;
+                        each stays 'accepted'.
+  --superseded-section SUPERSEDED_SECTION
+                        With partial_supersedes: the section of the earlier
+                        ADR this one replaces.
+  --references REFERENCES [REFERENCES ...]
+                        What the decision applies to: files, documents,
+                        repositories or tasks.
 
 Example:
   deskops add atom --root . --title "Example" --five-wh-one-plus "what" --answer "..."

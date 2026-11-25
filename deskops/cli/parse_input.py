@@ -37,6 +37,7 @@ def parse_task_input(args: Any) -> dict[str, Any]:
     if getattr(args, "evidence", None): payload["closeout_evidence"] = args.evidence
     if getattr(args, "inherits_from", None): payload["inherits_from"] = args.inherits_from
     if getattr(args, "atom", None): payload["atoms"] = args.atom
+    if getattr(args, "pointers", None): payload["pointers"] = args.pointers
     if getattr(args, "inherit_acceptance_context", False): payload["inherit_acceptance_context"] = True
 
     return payload
@@ -50,6 +51,7 @@ _TASK_STRING_LIST_FIELDS = (
     "evidence",
     "closeout_evidence",
     "references",
+    "pointers",
 )
 
 

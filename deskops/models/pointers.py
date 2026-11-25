@@ -4,9 +4,11 @@ One field, the same in AtomDoc, PillDoc and TaskDoc: a list of strings with a cl
 deskops only keeps and checks the shape; resolving a pointer is sldb's job.
 
 - ``doc:<Model>:<id>``: a store document, sldb's export id ``Model:name`` (selectors.md).
-- ``tag:<namespace>:<value>``: a category, a complete namespaced tag (tags.md).
+- ``tag:<namespace>:<value>``: a category, a complete namespaced tag (tags.md); the value may
+  itself hold ``:`` (``tag:area:ui:graph``).
 - ``code:<path>::<qualified_name>``: a code anchor, sldb's ``code:…::…`` reference
-  (code-anchoring.md); the whole module is ``code:<path>::`` (empty name). sldb refuses a
+  (code-anchoring.md), with the optional ``~N`` disambiguator for the Nth homonym
+  (``code:src/a.py::foo~2``); the whole module is ``code:<path>::`` (empty name). sldb refuses a
   code reference without ``::``, so this one does too.
 """
 from __future__ import annotations
@@ -16,8 +18,8 @@ import re
 POINTER_CLASSES = ("doc", "tag", "code")
 
 _DOC = re.compile(r"^[A-Za-z][A-Za-z0-9_]*:[^\s:][^\s]*$")
-_TAG = re.compile(r"^[a-z][a-z0-9_]*:[a-z][a-z0-9_.-]*$")
-_CODE = re.compile(r"^[^\s:][^\s:]*(?::[^\s:]+)*::([A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*)?$")
+_TAG = re.compile(r"^[a-z][a-z0-9_]*(:[a-z][a-z0-9_.-]*)+$")
+_CODE = re.compile(r"^[^\s:][^\s:]*(?::[^\s:]+)*::([A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*(~[0-9]+)?)?$")
 
 _EXPECTED = {
     "doc": "doc:<Model>:<id>",

@@ -1,5 +1,6 @@
 usage: deskops add [-h]
-                   {task,pill,ritual,board,atom,materialization,repository,inbox-note,faq-doc,step,role,runtime-profile} ...
+                   {task,pill,ritual,board,atom,materialization,repository,inbox-note,faq-doc,step,role,runtime-profile}
+                   ...
 
 Create desk workflow artifacts from modeled templates.
 

@@ -405,6 +405,14 @@ A task's closeout evidence is declared by its type; see `deskops add task --help
                     action="store_true",
                     help="Inherit validation and done-when context from tasks listed in --inherits-from.",
                 ),
+                A(
+                    "--pointers",
+                    action="extend",
+                    nargs="+",
+                    default=[],
+                    help="Where this applies: 'doc:<Model>:<id>', 'tag:<namespace>:<value>' or "
+                    "'code:<path>::<qualified_name>'; repeat or space-separate as needed.",
+                ),
             ),
             handler="deskops.cli.commands.operations:OperationsCLI",
             mutates=True,

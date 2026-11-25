@@ -3,7 +3,8 @@ usage: deskops add board [-h] [--root ROOT] [--from-yaml FROM_YAML]
                          [--tags TAGS [TAGS ...]] [--scope SCOPE]
                          [--purpose PURPOSE] [--tasks TASKS [TASKS ...]]
                          [--pills PILLS [PILLS ...]]
-                         [--rituals RITUALS [RITUALS ...]] [--notes NOTES]
+                         [--rituals RITUALS [RITUALS ...]]
+                         [--phases PHASES [PHASES ...]] [--notes NOTES]
 
 Create a board artifact.
 
@@ -25,6 +26,9 @@ options:
                         Active pill document references routed by this board.
   --rituals RITUALS [RITUALS ...]
                         Ritual document references relevant to this board.
+  --phases PHASES [PHASES ...]
+                        DAG phases: id, member tasks and the phase
+                        integration.
   --notes NOTES         Short operational notes about the current routed set.
 
 Example:

@@ -3,6 +3,7 @@ usage: deskops add pill [-h] [--root ROOT] [--from-yaml FROM_YAML]
                         [--tags TAGS [TAGS ...]] [--what WHAT] [--why WHY]
                         [--when WHEN] [--where WHERE] [--how HOW]
                         [--how-not HOW_NOT]
+                        [--pointers POINTERS [POINTERS ...]]
 
 Create a pill artifact.
 
@@ -25,6 +26,11 @@ options:
                         references to existing code or docs.
   --how HOW             How to apply the guidance in practice.
   --how-not HOW_NOT     How not to apply the guidance or what to avoid.
+  --pointers POINTERS [POINTERS ...]
+                        Where this applies, as pointers with a class prefix:
+                        'doc:<Model>:<id>', 'tag:<namespace>:<value>' or
+                        'code:<path>::<qualified_name>'. Optional; the free-
+                        text where/files stay as they are.
 
 Example:
   deskops add pill --root . --title "Example" --what "..." --why "..." --when "..." --where "..." --how "..." --how-not "..."

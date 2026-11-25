@@ -1,5 +1,6 @@
 usage: deskops show [-h]
-                    {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step,role,runtime-profile} ...
+                    {task,pill,ritual,board,atom,materialization,repository,review,inbox-note,faq-doc,step,role,runtime-profile}
+                    ...
 
 Show one desk workflow artifact by selector.
 

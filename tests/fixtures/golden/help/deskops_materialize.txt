@@ -1,8 +1,12 @@
-usage: deskops materialize [-h] [--root ROOT] [--out OUT]
+usage: deskops materialize [-h] [--root ROOT] [--out OUT] [--adr ADR]
 
-Render tracked desk role prompts into installed pi-agent files.
+Render tracked desk role prompts into installed pi-agent files, or one
+atom.adr as Markdown (--adr).
 
 options:
   -h, --help   show this help message and exit
   --root ROOT  Target repository root.
-  --out OUT    Output directory override; defaults to ~/.pi/agent/agents.
+  --out OUT    Output directory override; defaults to ~/.pi/agent/agents (with
+               --adr: the output file, default docs/decisions/<id>.md).
+  --adr ADR    Materialize this atom.adr (id or selector) as Markdown instead
+               of the role prompts.

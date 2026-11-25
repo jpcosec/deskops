@@ -10,6 +10,7 @@ from deskops.models.pill import PillDoc
 from deskops.models.task import TaskDoc
 
 GOOD = ["doc:TaskDoc:task-x", "tag:area:ui.graph", "code:src/a/b.py::Clase.metodo", "code:src/a/b.py::"]
+GOOD_EXTRA = ["tag:area:ui:graph", "code:src/a.py::foo~2", "code:src/a.py::Clase.metodo~2"]
 BAD = {
     "doc:nada": "doc:<Model>:<id>",
     "tag:SinNamespace": "tag:<namespace>:<value>",
@@ -31,6 +32,11 @@ def test_models_default_and_accept_every_class(model, base) -> None:
     assert model(**{**base, "pointers": None}).pointers == []
 
 
+@pytest.mark.parametrize("pointer", GOOD_EXTRA)
+def test_tag_value_with_colon_and_code_tilde_suffix(pointer) -> None:
+    assert TaskDoc(**TASK, pointers=[pointer]).pointers == [pointer]
+
+
 @pytest.mark.parametrize("model,base", MODELS)
 @pytest.mark.parametrize("bad,expected", BAD.items())
 def test_models_reject_malformed_pointer_naming_class(model, base, bad, expected) -> None:
@@ -44,6 +50,7 @@ def _add_task(root: Path) -> None:
         "add", "task", "--root", str(root), "--title", "Punteros", "--task-type", "task.code",
         "--goal", "g", "--why", "w", "--scope", "s", "--implementation-path", "i",
         "--done-when", "d", "--validation", "pytest",
+        "--pointers", *GOOD,
     ]) == 0
 
 

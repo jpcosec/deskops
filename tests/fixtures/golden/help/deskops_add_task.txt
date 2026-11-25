@@ -10,6 +10,7 @@ usage: deskops add task [-h] [--from-yaml FROM_YAML] [--root ROOT]
                         [--inherits-from INHERITS_FROM [INHERITS_FROM ...]]
                         [--atom ATOM [ATOM ...]]
                         [--inherit-acceptance-context]
+                        [--pointers POINTERS [POINTERS ...]]
                         [payload]
 
 Create an actionable task bundle.
@@ -60,6 +61,11 @@ options:
   --inherit-acceptance-context
                         Inherit validation and done-when context from tasks
                         listed in --inherits-from.
+  --pointers POINTERS [POINTERS ...]
+                        Where this applies: 'doc:<Model>:<id>',
+                        'tag:<namespace>:<value>' or
+                        'code:<path>::<qualified_name>'; repeat or space-
+                        separate as needed.
 
 Examples:
   deskops add task --root . --title "Fix thing" --goal "..." --scope "..." --validation "pytest" --task-type task.code

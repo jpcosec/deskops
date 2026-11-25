@@ -1,5 +1,6 @@
 usage: deskops [-h] [--debug]
-               {about,doctor,status,faq,bootstrap,init,message,queue,dispatch,integrate,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,owner,desk,atoms,graph,materialize,tags,drift,closeout,view,runtime} ...
+               {about,doctor,status,faq,bootstrap,init,message,queue,dispatch,integrate,review,promote,drawer,retire,issue,add,edit,bind,next,list,show,advance,repo,owner,desk,atoms,graph,materialize,tags,drift,closeout,view,runtime}
+               ...
 
 deskops: Workflow-domain layer for the hum-ecosystem.
 
@@ -32,7 +33,7 @@ positional arguments:
     desk                Desk workspace management.
     atoms               Atom model and namespace management.
     graph               Build and inspect deskops KGDB graph runtime outputs.
-    materialize         Render tracked desk role prompts into installed pi-agent files.
+    materialize         Render tracked desk role prompts into installed pi-agent files, or one atom.adr as Markdown (--adr).
     tags                Keep the desk's documents on one semantic tag vocabulary.
     drift               Check for role-agent drift between tracked role docs and installed agent files.
     closeout            Workflow closeout operations.
