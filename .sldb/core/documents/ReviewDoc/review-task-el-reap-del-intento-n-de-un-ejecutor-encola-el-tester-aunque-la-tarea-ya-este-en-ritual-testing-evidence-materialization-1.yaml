@@ -1,0 +1,36 @@
+name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-evidence-materialization-1
+path: desk/reviews/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing/evidence-materialization-1.md
+source_hash: b879f48b8ed45c94ca1c32e79f9739677e4c02fd477374bcf2ef7a1e423be5c6
+content_hash: e47389931fe9f26969c485d75e83149827de1ee89297a9ff25f3cf5ab626731d
+field_hashes:
+  id: 5adc70b2cec2fba6c55b467502ad4a0ab175801112eae9da832300b66705c09c
+  title: 0ee40719e26b32905a6b89b12a455ff6883ac9f691fa99c66d8b7b293d549381
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: b77d8cf6414796c495587568e836eb101f2c47c6cbab025c9e93d24db5ead67b
+  value: 4b22503b2707f8d4f35e78db10941b0edffdf1ca62095ad66e60f5f5a4f8b92b
+  subject: b992acf6efbc723d88c87f840407ebcb5d8d3f164b70b09b85ff812054169ce5
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 1ba5cf15ea99d1a80c0aa8457dc28dad0906cbba5fcf289d440625f5de292e4e
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 444b2deddc3298ddf8b724d9114643aad06a00a1cc449b1691e50e36d12f7709
+  created_at: ec20e25b1036ffb9634290a5cecce1a5c860d4a040d3d8c410467f532b506cd8
+  disposed_at: ec20e25b1036ffb9634290a5cecce1a5c860d4a040d3d8c410467f532b506cd8
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 37d55c59c5856865fb082c8d899bcdb829fe87bca38b689efe736ad433cd1286
+  disposition: a5d272b0833a2c30e5a8661b8a414d8c83edfe22c1377a4366bb621681cd4aa0
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T03:15:55Z'
+  authority: generated
+  via: create_document

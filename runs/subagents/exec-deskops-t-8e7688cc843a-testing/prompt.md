@@ -1,7 +1,17 @@
+Task: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
+Title: El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing
+Status: active
+Current node: ritual-testing
+Task type: task.debug
+Lifecycle gates:
+- task_hands_to_closeout -> ritual-closeout: open [nonempty(validation)]
+  post-hook evento-para-el-coordinador: sh -c mkdir -p runs/hooks && printf '%s %s %s %s->%s\n' "$(date -u +%FT%TZ)" "$DESKOPS_TASK_ID" "$DESKOPS_TRANSITION" "$DESKOPS_FROM_NODE" "$DESKOPS_TO_NODE" >> runs/hooks/events.log
+  post-hook encola-reap-del-tester: deskops queue add dispatch-reap --root .
+
 ---
 sldb:
   by: agent
-  at: '2026-11-25T03:15:02Z'
+  at: '2026-11-25T02:56:00Z'
   authority: generated
   via: save_document_payload
 id: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
@@ -11,20 +21,14 @@ tags: []
 current_node: ritual-testing
 history:
 - task_activates
-references:
-- deskops/dispatch.py
-- tests/test_dispatch.py
-- 3b9d6f5ed73c6556c34c2801a3f4c8da01f955b5
+references: []
 depends_on: []
 pills: []
-files:
-- deskops/dispatch.py
-- tests/test_dispatch.py
+files: []
 task_type: task.debug
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-el-reap-encola-el-tester-tras-integrar-un-ejecutor
+atoms: []
 ---
 
 # El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing
@@ -64,3 +68,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 tests/test_dispatch.py tiene los casos (a) encola tras integrar, (b) no duplica con uno pendiente y (c) no encola si la integracion falla; el archivo completo pasa.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
+
+## Temporales de pytest
+
+Antes de cualquier pytest exporta, para que sus temporales caigan en el /tmp del contenedor (muere con el agente) y no en el /dev/shm del host:
+
+    export PYTEST_ADDOPTS="--basetemp=/tmp/pytest-deskops-t-8e7688cc843a"

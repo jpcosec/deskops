@@ -1,0 +1,2 @@
+pytest -q -n 4 tests/test_dispatch.py
+52 passed, exit 0

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T01:07:13Z'
+  at: '2026-11-25T03:21:58Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -55,7 +55,6 @@ tasks:
 - desk/tasks/task-desk-update-en-seco-lista-los-tags-de-tareas-con-namespace-sin-declarar-y-apply-no-mete-taskdoc-en-t.md
 - desk/tasks/task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo.md
 - desk/tasks/task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.md
-- desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
 - desk/tasks/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.md
 - desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
 - desk/tasks/task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y.md
@@ -148,9 +147,8 @@ _Generated from the task references above._
 - desk update en seco lista los tags de tareas con namespace sin declarar y --apply no mete TaskDoc en tag_models mientras queden [draft] - (1) deskops desk update (en seco) lista, por namespace no declarado (ni en desk/atoms/tag-namespaces.yaml ni en FLAT_NAMESPACES), cuántas tareas lo usan y hasta 5 ids: "- Tags de tareas sin namespace declarado: capa (12: task-a, ...)". (2) Con --apply, si hay alguno, declara los namespaces para AtomDoc y ProtoAtomDoc pero NO agrega TaskDoc a tag_models, imprime la misma lista y "TaskDoc queda sin validar: declara los namespaces con deskops atoms add-namespace y vuelve a correr desk update --apply". Sin tags sin declarar, el comportamiento es el de hoy (TaskDoc entra). (3) Si el store ya tiene TaskDoc en tag_models y hay tags sin declarar, --apply lo saca, para que deskops edit task vuelva a funcionar.
 - El runner de revisiones lanza al revisor con stdin DEVNULL cuando la entrada va por archivo [draft] - Cuando command["stdin"] es None, subprocess.run recibe stdin=subprocess.DEVNULL (y no input); cuando hay entrada por stdin, se sigue pasando por input como hoy.
 - deskops list tasks y deskops next filtran por máquina con --host (tag host:<valor>) y la salida de list tasks muestra el host [draft] - (1) deskops list tasks --host <valor> lista solo las tareas con el tag host:<valor>; --host none lista las que no tienen tag host. La salida de texto agrega el host de cada tarea (o "-") y la json un campo host. (2) deskops next sin task_id acepta --host <valor> y elige solo entre tareas de ese host. Sin --host, ambas salidas listan lo mismo que hoy (solo se agrega la columna/campo host).
-- El reap del intento N de un ejecutor encola el tester aunque la tarea ya este en ritual-testing [draft] - Despues de integrar el commit de un ejecutor, dispatch reap encola dispatch-tester de la tarea si no hay un tester vivo ni pendiente, sea el intento que sea.
 - integrate por fase: la unidad de integracion es la fase del Board (una suite, un grafo, un store y un push por fase) [draft] - deskops integrate --phase <fase> integra de una vez todas las tareas cerradas de esa fase del Board: un tip, una suite completa, una comprobacion de grafo y de store, un push y el commit de cierre de fase de ritual-phase. Una tarea sin fase se integra como fase de una sola tarea (--task sigue andando).
-- El Board declara las fases del DAG: que tareas forman cada fase y que su integracion es de la fase [draft] - BoardDoc tiene un campo de fases: cada fase con id, lista de tareas e integracion de la fase (validacion combinada y commit de cierre de fase). El modelo valida que una tarea este en una sola fase. Solo modelo y template; CLI y vista son tareas aparte.
+- El Board declara las fases del DAG: que tareas forman cada fase y que su integracion es de la fase [active] - BoardDoc tiene un campo de fases: cada fase con id, lista de tareas e integracion de la fase (validacion combinada y commit de cierre de fase). El modelo valida que una tarea este en una sola fase. Solo modelo y template; CLI y vista son tareas aparte.
 - El skill deskops-workflow y vocabulary.md explican que la suite completa y el push son de la fase y cada tarea solo corre su validacion dirigida [draft] - SKILL.md explica como se declaran las fases en el Board al descomponer el DAG y que la integracion (suite completa, grafo, store, push y commit de cierre de fase) es de la fase, mientras cada tarea cierra con su validacion dirigida; vocabulary.md define fase como capa de dependencias declarada en el Board y unidad de integracion; los comandos citados existen en la ayuda del CLI.
 - deskops declara fases del Board por CLI: crear una fase y agregar o quitar tareas [draft] - Un comando de deskops crea una fase en el Board y agrega o quita tareas de ella, validando que la tarea exista y que no este ya en otra fase; escribe por sldb.
 - deskops view board muestra las fases del DAG con sus tareas y su estado [draft] - deskops view board (texto y json) lista cada fase con sus tareas y el estado de cada una, y si la fase esta completa.
