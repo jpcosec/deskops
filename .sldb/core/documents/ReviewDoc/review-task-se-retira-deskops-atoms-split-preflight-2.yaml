@@ -1,0 +1,36 @@
+name: review-task-se-retira-deskops-atoms-split-preflight-2
+path: desk/reviews/task-se-retira-deskops-atoms-split/preflight-2.md
+source_hash: dbf1d6d429a25066cae1452470c83aca018b6ac4a4c985e6e9136cba81f624ab
+content_hash: 5be8caf70fce587687f6a825f6a97e2b9f85a2fa072a77336e3cb26c82b72ac1
+field_hashes:
+  id: 6b2bb2f83485783293660d3341b3a8ea7da5a5aa853c11e3e0777e17087bb96c
+  title: 52145da5e02a77ad93a2cc0be820144af0fa725a5284d5f3863e3ea6fd245439
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 3bda7ecc89642c6fd76a5f1d832944623115e91bf0b39d77c3b956c047932c8a
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: e51c5455f8e30d2626d0c23ae7448183a2e50bde1f38efbd832e94a26f41b171
+  input_sha256: 4121fc7b6e037594a326dbb17952357a8fcb6cf380317358c297e36bd290da54
+  contract_sha256: 81530cd1e35825a1f74ab88d882b569332197efd16fdf3ec69564d40f508cd72
+  output_sha256: 1f54bd6b08ed9bf43b863cda656bf968acc05c44a105d00be090eadfc36c664c
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: adf782e6159ad9e67043737a210f7c082f796cd5e8e7b8119d6429465df23727
+  created_at: 3212b78d6809a0f51821039eb3a4515ac0d77cf66be78fb8d65c6e4ae6453a63
+  disposed_at: 5878310738921c66363f88386add89bef0bda09031e3670f4031948d951d3785
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 778b517cc5f4c2dbaa689b1bb4f2746027e7f527fe5ce21edad7efa8547356e2
+  disposition: aac231c3b00e21f12f8b45fed46a877d4b473aa4a98ff4baa018f90cae280874
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T23:15:18Z'
+  authority: generated
+  via: save_document_payload

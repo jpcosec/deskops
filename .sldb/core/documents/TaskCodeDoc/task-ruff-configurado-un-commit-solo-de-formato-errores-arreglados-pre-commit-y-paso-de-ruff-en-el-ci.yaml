@@ -1,7 +1,7 @@
 name: task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
 path: desk/tasks/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci.md
-source_hash: 1031e81ae21d7131f741a5480a12f036ade1179778ed3e2d010a48a753fa99ee
-content_hash: a40b0c625106fa6a50397a6964f98a7926dc4212b7215a3c11aaf35de9a774bd
+source_hash: 1c6b5c43c92e3f9b0ff48eab7474bde30d13c849c159f326449bbfdf0d997763
+content_hash: c11bef469d736d63037f99dab5741ace81593cd4210acf0fad5b46ce1bb84346
 field_hashes:
   title: eba6e7bb8e9a23c82804a37a96cea6ee798435c2f53145185a9ce2641b0a42d1
   id: acf4d774d2ab2c2612e00f945d502730810f5587c8139542d18d33db6aae56cd
@@ -12,7 +12,7 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
   goal: 1cb8494cb9fb11e858b79c560d1e2aab27229a6405e518063b8c74e69487eab9
-  scope: a92e5333f0305fb14556070b4798fe43972697a4eaed8150f0f0feb0df956929
+  scope: 1684abe1f7fcbf78d7bbd4439dc128e5ed7b2fb2b5e506f7cea2923984c792af
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: 2cda2c4033bb45772d689cb200aa550addfd6351bcaf3644ef7da7e87b17f340
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T23:04:29Z'
+  at: '2026-11-25T23:12:15Z'
   authority: generated
   via: save_document_payload

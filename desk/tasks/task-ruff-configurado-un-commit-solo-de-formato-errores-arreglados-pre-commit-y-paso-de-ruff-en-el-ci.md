@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:04:29Z'
+  at: '2026-11-25T23:12:15Z'
   authority: generated
   via: save_document_payload
 id: task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci
@@ -44,7 +44,7 @@ deskops tiene lint y formato obligatorios: [tool.ruff] en pyproject.toml, el có
 
 _State what is in scope and what is out of scope._
 
-Entra: [tool.ruff] en pyproject.toml (line-length 120, target py312, select E F I UP B C901 D100 D104 sobre deskops/; D100 y D104 con per-file-ignores para los módulos que hoy no tienen docstring, lista que vacía la tarea de código muerto), ruff fijado en las dependencias de desarrollo, un commit solo de ruff format y un segundo commit que agrega su SHA a .git-blame-ignore-revs, ruff check --fix y arreglos a mano que no cambian comportamiento (E402 moviendo imports; si un arreglo cambiaría lógica, noqa con el motivo), .pre-commit-config.yaml con los hooks ruff y ruff-format de astral-sh/ruff-pre-commit en la misma versión, y un paso del CI: ruff check deskops tests && ruff format --check deskops tests. Sale: refactors de lógica.
+Entra: [tool.ruff] en pyproject.toml (line-length 120, target py312, select E F I UP B C901 D100 D104; per-file-ignores con tests/** = D y con los módulos de deskops/ que hoy no tienen docstring para D100 y D104, lista que vacía la tarea de código muerto), ruff agregado a [project.optional-dependencies] dev con la versión fijada (==, la última estable al ejecutar), un commit solo de ruff format y un segundo commit que agrega su SHA a .git-blame-ignore-revs, ruff check --fix y arreglos a mano que no cambian comportamiento (E402 moviendo imports; si un arreglo cambiaría lógica, '# noqa: <código>  <motivo>'), .pre-commit-config.yaml con los hooks ruff y ruff-format de astral-sh/ruff-pre-commit con rev igual a la versión fijada, y un paso en el job de tests de .github/workflows/tests.yml antes de pytest: ruff check deskops tests && ruff format --check deskops tests. Sale: refactors de lógica.
 
 ## Implementation Path
 

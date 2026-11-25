@@ -1,7 +1,7 @@
 name: task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
 path: desk/tasks/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports.md
-source_hash: b5a86b50f6edeb0ec6de412ea77a9e6def2e3214af9a0290377fb509ba394aca
-content_hash: 3d76b417776c34189577ec202521f1a4cc31b7a6dfc63b7cf633cec2a70a00f3
+source_hash: fd8778fa436a30d95c87efc1966aad3c39cc5fc9a3550ea70472de5111190af2
+content_hash: bd588ac5ea1b19baa48bed036eecd306239212faf030e50be744d89aeac3ac36
 field_hashes:
   title: 084e5ef6833df11c3dddbd3cff647a24ce518e3157b34efea4b53a769e728d0f
   id: 10c257a5893c92a3932a927c431de3b032f02b703938bde8ffb40241b898841b
@@ -11,7 +11,7 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: fa1e3ccaeaa86cc47f8588d7b3399d674d948b96fc2a6b6a48aabdc3941e815a
+  goal: 0d7cdecd3b448a0aaa107409051335e9aaffdbb20b91375e8a4aba24074a0f47
   scope: 5de728474e2c37c8702d9a6952731d96533ecdcae01d76da62962ba6e2117158
   references: e06cb8f2a6421e502f5a0a0227195f0b96508b1fab2f4ec2e5df4c22ae7d2028
   depends_on: 15cfff4aea6bdb7020f25c2f1fb71e511098e00c5f2571a0515732e96ec0b45e
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T23:06:38Z'
+  at: '2026-11-25T23:13:03Z'
   authority: generated
   via: save_document_payload

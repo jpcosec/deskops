@@ -1,0 +1,36 @@
+name: review-task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de-preflight-2
+path: desk/reviews/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de/preflight-2.md
+source_hash: 85707514839b776cc543105fed68c5ea5f340db874612a0bd896faebac8e9b1c
+content_hash: 39aad9a9decd6058d08ddda0f97e22c1b68e0a486ac866c6670849784e0ea9fd
+field_hashes:
+  id: 851dd73978f4c150ce97a59307a32b324bf817ddd7d349de21180cdd94383100
+  title: 37d488cdde846a69de397fb1b32aa85136f6613b31df4fafe10951d09a46e2e8
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 27cf8e61819442f3921db9c2f1d7ecc1b71b240626630e7fc45ac634d8875491
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 5e7ed6ef3b77f015e54fb94c1ac4b48ea68cca653f5acd311b07e9e77603a07c
+  input_sha256: 12f4649640f933c09ec898ebc55debb14ebd4670e351c145ad2db145a2f4d0c5
+  contract_sha256: eb78a8fdc07083d4dd3fc9b0e796351badc689dca9c476b2805157be399eed6c
+  output_sha256: 204f0c8ab687d64b85efde940cfe6ba4540e5c0fb8c18ddee04620a34d7fa898
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: adf782e6159ad9e67043737a210f7c082f796cd5e8e7b8119d6429465df23727
+  created_at: a0b3afc3075428a11816b4dd2d56bb927d5217092ccdca497cf938c1973f3054
+  disposed_at: aa34f5ad7c3e1ea82761993def683293b6c0779cdc2d26a6c3dffc3d52ed5755
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 3357077ba24b32bb359dbc7d42d4f9d7195ec26e885e005a6eeac19092ad3a34
+  disposition: aac231c3b00e21f12f8b45fed46a877d4b473aa4a98ff4baa018f90cae280874
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T23:15:29Z'
+  authority: generated
+  via: save_document_payload

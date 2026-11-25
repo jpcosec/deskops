@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:08:16Z'
+  at: '2026-11-25T23:13:39Z'
   authority: generated
   via: save_document_payload
 id: task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo
@@ -35,19 +35,19 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-tests/core/test_escenarios.py documenta cada hallazgo del núcleo de diagnostico.md con un escenario que hoy falla: W3 (closeout commit cierra una tarea que está en ritual-execution sin tomar task_completes), N3 (closeout commit cierra con la evidencia tests aunque la validación de la tarea falle), W4/N10 (una tarea que no está en el Board se activa y cierra sin compuertas), N1 (una tarea sin task_type cierra con commit aunque verify falle) y N9 (review record con engine human cumple el gate de revisión en frío).
+tests/core/test_escenarios.py tiene un escenario por hallazgo del núcleo de diagnostico.md que aserta el comportamiento correcto (el workflow bloquea) y hoy falla: W3 (closeout commit de una tarea en ritual-execution se rechaza), N3 (closeout commit con la validación de la tarea en rojo se rechaza), W4/N10 (una tarea fuera del Board no se activa ni cierra sin compuertas), N1 (una tarea sin task_type no cierra con commit si verify falla) y N9 (review record con engine human no cumple el gate de revisión en frío).
 
 ## Scope
 
 _State what is in scope and what is out of scope._
 
-Entra: un escenario por hallazgo sobre las fixtures desk y no_subprocess de la suite nueva, cada uno con pytest.mark.xfail(strict=True, reason='<id del hallazgo>'). La variante 'el workflow apaga la compuerta y deja pasar' se escribe con la severidad de la cláusula de RuleDoc del desk, que introduce la tarea de compuertas como reglas; hasta entonces también es xfail estricto con reason='W4: severidad por desk'. Mapa de quién quita cada xfail: W3, tarea del cierre por arista; N3 y N1, tarea de compuertas como reglas; W4/N10, tarea de compuertas como reglas; N9, tarea de compuertas como reglas (motor del recibo como cláusula). Sale: arreglarlos.
+Entra: cinco escenarios sobre las fixtures desk y no_subprocess de tests/conftest.py, cada uno con pytest.mark.xfail(strict=True, reason='<id del hallazgo>'). Quién quita cada xfail: W3, la tarea del cierre por arista; N3, N1, W4/N10 y N9, la tarea de compuertas como reglas. Con xfail estricto, un xpass rompe la suite: la tarea que arregla el hallazgo quita su marca en el mismo commit. Sale: arreglarlos y la variante con la compuerta apagada (la escribe la tarea de compuertas como reglas, que introduce la severidad por desk).
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Un escenario por hallazgo con sus dos variantes. 2) xfail estricto con el id. 3) Comprobar que cada uno falla por la razón del hallazgo y no por la fixture.
+1) Un escenario por hallazgo. 2) xfail estricto con el id. 3) Comprobar que cada uno falla por la razón del hallazgo y no por la fixture.
 
 ## Validation
 

@@ -1,7 +1,7 @@
 name: task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de
 path: desk/tasks/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de.md
-source_hash: 66aae3aeeed784e37e577893d327d4ee8247bcfc5a775b3285aac97c9d137467
-content_hash: d30befc7d4abe62385b85e8f2b427535dc2d2c3f62c8c92ad94d299b5d3cf0ad
+source_hash: b663370a7ca4931edee8164e6826abf83a44760e3173cd5c848b36ee66752156
+content_hash: bc91c3d6bcfdeedfdc4bab04fd65201cf6cdc857dcd0ccce269303982220f1ea
 field_hashes:
   title: 9901398cc39a69e0e66a14a623f813294c14602ad3e97c7fe6b6acf47e420ea0
   id: 4fd9aaa8c44291d784eb805e1583866573eef82456f5348867e53de4f04111f6
@@ -12,7 +12,7 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
   goal: 552b3fe3178717c194722ac69d06e7290af7ae7d63ce3d3fad4e35d9af55def5
-  scope: b0ca053fddf855ba4c59f8fb13aec884af1e179d251dc200873f8f5c25d1bad4
+  scope: e7397c881fb445031dc4e49d9499db4c2a4be7edf8e382f2d55e05e7b4fb6c0e
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T23:07:44Z'
+  at: '2026-11-25T23:13:46Z'
   authority: generated
   via: save_document_payload

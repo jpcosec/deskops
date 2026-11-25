@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:04:10Z'
+  at: '2026-11-25T23:12:07Z'
   authority: generated
   via: save_document_payload
 id: task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos
@@ -50,7 +50,7 @@ Entra: .github/workflows/tests.yml, tests/test_output_goldens.py y .sldb/store.y
 
 _Outline the expected implementation route or affected surface._
 
-Causas verificadas el 25-11: (A) tests/test_output_goldens.py:123, _SHORT_OPTION_METAVAR_RE no normaliza los alias largo+largo que 3.13 escribe distinto; (B) .sldb/store.yaml incluye los AtomDoc (líneas 139-143) antes que el CrossroadDoc (145), así que domain:knowledge-management se valida antes de que exista su namespace. 1) A: ampliar la normalización del test para que 3.12 y 3.13 comparen igual; no se regeneran goldens a mano. 2) B: mover el include de CrossroadDoc antes de los de AtomDoc; el tag queda anclado, no se retira. 3) pytest-xdist en las dependencias de test y pytest -n 2 en el CI (runner estándar de GitHub, 16 GB). 4) A nivel de workflow: concurrency con group tests-${{ github.ref }} y cancel-in-progress: true. 5) Medir una corrida real sobre main.
+Causas verificadas el 25-11: (A) tests/test_output_goldens.py:123, _SHORT_OPTION_METAVAR_RE no normaliza los alias largo+largo que 3.13 escribe distinto; (B) .sldb/store.yaml incluye los AtomDoc (líneas 139-143) antes que el CrossroadDoc (145), así que domain:knowledge-management se valida antes de que exista su namespace. 1) A: ampliar la normalización del test para que 3.12 y 3.13 comparen igual; no se regeneran goldens a mano. 2) B: mover el bloque include de CrossroadDoc inmediatamente antes del primer include de AtomDoc; anclado quiere decir que sldb stores build --check pasa sin hallazgos sobre ese tag. 3) pytest-xdist ya está en [project.optional-dependencies] dev; el CI instala .[dev] y corre pytest -n 2 (runner estándar de GitHub, 16 GB). 4) A nivel de workflow: concurrency con group tests-${{ github.ref }} y cancel-in-progress: true. 5) Medir una corrida real sobre main.
 
 ## Validation
 

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:06:12Z'
+  at: '2026-11-25T23:12:56Z'
   authority: generated
   via: save_document_payload
 id: task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo
@@ -44,13 +44,13 @@ tests/acceptance/ tiene un test por capacidad del CLI que corre deskops como sub
 
 _State what is in scope and what is out of scope._
 
-Entra: el inventario (add, edit, advance y next de una tarea; closeout en sus cinco modos: commit, verify, supersede, resolved-by y retire; bind de pill; add, merge, delete y validate de átomos; drawer e inbox; message send, list y ack; review preflight, node y dispose; doctor; init y bootstrap; dispatch prompt; integrate; view), la fixture de desk temporal y el paso del CI. Sale: tests de implementación, goldens de salida, atoms split (se retira). Un bug que aparezca no se arregla aquí: su test lleva pytest.mark.xfail(strict=True, reason='<id>: <qué falla>'), con el id del hallazgo de diagnostico.md (W3, N1...) o uno nuevo CAP-n anotado en la fila de capacidades.md; un xfail estricto cuenta como pasar.
+Entra: una fila por verbo de cli/registry.py salvo atoms split; la lista mínima es add, edit, advance y next de una tarea; closeout en sus cinco modos, una fila y un test por modo (commit, verify, supersede, resolved-by, retire); bind de pill; add, merge, delete y validate de átomos; drawer e inbox; message send, list y ack; review preflight, node y dispose; doctor; init y bootstrap; dispatch prompt; integrate; view. Los tests llaman a [sys.executable, '-m', 'deskops'] con cwd en el desk temporal y HOME en tmp_path, y asertan sobre sldb find --format json, los archivos y git log --format=%B. Sale: tests de implementación, goldens de salida, atoms split (se retira). Un bug que aparezca no se arregla aquí: su test lleva pytest.mark.xfail(strict=True, reason='<id>: <qué falla>'), con el id del hallazgo de diagnostico.md (W3, N1...) o uno nuevo CAP-n anotado en la fila de capacidades.md; un xfail estricto cuenta como pasar.
 
 ## Implementation Path
 
 _Outline the expected implementation route or affected surface._
 
-1) Inventario desde cli/registry.py en capacidades.md. 2) Fixture en tests/acceptance/conftest.py: git init con usuario y commit inicial, y deskops init en tmp_path. 3) Un test por fila que aserta con sldb find, los archivos y git log. 4) Un paso pytest -q tests/acceptance en el job de tests de .github/workflows/tests.yml, antes de la suite completa.
+1) Inventario desde cli/registry.py en capacidades.md. 2) Fixture en tests/acceptance/conftest.py: git init con usuario y commit inicial, y deskops init en tmp_path. 3) Un test por fila. 4) Un paso separado pytest -q tests/acceptance en el job de tests de .github/workflows/tests.yml, antes del paso de la suite completa (que excluye tests/acceptance con --ignore).
 
 ## Validation
 

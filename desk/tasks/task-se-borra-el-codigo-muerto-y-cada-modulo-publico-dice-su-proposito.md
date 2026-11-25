@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:05:31Z'
+  at: '2026-11-25T23:12:32Z'
   authority: generated
   via: save_document_payload
 id: task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
@@ -17,8 +17,7 @@ depends_on:
 - task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo
 pills: []
 files:
-- deskops/services/closure.py
-- deskops/graph/atom_trace.py
+- deskops/
 - pyproject.toml
 task_type: task.refactor
 inherits_from: []
@@ -44,7 +43,7 @@ ClosureService.close_auto (services/closure.py:720), graph/atom_trace.py y las f
 
 _State what is in scope and what is out of scope._
 
-Entra: borrar lo de arriba y escribir los docstrings de módulo, vaciando la lista de per-file-ignores de D100 y D104 que dejó la tarea de lint. Una función no tiene llamadores si vulture deskops --min-confidence 80 la marca y un grep de su nombre en deskops/, tests/, pyproject.toml y los repos hermanos de ~/proyectos no encuentra usos (incluye usos por nombre en cli/registry.py). Módulo público: todo módulo bajo deskops/ cuyo nombre no empieza con guion bajo. Sale: testing/foreign_suites.py (lo importan 5 tests de scion) y refactors.
+Entra: borrar lo de arriba y escribir los docstrings de módulo y de paquete, borrando de per-file-ignores en pyproject.toml las entradas D100 y D104 de deskops/ (tests/** = D se queda). Una función no tiene llamadores si vulture deskops --min-confidence 80 la marca y un grep de su nombre (como identificador o como cadena) en deskops/, tests/, pyproject.toml y en sldb, IR, UIs/graph_ui, scion y legos no encuentra usos. Módulo público: todo módulo bajo deskops/ cuyo nombre no empieza con guion bajo, más los __init__.py (D104). El docstring dice en una o dos frases qué hace y qué capa o comando lo usa. Sale: testing/foreign_suites.py (lo importan 5 tests de scion) y refactors.
 
 ## Implementation Path
 

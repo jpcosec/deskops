@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:07:11Z'
+  at: '2026-11-25T23:13:13Z'
   authority: generated
   via: save_document_payload
 id: task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados
@@ -49,7 +49,7 @@ Los siete parseos a mano de frontmatter leen con sldb.api.extract_document_paylo
 
 _State what is in scope and what is out of scope._
 
-Entra: los siete módulos en sus rutas después de la mudanza: ops/doctor.py, runtime/integrate.py, core/lifecycle.py, core/doc_access.py, ops/absolute_paths.py, core/models/task_lifecycle.py y core/issues.py. Sale: nada más.
+Entra: los siete módulos en sus rutas después de la mudanza (ops/doctor.py, runtime/integrate.py, core/lifecycle.py, core/doc_access.py, ops/absolute_paths.py, core/models/task_lifecycle.py y core/issues.py), cada parseo que encuentre en ellos el grep de la validación, y crear runtime/git.py y core/util.py para los helpers. Un documento suelto se lee con extract_document_payload; un recorrido del store con load_runtime_documents. Sale: nada más.
 
 ## Implementation Path
 

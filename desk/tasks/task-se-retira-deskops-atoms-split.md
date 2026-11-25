@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:05:47Z'
+  at: '2026-11-25T23:12:41Z'
   authority: generated
   via: save_document_payload
 id: task-se-retira-deskops-atoms-split
@@ -47,7 +47,7 @@ deskops atoms split no existe: se borran el comando, split_atom de services/atom
 
 _State what is in scope and what is out of scope._
 
-Entra: el subcomando y split_atom; las referencias a ellos en cli/registry.py, doc_access.py y operations.py; los tests que llaman a split_atom o a 'atoms split' (los encuentra el grep de la validación sobre tests/); el golden tests/fixtures/golden/help/deskops_atoms_split.txt, que se borra; y las menciones en docs/, .claude/, .pi/, .opencode/, AGENTS.md y README.md. Sale: merge, delete y validate de átomos, y el historial (desk/, runs/ y changelogs no se tocan).
+Entra: el subcomando y split_atom; las referencias a ellos en cli/registry.py, doc_access.py y operations.py; los casos de test que llaman a split_atom o a 'atoms split' (se borra el caso, no el archivo, salvo que el archivo quede vacío); el golden tests/fixtures/golden/help/deskops_atoms_split.txt, que se borra; y las menciones en docs/, las skills (.claude/skills/deskops-workflow, .pi/skills/*, .opencode/skills/*), AGENTS.md y README.md. Sale: merge, delete y validate de átomos, y el historial (desk/, runs/ y changelogs no se tocan).
 
 ## Implementation Path
 

@@ -1,7 +1,7 @@
 name: task-se-retira-deskops-atoms-split
 path: desk/tasks/task-se-retira-deskops-atoms-split.md
-source_hash: dfad3eb81cd0c9f4c4fef1f445567f7daab7edb1c07f74b50e5277b7f57432ed
-content_hash: 554916b37e8f041029350087ef72e18d6f7f4690c8689989219bc00d7fb427ba
+source_hash: 56f928c5ff13a5c4209f962a50c810a20f4d268d6926d1044c0ed783c3a8ab81
+content_hash: cdb997c6e7487d4d29cc587f9c81b19742e120b4261aeca84e101659169fec66
 field_hashes:
   title: bc8719fee6dbd5843856f2885ea6e939e1d0f1553578fa2ccb4a6cdf14f51468
   id: 74dbf43eef524d646c57bbb9fe441f72b91218c5f9f5daeb5408f2e5aa07e4ec
@@ -12,7 +12,7 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: cf6c0a83909a8be830bf2368c7fb3fcd3581b7dc03e04e1eb2f973c21fc61c20
   goal: 7945d93b52f15ec1357582c151a66e0ff7441cadb5e4662a432b5ceade7cf825
-  scope: 9970d59bae6e11dc61d01e3bdce271f336c0c4cdbc19527628a1a7b508a1ebf5
+  scope: 44615274142e43d09db5e2f654b0b5aa76f0a4c040291fb8b4aaf947f2fb4c34
   references: 61f617fa206f99d42b0b67b2cbc852b379482a98e959c46d8f2c74adcd4dd643
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T23:05:47Z'
+  at: '2026-11-25T23:12:41Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados
 path: desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
-source_hash: 98147372e183782a9c3550a9be833b45c1a5a5321ea297a46d42da57f4e91d4b
-content_hash: 9704976578eb9e47f7060a79c71af238d4abb443bbcb4b84c42d80bce5708d57
+source_hash: 82109c0aca2205fd11dea113ab6f8a771d9df7dee4c954f0fe2d96af45c78a24
+content_hash: 60f849b990af61f26b586c570b93b4f29b6058cf98848d357acecbd5c2038416
 field_hashes:
   title: bf33d66b011be42d3a8b7060c942ddc579a7cf94f8c05809f093dbabe53b720a
   id: 7ef70b6e92cc5ddf7a346ac8d35764da1cff05510309baeb357691322d85160c
@@ -12,7 +12,7 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
   goal: 6be986a9eb10de280b70a3a51b15e2090a99fac9842b3fc446fd2a5b0bad4ef1
-  scope: b271b9630c5ac3688694b9efa9947a6da0cfa829b9ecdcc40423be4b1a362abd
+  scope: 4fa8b0eda27541f56aac22bb6dc03e3857925be309cfddf0d62c518b57b30d12
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T23:07:11Z'
+  at: '2026-11-25T23:13:13Z'
   authority: generated
   via: save_document_payload

@@ -1,7 +1,7 @@
 name: task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
 path: desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
-source_hash: 25a9ebd312750580f5885412932aa3e37c0d7ebd50a1d31712de3d40c6f8e5fc
-content_hash: 7a9cddb1762351d38e65ef5f73c7e1ac18f76358f650161dd586380ec980de46
+source_hash: b14bec161d477f10de3fca4db73020bc3a4488c656f75eab8e5149503f47e9d7
+content_hash: e96fa247217aa61ecadcc7210bb8e3d91150caf8bdacd12d279b5e65263ec20a
 field_hashes:
   title: 0a85666e7b249406f897a3abd212144dff1dad192530ba2a1a99af21684dfbdb
   id: cf41c2831a70e9404ff463a3e953827936ff9148156d25d8bfadb34456fb885d
@@ -12,11 +12,11 @@ field_hashes:
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
   goal: f050ac8f124dce41e3a05195eec9f783627979ccccf592e5a6b4117df38fa466
-  scope: edaf5d1f5e574b45ca8280fbd1a6f8077a3f71d78db067ad66981b5c17276ba9
+  scope: 6f036262f61702c9d491cf5d76fbba3adf4ac691d574dc4d796969bd8bbccf66
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: cc23a707a501572b5f5336611dfeb088f51d74769c661115a258f562764f3e39
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  files: 732b2f4ab57747f01a498b6c3672ec14ebad3e5c75c8a5d31530f1bfd6c3c796
+  files: 0701dfeaa4f51f6f4fb2514eae705cd6dea2603be32d069d39bfe01dbc3ec56d
   implementation_path: a301c074a031a308499ae974d7d965f2c5cd679123d5990f1e1643e9d33309a3
   validation: 3c69227f3d4fa38f38667481bfbaa1227221531df9123d99b7827a20124b81d0
   done_when: 351167fddb90fd364d7f14fa8a76ee3526f8271ab2db7f06827d3f9741238b7f
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T23:05:31Z'
+  at: '2026-11-25T23:12:32Z'
   authority: generated
   via: save_document_payload

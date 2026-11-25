@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:06:38Z'
+  at: '2026-11-25T23:13:03Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports
@@ -40,7 +40,7 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-El código de deskops/ vive en cinco paquetes (core, ops, runtime, operations, surfaces) según la tabla de desk/drawer/plans/deskops-plugin-de-sldb/capas.md, y import-linter hace cumplir sus tres contratos: core no importa ops, runtime, operations, surfaces ni subprocess; runtime no importa ops, operations ni surfaces, y ops no importa operations ni surfaces; surfaces importa solo operations y modelos de core.
+El código de deskops/ vive en cinco paquetes (core, ops, runtime, operations, surfaces) según la tabla de desk/drawer/plans/deskops-plugin-de-sldb/capas.md, y import-linter hace cumplir tres contratos: (1) core no importa ops, runtime, operations, surfaces ni subprocess; (2) runtime no importa ops, operations ni surfaces, y ops no importa operations ni surfaces; (3) surfaces importa solo operations y core.models.
 
 ## Scope
 
