@@ -1,4 +1,4 @@
-# deskops + spec2viz vocabulary
+# deskops + specIR vocabulary
 
 Precise definitions for the nouns these tools use. Consult this when a command's *purpose*, not
 just its flags, is unclear — for example, before deciding whether something belongs in a pill or
@@ -11,9 +11,10 @@ an atom, or whether a diagram spec or its rendered output is the thing to edit.
   semantic + physical search, store integrity. It has no opinion on workflow or diagrams.
 - **deskops** is the workflow-domain instance built on sldb: tasks, routines, pills, atoms,
   drawer, board, rituals, hooks. It owns *what work is happening and why*.
-- **spec2viz** is the diagram-domain mirror of the same idea: a diagram's YAML spec plus its
-  contract compiles to a rendered visual artifact, exactly as an sldb model plus a template
-  compiles to a Markdown document. It owns *what things look like*.
+- **specIR** (command `specir`; it replaces the retired spec2viz) is the diagram-domain mirror of
+  the same idea: a diagram's YAML spec plus its notation resolves to a diagram, exactly as an sldb
+  model plus a template compiles to a Markdown document. It owns diagram content (notations, spec
+  classes, text exports); `sldb` resolves and validates, and `graph_ui` draws and edits.
 
 Both exist to keep a human-facing surface (a Markdown doc, a rendered diagram) from drifting
 silently away from its structured source. The fix for a wrong output is always upstream: the

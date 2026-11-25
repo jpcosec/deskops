@@ -13,7 +13,8 @@ description: This skill should be used when a repository has a top-level desk/ d
 diagrams. `deskops` sits on top of `sldb` (structured-Markdown document infrastructure) and owns
 tasks, routines, pills, atoms, drawer, and board. `specir` (which replaces the retired spec2viz) owns diagrams the same way: a YAML
 spec is the source of truth, and every rendered Mermaid/PlantUML/Vega/D2/HTML file is a generated
-projection of it. Both CLIs are on PATH as `deskops` and `specir` — always run `--help` on an
+projection of it; a diagram is drawn and edited in `graph_ui`'s notation view, and rendered text or
+static HTML/SVG is for inline use and export. Both CLIs are on PATH as `deskops` and `specir` — always run `--help` on an
 unfamiliar subcommand instead of guessing flags.
 
 ## The pipeline this skill enforces
@@ -60,7 +61,7 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
 - **Never hand-edit a generated diagram.** `.mmd`, `.puml`, `.svg`, and generated `.html` catalog
   files are projections. Fix the YAML diagram spec (or the renderer, if the gap is systemic) and
   re-run `specir diagram render` / `specir catalog build`. Validate before rendering:
-  `specir diagram validate <spec.yml>`.
+  `sldb notations validate <spec.yml>` (specir has no validate command).
 - **Advance tasks through the CLI, not by editing status fields.** Use
   `deskops advance task <selector> --root .` and check what is next with
   `deskops next <selector> --root .` rather than manually flipping a task's phase/status text.
@@ -103,7 +104,7 @@ loose by design and a task is a fully authored, compiled bundle. Author the task
 | Create/bind a pill | `deskops add pill --root . --what ... --why ... --when ... --where ... --how ... --how-not ...` then `deskops bind pill <task> <pill> --root .` |
 | Create an atom | `deskops add atom --root . --five-wh-one-plus <what\|why\|how\|how_not\|when\|where\|for_whom> --answer ...` |
 | Promote / author work | `deskops add task --root . --title ... --goal ... --scope ... --validation ... --from-yaml <file with references to the note>`, then `deskops message ack <note> --root .`; for a drawer item, `deskops add task --root . --from-drawer <selector> ...` (no drawer-to-task promotion; `promote inbox-to-drawer-task` deletes the note and is not the path for notes that are work) |
-| Validate a diagram spec | `specir diagram validate <spec.yml>` |
+| Validate a diagram spec | `sldb notations validate <spec.yml>` |
 | Render a diagram | `specir diagram render <spec.yml> --out <dir> [--renderer mermaid\|plantuml\|vega\|d2\|antonia-html\|json]` |
 | Build a diagram catalog | `specir catalog build --config <catalog.yml> --out <out.html>` |
 | Close a task's code | run the task's validation, then `deskops closeout commit --root . --task <id> --run-dir <dir> ...` (or plain commit if no run-dir) |
