@@ -1,15 +1,16 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:13:22Z'
+  at: '2026-11-25T21:13:02Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un
-status: draft
+status: active
 summary: ''
 tags: []
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references: []
 depends_on: []
 pills: []
@@ -45,6 +46,8 @@ Dentro: deskops/models/ (atom, pill, task), deskops add y deskops edit, y la lec
 _Outline the expected implementation route or affected surface._
 
 Leer sldb/docs/architecture/code-anchoring.md, tags.md y selectors.md para usar la forma de dirección que sldb ya tiene para cada clase de puntero; no se inventa una sintaxis. El texto libre actual se conserva como está hasta que una tarea aparte lo migre.
+
+Aclaraciones de la revisión: Campo nuevo, opcional, por defecto [], llamado pointers, igual en AtomDoc, PillDoc y TaskDoc: lista de strings con prefijo de clase: 'doc:<Modelo>:<id>', 'tag:<tag>' y 'code:<ruta>[::<símbolo>]'. Después del prefijo, usar la forma que sldb ya tiene (leer /mnt/ssd/proyectos/SLDB_1/sldb/docs/architecture/code-anchoring.md, tags.md y selectors.md) y adaptar los prefijos a esa forma si difiere, explicándolo en result-summary. Convive con los campos de texto libre actuales (where, files), que no cambian. Uno mal formado lo rechaza la validación del modelo con un mensaje que nombra la clase esperada, y la CLI (deskops edit ... pointers) lo muestra con rc != 0. deskops show <tipo> <id> lo muestra. 'Desk sano' = deskops doctor --root . sin errores nuevos respecto de main. Va antes de la tarea de la pill (mismo models/pill.py). No poner Task-Id en el commit de código.
 
 ## Validation
 

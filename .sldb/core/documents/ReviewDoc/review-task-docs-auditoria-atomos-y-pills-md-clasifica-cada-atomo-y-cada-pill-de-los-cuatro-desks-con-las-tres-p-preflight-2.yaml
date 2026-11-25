@@ -1,0 +1,36 @@
+name: review-task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p-preflight-2
+path: desk/reviews/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p/preflight-2.md
+source_hash: d8c32d5a179d1c4f9de53a5c97ce84ca1685c717a005d0653fbd3b90a7e4f9be
+content_hash: 299da3c9c0a1aaabaa5dc98cf649e92aec61aa59a992c65bca31b1d7705a4e83
+field_hashes:
+  id: 09381d07088921ba4df8ee0ea56d5a8c2d18e2bedcb5d297c293cb9cc69b06ef
+  title: 4a3dff7ecbf8c1497c5f68b256172fe3764bf9fababfd923966eeb009741a919
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: dc6254528e5c570c947ca01c2fb2191ef6ae224b495e9d515f4d2e78e62f3424
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: e9d321e4f431cc66584f7aa3ae13f790cb6c8088bdb03a20239399e33fe8fae2
+  input_sha256: 842b724ed94c24615d974a753fe4f1d32f96e5927a1bd6aa04ae052175d290fd
+  contract_sha256: 20a95916c35389cc3d4cd24fa2ecbc00ee7c96d8f71cc117da28938a73ebad7a
+  output_sha256: 5a1db27e4943c359febe5121a21942d6f2006322e92e1fd8500587b261117a44
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: abaaaebba44c7910c3a96aa4e0442d0aab504a27769a58091cdf37de031eacce
+  created_at: ccbe7ba6fbff2b1803a19f09f624f7276fc16b555ad5beae505d9d330529a5c3
+  disposed_at: afe826effce8f6e938779994534bc22ee9498c385f09edbca535876a9b0253c8
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 6d51ef1b20b410e1b4db4a8e18df7c6998ff8d0a2405ee8140aaef3ac6582cac
+  disposition: 77e44e7b00302335cb0729683929219e105dc3d72c06abcc1e6d99a170b27371
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T20:45:21Z'
+  authority: generated
+  via: save_document_payload

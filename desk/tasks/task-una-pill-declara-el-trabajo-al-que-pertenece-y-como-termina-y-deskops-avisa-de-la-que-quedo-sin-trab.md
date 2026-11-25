@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:13:40Z'
+  at: '2026-11-25T19:27:50Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab
 status: draft
 summary: ''
@@ -45,6 +45,8 @@ Dentro: deskops/models/pill.py y los subtipos, deskops add pill, deskops doctor,
 _Outline the expected implementation route or affected surface._
 
 Mismo mecanismo que los tipos de tarea (deskops/models/task_types.py): un tipo es una subclase que solo agrega y sus compuertas son RuleDoc sembradas. La pill base no pierde campos en esta tarea, para que las existentes sigan leyéndose.
+
+Aclaraciones de la revisión: Va después de la tarea de punteros (mismo models/pill.py): parte de main cuando esa esté integrada. Trabajo: campo work = id de la tarea abierta (task-...) o ruta del plan de drawer, uno solo. Salida: campo exit con valores code, atom, delete. Tipos: PillPointerDoc, PillQuestionDoc, PillConstraintDoc, PillFindingDoc como subclases de PillDoc, modelados como los tipos de tarea (deskops/models/task_types.py); pointer exige pointers no vacío y nada de texto de regla; question exige una pregunta (termina en ?); constraint exige un enunciado y su porqué; finding exige evidencia archivo:línea. CLI: deskops add pill --type <pointer|question|constraint|finding> --work <id> ...; sin --work, rc != 0. Cierre: 'deskops closeout verify' emite un aviso (no bloquea) por cada pill cuyo work es la tarea que cierra. Revisión del desk = deskops doctor: lista las pills cuyo work no es una tarea abierta (sin tarea o todas cerradas). No poner Task-Id en el commit de código.
 
 ## Validation
 

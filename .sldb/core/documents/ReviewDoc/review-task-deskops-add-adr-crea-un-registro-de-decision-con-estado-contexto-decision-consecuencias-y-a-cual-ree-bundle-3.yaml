@@ -1,0 +1,36 @@
+name: review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-bundle-3
+path: desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/bundle-3.md
+source_hash: 2e68db475fdc1036a33565f2f000273a7118ca352e41620002b87d0b127956c6
+content_hash: 964767afe3052c56e9ead0878d20a492e4f62a9a52615932e5fe4f9d3844dcb1
+field_hashes:
+  id: 5f7996344c7f94196158fa3c1307adbe119b68bd1c168e6cf4bc372d364631fa
+  title: 4b9938557499c08f9ccda3c7c6c1c1ccf40710cfb7e809b3c02be79fbb0c7c2b
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 10bb19580fd1eae73a77adf412827a815f5a0c209c26dc08273c488b203d677b
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 75c94eb1a615fa39db9565cc9f1a989a9ce762cd8c6e38e9cc6b0b9ef7eb20f6
+  input_sha256: a7879e037c2b390c5800cc89b1b21c2749118c8cc25cfee46f43f2a9a06af765
+  contract_sha256: 8cde3eb0ce3b3581b09a57e72ce031a6ac2a4110b63d181d13552ef46d98863d
+  output_sha256: 73ebcdc35c30a2c54dc682e7e103d332dca4c5573e495c6162ebb6366d325c0e
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 08d24dc95ebf4af924cf1507de7c0e3f8d7a074e711b498296ead33c15a7e2d1
+  created_at: c0a7a9983306485a545298c829c5de6349da4d9912c9d75f80d41a3465f64291
+  disposed_at: 904fff20bc7e857c2711c05a1db2b56f7f4c325d04ab6f61b4221ac96e976e14
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 90647dc423015145a7174f2bacd67f00d71a7fde002876985e19ad621f90f3df
+  disposition: 5f913e449e6a52102912dc614d1373d8a69b7f3de51ca7cf7d26f4ddacc89419
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T19:25:13Z'
+  authority: generated
+  via: save_document_payload

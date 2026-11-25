@@ -1,0 +1,25 @@
+name: materialization-closeout-node-tests-tests-test-closeout-test-paths-py
+path: desk/materializations/materialization-closeout-node-tests-tests-test-closeout-test-paths-py.md
+source_hash: 49dab75a483109d9966435cf6791288566d566e4fc937a13e74f6e950d9bc3fe
+content_hash: a894c4fb4cadf9f14fbf0a754a46132df97ab6080331c5d8036d3824394b9f25
+field_hashes:
+  id: 257c535f72df49e027b2015f3320ea370214f2029346500a6f5605135a17b909
+  title: f9759a868b8d374f54f3b3e42c1544633196d030bb2f9dda15048f292cdfbb22
+  source_atoms: 2cc076956918be82473d4ae8d8fb77213a2e225108f4e3aff4c3b2920e4c6ae8
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 109412935cd1238480b251be9644658b4c3f00d2841b35d05887e7802ced81e1
+  intent: 5bf244ce58ae12449792d3e59d3d8c5d7f7fa4103977d30e94737640d3bbd8fa
+  validation: e5ef8c2e4170bbb79147c6ec7877ca2215b44523201ef8e9e565b302820b7b15
+  tags: a366278d5fcf2fe8a53423834fd921aefcaf9cdc992c727b2970c54691bc7160
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:closeout-node-tests
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-25T21:15:15Z'
+  authority: generated
+  via: create_document

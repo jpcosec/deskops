@@ -1,23 +1,30 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T18:30:29Z'
+  at: '2026-11-25T21:14:04Z'
   authority: generated
   via: save_document_payload
 id: task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js
-status: draft
+status: active
 summary: ''
 tags: []
-current_node: ritual-execution
-history: []
-references: []
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- deskops/services/closeout_gates.py
+- tests/test_closeout_test_paths.py
+- 11bc8c3761b2221e87ce63a26e476aaf5bc0fc8b
 depends_on: []
 pills: []
-files: []
+files:
+- deskops/services/closeout_gates.py
+- tests/test_closeout_test_paths.py
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms: []
+atoms:
+- atom-el-gate-de-tests-del-closeout-acepta-pruebas-de-node
 ---
 
 # El gate de tests del closeout acepta pruebas de node: .test.mjs, .test.js, .spec.mjs y .spec.js

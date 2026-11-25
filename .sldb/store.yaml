@@ -623,6 +623,8 @@ include:
   - desk/materializations/materialization-integrate-cleanup-deskops-integrate-py.md
   - desk/materializations/materialization-integrate-cleanup-tests-test-integrate-py.md
   - desk/materializations/materialization-board-phases-tests-fixtures-model-contract-hashes-json.md
+  - desk/materializations/materialization-closeout-node-tests-deskops-services-closeout-gates-py.md
+  - desk/materializations/materialization-closeout-node-tests-tests-test-closeout-test-paths-py.md
 - model: RunDoc
   paths:
   - path: runs/subagents/20261029-152259-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
@@ -3357,6 +3359,22 @@ include:
     name: review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-preflight-2
   - path: desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/bundle-2.md
     name: review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-bundle-2
+  - path: desk/reviews/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab/preflight-2.md
+    name: review-task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab-preflight-2
+  - path: desk/reviews/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab/bundle-2.md
+    name: review-task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab-bundle-2
+  - path: desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/preflight-4.md
+    name: review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-preflight-4
+  - path: desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/bundle-4.md
+    name: review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-bundle-4
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js/evidence-tests-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-evidence-tests-1
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js/evidence-commit-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-evidence-commit-1
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js/evidence-atom-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-evidence-atom-1
+  - path: desk/reviews/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js/evidence-materialization-1.md
+    name: review-task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js-evidence-materialization-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md

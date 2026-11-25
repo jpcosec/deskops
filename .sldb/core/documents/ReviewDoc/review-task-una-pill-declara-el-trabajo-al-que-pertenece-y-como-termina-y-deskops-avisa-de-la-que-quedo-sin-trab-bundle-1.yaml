@@ -1,0 +1,36 @@
+name: review-task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab-bundle-1
+path: desk/reviews/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab/bundle-1.md
+source_hash: 308b691304b73e78935c590e523b75c1eefa1bd70a77f67ed3a3f8301b67fb88
+content_hash: 7b9e87d320ec9d965dcd48576128703ccb7ba80052fcb16f3f1826382f002230
+field_hashes:
+  id: 92611e571d6a0d46c5ef7a10859a93b4415396f438cfe64b42b703c8a6c8ea16
+  title: d3a918ec0eb1a1de9762faba35a90468031e8d4ab99fa5e10611ccc7b9255c3e
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: c74cb190ffb83d83b9f907f4028e8872dfc3aef4c852f7ba87558e0599f4ff54
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 5f795449d45b277dbd24c58f8b342edc7c217974380a0572ab1aa396ccaddd79
+  input_sha256: 1ff0392e0a244d99a40ed5ae8ae63221144e5c0822db3c76c6da73c4f1bf8414
+  contract_sha256: f20240984ea9f305d217991578f544a7ed0387fac2f2a7151dde302519619859
+  output_sha256: 1fe7625efe213be94f6125a6e2b81499ab21cd89de148a100dfea0dcb7fcd663
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 174f3380e4f131f4a41d66b3e365f557d1db14a5204cd37e063e1c2bd3dd886f
+  created_at: 2c959dacbc8117d98265fa652893f311e41c0bfa3f61f9bbed30118bf3d205b1
+  disposed_at: dc18f054679ae579df69aead0f47520bbe34d83f410472faebaa55f5d6c152a2
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 24fed709ea35f68b4944e7b5472125b13325ef47c6b400240d979cb41283c4cc
+  disposition: 6b755c3afc25a4eaa49c567549265de855769b08c5b16a177f79472b477977a7
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T19:28:30Z'
+  authority: generated
+  via: save_document_payload

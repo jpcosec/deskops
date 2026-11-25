@@ -1,15 +1,16 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:13:58Z'
+  at: '2026-11-25T20:48:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p
-status: draft
+status: active
 summary: ''
 tags: []
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references: []
 depends_on: []
 pills: []
@@ -45,6 +46,8 @@ Dentro: leer los átomos y las pills de los cuatro desks y escribir el informe. 
 _Outline the expected implementation route or affected surface._
 
 Las tres preguntas, en orden: si se puede leer del código o de su docstring; si lo puede extraer specIR; si seguiría valiendo sin el trabajo en curso. Para la primera se abre el código al que el documento se refiere y se cita archivo y línea. No se clasifica por el título.
+
+Aclaraciones de la revisión: Desks: /mnt/ssd/proyectos/SLDB_1/{UIs/graph_ui,deskops,sldb,IR}/desk; átomos = desk/atoms/atom-*.md y pills = las de desk/contexts/ (las que lista 'deskops list pills --root <repo>'); censo con 'deskops list atoms|pills --root <repo>', sin drawer ni retirados; si el número difiere de 647/59, se usa el real y se dice. Las tres preguntas y las definiciones son las de deskops/desk/drawer/plans/que-es-un-atomo-y-que-es-una-pill/README.md (leerlo primero). specIR = el extractor de /mnt/ssd/proyectos/SLDB_1/IR (specir extract): 'lo extrae' si hoy produce ese hecho, 'lo extraería' si es del tipo que extrae pero falta. Trabajo en curso = tareas no cerradas de los cuatro desks y los planes de drawer. Documento sin código referido: se busca el código por grep del concepto; si no hay, veredicto 'no se sostiene'. Pills: los mismos veredictos aplicados a lo que la pill afirma. Sin clasificar = no se pudo abrir ni encontrar el código o el texto es ambiguo; 'no se sostiene' = el código contradice lo afirmado o ya no existe. Evidencia mínima: archivo:línea. Salida en deskops/docs/auditoria/atomos-y-pills.md; es solo lectura, no se edita ningún átomo ni pill.
 
 ## Validation
 

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:15:06Z'
+  at: '2026-11-25T19:24:35Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree
@@ -45,6 +45,8 @@ Dentro: deskops/models/ (AtomAdrDoc y un registro ATOM_TYPE_MODELS como TASK_TYP
 _Outline the expected implementation route or affected surface._
 
 Leer deskops/models/task_types.py (un tipo es un modelo; un subtipo solo agrega; las compuertas son RuleDoc sembradas) y deskops/models/atom.py. AtomAdrDoc(AtomDoc) responde why, con la decisión como respuesta; agrega decided_on, decided_by y las secciones context, consequences y alternatives (opcional; lo descartado va aquí). Dos estados: accepted y superseded. El reemplazo es una arista supersedes de ADR a ADR; crearla deja al anterior en superseded, y una RuleDoc exige que ningún accepted tenga una supersedes entrante de otro accepted. Otra RuleDoc exige recibo de owner para crearlo. A qué aplica va en el campo común de punteros si ya existe (tarea de punteros de este desk); si no, en references, sin inventar tags. Un task.decision cierra citándolo con la evidencia atom que ya existe. El Markdown en docs/ es una materialización (deskops materialize).
+
+Aclaraciones de la revisión: AtomAdrDoc va en un módulo propio (deskops/models/adr.py) que importa AtomDoc; no editar atom.py, porque la tarea de punteros (task-atomos-pills-y-tareas-guardan-el-donde-...) corre en paralelo sobre ese archivo. Punteros: si al empezar AtomDoc ya tiene el campo pointers (está en main), usarlo; si no, references; no esperar. Los cinco ADR: /mnt/ssd/proyectos/SLDB_1/sldb/docs/architecture/{mechanism-in-sldb-content-in-specir,pron-is-archived,one-command-taxonomy-served-by-fastmcp,surface-is-an-editor-contract}.md y /mnt/ssd/proyectos/SLDB_1/IR/docs/decisiones/paridad-por-capacidades.md (más sldb-absorbs-kgdb.md como el reemplazado). Recibo de owner: el mismo de task.decision (deskops review record --kind owner; dispose accepted solo JP); la RuleDoc exige un ReviewDoc kind owner accepted cuyo sujeto es el ADR. Reemplazo parcial: arista supersedes con atributo opcional section; con section, el anterior sigue accepted y la RuleDoc de 'sin supersedes entrante' ignora las parciales. Reglas: dos RuleDoc nuevas en deskops/data/rules/ (la de supersedes y la de owner), nombradas como las existentes. El filtro 'solo accepted' es solo de deskops list atoms --type atom.adr (o el verbo que use el listado de tipos); --all muestra todos; el listado general no cambia. tests/test_adr_artifact.py se crea. No poner Task-Id en el commit de código.
 
 ## Validation
 
