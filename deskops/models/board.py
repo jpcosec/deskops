@@ -1,6 +1,26 @@
-from pydantic import Field
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 from .base import OperationalArtifactDoc
+
+
+class PhaseIntegration(BaseModel):
+    validation: list[str] = Field(
+        default_factory=list,
+        description="Combined validation commands run once the phase tasks are done.",
+    )
+    closing_commit: str | None = Field(
+        default=None,
+        description="Phase closing commit that integrates the phase.",
+    )
+
+
+class Phase(BaseModel):
+    id: str = Field(description="Stable phase identifier.")
+    tasks: list[str] = Field(default_factory=list, description="Task references forming this phase.")
+    integration: PhaseIntegration = Field(
+        default_factory=PhaseIntegration,
+        description="Phase integration: combined validation and closing commit.",
+    )
 
 
 class BoardDoc(OperationalArtifactDoc):
@@ -31,6 +51,8 @@ tasks: ⸢rev•tasks⸥
 pills: ⸢rev•pills⸥
 # List of ritual-xxx paths
 rituals: ⸢rev•rituals⸥
+# DAG phases: id, tasks, integration
+phases: ⸢rev•phases⸥
 # e.g., system:sldb
 tags: ⸢rev•tags⸥
 ---
@@ -73,6 +95,10 @@ _Generated from the task references above._
         default_factory=list,
         description="Ritual document references relevant to this board.",
     )
+    phases: list[Phase] = Field(
+        default_factory=list,
+        description="DAG phases: id, member tasks and the phase integration.",
+    )
     notes: str = Field(
         default="No additional notes.",
         description="Short operational notes about the current routed set.",
@@ -81,3 +107,19 @@ _Generated from the task references above._
         default_factory=list,
         description="Semantic tags placed at the end, using namespaced forms such as 'system:sldb'.",
     )
+
+
+    @field_validator("phases", mode="before")
+    @classmethod
+    def _absent_phases_are_empty(cls, value):
+        return [] if value is None else value
+
+    @model_validator(mode="after")
+    def _task_in_one_phase(self):
+        seen: set[str] = set()
+        for phase in self.phases:
+            for task in phase.tasks:
+                if task in seen:
+                    raise ValueError(f"task {task!r} appears more than once in the board phases")
+                seen.add(task)
+        return self
