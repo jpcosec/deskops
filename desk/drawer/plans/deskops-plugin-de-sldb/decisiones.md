@@ -1,5 +1,7 @@
 # Decisiones: deskops como plugin de sldb
 
+El plan por fases F0-F5 (brief, alcance, dag) se retiró el 2026-11-25: lo reemplazan las macros M0-M6 del Board, que salen de diagnostico.md. Estas decisiones siguen vigentes.
+
 | Id | Decisión | Actor | Fuente | Fecha |
 |---|---|---|---|---|
 | D1 | deskops es un plugin sobre sldb, no una reimplementación. Lo modelado del workflow es dato en el store y lo evalúan reglas, aristas y vistas de sldb; deskops conserva como código solo dispatch/scion, git (worktrees, cierre, integrate), la cola, herdr, el lanzador de revisores y un CLI delgado. | JP | conversación 2026-11-25; átomo `atom-deskops-es-un-plugin-sobre-sldb-no-una-reimplementacion` | 2026-11-25 |
