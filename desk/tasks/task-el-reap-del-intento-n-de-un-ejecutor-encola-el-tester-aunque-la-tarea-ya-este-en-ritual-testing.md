@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T18:27:52Z'
+  at: '2026-11-25T01:26:18Z'
   authority: generated
   via: save_document_payload
 id: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
@@ -44,16 +44,16 @@ deskops/dispatch.py (reap) y sus tests; nada de la maquina de estados de rituale
 
 _Outline the expected implementation route or affected surface._
 
-1. En reap, tras integrar commits de un ejecutor, comprobar si la cola ya tiene dispatch-tester pendiente o un tester vivo de la tarea. 2. Si no, encolar dispatch-tester. 3. Test: tarea en ritual-testing, intento 2 reapeado -> queda un dispatch-tester pendiente; con uno ya pendiente no se duplica.
+Repo: /mnt/ssd/proyectos/SLDB_1/deskops (raiz). Contexto: el tester se encola hoy solo por el hook 'encola-tester' de la transicion execution -> testing (desk/lifecycle/execution-task_activates.md: corre 'deskops queue add dispatch-tester'). En un intento 2 la tarea ya esta en ritual-testing, no hay transicion y nadie encola el tester. Cambio, solo en deskops/dispatch.py, funcion reap(root, task_id): 1) Dentro del bucle, cuando role == 'executor' y _integrate_branch(root, name, task_id) devuelve code == 0, marcar integrated = True. Si _integrate_branch falla o el ejecutor no se reapea, no se hace nada nuevo. 2) Al final de reap, antes de los return, si integrated y no hubo tester vivo de la tarea en el mismo bucle (agente con labels deskops.role == 'tester' que quedo como 'vivo') y no hay en deskops.queue un trabajo pendiente o corriendo de kind 'dispatch-tester' con ese task_id (leer los JSON de queue_dir(root)/'pending' y /'running' con su campo task_id; reutilizar queue._jobs y queue._read_job), llamar queue.enqueue(root, 'dispatch-tester', task_id, 'reap') e imprimir 'encolado: dispatch-tester'. La deduplicacion es por task_id y kind, sin importar el intento. 3) Tests en tests/test_dispatch.py siguiendo los fakes de scion que ya usa ese archivo: (a) ejecutor reapeado e integrado sin tester pendiente -> queda un JSON dispatch-tester en runs/queue/pending con ese task_id; (b) con uno ya pendiente -> sigue habiendo uno solo; (c) si _integrate_branch falla -> no se encola. Correr solo tests/test_dispatch.py.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- pytest -q tests/test_dispatch.py
+- TMPDIR=/mnt/ssd/tmp/sldb1 pytest -q tests/test_dispatch.py
 
 ## Done When
 
 _Name the observable condition that makes the task complete._
 
-tests/test_dispatch.py cubre el caso del intento 2 y el de no duplicar; pasan.
+tests/test_dispatch.py tiene los casos (a) encola tras integrar, (b) no duplica con uno pendiente y (c) no encola si la integracion falla; el archivo completo pasa.

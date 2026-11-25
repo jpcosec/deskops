@@ -1,0 +1,36 @@
+name: review-task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing-preflight-3
+path: desk/reviews/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing/preflight-3.md
+source_hash: 506ef4cd631e9fc13330825c35bc94c48a988808602774d3c0f6bcfc62cc5928
+content_hash: e5fe1a96b470c66a15b141dddaf9a26200529d724a24c3d3e43ddd8240997d80
+field_hashes:
+  id: 898fc7dd46f8b7b435500fc5c54f10a07f43ad7f28df5d787337c943cabe048d
+  title: be38347dc06f6afbb81995f79a0000ad39d5df42394d614bc28e23e77565e66b
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 08b48172940ce91b0b9d0e799b50431f31dc649b1ae06ed83a6d848d5f4bb217
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 36b9d895f3bfa4183e388605186c9ce091c435897c15ef590f39e4a7cdca8a9f
+  input_sha256: 83b10bcb2b8f59217c95b6f003f8c03d94ad08ab8616fe3cf1309fe83dec1a29
+  contract_sha256: 5560edf078eb71b3ebac4e2ef0b122a63d5123f63cb5ac850ee013de7f1f98a1
+  output_sha256: f1baf9cd0e21f7e9dfce7e9feb56db2e643fccdfe40d55bfc5d8406eac5f3dc3
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: bdfe96e27f96514380f6c350e7d9f229f68fc5ef60b622d4267dfe6235c4baeb
+  created_at: 183bf02b8b9eaa82d801cae3db888ac2745d40ee9ba91793766418c46f18dd52
+  disposed_at: 8d78d1c07a7554d1f37ed020d302d366e18238812907f1abcddcc0c5793e1631
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 23d1d36a44d348722452577f9e018b15ec1ecd358f3acebf0fb74cd08bfc1393
+  disposition: 9a57a0830b286c574502be77bff11f96b3a8b533fd80ffd9ef3943fd777a0832
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T02:36:08Z'
+  authority: generated
+  via: save_document_payload

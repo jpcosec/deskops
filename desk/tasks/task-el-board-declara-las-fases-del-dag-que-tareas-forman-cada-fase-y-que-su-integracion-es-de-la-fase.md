@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T01:04:46Z'
+  at: '2026-11-25T01:27:04Z'
   authority: generated
   via: save_document_payload
 id: task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase
@@ -45,16 +45,16 @@ deskops/models/board.py, el template del Board con el marcador de fases y su tes
 
 _Outline the expected implementation route or affected surface._
 
-1) Leer ritual-phase y pill-007-phase-gated-task-flow para el vocabulario. 2) Campo phases en BoardDoc (id, tasks, integration) con su marcador en el template. 3) Validador: una tarea en una sola fase. 4) Test de modelo: un Board con dos fases hace round-trip y una tarea repetida falla. Correr solo ese test.
+Repo: /mnt/ssd/proyectos/SLDB_1/deskops. El template del Board NO es un archivo aparte: es el atributo __template__ de BoardDoc en deskops/models/board.py (frontmatter con marcadores rev, como 'tasks: ⸢rev•tasks⸥'). Vocabulario: desk/rituals/phase.md y desk/contexts/pill-007-phase-gated-task-flow.md (solo leer). Esquema fijo: modelo pydantic PhaseIntegration(validation: list[str] = [], closing_commit: str | None = None) y Phase(id: str, tasks: list[str], integration: PhaseIntegration = PhaseIntegration()); en BoardDoc, phases: list[Phase] = [] (default vacio: los Board existentes siguen validos sin la clave). Marcador nuevo en el frontmatter del __template__, despues de rituals: '# DAG phases: id, tasks, integration' y 'phases: ⸢rev•phases⸥'. Validador de BoardDoc: una tarea no puede aparecer dos veces, ni en dos fases ni repetida dentro de la misma fase (ValueError que nombra la tarea). Test nuevo tests/test_board_phases.py, siguiendo como tests/test_board_portable_references.py construye un BoardDoc: (a) un Board con dos fases hace round-trip render -> extract por sldb con los mismos valores; (b) tarea en dos fases falla; (c) tarea repetida en la misma fase falla; (d) un Board sin phases sigue valido. Correr solo tests/test_board_phases.py y tests/test_board_portable_references.py.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- TMPDIR=/mnt/ssd/tmp/sldb1 pytest -q tests/test_board_phases.py
+- TMPDIR=/mnt/ssd/tmp/sldb1 pytest -q tests/test_board_phases.py tests/test_board_portable_references.py
 
 ## Done When
 
 _Name the observable condition that makes the task complete._
 
-Un Board con dos fases hace round-trip por sldb y una tarea en dos fases es rechazada; el test nuevo pasa.
+tests/test_board_phases.py cubre (a) round-trip de dos fases, (b) tarea en dos fases rechazada, (c) tarea repetida en una fase rechazada y (d) Board sin phases valido; pasa junto con tests/test_board_portable_references.py.

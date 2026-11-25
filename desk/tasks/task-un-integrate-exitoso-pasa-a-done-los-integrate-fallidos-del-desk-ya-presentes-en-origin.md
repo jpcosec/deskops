@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T01:06:55Z'
+  at: '2026-11-25T01:27:50Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin
 status: draft
 summary: ''
@@ -44,16 +44,16 @@ deskops/integrate.py (paso final) y su test. Fuera: fases, encolado, otros tipos
 
 _Outline the expected implementation route or affected surface._
 
-1) Tras el push exitoso, listar failed/*-integrate-*. 2) Para cada uno, si su tarea o tip ya esta en origin (merge-base --is-ancestor), moverlo a done con una linea en el log. 3) Test con un failed ya en origin (se mueve) y otro que no (se queda). Correr solo ese test.
+Repo: /mnt/ssd/proyectos/SLDB_1/deskops. Solo deskops/integrate.py y tests/test_integrate.py. Activacion: al final de un integrate real (no --dry-run) que termino bien, sea porque hizo push o porque reporto 'ya integrado'. Barrido: los JSON de queue_dir(root)/'failed' (deskops.queue.queue_dir; leer con queue._read_job) con kind == 'integrate'. Criterio por trabajo: tomar su task_id, buscar en la rama local el commit de cierre de esa tarea (git log -1 --format=%H --grep='^Task-Id: <task_id>$' <integrate.branch>); si existe y 'git merge-base --is-ancestor <sha> origin/<integrate.branch>' da 0 (despues del fetch que integrate ya hace), mover el JSON a queue_dir(root)/'done' y agregar al final del archivo de su campo log una linea 'resuelto por integrate <task actual>: <sha> ya en origin/<branch>'. Si no hay commit de cierre o no es ancestro, se deja en failed. Tests nuevos en tests/test_integrate.py con nombres que contengan 'failed' (p. ej. test_integrate_moves_failed_already_in_origin_to_done y test_integrate_keeps_failed_not_in_origin), usando el repo git temporal y el origin bare que ya arman los tests de ese archivo. Correr solo pytest -q tests/test_integrate.py -k failed y luego el archivo entero.
 
 ## Validation
 
 _List the checks required before this task can close._
 
-- TMPDIR=/mnt/ssd/tmp/sldb1 pytest -q tests/test_integrate.py -k failed
+- TMPDIR=/mnt/ssd/tmp/sldb1 pytest -q tests/test_integrate.py
 
 ## Done When
 
 _Name the observable condition that makes the task complete._
 
-Tras un integrate exitoso, un failed ya en origin pasa a done con su linea de log y uno ausente queda en failed; el test nuevo pasa.
+Tras un integrate exitoso, un integrate en failed cuyo cierre ya esta en origin pasa a done con su linea de log, y uno cuyo cierre no esta queda en failed; tests/test_integrate.py entero pasa.

@@ -1,0 +1,36 @@
+name: review-task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase-preflight-2
+path: desk/reviews/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase/preflight-2.md
+source_hash: d8281c328fc82f6ac816274faf2930888090ac5d3163e24e7bc6770090e50985
+content_hash: fc25295facb8dc3f9f13c4ce173b7eacf32f4ae115f4cb99cf9f99bf12c13b02
+field_hashes:
+  id: e56576aaf36f09f4a3c0668cf2a861559e92eeb709424de74e9e2ece277644f8
+  title: c4f81e27088cb2f8935049d3d3984eaf2aae7cee2c1af99357540c39cb7db005
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: a439ea2aebb8cf04f6bf3545b1bac49b1df78ae920942ec03c50fdc8e66695ef
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 352c0f50725f751c994a4169186ee7bada8a0e24440bdc99ec98e6f482d081bb
+  input_sha256: 928cdec50a45898c39048051254ace097f43434eb2b823151e6f4ced51da8071
+  contract_sha256: ff8dbc9f0ef9a1913268fd468d45e23cc26ede8a23df92c6cb85779cfcb47dcc
+  output_sha256: b4b16dad390bac4c7ce42014c594fa668910b49ec1b7771a17891c187d71e0ab
+  verdict: b93e167bbe964a29c927882c2bc868922a912d6e74592730258b222da98b8c6c
+  reason: 99949703a4cd3798543f647bacc9d068375b8e83c02f1a5c088abaa65fe5f63a
+  created_at: 9c70c8e4ecbd4c2f44b2455f872c77a1f91fa9e7c7a5ad38d096df2bf06f0224
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: 1ce3fa4e7b6faf0daafcd67b8000400ef4475c7480644119f314d85d74b58ad6
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T01:43:01Z'
+  authority: generated
+  via: create_document
