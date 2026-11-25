@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-24T20:20:15Z'
+  at: '2026-11-25T01:44:32Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -59,6 +59,9 @@ tasks:
 - desk/tasks/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.md
 - desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
 - desk/tasks/task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y.md
+- desk/tasks/task-el-modo-pr-de-dispatch-e-integrate-trabaja-en-un-worktree-propio-de-task-id-y-nunca-cambia-la-rama-d.md
+- desk/tasks/task-el-gate-atom-materialization-del-closeout-reconoce-un-atomo-declarado-por-la-tarea-que-cita-el-archi.md
+- desk/tasks/task-un-dispatch-start-que-falla-antes-de-que-arranque-el-agente-no-gasta-intento.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -75,7 +78,7 @@ rituals:
 - ritual-closeout
 - ritual-testing
 - context-review
-# e.g., system:sldb, workspace:desk
+# e.g., system:sldb
 tags:
 - system:sldb
 - topic:routing
@@ -148,3 +151,6 @@ _Generated from the task references above._
 - integrate por fase: la unidad de integracion es la fase del Board (una suite, un grafo, un store y un push por fase) [draft] - deskops integrate toma como unidad la fase declarada en el Board: cada tarea de la fase cierra con su validacion dirigida; cuando cierra la ultima tarea de la fase se encola un solo trabajo integrate de esa fase, que corre una suite completa, una comprobacion de grafo y una de store sobre el tip y hace un push (o un PR en modo pr) y el commit de cierre de fase de ritual-phase; un integrate exitoso da por resueltos los integrate anteriores de ese desk que quedaron en failed y cuyo contenido ya esta en origin. Una tarea sin fase declarada se integra como fase de una sola tarea.
 - El Board declara las fases del DAG: que tareas forman cada fase y que su integracion es de la fase [draft] - BoardDoc tiene un campo de fases (id, tareas, integracion de la fase: validacion combinada y commit de cierre de fase); deskops tiene comandos para declarar una fase y agregar o quitar tareas de ella; deskops view board las muestra; el store del desk se actualiza con sldb stores update.
 - El skill deskops-workflow y vocabulary.md explican que la suite completa y el push son de la fase y cada tarea solo corre su validacion dirigida [draft] - SKILL.md explica como se declaran las fases en el Board al descomponer el DAG y que la integracion (suite completa, grafo, store, push y commit de cierre de fase) es de la fase, mientras cada tarea cierra con su validacion dirigida; vocabulary.md define fase como capa de dependencias declarada en el Board y unidad de integracion; los comandos citados existen en la ayuda del CLI.
+- El modo pr de dispatch e integrate trabaja en un worktree propio de task/<id> y nunca cambia la rama del checkout principal [draft] - En modo pr, dispatch reap trae los commits del ejecutor a task/<id> en el worktree <root>/.worktrees/<task-id>; closeout verify/commit e integrate usan ese worktree cuando existe la rama task/<id>; el checkout principal no cambia de rama.
+- El gate atom|materialization del closeout reconoce un atomo declarado por la tarea que cita el archivo cambiado, de cualquier tipo [draft] - closeout verify acepta como enlace de un archivo cambiado un atomo declarado en atoms o references cuya provenance o texto cite la ruta (o su directorio); el mensaje del hallazgo dice que forma de enlace se acepta.
+- Un dispatch start que falla antes de que arranque el agente no gasta intento [draft] - Si scion templates sync o scion start fallan, o el agente queda en fase error, dispatch start borra el run_dir, destrackea el RunDoc, deshace su commit (o commitea el borrado), quita worktree y rama, y avisa fallo tecnico reintentable; el siguiente start usa el mismo intento.
