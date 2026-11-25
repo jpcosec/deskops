@@ -1151,6 +1151,8 @@ include:
     name: run-deskops-e-ca9c3f91e5cf
   - path: runs/subagents/exec-deskops-t-6f073db3f764-testing/run.md
     name: run-deskops-t-6f073db3f764
+  - path: runs/subagents/exec-deskops-e-0cd61a6d9fa0/run.md
+    name: run-deskops-e-0cd61a6d9fa0
 - model: ReviewDoc
   paths:
   - path: desk/reviews/task-cc30-limpieza-previa-operations-py-como-fachada-y-fuera-los-spec-yaml-duplicados/preflight-1.md
@@ -3403,6 +3405,10 @@ include:
     name: review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-preflight-6
   - path: desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/bundle-6.md
     name: review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-bundle-6
+  - path: desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/preflight-4.md
+    name: review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-preflight-4
+  - path: desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/bundle-4.md
+    name: review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-bundle-4
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
