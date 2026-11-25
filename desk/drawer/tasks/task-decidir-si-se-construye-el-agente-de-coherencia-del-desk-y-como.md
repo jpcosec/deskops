@@ -5,7 +5,7 @@ sldb:
   authority: generated
   via: create_document
 id: task-decidir-si-se-construye-el-agente-de-coherencia-del-desk-y-como
-status: draft
+status: deferred
 summary: ''
 tags: []
 current_node: ritual-execution

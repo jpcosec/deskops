@@ -93,7 +93,6 @@ tasks:
 - desk/tasks/task-los-atomos-se-mueven-con-move-document-de-sldb.md
 - desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
 - desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
-- desk/tasks/task-decidir-si-se-construye-el-agente-de-coherencia-del-desk-y-como.md
 - desk/tasks/task-el-prompt-de-una-tarea-es-una-vista-del-nucleo-un-solo-texto-sin-contradicciones.md
 - desk/tasks/task-despacho-flexible-sobre-runtimeprofiledoc-claude-headless-o-subagente-de-sesion-pi-y-scion-con-el-mi.md
 - desk/tasks/task-el-cli-de-deskops-sale-de-fastmcp-generate-cli-y-el-cli-escrito-a-mano-queda-solo-para-bootstrap-e-i.md
@@ -238,7 +237,6 @@ _Generated from the task references above._
 - Los átomos se mueven con move_document de sldb [draft] - split, merge y reorganize de átomos usan move_document y move_path de sldb en vez de rename más untrack y track, y conservan la reescritura de links.
 - El frontmatter se lee solo por sldb y se eliminan los helpers duplicados [draft] - Los siete parseos a mano de frontmatter usan la API de sldb, y _git, _yaml_scalar, _coerce_list, _now y _under quedan una sola vez.
 - Se borra el código muerto y cada módulo público dice su propósito [draft] - close_auto, graph/atom_trace.py, testing/foreign_suites.py y las funciones sin llamadores se borran; cada módulo público tiene un docstring que dice qué hace y quién lo usa.
-- Decidir si se construye el agente de coherencia del desk y cómo [draft] - JP decide sobre la propuesta desk/drawer/plans/deskops-plugin-de-sldb/propuesta-agente-coherencia.md: si vale la parte con modelo, si es un comando nuevo o doctor corregido más hooks, y qué disparadores vienen activados.
 - El prompt de una tarea es una vista del núcleo, un solo texto sin contradicciones [draft] - Una operación devuelve el prompt de una tarea: la tarea, su contexto (pills, átomos, archivos), lo que advance exige y las reglas de entrega del RoleDoc del rol, sin las instrucciones contradictorias de hoy (N5); dispatch start --only-prompt lo escribe sin lanzar nada.
 - Despacho flexible sobre RuntimeProfileDoc: claude (headless o subagente de sesión), pi y scion, con el mismo prompt y el mismo runner que la revisión [draft] - deskops despacha una tarea con cualquier perfil de runtime del desk usando el prompt de la tarea, y la revisión en frío usa el mismo runner; scion queda como un adaptador más.
 - El CLI de deskops sale de fastmcp generate-cli y el CLI escrito a mano queda solo para bootstrap e init [draft] - El CLI de uso diario es el que genera fastmcp generate-cli desde las herramientas (o fastmcp call), regenerado en el build; cli/registry.py deja de existir salvo lo que no es herramienta.

@@ -4,6 +4,8 @@ This board routes deferred work only.
 
 ## Remaining
 
+- task-decidir-si-se-construye-el-agente-de-coherencia-del-desk-y-como: decidir si se construye el agente de coherencia del desk; propuesta en desk/drawer/plans/deskops-plugin-de-sldb/propuesta-agente-coherencia.md. Diferida por JP el 2026-11-25.
+
 Nada. Triaje del 2026-11-16: los 14 ítems sueltos se botaron (5 ya resueltos y 9 cubiertos por una tarea activa que los cita en from_drawer). Detalle en reports/triaje-deskops-20261116.md.
 
 
