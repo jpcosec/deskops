@@ -1,7 +1,7 @@
 name: Board
 path: desk/tasks/Board.md
 source_hash: 76b69a15ef8aee4074677f68f2eb3f2cb1d9184d1bceb9b3c1ed2ecfb7266ea4
-content_hash: 28a7777d30fd4282b5bd452017ac5191c571a124b3661707394ec92ad013d597
+content_hash: 12e59de9cf6971f4af9a69110884e6b55476e7135af9412a3eed17fe86a2147c
 field_hashes:
   title: f2f017f9dffb162f665f3cfa5eeff0dc436dc49cb7f4b932cb3dc354d465d192
   id: 14fdd56a1f61a067259a59a534c546cea3a3c3dc109c1faa2ead67d4628306d4
@@ -15,6 +15,7 @@ field_hashes:
   tasks: d7a06e82ad08eb12ec8e40a52f7981ca46b27d25db4686ed5496268a280427d6
   pills: ea66c76cc80b3b64bf3b303afab883b201de438541d9e2e47893c28bdaa9b04d
   rituals: 12736e434519662e5909a2a47bcf5cb810bf7c8dbcec31f8bc25f0c7cc5375ef
+  phases: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   notes: fb600f7808a671556132ae9b20c7ebd05bb43fcb5154fe7d7b2faf0fe5c6f559
 semantic_tags:
 - representation.markdown

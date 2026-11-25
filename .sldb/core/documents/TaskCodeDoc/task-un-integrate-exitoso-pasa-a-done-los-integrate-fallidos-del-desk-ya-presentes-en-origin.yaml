@@ -1,15 +1,15 @@
 name: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin
 path: desk/tasks/task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin.md
-source_hash: 035a6866c6e30ca26851618dd65501b3614f5e768e61ee2e5432c5396d3468fc
-content_hash: cd78ffa9a92b4a63b60a2607b8157893ace700b6865ab80e107303f5c8945a7e
+source_hash: f2a9497e5cff55fab61844d304616c22ae87aa86f9eda213d4596498064cd73b
+content_hash: dc0ee4e37bdc62f6f1bb799c72162f092ba74d84b36a9024f38060d7412ecbe8
 field_hashes:
   title: 225e8a1600d747e8b048132bc0530661d2d087d9ac832daba6d087a7842eeea4
   id: 0ba38dd62cf49f6d03441e99813ba757435abfb9e44c0fe80bee89ca86857f8d
-  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
   summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
-  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
-  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: d10f5286503cbf750af0584acaec732741c2d9cfbae2a6d5b8ce45b8bf83b79d
+  history: f89b8fd2ac9e43a24ba505d162381268ed901d0695f62c6ad8ec2c62718dfa1c
   why: f568168ea6cca993df77e3548b2b2d0819cf4218b2d49aa87a6ae680ce47814d
   goal: 99367ef274742037a023cc1c8fa30ddcc11fbb2e501b71b1c737b670ec85efb9
   scope: 9be94f268af3d8235ebe7efd331d7d6933dd8fbc51ac51f6715def7e68643b65
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T01:27:50Z'
+  at: '2026-11-25T03:32:49Z'
   authority: generated
   via: save_document_payload

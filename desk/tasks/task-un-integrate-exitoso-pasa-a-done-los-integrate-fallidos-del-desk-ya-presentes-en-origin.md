@@ -1,15 +1,16 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T01:27:50Z'
+  at: '2026-11-25T03:32:49Z'
   authority: generated
   via: save_document_payload
 id: task-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-del-desk-ya-presentes-en-origin
-status: draft
+status: active
 summary: ''
 tags: []
-current_node: ritual-execution
-history: []
+current_node: ritual-testing
+history:
+- task_activates
 references: []
 depends_on: []
 pills: []

@@ -1,7 +1,7 @@
 name: run-deskops-closeout-suite
 path: runs/subagents/20261031-044028-task-closeout-la-evidencia-exigida-depende-de-lo-que-la-tarea-toca-no-es-la-misma-para-todo/run.md
 source_hash: 5b3b7d4d59e617701cfde823b8c0e2bdaaad507313515584a81808fe5b382d09
-content_hash: f482c5501f78bfc68581bd336141e74da23c25536c3b768871335cf770d5f77e
+content_hash: 528eaa8dbade327a827b414b6ef4ee5e114186f62cdf503dd9ec46c78105743b
 field_hashes:
   id: 4e027a49d999cffe38293b0a4fc27c7a06a8119c9ef1c5e777766a10e5de448d
   title: 2ce127cab24c494365435288591e305570b8e01aa68c6166f562bff061de2bd1
@@ -14,6 +14,9 @@ field_hashes:
   session_path: bc0c3517fbe7ef899d1c8d9c214cfb57a4ee6d3fc27aa9a78fc50d5d739acfef
   session_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   started_at: 4eb48ed8d717f791716e82022f9f9575a4394e725ac671432a42bbfda2ad82a3
+  intent_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  dispatch_confirmed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  external_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   ended_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   outcome: de2bc7968076346e1ae2e62d3fd6385361b3855025678cd2732d9132eb9965cb
   commit_sha: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
