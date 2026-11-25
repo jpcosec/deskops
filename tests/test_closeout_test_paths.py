@@ -170,3 +170,30 @@ def test_typescript_test_in_node_modules_is_not_evidence(repo: Path) -> None:
 def test_plain_typescript_file_is_not_evidence(repo: Path) -> None:
     _touch(repo, "surface/src/x.ts")
     assert _tests_evidence(repo, ["surface/src/x.ts"], files=["surface/src/x.ts"]) == []
+
+
+# Node tests -------------------------------------------------------------------------
+
+NODE_SUFFIXES = [".test.mjs", ".test.js", ".spec.mjs", ".spec.js"]
+
+
+@pytest.mark.parametrize("suffix", NODE_SUFFIXES)
+def test_node_test_under_tests_is_evidence(repo: Path, suffix: str) -> None:
+    relative = f"ui/tests/x{suffix}"
+    _touch(repo, relative)
+    assert CloseoutGatesService(repo).reference_points_to_test(relative)
+    assert _tests_evidence(repo, [relative]) == [relative]
+
+
+@pytest.mark.parametrize("suffix", NODE_SUFFIXES)
+def test_node_test_declared_in_files_is_evidence(repo: Path, suffix: str) -> None:
+    relative = f"ui/src/x{suffix}"
+    _touch(repo, relative)
+    assert _tests_evidence(repo, [relative], files=[relative]) == [relative]
+    assert _tests_evidence(repo, [relative]) == []
+
+
+def test_plain_mjs_is_not_evidence(repo: Path) -> None:
+    for relative in ("ui/tests/helper.mjs", "ui/src/helper.mjs", "ui/tests/helper.js"):
+        _touch(repo, relative)
+        assert _tests_evidence(repo, [relative], files=[relative]) == []

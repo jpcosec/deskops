@@ -87,7 +87,17 @@ def gate_summary(declared: list[str], found: list[str]) -> str:
     return f"esta tarea declaró {declared_text}; encontré {found_text}"
 
 
-TEST_FILE_SUFFIXES = (".py", ".test.ts", ".test.tsx", ".spec.ts", ".spec.tsx")
+TEST_FILE_SUFFIXES = (
+    ".py",
+    ".test.ts",
+    ".test.tsx",
+    ".spec.ts",
+    ".spec.tsx",
+    ".test.mjs",
+    ".test.js",
+    ".spec.mjs",
+    ".spec.js",
+)
 
 
 def _has_test_suffix_hint(text: str) -> bool:
@@ -174,8 +184,9 @@ class CloseoutGatesService:
     def reference_points_to_test(self, reference: str, files: list[Any] | None = None) -> bool:
         """True only for an existing test file inside the repository that is a test location.
 
-        A test file is a ``.py`` file or a TypeScript test (``.test.ts``, ``.test.tsx``,
-        ``.spec.ts``, ``.spec.tsx``).
+        A test file is a ``.py`` file, a TypeScript test (``.test.ts``, ``.test.tsx``,
+        ``.spec.ts``, ``.spec.tsx``) or a node test (``.test.mjs``, ``.test.js``,
+        ``.spec.mjs``, ``.spec.js``).
 
         After dropping an optional ``::node`` suffix (the node is not validated) and the
         ``pytest <path>`` form, the reference must name an existing file, relative to the
