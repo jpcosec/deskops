@@ -563,6 +563,21 @@ def test_pr_mode_dry_run_pushes_nothing(closed: Path, tmp_path: Path) -> None:
     assert not log.exists()
 
 
+def test_pr_mode_runs_on_the_task_worktree_and_leaves_the_main_checkout_branch_alone(closed: Path, tmp_path: Path) -> None:
+    root = closed
+    remote, log, env = _pr_setup(root, tmp_path)
+    _git(root, "checkout", "-q", BRANCH)  # the main checkout stays on its branch; task/<id> is not checked out
+    tip = _git(root, "rev-parse", f"task/{TASK}")
+    result = _integrate_env(root, env, "--dry-run")
+    assert result.returncode == 0, result.stdout + result.stderr
+    worktree = root / ".worktrees" / TASK
+    assert f"modo pr: rama task/{TASK} en el worktree {worktree}" in result.stdout
+    assert f"dry-run: git push origin {tip}:refs/heads/task/{TASK}" in result.stdout
+    assert _git(root, "rev-parse", "--abbrev-ref", "HEAD") == BRANCH
+    assert _git(worktree, "rev-parse", "--abbrev-ref", "HEAD") == f"task/{TASK}"
+    assert _git(remote, "branch", "--list", "task/*") == ""
+
+
 def _suite_cfg(suite: list[str], **extra: object):
     from deskops.config import IntegrateConfig
 

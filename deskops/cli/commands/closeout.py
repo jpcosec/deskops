@@ -9,6 +9,34 @@ from deskops.operations import DeskopsOperations
 from deskops.services.closure import ClosureService
 
 
+def _task_root(args: Any) -> Path:
+    """``--root``, or in pr mode the worktree of the task's ``task/<id>`` branch (said on stderr).
+
+    The closeout of a pr-mode task travels inside its PR, so it is verified and committed on
+    ``task/<id>``, in that branch's own worktree; the main checkout never changes branch.
+    """
+    from deskops.dispatch import pr_task_root
+
+    root = Path(args.root).resolve()
+    selector = str(getattr(args, "task", "") or "").strip()
+    if not selector:
+        return root
+    candidates = [selector]
+    try:
+        from deskops import doc_access
+
+        resolved = doc_access.resolve_artifact_selector(root, "artifact.task", root / "desk" / "tasks", selector)
+        candidates.insert(0, Path(resolved).stem)
+    except Exception:  # noqa: BLE001 - an unresolved selector keeps --root; the service reports it
+        pass
+    for task_id in dict.fromkeys(candidates):
+        task_root = pr_task_root(root, task_id)
+        if task_root != root:
+            print(f"modo pr: closeout en el worktree {task_root} (rama task/{task_id})", file=sys.stderr)
+            return task_root
+    return root
+
+
 class CloseoutCLI:
     """Tool-made closing commits, linked to run evidence or marked manual.
 
@@ -81,7 +109,7 @@ test instead of an atom per file. Either way an append-only
         return outcome.exit_code
 
     def _verify(self, args: Any) -> int:
-        root = Path(args.root).resolve()
+        root = _task_root(args)
         # verify also writes the evidence receipts (CC33a); the envelope is unchanged.
         report = DeskopsOperations(root).closure.verify_task_closeout(
             args.task, write_receipts=True, run_dir=getattr(args, "run_dir", None)
@@ -115,7 +143,7 @@ test instead of an atom per file. Either way an append-only
         return self._commit_with_run(args)
 
     def _commit_manual(self, args: Any, reason: str | None) -> int:
-        root = Path(args.root).resolve()
+        root = _task_root(args)
         run_only = [flag for flag, attr in (("--run-id", "run_id"), ("--session", "session")) if getattr(args, attr, None)]
         if run_only:
             print(f"{', '.join(run_only)} applies only to --run-dir; a --no-run closeout has no run to record.")
@@ -136,7 +164,7 @@ test instead of an atom per file. Either way an append-only
         return outcome.exit_code
 
     def _commit_with_run(self, args: Any) -> int:
-        root = Path(args.root).resolve()
+        root = _task_root(args)
         service = ClosureService(root, DeskopsOperations(root))
         outcome = service.close_with_run(
             args.task,

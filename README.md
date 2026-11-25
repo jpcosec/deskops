@@ -138,26 +138,19 @@ with the same remedy. Per repo:
 6. Commit with `[skip ci]` and push.
 7. Tell the other sessions of the repo.
 
-## Spec2viz Boundary
+## specIR Boundary
 
-`spec2viz` owns structured diagram generation in the same way `sldb` owns structured Markdown operations.
+`spec2viz` is retired; it continues as specIR (the `IR` repo, command `specir`). specIR owns diagram content: notations, spec classes, extraction from code and text exports. `sldb` owns the mechanism that resolves and validates a spec against its notation, and `graph_ui` is where a diagram is drawn and edited; rendered text or static HTML/SVG is for inline use and export.
 
-Use `spec2viz` when a diagram has or should have a structured YAML source. The YAML spec is the source of truth; Mermaid, PlantUML, SVG, or other rendered outputs are projections.
-
-Use `spec2viz` for:
-
-- validating structured diagram specs
-- rendering human-facing diagrams from semantic YAML
-- keeping diagrams aligned with their underlying architecture/process model
-- avoiding hand-maintained duplicate Mermaid or PlantUML surfaces
+A diagram has a structured YAML spec as its source of truth; Mermaid, PlantUML, SVG, or other rendered outputs are projections.
 
 Common commands:
 
 ```bash
-spec2viz validate <diagram-spec.yaml>
-spec2viz render <diagram-spec.yaml> --backend mermaid --out <output-dir>
-spec2viz render <diagram-spec.yaml> --out <output-dir>
-spec2viz schema --out spec2viz.schema.json
+sldb notations validate <diagram-spec.yaml>
+specir diagram render <diagram-spec.yaml> --renderer mermaid --out <output-dir>
+specir diagram render <diagram-spec.yaml> --out <output-dir>
+specir diagram schema --type <type> --out <schema.json>
 ```
 
 For `docs/diagrams/`, prefer this rule:
@@ -165,12 +158,12 @@ For `docs/diagrams/`, prefer this rule:
 - structured YAML specs are editable source
 - `.mmd`, PlantUML, SVG, or rendered diagram files are generated projections
 - if a generated diagram is wrong, fix the YAML source or the renderer, not only the generated output
-- if `spec2viz` cannot express or render the needed diagram, capture the gap in the sibling `spec2viz` repo's inbox before creating a deskops-specific workaround
+- if specIR cannot express or render the needed diagram, capture the gap in the `IR` repo's inbox before creating a deskops-specific workaround
 
 The intended parallel is:
 
 - `sldb`: structured data plus model contract -> Markdown document and field/query/edit surface
-- `spec2viz`: structured diagram spec plus diagram contract -> rendered visual artifact
+- specIR: structured diagram spec plus notation -> diagram, drawn in `graph_ui` or exported as text
 
 Both exist to reduce drift by making the structured source explicit and regenerating the human-facing projection from it.
 

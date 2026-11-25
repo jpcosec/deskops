@@ -1,0 +1,36 @@
+name: review-task-el-gate-atom-materialization-del-closeout-reconoce-un-atomo-declarado-por-la-tarea-que-cita-el-archi-preflight-1
+path: desk/reviews/task-el-gate-atom-materialization-del-closeout-reconoce-un-atomo-declarado-por-la-tarea-que-cita-el-archi/preflight-1.md
+source_hash: 4e9c635b0bd2799c440694f9cfee817b271b29ea54a695a6c8eb36df3caca72f
+content_hash: cc864a5f65fb3169474e2f0a32efc4bc6d3d5a85a712f8d8a93e576b510c1697
+field_hashes:
+  id: 88acd1f9b9215d3fabd1b9614f27b6528ad7e9476842f4f14148f8a4cc992c3d
+  title: 0453b67ef2756990fbcb3fb250470a410e899fb8234dce26033992c9bb678ea5
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 14b6125941a4af1f33cfeaca05961a3fd14cfb234cbd8f3ae9b594b82b07d908
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 77ec210d2a4d6e5723d6f0c22d0ad3801194a8dd83e48ca765caaf38972f9c8b
+  input_sha256: e00ebf0f8ff63e50fd373624ab8f0841deafd3d43f634c950d6f30fc28c55da8
+  contract_sha256: 35a5df0a8ed7fc7d058d045724b74985eb30f52ceb1f0f977744963912f1a094
+  output_sha256: 0ea1f197ff9ca72c7e63cb07028629ff5eec54c13e677c297ef6a1c141382e71
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 1d8f81cd3c0794699b5ceede543e88372fc484df83752d678d647ae0cba0559d
+  created_at: 61fbc8bb77dbef064626b3beba57eff98cc463523b562c02534f023883ba1f54
+  disposed_at: 185515d24b63193cd489ebef1557685f93c58a43bf386c1811420d5dbb51b4c8
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 51d1b54a1c17f9400de20dfc3a87fa12f725844031e88713c41e82d5b03c80f6
+  disposition: 029f4247aec136c0e7e6a0621c161ef2e6d95131054cde133d2b3137a0c6e55a
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T02:29:05Z'
+  authority: generated
+  via: save_document_payload

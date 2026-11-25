@@ -27,6 +27,7 @@ EXIT_SCION_ERROR = 6
 EXIT_WORKTREE = 8
 WORKTREES_DIR = ".worktrees"
 DONE_ACTIVITIES = ("completed", "blocked", "limits_exceeded")
+FAILED_PHASES = ("error", "failed")  # an agent scion created that never got to run
 SCION_PYTEST_TMP = "/dev/shm/pytest-of-scion"  # patchable in tests
 
 
@@ -118,13 +119,12 @@ def _worktree_path(root: Path, name: str) -> Path:
 def _check_on_base(root: Path, base: str) -> str | None:
     """Error text when the main checkout is not on ``base``, else None.
 
-    In pr mode a ``task/<id>`` branch (where reap left the executor's commits and the closeout goes) also counts.
+    pr mode too: the task branch lives in its own worktree (``task_worktree_path``), never in
+    the main checkout, which other sessions share.
     """
     head = _git(root, "rev-parse", "--abbrev-ref", "HEAD")
     if head.returncode != 0:
         return f"{root} no es un repo git: {_git_error(head)}"
-    if _pr_mode(root) and head.stdout.strip().startswith("task/"):
-        return None
     if head.stdout.strip() != base:
         return f"el checkout principal esta en '{head.stdout.strip()}', no en '{base}'"
     return None
@@ -168,30 +168,72 @@ def _remove_worktree(root: Path, name: str) -> subprocess.CompletedProcess[str] 
     return deleted if deleted.returncode != 0 else None
 
 
-def _prepare_target(root: Path, base: str, task_id: str) -> tuple[str, str]:
-    """(branch that receives the commits, error). In pr mode: ``task/<id>`` from the base, checked out."""
+def task_worktree_path(root: Path, task_id: str) -> Path:
+    """pr mode: the worktree of ``task/<task_id>`` (``<root>/.worktrees/<task id>``)."""
+    name = task_id if task_id.startswith("task-") else f"task-{task_id}"
+    return root / WORKTREES_DIR / name
+
+
+def _branch_exists(root: Path, branch: str) -> bool:
+    return _git(root, "rev-parse", "--verify", "--quiet", f"refs/heads/{branch}").returncode == 0
+
+
+def ensure_task_worktree(root: Path, task_id: str, base: str) -> tuple[Path, str]:
+    """(worktree of ``task/<id>``, error). Creates the branch from ``base`` when missing, and the worktree.
+
+    The main checkout never changes branch: the task branch is checked out only in its worktree.
+    """
+    path = task_worktree_path(root, task_id)
+    branch = task_branch(task_id)
+    if (path / ".git").exists():
+        head = _git(path, "rev-parse", "--abbrev-ref", "HEAD")
+        if head.returncode != 0 or head.stdout.strip() != branch:
+            return path, f"el worktree {path} no esta en {branch}"
+        return path, ""
+    _ignore_worktrees(root)
+    if _branch_exists(root, branch):
+        made = _git(root, "worktree", "add", "-q", str(path), branch)
+    else:
+        made = _git(root, "worktree", "add", "-q", "-b", branch, str(path), base)
+    if made.returncode != 0:
+        detail = _git_error(made)
+        if "already" in detail:
+            detail += f" (vuelve el checkout que tiene {branch} a otra rama: la rama de la tarea vive solo en {path})"
+        return path, f"git worktree add {path} {branch}: {detail}"
+    return path, ""
+
+
+def pr_task_root(root: Path, task_id: str) -> Path:
+    """Root where a task's closeout and integration run: in pr mode with a ``task/<id>`` branch, its worktree.
+
+    Push mode, a task without that branch, or a root already on it return ``root`` unchanged.
+    """
     if not _pr_mode(root):
-        return base, ""
-    target = task_branch(task_id)
-    head = _git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
-    if head == target:
-        return target, ""
-    exists = _git(root, "rev-parse", "--verify", "--quiet", f"refs/heads/{target}").returncode == 0
-    if not exists:
-        made = _git(root, "branch", target, base)
-        if made.returncode != 0:
-            return target, f"git branch {target} {base}: {_git_error(made)}"
-    switched = _git(root, "checkout", "-q", target)
-    if switched.returncode != 0:
-        return target, f"git checkout {target}: {_dirty_overwrite_hint(root, base, target, _git_error(switched))}"
-    return target, ""
+        return root
+    branch = task_branch(task_id)
+    if not _branch_exists(root, branch):
+        return root
+    if _git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.strip() == branch:
+        return root
+    path, problem = ensure_task_worktree(root, task_id, _base_branch(root))
+    if problem:
+        raise UsageError(problem)
+    return path
+
+
+def _task_base(root: Path, task_id: str) -> str:
+    """Branch an executor starts from and is compared with: pr mode's ``task/<id>`` once it exists, else the base."""
+    if _pr_mode(root) and _branch_exists(root, task_branch(task_id)):
+        return task_branch(task_id)
+    return _base_branch(root)
 
 
 def _integrate_branch(root: Path, name: str, task_id: str = "") -> tuple[int, str]:
     """Bring the commits of ``deskops/<name>`` onto the local base branch, then drop worktree and branch.
 
-    In pr mode the target is the local branch ``task/<task id>`` (created from the base and checked out
-    in the main checkout, so the closeout commits land on it), never the base itself.
+    In pr mode the target is the local branch ``task/<task id>``, created from the base and checked
+    out in its own worktree (``task_worktree_path``), where the closeout is committed too; the main
+    checkout stays on the base.
 
     Returns (0, "") when there was nothing to do or it went through, else (code, message)
     leaving worktree and branch in place.
@@ -206,9 +248,12 @@ def _integrate_branch(root: Path, name: str, task_id: str = "") -> tuple[int, st
     problem = _check_on_base(root, base)
     if problem:
         return EXIT_WORKTREE, f"{problem}: no se integra {branch}"
-    base, problem = _prepare_target(root, base, task_id)
-    if problem:
-        return EXIT_WORKTREE, f"no se pudo preparar {base}: {problem}"
+    target_root = root
+    if _pr_mode(root):
+        target_root, problem = ensure_task_worktree(root, task_id, base)
+        base = task_branch(task_id)
+        if problem:
+            return EXIT_WORKTREE, f"no se pudo preparar {base}: {problem}"
     pending = _git(root, "rev-list", "--reverse", "--no-merges", f"{base}..{branch}")
     if pending.returncode != 0:
         return EXIT_WORKTREE, f"git rev-list {base}..{branch}: {_git_error(pending)}"
@@ -225,17 +270,19 @@ def _integrate_branch(root: Path, name: str, task_id: str = "") -> tuple[int, st
         if failure:
             return EXIT_WORKTREE, f"no se pudo commitear el RunDoc de {name}: {failure}"
         if _git(root, "merge-base", "--is-ancestor", base, branch).returncode == 0:
-            picked = _git(root, "merge", "--ff-only", "-q", branch)  # keeps the executor's shas
+            picked = _git(target_root, "merge", "--ff-only", "-q", branch)  # keeps the executor's shas
         else:
-            picked = _git(root, "cherry-pick", "--keep-redundant-commits", *commits)
+            picked = _git(target_root, "cherry-pick", "--keep-redundant-commits", *commits)
             if picked.returncode != 0:
-                _git(root, "cherry-pick", "--abort")
+                _git(target_root, "cherry-pick", "--abort")
         if picked.returncode != 0:
-            return EXIT_WORKTREE, f"conflicto al traer {branch} a {base}: {_dirty_overwrite_hint(root, base, branch, _git_error(picked))}"
+            hint = _dirty_overwrite_hint(target_root, base, branch, _git_error(picked))
+            return EXIT_WORKTREE, f"conflicto al traer {branch} a {base}: {hint}"
     failed = _remove_worktree(root, name)
     if failed is not None:
         return EXIT_WORKTREE, f"no se pudo borrar el worktree de {name}: {_git_error(failed)}"
-    return 0, f"integrado {len(commits)} commit(s) de {branch} en {base}"
+    where = f" (worktree {target_root})" if target_root != root else ""
+    return 0, f"integrado {len(commits)} commit(s) de {branch} en {base}{where}"
 
 
 _STORE_RUN_PATHS = (
@@ -379,7 +426,7 @@ def _unintegrated_executor_branch(root: Path, task_path: Path) -> str | None:
     """Branch of an executor of the task (attempts 1 and 2) with commits not on the base branch."""
     from deskops.runtime.scion import scion_child_identity
 
-    base = "HEAD" if _pr_mode(root) else _base_branch(root)
+    base = _task_base(root, task_path.stem)
     for attempt in (1, 2):
         branch = _agent_branch(scion_child_identity(task_path, "executor", attempt)["name"])
         if _git(root, "rev-parse", "--verify", "-q", f"refs/heads/{branch}").returncode != 0:
@@ -440,8 +487,7 @@ def start(root: Path, role: str, task_id: str) -> int:
         if problem:
             print(f"worktree: {problem}; no se lanza")
             return EXIT_WORKTREE
-        if _pr_mode(root):
-            base = "HEAD"  # the base or the task branch the checkout is on
+        base = _task_base(root, task_id)  # pr mode: a second attempt builds on task/<id>
         worktree = _worktree_path(root, name)
 
     roles_root = _roles_root(root, cfg)
@@ -467,6 +513,8 @@ def start(root: Path, role: str, task_id: str) -> int:
     from deskops import doc_access
 
     doc_access.untrack_doc(root, f"run-{_slug(name)}")
+    # Store files with no local change before the run: an undone launch puts them back as they were.
+    clean_store = [rel for rel in _STORE_RUN_PATHS if (root / rel).exists() and not _git(root, "status", "--porcelain", "--", rel).stdout.strip()]
     try:
         record_scion_run(
             root,
@@ -482,63 +530,116 @@ def start(root: Path, role: str, task_id: str) -> int:
         if leftover.is_dir() and not any(leftover.iterdir()):
             leftover.rmdir()
         raise
+    head_before = _git(root, "rev-parse", "HEAD").stdout.strip()
     failure = _commit_run_store(root, [name])
     if failure:
         print(f"aviso: no se pudo commitear el RunDoc de {name}: {failure}")
+    head_after = _git(root, "rev-parse", "HEAD").stdout.strip()
+    run_commit = head_after if head_after and head_after != head_before else ""
 
-    sync = _scion(["scion", "templates", "sync", str(target.resolve()), "--project", cfg.project])
-    if sync.returncode != 0:
-        print(f"scion templates sync fallo ({sync.returncode}): {sync.stderr.strip()}")
-        return sync.returncode
+    def technical_failure(message: str, code: int) -> int:
+        """Undo the attempt (run_dir, RunDoc, worktree): a launch that never ran spends nothing."""
+        undone = _undo_start(root, name, run_dir, run_commit, clean_store)
+        print(f"fallo tecnico: {message}")
+        print(f"no se gasto el intento {identity['attempt']} de {task_id} {role}: reintentable{undone}")
+        return code
 
-    shown = io.StringIO()
-    with contextlib.redirect_stdout(shown):
-        deskops_main(["show", "task", task_id, "--root", str(root)])
-    prompt_path = (root / run_dir / "prompt.md").resolve()
-    prompt_path.parent.mkdir(parents=True, exist_ok=True)
-    prompt_path.write_text(
-        shown.getvalue().rstrip("\n")
-        + "\n\n"
-        + task_path.read_text(encoding="utf-8").rstrip("\n")
-        + "\n\n"
-        + _role_instructions(role, task_id, cfg.quick_gates, worktree, root, name),
-        encoding="utf-8",
-    )
+    try:
+        sync = _scion(["scion", "templates", "sync", str(target.resolve()), "--project", cfg.project])
+        if sync.returncode != 0:
+            return technical_failure(f"scion templates sync fallo ({sync.returncode}): {sync.stderr.strip()}", sync.returncode)
 
-    if worktree is not None:
-        _ignore_worktrees(root)
-        created = _git(root, "worktree", "add", "-q", "-b", _agent_branch(name), str(worktree), base)
-        if created.returncode != 0:
-            print(f"worktree: git worktree add fallo: {_git_error(created)}")
-            return EXIT_WORKTREE
+        shown = io.StringIO()
+        with contextlib.redirect_stdout(shown):
+            deskops_main(["show", "task", task_id, "--root", str(root)])
+        prompt_path = (root / run_dir / "prompt.md").resolve()
+        prompt_path.parent.mkdir(parents=True, exist_ok=True)
+        prompt_path.write_text(
+            shown.getvalue().rstrip("\n")
+            + "\n\n"
+            + task_path.read_text(encoding="utf-8").rstrip("\n")
+            + "\n\n"
+            + _role_instructions(role, task_id, cfg.quick_gates, worktree, root, name),
+            encoding="utf-8",
+        )
 
-    argv = scion_start_argv(
-        identity,
-        prompt=(
-            f"Tu encargo esta en el archivo {prompt_path}. "
-            "Lee el archivo completo antes de empezar y luego cumple el encargo que describe."
-        ),
-        project=cfg.project,
-        workspace=cfg.workspace,
-        template=role_name,
-        harness_auth=role_cfg.harness_auth,
-        config=str(target / "scion-env.yaml") if (target / "scion-env.yaml").is_file() else role_cfg.env_config,
-    )
-    started = _scion(argv)
-    if started.returncode != 0:
-        print(started.stderr.strip())
         if worktree is not None:
-            _remove_worktree(root, name)
-    else:
+            _ignore_worktrees(root)
+            created = _git(root, "worktree", "add", "-q", "-b", _agent_branch(name), str(worktree), base)
+            if created.returncode != 0:
+                return technical_failure(f"worktree: git worktree add fallo: {_git_error(created)}", EXIT_WORKTREE)
+
+        argv = scion_start_argv(
+            identity,
+            prompt=(
+                f"Tu encargo esta en el archivo {prompt_path}. "
+                "Lee el archivo completo antes de empezar y luego cumple el encargo que describe."
+            ),
+            project=cfg.project,
+            workspace=cfg.workspace,
+            template=role_name,
+            harness_auth=role_cfg.harness_auth,
+            config=str(target / "scion-env.yaml") if (target / "scion-env.yaml").is_file() else role_cfg.env_config,
+        )
+        started = _scion(argv)
+    except BaseException:
+        _undo_start(root, name, run_dir, run_commit, clean_store)
+        raise
+    if started.returncode != 0:
+        _delete_failed_agent(cfg, name)
+        detail = started.stderr.strip() or started.stdout.strip() or f"codigo {started.returncode}"
+        return technical_failure(f"scion start fallo ({started.returncode}): {detail}", started.returncode)
+    agent = next((item for item in _list_agents(cfg) if str(item.get("name")) == name), None)
+    if agent is not None and str(agent.get("phase", "")) in FAILED_PHASES:
+        _delete_failed_agent(cfg, name)
+        return technical_failure(f"el agente {name} quedo en fase {agent.get('phase')} tras scion start", EXIT_SCION_ERROR)
+    if agent is not None:
         from deskops.runtime.scion import confirm_scion_dispatch
 
-        if any(str(agent.get("name")) == name for agent in _list_agents(cfg)):
-            try:
-                confirm_scion_dispatch(root, run_dir)
-            except Exception as exc:  # noqa: BLE001 - confirmation is best effort
-                print(f"aviso: no se pudo confirmar el despacho de {name}: {exc}")
+        try:
+            confirm_scion_dispatch(root, run_dir)
+        except Exception as exc:  # noqa: BLE001 - confirmation is best effort
+            print(f"aviso: no se pudo confirmar el despacho de {name}: {exc}")
     print(f"agente {name} run_dir {run_dir}")
-    return started.returncode
+    return 0
+
+
+def _delete_failed_agent(cfg: DispatchConfig, name: str) -> None:
+    """Best effort: drop an agent scion left behind (error phase), so the same name can start again."""
+    if any(str(item.get("name")) == name for item in _list_agents(cfg)):
+        _scion(["scion", "delete", name, "--project", cfg.project, "--yes"])
+
+
+def _undo_start(root: Path, name: str, run_dir: str, run_commit: str, clean_store: list[str] = ()) -> str:
+    """Undo what ``start`` left for agent ``name``: worktree and branch, RunDoc, run_dir and its commit.
+
+    The run_dir is what counts as an attempt, so removing it gives the attempt back. The RunDoc
+    commit is dropped (soft reset) when it is still HEAD, and the store files in ``clean_store``
+    (unchanged before the launch) go back to HEAD; otherwise the removal is committed with pathspec. Returns a note for the operator ("" when everything was undone silently).
+    """
+    from deskops import doc_access
+    from deskops.runtime.scion import _slug
+
+    paths = _run_store_paths(root, name)
+    if _worktree_path(root, name).exists() or _branch_exists(root, _agent_branch(name)):
+        _remove_worktree(root, name)
+    with contextlib.suppress(Exception):
+        doc_access.untrack_doc(root, f"run-{_slug(name)}")
+    shutil.rmtree(root / run_dir, ignore_errors=True)
+    if not run_commit:
+        return ""
+    if _git(root, "rev-parse", "HEAD").stdout.strip() == run_commit:
+        reset = _git(root, "reset", "-q", "--soft", "HEAD^")
+        if reset.returncode == 0:
+            _git(root, "reset", "-q", "--", *paths)
+            if clean_store:
+                _git(root, "checkout", "-q", "HEAD", "--", *clean_store)
+            return ""
+    _git(root, "add", "-A", "--", *paths)
+    done = _git(root, "commit", "-q", "-m", f"run: {name} deshecho (fallo tecnico de scion)", "-m", "[skip ci]", "--", *paths)
+    if done.returncode != 0:
+        return f" (aviso: no se pudo commitear el borrado del RunDoc: {_git_error(done)})"
+    return f" (commit 'run: {name} deshecho')"
 
 
 def _scion_pytest_tmp() -> str:
