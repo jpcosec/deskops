@@ -1,16 +1,17 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T22:40:47Z'
+  at: '2026-11-26T04:25:15Z'
   authority: generated
   via: save_document_payload
 id: task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree
-status: active
+status: ready_for_testing
 summary: ''
 tags: []
-current_node: ritual-testing
+current_node: ritual-closeout
 history:
 - task_activates
+- task_hands_to_closeout
 references: []
 depends_on: []
 pills: []
