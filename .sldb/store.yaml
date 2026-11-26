@@ -158,6 +158,7 @@ include:
   - desk/lifecycle/execution-task_activates.md
   - desk/lifecycle/testing-task_hands_to_closeout.md
   - desk/lifecycle/testing-task_returns_to_execution.md
+  - desk/supersessions/supersedes-atom-pron-queda-archivado-y-la-puerta-al-store-es-la-api-de-sldb-atom-sldb-absorbe-kgdb-un-sustrato-con-dos-capas-internas.md
 - model: RelationTypeDoc
   paths:
   - desk/lifecycle/type-task_activates.md
@@ -192,6 +193,7 @@ include:
     name: reltype-semantic_parent
   - path: sldb/relation_types/tagged_as.md
     name: reltype-tagged_as
+  - desk/supersessions/type-supersedes.md
 - model: RelationTypeDoc
   paths:
   - path: sldb/relation_types/applies_to_source.md
@@ -3426,6 +3428,18 @@ include:
     name: review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-evidence-atom-1
   - path: desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/evidence-materialization-1.md
     name: review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-evidence-materialization-1
+  - path: desk/reviews/atom-el-mecanismo-de-notaciones-queda-en-sldb-y-su-contenido-pasa-a-specir/owner-1.md
+    name: review-atom-el-mecanismo-de-notaciones-queda-en-sldb-y-su-contenido-pasa-a-specir-owner-1
+  - path: desk/reviews/atom-sldb-absorbe-kgdb-un-sustrato-con-dos-capas-internas/owner-1.md
+    name: review-atom-sldb-absorbe-kgdb-un-sustrato-con-dos-capas-internas-owner-1
+  - path: desk/reviews/atom-pron-queda-archivado-y-la-puerta-al-store-es-la-api-de-sldb/owner-1.md
+    name: review-atom-pron-queda-archivado-y-la-puerta-al-store-es-la-api-de-sldb-owner-1
+  - path: desk/reviews/atom-una-taxonomia-de-comandos-servida-por-fastmcp/owner-1.md
+    name: review-atom-una-taxonomia-de-comandos-servida-por-fastmcp-owner-1
+  - path: desk/reviews/atom-la-superficie-es-un-contrato-de-editores-texto-y-grafo-son-sus-dos-casos/owner-1.md
+    name: review-atom-la-superficie-es-un-contrato-de-editores-texto-y-grafo-son-sus-dos-casos-owner-1
+  - path: desk/reviews/atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz/owner-1.md
+    name: review-atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz-owner-1
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -3498,6 +3512,7 @@ include:
   - desk/tasks/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.md
   - desk/tasks/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.md
   - desk/tasks/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js.md
+  - desk/tasks/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
@@ -3523,6 +3538,14 @@ include:
 - model: TaskExternalDoc
   paths:
   - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
+- model: AtomAdrDoc
+  paths:
+  - desk/atoms/atom-sldb-absorbe-kgdb-un-sustrato-con-dos-capas-internas.md
+  - desk/atoms/atom-el-mecanismo-de-notaciones-queda-en-sldb-y-su-contenido-pasa-a-specir.md
+  - desk/atoms/atom-pron-queda-archivado-y-la-puerta-al-store-es-la-api-de-sldb.md
+  - desk/atoms/atom-una-taxonomia-de-comandos-servida-por-fastmcp.md
+  - desk/atoms/atom-la-superficie-es-un-contrato-de-editores-texto-y-grafo-son-sus-dos-casos.md
+  - desk/atoms/atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz.md
 graph_backend: networkx
 policy: {}
 tag_models:

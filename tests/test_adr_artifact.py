@@ -9,7 +9,6 @@ and a ``task.decision`` that cites the ADR.
 from __future__ import annotations
 
 import contextlib
-import hashlib
 import io
 import json
 from pathlib import Path
@@ -71,12 +70,14 @@ def test_a_type_only_adds_and_the_untyped_atom_contract_is_unchanged() -> None:
     assert {"atom_type", "status", "decided_on", "decided_by", "context", "consequences", "alternatives",
             "supersedes", "partial_supersedes", "references"} <= set(AtomAdrDoc.model_fields) - set(AtomDoc.model_fields) | {"references"}
     assert "atom_type" not in AtomDoc.model_fields and "status" not in AtomDoc.model_fields
-    # The schema (what a store hashes) of AtomDoc is the same with and without the subtype imported.
-    schema = json.dumps(AtomDoc.model_json_schema(), sort_keys=True)
-    assert "decided_by" not in schema
-    assert hashlib.sha256(schema.encode()).hexdigest() == hashlib.sha256(
-        json.dumps(AtomDoc.model_json_schema(), sort_keys=True).encode()
-    ).hexdigest()
+    # AtomDoc's contract hash is the one the snapshot pins: the subtype did not move it.
+    from sldb.store.hashing import hash_model_contract
+
+    snapshot = json.loads(
+        (Path(__file__).with_name("fixtures") / "model_contract_hashes.json").read_text()
+    )
+    assert hash_model_contract(AtomDoc) == snapshot["AtomDoc"]
+    assert "decided_by" not in json.dumps(AtomDoc.model_json_schema(), sort_keys=True)
 
 
 def test_the_adr_answers_why_and_has_two_states() -> None:

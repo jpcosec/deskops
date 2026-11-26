@@ -1,0 +1,36 @@
+name: review-atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz-owner-1
+path: desk/reviews/atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz/owner-1.md
+source_hash: d81758efc777adcf09a9d51cc8493a10387e3b86311f67c329bcde2231b5a23a
+content_hash: 00b753ea698866e1db491d9e1b9cdf8c30050a57f8e7101e0bb17d179979d910
+field_hashes:
+  id: 9e2327a1a38569990ecee49b219feb3f053fd868729bf6d3a4d96697b347c4f0
+  title: a1187d1e83375cd27833c4faa227416a63c2806765c496ea1df33cd6dd9dc5b7
+  kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: ecba6c4a2ad4ca3ff9483c29179bd4141060e89da6b0e54c1e098e95f67895e3
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: fca75bf56d8297baf8b2a0c3d42e1664b2270a783307e87004a13a0dc4068045
+  created_at: a185dbe5323af405e48211641a804ea8146221d320bc24a8519e0d0e21180d78
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-26T03:01:58Z'
+  authority: generated
+  via: create_document

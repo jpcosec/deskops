@@ -1,0 +1,24 @@
+name: type-supersedes
+path: desk/supersessions/type-supersedes.md
+source_hash: 9b507983d1dbddd25464bdaebdbe315a30a3edeccbb2d29b7375b2440e69c12a
+content_hash: 692d8dad76c503c6dda021426047d926e5ecd4096a1792b5b42bc3e8284bb57e
+field_hashes:
+  title: ae7dba93607ab89249bc71cd7e8a1ea73e24ac1e758bccb0be1c3c24575b5eb4
+  name: e38b47d032779490a9fbaadb8970450c478320bc7961343c6632621ec28173b2
+  direction: bc5965e31ad9b9fbdee7d03f2a8a26540c86629ea7b2abb3eb4cf2ac5e63a18b
+  cardinality: 3ea55382070a4f53a291448ffcb0ca975ac9b850f2514acbd418f89c891c1ffd
+  axis: 53b31b2c1c0e2bbecd50ad9b47452b3ab00e73630bc77511638a9f6e8d87e8e4
+  source_types: 6d9d5aa14e712e3f45e836ab01927d602f2bf9bb76b9ef4f12ec3942b2f25ef8
+  target_types: 6d9d5aa14e712e3f45e836ab01927d602f2bf9bb76b9ef4f12ec3942b2f25ef8
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  description: 8c465201fd944e2d9110975abfc6cef1519c18c30c8970f5d7a9c8bec083881f
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type
+provenance:
+  by: agent
+  at: '2026-11-26T02:59:54Z'
+  authority: generated
+  via: create_document

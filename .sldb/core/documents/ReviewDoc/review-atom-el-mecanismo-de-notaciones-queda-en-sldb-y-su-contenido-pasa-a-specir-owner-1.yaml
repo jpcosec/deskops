@@ -1,0 +1,36 @@
+name: review-atom-el-mecanismo-de-notaciones-queda-en-sldb-y-su-contenido-pasa-a-specir-owner-1
+path: desk/reviews/atom-el-mecanismo-de-notaciones-queda-en-sldb-y-su-contenido-pasa-a-specir/owner-1.md
+source_hash: 495910af0b34bcd734b5d6abe271374fc9e2874da79c7751f47da4dc82edae86
+content_hash: 7b11568cdc2a5cd0e681ae14091a1f7a7f237235085c779fb249e5b21c2ab109
+field_hashes:
+  id: 83683d6b797f21f95f62bc778f62c4efcf29c422e098761274fdd6aff51fd036
+  title: 289549159e084aa11619f6bb84c771db80f4860395b99249d3d5c45971abfe29
+  kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 45440d61e83d126362aa94c8d69120e836e8a4d68aeffe97419b61c761a9ac66
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: 65cab4f7ff4547ae85429de1a497b35396499a70adc0950fa18e966ded22efe9
+  created_at: b6601a746ef6cefbd3c9de5aad74a7e2ff2af4c655801031df28cd842e676677
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-26T03:00:47Z'
+  authority: generated
+  via: create_document

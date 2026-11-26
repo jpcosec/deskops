@@ -1,0 +1,36 @@
+name: review-atom-una-taxonomia-de-comandos-servida-por-fastmcp-owner-1
+path: desk/reviews/atom-una-taxonomia-de-comandos-servida-por-fastmcp/owner-1.md
+source_hash: 965a33faa60ced92b6b7ae974cd3324587fd298f6b3e46b8460d4655a47b67fc
+content_hash: 4c24a7908cae8c8635eb3fa7888b8c503aa45f00251589e1ea79a1cec27e3210
+field_hashes:
+  id: b0efe5ca6b48b94f855c17d894190706173e81e08eecfe0463b93f1e3ae6384b
+  title: a201d2201517ee35b87bfad92f00538ba549093a02280789fc8ef8e1765f81cf
+  kind: 622f06cbcd2e7e61637e17212e714e6c721d2dd5a9f7bc1aec911b65b34edcf5
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: ae03656a9fc1e3d66a9c0ab0fef51bd2eda0ca0957d22fac9ac804603d4a16b7
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 11e25bab0df4bb9f63c6dde985fea5de0ef16abdb2ec640dc08e7e97ec6b1d15
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: 12adac54ac6f7140109391b670b3cbcd51f083d8f5ee62ce26857c794ed67d36
+  reason: fca75bf56d8297baf8b2a0c3d42e1664b2270a783307e87004a13a0dc4068045
+  created_at: 8bbdbfa3eb374fb05abf5a815c9f5e02e67bac77ad51fc74ba603dd2076a4d93
+  disposed_at: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  disposed_by: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: fa403d0b32165434e96d49693cd40051286e0ccc702c218cbb87ba54cdbd8696
+  disposition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-26T03:01:31Z'
+  authority: generated
+  via: create_document
