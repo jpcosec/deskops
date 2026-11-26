@@ -76,7 +76,7 @@ Además, en el núcleo:
   `AtomDoc` (l. 139-143) van antes que el de `CrossroadDoc` (l. 145) y al reconstruir desde cero la regla
   `tag_namespace:domain` evalúa átomos antes de que exista su ancla (verificado). El comentario del CI dice que
   `.sldb/core` no se versiona; se versiona.
-- Mantenimiento que reimplementa sldb: `bootstrap.py` (vs `apply_declaration`), `workspace.py` y `cli/commands/desk.py`
+- Mantenimiento que reimplementa sldb: `bootstrap.py` (vs `StoreDeclaration` + `build_store`; `apply_declaration` es interno, corregido el 26-11), `workspace.py` y `cli/commands/desk.py`
   (secuencia de `stores build`/`scaffold`/`check` por subprocess), `doctor_findings.py` (vs `diagnosis_findings`),
   los cuatro módulos de tags (vs `tag_namespaces` y `tag_tree`), `identity.py` (vs `catalog_store`), y deskops pasa
   `include_linked=False` en `lifecycle.py:318-343` (verificado), lo que obliga a copiar semillas a cada desk.
@@ -111,7 +111,7 @@ en sldb ~1 200, propio ~5 500. El análisis previo (6 500 / 3 000 / 2 300) estab
 - Configuración como Python: `graph/desk_graph.py` (debería ser `project_graph:` en `store.yaml`), namespaces de
   tags duplicados (`atom_tags.py`), tablas `ARTIFACT_*` de `doc_access.py`, `services/issues.py` sin modelo.
 - Frontmatter parseado a mano en 7 módulos; `workspace.py` escribe frontmatter fuera de sldb.
-- Por módulo: `references.py`, `model_introspection.py`, `identity.py`, `bootstrap.py` (vs `apply_declaration`),
+- Por módulo: `references.py`, `model_introspection.py`, `identity.py`, `bootstrap.py` (vs `StoreDeclaration` + `build_store`; `apply_declaration` es interno, corregido el 26-11),
   `message.py` (vs `sldb inbox`), `domain_tree.py` (vs `tag_tree`), `graph/view.py`, `doctor_findings.py`.
 
 Pedidos C1-C9 enviados a sldb el 25-11, revisados: C7 y C8 ya existen (`catalog_store`; `stores build --check`);

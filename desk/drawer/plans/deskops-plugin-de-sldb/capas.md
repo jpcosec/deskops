@@ -59,7 +59,7 @@ API de sldb (E3) y el módulo se borra o adelgaza. La tarea de capas solo mueve;
 | Módulo hoy | Líneas | Destino | Después |
 |---|---|---|---|
 | `doctor_findings.py`, `cli/commands/doctor.py` (lógica) | ~500 | `ops/doctor.py` | Mutación separada de error (drawer) |
-| `bootstrap.py` | 472 | `ops/bootstrap.py` | `apply_declaration` de sldb (E3) |
+| `bootstrap.py` | 472 | `ops/bootstrap.py` | `StoreDeclaration` y `build_store` de sldb (E3) |
 | `workspace.py` | 1 107 | `ops/workspace.py` (scaffold) y `ops/migrations/` (las cuatro migraciones) | Migración de task_type se borra (E1) |
 | `sldb_layout.py` | 50 | `ops/migrations/` | |
 | `identity.py` | 338 | `ops/identity.py` | `catalog_store` de sldb (E3) |

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:46:17Z'
+  at: '2026-11-26T02:57:01Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-bootstrap-workspace-y-desk-update-usan-apply-declaration-y-la-api-de-stores-de-sldb-sin-subprocess
 status: draft
 summary: ''
@@ -34,7 +34,7 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-La instalación y actualización del desk se declaran (links, models con origin) y se aplican con apply_declaration y build_store; desk update no llama a sldb por subprocess; workspace.py se parte por responsabilidad.
+La instalación y actualización del desk se declaran con sldb.api.StoreDeclaration (links, models con origin) y se aplican con sldb.api.build_store (apply_declaration es un módulo interno de sldb, no una API pública); desk update no llama a sldb por subprocess; workspace.py se parte por responsabilidad.
 
 ## Scope
 
@@ -46,7 +46,7 @@ Entra: bootstrap.py, workspace.py, cli/commands/desk.py. Sale: las migraciones l
 
 _Outline the expected implementation route or affected surface._
 
-1) Declaración. 2) apply_declaration. 3) Partir workspace.py. 4) Tests en repos temporales.
+1) StoreDeclaration del desk. 2) Aplicarla con build_store y scaffold_store. 3) Partir workspace.py. 4) Tests en repos temporales.
 
 ## Validation
 

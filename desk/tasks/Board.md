@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-26T02:30:18Z'
+  at: '2026-11-26T02:56:53Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -125,7 +125,7 @@ _Generated from the task references above._
 - El Board es un documento generado desde las tareas y sus operaciones quedan mapeadas [draft] - El Board se genera desde las tareas (no se edita a mano ni lo reescribe cada sesión al crear o cerrar una tarea) y cada operación que se hace sobre él (rutear una tarea, sacarla, ordenar, declarar fases, cambiar pills de board) está mapeada a una operación de deskops que modifica la fuente y regenera el Board.
 - deskops lee las aristas del ciclo de vida desde el store enlazado y deja de copiarlas donde sldb ya lo permite [draft] - lifecycle.py deja de pasar include_linked=False y lee las aristas del paquete enlazado; la siembra de copias se reduce a lo que sldb todavía no aplica (las reglas, pedido C1).
 - identity resuelve repos y stores con catalog_store y store_links de sldb [draft] - deskops/identity.py deja su registro propio y resuelve por el catálogo de sldb (catalog_store, store_links, get_store_context).
-- bootstrap, workspace y desk update usan apply_declaration y la API de stores de sldb, sin subprocess [draft] - La instalación y actualización del desk se declaran (links, models con origin) y se aplican con apply_declaration y build_store; desk update no llama a sldb por subprocess; workspace.py se parte por responsabilidad.
+- bootstrap, workspace y desk update usan apply_declaration y la API de stores de sldb, sin subprocess [draft] - La instalación y actualización del desk se declaran con sldb.api.StoreDeclaration (links, models con origin) y se aplican con sldb.api.build_store (apply_declaration es un módulo interno de sldb, no una API pública); desk update no llama a sldb por subprocess; workspace.py se parte por responsabilidad.
 - Los tags usan tag_namespaces y tag_tree de sldb [draft] - atom_tags.py, domain_tree.py, tag_migration.py y tag_vocabulary.py dejan de duplicar namespaces y árbol: usan tag_namespaces de store.yaml, tag_tree y el on_write de sldb.
 - message usa sldb inbox y transacciones [draft] - send, list, read y ack de message se apoyan en sldb inbox y transaction; deskops conserva solo --to, ack y wake.
 - El grafo del proyecto se declara en store.yaml y graph view y checks usan sldb graph project [draft] - SURFACES, FILE_RULES y EXCLUSIONS de graph/desk_graph.py pasan a project_graph: en store.yaml; graph view y graph checks usan sldb graph project; atom_trace.py se borra.
