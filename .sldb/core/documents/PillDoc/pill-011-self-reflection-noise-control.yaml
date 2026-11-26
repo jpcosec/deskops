@@ -1,7 +1,7 @@
 name: pill-011-self-reflection-noise-control
 path: desk/contexts/pill-011-self-reflection-noise-control.md
 source_hash: 7cc7a4606b08cad1c49ac44248b094ee42722f61dbfc7a474100690f0a4e45a3
-content_hash: 7fc31d25394ad60d13b5a419d2a88923e6c8f97424c5c81e3145f8b0f026487f
+content_hash: 03023b08fea07125f0350b0d7bc72029168aeb71a6abf837bba142ef82b8af48
 field_hashes:
   title: 2b05524fa5044f2ff4a760b6858e93d4d36d93c75c492579df7cb0611b12ef63
   id: c97a58333e6d2713fc62120d3c56dfe8efa84792e90548d475bc5dd9e31466f3
@@ -12,6 +12,7 @@ field_hashes:
   where: 66e802c2a69e108dc08e75050746941b31bf9c8ba0e2493302996f9a383c35b3
   how: b953e7b9f846de0253e648f3f7d01e596ecfdb4261e09e51b7f21877ce610434
   how_not: b2b160d444e626b140a7648dd17e65f17f352f81e86e5e55274782316b63fd4c
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown
@@ -22,3 +23,4 @@ semantic_tags:
 - topic:self-reflection
 - type.workflow.pill
 - workspace.desk
+provenance: null

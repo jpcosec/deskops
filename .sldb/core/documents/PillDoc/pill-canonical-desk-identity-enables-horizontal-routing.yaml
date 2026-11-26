@@ -1,7 +1,7 @@
 name: pill-canonical-desk-identity-enables-horizontal-routing
 path: desk/contexts/pill-canonical-desk-identity-enables-horizontal-routing.md
 source_hash: 8821cb61a25c46e84092697a457cbeebbf81b0cc93e9bd54f4f3b6e03f116e39
-content_hash: 75df15162fe7819f5465985358361fdf516c2217e6f64c38de6f23a6f58a44c3
+content_hash: c4eb953da599f7041b0084a86538e7121b065c8ab438ca3b24cdf3ae07d8aeb3
 field_hashes:
   title: 9f7139db9b0c69587c65c8ac37f7cb6701ddb9e473de783e725da04503ae1e16
   id: 1f92b8d022c42eab4e9dab1827c8bc712c122a23254ee1f97004ae884dd73a69
@@ -12,6 +12,7 @@ field_hashes:
   where: 73150506260ae95e10d0ff69553d918a37566ea0bf6985e0731d66a5396dd605
   how: abba9560817c6c736da1547778ffd5f454193df4df2b6ee89ef9cc40095b92cc
   how_not: 6425b559441d26dd2c6ee7466778da291e0dcc95b2280533b8f1aa2e2bf6c527
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

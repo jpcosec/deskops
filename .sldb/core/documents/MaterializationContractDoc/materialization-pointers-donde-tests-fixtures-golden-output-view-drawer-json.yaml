@@ -1,0 +1,25 @@
+name: materialization-pointers-donde-tests-fixtures-golden-output-view-drawer-json
+path: desk/materializations/materialization-pointers-donde-tests-fixtures-golden-output-view-drawer-json.md
+source_hash: 505a4757f0b8aed5b99defc800205e6a3e7c44e148ef2644b759667ae14bbd37
+content_hash: 963ac10fdebdd90a3aa0ac3da760a16c8c74ba29cc6369e302467bac5e93ea14
+field_hashes:
+  id: f81e6492d0751eec3f3f983c8a3b460d0d3450a7a389130f0bae43b5fc43b7ae
+  title: 34fdcb6a355228de842b78e70fb8df8db91e5b2fbf1350f259d1eab94dd607b0
+  source_atoms: 31a882b5542cacd3af0e343d75916101dda9d97890367c8bd6fe9377f42b594e
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: e283d268ca08813b2f7ac43755cdd244641521744bb0ebb370b1b43fd5f2e16b
+  intent: bceb9a722c615598c6d38e9419a28b123bab5770f23f0ceb49e7e9d1df52e371
+  validation: c92694ef56f02d71a0f2219c1584516919367954ff3944aae24921ce83578bea
+  tags: e3aa703902e23ec3c1ac6532a8108e9fb0c3c9144436e6176e4a92f94d11001c
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:pointers-donde
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-26T03:24:25Z'
+  authority: generated
+  via: create_document

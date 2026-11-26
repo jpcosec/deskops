@@ -1,7 +1,7 @@
 name: task-dispatch-start-se-niega-a-lanzar-un-rol-cuyo-env-config-no-declara-volumes-propios-para-poder-quitar
 path: desk/tasks/task-dispatch-start-se-niega-a-lanzar-un-rol-cuyo-env-config-no-declara-volumes-propios-para-poder-quitar.md
 source_hash: c3a2fcdb84739a55129221ff2b876e49213468e5c6aae94c551fc1f93480b74a
-content_hash: f178389e2fa175d52c8e6d96be4a5203eda28adf8d68b17ed380d8cfbfab534b
+content_hash: ad6662d4f4011a7b52492270fb8b95d7aec2dfde135a221c0cd52fc9b501283b
 field_hashes:
   title: 9bfe924ba7ed66d63c1a41d77c68c37372ad06f04eb049da9e388d05182420d5
   id: fde565d92326c86282be9e3b1beda0a58e6f7ac9662f5defcddd13ffada0d583
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 08fd8fc65538780e03e1830fecae2977e6a91b2c20181bd6496bcf3eeffdce70
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 86bef3fba89d229386cf964c57d8a4bf6312a08c698d37f73284583376203fcc
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: fdb4e0065064fd31309a9a116257d45f3f3ace5967d398172208d257c093d6ce
   validation: 5f65d798c858c72c63e5713e29b9ff0f742a433ade39a7e3f81dc6d1d43a6cf0
   done_when: 42abde2f9b36f40d92da09d926da022d3337fc8fae6affeafb28166b61eec74a

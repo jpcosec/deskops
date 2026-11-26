@@ -1,13 +1,14 @@
 name: atom-primitives-encode-operational-rules
 path: desk/atoms/workflow-model/atom-primitives-encode-operational-rules.md
 source_hash: f3a1c009a6c70775e6bf255ec813bc1ff3418323b806f00c8a162d28552498aa
-content_hash: 6577f1179d388161d305cb173144e54d4e2550052c529fcbda60eba6f00290f4
+content_hash: d96ccda614cbf11e49f4c17d97c31f6429843e6bd56c8bda3021beaa80baa6c9
 field_hashes:
   id: ed7286dc6c698a6d5d94b4b20b7121f6d3ab9c63e7dfa54da9da2e6376786642
   title: 878b634d5e9aadf37a854fded2a8a62724a6d4ef5876f22ff6c30e24e98d451e
   five_wh_one_plus: 0ac5b48a10a651e75b01f8d26468c18977ea336c90a9607a6163d0d330a4bb40
   answer: 4e170bfe6534e44d94a38953247e4b16de08e35f67a99faa0d241d3ec48b898f
   tags: 5a133bad35158b51faa973e5713775892c6b2b6780e48fc0428d49b420f33cba
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
@@ -16,3 +17,4 @@ semantic_tags:
 - topic:workflow
 - type.knowledge.atom
 - workspace.desk.atoms
+provenance: null

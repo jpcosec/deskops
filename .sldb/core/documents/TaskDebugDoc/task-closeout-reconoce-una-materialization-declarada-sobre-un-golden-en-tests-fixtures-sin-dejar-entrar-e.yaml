@@ -1,7 +1,7 @@
 name: task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e
 path: desk/tasks/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.md
 source_hash: 27662b6905959ffd17345babb8261d16f65b79b0840cfa9ca56baaf0e95493af
-content_hash: 290d4adff9a83519b0d460b71279a009ad154fc4f8fd8680ac7d484a8547a98e
+content_hash: 72b64b5efda1ea517eb76fbd236bfaabfd1b7171b19dc3aaad64fb41994d32c6
 field_hashes:
   title: 80d780bb2ac90ac4c2ad65fcf5e60a4d7cdab00191117635dfe35bf02df298b2
   id: 2f1ef8548ca844452b0608d6a245644b7f3597cfd24c7580acd79323a1d30145
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 1a7462a0dbf4382d8f90651a00b3a107d6a213e57c2d5471b30949f194f01844
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 72eba185f29553793a2523a2c1d649c2603ce0beb41389982398b54ffab4200f
   validation: 6667a6e55b56b5b9b3c8843cc580a60c179109616cfab2fc0dd770472104b3f7
   done_when: de9e2f94ce91c2c1fc3af2c20370ed697ac78711eea7259fc720b30d089b43be

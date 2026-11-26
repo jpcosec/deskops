@@ -1,7 +1,7 @@
 name: pill-ready-phases-prove-dependencies-and-non-overlap
 path: desk/contexts/pill-ready-phases-prove-dependencies-and-non-overlap.md
 source_hash: bcdad795631fd01ed79703f9af92ab857099840769411ecf25af6f2f970bd554
-content_hash: 3256fd0bdccbaf4ea327496708b0266630b4a450ace0b07f29f5a03e954e2e63
+content_hash: c51816a4dab7900e20431123dd5ea03e33c39ef5e845eddabd25ce3c98c82cd0
 field_hashes:
   title: 50866527c7b485ea30bd4320f421338bb1ccffbb66b1f29fb4e0e2e6c5b51473
   id: c13356287f143e40c6c74b497b7ea122a6baa318e7400d949b8038f418027f54
@@ -12,6 +12,7 @@ field_hashes:
   where: f5319aeb3cbc3b4bce659293794b157dee64aa74591aa32ba7b176c254bb2f04
   how: ab9a2a4bda8260cb80810996c4c5439ba5cfb9fe62dc55ce384a3df2eb5cfffe
   how_not: d43bfe913d38c11595501d82601e56edf907de40108394ac628ec60310aeaefc
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

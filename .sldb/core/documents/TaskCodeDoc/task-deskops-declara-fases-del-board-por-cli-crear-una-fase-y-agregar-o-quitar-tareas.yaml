@@ -1,7 +1,7 @@
 name: task-deskops-declara-fases-del-board-por-cli-crear-una-fase-y-agregar-o-quitar-tareas
 path: desk/tasks/task-deskops-declara-fases-del-board-por-cli-crear-una-fase-y-agregar-o-quitar-tareas.md
 source_hash: 2a4fe9581a7cfdcf71b4d1700be37af5655f8788152dc34e88a2f1d0acb85ab9
-content_hash: 6336c14e6b97478f64f8a9edae800cb63767db9b9e58fa31c392097cb987ad2a
+content_hash: 750596b3d125c71c7ce5bf7e2ada6b54400a583b8ad8ced2854fcaf08a864f8a
 field_hashes:
   title: a16b1cf34333d23d2e49bd307561130144b7cf8a408dfee8afec0bea3653e606
   id: b03e9cbdda96a774da817d6b5bca2d7ddc3c12bbfae8e12887fcdeeea0843694
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: cf8b0ac630317e1108bd187e27a2631ca8f3dfe47fd3379889d91ebc5e6fbbe7
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: bf611ac191eb0ea23919ecb9e926b6f8e8daaefe7a507ed44ff35b4ed040f80a
   validation: 39ca5d731e197223c8be9be556a781135c8f75f485be1570b001d23f024fa70a
   done_when: 8230c6449e261134bfb7a614434edc101e4bb225f00856c7d1f6dc2319d97b2a

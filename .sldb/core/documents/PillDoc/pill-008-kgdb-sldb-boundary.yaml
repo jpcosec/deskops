@@ -1,7 +1,7 @@
 name: pill-008-kgdb-sldb-boundary
 path: desk/contexts/pill-008-kgdb-sldb-boundary.md
 source_hash: 59c4b54560dfb219518b379cc1af8df4bfc77cb7a1f6821e34b4da44a7e07073
-content_hash: 29b99dc71a7440a05389640f7254739ecb8a427cb7cf6b776d48a524df845422
+content_hash: 04c5722cd133d0e7b995530100c5832151471ebc08b42280a439a2ee0bc4ea37
 field_hashes:
   title: bf5da013ec06144771388ca75d7f80b97dcf839d87e154af5017b9f2df9b4a76
   id: 4b84b4855b8c60616cd9fef452bc482fc667db176d9bfe96af5e458351ac3f04
@@ -12,6 +12,7 @@ field_hashes:
   where: 342dd2abbe309d28ec8fb95f95e224dfdb1ba8e0ef46aa2333f5ad18fb5e5b13
   how: ce24a70e8867bf0558ff2099f510f90505c74473928b12be997fba997dc91d7d
   how_not: fdf2461b36ed6becf02bd5c363b2d8bbdbe326669a84d02f392ba45ada9f036e
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:decision
 - representation.markdown
@@ -21,3 +22,4 @@ semantic_tags:
 - topic:knowledge-graph
 - type.workflow.pill
 - workspace.desk
+provenance: null

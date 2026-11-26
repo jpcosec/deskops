@@ -1,7 +1,7 @@
 name: task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi
 path: desk/tasks/task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi.md
 source_hash: 61874d879d27e691d4ad8b221b82214810196435f7c9a1f484d904a9b9b5eaec
-content_hash: 4862c7e6a3e36cb0b3d4bf145615f121df2c9febb8c12cc6627f9907f538903e
+content_hash: 6c992f6a4b72428f5f80330e682224ff264befb200c2ea1a020e652e4e2685e0
 field_hashes:
   title: 3a967e4f049a495ae9529c5912a703bc11aa3ee834cd4073c3db3ecff51c72ef
   id: 909aa6dc4a6bc0c26fab23f6a35770f9eb2a89bc95fff558dbb050f4ca57a44e
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: da4001062f98cdf6188f90e5ce8daa3f02966f7ec9e9e9af0d027d3b89555ae0
   validation: 645a4ab5287b224076a574cbc94fd6965bd73785f9267dc65b1b7d8b19b5738a
   done_when: a5eec154097d9f703dc4d1439b2064a2b8583d2b08e4aedd56cf19f91e830811

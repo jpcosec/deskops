@@ -1,13 +1,14 @@
 name: atom-every-change-needs-descriptive-commit
 path: desk/atoms/workflow-model/atom-every-change-needs-descriptive-commit.md
 source_hash: 7c80bceb5fde522c9594eefb047667722ee2969f78d9ef38e4a3a2f433bae852
-content_hash: f8e6374177ed0c2c9e2b240abaff0c799fd892a341b1559861270344e1b18d44
+content_hash: 29e1ed0dc5c93706e8353dc58c363646248eba6a73060f81da02692551d5b8d5
 field_hashes:
   id: de672bca4420e1343cb8e1069f966b0d128d6fcb31afd60c4b869e9f3717ba36
   title: 11c96016c067ac406d4079e02367cc88507a9e71e748faf61d1a457a0ca55bb0
   five_wh_one_plus: 5cada7d158df7d5d2f211af6f0f652e095e9f6ed1f2f2da0bd61ecab7e8ee74f
   answer: 684b1550c349cb0db84a1a2fc3e0d649b2724ac4e0c9643220a33b400f80ddb3
   tags: e99f234dd630876930356a9c9d1fb8a93878c474622793fe394d1729d817c8b0
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
@@ -17,3 +18,4 @@ semantic_tags:
 - topic:workflow
 - type.knowledge.atom
 - workspace.desk.atoms
+provenance: null

@@ -1,7 +1,7 @@
 name: pill-closeout-knowledge-gates-require-traceable-evidence
 path: desk/contexts/pill-closeout-knowledge-gates-require-traceable-evidence.md
 source_hash: 52ace5b1b6cda93d2e821c4a8d9185afb4291be3db6b597c1fd032a2e3bce2fc
-content_hash: b5ccbcc871bc37ac5a2aebc7e1433d46f55a9f61d859bc899c02109eb55a969c
+content_hash: 4b614c9b6126298e83a3c79053cc7f4b993441216b22e318ef1bee8dbcf5d6ec
 field_hashes:
   title: a187a7778c6326fd94b04b89673ed68c6dcd6fd6a002bb87213e927a57e6b5d3
   id: f2bc6597f777b3f4f88f4df1174a0e05bb0abd38e1f53c3c045199a5e862a721
@@ -12,6 +12,7 @@ field_hashes:
   where: c7eefe2005f55991689d20debc3f7ce738071aff43807389c7dde10410125c8e
   how: 2757f406cd5cde6f82964b388f208606ab84e594fb7bbd104bd7bd5d5488851c
   how_not: 0d2c760d844cd6932260ba59f96e15f435ef87d9cd7412d898ea1e2e7cbe93b8
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

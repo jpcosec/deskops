@@ -1,13 +1,14 @@
 name: atom-codebase-surfaces-generate-atom-candidates
 path: desk/atoms/workflow-model/atom-codebase-surfaces-generate-atom-candidates.md
 source_hash: 639c9db1cd1c6aee03b31bdddaabbcca98e171b3ce5f29e31ad4e3dc901fb41d
-content_hash: 7500813db4c78bca86ee73db77a985cd31f72453c56fff559fc53483a3982d97
+content_hash: 722852fcf0533756afd3b4ba2a39639d017b321fc9bcfa66202bf80f5f7e46d1
 field_hashes:
   id: 33ee913a8aef5ce20f30fe19d21dc737888e86e21ddcb71be122eed24f001778
   title: d0b4a73753fc212e0dddb256c7e347b6ee4605cab266e0cd1d0f448064cf2815
   five_wh_one_plus: 5cada7d158df7d5d2f211af6f0f652e095e9f6ed1f2f2da0bd61ecab7e8ee74f
   answer: edaa4dab5b19520bbe975fab526efc5c453a68ba9ee6709a3f71a3e05f856001
   tags: 42807a7ca852d273bd8d4a68ebee212a181a0a99fd29159d0f0e1e907488a9a8
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
@@ -16,3 +17,4 @@ semantic_tags:
 - topic:codebase
 - type.knowledge.atom
 - workspace.desk.atoms
+provenance: null

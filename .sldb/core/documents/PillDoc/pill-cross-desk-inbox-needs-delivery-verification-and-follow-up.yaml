@@ -1,7 +1,7 @@
 name: pill-cross-desk-inbox-needs-delivery-verification-and-follow-up
 path: desk/contexts/pill-cross-desk-inbox-needs-delivery-verification-and-follow-up.md
 source_hash: 87441398f192bbcdf2615cb46e45ff480092314c7aed523d6679bf71e6ecded4
-content_hash: 2f4e79c76e9e2e2c1b1e65401f9b26ec9f958b6ec4dc6a9d649de0a1867dd228
+content_hash: bbfa97cc7c19cbf5c3bbbe338ccf970d2630cc84c0eb4be498fc26e57927a41e
 field_hashes:
   title: 21d9e9c69f62477ca718454d4124f5881762b33e94ff09fde9f9b5494ec78427
   id: c79bfbe268209e7c4cbdf05a6b94c9b85a49b3a02f458eaef0a3b57862e590c0
@@ -12,6 +12,7 @@ field_hashes:
   where: bb3a609912343cde052922facf9834d77f78444302ff845a43c8fe9f91fe05b3
   how: 6c1e7c228bfa1b011d761d79e34ff0456a8b2286832d729b7f8db7e5668dd69b
   how_not: 600199a8ea2cc9f40c4a951c49c64adbcd60158b15748edd01d4cb6d9fe3126c
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

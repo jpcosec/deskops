@@ -1,13 +1,14 @@
 name: atom-create-operations-should-rollback-on-failure
 path: desk/atoms/workflow-model/atom-create-operations-should-rollback-on-failure.md
 source_hash: c8ea28114220299642ba74fb437c951fd75d13cf8cb64bf25dd3c5913579d2cf
-content_hash: 5dc200bae96824b154e1dd4a397eae686b5a48f7b8ce22337e98c4458ee5d0a0
+content_hash: bac7849adeb5e19a8a2a2d761368e94db6b230b9d065c780690ee204f36f1c61
 field_hashes:
   id: e802f5d23f1503be1f7f9e597eb388ec75ccb85651601abd559d8031faf46500
   title: 51b24821fe5d2ee01b2dd4e0112f73a601b63e23cb859b711e6cda57482623de
   five_wh_one_plus: c7d4bb6c4e85ef7f9bf7592aeecd1d09dd38adc39afd1ffb3908b19e689040ad
   answer: 2190ce36b874941b04d194ec1e347d802adad0a3e90b187dfb9ea6432895ee31
   tags: 130e27bdd078ea3a33bc0466f155b61f3e24e77dfd4e23a18b99ced5c2f98abf
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
@@ -16,3 +17,4 @@ semantic_tags:
 - topic:operations
 - type.knowledge.atom
 - workspace.desk.atoms
+provenance: null

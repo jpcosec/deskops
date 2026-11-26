@@ -1,7 +1,7 @@
 name: task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita
 path: desk/tasks/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.md
 source_hash: f194c924a1f79f370f1b863a3fa71a55b86a93dc7033360c68526759913fb49a
-content_hash: 2319616f9fff36e6fbc028f0a3d747a86e2c313a9a723c5ac24a61aaf4d0ee13
+content_hash: e191e3a86ad75004e7b538b4397240bf3180f0bbb38e7fb828b799f5b01bad5e
 field_hashes:
   title: 6e4ac31c713ca6b7c8593342fd3f465ead0925b82811fbb4e6ce0fe58198b2aa
   id: eea5942e73ee2347f242bd308e3efc6c8afb1d7299759affae05b250bfa0680c
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: a9aa7c499271f7797e857d00170a01d217d1ed9690f6148c698734a230282101
   files: 2a49298a5af42ada87c2666b59845cb21ce2c406f391980b104f0d368c0a557e
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: ed064ed7cf814537f5547e49357b189e70b802eefbfa1fce955df0fe4c66b071
   validation: 17e9ed740adb053cfd05c1ebc8798cfad360910fd0cb2245c3bfea624c4a2314
   done_when: 083e851ee386be371e6a2431f5847b3c31eb2a01929731988811ea03292af7e6

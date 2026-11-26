@@ -1,7 +1,7 @@
 name: pill-doctor-separates-desk-repair-from-sldb-health
 path: desk/contexts/pill-doctor-separates-desk-repair-from-sldb-health.md
 source_hash: 489df788d475a51d119d8f55fde88acd01c70e49003dd76b5595523c070187e6
-content_hash: 1bf9a56f7df36367ebd24c68fe773712a33878619a6d1a75c766011a33a584ba
+content_hash: 2ce38c5aee6460517ae97d6c52220522f1f599eb77a18535418df4434938428a
 field_hashes:
   title: d94e8c75017f58483551f5afcfdf2443f566ffd085dfc954e327161799d2b51f
   id: bca75c8e6762d15b6d7b169f19589ccd22baf0498a1f69d55844cd081b815c82
@@ -12,6 +12,7 @@ field_hashes:
   where: c4bd067bdb5108615bfb728147becc3ece257166d42e45bb62fbddee55b28a86
   how: f4b3bb8bbf70b27218962b06bac12de29940adad23806d32ec53a42b8fa6150f
   how_not: 7bc7a78a3619a87042cb9c7e691a0a2635dbe7278e4499f71bdf548c336e4508
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

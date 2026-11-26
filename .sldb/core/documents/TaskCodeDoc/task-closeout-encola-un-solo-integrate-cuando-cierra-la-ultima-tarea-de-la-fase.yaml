@@ -1,7 +1,7 @@
 name: task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase
 path: desk/tasks/task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase.md
 source_hash: 319132c036cd43e0dc9aa2ad3d94c0df50162a465797b2c389cf7be845b8664b
-content_hash: a5bf8726b0c7ea3f5aa083bebd89b08e0a24c5d9bfcbbe675ea338ae9f73a914
+content_hash: 6987255b7770151630d8a26a9808bceb3a174095deb5e13484f0a7cdad7e2825
 field_hashes:
   title: 152c6e77c1ef5be306612423673691fc71b687cebd4d7f3a628f4f06bd5d7406
   id: 1f6507067b1841937f398e99d2aa4cfcdd143720c0e9b877d2981c6b8089b5e9
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 07e6597c3ffe3dddc4882fa5a20fbb2f0ece18aa16c84eac71cd6eebbb99ad2f
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 3808cf042f4f9698f929850c66a7857f3e6739ef3da47ffc24eb0afe165e493e
   validation: 23653ceb4707354a8055617275d310e81c95dd98a510d8f429a4b9fc5541a12f
   done_when: c2f65faa578bfb326c566727ab16aff5a178a3b86eff62513b51cf616bb2893e

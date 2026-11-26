@@ -1,7 +1,7 @@
 name: task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo
 path: desk/tasks/task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo.md
 source_hash: 798a89d03a39f8a65f43abe1ac7c160854f2300e088ff323f1970ce327b551ea
-content_hash: f03cf6244171b1ba2466fe5da11ae0e4142bb1f6daa6a0035846076fb271e0da
+content_hash: 376e4601dc6961f83abdd447c57fee0835b08a582ec798820126e40487d45c52
 field_hashes:
   title: 52df4195278f0fb0e0360c2a3a518ccabe4e86847b5def61a46293f54c26fcf7
   id: 2af37ce52c8039ee6202339a1fa73728f77c11e257062a152639c4b0c9ab93f1
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: fea13a6a5d17a9a8b0116c81ff623f25d86823ee503f0688734f8386b3e86a67
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: c984323e3f82be0ae509bd9ed9b2363308d167e168e988e183c9eda89dcdeebe
   validation: 2910aba3b2c56cae5e867b62cece2b336f18da746c3e4db5017c35799fc1b99a
   done_when: 4ab0683a0ca9909a4ecc3f8416e0714d36bd3177f9b81bf49faee105d9ab7df5

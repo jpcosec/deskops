@@ -1,7 +1,7 @@
 name: pill-real-cli-surfaces-prove-operator-contracts
 path: desk/contexts/pill-real-cli-surfaces-prove-operator-contracts.md
 source_hash: b7c3b29927db632d0adc91a21a745b4564aa50ef4d820852797973e4f60912e9
-content_hash: becc288c83dd1f7e1f2404209da83c7f3ebb09ce4dbd384fc60c88c42e6f901a
+content_hash: 10777bde9b9c320eaeeed02ad5f8f4a14e81c7c8a7c329502f888ae146452cea
 field_hashes:
   title: bde74d60192ff1f1ead4ee545828925622b0e53b9158e10bae01247f5cc4a034
   id: 22338f200980b6e436f78cc4d7c49349f07624057a7299b082cc49a2fa979c96
@@ -12,6 +12,7 @@ field_hashes:
   where: caf8eb1ffe1037d3f24406c6c8040cb6a9c691bcc366fd96c18ae6f386ca9fd5
   how: 9e696b1b02247f3bc6117868eaf565223905f80e9b3732119f2adc0299c3ded9
   how_not: f1ba15461659e0c18555ccad695342fbf43741aea1207239bb12eeb828eefe0b
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:pattern
 - representation.markdown

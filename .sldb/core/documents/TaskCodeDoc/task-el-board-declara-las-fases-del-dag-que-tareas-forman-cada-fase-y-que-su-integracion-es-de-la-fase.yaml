@@ -1,7 +1,7 @@
 name: task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase
 path: desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
 source_hash: 50d04ffddd9dd45bc675537f9ee2cb03f27084645c1447a3cbe02afa208475ae
-content_hash: e3d96b3ca49cadafc5274e3d48beb5d498c368c8f4e7a4d9d4d7c667802f7489
+content_hash: d64fb5866fd3c5b96e59f4873f9b52a6a43839be2c022500eb17ccc893b0a2c1
 field_hashes:
   title: 1a9eeb9bb61dbd5802bbc43039412eddff3c94e7094895cd97be92f639f2bd9a
   id: 4660b1b4114a401dfac963e78ca0c92c1f01b6896f4ca0126c65d4d617e19fcd
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 7d58a2667c7687cc97eddf7aa2fecf7aa135e06ffe3d739d906d280890b24d9e
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 0ea65ea2eeef5035cd79560f91b8b2b358165d3713c36e6352d08969b97c0e40
   validation: 62f6bbe29d0e57f0d4f99444957839b0809adff7e3b4fb2c40a49fa7d635c3ca
   done_when: be7db98ef87a32b2eb92a2ecb823374675e11a58a77b5e8d24a84c46aeb6563f

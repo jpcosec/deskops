@@ -1,7 +1,7 @@
 name: pill-atom-lifecycle-preserves-provenance-and-materialization-links
 path: desk/contexts/pill-atom-lifecycle-preserves-provenance-and-materialization-links.md
 source_hash: 7a49a3523abefbe941d43936788d5521d4591d96861dd4aa328fd50daabd50d3
-content_hash: 447ef523ee72c94b6581183b8b0c45b6f1f6c0973e3b4c20532b6a8a7b335500
+content_hash: 5e215c3a8723289438850c3f7b5fd2b2ac94ead37d5b1565bc37089df9618ac9
 field_hashes:
   title: 836c79e044ead0cfc40472ef6c144e7cf40d31663e06a3e0315b9b8da441a4f5
   id: 80e2c3a5552be6a537c20b85d8203bc77dc863d16a090e534ff012888bbd83c1
@@ -12,6 +12,7 @@ field_hashes:
   where: 869237d2af11b4ee72bc3152bddbd8e45f985e05ec57d673180da6710f1f2b66
   how: 187441307c40448e69f5ba02b211ac3f1ae8087c0456eeddebbe1970aca740fa
   how_not: 3af7c7f3056436bd269f7db44da24d2a5b3566acdfb411226f37f53a7cbc4dea
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

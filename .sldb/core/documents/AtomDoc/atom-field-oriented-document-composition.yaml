@@ -1,13 +1,14 @@
 name: atom-field-oriented-document-composition
 path: desk/atoms/workflow-model/atom-field-oriented-document-composition.md
 source_hash: 937bc749fb50a07aa156df308f29d2cbe5042abea5bd66f6f357cdd0592c6d26
-content_hash: 488bf2d40e05091bded33f23d7671c1f9e4202cac4ee3d3594f656bbac58388a
+content_hash: 054d28dbd02bb7de19130654f16714b4297906c12fcb99957941ea2a233a1b99
 field_hashes:
   id: fcf239b219a0898986a41346477b31681ad31f7658335e3d7ca308da9309a1a8
   title: b7eb9e7c9e8166216e1081d8ee17f63647315d98494c6c281988ffb2de8c046f
   five_wh_one_plus: 0ac5b48a10a651e75b01f8d26468c18977ea336c90a9607a6163d0d330a4bb40
   answer: 12f4435677a2fe81cdc13d0ae64ff8f3abfbbab42cd98d6dd2308b430c66d945
   tags: b3ed510a77b04281eaf2ee8c0828d81431fe3708be53e26457b81b078482e782
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - representation.markdown
 - source.document.markdown
@@ -16,3 +17,4 @@ semantic_tags:
 - topic:fields
 - type.knowledge.atom
 - workspace.desk.atoms
+provenance: null

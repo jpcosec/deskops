@@ -3,9 +3,9 @@ model_ref: deskops.models:TaskDebugDoc
 path: deskops/models/task_types.py
 documents_index: .sldb/core/documents/TaskDebugDoc.yaml
 sections_index: .sldb/runtime/sections/TaskDebugDoc.yaml
-model_hash: ebb296cfa7b80472acaceb1c6207858f1b0deeb5f47eb065d49b418f180b7f6c
-roster_hash: 21cb441b95f12c659ccfb811cc9972696e4302aabc7af2cbe7a729a013e77842
-contract_hash: d5d05d2a7b8edc9e89b556d0a7d03be23f393958d891b1df96dc1c9496112296
+model_hash: b292c7e211832098ee12f380e9a0cbe743e4f5d804b932de048cad1cdb1c2273
+roster_hash: 20e3d3273f105356fd118ee76e7ee12d3c45d199de39b86a01d68743b854e22e
+contract_hash: 718a58c7e41e7d67e43568e262cb848d98ad4a357baf9efcfb846c583f03486e
 documents_count: 2
 version: 1
 canonical: false

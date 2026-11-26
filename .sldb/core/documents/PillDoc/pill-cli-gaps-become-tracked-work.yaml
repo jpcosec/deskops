@@ -1,7 +1,7 @@
 name: pill-cli-gaps-become-tracked-work
 path: desk/contexts/pill-cli-gaps-become-tracked-work.md
 source_hash: c8feb28b8324d250d2126746370346e630adf6f8c043912df3f0c717cd573d86
-content_hash: d5cdebd5dba7a7f562b398b6779f01862f268fdd202ccef0e69591a80a18afc3
+content_hash: c183082f04ef34bb4961b552cd3304da651ad4c036da27c7dda3e3547c0f9abb
 field_hashes:
   title: a053e0cc226049a653c49b507c6689a5410eb3073158b30fcf9a8b289450d266
   id: ddde0c720a35e7fbc4f88e02bc5a8e8af25ca3843a3f79d1e65e4dfd5bc4ca62
@@ -12,6 +12,7 @@ field_hashes:
   where: a3ecd3c217c43fa9aea9dc5b47b88b1ccc06b34332144320c2b325924ecc3543
   how: a605632fb40412b722b9fac96b465ce0ed6c1e9c63859bb8abc38a2d816d6047
   how_not: cfa161ac06230df9bf1899575c3b024b7b7a9b2ced3bfb0afea1f5449ad36159
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

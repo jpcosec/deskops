@@ -1,0 +1,25 @@
+name: materialization-pointers-donde-tests-fixtures-model-contract-hashes-json
+path: desk/materializations/materialization-pointers-donde-tests-fixtures-model-contract-hashes-json.md
+source_hash: 615ecec58877261595d78ef51414fe3180c8d7f6c76357d8dc2b420ead70cc12
+content_hash: dd7bc6526b044eae46f0e18811d0c3b721ae22792ed194d9b1a6d51c8b48fdbd
+field_hashes:
+  id: 265f4a5ebeecb7c2f6eced89917ddb3230c7dad2e58d14464a6537e60952528c
+  title: 3e298d1d1574e223a11b0d4af3a0784bcad64ca32bb3d8ce908304be59cd8722
+  source_atoms: 31a882b5542cacd3af0e343d75916101dda9d97890367c8bd6fe9377f42b594e
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 63010393512eba8902dd4e437dd58ffdc51ff42b7acf107af6f438c78a0fe9e1
+  intent: 709b488638c93fd141b3e7121c2170e8508abc4a269cf6c07bc5a231438274fa
+  validation: c92694ef56f02d71a0f2219c1584516919367954ff3944aae24921ce83578bea
+  tags: e3aa703902e23ec3c1ac6532a8108e9fb0c3c9144436e6176e4a92f94d11001c
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:pointers-donde
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-26T03:24:40Z'
+  authority: generated
+  via: create_document

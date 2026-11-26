@@ -1,7 +1,7 @@
 name: task-desk-update-en-seco-lista-los-tags-de-tareas-con-namespace-sin-declarar-y-apply-no-mete-taskdoc-en-t
 path: desk/tasks/task-desk-update-en-seco-lista-los-tags-de-tareas-con-namespace-sin-declarar-y-apply-no-mete-taskdoc-en-t.md
 source_hash: bd06686004b903c305a47e3a3f7223d075cf309b68e6fdb76dd0d49d0adb72bd
-content_hash: f0908811dfd9fcca78999c58c542478281fb36a50183a3c61041e987c38efe99
+content_hash: d2f77d9c7c14c55a98ce0e3f5bec402a9cddfb8fc963c94982a02ed66c8f7330
 field_hashes:
   title: b651c5207a6114ee48d1dcef0df8a966e6d0a1540f4a13a920db21bd0e0bb20c
   id: 28c7f466d752a5fe26a1b945ff6d1d741468711ef3fff9213e36b5ac36760afb
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 90c77353a0cc793b4630f11a4c7b4a29e795bba4114efd37154a595637717e61
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 2d9731528821f0064d56a87b96ae45b506e9d6014709164afbd343c25188fc49
   validation: 9113355d66c29c5c1210fa08f8d94e1ada850f942f3e807fe26851e87513aace
   done_when: 33e5be2d6380ed7a50d8d81e230729e006da7b0ae47fd577519efb767eacc4b4

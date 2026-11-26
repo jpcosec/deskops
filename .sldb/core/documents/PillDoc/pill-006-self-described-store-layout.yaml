@@ -1,7 +1,7 @@
 name: pill-006-self-described-store-layout
 path: desk/contexts/pill-006-self-described-store-layout.md
 source_hash: 95361a9fea1e9056573cb7607958b73b1116b02e8309b1c8803f4d2c85297f09
-content_hash: ab6e308674adb8e2c975c46347974c8fc2f8388f73b8b5d7639a085f5de68131
+content_hash: 08393f4ddd3b5622e6a7e084c804db081791e1cac1cd53e8cbcc0e9c2b012ca0
 field_hashes:
   title: 2989c9e413615fc1d974b13844a35aa11841e4a8858181a6e93878f8bf6cbe49
   id: 7b00af20608182a4441c2e31b60d86518093606c1ad57448e81c32ce0161505f
@@ -12,6 +12,7 @@ field_hashes:
   where: dc05dc3b06aa01be6c1142e0158426574e8a3195e396f7018a4c0620de2f9359
   how: 99da69e89e7f452b548b1dffecba00280995f9f6dcda7db092180475902e314d
   how_not: 81f5689f55344b3766c5f2e4ff6406fc222fc3c3b44c50f618db127970d15746
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:index
 - representation.markdown

@@ -1,0 +1,25 @@
+name: materialization-pointers-donde-tests-test-where-pointers-py
+path: desk/materializations/materialization-pointers-donde-tests-test-where-pointers-py.md
+source_hash: d3ca9c9561316f92c321d3d9e58afe679e7ca7a2a781d7d7118f790af4fbb15b
+content_hash: b542772a732b55e5467560ff80293bad1d7535c26393e4451bdaba8eb13f2133
+field_hashes:
+  id: 3f384684a8aea10564d042cbb7f09a4076669fc6583fed860c4a4c847a53ca78
+  title: 61f475a3860928ad040146f7dad4d29535e76b664d8c4ceec89cb41dba6884e0
+  source_atoms: 31a882b5542cacd3af0e343d75916101dda9d97890367c8bd6fe9377f42b594e
+  target_kind: 4d967a30111bf29f0eba01c448b375c1629b2fed01cdfcc3aed91f1b57d5dd5e
+  target_identity: 019f84fb1cdc5f56271e3e682fc544f0584d8a21f15da6f2aa3220b7a1bf8e8a
+  intent: 582be4bedf39e002a88a2257164eaf49f8c6c2bcf6eb3cb1454c6c7566794fe3
+  validation: c92694ef56f02d71a0f2219c1584516919367954ff3944aae24921ce83578bea
+  tags: e3aa703902e23ec3c1ac6532a8108e9fb0c3c9144436e6176e4a92f94d11001c
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- system:deskops
+- topic:pointers-donde
+- type.knowledge.materialization_contract
+- workspace.desk.materializations
+provenance:
+  by: agent
+  at: '2026-11-26T03:25:10Z'
+  authority: generated
+  via: create_document

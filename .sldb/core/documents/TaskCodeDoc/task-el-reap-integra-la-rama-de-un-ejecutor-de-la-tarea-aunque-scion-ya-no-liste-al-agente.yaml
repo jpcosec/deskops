@@ -1,7 +1,7 @@
 name: task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente
 path: desk/tasks/task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente.md
 source_hash: aab47c1e6c55ef65ebe7d071222909294a50fa1f50c7c03bffbf0553b0ae1ec3
-content_hash: 0c3efb5e47929eced81c37ab762ec4966f782c50a93218f6a486915d92fc800f
+content_hash: feb95a8f24ac71477ba34a82bed386c5562ce81b72dab9e1f300c7bf852a87a8
 field_hashes:
   title: 638c29a1ebf84ccf767086d2c765a4cfcf89722b876df3237214b60db528f769
   id: 59a09fae5cca41e92e1e7e19e225a41b8986ecd43a6ebb26fc0d8d2ea7dfa0b4
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 5e20e42ade2b3dac756094fdc9c41b3e2158dd3aa11e2b80abdfc11d674db36b
   validation: 296f1e2142efecccc71e780ea0e3b2f9650598ef86a8b1ba48ece300291341cd
   done_when: 1ddf2cd20af56683eaf9c6cafa3b737b28c84271715df4fdd1786da6c4f69399

@@ -1,7 +1,7 @@
 name: pill-machine-readable-cli-output-needs-stable-contract
 path: desk/contexts/pill-machine-readable-cli-output-needs-stable-contract.md
 source_hash: 395c0afcaea32418f3aa49298ba164628c7c7085f0634290af2dc5a9042dca5f
-content_hash: 04d041497e5343da781dbf8dd71108f6af58640cdd7edbfdd33848a9c8ad9868
+content_hash: 46b2885bdf1159f5e0fb76c99d9d807733f2e5005dd8979c04849f1062eebd86
 field_hashes:
   title: 96806e15d62e980a3edc7d186760b0aa8d718edcb77e3503eaae5403424e5373
   id: 84cd5f5dfe15a0ff8b50a3e05f97b96f22d8751b3a51f42a777fb0e9591219ed
@@ -12,6 +12,7 @@ field_hashes:
   where: 4e4435f4b4a5e9a674da7b9fa98978a86a22687a4f9e19d451774bed16fa3db3
   how: 8b1ca90687000310aaa450be60b2287d78714022ac9dcead5a865cf8592bf9d2
   how_not: 71df2b2716b9462b85187cc8ba7cbc3ba146ae21fd2bddf750b896ee65544b19
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

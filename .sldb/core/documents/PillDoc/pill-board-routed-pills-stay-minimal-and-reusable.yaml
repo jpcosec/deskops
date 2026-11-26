@@ -1,7 +1,7 @@
 name: pill-board-routed-pills-stay-minimal-and-reusable
 path: desk/contexts/pill-board-routed-pills-stay-minimal-and-reusable.md
 source_hash: cc40ee6530db5fb971c146b2c71f8bb7a28075837ae28f6c88eac1202b72f6cc
-content_hash: 00fd19158f33a38ba35632b574af596c6ab50f078308dfb632718ad941febc04
+content_hash: c1388b9b6f4babdf8843fc15b9fa577176b02e7c0f741d347a7500b59eb6580e
 field_hashes:
   title: 7c91f188c2a53141d92cd3173b10f0dbba4516e5d3a9b83197d2a062ea46a72e
   id: f39d780d90eab3d92e15e087b93da44f9b1cbf0caa86de4549743247430ee11d
@@ -12,6 +12,7 @@ field_hashes:
   where: c27cbfedd07d8a4950e5d52db52034a1d2e855016c54554665f0c9b815e1218c
   how: 67ff3ab746ee13f0c65b19b018cd4ec9da4545e23336ee490ccd8b362a1a6a98
   how_not: 1552ea11f0fb219efbbd012e396e96e2c5077c93ed2edb97134875cc2afa38e0
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

@@ -1,7 +1,7 @@
 name: task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada
 path: desk/tasks/task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada.md
 source_hash: f84fd833eca3bd5680ec23e01dc87024ad69c9b94b0668aa7225a7176ae1f280
-content_hash: 1b336c974e22ec6bd503d4bd4bdcd0beb34706b2772a847f3320cbaf7dc111f0
+content_hash: 3d28dc92cc7406e52956dba3c56d7514ceb01bc7bb41891f0bfbf5b711034792
 field_hashes:
   title: 8605912ad6c4da9af830531dec2f4162df8d9aa74ac26d1dc2c339de104326c2
   id: 49569a689e673200b9506ac96504af2986f8749aa7ff227e3d2320ed1b8e2f6e
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   validation: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   done_when: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126

@@ -1,7 +1,7 @@
 name: task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado
 path: desk/tasks/task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado.md
 source_hash: fff5081c308aefef86dbf4a6e361e5c33cd4c4540d71d7914089e03e557497b8
-content_hash: 72a49ae7bb12279fe0bf0a0f77b8e64eff355f0a7334f443ef6c51bb89be1c8e
+content_hash: 8a2fb5ac6026cf89f7ff1d712f5d617ee714e467f55cea524409baa384e34637
 field_hashes:
   title: c735395b8e683b432830d13fb2c0162a92051288bd72d44edebb187a5258fefb
   id: 5971b94c51dd63b198fe81ca77731970a391a6b7c704d96373081f631e5e1046
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: cf8b0ac630317e1108bd187e27a2631ca8f3dfe47fd3379889d91ebc5e6fbbe7
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: fba6e5a0473598e1604afbf003e1af7c4f4d6b35296c727c65f17bcb3385f169
   validation: 45f3e2e20619a11fbe690489f0abe6a4282e62d9eeb90a9d7dcd65eabd5271ad
   done_when: 8cdf95c0940af63bfd6b1ac0726b9eff23b3ab6a82c658f722fec5107d7b0bdb

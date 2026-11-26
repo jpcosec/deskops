@@ -1,7 +1,7 @@
 name: pill-materialization-contracts-declare-source-intent-and-target
 path: desk/contexts/pill-materialization-contracts-declare-source-intent-and-target.md
 source_hash: 573fe92369d0217e4bc6a888549a0adc6d36fc6dca996211ed6b90a8dff9d3dc
-content_hash: 283996ea83d50ad9363424e20417dd128c72bda5815bf8b58a97454bb8490cc1
+content_hash: 978380379473dde3b71873ff957ad23549dd88632ea38bf4a640993008f7a8ef
 field_hashes:
   title: 15c1a26705994d1f4599575d3c9b591b2c87d98a9a097aa0ead20d3b7c1ccd86
   id: f228bc2d36bebf34beb70551afdc83968a0c3fc0f89024646ddc1b3ab1e97b0e
@@ -12,6 +12,7 @@ field_hashes:
   where: c2e06e6353d82de28b1c76589c83c8f05e98625b71a9dedde676cf51f71444db
   how: 14976f388aa098e42306bd0db9554add2aa5bde7c2560a677db4fb435ada9750
   how_not: 49f33042adcfb90b0c3508d8b5894afed1fba4c346adc71fdb70bb56ed59b3ba
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

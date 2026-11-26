@@ -1,7 +1,7 @@
 name: task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests
 path: desk/tasks/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.md
 source_hash: 6da2e6c78852e1b5ed52eae59cffcd7f76adc2493714c913c2e3e0608babbd17
-content_hash: 6e97d33e5cbb47bb1502c220022484bfbf521c26a93855aaca0838cdcc56a96f
+content_hash: b291ba1874069f9378dfa5965a0d1782878288a4bd86f2684f9a3dd4b129f349
 field_hashes:
   title: 32b80b54dc33866dc8e061b49b95178609d764c34e73b192c6da5fdd1a5c86ad
   id: f0b39d969fc153bc6f9779a6b661e2cba98e309e96e14ecaadad7d37672f1835
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: c9944ea7239330942c9de7cad717947b10abab101477ab70435a6c4c2a079d03
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 34384336aee63c9d4ddaa45175eb3e83e25cbefd1275471f9eed4db437e98ea7
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 554c1d59e758568a1d31e06d5c7f9e3109da1e515693a4a3f17dbe967510da39
   validation: b14c40630ecc2ee757257089006fcd2cb3d5eae369fed84c1e0dbdb69457afe5
   done_when: 1c30f8e202a3cf457bf1e76a73280ff5fb774c9e0906ea6b02472177a1a1de4d

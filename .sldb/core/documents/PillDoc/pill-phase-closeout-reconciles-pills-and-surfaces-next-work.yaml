@@ -1,7 +1,7 @@
 name: pill-phase-closeout-reconciles-pills-and-surfaces-next-work
 path: desk/contexts/pill-phase-closeout-reconciles-pills-and-surfaces-next-work.md
 source_hash: d451c3bf2b9f1897e35fc61ba3c50fd3dbc7f503b19c8a2099115bd5f330b912
-content_hash: e94d3e9ddf0b750c9f2ef5b7dbaf631ec8e74122a278ceec8bc21a8a46ea1420
+content_hash: d7ec432c50f6e9513ab938fce1a9f2d855ac51d274899cf87c48dbfe84a657d3
 field_hashes:
   title: 3ac1866a81c50f141c5d921b5680ae57b1dc3f95d9a3ab7ad99471160d89f0c3
   id: f8748331f35ae342a015f97500bed2a582ad92eef19497db671e708743e5e1de
@@ -12,6 +12,7 @@ field_hashes:
   where: 965f8a28b2702b74a3426db217c0c845ed6692feec8e5b0d2f3b52d6854992eb
   how: 552c8d09c4d686f46fe1e957a16165c600b954c019d24714f4020f42a30521c1
   how_not: e4457150bb171db92abbd58c661b822895e0783c9cdcaa35eac7746b7bc1a452
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown

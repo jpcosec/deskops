@@ -1,7 +1,7 @@
 name: task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare
 path: desk/tasks/task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare.md
 source_hash: a8c0f4863aa9f2ca356dcaa7fcbd50c394eb25c2e3f13e26e840ffcab79d542c
-content_hash: 8351fa8927d72187bd91cea5b382a4ebb924dcb53a8abc18bc5aa7da8b767e82
+content_hash: b3f538f2fcbb05354927c177e0474e21c0d02bcb9c9cb35cf997aed4ec1da0ab
 field_hashes:
   title: 1325602207da2f392cd200c45badb6bc13f15fc877a3e7a7a256c20b37fa114d
   id: a4f22fc8a795a5b31456ed59765f0c179ead56efde478860800d4aa8c675b5d7
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   validation: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   done_when: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126

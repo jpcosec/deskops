@@ -1,7 +1,7 @@
 name: task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits-from-o-las-herederas-siguen
 path: desk/tasks/task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits-from-o-las-herederas-siguen.md
 source_hash: 2d6ead68d9b6237c2347ae905f48c4b244ee9d6fc84c4b07d89c72949da49172
-content_hash: 1846a9ec5f425347e490cb17bfcc60c8b9c4042af9a700612346dc8e0943c312
+content_hash: 8e6e4554466662ff5222c210ff0bedf07fcc6c0258c5440915b2cbf43a983334
 field_hashes:
   title: 88a220d2f2e6d68c89f97c9170df157b058e545e6e29d2d5d527dc1a345a989a
   id: 16019a527f8afe36549d4a809584469437f1ebb695dc8f8cced195ca39177cf3
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
   validation: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   done_when: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126

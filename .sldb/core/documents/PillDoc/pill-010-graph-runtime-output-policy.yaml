@@ -1,7 +1,7 @@
 name: pill-010-graph-runtime-output-policy
 path: desk/contexts/pill-010-graph-runtime-output-policy.md
 source_hash: 22d47396cb149921e6c0dfcbd2d817b2ec400cc339b5350c5371f8bbc8a9036b
-content_hash: c9a982736150444e013839bac655532956f4850aca4bd95a56131fc7460d766f
+content_hash: dc0cbbafbb30f57d0c3468961a5bf1b0055927ddb575fa982a5c9351ed89a802
 field_hashes:
   title: 7ff8794c9b5d77550f3cfb2ca159ed178a78b976900814b82aae75642a025f2c
   id: dbd18f4c1a099cafb48ccf5ec9ce048f65c60f5aa7098219429a5aebaacfe7c2
@@ -12,6 +12,7 @@ field_hashes:
   where: 9c6191d86862324c202fcbb98282686264bfd84122ef2a5effe92fcdfc0d6a23
   how: e4db3e73cd7bcf5fcdbf0aac43d035695ed0130514e3e5fd7b58b5ed75584a16
   how_not: 1653c493da051c998ee25c436ef9d7ba621b89a62c01a8853c52c1a9a68fa053
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 semantic_tags:
 - pill-type:guardrail
 - representation.markdown
