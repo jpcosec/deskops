@@ -1,7 +1,7 @@
 name: task-los-atomos-se-mueven-con-move-document-de-sldb
 path: desk/tasks/task-los-atomos-se-mueven-con-move-document-de-sldb.md
-source_hash: 6276024bae6232aeea4b73f64b27df52513cf7b0a03ec5725ccb882d46af77c3
-content_hash: 5b0f5fd6b5336fe280f8210694c87f3e7bf13d3204b954ea077f7e239dfa845c
+source_hash: 3ed05e95047ffb661e4ff23a12b1b078d1696443deeab0bbfee03955225cc7c7
+content_hash: 4843acd331b5953490b66fc5f8b42733fa4a13229a1a8d32c111afc5e8aa4367
 field_hashes:
   title: b93ac4e99387557f779c6916b057489edbabbd867bcd2f3ddeba417fa353a20b
   id: 1be87ed47a1c3d6636ee189380d97b52c84c01732003357dac5bf0a1e550f63e
@@ -11,7 +11,7 @@ field_hashes:
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
-  goal: 1c19403eca13fef6183a6a17b846f54a85e49632ade140f74b59c6c9cc738271
+  goal: b6d616e39596517b3274b09f62f855fcc6a28a37e5b12807ab25cc0188fd5e7d
   scope: ad234765ee2de16104e24e0c8063a86f5d72edb6814ea6863c48648949eb419c
   references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
   depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
@@ -32,6 +32,6 @@ semantic_tags:
 - workspace.desk
 provenance:
   by: agent
-  at: '2026-11-25T19:47:02Z'
+  at: '2026-11-26T02:30:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

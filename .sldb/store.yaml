@@ -3317,6 +3317,9 @@ include:
   - desk/tasks/task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada.md
   - desk/tasks/task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto.md
   - desk/tasks/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo.md
+  - desk/tasks/task-el-despacho-no-lanza-un-intento-2-de-ejecutor-si-el-intento-1-ya-dejo-result-summary-md-lo-manda-al.md
+  - desk/tasks/task-una-parada-pedida-por-el-despacho-sigterm-exit-255-queda-como-detenida-y-no-como-falla.md
+  - desk/tasks/task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-verificar-fastmcp-call-generate-cli-inspect-e-install-contra-sldb-mcp-con-una-extension-de-deskops.md

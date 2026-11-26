@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T23:13:24Z'
+  at: '2026-11-26T02:30:18Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -60,6 +60,9 @@ tasks:
 - desk/tasks/task-e2-pluginizacion-las-operaciones-como-herramientas-mcp-sobre-sldb-cli-generado-y-docs-que-salen-de-a.md
 - desk/tasks/task-e3-responsabilidades-a-sldb-deskops-deja-de-envolver-sldb-y-declara-su-workflow-como-dato-que-sldb-e.md
 - desk/tasks/task-e4-rediseno-del-testing-suite-nueva-por-capa-guardas-de-arquitectura-escenarios-del-workflow-y-tests.md
+- desk/tasks/task-el-despacho-no-lanza-un-intento-2-de-ejecutor-si-el-intento-1-ya-dejo-result-summary-md-lo-manda-al.md
+- desk/tasks/task-una-parada-pedida-por-el-despacho-sigterm-exit-255-queda-como-detenida-y-no-como-falla.md
+- desk/tasks/task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -126,7 +129,7 @@ _Generated from the task references above._
 - Los tags usan tag_namespaces y tag_tree de sldb [draft] - atom_tags.py, domain_tree.py, tag_migration.py y tag_vocabulary.py dejan de duplicar namespaces y árbol: usan tag_namespaces de store.yaml, tag_tree y el on_write de sldb.
 - message usa sldb inbox y transacciones [draft] - send, list, read y ack de message se apoyan en sldb inbox y transaction; deskops conserva solo --to, ack y wake.
 - El grafo del proyecto se declara en store.yaml y graph view y checks usan sldb graph project [draft] - SURFACES, FILE_RULES y EXCLUSIONS de graph/desk_graph.py pasan a project_graph: en store.yaml; graph view y graph checks usan sldb graph project; atom_trace.py se borra.
-- Los átomos se mueven con move_document de sldb [draft] - split, merge y reorganize de átomos usan move_document y move_path de sldb en vez de rename más untrack y track, y conservan la reescritura de links.
+- Los átomos se mueven con move_document de sldb [draft] - merge y reorganize de átomos usan move_document y move_path de sldb en vez de rename más untrack y track, y conservan la reescritura de links (split se retira en E1).
 - El frontmatter se lee solo por sldb y se eliminan los helpers duplicados [draft] - Los siete parseos a mano de frontmatter leen con sldb.api.extract_document_payload (o load_runtime_documents cuando leen el store entero), y _git queda una sola vez en runtime/git.py y _yaml_scalar, _coerce_list, _now y _under una sola vez en core/util.py.
 - Se borra el código muerto y cada módulo público dice su propósito [draft] - ClosureService.close_auto (services/closure.py:720), graph/atom_trace.py y las funciones sin llamadores se borran antes de la mudanza por capas; cada módulo de deskops/ tiene un docstring de módulo que dice qué hace y quién lo usa.
 - El prompt de una tarea es una vista del núcleo, un solo texto sin contradicciones [draft] - Una operación devuelve el prompt de una tarea: la tarea, su contexto (pills, átomos, archivos), lo que advance exige y las reglas de entrega del RoleDoc del rol, sin las instrucciones contradictorias de hoy (N5); dispatch start --only-prompt lo escribe sin lanzar nada.
@@ -150,3 +153,6 @@ _Generated from the task references above._
 - E2 Pluginización: las operaciones como herramientas MCP sobre sldb, CLI generado y docs que salen de ahí [draft] - Todas las subtareas de E2 cerradas.
 - E3 Responsabilidades a sldb: deskops deja de envolver sldb y declara su workflow como dato que sldb evalúa [draft] - Todas las subtareas de E3 cerradas.
 - E4 Testing: guardas de arquitectura, tests de lo que mutó antes del CI, retiro de la suite vieja y suite liviana [draft] - Todas las subtareas de E4 cerradas.
+- El despacho no lanza un intento 2 de ejecutor si el intento 1 ya dejó result-summary.md: lo manda al reap [draft] - deskops dispatch start de un ejecutor, cuando el run_dir del intento anterior tiene result-summary.md, no crea el intento 2: imprime que la entrega está hecha, encola el reap de la tarea y sale con un código propio que la cola no reintenta.
+- Una parada pedida por el despacho (SIGTERM, exit 255) queda como detenida y no como falla [draft] - Cuando el despacho o la cola detienen un agente y scion informa exit 255 con crash=false, el job y el RunDoc quedan como stopped, no failed, y no cuentan como intento fallido.
+- El reap registra si limits_exceeded fue por turnos o por duración [draft] - Cuando reap encuentra un agente en limits_exceeded, imprime y guarda en el RunDoc el motivo (max_turns o max_duration) leído del log del agente.

@@ -1,9 +1,9 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-25T19:47:02Z'
+  at: '2026-11-26T02:30:16Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-los-atomos-se-mueven-con-move-document-de-sldb
 status: draft
 summary: ''
@@ -34,7 +34,7 @@ Sale del diagnóstico de deskops del 25-11 (desk/drawer/plans/deskops-plugin-de-
 
 _Describe the concrete result this task must produce._
 
-split, merge y reorganize de átomos usan move_document y move_path de sldb en vez de rename más untrack y track, y conservan la reescritura de links.
+merge y reorganize de átomos usan move_document y move_path de sldb en vez de rename más untrack y track, y conservan la reescritura de links (split se retira en E1).
 
 ## Scope
 
