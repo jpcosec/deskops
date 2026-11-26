@@ -1,0 +1,36 @@
+name: review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-evidence-commit-1
+path: desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/evidence-commit-1.md
+source_hash: cba1d72bb4f15ffd6de324c4845e5f2fd44b964cab444d6ee5985d533360bf47
+content_hash: dcb2e13d9d576ee756a56f5691e4fed11593cb87d7b6f5748a8cda2d5169c51e
+field_hashes:
+  id: 3781cfc57f344fdb946b895a7472190fdc20daeee7887217fb2709dc2f1df724
+  title: 3584d4180d4341edf0701d20e6bd53e425affa9eae04be84784ca63d752bb1e1
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: 441e1efed2bcc28a669e6ac9d707183cb46baf29784d9209b26ae468454f5f45
+  subject: 7a6c0eeb8059bc54ab58e8d11bfcea05aba9983a23f2f6209cb1c413349938f5
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 75e0a38f031f361442590560a4facc3ab059225871ec164f313977dc9c26a924
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: b384e70cf8f31f08b47c791bf71c0c179c5983e9a3aaefb3f05654ab2e0e7e3b
+  created_at: ec61d896ce71972c14c41580d638e2882a187fac2f008bf539f41c5f8837b624
+  disposed_at: ec61d896ce71972c14c41580d638e2882a187fac2f008bf539f41c5f8837b624
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: 6213ace36829c426ccf100911079783ef6755ef463a903d76e5729c566a447f5
+  disposition: cfff7e981c6c4d70c82666b4c6541009064fcef7aba7df510d0307e0f6f1702e
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-26T03:25:35Z'
+  authority: generated
+  via: create_document

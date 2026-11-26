@@ -1,0 +1,431 @@
+## main...origin/main [ahead 52]
+ M .sldb/core/documents/AtomDoc/atom-001-self-described-store-layout.yaml
+ M .sldb/core/documents/AtomDoc/atom-add-task-from-yaml-rechaza-un-item-de-lista-que-yaml-leyo-como-dict.yaml
+ M .sldb/core/documents/AtomDoc/atom-agents-read-by-decision-need.yaml
+ M .sldb/core/documents/AtomDoc/atom-agents-read-through-semantic-tools.yaml
+ M .sldb/core/documents/AtomDoc/atom-al-llegar-una-nota-al-inbox-deskops-despierta-a-la-identidad-scion-del-desk-si-su-config-lo-pide.yaml
+ M .sldb/core/documents/AtomDoc/atom-atom-candidates-come-from-durable-answers.yaml
+ M .sldb/core/documents/AtomDoc/atom-atom-folder-axis-is-one-configurable-tag-namespace.yaml
+ M .sldb/core/documents/AtomDoc/atom-atom-lifecycle-includes-validate-and-delete-with-inbound-reference-guard.yaml
+ M .sldb/core/documents/AtomDoc/atom-atom-lifecycle-is-complete-create-from-source-split-merge.yaml
+ M .sldb/core/documents/AtomDoc/atom-atom-references-carry-roles.yaml
+ M .sldb/core/documents/AtomDoc/atom-atomdoc-e-inboxnotedoc-ganan-conversation-ref-add-atom-message-send-y-list-atoms-aceptan-conv.yaml
+ M .sldb/core/documents/AtomDoc/atom-atoms-answer-one-question.yaml
+ M .sldb/core/documents/AtomDoc/atom-atoms-are-stable-documentation-core.yaml
+ M .sldb/core/documents/AtomDoc/atom-atoms-distill-project-knowledge.yaml
+ M .sldb/core/documents/AtomDoc/atom-auditoria-de-atomos-y-pills-con-las-tres-preguntas.yaml
+ M .sldb/core/documents/AtomDoc/atom-automatic-routines-vs-llm-tasks.yaml
+ M .sldb/core/documents/AtomDoc/atom-available-tasks-are-board-routed-work.yaml
+ M .sldb/core/documents/AtomDoc/atom-big-documents-need-explicit-modeling-strategy.yaml
+ M .sldb/core/documents/AtomDoc/atom-board-context-uses-portable-document-names.yaml
+ M .sldb/core/documents/AtomDoc/atom-build-neighbours-de-absolute-paths-resuelve-el-registro-con-resolve-registered-root.yaml
+ M .sldb/core/documents/AtomDoc/atom-cada-ejecutor-de-dispatch-trabaja-en-su-propio-git-worktree-y-reap-integra-su-rama.yaml
+ M .sldb/core/documents/AtomDoc/atom-cada-intento-de-dispatch-tiene-su-propio-rundoc-con-intencion-y-confirmacion-separadas.yaml
+ M .sldb/core/documents/AtomDoc/atom-canonical-project-identity-resolves-through-a-shared-registry-resolver.yaml
+ M .sldb/core/documents/AtomDoc/atom-cero-instancias-de-un-modelo-no-prueba-ausencia-de-la-capacidad.yaml
+ M .sldb/core/documents/AtomDoc/atom-changes-flow-through-tasks-and-pills.yaml
+ M .sldb/core/documents/AtomDoc/atom-cheap-zero-context-reviews-test-the-brief-recursively.yaml
+ M .sldb/core/documents/AtomDoc/atom-clean-agents-start-from-minimum-workflow-set.yaml
+ M .sldb/core/documents/AtomDoc/atom-clean-code-reduces-knowledge-drift.yaml
+ M .sldb/core/documents/AtomDoc/atom-clean-subagent-ambiguity-review.yaml
+ M .sldb/core/documents/AtomDoc/atom-cli-gaps-become-tracked-work.yaml
+ M .sldb/core/documents/AtomDoc/atom-cli-is-thin-over-primitives-and-sldb.yaml
+ M .sldb/core/documents/AtomDoc/atom-cli-mutation-testing-uses-sandbox-desk-roots.yaml
+ M .sldb/core/documents/AtomDoc/atom-cli-should-match-spoken-workflow-language.yaml
+ M .sldb/core/documents/AtomDoc/atom-closeout-evidence-is-declared-at-task-creation-and-verified-exactly.yaml
+ M ".sldb/core/documents/AtomDoc/atom-closeout-resolved-by-cierra-una-tarea-cuyo-trabajo-ya-entr\303\263-por-pr.yaml"
+ M .sldb/core/documents/AtomDoc/atom-closeout-validates-knowledge-surfaces.yaml
+ M .sldb/core/documents/AtomDoc/atom-closeout-verify-cubre-los-archivos-bajo-un-directorio-target-sea-nodo-del-grafo-o-missing.yaml
+ M .sldb/core/documents/AtomDoc/atom-closeout-verify-escribe-recibos-de-evidencia-como-reviewdoc-kind-evidence.yaml
+ M .sldb/core/documents/AtomDoc/atom-closing-commits-are-tool-made-and-run-linked.yaml
+ M .sldb/core/documents/AtomDoc/atom-code-changes-close-with-tests-and-commit.yaml
+ M .sldb/core/documents/AtomDoc/atom-codebase-surfaces-generate-atom-candidates.yaml
+ M .sldb/core/documents/AtomDoc/atom-contenedores-scion-venv-propio-con-uv-python-3-12-via-a.yaml
+ M .sldb/core/documents/AtomDoc/atom-create-operations-should-rollback-on-failure.yaml
+ M .sldb/core/documents/AtomDoc/atom-cross-desk-inbox-delivery-is-verifiable-and-acknowledgeable.yaml
+ M .sldb/core/documents/AtomDoc/atom-declared-materialization-targets-are-graph-nodes.yaml
+ M .sldb/core/documents/AtomDoc/atom-desk-health-delegates-store-diagnostics-to-sldb.yaml
+ M .sldb/core/documents/AtomDoc/atom-desk-health-is-measured-by-cli-diagnostics.yaml
+ M .sldb/core/documents/AtomDoc/atom-desk-health-is-workspace-integrity-state.yaml
+ M .sldb/core/documents/AtomDoc/atom-desk-is-document-data-only.yaml
+ M .sldb/core/documents/AtomDoc/atom-desk-repair-is-owned-by-deskops.yaml
+ M .sldb/core/documents/AtomDoc/atom-desk-test-root-precedence-is-explicit.yaml
+ M .sldb/core/documents/AtomDoc/atom-desk-workspaces-classify-as-absent-empty-legacy-or-current.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-architecture.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-automates-repeated-workflow-obligations.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-declara-el-namespace-de-tags-host.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-es-un-plugin-sobre-sldb-no-una-reimplementacion.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-exige-git-en-cada-desk.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-imports-sldb-cli-helpers-from-their-current-modules.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-init-agrega-deskops-log-al-gitignore-del-repo.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-init-id-fija-la-project-identity-repo-whoami-set-la-cambia-por-cli-y-repo-register-avisa.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-init-y-desk-update-apply-instalan-el-merge-driver-de-sldb-en-el-repo-del-desk.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-message-es-el-unico-comando-de-mensajeria-del-desk.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-models-are-sldb-documents.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-owns-workflow-not-document-infrastructure.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-queue-job-set-edita-los-trabajos-de-la-cola.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-reads-and-writes-through-sldb.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-resuelve-documentos-por-los-selectores-de-sldb.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-review-record-deja-recibos-reproduction-goldens-y-owner-sin-modelo.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-should-read-through-sldb-compositions.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops-still-reads-workflow-surfaces-as-files-where-it-could-compose-them.yaml
+ M .sldb/core/documents/AtomDoc/atom-deskops.yaml
+ M .sldb/core/documents/AtomDoc/atom-diagrams-generate-operational-models.yaml
+ M .sldb/core/documents/AtomDoc/atom-diagrams-project-knowledge-relations.yaml
+ M .sldb/core/documents/AtomDoc/atom-dispatch-commitea-el-run-md-del-run-dir-junto-con-su-rundoc.yaml
+ M .sldb/core/documents/AtomDoc/atom-dispatch-commitea-los-rundoc-que-escribe.yaml
+ M .sldb/core/documents/AtomDoc/atom-dispatch-start-no-falla-si-el-rundoc-de-la-identidad-ya-esta-trackeado.yaml
+ M .sldb/core/documents/AtomDoc/atom-dispatch-start-sincroniza-el-template-de-scion-por-su-ruta.yaml
+ M .sldb/core/documents/AtomDoc/atom-dispatch-start-solo-se-frena-por-la-memoria-de-la-maquina-o-porque-la-tarea-ya-tiene-agente.yaml
+ M .sldb/core/documents/AtomDoc/atom-dispatch-start-tester-espera-a-que-la-rama-del-ejecutor-este-integrada.yaml
+ M .sldb/core/documents/AtomDoc/atom-divide-and-conquer-persisted-operations.yaml
+ M .sldb/core/documents/AtomDoc/atom-do-not-atomize-a-coherent-deliverable-into-disconnected-tasks.yaml
+ M .sldb/core/documents/AtomDoc/atom-do-not-use-instructional-text-as-model-documentation.yaml
+ M .sldb/core/documents/AtomDoc/atom-docs-are-human-facing-atom-materializations.yaml
+ M .sldb/core/documents/AtomDoc/atom-docs-configuration-md-explica-que-es-configuracion-en-deskops-y-como-se-declara-un-tipo-de-tarea.yaml
+ M .sldb/core/documents/AtomDoc/atom-docs-materialize-atoms-for-humans.yaml
+ M .sldb/core/documents/AtomDoc/atom-doctor-e-init-reportan-el-layout-viejo-de-sldb-con-el-remedio-migrate-layout.yaml
+ M .sldb/core/documents/AtomDoc/atom-doctor-no-alerta-como-lost-los-recibos-de-una-tarea-cerrada.yaml
+ M .sldb/core/documents/AtomDoc/atom-doctor-separates-unmodeled-desk-surfaces-from-broken-tracking.yaml
+ M .sldb/core/documents/AtomDoc/atom-documents-point-to-atoms.yaml
+ M .sldb/core/documents/AtomDoc/atom-domain-crossroads-are-mandatory-parents.yaml
+ M .sldb/core/documents/AtomDoc/atom-drawer-is-not-active-work.yaml
+ M .sldb/core/documents/AtomDoc/atom-drawer-remove-retira-un-plan-entero-los-assets-de-un-issue-y-entradas-no-md-por-stem-y-registra-reas.yaml
+ M .sldb/core/documents/AtomDoc/atom-drawers-feed-tasks-through-promotion.yaml
+ M .sldb/core/documents/AtomDoc/atom-drift-checks-are-review-surfaces-not-mutators.yaml
+ M .sldb/core/documents/AtomDoc/atom-drift-checks-compare-atoms-materializations-implementation.yaml
+ M .sldb/core/documents/AtomDoc/atom-ease-of-use-requires-progressive-disclosure.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-board-declara-las-fases-del-dag.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-commit-de-cierre-stagea-solo-lo-que-escribio-el-cierre-en-sldb.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-gate-atom-materialization-del-closeout-acepta-un-atomo-declarado-por-la-tarea-que-cita-el-archivo.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-gate-de-tests-del-closeout-acepta-archivos-de-test-de-typescript.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-gate-de-tests-del-closeout-acepta-pruebas-de-node.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-gate-de-tests-del-closeout-acepta-py-bajo-cualquier-tests-del-repo-o-declarados-en-files.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-golden-de-help-de-deskops-drawer-refleja-la-descripcion-nueva-de-drawer-remove.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-reap-encola-el-tester-tras-integrar-un-ejecutor.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-runtime-profile-traduce-los-tools-del-roledoc-al-vocabulario-de-claude-y-deriva-el-alias-de-model.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-snapshot-de-contratos-de-modelo-acepta-el-cambio-solo-de-descripcion-de-ruledoc.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-store-de-deskops-no-federa-el-store-de-spec2viz.yaml
+ M .sldb/core/documents/AtomDoc/atom-el-vocabulario-de-esquema-de-los-artefactos-de-deskops-vive-en-los-modelos-no-en-spec-artifacts-ni-s.yaml
+ M ".sldb/core/documents/AtomDoc/atom-en-deskops-el-store-de-sldb-se-versiona-entero-y-solo-la-cach\303\251-se-ignora.yaml"
+ M .sldb/core/documents/AtomDoc/atom-en-modo-pr-la-rama-task-id-vive-en-su-propio-worktree-y-el-checkout-principal-nunca-cambia-de-rama.yaml
+ M .sldb/core/documents/AtomDoc/atom-every-change-needs-descriptive-commit.yaml
+ M .sldb/core/documents/AtomDoc/atom-extensibility-is-a-contract.yaml
+ M .sldb/core/documents/AtomDoc/atom-failed-sldb-paths-become-sldb-inbox-issues.yaml
+ M .sldb/core/documents/AtomDoc/atom-field-oriented-document-composition.yaml
+ M .sldb/core/documents/AtomDoc/atom-first-safe-action-follows-read-route.yaml
+ M .sldb/core/documents/AtomDoc/atom-git-history-is-the-past.yaml
+ M .sldb/core/documents/AtomDoc/atom-git-ignored-skill-trees-need-tracked-drift-guards.yaml
+ M .sldb/core/documents/AtomDoc/atom-git-is-explanatory-surface-for-changes.yaml
+ M .sldb/core/documents/AtomDoc/atom-graph-export-y-self-reflection-escriben-su-salida-derivada-en-sldb-cache.yaml
+ M .sldb/core/documents/AtomDoc/atom-graph-missing-separa-los-archivos-que-una-tarea-abierta-va-a-crear-de-las-referencias-rotas.yaml
+ M .sldb/core/documents/AtomDoc/atom-implementation-feedback-refines-atoms.yaml
+ M .sldb/core/documents/AtomDoc/atom-inbox-is-coordination-intake.yaml
+ M .sldb/core/documents/AtomDoc/atom-inbox-routes-external-needs-toward-work.yaml
+ M .sldb/core/documents/AtomDoc/atom-init-y-sus-tests-asumen-la-resolucion-por-nombre-de-enlaces-de-sldb-3.yaml
+ M .sldb/core/documents/AtomDoc/atom-instructional-text-makes-a-template-self-sufficient.yaml
+ M .sldb/core/documents/AtomDoc/atom-integrate-corre-la-suite-con-basetemp-propio-y-limpia-temporales-de-corridas-muertas.yaml
+ M .sldb/core/documents/AtomDoc/atom-integrate-en-modo-pr-termina-en-un-pr-hacia-la-rama-base-declarada.yaml
+ M .sldb/core/documents/AtomDoc/atom-integrate-extiende-el-tip-a-head-cuando-despues-del-closeout-solo-hay-commits-de-desk.yaml
+ M .sldb/core/documents/AtomDoc/atom-integrate-extiende-el-tip-sobre-un-merge-de-la-rama-remota.yaml
+ M .sldb/core/documents/AtomDoc/atom-integrate-no-empuja-por-separado-un-commit-de-codigo-que-no-avanza-rapido-sobre-el-remoto.yaml
+ M .sldb/core/documents/AtomDoc/atom-integrate-saltea-el-push-del-sha-de-codigo-cuando-ya-es-ancestro-de-origin.yaml
+ M .sldb/core/documents/AtomDoc/atom-kgdb-owns-relations-between-knowledge-surfaces.yaml
+ M .sldb/core/documents/AtomDoc/atom-knowledge-graph-connects-desk-and-source-files.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-alerta-lost-de-doctor-nombra-el-remedio-real.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-consistencia-del-ciclo-de-vida-de-una-tarea-es-un-validador-de-taskdoc.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-copia-empaquetada-de-la-faq-deskops-data-faq-md-es-identica-a-docs-faq-md.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-estructura-inicial-de-un-desk-se-declara-en-el-paquete-de-deskops-y-la-aplica-sldb.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-ficha-de-repo-del-registro-declara-owns-paths-y-owns-topics-y-deskops-owner-responde-el-dueno.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-guia-versionada-de-deskops-dice-que-los-cambios-solo-de-desk-van-en-el-checkout-principal.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-limpieza-de-pytest-of-scion-en-dispatch-reap-se-redirige-por-entorno-y-los-tests-del-cli-no-tocan.yaml
+ M .sldb/core/documents/AtomDoc/atom-la-suite-de-deskops-en-un-solo-proceso-cabe-en-memorymax-2g-gracias-a-una-fixture-autouse-que-limpia.yaml
+ M .sldb/core/documents/AtomDoc/atom-large-worktree-changes-need-explanatory-slices.yaml
+ M .sldb/core/documents/AtomDoc/atom-las-transiciones-del-ciclo-de-vida-de-una-tarea-son-aristas-con-efectos-declarados.yaml
+ M .sldb/core/documents/AtomDoc/atom-los-4-atomos-de-salud-del-desk-dejan-de-dar-ruido-estructural-en-sldb-stores-check.yaml
+ M .sldb/core/documents/AtomDoc/atom-los-agentes-despachados-corren-pytest-con-basetemp-en-tmp-del-contenedor-y-reap-limpia-dev-shm-pytes.yaml
+ M .sldb/core/documents/AtomDoc/atom-los-contenedores-de-scion-traen-pytest-xdist-y-la-suite-completa-corre-con-n-4.yaml
+ M ".sldb/core/documents/AtomDoc/atom-los-gates-de-activaci\303\263n-de-cada-tipo-de-tarea-son-ruledoc-semilla.yaml"
+ M ".sldb/core/documents/AtomDoc/atom-los-ids-que-deskops-deriva-de-un-t\303\255tulo-se-pliegan-a-ascii-y-los-ids-existentes-con-tilde-siguen-val.yaml"
+ M .sldb/core/documents/AtomDoc/atom-los-rituales-context-review-y-phase-describen-la-revision-de-contexto-con-deskops-review-y-la-regla.yaml
+ M .sldb/core/documents/AtomDoc/atom-main-docs-are-composed-materializations.yaml
+ M .sldb/core/documents/AtomDoc/atom-materialization-contracts-bind-source-output-validation.yaml
+ M .sldb/core/documents/AtomDoc/atom-materialization-metadata-is-not-atom-content.yaml
+ M .sldb/core/documents/AtomDoc/atom-materializations-are-projections-not-read-surfaces.yaml
+ M .sldb/core/documents/AtomDoc/atom-materializations-declare-source-atoms.yaml
+ M .sldb/core/documents/AtomDoc/atom-message-is-the-cross-desk-transport-verb.yaml
+ M .sldb/core/documents/AtomDoc/atom-multi-surface-drift-is-a-core-workflow-failure-mode.yaml
+ M .sldb/core/documents/AtomDoc/atom-networkx-is-first-graph-runtime.yaml
+ M .sldb/core/documents/AtomDoc/atom-non-durable-notes-do-not-become-atoms.yaml
+ M .sldb/core/documents/AtomDoc/atom-operational-primitives-model.yaml
+ M .sldb/core/documents/AtomDoc/atom-operations-py-es-una-fachada-y-cada-artefacto-declara-su-forma-en-su-modelo.yaml
+ M .sldb/core/documents/AtomDoc/atom-orphan-artifacts-are-knowledge-system-failures.yaml
+ M .sldb/core/documents/AtomDoc/atom-phase-closeout-reconciles-pills-and-next-work.yaml
+ M .sldb/core/documents/AtomDoc/atom-phase-gates-prevent-agent-skipping.yaml
+ M .sldb/core/documents/AtomDoc/atom-phases-are-dependency-layers-of-tasks.yaml
+ M .sldb/core/documents/AtomDoc/atom-pills-are-reusable-across-tasks.yaml
+ M .sldb/core/documents/AtomDoc/atom-pills-are-transient.yaml
+ M .sldb/core/documents/AtomDoc/atom-pills-carry-transitional-task-knowledge.yaml
+ M .sldb/core/documents/AtomDoc/atom-pills-end-as-atoms-docs-or-deletion.yaml
+ M .sldb/core/documents/AtomDoc/atom-pills-index-existing-and-bound-future-context.yaml
+ M .sldb/core/documents/AtomDoc/atom-pills-reference-not-copy.yaml
+ M .sldb/core/documents/AtomDoc/atom-primitives-encode-operational-rules.yaml
+ M .sldb/core/documents/AtomDoc/atom-promotion-flattens-structured-source-sections-into-task-fields.yaml
+ M .sldb/core/documents/AtomDoc/atom-promotion-needs-explicit-criteria.yaml
+ M .sldb/core/documents/AtomDoc/atom-protoatoms-are-free-atoms-captured-before-typing.yaml
+ M .sldb/core/documents/AtomDoc/atom-queue-run-all-saltea-en-esa-corrida-el-trabajo-que-quedo-en-espera-por-retry-y-sigue-con-los-siguien.yaml
+ M .sldb/core/documents/AtomDoc/atom-queue-run-deja-en-pending-un-trabajo-cuyo-codigo-de-salida-esta-en-retry-exit-codes.yaml
+ M .sldb/core/documents/AtomDoc/atom-raw-file-reads-flatten-knowledge-layers.yaml
+ M .sldb/core/documents/AtomDoc/atom-raw-signals-need-distillation-before-formalization.yaml
+ M .sldb/core/documents/AtomDoc/atom-real-cli-surfaces-prove-workflow-behavior.yaml
+ M .sldb/core/documents/AtomDoc/atom-reap-no-pierde-los-commits-del-ejecutor.yaml
+ M .sldb/core/documents/AtomDoc/atom-reap-nombra-los-archivos-que-bloquean-el-cherry-pick-con-cualquier-idioma-de-git.yaml
+ M .sldb/core/documents/AtomDoc/atom-rendered-diagrams-are-projections.yaml
+ M .sldb/core/documents/AtomDoc/atom-repo-artifacts-need-atom-traceability.yaml
+ M .sldb/core/documents/AtomDoc/atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix.yaml
+ M .sldb/core/documents/AtomDoc/atom-reports-capture-evidence-and-next-decision-surface.yaml
+ M .sldb/core/documents/AtomDoc/atom-reports-carry-minimal-reproduction-evidence.yaml
+ M .sldb/core/documents/AtomDoc/atom-reverse-traceability-is-derived.yaml
+ M .sldb/core/documents/AtomDoc/atom-review-attestations-state-only-what-was-actually-read.yaml
+ M .sldb/core/documents/AtomDoc/atom-review-status-muestra-incomplete-para-un-recibo-dispuesto-como-incomplete.yaml
+ M .sldb/core/documents/AtomDoc/atom-review-status-preserves-current-dispositions.yaml
+ M .sldb/core/documents/AtomDoc/atom-rituals-precede-routines.yaml
+ M .sldb/core/documents/AtomDoc/atom-role-prompts-are-tracked-documents-agent-files-are-materializations.yaml
+ M .sldb/core/documents/AtomDoc/atom-role-tool-boundaries-and-evidence-surface.yaml
+ M .sldb/core/documents/AtomDoc/atom-routine-based-task-execution.yaml
+ M .sldb/core/documents/AtomDoc/atom-runtime-template-de-scion-escribe-image-resources-volumes-kubernetes-y-telemetry-en-scion-env-yaml-y.yaml
+ M .sldb/core/documents/AtomDoc/atom-scion-coordinator-progresses-authorized-work.yaml
+ M .sldb/core/documents/AtomDoc/atom-se-borra-el-detector-legacy-de-related-atoms-y-los-alias-scaffold-desk-y-ensure-lifecycle-graph.yaml
+ M .sldb/core/documents/AtomDoc/atom-se-borro-el-camino-legacy-de-deskops-message-sin-subcomando-es-un-error-de-uso.yaml
+ M .sldb/core/documents/AtomDoc/atom-self-generating-spec-derived-cli.yaml
+ M .sldb/core/documents/AtomDoc/atom-self-reflection-is-a-feedback-loop.yaml
+ M ".sldb/core/documents/AtomDoc/atom-separar-procedencia-exige-comparar-todas-las-columnas-contra-la-versi\303\263n-previa.yaml"
+ M .sldb/core/documents/AtomDoc/atom-sin-dueno-lo-que-no-tiene-dueno-en-sldb-1-va-al-inbox-de-deskops.yaml
+ M .sldb/core/documents/AtomDoc/atom-sldb-extraction-reads-values-relative-to-the-template-s-own-text.yaml
+ M .sldb/core/documents/AtomDoc/atom-sldb-is-read-write-edit-surface.yaml
+ M .sldb/core/documents/AtomDoc/atom-sldb-semantics-are-graph-inputs.yaml
+ M .sldb/core/documents/AtomDoc/atom-sldb-template-markers-declare-where-each-field-lives.yaml
+ M .sldb/core/documents/AtomDoc/atom-source-file-relations-make-knowledge-actionable.yaml
+ M .sldb/core/documents/AtomDoc/atom-spec-driven-artifact-architecture.yaml
+ M .sldb/core/documents/AtomDoc/atom-spec-fields-compile-into-model-fields.yaml
+ M .sldb/core/documents/AtomDoc/atom-spec-to-visualization-pipeline.yaml
+ M .sldb/core/documents/AtomDoc/atom-spec2viz-mirrors-sldb-for-diagrams.yaml
+ M .sldb/core/documents/AtomDoc/atom-specs-formalize-atoms-as-contracts.yaml
+ M .sldb/core/documents/AtomDoc/atom-stale-state-causes-agent-hallucination.yaml
+ M .sldb/core/documents/AtomDoc/atom-subagent-runs-are-linked-to-session-logs-by-hash.yaml
+ M .sldb/core/documents/AtomDoc/atom-task-board-phases.yaml
+ M .sldb/core/documents/AtomDoc/atom-task-bundles-are-tracked-in-the-store-at-creation-time.yaml
+ M .sldb/core/documents/AtomDoc/atom-task-closeout-checks-pill-knowledge-graduation.yaml
+ M .sldb/core/documents/AtomDoc/atom-task-lifecycle-is-cli-runnable-end-to-end.yaml
+ M .sldb/core/documents/AtomDoc/atom-tasks-enable-zero-context-subagents.yaml
+ M .sldb/core/documents/AtomDoc/atom-templates-are-defined-as-model-strings.yaml
+ M .sldb/core/documents/AtomDoc/atom-the-deskops-ui-reads-the-desk-only-through-deskops-view-and-writes-only-through-deskops-operations.yaml
+ M ".sldb/core/documents/AtomDoc/atom-toda-escritura-de-deskops-pasa-por-la-transacci\303\263n-de-sldb.yaml"
+ M ".sldb/core/documents/AtomDoc/atom-todo-sustantivo-de-primer-nivel-del-cli-de-deskops-est\303\241-clasificado-una-sola-vez-en-su-gram\303\241tica.yaml"
+ M .sldb/core/documents/AtomDoc/atom-typing-a-protoatom-keeps-a-redirect-stub.yaml
+ M .sldb/core/documents/AtomDoc/atom-un-archivo-de-codigo-cita-los-atomos-que-implementa-y-deskops-atoms-citations-lo-comprueba.yaml
+ M ".sldb/core/documents/AtomDoc/atom-un-cambio-de-contrato-de-un-modelo-se-registra-a-prop\303\263sito-en-el-snapshot-y-en-el-store.yaml"
+ M .sldb/core/documents/AtomDoc/atom-un-dispatch-start-que-falla-antes-de-que-el-agente-arranque-no-gasta-intento.yaml
+ M .sldb/core/documents/AtomDoc/atom-un-integrate-exitoso-pasa-a-done-los-integrate-fallidos-ya-presentes-en-origin.yaml
+ M ".sldb/core/documents/AtomDoc/atom-un-l\303\255mite-de-intentos-no-autoriza-aceptar-una-contradicci\303\263n.yaml"
+ M .sldb/core/documents/AtomDoc/atom-un-pass-focal-no-prueba-el-resto-del-artefacto.yaml
+ M .sldb/core/documents/AtomDoc/atom-un-repo-con-tests-en-otro-lenguaje-declara-su-evidencia-de-closeout-con-un-test-py-que-corre-la-suit.yaml
+ M .sldb/core/documents/AtomDoc/atom-un-solo-vocabulario-de-tags-semanticos-en-deskops-resuelto-por-el-store-semantico-de-sldb.yaml
+ M .sldb/core/documents/AtomDoc/atom-una-disposicion-lee-toda-la-salida-del-revisor.yaml
+ M .sldb/core/documents/AtomDoc/atom-una-invariante-de-un-solo-documento-vive-como-validador-de-su-modelo.yaml
+ M .sldb/core/documents/AtomDoc/atom-una-nota-del-inbox-no-va-al-drawer-la-skill-el-ritual-drawer-triage-la-ayuda-de-promote-y-los-docs-l.yaml
+ M .sldb/core/documents/AtomDoc/atom-unwritten-knowledge-belongs-in-atoms-or-materializations.yaml
+ M .sldb/core/documents/AtomDoc/atom-upstream-routing-needs-convenient-command.yaml
+ M .sldb/core/documents/AtomDoc/atom-used-source-artifacts-are-deleted.yaml
+ M .sldb/core/documents/AtomDoc/atom-work-is-board-routed-to-preserve-intent.yaml
+ M .sldb/core/documents/AtomDoc/atom-workflow-role-model-routing.yaml
+ M .sldb/core/documents/AtomDoc/atom-workflow-surfaces-have-operational-lifetimes.yaml
+ M .sldb/core/documents/AtomDoc/atom-workflow-vocabulary-separates-knowledge-and-work.yaml
+ M .sldb/core/documents/BoardDoc/Board.yaml
+ M .sldb/core/documents/PillDoc/pill-001-task-closure-commit.yaml
+ M .sldb/core/documents/PillDoc/pill-005-subagent-execution.yaml
+ M .sldb/core/documents/PillDoc/pill-006-self-described-store-layout.yaml
+ M .sldb/core/documents/PillDoc/pill-007-phase-gated-task-flow.yaml
+ M .sldb/core/documents/PillDoc/pill-008-kgdb-sldb-boundary.yaml
+ M .sldb/core/documents/PillDoc/pill-009-source-file-graph-traceability.yaml
+ M .sldb/core/documents/PillDoc/pill-010-graph-runtime-output-policy.yaml
+ M .sldb/core/documents/PillDoc/pill-011-self-reflection-noise-control.yaml
+ M .sldb/core/documents/PillDoc/pill-012-create-operations-transactional-rollback.yaml
+ M .sldb/core/documents/PillDoc/pill-atom-lifecycle-preserves-provenance-and-materialization-links.yaml
+ M .sldb/core/documents/PillDoc/pill-board-routed-pills-stay-minimal-and-reusable.yaml
+ M .sldb/core/documents/PillDoc/pill-canonical-desk-identity-enables-horizontal-routing.yaml
+ M .sldb/core/documents/PillDoc/pill-cli-gaps-become-tracked-work.yaml
+ M .sldb/core/documents/PillDoc/pill-closeout-knowledge-gates-require-traceable-evidence.yaml
+ M .sldb/core/documents/PillDoc/pill-cross-desk-inbox-needs-delivery-verification-and-follow-up.yaml
+ M .sldb/core/documents/PillDoc/pill-doctor-separates-desk-repair-from-sldb-health.yaml
+ M .sldb/core/documents/PillDoc/pill-drift-checks-are-review-surfaces-not-mutators.yaml
+ M .sldb/core/documents/PillDoc/pill-durable-pill-knowledge-graduates-to-atoms-at-closeout.yaml
+ M .sldb/core/documents/PillDoc/pill-legacy-desk-formats-need-explicit-adaptation.yaml
+ M .sldb/core/documents/PillDoc/pill-list-surfaces-must-expose-malformed-docs.yaml
+ M .sldb/core/documents/PillDoc/pill-machine-readable-cli-output-needs-stable-contract.yaml
+ M .sldb/core/documents/PillDoc/pill-materialization-contracts-declare-source-intent-and-target.yaml
+ M .sldb/core/documents/PillDoc/pill-operational-cli-grammar-follows-spoken-workflow.yaml
+ M .sldb/core/documents/PillDoc/pill-pattern-supervisor-playbook-buenas-tareas-bundle-contexto-cero-y-frontera-de-modelos.yaml
+ M .sldb/core/documents/PillDoc/pill-phase-closeout-reconciles-pills-and-surfaces-next-work.yaml
+ M .sldb/core/documents/PillDoc/pill-project-local-config-carries-version-and-sandbox-policy.yaml
+ M .sldb/core/documents/PillDoc/pill-ready-phases-prove-dependencies-and-non-overlap.yaml
+ M .sldb/core/documents/PillDoc/pill-real-cli-surfaces-prove-operator-contracts.yaml
+ M .sldb/core/documents/PillDoc/pill-zero-context-preflight-precedes-executor.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-7d4dbdc213b4.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-e-ca9c3f91e5cf.yaml
+ M .sldb/core/documents/RunDoc/run-deskops-t-f8066c015320.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-advance-y-closeout-no-derraman-reglas-de-activacion-ni-runtimes-centrales-sin-trackear-en-el-desk-co.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-borrar-la-migracion-de-task-type-viejo-legacy-task-type-keys-y-migrate-task-types-y-sus-tests.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-cc52-suite-doctor-y-board-verdes-en-los-6-desks-con-tiempos-de-view-board-medidos-en-robocop2.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-desk-update-en-seco-lista-los-tags-de-tareas-con-namespace-sin-declarar-y-apply-no-mete-taskdoc-en-t.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-declara-fases-del-board-por-cli-crear-una-fase-y-agregar-o-quitar-tareas.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host-valor-y-la-salida-de-list-ta.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-status-deja-de-ser-solo-un-aviso-deprecated-y-entrega-el-estado-rapido-del-desk.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-runtime-template-lo-materializa.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-usa-las-apis-publicas-de-sldb-ya-integradas-y-borra-sus-rodeos-rewrite-references-con-graph.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-dispatch-start-se-niega-a-lanzar-un-rol-cuyo-env-config-no-declara-volumes-propios-para-poder-quitar.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-doctor-dice-de-que-tarea-es-cada-cambio-sin-commitear-en-sldb-checkout-atrasado.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-archivo-de-files-en-vez-de-exigi.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-entrada-va-por-archivo.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-el-skill-deskops-workflow-pasa-a-un-nucleo-corto-que-delega-en-deskops-next-y-dispatch-start-gana-on.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-deskops.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits-from-o-las-herederas-siguen.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta-en-scion.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-e-g-other-repo.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-el-cierre-de-la-tarea-ocurre-dentro-del-pr-y-deskops-reconcile-lo-cruza-con-github.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-el-store-se-actualiza-solo-hook-de-pre-commit-o-pr-check-que-falla-si-el-store-no-corresp.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-interfaz-mcp-de-deskops-compatible-con-claude-code-delgada-sobre-las-operaciones-del-cli.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflow-de-deskops.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-los-ritos-son-donde-cada-desk-declara-que-exige-revision-en-frio-configurable.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-message-send-to-y-list-tasks-include-repos-resuelven-el-repo-por-la-ruta-del-registro-no.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-migracion-del-workflow-nuevo-a-los-diez-desks-a-la-vez-con-vuelta-atras-probada.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-propuesta-de-workflow-de-deskops-con-las-decisiones-de-jp-del-20-11.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-y-doctor-que-valida-cada-tare.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y-por-el-desk.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-governance-ui-de-deskops-en-astro-sobre-las-uis-de-sldb-1.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-inbox-y-drawer-quedan-trackeados-en-el-store-del-desk-y-las-vistas-los-leen-del-store-h10-de-cc34.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-init-en-un-worktree-usa-el-nombre-del-repo-y-doctor-lee-el-pythonpath-del-store.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-la-suite-de-deskops-baja-su-ram-por-worker-y-declara-en-que-maquina-y-con-cuantos-workers-corre.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-desk-config-json-versionado-a-d.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-rol-de-desk-hitl-about-faq-y-doctor-documentan-cada-carpeta-del-desk-y-doctor-avisa-si-hitl-tiene-ar.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-supertareas-y-alta-en-lote-campo-parent-en-taskdoc-y-add-task-from-yaml-con-varias-tareas.yaml
+ M .sldb/core/documents/TaskCodeDoc/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.yaml
+ M .sldb/core/documents/TaskDebugDoc/task-closeout-reconoce-una-materialization-declarada-sobre-un-golden-en-tests-fixtures-sin-dejar-entrar-e.yaml
+ M .sldb/core/documents/TaskDebugDoc/task-huecos-de-atomos-de-la-auditoria-de-chatbot-infra-renombrar-id-retire-de-atomos-validate-all-y-edita.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-confirma-o-revierte-do4-review-record-acepta-preflight-y-bundle-humanos-solo-para-quickstart-y-e2.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-decide-como-se-alimenta-deskops-atoms-split-por-el-cli-opcion-a-b-o-c.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-decide-el-release-0-2-0-de-deskops-y-que-hacer-con-el-tag-v0-2-0-prematuro.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-decide-si-deskops-adopta-d4-pr-en-taskdoc-y-d5-kind-alert-en-el-inbox-del-spec-de-governance.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-decide-si-deskops-exige-git-en-cada-desk-o-acepta-otra-evidencia-de-cierre.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-decide-si-deskops-pasa-a-ser-un-plugin-de-sldb-modelos-reglas-vistas-y-ritos-como-datos-del-store.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-decide-si-deskops-promote-inbox-to-drawer-task-se-retira.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-decide-si-el-plan-workspace-documental-se-retira-con-sus-67-fichas-o-se-rescatan-nodos.yaml
+ M .sldb/core/documents/TaskDecisionDoc/task-jp-fija-n-la-meta-de-lineas-de-python-de-deskops-que-exige-cc51.yaml
+ M .sldb/core/documents/TaskDocsDoc/task-cc51-docs-config-vs-code-md-con-la-medicion-de-lineas-de-codigo-frente-a-configuracion-y-el-inventar.yaml
+ M .sldb/core/documents/TaskDocsDoc/task-el-skill-deskops-workflow-y-vocabulary-md-explican-que-la-suite-completa-y-el-push-son-de-la-fase-y.yaml
+ M .sldb/core/documents/TaskExternalDoc/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.yaml
+ M .sldb/core/models/AtomAdrDoc.yaml
+ M .sldb/core/models/AtomDoc.yaml
+ M .sldb/core/models/BoardDoc.yaml
+ M .sldb/core/models/InboxNoteDoc.yaml
+ M .sldb/core/models/PillDoc.yaml
+ M .sldb/core/models/ReviewDoc.yaml
+ M .sldb/core/models/RunDoc.yaml
+ M .sldb/core/models/TaskAggregateDoc.yaml
+ M .sldb/core/models/TaskCodeDoc.yaml
+ M .sldb/core/models/TaskDebugDoc.yaml
+ M .sldb/core/models/TaskDecisionDoc.yaml
+ M .sldb/core/models/TaskDoc.yaml
+ M .sldb/core/models/TaskDocsDoc.yaml
+ M .sldb/core/models/TaskExternalDoc.yaml
+ M .sldb/core/models/TaskRefactorDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M desk/tasks/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.md
+ M desk/tasks/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.md
+ M runs/subagents/exec-deskops-e-7d4dbdc213b4/run.md
+ M runs/subagents/exec-deskops-e-c8535b51bd61/run.md
+ M runs/subagents/exec-deskops-e-ca9c3f91e5cf/run.md
+ M runs/subagents/exec-deskops-t-19aa7b8d6d39-testing/run.md
+ M runs/subagents/exec-deskops-t-f8066c015320-testing/run.md
+?? .sldb/core/documents/InboxNoteDoc/20261125-191842-unclear-queue-20261125t220611z-dispatch-reap-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-bundle-3.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-preflight-3.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-bundle-5.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-bundle-6.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-preflight-5.yaml
+?? .sldb/core/documents/ReviewDoc/review-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree-preflight-6.yaml
+?? desk/inbox/20261125-191842-unclear-queue-20261125t220611z-dispatch-reap-task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.md
+?? desk/lifecycle/rule-adr-owner-receipt.md
+?? desk/lifecycle/rule-adr-supersedes.md
+?? desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/bundle-3.md
+?? desk/reviews/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un/preflight-3.md
+?? desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/bundle-5.md
+?? desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/bundle-6.md
+?? desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/preflight-5.md
+?? desk/reviews/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree/preflight-6.md
+?? runs/subagents/20261125-191854/
+?? runs/subagents/20261125-191930/
+?? runs/subagents/20261125-191951/
+?? runs/subagents/20261125-192015/
+?? runs/subagents/20261125-192054/
+?? runs/subagents/20261125-192131/
+?? runs/subagents/20261125-192313/
+?? runs/subagents/20261125-192349/
+?? runs/subagents/20261125-203724/
+?? runs/subagents/20261125-203755/
+?? runs/subagents/20261125-204048/
+?? runs/subagents/20261125-204131/
+?? runs/subagents/20261125-204540/
+?? runs/subagents/20261125-204658/
+?? runs/subagents/20261125-205623/
+?? runs/subagents/20261125-205701/
+?? runs/subagents/20261125-205945/
+?? runs/subagents/20261125-210031/
+?? runs/subagents/20261125-221435/
+?? runs/subagents/20261125-221503/
+?? runs/subagents/20261125-222430/
+?? runs/subagents/20261125-222455/
+?? runs/subagents/20261125-224049/
+?? runs/subagents/20261125-224120/
+?? runs/subagents/exec-deskops-e-4defa731dfac/board.txt
+?? runs/subagents/exec-deskops-e-4defa731dfac/git-status.txt
+?? runs/subagents/exec-deskops-e-4defa731dfac/graph.txt
+?? runs/subagents/exec-deskops-e-4defa731dfac/next.txt
+?? runs/subagents/exec-deskops-e-4defa731dfac/prompt.md
+?? runs/subagents/exec-deskops-e-4defa731dfac/result-summary.md
+?? runs/subagents/exec-deskops-e-4defa731dfac/task.txt
+?? runs/subagents/exec-deskops-e-4defa731dfac/validation.log
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/board.txt
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/git-status.txt
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/graph.txt
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/next.txt
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/prompt.md
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/result-summary.md
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/task.txt
+?? runs/subagents/exec-deskops-e-8265bcf88fd1/validation.log
+?? runs/subagents/exec-deskops-e-ca9c3f91e5cf/board.txt
+?? runs/subagents/exec-deskops-e-ca9c3f91e5cf/git-status.txt
+?? runs/subagents/exec-deskops-e-ca9c3f91e5cf/graph.txt
+?? runs/subagents/exec-deskops-e-ca9c3f91e5cf/next.txt
+?? runs/subagents/exec-deskops-e-ca9c3f91e5cf/prompt.md
+?? runs/subagents/exec-deskops-e-ca9c3f91e5cf/task.txt
+?? runs/subagents/exec-deskops-t-19aa7b8d6d39-testing/prompt.md
+?? runs/subagents/exec-deskops-t-19aa7b8d6d39-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/board.txt
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/git-status.txt
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/graph.txt
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/next.txt
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/prompt.md
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/result-summary.md
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/task.txt
+?? runs/subagents/exec-deskops-t-f8066c015320-testing/validation.log

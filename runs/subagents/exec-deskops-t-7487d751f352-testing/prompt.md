@@ -1,7 +1,16 @@
+Task: task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un
+Title: átomos, pills y tareas guardan el dónde como punteros a un documento del store, a una categoría o a un ancla de código
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.code
+Lifecycle gates:
+- task_completes -> complete: closed [status = "ready_for_testing"]
+  blocked by: error: [rules/rule-closeout-task-code] TaskCodeDoc:task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un: Una tarea task.code se cierra con recibos evidence aceptados e intactos de tests, commit y atom o materialization (los escribe deskops closeout verify). | any(^subject: kind = "evidence" and fact = "tests" and anchor_state = "intact" and verdict = "accepted") (seen: {}) (witness: ReviewDoc:review-task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un-bundle-1 {"kind":"bundle"})
+
 ---
 sldb:
   by: agent
-  at: '2026-11-26T03:23:56Z'
+  at: '2026-11-25T23:30:15Z'
   authority: generated
   via: save_document_payload
 id: task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un
@@ -12,29 +21,15 @@ current_node: ritual-closeout
 history:
 - task_activates
 - task_hands_to_closeout
-references:
-- deskops/models/adr.py
-- tests/fixtures/golden/output/view_drawer.json
-- tests/fixtures/model_contract_hashes.json
-- tests/test_atom_materialization.py
-- tests/test_where_pointers.py
-- 9bcec7d88c1291c0e1e2311046f910e4d5c9b1ce
-- 7a9d0be0e
-- 871f5f4b1
+references: []
 depends_on: []
 pills: []
-files:
-- deskops/models/adr.py
-- tests/fixtures/golden/output/view_drawer.json
-- tests/fixtures/model_contract_hashes.json
-- tests/test_atom_materialization.py
-- tests/test_where_pointers.py
+files: []
 pointers: []
 task_type: task.code
 inherits_from: []
 inherit_acceptance_context: false
-atoms:
-- atom-atomos-pills-y-tareas-guardan-el-donde-como-punteros
+atoms: []
 ---
 
 # átomos, pills y tareas guardan el dónde como punteros a un documento del store, a una categoría o a un ancla de código
@@ -79,3 +74,20 @@ _List the checks required before this task can close._
 _Name the observable condition that makes the task complete._
 
 Un átomo, una pill y una tarea se crean con un puntero de cada clase y deskops los guarda y los muestra. Un puntero con forma inválida se rechaza nombrando la clase esperada. Los documentos existentes siguen leyéndose y el desk queda sano según deskops doctor.
+
+## Como probar (tester)
+
+Ubica el trabajo del ejecutor:
+
+    git log -1 --format=%H --grep "Task-Id: task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un"   # commit del ejecutor
+    git show --name-only <commit>                           # sus archivos
+
+Los tests a correr son los archivos tests/*.py de ese commit, mas tests/test_<modulo>.py cuando exista para cada modulo de codigo tocado; de a uno, con `TMPDIR=/tmp python -m pytest -q <archivo>`. No corras la suite completa: la corre integrate en el host.
+
+Escribe result-summary.md con el veredicto PASA o FALLA en la primera linea.
+
+## Temporales de pytest
+
+Antes de cualquier pytest exporta, para que sus temporales caigan en el /tmp del contenedor (muere con el agente) y no en el /dev/shm del host:
+
+    export PYTEST_ADDOPTS="--basetemp=/tmp/pytest-deskops-t-7487d751f352"
