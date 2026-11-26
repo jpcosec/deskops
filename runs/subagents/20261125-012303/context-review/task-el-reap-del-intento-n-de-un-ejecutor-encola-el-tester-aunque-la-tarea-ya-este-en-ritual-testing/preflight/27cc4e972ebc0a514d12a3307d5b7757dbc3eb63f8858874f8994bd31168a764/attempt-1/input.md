@@ -6,7 +6,7 @@ sldb:
   authority: generated
   via: save_document_payload
 id: task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing
-status: draft
+status: deferred
 summary: ''
 tags: []
 current_node: ritual-execution

@@ -1,0 +1,37 @@
+name: task-message-usa-sldb-inbox-y-transacciones
+path: desk/tasks/task-message-usa-sldb-inbox-y-transacciones.md
+source_hash: f78a58b75cb1295b60296b71e7bfbbe1dd2a520f0a1d83449d7842cc501c7673
+content_hash: 04327cb972c59e29ce996aec1c62319e5b94447b1e04ef27b26c3cb9d159ac4b
+field_hashes:
+  title: c685002c2db98379365229e9e3ffe4afde019b2d4bdfe32aaad440e6f49bea7b
+  id: 9c0d989381b1bd2659ef244dc15cd3535b89cc34bab670af4620bf475e45a6b3
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: bd38e9bfd70b840324979dcd5d4282583fe3b04e171ac700848e8aa15dec1f79
+  scope: 854fc7e8b7bc46e9b92c654efc667c36f4c52ea90d7c7012b2d1815f4d5b79fb
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: b596b46fdc0b0917ec8cd427746ac14b6621767c1e16d5ee672689e64661db8c
+  validation: c5bc2a56366144fb0d5d7338102d356edb05c79224ece46b93ce878d7737925f
+  done_when: 7ff3f8f82858ac0dd46b4237788da75bcd455c67ba4ac2e18d895bb540efbb2c
+  task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T19:46:39Z'
+  authority: generated
+  via: create_document

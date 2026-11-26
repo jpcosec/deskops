@@ -1,0 +1,37 @@
+name: task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito
+path: desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
+source_hash: b14bec161d477f10de3fca4db73020bc3a4488c656f75eab8e5149503f47e9d7
+content_hash: e96fa247217aa61ecadcc7210bb8e3d91150caf8bdacd12d279b5e65263ec20a
+field_hashes:
+  title: 0a85666e7b249406f897a3abd212144dff1dad192530ba2a1a99af21684dfbdb
+  id: cf41c2831a70e9404ff463a3e953827936ff9148156d25d8bfadb34456fb885d
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: f050ac8f124dce41e3a05195eec9f783627979ccccf592e5a6b4117df38fa466
+  scope: 6f036262f61702c9d491cf5d76fbba3adf4ac691d574dc4d796969bd8bbccf66
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: cc23a707a501572b5f5336611dfeb088f51d74769c661115a258f562764f3e39
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 0701dfeaa4f51f6f4fb2514eae705cd6dea2603be32d069d39bfe01dbc3ec56d
+  implementation_path: a301c074a031a308499ae974d7d965f2c5cd679123d5990f1e1643e9d33309a3
+  validation: 3c69227f3d4fa38f38667481bfbaa1227221531df9123d99b7827a20124b81d0
+  done_when: 351167fddb90fd364d7f14fa8a76ee3526f8271ab2db7f06827d3f9741238b7f
+  task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T23:12:32Z'
+  authority: generated
+  via: save_document_payload

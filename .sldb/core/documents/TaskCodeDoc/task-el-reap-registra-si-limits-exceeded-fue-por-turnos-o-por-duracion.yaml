@@ -1,0 +1,37 @@
+name: task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion
+path: desk/tasks/task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion.md
+source_hash: 327c25be57be308e990a205527ad02ea23644615966330bf07d09b0125cdeb7c
+content_hash: 4fc6fc0bb38ff3ffe661f33adaf9961198cdc20223d1b3fd17822eda66f5ea90
+field_hashes:
+  title: c469a9fee6520a4f77873e91161f1045d344c82e6cd3ca3996564947440acc44
+  id: 8d1c29d30b603bcd1e2e82b28e1127a51d0d8e3466831733189016120564388a
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 16516664cdb8ebe2f478a940029b63800013cd82877d1033b663ce54252c44d4
+  goal: 95c2a8473e52a23f70c86457c954b3b46a3a869931b3c4622454ef83a5e1a1fc
+  scope: 9510d9c9e12a92776e8dda3006defb81655346f9e751832ea1634a20f2b9c570
+  references: a03aca5a17916b3e82b72709a619d1da8511c4e368974d52c69bd659df4a62d3
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 9e28c36f16fa30c589c7bebe44afbd233aeced6ba7e63f1ed8c463a925c53952
+  implementation_path: a6fc55864cb68745114a68919f4caf55f8eac8ce6c9c2faa9837f0820d6560aa
+  validation: 49c7a2b6b6db82f4ef8672be0ee51a0f63ee523d915f42bc9c2b4e7bf5c01b88
+  done_when: a85cc396346d2eb55a3f90837de25dbc7cc35790c926543028dec7601b67dc07
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-26T02:30:06Z'
+  authority: generated
+  via: create_document

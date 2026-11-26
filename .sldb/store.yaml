@@ -3440,6 +3440,42 @@ include:
     name: review-atom-la-superficie-es-un-contrato-de-editores-texto-y-grafo-son-sus-dos-casos-owner-1
   - path: desk/reviews/atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz/owner-1.md
     name: review-atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz-owner-1
+  - path: desk/reviews/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito/preflight-1.md
+    name: review-task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito-preflight-1
+  - path: desk/reviews/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos/preflight-1.md
+    name: review-task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos-preflight-1
+  - path: desk/reviews/task-se-retira-deskops-atoms-split/preflight-1.md
+    name: review-task-se-retira-deskops-atoms-split-preflight-1
+  - path: desk/reviews/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci/preflight-1.md
+    name: review-task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci-preflight-1
+  - path: desk/reviews/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo/preflight-1.md
+    name: review-task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo-preflight-1
+  - path: desk/reviews/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados/preflight-1.md
+    name: review-task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados-preflight-1
+  - path: desk/reviews/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports/preflight-1.md
+    name: review-task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports-preflight-1
+  - path: desk/reviews/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de/preflight-1.md
+    name: review-task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de-preflight-1
+  - path: desk/reviews/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo/preflight-1.md
+    name: review-task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo-preflight-1
+  - path: desk/reviews/task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos/preflight-2.md
+    name: review-task-el-ci-de-deskops-vuelve-a-verde-y-baja-de-1h30-a-menos-de-20-minutos-preflight-2
+  - path: desk/reviews/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito/preflight-2.md
+    name: review-task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito-preflight-2
+  - path: desk/reviews/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci/preflight-2.md
+    name: review-task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci-preflight-2
+  - path: desk/reviews/task-se-retira-deskops-atoms-split/preflight-2.md
+    name: review-task-se-retira-deskops-atoms-split-preflight-2
+  - path: desk/reviews/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports/preflight-2.md
+    name: review-task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports-preflight-2
+  - path: desk/reviews/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados/preflight-2.md
+    name: review-task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados-preflight-2
+  - path: desk/reviews/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo/preflight-2.md
+    name: review-task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo-preflight-2
+  - path: desk/reviews/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de/preflight-2.md
+    name: review-task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de-preflight-2
+  - path: desk/reviews/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo/preflight-2.md
+    name: review-task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo-preflight-2
 - model: BoardDoc
   paths:
   - desk/tasks/Board.md
@@ -3483,16 +3519,44 @@ include:
   - desk/tasks/task-una-pill-declara-el-trabajo-al-que-pertenece-y-como-termina-y-deskops-avisa-de-la-que-quedo-sin-trab.md
   - desk/tasks/task-el-gate-de-tests-del-closeout-acepta-pruebas-de-node-test-mjs-test-js-spec-mjs-y-spec-js.md
   - desk/tasks/task-atomos-pills-y-tareas-guardan-el-donde-como-punteros-a-un-documento-del-store-a-una-categoria-o-a-un.md
+  - desk/tasks/task-las-operaciones-de-deskops-se-definen-una-sola-vez-como-herramientas-mcp-en-una-extension-del-servid.md
+  - desk/tasks/task-ruff-configurado-un-commit-solo-de-formato-errores-arreglados-pre-commit-y-paso-de-ruff-en-el-ci.md
+  - desk/tasks/task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse.md
+  - desk/tasks/task-suite-de-tests-nueva-por-capa-escenarios-del-nucleo-operacion-con-repos-git-temporales-y-contrato-de.md
+  - desk/tasks/task-escenarios-del-workflow-escritos-para-fallar-hoy-cerrar-desde-ejecucion-con-tests-rojos-fuera-del-bo.md
+  - desk/tasks/task-el-cierre-toma-la-arista-task-completes-desde-el-nodo-real-de-la-tarea.md
+  - desk/tasks/task-supersede-resolved-by-y-retire-son-aristas-declaradas-del-ciclo-de-vida.md
+  - desk/tasks/task-toda-compuerta-de-cierre-y-de-activacion-es-una-clausula-de-ruledoc-con-severidad-que-declara-el-wor.md
+  - desk/tasks/task-un-solo-texto-por-rito-next-actions-y-nombres-de-nodo-salen-del-ritualdoc-y-se-borra-task-lifecycle.md
+  - desk/tasks/task-la-coherencia-de-status-current-node-e-history-es-una-regla-on-write-que-lee-el-grafo-del-desk.md
+  - desk/tasks/task-el-board-es-una-vista-calculada-sobre-las-tareas-y-deja-de-ser-un-documento-que-reescriben-todas-las.md
+  - desk/tasks/task-el-prompt-de-una-tarea-es-una-vista-del-nucleo-un-solo-texto-sin-contradicciones.md
+  - desk/tasks/task-el-cli-de-deskops-sale-de-fastmcp-generate-cli-y-el-cli-escrito-a-mano-queda-solo-para-bootstrap-e-i.md
+  - desk/tasks/task-deskops-se-instala-en-claude-code-y-otros-clientes-con-fastmcp-install.md
+  - desk/tasks/task-migrar-los-repos-que-consumen-deskops-a-la-version-refactorizada.md
+  - desk/tasks/task-antes-del-ci-se-corren-solo-los-tests-que-corresponden-a-lo-que-muto.md
+  - desk/tasks/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo.md
+  - desk/tasks/task-el-despacho-no-lanza-un-intento-2-de-ejecutor-si-el-intento-1-ya-dejo-result-summary-md-lo-manda-al.md
+  - desk/tasks/task-una-parada-pedida-por-el-despacho-sigterm-exit-255-queda-como-detenida-y-no-como-falla.md
+  - desk/tasks/task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion.md
 - model: TaskDebugDoc
   paths:
   - desk/tasks/task-el-reap-del-intento-n-de-un-ejecutor-encola-el-tester-aunque-la-tarea-ya-este-en-ritual-testing.md
+  - desk/tasks/task-verificar-fastmcp-call-generate-cli-inspect-e-install-contra-sldb-mcp-con-una-extension-de-deskops.md
 - model: TaskDocsDoc
   paths:
   - desk/tasks/task-agents-md-readme-md-y-la-carpeta-de-la-skill-de-opencode-dejan-de-nombrar-use-spec2viz-y-pasan-a-use.md
   - desk/tasks/task-docs-auditoria-atomos-y-pills-md-clasifica-cada-atomo-y-cada-pill-de-los-cuatro-desks-con-las-tres-p.md
+  - desk/tasks/task-la-skill-deskops-workflow-es-el-skill-md-generado-por-fastmcp-mas-una-parte-corta-del-workflow-desde.md
+  - desk/tasks/task-agents-md-sin-contradicciones.md
+  - desk/tasks/task-los-docs-de-deskops-son-materializaciones-de-atomos-con-una-pagina-por-capa.md
 - model: TaskExternalDoc
   paths:
   - desk/tasks/task-traderbot-y-sldb-migran-sus-task-type-viejos-con-deskops-desk-update-apply.md
+  - desk/tasks/task-sldb-aplica-las-ruledoc-de-un-store-enlazado-parte-de-reglas-del-pedido-c1.md
+  - desk/tasks/task-sldb-ofrece-la-primitiva-tomar-transicion-en-su-cli-y-su-api-pedido-c2.md
+  - desk/tasks/task-el-lenguaje-de-reglas-de-sldb-lee-el-ultimo-elemento-de-una-lista-pedido-c3.md
+  - desk/tasks/task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista.md
 - model: AtomAdrDoc
   paths:
   - desk/atoms/atom-sldb-absorbe-kgdb-un-sustrato-con-dos-capas-internas.md
@@ -3501,6 +3565,29 @@ include:
   - desk/atoms/atom-una-taxonomia-de-comandos-servida-por-fastmcp.md
   - desk/atoms/atom-la-superficie-es-un-contrato-de-editores-texto-y-grafo-son-sus-dos-casos.md
   - desk/atoms/atom-specir-cumple-capacidades-no-reproduce-el-codigo-de-spec2viz.md
+- model: TaskRefactorDoc
+  paths:
+  - desk/tasks/task-deskops-se-ordena-en-paquetes-por-capa-core-ops-runtime-operations-surfaces-con-contratos-de-imports.md
+  - desk/tasks/task-la-suite-vieja-se-retira-a-medida-que-cada-modulo-se-muda-a-su-capa.md
+  - desk/tasks/task-deskops-lee-las-aristas-del-ciclo-de-vida-desde-el-store-enlazado-y-deja-de-copiarlas-donde-sldb-ya.md
+  - desk/tasks/task-identity-resuelve-repos-y-stores-con-catalog-store-y-store-links-de-sldb.md
+  - desk/tasks/task-bootstrap-workspace-y-desk-update-usan-apply-declaration-y-la-api-de-stores-de-sldb-sin-subprocess.md
+  - desk/tasks/task-los-tags-usan-tag-namespaces-y-tag-tree-de-sldb.md
+  - desk/tasks/task-message-usa-sldb-inbox-y-transacciones.md
+  - desk/tasks/task-el-grafo-del-proyecto-se-declara-en-store-yaml-y-graph-view-y-checks-usan-sldb-graph-project.md
+  - desk/tasks/task-los-atomos-se-mueven-con-move-document-de-sldb.md
+  - desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
+  - desk/tasks/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito.md
+  - desk/tasks/task-se-retira-deskops-atoms-split.md
+  - desk/tasks/task-se-borra-la-copia-de-reglas-de-ciclo-de-vida-en-cada-desk-las-aplica-sldb-desde-el-paquete-enlazado.md
+  - desk/tasks/task-advance-y-el-cierre-toman-la-transicion-con-la-primitiva-de-sldb-y-se-borra-lifecycle-advance.md
+  - desk/tasks/task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py.md
+- model: TaskAggregateDoc
+  paths:
+  - desk/tasks/task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy.md
+  - desk/tasks/task-e2-pluginizacion-las-operaciones-como-herramientas-mcp-sobre-sldb-cli-generado-y-docs-que-salen-de-a.md
+  - desk/tasks/task-e3-responsabilidades-a-sldb-deskops-deja-de-envolver-sldb-y-declara-su-workflow-como-dato-que-sldb-e.md
+  - desk/tasks/task-e4-rediseno-del-testing-suite-nueva-por-capa-guardas-de-arquitectura-escenarios-del-workflow-y-tests.md
 graph_backend: networkx
 policy: {}
 tag_models:

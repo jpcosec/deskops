@@ -1,0 +1,37 @@
+name: task-se-retira-deskops-atoms-split
+path: desk/tasks/task-se-retira-deskops-atoms-split.md
+source_hash: 56f928c5ff13a5c4209f962a50c810a20f4d268d6926d1044c0ed783c3a8ab81
+content_hash: cdb997c6e7487d4d29cc587f9c81b19742e120b4261aeca84e101659169fec66
+field_hashes:
+  title: bc8719fee6dbd5843856f2885ea6e939e1d0f1553578fa2ccb4a6cdf14f51468
+  id: 74dbf43eef524d646c57bbb9fe441f72b91218c5f9f5daeb5408f2e5aa07e4ec
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: cf6c0a83909a8be830bf2368c7fb3fcd3581b7dc03e04e1eb2f973c21fc61c20
+  goal: 7945d93b52f15ec1357582c151a66e0ff7441cadb5e4662a432b5ceade7cf825
+  scope: 44615274142e43d09db5e2f654b0b5aa76f0a4c040291fb8b4aaf947f2fb4c34
+  references: 61f617fa206f99d42b0b67b2cbc852b379482a98e959c46d8f2c74adcd4dd643
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: d126d666d48fa05e22414b2c591780f35e4aae816410680fe89e356066cb1add
+  implementation_path: 8140efd49ad8d81f08ba7a64e70040b2bf74a855d6300a17fd5348e1f66ee1dc
+  validation: 93f555d3abe2ba609a2854d357190d7bb4d7d1ad9c60df346656d49645cd8c10
+  done_when: 668b335c84a4adf43c39306507ff243be4a824ad671c33148e0aff7d8d8ee46e
+  task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T23:12:41Z'
+  authority: generated
+  via: save_document_payload

@@ -1,0 +1,37 @@
+name: task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo
+path: desk/tasks/task-cada-capacidad-del-cli-de-deskops-tiene-un-test-de-aceptacion-de-caja-negra-antes-de-mover-codigo.md
+source_hash: 7b7bdcffc47a9d15b1d90c293467b798dfbaa82ff16e6497c5812ea3d6326831
+content_hash: be3f8be9cf615b456ddd491634a867379b1d6a2252af60b94e13514bd18d2ffa
+field_hashes:
+  title: 556e29d80c14903048d00177c735b974cb398942a12ace529a132972e15a799e
+  id: 1bc5f447eed0d1ea5518596a9036576d1e7e39c16f4695faf17959639e9708c0
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 4dd38ac47d9c51bed01fc99dab19ab7432fe19de274071af25d9b1cb24a891ac
+  goal: 1b441b4f0ff80499f73793bc431da273861265fdbebd1c685735413efb0dc498
+  scope: 65fd1b00192db73cc878a01577c51dd0387543d4440543100ad8e0e59f0adc27
+  references: c0afb54317e2408b47b0809b5bf8bd59b142c91f2e434a181bca0611a1994468
+  depends_on: 2cda2c4033bb45772d689cb200aa550addfd6351bcaf3644ef7da7e87b17f340
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: c6e9e5314d68e9f6214c12da42450c37b77c4dab0dc99ebea4eea95b1f1dff43
+  implementation_path: ab7def019b8c2efee84608a722588877b6649366a7b7c16bdf036945f234d8f4
+  validation: 745cd76721d8c2135326642cf083ed1da06e165802e47fc51cbc308772779d52
+  done_when: 92435c72a6b63fb5ef91bf411abe34ab23a8f178c0e43a2a8f783d4dc54c45e2
+  task_type: 430e281fc3506e5a61bf187bc4220dab834ca38806ca4f603f817cc82f9791bb
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T23:12:56Z'
+  authority: generated
+  via: save_document_payload

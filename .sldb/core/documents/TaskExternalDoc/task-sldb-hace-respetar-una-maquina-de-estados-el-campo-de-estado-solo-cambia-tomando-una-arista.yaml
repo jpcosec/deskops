@@ -1,0 +1,37 @@
+name: task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista
+path: desk/tasks/task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista.md
+source_hash: 28170ad2164af10fe3026c82609b21534fd42352e066f3eb6e35a91d88e00518
+content_hash: 88212fcc3ef76f65be9a0cfc72daf7665d66f23f65db4fcb2b190c5610c0a263
+field_hashes:
+  title: 0cc14642932b9f8ebe04d826829adf55ed8baf10ab6d1f59d5605312b7ce48ac
+  id: 10831fa9bf31d751a7e95ce74a89764f38a82349af0be4004fd7d17717b894ea
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 65f6db05a63471ffb6663663d7f8d8ea4ac896d824b79d998122ce8d927c7660
+  goal: bccf530580c2b60456a4e5a77a14b7d7189ab4bc526f42768849a71e665c4348
+  scope: 2d84e7c2cd7ad09c980ce55edf2c0b91c0f950738c399e46d32179cfc469e426
+  references: f9bd4ad95f590d5a538eb62fbc5c32bf251e26f541891165406bb320730e05cd
+  depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  implementation_path: 9207f4afc8ba24f69decc95a666d2768cb6052b104c1021c53dbb0e5fbb02f23
+  validation: 14b6cdca4448ef73784dda86becc6b2f3cfa0a15d901740de31a60f2c138d022
+  done_when: 5f1f43342747a6cc7e6764003d566719c68454899e1c2152a875afae236192c3
+  task_type: 5619d24174620ad487a0abcf96f8cf76f2194860f28794d1d441226cd2d613dd
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T22:55:42Z'
+  authority: generated
+  via: create_document

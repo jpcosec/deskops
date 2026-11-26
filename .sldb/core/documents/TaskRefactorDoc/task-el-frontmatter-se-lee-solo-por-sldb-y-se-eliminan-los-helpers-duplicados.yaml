@@ -1,0 +1,37 @@
+name: task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados
+path: desk/tasks/task-el-frontmatter-se-lee-solo-por-sldb-y-se-eliminan-los-helpers-duplicados.md
+source_hash: 82109c0aca2205fd11dea113ab6f8a771d9df7dee4c954f0fe2d96af45c78a24
+content_hash: 60f849b990af61f26b586c570b93b4f29b6058cf98848d357acecbd5c2038416
+field_hashes:
+  title: bf33d66b011be42d3a8b7060c942ddc579a7cf94f8c05809f093dbabe53b720a
+  id: 7ef70b6e92cc5ddf7a346ac8d35764da1cff05510309baeb357691322d85160c
+  status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
+  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
+  history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  why: 8586538a3769a7b0309d16886e0bc22e769181dd614deb07c3e46f28b7c30f2a
+  goal: 6be986a9eb10de280b70a3a51b15e2090a99fac9842b3fc446fd2a5b0bad4ef1
+  scope: 4fa8b0eda27541f56aac22bb6dc03e3857925be309cfddf0d62c518b57b30d12
+  references: bdcf682ad7891af8b0418770419d1464c5a1d430ba553f8e6fcc2d228dbb632a
+  depends_on: f153754e6b9eb0bba70976148f78b509a5d479302277fc31f87d6d3a3ca359b3
+  pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  files: 6cf827c78217da0514056bdadfa17ee512caa1065f6469375d0b8788107498de
+  implementation_path: c787c6e1191f1061a76a198ef9bcd7cbcfb2602ec41ef59d4f5936407e7f2a11
+  validation: 230ccf23b654c791ebc0675937227ea12b3248ec1273fab62a5133005a3f757b
+  done_when: 6c4e391e1fae37c24186660cec685f432cf44504d38ad669814134d14f45556f
+  task_type: d0b4cbfeadc448bca1492079dfd36948fd84b4ae366c521b0e71add2bea3fa86
+  inherits_from: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  inherit_acceptance_context: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  atoms: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- board.tareas
+- representation.markdown
+- source.document.markdown
+- type.workflow.task
+- workspace.desk
+provenance:
+  by: agent
+  at: '2026-11-25T23:13:13Z'
+  authority: generated
+  via: save_document_payload

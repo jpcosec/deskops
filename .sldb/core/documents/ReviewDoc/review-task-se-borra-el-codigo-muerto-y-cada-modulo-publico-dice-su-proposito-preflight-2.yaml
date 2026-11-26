@@ -1,0 +1,36 @@
+name: review-task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito-preflight-2
+path: desk/reviews/task-se-borra-el-codigo-muerto-y-cada-modulo-publico-dice-su-proposito/preflight-2.md
+source_hash: 354e0fff7b327892e083032b78352a3862eea097bd1044839e997fa13e68a64e
+content_hash: 32bf29a8eb4e13eff7b029d159f33a513c92ba679fffa47fd0b530111150fa59
+field_hashes:
+  id: a08a63d78920bb2d49cf60bed2fef791376444aa5602399a7b977a652cb3a5d1
+  title: 73e275b86bef81767abbb8444bc389029fe09ce0893d34866b0f2bdf7eda8659
+  kind: b7aa467a101908787d614f7bfc1dadd75a976b85a3bf6022dd451c30158bbff2
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: 201fea90c6a84b627f146d899b6932146c5e212e3321bfd19e23fd636cf3e21a
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  run_dir: e6ff515538f2999e411ba883719ee433ca877b5a33105b841d22b9a88b85d07d
+  input_sha256: f53ea1409baba569e32cba136c59b1ea3c3c26daa9e55a2c0f95732b29033ecb
+  contract_sha256: f2ec663eade1b3baaaa793707bb0e86310dd7e1908b3d3d2deb53be3cb4822ee
+  output_sha256: 7e8c24ffc517ddc7dfc90c933b581d899159ca8bc92d8b0d0f5c5b7d81b91ad3
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: adf782e6159ad9e67043737a210f7c082f796cd5e8e7b8119d6429465df23727
+  created_at: de015da27fb2712d139b618d69969e1c9ddac2df625924f1f4a01ad59bf83117
+  disposed_at: 86aa1259b3e24c9b8b4e06f793e414bd97bf2ae6f1e660b8197def6ca1f625c6
+  disposed_by: be1a918d36a26b50ff05a32144905fa0851e3a2c55c93b05726d8a3bab97b3e7
+  summary: ef40d815a2241d558574e04fd81b94d72fdd27d7407fe14eb137f977356bdb90
+  disposition: aac231c3b00e21f12f8b45fed46a877d4b473aa4a98ff4baa018f90cae280874
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+provenance:
+  by: agent
+  at: '2026-11-25T23:15:07Z'
+  authority: generated
+  via: save_document_payload
