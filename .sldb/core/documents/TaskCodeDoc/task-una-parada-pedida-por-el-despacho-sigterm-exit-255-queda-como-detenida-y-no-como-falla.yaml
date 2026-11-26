@@ -1,7 +1,7 @@
 name: task-una-parada-pedida-por-el-despacho-sigterm-exit-255-queda-como-detenida-y-no-como-falla
 path: desk/tasks/task-una-parada-pedida-por-el-despacho-sigterm-exit-255-queda-como-detenida-y-no-como-falla.md
 source_hash: 3fc650fb9082acd6bac1e10fb7c1741cb5d8bd6d1d86d94d77ed7b394f0eb5cc
-content_hash: bc233c600bfc660c2f672741333466b27ec2d08c6558593bbe8c63069f9494bd
+content_hash: f273d470499def440b22cc9a13e15c6c8ae1e497acdccc1605013c664018696b
 field_hashes:
   title: 1a889dffd644fc804377595af329794b126ed75188a00a589f3cd3a9b676848e
   id: f08137f55de40b1eb3e9e44798bce99d0acaf4e8ad486deb130a2ee54ef649c8
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: eb219aa4c53f826983711733aae451e0efa671b242a39eb7f21cd55536eec360
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: c08d76bf69347724502895aac79a558330885d231004c5f92419e19ee3970b72
   validation: bc7d6e4cb9d1ad5a2a6fda319d239131314e31f91e07a451342e5422dad0a510
   done_when: 0f36d1251638f46368b1cc304c95cda36c92f4c87d01b2453130d185a4d0303d

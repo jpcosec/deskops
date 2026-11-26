@@ -1,7 +1,7 @@
 name: task-el-despacho-no-lanza-un-intento-2-de-ejecutor-si-el-intento-1-ya-dejo-result-summary-md-lo-manda-al
 path: desk/tasks/task-el-despacho-no-lanza-un-intento-2-de-ejecutor-si-el-intento-1-ya-dejo-result-summary-md-lo-manda-al.md
 source_hash: e2b06c4b6ce464913a93a4a90603aeae25529cfe0f0f644e06d44859b14bd1a6
-content_hash: 0f3bd07d97ae5ffd9f4c75939184feb14ac35deefe931177c207cd53e4b59fc5
+content_hash: 3133375926d6347afeb733bec95206e89ff53f034d960f2a7a6780afed39b7e3
 field_hashes:
   title: c88ee590ac6e4dd239094ad2463833e21a077070032d6f174d47a7b6939ccc8e
   id: 00f7efd00e07a88f7b325f381441005e509c6793ec8230378843d0ef519097e8
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: eb219aa4c53f826983711733aae451e0efa671b242a39eb7f21cd55536eec360
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 755416e0ec53335ad723c94b8462e72c9489672135e3fea6bf85e9bb06329b84
   validation: cf0e298eb4cbf22815ac759c6a42987de1d9b9db8beb105c02232ed0af90ed02
   done_when: 1db3f0606bba50d8e845feaf82321325d522bb1068f34cd73db299f11866f10b

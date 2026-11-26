@@ -1,7 +1,7 @@
 name: task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion
 path: desk/tasks/task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion.md
 source_hash: 327c25be57be308e990a205527ad02ea23644615966330bf07d09b0125cdeb7c
-content_hash: 4fc6fc0bb38ff3ffe661f33adaf9961198cdc20223d1b3fd17822eda66f5ea90
+content_hash: dba07656e78c067bf601c54cdbf69fae34841b489de17149ee8dcd0988fef336
 field_hashes:
   title: c469a9fee6520a4f77873e91161f1045d344c82e6cd3ca3996564947440acc44
   id: 8d1c29d30b603bcd1e2e82b28e1127a51d0d8e3466831733189016120564388a
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 9e28c36f16fa30c589c7bebe44afbd233aeced6ba7e63f1ed8c463a925c53952
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: a6fc55864cb68745114a68919f4caf55f8eac8ce6c9c2faa9837f0820d6560aa
   validation: 49c7a2b6b6db82f4ef8672be0ee51a0f63ee523d915f42bc9c2b4e7bf5c01b88
   done_when: a85cc396346d2eb55a3f90837de25dbc7cc35790c926543028dec7601b67dc07

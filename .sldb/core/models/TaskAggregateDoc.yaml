@@ -2,11 +2,11 @@ name: TaskAggregateDoc
 model_ref: deskops.models:TaskAggregateDoc
 path: deskops/models/task_types.py
 documents_index: .sldb/core/documents/TaskAggregateDoc.yaml
-sections_index: ''
-model_hash: de2cdd665f6d4c768b0850b73bda7029c364e48787c5a25ae125ab09c0e887d2
-roster_hash: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+sections_index: .sldb/runtime/sections/TaskAggregateDoc.yaml
+model_hash: 8bf0e24020686ed1d50305bf568ae363e10c9c49e8493ca96f9459baf001b170
+roster_hash: 910e54b5a01ff34e2e2ae5191477951eb432ce2dd98812504e3d63e8dee4ccce
 contract_hash: c51f00cf0146d58eefd99a69ecc8948f7aa7aac10b68efa49148076c46c663e8
-documents_count: 0
+documents_count: 4
 version: 1
 canonical: false
 family: null

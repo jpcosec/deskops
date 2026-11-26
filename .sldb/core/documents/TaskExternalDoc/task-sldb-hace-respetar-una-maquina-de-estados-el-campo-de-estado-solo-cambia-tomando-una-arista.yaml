@@ -1,7 +1,7 @@
 name: task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista
 path: desk/tasks/task-sldb-hace-respetar-una-maquina-de-estados-el-campo-de-estado-solo-cambia-tomando-una-arista.md
 source_hash: 28170ad2164af10fe3026c82609b21534fd42352e066f3eb6e35a91d88e00518
-content_hash: 88212fcc3ef76f65be9a0cfc72daf7665d66f23f65db4fcb2b190c5610c0a263
+content_hash: 87d8c1a0c1336ae011c88064d4c717a2b3bbf3ba288d303f9413f663c966a94a
 field_hashes:
   title: 0cc14642932b9f8ebe04d826829adf55ed8baf10ab6d1f59d5605312b7ce48ac
   id: 10831fa9bf31d751a7e95ce74a89764f38a82349af0be4004fd7d17717b894ea
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 9207f4afc8ba24f69decc95a666d2768cb6052b104c1021c53dbb0e5fbb02f23
   validation: 14b6cdca4448ef73784dda86becc6b2f3cfa0a15d901740de31a60f2c138d022
   done_when: 5f1f43342747a6cc7e6764003d566719c68454899e1c2152a875afae236192c3

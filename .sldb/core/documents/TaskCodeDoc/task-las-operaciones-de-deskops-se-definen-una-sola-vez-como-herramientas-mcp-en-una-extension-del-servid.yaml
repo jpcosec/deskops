@@ -1,7 +1,7 @@
 name: task-las-operaciones-de-deskops-se-definen-una-sola-vez-como-herramientas-mcp-en-una-extension-del-servid
 path: desk/tasks/task-las-operaciones-de-deskops-se-definen-una-sola-vez-como-herramientas-mcp-en-una-extension-del-servid.md
 source_hash: 61ecd7e4e8bed8b462a3b2a979984600b7c07971c3279b18f038324b92389151
-content_hash: dfc23b83bd3c9ac4784fb08d0e4ae14b19f6d8c17bc24c361230e9bdfccbdea5
+content_hash: dab4aeb69fafe603d11ba039e190977dc5b3eea710735c7dfcc035bed2f45df7
 field_hashes:
   title: 04ab2f73c05095fe976bc1652a67bb14383dc70dd8d17bee8ff9bca1a69bfeed
   id: 02dc943d757137c63185c0bb6467bb97304b52c30ebee3314fa8b72514a68f50
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 1b267024053b25bd02c14ca859be0131be550da2714fe2150d59944cd8136451
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: c7466f8af95855cfd59062bf4c716b86deb48477b00f64df4c6e374b93dee1e7
   validation: d121134d51a726d8c954ca01b89910bdb90852c48004c98c56bf0c919696e7c1
   done_when: e591ae79bb661073c7534638b6553ea9413322026ef7e1ab71dce550448f5112

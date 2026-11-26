@@ -1,7 +1,7 @@
 name: task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy
 path: desk/tasks/task-e1-refactor-deskops-ordenado-por-capas-con-lint-sin-codigo-muerto-ni-helpers-duplicados-y-sin-legacy.md
 source_hash: 2e6b04e91c8f52d73edfd77d7970866f978fb4cc8faadbcc44e670af8d558a4c
-content_hash: cd7d9e6972ec3662a5e34ef290436f4c269aad8b9e551080b37347d50b495885
+content_hash: 80440d759f8bc8f5ae31b746378842cb1a166ddee22a82b1d32ea86411ee2137
 field_hashes:
   title: 8c99fd28fda033842e0c5a1ee6f9aa5bd841da9fe57afaff2c996e0d7db31cc3
   id: dbe51dab909848c8a4ca12f5bb8d5c8e767aec066d3e95c8bb0f0484da5c07c2
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: fd3b5bb68f429a437a4781c0a5ed47662266e3a013badc85963912543db0bda4
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: b2304fd9400ed295a61afde008b9cf8c023c8cbabbaf4a09b408384c396a84ed
   validation: 603f2ba85fcf63759fd63620261e594b84eeaabd70963d15763abb0e76c6a1d3
   done_when: d3960af93081d97714ec77d002b03b1e568913769b33dee2c248f439a8f9d9fe

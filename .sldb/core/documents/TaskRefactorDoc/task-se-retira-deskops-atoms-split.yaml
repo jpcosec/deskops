@@ -1,7 +1,7 @@
 name: task-se-retira-deskops-atoms-split
 path: desk/tasks/task-se-retira-deskops-atoms-split.md
 source_hash: 56f928c5ff13a5c4209f962a50c810a20f4d268d6926d1044c0ed783c3a8ab81
-content_hash: cdb997c6e7487d4d29cc587f9c81b19742e120b4261aeca84e101659169fec66
+content_hash: 82bf25b4a7865904f3e46236e2d5ab760bbf5e76c29d203f30cc3c163debeb73
 field_hashes:
   title: bc8719fee6dbd5843856f2885ea6e939e1d0f1553578fa2ccb4a6cdf14f51468
   id: 74dbf43eef524d646c57bbb9fe441f72b91218c5f9f5daeb5408f2e5aa07e4ec
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: d126d666d48fa05e22414b2c591780f35e4aae816410680fe89e356066cb1add
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 8140efd49ad8d81f08ba7a64e70040b2bf74a855d6300a17fd5348e1f66ee1dc
   validation: 93f555d3abe2ba609a2854d357190d7bb4d7d1ad9c60df346656d49645cd8c10
   done_when: 668b335c84a4adf43c39306507ff243be4a824ad671c33148e0aff7d8d8ee46e

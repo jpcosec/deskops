@@ -1,7 +1,7 @@
 name: task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse
 path: desk/tasks/task-guardas-de-arquitectura-que-fallan-en-el-ci-si-el-codigo-vuelve-a-desordenarse.md
 source_hash: 6071974e1799e4bcaf97b2db1670599b3a8302d0aa1f9861f80139353af75ffe
-content_hash: 0609e359e215715c9a88ba37fcd4719e58376460f2edb8d777c6f8524d06e9c3
+content_hash: 88c82c8743ea16d9632a76c2c1de9ff91b654b9e33cf19648d6ee83c604693b6
 field_hashes:
   title: f52f9db21f57f27ef1c16eb41aa1552bfd4a7116dd6a52a24284f26d45debf14
   id: c0ed720ceae69a9b744fd1b2a9a9c0d44cb61790d1a1a0b0569aff673f815677
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: b26a529a5eaa2922d818af53f86b1ce17ec15966ac37550d1143a8fe9adada43
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 0faea1a13e8d935e5d94b2082e983146d1d28441bf78b1939a087ada47d7a703
   validation: 0eb398bd0863cbb4fcb3affe31a61f02755448d255f747702b23e0ecb5317b0e
   done_when: 3645218a7cf5dff6694e8e1816ecb71fcd847085fa9fc23f659f80fa27f167fa

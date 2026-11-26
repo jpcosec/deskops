@@ -1,7 +1,7 @@
 name: task-se-borra-la-copia-de-reglas-de-ciclo-de-vida-en-cada-desk-las-aplica-sldb-desde-el-paquete-enlazado
 path: desk/tasks/task-se-borra-la-copia-de-reglas-de-ciclo-de-vida-en-cada-desk-las-aplica-sldb-desde-el-paquete-enlazado.md
 source_hash: 4e697375e99b152fba9d31f5d394d85ee939764393d4655266b2ac8fa535226b
-content_hash: 8f40582b6a13a6f5e4d6edc98ee0429097bb2d8411e9f9e014c91225889da545
+content_hash: 9a60925a4fc7a4a4509ee8eb7d755f141abd38bf9a77f941b0feecd6beea986f
 field_hashes:
   title: d7691d83848cf0c5db1f12463cde1fd630b322b6cacd697a39237a26dd998da1
   id: c8097404ea435ec7637355afc2fe25bf61f8c21869ccf415308d448220d39e82
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: dcad1bc337fe48134e274ac1d19cf83abf5ea46e5b9bbacd308f5ac5d41c5e38
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: 71ddfc9d8c9110d5a8d8d8dbd38a44712bd01a3eb79dafbc1085fc7e36d7bc4f
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: 29e68f2045094695f82ae2cb190b13a512d0c190cea7e24ebd1452a1f75b97ee
   validation: 0e863cbc83250915d163bb6631bb66e3d017e3538472835514bf72561afa01a6
   done_when: 8415367cead63eaf1543129f690361ebbb1c6700be599e45898e300344c5a2b6

@@ -1,7 +1,7 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-26T02:56:53Z'
+  at: '2026-11-26T13:15:38Z'
   authority: generated
   via: save_document_payload
 # board-xxx
@@ -63,6 +63,13 @@ tasks:
 - desk/tasks/task-el-despacho-no-lanza-un-intento-2-de-ejecutor-si-el-intento-1-ya-dejo-result-summary-md-lo-manda-al.md
 - desk/tasks/task-una-parada-pedida-por-el-despacho-sigterm-exit-255-queda-como-detenida-y-no-como-falla.md
 - desk/tasks/task-el-reap-registra-si-limits-exceeded-fue-por-turnos-o-por-duracion.md
+- desk/tasks/task-deskops-add-adr-crea-un-registro-de-decision-con-estado-contexto-decision-consecuencias-y-a-cual-ree.md
+- desk/tasks/task-el-board-declara-las-fases-del-dag-que-tareas-forman-cada-fase-y-que-su-integracion-es-de-la-fase.md
+- desk/tasks/task-integrate-por-lote-una-sola-integracion-por-desk-con-todo-lo-cerrado-pendiente-un-tip-una-suite-un-g.md
+- desk/tasks/task-el-reap-integra-la-rama-de-un-ejecutor-de-la-tarea-aunque-scion-ya-no-liste-al-agente.md
+- desk/tasks/task-closeout-encola-un-solo-integrate-cuando-cierra-la-ultima-tarea-de-la-fase.md
+- desk/tasks/task-deskops-declara-fases-del-board-por-cli-crear-una-fase-y-agregar-o-quitar-tareas.md
+- desk/tasks/task-deskops-view-board-muestra-las-fases-del-dag-con-sus-tareas-y-su-estado.md
 # List of pill-xxx paths
 pills:
 - pill-001-task-closure-commit
@@ -79,6 +86,8 @@ rituals:
 - ritual-closeout
 - ritual-testing
 - context-review
+# DAG phases: id, tasks, integration
+phases: []
 # e.g., system:sldb
 tags:
 - system:sldb
@@ -156,3 +165,10 @@ _Generated from the task references above._
 - El despacho no lanza un intento 2 de ejecutor si el intento 1 ya dejó result-summary.md: lo manda al reap [draft] - deskops dispatch start de un ejecutor, cuando el run_dir del intento anterior tiene result-summary.md, no crea el intento 2: imprime que la entrega está hecha, encola el reap de la tarea y sale con un código propio que la cola no reintenta.
 - Una parada pedida por el despacho (SIGTERM, exit 255) queda como detenida y no como falla [draft] - Cuando el despacho o la cola detienen un agente y scion informa exit 255 con crash=false, el job y el RunDoc quedan como stopped, no failed, y no cuentan como intento fallido.
 - El reap registra si limits_exceeded fue por turnos o por duración [draft] - Cuando reap encuentra un agente en limits_exceeded, imprime y guarda en el RunDoc el motivo (max_turns o max_duration) leído del log del agente.
+- atom.adr: una decisión aceptada es un átomo que responde el porqué, con contexto, consecuencias, a cuál reemplaza y a qué aplica [ready_for_testing] - Que una decisión de arquitectura aceptada sea un subtipo de átomo, atom.adr, modelado como los tipos de tarea. Una decisión pendiente no es un átomo: es una tarea task.decision, que cierra citando el atom.adr. Propuesta deskops/desk/drawer/plans/que-es-un-atomo-y-que-es-una-pill/README.md (JP, 2026-11-25).
+- El Board declara las fases del DAG: que tareas forman cada fase y que su integracion es de la fase [ready_for_testing] - BoardDoc tiene un campo de fases: cada fase con id, lista de tareas e integracion de la fase (validacion combinada y commit de cierre de fase). El modelo valida que una tarea este en una sola fase. Solo modelo y template; CLI y vista son tareas aparte.
+- integrate por fase: la unidad de integracion es la fase del Board (una suite, un grafo, un store y un push por fase) [draft] - deskops integrate --phase <fase> integra de una vez todas las tareas cerradas de esa fase del Board: un tip, una suite completa, una comprobacion de grafo y de store, un push y el commit de cierre de fase de ritual-phase. Una tarea sin fase se integra como fase de una sola tarea (--task sigue andando).
+- El reap integra la rama de un ejecutor de la tarea aunque scion ya no liste al agente [draft] - Que reap integre toda rama deskops/<ejecutor> de la tarea con commits fuera de la base aunque el agente ya no exista, y encole el tester como hoy.
+- closeout encola un solo integrate cuando cierra la ultima tarea de la fase [draft] - Al cerrar una tarea que pertenece a una fase del Board: si quedan tareas abiertas en la fase no se encola nada; si era la ultima se encola un solo trabajo integrate --phase, sin duplicar uno pendiente. Una tarea sin fase encola su integrate como hoy.
+- deskops declara fases del Board por CLI: crear una fase y agregar o quitar tareas [draft] - Un comando de deskops crea una fase en el Board y agrega o quita tareas de ella, validando que la tarea exista y que no este ya en otra fase; escribe por sldb.
+- deskops view board muestra las fases del DAG con sus tareas y su estado [draft] - deskops view board (texto y json) lista cada fase con sus tareas y el estado de cada una, y si la fase esta completa.

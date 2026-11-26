@@ -1,7 +1,7 @@
 name: task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py
 path: desk/tasks/task-el-estado-de-una-tarea-solo-cambia-tomando-una-arista-se-borran-los-if-de-estado-de-closure-py.md
 source_hash: ba38fa32faa01e4ca7e874b3bd98d9b75a3b3fca316884c1394ae8ca1abe5901
-content_hash: bc77cda4ac68866a29acf92f6a60f9222b5b35d2b768d5f4d3957058c361255e
+content_hash: e4d6dfe5855d6af630583f6e23114c560c476d8cbc976e7f89380f5dba4db4bd
 field_hashes:
   title: 1b3bfce0d1c6f008f479113e3912f1d22fa0d2fc8fb8d38c0c2adfa2f1da56fb
   id: 8bdc73be2bbfaf0b5442ce7c7fd1f56ab64247be1175f28e98cbc9b71c1c525d
@@ -17,6 +17,7 @@ field_hashes:
   depends_on: 387367cd0bb219c0d99bd4bd7e0ac6db02f1db51c2b2d8efddfc66b039ce8526
   pills: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   files: a2573ab112065fb61db86c18d82b7895a78ac72c94513486eed006c7b3ae8a66
+  pointers: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
   implementation_path: f3c9bb95fc1272195e75724b7d0f6ffc211bedabff7518c97c8134d7b3997588
   validation: 49f7b6b890c4af15806de61a578bd24b1f7fe881b3c48dd7ab25892bd51db215
   done_when: 8e35fcc6743f0b7feda3894afd8b938a5ac4007664f12a408efdbbfcde3bbf37
