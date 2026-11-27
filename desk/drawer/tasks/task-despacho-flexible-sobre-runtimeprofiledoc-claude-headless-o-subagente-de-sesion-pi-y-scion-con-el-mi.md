@@ -8,7 +8,7 @@ id: task-despacho-flexible-sobre-runtimeprofiledoc-claude-headless-o-subagente-d
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

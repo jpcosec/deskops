@@ -8,7 +8,7 @@ id: task-el-inbox-admite-avisos-kind-alert-ademas-de-unclear-y-suggestion-d5-de-
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - deskops/models/inbox.py

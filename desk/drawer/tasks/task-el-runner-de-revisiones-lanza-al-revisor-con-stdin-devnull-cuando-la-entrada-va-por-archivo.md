@@ -8,7 +8,7 @@ id: task-el-runner-de-revisiones-lanza-al-revisor-con-stdin-devnull-cuando-la-en
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261122-224522-suggestion-review-preflight-bundle-se-cuelga-con-el-stdin-abierto-pi-print-espera-reportado-por-mepu.md

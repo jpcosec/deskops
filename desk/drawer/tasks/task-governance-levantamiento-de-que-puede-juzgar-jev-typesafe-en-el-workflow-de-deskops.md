@@ -8,7 +8,7 @@ id: task-governance-levantamiento-de-que-puede-juzgar-jev-typesafe-en-el-workflo
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261120-194010-suggestion-levantamiento-de-qu-puede-hacer-jev-typesafe-en-deskops.md

@@ -8,7 +8,7 @@ id: task-governance-el-cierre-de-la-tarea-ocurre-dentro-del-pr-y-deskops-reconci
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261120-193943-suggestion-cierre-de-la-tarea-dentro-del-pr-y-reconcile-contra-github.md

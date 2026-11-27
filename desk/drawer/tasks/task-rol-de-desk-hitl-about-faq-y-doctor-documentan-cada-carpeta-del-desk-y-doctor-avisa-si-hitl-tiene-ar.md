@@ -11,7 +11,7 @@ summary: 'Borrador sin preparar: preflight rechazado el 2026-11-21 (ver desk/rev
   de revisar de nuevo.'
 tags:
 - host:robocop2
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261115-194443-unclear-rol-de-desk-hitl-y-carpetas-no-modeladas.md

@@ -8,7 +8,7 @@ id: task-deskops-list-tasks-y-deskops-next-filtran-por-maquina-con-host-tag-host
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261122-214748-unclear-de-ftcourier-a-la-tarea-le-falta-un-campo-para-decir-en-qu-m-quina-y-con-qu-ejecutor-corre.md

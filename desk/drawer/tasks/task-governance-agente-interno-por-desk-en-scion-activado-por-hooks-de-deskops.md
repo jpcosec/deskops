@@ -8,7 +8,7 @@ id: task-governance-agente-interno-por-desk-en-scion-activado-por-hooks-de-desko
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261120-194002-suggestion-agente-interno-por-desk-en-scion-activado-por-hooks.md

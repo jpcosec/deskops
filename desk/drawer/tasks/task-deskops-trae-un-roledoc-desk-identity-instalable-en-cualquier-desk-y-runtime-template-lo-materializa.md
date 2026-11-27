@@ -8,7 +8,7 @@ id: task-deskops-trae-un-roledoc-desk-identity-instalable-en-cualquier-desk-y-ru
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261122-234447-suggestion-roledoc-de-identidad-de-desk-desk-identity-y-su-traduccion-a-agente-scion.md

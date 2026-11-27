@@ -8,7 +8,7 @@ id: task-lo-retirado-se-borra-y-la-tarea-guarda-un-puntero-a-git-para-ver-su-gen
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - deskops/models/task.py

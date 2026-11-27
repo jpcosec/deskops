@@ -8,7 +8,7 @@ id: task-dispatch-start-se-niega-a-lanzar-un-rol-cuyo-env-config-no-declara-volu
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261122-234509-suggestion-seguridad-todo-agente-claude-del-broker-recibe-sldb-1-y-dev-shm-en-escritura-sea-del-proyecto-que-sea.md

@@ -9,7 +9,7 @@ status: deferred
 summary: ''
 tags:
 - host:robocop2
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/tasks/task-chatbot-infra-indexar-las-citas-c-digo-atom-de-los-docstrings-en-el-grafo-y-huecos-de-atoms-vistos-en-la-auditor-a.md

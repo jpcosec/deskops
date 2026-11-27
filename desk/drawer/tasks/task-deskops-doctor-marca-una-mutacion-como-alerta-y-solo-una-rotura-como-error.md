@@ -8,7 +8,7 @@ id: task-deskops-doctor-marca-una-mutacion-como-alerta-y-solo-una-rotura-como-er
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

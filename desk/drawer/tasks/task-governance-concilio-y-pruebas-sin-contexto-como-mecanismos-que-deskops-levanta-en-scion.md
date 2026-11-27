@@ -8,7 +8,7 @@ id: task-governance-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261120-194016-suggestion-concilio-y-pruebas-sin-contexto-como-mecanismos-que-deskops-levanta.md

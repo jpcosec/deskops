@@ -8,7 +8,7 @@ id: task-los-botones-de-graph-ui-frontends-desk-llaman-a-las-operaciones-de-desk
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

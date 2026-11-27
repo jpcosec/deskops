@@ -8,7 +8,7 @@ id: task-las-rutas-y-credenciales-de-maquina-de-dispatch-e-integrate-salen-de-de
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261122-182810-unclear-orden-pedido-por-el-concilio-clones-primero-y-rutas-de-m-quina-en-desk-config-json.md

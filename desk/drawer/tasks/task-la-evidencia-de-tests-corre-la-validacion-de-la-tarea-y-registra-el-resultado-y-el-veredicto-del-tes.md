@@ -8,7 +8,7 @@ id: task-la-evidencia-de-tests-corre-la-validacion-de-la-tarea-y-registra-el-res
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

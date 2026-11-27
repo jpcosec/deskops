@@ -8,7 +8,7 @@ id: task-taskdoc-declara-el-pr-o-la-rama-que-la-realiza-como-referencia-a-un-pul
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/tasks/task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci.md

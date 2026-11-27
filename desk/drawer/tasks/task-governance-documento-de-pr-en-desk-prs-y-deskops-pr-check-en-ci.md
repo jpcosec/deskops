@@ -8,7 +8,7 @@ id: task-governance-documento-de-pr-en-desk-prs-y-deskops-pr-check-en-ci
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261120-193937-suggestion-documento-de-pr-en-desk-prs-y-pr-check-en-ci.md

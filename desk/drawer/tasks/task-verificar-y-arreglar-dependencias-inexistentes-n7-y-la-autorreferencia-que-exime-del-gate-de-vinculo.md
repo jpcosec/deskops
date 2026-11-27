@@ -8,7 +8,7 @@ id: task-verificar-y-arreglar-dependencias-inexistentes-n7-y-la-autorreferencia-
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

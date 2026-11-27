@@ -8,7 +8,7 @@ id: task-los-recibos-anclan-el-codigo-exponen-motor-y-autor-y-commit-respeta-el-
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

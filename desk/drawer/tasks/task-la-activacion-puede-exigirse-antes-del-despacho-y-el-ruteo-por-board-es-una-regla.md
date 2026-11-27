@@ -8,7 +8,7 @@ id: task-la-activacion-puede-exigirse-antes-del-despacho-y-el-ruteo-por-board-es
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

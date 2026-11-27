@@ -8,7 +8,7 @@ id: task-el-gate-de-cierre-acepta-el-commit-de-la-tarea-como-vinculo-de-cada-arc
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261125-092140-suggestion-gate-de-cierre-exigir-un-tomo-por-cada-archivo-de-files-bloquea-las.md

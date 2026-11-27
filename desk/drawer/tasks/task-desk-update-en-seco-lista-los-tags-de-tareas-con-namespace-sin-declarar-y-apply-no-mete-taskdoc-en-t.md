@@ -8,7 +8,7 @@ id: task-desk-update-en-seco-lista-los-tags-de-tareas-con-namespace-sin-declarar
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261122-231220-suggestion-desk-update-apply-activa-la-validaci-n-de-tags-de-taskdoc-y-deja-tareas-sin-poder-editarse-namespaces-del-roadmap-sin-declarar.md

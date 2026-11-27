@@ -8,7 +8,7 @@ id: task-integrate-encuentra-el-cierre-por-el-trailer-task-id-y-distingue-closeo
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

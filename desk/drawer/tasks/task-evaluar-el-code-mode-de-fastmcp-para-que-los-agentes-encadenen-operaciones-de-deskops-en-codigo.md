@@ -8,7 +8,7 @@ id: task-evaluar-el-code-mode-de-fastmcp-para-que-los-agentes-encadenen-operacio
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/drawer/plans/deskops-plugin-de-sldb/diagnostico.md

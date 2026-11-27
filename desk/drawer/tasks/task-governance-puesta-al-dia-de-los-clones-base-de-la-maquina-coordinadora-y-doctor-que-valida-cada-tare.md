@@ -8,7 +8,7 @@ id: task-governance-puesta-al-dia-de-los-clones-base-de-la-maquina-coordinadora-
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261121-040358-suggestion-clones-base-de-una-m-quina-coordinadora-y-doctor-que-valide-cada-tarea.md

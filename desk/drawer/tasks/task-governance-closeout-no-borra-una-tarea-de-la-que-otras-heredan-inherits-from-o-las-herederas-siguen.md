@@ -8,7 +8,7 @@ id: task-governance-closeout-no-borra-una-tarea-de-la-que-otras-heredan-inherits
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261122-132316-suggestion-closeout-borra-una-tarea-aunque-otras-hereden-de-ella-inherits-from-y-esas-dejan-de-cargar.md

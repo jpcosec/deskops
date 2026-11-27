@@ -8,7 +8,7 @@ id: task-governance-registro-en-el-desk-de-los-artefactos-generados-por-claude-y
 status: deferred
 summary: ''
 tags: []
-current_node: ritual-execution
+current_node: ''
 history: []
 references:
 - desk/inbox/20261120-194028-suggestion-registro-de-artefactos-generados-por-claude-y-por-el-desk.md
