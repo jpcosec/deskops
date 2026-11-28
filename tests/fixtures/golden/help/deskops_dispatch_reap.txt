@@ -1,6 +1,6 @@
 usage: deskops dispatch reap [-h] --task TASK [--root ROOT]
 
-Stop and delete the finished scion agents of a task.
+Stop and delete the finished agents of a task.
 
 options:
   -h, --help   show this help message and exit

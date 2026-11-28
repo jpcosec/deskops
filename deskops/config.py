@@ -7,7 +7,7 @@ from typing import Any
 
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 from deskops.constants import CURRENT_DESK_FORMAT
 
@@ -61,10 +61,13 @@ class IntegrateConfig(BaseModel):
 
 class DispatchRole(BaseModel):
     role: str = Field(min_length=1, description="RoleDoc id or name")
-    harness: str = Field(min_length=1, description="Runtime profile kind / scion harness")
-    model_alias: str = Field(min_length=1, description="Scion model size alias")
-    harness_auth: str | None = Field(default=None, description="Scion harness auth type")
-    env_config: str | None = Field(default=None, description="Path passed to scion start --config")
+    harness: str | None = Field(default=None, description="scion: runtime profile kind / scion harness")
+    model_alias: str | None = Field(default=None, description="scion: model size alias")
+    harness_auth: str | None = Field(default=None, description="scion: harness auth type")
+    env_config: str | None = Field(default=None, description="scion: path passed to scion start --config")
+    provider: str | None = Field(default=None, description="paseo: agent provider (pi, claude, codex, opencode...)")
+    model: str | None = Field(default=None, description="paseo: model, passed as --model (default: the provider's own)")
+    mode: str | None = Field(default=None, description="paseo: provider mode, passed as --mode (e.g. bypass)")
 
 
 class DispatchRoles(BaseModel):
@@ -73,10 +76,13 @@ class DispatchRoles(BaseModel):
 
 
 class DispatchConfig(BaseModel):
-    project: str = Field(min_length=1, description="Scion project")
-    workspace: str = Field(min_length=1, description="Absolute workspace path")
-    templates_dir: str = Field(min_length=1, description="Scion project templates folder")
-    context_file: str = Field(min_length=1, description="Scion context JSON path")
+    runtime: Literal["scion", "paseo"] = Field(
+        default="scion", description="Agent runtime: scion (one container per agent) or paseo (the local paseo daemon)"
+    )
+    project: str | None = Field(default=None, description="scion: project")
+    workspace: str | None = Field(default=None, description="scion: absolute workspace path")
+    templates_dir: str | None = Field(default=None, description="scion: project templates folder")
+    context_file: str | None = Field(default=None, description="scion: context JSON path")
     roles: DispatchRoles
     roles_root: str | None = Field(
         default=None,
@@ -86,6 +92,18 @@ class DispatchConfig(BaseModel):
         default=None,
         description="Optional argv of the fast gates the executor and the tester must run (rc 0) before the commit and the verdict.",
     )
+
+    @model_validator(mode="after")
+    def _runtime_fields(self) -> "DispatchConfig":
+        roles = {"executor": self.roles.executor, "tester": self.roles.tester}
+        if self.runtime == "scion":
+            missing = [f for f in ("project", "workspace", "templates_dir", "context_file") if not getattr(self, f)]
+            missing += [f"roles.{n}.{f}" for n, r in roles.items() for f in ("harness", "model_alias") if not getattr(r, f)]
+        else:
+            missing = [f"roles.{n}.provider" for n, r in roles.items() if not r.provider]
+        if missing:
+            raise ValueError(f"dispatch con runtime {self.runtime}: faltan {', '.join(missing)}")
+        return self
 
 
 class DeskConfig(BaseModel):
@@ -102,7 +120,7 @@ class DeskConfig(BaseModel):
     )
     dispatch: DispatchConfig | None = Field(
         default=None,
-        description="deskops dispatch: scion project, workspace, templates and per-role launch settings.",
+        description="deskops dispatch: agent runtime (scion or paseo) and per-role launch settings.",
     )
     identity: IdentityConfig | None = Field(
         default=None,

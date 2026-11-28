@@ -1,11 +1,12 @@
 usage: deskops dispatch [-h] {start,reap} ...
 
-Launch and reap the scion executor and tester of one task.
+Launch and reap the executor and tester of one task (scion or paseo).
 
 positional arguments:
   {start,reap}
-    start       Launch the executor or tester of a task through scion.
-    reap        Stop and delete the finished scion agents of a task.
+    start       Launch the executor or tester of a task through its runtime
+                (scion or paseo).
+    reap        Stop and delete the finished agents of a task.
 
 options:
   -h, --help    show this help message and exit

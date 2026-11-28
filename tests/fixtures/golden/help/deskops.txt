@@ -14,7 +14,7 @@ positional arguments:
     init                Initialize a local .sldb store and scaffold desk/ if needed.
     message             Send, list, read, or acknowledge cross-desk messages.
     queue               Enqueue and run heavy host jobs from the repo's runs/queue.
-    dispatch            Launch and reap the scion executor and tester of one task.
+    dispatch            Launch and reap the executor and tester of one task (scion or paseo).
     integrate           Run the gates of a closed task in a clean copy and push its code commit and closing tip.
     review              Run and dispose cold context reviews (node, preflight, bundle, status, dispose).
     promote             Promote inbox notes into loose drawer candidates. Drawer items become tasks only by authoring them with `deskops add task`.

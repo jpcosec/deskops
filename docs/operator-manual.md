@@ -720,7 +720,7 @@ A post-hook that enqueues (in the lifecycle hook declaration):
 run: [deskops, queue, add, full-suite, --root, .]
 ```
 
-### Launching the executor and tester through scion
+### Launching the executor and tester (scion or paseo)
 
 `deskops dispatch` chains the deterministic steps a coordinator agent did by
 hand. It reads the `dispatch` field of `desk/config.json` (without it both
@@ -750,6 +750,41 @@ subcommands exit 2 with `falta el campo dispatch en desk/config.json`):
 deskops dispatch start executor --task <task-id> --root .   # or: tester
 deskops dispatch reap --task <task-id> --root .
 ```
+
+**Runtime paseo.** With `"runtime": "paseo"` the agents run as processes of the
+local [paseo](https://paseo.sh) daemon (`npm install -g @getpaseo/cli`,
+`paseo start`) instead of scion containers. The scion fields (`project`,
+`workspace`, `templates_dir`, `context_file`, and per role `harness`,
+`model_alias`, `harness_auth`, `env_config`) are not used; each role names a
+`provider` (`pi`, `claude`, `codex`, `opencode`...) and optionally a `model` and
+a `mode` (e.g. `bypass` for claude):
+
+```json
+{
+  "dispatch": {
+    "runtime": "paseo",
+    "roles": {
+      "executor": {"role": "deskops-executor", "provider": "claude", "mode": "bypass"},
+      "tester": {"role": "deskops-tester", "provider": "pi"}
+    }
+  }
+}
+```
+
+- `start` writes the RunDoc and `prompt.md`, which opens with the role (the
+  RoleDoc body, the run_dir and its evidence, how to end: there is no template),
+  and runs `paseo run --no-wait --json --title <name> --provider ... --cwd
+  <worktree or root> --label deskops.*=... "<prompt>"`. The executor runs in its
+  worktree, the tester in the main checkout. A failing `paseo run` gives the
+  attempt back, as a failing `scion start` does.
+- `reap` reads `paseo ls --global --all --json` and treats `idle` (the turn
+  ended) and `closed` (process released) as finished; it deletes them with
+  `paseo delete <id>` and removes `/tmp/pytest-<name>`. Branch integration is the
+  same as with scion.
+- There is no container: the agent runs as the operator's user on the host, with
+  its files and credentials. The executor's isolation is its git worktree.
+- Paseo releases an idle agent's process after an hour (`agents.idleRuntimeCleanup`
+  in `~/.paseo/config.json`); `paseo send <id> "..."` resumes the conversation.
 
 - `start` has no agent cap: the only limit is the machine. It refuses (exit 3,
   retried by the queue through `retry_exit_codes: [3]`) when memory fails the

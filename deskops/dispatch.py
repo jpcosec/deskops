@@ -1,8 +1,10 @@
-"""Scion dispatch: `deskops dispatch {start|reap}`.
+"""Agent dispatch: `deskops dispatch {start|reap}`.
 
 Chains the deterministic steps of launching the executor or tester of one task
-(identity, template, prompt, `scion start`) and of collecting the finished ones
-(`scion stop` + `scion delete`). Every call to scion goes through `_scion`.
+(identity, prompt, start) and of collecting the finished ones (stop + delete). The runtime is
+``dispatch.runtime`` in desk/config.json: ``scion`` (template, `scion start`, one container per
+agent) or ``paseo`` (`paseo run` on the local daemon). Every call to scion goes through `_scion`
+and every call to paseo through `_paseo`.
 """
 
 from __future__ import annotations
@@ -34,6 +36,11 @@ SCION_PYTEST_TMP = "/dev/shm/pytest-of-scion"  # patchable in tests
 def _scion(argv: list[str]) -> subprocess.CompletedProcess[str]:
     """The only place that runs scion."""
     return subprocess.run(argv, capture_output=True, text=True)
+
+
+def _paseo(argv: list[str]) -> subprocess.CompletedProcess[str]:
+    """The only place that runs paseo."""
+    return subprocess.run(argv, capture_output=True, text=True, stdin=subprocess.DEVNULL)
 
 
 def _dispatch_config(root: Path) -> DispatchConfig:
@@ -68,6 +75,8 @@ def _task_path(root: Path, task_id: str) -> Path:
 
 
 def _list_agents(cfg: DispatchConfig) -> list[dict[str, Any]]:
+    if cfg.runtime == "paseo":
+        return _list_paseo_agents()
     result = _scion(["scion", "list", "--project", cfg.project, "--format", "json"])
     if result.returncode != 0:
         raise UsageError(f"scion list fallo ({result.returncode}): {result.stderr.strip()}")
@@ -78,6 +87,34 @@ def _list_agents(cfg: DispatchConfig) -> list[dict[str, Any]]:
     if isinstance(data, dict):
         data = data.get("agents") or []
     return [item for item in data if isinstance(item, dict)]
+
+
+def _list_paseo_agents() -> list[dict[str, Any]]:
+    from deskops.runtime import paseo
+
+    result = _paseo(paseo.list_argv())
+    if result.returncode != 0:
+        raise UsageError(f"paseo ls fallo ({result.returncode}): {(result.stderr or result.stdout).strip()}")
+    try:
+        data = paseo.parse_json(result.stdout or "[]")
+    except ValueError as exc:
+        raise UsageError(f"paseo ls no devolvio JSON: {exc}") from exc
+    return [paseo.normalize(item) for item in data if isinstance(item, dict)]
+
+
+def _stop_and_delete(cfg: DispatchConfig, agent: dict[str, Any]) -> tuple[str, int]:
+    """Stop and delete one agent: ("", 0) or (the failing step, its code)."""
+    name = str(agent.get("name"))
+    if cfg.runtime == "paseo":
+        from deskops.runtime import paseo
+
+        deleted = _paseo(paseo.delete_argv(str(agent.get("id") or name)))
+        return ("", 0) if deleted.returncode == 0 else ("delete", deleted.returncode)
+    stopped = _scion(["scion", "stop", name, "--project", cfg.project])
+    if stopped.returncode != 0:
+        return "stop", stopped.returncode
+    deleted = _scion(["scion", "delete", name, "--project", cfg.project, "--yes"])
+    return ("", 0) if deleted.returncode == 0 else ("delete", deleted.returncode)
 
 
 def _git(root: Path, *argv: str) -> subprocess.CompletedProcess[str]:
@@ -342,21 +379,22 @@ def _run_dir_for(name: str, role: str) -> str:
     return f"runs/subagents/exec-{name}" + ("-testing" if role == "tester" else "")
 
 
-def _quick_gates_text(role: str, quick_gates: list[str] | None) -> str:
+def _quick_gates_text(role: str, quick_gates: list[str] | None, runtime: str = "scion") -> str:
     if not quick_gates:
         return ""
     command = shlex.join(quick_gates)
+    python = "con el python del venv (/tmp/ws-venv en PATH)" if runtime == "scion" else "con el python del proyecto"
     if role == "executor":
         return (
             "\n## Gates rapidos del desk\n\n"
-            "Antes del commit corre, con el python del venv (/tmp/ws-venv en PATH):\n\n"
+            f"Antes del commit corre, {python}:\n\n"
             f"    {command}\n\n"
             "Debe terminar con rc 0 antes de commitear; si falla, corrige y repite. "
             "Anota el comando y su rc en validation.log.\n"
         )
     return (
         "\n## Gates rapidos del desk\n\n"
-        "Antes del veredicto corre, con el python del venv (/tmp/ws-venv en PATH):\n\n"
+        f"Antes del veredicto corre, {python}:\n\n"
         f"    {command}\n\n"
         "Si termina con rc distinto de 0 el veredicto es FALLA.\n"
     )
@@ -376,23 +414,68 @@ def _worktree_text(worktree: Path | None, root: Path) -> str:
     )
 
 
-def _pytest_tmp_text(name: str) -> str:
+def _pytest_tmp_text(name: str, runtime: str = "scion") -> str:
+    where = (
+        "en el /tmp del contenedor (muere con el agente) y no en el /dev/shm del host"
+        if runtime == "scion"
+        else "en un directorio propio de este agente, que reap borra"
+    )
     return (
         "\n## Temporales de pytest\n\n"
-        "Antes de cualquier pytest exporta, para que sus temporales caigan en el /tmp del contenedor "
-        "(muere con el agente) y no en el /dev/shm del host:\n\n"
+        f"Antes de cualquier pytest exporta, para que sus temporales caigan {where}:\n\n"
         f"    export PYTEST_ADDOPTS=\"--basetemp=/tmp/pytest-{name}\"\n"
     )
 
 
+def _paseo_role_text(role: str, task_id: str, run_dir: str, root: Path, role_body: str) -> str:
+    """What a scion template's AGENTS.md says, for paseo, which has no templates: role, evidence, how to end."""
+    body = role_body.strip()
+    lines = [
+        "# Tu rol",
+        "",
+        f"Eres el {'ejecutor' if role == 'executor' else 'tester'} deskops de la tarea `{task_id}`, en el repo `{root}`. "
+        "El desk, no tu memoria, guarda el estado. Una sola tarea: no toques otras ni el board, ni cierres la tarea.",
+        "Los CLI son `deskops` y `sldb` (aprendelos con `--help`); nunca edites a mano un documento del desk.",
+    ]
+    if body:
+        lines += ["", body]
+    lines += [
+        "",
+        "## Evidencia",
+        "",
+        f"Tu run_dir es `{run_dir}` (en `{root}`); no inventes otro. Deja ahi:",
+        "",
+        f"    deskops show board Board --root {root} > {run_dir}/board.txt",
+        f"    deskops show task {task_id} --root {root} > {run_dir}/task.txt",
+        f"    git -C {root} status --short --branch > {run_dir}/git-status.txt",
+        "",
+        "mas `validation.log` (el comando exacto y su codigo de salida) y `result-summary.md` (que hiciste, que "
+        "corriste, que debe revisar el supervisor).",
+        "",
+        "## Al terminar",
+        "",
+    ]
+    if role == "executor":
+        lines += [
+            f"Con la evidencia escrita y el commit hecho, corre una vez `deskops advance task {task_id} --root {root}`. "
+            "Si queda bloqueado o un hook falla, anota el hallazgo en `result-summary.md`.",
+            "Si terminas bloqueado o sin cambios, no avances la tarea: escribe el bloqueo en `result-summary.md`.",
+        ]
+    lines += [
+        "Termina tu turno con una linea de resumen: deskops lee que terminaste cuando quedas inactivo y "
+        "`result-summary.md` existe. No hagas push.",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 def _role_instructions(
     role: str, task_id: str, quick_gates: list[str] | None = None,
-    worktree: Path | None = None, root: Path | None = None, name: str = "",
+    worktree: Path | None = None, root: Path | None = None, name: str = "", runtime: str = "scion",
 ) -> str:
     return (
         _base_instructions(role, task_id)
-        + (_pytest_tmp_text(name) if name else "")
-        + _quick_gates_text(role, quick_gates)
+        + (_pytest_tmp_text(name, runtime) if name else "")
+        + _quick_gates_text(role, quick_gates, runtime)
         + (_worktree_text(worktree, root) if root is not None else "")
     )
 
@@ -491,21 +574,24 @@ def start(root: Path, role: str, task_id: str) -> int:
         worktree = _worktree_path(root, name)
 
     roles_root = _roles_root(root, cfg)
-    _, role_doc = find_role_doc(roles_root, role_cfg.role)
+    role_path, role_doc = find_role_doc(roles_root, role_cfg.role)
     role_name = str(role_doc["name"])
-    context = load_scion_context(Path(cfg.context_file).expanduser())
-    target = Path(cfg.templates_dir).expanduser() / role_name
-    materialize_scion_template(
-        roles_root,
-        role_cfg.role,
-        task_repo=_task_repo(root),
-        harness=role_cfg.harness,
-        out_dir=target,
-        model_alias=role_cfg.model_alias,
-        mode=role,
-        context=context,
-        harness_auth=role_cfg.harness_auth,
-    )
+    paseo_mode = cfg.runtime == "paseo"
+    target = Path()
+    if not paseo_mode:
+        context = load_scion_context(Path(cfg.context_file).expanduser())
+        target = Path(cfg.templates_dir).expanduser() / role_name
+        materialize_scion_template(
+            roles_root,
+            role_cfg.role,
+            task_repo=_task_repo(root),
+            harness=role_cfg.harness,
+            out_dir=target,
+            model_alias=role_cfg.model_alias,
+            mode=role,
+            context=context,
+            harness_auth=role_cfg.harness_auth,
+        )
     # A RunDoc left tracked by another session whose run_dir is gone is stale: untrack it
     # so the new run can track the same identity (a RunDoc with its run_dir counts as an attempt).
     from deskops.runtime.scion import _slug
@@ -520,7 +606,7 @@ def start(root: Path, role: str, task_id: str) -> int:
             root,
             task_id=task_id,
             role_id=str(role_doc["id"]),
-            kind=role_cfg.harness,
+            kind=role_cfg.provider if paseo_mode else role_cfg.harness,
             agent_slug=name,
             run_dir=run_dir,
             attempt=int(identity["attempt"]),
@@ -545,21 +631,26 @@ def start(root: Path, role: str, task_id: str) -> int:
         return code
 
     try:
-        sync = _scion(["scion", "templates", "sync", str(target.resolve()), "--project", cfg.project])
-        if sync.returncode != 0:
-            return technical_failure(f"scion templates sync fallo ({sync.returncode}): {sync.stderr.strip()}", sync.returncode)
+        if not paseo_mode:
+            sync = _scion(["scion", "templates", "sync", str(target.resolve()), "--project", cfg.project])
+            if sync.returncode != 0:
+                return technical_failure(f"scion templates sync fallo ({sync.returncode}): {sync.stderr.strip()}", sync.returncode)
 
         shown = io.StringIO()
         with contextlib.redirect_stdout(shown):
             deskops_main(["show", "task", task_id, "--root", str(root)])
         prompt_path = (root / run_dir / "prompt.md").resolve()
         prompt_path.parent.mkdir(parents=True, exist_ok=True)
+        preamble = ""
+        if paseo_mode:
+            preamble = _paseo_role_text(role, task_id, run_dir, root, _role_body(role_path)) + "\n"
         prompt_path.write_text(
-            shown.getvalue().rstrip("\n")
+            preamble
+            + shown.getvalue().rstrip("\n")
             + "\n\n"
             + task_path.read_text(encoding="utf-8").rstrip("\n")
             + "\n\n"
-            + _role_instructions(role, task_id, cfg.quick_gates, worktree, root, name),
+            + _role_instructions(role, task_id, cfg.quick_gates, worktree, root, name, cfg.runtime),
             encoding="utf-8",
         )
 
@@ -569,30 +660,40 @@ def start(root: Path, role: str, task_id: str) -> int:
             if created.returncode != 0:
                 return technical_failure(f"worktree: git worktree add fallo: {_git_error(created)}", EXIT_WORKTREE)
 
-        argv = scion_start_argv(
-            identity,
-            prompt=(
-                f"Tu encargo esta en el archivo {prompt_path}. "
-                "Lee el archivo completo antes de empezar y luego cumple el encargo que describe."
-            ),
-            project=cfg.project,
-            workspace=cfg.workspace,
-            template=role_name,
-            harness_auth=role_cfg.harness_auth,
-            config=str(target / "scion-env.yaml") if (target / "scion-env.yaml").is_file() else role_cfg.env_config,
+        prompt = (
+            f"Tu encargo esta en el archivo {prompt_path}. "
+            "Lee el archivo completo antes de empezar y luego cumple el encargo que describe."
         )
-        started = _scion(argv)
+        if paseo_mode:
+            from deskops.runtime import paseo
+
+            argv = paseo.run_argv(
+                name, prompt, cwd=str(worktree or root), provider=str(role_cfg.provider),
+                labels=dict(identity["labels"]), model=role_cfg.model, mode=role_cfg.mode,
+            )
+            started = _paseo(argv)
+        else:
+            argv = scion_start_argv(
+                identity,
+                prompt=prompt,
+                project=cfg.project,
+                workspace=cfg.workspace,
+                template=role_name,
+                harness_auth=role_cfg.harness_auth,
+                config=str(target / "scion-env.yaml") if (target / "scion-env.yaml").is_file() else role_cfg.env_config,
+            )
+            started = _scion(argv)
     except BaseException:
         _undo_start(root, name, run_dir, run_commit, clean_store)
         raise
     if started.returncode != 0:
         _delete_failed_agent(cfg, name)
         detail = started.stderr.strip() or started.stdout.strip() or f"codigo {started.returncode}"
-        return technical_failure(f"scion start fallo ({started.returncode}): {detail}", started.returncode)
+        return technical_failure(f"{cfg.runtime} start fallo ({started.returncode}): {detail}", started.returncode)
     agent = next((item for item in _list_agents(cfg) if str(item.get("name")) == name), None)
     if agent is not None and str(agent.get("phase", "")) in FAILED_PHASES:
         _delete_failed_agent(cfg, name)
-        return technical_failure(f"el agente {name} quedo en fase {agent.get('phase')} tras scion start", EXIT_SCION_ERROR)
+        return technical_failure(f"el agente {name} quedo en fase {agent.get('phase')} tras {cfg.runtime} start", EXIT_SCION_ERROR)
     if agent is not None:
         from deskops.runtime.scion import confirm_scion_dispatch
 
@@ -605,9 +706,16 @@ def start(root: Path, role: str, task_id: str) -> int:
 
 
 def _delete_failed_agent(cfg: DispatchConfig, name: str) -> None:
-    """Best effort: drop an agent scion left behind (error phase), so the same name can start again."""
-    if any(str(item.get("name")) == name for item in _list_agents(cfg)):
-        _scion(["scion", "delete", name, "--project", cfg.project, "--yes"])
+    """Best effort: drop an agent the runtime left behind (error phase), so the same name can start again."""
+    for item in _list_agents(cfg):
+        if str(item.get("name")) != name:
+            continue
+        if cfg.runtime == "paseo":
+            from deskops.runtime import paseo
+
+            _paseo(paseo.delete_argv(str(item.get("id") or name)))
+        else:
+            _scion(["scion", "delete", name, "--project", cfg.project, "--yes"])
 
 
 def _undo_start(root: Path, name: str, run_dir: str, run_commit: str, clean_store: list[str] = ()) -> str:
@@ -648,6 +756,8 @@ def _scion_pytest_tmp() -> str:
 
 def _clean_scion_pytest_tmp(cfg: DispatchConfig, reaped: set[str]) -> bool:
     """Remove scion's pytest temp dir when no agent of the project is left running."""
+    if cfg.runtime != "scion":
+        return False
     for agent in _list_agents(cfg):
         if agent.get("phase") == "running" and str(agent.get("name")) not in reaped:
             return False
@@ -717,16 +827,13 @@ def reap(root: Path, task_id: str) -> int:
                 print(waiting)
                 busy = True
                 continue
-        stopped = _scion(["scion", "stop", name, "--project", cfg.project])
-        if stopped.returncode != 0:
-            print(f"{name} {role} error:{stopped.returncode}")
+        step, code = _stop_and_delete(cfg, agent)
+        if step:
+            print(f"{name} {role} error:{code}")
             failed = True
             continue
-        deleted = _scion(["scion", "delete", name, "--project", cfg.project, "--yes"])
-        if deleted.returncode != 0:
-            print(f"{name} {role} error:{deleted.returncode}")
-            failed = True
-            continue
+        if cfg.runtime == "paseo":
+            shutil.rmtree(f"/tmp/pytest-{name}", ignore_errors=True)
         print(f"{name} {role} {reason}")
         reaped.add(name)
         if role == "executor":
@@ -753,6 +860,16 @@ def reap(root: Path, task_id: str) -> int:
     if busy:
         return EXIT_BUSY
     return EXIT_SCION_ERROR if failed else 0
+
+
+def _role_body(role_path: Path) -> str:
+    """The prose body of a RoleDoc (what follows its front matter)."""
+    text = role_path.read_text(encoding="utf-8")
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end >= 0:
+            text = text[end + 4:]
+    return text.strip()
 
 
 class DispatchCLI:

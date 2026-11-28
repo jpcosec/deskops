@@ -836,7 +836,7 @@ Examples:
         ),
         Command(
             path=("dispatch",),
-            help="Launch and reap the scion executor and tester of one task.",
+            help="Launch and reap the executor and tester of one task (scion or paseo).",
             args=(),
             handler="deskops.dispatch:DispatchCLI",
             mutates=True,
@@ -851,7 +851,7 @@ Examples:
         ),
         Command(
             path=("dispatch", "start"),
-            help="Launch the executor or tester of a task through scion.",
+            help="Launch the executor or tester of a task through its runtime (scion or paseo).",
             args=(
                 A("agent_role", metavar="role", choices=("executor", "tester"), help="executor or tester"),
                 A("--task", required=True, help="Task id"),
@@ -862,7 +862,7 @@ Examples:
         ),
         Command(
             path=("dispatch", "reap"),
-            help="Stop and delete the finished scion agents of a task.",
+            help="Stop and delete the finished agents of a task.",
             args=(A("--task", required=True, help="Task id"), ROOT_ARG),
             handler="deskops.dispatch:DispatchCLI",
             mutates=True,
