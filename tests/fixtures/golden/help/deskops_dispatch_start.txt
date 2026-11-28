@@ -1,6 +1,6 @@
 usage: deskops dispatch start [-h] --task TASK [--root ROOT] role
 
-Launch the executor or tester of a task through scion.
+Launch the executor or tester of a task through its runtime (scion or paseo).
 
 positional arguments:
   role         executor or tester
